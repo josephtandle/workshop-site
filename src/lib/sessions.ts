@@ -10,6 +10,15 @@ export interface Session {
 
 export const sessions: Session[] = [
   {
+    slug: '1',
+    number: 1,
+    title: 'Setting the Mastermind Container',
+    description: '',
+    date: '',
+    hasGuide: false,
+    hasPrep: false,
+  },
+  {
     slug: '2',
     number: 2,
     title: 'Building Your First Web Page with AI',

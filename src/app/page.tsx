@@ -4,7 +4,7 @@ import Reveal from '@/components/Reveal'
 import StaggerList, { StaggerItem } from '@/components/StaggerList'
 
 export default function HomePage() {
-  const sorted = [...sessions].reverse()
+  const sorted = [...sessions].sort((a, b) => a.number - b.number)
 
   return (
     <main>
@@ -45,15 +45,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Sessions grid */}
-      <section className="max-w-4xl mx-auto px-6 pb-24">
-        <StaggerList className="grid gap-4 md:grid-cols-2" staggerDelay={0.1}>
-          {sorted.map((session) => (
-            <StaggerItem key={session.slug}>
-              <SessionCard {...session} />
-            </StaggerItem>
-          ))}
-        </StaggerList>
+      {/* Sessions list */}
+      <section className="max-w-3xl mx-auto px-6 pb-24">
+        <div className="border border-white/[0.08] rounded-2xl overflow-hidden">
+          <StaggerList staggerDelay={0.07}>
+            {sorted.map((session, i) => (
+              <StaggerItem key={session.slug}>
+                <div className={i < sorted.length - 1 ? 'border-b border-white/[0.06]' : ''}>
+                  <SessionCard {...session} />
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerList>
+        </div>
       </section>
     </main>
   )
