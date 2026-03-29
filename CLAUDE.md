@@ -73,4 +73,16 @@ Interactive checkboxes, progress bar, TOC with shared state — all required.
 
 ---
 
-*Last updated: 2026-03-27 — Joe / Uni*
+## Templates — Mandatory
+
+Every new workshop page must be built from an existing template in `src/templates/`.
+Never start a page from scratch. Copy the closest template and fill in the markers.
+
+- **Session guides** — use `src/templates/session-guide-template.tsx`
+- **Prep pages** — use `src/content/session-3-prep.tsx` as canonical reference
+
+If a page type has no template yet, create one in `src/templates/` first, then build the page from it.
+
+---
+
+*Last updated: 2026-03-29 — Joe / Uni*
