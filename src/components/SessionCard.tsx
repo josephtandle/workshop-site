@@ -8,6 +8,7 @@ interface SessionCardProps {
   date: string
   hasGuide: boolean
   hasPrep: boolean
+  hasBonus: boolean
 }
 
 export default function SessionCard({
@@ -15,9 +16,9 @@ export default function SessionCard({
   number,
   title,
   description,
-  date,
   hasGuide,
   hasPrep,
+  hasBonus,
 }: SessionCardProps) {
   const hasContent = hasGuide || hasPrep
 
@@ -37,41 +38,50 @@ export default function SessionCard({
 
       {/* Title + description */}
       <div className="flex-1 min-w-0">
-        <div className="flex items-center gap-3 flex-wrap">
+        <div className="flex items-center gap-2 flex-wrap mb-0.5">
           <span className={`font-semibold text-sm leading-snug ${hasContent ? 'text-[#FCF4EB] group-hover:text-white transition-colors duration-150' : 'text-[#FCF4EB]/40'}`}>
             {title}
           </span>
-          {(hasGuide || hasPrep) && (
-            <div className="flex items-center gap-2">
-              {hasGuide && (
-                <span
-                  className="text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 rounded-full"
-                  style={{
-                    background: 'rgba(124, 105, 199, 0.15)',
-                    color: '#7C69C7',
-                    border: '1px solid rgba(124, 105, 199, 0.25)',
-                  }}
-                >
-                  Guide
-                </span>
-              )}
-              {hasPrep && (
-                <span
-                  className="text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 rounded-full"
-                  style={{
-                    background: 'rgba(252, 244, 235, 0.07)',
-                    color: 'rgba(252, 244, 235, 0.45)',
-                    border: '1px solid rgba(252, 244, 235, 0.12)',
-                  }}
-                >
-                  Prep
-                </span>
-              )}
-            </div>
+          {/* Badges in order: Prep → Guide → Bonus */}
+          {hasPrep && (
+            <span
+              className="text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 rounded-full"
+              style={{
+                background: 'rgba(252, 244, 235, 0.07)',
+                color: 'rgba(252, 244, 235, 0.45)',
+                border: '1px solid rgba(252, 244, 235, 0.12)',
+              }}
+            >
+              Prep
+            </span>
+          )}
+          {hasGuide && (
+            <span
+              className="text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 rounded-full"
+              style={{
+                background: 'rgba(124, 105, 199, 0.15)',
+                color: '#7C69C7',
+                border: '1px solid rgba(124, 105, 199, 0.25)',
+              }}
+            >
+              Guide
+            </span>
+          )}
+          {hasBonus && (
+            <span
+              className="text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 rounded-full"
+              style={{
+                background: 'rgba(245, 195, 198, 0.10)',
+                color: '#F5C3C6',
+                border: '1px solid rgba(245, 195, 198, 0.20)',
+              }}
+            >
+              Bonus
+            </span>
           )}
         </div>
         {description && (
-          <p className="text-xs text-[#FCF4EB]/40 leading-relaxed mt-0.5 line-clamp-1">{description}</p>
+          <p className="text-xs text-[#FCF4EB]/40 leading-relaxed line-clamp-2">{description}</p>
         )}
       </div>
 

@@ -5,7 +5,7 @@ import StickyVideoPlayer from '@/components/StickyVideoPlayer'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Optional Homework: Verify Your Domain in Resend — Masterminds Workshop',
+  title: 'Bonus: Verify Your Domain in Resend — Masterminds Workshop',
   description: 'Step-by-step guide to verify your custom domain in Resend so you can send emails to anyone from your own address.',
 }
 
@@ -81,7 +81,7 @@ export default function Session3Homework() {
         <div className="flex items-center gap-3 mb-3">
           <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Session 3</span>
           <span className="text-xs px-2 py-0.5 rounded-full font-medium bg-white/[0.06] text-[#FCF4EB]/40">
-            Optional Homework
+            Bonus
           </span>
         </div>
         <h1 className="text-4xl font-bold text-[#FCF4EB] leading-tight mb-5">

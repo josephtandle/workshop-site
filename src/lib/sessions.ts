@@ -6,6 +6,7 @@ export interface Session {
   date: string
   hasGuide: boolean
   hasPrep: boolean
+  hasBonus: boolean
 }
 
 export const sessions: Session[] = [
@@ -13,30 +14,34 @@ export const sessions: Session[] = [
     slug: '1',
     number: 1,
     title: 'Setting the Mastermind Container',
-    description: '',
+    description:
+      'Introductions, group agreements, and the mindset shift from employee to entrepreneur. We define what we are building and why.',
     date: '',
     hasGuide: false,
     hasPrep: false,
+    hasBonus: false,
   },
   {
     slug: '2',
     number: 2,
     title: 'Building Your First Web Page with AI',
     description:
-      'Use Claude Code to build and deploy a personal brand website in under 2 hours. No experience required.',
+      'Go from zero to a live personal brand website in under two hours using Claude Code and Vercel. No coding experience needed — just your ideas and a laptop.',
     date: '',
     hasGuide: true,
     hasPrep: true,
+    hasBonus: false,
   },
   {
     slug: '3',
     number: 3,
-    title: 'Custom Domains and Lead Magnets',
+    title: 'Building Your First Lead Magnets',
     description:
-      'Buy a domain, connect it to Vercel, capture leads with a form, save them to Supabase, and send an automatic welcome email with Resend.',
+      'Connect a custom domain, build a lead capture page, store subscribers in Supabase, and automatically deliver your resource by email the moment someone signs up.',
     date: '2026-04-05',
     hasGuide: true,
     hasPrep: true,
+    hasBonus: true,
   },
 ]
 
