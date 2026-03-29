@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Workshop Guide — Build Your First Website with AI | Masterminds HQ</title>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --purple: #7b6ba5;
+            --purple-dark: #1e1b2e;
+            --purple-deep: #16132b;
+            --purple-light: #a899cc;
+            --beige: #f5efe6;
+            --beige-dark: #e8dfd2;
+            --tan: #c9b99a;
+            --dark: #1a1728;
+            --gray-1: #9590a8;
+            --gray-2: #c5c0d0;
+            --gray-3: #6e6880;
+            --white: #fff;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background: var(--purple-deep);
+            overflow-x: hidden;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 1.5rem;
+            background: linear-gradient(160deg, var(--purple-deep) 0%, var(--purple-dark) 40%, #2a2545 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(123, 107, 165, 0.15) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .hero-container {
+            max-width: 1060px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 3.5rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== COPY SIDE ===== */
+        .hero-copy { color: var(--white); }
+
+        .badge {
+            display: inline-block;
+            background: rgba(123, 107, 165, 0.2);
+            border: 1px solid rgba(168, 153, 204, 0.25);
+            color: var(--purple-light);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 0.4rem 1.1rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-copy h1 {
+            font-size: clamp(2rem, 4.2vw, 2.85rem);
+            line-height: 1.15;
+            font-weight: 800;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-copy h1 span { color: var(--purple-light); }
+
+        .hero-copy .subtitle {
+            font-size: 1.1rem;
+            color: var(--gray-2);
+            margin-bottom: 2rem;
+            max-width: 480px;
+            line-height: 1.7;
+        }
+
+        /* What's Inside */
+        .whats-inside-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--purple-light);
+            margin-bottom: 1rem;
+        }
+
+        .benefits {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+
+        .benefits li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            color: var(--gray-2);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .benefits li .check {
+            flex-shrink: 0;
+            width: 22px;
+            height: 22px;
+            background: var(--purple);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+        }
+
+        .benefits li .check svg {
+            width: 12px;
+            height: 12px;
+            stroke: var(--white);
+            stroke-width: 3;
+            fill: none;
+        }
+
+        /* ===== FORM CARD ===== */
+        .form-card {
+            background: var(--white);
+            border-radius: 18px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+            position: relative;
+        }
+
+        .form-card::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, var(--purple-light), var(--purple), var(--purple-dark));
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .pdf-preview {
+            background: var(--purple-deep);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .pdf-preview .pdf-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pdf-preview .pdf-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.3;
+        }
+
+        .pdf-preview .pdf-meta {
+            font-size: 0.75rem;
+            color: var(--gray-1);
+            margin-top: 0.35rem;
+        }
+
+        .form-card h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.4rem;
+            text-align: center;
+        }
+
+        .form-card .form-subtitle {
+            font-size: 0.88rem;
+            color: var(--gray-3);
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group { margin-bottom: 0.9rem; }
+
+        .form-group label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 2px solid var(--beige-dark);
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: inherit;
+            color: var(--dark);
+            background: var(--beige);
+            transition: border-color 0.3s ease;
+            outline: none;
+        }
+
+        .form-group input:focus { border-color: var(--purple); }
+        .form-group input::placeholder { color: var(--gray-1); }
+
+        .cta-btn {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: var(--purple);
+            color: var(--white);
+            border: none;
+            border-radius: 10px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            font-family: inherit;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            margin-top: 0.35rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-btn:hover {
+            background: var(--purple-light);
+            color: var(--dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(123, 107, 165, 0.4);
+        }
+
+        .form-note {
+            font-size: 0.73rem;
+            color: var(--gray-1);
+            text-align: center;
+            margin-top: 0.85rem;
+        }
+
+        /* ===== SUCCESS STATE ===== */
+        .success-message { display: none; text-align: center; padding: 1.5rem 0; }
+
+        .success-message .icon {
+            width: 64px;
+            height: 64px;
+            background: var(--purple);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .success-message .icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--white);
+            stroke-width: 2.5;
+            fill: none;
+        }
+
+        .success-message h3 { font-size: 1.3rem; color: var(--dark); margin-bottom: 0.4rem; }
+        .success-message p { font-size: 0.92rem; color: var(--gray-3); line-height: 1.6; }
+
+        /* ===== WHAT YOU'LL LEARN SECTION ===== */
+        .learn-section {
+            padding: 5rem 1.5rem;
+            background: var(--beige);
+        }
+
+        .learn-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--purple);
+            margin-bottom: 0.75rem;
+        }
+
+        .learn-inner h2 {
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .learn-inner > p {
+            font-size: 1.05rem;
+            color: var(--gray-3);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .step-card {
+            background: var(--white);
+            border-radius: 14px;
+            padding: 1.75rem 1.5rem;
+            border: 1px solid var(--beige-dark);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(26, 23, 40, 0.08);
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--purple);
+            color: var(--white);
+            border-radius: 50%;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .step-card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .step-card p {
+            font-size: 0.88rem;
+            color: var(--gray-3);
+            line-height: 1.55;
+        }
+
+        /* ===== WHO IT'S FOR ===== */
+        .audience-section {
+            padding: 5rem 1.5rem;
+            background: var(--purple-deep);
+        }
+
+        .audience-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .audience-inner .section-label { color: var(--purple-light); }
+
+        .audience-inner h2 {
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 2.5rem;
+        }
+
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.25rem;
+            text-align: left;
+        }
+
+        .audience-card {
+            background: rgba(123, 107, 165, 0.1);
+            border: 1px solid rgba(168, 153, 204, 0.15);
+            border-radius: 14px;
+            padding: 1.5rem;
+        }
+
+        .audience-card .emoji {
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .audience-card h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.35rem;
+        }
+
+        .audience-card p {
+            font-size: 0.82rem;
+            color: var(--gray-1);
+            line-height: 1.5;
+        }
+
+        /* ===== ABOUT / TRUST ===== */
+        .about-section {
+            padding: 5rem 1.5rem;
+            background: var(--beige);
+        }
+
+        .about-inner {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--purple);
+            margin-bottom: 1.25rem;
+        }
+
+        .about-inner h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .about-inner .about-role {
+            font-size: 0.85rem;
+            color: var(--purple);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .about-inner .about-bio {
+            font-size: 0.95rem;
+            color: var(--gray-3);
+            line-height: 1.7;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        /* ===== FINAL CTA ===== */
+        .final-cta {
+            padding: 5rem 1.5rem;
+            background: linear-gradient(160deg, var(--purple-dark) 0%, var(--purple-deep) 100%);
+            text-align: center;
+        }
+
+        .final-cta-inner { max-width: 560px; margin: 0 auto; }
+
+        .final-cta h2 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .final-cta h2 span { color: var(--purple-light); }
+
+        .final-cta p {
+            font-size: 1rem;
+            color: var(--gray-2);
+            margin-bottom: 2rem;
+        }
+
+        .final-cta .cta-btn {
+            max-width: 360px;
+            margin: 0 auto;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: var(--purple-deep);
+            border-top: 1px solid rgba(123, 107, 165, 0.12);
+        }
+
+        .footer-brand {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-brand span { color: var(--purple-light); }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--gray-1);
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover { color: var(--purple-light); }
+
+        .footer-copy { font-size: 0.73rem; color: var(--gray-3); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2.5rem;
+            }
+
+            .hero-copy .subtitle { max-width: 100%; }
+            .benefits { align-items: center; }
+            .whats-inside-label { text-align: center; }
+
+            .form-card {
+                max-width: 440px;
+                margin: 0 auto;
+            }
+
+            .audience-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .audience-grid { grid-template-columns: 1fr; }
+            .steps-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="hero-container">
+
+            <div class="hero-copy fade-in">
+                <div class="badge">Free 22-Page Workshop Guide</div>
+                <h1>Build Your First Website with <span>AI</span></h1>
+                <p class="subtitle">A step-by-step guide to building, deploying, and customizing your personal website using Claude Code. No coding experience needed — just plain English.</p>
+
+                <p class="whats-inside-label">What's inside:</p>
+                <ul class="benefits">
+                    <li>
+                        <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        7 step-by-step instructions from zero to live website
+                    </li>
+                    <li>
+                        <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Recommended tools & frameworks (Tailwind, shadcn/ui, DaisyUI)
+                    </li>
+                    <li>
+                        <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Pro design techniques — animations, effects & visual polish
+                    </li>
+                    <li>
+                        <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Deploy to the internet & connect a custom domain
+                    </li>
+                    <li>
+                        <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Content worksheet so you're ready to build immediately
+                    </li>
+                </ul>
+            </div>
+
+            <div class="form-card fade-in delay-1" id="formCard">
+                <div class="pdf-preview">
+                    <div class="pdf-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <rect x="8" y="4" width="32" height="40" rx="4" fill="#7b6ba5" opacity="0.3"/>
+                            <rect x="10" y="6" width="28" height="36" rx="3" fill="#1e1b2e"/>
+                            <text x="24" y="22" text-anchor="middle" font-size="7" font-weight="700" fill="#a899cc" font-family="Arial">SESSION 2</text>
+                            <text x="24" y="32" text-anchor="middle" font-size="6" font-weight="600" fill="#fff" font-family="Arial">WORKSHOP</text>
+                            <text x="24" y="39" text-anchor="middle" font-size="6" font-weight="600" fill="#fff" font-family="Arial">GUIDE</text>
+                        </svg>
+                    </div>
+                    <p class="pdf-title">Building Your First Web Page with AI</p>
+                    <p class="pdf-meta">22 pages &bull; PDF &bull; Complete Beginner</p>
+                </div>
+
+                <form id="leadForm">
+                    <h2>Download the Free Guide</h2>
+                    <p class="form-subtitle">Get instant access — sent straight to your inbox.</p>
+
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="Your first name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    </div>
+
+                    <button type="submit" class="cta-btn">Send Me the Free Guide</button>
+
+                    <p class="form-note">No spam, ever. Unsubscribe anytime.</p>
+                </form>
+
+                <div class="success-message" id="successMessage">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <h3>You're in!</h3>
+                    <p>Check your inbox — your free workshop guide is on the way.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== WHAT YOU'LL LEARN ===== -->
+    <section class="learn-section">
+        <div class="learn-inner">
+            <p class="section-label fade-in">Inside the Guide</p>
+            <h2 class="fade-in">From Zero to Live Website in 7 Steps</h2>
+            <p class="fade-in">Follow each step in order. You only type one terminal command in the entire workshop — AI handles the rest.</p>
+
+            <div class="steps-grid">
+                <div class="step-card fade-in">
+                    <div class="step-number">1</div>
+                    <h3>Start Claude Code</h3>
+                    <p>Open your terminal, type one command, and you're ready. Mac and PC instructions included.</p>
+                </div>
+                <div class="step-card fade-in delay-1">
+                    <div class="step-number">2</div>
+                    <h3>Build Your Website</h3>
+                    <p>Describe what you want in plain English. Claude writes the HTML, CSS, and JavaScript for you.</p>
+                </div>
+                <div class="step-card fade-in delay-2">
+                    <div class="step-number">3</div>
+                    <h3>Add Visual Effects</h3>
+                    <p>Scroll animations, hover effects, gradient backgrounds — just describe the effect you want.</p>
+                </div>
+                <div class="step-card fade-in delay-1">
+                    <div class="step-number">4</div>
+                    <h3>Pro-Level Polish</h3>
+                    <p>Particle backgrounds, dark mode toggle, image lightbox, contact forms, and mobile responsive.</p>
+                </div>
+                <div class="step-card fade-in delay-2">
+                    <div class="step-number">5</div>
+                    <h3>Deploy to the Internet</h3>
+                    <p>Push your site live with Vercel in about 30 seconds. Share the link with the world.</p>
+                </div>
+                <div class="step-card fade-in delay-3">
+                    <div class="step-number">6</div>
+                    <h3>Add Your Photo & Domain</h3>
+                    <p>Drop in your headshot, buy a custom domain on Porkbun, and connect it — all walkthrough included.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHO IT'S FOR ===== -->
+    <section class="audience-section">
+        <div class="audience-inner">
+            <p class="section-label fade-in">Who This Is For</p>
+            <h2 class="fade-in">Built for Complete Beginners</h2>
+
+            <div class="audience-grid">
+                <div class="audience-card fade-in">
+                    <div class="emoji">&#128188;</div>
+                    <h4>Mentors & Consultants</h4>
+                    <p>Need a personal site to build credibility and attract clients online.</p>
+                </div>
+                <div class="audience-card fade-in delay-1">
+                    <div class="emoji">&#127919;</div>
+                    <h4>Agency Owners</h4>
+                    <p>Want a clean, professional web presence without hiring a developer.</p>
+                </div>
+                <div class="audience-card fade-in delay-2">
+                    <div class="emoji">&#128640;</div>
+                    <h4>Entrepreneurs</h4>
+                    <p>Ready to launch fast without learning to code from scratch.</p>
+                </div>
+                <div class="audience-card fade-in delay-3">
+                    <div class="emoji">&#128161;</div>
+                    <h4>Anyone Curious About AI</h4>
+                    <p>Want to see what's possible when you build with AI tools — even with zero experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT JOE ===== -->
+    <section class="about-section">
+        <div class="about-inner fade-in">
+            <img src="joe-che-professional-headshot.jpg" alt="Joe Che" class="about-photo">
+            <h3>Joe Che</h3>
+            <p class="about-role">Business Automation Mentor & AI Consultant</p>
+            <p class="about-bio">Joe helps mentors, consultants, and agency owners scale with no-code tools and AI agents. This workshop guide is from his Business Automation Mastermind — a premium 6-12 month group mentorship program at Masterminds HQ.</p>
+        </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="final-cta">
+        <div class="final-cta-inner fade-in">
+            <h2>Ready to Build Your Website <span>with AI?</span></h2>
+            <p>Download the free 22-page guide and go from zero to a live, professional website — no coding required.</p>
+            <a href="#formCard" class="cta-btn" style="display:inline-block; text-align:center;">Get the Free Guide Now</a>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-brand">Masterminds <span>HQ</span></div>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/joeche1/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://www.instagram.com/joe.che.official/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.instagram.com/mastermindshq" target="_blank" rel="noopener">@mastermindshq</a>
+        </div>
+        <p class="footer-copy">&copy; 2026 Masterminds HQ. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Supabase config
+        const SUPABASE_URL = 'https://xjzwvopahyxqgpeaakga.supabase.co';
+        const SUPABASE_ANON_KEY = 'sb_publishable_hjd6io6wNbBTjeGdiWxF9Q_djQPtE2q';
+
+        // Scroll fade-in
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Form submission
+        document.getElementById('leadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const firstName = document.getElementById('firstName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            if (!firstName || !email) return;
+
+            const btn = this.querySelector('.cta-btn');
+            btn.disabled = true;
+            btn.textContent = 'Sending...';
+
+            try {
+                const res = await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
+                    method: 'POST',
+                    headers: {
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                        'Content-Type': 'application/json',
+                        'Prefer': 'return=minimal'
+                    },
+                    body: JSON.stringify({
+                        first_name: firstName,
+                        email: email,
+                        lead_magnet: 'Building Your First Web Page with AI'
+                    })
+                });
+
+                if (!res.ok) throw new Error('Failed to save');
+
+                this.style.display = 'none';
+                document.querySelector('.pdf-preview').style.display = 'none';
+                document.getElementById('successMessage').style.display = 'block';
+            } catch (err) {
+                btn.disabled = false;
+                btn.textContent = 'Send Me the Free Guide';
+                alert('Something went wrong. Please try again.');
+                console.error(err);
+            }
+        });
+    </script>
+
+</body>
+</html>

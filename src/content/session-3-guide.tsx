@@ -452,6 +452,45 @@ Please always remember this.`}
             </div>
           </div>
 
+          {/* Resend free tier info */}
+          <div className="bg-white/[0.04] border border-white/[0.08] rounded-2xl p-8 mb-8">
+            <p className="text-[#7C69C7] text-xs font-semibold uppercase tracking-widest mb-3">Important: Resend Free Tier</p>
+            <h3 className="text-xl font-bold text-[#FCF4EB] mb-3">Your lead magnet works, with two limits</h3>
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-5">
+              Until you verify your own domain in Resend, two things apply:
+            </p>
+            <div className="space-y-3 mb-5">
+              <div className="flex gap-3 items-start">
+                <span className="text-[#9D8FE0] font-bold text-sm mt-0.5">1.</span>
+                <p className="text-[#FCF4EB]/70 text-sm leading-relaxed">
+                  <span className="text-[#FCF4EB] font-semibold">Emails send from a default address</span>{' '}
+                  (<code className="bg-white/[0.06] px-1.5 py-0.5 rounded text-xs">onboarding@resend.dev</code>),
+                  not from your own domain. They may land in spam.
+                </p>
+              </div>
+              <div className="flex gap-3 items-start">
+                <span className="text-[#9D8FE0] font-bold text-sm mt-0.5">2.</span>
+                <p className="text-[#FCF4EB]/70 text-sm leading-relaxed">
+                  <span className="text-[#FCF4EB] font-semibold">You can only send to your own email address</span>{' '}
+                  (the one you signed up with). Other recipients will not receive the email until you verify a domain.
+                </p>
+              </div>
+            </div>
+            <p className="text-[#FCF4EB]/70 text-sm leading-relaxed mb-4">
+              This is fine for today. You can test the full flow by submitting your own email. To unlock
+              sending to anyone, complete the optional homework below.
+            </p>
+            <a
+              href="/session/3/homework"
+              className="inline-flex items-center gap-2 text-[#7C69C7] text-sm font-medium hover:text-[#9D8FE0] transition-colors"
+            >
+              <span>Optional Homework: Verify Your Domain in Resend</span>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
+          </div>
+
           <div className="border border-[#7C69C7]/50 bg-[#7C69C7]/[0.08] rounded-xl p-6">
             <p className="text-[#7C69C7] text-xs font-semibold uppercase tracking-widest mb-3">Challenge</p>
             <p className="text-[#FCF4EB]/80 leading-relaxed">

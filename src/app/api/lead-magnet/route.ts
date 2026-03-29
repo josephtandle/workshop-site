@@ -33,10 +33,10 @@ export async function POST(request: Request) {
     }
 
     // Send email with PDF link via Resend
-    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://workshop-site-sigma.vercel.app'
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://workshop.mastermindshq.business'
 
     const { error: emailError } = await resend.emails.send({
-      from: 'onboarding@resend.dev',
+      from: 'Masterminds HQ <onboarding@resend.dev>',
       to: email,
       subject: 'Your free PDF: Un-Learning Success',
       html: `
@@ -53,7 +53,7 @@ export async function POST(request: Request) {
             Download the PDF
           </a>
           <p style="font-size: 13px; color: #999; margin-top: 32px; line-height: 1.5;">
-            Sent by The Connection Map. You can unsubscribe any time.
+            Sent by Masterminds HQ. You can unsubscribe any time.
           </p>
         </div>
       `,

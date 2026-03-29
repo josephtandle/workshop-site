@@ -135,6 +135,49 @@ export default async function SessionIndexPage({ params }: Props) {
         </Reveal>
       </div>
 
+      {/* Homework card — Session 3 only */}
+      {slug === '3' && (
+        <div className="mt-6">
+          <Reveal delay={3}>
+            <Link
+              href="/session/3/homework"
+              className="group card-hover card-shimmer block bg-white/[0.05] border border-white/[0.10] rounded-2xl p-8"
+            >
+              <div className="flex items-start justify-between mb-5">
+                <div
+                  className="number-glow w-11 h-11 rounded-xl flex items-center justify-center text-lg"
+                  style={{ background: 'rgba(252, 244, 235, 0.07)', border: '1px solid rgba(252, 244, 235, 0.12)' }}
+                >
+                  +
+                </div>
+                <span
+                  className="text-[10px] font-semibold uppercase tracking-widest px-2.5 py-1 rounded-full"
+                  style={{
+                    background: 'rgba(252, 244, 235, 0.06)',
+                    color: 'rgba(252, 244, 235, 0.4)',
+                    border: '1px solid rgba(252, 244, 235, 0.10)',
+                  }}
+                >
+                  Optional Homework
+                </span>
+              </div>
+              <h2 className="text-xl font-bold text-[#FCF4EB] mb-2 group-hover:text-white transition-colors">
+                Verify Your Domain in Resend
+              </h2>
+              <p className="text-[#FCF4EB]/55 text-sm leading-relaxed mb-6">
+                Send emails from your own domain and unlock delivery to any email address. About 15 minutes.
+              </p>
+              <div className="flex items-center gap-2 text-[#7C69C7] text-sm font-medium group-hover:gap-3 transition-all">
+                <span>Start homework</span>
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+            </Link>
+          </Reveal>
+        </div>
+      )}
+
       {/* Back link */}
       <div className="mt-16 pt-8 border-t border-white/[0.06]">
         <Link
