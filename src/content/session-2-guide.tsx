@@ -54,52 +54,8 @@ export default function Session2Guide() {
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Set Up and Build Your Page</h2>
         </div>
 
-        {/* Step 1: Node.js */}
-        <StepCard number={1} title="Install Node.js">
-          <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-            Node.js is a free tool that Claude Code needs to run. You do not need to know what it does.
-            Just install it and move on. This takes about 2 minutes.
-          </p>
-
-          <ol className="space-y-3 mb-5">
-            <li className="flex gap-3 text-sm text-[#FCF4EB]/70">
-              <span className="text-[#7C69C7] font-bold flex-shrink-0">1.</span>
-              <span>Go to{' '}
-                <a href="https://nodejs.org" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline font-medium">nodejs.org</a>
-              </span>
-            </li>
-            <li className="flex gap-3 text-sm text-[#FCF4EB]/70">
-              <span className="text-[#7C69C7] font-bold flex-shrink-0">2.</span>
-              <span>Download the <strong className="text-[#FCF4EB]/90">LTS version</strong> — it will be the big green button on the page</span>
-            </li>
-            <li className="flex gap-3 text-sm text-[#FCF4EB]/70">
-              <span className="text-[#7C69C7] font-bold flex-shrink-0">3.</span>
-              <span>Open the downloaded file and follow the prompts, clicking Next or Continue through each screen</span>
-            </li>
-            <li className="flex gap-3 text-sm text-[#FCF4EB]/70">
-              <span className="text-[#7C69C7] font-bold flex-shrink-0">4.</span>
-              <span>When it finishes, close the installer. You are done with this step.</span>
-            </li>
-          </ol>
-
-          <div className="space-y-3">
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
-              <p className="text-[#FCF4EB] font-semibold text-sm mb-1">Mac</p>
-              <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
-                The downloaded file ends in <span className="font-mono bg-white/[0.08] px-1 rounded text-xs">.pkg</span>. Double-click it and follow the prompts.
-              </p>
-            </div>
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
-              <p className="text-[#FCF4EB] font-semibold text-sm mb-1">Windows</p>
-              <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
-                The downloaded file ends in <span className="font-mono bg-white/[0.08] px-1 rounded text-xs">.msi</span>. Double-click it. If Windows asks for permission, click Yes.
-              </p>
-            </div>
-          </div>
-        </StepCard>
-
-        {/* Step 2: Install Claude Code */}
-        <StepCard number={2} title="Install Claude Code">
+        {/* Step 1: Install Claude Code */}
+        <StepCard number={1} title="Install Claude Code">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-5">
             Claude Code is the AI tool you will use to build your website. It runs in your terminal
             and understands plain English. You tell it what you want, it writes all the code.
@@ -145,36 +101,41 @@ export default function Session2Guide() {
           <p className="text-[#FCF4EB] font-semibold text-sm mb-2">Install Claude Code</p>
           <p className="text-[#FCF4EB]/60 text-sm leading-relaxed mb-3">
             Copy the command below and paste it into your terminal. Then press Enter and wait for it to finish.
-            You will see text moving across the screen — that is normal. It is done when you see the prompt symbol
+            You will see text moving across the screen. That is normal. It is done when you see the prompt symbol
             {' '}<span className="font-mono bg-white/[0.08] px-1 rounded text-xs">$</span> or <span className="font-mono bg-white/[0.08] px-1 rounded text-xs">{'>'}</span> again.
           </p>
-          <CodeBlock filename="Terminal" code={`npm install -g @anthropic-ai/claude-code`} />
+          <CodeBlock filename="Terminal" code={`curl -fsSL https://claude.ai/install.sh | bash`} />
 
-          {/* Login command */}
-          <p className="text-[#FCF4EB] font-semibold text-sm mb-2 mt-5">Log in to your Claude account</p>
+          <ProTip type="info">
+            This is the official installer from Anthropic. It downloads and installs everything Claude Code needs
+            automatically. No other software required.
+          </ProTip>
+
+          {/* First run and login */}
+          <p className="text-[#FCF4EB] font-semibold text-sm mb-2 mt-5">Run Claude Code for the first time</p>
           <p className="text-[#FCF4EB]/60 text-sm leading-relaxed mb-3">
-            Now run this command:
+            After the installer finishes, close and reopen your terminal. Then type:
           </p>
-          <CodeBlock filename="Terminal" code={`claude-code login`} />
+          <CodeBlock filename="Terminal" code={`claude`} />
           <p className="text-[#FCF4EB]/60 text-sm leading-relaxed mt-3 mb-4">
-            Your browser will open automatically and take you through a few screens. Here is what to expect:
+            The first time you run it, Claude Code will walk you through a few screens:
           </p>
           <ol className="space-y-3 mb-4">
             <li className="flex gap-3 text-sm text-[#FCF4EB]/70">
               <span className="text-[#7C69C7] font-bold flex-shrink-0">1.</span>
-              <span>A browser window opens — if it does not, look for a link in the terminal and click it</span>
+              <span>It will ask you to accept the Terms of Service. Type <span className="font-mono bg-white/[0.08] px-1 rounded text-xs">y</span> and press Enter</span>
             </li>
             <li className="flex gap-3 text-sm text-[#FCF4EB]/70">
               <span className="text-[#7C69C7] font-bold flex-shrink-0">2.</span>
-              <span>You will see a sign-in screen. Log in with the same email and password you use for your Claude Pro account</span>
+              <span>Your browser will open automatically. If it does not, look for a link in the terminal and click it</span>
             </li>
             <li className="flex gap-3 text-sm text-[#FCF4EB]/70">
               <span className="text-[#7C69C7] font-bold flex-shrink-0">3.</span>
-              <span>You will see an authorization screen asking if you want to allow Claude Code access. Click <strong className="text-[#FCF4EB]/90">Allow</strong> or <strong className="text-[#FCF4EB]/90">Authorize</strong></span>
+              <span>Log in with the same email and password you use at claude.ai. Click <strong className="text-[#FCF4EB]/90">Authorize</strong> when prompted</span>
             </li>
             <li className="flex gap-3 text-sm text-[#FCF4EB]/70">
               <span className="text-[#7C69C7] font-bold flex-shrink-0">4.</span>
-              <span>You will see a success message in the browser. You can close that tab and return to your terminal</span>
+              <span>Return to your terminal. You should see a welcome message and a blinking cursor ready for instructions</span>
             </li>
           </ol>
 
@@ -235,11 +196,11 @@ export default function Session2Guide() {
                   <ul className="space-y-2 text-[#FCF4EB]/60 text-sm mb-3">
                     <li className="flex gap-2">
                       <span className="text-[#7C69C7] flex-shrink-0">&#8250;</span>
-                      <span><span className="font-mono bg-white/[0.08] px-1 rounded text-xs">Try running: sudo npm install -g @anthropic-ai/claude-code</span> — it is giving you the exact command to fix the problem. Copy it and run it.</span>
+                      <span><span className="font-mono bg-white/[0.08] px-1 rounded text-xs">Try running: ...</span> followed by a command. It is giving you the exact fix. Copy that command and run it.</span>
                     </li>
                     <li className="flex gap-2">
                       <span className="text-[#7C69C7] flex-shrink-0">&#8250;</span>
-                      <span><span className="font-mono bg-white/[0.08] px-1 rounded text-xs">Run `npm install` to resolve</span> — again, it is telling you the next step. Just copy and run it.</span>
+                      <span><span className="font-mono bg-white/[0.08] px-1 rounded text-xs">Permission denied</span> or similar. Close and reopen terminal, then try the command again.</span>
                     </li>
                   </ul>
                   <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
@@ -254,28 +215,31 @@ export default function Session2Guide() {
                 <p className="text-[#FCF4EB]/50 text-xs uppercase tracking-widest font-semibold mb-3">Common errors and fixes</p>
                 <div className="space-y-4">
                   <div className="bg-white/[0.04] border border-white/[0.07] rounded-xl p-4">
-                    <p className="text-[#FCF4EB] font-semibold text-sm mb-1">&ldquo;command not found: npm&rdquo; or &ldquo;npm is not recognized&rdquo;</p>
+                    <p className="text-[#FCF4EB] font-semibold text-sm mb-1">&ldquo;command not found: curl&rdquo;</p>
                     <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
-                      Node.js did not install correctly, or your terminal needs a restart. Close the terminal
-                      window completely, open a new one, and try the install command again.
+                      This is very rare on modern systems. On Mac, open Terminal and it should already be available.
+                      On Windows, make sure you are using Command Prompt or PowerShell, not an older terminal.
                     </p>
                   </div>
                   <div className="bg-white/[0.04] border border-white/[0.07] rounded-xl p-4">
                     <p className="text-[#FCF4EB] font-semibold text-sm mb-1">&ldquo;command not found: claude&rdquo;</p>
                     <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
-                      Claude Code did not install successfully. Close and reopen your terminal, then run the
-                      install command again. Once it installs, run <span className="font-mono bg-white/[0.08] px-1 rounded text-xs">claude-code login</span> to log in.
-                      If it still does not work, let us know in the group and we will help you live.
+                      Close and reopen your terminal after installing. This is needed so your terminal picks up the new command.
+                      If it still does not work, run the install command again.
+                      If it still does not work after that, let us know in the group and we will help you live.
                     </p>
                   </div>
                   <div className="bg-white/[0.04] border border-white/[0.07] rounded-xl p-4">
-                    <p className="text-[#FCF4EB] font-semibold text-sm mb-1">&ldquo;permission denied&rdquo; (Mac)</p>
+                    <p className="text-[#FCF4EB] font-semibold text-sm mb-1">&ldquo;Missing billing information&rdquo; or &ldquo;Subscription required&rdquo;</p>
                     <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
-                      Try adding <span className="font-mono bg-white/[0.08] px-1 rounded text-xs">sudo</span> to the front of the command. You will be asked for your Mac password. Type it and press Enter — the password will not be visible as you type, that is normal.
+                      Claude Code requires a paid Claude plan (Pro, Max, Teams, or Enterprise). Log in at claude.ai and confirm your subscription is active.
                     </p>
-                    <div className="mt-3">
-                      <CodeBlock filename="Terminal" code={`sudo npm install -g @anthropic-ai/claude-code`} />
-                    </div>
+                  </div>
+                  <div className="bg-white/[0.04] border border-white/[0.07] rounded-xl p-4">
+                    <p className="text-[#FCF4EB] font-semibold text-sm mb-1">The browser did not open during login</p>
+                    <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
+                      Look in your terminal for a URL that starts with <span className="font-mono bg-white/[0.08] px-1 rounded text-xs">https://claude.ai/auth...</span> Copy it and paste it into your browser manually.
+                    </p>
                   </div>
                   <div className="bg-white/[0.04] border border-white/[0.07] rounded-xl p-4">
                     <p className="text-[#FCF4EB] font-semibold text-sm mb-1">Something else is going wrong</p>
@@ -292,7 +256,7 @@ export default function Session2Guide() {
         </StepCard>
 
         {/* Step 3: Create project folder */}
-        <StepCard number={3} title="Create your project folder and open Claude Code">
+        <StepCard number={2} title="Create your project folder and open Claude Code">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
             Open your terminal and start Claude Code with the command below. Then give Claude the plain-English
             instruction to set up your project folder.
@@ -313,7 +277,7 @@ export default function Session2Guide() {
         </StepCard>
 
         {/* Step 4: Add photo */}
-        <StepCard number={4} title="Add your photo to the folder">
+        <StepCard number={3} title="Add your photo to the folder">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
             Before we build, move your photo into the project folder. Make sure it is named{' '}
             <span className="font-mono bg-white/[0.08] px-1.5 py-0.5 rounded text-sm">photo.jpg</span>.
@@ -345,7 +309,7 @@ export default function Session2Guide() {
         </StepCard>
 
         {/* Step 5: Build the page */}
-        <StepCard number={5} title="Build your personal brand page">
+        <StepCard number={4} title="Build your personal brand page">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
             Fill in your own details below, replacing everything in brackets. Then copy and paste it
             into Claude Code.
@@ -398,7 +362,7 @@ Use HTML, CSS, and vanilla JavaScript only.`}
           something that feels professional and polished. Paste each one exactly as written.
         </p>
 
-        <StepCard number={6} title="Add scroll animations and glassmorphism">
+        <StepCard number={5} title="Add scroll animations and glassmorphism">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
             Paste this exactly as written. No edits needed.
           </p>
@@ -417,7 +381,7 @@ Keep all my content exactly as it is.`}
           />
         </StepCard>
 
-        <StepCard number={7} title="Add pro-level interactions">
+        <StepCard number={6} title="Add pro-level interactions">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
             When the previous effects are looking great, paste this to take it further. Paste exactly as written.
           </p>
@@ -450,7 +414,7 @@ Do not change any content or layout.`}
           Your site is ready. Now put it on the internet, add your photo, and start customizing.
         </p>
 
-        <StepCard number={8} title="Deploy to Vercel">
+        <StepCard number={7} title="Deploy to Vercel">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
             Tell Claude Code to deploy. It will handle everything including logging into{' '}
             <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">Vercel</a>{' '}
@@ -472,7 +436,7 @@ Do not change any content or layout.`}
           </ProTip>
         </StepCard>
 
-        <StepCard number={9} title="Add your photo">
+        <StepCard number={8} title="Add your photo">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
             Tell Claude to place your photo on the page. Edit the file name below if yours is different.
           </p>
@@ -492,7 +456,7 @@ Place it in the about section next to my bio. Style it with a rounded border and
           />
         </StepCard>
 
-        <StepCard number={10} title="Customize and explore">
+        <StepCard number={9} title="Customize and explore">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
             Now it is yours. There are no wrong moves. Try asking Claude things like:
           </p>
