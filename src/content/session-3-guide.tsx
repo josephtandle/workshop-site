@@ -1,6 +1,7 @@
 import StepCard from '@/components/StepCard';
 import CodeBlock from '@/components/CodeBlock';
 import ProTip from '@/components/ProTip';
+import StickyVideoPlayer from '@/components/StickyVideoPlayer';
 
 function DnsRecord({
   type,
@@ -16,6 +17,7 @@ function DnsRecord({
   value: string;
 }) {
   return (
+    <>
     <div className="rounded-xl border border-white/[0.10] overflow-hidden">
       <div className="grid grid-cols-3 divide-x divide-white/[0.08] bg-white/[0.03]">
         <div className="px-4 py-3">
@@ -39,12 +41,14 @@ function DnsRecord({
         <CodeBlock code={value} />
       </div>
     </div>
+    </>
   );
 }
 
 export default function Session3Guide() {
   return (
-    <div className="max-w-3xl mx-auto px-6 py-16">
+    <div>
+    <div className="max-w-3xl mx-auto px-6 py-16 pb-0">
 
       {/* Page Header */}
       <div className="mb-14">
@@ -77,6 +81,18 @@ export default function Session3Guide() {
         </div>
       </div>
 
+      {/* Workshop Recording — sticky video player */}
+      <div className="max-w-3xl mx-auto px-6 mb-14">
+        <div className="mb-4">
+          <p className="text-[#FCF4EB]/50 text-xs uppercase tracking-widest font-semibold mb-1">Workshop Recording</p>
+          <p className="text-[#FCF4EB]/40 text-sm">Follow along with the live session. Hit play and the video will stick to the top as you scroll.</p>
+        </div>
+        <StickyVideoPlayer videoId="MQS_V0xjMxk" title="Cohort 1, Session 3: Business Automation Masterminds" />
+      </div>
+
+    </div>
+
+    <div className="max-w-3xl mx-auto px-6 pb-16">
       {/* Part A */}
       <section id="custom-domain" className="mb-16">
         <div className="flex items-center gap-3 mb-8">
@@ -574,6 +590,7 @@ Please always remember this.`}
         </div>
       </section>
 
+    </div>
     </div>
   );
 }
