@@ -324,31 +324,22 @@ Please always remember this.`}
           </ProTip>
         </StepCard>
 
-        <StepCard number={10} title="Tell Claude to create the form backend">
+        <StepCard number={10} title="Tell Claude to set up the form backend and subscriber database">
           <p className="text-[#FCF4EB]/70 mb-4">
-            Your lead magnet page needs something on the server side to receive the form submissions.
-            Tell Claude to set that up:
+            Now that Claude has your Supabase credentials, tell it to set up everything your lead magnet
+            form needs to work on the server side:
           </p>
           <CodeBlock
             filename="Paste into Claude Code"
-            code={`Set up the backend for my lead magnet form so that when someone submits their name and email, the server receives it.
-Make sure both fields are filled in before doing anything.
-For now, just return a success message. We will connect it to the database in the next step.`}
-          />
-        </StepCard>
+            code={`Set up the backend for my lead magnet form using my Supabase credentials.
 
-        <StepCard number={11} title="Tell Claude to set up your subscriber database">
-          <p className="text-[#FCF4EB]/70 mb-4">
-            Claude already has your Supabase credentials. Just tell it what you need and it will
-            set up the database for you:
-          </p>
-          <CodeBlock
-            filename="Paste into Claude Code"
-            code={`Using my Supabase credentials, create a table to store my email subscribers.
-It should save their first name, email, which lead magnet they signed up for, and the date.
-The same person should be able to sign up for different lead magnets and get each email.
-The same person should not be able to sign up for the same lead magnet twice.
-Make sure my website is allowed to save data to it.`}
+1. Create a database table to store my email subscribers. It should save their first name, email, which lead magnet they signed up for, and the date.
+2. The same person should be able to sign up for different lead magnets and get each email.
+3. The same person should not be able to sign up for the same lead magnet twice.
+4. Make sure my website is allowed to save data to the table.
+5. Set up the server side so that when someone submits their name and email through the lead magnet form, it saves them to the database.
+6. Make sure both fields are filled in before saving anything.
+7. Return a success message when it works and an error message when it does not.`}
           />
           <ProTip type="info" className="mt-4">
             The &ldquo;different lead magnets&rdquo; setup means if someone signs up for your free checklist
@@ -369,7 +360,7 @@ Make sure my website is allowed to save data to it.`}
           two more to push it live.
         </p>
 
-        <StepCard number={12} title="Tell Claude to set up the full integration">
+        <StepCard number={11} title="Tell Claude to set up the full integration">
           <CodeBlock
             filename="Paste into Claude Code"
             editable
@@ -387,7 +378,7 @@ Make sure my website is allowed to save data to it.`}
           />
         </StepCard>
 
-        <StepCard number={13} title="Tell Claude to add your keys to Vercel">
+        <StepCard number={12} title="Tell Claude to add your keys to Vercel">
           <p className="text-[#FCF4EB]/70 mb-4">
             Claude can add your environment variables to Vercel directly:
           </p>
@@ -397,7 +388,7 @@ Make sure my website is allowed to save data to it.`}
           />
         </StepCard>
 
-        <StepCard number={14} title="Tell Claude to deploy">
+        <StepCard number={13} title="Tell Claude to deploy">
           <CodeBlock
             filename="Paste into Claude Code"
             code={`Deploy my website to production.`}
