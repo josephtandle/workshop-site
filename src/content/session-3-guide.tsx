@@ -262,15 +262,6 @@ The page should have:
           />
         </StepCard>
 
-        <StepCard number={7} title="Tell Claude to create the form backend">
-          <p className="text-[#FCF4EB]/70 mb-4">Tell Claude this in plain English:</p>
-          <CodeBlock
-            filename="Paste into Claude Code"
-            code={`Create an API route at /api/subscribe that accepts a POST request with a first name and email.
-Make sure both fields are filled in before doing anything.
-For now, just return a success response. We will connect it to the database in the next step.`}
-          />
-        </StepCard>
       </section>
 
       {/* Part C */}
@@ -284,7 +275,7 @@ For now, just return a success response. We will connect it to the database in t
           their name and email get saved here automatically. You can log in any time and see your whole list.
         </p>
 
-        <StepCard number={8} title="Create your Supabase project">
+        <StepCard number={7} title="Create your Supabase project">
           <ol className="space-y-2 text-[#FCF4EB]/70 list-decimal list-inside">
             <li>Go to <a href="https://supabase.com/dashboard" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">supabase.com/dashboard</a> and click <span className="text-[#FCF4EB]">New Project</span></li>
             <li>Give it a name like your business name or &ldquo;my-leads&rdquo;</li>
@@ -294,7 +285,7 @@ For now, just return a success response. We will connect it to the database in t
           </ol>
         </StepCard>
 
-        <StepCard number={9} title="Get your Supabase key and give it to Claude">
+        <StepCard number={8} title="Get your Supabase key and give it to Claude">
           <ol className="space-y-2 text-[#FCF4EB]/70 list-decimal list-inside mb-4">
             <li>In your Supabase project, click the gear icon and go to <a href="https://supabase.com/dashboard/project/_/settings/api" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">Settings &gt; API</a></li>
             <li>Copy your <span className="text-[#FCF4EB] font-semibold">Project URL</span> (looks like https://abcdef.supabase.co)</li>
@@ -315,7 +306,7 @@ Please always remember these.`}
           </ProTip>
         </StepCard>
 
-        <StepCard number={10} title="Get your Resend key and give it to Claude">
+        <StepCard number={9} title="Get your Resend key and give it to Claude">
           <ol className="space-y-2 text-[#FCF4EB]/70 list-decimal list-inside mb-4">
             <li>Go to <a href="https://resend.com" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">resend.com</a> and sign in (create a free account if you have not yet)</li>
             <li>Click <a href="https://resend.com/api-keys" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">API Keys</a> in the left sidebar</li>
@@ -331,6 +322,19 @@ Please always remember this.`}
           <ProTip type="warning" className="mt-4">
             Copy the key before closing the modal. If you lose it, delete it and create a new one.
           </ProTip>
+        </StepCard>
+
+        <StepCard number={10} title="Tell Claude to create the form backend">
+          <p className="text-[#FCF4EB]/70 mb-4">
+            Your lead magnet page needs something on the server side to receive the form submissions.
+            Tell Claude to set that up:
+          </p>
+          <CodeBlock
+            filename="Paste into Claude Code"
+            code={`Set up the backend for my lead magnet form so that when someone submits their name and email, the server receives it.
+Make sure both fields are filled in before doing anything.
+For now, just return a success message. We will connect it to the database in the next step.`}
+          />
         </StepCard>
 
         <StepCard number={11} title="Tell Claude to set up your subscriber database">
