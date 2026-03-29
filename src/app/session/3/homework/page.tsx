@@ -1,6 +1,7 @@
 import StepCard from '@/components/StepCard'
 import CodeBlock from '@/components/CodeBlock'
 import ProTip from '@/components/ProTip'
+import StickyVideoPlayer from '@/components/StickyVideoPlayer'
 import Link from 'next/link'
 
 export const metadata = {
@@ -63,7 +64,8 @@ function DnsRecord({
 
 export default function Session3Homework() {
   return (
-    <div className="max-w-3xl mx-auto px-6 py-16">
+    <>
+    <div className="max-w-3xl mx-auto px-6 py-16 pb-0">
 
       {/* Breadcrumb */}
       <nav className="mb-10 text-sm text-[#FCF4EB]/40 flex items-center gap-2">
@@ -148,6 +150,19 @@ export default function Session3Homework() {
           </ul>
         </div>
       </div>
+
+    </div>
+
+    {/* Workshop Recording — sticky video player */}
+    <div className="max-w-3xl mx-auto px-6 mb-14">
+      <div className="mb-4">
+        <p className="text-[#FCF4EB]/50 text-xs uppercase tracking-widest font-semibold mb-1">Walkthrough Video</p>
+        <p className="text-[#FCF4EB]/40 text-sm">Hit play and the video will stick to the top as you scroll.</p>
+      </div>
+      <StickyVideoPlayer videoId="4KrrQgQ83xk" title="How to Verify Resend Domain Verification" />
+    </div>
+
+    <div className="max-w-3xl mx-auto px-6 pb-16">
 
       {/* Step 1 */}
       <StepCard number={1} title="Ask Claude Code to get your DNS records">
@@ -445,5 +460,6 @@ After you get the DNS records back, do the following:
         </Link>
       </div>
     </div>
+    </>
   )
 }
