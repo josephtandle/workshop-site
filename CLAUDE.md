@@ -66,6 +66,21 @@ When writing Claude Code prompts for participants:
 
 ---
 
+## Supabase Keys
+
+Supabase no longer uses `anon` and `service_role` keys. New projects use:
+
+- **Publishable key** (`sb_publishable_...`) — replaces the old `anon` key
+- **Secret key** (`sb_secret_...`) — replaces the old `service_role` key
+
+When writing env variable names, use:
+- `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` (not `NEXT_PUBLIC_SUPABASE_ANON_KEY`)
+- `SUPABASE_SECRET_KEY` (not `SUPABASE_SERVICE_ROLE_KEY`)
+
+Never reference `anon key`, `service_role`, or the legacy variable names in guides.
+
+---
+
 ## Prep Pages
 
 Use `session-3-prep.tsx` as the canonical template for all prep pages.

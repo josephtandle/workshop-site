@@ -285,24 +285,24 @@ The page should have:
           </ol>
         </StepCard>
 
-        <StepCard number={8} title="Get your Supabase key and give it to Claude">
+        <StepCard number={8} title="Create your API keys and give them to Claude">
           <ol className="space-y-2 text-[#FCF4EB]/70 list-decimal list-inside mb-4">
-            <li>In your Supabase project, click the gear icon and go to <a href="https://supabase.com/dashboard/project/_/settings/api" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">Settings &gt; API</a></li>
+            <li>In your Supabase project, click the gear icon and go to <a href="https://supabase.com/dashboard/project/_/settings/api" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">Settings &gt; API Keys</a></li>
+            <li>Click <span className="text-[#FCF4EB] font-semibold">Create new API Keys</span></li>
             <li>Copy your <span className="text-[#FCF4EB] font-semibold">Project URL</span> (looks like https://abcdef.supabase.co)</li>
-            <li>Copy the <span className="text-[#FCF4EB] font-semibold">anon / public key</span> (the long string under &ldquo;Project API Keys&rdquo;)</li>
+            <li>Copy the <span className="text-[#FCF4EB] font-semibold">Publishable key</span> (starts with <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-sm text-[#FCF4EB]">sb_publishable_</code>)</li>
             <li>Go to Claude Code in your terminal and paste this with your values filled in:</li>
           </ol>
           <CodeBlock
             filename="Paste into Claude Code"
             editable
             code={`My Supabase URL is [PASTE YOUR PROJECT URL HERE]
-My Supabase anon key is [PASTE YOUR ANON KEY HERE]
+My Supabase publishable key is [PASTE YOUR PUBLISHABLE KEY HERE]
 Please always remember these.`}
           />
           <ProTip type="warning" className="mt-4">
-            Do not copy the <code className="bg-white/[0.06] px-1.5 py-0.5 rounded text-sm">service_role</code> key.
-            That one has full access to your database. The{' '}
-            <code className="bg-white/[0.06] px-1.5 py-0.5 rounded text-sm">anon</code> key is the safe one.
+            You only need the <span className="text-[#FCF4EB] font-semibold">publishable key</span>.
+            Do not copy the secret key. The publishable key is the safe one for your website to use.
           </ProTip>
         </StepCard>
 
