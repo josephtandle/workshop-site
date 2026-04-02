@@ -273,28 +273,18 @@ Here is what I need you to do:
           </StepCard>
 
           {/* Step 6 — Load CLAUDE.md */}
-          <StepCard number={6} title="Start a fresh session to load your context">
+          <StepCard number={6} title="Load your context">
             <p className="mb-4">
-              The Brain Dump prompt just updated your CLAUDE.md with a Personal Context section.
-              But Claude read that file at the start of this session, before any of this existed.
-              To load it properly, you need to start a new session.
+              The Brain Dump just updated your CLAUDE.md with a Personal Context section.
+              Paste this prompt and Claude will read it right now, without needing to restart.
             </p>
 
-            <p className="mb-3 text-[#FCF4EB]/90 font-medium">Type this to close the current session:</p>
-            <CodeBlock code="exit" language="terminal" />
-
-            <p className="mb-3 text-[#FCF4EB]/90 font-medium">Then start a fresh one:</p>
-            <CodeBlock code="claude" language="terminal" />
+            <CodeBlock code="Please read my CLAUDE.md file and use it as your context for the rest of this session." language="prompt" />
 
             <p>
-              Claude will now read your updated CLAUDE.md automatically. From this point on,
-              every new Claude Code session will start with full context about who you are.
+              From now on, every time you open Claude Code it will load this automatically.
+              You will not need to ask again.
             </p>
-
-            <ProTip type="info">
-              If you want to stay in this session instead, paste this and Claude will read it now:
-            </ProTip>
-            <CodeBlock code="Please read my CLAUDE.md file and use it as your context for the rest of this session." language="prompt" />
           </StepCard>
 
           {/* Step 7 — Test it */}
