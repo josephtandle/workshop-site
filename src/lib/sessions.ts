@@ -38,10 +38,21 @@ export const sessions: Session[] = [
     title: 'Building Your First Lead Magnets',
     description:
       'Connect a custom domain, build a lead capture page, store subscribers in Supabase, and automatically deliver your resource by email the moment someone signs up.',
-    date: '2026-04-05',
+    date: '',
     hasGuide: true,
     hasPrep: true,
     hasBonus: true,
+  },
+  {
+    slug: '4',
+    number: 4,
+    title: 'Give Claude Code Your Brain',
+    description:
+      'Export your conversation history from ChatGPT and Claude, use AI to organize it into a Brain Dump folder, and wire it into Claude Code so it knows who you are automatically.',
+    date: '',
+    hasGuide: true,
+    hasPrep: true,
+    hasBonus: false,
   },
 ]
 

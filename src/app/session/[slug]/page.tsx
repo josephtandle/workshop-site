@@ -8,7 +8,7 @@ interface Props {
 }
 
 export function generateStaticParams() {
-  return [{ slug: '2' }, { slug: '3' }]
+  return [{ slug: '2' }, { slug: '3' }, { slug: '4' }]
 }
 
 export async function generateMetadata({ params }: Props) {
@@ -30,9 +30,7 @@ export default async function SessionIndexPage({ params }: Props) {
     <main className="max-w-4xl mx-auto px-6 py-16">
       {/* Breadcrumb */}
       <nav className="mb-10 text-sm text-[#FCF4EB]/40 flex items-center gap-2">
-        <Link href="/" className="hover:text-[#7C69C7] transition-colors">
-          All Sessions
-        </Link>
+        <Link href="/" className="hover:text-[#7C69C7] transition-colors">All Sessions</Link>
         <span>/</span>
         <span className="text-[#FCF4EB]/60">Session {session.number}</span>
       </nav>

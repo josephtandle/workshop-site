@@ -3,11 +3,13 @@ import { notFound } from 'next/navigation'
 import { getSession } from '@/lib/sessions'
 import Session2Prep from '@/content/session-2-prep'
 import Session3Prep from '@/content/session-3-prep'
+import Session4Prep from '@/content/session-4-prep'
 import type { ComponentType } from 'react'
 
 const prepComponents: Record<string, ComponentType> = {
   '2': Session2Prep,
   '3': Session3Prep,
+  '4': Session4Prep,
 }
 
 interface Props {
@@ -15,7 +17,7 @@ interface Props {
 }
 
 export function generateStaticParams() {
-  return [{ slug: '2' }, { slug: '3' }]
+  return [{ slug: '2' }, { slug: '3' }, { slug: '4' }]
 }
 
 export async function generateMetadata({ params }: Props) {
