@@ -28,10 +28,9 @@ function Checkbox({ checked, onChange }: { checked: boolean; onChange: () => voi
 }
 
 const REVIEW_ITEMS = [
-  { id: 'open-folder',    label: 'Open the Brain Dump folder on my Desktop and browse what Claude created' },
-  { id: 'read-index',     label: 'Open BRAIN_DUMP.md — the master index. It should read like a summary of me' },
-  { id: 'edit-cleanup',   label: 'Edit or delete anything that does not feel right' },
-  { id: 'fresh-session',  label: 'Open a new Claude Code terminal window and say hello — Claude should now know who I am' },
+  { id: 'open-folder',  label: 'Open the brain_dump_map folder on my Desktop and browse what Claude created' },
+  { id: 'read-index',   label: 'Open BRAIN_DUMP.md — the master index. It should feel like a summary of me' },
+  { id: 'edit-cleanup', label: 'Edit or delete anything that does not feel right' },
 ]
 
 export default function Session4Guide() {
@@ -95,7 +94,7 @@ export default function Session4Guide() {
               {[
                 { href: '#part-a', label: 'Part A: Open Claude Code' },
                 { href: '#part-b', label: 'Part B: Run your Brain Dump' },
-                { href: '#part-c', label: 'Part C: Review and you are done' },
+                { href: '#part-c', label: 'Part C: Review, load context, and test it' },
               ].map((item) => (
                 <li key={item.href}>
                   <a href={item.href} className="text-sm text-[#FCF4EB]/70 hover:text-[#7C69C7] transition-colors">
@@ -215,67 +214,126 @@ Here is what I need you to do:
         {/* Part C */}
         <section id="part-c" className="mb-14">
           <h2 className="text-2xl font-bold text-[#FCF4EB] mb-2 pt-4">
-            Part C: Review and you are done
+            Part C: Review, load context, and test it
           </h2>
           <p className="text-[#FCF4EB]/60 text-sm mb-6 leading-relaxed">
-            Once Claude finishes processing, check each item below.
+            Once Claude finishes processing, work through the steps below.
           </p>
 
-          {/* Review checklist */}
-          <div className="bg-white/[0.05] border border-white/[0.10] rounded-2xl p-6 sm:p-8 space-y-4 mb-6">
-            {REVIEW_ITEMS.map((item) => (
-              <label
-                key={item.id}
-                className="flex items-start gap-4 cursor-pointer group"
-              >
-                <Checkbox
-                  checked={reviewChecked.has(item.id)}
-                  onChange={() => toggleReview(item.id)}
-                />
-                <span
-                  className={`text-sm leading-relaxed transition-colors ${
-                    reviewChecked.has(item.id)
-                      ? 'text-[#FCF4EB]/40 line-through'
-                      : 'text-[#FCF4EB]/70 group-hover:text-[#FCF4EB]/90'
-                  }`}
+          {/* Step 5 — Review */}
+          <StepCard number={5} title="Review your brain_dump_map">
+            <p className="mb-4">
+              Open the folder Claude just created and check what is in there.
+            </p>
+
+            <div className="bg-white/[0.05] border border-white/[0.10] rounded-2xl p-5 space-y-4 mb-4">
+              {REVIEW_ITEMS.map((item) => (
+                <label
+                  key={item.id}
+                  className="flex items-start gap-4 cursor-pointer group"
                 >
-                  {item.label}
-                </span>
-              </label>
-            ))}
+                  <Checkbox
+                    checked={reviewChecked.has(item.id)}
+                    onChange={() => toggleReview(item.id)}
+                  />
+                  <span
+                    className={`text-sm leading-relaxed transition-colors ${
+                      reviewChecked.has(item.id)
+                        ? 'text-[#FCF4EB]/40 line-through'
+                        : 'text-[#FCF4EB]/70 group-hover:text-[#FCF4EB]/90'
+                    }`}
+                  >
+                    {item.label}
+                  </span>
+                </label>
+              ))}
 
-            {/* Progress bar */}
-            <div className="pt-4 border-t border-white/[0.06]">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-[#FCF4EB]/40 text-xs">Progress</span>
-                <span className="text-[#FCF4EB]/40 text-xs">{reviewChecked.size} of {REVIEW_ITEMS.length}</span>
-              </div>
-              <div className="h-1 bg-white/[0.08] rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-[#7C69C7] rounded-full transition-all duration-300"
-                  style={{ width: `${(reviewChecked.size / REVIEW_ITEMS.length) * 100}%` }}
-                />
+              <div className="pt-3 border-t border-white/[0.06]">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-[#FCF4EB]/40 text-xs">Progress</span>
+                  <span className="text-[#FCF4EB]/40 text-xs">{reviewChecked.size} of {REVIEW_ITEMS.length}</span>
+                </div>
+                <div className="h-1 bg-white/[0.08] rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-[#7C69C7] rounded-full transition-all duration-300"
+                    style={{ width: `${(reviewChecked.size / REVIEW_ITEMS.length) * 100}%` }}
+                  />
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Completion banner */}
-          {allReviewDone && (
-            <div
-              className="rounded-2xl px-6 py-5 text-center mb-6"
-              style={{ background: 'linear-gradient(135deg, rgba(124,105,199,0.20) 0%, rgba(245,195,198,0.15) 100%)', border: '1px solid rgba(124,105,199,0.30)' }}
-            >
-              <p className="text-xl font-bold text-[#FCF4EB] mb-1">Your Brain Dump is live.</p>
-              <p className="text-[#FCF4EB]/60 text-sm">Claude Code now knows who you are.</p>
+            {allReviewDone && (
+              <div
+                className="rounded-xl px-5 py-4 text-center"
+                style={{ background: 'linear-gradient(135deg, rgba(124,105,199,0.20) 0%, rgba(245,195,198,0.15) 100%)', border: '1px solid rgba(124,105,199,0.30)' }}
+              >
+                <p className="text-base font-bold text-[#FCF4EB]">brain_dump_map looks good. On to the next step.</p>
+              </div>
+            )}
+          </StepCard>
+
+          {/* Step 6 — Load CLAUDE.md */}
+          <StepCard number={6} title="Start a fresh session to load your context">
+            <p className="mb-4">
+              The Brain Dump prompt just updated your CLAUDE.md with a Personal Context section.
+              But Claude read that file at the start of this session, before any of this existed.
+              To load it properly, you need to start a new session.
+            </p>
+
+            <p className="mb-3 text-[#FCF4EB]/90 font-medium">Type this to close the current session:</p>
+            <CodeBlock code="exit" language="terminal" />
+
+            <p className="mb-3 text-[#FCF4EB]/90 font-medium">Then start a fresh one:</p>
+            <CodeBlock code="claude" language="terminal" />
+
+            <p>
+              Claude will now read your updated CLAUDE.md automatically. From this point on,
+              every new Claude Code session will start with full context about who you are.
+            </p>
+
+            <ProTip type="info">
+              If you want to stay in this session instead, paste this and Claude will read it now:
+            </ProTip>
+            <CodeBlock code="Please read my CLAUDE.md file and use it as your context for the rest of this session." language="prompt" />
+          </StepCard>
+
+          {/* Step 7 — Test it */}
+          <StepCard number={7} title="Ask Claude about yourself">
+            <p className="mb-4">
+              Now test it. These questions can only be answered if Claude properly read your
+              Brain Dump. Try them one at a time and see what comes back.
+            </p>
+
+            <div className="space-y-3 mb-6">
+              {[
+                'Tell me about the projects I am currently working on.',
+                'Tell me the things I am most curious about.',
+                'Tell me my astrological sign.',
+                'What was the last idea I got excited about?',
+                'Who are my most important clients or collaborators?',
+                'What should I focus on to move my business forward?',
+              ].map((q) => (
+                <CodeBlock key={q} code={q} language="prompt" />
+              ))}
             </div>
-          )}
+
+            <p className="mb-3">
+              Anything it does not know, let it ask you. Paste this prompt and Claude will
+              interview you to fill in the gaps:
+            </p>
+
+            <CodeBlock
+              editable
+              code={`Look through my brain_dump_map and tell me what important information you are still missing about me. Then ask me those questions one at a time so you can fill in the gaps and build a more complete picture of who I am and what I am building.`}
+            />
+          </StepCard>
 
           {/* Move to cloud note */}
-          <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl px-5 py-4">
+          <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl px-5 py-4 mt-6">
             <p className="text-[#FCF4EB]/70 text-sm leading-relaxed">
-              <strong className="text-[#FCF4EB]">One more thing:</strong> Move your Brain Dump folder
-              from your Desktop to Dropbox or Google Drive when you get home. That way it is backed
-              up and accessible from any computer. We will use it again in a future session with All Sorted.
+              <strong className="text-[#FCF4EB]">Back it up:</strong> Move brain_dump_map from your
+              Desktop to Dropbox or Google Drive when you get home. We will use it again in a
+              future session with All Sorted.
             </p>
           </div>
         </section>
