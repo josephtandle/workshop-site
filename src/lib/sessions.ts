@@ -19,7 +19,7 @@ export const sessions: Session[] = [
     date: '',
     hasGuide: false,
     hasPrep: false,
-    hasBonus: false,
+    hasBonus: true,
   },
   {
     slug: '2',

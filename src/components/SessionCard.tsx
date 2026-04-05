@@ -20,7 +20,7 @@ export default function SessionCard({
   hasPrep,
   hasBonus,
 }: SessionCardProps) {
-  const hasContent = hasGuide || hasPrep
+  const hasContent = hasGuide || hasPrep || hasBonus
 
   const inner = (
     <div className={`flex items-center gap-5 py-5 px-4 rounded-xl transition-colors duration-150 ${hasContent ? 'group-hover:bg-white/[0.04]' : ''}`}>

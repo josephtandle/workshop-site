@@ -61,35 +61,9 @@ body {
   margin-bottom: -0.15em;
 }
 
-/* ─── Animated Gradient Border ────────────────────────── */
-@keyframes rotate-gradient {
-  to { --gradient-angle: 360deg; }
-}
-
 .card-glow-border {
   position: relative;
   border-radius: 1rem;
-}
-.card-glow-border::before {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  background: conic-gradient(
-    from var(--gradient-angle),
-    transparent 0%,
-    transparent 70%,
-    rgba(124, 105, 199, 0.5) 85%,
-    rgba(245, 195, 198, 0.4) 92%,
-    rgba(124, 105, 199, 0.5) 100%
-  );
-  opacity: 0;
-  transition: opacity 0.35s ease;
-  z-index: -1;
-}
-.card-glow-border:hover::before {
-  opacity: 1;
-  animation: rotate-gradient 3s linear infinite;
 }
 
 /* ─── Card Hover ──────────────────────────────────────── */

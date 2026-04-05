@@ -8,7 +8,7 @@ interface Props {
 }
 
 export function generateStaticParams() {
-  return [{ slug: '2' }, { slug: '3' }, { slug: '4' }]
+  return [{ slug: '1' }, { slug: '2' }, { slug: '3' }, { slug: '4' }]
 }
 
 export async function generateMetadata({ params }: Props) {
@@ -51,86 +51,90 @@ export default async function SessionIndexPage({ params }: Props) {
       {/* Cards */}
       <div className="grid md:grid-cols-2 gap-6">
         {/* Prep page */}
-        <Reveal delay={1}>
-          <Link
-            href={`/session/${slug}/prep`}
-            className="group card-hover card-shimmer block bg-white/[0.05] border border-white/[0.10] rounded-2xl p-8"
-          >
-            <div className="flex items-start justify-between mb-5">
-              <div
-                className="number-glow w-11 h-11 rounded-xl flex items-center justify-center text-lg"
-                style={{ background: 'rgba(252, 244, 235, 0.07)', border: '1px solid rgba(252, 244, 235, 0.12)' }}
-              >
-                ✓
+        {session.hasPrep && (
+          <Reveal delay={1}>
+            <Link
+              href={`/session/${slug}/prep`}
+              className="group card-hover card-shimmer block bg-white/[0.05] border border-white/[0.10] rounded-2xl p-8"
+            >
+              <div className="flex items-start justify-between mb-5">
+                <div
+                  className="number-glow w-11 h-11 rounded-xl flex items-center justify-center text-lg"
+                  style={{ background: 'rgba(252, 244, 235, 0.07)', border: '1px solid rgba(252, 244, 235, 0.12)' }}
+                >
+                  ✓
+                </div>
+                <span
+                  className="text-[10px] font-semibold uppercase tracking-widest px-2.5 py-1 rounded-full"
+                  style={{
+                    background: 'rgba(124, 105, 199, 0.12)',
+                    color: '#7C69C7',
+                    border: '1px solid rgba(124, 105, 199, 0.2)',
+                  }}
+                >
+                  Before the Session
+                </span>
               </div>
-              <span
-                className="text-[10px] font-semibold uppercase tracking-widest px-2.5 py-1 rounded-full"
-                style={{
-                  background: 'rgba(124, 105, 199, 0.12)',
-                  color: '#7C69C7',
-                  border: '1px solid rgba(124, 105, 199, 0.2)',
-                }}
-              >
-                Before the Session
-              </span>
-            </div>
-            <h2 className="text-xl font-bold text-[#FCF4EB] mb-2 group-hover:text-white transition-colors">
-              Prep Requirements
-            </h2>
-            <p className="text-[#FCF4EB]/55 text-sm leading-relaxed mb-6">
-              What to set up before you arrive. About 20 minutes. Complete this first.
-            </p>
-            <div className="flex items-center gap-2 text-[#7C69C7] text-sm font-medium group-hover:gap-3 transition-all">
-              <span>Read prep guide</span>
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-          </Link>
-        </Reveal>
+              <h2 className="text-xl font-bold text-[#FCF4EB] mb-2 group-hover:text-white transition-colors">
+                Prep Requirements
+              </h2>
+              <p className="text-[#FCF4EB]/55 text-sm leading-relaxed mb-6">
+                What to set up before you arrive. About 20 minutes. Complete this first.
+              </p>
+              <div className="flex items-center gap-2 text-[#7C69C7] text-sm font-medium group-hover:gap-3 transition-all">
+                <span>Read prep guide</span>
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+            </Link>
+          </Reveal>
+        )}
 
         {/* Guide page */}
-        <Reveal delay={2}>
-          <Link
-            href={`/session/${slug}/guide`}
-            className="group card-hover card-shimmer block rounded-2xl p-8"
-            style={{
-              background: 'linear-gradient(135deg, rgba(124, 105, 199, 0.18) 0%, rgba(245, 195, 198, 0.10) 100%)',
-              border: '1px solid rgba(124, 105, 199, 0.30)',
-            }}
-          >
-            <div className="flex items-start justify-between mb-5">
-              <div
-                className="number-glow w-11 h-11 rounded-xl flex items-center justify-center text-lg"
-                style={{ background: 'rgba(124, 105, 199, 0.20)', border: '1px solid rgba(124, 105, 199, 0.35)' }}
-              >
-                ⚡
+        {session.hasGuide && (
+          <Reveal delay={2}>
+            <Link
+              href={`/session/${slug}/guide`}
+              className="group card-hover card-shimmer block rounded-2xl p-8"
+              style={{
+                background: 'linear-gradient(135deg, rgba(124, 105, 199, 0.18) 0%, rgba(245, 195, 198, 0.10) 100%)',
+                border: '1px solid rgba(124, 105, 199, 0.30)',
+              }}
+            >
+              <div className="flex items-start justify-between mb-5">
+                <div
+                  className="number-glow w-11 h-11 rounded-xl flex items-center justify-center text-lg"
+                  style={{ background: 'rgba(124, 105, 199, 0.20)', border: '1px solid rgba(124, 105, 199, 0.35)' }}
+                >
+                  ⚡
+                </div>
+                <span
+                  className="text-[10px] font-semibold uppercase tracking-widest px-2.5 py-1 rounded-full"
+                  style={{
+                    background: 'rgba(124, 105, 199, 0.25)',
+                    color: '#9D8FE0',
+                    border: '1px solid rgba(124, 105, 199, 0.40)',
+                  }}
+                >
+                  Live Guide
+                </span>
               </div>
-              <span
-                className="text-[10px] font-semibold uppercase tracking-widest px-2.5 py-1 rounded-full"
-                style={{
-                  background: 'rgba(124, 105, 199, 0.25)',
-                  color: '#9D8FE0',
-                  border: '1px solid rgba(124, 105, 199, 0.40)',
-                }}
-              >
-                Live Guide
-              </span>
-            </div>
-            <h2 className="text-xl font-bold text-[#FCF4EB] mb-2 group-hover:text-white transition-colors">
-              Session Workshop Guide
-            </h2>
-            <p className="text-[#FCF4EB]/55 text-sm leading-relaxed mb-6">
-              Step-by-step instructions for following along during the live session. All code included.
-            </p>
-            <div className="flex items-center gap-2 text-[#7C69C7] text-sm font-medium group-hover:gap-3 transition-all">
-              <span>Open guide</span>
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-          </Link>
-        </Reveal>
+              <h2 className="text-xl font-bold text-[#FCF4EB] mb-2 group-hover:text-white transition-colors">
+                Session Workshop Guide
+              </h2>
+              <p className="text-[#FCF4EB]/55 text-sm leading-relaxed mb-6">
+                Step-by-step instructions for following along during the live session. All code included.
+              </p>
+              <div className="flex items-center gap-2 text-[#7C69C7] text-sm font-medium group-hover:gap-3 transition-all">
+                <span>Open guide</span>
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+            </Link>
+          </Reveal>
+        )}
 
         {/* 3 — Custom Domain — Session 3 only */}
         {slug === '3' && (
@@ -203,6 +207,46 @@ export default async function SessionIndexPage({ params }: Props) {
               </h2>
               <p className="text-[#FCF4EB]/55 text-sm leading-relaxed mb-6">
                 Send emails from your own domain and unlock delivery to any email address. About 15 minutes.
+              </p>
+              <div className="flex items-center gap-2 text-[#7C69C7] text-sm font-medium group-hover:gap-3 transition-all">
+                <span>Open bonus</span>
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+            </Link>
+          </Reveal>
+        )}
+
+        {slug === '1' && (
+          <Reveal delay={3}>
+            <Link
+              href="/session/1/bonus"
+              className="group card-hover card-shimmer block bg-white/[0.05] border border-white/[0.10] rounded-2xl p-8"
+            >
+              <div className="flex items-start justify-between mb-5">
+                <div
+                  className="number-glow w-11 h-11 rounded-xl flex items-center justify-center text-lg"
+                  style={{ background: 'rgba(245, 195, 198, 0.10)', border: '1px solid rgba(245, 195, 198, 0.20)' }}
+                >
+                  ✦
+                </div>
+                <span
+                  className="text-[10px] font-semibold uppercase tracking-widest px-2.5 py-1 rounded-full"
+                  style={{
+                    background: 'rgba(245, 195, 198, 0.10)',
+                    color: '#F5C3C6',
+                    border: '1px solid rgba(245, 195, 198, 0.20)',
+                  }}
+                >
+                  Optional Bonus
+                </span>
+              </div>
+              <h2 className="text-xl font-bold text-[#FCF4EB] mb-2 group-hover:text-white transition-colors">
+                Dictate to Your Computer
+              </h2>
+              <p className="text-[#FCF4EB]/55 text-sm leading-relaxed mb-6">
+                A polished web version of the Session 1 dictation guide with MacWhisper, built-in Mac and Windows tools, and cross-platform options.
               </p>
               <div className="flex items-center gap-2 text-[#7C69C7] text-sm font-medium group-hover:gap-3 transition-all">
                 <span>Open bonus</span>

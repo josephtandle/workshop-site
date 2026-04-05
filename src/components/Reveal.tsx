@@ -17,12 +17,13 @@ export default function Reveal({
   direction = 'up',
 }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true, margin: '0px 0px -48px 0px' })
+  const isInView = useInView(ref, { once: true, margin: '0px 0px -12% 0px' })
+  const staggerDelay = delay * 0.08
 
   const initial = {
     opacity: 0,
-    y: direction === 'up' ? 20 : 0,
-    x: direction === 'left' ? -20 : direction === 'right' ? 20 : 0,
+    y: direction === 'up' ? 14 : 0,
+    x: direction === 'left' ? -14 : direction === 'right' ? 14 : 0,
   }
 
   return (
@@ -30,7 +31,7 @@ export default function Reveal({
       ref={ref}
       initial={initial}
       animate={isInView ? { opacity: 1, y: 0, x: 0 } : initial}
-      transition={{ duration: 0.5, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
+      transition={{ duration: 0.34, delay: staggerDelay, ease: [0.25, 0.46, 0.45, 0.94] }}
       className={className}
     >
       {children}
