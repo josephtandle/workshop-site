@@ -838,17 +838,6 @@ function MastermindCTA() {
           border: '1px solid rgba(245,195,198,0.15)',
         }}
       >
-        {/* Joe on stage image strip with gradient to black */}
-        <div className="relative h-52 sm:h-60 overflow-hidden">
-          <Image
-            src="/joe-on-stage-hands-raised.png"
-            alt="Joe Che presenting at the Business Automation Mastermind"
-            fill
-            className="object-cover object-top opacity-45"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#1a1020]" />
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 60%, #1a1020 100%)' }} />
-        </div>
 
         <div className="px-9 sm:px-14 pb-12 pt-8 text-center">
           <h2 className="text-3xl sm:text-5xl font-bold text-[#FCF4EB] mb-4">
