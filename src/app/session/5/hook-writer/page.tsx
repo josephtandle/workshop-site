@@ -3,6 +3,7 @@
 import { useState, useRef, useCallback } from 'react'
 import Link from 'next/link'
 import confetti from 'canvas-confetti'
+import CodeBlock from '@/components/CodeBlock'
 
 // ─── Hook Lab prompt (embedded constant) ─────────────────────────────────────
 const HOOK_LAB_PROMPT = `Paste this entire file into Claude.ai, then paste your brand voice profile directly below it. Claude will run the Hook Lab and return five scored hooks plus winners, testing guidance, and a personal teaching note.
@@ -148,6 +149,52 @@ Name which winner to test first. One sentence on why: not "it's stronger," but w
 ### ONE THING TO NOTICE
 
 1-2 sentences. One pattern in these hooks that reflects something specific about how this person naturally communicates. Make it feel like an observation, not a compliment.`
+
+// ─── Skill install prompt ─────────────────────────────────────────────────────
+const HOOK_LAB_MASTER_PROMPT = HOOK_LAB_PROMPT.slice(HOOK_LAB_PROMPT.indexOf('# HOOK LAB: MASTER PROMPT'))
+
+const SKILL_CONTENT = `---
+name: hook-writer
+description: Run the Hook Lab to generate five scored Instagram Reel hooks from your brand voice profile.
+---
+
+# Hook Writer
+
+You are running the Hook Lab for a Mastermind HQ participant. Follow these steps exactly.
+
+---
+
+## Step 1: Get the profile and topic
+
+Say this exactly:
+
+"Paste your brand voice profile below and tell me this week's topic. Include any specific details, numbers, or examples you want in the hooks."
+
+Wait for their full response before writing a single hook.
+
+---
+
+## Step 2: Run the Hook Lab
+
+Combine the brand voice profile they pasted with the master prompt below. Follow it exactly. Do not abbreviate. Output all five hooks with scores and full Reel scripts, two winners with rationale, a testing recommendation, and a One Thing to Notice.
+
+${HOOK_LAB_MASTER_PROMPT}
+
+---
+
+## Step 3: Offer to log the winner
+
+After delivering output, ask: "Want me to save this week's winner to a log?"
+
+If yes, create or append to ~/hook-writer/hooks-log.md with this row format:
+
+| [date] | [topic shortened] | [hook type] | [first 8 words of winning hook] | [score]/30 | -- | -- | Pending |
+
+Leave the last three columns blank. The user fills in their results at 48 hours.`
+
+const SKILL_INSTALL_PROMPT = `Create the file ~/.claude/skills/hook-writer/SKILL.md with this exact content:
+
+${SKILL_CONTENT}`
 
 // ─── Participant data (static snapshot from DB) ────────────────────────────
 type Participant = {
@@ -1092,8 +1139,58 @@ export default function HookWriterPage() {
         </div>
       )}
 
+      {/* Install as a Skill */}
+      <div className="mt-16 pt-10" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <div className="mb-6">
+          <h2 className="gradient-text text-3xl md:text-4xl font-extrabold">
+            Install as a Skill
+          </h2>
+        </div>
+
+        <div className="space-y-4 mb-10">
+          <p className="text-base leading-relaxed" style={{ color: 'rgba(252,244,235,0.7)' }}>
+            A skill is a shortcut command you install once in Claude Code. After that, you type{' '}
+            <code className="px-1.5 py-0.5 rounded text-xs font-mono" style={{ background: 'rgba(255,255,255,0.08)', color: '#9D8FE0' }}>/hook-writer</code>{' '}
+            in any terminal session and Claude runs the Hook Lab automatically. No form, no copying, no pasting. You open Terminal, type the command, and get your hooks.
+          </p>
+          <p className="text-base leading-relaxed" style={{ color: 'rgba(252,244,235,0.7)' }}>
+            The web tool above is the right place to start because your profile is pre-filled and everything is guided. The skill is for when you have run it a few times and want the faster loop. Install it once and it is yours permanently.
+          </p>
+        </div>
+
+        <div className="rounded-2xl p-6 space-y-5 mb-2" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
+          <p className="text-sm font-semibold" style={{ color: 'rgba(252,244,235,0.9)' }}>How to install it:</p>
+          <ol className="space-y-5 text-sm leading-relaxed" style={{ color: 'rgba(252,244,235,0.75)' }}>
+            <li>
+              <span className="block mb-2">1. Open Terminal. On Mac: press{' '}
+                <code className="px-1.5 py-0.5 rounded text-xs font-mono" style={{ background: 'rgba(255,255,255,0.08)', color: '#9D8FE0' }}>Cmd + Space</code>,
+                type{' '}
+                <code className="px-1.5 py-0.5 rounded text-xs font-mono" style={{ background: 'rgba(255,255,255,0.08)', color: '#9D8FE0' }}>Terminal</code>,
+                hit Enter.
+              </span>
+            </li>
+            <li>
+              <span className="block mb-2">2. Run this command:</span>
+              <div className="rounded-lg overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.08)', borderLeft: '2px solid #7C69C7' }}>
+                <div className="flex items-center px-3 py-1.5" style={{ background: 'rgba(255,255,255,0.04)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+                  <span className="text-xs font-mono" style={{ color: 'rgba(252,244,235,0.35)' }}>Terminal</span>
+                </div>
+                <pre className="px-4 py-3 text-sm font-mono" style={{ background: '#0d0d0d', color: '#9D8FE0' }}>claude --dangerously-skip-permissions</pre>
+              </div>
+            </li>
+            <li>3. Copy the full block below, paste it into Claude, and hit Enter. Claude will create the skill file on your computer.</li>
+            <li>4. Once Claude confirms, type{' '}
+              <code className="px-1.5 py-0.5 rounded text-xs font-mono" style={{ background: 'rgba(255,255,255,0.08)', color: '#9D8FE0' }}>/hook-writer</code>{' '}
+              any time you want to run the Hook Lab.
+            </li>
+          </ol>
+        </div>
+
+        <CodeBlock code={SKILL_INSTALL_PROMPT} filename="Install prompt" />
+      </div>
+
       {/* Back link */}
-      <div className="mt-16 pt-8" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+      <div className="mt-8 pt-8" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
         <Link
           href="/session/5"
           className="inline-flex items-center gap-2 text-sm transition-colors"
