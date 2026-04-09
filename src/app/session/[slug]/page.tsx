@@ -8,15 +8,15 @@ interface Props {
 }
 
 export function generateStaticParams() {
-  return [{ slug: '1' }, { slug: '2' }, { slug: '3' }, { slug: '4' }]
+  return [{ slug: '1' }, { slug: '2' }, { slug: '3' }, { slug: '4' }, { slug: '5' }]
 }
 
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params
   const session = getSession(slug)
-  if (!session) return {}
+  if (!session) return { title: 'Session', description: '' }
   return {
-    title: `Session ${session.number}: ${session.title} — Masterminds Workshop`,
+    title: `Session ${session.number}: ${session.title}`,
     description: session.description,
   }
 }
@@ -27,7 +27,7 @@ export default async function SessionIndexPage({ params }: Props) {
   if (!session) notFound()
 
   return (
-    <main className="max-w-4xl mx-auto px-6 py-16">
+    <main className="max-w-5xl mx-auto px-6 py-16">
       {/* Breadcrumb */}
       <nav className="mb-10 text-sm text-[#FCF4EB]/40 flex items-center gap-2">
         <Link href="/" className="hover:text-[#7C69C7] transition-colors">All Sessions</Link>
@@ -95,7 +95,7 @@ export default async function SessionIndexPage({ params }: Props) {
         {session.hasGuide && (
           <Reveal delay={2}>
             <Link
-              href={`/session/${slug}/guide`}
+              href={`/session/${slug}/${session.guidePath ?? 'guide'}`}
               className="group card-hover card-shimmer block rounded-2xl p-8"
               style={{
                 background: 'linear-gradient(135deg, rgba(124, 105, 199, 0.18) 0%, rgba(245, 195, 198, 0.10) 100%)',
@@ -121,7 +121,7 @@ export default async function SessionIndexPage({ params }: Props) {
                 </span>
               </div>
               <h2 className="text-xl font-bold text-[#FCF4EB] mb-2 group-hover:text-white transition-colors">
-                Session Workshop Guide
+                {session.guideTitle ?? 'Session Workshop Guide'}
               </h2>
               <p className="text-[#FCF4EB]/55 text-sm leading-relaxed mb-6">
                 Step-by-step instructions for following along during the live session. All code included.
@@ -210,6 +210,46 @@ export default async function SessionIndexPage({ params }: Props) {
               </p>
               <div className="flex items-center gap-2 text-[#7C69C7] text-sm font-medium group-hover:gap-3 transition-all">
                 <span>Open bonus</span>
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+            </Link>
+          </Reveal>
+        )}
+
+        {slug === '4' && (
+          <Reveal delay={3}>
+            <Link
+              href="/session/4/wrapup"
+              className="group card-hover card-shimmer block bg-white/[0.05] border border-white/[0.10] rounded-2xl p-8"
+            >
+              <div className="flex items-start justify-between mb-5">
+                <div
+                  className="number-glow w-11 h-11 rounded-xl flex items-center justify-center text-lg"
+                  style={{ background: 'rgba(252, 244, 235, 0.07)', border: '1px solid rgba(252, 244, 235, 0.12)' }}
+                >
+                  ▶
+                </div>
+                <span
+                  className="text-[10px] font-semibold uppercase tracking-widest px-2.5 py-1 rounded-full"
+                  style={{
+                    background: 'rgba(252, 244, 235, 0.06)',
+                    color: 'rgba(252, 244, 235, 0.4)',
+                    border: '1px solid rgba(252, 244, 235, 0.10)',
+                  }}
+                >
+                  Session Recap
+                </span>
+              </div>
+              <h2 className="text-xl font-bold text-[#FCF4EB] mb-2 group-hover:text-white transition-colors">
+                Mastermind Alignment Wrap-Up
+              </h2>
+              <p className="text-[#FCF4EB]/55 text-sm leading-relaxed mb-6">
+                Recording, participant highlights, and what we are improving for next time.
+              </p>
+              <div className="flex items-center gap-2 text-[#7C69C7] text-sm font-medium group-hover:gap-3 transition-all">
+                <span>View recap</span>
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>

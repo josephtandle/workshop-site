@@ -154,7 +154,7 @@ export default function AnthropicSafetyChecklistPage() {
           <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-start">
             <div>
               <Reveal>
-                <h1 className="gradient-text text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.05] mb-5 max-w-4xl">
+                <h1 className="gradient-text text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.05] mb-5 max-w-5xl">
                   How to avoid getting banned by Anthropic
                 </h1>
               </Reveal>

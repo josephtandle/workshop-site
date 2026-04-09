@@ -1,0 +1,42 @@
+# Business Automation Mastermind — Workshop Site
+
+> Live session guides, prep materials, recordings, and resources for a small cohort of business owners building real things with AI.
+> Led by Joe Che. Published at workshop.mastermindshq.business.
+
+## Sessions
+
+- [Session 1: Setting the Mastermind Container](/session/1): Introductions, group agreements, and the mindset shift from employee to entrepreneur.
+  - [Bonus](/session/1/bonus): Bonus resources from Session 1.
+
+- [Session 2: Building Your First Web Page with AI](/session/2): Go from zero to a live personal brand website using Claude Code and Vercel. No coding experience needed.
+  - [Session Guide](/session/2/guide): Step-by-step build guide.
+  - [Prep](/session/2/prep): What to do before the session.
+
+- [Session 3: Building Your First Lead Magnets](/session/3): Connect a custom domain, build a lead capture page, store subscribers in Supabase, and deliver resources automatically by email.
+  - [Session Guide](/session/3/guide): Full technical walkthrough.
+  - [Prep](/session/3/prep): Pre-session checklist.
+  - [Bonus](/session/3/bonus): Bonus content and extensions.
+
+- [Session 4: Mastermind Alignment](/session/4): Group alignment call to share wins, identify automation opportunities, and map each member's biggest needle-movers.
+  - [Prep](/session/4/prep): Pre-session preparation.
+  - [Wrap-Up](/session/4/wrapup): Recording, key takeaways, participant highlights, and suggested improvements.
+
+- [Session 5: Give Claude Code Your Brain](/session/5): Export conversation history from ChatGPT and Claude, organize it into a Brain Dump folder, and wire it into Claude Code so it knows who you are automatically.
+  - [Session Guide](/session/5/guide): Full walkthrough.
+  - [Brain Dump Guide](/session/5/guide-brain): How to give Claude Code your brain, Part 1.
+
+## Free Giveaways
+
+- [Web Design Arsenal](/giveaways/web-design-arsenal): A single prompt that installs 24 professional web design tools, animation libraries, and effects for Claude Code, Codex, and Gemini CLI. Build professional sites in an afternoon.
+- [Anthropic Safety Checklist](/giveaways/anthropic-safety-checklist): Safety and review checklist for AI-assisted projects.
+- [Lead Magnet](/giveaways/lead-magnet): Free resources for business owners learning to use AI.
+- [Benchmark](/giveaways/benchmark): AI benchmarking resource.
+- [Ultimate CLAUDE.md](/lead-magnets/ultimate-claudemd): The definitive CLAUDE.md template for Claude Code projects.
+
+## About
+
+The Business Automation Mastermind is a small, focused cohort of business owners who meet weekly to build real things with AI. Capped at 15 participants. Led by Joe Che.
+
+Homepage: https://www.mastermindshq.business
+Workshop site: https://workshop.mastermindshq.business
+Sitemap: https://workshop.mastermindshq.business/sitemap.xml

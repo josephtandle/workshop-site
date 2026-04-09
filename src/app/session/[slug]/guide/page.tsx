@@ -3,13 +3,11 @@ import { notFound } from 'next/navigation'
 import { getSession } from '@/lib/sessions'
 import Session2Guide from '@/content/session-2-guide'
 import Session3Guide from '@/content/session-3-guide'
-import Session4Guide from '@/content/session-4-guide'
 import type { ComponentType } from 'react'
 
 const guideComponents: Record<string, ComponentType> = {
   '2': Session2Guide,
   '3': Session3Guide,
-  '4': Session4Guide,
 }
 
 interface Props {
@@ -17,15 +15,15 @@ interface Props {
 }
 
 export function generateStaticParams() {
-  return [{ slug: '2' }, { slug: '3' }, { slug: '4' }]
+  return [{ slug: '2' }, { slug: '3' }]
 }
 
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params
   const session = getSession(slug)
-  if (!session) return {}
+  if (!session) return { title: 'Workshop Guide', description: '' }
   return {
-    title: `Session ${session.number} Guide: ${session.title} — Masterminds Workshop`,
+    title: `Session ${session.number} Guide: ${session.title}`,
     description: `Step-by-step workshop guide for Session ${session.number}: ${session.title}`,
   }
 }
@@ -40,7 +38,7 @@ export default async function SessionGuidePage({ params }: Props) {
   return (
     <main>
       {/* Breadcrumb */}
-      <div className="max-w-4xl mx-auto px-6 pt-10 pb-0">
+      <div className="max-w-5xl mx-auto px-6 pt-10 pb-0">
         <nav className="text-sm text-[#FCF4EB]/40 flex items-center gap-2 flex-wrap">
           <Link href="/" className="hover:text-[#7C69C7] transition-colors">
             All Sessions
@@ -58,7 +56,7 @@ export default async function SessionGuidePage({ params }: Props) {
       <GuideContent />
 
       {/* Footer nav */}
-      <div className="max-w-4xl mx-auto px-6 pb-16">
+      <div className="max-w-5xl mx-auto px-6 pb-16">
         <div className="border-t border-white/[0.06] pt-8 flex items-center justify-between flex-wrap gap-4">
           <Link
             href={`/session/${slug}/prep`}

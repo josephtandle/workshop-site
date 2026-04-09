@@ -334,8 +334,63 @@ export default function WebDesignArsenalPage() {
     }
   }
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'Build Gorgeous Websites with AI Using Claude Code',
+    description:
+      'A free prompt that installs 24 of the best web design tools and libraries in seconds. No coding experience needed. Works with Claude Code.',
+    author: {
+      '@type': 'Person',
+      name: 'Joe Che',
+      url: 'https://www.mastermindshq.business',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Business Automation Mastermind',
+      url: 'https://www.mastermindshq.business',
+    },
+    step: [
+      {
+        '@type': 'HowToStep',
+        name: 'Copy the prompt',
+        text: 'Copy the free web design toolkit install prompt.',
+        position: 1,
+      },
+      {
+        '@type': 'HowToStep',
+        name: 'Paste into your AI tool',
+        text: 'Open Claude Code, Codex, or Gemini CLI and paste. Everything installs automatically.',
+        position: 2,
+      },
+      {
+        '@type': 'HowToStep',
+        name: 'Describe what you want',
+        text: 'Your AI now has professional design intelligence. Describe your site and it builds something beautiful.',
+        position: 3,
+      },
+    ],
+    tool: [
+      { '@type': 'HowToTool', name: 'Claude Code' },
+      { '@type': 'HowToTool', name: 'Codex' },
+      { '@type': 'HowToTool', name: 'Gemini CLI' },
+    ],
+    totalTime: 'PT3H',
+    supply: [
+      { '@type': 'HowToSupply', name: 'GSAP animation library' },
+      { '@type': 'HowToSupply', name: 'Framer Motion' },
+      { '@type': 'HowToSupply', name: 'Lenis smooth scroll' },
+      { '@type': 'HowToSupply', name: 'tsparticles' },
+      { '@type': 'HowToSupply', name: 'Three.js' },
+    ],
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <style>{`
         @keyframes aurora-drift {
           0%, 100% { transform: translate(0, 0) scale(1); }
@@ -372,7 +427,7 @@ export default function WebDesignArsenalPage() {
         {/* ================================================================ */}
         {/* SECTION 1: HERO -- full-bleed image with parallax + fade to black */}
         {/* ================================================================ */}
-        <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pb-8 pt-20 overflow-hidden">
+        <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 pb-8 pt-16 sm:pt-20 overflow-hidden">
 
 
           {/* Aurora glow blobs (subtle, on top of image) */}
@@ -394,7 +449,7 @@ export default function WebDesignArsenalPage() {
           />
 
           {/* Content */}
-          <div className="relative z-10 max-w-4xl mx-auto">
+          <div className="relative z-10 max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
@@ -413,12 +468,12 @@ export default function WebDesignArsenalPage() {
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="mb-3 whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-[#9D8FE0] to-[#F5C3C6]"
+              className="mb-3 sm:whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-[#9D8FE0] to-[#F5C3C6]"
               style={{
                 fontFamily: '"Cormorant Garamond", Georgia, serif',
                 fontStyle: 'italic',
                 fontWeight: 700,
-                fontSize: 'clamp(1.4rem, 3.8vw, 3.8rem)',
+                fontSize: 'clamp(1.8rem, 5.5vw, 3.8rem)',
                 lineHeight: 1.2,
                 letterSpacing: '-0.01em',
                 paddingBottom: '0.05em',
@@ -433,7 +488,7 @@ export default function WebDesignArsenalPage() {
               className="text-[#FCF4EB] font-bold mb-8"
               style={{
                 fontFamily: '"Cormorant Garamond", Georgia, serif',
-                fontSize: 'clamp(1.2rem, 3vw, 2.2rem)',
+                fontSize: 'clamp(1rem, 2.8vw, 2.2rem)',
                 lineHeight: 1.1,
               }}
             >
@@ -444,7 +499,7 @@ export default function WebDesignArsenalPage() {
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 1.6 }}
-              className="text-[#FCF4EB]/55 text-lg sm:text-xl leading-relaxed max-w-xl mx-auto mb-12"
+              className="text-[#FCF4EB]/55 text-base sm:text-xl leading-relaxed max-w-xl mx-auto mb-12"
             >
               Paste it into your AI coding tool. Your entire professional design toolkit installs automatically -- and you start building.
             </motion.p>
@@ -496,7 +551,7 @@ export default function WebDesignArsenalPage() {
         {/* ================================================================ */}
         {/* SECTION 2: HOW IT WORKS                                          */}
         {/* ================================================================ */}
-        <section className="max-w-4xl mx-auto px-6 py-14">
+        <section className="max-w-5xl mx-auto px-6 py-14">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -532,7 +587,7 @@ export default function WebDesignArsenalPage() {
         {/* ================================================================ */}
         {/* SECTION 3: PARTICIPANT TESTIMONIAL                               */}
         {/* ================================================================ */}
-        <section className="max-w-4xl mx-auto px-6 py-4">
+        <section className="max-w-5xl mx-auto px-6 py-4">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -568,7 +623,7 @@ export default function WebDesignArsenalPage() {
         {/* ================================================================ */}
         {/* SECTION 6: PARTICIPANT TESTIMONIALS                              */}
         {/* ================================================================ */}
-        <section className="max-w-4xl mx-auto px-6 py-14">
+        <section className="max-w-5xl mx-auto px-6 py-14">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -636,7 +691,7 @@ export default function WebDesignArsenalPage() {
         {/* ================================================================ */}
         {/* SECTION 7: THE ONE PROMPT                                         */}
         {/* ================================================================ */}
-        <section className="max-w-4xl mx-auto px-6 py-16">
+        <section className="max-w-5xl mx-auto px-6 py-16">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -684,7 +739,7 @@ export default function WebDesignArsenalPage() {
         {/* ================================================================ */}
         {/* SECTION 8: STATS                                                  */}
         {/* ================================================================ */}
-        <section className="max-w-4xl mx-auto px-6 pt-6 pb-14">
+        <section className="max-w-5xl mx-auto px-6 pt-6 pb-14">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
               { idx: 0, label: 'skills and libraries' },
@@ -711,7 +766,7 @@ export default function WebDesignArsenalPage() {
         {/* ================================================================ */}
         {/* SECTION 9: WHAT'S INSTALLED                                      */}
         {/* ================================================================ */}
-        <section className="max-w-4xl mx-auto px-6 py-14">
+        <section className="max-w-5xl mx-auto px-6 py-14">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -827,7 +882,7 @@ function MastermindCTA() {
   const magnet = useMagnet(0.28)
 
   return (
-    <section className="max-w-4xl mx-auto px-6 py-14">
+    <section className="max-w-5xl mx-auto px-6 py-14">
       <motion.div
         initial={{ opacity: 0, y: 18 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -839,12 +894,12 @@ function MastermindCTA() {
         }}
       >
 
-        <div className="px-9 sm:px-14 pb-12 pt-8 text-center">
-          <h2 className="text-3xl sm:text-5xl font-bold text-[#FCF4EB] mb-4">
+        <div className="px-6 sm:px-14 pb-12 pt-8 text-center">
+          <h2 className="text-2xl sm:text-5xl font-bold text-[#FCF4EB] mb-4">
             Want to learn how to do this?
           </h2>
 
-          <p className="text-2xl sm:text-3xl font-bold mb-5">
+          <p className="text-xl sm:text-3xl font-bold mb-5">
             <a href={MASTERMIND_URL} target="_blank" rel="noopener noreferrer" className="text-transparent bg-clip-text bg-gradient-to-r from-[#9D8FE0] to-[#F5C3C6] hover:opacity-80 transition-opacity">
               Join the Business Automation Mastermind
             </a>
@@ -870,7 +925,7 @@ function MastermindCTA() {
             rel="noopener noreferrer"
             onMouseMove={magnet.onMouseMove}
             onMouseLeave={magnet.onMouseLeave}
-            className="inline-block px-10 py-4 rounded-xl bg-[#F5C3C6] hover:bg-[#f0b8bc] text-[#151515] font-bold text-base active:scale-[0.98] glow-btn glow-btn-pink"
+            className="block sm:inline-block w-full sm:w-auto px-10 py-4 rounded-xl bg-[#F5C3C6] hover:bg-[#f0b8bc] text-[#151515] font-bold text-base active:scale-[0.98] glow-btn glow-btn-pink text-center"
           >
             Learn More
           </a>

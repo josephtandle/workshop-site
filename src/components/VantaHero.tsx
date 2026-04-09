@@ -8,9 +8,10 @@ interface Props {
   title: string
   description: string
   slug: string
+  subpage?: string
 }
 
-export default function VantaHero({ sessionNumber, title, description, slug }: Props) {
+export default function VantaHero({ sessionNumber, title, description, slug, subpage }: Props) {
   const bgRef = useRef<HTMLDivElement>(null)
   const effectRef = useRef<{ destroy: () => void } | null>(null)
 
@@ -60,12 +61,22 @@ export default function VantaHero({ sessionNumber, title, description, slug }: P
       {/* content */}
       <div className="relative z-10 max-w-4xl mx-auto px-6 pt-16 pb-14">
         {/* Breadcrumb */}
-        <nav className="mb-10 text-sm text-[#FCF4EB]/40 flex items-center gap-2">
+        <nav className="mb-10 text-sm text-[#FCF4EB]/40 flex items-center gap-2 flex-wrap">
           <Link href="/" className="hover:text-[#7C69C7] transition-colors">
             All Sessions
           </Link>
           <span>/</span>
-          <span className="text-[#FCF4EB]/60">Session {sessionNumber}</span>
+          {subpage ? (
+            <>
+              <Link href={`/session/${slug}`} className="hover:text-[#7C69C7] transition-colors">
+                Session {sessionNumber}
+              </Link>
+              <span>/</span>
+              <span className="text-[#FCF4EB]/60">{subpage}</span>
+            </>
+          ) : (
+            <span className="text-[#FCF4EB]/60">Session {sessionNumber}</span>
+          )}
         </nav>
 
         <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">

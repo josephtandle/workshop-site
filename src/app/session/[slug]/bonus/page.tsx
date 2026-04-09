@@ -19,10 +19,10 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params
   const session = getSession(slug)
-  if (!session) return {}
+  if (!session) return { title: 'Bonus', description: '' }
 
   return {
-    title: `Session ${session.number} Bonus: ${session.title} — Masterminds Workshop`,
+    title: `Session ${session.number} Bonus: ${session.title}`,
     description: `Optional bonus resource for Session ${session.number}: ${session.title}`,
   }
 }
@@ -38,7 +38,7 @@ export default async function SessionBonusPage({ params }: Props) {
     <main>
       <BonusContent />
 
-      <div className="max-w-4xl mx-auto px-6 pb-16">
+      <div className="max-w-5xl mx-auto px-6 pb-16">
         <div className="border-t border-white/[0.06] pt-8 flex items-center justify-between flex-wrap gap-4">
           <Link
             href={`/session/${slug}`}

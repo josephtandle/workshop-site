@@ -65,7 +65,7 @@ function DnsRecord({
 export default function Session3Homework() {
   return (
     <>
-    <div className="max-w-3xl mx-auto px-6 py-16 pb-0">
+    <div className="max-w-5xl mx-auto px-6 py-16 pb-0">
 
       {/* Breadcrumb */}
       <nav className="mb-10 text-sm text-[#FCF4EB]/40 flex items-center gap-2">
@@ -154,7 +154,7 @@ export default function Session3Homework() {
     </div>
 
     {/* Workshop Recording — sticky video player */}
-    <div className="max-w-3xl mx-auto px-6 mb-14">
+    <div className="max-w-5xl mx-auto px-6 mb-14">
       <div className="mb-4">
         <p className="text-[#FCF4EB]/50 text-xs uppercase tracking-widest font-semibold mb-1">Walkthrough Video</p>
         <p className="text-[#FCF4EB]/40 text-sm">Hit play and the video will stick to the top as you scroll.</p>
@@ -162,7 +162,7 @@ export default function Session3Homework() {
       <StickyVideoPlayer videoId="4KrrQgQ83xk" title="How to Verify Resend Domain Verification" />
     </div>
 
-    <div className="max-w-3xl mx-auto px-6 pb-16">
+    <div className="max-w-5xl mx-auto px-6 pb-16">
 
       {/* Step 1 */}
       <StepCard number={1} title="Ask Claude Code to get your DNS records">

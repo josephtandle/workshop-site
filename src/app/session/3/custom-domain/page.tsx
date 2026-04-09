@@ -51,7 +51,7 @@ function DnsRecord({
 export default function CustomDomainPage() {
   return (
     <>
-    <div className="max-w-3xl mx-auto px-6 py-16 pb-0">
+    <div className="max-w-5xl mx-auto px-6 py-16 pb-0">
 
       {/* Breadcrumb */}
       <nav className="mb-10 text-sm text-[#FCF4EB]/40 flex items-center gap-2">
@@ -78,7 +78,7 @@ export default function CustomDomainPage() {
 
     </div>
 
-    <div className="max-w-3xl mx-auto px-6 pb-16">
+    <div className="max-w-5xl mx-auto px-6 pb-16">
 
       <StepCard number={1} title="Buy a domain">
         <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">

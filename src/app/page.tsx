@@ -3,6 +3,11 @@ import SessionCard from '@/components/SessionCard'
 import Reveal from '@/components/Reveal'
 import StaggerList, { StaggerItem } from '@/components/StaggerList'
 
+export const metadata = {
+  title: 'Session Guides',
+  description: 'Follow-along workshop references for the Masterminds cohort. Copy code, follow steps, and build real things.',
+}
+
 export default function HomePage() {
   const sorted = [...sessions].sort((a, b) => a.number - b.number)
 
@@ -46,7 +51,7 @@ export default function HomePage() {
       </section>
 
       {/* Sessions list */}
-      <section className="max-w-3xl mx-auto px-6 pb-24">
+      <section className="max-w-5xl mx-auto px-6 pb-24">
         <div className="border border-white/[0.08] rounded-2xl overflow-hidden">
           <StaggerList staggerDelay={0.07}>
             {sorted.map((session, i) => (

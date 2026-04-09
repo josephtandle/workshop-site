@@ -23,9 +23,9 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params
   const session = getSession(slug)
-  if (!session) return {}
+  if (!session) return { title: 'Prep Requirements', description: '' }
   return {
-    title: `Session ${session.number} Prep: ${session.title} — Masterminds Workshop`,
+    title: `Session ${session.number} Prep: ${session.title}`,
     description: `Pre-session requirements for Session ${session.number}: ${session.title}. Complete these before attending.`,
   }
 }
@@ -40,7 +40,7 @@ export default async function SessionPrepPage({ params }: Props) {
   return (
     <main>
       {/* Breadcrumb */}
-      <div className="max-w-4xl mx-auto px-6 pt-10 pb-0">
+      <div className="max-w-5xl mx-auto px-6 pt-10 pb-0">
         <nav className="text-sm text-[#FCF4EB]/40 flex items-center gap-2 flex-wrap">
           <Link href="/" className="hover:text-[#7C69C7] transition-colors">
             All Sessions
@@ -58,7 +58,7 @@ export default async function SessionPrepPage({ params }: Props) {
       <PrepContent />
 
       {/* Footer nav */}
-      <div className="max-w-4xl mx-auto px-6 pb-16">
+      <div className="max-w-5xl mx-auto px-6 pb-16">
         <div className="border-t border-white/[0.06] pt-8">
           <Link
             href={`/session/${slug}`}

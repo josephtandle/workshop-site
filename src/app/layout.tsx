@@ -10,9 +10,40 @@ const plusJakarta = Plus_Jakarta_Sans({
   variable: '--font-plus-jakarta',
 })
 
+const BASE = 'https://workshop.mastermindshq.business'
+
 export const metadata: Metadata = {
-  title: 'Masterminds Workshop',
-  description: 'Live session guides for building real things with AI.',
+  metadataBase: new URL(BASE),
+  title: {
+    default: 'Masterminds Workshop',
+    template: '%s — Masterminds Workshop',
+  },
+  description:
+    'Live session guides, recordings, and resources for building real businesses with AI. Led by Joe Che.',
+  openGraph: {
+    type: 'website',
+    siteName: 'Masterminds Workshop',
+    url: BASE,
+    title: 'Masterminds Workshop',
+    description:
+      'Live session guides, recordings, and resources for building real businesses with AI.',
+    images: [{ url: '/hero-joe-creation-banner.jpg', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Masterminds Workshop',
+    description:
+      'Live session guides, recordings, and resources for building real businesses with AI.',
+    images: ['/hero-joe-creation-banner.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
+  alternates: {
+    canonical: BASE,
+  },
 }
 
 export default function RootLayout({
