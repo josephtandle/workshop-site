@@ -130,6 +130,12 @@ type Participant = {
   casual: string
   mistake: string
   belief: string
+  language?: string
+  credibility?: string
+  recentWin?: string
+  voiceWords?: string
+  neverSay?: string
+  voiceSentence?: string
 }
 
 const PARTICIPANTS: Participant[] = [
@@ -190,11 +196,17 @@ const PARTICIPANTS: Participant[] = [
   {
     slug: 'joe',
     displayName: 'Joe',
-    teaches: 'systems and automation that create freedom, balance, and joy in business — built from 30 years and 22 ventures',
-    helps: 'small business owners who are tired of trading hours for dollars and want their business to work without requiring them in every seat',
-    casual: "I've built 22 businesses over 30 years and learned that the real work is building systems so the business doesn't need you in every seat",
-    mistake: 'building businesses that require constant personal presence to function',
-    belief: 'working harder is the path to freedom',
+    teaches: 'how to build AI-powered systems and automations that let a small business run without the founder in every seat. 30 years and 22 ventures taught me what actually creates freedom, and it is not working harder.',
+    helps: 'coaches, healers, consultants, and creator-led businesses who are doing everything manually and want to use AI and automation to get their time back without having to become technical to do it',
+    casual: "I\'ve started 22 businesses over 30 years. Some flopped, some moved millions of dollars, all of them taught me the same thing: the business should not need you in every seat. That\'s what I help people build now.",
+    mistake: 'building content and taking on clients without any systems behind it, so every new thing they create or sell requires them to personally show up and do all the work again from scratch',
+    belief: 'AI and automation are for technical people, or for later once the business is bigger',
+    language: '"I\'m not technical." "I keep saying I\'ll set up systems but I never get around to it." "I\'m doing everything myself and I\'m burning out." "I don\'t have time to learn all this." "I\'ll automate once things calm down." "I feel like I\'m always behind."',
+    credibility: '30 years, 22 businesses, ventures that reached tens of thousands of customers and moved millions of dollars. Now running a fully autonomous AI operating system with 65 agents handling marketing, research, and operations.',
+    recentWin: 'Built an AI operating system that runs 65+ agents autonomously, including the system that plans, prepares, and documents this entire Mastermind HQ program without manual input.',
+    voiceWords: 'direct, experienced, warm',
+    neverSay: '"hustle," "crush it," "grind," "game-changer," "unlock your potential," "level up," "high-vibe," "quantum," "manifest," "10x your business"',
+    voiceSentence: "I\'ve built 22 businesses, and the one thing none of them came with was a manual for how to stop being the most important part of them.",
   },
   {
     slug: 'johanna',
@@ -311,12 +323,12 @@ function participantToForm(p: Participant): FormState {
     casual: p.casual,
     mistake: p.mistake,
     belief: p.belief,
-    language: '',
-    credibility: '',
-    recentWin: '',
-    voiceWords: '',
-    neverSay: '',
-    voiceSentence: '',
+    language: p.language ?? '',
+    credibility: p.credibility ?? '',
+    recentWin: p.recentWin ?? '',
+    voiceWords: p.voiceWords ?? '',
+    neverSay: p.neverSay ?? '',
+    voiceSentence: p.voiceSentence ?? '',
     topic: '',
     details: '',
   }
