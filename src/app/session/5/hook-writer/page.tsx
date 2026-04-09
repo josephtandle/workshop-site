@@ -55,7 +55,8 @@ Write five hooks, one per category, in the exact order below. For each hook:
 
 - Write the hook itself. The main line must be 10 words or fewer. You may add one optional setup line of 5 words or fewer before the main line if it genuinely improves the hook. If the setup line does not make the hook stronger, omit it.
 - Score it on three labeled sub-scores, each out of 10: **Specificity**, **Mechanism Strength**, **Brand Voice Match**. Add them together for a total score out of 30. Show all three sub-scores and the total.
-- Write 2-3 sentences explaining why this specific hook works for this specific niche and this specific audience. Not general hook advice. Not "this is effective because curiosity gaps work." Specific: "This works for nervous system coaches because..."
+- Write 1 sentence explaining why this hook works for this specific audience. Be specific, not general.
+- Write a **Full Reel Script** using this hook. Format: the hook line(s) first, then the body (2-4 short punchy points or a single tight story), then one CTA. Total length: 60-90 seconds spoken (roughly 120-160 words). Write it exactly as the person would say it out loud in their natural voice. No stage directions, no timestamps, no headers inside the script — just the words they speak.
 
 ---
 
@@ -108,7 +109,7 @@ Declare the top 2 hooks. Do not simply pick the two highest scores. Choose 2 hoo
 For each winner:
 
 - Repeat the hook text in full.
-- Write 3-4 sentences explaining why this hook specifically works for this person's niche, this person's audience, and this person's credibility. Not "this is a strong hook." Specific: why it works here, for them, for the people they serve.
+- Write 2 sentences explaining why it works specifically for this person's niche and audience.
 
 ---
 
@@ -120,7 +121,7 @@ Tell them which of the two winners to test first and name a specific reason why 
 
 ### ONE THING TO NOTICE
 
-In 2-3 sentences, name one specific thing about the hooks you wrote that reflects something particular about their brand voice. A pattern in word choice. A rhythm. A phrase structure that kept appearing. Something they may not have consciously noticed about how they naturally communicate. This is the teaching moment. Make it feel personal, because it is.`
+In 1-2 sentences, name one specific pattern in the hooks that reflects something particular about how this person naturally communicates — a word rhythm, a phrase structure, or a voice quality they may not have consciously noticed.`
 
 // ─── Participant data (static snapshot from DB) ────────────────────────────
 type Participant = {
