@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getSession } from '@/lib/sessions'
+import { LOCKS } from '@/lib/locks'
 import Reveal from '@/components/Reveal'
 
 interface Props {
@@ -50,6 +51,43 @@ export default async function SessionIndexPage({ params }: Props) {
 
       {/* Cards */}
       <div className="grid md:grid-cols-2 gap-6">
+        {/* Hook writing prep card — Session 5 only */}
+        {slug === '5' && (
+          <Reveal delay={1}>
+            <Link
+              href="/session/5/prep-hooks"
+              className="group card-hover card-shimmer block bg-white/[0.05] border border-white/[0.10] rounded-2xl p-8"
+            >
+              <div className="flex items-start justify-between mb-5">
+                <div
+                  className="number-glow w-11 h-11 rounded-xl flex items-center justify-center text-lg"
+                  style={{ background: 'rgba(252, 244, 235, 0.07)', border: '1px solid rgba(252, 244, 235, 0.12)' }}
+                >
+                  ✓
+                </div>
+                <span
+                  className="text-[10px] font-semibold uppercase tracking-widest px-2.5 py-1 rounded-full"
+                  style={{ background: 'rgba(124, 105, 199, 0.12)', color: '#7C69C7', border: '1px solid rgba(124, 105, 199, 0.2)' }}
+                >
+                  Before the Session
+                </span>
+              </div>
+              <h2 className="text-xl font-bold text-[#FCF4EB] mb-2 group-hover:text-white transition-colors">
+                Prep: Prepare for Hook Writing
+              </h2>
+              <p className="text-[#FCF4EB]/55 text-sm leading-relaxed mb-6">
+                Find your Instagram inspiration and define your audience so we can write hooks that actually land.
+              </p>
+              <div className="flex items-center gap-2 text-[#7C69C7] text-sm font-medium group-hover:gap-3 transition-all">
+                <span>Read prep guide</span>
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+            </Link>
+          </Reveal>
+        )}
+
         {/* Prep page */}
         {session.hasPrep && (
           <Reveal delay={1}>
@@ -76,10 +114,10 @@ export default async function SessionIndexPage({ params }: Props) {
                 </span>
               </div>
               <h2 className="text-xl font-bold text-[#FCF4EB] mb-2 group-hover:text-white transition-colors">
-                Prep Requirements
+                {session.prepLabel ?? 'Prep Requirements'}
               </h2>
               <p className="text-[#FCF4EB]/55 text-sm leading-relaxed mb-6">
-                What to set up before you arrive. About 20 minutes. Complete this first.
+                {session.prepDescription ?? 'What to set up before you arrive. Complete this first.'}
               </p>
               <div className="flex items-center gap-2 text-[#7C69C7] text-sm font-medium group-hover:gap-3 transition-all">
                 <span>Read prep guide</span>
@@ -94,45 +132,87 @@ export default async function SessionIndexPage({ params }: Props) {
         {/* Guide page */}
         {session.hasGuide && (
           <Reveal delay={2}>
-            <Link
-              href={`/session/${slug}/${session.guidePath ?? 'guide'}`}
-              className="group card-hover card-shimmer block rounded-2xl p-8"
-              style={{
-                background: 'linear-gradient(135deg, rgba(124, 105, 199, 0.18) 0%, rgba(245, 195, 198, 0.10) 100%)',
-                border: '1px solid rgba(124, 105, 199, 0.30)',
-              }}
-            >
-              <div className="flex items-start justify-between mb-5">
-                <div
-                  className="number-glow w-11 h-11 rounded-xl flex items-center justify-center text-lg"
-                  style={{ background: 'rgba(124, 105, 199, 0.20)', border: '1px solid rgba(124, 105, 199, 0.35)' }}
-                >
-                  ⚡
+            {slug === '5' && LOCKS.session5Guide === false ? (
+              <div
+                className="block bg-white/[0.02] border border-white/[0.05] rounded-2xl p-8 cursor-not-allowed select-none"
+                aria-disabled="true"
+              >
+                <div className="flex items-start justify-between mb-5">
+                  <div
+                    className="w-11 h-11 rounded-xl flex items-center justify-center"
+                    style={{ background: 'rgba(124, 105, 199, 0.06)', border: '1px solid rgba(124, 105, 199, 0.10)' }}
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <rect x="5" y="11" width="14" height="10" rx="2" stroke="rgba(124,105,199,0.3)" strokeWidth="1.5" />
+                      <path d="M8 11V7a4 4 0 0 1 8 0v4" stroke="rgba(124,105,199,0.3)" strokeWidth="1.5" strokeLinecap="round" />
+                    </svg>
+                  </div>
+                  <span
+                    className="text-[10px] font-semibold uppercase tracking-widest px-2.5 py-1 rounded-full"
+                    style={{
+                      background: 'rgba(124, 105, 199, 0.06)',
+                      color: 'rgba(124, 105, 199, 0.35)',
+                      border: '1px solid rgba(124, 105, 199, 0.10)',
+                    }}
+                  >
+                    Locked
+                  </span>
                 </div>
-                <span
-                  className="text-[10px] font-semibold uppercase tracking-widest px-2.5 py-1 rounded-full"
-                  style={{
-                    background: 'rgba(124, 105, 199, 0.25)',
-                    color: '#9D8FE0',
-                    border: '1px solid rgba(124, 105, 199, 0.40)',
-                  }}
-                >
-                  Live Guide
-                </span>
+                <h2 className="text-xl font-bold mb-2" style={{ color: 'rgba(252,244,235,0.25)' }}>
+                  {session.guideTitle ?? 'Session Workshop Guide'}
+                </h2>
+                <p className="text-sm leading-relaxed mb-6" style={{ color: 'rgba(252,244,235,0.18)' }}>
+                  Step-by-step instructions for following along during the live session. Available when the session opens.
+                </p>
+                <div className="flex items-center gap-2 text-sm font-medium" style={{ color: 'rgba(124,105,199,0.3)' }}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <rect x="5" y="11" width="14" height="10" rx="2" stroke="currentColor" strokeWidth="1.5" />
+                    <path d="M8 11V7a4 4 0 0 1 8 0v4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                  </svg>
+                  <span>Coming soon</span>
+                </div>
               </div>
-              <h2 className="text-xl font-bold text-[#FCF4EB] mb-2 group-hover:text-white transition-colors">
-                {session.guideTitle ?? 'Session Workshop Guide'}
-              </h2>
-              <p className="text-[#FCF4EB]/55 text-sm leading-relaxed mb-6">
-                Step-by-step instructions for following along during the live session. All code included.
-              </p>
-              <div className="flex items-center gap-2 text-[#7C69C7] text-sm font-medium group-hover:gap-3 transition-all">
-                <span>Open guide</span>
-                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
-            </Link>
+            ) : (
+              <Link
+                href={`/session/${slug}/${session.guidePath ?? 'guide'}`}
+                className="group card-hover card-shimmer block rounded-2xl p-8"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(124, 105, 199, 0.18) 0%, rgba(245, 195, 198, 0.10) 100%)',
+                  border: '1px solid rgba(124, 105, 199, 0.30)',
+                }}
+              >
+                <div className="flex items-start justify-between mb-5">
+                  <div
+                    className="number-glow w-11 h-11 rounded-xl flex items-center justify-center text-lg"
+                    style={{ background: 'rgba(124, 105, 199, 0.20)', border: '1px solid rgba(124, 105, 199, 0.35)' }}
+                  >
+                    ⚡
+                  </div>
+                  <span
+                    className="text-[10px] font-semibold uppercase tracking-widest px-2.5 py-1 rounded-full"
+                    style={{
+                      background: 'rgba(124, 105, 199, 0.25)',
+                      color: '#9D8FE0',
+                      border: '1px solid rgba(124, 105, 199, 0.40)',
+                    }}
+                  >
+                    Live Guide
+                  </span>
+                </div>
+                <h2 className="text-xl font-bold text-[#FCF4EB] mb-2 group-hover:text-white transition-colors">
+                  {session.guideTitle ?? 'Session Workshop Guide'}
+                </h2>
+                <p className="text-[#FCF4EB]/55 text-sm leading-relaxed mb-6">
+                  Step-by-step instructions for following along during the live session. All code included.
+                </p>
+                <div className="flex items-center gap-2 text-[#7C69C7] text-sm font-medium group-hover:gap-3 transition-all">
+                  <span>Open guide</span>
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
+              </Link>
+            )}
           </Reveal>
         )}
 

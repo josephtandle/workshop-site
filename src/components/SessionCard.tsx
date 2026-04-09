@@ -9,6 +9,7 @@ interface SessionCardProps {
   hasGuide: boolean
   hasPrep: boolean
   hasBonus: boolean
+  hasWrapup?: boolean
 }
 
 export default function SessionCard({
@@ -19,8 +20,9 @@ export default function SessionCard({
   hasGuide,
   hasPrep,
   hasBonus,
+  hasWrapup,
 }: SessionCardProps) {
-  const hasContent = hasGuide || hasPrep || hasBonus
+  const hasContent = hasGuide || hasPrep || hasBonus || !!hasWrapup
 
   const inner = (
     <div className={`flex items-center gap-5 py-5 px-4 rounded-xl transition-colors duration-150 ${hasContent ? 'group-hover:bg-white/[0.04]' : ''}`}>

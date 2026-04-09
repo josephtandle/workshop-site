@@ -24,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/session/3/bonus`,       lastModified: NOW, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE}/session/4/prep`,        lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/session/4/wrapup`,      lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/session/5/prep`,        lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/session/5/guide`,       lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/session/5/guide-brain`, lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
 

@@ -1,14 +1,11 @@
 'use client'
 
 import { useState } from 'react'
-import ProTip from '@/components/ProTip'
-import ScreenshotCard from '@/components/ScreenshotCard'
 import { celebrate } from '@/lib/celebrate'
 
 const ITEMS = [
-  { id: 'chatgpt', label: 'Export from ChatGPT', anchor: '#chatgpt' },
-  { id: 'claude',  label: 'Export from Claude',  anchor: '#claude'  },
-  { id: 'urls',    label: 'Gather your online presence', anchor: '#urls' },
+  { id: 'creators', label: 'Find your Instagram inspiration', anchor: '#creators' },
+  { id: 'audience', label: 'Define your audience and content focus', anchor: '#audience' },
 ]
 
 function Checkbox({ checked, onChange }: { checked: boolean; onChange: () => void }) {
@@ -106,26 +103,20 @@ export default function Session4Prep() {
   const allDone = checked.size === ITEMS.length
 
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
 
       {/* Page Header */}
       <div className="mb-10">
         <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
-          Before Session Four
+          Before Session Five
         </p>
         <h1 className="text-3xl sm:text-4xl font-bold text-[#FCF4EB] leading-tight mb-5">
-          Get Your Brain Dump Ready
+          Prepare for Hook Writing Project
         </h1>
         <p className="text-[#FCF4EB]/70 text-base sm:text-lg leading-relaxed mb-6">
-          Do these steps at least two days before the session.
-          The export emails from ChatGPT and Claude can take up to 48 hours to arrive.
+          This session we are going to write real Instagram hooks for your business using AI.
+          Do this research before you show up so we can move fast and make them actually good.
         </p>
-        <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl px-5 py-4">
-          <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
-            Don&apos;t have ChatGPT? Don&apos;t use Claude much yet? No problem.
-            Even one export file is enough to get started. Do what you can.
-          </p>
-        </div>
       </div>
 
       {/* Table of Contents */}
@@ -179,166 +170,112 @@ export default function Session4Prep() {
       {/* Sections */}
       <div className="space-y-6">
 
-        {/* 1. ChatGPT Export */}
+        {/* 1. Instagram Inspiration */}
         <SectionCard
-          id="chatgpt"
+          id="creators"
           number={1}
-          title="Export from ChatGPT"
-          badge={{ label: 'Do this 2 days early', color: 'purple' }}
-          checked={checked.has('chatgpt')}
-          onToggle={() => toggle('chatgpt')}
+          title="Find your Instagram inspiration"
+          badge={{ label: 'Before the session', color: 'purple' }}
+          checked={checked.has('creators')}
+          onToggle={() => toggle('creators')}
         >
           <p>
-            ChatGPT has a built-in export tool. It emails you a download link within 24-48 hours,
-            so request it now.
+            Find two or three Instagram creators who are in your niche, have under 500,000 followers,
+            and are doing really well on the platform. These are people whose hooks you genuinely admire
+            and whose content stops you mid-scroll.
+          </p>
+
+          <div className="bg-white/[0.03] border border-white/[0.06] rounded-xl px-5 py-4 space-y-2">
+            <p className="text-[#FCF4EB]/70 text-sm font-semibold">What to look for:</p>
+            <ul className="space-y-2 ml-2">
+              {[
+                'They are in your niche or adjacent to it',
+                'Under 500,000 followers — smaller accounts often have stronger, more intentional hooks',
+                'Their Reels and posts consistently get strong engagement relative to their size',
+                'Their hooks make you want to keep watching or reading',
+              ].map((point, i) => (
+                <li key={i} className="flex items-start gap-2">
+                  <span className="text-[#7C69C7] mt-0.5 flex-shrink-0">•</span>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <p>
+            Save their profile URLs and note two or three specific posts or Reels with hooks you respect.
+            We will use these as reference material to understand what works in your space.
           </p>
 
           <div className="bg-white/[0.03] border border-white/[0.06] rounded-xl px-5 py-4">
-            <p className="text-[#FCF4EB]/50 text-xs mb-3 font-semibold uppercase tracking-wide">Don&apos;t have ChatGPT? Skip this section.</p>
+            <p className="text-[#FCF4EB]/50 text-xs font-semibold uppercase tracking-wide mb-2">Bring to the session</p>
+            <ul className="space-y-1.5 text-sm text-[#FCF4EB]/65">
+              <li>2-3 creator profile URLs</li>
+              <li>Links to specific posts or Reels whose hooks you admire</li>
+            </ul>
           </div>
-
-          <ol className="space-y-3 list-decimal list-inside">
-            <li>
-              Go to{' '}
-              <a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline font-medium">
-                chatgpt.com
-              </a>
-              {' '}and log in
-            </li>
-            <li>Click your profile icon in the bottom-left corner, then click <strong className="text-[#FCF4EB]">Settings</strong></li>
-            <li>In the sidebar, click <strong className="text-[#FCF4EB]">Data controls</strong></li>
-            <li>Scroll to the bottom and click the <strong className="text-[#FCF4EB]">Export</strong> button next to &ldquo;Export data&rdquo;</li>
-          </ol>
-
-          <ScreenshotCard
-            src="/screenshots/chatgpt-data-controls.png"
-            alt="ChatGPT Data controls settings panel showing the Export data button"
-            caption="The Export button is at the very bottom of the Data controls panel"
-          />
-
-          <ol className="space-y-3 list-decimal list-inside" start={5}>
-            <li>A confirmation email will arrive in your inbox within a few minutes to a few hours</li>
-            <li>When the email arrives: click the download link, then unzip the file you receive</li>
-            <li>Inside the zip you will find a file called <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">conversations.json</code> — keep this handy for the session</li>
-          </ol>
-
-          <ProTip type="info">
-            The download link in the email expires after 24 hours. Download the file as soon as it arrives.
-          </ProTip>
         </SectionCard>
 
-        {/* 2. Claude Export */}
+        {/* 2. Audience and Content Focus */}
         <SectionCard
-          id="claude"
+          id="audience"
           number={2}
-          title="Export from Claude"
-          badge={{ label: 'Do this 2 days early', color: 'purple' }}
-          checked={checked.has('claude')}
-          onToggle={() => toggle('claude')}
-        >
-          <p>
-            Claude&apos;s export tool lives in your Privacy settings. It works the same way: you
-            request it, they email you the file.
-          </p>
-
-          <div className="bg-white/[0.03] border border-white/[0.06] rounded-xl px-5 py-4">
-            <p className="text-[#FCF4EB]/50 text-xs font-semibold uppercase tracking-wide">Don&apos;t use Claude much yet? Skip this section.</p>
-          </div>
-
-          <ol className="space-y-3 list-decimal list-inside">
-            <li>
-              Go to{' '}
-              <a href="https://claude.ai/settings/data-privacy-controls" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline font-medium">
-                claude.ai/settings/data-privacy-controls
-              </a>
-            </li>
-            <li>In the sidebar, click <strong className="text-[#FCF4EB]">Privacy</strong></li>
-            <li>Scroll to <strong className="text-[#FCF4EB]">Privacy settings</strong> and click the <strong className="text-[#FCF4EB]">Export data</strong> button on the right</li>
-          </ol>
-
-          <ScreenshotCard
-            src="/screenshots/claude-privacy-settings.png"
-            alt="Claude Settings Privacy page showing the Export data button"
-            caption="Go to Settings, then Privacy, and click Export data on the right"
-          />
-
-          <ol className="space-y-3 list-decimal list-inside" start={4}>
-            <li>A dialog will appear. Make sure <strong className="text-[#FCF4EB]">All</strong> is selected under &ldquo;Conversations from&rdquo;</li>
-            <li>Click the white <strong className="text-[#FCF4EB]">Export</strong> button</li>
-          </ol>
-
-          <ScreenshotCard
-            src="/screenshots/claude-export-modal.png"
-            alt="Claude Export data dialog with All selected and the Export button highlighted"
-            caption="Select All, then click Export"
-          />
-
-          <ol className="space-y-3 list-decimal list-inside" start={6}>
-            <li>Check your email for a download link (arrives within a few hours, sometimes up to 48 hours)</li>
-            <li>Download the file and unzip it when it arrives. Keep it ready for the session</li>
-          </ol>
-
-          <ProTip type="info">
-            The download link expires in 24 hours. Download it as soon as you get the email.
-          </ProTip>
-        </SectionCard>
-
-        {/* 3. Online Presence */}
-        <SectionCard
-          id="urls"
-          number={3}
-          title="Gather your online presence"
+          title="Define your audience and content focus"
           badge={{ label: 'Before the session', color: 'muted' }}
-          checked={checked.has('urls')}
-          onToggle={() => toggle('urls')}
+          checked={checked.has('audience')}
+          onToggle={() => toggle('audience')}
         >
           <p>
-            We will feed your social media and website URLs into your Brain Dump so Claude knows
-            where to find you online. Take two minutes now to collect these links.
+            Good hooks are specific. The more clearly you know who you are talking to and what you
+            want to say, the better the hooks we can write together. Take a few minutes to write
+            down answers to these three things.
           </p>
 
-          <div className="bg-white/[0.03] border border-white/[0.06] rounded-xl px-5 py-4">
-            <p className="text-[#FCF4EB]/50 text-xs font-semibold uppercase tracking-wide">Don&apos;t have some of these? No problem. Skip the ones that don&apos;t apply.</p>
+          <div className="space-y-4">
+            {[
+              {
+                number: 1,
+                label: 'Your target audience',
+                detail: 'Who exactly are you trying to reach? Be as specific as you can. Not just "women" or "entrepreneurs" but something like "service-based business owners who want more clients without more ads."',
+              },
+              {
+                number: 2,
+                label: 'What that audience wants',
+                detail: 'What is the outcome they are chasing? What do they lie awake thinking about? What would feel like a win for them?',
+              },
+              {
+                number: 3,
+                label: 'One thing you love creating content about',
+                detail: 'If you had to pick one topic, angle, or idea that you genuinely enjoy talking about, what is it? This is the lens we will write your hooks through.',
+              },
+            ].map((item) => (
+              <div key={item.number} className="flex gap-4 items-start">
+                <div className="w-7 h-7 rounded-full bg-[#7C69C7]/20 border border-[#7C69C7]/30 flex items-center justify-center text-[#7C69C7] text-xs font-bold flex-shrink-0 mt-0.5">
+                  {item.number}
+                </div>
+                <div>
+                  <p className="text-[#FCF4EB] font-semibold text-sm mb-1">{item.label}</p>
+                  <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">{item.detail}</p>
+                </div>
+              </div>
+            ))}
           </div>
 
-          <p className="text-[#FCF4EB]/80 font-medium">
-            Open a notes app and paste in any of the following you have:
-          </p>
-
-          <ul className="space-y-2 ml-4">
-            <li className="flex items-start gap-2">
-              <span className="text-[#7C69C7] mt-0.5">•</span>
-              <span>Your main website URL</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-[#7C69C7] mt-0.5">•</span>
-              <span>Instagram profile URL</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-[#7C69C7] mt-0.5">•</span>
-              <span>Facebook profile or page URL</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-[#7C69C7] mt-0.5">•</span>
-              <span>LinkedIn profile URL</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-[#7C69C7] mt-0.5">•</span>
-              <span>Any other platforms you use: TikTok, Twitter/X, YouTube, etc.</span>
-            </li>
-          </ul>
-
-          <p>
-            You will paste these into a prompt during the session. Having them ready saves
-            time and means Claude gets a more complete picture of you.
-          </p>
+          <div className="bg-white/[0.03] border border-white/[0.06] rounded-xl px-5 py-4">
+            <p className="text-[#FCF4EB]/50 text-xs font-semibold uppercase tracking-wide mb-2">Bring to the session</p>
+            <p className="text-[#FCF4EB]/65 text-sm">
+              A short written answer to each of the three points above. A few sentences is enough.
+              You do not need to have it perfect.
+            </p>
+          </div>
         </SectionCard>
+
       </div>
 
       {/* Footer note */}
       <div className="mt-14 border-t border-white/[0.08] pt-8">
         <p className="text-[#FCF4EB]/40 text-sm leading-relaxed text-center">
-          If you get stuck on any of the export steps, reach out before the session and someone will help.
+          The more specific your answers, the better your hooks will be. Come ready to work.
         </p>
       </div>
     </div>

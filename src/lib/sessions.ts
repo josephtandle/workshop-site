@@ -7,8 +7,11 @@ export interface Session {
   hasGuide: boolean
   hasPrep: boolean
   hasBonus: boolean
+  hasWrapup?: boolean
   guidePath?: string
   guideTitle?: string
+  prepLabel?: string
+  prepDescription?: string
 }
 
 export const sessions: Session[] = [
@@ -52,19 +55,22 @@ export const sessions: Session[] = [
     description: '',
     date: '',
     hasGuide: false,
-    hasPrep: true,
+    hasPrep: false,
     hasBonus: false,
+    hasWrapup: true,
   },
   {
     slug: '5',
     number: 5,
-    title: 'Give Claude Code Your Brain',
+    title: 'Give Claude Code a Brain and Hook Writer Part 1',
     description:
       'Export your conversation history from ChatGPT and Claude, use AI to organize it into a Brain Dump folder, and wire it into Claude Code so it knows who you are automatically.',
     date: '',
     hasGuide: true,
-    hasPrep: false,
+    hasPrep: true,
     hasBonus: false,
+    prepLabel: 'Prep: Export Your AI Conversations',
+    prepDescription: 'Export your conversation history from ChatGPT and Claude before the session. Requests can take up to 48 hours.',
     guidePath: 'guide-brain',
     guideTitle: 'How to Give Claude Code Your Brain, Part 1: Session Guide',
   },
