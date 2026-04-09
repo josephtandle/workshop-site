@@ -381,6 +381,60 @@ Specific details to weave in:
 ${form.details || '[Optional: any numbers, tools, or examples to include]'}`
 }
 
+// ─── Participant photos (slugs that have a real headshot in /participants/) ────
+const PHOTO_SLUGS = new Set([
+  'aaqib', 'alla', 'daniel', 'jasmine', 'jenny', 'joe',
+  'johanna', 'marina', 'miia', 'quincee', 'ronnie', 'sophia', 'sundari',
+])
+
+// ─── Name card (defined at module level to avoid scroll-jump on re-render) ────
+type NameCardProps = {
+  slug: string
+  displayName: string
+  isSelected: boolean
+  onClick: () => void
+}
+
+function NameCard({ slug, displayName, isSelected, onClick }: NameCardProps) {
+  const hasPhoto = PHOTO_SLUGS.has(slug)
+  const initials = displayName.slice(0, 2).toUpperCase()
+  return (
+    <button
+      onClick={onClick}
+      className="flex flex-col items-center gap-2 group"
+    >
+      <div
+        className="w-14 h-14 rounded-full overflow-hidden transition-all"
+        style={{
+          border: isSelected ? '2px solid #9D8FE0' : '2px solid rgba(255,255,255,0.10)',
+          boxShadow: isSelected ? '0 0 0 3px rgba(124,105,199,0.25)' : 'none',
+        }}
+      >
+        {hasPhoto ? (
+          <img
+            src={`/participants/${slug}.jpg`}
+            alt={displayName}
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <div
+            className="w-full h-full flex items-center justify-center text-sm font-bold"
+            style={{ background: 'rgba(124,105,199,0.20)', color: '#9D8FE0' }}
+          >
+            {initials}
+          </div>
+        )}
+      </div>
+      <span
+        className="text-xs font-medium text-center leading-tight transition-colors"
+        style={{ color: isSelected ? '#9D8FE0' : 'rgba(252,244,235,0.55)' }}
+      >
+        {displayName}
+      </span>
+    </button>
+  )
+}
+
 // ─── Field components (defined at module level to avoid scroll-jump) ──────────
 
 type FieldProps = {
@@ -498,24 +552,15 @@ export default function HookWriterPage() {
         <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: 'rgba(252,244,235,0.4)' }}>
           Who are you?
         </p>
-        <div className="flex flex-wrap gap-2">
+        <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-3">
           {PARTICIPANTS.map(p => (
-            <button
+            <NameCard
               key={p.slug}
+              slug={p.slug}
+              displayName={p.displayName}
+              isSelected={selected === p.slug}
               onClick={() => selectParticipant(p.slug)}
-              className="px-4 py-2 rounded-xl text-sm font-medium transition-all"
-              style={selected === p.slug ? {
-                background: 'rgba(124,105,199,0.20)',
-                border: '1px solid rgba(124,105,199,0.40)',
-                color: '#9D8FE0',
-              } : {
-                background: 'rgba(255,255,255,0.05)',
-                border: '1px solid rgba(255,255,255,0.10)',
-                color: 'rgba(252,244,235,0.65)',
-              }}
-            >
-              {p.displayName}
-            </button>
+            />
           ))}
         </div>
       </div>
