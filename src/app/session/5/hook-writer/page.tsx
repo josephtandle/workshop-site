@@ -951,10 +951,10 @@ export default function HookWriterPage() {
       {selected && (
         <div className="space-y-8">
 
-          {/* Section: About Your Business */}
+          {/* Section: About [Name] */}
           <div className="rounded-2xl p-6 space-y-5" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
             <div className="mb-2">
-              <h2 className="text-base font-bold mb-1" style={{ color: 'rgba(252,244,235,0.9)' }}>About Your Business</h2>
+              <h2 className="text-base font-bold mb-1" style={{ color: 'rgba(252,244,235,0.9)' }}>About {PARTICIPANTS.find(p => p.slug === selected)?.displayName ?? 'You'}</h2>
               <p className="text-sm" style={{ color: 'rgba(252,244,235,0.4)' }}>Pre-filled from your profile. Edit anything that feels off.</p>
             </div>
             <Field label="What I teach, sell, or do" value={form.teaches} onChange={v => updateField('teaches', v)} />
