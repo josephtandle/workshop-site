@@ -154,7 +154,7 @@ Name which winner to test first. One sentence on why: not "it's stronger," but w
 const HOOK_LAB_MASTER_PROMPT = HOOK_LAB_PROMPT.slice(HOOK_LAB_PROMPT.indexOf('# HOOK LAB: MASTER PROMPT'))
 
 const SKILL_CONTENT = `---
-name: hook-writer
+name: hook-lab
 description: Run the Hook Lab to generate five scored Instagram Reel hooks from your brand voice profile.
 ---
 
@@ -186,13 +186,13 @@ ${HOOK_LAB_MASTER_PROMPT}
 
 After delivering output, ask: "Want me to save this week's winner to a log?"
 
-If yes, create or append to ~/hook-writer/hooks-log.md with this row format:
+If yes, create or append to ~/hook-lab/hooks-log.md with this row format:
 
 | [date] | [topic shortened] | [hook type] | [first 8 words of winning hook] | [score]/30 | -- | -- | Pending |
 
 Leave the last three columns blank. The user fills in their results at 48 hours.`
 
-const SKILL_INSTALL_PROMPT = `Create the file ~/.claude/skills/hook-writer/SKILL.md with this exact content:
+const SKILL_INSTALL_PROMPT = `Create the file ~/.claude/skills/hook-lab/SKILL.md with this exact content:
 
 ${SKILL_CONTENT}`
 
@@ -1150,7 +1150,7 @@ export default function HookWriterPage() {
         <div className="space-y-4 mb-10">
           <p className="text-base leading-relaxed" style={{ color: 'rgba(252,244,235,0.7)' }}>
             A skill is a shortcut command you install once in Claude Code. After that, you type{' '}
-            <code className="px-1.5 py-0.5 rounded text-xs font-mono" style={{ background: 'rgba(255,255,255,0.08)', color: '#9D8FE0' }}>/hook-writer</code>{' '}
+            <code className="px-1.5 py-0.5 rounded text-xs font-mono" style={{ background: 'rgba(255,255,255,0.08)', color: '#9D8FE0' }}>/hook-lab</code>{' '}
             in any terminal session and Claude runs the Hook Lab automatically. No form, no copying, no pasting. You open Terminal, type the command, and get your hooks.
           </p>
           <p className="text-base leading-relaxed" style={{ color: 'rgba(252,244,235,0.7)' }}>
@@ -1180,7 +1180,7 @@ export default function HookWriterPage() {
             </li>
             <li>3. Copy the full block below, paste it into Claude, and hit Enter. Claude will create the skill file on your computer.</li>
             <li>4. Once Claude confirms, type{' '}
-              <code className="px-1.5 py-0.5 rounded text-xs font-mono" style={{ background: 'rgba(255,255,255,0.08)', color: '#9D8FE0' }}>/hook-writer</code>{' '}
+              <code className="px-1.5 py-0.5 rounded text-xs font-mono" style={{ background: 'rgba(255,255,255,0.08)', color: '#9D8FE0' }}>/hook-lab</code>{' '}
               any time you want to run the Hook Lab.
             </li>
           </ol>
