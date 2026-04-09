@@ -27,6 +27,7 @@
 
 ## Free Giveaways
 
+- [The Ultimate CLAUDE.md File](/giveaways/claude-md): A free CLAUDE.md template for Claude Code. Loads your rules, agent routing, iron laws, and project context automatically at the start of every session. Download and drop in your project root.
 - [Web Design Arsenal](/giveaways/web-design-arsenal): A single prompt that installs 24 professional web design tools, animation libraries, and effects for Claude Code, Codex, and Gemini CLI. Build professional sites in an afternoon.
 - [Anthropic Safety Checklist](/giveaways/anthropic-safety-checklist): Safety and review checklist for AI-assisted projects.
 - [Lead Magnet](/giveaways/lead-magnet): Free resources for business owners learning to use AI.
