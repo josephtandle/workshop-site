@@ -59,11 +59,11 @@ Output the results in two parts.
 
 Before writing any scripts, output a quick-reference summary of all five hooks. Format it as a simple numbered list:
 
-1. [Hook type] — [Total score]/30 — "[Hook line(s)]"
-2. [Hook type] — [Total score]/30 — "[Hook line(s)]"
-3. [Hook type] — [Total score]/30 — "[Hook line(s)]"
-4. [Hook type] — [Total score]/30 — "[Hook line(s)]"
-5. [Hook type] — [Total score]/30 — "[Hook line(s)]"
+1. [Hook type] | [Total score]/30 | "[Hook line(s)]"
+2. [Hook type] | [Total score]/30 | "[Hook line(s)]"
+3. [Hook type] | [Total score]/30 | "[Hook line(s)]"
+4. [Hook type] | [Total score]/30 | "[Hook line(s)]"
+5. [Hook type] | [Total score]/30 | "[Hook line(s)]"
 
 Then on a new line, bold the recommended winner: **Recommended: Hook [N]**
 
@@ -75,13 +75,13 @@ Now go through each hook in order. For each one:
 
 **Hook [N]: [Hook Type]**
 
-Write the hook. The main line must be 10 words or fewer. One optional setup line of 5 words or fewer if it genuinely strengthens the hook — otherwise omit it.
+Write the hook. The main line must be 10 words or fewer. One optional setup line of 5 words or fewer if it genuinely strengthens the hook. Otherwise omit it.
 
 Scores: Specificity [X]/10, Mechanism Strength [X]/10, Brand Voice Match [X]/10. Total: [X]/30.
 
 Write 1 sentence explaining why this hook works for this specific audience.
 
-Then write the **Full Reel Script**. Format: hook line(s) to open, then the body (2-4 short punchy points or a single tight story arc), then one CTA. Total: 60-90 seconds spoken, roughly 120-160 words. Write it exactly as the person would say it out loud in their natural voice. No stage directions, no timestamps, no section headers inside the script — just the words they speak.
+Then write the **Full Reel Script**. Format: hook line(s) to open, then the body (2-4 short punchy points or a single tight story arc), then one CTA. Total: 60-90 seconds spoken, roughly 120-160 words. Write it exactly as the person would say it out loud in their natural voice. No stage directions, no timestamps, no section headers inside the script. Just the words they speak.
 
 Repeat for all five hooks.
 
@@ -131,7 +131,7 @@ Write Hook 5 now.
 
 ### THE WINNERS
 
-Pick the top 2 hooks. Do not simply pick the two highest scores — choose 2 that use different psychological mechanisms so they become a true testing pair.
+Pick the top 2 hooks. Do not simply pick the two highest scores. Choose 2 that use different psychological mechanisms so they become a true testing pair.
 
 For each winner:
 - Repeat the hook line(s).
@@ -141,7 +141,7 @@ For each winner:
 
 ### TEST THIS ONE FIRST
 
-Name which winner to test first. One sentence on why — not "it's stronger," but why it fits this audience's current state or this moment in their content strategy. Name the one metric to watch (saves, comments, shares — be specific about which and why).
+Name which winner to test first. One sentence on why: not "it's stronger," but why it fits this audience's current state or this moment in their content strategy. Name the one metric to watch (saves, comments, or shares, and why that one specifically).
 
 ---
 
@@ -739,7 +739,7 @@ export default function HookWriterPage() {
           <span className="text-base shrink-0" aria-hidden="true">💡</span>
           <p className="text-sm leading-relaxed" style={{ color: 'rgba(252,244,235,0.6)' }}>
             <span className="font-semibold" style={{ color: 'rgba(252,244,235,0.85)' }}>These are suggestions, not scripts.</span>{' '}
-            Read everything Claude gives you before you post it. The best hooks will feel immediately right. The others will point you toward something better. Always stay in your own voice.
+            Read everything Claude gives you before you post it. The best hooks will feel immediately right. The others will show you what to adjust. Always stay in your own voice.
           </p>
         </div>
       </div>
@@ -779,7 +779,7 @@ export default function HookWriterPage() {
             <p className="text-sm font-semibold" style={{ color: 'rgba(252,244,235,0.4)' }}>David Ogilvy</p>
           </blockquote>
           <p className="text-sm leading-relaxed" style={{ color: 'rgba(252,244,235,0.45)' }}>
-            Ogilvy wrote that about print ads in 1963. The ratio is worse on social. The hook is not a nice-to-have — it is the difference between content that gets seen and content that disappears.
+            Ogilvy wrote that about print ads in 1963. The ratio is worse on social. Your hook is not optional. Miss it and your content does not get seen.
           </p>
         </div>
 
@@ -872,7 +872,7 @@ export default function HookWriterPage() {
           Building Your Hook Writer
         </h2>
         <p className="text-base leading-relaxed max-w-2xl" style={{ color: 'rgba(252,244,235,0.65)' }}>
-          Now that you know the five types, you are going to build a profile that tells Claude everything it needs to write hooks in your voice. Click your name below to load your pre-filled profile, then fill in the highlighted fields before hitting Copy.
+          You know the types. Now build a profile that gives Claude everything it needs to write hooks in your voice. Click your name below, load your pre-filled profile, fill in the highlighted fields, and hit Copy.
         </p>
       </div>
 
@@ -1052,7 +1052,7 @@ export default function HookWriterPage() {
               {/* About this tool — shown after copy */}
               <div className="pt-6 space-y-8" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
                 <p className="text-base leading-relaxed" style={{ color: 'rgba(252,244,235,0.7)' }}>
-                  You filled in a profile. That profile got wrapped in a carefully engineered set of instructions and bundled into the text you copy. When you paste it into Claude, Claude reads your profile, gets your voice, and runs the Hook Lab. Five hooks. Five full Reel scripts. Each one scored, ranked, two winners picked, a recommendation on which to test first. About 90 seconds of output.
+                  You filled in a profile. That profile got packed into a structured prompt with instructions Claude follows precisely. When you paste it in, Claude reads your profile, gets your voice, and runs the Hook Lab. Five hooks. Five full Reel scripts. Each one scored and ranked. Two winners picked. A recommendation on which to test first. About 90 seconds of output.
                 </p>
 
                 <div>
@@ -1065,14 +1065,14 @@ export default function HookWriterPage() {
                 <div>
                   <p className="text-sm font-bold mb-2" style={{ color: 'rgba(252,244,235,0.9)' }}>This is version one</p>
                   <p className="text-base leading-relaxed" style={{ color: 'rgba(252,244,235,0.6)' }}>
-                    The hook types, the scoring, the script format, the Friend Test. All of it was chosen based on what we know about what actually stops a scroll. Your profile gets better every time you use it. The voice sentence field in particular: the more real sentences from your own writing you put in there, the more the output sounds like something you would actually say.
+                    The hook types, the scoring, the script format, the Friend Test. All of it was chosen because of what we know stops a scroll. None of it was random. Your profile gets better every time you use it, especially the voice sentence field. The more real sentences from your own writing you put in there, the more the output sounds like you.
                   </p>
                 </div>
 
                 <div>
                   <p className="text-sm font-bold mb-2" style={{ color: 'rgba(252,244,235,0.9)' }}>Why five specific types and not just "write me a hook"</p>
                   <p className="text-base leading-relaxed mb-3" style={{ color: 'rgba(252,244,235,0.6)' }}>
-                    Each one maps to a documented psychological mechanism. The Curiosity Gap uses Loewenstein's information gap theory. The Pattern Interrupt works through the reticular activating system, the part of your brain that filters out predictable input before you consciously process it. Loss Aversion comes from Kahneman. Direct Address works because the brain elevates content that names it specifically.
+                    Each type is built on a specific piece of psychology. The Curiosity Gap uses Loewenstein's information gap theory. The Pattern Interrupt works through the reticular activating system, the part of your brain that filters out predictable content before you consciously register it. Loss Aversion comes from Kahneman. Direct Address works because your brain elevates content that names you specifically.
                   </p>
                   <p className="text-base leading-relaxed mb-3" style={{ color: 'rgba(252,244,235,0.6)' }}>
                     Most hook advice skips the mechanism and gives you a template. A template works once, for the exact scenario it was written for. Step outside that scenario and it falls apart. A mechanism does not. Once you understand why a Curiosity Gap hook works, you can write one for any topic, any week, any niche.
