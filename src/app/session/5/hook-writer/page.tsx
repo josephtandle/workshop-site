@@ -51,12 +51,39 @@ Run this extraction silently. Then write the hooks.
 
 ## SECTION 3: THE HOOK LAB
 
-Write five hooks, one per category, in the exact order below. For each hook:
+Output the results in two parts.
 
-- Write the hook itself. The main line must be 10 words or fewer. You may add one optional setup line of 5 words or fewer before the main line if it genuinely improves the hook. If the setup line does not make the hook stronger, omit it.
-- Score it on three labeled sub-scores, each out of 10: **Specificity**, **Mechanism Strength**, **Brand Voice Match**. Add them together for a total score out of 30. Show all three sub-scores and the total.
-- Write 1 sentence explaining why this hook works for this specific audience. Be specific, not general.
-- Write a **Full Reel Script** using this hook. Format: the hook line(s) first, then the body (2-4 short punchy points or a single tight story), then one CTA. Total length: 60-90 seconds spoken (roughly 120-160 words). Write it exactly as the person would say it out loud in their natural voice. No stage directions, no timestamps, no headers inside the script — just the words they speak.
+---
+
+### PART A: HOOK SUMMARY
+
+Before writing any scripts, output a quick-reference summary of all five hooks. Format it as a simple numbered list:
+
+1. [Hook type] — [Total score]/30 — "[Hook line(s)]"
+2. [Hook type] — [Total score]/30 — "[Hook line(s)]"
+3. [Hook type] — [Total score]/30 — "[Hook line(s)]"
+4. [Hook type] — [Total score]/30 — "[Hook line(s)]"
+5. [Hook type] — [Total score]/30 — "[Hook line(s)]"
+
+Then on a new line, bold the recommended winner: **Recommended: Hook [N]**
+
+---
+
+### PART B: FULL DETAIL
+
+Now go through each hook in order. For each one:
+
+**Hook [N]: [Hook Type]**
+
+Write the hook. The main line must be 10 words or fewer. One optional setup line of 5 words or fewer if it genuinely strengthens the hook — otherwise omit it.
+
+Scores: Specificity [X]/10, Mechanism Strength [X]/10, Brand Voice Match [X]/10. Total: [X]/30.
+
+Write 1 sentence explaining why this hook works for this specific audience.
+
+Then write the **Full Reel Script**. Format: hook line(s) to open, then the body (2-4 short punchy points or a single tight story arc), then one CTA. Total: 60-90 seconds spoken, roughly 120-160 words. Write it exactly as the person would say it out loud in their natural voice. No stage directions, no timestamps, no section headers inside the script — just the words they speak.
+
+Repeat for all five hooks.
 
 ---
 
@@ -104,24 +131,23 @@ Write Hook 5 now.
 
 ### THE WINNERS
 
-Declare the top 2 hooks. Do not simply pick the two highest scores. Choose 2 hooks that use different psychological mechanisms. They become a testing pair: one hook tested one week, the other hook tested the following week. After both tests, the pattern of results will reveal which mechanism type resonates most deeply with this person's specific audience.
+Pick the top 2 hooks. Do not simply pick the two highest scores — choose 2 that use different psychological mechanisms so they become a true testing pair.
 
 For each winner:
-
-- Repeat the hook text in full.
-- Write 2 sentences explaining why it works specifically for this person's niche and audience.
+- Repeat the hook line(s).
+- 2 sentences: why it works for this person's specific niche and audience.
 
 ---
 
-### TESTING RECOMMENDATION
+### TEST THIS ONE FIRST
 
-Tell them which of the two winners to test first and name a specific reason why (not "it's the stronger hook" -- say why it fits this platform, this audience state, or this moment in their content strategy). Then name one concrete signal in their analytics that will tell them whether this hook type is working. Name the actual metric or behavior to watch, not a vague directive like "see how it performs."
+Name which winner to test first. One sentence on why — not "it's stronger," but why it fits this audience's current state or this moment in their content strategy. Name the one metric to watch (saves, comments, shares — be specific about which and why).
 
 ---
 
 ### ONE THING TO NOTICE
 
-In 1-2 sentences, name one specific pattern in the hooks that reflects something particular about how this person naturally communicates — a word rhythm, a phrase structure, or a voice quality they may not have consciously noticed.`
+1-2 sentences. One pattern in these hooks that reflects something specific about how this person naturally communicates. Make it feel like an observation, not a compliment.`
 
 // ─── Participant data (static snapshot from DB) ────────────────────────────
 type Participant = {
