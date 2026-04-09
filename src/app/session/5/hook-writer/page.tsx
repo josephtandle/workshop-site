@@ -732,9 +732,16 @@ export default function HookWriterPage() {
         <h1 className="gradient-text text-4xl md:text-5xl font-extrabold leading-tight mb-4">
           Hook Writer: Part 1
         </h1>
-        <p className="text-lg leading-relaxed" style={{ color: 'rgba(252,244,235,0.6)' }}>
+        <p className="text-lg leading-relaxed mb-6" style={{ color: 'rgba(252,244,235,0.6)' }}>
           Click your name, fill in the highlighted fields, hit Copy, then paste into Claude and hit send.
         </p>
+        <div className="inline-flex items-start gap-3 rounded-xl px-4 py-3" style={{ background: 'rgba(245,195,198,0.08)', border: '1px solid rgba(245,195,198,0.20)' }}>
+          <span className="text-base shrink-0" aria-hidden="true">💡</span>
+          <p className="text-sm leading-relaxed" style={{ color: 'rgba(252,244,235,0.6)' }}>
+            <span className="font-semibold" style={{ color: 'rgba(252,244,235,0.85)' }}>These are suggestions, not scripts.</span>{' '}
+            Read everything Claude gives you before you post it. The best hooks will feel immediately right. The others will point you toward something better. Always stay in your own voice.
+          </p>
+        </div>
       </div>
 
       {/* Understanding Hooks — educational section */}
@@ -1042,6 +1049,40 @@ export default function HookWriterPage() {
                 </ol>
               </div>
 
+              {/* About this tool — shown after copy */}
+              <div className="pt-6 space-y-8" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+                <p className="text-base leading-relaxed" style={{ color: 'rgba(252,244,235,0.7)' }}>
+                  You filled in a profile. That profile got wrapped in a carefully engineered set of instructions and bundled into the text you copy. When you paste it into Claude, Claude reads your profile, gets your voice, and runs the Hook Lab. Five hooks. Five full Reel scripts. Each one scored, ranked, two winners picked, a recommendation on which to test first. About 90 seconds of output.
+                </p>
+
+                <div>
+                  <p className="text-sm font-bold mb-2" style={{ color: 'rgba(252,244,235,0.9)' }}>Why I built this instead of using something that already existed</p>
+                  <p className="text-base leading-relaxed" style={{ color: 'rgba(252,244,235,0.6)' }}>
+                    I went looking for Claude skills and tools that could do this before building it. There was nothing worth using. Most AI hook generators spit out the same interchangeable output regardless of who you are. They sound like every other coach in every niche. The problem is not the AI. The prompts behind them do not carry your voice. So I built one that does. The brand voice profile you just filled in is not a form. It is what makes the output sound like you and not a template.
+                  </p>
+                </div>
+
+                <div>
+                  <p className="text-sm font-bold mb-2" style={{ color: 'rgba(252,244,235,0.9)' }}>This is version one</p>
+                  <p className="text-base leading-relaxed" style={{ color: 'rgba(252,244,235,0.6)' }}>
+                    The hook types, the scoring, the script format, the Friend Test. All of it was chosen based on what we know about what actually stops a scroll. Your profile gets better every time you use it. The voice sentence field in particular: the more real sentences from your own writing you put in there, the more the output sounds like something you would actually say.
+                  </p>
+                </div>
+
+                <div>
+                  <p className="text-sm font-bold mb-2" style={{ color: 'rgba(252,244,235,0.9)' }}>Why five specific types and not just "write me a hook"</p>
+                  <p className="text-base leading-relaxed mb-3" style={{ color: 'rgba(252,244,235,0.6)' }}>
+                    Each one maps to a documented psychological mechanism. The Curiosity Gap uses Loewenstein's information gap theory. The Pattern Interrupt works through the reticular activating system, the part of your brain that filters out predictable input before you consciously process it. Loss Aversion comes from Kahneman. Direct Address works because the brain elevates content that names it specifically.
+                  </p>
+                  <p className="text-base leading-relaxed mb-3" style={{ color: 'rgba(252,244,235,0.6)' }}>
+                    Most hook advice skips the mechanism and gives you a template. A template works once, for the exact scenario it was written for. Step outside that scenario and it falls apart. A mechanism does not. Once you understand why a Curiosity Gap hook works, you can write one for any topic, any week, any niche.
+                  </p>
+                  <p className="text-base leading-relaxed" style={{ color: 'rgba(252,244,235,0.6)' }}>
+                    The Friend Test is in there for a specific reason. Without it, Claude writes hooks that score well but sound like a copywriter wrote them. A hook that passes every test except sounding like you is worse than no hook at all. It trains your audience to expect a version of you that does not exist.
+                  </p>
+                </div>
+              </div>
+
             </div>
           )}
 
@@ -1050,44 +1091,6 @@ export default function HookWriterPage() {
           </p>
         </div>
       )}
-
-      {/* About this tool — always visible */}
-      <div className="mt-20 pt-12 space-y-10" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-
-        <div>
-          <p className="text-base leading-relaxed mb-4" style={{ color: 'rgba(252,244,235,0.7)' }}>
-            You filled in a profile. That profile got wrapped in a carefully engineered set of instructions and bundled into the text you copy. When you paste it into Claude, Claude reads your profile, gets your voice, and runs the Hook Lab. Five hooks. Five full Reel scripts. Each one scored, ranked, two winners picked, a recommendation on which to test first. About 90 seconds of output.
-          </p>
-        </div>
-
-        <div>
-          <p className="text-sm font-bold mb-3" style={{ color: 'rgba(252,244,235,0.9)' }}>Why I built this instead of using something that already existed</p>
-          <p className="text-base leading-relaxed" style={{ color: 'rgba(252,244,235,0.6)' }}>
-            I went looking for Claude skills and tools that could do this before building it. There was nothing worth using. Most AI hook generators spit out the same interchangeable output regardless of who you are. They sound like every other coach in every niche. The problem is not the AI. The prompts behind them do not carry your voice. So I built one that does. The brand voice profile you just filled in is not a form. It is what makes the output sound like you and not a template.
-          </p>
-        </div>
-
-        <div>
-          <p className="text-sm font-bold mb-3" style={{ color: 'rgba(252,244,235,0.9)' }}>This is version one</p>
-          <p className="text-base leading-relaxed" style={{ color: 'rgba(252,244,235,0.6)' }}>
-            The hook types, the scoring, the script format, the Friend Test. All of it was chosen based on what we know about what actually stops a scroll. Your profile gets better every time you use it. The voice sentence field in particular: the more real sentences from your own writing you put in there, the more the output sounds like something you would actually say.
-          </p>
-        </div>
-
-        <div>
-          <p className="text-sm font-bold mb-3" style={{ color: 'rgba(252,244,235,0.9)' }}>Why five specific types and not just "write me a hook"</p>
-          <p className="text-base leading-relaxed mb-4" style={{ color: 'rgba(252,244,235,0.6)' }}>
-            Each one maps to a documented psychological mechanism. The Curiosity Gap uses Loewenstein's information gap theory. The Pattern Interrupt works through the reticular activating system, the part of your brain that filters out predictable input before you consciously process it. Loss Aversion comes from Kahneman. Direct Address works because the brain elevates content that names it specifically.
-          </p>
-          <p className="text-base leading-relaxed mb-4" style={{ color: 'rgba(252,244,235,0.6)' }}>
-            Most hook advice skips the mechanism and gives you a template. A template works once, for the exact scenario it was written for. Step outside that scenario and it falls apart. A mechanism does not. Once you understand why a Curiosity Gap hook works, you can write one for any topic, any week, any niche.
-          </p>
-          <p className="text-base leading-relaxed" style={{ color: 'rgba(252,244,235,0.6)' }}>
-            The Friend Test is in there for a specific reason. Without it, Claude writes hooks that score well but sound like a copywriter wrote them. A hook that passes every test except sounding like you is worse than no hook at all. It trains your audience to expect a version of you that does not exist.
-          </p>
-        </div>
-
-      </div>
 
       {/* Back link */}
       <div className="mt-16 pt-8" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
