@@ -138,6 +138,8 @@ type Participant = {
   voiceWords?: string
   neverSay?: string
   voiceSentence?: string
+  topic?: string
+  details?: string
 }
 
 const PARTICIPANTS: Participant[] = [
@@ -156,6 +158,8 @@ const PARTICIPANTS: Participant[] = [
     voiceWords: 'thoughtful, cross-cultural, precise',
     neverSay: '"fast fashion," "drop culture," "influencer collab," "mass market," "affordable luxury"',
     voiceSentence: 'I am constantly looking to integrate Western efficiency with Eastern wisdom.',
+    topic: 'We just opened our first physical store in Ubud',
+    details: 'After building the brand online and at markets and festivals, we signed a lease and opened the doors. The store carries our RASA ikat collection. We worked with the local community to design the space.',
   },
   {
     slug: 'alex',
@@ -172,6 +176,8 @@ const PARTICIPANTS: Participant[] = [
     voiceWords: 'direct, intellectual, adventurous',
     neverSay: '"woo-woo," "manifest," "hustle," "crush it," "quantum leap"',
     voiceSentence: "I\'m a scientist and coach living adventurously around the world, figuring out how to make a real difference at scale.",
+    topic: 'I organized a cross-disciplinary co-working session in Bali and something unexpected happened',
+    details: 'Brought together scientists, coaches, and founders to work side by side. What came out of it was not what I expected. There were collaborations I did not plan for.',
   },
   {
     slug: 'alla',
@@ -188,6 +194,8 @@ const PARTICIPANTS: Participant[] = [
     voiceWords: 'measured, warm, evidence-aware',
     neverSay: '"hustle," "high-vibe," "quantum healing," "manifest," "toxic positivity," "just heal yourself"',
     voiceSentence: 'Healing is not about fixing what is broken; it is about expanding our capacity to be fully human.',
+    topic: 'I finally launched my website and started publishing — and I noticed something immediately',
+    details: 'Website fully migrated to Vercel with a custom domain. Publishing blog posts and photos regularly. Something shifted when the work became visible. Content-to-client pipeline is what I am building next.',
   },
   {
     slug: 'daniel',
@@ -204,6 +212,8 @@ const PARTICIPANTS: Participant[] = [
     voiceWords: 'direct, candid, results-focused',
     neverSay: '"authentic," "showing up," "being seen," "vulnerable," "on a journey"',
     voiceSentence: "I\'ve built a team of 11, hit $145K revenue months, lost it all, rebuilt from Bali, and now I use AI to do what I couldn\'t do manually.",
+    topic: 'I cracked personalized email outreach at scale using AI — and landed a client the same week',
+    details: 'New client signed plus two strong pipeline opportunities. The system handles personalization across millions of variable combinations. Results guaranteed model now proven.',
   },
   {
     slug: 'jasmine',
@@ -220,6 +230,8 @@ const PARTICIPANTS: Participant[] = [
     voiceWords: 'fluid, embodied, expansive',
     neverSay: '"professional," "corporate," "structured plan," "content strategy," "the algorithm"',
     voiceSentence: 'I create spaces where people can reconnect with themselves, awaken their inner vitality, and access profound healing and insight.',
+    topic: 'I started labeling every photo on my site for SEO and the results surprised me',
+    details: 'Using AI to label all photos for Google search visibility. Targeting "female DJ" and related search terms. Organic discovery is the goal — building findability before launching the DJ training program.',
   },
   {
     slug: 'jenny',
@@ -236,6 +248,8 @@ const PARTICIPANTS: Participant[] = [
     voiceWords: 'feminine, ritualistic, empowering',
     neverSay: '"hustle," "grind," "productivity hack," "growth strategy," "scale fast"',
     voiceSentence: 'I lead international retreats and trainings for women who want to embody their feminine wisdom and share it with others.',
+    topic: 'The moment I stopped separating my spiritual path from my business — everything changed',
+    details: 'Running the Institut fur Feminine Heilkunst alongside international retreats. Entry point at EUR 47, year-long certification at EUR 399 per month. The integration of sacred practice and business is the whole point.',
   },
   {
     slug: 'joe',
@@ -252,6 +266,8 @@ const PARTICIPANTS: Participant[] = [
     voiceWords: 'direct, experienced, warm',
     neverSay: '"hustle," "crush it," "grind," "game-changer," "unlock your potential," "level up," "high-vibe," "quantum," "manifest," "10x your business"',
     voiceSentence: "I've built 22 businesses, and the one thing none of them came with was a manual for how to stop being the most important part of them.",
+    topic: 'I taught 16 business owners to use AI this week — and the ones who thought they were "not technical" went the furthest',
+    details: 'Mastermind HQ Session 5. Coaches, healers, consultants. None of them coders. All of them now using Claude to run their business. The pattern of who adapts fastest and why.',
   },
   {
     slug: 'johanna',
@@ -268,6 +284,8 @@ const PARTICIPANTS: Participant[] = [
     voiceWords: 'structured, introspective, bridging',
     neverSay: '"just be yourself," "follow your heart," "you already have all the answers," "high-vibe"',
     voiceSentence: 'What makes my approach unique is that I naturally bridge structured business thinking with deep inner work and embodiment.',
+    topic: 'I built two complete coaching offers in one afternoon using Claude — one for women, one for men',
+    details: 'Used deep research mode in Claude with access to all past client work. Scientific frameworks pulled in minutes. Produced two fully structured offers with positioning, session flow, and pricing. First time having a real foundation.',
   },
   {
     slug: 'marina',
@@ -284,6 +302,8 @@ const PARTICIPANTS: Participant[] = [
     voiceWords: 'polished, direct, warm',
     neverSay: '"networking event," "cold outreach," "growth hacking," "leads," "funnel"',
     voiceSentence: 'My passion is curating spaces that empower people and facilitate deep connection, designing private rooms where strategic relationships form quickly and partnerships follow naturally.',
+    topic: 'Why I stopped hosting big networking events and started running invite-only founder dinners instead',
+    details: 'Ascend to Bali produces curated dinners and immersive retreats for founders in Bali. Invite-only. Focus on real outcomes, not just connections. Partnerships form faster in smaller rooms.',
   },
   {
     slug: 'miia',
@@ -300,6 +320,8 @@ const PARTICIPANTS: Participant[] = [
     voiceWords: 'conversational, specific, celestial',
     neverSay: '"manifestation," "law of attraction," "the universe has a plan," "vague cosmic signs," "star sign season"',
     voiceSentence: "I\'ve grown from 100 to 3,000 followers by going deep rather than chasing trends.",
+    topic: 'How I grew from 100 to 3,000 astrology followers by going deeper instead of broader',
+    details: 'Grew Instagram account focused on astrology from 100 to 3,000 followers. No viral content. Deep, specific posts. Currently launching a professional astrologer training program.',
   },
   {
     slug: 'pinamaria',
@@ -316,6 +338,8 @@ const PARTICIPANTS: Participant[] = [
     voiceWords: 'warm, feminine, energetic',
     neverSay: '"hustle," "toxic," "healing journey," "shadow work," "trauma dump"',
     voiceSentence: 'I host a daily dance and embodiment community for women who are ready to stop dimming their light.',
+    topic: 'I renamed my program in 5 minutes using AI — and discovered something about how attached I was to the wrong name',
+    details: 'Rebranded HypnoDance to Welcome Home Dance instantly using Claude. The new name landed immediately with the community. Website is coming together. Next step is driving traffic rather than refining the container.',
   },
   {
     slug: 'quincee',
@@ -332,6 +356,8 @@ const PARTICIPANTS: Participant[] = [
     voiceWords: 'lyrical, embodied, grounded',
     neverSay: '"content," "algorithm," "hustle," "productivity," "creative output"',
     voiceSentence: 'My work lives at the intersection of art, somatics, spirituality, and healing.',
+    topic: 'I got a full rebrand and new photos this week — and it taught me something about creative identity I did not expect',
+    details: 'Brand new photo shoot. Website fully refreshed. Feels like a new person digitally. Visionseed Oracle Deck available ($44 retail, $6 production cost). Creative Cohort launching soon.',
   },
   {
     slug: 'ronnie',
@@ -348,6 +374,8 @@ const PARTICIPANTS: Participant[] = [
     voiceWords: 'assured, warm, experiential',
     neverSay: '"cheap," "budget," "deal," "affordable," "value for money"',
     voiceSentence: "I\'m the Managing Partner of Electric Avenue Bali -- we run some of the most iconic venues on the island, and my job is making sure the people inside them have the time of their lives.",
+    topic: '3 years in business, every client from word of mouth — here is what I am finally changing',
+    details: 'Electric Avenue Bali operates Morabito Art Villa, Desa Eko, Tabu Supper Club, Ours Restaurant, and live music venues. Recently built first website and started social media. Strangers cannot find us yet. That is the gap.',
   },
   {
     slug: 'sophia',
@@ -364,6 +392,8 @@ const PARTICIPANTS: Participant[] = [
     voiceWords: 'clear, empowering, elegant',
     neverSay: '"girl boss," "boss babe," "hustle," "tribe," "squad," "manifesting"',
     voiceSentence: 'I created Sisterhood OS because I kept seeing high-achieving women who were doing everything right on the outside and still felt disconnected from themselves.',
+    topic: 'I got 55 masterclass signups in 4 days without spending a dollar on ads',
+    details: 'Sisterhood OS masterclass. 55 signups in approximately 4 days. No paid ads. Full email funnel built with Claude. Meta ads now set up for the next push. Goal is 300 signups. Targeting US and Europe.',
   },
   {
     slug: 'sundari',
@@ -380,6 +410,8 @@ const PARTICIPANTS: Participant[] = [
     voiceWords: 'expansive, authoritative, luminous',
     neverSay: '"mindset hack," "manifest," "hustle," "strategy session," "quick fix"',
     voiceSentence: "I guide people through the kind of transformation that isn\'t about adding more strategies, it\'s about becoming more of what was always there.",
+    topic: 'I finally finished my lead magnet after years of putting it off — here is what made it happen',
+    details: 'Lead magnet completed and connected to GoHighLevel. Chrome extension activated. Content funnels now in progress. Over two decades of work going into the first real automated entry point.',
   },
   {
     slug: 'tiyana',
@@ -396,6 +428,8 @@ const PARTICIPANTS: Participant[] = [
     voiceWords: 'devotional, slow, sensory',
     neverSay: '"trendy," "influencer," "content strategy," "fast," "drop," "collab"',
     voiceSentence: 'Everything I make and offer is designed to invite women back into presence, devotion, and the temple of their own body.',
+    topic: 'Why I opened a physical space in Ubud instead of staying online — and what it changed',
+    details: 'TI YA RA boutique sanctuary open in Ubud. Also established presence in Dubai. Kimonos from $220, pants from $144. Private feminine mentorships and tea ceremonies available. The physical space is part of the offering, not separate from it.',
   },
 ]
 
@@ -437,8 +471,8 @@ function participantToForm(p: Participant): FormState {
     voiceWords: p.voiceWords ?? '',
     neverSay: p.neverSay ?? '',
     voiceSentence: p.voiceSentence ?? '',
-    topic: '',
-    details: '',
+    topic: p.topic ?? '',
+    details: p.details ?? '',
   }
 }
 
@@ -627,10 +661,16 @@ export default function HookWriterPage() {
     if (selected) saveToStorage(selected, next)
   }
 
-  async function handleCopy() {
+  async function handleCopy(e: React.MouseEvent<HTMLButtonElement>) {
     await navigator.clipboard.writeText(buildCopyText(form))
+    confetti({
+      particleCount: 120,
+      spread: 80,
+      origin: { x: e.clientX / window.innerWidth, y: e.clientY / window.innerHeight },
+      colors: ['#7C69C7', '#9D8FE0', '#F5C3C6', '#FCF4EB'],
+    })
     setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
+    setTimeout(() => setCopied(false), 5000)
   }
 
   return (
@@ -660,7 +700,7 @@ export default function HookWriterPage() {
 
       {/* Understanding Hooks — educational section */}
       <div className="mb-14">
-        <h2 className="gradient-text text-3xl md:text-4xl font-extrabold mb-8">
+        <h2 className="gradient-text text-3xl md:text-4xl font-extrabold mt-4 mb-14">
           Understanding Hooks
         </h2>
 
@@ -668,81 +708,81 @@ export default function HookWriterPage() {
 
           {/* 1. Curiosity Gap */}
           <div className="rounded-2xl p-6" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
-            <p className="text-lg font-bold mb-3" style={{ color: 'rgba(252,244,235,0.9)' }}>1. The Curiosity Gap</p>
-            <p className="text-sm leading-relaxed mb-2" style={{ color: 'rgba(252,244,235,0.7)' }}>
+            <p className="text-xl font-bold mb-4" style={{ color: 'rgba(252,244,235,0.9)' }}>1. The Curiosity Gap</p>
+            <p className="text-base leading-relaxed mb-3" style={{ color: 'rgba(252,244,235,0.7)' }}>
               You open with a specific, intriguing claim and then deliberately withhold the answer. The viewer has to keep watching to close the gap you just opened.
             </p>
-            <p className="text-xs leading-relaxed mb-4" style={{ color: 'rgba(252,244,235,0.45)', fontStyle: 'italic' }}>
+            <p className="text-sm leading-relaxed mb-5" style={{ color: 'rgba(252,244,235,0.45)', fontStyle: 'italic' }}>
               Psychology: The brain experiences an open information gap as mild discomfort and is driven to resolve it. Specific mystery works. Vague mystery does not.
             </p>
             <div className="pl-4 space-y-1.5" style={{ borderLeft: '2px solid rgba(124,105,199,0.35)' }}>
-              <p className="text-sm" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"The one question I stopped asking after 200 clients."</p>
-              <p className="text-sm" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"There are three words I never use in a sales call."</p>
-              <p className="text-sm" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"What my most successful client did differently in week one."</p>
+              <p className="text-base" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"The one question I stopped asking after 200 clients."</p>
+              <p className="text-base" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"There are three words I never use in a sales call."</p>
+              <p className="text-base" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"What my most successful client did differently in week one."</p>
             </div>
           </div>
 
           {/* 2. Pattern Interrupt */}
           <div className="rounded-2xl p-6" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
-            <p className="text-lg font-bold mb-3" style={{ color: 'rgba(252,244,235,0.9)' }}>2. The Pattern Interrupt</p>
-            <p className="text-sm leading-relaxed mb-2" style={{ color: 'rgba(252,244,235,0.7)' }}>
+            <p className="text-xl font-bold mb-4" style={{ color: 'rgba(252,244,235,0.9)' }}>2. The Pattern Interrupt</p>
+            <p className="text-base leading-relaxed mb-3" style={{ color: 'rgba(252,244,235,0.7)' }}>
               You open with something that contradicts what the viewer expected to see. The brain snaps out of scroll mode and pays attention because something did not fit.
             </p>
-            <p className="text-xs leading-relaxed mb-4" style={{ color: 'rgba(252,244,235,0.45)', fontStyle: 'italic' }}>
+            <p className="text-sm leading-relaxed mb-5" style={{ color: 'rgba(252,244,235,0.45)', fontStyle: 'italic' }}>
               Psychology: The reticular activating system filters out predictable content automatically. A genuine contradiction forces the brain into alert mode before the viewer has consciously decided to watch.
             </p>
             <div className="pl-4 space-y-1.5" style={{ borderLeft: '2px solid rgba(124,105,199,0.35)' }}>
-              <p className="text-sm" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"Stop trying to find your niche. That is the wrong question."</p>
-              <p className="text-sm" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"The best session I ever ran, I cried the whole way through."</p>
-              <p className="text-sm" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"I charged less and signed more clients that same month."</p>
+              <p className="text-base" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"Stop trying to find your niche. That is the wrong question."</p>
+              <p className="text-base" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"The best session I ever ran, I cried the whole way through."</p>
+              <p className="text-base" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"I charged less and signed more clients that same month."</p>
             </div>
           </div>
 
           {/* 3. Loss Aversion */}
           <div className="rounded-2xl p-6" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
-            <p className="text-lg font-bold mb-3" style={{ color: 'rgba(252,244,235,0.9)' }}>3. Loss Aversion</p>
-            <p className="text-sm leading-relaxed mb-2" style={{ color: 'rgba(252,244,235,0.7)' }}>
+            <p className="text-xl font-bold mb-4" style={{ color: 'rgba(252,244,235,0.9)' }}>3. Loss Aversion</p>
+            <p className="text-base leading-relaxed mb-3" style={{ color: 'rgba(252,244,235,0.7)' }}>
               You name something the viewer is already losing, getting wrong, or missing. That lands harder than telling them what they could gain, because loss feels more urgent than opportunity.
             </p>
-            <p className="text-xs leading-relaxed mb-4" style={{ color: 'rgba(252,244,235,0.45)', fontStyle: 'italic' }}>
+            <p className="text-sm leading-relaxed mb-5" style={{ color: 'rgba(252,244,235,0.45)', fontStyle: 'italic' }}>
               Psychology: Kahneman's research shows humans weight potential losses more heavily than equivalent gains. A concrete, personally relevant loss activates attention faster than any promise of reward.
             </p>
             <div className="pl-4 space-y-1.5" style={{ borderLeft: '2px solid rgba(124,105,199,0.35)' }}>
-              <p className="text-sm" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"You are losing clients after session one and you do not know why."</p>
-              <p className="text-sm" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"Every week without a system is a week you are paying yourself last."</p>
-              <p className="text-sm" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"The content you posted last year is still working against you."</p>
+              <p className="text-base" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"You are losing clients after session one and you do not know why."</p>
+              <p className="text-base" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"Every week without a system is a week you are paying yourself last."</p>
+              <p className="text-base" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"The content you posted last year is still working against you."</p>
             </div>
           </div>
 
           {/* 4. Belief Reversal */}
           <div className="rounded-2xl p-6" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
-            <p className="text-lg font-bold mb-3" style={{ color: 'rgba(252,244,235,0.9)' }}>4. The Belief Reversal</p>
-            <p className="text-sm leading-relaxed mb-2" style={{ color: 'rgba(252,244,235,0.7)' }}>
+            <p className="text-xl font-bold mb-4" style={{ color: 'rgba(252,244,235,0.9)' }}>4. The Belief Reversal</p>
+            <p className="text-base leading-relaxed mb-3" style={{ color: 'rgba(252,244,235,0.7)' }}>
               You name a belief you used to hold, then tell them you were wrong. Because you actually lived it, the viewer trusts what comes next, and they start wondering if they are also wrong.
             </p>
-            <p className="text-xs leading-relaxed mb-4" style={{ color: 'rgba(252,244,235,0.45)', fontStyle: 'italic' }}>
+            <p className="text-sm leading-relaxed mb-5" style={{ color: 'rgba(252,244,235,0.45)', fontStyle: 'italic' }}>
               Psychology: Challenging an installed belief signals lived experience, not theory. It triggers the question in the viewer's mind: "Am I also wrong about this?" That question is almost impossible to scroll past.
             </p>
             <div className="pl-4 space-y-1.5" style={{ borderLeft: '2px solid rgba(124,105,199,0.35)' }}>
-              <p className="text-sm" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"I used to think consistency was the answer. I was wrong."</p>
-              <p className="text-sm" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"I spent three years helping people heal the wrong thing entirely."</p>
-              <p className="text-sm" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"I believed niching down would shrink my audience. The opposite happened."</p>
+              <p className="text-base" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"I used to think consistency was the answer. I was wrong."</p>
+              <p className="text-base" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"I spent three years helping people heal the wrong thing entirely."</p>
+              <p className="text-base" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"I believed niching down would shrink my audience. The opposite happened."</p>
             </div>
           </div>
 
           {/* 5. Direct Address */}
           <div className="rounded-2xl p-6" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
-            <p className="text-lg font-bold mb-3" style={{ color: 'rgba(252,244,235,0.9)' }}>5. Direct Address</p>
-            <p className="text-sm leading-relaxed mb-2" style={{ color: 'rgba(252,244,235,0.7)' }}>
+            <p className="text-xl font-bold mb-4" style={{ color: 'rgba(252,244,235,0.9)' }}>5. Direct Address</p>
+            <p className="text-base leading-relaxed mb-3" style={{ color: 'rgba(252,244,235,0.7)' }}>
               You name the exact person you are talking to, describing their specific situation so precisely that they feel the hook was written for them alone. The more specific the description, the stronger the pull.
             </p>
-            <p className="text-xs leading-relaxed mb-4" style={{ color: 'rgba(252,244,235,0.45)', fontStyle: 'italic' }}>
+            <p className="text-sm leading-relaxed mb-5" style={{ color: 'rgba(252,244,235,0.45)', fontStyle: 'italic' }}>
               Psychology: The brain elevates content that directly references the self above content that does not. Specificity amplifies this effect. "If you're a coach" is far weaker than naming the exact situation the person is already living.
             </p>
             <div className="pl-4 space-y-1.5" style={{ borderLeft: '2px solid rgba(124,105,199,0.35)' }}>
-              <p className="text-sm" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"If you are a healer doing everything manually, this is for you."</p>
-              <p className="text-sm" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"This is for the coach who is fully booked and still not making enough."</p>
-              <p className="text-sm" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"If you have been posting for a year and your audience is not growing, watch this."</p>
+              <p className="text-base" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"If you are a healer doing everything manually, this is for you."</p>
+              <p className="text-base" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"This is for the coach who is fully booked and still not making enough."</p>
+              <p className="text-base" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"If you have been posting for a year and your audience is not growing, watch this."</p>
             </div>
           </div>
 
@@ -759,7 +799,7 @@ export default function HookWriterPage() {
 
       {/* Name picker */}
       <div className="mb-10">
-        <h2 className="gradient-text text-3xl md:text-4xl font-extrabold mb-6">
+        <h2 className="gradient-text text-3xl md:text-4xl font-extrabold mt-4 mb-14">
           Who Are You? Click your name.
         </h2>
         <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-4">
@@ -882,8 +922,20 @@ export default function HookWriterPage() {
               color: copied ? '#9D8FE0' : '#FCF4EB',
             }}
           >
-            {copied ? 'Copied! Now paste into Claude.ai' : 'Copy Hook Lab Prompt + My Profile'}
+            {copied ? 'Copied!' : 'Copy Hook Lab Prompt + My Profile'}
           </button>
+
+          {copied && (
+            <div className="rounded-xl p-5 space-y-3" style={{ background: 'rgba(124,105,199,0.10)', border: '1px solid rgba(124,105,199,0.25)' }}>
+              <p className="text-sm font-semibold" style={{ color: '#9D8FE0' }}>Now do this:</p>
+              <ol className="space-y-2 text-sm" style={{ color: 'rgba(252,244,235,0.75)' }}>
+                <li>1. Open your terminal and type <code className="px-1.5 py-0.5 rounded text-xs font-mono" style={{ background: 'rgba(255,255,255,0.08)', color: '#9D8FE0' }}>claude</code> — or open Claude.ai in your browser</li>
+                <li>2. Paste everything you just copied and hit Enter</li>
+                <li>3. Wait for Claude to generate your five hooks</li>
+                <li>4. Read the two winners and the "One Thing to Notice" section — that part is yours</li>
+              </ol>
+            </div>
+          )}
 
           <p className="text-center text-xs" style={{ color: 'rgba(252,244,235,0.25)' }}>
             Your edits are saved in this browser automatically.
