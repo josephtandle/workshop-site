@@ -7,4 +7,5 @@
  */
 export const LOCKS = {
   session5Guide: false,
+  session5HookWriter: false,
 } as const

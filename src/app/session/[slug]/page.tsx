@@ -341,6 +341,47 @@ export default async function SessionIndexPage({ params }: Props) {
         {/* Hook Writer — Session 5 only */}
         {slug === '5' && (
           <Reveal delay={3}>
+            {LOCKS.session5HookWriter === false ? (
+              <div
+                className="block bg-white/[0.02] border border-white/[0.05] rounded-2xl p-8 cursor-not-allowed select-none"
+                aria-disabled="true"
+              >
+                <div className="flex items-start justify-between mb-5">
+                  <div
+                    className="w-11 h-11 rounded-xl flex items-center justify-center"
+                    style={{ background: 'rgba(124, 105, 199, 0.06)', border: '1px solid rgba(124, 105, 199, 0.10)' }}
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <rect x="5" y="11" width="14" height="10" rx="2" stroke="rgba(124,105,199,0.3)" strokeWidth="1.5" />
+                      <path d="M8 11V7a4 4 0 0 1 8 0v4" stroke="rgba(124,105,199,0.3)" strokeWidth="1.5" strokeLinecap="round" />
+                    </svg>
+                  </div>
+                  <span
+                    className="text-[10px] font-semibold uppercase tracking-widest px-2.5 py-1 rounded-full"
+                    style={{
+                      background: 'rgba(124, 105, 199, 0.06)',
+                      color: 'rgba(124, 105, 199, 0.35)',
+                      border: '1px solid rgba(124, 105, 199, 0.10)',
+                    }}
+                  >
+                    Locked
+                  </span>
+                </div>
+                <h2 className="text-xl font-bold mb-2" style={{ color: 'rgba(252,244,235,0.25)' }}>
+                  Hook Writer: Part 1
+                </h2>
+                <p className="text-sm leading-relaxed mb-6" style={{ color: 'rgba(252,244,235,0.18)' }}>
+                  Build your brand voice profile and generate your first Instagram Reel hooks in your own voice.
+                </p>
+                <div className="flex items-center gap-2 text-sm font-medium" style={{ color: 'rgba(124,105,199,0.3)' }}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <rect x="5" y="11" width="14" height="10" rx="2" stroke="currentColor" strokeWidth="1.5" />
+                    <path d="M8 11V7a4 4 0 0 1 8 0v4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                  </svg>
+                  <span>Coming soon</span>
+                </div>
+              </div>
+            ) : (
             <Link
               href="/session/5/hook-writer"
               className="group card-hover card-shimmer block bg-white/[0.05] border border-white/[0.10] rounded-2xl p-8"
@@ -376,6 +417,7 @@ export default async function SessionIndexPage({ params }: Props) {
                 </svg>
               </div>
             </Link>
+            )}
           </Reveal>
         )}
 
