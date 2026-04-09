@@ -706,6 +706,37 @@ export default function HookWriterPage() {
           </h2>
         </div>
 
+        {/* Intro: what a hook is */}
+        <div className="mb-10 space-y-6">
+          <p className="text-base leading-relaxed" style={{ color: 'rgba(252,244,235,0.7)' }}>
+            A hook is the first thing someone hears or reads. On Instagram Reels, that means the first 1 to 3 seconds of audio or on-screen text. That is it. The hook does not sell anything. It does not explain anything. Its only job is to stop the scroll long enough for the rest of your content to do its work.
+          </p>
+          <p className="text-base leading-relaxed" style={{ color: 'rgba(252,244,235,0.7)' }}>
+            You need one every time you post. Not just for promotional content. Every reel. Without a hook, Instagram shows your content to a small test group, most of them scroll past, and the algorithm decides the video is not worth distributing. The hook is the signal the algorithm looks for.
+          </p>
+
+          {/* Stat callout */}
+          <div className="rounded-2xl p-6 flex gap-6 items-start" style={{ background: 'rgba(124,105,199,0.08)', border: '1px solid rgba(124,105,199,0.20)' }}>
+            <div className="shrink-0">
+              <p className="text-5xl font-extrabold leading-none" style={{ color: '#9D8FE0' }}>3x</p>
+            </div>
+            <p className="text-base leading-relaxed pt-1" style={{ color: 'rgba(252,244,235,0.65)' }}>
+              Reels that hold viewer attention past the 3-second mark are 3 times more likely to be shared and reach new audiences, according to Meta's internal research. Miss those first three seconds and most of the video never gets seen.
+            </p>
+          </div>
+
+          {/* Quote */}
+          <blockquote className="pl-5 py-1" style={{ borderLeft: '3px solid rgba(124,105,199,0.5)' }}>
+            <p className="text-base leading-relaxed mb-2" style={{ color: 'rgba(252,244,235,0.75)', fontStyle: 'italic' }}>
+              "On average, five times as many people read the headline as read the body copy. When you have written your headline, you have spent eighty cents out of your dollar."
+            </p>
+            <p className="text-sm font-semibold" style={{ color: 'rgba(252,244,235,0.4)' }}>David Ogilvy</p>
+          </blockquote>
+          <p className="text-sm leading-relaxed" style={{ color: 'rgba(252,244,235,0.45)' }}>
+            Ogilvy wrote that about print ads in 1963. The ratio is worse on social. The hook is not a nice-to-have — it is the difference between content that gets seen and content that disappears.
+          </p>
+        </div>
+
         <div className="space-y-5">
 
           {/* 1. Curiosity Gap */}
