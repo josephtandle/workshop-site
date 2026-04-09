@@ -660,7 +660,7 @@ export default function HookWriterPage() {
 
       {/* Understanding Hooks — educational section */}
       <div className="mb-14">
-        <h2 className="text-2xl font-bold mb-8" style={{ color: 'rgba(252,244,235,0.9)' }}>
+        <h2 className="gradient-text text-3xl md:text-4xl font-extrabold mb-8">
           Understanding Hooks
         </h2>
 
@@ -759,8 +759,8 @@ export default function HookWriterPage() {
 
       {/* Name picker */}
       <div className="mb-10">
-        <h2 className="text-2xl font-bold mb-6" style={{ color: 'rgba(252,244,235,0.9)' }}>
-          Who are you?
+        <h2 className="gradient-text text-3xl md:text-4xl font-extrabold mb-6">
+          Who Are You? Click your name.
         </h2>
         <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-4">
           {PARTICIPANTS.map(p => (
