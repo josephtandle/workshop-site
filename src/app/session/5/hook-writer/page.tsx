@@ -147,9 +147,9 @@ const PARTICIPANTS: Participant[] = [
     slug: 'aaqib',
     displayName: 'Aaqib',
     photo: '/mastermind-participants/aaiqb-hasnain.jpg',
-    teaches: 'slow fashion rooted in cultural heritage and ethical craftsmanship — limited edition collections made with local artisans in Bali and beyond',
+    teaches: 'slow fashion rooted in cultural heritage and ethical craftsmanship. Limited edition collections made with local artisans in Bali and beyond.',
     helps: 'people who want to wear clothing that connects to living culture, not mass production',
-    casual: "I'm a Dutch entrepreneur with roots across South Asia who traded seven years at Google for building something with soul — a slow fashion brand called HAYAQI that I run from Bali",
+    casual: "I'm a Dutch entrepreneur with roots across South Asia who traded seven years at Google for building something with soul. I run a slow fashion brand called HAYAQI from Bali.",
     mistake: 'treating content as a volume game instead of a cultural story',
     belief: 'more content leads to more sales',
     language: '"I want to wear something that actually means something." "I\'m tired of buying things that fall apart or were made by exploiting someone." "I want to support real artisans but I don\'t know where to find them." "I want fashion that reflects who I actually am, not just what\'s trending."',
@@ -185,7 +185,7 @@ const PARTICIPANTS: Participant[] = [
     photo: '/mastermind-participants/alla-demutska.jpg',
     teaches: 'trauma recovery and emotional regulation through embodied, evidence-based therapy that integrates somatic and mindfulness approaches',
     helps: 'women in the second half of life who are ready to reconnect with their vitality, voice, and self-authorship',
-    casual: "I'm a clinical psychologist with a doctorate from Monash and 15 years working with trauma across Singapore, Hong Kong, and Australia — I believe healing isn't about fixing what's broken, it's about expanding your capacity to be fully human",
+    casual: "I'm a clinical psychologist with a doctorate from Monash and 15 years working with trauma across Singapore, Hong Kong, and Australia. I believe healing is not about fixing what's broken. It's about expanding your capacity to be fully human.",
     mistake: 'treating healing as a practical problem to solve rather than a relational and somatic process',
     belief: 'therapy is about fixing what is broken',
     language: '"I\'ve tried therapy before and it didn\'t really work." "I keep repeating the same patterns no matter what I do." "I know what my issues are, I just can\'t seem to change." "I feel like something is broken in me." "I want to feel alive again, not just functional."',
@@ -194,14 +194,14 @@ const PARTICIPANTS: Participant[] = [
     voiceWords: 'measured, warm, evidence-aware',
     neverSay: '"hustle," "high-vibe," "quantum healing," "manifest," "toxic positivity," "just heal yourself"',
     voiceSentence: 'Healing is not about fixing what is broken; it is about expanding our capacity to be fully human.',
-    topic: 'I finally launched my website and started publishing — and I noticed something immediately',
+    topic: 'I finally launched my website and started publishing. I noticed something immediately.',
     details: 'Website fully migrated to Vercel with a custom domain. Publishing blog posts and photos regularly. Something shifted when the work became visible. Content-to-client pipeline is what I am building next.',
   },
   {
     slug: 'daniel',
     displayName: 'Daniel',
     photo: '/mastermind-participants/daniel-holloway.png',
-    teaches: 'AI-powered sales and marketing systems for agencies — results guaranteed or their money back',
+    teaches: 'AI-powered sales and marketing systems for agencies. Results guaranteed or their money back.',
     helps: 'agency owners who are doing personalized outreach manually and want a system that does it at scale with guaranteed results',
     casual: "I've built a team of 11, hit $145K revenue months, lost it all, rebuilt from Bali, and now I use AI to do what I couldn't do manually",
     mistake: 'doing personalized outreach manually when AI can handle it at scale',
@@ -212,14 +212,14 @@ const PARTICIPANTS: Participant[] = [
     voiceWords: 'direct, candid, results-focused',
     neverSay: '"authentic," "showing up," "being seen," "vulnerable," "on a journey"',
     voiceSentence: "I\'ve built a team of 11, hit $145K revenue months, lost it all, rebuilt from Bali, and now I use AI to do what I couldn\'t do manually.",
-    topic: 'I cracked personalized email outreach at scale using AI — and landed a client the same week',
+    topic: 'I cracked personalized email outreach at scale using AI. Landed a new client the same week.',
     details: 'New client signed plus two strong pipeline opportunities. The system handles personalization across millions of variable combinations. Results guaranteed model now proven.',
   },
   {
     slug: 'jasmine',
     displayName: 'Jasmine',
     photo: '/mastermind-participants/jasmine--oh.jpg',
-    teaches: 'transformative experiences through music, movement, and expanded states of consciousness — including DJ training for the next generation of ceremony facilitators',
+    teaches: 'transformative experiences through music, movement, and expanded states of consciousness, including DJ training for the next generation of ceremony facilitators',
     helps: 'aspiring DJs and facilitators ready to guide transformative experiences through sound and embodiment',
     casual: "I'm a DJ, dance facilitator, and psychedelic therapist who creates spaces where people come home to themselves through sound and movement",
     mistake: 'posting content without a system to capture and nurture the audience they are building',
@@ -231,7 +231,7 @@ const PARTICIPANTS: Participant[] = [
     neverSay: '"professional," "corporate," "structured plan," "content strategy," "the algorithm"',
     voiceSentence: 'I create spaces where people can reconnect with themselves, awaken their inner vitality, and access profound healing and insight.',
     topic: 'I started labeling every photo on my site for SEO and the results surprised me',
-    details: 'Using AI to label all photos for Google search visibility. Targeting "female DJ" and related search terms. Organic discovery is the goal — building findability before launching the DJ training program.',
+    details: 'Using AI to label all photos for Google search visibility. Targeting "female DJ" and related search terms. Building findability before launching the DJ training program.',
   },
   {
     slug: 'jenny',
@@ -240,7 +240,7 @@ const PARTICIPANTS: Participant[] = [
     teaches: "feminine healing arts, Tao Tantric practices, ritual work, and women's facilitation training through retreats, online courses, and the Institut für Feminine Heilkunst",
     helps: 'women ready to deepen their personal healing and learn to guide others through feminine embodiment and sacred practice',
     casual: "I lead international retreats, teacher trainings, and a German online school for women who want to embody their feminine wisdom and share it with others",
-    mistake: 'separating the spiritual path from the professional one — treating them as if only one can be real',
+    mistake: 'separating the spiritual path from the professional one, treating them as if only one can be real',
     belief: 'deep healing work and a thriving business cannot coexist',
     language: '"I feel disconnected from my body and my feminine nature." "I want to go deeper but I don\'t know which tradition to trust." "I want to guide other women but I don\'t feel qualified yet." "I\'ve been doing the personal work for years and now I want to share it."',
     credibility: '8 years of study in cultural anthropology, energy medicine, and healing arts, founder of Institut fur Feminine Heilkunst, leading retreats across Greece, Portugal, India, Egypt, Germany, Italy, Mexico, and Bali',
@@ -248,7 +248,7 @@ const PARTICIPANTS: Participant[] = [
     voiceWords: 'feminine, ritualistic, empowering',
     neverSay: '"hustle," "grind," "productivity hack," "growth strategy," "scale fast"',
     voiceSentence: 'I lead international retreats and trainings for women who want to embody their feminine wisdom and share it with others.',
-    topic: 'The moment I stopped separating my spiritual path from my business — everything changed',
+    topic: 'The moment I stopped separating my spiritual path from my business. Everything changed.',
     details: 'Running the Institut fur Feminine Heilkunst alongside international retreats. Entry point at EUR 47, year-long certification at EUR 399 per month. The integration of sacred practice and business is the whole point.',
   },
   {
@@ -266,14 +266,14 @@ const PARTICIPANTS: Participant[] = [
     voiceWords: 'direct, experienced, warm',
     neverSay: '"hustle," "crush it," "grind," "game-changer," "unlock your potential," "level up," "high-vibe," "quantum," "manifest," "10x your business"',
     voiceSentence: "I've built 22 businesses, and the one thing none of them came with was a manual for how to stop being the most important part of them.",
-    topic: 'I taught 16 business owners to use AI this week — and the ones who thought they were "not technical" went the furthest',
+    topic: 'I taught 16 business owners to use AI this week. The ones who thought they were "not technical" went the furthest.',
     details: 'Mastermind HQ Session 5. Coaches, healers, consultants. None of them coders. All of them now using Claude to run their business. The pattern of who adapts fastest and why.',
   },
   {
     slug: 'johanna',
     displayName: 'Johanna',
     photo: '/mastermind-participants/johanna-bieber.png',
-    teaches: 'embodied self-inquiry through somatic and trauma-informed practices — helping people access deeper layers of their inner experience',
+    teaches: 'embodied self-inquiry through somatic and trauma-informed practices, helping people access deeper layers of their inner experience',
     helps: 'people navigating the gap between who they are and how they relate, especially those juggling structure-heavy careers while doing deep inner work',
     casual: "I'm a demand planner turned embodiment coach, and I bring the same structured thinking I used in corporate life to helping people understand their nervous systems and relationship patterns",
     mistake: 'trying to shift relationship patterns through mindset work alone, without addressing what the body is holding',
@@ -284,7 +284,7 @@ const PARTICIPANTS: Participant[] = [
     voiceWords: 'structured, introspective, bridging',
     neverSay: '"just be yourself," "follow your heart," "you already have all the answers," "high-vibe"',
     voiceSentence: 'What makes my approach unique is that I naturally bridge structured business thinking with deep inner work and embodiment.',
-    topic: 'I built two complete coaching offers in one afternoon using Claude — one for women, one for men',
+    topic: 'I built two complete coaching offers in one afternoon using Claude. One for women, one for men.',
     details: 'Used deep research mode in Claude with access to all past client work. Scientific frameworks pulled in minutes. Produced two fully structured offers with positioning, session flow, and pricing. First time having a real foundation.',
   },
   {
@@ -338,7 +338,7 @@ const PARTICIPANTS: Participant[] = [
     voiceWords: 'warm, feminine, energetic',
     neverSay: '"hustle," "toxic," "healing journey," "shadow work," "trauma dump"',
     voiceSentence: 'I host a daily dance and embodiment community for women who are ready to stop dimming their light.',
-    topic: 'I renamed my program in 5 minutes using AI — and discovered something about how attached I was to the wrong name',
+    topic: 'I renamed my program in 5 minutes using AI. Discovered something about how attached I was to the wrong name.',
     details: 'Rebranded HypnoDance to Welcome Home Dance instantly using Claude. The new name landed immediately with the community. Website is coming together. Next step is driving traffic rather than refining the container.',
   },
   {
@@ -349,23 +349,23 @@ const PARTICIPANTS: Participant[] = [
     helps: 'artists who want to access their creativity as a sacred, embodied process rather than a grind',
     casual: "I'm a wilderness therapy and yoga-trained facilitator who guides artists into their bodies so they can stop struggling and start creating from a full well",
     mistake: 'treating creative blocks as a mindset problem rather than a body problem',
-    belief: 'creativity comes from inspiration — and when inspiration is gone, you just wait',
+    belief: 'creativity comes from inspiration. When inspiration is gone, you just wait.',
     language: '"I feel creatively suffocated." "I used to make art all the time and now I can\'t start anything." "I sit down to create and my mind goes blank." "I feel disconnected from the work that used to light me up." "I don\'t know if I\'m even an artist anymore."',
     credibility: 'Wilderness therapy and yoga-trained facilitator, founder of Visionseed, creator of the Visionseed Oracle Deck and Creative Cohort',
     recentWin: 'Brand new photo shoot and fully refreshed digital presence -- add cohort enrollment or oracle deck sales number here',
     voiceWords: 'lyrical, embodied, grounded',
     neverSay: '"content," "algorithm," "hustle," "productivity," "creative output"',
     voiceSentence: 'My work lives at the intersection of art, somatics, spirituality, and healing.',
-    topic: 'I got a full rebrand and new photos this week — and it taught me something about creative identity I did not expect',
+    topic: 'I got a full rebrand and new photos this week. It taught me something about creative identity I did not expect.',
     details: 'Brand new photo shoot. Website fully refreshed. Feels like a new person digitally. Visionseed Oracle Deck available ($44 retail, $6 production cost). Creative Cohort launching soon.',
   },
   {
     slug: 'ronnie',
     displayName: 'Ronnie',
     photo: '/mastermind-participants/ronnie-ansara.JPG',
-    teaches: 'hospitality and venue experiences through Electric Avenue Bali — a group of venues including Morabito Art Villa, Desa Eko, Tabu Supper Club, and Ours Restaurant',
-    helps: 'people who want to be in the right room in Bali, with the right people, at the right time — and businesses who want to build their brand through unforgettable experiences',
-    casual: "I'm the Managing Partner of Electric Avenue Bali — we run some of the most iconic venues on the island, and my job is making sure the people inside them have the time of their lives",
+    teaches: 'hospitality and venue experiences through Electric Avenue Bali, a group of venues including Morabito Art Villa, Desa Eko, Tabu Supper Club, and Ours Restaurant',
+    helps: 'people who want to be in the right room in Bali, with the right people, at the right time. Also businesses who want to build their brand through unforgettable experiences.',
+    casual: "I'm the Managing Partner of Electric Avenue Bali. We run some of the most iconic venues on the island, and my job is making sure the people inside them have the time of their lives.",
     mistake: 'building a hospitality or venue business on reputation alone with no way for the right people to find it online',
     belief: 'great experiences speak for themselves and do not need to be marketed',
     language: '"I want something truly extraordinary but I don\'t know who to trust to plan it." "Every time I try to do it myself, something falls flat." "I want an experience, not just a trip." "I need someone who actually knows the right people."',
@@ -374,7 +374,7 @@ const PARTICIPANTS: Participant[] = [
     voiceWords: 'assured, warm, experiential',
     neverSay: '"cheap," "budget," "deal," "affordable," "value for money"',
     voiceSentence: "I\'m the Managing Partner of Electric Avenue Bali -- we run some of the most iconic venues on the island, and my job is making sure the people inside them have the time of their lives.",
-    topic: '3 years in business, every client from word of mouth — here is what I am finally changing',
+    topic: '3 years in business, every client from word of mouth. Here is what I am finally changing.',
     details: 'Electric Avenue Bali operates Morabito Art Villa, Desa Eko, Tabu Supper Club, Ours Restaurant, and live music venues. Recently built first website and started social media. Strangers cannot find us yet. That is the gap.',
   },
   {
@@ -410,7 +410,7 @@ const PARTICIPANTS: Participant[] = [
     voiceWords: 'expansive, authoritative, luminous',
     neverSay: '"mindset hack," "manifest," "hustle," "strategy session," "quick fix"',
     voiceSentence: "I guide people through the kind of transformation that isn\'t about adding more strategies, it\'s about becoming more of what was always there.",
-    topic: 'I finally finished my lead magnet after years of putting it off — here is what made it happen',
+    topic: 'I finally finished my lead magnet after years of putting it off. Here is what made it happen.',
     details: 'Lead magnet completed and connected to GoHighLevel. Chrome extension activated. Content funnels now in progress. Over two decades of work going into the first real automated entry point.',
   },
   {
@@ -428,7 +428,7 @@ const PARTICIPANTS: Participant[] = [
     voiceWords: 'devotional, slow, sensory',
     neverSay: '"trendy," "influencer," "content strategy," "fast," "drop," "collab"',
     voiceSentence: 'Everything I make and offer is designed to invite women back into presence, devotion, and the temple of their own body.',
-    topic: 'Why I opened a physical space in Ubud instead of staying online — and what it changed',
+    topic: 'Why I opened a physical space in Ubud instead of staying online, and what it changed.',
     details: 'TI YA RA boutique sanctuary open in Ubud. Also established presence in Dubai. Kimonos from $220, pants from $144. Private feminine mentorships and tea ceremonies available. The physical space is part of the offering, not separate from it.',
   },
 ]
@@ -699,10 +699,12 @@ export default function HookWriterPage() {
       </div>
 
       {/* Understanding Hooks — educational section */}
-      <div className="mb-14">
-        <h2 className="gradient-text text-3xl md:text-4xl font-extrabold mt-4 mb-14">
-          Understanding Hooks
-        </h2>
+      <div className="mb-14 pt-10">
+        <div className="mb-20">
+          <h2 className="gradient-text text-3xl md:text-4xl font-extrabold">
+            Understanding Hooks
+          </h2>
+        </div>
 
         <div className="space-y-5">
 
@@ -798,10 +800,12 @@ export default function HookWriterPage() {
       </div>
 
       {/* Name picker */}
-      <div className="mb-10">
-        <h2 className="gradient-text text-3xl md:text-4xl font-extrabold mt-4 mb-14">
-          Who Are You? Click your name.
-        </h2>
+      <div className="mb-10 pt-10">
+        <div className="mb-20">
+          <h2 className="gradient-text text-3xl md:text-4xl font-extrabold">
+            Who Are You? Click your name.
+          </h2>
+        </div>
         <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-4">
           {PARTICIPANTS.map(p => (
             <NameCard
@@ -828,7 +832,7 @@ export default function HookWriterPage() {
             </div>
             <Field label="What I teach, sell, or do" value={form.teaches} onChange={v => updateField('teaches', v)} />
             <Field label="Who I help" value={form.helps} onChange={v => updateField('helps', v)} />
-            <Field label="How I describe myself in conversation" value={form.casual} onChange={v => updateField('casual', v)} placeholder="First person, casual — like you'd say it to someone at a dinner party" />
+            <Field label="How I describe myself in conversation" value={form.casual} onChange={v => updateField('casual', v)} placeholder="First person, casual. How would you say it at a dinner party?" />
             <Field label="The number one mistake my audience makes" value={form.mistake} onChange={v => updateField('mistake', v)} />
             <Field label="The belief my audience holds that I want to shift" value={form.belief} onChange={v => updateField('belief', v)} />
           </div>
@@ -929,10 +933,10 @@ export default function HookWriterPage() {
             <div className="rounded-xl p-5 space-y-3" style={{ background: 'rgba(124,105,199,0.10)', border: '1px solid rgba(124,105,199,0.25)' }}>
               <p className="text-sm font-semibold" style={{ color: '#9D8FE0' }}>Now do this:</p>
               <ol className="space-y-2 text-sm" style={{ color: 'rgba(252,244,235,0.75)' }}>
-                <li>1. Open your terminal and type <code className="px-1.5 py-0.5 rounded text-xs font-mono" style={{ background: 'rgba(255,255,255,0.08)', color: '#9D8FE0' }}>claude</code> — or open Claude.ai in your browser</li>
+                <li>1. Open your terminal and type <code className="px-1.5 py-0.5 rounded text-xs font-mono" style={{ background: 'rgba(255,255,255,0.08)', color: '#9D8FE0' }}>claude</code>, or open Claude.ai in your browser</li>
                 <li>2. Paste everything you just copied and hit Enter</li>
                 <li>3. Wait for Claude to generate your five hooks</li>
-                <li>4. Read the two winners and the "One Thing to Notice" section — that part is yours</li>
+                <li>4. Read the two winners and the "One Thing to Notice" section. That part is yours.</li>
               </ol>
             </div>
           )}
