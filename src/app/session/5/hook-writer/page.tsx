@@ -693,7 +693,7 @@ export default function HookWriterPage() {
         <h1 className="gradient-text text-4xl md:text-5xl font-extrabold leading-tight mb-4">
           Hook Writer: Part 1
         </h1>
-        <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'rgba(252,244,235,0.6)' }}>
+        <p className="text-lg leading-relaxed" style={{ color: 'rgba(252,244,235,0.6)' }}>
           Click your name, fill in the highlighted fields, hit Copy, then paste into Claude and hit send.
         </p>
       </div>
@@ -806,7 +806,7 @@ export default function HookWriterPage() {
             Who Are You? Click your name.
           </h2>
         </div>
-        <p className="text-base leading-relaxed max-w-2xl mb-8" style={{ color: 'rgba(252,244,235,0.55)' }}>
+        <p className="text-base leading-relaxed mb-8" style={{ color: 'rgba(252,244,235,0.55)' }}>
           Before today I had my agents do some homework on you. They went through our session transcripts, pulled your website, and took their best shot at filling things in. Some of it will be right. Some will be a bit off. That is fine. The point was to save you from starting with a blank form. Click your name, read what came back, fix anything that feels wrong, and then focus on the highlighted fields. Those are the ones that make the hooks actually sound like you.
         </p>
         <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-4">
