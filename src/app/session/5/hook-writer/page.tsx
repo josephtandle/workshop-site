@@ -628,6 +628,9 @@ export default function HookWriterPage() {
   const [selected, setSelected] = useState<string | null>(null)
   const [form, setForm] = useState<FormState>(blankForm())
   const [copied, setCopied] = useState(false)
+  const [promptCopied, setPromptCopied] = useState(false)
+  const [showPrompt, setShowPrompt] = useState(false)
+  const [promptText, setPromptText] = useState('')
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   // Load from localStorage or static data when participant is selected
@@ -662,15 +665,24 @@ export default function HookWriterPage() {
   }
 
   async function handleCopy(e: React.MouseEvent<HTMLButtonElement>) {
-    await navigator.clipboard.writeText(buildCopyText(form))
+    const text = buildCopyText(form)
+    await navigator.clipboard.writeText(text)
     confetti({
       particleCount: 120,
       spread: 80,
       origin: { x: e.clientX / window.innerWidth, y: e.clientY / window.innerHeight },
       colors: ['#7C69C7', '#9D8FE0', '#F5C3C6', '#FCF4EB'],
     })
+    setPromptText(text)
+    setShowPrompt(true)
     setCopied(true)
-    setTimeout(() => setCopied(false), 5000)
+    setTimeout(() => setCopied(false), 2000)
+  }
+
+  async function handlePromptCopy() {
+    await navigator.clipboard.writeText(promptText)
+    setPromptCopied(true)
+    setTimeout(() => setPromptCopied(false), 2000)
   }
 
   return (
@@ -960,18 +972,49 @@ export default function HookWriterPage() {
               color: copied ? '#9D8FE0' : '#FCF4EB',
             }}
           >
-            {copied ? 'Copied!' : 'Copy Hook Lab Prompt + My Profile'}
+            {copied ? 'Copied to clipboard!' : 'Copy Hook Lab Prompt + My Profile'}
           </button>
 
-          {copied && (
-            <div className="rounded-xl p-5 space-y-3" style={{ background: 'rgba(124,105,199,0.10)', border: '1px solid rgba(124,105,199,0.25)' }}>
-              <p className="text-sm font-semibold" style={{ color: '#9D8FE0' }}>Now do this:</p>
-              <ol className="space-y-2 text-sm" style={{ color: 'rgba(252,244,235,0.75)' }}>
-                <li>1. Open your terminal and type <code className="px-1.5 py-0.5 rounded text-xs font-mono" style={{ background: 'rgba(255,255,255,0.08)', color: '#9D8FE0' }}>claude</code>, or open Claude.ai in your browser</li>
-                <li>2. Paste everything you just copied and hit Enter</li>
-                <li>3. Wait for Claude to generate your five hooks</li>
-                <li>4. Read the two winners and the "One Thing to Notice" section. That part is yours.</li>
-              </ol>
+          {/* Prompt display — shown after first copy, stays visible */}
+          {showPrompt && (
+            <div className="space-y-4">
+
+              {/* Assembled prompt */}
+              <div className="rounded-xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.08)', borderLeft: '2px solid #7C69C7' }}>
+                <div className="flex items-center justify-between px-4 py-2" style={{ background: 'rgba(255,255,255,0.04)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+                  <span className="text-xs font-mono" style={{ color: 'rgba(252,244,235,0.4)' }}>Your Hook Lab Prompt</span>
+                  <button
+                    onClick={handlePromptCopy}
+                    className="px-3 py-1 rounded-md text-xs font-medium transition-colors"
+                    style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.10)', color: promptCopied ? '#9D8FE0' : 'rgba(252,244,235,0.6)' }}
+                  >
+                    {promptCopied ? 'Copied!' : 'Copy'}
+                  </button>
+                </div>
+                <pre className="p-4 text-xs font-mono leading-relaxed overflow-y-auto" style={{ background: '#0d0d0d', color: 'rgba(252,244,235,0.7)', maxHeight: '240px', whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
+                  {promptText}
+                </pre>
+              </div>
+
+              {/* Terminal instructions — always visible once prompt is shown */}
+              <div className="rounded-xl p-5 space-y-4" style={{ background: 'rgba(124,105,199,0.08)', border: '1px solid rgba(124,105,199,0.20)' }}>
+                <p className="text-sm font-semibold" style={{ color: '#9D8FE0' }}>Now paste it into Claude:</p>
+                <ol className="space-y-3 text-sm" style={{ color: 'rgba(252,244,235,0.75)' }}>
+                  <li>
+                    <span className="block mb-2">1. Open your terminal. On Mac, press <code className="px-1.5 py-0.5 rounded text-xs font-mono" style={{ background: 'rgba(255,255,255,0.08)', color: '#9D8FE0' }}>Cmd + Space</code>, type <code className="px-1.5 py-0.5 rounded text-xs font-mono" style={{ background: 'rgba(255,255,255,0.08)', color: '#9D8FE0' }}>Terminal</code>, hit Enter.</span>
+                    <div className="rounded-lg overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.08)', borderLeft: '2px solid #7C69C7' }}>
+                      <div className="flex items-center justify-between px-3 py-1.5" style={{ background: 'rgba(255,255,255,0.04)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+                        <span className="text-xs font-mono" style={{ color: 'rgba(252,244,235,0.35)' }}>Terminal</span>
+                      </div>
+                      <pre className="px-4 py-3 text-sm font-mono" style={{ background: '#0d0d0d', color: '#9D8FE0' }}>claude --dangerously-skip-permissions</pre>
+                    </div>
+                  </li>
+                  <li>2. Paste what you copied above and hit Enter.</li>
+                  <li>3. Wait for Claude to generate your five hooks.</li>
+                  <li>4. Read the two winners and the "One Thing to Notice" section. That part is yours.</li>
+                </ol>
+              </div>
+
             </div>
           )}
 
