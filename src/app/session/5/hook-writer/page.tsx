@@ -560,6 +560,105 @@ export default function HookWriterPage() {
         </p>
       </div>
 
+      {/* Understanding Hooks — educational section */}
+      <div className="mb-14">
+        <h2 className="text-2xl font-bold mb-8" style={{ color: 'rgba(252,244,235,0.9)' }}>
+          Understanding Hooks
+        </h2>
+
+        <div className="space-y-5">
+
+          {/* 1. Curiosity Gap */}
+          <div className="rounded-2xl p-6" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
+            <p className="text-lg font-bold mb-3" style={{ color: 'rgba(252,244,235,0.9)' }}>1. The Curiosity Gap</p>
+            <p className="text-sm leading-relaxed mb-2" style={{ color: 'rgba(252,244,235,0.7)' }}>
+              You open with a specific, intriguing claim and then deliberately withhold the answer. The viewer has to keep watching to close the gap you just opened.
+            </p>
+            <p className="text-xs leading-relaxed mb-4" style={{ color: 'rgba(252,244,235,0.45)', fontStyle: 'italic' }}>
+              Psychology: The brain experiences an open information gap as mild discomfort and is driven to resolve it. Specific mystery works. Vague mystery does not.
+            </p>
+            <div className="pl-4 space-y-1.5" style={{ borderLeft: '2px solid rgba(124,105,199,0.35)' }}>
+              <p className="text-sm" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"The one question I stopped asking after 200 clients."</p>
+              <p className="text-sm" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"There are three words I never use in a sales call."</p>
+              <p className="text-sm" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"What my most successful client did differently in week one."</p>
+            </div>
+          </div>
+
+          {/* 2. Pattern Interrupt */}
+          <div className="rounded-2xl p-6" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
+            <p className="text-lg font-bold mb-3" style={{ color: 'rgba(252,244,235,0.9)' }}>2. The Pattern Interrupt</p>
+            <p className="text-sm leading-relaxed mb-2" style={{ color: 'rgba(252,244,235,0.7)' }}>
+              You open with something that contradicts what the viewer expected to see. The brain snaps out of scroll mode and pays attention because something did not fit.
+            </p>
+            <p className="text-xs leading-relaxed mb-4" style={{ color: 'rgba(252,244,235,0.45)', fontStyle: 'italic' }}>
+              Psychology: The reticular activating system filters out predictable content automatically. A genuine contradiction forces the brain into alert mode before the viewer has consciously decided to watch.
+            </p>
+            <div className="pl-4 space-y-1.5" style={{ borderLeft: '2px solid rgba(124,105,199,0.35)' }}>
+              <p className="text-sm" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"Stop trying to find your niche. That is the wrong question."</p>
+              <p className="text-sm" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"The best session I ever ran, I cried the whole way through."</p>
+              <p className="text-sm" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"I charged less and signed more clients that same month."</p>
+            </div>
+          </div>
+
+          {/* 3. Loss Aversion */}
+          <div className="rounded-2xl p-6" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
+            <p className="text-lg font-bold mb-3" style={{ color: 'rgba(252,244,235,0.9)' }}>3. Loss Aversion</p>
+            <p className="text-sm leading-relaxed mb-2" style={{ color: 'rgba(252,244,235,0.7)' }}>
+              You name something the viewer is already losing, getting wrong, or missing. That lands harder than telling them what they could gain, because loss feels more urgent than opportunity.
+            </p>
+            <p className="text-xs leading-relaxed mb-4" style={{ color: 'rgba(252,244,235,0.45)', fontStyle: 'italic' }}>
+              Psychology: Kahneman's research shows humans weight potential losses more heavily than equivalent gains. A concrete, personally relevant loss activates attention faster than any promise of reward.
+            </p>
+            <div className="pl-4 space-y-1.5" style={{ borderLeft: '2px solid rgba(124,105,199,0.35)' }}>
+              <p className="text-sm" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"You are losing clients after session one and you do not know why."</p>
+              <p className="text-sm" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"Every week without a system is a week you are paying yourself last."</p>
+              <p className="text-sm" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"The content you posted last year is still working against you."</p>
+            </div>
+          </div>
+
+          {/* 4. Belief Reversal */}
+          <div className="rounded-2xl p-6" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
+            <p className="text-lg font-bold mb-3" style={{ color: 'rgba(252,244,235,0.9)' }}>4. The Belief Reversal</p>
+            <p className="text-sm leading-relaxed mb-2" style={{ color: 'rgba(252,244,235,0.7)' }}>
+              You name a belief you used to hold, then tell them you were wrong. Because you actually lived it, the viewer trusts what comes next, and they start wondering if they are also wrong.
+            </p>
+            <p className="text-xs leading-relaxed mb-4" style={{ color: 'rgba(252,244,235,0.45)', fontStyle: 'italic' }}>
+              Psychology: Challenging an installed belief signals lived experience, not theory. It triggers the question in the viewer's mind: "Am I also wrong about this?" That question is almost impossible to scroll past.
+            </p>
+            <div className="pl-4 space-y-1.5" style={{ borderLeft: '2px solid rgba(124,105,199,0.35)' }}>
+              <p className="text-sm" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"I used to think consistency was the answer. I was wrong."</p>
+              <p className="text-sm" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"I spent three years helping people heal the wrong thing entirely."</p>
+              <p className="text-sm" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"I believed niching down would shrink my audience. The opposite happened."</p>
+            </div>
+          </div>
+
+          {/* 5. Direct Address */}
+          <div className="rounded-2xl p-6" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
+            <p className="text-lg font-bold mb-3" style={{ color: 'rgba(252,244,235,0.9)' }}>5. Direct Address</p>
+            <p className="text-sm leading-relaxed mb-2" style={{ color: 'rgba(252,244,235,0.7)' }}>
+              You name the exact person you are talking to, describing their specific situation so precisely that they feel the hook was written for them alone. The more specific the description, the stronger the pull.
+            </p>
+            <p className="text-xs leading-relaxed mb-4" style={{ color: 'rgba(252,244,235,0.45)', fontStyle: 'italic' }}>
+              Psychology: The brain elevates content that directly references the self above content that does not. Specificity amplifies this effect. "If you're a coach" is far weaker than naming the exact situation the person is already living.
+            </p>
+            <div className="pl-4 space-y-1.5" style={{ borderLeft: '2px solid rgba(124,105,199,0.35)' }}>
+              <p className="text-sm" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"If you are a healer doing everything manually, this is for you."</p>
+              <p className="text-sm" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"This is for the coach who is fully booked and still not making enough."</p>
+              <p className="text-sm" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"If you have been posting for a year and your audience is not growing, watch this."</p>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Bridge heading */}
+        <h2 className="text-2xl font-bold mt-12 mb-4" style={{ color: 'rgba(252,244,235,0.9)' }}>
+          Building Your Hook Writer
+        </h2>
+        <p className="text-base leading-relaxed max-w-2xl" style={{ color: 'rgba(252,244,235,0.65)' }}>
+          Now that you know the five types, you are going to build a profile that tells Claude everything it needs to write hooks in your voice. Click your name below to load your pre-filled profile, then fill in the highlighted fields before hitting Copy.
+        </p>
+      </div>
+
       {/* Name picker */}
       <div className="mb-10">
         <h2 className="text-2xl font-bold mb-6" style={{ color: 'rgba(252,244,235,0.9)' }}>
