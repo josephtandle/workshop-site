@@ -150,6 +150,12 @@ const PARTICIPANTS: Participant[] = [
     casual: "I'm a Dutch entrepreneur with roots across South Asia who traded seven years at Google for building something with soul — a slow fashion brand called HAYAQI that I run from Bali",
     mistake: 'treating content as a volume game instead of a cultural story',
     belief: 'more content leads to more sales',
+    language: '"I want to wear something that actually means something." "I\'m tired of buying things that fall apart or were made by exploiting someone." "I want to support real artisans but I don\'t know where to find them." "I want fashion that reflects who I actually am, not just what\'s trending."',
+    credibility: '7 years at Google leading marketing strategy for an entire country, now building HAYAQI from Bali with local artisan communities',
+    recentWin: 'Opened our first physical store in Ubud -- add a specific sales or foot traffic number here',
+    voiceWords: 'thoughtful, cross-cultural, precise',
+    neverSay: '"fast fashion," "drop culture," "influencer collab," "mass market," "affordable luxury"',
+    voiceSentence: 'I am constantly looking to integrate Western efficiency with Eastern wisdom.',
   },
   {
     slug: 'alex',
@@ -160,6 +166,12 @@ const PARTICIPANTS: Participant[] = [
     casual: "I'm a scientist and coach living adventurously around the world, figuring out how to make a real difference at scale",
     mistake: 'assuming that expertise alone is enough to build connection and community',
     belief: 'if your work is good enough, the right people will find you',
+    language: '"I have all this knowledge but I don\'t know how to reach people." "I want my work to matter beyond my immediate circle." "I feel isolated doing good work in a vacuum." "I want real community, not just colleagues."',
+    credibility: 'Researcher at Kyushu University, 7+ years living and working across multiple countries, trained Rapid Transformational Therapist',
+    recentWin: 'Organized a cross-disciplinary co-working jam in Bali -- add a specific attendance or outcome number here',
+    voiceWords: 'direct, intellectual, adventurous',
+    neverSay: '"woo-woo," "manifest," "hustle," "crush it," "quantum leap"',
+    voiceSentence: "I\'m a scientist and coach living adventurously around the world, figuring out how to make a real difference at scale.",
   },
   {
     slug: 'alla',
@@ -170,6 +182,12 @@ const PARTICIPANTS: Participant[] = [
     casual: "I'm a clinical psychologist with a doctorate from Monash and 15 years working with trauma across Singapore, Hong Kong, and Australia — I believe healing isn't about fixing what's broken, it's about expanding your capacity to be fully human",
     mistake: 'treating healing as a practical problem to solve rather than a relational and somatic process',
     belief: 'therapy is about fixing what is broken',
+    language: '"I\'ve tried therapy before and it didn\'t really work." "I keep repeating the same patterns no matter what I do." "I know what my issues are, I just can\'t seem to change." "I feel like something is broken in me." "I want to feel alive again, not just functional."',
+    credibility: 'Clinical psychologist with a Doctorate from Monash University and 15 years working with trauma across Singapore, Hong Kong, and Australia',
+    recentWin: 'Client transformation result to add here with a specific number',
+    voiceWords: 'measured, warm, evidence-aware',
+    neverSay: '"hustle," "high-vibe," "quantum healing," "manifest," "toxic positivity," "just heal yourself"',
+    voiceSentence: 'Healing is not about fixing what is broken; it is about expanding our capacity to be fully human.',
   },
   {
     slug: 'daniel',
@@ -180,6 +198,12 @@ const PARTICIPANTS: Participant[] = [
     casual: "I've built a team of 11, hit $145K revenue months, lost it all, rebuilt from Bali, and now I use AI to do what I couldn't do manually",
     mistake: 'doing personalized outreach manually when AI can handle it at scale',
     belief: 'growth requires a bigger team or more hours',
+    language: '"My outreach isn\'t converting." "I\'m spending all day sending emails and barely getting replies." "I know personalization works but I can\'t scale it." "I need a repeatable system, not just hustle."',
+    credibility: 'Built a team of 11 and hit $145K revenue months, rebuilt from zero, now offers results-guaranteed AI sales systems',
+    recentWin: 'Cracked personalized AI email outreach system and landed a new client plus two promising opportunities in one week',
+    voiceWords: 'direct, candid, results-focused',
+    neverSay: '"authentic," "showing up," "being seen," "vulnerable," "on a journey"',
+    voiceSentence: "I\'ve built a team of 11, hit $145K revenue months, lost it all, rebuilt from Bali, and now I use AI to do what I couldn\'t do manually.",
   },
   {
     slug: 'jasmine',
@@ -190,6 +214,12 @@ const PARTICIPANTS: Participant[] = [
     casual: "I'm a DJ, dance facilitator, and psychedelic therapist who creates spaces where people come home to themselves through sound and movement",
     mistake: 'posting content without a system to capture and nurture the audience they are building',
     belief: 'going viral is enough to build a business',
+    language: '"I want to DJ but I don\'t know where to start." "I feel called to lead ceremony but I\'m not trained." "I want to create experiences that actually transform people." "How do I make music that moves people on a deeper level?"',
+    credibility: 'Resident DJ aboard the Ritz-Carlton Yacht Collection, Music Director at Nihi Sumba, 6 years facilitating conscious events and ceremony globally',
+    recentWin: 'Booking inquiry result to add here with a specific number',
+    voiceWords: 'fluid, embodied, expansive',
+    neverSay: '"professional," "corporate," "structured plan," "content strategy," "the algorithm"',
+    voiceSentence: 'I create spaces where people can reconnect with themselves, awaken their inner vitality, and access profound healing and insight.',
   },
   {
     slug: 'jenny',
@@ -200,6 +230,12 @@ const PARTICIPANTS: Participant[] = [
     casual: "I lead international retreats, teacher trainings, and a German online school for women who want to embody their feminine wisdom and share it with others",
     mistake: 'separating the spiritual path from the professional one — treating them as if only one can be real',
     belief: 'deep healing work and a thriving business cannot coexist',
+    language: '"I feel disconnected from my body and my feminine nature." "I want to go deeper but I don\'t know which tradition to trust." "I want to guide other women but I don\'t feel qualified yet." "I\'ve been doing the personal work for years and now I want to share it."',
+    credibility: '8 years of study in cultural anthropology, energy medicine, and healing arts, founder of Institut fur Feminine Heilkunst, leading retreats across Greece, Portugal, India, Egypt, Germany, Italy, Mexico, and Bali',
+    recentWin: 'New enrollment in 1-year training -- add a specific student result or cohort number here',
+    voiceWords: 'feminine, ritualistic, empowering',
+    neverSay: '"hustle," "grind," "productivity hack," "growth strategy," "scale fast"',
+    voiceSentence: 'I lead international retreats and trainings for women who want to embody their feminine wisdom and share it with others.',
   },
   {
     slug: 'joe',
@@ -226,6 +262,12 @@ const PARTICIPANTS: Participant[] = [
     casual: "I'm a demand planner turned embodiment coach, and I bring the same structured thinking I used in corporate life to helping people understand their nervous systems and relationship patterns",
     mistake: 'trying to shift relationship patterns through mindset work alone, without addressing what the body is holding',
     belief: 'mindset work is enough to change how we relate',
+    language: '"I know what I need to change but I can\'t seem to actually change it." "My relationships keep following the same pattern." "I\'ve done all the therapy and journaling but nothing fully clicks." "I feel disconnected from my body and I don\'t know why."',
+    credibility: 'Over a decade in corporate supply chain and operations, now a somatic and trauma-informed coach who bridges structured thinking with deep embodiment work',
+    recentWin: 'Built two complete coaching offers in a single deep research session -- client transformation result to add with a specific number',
+    voiceWords: 'structured, introspective, bridging',
+    neverSay: '"just be yourself," "follow your heart," "you already have all the answers," "high-vibe"',
+    voiceSentence: 'What makes my approach unique is that I naturally bridge structured business thinking with deep inner work and embodiment.',
   },
   {
     slug: 'marina',
@@ -236,6 +278,12 @@ const PARTICIPANTS: Participant[] = [
     casual: "I'm a connector and event designer who creates private rooms where founders meet the right people and partnerships form naturally -- I run Ascend to Bali",
     mistake: 'networking in large groups and expecting meaningful partnerships to form',
     belief: 'you need a big audience to build real influence',
+    language: '"I\'m networking constantly and nothing is sticking." "I meet a lot of people but no real partnerships come out of it." "I need the right introductions, not just more connections." "I want to be in the room where decisions are made."',
+    credibility: 'Founder of Ascend to Bali, trusted connector in the Bali founder ecosystem with a track record of curated experiences where real partnerships form',
+    recentWin: 'Referral commission earned from a successful connection -- add the partnership outcome or dollar amount here',
+    voiceWords: 'polished, direct, warm',
+    neverSay: '"networking event," "cold outreach," "growth hacking," "leads," "funnel"',
+    voiceSentence: 'My passion is curating spaces that empower people and facilitate deep connection, designing private rooms where strategic relationships form quickly and partnerships follow naturally.',
   },
   {
     slug: 'miia',
@@ -246,6 +294,12 @@ const PARTICIPANTS: Participant[] = [
     casual: "I'm 28, I create astrology content from Bali, and I've grown from 100 to 3,000 followers by going deep rather than chasing trends",
     mistake: 'creating content without building the client journey on the back end',
     belief: 'growing a following will automatically grow a coaching business',
+    language: '"I\'ve always been drawn to astrology but I don\'t know if I can make money from it." "I read charts for friends for free but I feel weird charging." "I want to go deeper than reading memes about my sign." "How do I become a real astrologer?"',
+    credibility: 'Professional astrologer based in Bali, grew from 100 to 3,000 followers by going deep rather than chasing trends',
+    recentWin: 'Grew Instagram from 100 to 3,000 followers and launched first professional astrologer training -- add enrollment number here',
+    voiceWords: 'conversational, specific, celestial',
+    neverSay: '"manifestation," "law of attraction," "the universe has a plan," "vague cosmic signs," "star sign season"',
+    voiceSentence: "I\'ve grown from 100 to 3,000 followers by going deep rather than chasing trends.",
   },
   {
     slug: 'pinamaria',
@@ -256,6 +310,12 @@ const PARTICIPANTS: Participant[] = [
     casual: "I'm a Reiki Master and intuitive coach who hosts a daily dance and embodiment community for women who are ready to stop dimming their light",
     mistake: 'perfecting the container instead of filling it with people',
     belief: 'more polish leads to more clients',
+    language: '"I feel like I\'m meant for more but something is blocking me." "I want to step into my purpose but I keep playing small." "I give my energy to everyone else and have nothing left for myself." "I know I\'m meant to lead but I don\'t feel ready."',
+    credibility: 'Reiki Master, intuitive coach, and divine guidance practitioner helping lightworkers step into their purpose and create dream relationships',
+    recentWin: 'Community rebranded from HypnoDance to Welcome Home Dance instantly -- add a member growth or engagement number here',
+    voiceWords: 'warm, feminine, energetic',
+    neverSay: '"hustle," "toxic," "healing journey," "shadow work," "trauma dump"',
+    voiceSentence: 'I host a daily dance and embodiment community for women who are ready to stop dimming their light.',
   },
   {
     slug: 'quincee',
@@ -266,6 +326,12 @@ const PARTICIPANTS: Participant[] = [
     casual: "I'm a wilderness therapy and yoga-trained facilitator who guides artists into their bodies so they can stop struggling and start creating from a full well",
     mistake: 'treating creative blocks as a mindset problem rather than a body problem',
     belief: 'creativity comes from inspiration — and when inspiration is gone, you just wait',
+    language: '"I feel creatively suffocated." "I used to make art all the time and now I can\'t start anything." "I sit down to create and my mind goes blank." "I feel disconnected from the work that used to light me up." "I don\'t know if I\'m even an artist anymore."',
+    credibility: 'Wilderness therapy and yoga-trained facilitator, founder of Visionseed, creator of the Visionseed Oracle Deck and Creative Cohort',
+    recentWin: 'Brand new photo shoot and fully refreshed digital presence -- add cohort enrollment or oracle deck sales number here',
+    voiceWords: 'lyrical, embodied, grounded',
+    neverSay: '"content," "algorithm," "hustle," "productivity," "creative output"',
+    voiceSentence: 'My work lives at the intersection of art, somatics, spirituality, and healing.',
   },
   {
     slug: 'ronnie',
@@ -276,6 +342,12 @@ const PARTICIPANTS: Participant[] = [
     casual: "I'm the Managing Partner of Electric Avenue Bali — we run some of the most iconic venues on the island, and my job is making sure the people inside them have the time of their lives",
     mistake: 'building a hospitality or venue business on reputation alone with no way for the right people to find it online',
     belief: 'great experiences speak for themselves and do not need to be marketed',
+    language: '"I want something truly extraordinary but I don\'t know who to trust to plan it." "Every time I try to do it myself, something falls flat." "I want an experience, not just a trip." "I need someone who actually knows the right people."',
+    credibility: 'Over 20 years of Fortune 500 corporate experience, Managing Partner of Electric Avenue Bali operating some of the most iconic venues on the island',
+    recentWin: 'Client experience result to add here with a specific outcome or number',
+    voiceWords: 'assured, warm, experiential',
+    neverSay: '"cheap," "budget," "deal," "affordable," "value for money"',
+    voiceSentence: "I\'m the Managing Partner of Electric Avenue Bali -- we run some of the most iconic venues on the island, and my job is making sure the people inside them have the time of their lives.",
   },
   {
     slug: 'sophia',
@@ -286,6 +358,12 @@ const PARTICIPANTS: Participant[] = [
     casual: "I created Sisterhood OS because I kept seeing high-achieving women who were doing everything right on the outside and still felt disconnected from themselves",
     mistake: 'joining communities that feel safe but never actually ask them to grow',
     belief: 'belonging requires fitting in',
+    language: '"I\'m high-achieving on the outside but feel empty on the inside." "I\'ve outgrown my friendships but I don\'t know where to find women at my level." "Every women\'s community I join feels either too shallow or too chaotic." "I want to grow, not just belong."',
+    credibility: 'Founder of Sisterhood OS, a global personal development platform for women, with 55 masterclass signups in approximately 4 days before running a single ad',
+    recentWin: '55 masterclass signups in approximately 4 days with no paid ads',
+    voiceWords: 'clear, empowering, elegant',
+    neverSay: '"girl boss," "boss babe," "hustle," "tribe," "squad," "manifesting"',
+    voiceSentence: 'I created Sisterhood OS because I kept seeing high-achieving women who were doing everything right on the outside and still felt disconnected from themselves.',
   },
   {
     slug: 'sundari',
@@ -296,6 +374,12 @@ const PARTICIPANTS: Participant[] = [
     casual: "I'm the Alchemist of Light -- I've worked globally for over two decades guiding people through the kind of transformation that isn't about adding more strategies, it's about becoming more of what was always there",
     mistake: 'optimizing identity at the surface level without integrating it in the body and in how they live',
     belief: 'transformation is about acquiring better strategies',
+    language: '"I\'ve done every program and I still feel like something is missing." "I know who I want to be but I can\'t seem to live it." "I\'m successful by every external measure and still don\'t feel like myself." "I want a transformation that actually lasts."',
+    credibility: 'Over two decades of global work in identity evolution, author of The Awakened Being, host of Divine Life Mastery Codes on Infynit TV',
+    recentWin: 'Lead magnet completed and connected to GoHighLevel -- client transformation result to add with a specific number',
+    voiceWords: 'expansive, authoritative, luminous',
+    neverSay: '"mindset hack," "manifest," "hustle," "strategy session," "quick fix"',
+    voiceSentence: "I guide people through the kind of transformation that isn\'t about adding more strategies, it\'s about becoming more of what was always there.",
   },
   {
     slug: 'tiyana',
@@ -306,6 +390,12 @@ const PARTICIPANTS: Participant[] = [
     casual: "I'm the founder of TI YA RA -- everything I make and offer is designed to invite women back into presence, devotion, and the temple of their own body",
     mistake: 'treating beauty and ritual as optional instead of as the foundation of a life well lived',
     belief: 'spirituality and a real life are separate things',
+    language: '"I want to slow down but I don\'t know how." "I\'m drawn to ceremony but it feels inaccessible." "I want to dress with intention, not just for function." "I\'m looking for something sacred in my everyday life."',
+    credibility: 'Over 15 years in plant-based wellness, embodied movement, and temple arts, founder of TI YA RA with a physical sanctuary boutique in Ubud and presence in Dubai',
+    recentWin: 'Physical store open in Ubud and presence established in Dubai -- add a specific product or mentorship result here',
+    voiceWords: 'devotional, slow, sensory',
+    neverSay: '"trendy," "influencer," "content strategy," "fast," "drop," "collab"',
+    voiceSentence: 'Everything I make and offer is designed to invite women back into presence, devotion, and the temple of their own body.',
   },
 ]
 
@@ -410,9 +500,18 @@ type NameCardProps = {
 
 function NameCard({ displayName, photo, isSelected, onClick }: NameCardProps) {
   const initials = displayName.slice(0, 2).toUpperCase()
+  function handleClick(e: React.MouseEvent<HTMLButtonElement>) {
+    confetti({
+      particleCount: 80,
+      spread: 70,
+      origin: { x: e.clientX / window.innerWidth, y: e.clientY / window.innerHeight },
+      colors: ['#7C69C7', '#9D8FE0', '#F5C3C6', '#FCF4EB'],
+    })
+    onClick()
+  }
   return (
     <button
-      onClick={onClick}
+      onClick={handleClick}
       className="flex flex-col items-center gap-2 group"
     >
       <div
@@ -499,7 +598,6 @@ export default function HookWriterPage() {
 
   // Load from localStorage or static data when participant is selected
   function selectParticipant(slug: string) {
-    confetti({ particleCount: 80, spread: 70, origin: { y: 0.4 }, colors: ['#7C69C7', '#9D8FE0', '#F5C3C6', '#FCF4EB'] })
     const saved = typeof window !== 'undefined' ? localStorage.getItem(`hook-writer-${slug}`) : null
     if (saved) {
       try {
