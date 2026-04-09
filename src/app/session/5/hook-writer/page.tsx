@@ -1,7 +1,8 @@
 'use client'
 
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useRef, useCallback } from 'react'
 import Link from 'next/link'
+import confetti from 'canvas-confetti'
 
 // ─── Hook Lab prompt (embedded constant) ─────────────────────────────────────
 const HOOK_LAB_PROMPT = `Paste this entire file into Claude.ai, then paste your brand voice profile directly below it. Claude will run the Hook Lab and return five scored hooks plus winners, testing guidance, and a personal teaching note.
@@ -125,6 +126,7 @@ In 2-3 sentences, name one specific thing about the hooks you wrote that reflect
 type Participant = {
   slug: string
   displayName: string
+  photo: string
   teaches: string
   helps: string
   casual: string
@@ -142,6 +144,7 @@ const PARTICIPANTS: Participant[] = [
   {
     slug: 'aaqib',
     displayName: 'Aaqib',
+    photo: '/mastermind-participants/aaiqb-hasnain.jpg',
     teaches: 'slow fashion rooted in cultural heritage and ethical craftsmanship — limited edition collections made with local artisans in Bali and beyond',
     helps: 'people who want to wear clothing that connects to living culture, not mass production',
     casual: "I'm a Dutch entrepreneur with roots across South Asia who traded seven years at Google for building something with soul — a slow fashion brand called HAYAQI that I run from Bali",
@@ -151,6 +154,7 @@ const PARTICIPANTS: Participant[] = [
   {
     slug: 'alex',
     displayName: 'Alex',
+    photo: '/mastermind-participants/alex--feldman.jpg',
     teaches: 'creating meaningful impact through science, coaching, and intentional global community building',
     helps: 'scientists, adventurers, and global citizens who want their work to contribute to human flourishing at every scale',
     casual: "I'm a scientist and coach living adventurously around the world, figuring out how to make a real difference at scale",
@@ -160,6 +164,7 @@ const PARTICIPANTS: Participant[] = [
   {
     slug: 'alla',
     displayName: 'Alla',
+    photo: '/mastermind-participants/alla-demutska.jpg',
     teaches: 'trauma recovery and emotional regulation through embodied, evidence-based therapy that integrates somatic and mindfulness approaches',
     helps: 'women in the second half of life who are ready to reconnect with their vitality, voice, and self-authorship',
     casual: "I'm a clinical psychologist with a doctorate from Monash and 15 years working with trauma across Singapore, Hong Kong, and Australia — I believe healing isn't about fixing what's broken, it's about expanding your capacity to be fully human",
@@ -169,6 +174,7 @@ const PARTICIPANTS: Participant[] = [
   {
     slug: 'daniel',
     displayName: 'Daniel',
+    photo: '/mastermind-participants/daniel-holloway.png',
     teaches: 'AI-powered sales and marketing systems for agencies — results guaranteed or their money back',
     helps: 'agency owners who are doing personalized outreach manually and want a system that does it at scale with guaranteed results',
     casual: "I've built a team of 11, hit $145K revenue months, lost it all, rebuilt from Bali, and now I use AI to do what I couldn't do manually",
@@ -178,6 +184,7 @@ const PARTICIPANTS: Participant[] = [
   {
     slug: 'jasmine',
     displayName: 'Jasmine',
+    photo: '/mastermind-participants/jasmine--oh.jpg',
     teaches: 'transformative experiences through music, movement, and expanded states of consciousness — including DJ training for the next generation of ceremony facilitators',
     helps: 'aspiring DJs and facilitators ready to guide transformative experiences through sound and embodiment',
     casual: "I'm a DJ, dance facilitator, and psychedelic therapist who creates spaces where people come home to themselves through sound and movement",
@@ -187,7 +194,8 @@ const PARTICIPANTS: Participant[] = [
   {
     slug: 'jenny',
     displayName: 'Jenny',
-    teaches: 'feminine healing arts, Tao Tantric practices, ritual work, and women\'s facilitation training through retreats, online courses, and the Institut für Feminine Heilkunst',
+    photo: '/mastermind-participants/jenny-jessen.jpg',
+    teaches: "feminine healing arts, Tao Tantric practices, ritual work, and women's facilitation training through retreats, online courses, and the Institut für Feminine Heilkunst",
     helps: 'women ready to deepen their personal healing and learn to guide others through feminine embodiment and sacred practice',
     casual: "I lead international retreats, teacher trainings, and a German online school for women who want to embody their feminine wisdom and share it with others",
     mistake: 'separating the spiritual path from the professional one — treating them as if only one can be real',
@@ -196,9 +204,10 @@ const PARTICIPANTS: Participant[] = [
   {
     slug: 'joe',
     displayName: 'Joe',
+    photo: '/mastermind-participants/joe-che.jpeg',
     teaches: 'how to build AI-powered systems and automations that let a small business run without the founder in every seat. 30 years and 22 ventures taught me what actually creates freedom, and it is not working harder.',
     helps: 'coaches, healers, consultants, and creator-led businesses who are doing everything manually and want to use AI and automation to get their time back without having to become technical to do it',
-    casual: "I\'ve started 22 businesses over 30 years. Some flopped, some moved millions of dollars, all of them taught me the same thing: the business should not need you in every seat. That\'s what I help people build now.",
+    casual: "I've started 22 businesses over 30 years. Some flopped, some moved millions of dollars, all of them taught me the same thing: the business should not need you in every seat. That's what I help people build now.",
     mistake: 'building content and taking on clients without any systems behind it, so every new thing they create or sell requires them to personally show up and do all the work again from scratch',
     belief: 'AI and automation are for technical people, or for later once the business is bigger',
     language: '"I\'m not technical." "I keep saying I\'ll set up systems but I never get around to it." "I\'m doing everything myself and I\'m burning out." "I don\'t have time to learn all this." "I\'ll automate once things calm down." "I feel like I\'m always behind."',
@@ -206,11 +215,12 @@ const PARTICIPANTS: Participant[] = [
     recentWin: 'Built an AI operating system that runs 65+ agents autonomously, including the system that plans, prepares, and documents this entire Mastermind HQ program without manual input.',
     voiceWords: 'direct, experienced, warm',
     neverSay: '"hustle," "crush it," "grind," "game-changer," "unlock your potential," "level up," "high-vibe," "quantum," "manifest," "10x your business"',
-    voiceSentence: "I\'ve built 22 businesses, and the one thing none of them came with was a manual for how to stop being the most important part of them.",
+    voiceSentence: "I've built 22 businesses, and the one thing none of them came with was a manual for how to stop being the most important part of them.",
   },
   {
     slug: 'johanna',
     displayName: 'Johanna',
+    photo: '/mastermind-participants/johanna-bieber.png',
     teaches: 'embodied self-inquiry through somatic and trauma-informed practices — helping people access deeper layers of their inner experience',
     helps: 'people navigating the gap between who they are and how they relate, especially those juggling structure-heavy careers while doing deep inner work',
     casual: "I'm a demand planner turned embodiment coach, and I bring the same structured thinking I used in corporate life to helping people understand their nervous systems and relationship patterns",
@@ -220,6 +230,7 @@ const PARTICIPANTS: Participant[] = [
   {
     slug: 'marina',
     displayName: 'Marina',
+    photo: '/mastermind-participants/marina--jaubert.jpg',
     teaches: 'building strategic relationships and partnerships through curated experiences that bring the right people into the same room',
     helps: 'founders and entrepreneurs in Bali who want meaningful connections that lead to real partnerships and outcomes',
     casual: "I'm a connector and event designer who creates private rooms where founders meet the right people and partnerships form naturally -- I run Ascend to Bali",
@@ -229,6 +240,7 @@ const PARTICIPANTS: Participant[] = [
   {
     slug: 'miia',
     displayName: 'Miia',
+    photo: '/mastermind-participants/miia-nern.jpg',
     teaches: 'astrology and how to become a working professional astrologer through online group training',
     helps: 'people who want to understand themselves and others through astrology and turn that knowledge into a livelihood',
     casual: "I'm 28, I create astrology content from Bali, and I've grown from 100 to 3,000 followers by going deep rather than chasing trends",
@@ -238,6 +250,7 @@ const PARTICIPANTS: Participant[] = [
   {
     slug: 'pinamaria',
     displayName: 'Pina',
+    photo: '/mastermind-participants/pina-maria-muckle.png',
     teaches: 'energy healing, Reiki, intuitive coaching, feminine embodiment, and dance activations through the Wealth Being Community',
     helps: 'women ready to reconnect with their wealth, joy, and feminine power through energy and embodiment practices',
     casual: "I'm a Reiki Master and intuitive coach who hosts a daily dance and embodiment community for women who are ready to stop dimming their light",
@@ -247,6 +260,7 @@ const PARTICIPANTS: Participant[] = [
   {
     slug: 'quincee',
     displayName: 'Quincee',
+    photo: '/mastermind-participants/quincee-lark.jpg',
     teaches: 'somatic practices, breathwork, and yoga to liberate creative expression and reconnect artists with their creative life force',
     helps: 'artists who want to access their creativity as a sacred, embodied process rather than a grind',
     casual: "I'm a wilderness therapy and yoga-trained facilitator who guides artists into their bodies so they can stop struggling and start creating from a full well",
@@ -256,6 +270,7 @@ const PARTICIPANTS: Participant[] = [
   {
     slug: 'ronnie',
     displayName: 'Ronnie',
+    photo: '/mastermind-participants/ronnie-ansara.JPG',
     teaches: 'premium concierge and curated travel experiences — designed by someone with 20 years of Fortune 500 relationships and an instinct for the right room',
     helps: 'people who want an extraordinary time, with every detail handled by someone who actually knows the right people',
     casual: "I'm a host, connector, and experience designer who has spent over 20 years making sure the right people have the best possible time",
@@ -265,6 +280,7 @@ const PARTICIPANTS: Participant[] = [
   {
     slug: 'sophia',
     displayName: 'Sophia',
+    photo: '/mastermind-participants/sophia-fox.png',
     teaches: 'emotional maturity, self-connection, and sovereign leadership for women through the Sisterhood OS global platform',
     helps: 'emotionally self-aware women who want deeper inner work without competition, performance, or losing themselves in the process',
     casual: "I created Sisterhood OS because I kept seeing high-achieving women who were doing everything right on the outside and still felt disconnected from themselves",
@@ -274,6 +290,7 @@ const PARTICIPANTS: Participant[] = [
   {
     slug: 'sundari',
     displayName: 'SunDari',
+    photo: '/mastermind-participants/marci-loughmiller.jpg',
     teaches: 'identity evolution, embodiment, and full-life integration through private mentorship, immersive experiences, media, and publishing',
     helps: 'individuals and leaders ready to expand who they are and align how they live, lead, and create',
     casual: "I'm the Alchemist of Light -- I've worked globally for over two decades guiding people through the kind of transformation that isn't about adding more strategies, it's about becoming more of what was always there",
@@ -283,6 +300,7 @@ const PARTICIPANTS: Participant[] = [
   {
     slug: 'tiyana',
     displayName: 'Tiyana',
+    photo: '/mastermind-participants/tiyana-jovic.jpg',
     teaches: 'templewear and ritual living rooted in sacred feminine wisdom, tea ceremony, and conscious design',
     helps: 'women drawn to tea ceremony, sacred design, and the feminine path home to presence and devotion',
     casual: "I'm the founder of TI YA RA -- everything I make and offer is designed to invite women back into presence, devotion, and the temple of their own body",
@@ -381,22 +399,16 @@ Specific details to weave in:
 ${form.details || '[Optional: any numbers, tools, or examples to include]'}`
 }
 
-// ─── Participant photos (slugs that have a real headshot in /participants/) ────
-const PHOTO_SLUGS = new Set([
-  'aaqib', 'alla', 'daniel', 'jasmine', 'jenny', 'joe',
-  'johanna', 'marina', 'miia', 'quincee', 'ronnie', 'sophia', 'sundari',
-])
-
 // ─── Name card (defined at module level to avoid scroll-jump on re-render) ────
 type NameCardProps = {
   slug: string
   displayName: string
+  photo: string
   isSelected: boolean
   onClick: () => void
 }
 
-function NameCard({ slug, displayName, isSelected, onClick }: NameCardProps) {
-  const hasPhoto = PHOTO_SLUGS.has(slug)
+function NameCard({ displayName, photo, isSelected, onClick }: NameCardProps) {
   const initials = displayName.slice(0, 2).toUpperCase()
   return (
     <button
@@ -404,15 +416,15 @@ function NameCard({ slug, displayName, isSelected, onClick }: NameCardProps) {
       className="flex flex-col items-center gap-2 group"
     >
       <div
-        className="w-14 h-14 rounded-full overflow-hidden transition-all"
+        className="w-16 h-16 rounded-full overflow-hidden transition-all"
         style={{
           border: isSelected ? '2px solid #9D8FE0' : '2px solid rgba(255,255,255,0.10)',
           boxShadow: isSelected ? '0 0 0 3px rgba(124,105,199,0.25)' : 'none',
         }}
       >
-        {hasPhoto ? (
+        {photo ? (
           <img
-            src={`/participants/${slug}.jpg`}
+            src={photo}
             alt={displayName}
             className="w-full h-full object-cover"
           />
@@ -487,6 +499,7 @@ export default function HookWriterPage() {
 
   // Load from localStorage or static data when participant is selected
   function selectParticipant(slug: string) {
+    confetti({ particleCount: 80, spread: 70, origin: { y: 0.4 }, colors: ['#7C69C7', '#9D8FE0', '#F5C3C6', '#FCF4EB'] })
     const saved = typeof window !== 'undefined' ? localStorage.getItem(`hook-writer-${slug}`) : null
     if (saved) {
       try {
@@ -549,15 +562,16 @@ export default function HookWriterPage() {
 
       {/* Name picker */}
       <div className="mb-10">
-        <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: 'rgba(252,244,235,0.4)' }}>
+        <h2 className="text-2xl font-bold mb-6" style={{ color: 'rgba(252,244,235,0.9)' }}>
           Who are you?
-        </p>
-        <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-3">
+        </h2>
+        <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-4">
           {PARTICIPANTS.map(p => (
             <NameCard
               key={p.slug}
               slug={p.slug}
               displayName={p.displayName}
+              photo={p.photo}
               isSelected={selected === p.slug}
               onClick={() => selectParticipant(p.slug)}
             />
