@@ -208,6 +208,20 @@ export async function POST(request: Request) {
       console.error('Supabase error (non-blocking):', dbErr)
     }
 
+    // Ingest into Mission Control CRM (non-blocking)
+    fetch('http://localhost:3000/api/crm', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        action: 'ingest',
+        first_name: firstName,
+        email,
+        source: 'giveaway-claude-md',
+        primary_project: 'mastermind',
+        campaign: 'claude-md',
+      }),
+    }).catch((err) => console.error('CRM ingest error (non-blocking):', err))
+
     // Send via Mandrill
     await sendViaMandrill(firstName, email)
 
