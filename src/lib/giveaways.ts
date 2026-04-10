@@ -29,6 +29,30 @@ export const giveaways: Giveaway[] = [
     badge: 'Template',
     badgeVariant: 'purple',
   },
+  {
+    slug: 'benchmark',
+    title: 'Claude vs OpenAI Benchmark Guide',
+    description: 'A side-by-side pricing and capability comparison across flagship, balanced, and value tiers. Know which model to use and when.',
+    icon: '⬡',
+    badge: 'Guide',
+    badgeVariant: 'pink',
+  },
+  {
+    slug: 'anthropic-safety-checklist',
+    title: 'Anthropic Safety Checklist',
+    description: "The rules Anthropic actually enforces. Know what's allowed before you build agents, bots, or automated workflows.",
+    icon: '✓',
+    badge: 'Checklist',
+    badgeVariant: 'pink',
+  },
+  {
+    slug: 'lead-magnet',
+    title: 'What Does Success Mean to You?',
+    description: 'Stories and reflections from the Masterminds cohort on what success really looks like when you stop chasing and start building.',
+    icon: '✶',
+    badge: 'Resource',
+    badgeVariant: 'purple',
+  },
 ]
 
 export function getGiveaway(slug: string): Giveaway | undefined {
