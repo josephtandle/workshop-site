@@ -67,6 +67,31 @@ async function sendViaMandrill(email: string, source: string) {
   return res.json()
 }
 
+// Map the giveaway page source to the CRM source key and giveaway label
+const GIVEAWAY_SOURCE_MAP: Record<string, string> = {
+  'web-design-arsenal': 'giveaway-web-design-arsenal',
+  'lead-magnet': 'giveaway-unlearning-success',
+  'claude-md': 'giveaway-claude-md',
+  'benchmark': 'giveaway-benchmark',
+  'anthropic-safety-checklist': 'giveaway-anthropic-checklist',
+}
+
+async function ingestIntoCrm(email: string, source: string) {
+  const crmSource = GIVEAWAY_SOURCE_MAP[source] ?? `giveaway-${source}`
+  const res = await fetch('http://localhost:3000/api/crm', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      action: 'ingest',
+      email,
+      source: crmSource,
+      primary_project: 'mastermind',
+      campaign: source,
+    }),
+  })
+  if (!res.ok) throw new Error(`CRM ingest failed: ${res.status}`)
+}
+
 export async function POST(request: Request) {
   try {
     const { email, source = 'lead-magnet' } = await request.json()
@@ -87,6 +112,11 @@ export async function POST(request: Request) {
     } catch (dbErr) {
       console.error('Supabase error (non-blocking):', dbErr)
     }
+
+    // Ingest into Mission Control CRM with giveaway tag (non-blocking)
+    ingestIntoCrm(email, source).catch((err) =>
+      console.error('CRM ingest error (non-blocking):', err)
+    )
 
     // Send confirmation via Mandrill
     await sendViaMandrill(email, source)
