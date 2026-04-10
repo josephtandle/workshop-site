@@ -81,6 +81,19 @@ Never reference `anon key`, `service_role`, or the legacy variable names in guid
 
 ---
 
+## Giveaway Pages — Registry Rule
+
+Every new giveaway page lives under `src/app/giveaways/<slug>/page.tsx`.
+
+**When you create a new giveaway page, you must also add an entry to `src/lib/giveaways.ts`.**
+That file is the single source of truth. The index at `/giveaways/` is generated from it automatically.
+
+Each entry needs: `slug`, `title`, `description`, `icon`, `badge`, and `badgeVariant` (`'purple'` or `'pink'`).
+
+Never add a giveaway page without registering it. Never register a slug without a matching page.
+
+---
+
 ## Prep Pages
 
 Use `session-3-prep.tsx` as the canonical template for all prep pages.
