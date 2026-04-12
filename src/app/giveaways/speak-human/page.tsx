@@ -26,13 +26,14 @@ const SKILL_SECTIONS = [
   },
   {
     name: 'AI Pattern Detection',
-    count: 40,
+    count: 41,
     items: [
       { name: 'Content inflation removal', desc: 'Strips significance inflation, vague attributions, promotional language, and generic conclusions. "Pivotal moment in history" becomes the thing that actually happened.' },
       { name: 'AI vocabulary blacklist', desc: 'Catches leverage, utilize, delve, foster, pivotal, multifaceted, and 35+ more. Updated for 2025-2026 additions like "I\'ll be honest" and "do a lot of heavy lifting."' },
       { name: 'Structural problem detection', desc: 'Finds binary contrasts ("Not because X. Because Y."), dramatic fragmentation, rhetorical setups, false agency, and passive voice. All of them.' },
       { name: 'Formatting tells', desc: 'Zero tolerance for em dashes. Catches bold overuse, structured list syndrome, question-format headings, and Markdown bleeding into plain text.' },
       { name: 'Chatbot artifact removal', desc: '"I hope this helps," "Certainly!", "Let\'s dive in" -- gone. Knowledge-cutoff disclaimers and comprehensive overview openers too.' },
+      { name: 'Code and prompt protection', desc: 'Detects code blocks, technical commands, and prompt text and skips them entirely. It rewrites the writing around them, never through them. Your logic stays intact.' },
     ],
   },
   {
@@ -154,13 +155,13 @@ export default function SpeakHumanPage() {
 
     type Particle = { x: number; y: number; r: number; dx: number; dy: number; alpha: number; color: string }
     const colors = ['#8B79D4', '#F5C3C6', '#9D8FE0', '#BDB3E8', '#FCF4EB']
-    const particles: Particle[] = Array.from({ length: 120 }, () => ({
+    const particles: Particle[] = Array.from({ length: 70 }, () => ({
       x: Math.random() * window.innerWidth,
       y: Math.random() * window.innerHeight,
-      r: Math.random() * 2.2 + 0.5,
+      r: Math.random() * 1.6 + 0.4,
       dx: (Math.random() - 0.5) * 0.4,
       dy: Math.random() * 0.7 + 0.3,
-      alpha: Math.random() * 0.55 + 0.1,
+      alpha: Math.random() * 0.22 + 0.05,
       color: colors[Math.floor(Math.random() * colors.length)],
     }))
 
@@ -191,7 +192,7 @@ export default function SpeakHumanPage() {
 
   // CountUp animated stats
   useEffect(() => {
-    const values = [40, 5, 1]
+    const values = [41, 5, 1]
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -378,7 +379,7 @@ export default function SpeakHumanPage() {
               transition={{ duration: 0.55, delay: 1.6 }}
               className="text-[#FCF4EB]/55 text-base sm:text-lg leading-relaxed max-w-xl mx-auto mb-6"
             >
-              Install it once in Claude Code. Use it on website copy, Instagram hooks, email sequences, captions, and anything else that needs to sound like a person wrote it. Feed it your podcasts, books, or reels once and it learns to write in your actual voice.
+              Install it once in Claude Code. Use it on website copy, Instagram hooks, email sequences, captions, and anything else that needs to sound like a person wrote it. It recognizes code blocks and prompts and leaves them completely untouched. Feed it your podcasts, books, or reels once and it learns to write in your actual voice.
             </motion.p>
 
             {/* Works in strip */}
