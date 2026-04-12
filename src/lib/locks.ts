@@ -6,6 +6,6 @@
  * "Unlock the guide for Session 5"   → session5Guide: true
  */
 export const LOCKS = {
-  session5Guide: false,
-  session5HookWriter: false,
+  session5Guide: true,
+  session5HookWriter: true,
 } as const
