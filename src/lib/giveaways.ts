@@ -53,6 +53,14 @@ export const giveaways: Giveaway[] = [
     badge: 'Resource',
     badgeVariant: 'purple',
   },
+  {
+    slug: 'logo-maker-guide',
+    title: 'How to Get a Great Logo',
+    description: 'Every path covered: free tools, paid options, hiring a designer, and how to build your own logo maker with APIs. Includes API comparison and limitations.',
+    icon: '◈',
+    badge: 'Guide',
+    badgeVariant: 'pink',
+  },
 ]
 
 export function getGiveaway(slug: string): Giveaway | undefined {
