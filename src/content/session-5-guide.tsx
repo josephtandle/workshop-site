@@ -4,6 +4,7 @@ import { useState } from 'react'
 import StepCard from '@/components/StepCard'
 import CodeBlock from '@/components/CodeBlock'
 import ProTip from '@/components/ProTip'
+import StickyVideoPlayer from '@/components/StickyVideoPlayer'
 import { celebrate } from '@/lib/celebrate'
 
 function Checkbox({ checked, onChange }: { checked: boolean; onChange: () => void }) {
@@ -105,6 +106,15 @@ export default function Session5Guide() {
             </ol>
           </div>
         </div>
+      </div>
+
+      {/* Workshop Recording */}
+      <div className="max-w-3xl mx-auto px-6 mb-14">
+        <div className="mb-4">
+          <p className="text-[#FCF4EB]/50 text-xs uppercase tracking-widest font-semibold mb-1">Workshop Recording</p>
+          <p className="text-[#FCF4EB]/40 text-sm">Follow along with the live session. Hit play and the video will stick to the top as you scroll.</p>
+        </div>
+        <StickyVideoPlayer videoId="dSk7aAUAOKc" title="Session 5: Give Claude Code Your Brain" />
       </div>
 
       <div className="max-w-3xl mx-auto px-6 pb-16">

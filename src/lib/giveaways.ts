@@ -61,6 +61,14 @@ export const giveaways: Giveaway[] = [
     badge: 'Guide',
     badgeVariant: 'pink',
   },
+  {
+    slug: 'speak-human',
+    title: 'Speak Human',
+    description: 'A Claude Code skill that strips AI writing patterns and rewrites in your actual voice. Learns from your podcasts, books, and content. One command to install.',
+    icon: '✦',
+    badge: 'Skill',
+    badgeVariant: 'purple',
+  },
 ]
 
 export function getGiveaway(slug: string): Giveaway | undefined {

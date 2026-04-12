@@ -34,6 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/giveaways/anthropic-safety-checklist`,  lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/giveaways/lead-magnet`,                 lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/giveaways/benchmark`,                   lastModified: NOW, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${BASE}/giveaways/speak-human`,                 lastModified: NOW, changeFrequency: 'monthly', priority: 0.9 },
 
     // Lead magnets
     { url: `${BASE}/lead-magnets/ultimate-claudemd`,        lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
