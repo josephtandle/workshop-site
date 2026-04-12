@@ -15,6 +15,16 @@ const INSTALL_COMMAND = `git clone https://github.com/josephtandle/speak-human &
 
 const SKILL_SECTIONS = [
   {
+    name: 'Voice Profile Builder',
+    count: 1,
+    items: [
+      { name: 'One-time setup', desc: 'Point it at your podcast transcripts, book chapters, or Instagram captions once. It extracts your actual voice patterns and saves them permanently. Never asks again.' },
+      { name: 'What gets extracted', desc: 'Sentence length and rhythm, paragraph structure, signature vocabulary, recurring phrases, perspective (I/you/we), hedging level, tone markers, and what you never say.' },
+      { name: 'Gold standard examples', desc: 'Picks 3-5 sentences from your content that best represent your voice at its best. Uses them as the target register for every future rewrite.' },
+      { name: 'Works with any content', desc: 'Podcast transcripts, book chapters, Instagram captions, newsletter issues, emails you\'re proud of. One strong file is enough to start.' },
+    ],
+  },
+  {
     name: 'AI Pattern Detection',
     count: 40,
     items: [
@@ -34,16 +44,6 @@ const SKILL_SECTIONS = [
       { name: 'Technical', desc: 'Precision, concrete numbers, exact terminology. One point per sentence. File paths, version numbers, specific behavior. Deadpan observations allowed.' },
       { name: 'Warm', desc: 'Shared experience, honest acknowledgment of difficulty. Shorter paragraphs. First person. "I struggled with this too" over "many people find this difficult."' },
       { name: 'Blunt', desc: 'The shortest path to the point. Everything that is not the point gets cut. Active voice only. No hedging unless genuinely uncertain.' },
-    ],
-  },
-  {
-    name: 'Voice Profile Builder',
-    count: 1,
-    items: [
-      { name: 'One-time setup', desc: 'Point it at your podcast transcripts, book chapters, or Instagram captions once. It extracts your actual voice patterns and saves them permanently. Never asks again.' },
-      { name: 'What gets extracted', desc: 'Sentence length and rhythm, paragraph structure, signature vocabulary, recurring phrases, perspective (I/you/we), hedging level, tone markers, and what you never say.' },
-      { name: 'Gold standard examples', desc: 'Picks 3-5 sentences from your content that best represent your voice at its best. Uses them as the target register for every future rewrite.' },
-      { name: 'Works with any content', desc: 'Podcast transcripts, book chapters, Instagram captions, newsletter issues, emails you\'re proud of. One strong file is enough to start.' },
     ],
   },
   {
@@ -378,7 +378,7 @@ export default function SpeakHumanPage() {
               transition={{ duration: 0.55, delay: 1.6 }}
               className="text-[#FCF4EB]/55 text-base sm:text-lg leading-relaxed max-w-xl mx-auto mb-6"
             >
-              Install it once in Claude Code. It strips every AI pattern from your writing, then learns your voice from your podcasts, books, and Instagram content so it actually sounds like you.
+              Install it once in Claude Code. Use it on website copy, Instagram hooks, email sequences, captions, and anything else that needs to sound like a person wrote it. Feed it your podcasts, books, or reels once and it learns to write in your actual voice.
             </motion.p>
 
             {/* Works in strip */}
@@ -559,7 +559,7 @@ export default function SpeakHumanPage() {
               Everything inside this skill
             </h2>
             <p className="text-[#FCF4EB]/35 text-sm max-w-lg mx-auto">
-              Five systems. Built from the best humanizing techniques gathered across every tool and approach, then improved significantly.
+              Five systems. The voice profile is the part that makes it yours. Everything else strips the AI out. Together they handle website copy, Instagram hooks, email sequences, and any copy that needs to sound human.
             </p>
           </motion.div>
 
@@ -735,7 +735,7 @@ function InlineCopyButton({ text }: { text: string }) {
 }
 
 // ---------------------------------------------------------------------------
-// Big install copy button (with confetti)
+// Big install copy button (with confetti + GitHub star nudge)
 // ---------------------------------------------------------------------------
 function InstallCopyButton({ command }: { command: string }) {
   const [copied, setCopied] = useState(false)
@@ -751,12 +751,13 @@ function InstallCopyButton({ command }: { command: string }) {
         origin: { y: 0.6 },
         colors: ['#9D8FE0', '#F5C3C6', '#BDB3E8', '#FCF4EB'],
       })
-      setTimeout(() => setCopied(false), 2500)
+      window.open('https://github.com/josephtandle/speak-human', '_blank', 'noopener,noreferrer')
+      setTimeout(() => setCopied(false), 3500)
     } catch { /* noop */ }
   }, [command])
 
   return (
-    <div className="flex justify-center mt-6">
+    <div className="flex flex-col items-center gap-3 mt-6">
       <button
         ref={magnet.ref as React.RefObject<HTMLButtonElement>}
         onClick={handleCopy}
@@ -764,8 +765,17 @@ function InstallCopyButton({ command }: { command: string }) {
         onMouseLeave={magnet.onMouseLeave}
         className="px-10 py-4 rounded-xl bg-[#7C69C7] hover:bg-[#6e5db8] text-[#FCF4EB] font-bold text-base active:scale-[0.98] glow-btn"
       >
-        {copied ? 'Copied! Now run it in your terminal.' : 'Copy Install Command'}
+        {copied ? 'Copied! Run it in your terminal.' : 'Copy Install Command'}
       </button>
+      {copied && (
+        <motion.p
+          initial={{ opacity: 0, y: 6 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-[#FCF4EB]/40 text-xs text-center"
+        >
+          We opened the GitHub repo too. A star helps others find it.
+        </motion.p>
+      )}
     </div>
   )
 }
