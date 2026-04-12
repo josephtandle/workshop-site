@@ -764,7 +764,7 @@ function InstallCopyButton({ command }: { command: string }) {
         onClick={handleCopy}
         onMouseMove={magnet.onMouseMove}
         onMouseLeave={magnet.onMouseLeave}
-        className="px-10 py-4 rounded-xl bg-[#7C69C7] hover:bg-[#6e5db8] text-[#FCF4EB] font-bold text-base active:scale-[0.98] glow-btn"
+        className="block w-full sm:inline-block sm:w-auto px-10 py-4 rounded-xl bg-[#7C69C7] hover:bg-[#6e5db8] text-[#FCF4EB] font-bold text-base active:scale-[0.98] glow-btn text-center"
       >
         {copied ? 'Copied! Run it in your terminal.' : 'Copy Install Command'}
       </button>
