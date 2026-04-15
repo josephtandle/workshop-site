@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getSession } from '@/lib/sessions'
+import { LOCKS } from '@/lib/locks'
 import Session2Guide from '@/content/session-2-guide'
 import Session3Guide from '@/content/session-3-guide'
 import Session6Guide from '@/content/session-6-guide'
@@ -17,7 +18,11 @@ interface Props {
 }
 
 export function generateStaticParams() {
-  return [{ slug: '2' }, { slug: '3' }, { slug: '6' }]
+  return [
+    { slug: '2' },
+    { slug: '3' },
+    ...(LOCKS.session6Guide ? [{ slug: '6' }] : []),
+  ]
 }
 
 export async function generateMetadata({ params }: Props) {
@@ -34,6 +39,7 @@ export default async function SessionGuidePage({ params }: Props) {
   const { slug } = await params
   const session = getSession(slug)
   if (!session || !session.hasGuide) notFound()
+  if (slug === '6' && !LOCKS.session6Guide) notFound()
 
   const GuideContent = guideComponents[slug]
 
