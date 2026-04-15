@@ -317,12 +317,25 @@ export default function GuardogPage() {
             transition={{ duration: 0.5 }}
             className="absolute top-8 sm:top-10 left-0 right-0 flex justify-center"
           >
-            <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
-              Free from the{' '}
-              <a href={MASTERMIND_URL} target="_blank" rel="noopener noreferrer" className="hover:text-[#BDB3E8] transition-colors underline underline-offset-2 decoration-[#7C69C7]/40">
-                Business Automation Mastermind
-              </a>
-            </span>
+            <div className="p-[1px] rounded-full bg-gradient-to-r from-[#8B79D4] to-[#F5C3C6] inline-block">
+              <div className="px-5 py-2 rounded-full bg-[#151515] flex items-center gap-2">
+                <span className="text-[#9D8FE0] text-xs">✦</span>
+                <span
+                  className="font-semibold text-xs text-transparent bg-clip-text bg-gradient-to-r from-[#9D8FE0] to-[#F5C3C6]"
+                >
+                  Free
+                </span>
+                <span className="text-[#FCF4EB]/32 text-xs">from the</span>
+                <a
+                  href={MASTERMIND_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#FCF4EB]/60 text-xs font-medium hover:text-[#FCF4EB]/90 transition-colors"
+                >
+                  Business Automation Mastermind
+                </a>
+              </div>
+            </div>
           </motion.div>
 
           {/* Aurora glow blobs */}
@@ -356,7 +369,7 @@ export default function GuardogPage() {
                 paddingBottom: '0.05em',
               }}
             >
-              Guardog — Package Security Scanner
+              Guardog: Package Security Scanner
             </motion.h1>
 
             {/* Subheadline */}
@@ -610,7 +623,7 @@ export default function GuardogPage() {
                 desc: 'Dangerous. Do not install.',
                 icon: (
                   <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-                    {/* ears — raised/alert */}
+                    {/* ears, raised/alert */}
                     <path d="M7 18 L10 7 L16 16" fill="rgba(248,113,113,0.2)" stroke="#f87171" strokeWidth="1.5" strokeLinejoin="round"/>
                     <path d="M37 18 L34 7 L28 16" fill="rgba(248,113,113,0.2)" stroke="#f87171" strokeWidth="1.5" strokeLinejoin="round"/>
                     {/* head */}
