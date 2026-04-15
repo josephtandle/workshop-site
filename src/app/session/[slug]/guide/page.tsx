@@ -3,11 +3,13 @@ import { notFound } from 'next/navigation'
 import { getSession } from '@/lib/sessions'
 import Session2Guide from '@/content/session-2-guide'
 import Session3Guide from '@/content/session-3-guide'
+import Session6Guide from '@/content/session-6-guide'
 import type { ComponentType } from 'react'
 
 const guideComponents: Record<string, ComponentType> = {
   '2': Session2Guide,
   '3': Session3Guide,
+  '6': Session6Guide,
 }
 
 interface Props {
@@ -15,7 +17,7 @@ interface Props {
 }
 
 export function generateStaticParams() {
-  return [{ slug: '2' }, { slug: '3' }]
+  return [{ slug: '2' }, { slug: '3' }, { slug: '6' }]
 }
 
 export async function generateMetadata({ params }: Props) {

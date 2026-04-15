@@ -74,6 +74,17 @@ export const sessions: Session[] = [
     guidePath: 'guide-brain',
     guideTitle: 'How to Give Claude Code Your Brain, Part 1: Session Guide',
   },
+  {
+    slug: '6',
+    number: 6,
+    title: 'Claude on Your Phone, Your Voice, and Your Daily Hook Feed',
+    description:
+      'Install Claude on your phone, build a personal voice profile that actually sounds like you, explore model switching and background agents, and wire up a daily hook research agent that sends you fresh ideas every morning.',
+    date: '',
+    hasGuide: true,
+    hasPrep: true,
+    hasBonus: false,
+  },
 ]
 
 export function getSession(slug: string): Session | undefined {

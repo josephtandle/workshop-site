@@ -8,4 +8,7 @@
 export const LOCKS = {
   session5Guide: true,
   session5HookWriter: true,
+  session6Prep: true,
+  session6Guide: false,
+  session6HookWriter: false,
 }
