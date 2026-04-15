@@ -69,6 +69,14 @@ export const giveaways: Giveaway[] = [
     badge: 'Skill',
     badgeVariant: 'purple',
   },
+  {
+    slug: 'guardog',
+    title: 'Guardog',
+    description: 'Scan npm and PyPI packages for malware, CVEs, and suspicious patterns before you install them. One command to set up.',
+    icon: '◈',
+    badge: 'Skill',
+    badgeVariant: 'purple',
+  },
 ]
 
 export function getGiveaway(slug: string): Giveaway | undefined {
