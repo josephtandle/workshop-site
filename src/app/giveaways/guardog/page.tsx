@@ -381,7 +381,7 @@ export default function GuardogPage() {
               transition={{ duration: 0.55, delay: 1.6 }}
               className="text-[#FCF4EB]/55 text-base sm:text-lg leading-relaxed max-w-xl mx-auto mb-6"
             >
-              Every npm and PyPI package you install is code running on your machine. Guardog checks it first: known CVEs, package reputation, malicious code patterns, and optional VirusTotal scanning across 70+ antivirus engines. Works out of the box. No API keys needed.
+              Think of it as free antivirus for your code dependencies. It scans every package for hidden malware and checks live vulnerability databases for newly discovered threats. Install once, run it before you install anything.
             </motion.p>
 
             {/* Works in strip */}
@@ -464,6 +464,74 @@ export default function GuardogPage() {
         </section>
 
         {/* ================================================================ */}
+        {/* SECTION 2B: HOW IT ACTUALLY WORKS                               */}
+        {/* ================================================================ */}
+        <section className="max-w-5xl mx-auto px-6 pb-14">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="rounded-2xl overflow-hidden"
+            style={{
+              background: 'linear-gradient(135deg, rgba(124,105,199,0.07) 0%, rgba(157,143,224,0.04) 100%)',
+              border: '1px solid rgba(124,105,199,0.15)',
+            }}
+          >
+            <div className="px-8 py-10">
+              <div className="text-center mb-8">
+                <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
+                  Think of it as
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-bold text-[#FCF4EB]">
+                  Free antivirus for your packages. Gets smarter every day.
+                </h2>
+              </div>
+              <div className="grid gap-5 sm:grid-cols-2">
+                <div className="flex items-start gap-5">
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
+                    style={{ background: 'rgba(124,105,199,0.15)', border: '1px solid rgba(124,105,199,0.25)' }}
+                  >
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9D8FE0" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                      <polyline points="14 2 14 8 20 8"/>
+                      <line x1="16" y1="13" x2="8" y2="13"/>
+                      <line x1="16" y1="17" x2="8" y2="17"/>
+                      <polyline points="10 9 9 9 8 9"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-[#FCF4EB] font-semibold text-base mb-2">Scans the files you download</h3>
+                    <p className="text-[#FCF4EB]/44 text-sm leading-relaxed">
+                      When you run Guardog, it reads the actual package code sitting on your disk. It checks for credential harvesters, obfuscated scripts, crypto miners, reverse shells, and 25+ other malicious patterns. No sample or summary. The real files.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-5">
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
+                    style={{ background: 'rgba(124,105,199,0.15)', border: '1px solid rgba(124,105,199,0.25)' }}
+                  >
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9D8FE0" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10"/>
+                      <line x1="2" y1="12" x2="22" y2="12"/>
+                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                      <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-[#FCF4EB] font-semibold text-base mb-2">Checks the internet for new threats daily</h3>
+                    <p className="text-[#FCF4EB]/44 text-sm leading-relaxed">
+                      A package that was clean last month may have a critical CVE discovered today. Guardog queries live vulnerability databases every time you run it, so you are always checking against the latest known threats. Not a snapshot. Live data.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </section>
+
+        {/* ================================================================ */}
         {/* SECTION 3: VERDICT SYSTEM                                        */}
         {/* ================================================================ */}
         <section className="max-w-5xl mx-auto px-6 pb-14">
@@ -484,24 +552,88 @@ export default function GuardogPage() {
                 color: '#34d399',
                 borderColor: 'rgba(52,211,153,0.2)',
                 bg: 'rgba(52,211,153,0.05)',
+                glowColor: 'rgba(52,211,153,0.15)',
                 score: 'Score under 50',
                 desc: 'Package passed all checks. Safe to install.',
+                icon: (
+                  <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+                    {/* ears */}
+                    <ellipse cx="11" cy="13" rx="6" ry="8" fill="rgba(52,211,153,0.18)" stroke="#34d399" strokeWidth="1.5"/>
+                    <ellipse cx="33" cy="13" rx="6" ry="8" fill="rgba(52,211,153,0.18)" stroke="#34d399" strokeWidth="1.5"/>
+                    {/* head */}
+                    <ellipse cx="22" cy="26" rx="16" ry="14" fill="rgba(52,211,153,0.12)" stroke="#34d399" strokeWidth="1.5"/>
+                    {/* closed happy eyes */}
+                    <path d="M15 24 Q17 22 19 24" stroke="#34d399" strokeWidth="1.8" strokeLinecap="round" fill="none"/>
+                    <path d="M25 24 Q27 22 29 24" stroke="#34d399" strokeWidth="1.8" strokeLinecap="round" fill="none"/>
+                    {/* nose */}
+                    <ellipse cx="22" cy="29" rx="2.5" ry="1.8" fill="#34d399" opacity="0.7"/>
+                    {/* zzz */}
+                    <text x="31" y="18" fontSize="7" fill="#34d399" opacity="0.7" fontWeight="bold">z</text>
+                    <text x="34" y="14" fontSize="5.5" fill="#34d399" opacity="0.5" fontWeight="bold">z</text>
+                  </svg>
+                ),
               },
               {
                 label: 'WHINE',
                 color: '#fbbf24',
                 borderColor: 'rgba(251,191,36,0.2)',
                 bg: 'rgba(251,191,36,0.05)',
+                glowColor: 'rgba(251,191,36,0.15)',
                 score: 'Score 50-99',
                 desc: 'Suspicious signals found. Review before installing.',
+                icon: (
+                  <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+                    {/* ears */}
+                    <ellipse cx="11" cy="13" rx="6" ry="8" fill="rgba(251,191,36,0.18)" stroke="#fbbf24" strokeWidth="1.5"/>
+                    <ellipse cx="33" cy="13" rx="6" ry="8" fill="rgba(251,191,36,0.18)" stroke="#fbbf24" strokeWidth="1.5"/>
+                    {/* head */}
+                    <ellipse cx="22" cy="26" rx="16" ry="14" fill="rgba(251,191,36,0.10)" stroke="#fbbf24" strokeWidth="1.5"/>
+                    {/* worried eyes */}
+                    <circle cx="17" cy="24" r="2" fill="#fbbf24" opacity="0.8"/>
+                    <circle cx="27" cy="24" r="2" fill="#fbbf24" opacity="0.8"/>
+                    {/* nose */}
+                    <ellipse cx="22" cy="29" rx="2.5" ry="1.8" fill="#fbbf24" opacity="0.6"/>
+                    {/* wavy mouth - unsure */}
+                    <path d="M17 33 Q19 31 22 33 Q25 35 27 33" stroke="#fbbf24" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.7"/>
+                    {/* sweat drop */}
+                    <path d="M33 21 Q34 18 35 21 Q35 23 33 23 Z" fill="#fbbf24" opacity="0.5"/>
+                  </svg>
+                ),
               },
               {
                 label: 'BARK',
                 color: '#f87171',
                 borderColor: 'rgba(248,113,113,0.2)',
                 bg: 'rgba(248,113,113,0.05)',
+                glowColor: 'rgba(248,113,113,0.15)',
                 score: 'Score 100+',
                 desc: 'Dangerous. Do not install.',
+                icon: (
+                  <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+                    {/* ears — raised/alert */}
+                    <path d="M7 18 L10 7 L16 16" fill="rgba(248,113,113,0.2)" stroke="#f87171" strokeWidth="1.5" strokeLinejoin="round"/>
+                    <path d="M37 18 L34 7 L28 16" fill="rgba(248,113,113,0.2)" stroke="#f87171" strokeWidth="1.5" strokeLinejoin="round"/>
+                    {/* head */}
+                    <ellipse cx="22" cy="26" rx="16" ry="14" fill="rgba(248,113,113,0.10)" stroke="#f87171" strokeWidth="1.5"/>
+                    {/* alert eyes */}
+                    <circle cx="17" cy="23" r="2.5" fill="#f87171" opacity="0.9"/>
+                    <circle cx="27" cy="23" r="2.5" fill="#f87171" opacity="0.9"/>
+                    {/* glint */}
+                    <circle cx="18" cy="22" r="0.8" fill="white" opacity="0.6"/>
+                    <circle cx="28" cy="22" r="0.8" fill="white" opacity="0.6"/>
+                    {/* nose */}
+                    <ellipse cx="22" cy="27.5" rx="2.5" ry="1.8" fill="#f87171" opacity="0.7"/>
+                    {/* open mouth with teeth */}
+                    <path d="M15 32 Q22 38 29 32" fill="rgba(248,113,113,0.15)" stroke="#f87171" strokeWidth="1.2"/>
+                    <path d="M18 32 L18 34" stroke="white" strokeWidth="1.5" strokeLinecap="round" opacity="0.7"/>
+                    <path d="M22 32 L22 35" stroke="white" strokeWidth="1.5" strokeLinecap="round" opacity="0.7"/>
+                    <path d="M26 32 L26 34" stroke="white" strokeWidth="1.5" strokeLinecap="round" opacity="0.7"/>
+                    {/* motion lines */}
+                    <path d="M33 25 L37 24" stroke="#f87171" strokeWidth="1.5" strokeLinecap="round" opacity="0.5"/>
+                    <path d="M33 28 L37 29" stroke="#f87171" strokeWidth="1.5" strokeLinecap="round" opacity="0.4"/>
+                    <path d="M33 22 L36 20" stroke="#f87171" strokeWidth="1.5" strokeLinecap="round" opacity="0.3"/>
+                  </svg>
+                ),
               },
             ].map((v, i) => (
               <motion.div
@@ -513,6 +645,12 @@ export default function GuardogPage() {
                 className="rounded-2xl p-7 text-center"
                 style={{ background: v.bg, border: `1px solid ${v.borderColor}` }}
               >
+                <div
+                  className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+                  style={{ background: v.glowColor, boxShadow: `0 0 24px ${v.glowColor}` }}
+                >
+                  {v.icon}
+                </div>
                 <div className="text-3xl font-extrabold mb-2 font-mono tracking-widest" style={{ color: v.color }}>
                   {v.label}
                 </div>
