@@ -5,13 +5,10 @@ import ProTip from '@/components/ProTip'
 import { celebrate } from '@/lib/celebrate'
 
 const ITEMS = [
-  { id: 'phone-download', label: 'Download Claude on your phone',          required: true,  anchor: '#phone-download' },
-  { id: 'phone-login',    label: 'Log in with your existing account',       required: true,  anchor: '#phone-login'    },
-  { id: 'resend-domain',  label: 'Verify your Resend domain (or sandbox)',  required: true,  anchor: '#resend-domain'  },
-  { id: 'voice-samples',  label: 'Gather your writing samples',             required: true,  anchor: '#voice-samples'  },
-  { id: 'ig-handles',     label: 'Pick 2-3 Instagram accounts to study',   required: true,  anchor: '#ig-handles'     },
-  { id: 'instaloader',    label: 'Install InstaLoader',                     required: false, anchor: '#instaloader'    },
-  { id: 'resend-key',     label: 'Save your Resend API key somewhere handy', required: true,  anchor: '#resend-key'     },
+  { id: 'phone-download', label: 'Download Claude on your phone and log in',           required: true,  anchor: '#phone-download' },
+  { id: 'resend-domain',  label: 'Make sure your Resend domain is verified',            required: false, anchor: '#resend-domain'  },
+  { id: 'voice-samples',  label: 'Gather your writing samples',                         required: false, anchor: '#voice-samples'  },
+  { id: 'ig-handles',     label: 'Pick 2-3 Instagram accounts to study',               required: true,  anchor: '#ig-handles'     },
 ]
 
 function Checkbox({ checked, onChange }: { checked: boolean; onChange: () => void }) {
@@ -119,12 +116,12 @@ export default function Session6Prep() {
         </h1>
         <p className="text-[#FCF4EB]/70 text-base sm:text-lg leading-relaxed mb-6">
           Complete these steps before the session. Most of them take under five minutes.
-          The writing samples step takes a little longer but it is the most important one, so give it proper attention.
+          The writing samples step takes a little longer, so give it proper attention if you plan to do it beforehand.
         </p>
         <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl px-5 py-4">
           <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
             If you get stuck on anything before the session, message the group. Do not skip the writing samples
-            step and try to do it during the session, it takes time.
+            step and expect to finish it instantly during the session, it takes time.
           </p>
         </div>
       </div>
@@ -182,7 +179,7 @@ export default function Session6Prep() {
         <SectionCard
           id="phone-download"
           number={1}
-          title="Download Claude on your phone"
+          title="Download Claude on your phone and log in"
           badge={{ label: 'Required', required: true }}
           checked={checked.has('phone-download')}
           onToggle={() => toggle('phone-download')}
@@ -214,28 +211,7 @@ export default function Session6Prep() {
 
           <ol className="space-y-2 list-decimal list-inside">
             <li>Download the app from the store above</li>
-            <li>Open it, tap &ldquo;Log in&rdquo;</li>
-            <li>Stop there, do not start any conversations yet</li>
-          </ol>
-        </SectionCard>
-
-        {/* 2. Log in with existing account */}
-        <SectionCard
-          id="phone-login"
-          number={2}
-          title="Log in with your existing account"
-          badge={{ label: 'Required', required: true }}
-          checked={checked.has('phone-login')}
-          onToggle={() => toggle('phone-login')}
-        >
-          <p>
-            Log in using the same email address you use on your laptop. This connects
-            your phone and laptop so you can pick up any conversation on either device.
-          </p>
-
-          <ol className="space-y-2 list-decimal list-inside">
-            <li>Open the Claude app</li>
-            <li>Tap &ldquo;Log in&rdquo; and enter the same email you use on your laptop</li>
+            <li>Open a tab, log in using the same account you use on your laptop</li>
             <li>Complete the verification if prompted</li>
             <li>Confirm the app opens and shows your account name</li>
           </ol>
@@ -246,12 +222,12 @@ export default function Session6Prep() {
           </ProTip>
         </SectionCard>
 
-        {/* 3. Resend domain */}
+        {/* 2. Resend domain */}
         <SectionCard
           id="resend-domain"
-          number={3}
-          title="Verify your Resend domain (or set up sandbox)"
-          badge={{ label: 'Required', required: true }}
+          number={2}
+          title="Make sure your Resend domain is verified"
+          badge={{ label: 'Optional', required: false }}
           checked={checked.has('resend-domain')}
           onToggle={() => toggle('resend-domain')}
         >
@@ -288,16 +264,16 @@ export default function Session6Prep() {
           </div>
 
           <ProTip type="warning">
-            Either way, have your Resend API key ready before the session. You will need it to wire up the daily agent.
+            If your domain is not verified yet, that is okay. Sandbox mode is enough for the live exercise.
           </ProTip>
         </SectionCard>
 
-        {/* 4. Writing samples */}
+        {/* 3. Writing samples */}
         <SectionCard
           id="voice-samples"
-          number={4}
+          number={3}
           title="Gather your writing samples"
-          badge={{ label: 'Required', required: true }}
+          badge={{ label: 'Optional', required: false }}
           checked={checked.has('voice-samples')}
           onToggle={() => toggle('voice-samples')}
         >
@@ -331,10 +307,10 @@ export default function Session6Prep() {
           </p>
         </SectionCard>
 
-        {/* 5. Instagram handles */}
+        {/* 4. Instagram handles */}
         <SectionCard
           id="ig-handles"
-          number={5}
+          number={4}
           title="Pick 2-3 Instagram accounts to study"
           badge={{ label: 'Required', required: true }}
           checked={checked.has('ig-handles')}
@@ -363,73 +339,6 @@ export default function Session6Prep() {
           <ProTip type="tip">
             Not sure whose content to model? Think about the last creator in your niche that made you stop scrolling.
             Start there.
-          </ProTip>
-        </SectionCard>
-
-        {/* 6. InstaLoader */}
-        <SectionCard
-          id="instaloader"
-          number={6}
-          title="Install InstaLoader"
-          badge={{ label: 'Optional', required: false }}
-          checked={checked.has('instaloader')}
-          onToggle={() => toggle('instaloader')}
-        >
-          <p>
-            InstaLoader is a free tool that pulls recent captions and profile info from Instagram accounts.
-            We use it in the second half of the session to feed real content into your hook generator.
-          </p>
-
-          <p>
-            Try installing it now so we do not spend session time on it. Open your terminal and run:
-          </p>
-
-          <div className="bg-[#0d0d0f] border border-white/[0.08] rounded-xl p-4 font-mono text-sm text-[#FCF4EB]/80">
-            pip install instaloader
-          </div>
-
-          <p>
-            If it installs without errors, you are done. If you get an error, do not stress.
-            We will sort it out together at the start of the session, it is a common one.
-          </p>
-
-          <ProTip type="info">
-            If you get a &ldquo;pip not found&rdquo; error, try{' '}
-            <code className="bg-white/[0.08] px-1.5 py-0.5 rounded">pip3 install instaloader</code> instead.
-          </ProTip>
-        </SectionCard>
-
-        {/* 7. Resend API key */}
-        <SectionCard
-          id="resend-key"
-          number={7}
-          title="Save your Resend API key somewhere handy"
-          badge={{ label: 'Required', required: true }}
-          checked={checked.has('resend-key')}
-          onToggle={() => toggle('resend-key')}
-        >
-          <p>
-            You will need your Resend API key during the session to wire up the daily hook email agent.
-            Find it now and save it somewhere you can copy it quickly, like a note on your phone.
-          </p>
-
-          <ol className="space-y-2 list-decimal list-inside">
-            <li>
-              Log into{' '}
-              <a href="https://resend.com/api-keys" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">
-                Resend API Keys
-              </a>
-            </li>
-            <li>If you already have a key, copy it and save it in your notes</li>
-            <li>
-              If you do not have one yet, click &ldquo;Create API Key,&rdquo; name it anything (like &ldquo;Mastermind&rdquo;),
-              and save the key immediately. Resend only shows it once.
-            </li>
-          </ol>
-
-          <ProTip type="warning">
-            API keys are shown only once when you create them. If you never saved yours, you will need to create a new one.
-            That is fine, just delete the old one and generate a fresh key.
           </ProTip>
         </SectionCard>
 
