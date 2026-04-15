@@ -1,8 +1,7 @@
 import { NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
 
-const MANDRILL_API_KEY = process.env.MANDRILL_API_KEY
-const BASE_URL = 'https://mandrillapp.com/api/1.0'
+const RESEND_API_KEY = process.env.RESEND_API_KEY
 
 // Embedded at build time — no filesystem dependency in serverless
 const FILE_CONTENT = `# Joe Che's Ultimate CLAUDE.md
@@ -124,7 +123,7 @@ The more context Claude has, the less you have to explain each session.)
 **mastermindshq.business**
 **Free to use, share, and adapt.**`
 
-async function sendViaMandrill(firstName: string, email: string) {
+async function sendViaResend(firstName: string, email: string) {
   const fileBase64 = Buffer.from(FILE_CONTENT).toString('base64')
   const escapedContent = FILE_CONTENT.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 
@@ -161,29 +160,27 @@ async function sendViaMandrill(firstName: string, email: string) {
     </div>
   `
 
-  const res = await fetch(`${BASE_URL}/messages/send`, {
+  const res = await fetch('https://api.resend.com/emails', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${RESEND_API_KEY}`,
+    },
     body: JSON.stringify({
-      key: MANDRILL_API_KEY,
-      message: {
-        html,
-        subject: 'Your Ultimate Claude.md File',
-        from_email: 'joe@mastermindshq.business',
-        from_name: 'Joe Che',
-        to: [{ email, type: 'to' }],
-        attachments: [
-          {
-            type: 'text/plain',
-            name: 'joe-che-claude.md',
-            content: fileBase64,
-          },
-        ],
-      },
+      from: 'Joe Che <joe@mastermindshq.business>',
+      to: [email],
+      subject: 'Your Ultimate Claude.md File',
+      html,
+      attachments: [
+        {
+          filename: 'joe-che-claude.md',
+          content: fileBase64,
+        },
+      ],
     }),
   })
 
-  if (!res.ok) throw new Error(`Mandrill error: ${res.status}`)
+  if (!res.ok) throw new Error(`Resend error: ${res.status}`)
   return res.json()
 }
 
@@ -222,8 +219,8 @@ export async function POST(request: Request) {
       }),
     }).catch((err) => console.error('CRM ingest error (non-blocking):', err))
 
-    // Send via Mandrill
-    await sendViaMandrill(firstName, email)
+    // Send via Resend
+    await sendViaResend(firstName, email)
 
     return NextResponse.json({ success: true })
   } catch (error) {

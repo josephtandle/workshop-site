@@ -487,16 +487,18 @@ My brain dump is at: ~/Desktop/brain_dump_map`}
             pick the accounts once. After that it runs on its own.
           </p>
 
-          <StepCard number={15} title="Install Hook Writer Part 2">
+          <StepCard number={15} title="Install InstaLoader">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              InstaLoader is the tool that pulls public captions and bios from Instagram accounts.
               Run this in your terminal:
             </p>
             <CodeBlock
               filename="Terminal"
-              code={`curl -fsSL https://raw.githubusercontent.com/josephtandle/ultimate-hooklab-skill/main/install.sh | bash`}
+              code={`pip install instaloader`}
             />
             <ProTip type="info">
-              If you already ran this in Part E, you can skip this step. The script is the same.
+              InstaLoader only pulls publicly available data from public accounts. It does not
+              require logging in to Instagram.
             </ProTip>
           </StepCard>
 
@@ -516,27 +518,7 @@ My brain dump is at: ~/Desktop/brain_dump_map`}
             </ProTip>
           </StepCard>
 
-          <StepCard number={17} title="Wire up your Resend API key">
-            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-              Grab your API key from{' '}
-              <a
-                href="https://resend.com/api-keys"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#7C69C7] hover:underline"
-              >
-                Resend
-              </a>
-              , then paste this into Claude Code:
-            </p>
-            <CodeBlock
-              filename="Paste into Claude Code"
-              editable
-              code={`My Resend API key is [PASTE YOUR RESEND API KEY]. Please remember this.`}
-            />
-          </StepCard>
-
-          <StepCard number={18} title="Set up the daily email agent">
+          <StepCard number={17} title="Set up the daily email agent">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Fill in your Instagram handles and email address, then paste:
             </p>

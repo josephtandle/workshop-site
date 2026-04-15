@@ -1,10 +1,9 @@
 import { NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
 
-const MANDRILL_API_KEY = process.env.MANDRILL_API_KEY
-const BASE_URL = 'https://mandrillapp.com/api/1.0'
+const RESEND_API_KEY = process.env.RESEND_API_KEY
 
-async function sendViaMandrill(email: string, source: string) {
+async function sendViaResend(email: string, source: string) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://workshop.mastermindshq.business'
 
   let subject: string
@@ -48,22 +47,21 @@ async function sendViaMandrill(email: string, source: string) {
     `
   }
 
-  const res = await fetch(`${BASE_URL}/messages/send`, {
+  const res = await fetch('https://api.resend.com/emails', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${RESEND_API_KEY}`,
+    },
     body: JSON.stringify({
-      key: MANDRILL_API_KEY,
-      message: {
-        html,
-        subject,
-        from_email: 'joe@mastermindshq.business',
-        from_name: 'Joe Che',
-        to: [{ email, type: 'to' }],
-      },
+      from: 'Joe Che <joe@mastermindshq.business>',
+      to: [email],
+      subject,
+      html,
     }),
   })
 
-  if (!res.ok) throw new Error(`Mandrill error: ${res.status}`)
+  if (!res.ok) throw new Error(`Resend error: ${res.status}`)
   return res.json()
 }
 
@@ -118,8 +116,8 @@ export async function POST(request: Request) {
       console.error('CRM ingest error (non-blocking):', err)
     )
 
-    // Send confirmation via Mandrill
-    await sendViaMandrill(email, source)
+    // Send confirmation via Resend
+    await sendViaResend(email, source)
 
     return NextResponse.json({ success: true })
   } catch (error) {
