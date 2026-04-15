@@ -5,6 +5,17 @@ Follow them exactly. Do not deviate without Joe's explicit instruction.
 
 ---
 
+## Session Cards — Equal Height Rule
+
+All cards on session index pages (`/session/[slug]/`) must be the same height. Always:
+- Add `className="h-full"` to every `<Reveal>` wrapper around a card
+- Add `flex flex-col h-full` to every card `<Link>` or locked `<div>`
+- Add `flex-1` to the description `<p>` so it expands and pushes the CTA to the bottom
+
+This rule applies to every card on every session detail page, locked or not.
+
+---
+
 ## Audience
 
 Absolute beginners. No coding experience. English-first at all times.
