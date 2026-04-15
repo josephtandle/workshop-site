@@ -15,22 +15,6 @@ export default function HomePage() {
     <main>
       {/* Hero */}
       <section className="relative overflow-hidden py-28 px-6">
-        {/* Animated gradient orbs */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div
-            className="animate-float-slow absolute top-[-20%] left-[8%] w-[520px] h-[520px] rounded-full opacity-20"
-            style={{ background: 'radial-gradient(circle, #7C69C7 0%, transparent 70%)' }}
-          />
-          <div
-            className="animate-float-slower absolute bottom-[-15%] right-[3%] w-[420px] h-[420px] rounded-full opacity-15"
-            style={{ background: 'radial-gradient(circle, #F5C3C6 0%, transparent 70%)' }}
-          />
-          <div
-            className="animate-float-slow absolute top-[40%] right-[25%] w-[260px] h-[260px] rounded-full opacity-10"
-            style={{ background: 'radial-gradient(circle, #9D8FE0 0%, transparent 70%)', animationDelay: '3s' }}
-          />
-        </div>
-
         <div className="relative max-w-3xl mx-auto text-center">
           <Reveal>
             <p className="text-xs uppercase tracking-[0.2em] text-[#7C69C7] font-semibold mb-4">

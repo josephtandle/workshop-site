@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import Reveal from '@/components/Reveal'
 import StaggerList, { StaggerItem } from '@/components/StaggerList'
-import PageParticles from '@/components/PageParticles'
 import { giveaways } from '@/lib/giveaways'
 
 export const metadata = {
@@ -24,27 +23,7 @@ const BADGE_STYLES = {
 
 export default function GiveawaysIndexPage() {
   return (
-    <div className="relative">
-      {/* Full-page particle canvas */}
-      <PageParticles />
-
-      {/* Full-page gradient orbs */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <div
-          className="animate-float-slow absolute top-[-20%] left-[8%] w-[520px] h-[520px] rounded-full opacity-20"
-          style={{ background: 'radial-gradient(circle, #7C69C7 0%, transparent 70%)' }}
-        />
-        <div
-          className="animate-float-slower absolute bottom-[-15%] right-[3%] w-[420px] h-[420px] rounded-full opacity-15"
-          style={{ background: 'radial-gradient(circle, #F5C3C6 0%, transparent 70%)' }}
-        />
-        <div
-          className="animate-float-slow absolute top-[40%] right-[25%] w-[260px] h-[260px] rounded-full opacity-10"
-          style={{ background: 'radial-gradient(circle, #9D8FE0 0%, transparent 70%)', animationDelay: '3s' }}
-        />
-      </div>
-
-      <main className="relative z-10">
+    <main>
         {/* Hero */}
         <section className="overflow-hidden py-28 px-6">
           <div className="max-w-3xl mx-auto text-center">
@@ -116,7 +95,6 @@ export default function GiveawaysIndexPage() {
             </StaggerList>
           </div>
         </section>
-      </main>
-    </div>
+    </main>
   )
 }
