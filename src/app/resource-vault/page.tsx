@@ -2,14 +2,14 @@ import TabNav from '@/components/TabNav'
 
 export const metadata = {
   title: 'Resource Vault',
-  description: 'Bonus workshops and resources. Coming soon.',
+  description: 'Request any resources from the workshop.',
 }
 
 export default function ResourceVaultPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative overflow-hidden py-28 px-6">
+      <section className="relative overflow-hidden pt-20 pb-10 px-6">
         <div className="relative max-w-3xl mx-auto text-center">
           <p className="text-xs uppercase tracking-[0.2em] text-[#7C69C7] font-semibold mb-4">
             Masterminds Workshop
@@ -18,7 +18,7 @@ export default function ResourceVaultPage() {
             Resource Vault
           </h1>
           <p className="text-lg text-[#FCF4EB]/60 max-w-xl mx-auto leading-relaxed">
-            Bonus workshops and resources, all in one place.
+            Everything I have built is available to you. Just ask.
           </p>
         </div>
       </section>
@@ -26,23 +26,79 @@ export default function ResourceVaultPage() {
       {/* Tab nav */}
       <TabNav />
 
-      {/* Coming soon panel */}
-      <section className="max-w-5xl mx-auto px-6 pt-6 pb-24">
-        <div className="border border-white/[0.08] rounded-b-2xl rounded-tr-2xl overflow-hidden">
-          <div className="flex flex-col items-center justify-center py-24 px-6 text-center">
-            <div
-              className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-2xl"
-              style={{
-                background: 'rgba(124, 105, 199, 0.12)',
-                border: '1px solid rgba(124, 105, 199, 0.20)',
-              }}
-            >
-              ◆
+      {/* Content panel */}
+      <section className="max-w-5xl mx-auto px-6 pt-0 pb-24">
+        <div className="border border-t-0 border-white/[0.08] rounded-b-2xl overflow-hidden">
+          <div className="px-8 py-12 sm:px-12 sm:py-16">
+
+            {/* Main message */}
+            <div className="max-w-2xl mb-12">
+              <p className="text-[#FCF4EB]/80 text-base sm:text-lg leading-relaxed">
+                Feel free to request any resources. I am happy to provide any available materials I have,
+                even if they required significant time and money to build. If I have it, I am happy to
+                give it to you. Just request it.
+              </p>
             </div>
-            <h2 className="text-2xl font-bold text-[#FCF4EB] mb-3">Coming Soon</h2>
-            <p className="text-[#FCF4EB]/40 text-sm leading-relaxed max-w-sm">
-              Bonus workshops and extra resources will live here. Check back after the next session.
-            </p>
+
+            {/* Example resources */}
+            <div>
+              <p className="text-[#FCF4EB]/40 text-xs uppercase tracking-widest font-semibold mb-5">
+                Examples of what you can request
+              </p>
+              <div className="grid sm:grid-cols-3 gap-4">
+                {[
+                  {
+                    icon: '◈',
+                    title: 'Pitch Decks',
+                    desc: 'Real decks I have used or reviewed. Look them over, borrow the structure, adapt the framing.',
+                    variant: 'purple' as const,
+                  },
+                  {
+                    icon: '⬡',
+                    title: 'Financial Models',
+                    desc: 'Potential models and frameworks for thinking about revenue, costs, and growth projections.',
+                    variant: 'pink' as const,
+                  },
+                  {
+                    icon: '✦',
+                    title: 'Training Guides',
+                    desc: 'Step-by-step guides on topics I have built playbooks for over the years.',
+                    variant: 'purple' as const,
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.title}
+                    className="rounded-2xl p-5"
+                    style={{
+                      background: item.variant === 'purple'
+                        ? 'rgba(124, 105, 199, 0.07)'
+                        : 'rgba(245, 195, 198, 0.07)',
+                      border: item.variant === 'purple'
+                        ? '1px solid rgba(124, 105, 199, 0.15)'
+                        : '1px solid rgba(245, 195, 198, 0.15)',
+                    }}
+                  >
+                    <div
+                      className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold mb-4"
+                      style={{
+                        background: item.variant === 'purple'
+                          ? 'rgba(124, 105, 199, 0.18)'
+                          : 'rgba(245, 195, 198, 0.12)',
+                        color: item.variant === 'purple' ? '#9D8FE0' : '#F5C3C6',
+                        border: item.variant === 'purple'
+                          ? '1.5px solid rgba(124, 105, 199, 0.30)'
+                          : '1.5px solid rgba(245, 195, 198, 0.25)',
+                      }}
+                    >
+                      {item.icon}
+                    </div>
+                    <p className="text-[#FCF4EB] font-semibold text-sm mb-2">{item.title}</p>
+                    <p className="text-[#FCF4EB]/45 text-xs leading-relaxed">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
         </div>
       </section>

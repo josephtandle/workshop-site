@@ -26,18 +26,23 @@ export default function GiveawaysIndexPage() {
   return (
     <main>
         {/* Hero */}
-        <section className="overflow-hidden py-28 px-6">
+        <section className="overflow-hidden pt-20 pb-10 px-6">
           <div className="max-w-3xl mx-auto text-center">
+            <Reveal>
+              <p className="text-xs uppercase tracking-[0.2em] text-[#7C69C7] font-semibold mb-4">
+                Masterminds Workshop
+              </p>
+            </Reveal>
             <Reveal delay={2}>
               <div className="mb-5">
                 <h1 className="gradient-text text-5xl md:text-6xl font-extrabold leading-tight pb-1">
-                  All Joe Che Giveaways
+                  Bonus Resources
                 </h1>
               </div>
             </Reveal>
             <Reveal delay={3}>
               <p className="text-lg text-[#FCF4EB]/60 max-w-xl mx-auto leading-relaxed">
-                Free tools, templates, and guides.
+                Free tools, templates, and guides from the workshop.
               </p>
             </Reveal>
           </div>
@@ -47,8 +52,8 @@ export default function GiveawaysIndexPage() {
         <TabNav />
 
         {/* Giveaways list */}
-        <section className="max-w-5xl mx-auto px-6 pt-6 pb-24">
-          <div className="border border-white/[0.08] rounded-b-2xl rounded-tr-2xl overflow-hidden">
+        <section className="max-w-5xl mx-auto px-6 pt-0 pb-24">
+          <div className="border border-t-0 border-white/[0.08] rounded-b-2xl overflow-hidden">
             <StaggerList staggerDelay={0.07}>
               {giveaways.map((item, i) => (
                 <StaggerItem key={item.slug}>

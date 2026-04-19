@@ -15,7 +15,7 @@ export default function HomePage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative overflow-hidden py-28 px-6">
+      <section className="relative overflow-hidden pt-20 pb-10 px-6">
         <div className="relative max-w-3xl mx-auto text-center">
           <Reveal>
             <p className="text-xs uppercase tracking-[0.2em] text-[#7C69C7] font-semibold mb-4">
@@ -23,7 +23,7 @@ export default function HomePage() {
             </p>
           </Reveal>
           <Reveal delay={2}>
-            <h1 className="gradient-text text-5xl md:text-6xl font-extrabold mb-5 leading-tight">
+            <h1 className="gradient-text text-5xl md:text-6xl font-extrabold mb-5 leading-tight pb-1">
               Session Guides
             </h1>
           </Reveal>
@@ -39,8 +39,8 @@ export default function HomePage() {
       <TabNav />
 
       {/* Sessions list */}
-      <section className="max-w-5xl mx-auto px-6 pt-6 pb-24">
-        <div className="border border-white/[0.08] rounded-b-2xl rounded-tr-2xl overflow-hidden">
+      <section className="max-w-5xl mx-auto px-6 pt-0 pb-24">
+        <div className="border border-t-0 border-white/[0.08] rounded-b-2xl overflow-hidden">
           <StaggerList staggerDelay={0.07}>
             {sorted.map((session, i) => (
               <StaggerItem key={session.slug}>
