@@ -7,6 +7,7 @@ const TABS = [
   { label: 'Sessions',          href: '/'                  },
   { label: 'Bonus Resources',   href: '/giveaways'         },
   { label: 'Bonus Workshops',   href: '/bonus-workshops'   },
+  { label: 'Resource Vault',    href: '/resource-vault'    },
 ]
 
 export default function TabNav() {
