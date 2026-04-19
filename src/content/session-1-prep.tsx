@@ -5,8 +5,8 @@ import ProTip from '@/components/ProTip'
 import { celebrate } from '@/lib/celebrate'
 
 const ITEMS = [
-  { id: 'content',  label: 'Write Down Your Content',        required: true,  anchor: '#content'  },
-  { id: 'photo',    label: 'Gather Your Photos',              required: true,  anchor: '#photo'    },
+  { id: 'claude',  label: 'Claude Pro Account',     required: true, anchor: '#claude'  },
+  { id: 'vercel',  label: 'Create a Vercel Account', required: true, anchor: '#vercel'  },
 ]
 
 function Checkbox({ checked, onChange }: { checked: boolean; onChange: () => void }) {
@@ -87,7 +87,7 @@ function SectionCard({
   )
 }
 
-export default function Session2Prep() {
+export default function Session1Prep() {
   const [checked, setChecked] = useState<Set<string>>(new Set())
 
   const toggle = (id: string) => {
@@ -109,14 +109,13 @@ export default function Session2Prep() {
       {/* Page Header */}
       <div className="mb-10">
         <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
-          Before Session Two
+          Before Session One
         </p>
         <h1 className="text-3xl sm:text-4xl font-bold text-[#FCF4EB] leading-tight mb-5">
           Prep Requirements
         </h1>
         <p className="text-[#FCF4EB]/70 text-base sm:text-lg leading-relaxed mb-6">
-          Complete these two steps before the session. Total time: about 10 minutes.
-          We will handle all the technical setup together during the live session.
+          Complete these two steps before Session One. Total time: about 5 minutes. We will handle all the technical setup together during the live session.
         </p>
       </div>
 
@@ -169,112 +168,76 @@ export default function Session2Prep() {
       {/* Sections */}
       <div className="space-y-6">
 
-        {/* 1. Your Content */}
+        {/* 1. Claude Pro */}
         <SectionCard
-          id="content"
+          id="claude"
           number={1}
-          title="Write Down Your Content"
+          title="Claude Pro Account"
           badge={{ label: 'Required', required: true }}
-          checked={checked.has('content')}
-          onToggle={() => toggle('content')}
+          checked={checked.has('claude')}
+          onToggle={() => toggle('claude')}
         >
           <p>
-            <span className="text-[#FCF4EB] font-semibold">What this is for:</span> During the session,
-            you will give Claude all of this information and it will build your personal brand page
-            automatically. Write it down in advance so you are not scrambling to remember things on the call.
+            <span className="text-[#FCF4EB] font-semibold">What it is:</span> Claude Pro is the paid
+            version of Claude AI. It is required to use Claude Code, which is the tool we use to build
+            your website during the session. The free version of Claude does not include Claude Code access.
           </p>
 
-          <p>Open a notes app or a Google Doc and write down these six things:</p>
+          <p>
+            Claude Pro costs $20 per month. You can cancel any time.
+          </p>
 
-          <ol className="space-y-4 mt-2">
-            <li className="flex gap-3">
-              <span className="text-[#7C69C7] font-bold flex-shrink-0">1.</span>
-              <div>
-                <p className="text-[#FCF4EB] font-medium">Your name</p>
-                <p className="text-[#FCF4EB]/50 text-xs mt-0.5">The name you want displayed on your page.</p>
-              </div>
+          <ol className="space-y-3 list-decimal list-inside">
+            <li>
+              Go to{' '}
+              <a href="https://claude.ai/upgrade" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline font-medium">
+                claude.ai/upgrade
+              </a>
             </li>
-            <li className="flex gap-3">
-              <span className="text-[#7C69C7] font-bold flex-shrink-0">2.</span>
-              <div>
-                <p className="text-[#FCF4EB] font-medium">One sentence about what you do and who you help</p>
-                <p className="text-[#FCF4EB]/50 text-xs mt-0.5">
-                  Example: &ldquo;I help women feel powerful in their bodies.&rdquo; Keep it short and specific.
-                </p>
-              </div>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-[#7C69C7] font-bold flex-shrink-0">3.</span>
-              <div>
-                <p className="text-[#FCF4EB] font-medium">Your three services</p>
-                <p className="text-[#FCF4EB]/50 text-xs mt-0.5">
-                  A name and one-line description for each. You will get three cards on the page, one per service.
-                </p>
-              </div>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-[#7C69C7] font-bold flex-shrink-0">4.</span>
-              <div>
-                <p className="text-[#FCF4EB] font-medium">Your CTA link</p>
-                <p className="text-[#FCF4EB]/50 text-xs mt-0.5">
-                  This is the link your &ldquo;Book Now&rdquo; or &ldquo;Get in Touch&rdquo; button will point to.
-                  Use your booking link, your WhatsApp number, or your email address.
-                </p>
-              </div>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-[#7C69C7] font-bold flex-shrink-0">5.</span>
-              <div>
-                <p className="text-[#FCF4EB] font-medium">Your brand colors</p>
-                <p className="text-[#FCF4EB]/50 text-xs mt-0.5">
-                  If you have specific hex codes or brand colors, note them down. If not, just pick a vibe:{' '}
-                  <span className="text-[#FCF4EB]/70">dark and moody</span>,{' '}
-                  <span className="text-[#FCF4EB]/70">bright and energetic</span>, or{' '}
-                  <span className="text-[#FCF4EB]/70">soft and minimal</span>.
-                </p>
-              </div>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-[#7C69C7] font-bold flex-shrink-0">6.</span>
-              <div>
-                <p className="text-[#FCF4EB] font-medium">A photo of yourself</p>
-                <p className="text-[#FCF4EB]/50 text-xs mt-0.5">
-                  We will pick one together during the session. See the next step for how to prepare.
-                </p>
-              </div>
-            </li>
+            <li>Sign in or create a free Claude account if you do not have one</li>
+            <li>Click &ldquo;Upgrade to Pro&rdquo; and complete the payment</li>
+            <li>Confirm you can log in to your Claude account before the session</li>
           </ol>
 
-          <ProTip type="tip">
-            The more specific your tagline, the better your page will feel. &ldquo;I help busy mums lose
-            weight without giving up their favourite foods&rdquo; is far stronger than &ldquo;I help people get healthy.&rdquo;
-            Specificity builds trust instantly.
+          <ProTip type="info">
+            Claude Pro is enough for this session. If you get into heavy daily use later,
+            there is a higher-tier plan available but you do not need it now.
           </ProTip>
         </SectionCard>
 
-        {/* 2. Your Photo */}
+        {/* 2. Vercel */}
         <SectionCard
-          id="photo"
+          id="vercel"
           number={2}
-          title="Gather Your Photos"
+          title="Create a Vercel Account"
           badge={{ label: 'Required', required: true }}
-          checked={checked.has('photo')}
-          onToggle={() => toggle('photo')}
+          checked={checked.has('vercel')}
+          onToggle={() => toggle('vercel')}
         >
           <p>
-            Gather a few photos of yourself and put them somewhere easy to find — your desktop or
-            Downloads folder works perfectly. Having options is better than having one. You will pick
-            the best one together during the session.
+            <span className="text-[#FCF4EB] font-semibold">What it is:</span> Vercel is the platform
+            that puts your website on the internet. At the end of Session Two, you will run one command
+            and Vercel will give you a live URL you can share with anyone. It is completely free.
           </p>
 
-          <p>
-            Any mix of headshots, candid shots, or photos that represent you well is great.
-            Quality matters more than perfection — clear and well-lit is all you need.
-          </p>
+          <ol className="space-y-3 list-decimal list-inside">
+            <li>
+              Go to{' '}
+              <a href="https://vercel.com/signup" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline font-medium">
+                vercel.com/signup
+              </a>
+            </li>
+            <li>
+              Sign up with Google (recommended — one click if you are already logged into Gmail) or
+              with your email and a password
+            </li>
+            <li>If you signed up with email, check your inbox and click the verification link</li>
+            <li>Make sure your email is verified before the session — Vercel requires this before you can go live</li>
+          </ol>
 
           <ProTip type="info">
-            Your photos do not need to be professional. Clear selfies work perfectly.
-            We will choose and add one to your page together during the session.
+            The free plan covers everything you need. Unlimited projects, unlimited deployments,
+            and custom domain support — all at no cost.
           </ProTip>
         </SectionCard>
 

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getSession } from '@/lib/sessions'
+import Session1Prep from '@/content/session-1-prep'
 import Session2Prep from '@/content/session-2-prep'
 import Session3Prep from '@/content/session-3-prep'
 import Session4Prep from '@/content/session-4-prep'
@@ -9,6 +10,7 @@ import Session6Prep from '@/content/session-6-prep'
 import type { ComponentType } from 'react'
 
 const prepComponents: Record<string, ComponentType> = {
+  '1': Session1Prep,
   '2': Session2Prep,
   '3': Session3Prep,
   '4': Session4Prep,
@@ -21,7 +23,7 @@ interface Props {
 }
 
 export function generateStaticParams() {
-  return [{ slug: '2' }, { slug: '3' }, { slug: '4' }, { slug: '5' }, { slug: '6' }]
+  return [{ slug: '1' }, { slug: '2' }, { slug: '3' }, { slug: '4' }, { slug: '5' }, { slug: '6' }]
 }
 
 export async function generateMetadata({ params }: Props) {
