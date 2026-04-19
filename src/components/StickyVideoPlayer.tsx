@@ -15,6 +15,8 @@ export default function StickyVideoPlayer({ videoId, src, title = 'Workshop Reco
   const [isMinimized, setIsMinimized] = useState(false)
   const placeholderRef = useRef<HTMLDivElement>(null)
   const [inlineRect, setInlineRect] = useState<DOMRect | null>(null)
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const savedTimeRef = useRef(0)
 
   const HEADER_HEIGHT = 64
   const STICKY_WIDTH = 450
@@ -64,6 +66,19 @@ export default function StickyVideoPlayer({ videoId, src, title = 'Workshop Reco
   const handlePlay = useCallback(() => {
     setHasStarted(true)
   }, [])
+
+  const handleTimeUpdate = useCallback(() => {
+    if (videoRef.current) savedTimeRef.current = videoRef.current.currentTime
+  }, [])
+
+  // After sticky transition, restore playback position in the newly mounted video element
+  useEffect(() => {
+    if (!src || savedTimeRef.current === 0) return
+    const video = videoRef.current
+    if (!video) return
+    video.currentTime = savedTimeRef.current
+    video.play().catch(() => {})
+  }, [isSticky, src])
 
   const handleMinimize = useCallback(() => {
     setIsMinimized(true)
@@ -157,11 +172,13 @@ export default function StickyVideoPlayer({ videoId, src, title = 'Workshop Reco
           <div className="relative w-full h-full rounded-2xl border border-white/[0.10] overflow-hidden" style={{ aspectRatio: '16 / 9' }}>
             {src ? (
               <video
+                ref={videoRef}
                 src={src}
                 title={title}
                 controls
                 playsInline
                 onPlay={handlePlay}
+                onTimeUpdate={handleTimeUpdate}
                 className="absolute inset-0 w-full h-full object-contain bg-black"
               />
             ) : (
@@ -197,10 +214,11 @@ export default function StickyVideoPlayer({ videoId, src, title = 'Workshop Reco
           >
             {src ? (
               <video
+                ref={videoRef}
                 src={src}
                 controls
                 playsInline
-                autoPlay
+                onTimeUpdate={handleTimeUpdate}
                 className="absolute inset-0 w-full h-full object-contain bg-black"
               />
             ) : (
@@ -265,7 +283,7 @@ export default function StickyVideoPlayer({ videoId, src, title = 'Workshop Reco
                   src={src}
                   controls
                   playsInline
-                  autoPlay
+                  onTimeUpdate={handleTimeUpdate}
                   className="absolute inset-0 w-full h-full object-contain bg-black"
                 />
               ) : (
