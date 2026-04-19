@@ -3,11 +3,12 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
 
 interface StickyVideoPlayerProps {
-  videoId: string
+  videoId?: string
+  src?: string
   title?: string
 }
 
-export default function StickyVideoPlayer({ videoId, title = 'Workshop Recording' }: StickyVideoPlayerProps) {
+export default function StickyVideoPlayer({ videoId, src, title = 'Workshop Recording' }: StickyVideoPlayerProps) {
   const [isSticky, setIsSticky] = useState(false)
   const [hasStarted, setHasStarted] = useState(false)
   const [isExpanded, setIsExpanded] = useState(false)
@@ -91,7 +92,7 @@ export default function StickyVideoPlayer({ videoId, title = 'Workshop Recording
     return () => window.removeEventListener('keydown', handleKey)
   }, [isExpanded])
 
-  const iframeSrc = `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&enablejsapi=1`
+  const iframeSrc = videoId ? `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&enablejsapi=1` : ''
 
   // Compute the animated style for the video wrapper
   const getVideoStyle = (): React.CSSProperties => {
@@ -154,20 +155,32 @@ export default function StickyVideoPlayer({ videoId, title = 'Workshop Recording
         {/* When not sticky, video lives here in flow */}
         {!isSticky && (
           <div className="relative w-full h-full rounded-2xl border border-white/[0.10] overflow-hidden" style={{ aspectRatio: '16 / 9' }}>
-            <iframe
-              src={iframeSrc}
-              title={title}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              className="absolute inset-0 w-full h-full"
-            />
-
-            {!hasStarted && (
-              <div
-                className="absolute inset-0 z-10 cursor-pointer"
-                onClick={handlePlay}
-                aria-label="Play video"
+            {src ? (
+              <video
+                src={src}
+                title={title}
+                controls
+                playsInline
+                onPlay={handlePlay}
+                className="absolute inset-0 w-full h-full object-contain bg-black"
               />
+            ) : (
+              <>
+                <iframe
+                  src={iframeSrc}
+                  title={title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                />
+                {!hasStarted && (
+                  <div
+                    className="absolute inset-0 z-10 cursor-pointer"
+                    onClick={handlePlay}
+                    aria-label="Play video"
+                  />
+                )}
+              </>
             )}
           </div>
         )}
@@ -182,13 +195,23 @@ export default function StickyVideoPlayer({ videoId, title = 'Workshop Recording
             className="relative overflow-hidden rounded-xl border border-white/[0.12]"
             style={{ aspectRatio: '16 / 9' }}
           >
-            <iframe
-              src={iframeSrc}
-              title={title}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              className="absolute inset-0 w-full h-full"
-            />
+            {src ? (
+              <video
+                src={src}
+                controls
+                playsInline
+                autoPlay
+                className="absolute inset-0 w-full h-full object-contain bg-black"
+              />
+            ) : (
+              <iframe
+                src={iframeSrc}
+                title={title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              />
+            )}
 
             {/* Controls */}
             <div className="absolute top-2 right-2 flex items-center gap-1.5 z-20">
@@ -237,13 +260,23 @@ export default function StickyVideoPlayer({ videoId, title = 'Workshop Recording
             </button>
 
             <div className="relative rounded-2xl overflow-hidden border border-white/[0.10] shadow-2xl shadow-purple-900/20" style={{ aspectRatio: '16 / 9' }}>
-              <iframe
-                src={iframeSrc}
-                title={title}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                className="absolute inset-0 w-full h-full"
-              />
+              {src ? (
+                <video
+                  src={src}
+                  controls
+                  playsInline
+                  autoPlay
+                  className="absolute inset-0 w-full h-full object-contain bg-black"
+                />
+              ) : (
+                <iframe
+                  src={iframeSrc}
+                  title={title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                />
+              )}
             </div>
           </div>
         </div>

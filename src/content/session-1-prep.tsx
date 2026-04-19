@@ -3,11 +3,15 @@
 import { useState } from 'react'
 import ProTip from '@/components/ProTip'
 import { celebrate } from '@/lib/celebrate'
+import StickyVideoPlayer from '@/components/StickyVideoPlayer'
 
 const ITEMS = [
-  { id: 'claude',  label: 'Claude Pro Account',     required: true, anchor: '#claude'  },
-  { id: 'vercel',  label: 'Create a Vercel Account', required: true, anchor: '#vercel'  },
+  { id: 'claude',  label: 'Claude Pro Account',       required: true, anchor: '#claude'  },
+  { id: 'vercel',  label: 'Create a Vercel Account',  required: true, anchor: '#vercel'  },
+  { id: 'video',   label: 'Watch the Welcome Video',  required: true, anchor: '#video'   },
 ]
+
+const WELCOME_VIDEO_SRC = 'https://media.mastermindshq.business/videos/mastermind-welcome-setup.mp4'
 
 function Checkbox({ checked, onChange }: { checked: boolean; onChange: () => void }) {
   return (
@@ -115,7 +119,7 @@ export default function Session1Prep() {
           Prep Requirements
         </h1>
         <p className="text-[#FCF4EB]/70 text-base sm:text-lg leading-relaxed mb-6">
-          Complete these two steps before Session One. Total time: about 5 minutes. We will handle all the technical setup together during the live session.
+          Complete these three steps before Session One. Total time: about 10 minutes. We will handle all the technical setup together during the live session.
         </p>
       </div>
 
@@ -239,6 +243,28 @@ export default function Session1Prep() {
             The free plan covers everything you need. Unlimited projects, unlimited deployments,
             and custom domain support — all at no cost.
           </ProTip>
+        </SectionCard>
+
+        {/* 3. Welcome Video */}
+        <SectionCard
+          id="video"
+          number={3}
+          title="Watch the Welcome Video"
+          badge={{ label: 'Required', required: true }}
+          checked={checked.has('video')}
+          onToggle={() => toggle('video')}
+        >
+          <p>
+            <span className="text-[#FCF4EB] font-semibold">What it is:</span> A short welcome video
+            that walks you through what to expect in Session One and how to get the most out of
+            the workshop. Watch it before we go live.
+          </p>
+
+          <p>Hit play below. The video will follow you as you scroll.</p>
+
+          <div className="mt-4">
+            <StickyVideoPlayer src={WELCOME_VIDEO_SRC} title="Mastermind Welcome and Setup" />
+          </div>
         </SectionCard>
 
       </div>
