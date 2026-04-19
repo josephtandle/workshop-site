@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Reveal from '@/components/Reveal'
 import StaggerList, { StaggerItem } from '@/components/StaggerList'
+import TabNav from '@/components/TabNav'
 import { giveaways } from '@/lib/giveaways'
 
 export const metadata = {
@@ -42,9 +43,12 @@ export default function GiveawaysIndexPage() {
           </div>
         </section>
 
+        {/* Tab nav */}
+        <TabNav />
+
         {/* Giveaways list */}
-        <section className="max-w-5xl mx-auto px-6 pb-24">
-          <div className="border border-white/[0.08] rounded-2xl overflow-hidden">
+        <section className="max-w-5xl mx-auto px-6 pt-6 pb-24">
+          <div className="border border-white/[0.08] rounded-b-2xl rounded-tr-2xl overflow-hidden">
             <StaggerList staggerDelay={0.07}>
               {giveaways.map((item, i) => (
                 <StaggerItem key={item.slug}>
