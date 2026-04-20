@@ -1,51 +1,12 @@
 import Link from 'next/link'
-import { notFound } from 'next/navigation'
-import { getSession } from '@/lib/sessions'
-import { LOCKS } from '@/lib/locks'
-import Session1Guide from '@/content/session-1-guide'
-import Session2Guide from '@/content/session-2-guide'
-import Session3Guide from '@/content/session-3-guide'
-import Session6Guide from '@/content/session-6-guide'
-import type { ComponentType } from 'react'
+import Session2GuideCodex from '@/content/session-2-guide-codex'
 
-const guideComponents: Record<string, ComponentType> = {
-  '1': Session1Guide,
-  '2': Session2Guide,
-  '3': Session3Guide,
-  '6': Session6Guide,
+export const metadata = {
+  title: 'Session 2 Guide: Building Your First Website with AI (Codex)',
+  description: 'Step-by-step workshop guide for Session 2 using OpenAI Codex instead of Claude Code.',
 }
 
-interface Props {
-  params: Promise<{ slug: string }>
-}
-
-export function generateStaticParams() {
-  return [
-    { slug: '1' },
-    { slug: '2' },
-    { slug: '3' },
-    ...(LOCKS.session6Guide ? [{ slug: '6' }] : []),
-  ]
-}
-
-export async function generateMetadata({ params }: Props) {
-  const { slug } = await params
-  const session = getSession(slug)
-  if (!session) return { title: 'Workshop Guide', description: '' }
-  return {
-    title: `Session ${session.number} Guide: ${session.title}`,
-    description: `Step-by-step workshop guide for Session ${session.number}: ${session.title}`,
-  }
-}
-
-export default async function SessionGuidePage({ params }: Props) {
-  const { slug } = await params
-  const session = getSession(slug)
-  if (!session || !session.hasGuide) notFound()
-  if (slug === '6' && !LOCKS.session6Guide) notFound()
-
-  const GuideContent = guideComponents[slug]
-
+export default function Session2GuideCodexPage() {
   return (
     <main>
       {/* Breadcrumb */}
@@ -55,22 +16,23 @@ export default async function SessionGuidePage({ params }: Props) {
             All Sessions
           </Link>
           <span>/</span>
-          <Link href={`/session/${slug}`} className="hover:text-[#7C69C7] transition-colors">
-            Session {session.number}
+          <Link href="/session/2" className="hover:text-[#7C69C7] transition-colors">
+            Session 2
           </Link>
           <span>/</span>
           <span className="text-[#FCF4EB]/60">Workshop Guide</span>
+          <span className="text-xs px-2 py-0.5 rounded-full bg-[#7C69C7]/20 text-[#9D8FE0] font-medium ml-1">Codex</span>
         </nav>
       </div>
 
       {/* Content */}
-      <GuideContent />
+      <Session2GuideCodex />
 
       {/* Footer nav */}
       <div className="max-w-5xl mx-auto px-6 pb-16">
         <div className="border-t border-white/[0.06] pt-8 flex items-center justify-between flex-wrap gap-4">
           <Link
-            href={`/session/${slug}/prep`}
+            href="/session/2/prep"
             className="inline-flex items-center gap-2 text-sm text-[#FCF4EB]/40 hover:text-[#7C69C7] transition-colors"
           >
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">

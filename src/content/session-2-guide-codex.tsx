@@ -3,7 +3,7 @@ import CodeBlock from '@/components/CodeBlock';
 import ProTip from '@/components/ProTip';
 import StickyVideoPlayer from '@/components/StickyVideoPlayer';
 
-export default function Session2Guide() {
+export default function Session2GuideCodex() {
   return (
     <>
     <div className="max-w-3xl mx-auto px-6 py-16 pb-0">
@@ -16,6 +16,9 @@ export default function Session2Guide() {
         <h1 className="text-4xl font-bold text-[#FCF4EB] leading-tight mb-5">
           Building Your First Website with AI
         </h1>
+        <div className="inline-flex items-center gap-2 bg-[#7C69C7]/10 border border-[#7C69C7]/30 rounded-full px-3 py-1 mb-5">
+          <span className="text-[#9D8FE0] text-xs font-semibold">Using Codex instead of Claude Code</span>
+        </div>
         <p className="text-[#FCF4EB]/70 text-lg leading-relaxed mb-8">
           By the end of this session you will have a personal brand website live on the internet.
           No coding experience needed. You will describe what you want, and AI does the building.
@@ -54,10 +57,10 @@ export default function Session2Guide() {
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Set Up and Build Your Page</h2>
         </div>
 
-        {/* Step 1: Install Claude Code */}
-        <StepCard number={1} title="Install Claude Code">
+        {/* Step 1: Install Codex */}
+        <StepCard number={1} title="Install Codex">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-5">
-            Claude Code is the AI tool you will use to build your website. It runs in your terminal
+            Codex is the AI tool you will use to build your website. It runs in your terminal
             and understands plain English. You tell it what you want, it writes all the code.
           </p>
 
@@ -97,60 +100,65 @@ export default function Session2Guide() {
             </div>
           </div>
 
-          {/* Install command */}
-          <p className="text-[#FCF4EB] font-semibold text-sm mb-2">Install Claude Code</p>
+          {/* Node.js check */}
+          <p className="text-[#FCF4EB] font-semibold text-sm mb-2">Check if Node.js is installed</p>
           <p className="text-[#FCF4EB]/60 text-sm leading-relaxed mb-3">
-            Copy the command below and paste it into your terminal. Then press Enter and wait for it to finish.
-            You will see text moving across the screen. That is normal. It is done when you see the prompt symbol
-            {' '}<span className="font-mono bg-white/[0.08] px-1 rounded text-xs">$</span> or <span className="font-mono bg-white/[0.08] px-1 rounded text-xs">{'>'}</span> again.
+            Codex needs a tool called Node.js to run. Node.js is a program that lets your computer understand JavaScript.
+            Most computers already have it. Let&apos;s check. Paste this into your terminal and press Enter:
           </p>
-          <CodeBlock filename="Terminal" code={`curl -fsSL https://claude.ai/install.sh | bash`} />
+          <CodeBlock filename="Terminal" code={`node --version`} />
+          <p className="text-[#FCF4EB]/60 text-sm leading-relaxed mt-3 mb-4">
+            If you see a version number like <span className="font-mono bg-white/[0.08] px-1 rounded text-xs">v18.0.0</span> or
+            {' '}<span className="font-mono bg-white/[0.08] px-1 rounded text-xs">v20.0.0</span>, you are good. Skip ahead to the next section.
+          </p>
+          <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4 mb-5">
+            <p className="text-[#FCF4EB] font-semibold text-sm mb-1">If you see &ldquo;command not found&rdquo;</p>
+            <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
+              Go to{' '}
+              <a href="https://nodejs.org" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline font-medium">nodejs.org</a>,
+              click the big green &ldquo;LTS&rdquo; download button, run the installer, and click through with all
+              the default settings. When it is done, close your terminal and reopen it, then run{' '}
+              <span className="font-mono bg-white/[0.08] px-1 rounded text-xs">node --version</span> again.
+            </p>
+          </div>
+
+          {/* Install Codex */}
+          <p className="text-[#FCF4EB] font-semibold text-sm mb-2">Install Codex</p>
+          <p className="text-[#FCF4EB]/60 text-sm leading-relaxed mb-3">
+            This command downloads and installs Codex on your computer. Paste it into your terminal and press Enter.
+            You will see text moving across the screen — that is normal. Wait until the prompt symbol{' '}
+            <span className="font-mono bg-white/[0.08] px-1 rounded text-xs">$</span> or{' '}
+            <span className="font-mono bg-white/[0.08] px-1 rounded text-xs">{'>'}</span> reappears before moving on.
+          </p>
+          <CodeBlock filename="Terminal" code={`npm install -g @openai/codex`} />
 
           <ProTip type="info">
-            This is the official installer from Anthropic. It downloads and installs everything Claude Code needs
-            automatically. No other software required.
+            npm is a tool that Node.js includes automatically. It downloads packages and programs from the internet.
+            The <span className="font-mono bg-white/[0.06] px-1 rounded text-xs">-g</span> means &ldquo;install this globally so you can use it from anywhere.&rdquo;
           </ProTip>
 
-          {/* First run and login */}
-          <p className="text-[#FCF4EB] font-semibold text-sm mb-2 mt-5">Run Claude Code for the first time</p>
+          {/* Log in */}
+          <p className="text-[#FCF4EB] font-semibold text-sm mb-2 mt-5">Log in with your ChatGPT Plus account</p>
           <p className="text-[#FCF4EB]/60 text-sm leading-relaxed mb-3">
-            After the installer finishes, close and reopen your terminal. Then type:
+            After the install finishes, run this command. It opens a browser window where you log in
+            with your ChatGPT Plus account. Once you click Authorize, return to the terminal.
           </p>
-          <CodeBlock filename="Terminal" code={`claude`} />
-          <p className="text-[#FCF4EB]/60 text-sm leading-relaxed mt-3 mb-4">
-            The first time you run it, Claude Code will walk you through a few screens:
-          </p>
-          <ol className="space-y-3 mb-4">
-            <li className="flex gap-3 text-sm text-[#FCF4EB]/70">
-              <span className="text-[#7C69C7] font-bold flex-shrink-0">1.</span>
-              <span>It will ask you to accept the Terms of Service. Type <span className="font-mono bg-white/[0.08] px-1 rounded text-xs">y</span> and press Enter</span>
-            </li>
-            <li className="flex gap-3 text-sm text-[#FCF4EB]/70">
-              <span className="text-[#7C69C7] font-bold flex-shrink-0">2.</span>
-              <span>Your browser will open automatically. If it does not, look for a link in the terminal and click it</span>
-            </li>
-            <li className="flex gap-3 text-sm text-[#FCF4EB]/70">
-              <span className="text-[#7C69C7] font-bold flex-shrink-0">3.</span>
-              <span>Log in with the same email and password you use at claude.ai. Click <strong className="text-[#FCF4EB]/90">Authorize</strong> when prompted</span>
-            </li>
-            <li className="flex gap-3 text-sm text-[#FCF4EB]/70">
-              <span className="text-[#7C69C7] font-bold flex-shrink-0">4.</span>
-              <span>Return to your terminal. You should see a welcome message and a blinking cursor ready for instructions</span>
-            </li>
-          </ol>
+          <CodeBlock filename="Terminal" code={`codex auth`} />
 
           <ProTip type="tip">
-            You only need to log in once. After that, Claude Code remembers your account every time you open the terminal.
+            You only need to log in once. After that, Codex remembers your account every time you open the terminal.
           </ProTip>
 
-          {/* Always start with dangerously-skip-permissions */}
+          {/* Always start with full-auto */}
           <div className="mt-5 bg-white/[0.04] border border-white/[0.08] rounded-xl p-5">
-            <p className="text-[#FCF4EB] font-semibold text-sm mb-2">Always start Claude Code this way</p>
+            <p className="text-[#FCF4EB] font-semibold text-sm mb-2">Always start Codex this way</p>
             <p className="text-[#FCF4EB]/60 text-sm leading-relaxed mb-3">
-              Every time you open Claude Code, use this command instead of just typing <span className="font-mono bg-white/[0.08] px-1 rounded text-xs">claude</span>.
-              It skips the permission prompts so you are not clicking through confirmation screens every few seconds.
+              Every time you open Codex, use this command. The{' '}
+              <span className="font-mono bg-white/[0.08] px-1 rounded text-xs">--approval-mode full-auto</span>{' '}
+              flag means Codex will make changes without stopping to ask your permission on every step. This keeps
+              things moving smoothly during the session.
             </p>
-            <CodeBlock filename="Terminal" code={`claude --dangerously-skip-permissions`} />
+            <CodeBlock filename="Terminal" code={`codex --approval-mode full-auto`} />
           </div>
 
           {/* Error dropdown */}
@@ -215,14 +223,23 @@ export default function Session2Guide() {
                 <p className="text-[#FCF4EB]/50 text-xs uppercase tracking-widest font-semibold mb-3">Common errors and fixes</p>
                 <div className="space-y-4">
                   <div className="bg-white/[0.04] border border-white/[0.07] rounded-xl p-4">
-                    <p className="text-[#FCF4EB] font-semibold text-sm mb-1">&ldquo;command not found: curl&rdquo;</p>
+                    <p className="text-[#FCF4EB] font-semibold text-sm mb-1">&ldquo;command not found: node&rdquo; or &ldquo;node is not recognized&rdquo;</p>
                     <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
-                      This is very rare on modern systems. On Mac, open Terminal and it should already be available.
-                      On Windows, make sure you are using Command Prompt or PowerShell, not an older terminal.
+                      Node.js is not installed. Go to{' '}
+                      <a href="https://nodejs.org" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">nodejs.org</a>,
+                      download the LTS version, run the installer, then close and reopen your terminal before trying again.
                     </p>
                   </div>
                   <div className="bg-white/[0.04] border border-white/[0.07] rounded-xl p-4">
-                    <p className="text-[#FCF4EB] font-semibold text-sm mb-1">&ldquo;command not found: claude&rdquo;</p>
+                    <p className="text-[#FCF4EB] font-semibold text-sm mb-1">&ldquo;command not found: npm&rdquo;</p>
+                    <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
+                      npm comes bundled with Node.js. If npm is missing, reinstall Node.js from{' '}
+                      <a href="https://nodejs.org" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">nodejs.org</a>{' '}
+                      and reopen the terminal.
+                    </p>
+                  </div>
+                  <div className="bg-white/[0.04] border border-white/[0.07] rounded-xl p-4">
+                    <p className="text-[#FCF4EB] font-semibold text-sm mb-1">&ldquo;command not found: codex&rdquo;</p>
                     <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
                       Close and reopen your terminal after installing. This is needed so your terminal picks up the new command.
                       If it still does not work, run the install command again.
@@ -230,15 +247,9 @@ export default function Session2Guide() {
                     </p>
                   </div>
                   <div className="bg-white/[0.04] border border-white/[0.07] rounded-xl p-4">
-                    <p className="text-[#FCF4EB] font-semibold text-sm mb-1">&ldquo;Missing billing information&rdquo; or &ldquo;Subscription required&rdquo;</p>
-                    <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
-                      Claude Code requires a paid Claude plan (Pro, Max, Teams, or Enterprise). Log in at claude.ai and confirm your subscription is active.
-                    </p>
-                  </div>
-                  <div className="bg-white/[0.04] border border-white/[0.07] rounded-xl p-4">
                     <p className="text-[#FCF4EB] font-semibold text-sm mb-1">The browser did not open during login</p>
                     <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
-                      Look in your terminal for a URL that starts with <span className="font-mono bg-white/[0.08] px-1 rounded text-xs">https://claude.ai/auth...</span> Copy it and paste it into your browser manually.
+                      Look in your terminal for a URL that starts with <span className="font-mono bg-white/[0.08] px-1 rounded text-xs">https://auth.openai.com...</span> Copy it and paste it into your browser manually.
                     </p>
                   </div>
                   <div className="bg-white/[0.04] border border-white/[0.07] rounded-xl p-4">
@@ -255,28 +266,28 @@ export default function Session2Guide() {
           </details>
         </StepCard>
 
-        {/* Step 3: Create project folder */}
-        <StepCard number={2} title="Create your project folder and open Claude Code">
+        {/* Step 2: Create project folder */}
+        <StepCard number={2} title="Create your project folder and open Codex">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-            Open your terminal and start Claude Code with the command below. Then give Claude the plain-English
+            Open your terminal and start Codex with the command below. Then give Codex the plain-English
             instruction to set up your project folder.
           </p>
-          <CodeBlock filename="Terminal" code={`claude --dangerously-skip-permissions`} />
+          <CodeBlock filename="Terminal" code={`codex --approval-mode full-auto`} />
           <p className="text-[#FCF4EB]/70 leading-relaxed mt-5 mb-3">
-            Once Claude Code is running, paste this in:
+            Once Codex is running, paste this in:
           </p>
           <CodeBlock
-            filename="Paste into Claude Code"
+            filename="Paste into Codex"
             code={`Create me a folder that I'm going to make my website in and go into that folder.`}
           />
 
           <ProTip type="tip" className="mt-4">
-            When Claude Code asks &ldquo;Trust this folder?&rdquo; click <strong>Trust</strong>. This gives it
+            When Codex asks &ldquo;Trust this folder?&rdquo; click <strong>Trust</strong>. This gives it
             permission to create and edit files inside your project. Do not skip this step.
           </ProTip>
         </StepCard>
 
-        {/* Step 4: Add photo */}
+        {/* Step 3: Add photo */}
         <StepCard number={3} title="Add your photo to the folder">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
             Before we build, move your photo into the project folder. Make sure it is named{' '}
@@ -308,11 +319,11 @@ export default function Session2Guide() {
           </ProTip>
         </StepCard>
 
-        {/* Step 5: Build the page */}
+        {/* Step 4: Build the page */}
         <StepCard number={4} title="Build your personal brand page">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
             Fill in your own details below, replacing everything in brackets. Then copy and paste it
-            into Claude Code.
+            into Codex.
           </p>
           <ProTip type="tip" className="mb-4">
             Click anywhere in the box to edit it. Replace every{' '}
@@ -320,7 +331,7 @@ export default function Session2Guide() {
             your own information before copying.
           </ProTip>
           <CodeBlock
-            filename="Paste into Claude Code"
+            filename="Paste into Codex"
             editable
             code={`Build me a simple personal brand website as a single index.html file.
 
@@ -333,7 +344,7 @@ export default function Session2Guide() {
 Use HTML, CSS, and vanilla JavaScript only.`}
           />
           <p className="text-[#FCF4EB]/70 leading-relaxed mt-5 mb-2">
-            Once Claude finishes, open the file in your browser to see it:
+            Once Codex finishes, open the file in your browser to see it:
           </p>
           <div className="space-y-2">
             <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-3">
@@ -344,7 +355,7 @@ Use HTML, CSS, and vanilla JavaScript only.`}
             </div>
           </div>
           <ProTip type="tip" className="mt-4">
-            If anything looks wrong, just tell Claude in plain English what to fix. For example:{' '}
+            If anything looks wrong, just tell Codex in plain English what to fix. For example:{' '}
             &ldquo;Make the headline bigger&rdquo; or &ldquo;Change the background to white.&rdquo; You do not
             need to touch any code.
           </ProTip>
@@ -367,7 +378,7 @@ Use HTML, CSS, and vanilla JavaScript only.`}
             Paste this exactly as written. No edits needed.
           </p>
           <CodeBlock
-            filename="Paste into Claude Code"
+            filename="Paste into Codex"
             code={`Upgrade my website with these visual effects:
 
 - Animated gradient mesh background in the hero that slowly shifts
@@ -386,7 +397,7 @@ Keep all my content exactly as it is.`}
             When the previous effects are looking great, paste this to take it further. Paste exactly as written.
           </p>
           <CodeBlock
-            filename="Paste into Claude Code"
+            filename="Paste into Codex"
             code={`Now add these pro effects:
 
 1. Lenis smooth scroll
@@ -399,7 +410,7 @@ Do not change any content or layout.`}
           />
           <ProTip type="tip" className="mt-4">
             No stats yet? No problem. Use numbers like years of experience, clients helped, hours saved
-            per week, or an aspirational goal. Claude will use whatever you have in your page.
+            per week, or an aspirational goal. Codex will use whatever you have in your page.
           </ProTip>
         </StepCard>
       </section>
@@ -416,12 +427,12 @@ Do not change any content or layout.`}
 
         <StepCard number={7} title="Deploy to Vercel">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-            Tell Claude Code to deploy. It will handle everything including logging into{' '}
+            Tell Codex to deploy. It will handle everything including logging into{' '}
             <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">Vercel</a>{' '}
             and pushing your files live.
           </p>
           <CodeBlock
-            filename="Paste into Claude Code"
+            filename="Paste into Codex"
             code={`Deploy my website to production.`}
           />
           <p className="text-[#FCF4EB]/70 leading-relaxed mt-4">
@@ -438,10 +449,10 @@ Do not change any content or layout.`}
 
         <StepCard number={8} title="Add your photo">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-            Tell Claude to place your photo on the page. Edit the file name below if yours is different.
+            Tell Codex to place your photo on the page. Edit the file name below if yours is different.
           </p>
           <CodeBlock
-            filename="Paste into Claude Code"
+            filename="Paste into Codex"
             editable
             code={`Add my photo to the website. The file is called [photo.jpg] and it's in the same folder as index.html.
 
@@ -451,14 +462,14 @@ Place it in the about section next to my bio. Style it with a rounded border and
             Once it looks good, deploy again to update your live site:
           </p>
           <CodeBlock
-            filename="Paste into Claude Code"
+            filename="Paste into Codex"
             code={`Deploy my website to production.`}
           />
         </StepCard>
 
         <StepCard number={9} title="Customize and explore">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-            Now it is yours. There are no wrong moves. Try asking Claude things like:
+            Now it is yours. There are no wrong moves. Try asking Codex things like:
           </p>
           <ul className="space-y-2 text-[#FCF4EB]/70">
             <li className="flex gap-2">
@@ -479,7 +490,7 @@ Place it in the about section next to my bio. Style it with a rounded border and
             </li>
           </ul>
           <ProTip type="tip" className="mt-4">
-            Every time you make a change you like, tell Claude{' '}
+            Every time you make a change you like, tell Codex{' '}
             &ldquo;Deploy my website to production&rdquo; to push it live. Your URL stays the same.
           </ProTip>
         </StepCard>
@@ -551,11 +562,6 @@ Place it in the about section next to my bio. Style it with a rounded border and
 
         </div>
       </section>
-
-      <p className="text-center text-xs text-white/20 pb-8">
-        Using Codex instead of Claude Code?{' '}
-        <a href="/session/2/guide-codex" className="underline hover:text-white/50 transition-colors">Codex version of this page</a>
-      </p>
 
     </div>
     </>

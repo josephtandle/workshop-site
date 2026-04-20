@@ -6,9 +6,9 @@ import { celebrate } from '@/lib/celebrate'
 import StickyVideoPlayer from '@/components/StickyVideoPlayer'
 
 const ITEMS = [
-  { id: 'claude',  label: 'Claude Pro Account',       required: true, anchor: '#claude'  },
-  { id: 'vercel',  label: 'Create a Vercel Account',  required: true, anchor: '#vercel'  },
-  { id: 'video',   label: 'Watch the Welcome Video',  required: true, anchor: '#video'   },
+  { id: 'openai',  label: 'ChatGPT Plus Account',        required: true, anchor: '#openai'  },
+  { id: 'vercel',  label: 'Create a Vercel Account',     required: true, anchor: '#vercel'  },
+  { id: 'video',   label: 'Watch the Welcome Video',     required: true, anchor: '#video'   },
 ]
 
 const WELCOME_VIDEO_SRC = 'https://media.mastermindshq.business/videos/mastermind-welcome-setup.mp4'
@@ -91,7 +91,7 @@ function SectionCard({
   )
 }
 
-export default function Session1Prep() {
+export default function Session1PrepCodex() {
   const [checked, setChecked] = useState<Set<string>>(new Set())
 
   const toggle = (id: string) => {
@@ -118,6 +118,9 @@ export default function Session1Prep() {
         <h1 className="text-3xl sm:text-4xl font-bold text-[#FCF4EB] leading-tight mb-5">
           Prep Requirements
         </h1>
+        <div className="inline-flex items-center gap-2 bg-[#7C69C7]/10 border border-[#7C69C7]/30 rounded-full px-3 py-1 mb-5">
+          <span className="text-[#9D8FE0] text-xs font-semibold">Using Codex instead of Claude Code</span>
+        </div>
         <p className="text-[#FCF4EB]/70 text-base sm:text-lg leading-relaxed mb-6">
           Complete these three steps before Session One. Total time: about 10 minutes. We will handle all the technical setup together during the live session.
         </p>
@@ -172,40 +175,40 @@ export default function Session1Prep() {
       {/* Sections */}
       <div className="space-y-6">
 
-        {/* 1. Claude Pro */}
+        {/* 1. ChatGPT Plus */}
         <SectionCard
-          id="claude"
+          id="openai"
           number={1}
-          title="Claude Pro Account"
+          title="ChatGPT Plus Account"
           badge={{ label: 'Required', required: true }}
-          checked={checked.has('claude')}
-          onToggle={() => toggle('claude')}
+          checked={checked.has('openai')}
+          onToggle={() => toggle('openai')}
         >
           <p>
-            <span className="text-[#FCF4EB] font-semibold">What it is:</span> Claude Pro is the paid
-            version of Claude AI. It is required to use Claude Code, which is the tool we use to build
-            your website during the session. The free version of Claude does not include Claude Code access.
+            <span className="text-[#FCF4EB] font-semibold">What it is:</span> ChatGPT Plus is the paid
+            version of ChatGPT. It gives you access to Codex, the AI tool we use to build your website
+            during the session. The free version of ChatGPT does not include Codex access.
           </p>
 
           <p>
-            Claude Pro costs $20 per month. You can cancel any time.
+            ChatGPT Plus costs $20 per month. You can cancel any time.
           </p>
 
           <ol className="space-y-3 list-decimal list-inside">
             <li>
               Go to{' '}
-              <a href="https://claude.ai/upgrade" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline font-medium">
-                claude.ai/upgrade
+              <a href="https://chat.openai.com" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline font-medium">
+                chat.openai.com
               </a>
             </li>
-            <li>Sign in or create a free Claude account if you do not have one</li>
-            <li>Click &ldquo;Upgrade to Pro&rdquo; and complete the payment</li>
-            <li>Confirm you can log in to your Claude account before the session</li>
+            <li>Sign in or create a free OpenAI account if you do not have one</li>
+            <li>Click &ldquo;Upgrade to Plus&rdquo; and complete the payment</li>
+            <li>Confirm you can log in to your ChatGPT account before the session</li>
           </ol>
 
           <ProTip type="info">
-            Claude Pro is enough for this session. If you get into heavy daily use later,
-            there is a higher-tier plan available but you do not need it now.
+            ChatGPT Plus gives you access to Codex in the same way Claude Pro gives Claude Code users access
+            to Claude Code. One subscription, no per-use charges.
           </ProTip>
         </SectionCard>
 
@@ -273,10 +276,6 @@ export default function Session1Prep() {
       <div className="mt-14 border-t border-white/[0.08] pt-8">
         <p className="text-[#FCF4EB]/40 text-sm leading-relaxed text-center">
           That is everything. We will handle the rest together during the session.
-        </p>
-        <p className="text-center text-xs text-white/20 mt-8">
-          Using Codex instead of Claude?{' '}
-          <a href="/session/1/prep-codex" className="underline hover:text-white/50 transition-colors">Codex version of this page</a>
         </p>
       </div>
     </div>

@@ -22,9 +22,10 @@ export const sessions: Session[] = [
     description:
       'Introductions, group agreements, and the mindset shift from employee to entrepreneur. We define what we are building and why.',
     date: '',
-    hasGuide: false,
+    hasGuide: true,
     hasPrep: true,
     hasBonus: true,
+    guideTitle: 'Session Recording',
     prepDescription: 'Get your Claude Pro account and Vercel account set up before we start. Takes about 5 minutes.',
   },
   {

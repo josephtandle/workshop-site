@@ -40,6 +40,53 @@ export default function ResourceVaultPage() {
               </p>
             </div>
 
+            {/* Featured resource */}
+            <div className="mb-12">
+              <p className="text-[#FCF4EB]/40 text-xs uppercase tracking-widest font-semibold mb-5">
+                Featured resource
+              </p>
+              <a
+                href="/coach-kit-onboarding-matrix.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block rounded-2xl p-6 transition-all hover:scale-[1.01]"
+                style={{
+                  background: 'rgba(124, 105, 199, 0.07)',
+                  border: '1px solid rgba(124, 105, 199, 0.22)',
+                }}
+              >
+                <div className="flex items-start gap-5">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold flex-shrink-0"
+                    style={{
+                      background: 'rgba(124, 105, 199, 0.18)',
+                      color: '#9D8FE0',
+                      border: '1.5px solid rgba(124, 105, 199, 0.30)',
+                    }}
+                  >
+                    ◈
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-[#FCF4EB] font-semibold text-base mb-1">Coach Kit Onboarding Matrix</p>
+                    <p className="text-[#FCF4EB]/45 text-xs mb-3">by Studio Solay</p>
+                    <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
+                      An interactive AI priority matrix built for coaches. Map your weekly tasks by importance and time, then let the tool surface what to automate, augment, protect, or batch. Drag tasks around the matrix and export your action plan.
+                    </p>
+                  </div>
+                  <div
+                    className="flex-shrink-0 text-xs font-semibold px-3 py-1.5 rounded-full"
+                    style={{
+                      background: 'rgba(124, 105, 199, 0.15)',
+                      color: '#9D8FE0',
+                      border: '1px solid rgba(124, 105, 199, 0.25)',
+                    }}
+                  >
+                    Open tool
+                  </div>
+                </div>
+              </a>
+            </div>
+
             {/* Example resources */}
             <div>
               <p className="text-[#FCF4EB]/40 text-xs uppercase tracking-widest font-semibold mb-5">
