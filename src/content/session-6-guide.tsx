@@ -73,7 +73,7 @@ export default function Session6Guide() {
         <p className="text-[#FCF4EB]/50 text-xs uppercase tracking-widest font-semibold mb-1">Workshop Recording</p>
         <p className="text-[#FCF4EB]/40 text-sm">Follow along with the live session. Hit play and the video will stick to the top as you scroll.</p>
       </div>
-      <StickyVideoPlayer videoId="xBq_acIJBvw" title="Session 6 Workshop Recording" />
+      <StickyVideoPlayer videoId="uhJ6NJxrOxg" title="Session 6 Workshop Recording" />
     </div>
 
       <div className="max-w-3xl mx-auto px-6 pb-16">
