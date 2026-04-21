@@ -4,6 +4,7 @@ import StepCard from '@/components/StepCard'
 import CodeBlock from '@/components/CodeBlock'
 import ProTip from '@/components/ProTip'
 import { celebrate } from '@/lib/celebrate'
+import StickyVideoPlayer from '@/components/StickyVideoPlayer'
 
 export default function Session6Guide() {
   return (
@@ -66,7 +67,26 @@ export default function Session6Guide() {
         </div>
       </div>
 
+    {/* Workshop Recording — sticky video player */}
+    <div className="max-w-3xl mx-auto px-6 mb-14">
+      <div className="mb-4">
+        <p className="text-[#FCF4EB]/50 text-xs uppercase tracking-widest font-semibold mb-1">Workshop Recording</p>
+        <p className="text-[#FCF4EB]/40 text-sm">Follow along with the live session. Hit play and the video will stick to the top as you scroll.</p>
+      </div>
+      <StickyVideoPlayer videoId="xBq_acIJBvw" title="Session 6 Workshop Recording" />
+    </div>
+
       <div className="max-w-3xl mx-auto px-6 pb-16">
+
+        {/* Always start with dangerously-skip-permissions */}
+        <div className="mb-10 bg-white/[0.04] border border-white/[0.08] rounded-xl p-5">
+          <p className="text-[#FCF4EB] font-semibold text-sm mb-2">Always start Claude Code this way</p>
+          <p className="text-[#FCF4EB]/60 text-sm leading-relaxed mb-3">
+            Every time you open Claude Code, use this command instead of just typing <span className="font-mono bg-white/[0.08] px-1 rounded text-xs">claude</span>.
+            It skips the permission prompts so you are not clicking through confirmation screens every few seconds.
+          </p>
+          <CodeBlock filename="Terminal" code={`claude --dangerously-skip-permissions`} />
+        </div>
 
         {/* Part A */}
         <section id="part-a" className="mb-14">
@@ -482,39 +502,51 @@ My brain dump is at: ~/Desktop/brain_dump_map`}
             </h2>
           </div>
           <p className="text-[#FCF4EB]/60 text-sm mb-6 leading-relaxed">
-            Part 2 of Hook Writer pulls recent captions from Instagram accounts in your niche,
-            feeds them into the hook generator, and emails you the results every morning. You
-            pick the accounts once. After that it runs on its own.
+            Part 2 of Hook Writer downloads real Instagram videos from accounts in your niche,
+            transcribes what the creator actually said, and feeds the transcripts into the hook
+            generator. You get the spoken content, not just the caption. Then you set it up to
+            run every morning and email you fresh hook ideas automatically.
           </p>
 
-          <StepCard number={15} title="Install InstaLoader">
+          <StepCard number={15} title="Install yt-dlp and FFmpeg">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-              InstaLoader is the tool that pulls public captions and bios from Instagram accounts.
-              Run this in your terminal:
+              Paste this into Claude Code. It will detect your operating system and install both
+              tools the right way for your machine:
             </p>
             <CodeBlock
-              filename="Terminal"
-              code={`pip install instaloader`}
+              filename="Paste into Claude Code"
+              code={`Check what operating system I am on, then install yt-dlp and FFmpeg using the correct method for my system. If I am on a Mac, use Homebrew. If I am on Windows, use the appropriate package manager or direct download. Confirm both are installed and working when you are done.`}
             />
             <ProTip type="info">
-              InstaLoader only pulls publicly available data from public accounts. It does not
-              require logging in to Instagram.
+              yt-dlp downloads public videos from Instagram and hundreds of other platforms.
+              FFmpeg handles audio extraction. You only need to install these once.
             </ProTip>
           </StepCard>
 
-          <StepCard number={16} title="Run the live InstaLoader exercise">
+          <StepCard number={16} title="Download and transcribe a reel">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-              Everyone does this together. Paste this prompt and fill in ONE Instagram handle
-              from your prep list:
+              Everyone does this together. Go to one of the accounts from your prep list, open
+              any recent reel, and copy the URL from your browser. Then paste this prompt with
+              the URL filled in:
             </p>
             <CodeBlock
               filename="Paste into Claude Code"
               editable
-              code={`Pull the recent captions and bio from @[INSTAGRAM HANDLE] using InstaLoader. Save the output to a file called [HANDLE]-hooks.md. Then use the live-exercise prompt to: (1) generate 3-5 hooks in that creator's style adapted to my niche, (2) write a to-do list for modeling their content strategy, and (3) identify the key components of their landing page or offer structure.`}
+              code={`Download this Instagram reel using yt-dlp: [PASTE THE REEL URL HERE]
+
+Extract the audio using FFmpeg. Then transcribe the audio using Whisper — install it first if needed using "pip install openai-whisper", and use the "base" model for speed.
+
+Save the transcript to a file called research-transcript.md.
+
+Then use the transcript to:
+1. Generate 3-5 hooks in that creator's style adapted to my niche
+2. Write a to-do list for modeling their content strategy based on what they actually said
+3. Identify the key talking points, offer structure, or calls to action from the video`}
             />
             <ProTip type="tip">
-              While that is running, start a background agent for a second account by adding{' '}
+              While that is running, start a background agent on a second reel by adding{' '}
               <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">!</code> before the prompt.
+              You can transcribe multiple reels in parallel.
             </ProTip>
           </StepCard>
 
@@ -531,7 +563,14 @@ Instagram accounts to pull from: [@HANDLE1, @HANDLE2, @HANDLE3]
 My email address: [YOUR EMAIL]
 Send time: 7am my local time
 
-Every morning the agent should: pull recent captions from these accounts, generate 5-10 hook ideas adapted to my niche using my voice profile, and email them to me with the subject line "Your daily hooks".`}
+Every morning the agent should:
+1. Use yt-dlp to download the most recent reel from each account
+2. Extract the audio with FFmpeg
+3. Transcribe each reel using Whisper (base model)
+4. Generate 5-10 hook ideas adapted to my niche using my voice profile, drawing from the transcripts
+5. Email the hooks to me with the subject line "Your daily hooks"
+
+Use Claude's scheduled remote agents to run this automatically every day. Set it up using the /schedule skill so it runs on a daily cron schedule at the send time above. The agent should run in the cloud so it works even when my laptop is closed.`}
             />
             <ProTip type="warning">
               Make sure your{' '}
