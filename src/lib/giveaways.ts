@@ -77,6 +77,14 @@ export const giveaways: Giveaway[] = [
     badge: 'Skill',
     badgeVariant: 'purple',
   },
+  {
+    slug: 'ray-dalio-council',
+    title: 'Ray Dalio Council',
+    description: 'A Claude Code skill that runs a believability-weighted decision council. Five scouts argue your question. One synthesizer weighs them. PROCEED, HOLD, or INVESTIGATE.',
+    icon: '✦',
+    badge: 'Skill',
+    badgeVariant: 'purple',
+  },
 ]
 
 export function getGiveaway(slug: string): Giveaway | undefined {
