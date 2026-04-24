@@ -271,7 +271,7 @@ export default function Session7Prep() {
               </div>
               <div className="flex-1 min-w-0">
                 <p className="text-[#FCF4EB]/70 font-medium text-sm group-hover:text-[#9D8FE0] transition-colors">
-                  Download: Arja Hendrix interview (MP4, 20 min)
+                  Download: Adam Roa interview (MP4)
                 </p>
               </div>
               <svg width="12" height="12" viewBox="0 0 14 14" fill="none" className="flex-shrink-0 text-[#FCF4EB]/20 group-hover:text-[#7C69C7] transition-colors">
