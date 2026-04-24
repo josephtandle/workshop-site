@@ -260,7 +260,7 @@ export default function Session7Prep() {
               Don't have any long-form content? Download one of my podcasts for the session demo.
             </p>
             <a
-              href="https://media.mastermindshq.business/podcast/session7-demo.mp4"
+              href="https://media.mastermindshq.business/podcast/adam-roa-podcast.mp4"
               download
               className="flex items-center gap-3 bg-white/[0.04] border border-white/[0.08] hover:border-[#7C69C7]/40 rounded-xl px-4 py-3 transition-all duration-150 group"
             >
