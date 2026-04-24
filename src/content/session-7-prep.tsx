@@ -5,10 +5,8 @@ import ProTip from '@/components/ProTip'
 import { celebrate } from '@/lib/celebrate'
 
 const ITEMS = [
-  { id: 'node-installed',    label: 'Confirm Node.js is installed',        required: true,  anchor: '#node-installed'    },
-  { id: 'claude-working',    label: 'Confirm Claude Code is still working', required: true,  anchor: '#claude-working'    },
-  { id: 'terminal-ready',    label: 'Have your terminal ready to go',       required: true,  anchor: '#terminal-ready'    },
-  { id: 'task-ideas',        label: 'Think of 3 real tasks to add',         required: false, anchor: '#task-ideas'        },
+  { id: 'descript-account',   label: 'Create a free Descript account (if you don\'t already have one)', required: true, anchor: '#descript-account' },
+  { id: 'content-ready',      label: 'Have your long-form content ready',        required: true,  anchor: '#content-ready'      },
 ]
 
 function Checkbox({ checked, onChange }: { checked: boolean; onChange: () => void }) {
@@ -115,13 +113,13 @@ export default function Session7Prep() {
           Prep Requirements
         </h1>
         <p className="text-[#FCF4EB]/70 text-base sm:text-lg leading-relaxed mb-6">
-          This session involves installing something new, so your terminal and Node.js need to
-          be working before you arrive. Two quick checks and you are set.
+          Two things to do before you arrive: create a free Descript account and have one piece
+          of long-form content ready. Both take under five minutes.
         </p>
         <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl px-5 py-4">
           <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
-            If either check fails, message the group before the session. Do not wait until you
-            are live on the call to troubleshoot it.
+            No content of your own? A backup podcast episode is provided below.
+            It takes two minutes to download and works just as well for the session.
           </p>
         </div>
       </div>
@@ -175,157 +173,112 @@ export default function Session7Prep() {
       {/* Sections */}
       <div className="space-y-6">
 
-        {/* 1. Node.js */}
+        {/* 1. Descript account */}
         <SectionCard
-          id="node-installed"
+          id="descript-account"
           number={1}
-          title="Confirm Node.js is installed"
+          title="Create a free Descript account (if you don't already have one)"
           badge={{ label: 'Required', required: true }}
-          checked={checked.has('node-installed')}
-          onToggle={() => toggle('node-installed')}
+          checked={checked.has('descript-account')}
+          onToggle={() => toggle('descript-account')}
         >
           <p>
-            <span className="text-[#FCF4EB] font-semibold">Why it matters:</span> Mission Control
-            is a Node.js application. You installed Node.js back in Session 2, so it should
-            already be there. This check confirms it is still working.
+            Descript is free to start and no credit card is required. Create your account
+            before the session so you can follow along from the first minute.
           </p>
 
-          <p>Open your terminal and run this command:</p>
-
-          <div className="bg-[#0d0d0f] border border-white/[0.08] rounded-xl p-4 font-mono text-sm text-[#FCF4EB]/80 leading-relaxed">
-            node --version
-          </div>
-
-          <p>
-            You should see a version number like{' '}
-            <code className="bg-white/[0.08] px-1.5 py-0.5 rounded">v20.11.0</code> or similar.
-            Any version from v18 onward is fine. If the command is not found, go back to the
-            Session 2 guide and reinstall Node.js before the session.
-          </p>
-
-          <ProTip type="info">
-            The exact version number does not matter as long as it is v18 or higher. If you
-            see a number, Node.js is installed and working.
-          </ProTip>
-        </SectionCard>
-
-        {/* 2. Claude Code */}
-        <SectionCard
-          id="claude-working"
-          number={2}
-          title="Confirm Claude Code is still working"
-          badge={{ label: 'Required', required: true }}
-          checked={checked.has('claude-working')}
-          onToggle={() => toggle('claude-working')}
-        >
-          <p>
-            <span className="text-[#FCF4EB] font-semibold">Why it matters:</span> You will use
-            Claude Code during the session to write card descriptions and later to wire up the
-            AI automation. Make sure it is responding before you arrive.
-          </p>
-
-          <p>In your terminal, run:</p>
-
-          <div className="bg-[#0d0d0f] border border-white/[0.08] rounded-xl p-4 font-mono text-sm text-[#FCF4EB]/80 leading-relaxed">
-            claude --version
-          </div>
-
-          <p>
-            You should see a version number. Then open a Claude Code session and type anything
-            short, just to confirm it responds. If Claude Code has not been used in a while it
-            may prompt you to log in again. Do that now so you are not doing it live during the session.
-          </p>
+          <a
+            href="https://get.descript.com/ib44r8t9noyj"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 bg-white/[0.05] border border-white/[0.10] hover:border-[#7C69C7]/50 rounded-xl px-5 py-4 transition-all duration-150 group"
+          >
+            <div className="w-9 h-9 rounded-full bg-[#7C69C7]/20 border border-[#7C69C7]/40 flex items-center justify-center flex-shrink-0">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M2.5 11.5l9-9M5 2.5h6.5v6.5" stroke="#9D8FE0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-[#FCF4EB] font-semibold text-sm group-hover:text-[#9D8FE0] transition-colors">
+                Create your free Descript account
+              </p>
+              <p className="text-[#FCF4EB]/40 text-xs mt-0.5">
+                get.descript.com
+              </p>
+            </div>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="flex-shrink-0 text-[#FCF4EB]/30 group-hover:text-[#7C69C7] transition-colors">
+              <path d="M2.5 11.5l9-9M5 2.5h6.5v6.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </a>
 
           <ProTip type="tip">
-            If Claude Code asks you to authenticate, run{' '}
-            <code className="bg-white/[0.08] px-1.5 py-0.5 rounded">claude</code> in your
-            terminal and follow the login steps. It takes about two minutes.
+            Sign up and sign in before the session. You do not need to explore the app yet.
+            We will walk through everything together.
           </ProTip>
         </SectionCard>
 
-        {/* 3. Terminal ready */}
+        {/* 2. Long-form content */}
         <SectionCard
-          id="terminal-ready"
-          number={3}
-          title="Have your terminal app ready to go"
+          id="content-ready"
+          number={2}
+          title="Have your long-form content ready"
           badge={{ label: 'Required', required: true }}
-          checked={checked.has('terminal-ready')}
-          onToggle={() => toggle('terminal-ready')}
+          checked={checked.has('content-ready')}
+          onToggle={() => toggle('content-ready')}
         >
           <p>
-            This session starts with a terminal command to clone the repo and run the install
-            script. Have your terminal application open and ready before the session starts.
-          </p>
-
-          <div className="space-y-2">
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
-              <p className="text-[#FCF4EB] font-semibold text-sm mb-1">On Mac: Terminal</p>
-              <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
-                Press{' '}
-                <code className="bg-white/[0.08] px-1.5 py-0.5 rounded">Cmd + Space</code>,
-                type{' '}
-                <code className="bg-white/[0.08] px-1.5 py-0.5 rounded">Terminal</code>,
-                and hit Enter. Or use iTerm2 if you have it.
-              </p>
-            </div>
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
-              <p className="text-[#FCF4EB] font-semibold text-sm mb-1">On Windows: Windows Terminal</p>
-              <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
-                Search for &ldquo;Windows Terminal&rdquo; in the Start menu. If you have not installed
-                it, get it from the{' '}
-                <a
-                  href="https://aka.ms/terminal"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#7C69C7] hover:underline"
-                >
-                  Microsoft Store
-                </a>
-                . It is free.
-              </p>
-            </div>
-          </div>
-
-          <ProTip type="info">
-            You do not need anything special. The default terminal that came with your computer
-            works perfectly fine.
-          </ProTip>
-        </SectionCard>
-
-        {/* 4. Task ideas */}
-        <SectionCard
-          id="task-ideas"
-          number={4}
-          title="Think of 3 real tasks to add"
-          badge={{ label: 'Optional', required: false }}
-          checked={checked.has('task-ideas')}
-          onToggle={() => toggle('task-ideas')}
-        >
-          <p>
-            In this session you will add real cards to your Mission Control board. Coming in with
-            a few task ideas makes the session move faster and the board immediately useful to you.
-          </p>
-
-          <p>
-            Think about tasks that are currently in your head or scattered across different apps.
-            Pick three things you have been meaning to do for your business and jot them down
-            before the session.
+            You will use this content as your working example during the session. It can be
+            anything you have recorded or published, as long as it is over 10 minutes long.
           </p>
 
           <div>
-            <p className="text-[#FCF4EB] font-semibold mb-2">Good candidates:</p>
+            <p className="text-[#FCF4EB] font-semibold mb-2">What works:</p>
             <ul className="space-y-2 list-disc list-inside">
-              <li>Something you keep forgetting to do and it comes back to mind every few days</li>
-              <li>A task that needs a human to do it, not Claude: a call, a decision, a conversation</li>
-              <li>Something you could eventually hand off to Claude if the description were specific enough</li>
+              <li>A podcast episode you recorded</li>
+              <li>A keynote, talk, or presentation</li>
+              <li>A webinar, coaching call, or interview</li>
+              <li>Any speech or long video you have saved</li>
             </ul>
           </div>
 
+          <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4 space-y-1">
+            <p className="text-[#FCF4EB] font-semibold text-sm">File format</p>
+            <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
+              Audio or video both work: .mp3, .m4a, .wav, .mp4, or .mov. If you have it on your
+              phone, move it to your laptop before the session.
+            </p>
+          </div>
+
           <ProTip type="tip">
-            The third type is the most valuable one to think about before the session. Identifying
-            tasks that are repeatable and describable is the foundation of everything you will
-            build in Session 8.
+            Use your own content if you can. The session will be more useful to you when the
+            example is something you actually made.
           </ProTip>
+
+          {/* Inline backup option */}
+          <div className="border-t border-white/[0.08] pt-4">
+            <p className="text-[#FCF4EB]/50 text-sm mb-3">
+              Don't have any long-form content? Download one of my podcasts for the session demo.
+            </p>
+            <a
+              href="https://media.mastermindshq.business/podcast/session7-demo.mp4"
+              download
+              className="flex items-center gap-3 bg-white/[0.04] border border-white/[0.08] hover:border-[#7C69C7]/40 rounded-xl px-4 py-3 transition-all duration-150 group"
+            >
+              <div className="w-8 h-8 rounded-full bg-[#7C69C7]/15 border border-[#7C69C7]/30 flex items-center justify-center flex-shrink-0">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                  <path d="M8 2v8m0 0l-3-3m3 3l3-3M3 12h10" stroke="#9D8FE0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-[#FCF4EB]/70 font-medium text-sm group-hover:text-[#9D8FE0] transition-colors">
+                  Download: Nick Santonastasso interview (MP4, 20 min)
+                </p>
+              </div>
+              <svg width="12" height="12" viewBox="0 0 14 14" fill="none" className="flex-shrink-0 text-[#FCF4EB]/20 group-hover:text-[#7C69C7] transition-colors">
+                <path d="M2.5 11.5l9-9M5 2.5h6.5v6.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </a>
+          </div>
         </SectionCard>
 
       </div>
@@ -333,8 +286,7 @@ export default function Session7Prep() {
       {/* Footer note */}
       <div className="mt-14 border-t border-white/[0.08] pt-8">
         <p className="text-[#FCF4EB]/40 text-sm leading-relaxed text-center">
-          If either required check fails before the session, message the group. Do not try to
-          troubleshoot alone during the call.
+          That is all you need. See you at the session.
         </p>
       </div>
 

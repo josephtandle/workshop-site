@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=794">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #7C69C7;
+  --primary-light: #8B79D4;
+  --dark: #0e0a17;
+  --deep-purple: #2B1F38;
+  --light: #F0EDF9;
+  --warm: #FCF4EB;
+  --pink: #F5C3C6;
+  --body-text: #2d2640;
+  --muted: #6b6280;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: #fff;
+  color: var(--body-text);
+  line-height: 1.8;
+  font-size: 15.5px;
+  width: 794px;
+  margin: 0 auto;
+}
+
+/* ===== COVER ===== */
+.cover {
+  background: var(--dark);
+  min-height: 520px;
+  padding: 56px 64px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Diagonal stripe texture */
+.cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 8px,
+    rgba(124, 105, 199, 0.04) 8px,
+    rgba(124, 105, 199, 0.04) 9px
+  );
+  z-index: 1;
+}
+
+/* Geometric accent: large circle top-right */
+.cover::after {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 340px;
+  height: 340px;
+  border: 2px solid rgba(124, 105, 199, 0.25);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.cover-inner {
+  position: relative;
+  z-index: 2;
+}
+
+/* Small geometric accent: thin line + small circle */
+.cover-geo {
+  position: absolute;
+  top: 56px;
+  right: 64px;
+  z-index: 2;
+}
+.cover-geo::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid rgba(245, 195, 198, 0.4);
+  border-radius: 50%;
+}
+.cover-geo::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 1.5px;
+  background: rgba(124, 105, 199, 0.3);
+  margin-top: 16px;
+  margin-left: -20px;
+}
+
+.cover-badge {
+  display: inline-block;
+  color: var(--primary-light);
+  font-family: 'Sora', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0;
+  width: fit-content;
+  margin-bottom: 24px;
+}
+
+.cover-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 42px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.12;
+  max-width: 580px;
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+
+.cover-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.65;
+  max-width: 480px;
+  font-weight: 400;
+}
+
+.cover-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 48px;
+}
+
+.cover-footer-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cover-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--primary-light);
+  border-radius: 50%;
+}
+
+.cover-footer-label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.cover-url {
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* ===== INTRO CALLOUT ===== */
+.intro {
+  padding: 48px 64px;
+  background: #fff;
+  position: relative;
+}
+
+.intro-inner {
+  padding: 32px 36px 32px 40px;
+  border-left: 3px solid var(--primary);
+  position: relative;
+  background: var(--light);
+  border-radius: 0 8px 8px 0;
+}
+
+.intro-quote {
+  position: absolute;
+  top: -8px;
+  left: 12px;
+  font-family: 'Sora', serif;
+  font-size: 72px;
+  font-weight: 300;
+  color: var(--primary);
+  opacity: 0.25;
+  line-height: 1;
+}
+
+.intro p {
+  font-size: 15.5px;
+  color: var(--body-text);
+  line-height: 1.85;
+  position: relative;
+  z-index: 1;
+}
+
+.intro p strong {
+  color: var(--dark);
+  font-weight: 600;
+}
+
+/* ===== CONTENT ===== */
+.content {
+  padding: 16px 64px 56px;
+}
+
+/* ===== SECTION ===== */
+.section {
+  padding: 36px 0 32px;
+  border-bottom: 1px solid #ece8f4;
+  position: relative;
+}
+.section:last-of-type { border-bottom: none; }
+
+.section-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  margin-bottom: 18px;
+  position: relative;
+  min-height: 48px;
+}
+
+.num-watermark {
+  font-family: 'Sora', sans-serif;
+  font-size: 56px;
+  font-weight: 300;
+  color: var(--primary);
+  opacity: 0.12;
+  line-height: 1;
+  position: absolute;
+  top: -8px;
+  left: -4px;
+  user-select: none;
+}
+
+.section-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.15;
+  padding-left: 38px;
+  padding-top: 6px;
+}
+
+.section-body {
+  font-size: 15.5px;
+  color: var(--body-text);
+  margin-left: 38px;
+  line-height: 1.8;
+}
+
+.section-body p {
+  margin-bottom: 14px;
+}
+
+.section-body ul {
+  list-style: none;
+  margin-top: 12px;
+  margin-bottom: 14px;
+}
+
+.section-body ul li {
+  padding: 5px 0 5px 24px;
+  position: relative;
+  line-height: 1.7;
+}
+
+.section-body ul li::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  background: var(--primary);
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 13px;
+}
+
+.score-label {
+  font-family: 'Sora', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 8px;
+  display: block;
+}
+
+/* ===== ACTION STEP BOX ===== */
+.action-step {
+  background: var(--dark);
+  color: #fff;
+  padding: 16px 22px;
+  border-radius: 8px;
+  margin-top: 18px;
+  margin-left: 38px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.action-step-icon {
+  font-family: 'Sora', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: var(--primary);
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.action-step-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.9);
+}
+
+/* ===== SCORE GRID ===== */
+.score-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.score-card {
+  padding: 16px 20px;
+  border-radius: 8px;
+  background: var(--light);
+  border: 1px solid #e5e0f0;
+}
+
+.score-card-range {
+  font-family: 'Sora', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.score-card-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+
+.score-card-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* ===== CTA ===== */
+.cta {
+  background: var(--dark);
+  padding: 56px 64px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+/* Decorative circle */
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -60px;
+  transform: translateY(-50%);
+  width: 220px;
+  height: 220px;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  opacity: 0.15;
+}
+
+/* Second smaller circle */
+.cta::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  right: 60px;
+  width: 100px;
+  height: 100px;
+  border: 1.5px solid var(--pink);
+  border-radius: 50%;
+  opacity: 0.12;
+}
+
+.cta-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 520px;
+}
+
+.cta-label {
+  font-family: 'Sora', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--primary-light);
+  margin-bottom: 16px;
+}
+
+.cta h2 {
+  font-family: 'Sora', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.cta p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  padding: 13px 32px;
+  border-radius: 6px;
+  font-size: 14px;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 64px;
+  border-top: 1px solid #ece8f4;
+}
+
+.footer-left {
+  font-family: 'Sora', sans-serif;
+  font-size: 12px;
+  color: var(--primary);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.footer-right {
+  font-size: 11px;
+  color: #9ca3af;
+  letter-spacing: 0.02em;
+}
+
+/* ===== PRINT ===== */
+@media print {
+  @page { size: A4; margin: 0; }
+  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<div class="cover">
+  <div class="cover-geo"></div>
+  <div class="cover-inner">
+    <div class="cover-badge">Business Automation Mastermind</div>
+    <h1 class="cover-title">The 10-Minute<br>Automation Audit</h1>
+    <p class="cover-subtitle">Score your business across five core systems. Find the one costing you the most hours every week, and fix it first.</p>
+    <div class="cover-footer">
+      <div class="cover-footer-left">
+        <span class="cover-dot"></span>
+        <span class="cover-footer-label">Free Resource</span>
+      </div>
+      <span class="cover-url">mastermindshq.business</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== INTRO ===== -->
+<div class="intro">
+  <div class="intro-inner">
+    <span class="intro-quote">&ldquo;</span>
+    <p>You already know you should be automating more. The problem is not motivation. <strong>The problem is knowing which of the 50 things on your plate actually moves the needle if you automate it first.</strong> This audit gives you that answer. Walk through five systems, score each one honestly, and you will finish with a single, clear starting point.</p>
+  </div>
+</div>
+
+<!-- ===== CONTENT ===== -->
+<div class="content">
+
+  <!-- SECTION 1 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num-watermark">01</span>
+      <div class="section-title">Lead Capture and First Response</div>
+    </div>
+    <div class="section-body">
+      <p>A prospect fills out your contact form at 9pm. What happens next? If the answer is "nothing until I check email tomorrow morning," you are losing leads to competitors who reply in minutes. The research is clear: responding within 5 minutes makes you 21x more likely to close the deal. Score yourself:</p>
+      <ul>
+        <li>New leads get an automatic response within 5 minutes, even on weekends</li>
+        <li>Every inquiry is captured in a CRM or tracking sheet without you touching it</li>
+        <li>If someone does not reply in 48 hours, a follow-up sequence runs automatically</li>
+        <li>You can see this month's total leads without opening a spreadsheet</li>
+      </ul>
+      <span class="score-label">Your score: ___ / 4</span>
+    </div>
+    <div class="action-step">
+      <span class="action-step-icon">Do this</span>
+      <span class="action-step-text">Open your last 10 inquiry emails. Count how many got a response within one business hour. That number is your real lead response rate.</span>
+    </div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num-watermark">02</span>
+      <div class="section-title">Client Onboarding</div>
+    </div>
+    <div class="section-body">
+      <p>A new client says yes. Now what? If your process involves writing a welcome email from scratch, manually creating a project folder, and sending a scheduling link from a different app, you are spending 30 to 60 minutes per new client on tasks that should take zero. Worse, inconsistent onboarding creates inconsistent client experiences.</p>
+      <ul>
+        <li>New clients receive a welcome email automatically when they pay or sign</li>
+        <li>Your intake form, contract, and first-step instructions are sent without you doing anything</li>
+        <li>The kickoff call books itself through your calendar link</li>
+        <li>A client folder, project board, or workspace is created automatically</li>
+      </ul>
+      <span class="score-label">Your score: ___ / 4</span>
+    </div>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num-watermark">03</span>
+      <div class="section-title">Recurring Admin and Reporting</div>
+    </div>
+    <div class="section-body">
+      <p>How much of this week looked identical to last week? Invoicing clients, sending status updates, posting to social media, compiling reports. If you can describe a task step by step, it can be automated. Most business owners lose 5 to 8 hours per week on recurring admin they could eliminate entirely.</p>
+      <ul>
+        <li>Invoices go out on schedule, not when you remember to send them</li>
+        <li>Weekly or monthly reports generate and send themselves</li>
+        <li>Meeting notes are captured and summarized automatically</li>
+        <li>Content or newsletters are batched and scheduled in advance</li>
+      </ul>
+      <span class="score-label">Your score: ___ / 4</span>
+    </div>
+    <div class="action-step">
+      <span class="action-step-icon">Do this</span>
+      <span class="action-step-text">Track your time for one day this week. At the end of the day, highlight every task you did that was identical to a task from the previous week. That is your automation shortlist.</span>
+    </div>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num-watermark">04</span>
+      <div class="section-title">Scheduling and No-Shows</div>
+    </div>
+    <div class="section-body">
+      <p>If booking a meeting with you requires more than one email, your scheduling system is costing you real money. Every back-and-forth exchange adds 10 to 15 minutes of friction, and the longer it takes to lock in a time, the more likely the prospect cools off or books with someone else.</p>
+      <ul>
+        <li>Clients and prospects book directly from a link with zero back and forth</li>
+        <li>Reminders go out automatically 24 hours and 1 hour before every call</li>
+        <li>No-shows trigger an automatic reschedule or follow-up message</li>
+        <li>Post-call follow-ups, notes, or next steps send automatically</li>
+      </ul>
+      <span class="score-label">Your score: ___ / 4</span>
+    </div>
+  </div>
+
+  <!-- SECTION 5 — SCORING -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num-watermark">05</span>
+      <div class="section-title">Your Total Score and Next Move</div>
+    </div>
+    <div class="section-body">
+      <p>Add your scores from sections 1 through 4. Your total is out of 16.</p>
+
+      <div class="score-grid">
+        <div class="score-card">
+          <div class="score-card-range">13 &ndash; 16</div>
+          <div class="score-card-label">Well Automated</div>
+          <div class="score-card-desc">Focus on connecting your systems so they talk to each other. Integration is your next unlock.</div>
+        </div>
+        <div class="score-card">
+          <div class="score-card-range">8 &ndash; 12</div>
+          <div class="score-card-label">Solid Foundation</div>
+          <div class="score-card-desc">You have 3 to 5 gaps costing you several hours per week. Closing them doubles your leverage.</div>
+        </div>
+        <div class="score-card">
+          <div class="score-card-range">4 &ndash; 7</div>
+          <div class="score-card-label">High Leverage</div>
+          <div class="score-card-desc">Automation is your single biggest growth lever right now. Start with lead response. It pays for everything else.</div>
+        </div>
+        <div class="score-card">
+          <div class="score-card-range">0 &ndash; 3</div>
+          <div class="score-card-label">You Are the System</div>
+          <div class="score-card-desc">Nothing runs without you. The fastest path to revenue growth is getting you out of the day-to-day first.</div>
+        </div>
+      </div>
+
+      <p style="margin-top: 20px;">Here is the rule: <strong>find the section with the most unchecked items and start there.</strong> Do not try to fix everything at once. Build one system, prove it works, then move to the next. One automated system changes your week. Four changes your business.</p>
+    </div>
+    <div class="action-step">
+      <span class="action-step-icon">Do this</span>
+      <span class="action-step-text">Write down your lowest-scoring section. That is your Week 1 project. Block 90 minutes this week to set up just that one system.</span>
+    </div>
+  </div>
+
+  <!-- ===== CTA ===== -->
+  <div class="cta">
+    <div class="cta-inner">
+      <div class="cta-label">Next Step</div>
+      <h2>Want someone to build these systems with you, not just tell you what to build?</h2>
+      <p>The Business Automation Mastermind is a small-cohort program where you implement real automation alongside other six-figure business owners, with live guidance every week. Applications are open now.</p>
+      <a class="cta-btn" href="https://mastermindshq.business">mastermindshq.business</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <span class="footer-left">Business Automation Mastermind</span>
+  <span class="footer-right">mastermindshq.business</span>
+</div>
+
+</body>
+</html>

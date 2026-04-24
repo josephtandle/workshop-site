@@ -11,7 +11,7 @@ import MastermindReactionsSection from '@/components/sections/MastermindReaction
 const MASTERMIND_URL = 'https://www.mastermindshq.business'
 const GITHUB_URL = 'https://github.com/josephtandle/ray-dalio-council'
 
-const INSTALL_COMMAND = `git clone https://github.com/josephtandle/ray-dalio-council && cp ray-dalio-council/dalio-council.md ~/.claude/skills/dalio-council.md && rm -rf ray-dalio-council`
+const INSTALL_COMMAND = `mkdir -p ~/.claude/skills && curl -fsSL https://raw.githubusercontent.com/josephtandle/ray-dalio-council/main/dalio-council.md -o ~/.claude/skills/dalio-council.md`
 
 const SKILL_SECTIONS = [
   {
@@ -409,7 +409,44 @@ export default function RayDalioCouncilPage() {
         </section>
 
         {/* ================================================================ */}
-        {/* SECTION 2: HOW IT WORKS                                          */}
+        {/* SECTION 2: WHO IS RAY DALIO                                      */}
+        {/* ================================================================ */}
+        <section className="max-w-3xl mx-auto px-6 py-14">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="rounded-2xl px-8 sm:px-12 py-10"
+            style={{
+              background: 'linear-gradient(135deg, rgba(124,105,199,0.07) 0%, rgba(245,195,198,0.05) 100%)',
+              border: '1px solid rgba(124,105,199,0.14)',
+            }}
+          >
+            <p className="text-[11px] font-bold uppercase tracking-widest text-[#9D8FE0] mb-5">
+              Why Ray Dalio
+            </p>
+            <h2 className="text-xl sm:text-2xl font-bold text-[#FCF4EB] mb-5 leading-snug">
+              Ray Dalio founded Bridgewater Associates in 1975 and built it into the largest hedge fund in the world, managing over $150 billion at its peak.
+            </h2>
+            <div className="space-y-4 text-[#FCF4EB]/55 text-base leading-relaxed">
+              <p>
+                He ran it for nearly 50 years. In that time, he correctly called the 2008 financial crisis, survived multiple market collapses, and compounded returns for clients in ways that most funds never achieve.
+              </p>
+              <p>
+                His book <em className="text-[#FCF4EB]/75">Principles</em> lays out the system behind all of it. The core idea is called believability weighting: not all opinions deserve equal weight. The people with the strongest track record in a given domain should carry more influence over a decision than those without one.
+              </p>
+              <p>
+                He also believed you should never trust your own thinking unchallenged. The best decisions come from stress-testing your position against people who genuinely disagree with you, each arguing their strongest case, before you commit.
+              </p>
+              <p className="text-[#FCF4EB]/75 font-medium">
+                That is the exact system this skill runs. Five specialists. Fixed lenses. Weighted synthesis. One verdict.
+              </p>
+            </div>
+          </motion.div>
+        </section>
+
+        {/* ================================================================ */}
+        {/* SECTION 3: HOW IT WORKS                                          */}
         {/* ================================================================ */}
         <section className="max-w-5xl mx-auto px-6 py-14">
           <motion.div
@@ -445,17 +482,17 @@ export default function RayDalioCouncilPage() {
         </section>
 
         {/* ================================================================ */}
-        {/* SECTION 3: MASTERMIND CTA                                        */}
+        {/* SECTION 4: MASTERMIND CTA                                        */}
         {/* ================================================================ */}
         <MastermindCTA />
 
         {/* ================================================================ */}
-        {/* SECTION 4: PARTICIPANT REACTIONS                                 */}
+        {/* SECTION 5: PARTICIPANT REACTIONS                                 */}
         {/* ================================================================ */}
         <MastermindReactionsSection />
 
         {/* ================================================================ */}
-        {/* SECTION 5: THE INSTALL COMMAND                                   */}
+        {/* SECTION 6: THE INSTALL COMMAND                                   */}
         {/* ================================================================ */}
         <section className="max-w-5xl mx-auto px-6 py-16">
           <motion.div
@@ -507,7 +544,7 @@ export default function RayDalioCouncilPage() {
         </section>
 
         {/* ================================================================ */}
-        {/* SECTION 6: STATS                                                  */}
+        {/* SECTION 7: STATS                                                  */}
         {/* ================================================================ */}
         <section className="max-w-5xl mx-auto px-6 pt-6 pb-14">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -534,7 +571,7 @@ export default function RayDalioCouncilPage() {
         </section>
 
         {/* ================================================================ */}
-        {/* SECTION 7: WHAT'S INSIDE                                         */}
+        {/* SECTION 8: WHAT'S INSIDE                                         */}
         {/* ================================================================ */}
         <section className="max-w-5xl mx-auto px-6 py-14">
           <motion.div

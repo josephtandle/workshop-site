@@ -9,7 +9,7 @@ interface Props {
 }
 
 export function generateStaticParams() {
-  return [{ slug: '1' }, { slug: '2' }, { slug: '3' }, { slug: '4' }, { slug: '5' }]
+  return [{ slug: '1' }, { slug: '2' }, { slug: '3' }, { slug: '4' }, { slug: '5' }, { slug: '6' }, { slug: '7' }]
 }
 
 export async function generateMetadata({ params }: Props) {
@@ -173,7 +173,7 @@ export default async function SessionIndexPage({ params }: Props) {
         {/* Guide page */}
         {session.hasGuide && (
           <Reveal delay={2} className="h-full">
-            {(slug === '5' && LOCKS.session5Guide === false) || (slug === '6' && !LOCKS.session6Guide) ? (
+            {(slug === '5' && LOCKS.session5Guide === false) || (slug === '6' && !LOCKS.session6Guide) || (slug === '7' && !LOCKS.session7Guide) ? (
               <div
                 className="flex flex-col h-full bg-white/[0.02] border border-white/[0.05] rounded-2xl p-8 cursor-not-allowed select-none"
                 aria-disabled="true"
@@ -459,6 +459,47 @@ export default async function SessionIndexPage({ params }: Props) {
               </div>
             </Link>
             )}
+          </Reveal>
+        )}
+
+        {/* Descript Guide — Session 7 only */}
+        {slug === '7' && (
+          <Reveal delay={3} className="h-full">
+            <Link
+              href="/session/7/descript"
+              className="group card-hover card-shimmer flex flex-col h-full bg-white/[0.05] border border-white/[0.10] rounded-2xl p-8"
+            >
+              <div className="flex items-start justify-between mb-5">
+                <div
+                  className="number-glow w-11 h-11 rounded-xl flex items-center justify-center text-lg"
+                  style={{ background: 'rgba(245, 195, 198, 0.10)', border: '1px solid rgba(245, 195, 198, 0.20)' }}
+                >
+                  ✦
+                </div>
+                <span
+                  className="text-[10px] font-semibold uppercase tracking-widest px-2.5 py-1 rounded-full"
+                  style={{
+                    background: 'rgba(245, 195, 198, 0.10)',
+                    color: '#F5C3C6',
+                    border: '1px solid rgba(245, 195, 198, 0.20)',
+                  }}
+                >
+                  Bonus
+                </span>
+              </div>
+              <h2 className="text-xl font-bold text-[#FCF4EB] mb-2 group-hover:text-white transition-colors">
+                Descript: Repurpose Your Content
+              </h2>
+              <p className="text-[#FCF4EB]/55 text-sm leading-relaxed mb-6 flex-1">
+                Turn any long-form recording into short-form clips, reels, and social content using Descript. No video editing skills required.
+              </p>
+              <div className="flex items-center gap-2 text-[#7C69C7] text-sm font-medium group-hover:gap-3 transition-all">
+                <span>Open guide</span>
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+            </Link>
           </Reveal>
         )}
 
