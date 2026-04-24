@@ -109,7 +109,7 @@ export default function StickyVideoPlayer({ videoId, src, title = 'Workshop Reco
 
   const iframeSrc = videoId ? `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&enablejsapi=1` : ''
 
-  // Compute the animated style for the video wrapper
+  // Compute the animated style for the video wrapper (src/local video only)
   const getVideoStyle = (): React.CSSProperties => {
     if (!hasStarted || !inlineRect) {
       return {}
@@ -155,6 +155,124 @@ export default function StickyVideoPlayer({ videoId, src, title = 'Workshop Reco
     )
   }
 
+  // ── YouTube iframe path ────────────────────────────────────────────────────────
+  // Keep the iframe always mounted inside the placeholder so it never reloads.
+  // When sticky, CSS `position: fixed` pops it out of the placeholder's layout
+  // while the placeholder stays in flow to maintain page height.
+  if (videoId && !src) {
+    return (
+      <>
+        {/* Placeholder: always in flow, maintains vertical space, IntersectionObserver target */}
+        <div
+          ref={placeholderRef}
+          style={{ aspectRatio: '16 / 9', width: '100%', position: 'relative' }}
+        >
+          {/* iframe lives here in the DOM — never unmounts, just repositioned via CSS */}
+          <div
+            style={
+              isSticky && hasStarted
+                ? {
+                    position: 'fixed',
+                    top: HEADER_HEIGHT,
+                    right: STICKY_RIGHT,
+                    width: STICKY_WIDTH,
+                    zIndex: 40,
+                    aspectRatio: '16 / 9',
+                    borderRadius: '12px',
+                    overflow: 'hidden',
+                    border: '1px solid rgba(255,255,255,0.12)',
+                    boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.6)',
+                  }
+                : {
+                    position: 'absolute',
+                    inset: 0,
+                    borderRadius: '16px',
+                    overflow: 'hidden',
+                    border: '1px solid rgba(255,255,255,0.10)',
+                  }
+            }
+          >
+            <iframe
+              src={iframeSrc}
+              title={title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
+            />
+
+            {/* Click overlay before play starts — hands off to YouTube once dismissed */}
+            {!hasStarted && (
+              <div
+                style={{ position: 'absolute', inset: 0, zIndex: 10, cursor: 'pointer' }}
+                onClick={handlePlay}
+                aria-label="Play video"
+              />
+            )}
+
+            {/* Sticky controls */}
+            {isSticky && hasStarted && (
+              <div className="absolute top-2 right-2 flex items-center gap-1.5 z-20">
+                <button
+                  onClick={handleExpand}
+                  className="flex items-center justify-center w-7 h-7 rounded-lg bg-black/60 hover:bg-black/80 text-white/70 hover:text-white backdrop-blur-sm transition-all"
+                  title="Expand video"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="15 3 21 3 21 9" />
+                    <polyline points="9 21 3 21 3 15" />
+                    <line x1="21" y1="3" x2="14" y2="10" />
+                    <line x1="3" y1="21" x2="10" y2="14" />
+                  </svg>
+                </button>
+                <button
+                  onClick={handleMinimize}
+                  className="flex items-center justify-center w-7 h-7 rounded-lg bg-black/60 hover:bg-black/80 text-white/70 hover:text-white backdrop-blur-sm transition-all"
+                  title="Minimize video"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg>
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Expanded overlay */}
+        {isExpanded && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
+            onClick={handleCollapse}
+          >
+            <div
+              className="relative w-[92vw] max-w-6xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={handleCollapse}
+                className="absolute -top-12 right-0 flex items-center gap-2 text-white/60 hover:text-white transition-colors text-sm"
+              >
+                <span>Close</span>
+                <kbd className="text-xs bg-white/10 px-1.5 py-0.5 rounded">Esc</kbd>
+              </button>
+
+              <div className="relative rounded-2xl overflow-hidden border border-white/[0.10] shadow-2xl shadow-purple-900/20" style={{ aspectRatio: '16 / 9' }}>
+                <iframe
+                  src={iframeSrc}
+                  title={title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                />
+              </div>
+            </div>
+          </div>
+        )}
+      </>
+    )
+  }
+
+  // ── Local src video path ───────────────────────────────────────────────────────
   return (
     <>
       {/* Placeholder to maintain page flow and measure inline position */}
@@ -170,35 +288,16 @@ export default function StickyVideoPlayer({ videoId, src, title = 'Workshop Reco
         {/* When not sticky, video lives here in flow */}
         {!isSticky && (
           <div className="relative w-full h-full rounded-2xl border border-white/[0.10] overflow-hidden" style={{ aspectRatio: '16 / 9' }}>
-            {src ? (
-              <video
-                ref={videoRef}
-                src={src}
-                title={title}
-                controls
-                playsInline
-                onPlay={handlePlay}
-                onTimeUpdate={handleTimeUpdate}
-                className="absolute inset-0 w-full h-full object-contain bg-black"
-              />
-            ) : (
-              <>
-                <iframe
-                  src={iframeSrc}
-                  title={title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  className="absolute inset-0 w-full h-full"
-                />
-                {!hasStarted && (
-                  <div
-                    className="absolute inset-0 z-10 cursor-pointer"
-                    onClick={handlePlay}
-                    aria-label="Play video"
-                  />
-                )}
-              </>
-            )}
+            <video
+              ref={videoRef}
+              src={src}
+              title={title}
+              controls
+              playsInline
+              onPlay={handlePlay}
+              onTimeUpdate={handleTimeUpdate}
+              className="absolute inset-0 w-full h-full object-contain bg-black"
+            />
           </div>
         )}
       </div>
@@ -212,24 +311,14 @@ export default function StickyVideoPlayer({ videoId, src, title = 'Workshop Reco
             className="relative overflow-hidden rounded-xl border border-white/[0.12]"
             style={{ aspectRatio: '16 / 9' }}
           >
-            {src ? (
-              <video
-                ref={videoRef}
-                src={src}
-                controls
-                playsInline
-                onTimeUpdate={handleTimeUpdate}
-                className="absolute inset-0 w-full h-full object-contain bg-black"
-              />
-            ) : (
-              <iframe
-                src={iframeSrc}
-                title={title}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                className="absolute inset-0 w-full h-full"
-              />
-            )}
+            <video
+              ref={videoRef}
+              src={src}
+              controls
+              playsInline
+              onTimeUpdate={handleTimeUpdate}
+              className="absolute inset-0 w-full h-full object-contain bg-black"
+            />
 
             {/* Controls */}
             <div className="absolute top-2 right-2 flex items-center gap-1.5 z-20">
@@ -278,23 +367,13 @@ export default function StickyVideoPlayer({ videoId, src, title = 'Workshop Reco
             </button>
 
             <div className="relative rounded-2xl overflow-hidden border border-white/[0.10] shadow-2xl shadow-purple-900/20" style={{ aspectRatio: '16 / 9' }}>
-              {src ? (
-                <video
-                  src={src}
-                  controls
-                  playsInline
-                  onTimeUpdate={handleTimeUpdate}
-                  className="absolute inset-0 w-full h-full object-contain bg-black"
-                />
-              ) : (
-                <iframe
-                  src={iframeSrc}
-                  title={title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  className="absolute inset-0 w-full h-full"
-                />
-              )}
+              <video
+                src={src}
+                controls
+                playsInline
+                onTimeUpdate={handleTimeUpdate}
+                className="absolute inset-0 w-full h-full object-contain bg-black"
+              />
             </div>
           </div>
         </div>

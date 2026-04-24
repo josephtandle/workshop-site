@@ -6,6 +6,7 @@ import Session1Guide from '@/content/session-1-guide'
 import Session2Guide from '@/content/session-2-guide'
 import Session3Guide from '@/content/session-3-guide'
 import Session6Guide from '@/content/session-6-guide'
+import Session7Guide from '@/content/session-7-guide'
 import type { ComponentType } from 'react'
 
 const guideComponents: Record<string, ComponentType> = {
@@ -13,6 +14,7 @@ const guideComponents: Record<string, ComponentType> = {
   '2': Session2Guide,
   '3': Session3Guide,
   '6': Session6Guide,
+  '7': Session7Guide,
 }
 
 interface Props {
@@ -25,6 +27,7 @@ export function generateStaticParams() {
     { slug: '2' },
     { slug: '3' },
     ...(LOCKS.session6Guide ? [{ slug: '6' }] : []),
+    ...(LOCKS.session7Guide ? [{ slug: '7' }] : []),
   ]
 }
 
@@ -43,6 +46,7 @@ export default async function SessionGuidePage({ params }: Props) {
   const session = getSession(slug)
   if (!session || !session.hasGuide) notFound()
   if (slug === '6' && !LOCKS.session6Guide) notFound()
+  if (slug === '7' && !LOCKS.session7Guide) notFound()
 
   const GuideContent = guideComponents[slug]
 

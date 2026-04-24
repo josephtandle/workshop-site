@@ -29,10 +29,10 @@ export default function CodeBlock({ code, language, filename, editable }: CodeBl
     <div className="my-6 rounded-xl overflow-hidden border border-white/[0.08] border-l-2 border-l-[#7C69C7]">
       {/* Header bar — copy button always lives here */}
       <div className="flex items-center justify-between px-4 py-2 bg-white/[0.04] border-b border-white/[0.06]">
-        <div className="flex items-center gap-3">
-          <span className="text-xs text-[#FCF4EB]/40 font-mono">
-            {filename ?? language ?? ''}
-          </span>
+        <span className="text-xs text-[#FCF4EB]/40 font-mono">
+          {filename ?? language ?? ''}
+        </span>
+        <div className="flex items-center gap-2">
           {editable && (
             <span
               className="text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 rounded-full"
@@ -45,8 +45,7 @@ export default function CodeBlock({ code, language, filename, editable }: CodeBl
               Edit before copying
             </span>
           )}
-        </div>
-        <button
+          <button
           onClick={handleCopy}
           className="px-3 py-1 rounded-md text-xs font-medium
             bg-white/[0.08] hover:bg-white/[0.14] border border-white/[0.10]
@@ -54,7 +53,8 @@ export default function CodeBlock({ code, language, filename, editable }: CodeBl
             transition-all duration-150 select-none"
         >
           {copied ? 'Copied!' : 'Copy'}
-        </button>
+          </button>
+        </div>
       </div>
 
       {editable ? (

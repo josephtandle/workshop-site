@@ -87,6 +87,17 @@ export const sessions: Session[] = [
     hasPrep: true,
     hasBonus: false,
   },
+  {
+    slug: '7',
+    number: 7,
+    title: 'Your First Mission Control',
+    description:
+      'Install a personal browser-based task board with AI automation columns, pre-loaded projects, and drag-and-drop kanban — running entirely on your laptop.',
+    date: '',
+    hasGuide: true,
+    hasPrep: true,
+    hasBonus: false,
+  },
 ]
 
 export function getSession(slug: string): Session | undefined {

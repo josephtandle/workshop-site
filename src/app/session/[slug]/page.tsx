@@ -129,6 +129,47 @@ export default async function SessionIndexPage({ params }: Props) {
           </Reveal>
         )}
 
+        {/* Auto Lead Magnet bonus — Session 2 only */}
+        {slug === '2' && (
+          <Reveal delay={2} className="h-full">
+            <Link
+              href="/session/2/auto-lead-magnet"
+              className="group card-hover card-shimmer flex flex-col h-full bg-white/[0.05] border border-white/[0.10] rounded-2xl p-8"
+            >
+              <div className="flex items-start justify-between mb-5">
+                <div
+                  className="number-glow w-11 h-11 rounded-xl flex items-center justify-center text-lg"
+                  style={{ background: 'rgba(252, 244, 235, 0.07)', border: '1px solid rgba(252, 244, 235, 0.12)' }}
+                >
+                  ✦
+                </div>
+                <span
+                  className="text-[10px] font-semibold uppercase tracking-widest px-2.5 py-1 rounded-full"
+                  style={{
+                    background: 'rgba(124, 105, 199, 0.12)',
+                    color: '#7C69C7',
+                    border: '1px solid rgba(124, 105, 199, 0.2)',
+                  }}
+                >
+                  Pre-Session Bonus
+                </span>
+              </div>
+              <h2 className="text-xl font-bold text-[#FCF4EB] mb-2 group-hover:text-white transition-colors">
+                Lead Magnet: Auto Lead Magnet PDF
+              </h2>
+              <p className="text-[#FCF4EB]/55 text-sm leading-relaxed mb-6 flex-1">
+                Paste one prompt into Claude Code, point it at your website, and get a custom PDF lead magnet in your brand colors. Takes about 2 minutes.
+              </p>
+              <div className="flex items-center gap-2 text-[#7C69C7] text-sm font-medium group-hover:gap-3 transition-all">
+                <span>Open bonus</span>
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+            </Link>
+          </Reveal>
+        )}
+
         {/* Guide page */}
         {session.hasGuide && (
           <Reveal delay={2} className="h-full">
