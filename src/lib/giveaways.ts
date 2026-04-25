@@ -87,8 +87,8 @@ export const giveaways: Giveaway[] = [
   },
   {
     slug: 'viral-hooks',
-    title: 'Understanding Viral Hooks',
-    description: '7 proven hook formulas, 8 real reel examples, and AI prompts to generate hooks for any topic. Use it yourself, share it, or give it away.',
+    title: 'Understanding Visual Hooks',
+    description: '7 visual techniques that appear in scroll-stopping reels, with 8 real examples to study frame by frame. Free from the Business Automation Mastermind.',
     icon: '◎',
     badge: 'Guide',
     badgeVariant: 'pink',

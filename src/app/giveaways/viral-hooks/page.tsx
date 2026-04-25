@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useEffect, useRef, useCallback, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import MastermindReactionsSection from '@/components/sections/MastermindReactionsSection'
 
@@ -20,124 +20,41 @@ const REELS = [
   { id: 'DWmYXSxD5GP', label: 'Example 8', url: 'https://www.instagram.com/reel/DWmYXSxD5GP/' },
 ]
 
-const HOOK_FORMULAS = [
+const TECHNIQUES = [
   {
-    number: '01',
-    name: 'The Curiosity Gap',
-    pattern: '"The one thing I changed that [specific outcome]..."',
-    why: 'Opens a loop the brain needs to close. Implies a secret that most people are missing. The word "changed" signals a before/after and makes the outcome feel earned.',
-    examples: [
-      'The one thing I changed that tripled my close rate overnight',
-      'The one habit that changed how I sleep forever',
-      'I deleted this from my business and revenue went up 40%',
-    ],
-    color: '#8B79D4',
+    n: 1,
+    name: 'The First-Frame Statement',
+    desc: 'Pause on frame one. Mute the video. A stranger who knows nothing about the creator should be able to sense what is at stake. If the first frame is generic — a person standing, an office background, neutral expression — the hook is already failing before a word is spoken.',
   },
   {
-    number: '02',
-    name: 'The Contrarian Take',
-    pattern: '"Stop doing [common advice]. Here\'s what actually works."',
-    why: 'Attacks a belief your audience already holds. Disagreement creates cognitive dissonance, which forces attention. Works best when the common advice is genuinely wrong or overrated.',
-    examples: [
-      'Stop posting every day. It is making your content worse.',
-      'Cold outreach is not dead. You are just doing it wrong.',
-      'Hustle culture did not build my business. Doing less did.',
-    ],
-    color: '#F5C3C6',
+    n: 2,
+    name: 'The Interruption Visual',
+    desc: 'Something in the frame that does not belong to the expected content format. An unexpected environment, an unusual object, a facial expression that contradicts the setting. The brain registers the mismatch before conscious attention engages, which buys the next two seconds.',
   },
   {
-    number: '03',
-    name: 'The Specific Outcome',
-    pattern: '"How I [specific result] in [specific timeframe] with [specific constraint]"',
-    why: 'Specificity signals credibility. Vague claims are easy to ignore. When you say "42 new clients in 30 days without paid ads," every number forces the brain to pay attention.',
-    examples: [
-      'How I got 300 followers in 3 days without spending a dollar',
-      'How I replaced my 9-to-5 income in 90 days with one service',
-      'How I land 3 discovery calls a week from one Instagram story',
-    ],
-    color: '#9D8FE0',
+    n: 3,
+    name: 'Tight Framing',
+    desc: 'Close-up shots communicate intimacy and urgency. Wide shots communicate context. Scroll-stopping hooks almost always open tight: face filling most of the frame, eyes near the upper third. The tighter the frame, the harder it is to look away.',
   },
   {
-    number: '04',
-    name: 'The POV Setup',
-    pattern: '"POV: [relatable situation your audience is in]"',
-    why: 'Places the viewer inside the scene instantly. No buildup required. The POV format primes the brain to see itself in the content, which is the fastest path to emotional engagement.',
-    examples: [
-      'POV: You just hit send on your first cold email and it landed a call',
-      'POV: You are 2 years into your business and still working for free',
-      'POV: Your competitor has half your skills and twice your followers',
-    ],
-    color: '#BDB3E8',
+    n: 4,
+    name: 'On-Screen Text Timing',
+    desc: 'Text that appears before the voiceover starts has more stopping power than text that chases the speech. When the viewer reads before they hear, they have already committed to the first half-second. That commitment compounds.',
   },
   {
-    number: '05',
-    name: 'The Bold Claim',
-    pattern: '"[Strong assertion that is surprising or counterintuitive]"',
-    why: 'No hedging. No "I think" or "maybe." A hard claim made without apology demands a reaction. The audience either wants to agree or prove you wrong. Either way, they keep watching.',
-    examples: [
-      'This is the only content strategy you need in 2025.',
-      'Your pricing is why you are not closing. Not your pitch.',
-      'Most online courses fail on purpose. Here is proof.',
-    ],
-    color: '#F5C3C6',
+    n: 5,
+    name: 'Direct Camera Address',
+    desc: 'Looking directly into the lens creates a different psychological effect than looking slightly off-camera. Direct address is confrontational in the best possible way. It reads as: this is specifically for you. Looking away from the lens reads as: you are observing something that was not meant for you.',
   },
   {
-    number: '06',
-    name: 'The Story Open',
-    pattern: '"[Moment of tension or turning point] + where I was + what changed"',
-    why: 'Stories bypass resistance. Your brain cannot help but follow a narrative once it has started. Opening with tension drops the viewer mid-scene and makes stopping feel unnatural.',
-    examples: [
-      'I was about to quit my agency. Then I got one reply that changed everything.',
-      'Two years ago I was charging $200 for projects I now sell for $8,000.',
-      'My first product launch made $11. My second made $47,000. Here is the difference.',
-    ],
-    color: '#8B79D4',
+    n: 6,
+    name: 'The Unresolved Scene',
+    desc: 'Starting in the middle of something that has already started. The brain is a pattern-completing machine. An action already in progress with no visible beginning creates an obligation to see how it resolves. The hook does not explain what is happening. That explanation is the content.',
   },
   {
-    number: '07',
-    name: 'The Direct Address',
-    pattern: '"If you are [specific person in specific situation], watch this."',
-    why: 'Names the exact person who needs to see the content. When people feel personally called out, they stop. The more specific the description, the stronger the pull. Generic calls to action get ignored.',
-    examples: [
-      'If you are a freelancer charging less than $2,000 per project, this is for you.',
-      'If you have been posting for 6 months and have under 500 followers, watch this.',
-      'If your business runs entirely on referrals, you have a serious problem.',
-    ],
-    color: '#9D8FE0',
-  },
-]
-
-const ANATOMY = [
-  {
-    label: 'The Pattern Interrupt',
-    desc: 'The very first visual or word must break whatever the viewer was expecting. This can be an unusual angle, a bold text overlay, silence before a loud moment, or an opening statement that contradicts conventional wisdom.',
-  },
-  {
-    label: 'The Implicit Promise',
-    desc: 'Every strong hook contains an unspoken deal: "stay with me and you will get X." The viewer does not need to be told this. They feel it in the tension between what they see and what they want to know.',
-  },
-  {
-    label: 'The Audience Signal',
-    desc: 'The best hooks filter as well as attract. They say "this is for you" to the right viewer and "this is not for you" to everyone else. Specificity is not exclusion. It is precision.',
-  },
-  {
-    label: 'The Forward Pull',
-    desc: 'A hook is not complete until the viewer wants to keep watching. If the first 3 seconds could stand alone without the rest of the video, you do not have a hook. You have an intro.',
-  },
-]
-
-const AI_PROMPTS = [
-  {
-    title: 'Generate 10 hooks for any topic',
-    prompt: `Write 10 viral Instagram Reel hooks for the following topic: [YOUR TOPIC]\n\nFor each hook, use one of these formats:\n- Curiosity gap: "The one thing I changed that..."\n- Contrarian: "Stop doing X. Here's what actually works."\n- Specific outcome: "How I [result] in [timeframe]"\n- POV setup: "POV: You are [relatable situation]"\n- Bold claim: direct statement, no hedging\n- Story open: tension-first, then context\n- Direct address: "If you are [specific person]..."\n\nMy audience is: [DESCRIBE AUDIENCE]\nThe goal of the reel is: [EXPLAIN WHAT YOU WANT VIEWERS TO DO OR FEEL]\n\nFor each hook, also note which format you used and why it fits this topic.`,
-  },
-  {
-    title: 'Rewrite a weak hook until it lands',
-    prompt: `I have a hook that is not working. Help me improve it.\n\nMy current hook: [PASTE YOUR CURRENT HOOK]\n\nHere is what the reel is about: [BRIEF DESCRIPTION]\nMy target viewer: [WHO WILL SEE THIS]\n\nProblems I think it has: [WHAT FEELS FLAT ABOUT IT]\n\nRewrite it 5 different ways. For each version:\n1. Show the rewritten hook\n2. Name the formula used\n3. Explain in one sentence why this version should outperform the original`,
-  },
-  {
-    title: 'Extract the hook pattern from a successful reel',
-    prompt: `Analyze this hook and extract the formula so I can reuse it:\n\n[PASTE THE HOOK TEXT OR DESCRIBE WHAT HAPPENS IN THE FIRST 3 SECONDS]\n\nTell me:\n1. What type of hook formula is this?\n2. What specifically makes it work (the exact mechanism)\n3. What beliefs or desires does it target?\n4. Write 3 new hooks that use the exact same formula but for a different topic: [YOUR TOPIC]`,
+    n: 7,
+    name: 'Visual Contrast',
+    desc: 'A person in an unexpected setting. A mismatch between expression and environment. Text that contradicts what is visible. Contrast within the frame creates a visual tension the eye is drawn to resolve. Sameness gets scrolled. Contrast gets paused.',
   },
 ]
 
@@ -145,7 +62,7 @@ const AI_PROMPTS = [
 // Magnetic button hook
 // ---------------------------------------------------------------------------
 function useMagnet(strength = 0.3) {
-  const ref = useRef<HTMLAnchorElement | HTMLButtonElement | null>(null)
+  const ref = useRef<HTMLAnchorElement | null>(null)
   const onMouseMove = useCallback((e: React.MouseEvent<HTMLElement>) => {
     const el = ref.current
     if (!el) return
@@ -165,6 +82,34 @@ function useMagnet(strength = 0.3) {
 }
 
 // ---------------------------------------------------------------------------
+// CountUp number — fires when it enters viewport
+// ---------------------------------------------------------------------------
+function CountUpNum({ value, className }: { value: number; className?: string }) {
+  const ref = useRef<HTMLSpanElement>(null)
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return
+          ;(async () => {
+            const { CountUp } = await import('countup.js')
+            const cu = new CountUp(el, value, { duration: 1.8, separator: '' })
+            if (!cu.error) cu.start()
+          })()
+          observer.unobserve(el)
+        })
+      },
+      { threshold: 0.8 },
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [value])
+  return <span ref={ref} className={className}>0</span>
+}
+
+// ---------------------------------------------------------------------------
 // Video Card
 // ---------------------------------------------------------------------------
 function VideoCard({ reel, index }: { reel: typeof REELS[0]; index: number }) {
@@ -174,13 +119,8 @@ function VideoCard({ reel, index }: { reel: typeof REELS[0]; index: number }) {
   const togglePlay = useCallback(() => {
     const v = videoRef.current
     if (!v) return
-    if (v.paused) {
-      v.play()
-      setPlaying(true)
-    } else {
-      v.pause()
-      setPlaying(false)
-    }
+    if (v.paused) { v.play(); setPlaying(true) }
+    else { v.pause(); setPlaying(false) }
   }, [])
 
   return (
@@ -188,9 +128,10 @@ function VideoCard({ reel, index }: { reel: typeof REELS[0]; index: number }) {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: (index % 4) * 0.08 }}
-      className="group relative rounded-2xl overflow-hidden border border-white/[0.08] bg-white/[0.03]"
-      style={{ aspectRatio: '9/16', maxHeight: 480 }}
+      transition={{ delay: (index % 4) * 0.07 }}
+      className="relative rounded-2xl overflow-hidden border border-white/[0.08] bg-white/[0.03] cursor-pointer group"
+      style={{ aspectRatio: '9/16', maxHeight: 460 }}
+      onClick={togglePlay}
     >
       <video
         ref={videoRef}
@@ -201,67 +142,41 @@ function VideoCard({ reel, index }: { reel: typeof REELS[0]; index: number }) {
         onEnded={() => setPlaying(false)}
       />
 
-      {/* Play/pause overlay */}
-      <div
-        className="absolute inset-0 flex items-center justify-center cursor-pointer"
-        onClick={togglePlay}
-      >
-        <AnimatePresence>
-          {!playing && (
-            <motion.div
-              key="play"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              className="w-14 h-14 rounded-full bg-black/50 border border-white/20 flex items-center justify-center backdrop-blur-sm"
-            >
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+      {/* Play overlay */}
+      <AnimatePresence>
+        {!playing && (
+          <motion.div
+            key="play"
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.85 }}
+            className="absolute inset-0 flex items-center justify-center"
+          >
+            <div className="w-14 h-14 rounded-full bg-black/55 border border-white/20 flex items-center justify-center backdrop-blur-sm group-hover:bg-black/70 transition-colors">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
                 <polygon points="5,3 19,12 5,21" />
               </svg>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-      {/* Bottom bar */}
-      <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent flex items-center justify-between">
-        <span className="text-white/70 text-xs font-medium">{reel.label}</span>
+      {/* Bottom label */}
+      <div className="absolute bottom-0 left-0 right-0 px-3 py-2.5 bg-gradient-to-t from-black/75 to-transparent flex items-center justify-between">
+        <span className="text-white/65 text-xs font-medium">{reel.label}</span>
         <a
           href={reel.url}
           target="_blank"
           rel="noopener noreferrer"
           onClick={(e) => e.stopPropagation()}
-          className="flex items-center gap-1.5 text-white/55 hover:text-white/90 transition-colors text-xs"
+          className="text-white/45 hover:text-white/80 transition-colors"
         >
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
           </svg>
-          Instagram
         </a>
       </div>
     </motion.div>
-  )
-}
-
-// ---------------------------------------------------------------------------
-// Copy Button (for AI prompts)
-// ---------------------------------------------------------------------------
-function PromptCopyButton({ text }: { text: string }) {
-  const [copied, setCopied] = useState(false)
-  const handle = useCallback(async () => {
-    try {
-      await navigator.clipboard.writeText(text)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
-    } catch { /* noop */ }
-  }, [text])
-  return (
-    <button
-      onClick={handle}
-      className="px-3 py-1 rounded-md text-xs font-medium bg-white/[0.08] hover:bg-white/[0.14] border border-white/[0.10] text-[#FCF4EB]/60 hover:text-[#FCF4EB]/90 transition-all duration-150 select-none"
-    >
-      {copied ? 'Copied!' : 'Copy'}
-    </button>
   )
 }
 
@@ -270,9 +185,8 @@ function PromptCopyButton({ text }: { text: string }) {
 // ---------------------------------------------------------------------------
 function MastermindCTA() {
   const magnet = useMagnet(0.28)
-
   return (
-    <section className="max-w-5xl mx-auto px-6 py-14">
+    <section className="relative z-10 max-w-5xl mx-auto px-6 py-14">
       <motion.div
         initial={{ opacity: 0, y: 18 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -287,17 +201,14 @@ function MastermindCTA() {
           <h2 className="text-2xl sm:text-5xl font-bold text-[#FCF4EB] mb-4">
             Want to build this as a real skill?
           </h2>
-
           <p className="text-xl sm:text-3xl font-bold mb-5">
             <a href={MASTERMIND_URL} target="_blank" rel="noopener noreferrer" className="text-transparent bg-clip-text bg-gradient-to-r from-[#9D8FE0] to-[#F5C3C6] hover:opacity-80 transition-opacity">
               Join the Business Automation Mastermind
             </a>
           </p>
-
           <p className="text-[#FCF4EB]/52 max-w-xl mx-auto mb-8 leading-relaxed text-base sm:text-lg">
-            A small, focused group of business owners who meet weekly to build real things, fast. We go from hook to complete content system in a single session.
+            A small, focused group of business owners who meet weekly to build real things, fast. We go from studying what works to having a complete content system in a single session.
           </p>
-
           <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center items-center mb-9">
             {['Small group, capped at 15', 'We meet weekly', 'Idea to live system in one session'].map((item) => (
               <div key={item} className="flex items-center gap-2 text-[#FCF4EB]/58 text-sm">
@@ -306,17 +217,14 @@ function MastermindCTA() {
               </div>
             ))}
           </div>
-
           <a
-            ref={magnet.ref as React.RefObject<HTMLAnchorElement>}
+            ref={magnet.ref}
             href={MASTERMIND_URL}
             target="_blank"
             rel="noopener noreferrer"
             onMouseMove={magnet.onMouseMove}
-            onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = '0 0 0 transparent'; magnet.onMouseLeave() }}
-            className="block sm:inline-block w-full sm:w-auto px-10 py-4 rounded-xl bg-[#F5C3C6] hover:bg-[#f0b8bc] text-[#151515] font-bold text-base active:scale-[0.98] transition-all text-center"
-            style={{ boxShadow: '0 0 0 transparent', transition: 'box-shadow 0.2s ease, background-color 0.15s ease, transform 0.1s ease-out' }}
-            onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = '0 0 32px rgba(245,195,198,0.5), 0 0 60px rgba(245,195,198,0.2)' }}
+            onMouseLeave={magnet.onMouseLeave}
+            className="block sm:inline-block w-full sm:w-auto px-10 py-4 rounded-xl bg-[#F5C3C6] text-[#151515] font-bold text-base active:scale-[0.98] text-center glow-btn glow-btn-pink"
           >
             Learn More
           </a>
@@ -329,11 +237,11 @@ function MastermindCTA() {
 // ---------------------------------------------------------------------------
 // Page
 // ---------------------------------------------------------------------------
-export default function ViralHooksPage() {
+export default function VisualHooksPage() {
   const particleCanvasRef = useRef<HTMLCanvasElement>(null)
-  const [expandedFormula, setExpandedFormula] = useState<string | null>(null)
+  const [expandedTech, setExpandedTech] = useState<number | null>(null)
 
-  // Load fonts
+  // Load Cormorant Garamond
   useEffect(() => {
     if (document.querySelector('link[data-font="cormorant"]')) return
     const link = document.createElement('link')
@@ -349,20 +257,11 @@ export default function ViralHooksPage() {
     let rafId = 0
     ;(async () => {
       const { default: Lenis } = await import('lenis')
-      lenis = new Lenis({ duration: 1.1 }) as unknown as {
-        raf: (t: number) => void
-        destroy: () => void
-      }
-      const raf = (time: number) => {
-        lenis!.raf(time)
-        rafId = requestAnimationFrame(raf)
-      }
+      lenis = new Lenis({ duration: 1.1 }) as unknown as { raf: (t: number) => void; destroy: () => void }
+      const raf = (time: number) => { lenis!.raf(time); rafId = requestAnimationFrame(raf) }
       rafId = requestAnimationFrame(raf)
     })()
-    return () => {
-      if (lenis) lenis.destroy()
-      cancelAnimationFrame(rafId)
-    }
+    return () => { if (lenis) lenis.destroy(); cancelAnimationFrame(rafId) }
   }, [])
 
   // Canvas falling particles
@@ -371,147 +270,118 @@ export default function ViralHooksPage() {
     if (!canvas) return
     const ctx = canvas.getContext('2d')
     if (!ctx) return
-
-    const resize = () => {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
-    }
+    const resize = () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight }
     resize()
     window.addEventListener('resize', resize)
-
-    type Particle = { x: number; y: number; r: number; dx: number; dy: number; alpha: number; color: string }
+    type P = { x: number; y: number; r: number; dx: number; dy: number; alpha: number; color: string }
     const colors = ['#8B79D4', '#F5C3C6', '#9D8FE0', '#BDB3E8', '#FCF4EB']
-    const particles: Particle[] = Array.from({ length: 60 }, () => ({
+    const particles: P[] = Array.from({ length: 70 }, () => ({
       x: Math.random() * window.innerWidth,
       y: Math.random() * window.innerHeight,
-      r: Math.random() * 1.5 + 0.4,
-      dx: (Math.random() - 0.5) * 0.35,
-      dy: Math.random() * 0.6 + 0.25,
-      alpha: Math.random() * 0.18 + 0.04,
+      r: Math.random() * 1.6 + 0.4,
+      dx: (Math.random() - 0.5) * 0.4,
+      dy: Math.random() * 0.7 + 0.3,
+      alpha: Math.random() * 0.22 + 0.05,
       color: colors[Math.floor(Math.random() * colors.length)],
     }))
-
     let animId = 0
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
       particles.forEach((p) => {
-        ctx.beginPath()
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
-        ctx.fillStyle = p.color
-        ctx.globalAlpha = p.alpha
-        ctx.fill()
-        p.x += p.dx
-        p.y += p.dy
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
+        ctx.fillStyle = p.color; ctx.globalAlpha = p.alpha; ctx.fill()
+        p.x += p.dx; p.y += p.dy
         if (p.y > canvas.height + 5) { p.y = -5; p.x = Math.random() * canvas.width }
         if (p.x < -5) p.x = canvas.width + 5
         if (p.x > canvas.width + 5) p.x = -5
       })
-      ctx.globalAlpha = 1
-      animId = requestAnimationFrame(draw)
+      ctx.globalAlpha = 1; animId = requestAnimationFrame(draw)
     }
     draw()
-    return () => {
-      cancelAnimationFrame(animId)
-      window.removeEventListener('resize', resize)
-    }
+    return () => { cancelAnimationFrame(animId); window.removeEventListener('resize', resize) }
   }, [])
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'LearningResource',
-    name: 'Understanding Viral Hooks',
-    description: 'A free guide covering 7 proven hook formulas, real reel examples, and AI prompts to generate hooks for any topic.',
-    author: {
-      '@type': 'Person',
-      name: 'Joe Che',
-      url: 'https://www.mastermindshq.business',
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Business Automation Mastermind',
-      url: 'https://www.mastermindshq.business',
-    },
+    name: 'Understanding Visual Hooks',
+    description: 'A free guide covering 7 visual techniques found in scroll-stopping reels, with 8 real examples to study.',
+    author: { '@type': 'Person', name: 'Joe Che', url: MASTERMIND_URL },
+    publisher: { '@type': 'Organization', name: 'Business Automation Mastermind', url: MASTERMIND_URL },
   }
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <style>{`
         @keyframes aurora-drift {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          33%       { transform: translate(30px, -40px) scale(1.1); }
-          66%       { transform: translate(-20px, 25px) scale(0.93); }
+          0%, 100% { transform: translate(0,0) scale(1); }
+          33%       { transform: translate(30px,-40px) scale(1.1); }
+          66%       { transform: translate(-20px,25px) scale(0.93); }
         }
         @keyframes aurora-drift-2 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          40%       { transform: translate(-35px, 30px) scale(1.07); }
-          70%       { transform: translate(45px, -15px) scale(0.96); }
+          0%, 100% { transform: translate(0,0) scale(1); }
+          40%       { transform: translate(-35px,30px) scale(1.07); }
+          70%       { transform: translate(45px,-15px) scale(0.96); }
         }
         .aurora-a { animation: aurora-drift 16s ease-in-out infinite; }
         .aurora-b { animation: aurora-drift-2 20s ease-in-out infinite; }
-        .glow-card {
-          transition: box-shadow 0.3s ease, border-color 0.3s ease;
-        }
+        .glow-card { transition: box-shadow 0.3s ease, border-color 0.3s ease; }
         .glow-card:hover {
-          box-shadow: 0 0 28px rgba(124, 105, 199, 0.12), 0 0 0 1px rgba(124, 105, 199, 0.18);
-          border-color: rgba(124, 105, 199, 0.22) !important;
+          box-shadow: 0 0 28px rgba(124,105,199,0.12), 0 0 0 1px rgba(124,105,199,0.18);
+          border-color: rgba(124,105,199,0.22) !important;
         }
-        .formula-card {
-          transition: box-shadow 0.25s ease, border-color 0.25s ease;
-        }
-        .formula-card:hover {
-          box-shadow: 0 0 24px rgba(124, 105, 199, 0.10);
-        }
+        .glow-btn { transition: box-shadow 0.2s ease, background-color 0.15s ease, transform 0.1s ease-out; }
+        .glow-btn:hover { box-shadow: 0 0 32px rgba(124,105,199,0.45), 0 0 60px rgba(124,105,199,0.2); }
+        .glow-btn-pink:hover { box-shadow: 0 0 32px rgba(245,195,198,0.5), 0 0 60px rgba(245,195,198,0.2); }
+        .tech-row { transition: border-color 0.2s ease; }
+        .tech-row:hover { border-color: rgba(124,105,199,0.22) !important; }
       `}</style>
 
       <div className="min-h-screen bg-[#151515] text-[#FCF4EB] overflow-x-hidden">
 
-        {/* Full-page falling particles */}
+        {/* Fixed background particles */}
         <canvas
           ref={particleCanvasRef}
           className="fixed inset-0 w-full h-full pointer-events-none"
           style={{ zIndex: 0 }}
         />
 
-        {/* ================================================================ */}
-        {/* SECTION 1: HERO                                                   */}
-        {/* ================================================================ */}
+        {/* ================================================================
+            HERO
+        ================================================================ */}
         <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 pb-4 pt-6 sm:pt-8">
 
-          {/* Badge */}
+          {/* Gradient-border badge */}
           <motion.div
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="absolute top-8 sm:top-10 left-0 right-0 flex justify-center"
           >
-            <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
-              Free from the{' '}
-              <a href={MASTERMIND_URL} target="_blank" rel="noopener noreferrer" className="hover:text-[#BDB3E8] transition-colors underline underline-offset-2 decoration-[#7C69C7]/40">
-                Business Automation Mastermind
-              </a>
-            </span>
+            <div className="p-[1px] rounded-full bg-gradient-to-r from-[#8B79D4] to-[#F5C3C6] inline-block">
+              <div className="px-5 py-2 rounded-full bg-[#151515] flex items-center gap-2">
+                <span className="text-[#9D8FE0] text-xs">✦</span>
+                <span className="font-semibold text-xs text-transparent bg-clip-text bg-gradient-to-r from-[#9D8FE0] to-[#F5C3C6]">Free</span>
+                <span className="text-[#FCF4EB]/32 text-xs">from the</span>
+                <a href={MASTERMIND_URL} target="_blank" rel="noopener noreferrer" className="text-[#FCF4EB]/60 text-xs font-medium hover:text-[#FCF4EB]/90 transition-colors">
+                  Business Automation Mastermind
+                </a>
+              </div>
+            </div>
           </motion.div>
 
-          {/* Aurora glow blobs */}
+          {/* Aurora blobs */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            <div
-              className="aurora-a absolute top-[10%] left-[15%] w-[600px] h-[600px] rounded-full opacity-[0.09]"
-              style={{ background: 'radial-gradient(circle, #8B79D4 0%, transparent 70%)', filter: 'blur(80px)' }}
-            />
-            <div
-              className="aurora-b absolute top-[30%] right-[10%] w-[500px] h-[500px] rounded-full opacity-[0.07]"
-              style={{ background: 'radial-gradient(circle, #F5C3C6 0%, transparent 70%)', filter: 'blur(90px)' }}
-            />
+            <div className="aurora-a absolute top-[10%] left-[15%] w-[600px] h-[600px] rounded-full opacity-[0.09]"
+              style={{ background: 'radial-gradient(circle, #8B79D4 0%, transparent 70%)', filter: 'blur(80px)' }} />
+            <div className="aurora-b absolute top-[30%] right-[10%] w-[500px] h-[500px] rounded-full opacity-[0.07]"
+              style={{ background: 'radial-gradient(circle, #F5C3C6 0%, transparent 70%)', filter: 'blur(90px)' }} />
           </div>
 
           {/* Content */}
           <div className="relative z-10 w-full max-w-5xl mx-auto px-4">
 
-            {/* Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
@@ -521,55 +391,56 @@ export default function ViralHooksPage() {
                 fontFamily: '"Cormorant Garamond", Georgia, serif',
                 fontStyle: 'italic',
                 fontWeight: 700,
-                fontSize: 'clamp(2.2rem, 6vw, 4.2rem)',
+                fontSize: 'clamp(2.2rem, 6vw, 4.4rem)',
                 lineHeight: 1.15,
                 letterSpacing: '-0.01em',
                 paddingBottom: '0.05em',
               }}
             >
-              Understanding Viral Hooks
+              Understanding Visual Hooks
             </motion.h1>
 
-            {/* Subheadline */}
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 1.3 }}
-              className="mb-5 text-[#FCF4EB]/85"
+              className="mb-5 text-[#FCF4EB]/82"
               style={{
                 fontFamily: '"Cormorant Garamond", Georgia, serif',
                 fontWeight: 600,
-                fontSize: 'clamp(1.1rem, 3vw, 2.2rem)',
+                fontSize: 'clamp(1.1rem, 2.8vw, 2rem)',
                 lineHeight: 1.2,
               }}
             >
-              Why some content stops the scroll and most of it doesn't.
+              What the first 3 seconds of scroll-stopping content actually look like.
             </motion.p>
 
             <motion.p
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 1.6 }}
-              className="text-[#FCF4EB]/52 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-8"
+              className="text-[#FCF4EB]/50 text-base sm:text-lg leading-relaxed max-w-xl mx-auto mb-10"
             >
-              7 proven hook formulas broken down with real examples, a video library of viral reels, and AI prompts you can copy straight into Claude. Use this yourself, share it with your community, or give it away as a lead magnet.
+              Most people focus on what to say. This guide is about what to show. Seven visual techniques that appear in scroll-stopping content, with eight real reels to study frame by frame.
             </motion.p>
 
-            {/* Stats */}
+            {/* Stats — CountUp */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 1.9 }}
-              className="flex flex-wrap items-center justify-center gap-5 sm:gap-8 mb-8"
+              className="flex flex-wrap items-center justify-center gap-8 sm:gap-16 mb-10"
             >
               {[
-                { value: '7', label: 'Hook formulas' },
-                { value: '8', label: 'Reel examples' },
-                { value: '3', label: 'AI prompts' },
+                { value: 7, label: 'visual techniques' },
+                { value: 8, label: 'reel examples' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <div className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#9D8FE0] to-[#F5C3C6]">{stat.value}</div>
-                  <div className="text-[#FCF4EB]/38 text-xs uppercase tracking-widest mt-0.5">{stat.label}</div>
+                  <CountUpNum
+                    value={stat.value}
+                    className="block text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#9D8FE0] to-[#F5C3C6]"
+                  />
+                  <div className="text-[#FCF4EB]/35 text-xs uppercase tracking-widest mt-1">{stat.label}</div>
                 </div>
               ))}
             </motion.div>
@@ -588,10 +459,10 @@ export default function ViralHooksPage() {
           </div>
         </section>
 
-        {/* ================================================================ */}
-        {/* SECTION 2: THE 3-SECOND WINDOW                                   */}
-        {/* ================================================================ */}
-        <section className="max-w-5xl mx-auto px-6 py-14">
+        {/* ================================================================
+            THE 3-SECOND WINDOW
+        ================================================================ */}
+        <section className="relative z-10 max-w-5xl mx-auto px-6 py-14">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -599,29 +470,28 @@ export default function ViralHooksPage() {
             className="text-center mb-12"
           >
             <h2 className="text-2xl sm:text-3xl font-bold text-[#FCF4EB] mb-4">
-              You have 3 seconds. Maybe less.
+              The decision happens before the audio starts.
             </h2>
             <p className="text-[#FCF4EB]/50 max-w-2xl mx-auto leading-relaxed">
-              The algorithm does not care how good your content is. It only measures whether people stop scrolling. A hook is not an intro. It is not context-setting. It is the exact moment your viewer decides whether to stay or leave.
+              Most people scroll with sound off. The first 1-3 frames of a reel are processed visually before the brain decides whether to stay. Understanding what makes those frames work is a visual skill, not a writing skill.
             </p>
           </motion.div>
-
           <div className="grid gap-5 sm:grid-cols-3">
             {[
               {
                 icon: '◎',
-                title: 'Pattern interrupt',
-                body: 'The first frame must break the expected format. Something unexpected, visually or verbally, buys you the next few seconds.',
+                title: 'Visual before audio',
+                body: 'On Instagram, over 60% of users scroll with sound off. The hook has to work as a silent image before it works as a spoken sentence.',
               },
               {
                 icon: '◈',
-                title: 'Open loop',
-                body: 'A hook works because it creates a question the viewer cannot answer without watching. Satisfaction comes from closing the loop, not from the intro.',
+                title: 'Frame one is a billboard',
+                body: 'The first frame is a static image on the feed. It competes with every other static image in the scroll. Treat it like a billboard, not a film opening.',
               },
               {
                 icon: '✦',
-                title: 'Audience filter',
-                body: 'The best hooks signal exactly who the content is for. If everyone is your audience, your hook will not stop anyone. Specificity is not exclusion.',
+                title: 'Motion earns the next second',
+                body: 'Once someone pauses, the first moment of motion either confirms they made the right choice or tells them they were tricked. The visual energy has to match the promise.',
               },
             ].map((item, i) => (
               <motion.div
@@ -640,10 +510,10 @@ export default function ViralHooksPage() {
           </div>
         </section>
 
-        {/* ================================================================ */}
-        {/* SECTION 3: HOOK FORMULAS                                         */}
-        {/* ================================================================ */}
-        <section className="max-w-5xl mx-auto px-6 py-14">
+        {/* ================================================================
+            7 VISUAL TECHNIQUES
+        ================================================================ */}
+        <section className="relative z-10 max-w-5xl mx-auto px-6 py-14">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -651,49 +521,51 @@ export default function ViralHooksPage() {
             className="text-center mb-12"
           >
             <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
-              The 7 Formulas
+              Visual Techniques
             </span>
             <div className="mb-4">
               <h2 className="text-3xl sm:text-4xl font-bold text-[#FCF4EB]">
-                Every viral hook fits one of these patterns
+                7 things to look for in the first 3 seconds
               </h2>
             </div>
             <p className="text-[#FCF4EB]/45 max-w-xl mx-auto leading-relaxed">
-              These are not guesses. They are extracted from hundreds of high-performing reels across every niche. Click any formula to see examples.
+              Every scroll-stopping reel uses at least one of these. Most use three or more. Use the video library below to identify them as you watch.
             </p>
           </motion.div>
 
           <div className="space-y-3">
-            {HOOK_FORMULAS.map((formula, i) => {
-              const isOpen = expandedFormula === formula.name
+            {TECHNIQUES.map((tech, i) => {
+              const isOpen = expandedTech === tech.n
               return (
                 <motion.div
-                  key={formula.name}
+                  key={tech.n}
                   initial={{ opacity: 0, y: 14 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.06 }}
-                  className="formula-card rounded-2xl border border-white/[0.08] bg-white/[0.03] overflow-hidden"
-                  style={{ borderColor: isOpen ? `${formula.color}30` : undefined }}
+                  transition={{ delay: i * 0.05 }}
+                  className="tech-row rounded-2xl border border-white/[0.08] bg-white/[0.03] overflow-hidden"
+                  style={{ borderColor: isOpen ? 'rgba(124,105,199,0.25)' : undefined }}
                 >
                   <button
-                    onClick={() => setExpandedFormula(isOpen ? null : formula.name)}
-                    className="w-full flex items-start sm:items-center justify-between p-6 text-left gap-4"
+                    onClick={() => setExpandedTech(isOpen ? null : tech.n)}
+                    className="w-full flex items-center gap-5 p-5 sm:p-6 text-left"
                   >
-                    <div className="flex items-start sm:items-center gap-5 flex-1 min-w-0">
-                      <span className="text-2xl font-extrabold font-mono flex-shrink-0" style={{ color: `${formula.color}40` }}>
-                        {formula.number}
-                      </span>
-                      <div className="min-w-0">
-                        <div className="text-[#FCF4EB] font-bold text-base sm:text-lg">{formula.name}</div>
-                        <div className="text-[#FCF4EB]/38 text-xs sm:text-sm mt-0.5 font-mono italic truncate">
-                          {formula.pattern}
-                        </div>
-                      </div>
+                    {/* Animated counter number */}
+                    <div className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center"
+                      style={{ background: 'rgba(124,105,199,0.12)', border: '1px solid rgba(124,105,199,0.2)' }}>
+                      <CountUpNum
+                        value={tech.n}
+                        className="text-sm font-extrabold font-mono text-[#9D8FE0]"
+                      />
                     </div>
+
+                    <div className="flex-1 min-w-0">
+                      <div className="text-[#FCF4EB] font-bold text-base">{tech.name}</div>
+                    </div>
+
                     <div
-                      className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center border border-white/[0.12] text-[#FCF4EB]/40"
-                      style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.25s ease' }}
+                      className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center border border-white/[0.10] text-[#FCF4EB]/35"
+                      style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0)', transition: 'transform 0.22s ease' }}
                     >
                       <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.5">
                         <path d="M2 3.5l3 3 3-3" />
@@ -704,40 +576,17 @@ export default function ViralHooksPage() {
                   <AnimatePresence>
                     {isOpen && (
                       <motion.div
-                        key="content"
+                        key="body"
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: 'auto', opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.25, ease: 'easeInOut' }}
+                        transition={{ duration: 0.22, ease: 'easeInOut' }}
                         className="overflow-hidden"
                       >
-                        <div className="px-6 pb-7 space-y-5" style={{ borderTop: `1px solid ${formula.color}18` }}>
-                          {/* Why it works */}
-                          <div className="pt-5">
-                            <div className="text-[10px] uppercase tracking-widest font-bold mb-2" style={{ color: formula.color }}>
-                              Why it works
-                            </div>
-                            <p className="text-[#FCF4EB]/62 text-sm leading-relaxed">{formula.why}</p>
-                          </div>
-
-                          {/* Examples */}
-                          <div>
-                            <div className="text-[10px] uppercase tracking-widest font-bold mb-3" style={{ color: formula.color }}>
-                              Examples
-                            </div>
-                            <div className="space-y-2">
-                              {formula.examples.map((ex, j) => (
-                                <div
-                                  key={j}
-                                  className="flex items-start gap-3 px-4 py-3 rounded-xl bg-white/[0.04] border border-white/[0.06]"
-                                >
-                                  <span className="text-[#FCF4EB]/20 text-xs font-mono mt-0.5 flex-shrink-0">{String(j + 1).padStart(2, '0')}</span>
-                                  <p className="text-[#FCF4EB]/72 text-sm leading-relaxed italic">&ldquo;{ex}&rdquo;</p>
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
+                        <p className="px-6 pb-6 pt-1 text-[#FCF4EB]/58 text-sm leading-relaxed"
+                          style={{ borderTop: '1px solid rgba(124,105,199,0.1)' }}>
+                          {tech.desc}
+                        </p>
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -747,10 +596,10 @@ export default function ViralHooksPage() {
           </div>
         </section>
 
-        {/* ================================================================ */}
-        {/* SECTION 4: VIDEO LIBRARY                                         */}
-        {/* ================================================================ */}
-        <section className="max-w-6xl mx-auto px-6 py-14">
+        {/* ================================================================
+            VIDEO LIBRARY
+        ================================================================ */}
+        <section className="relative z-10 max-w-6xl mx-auto px-6 py-14">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -762,11 +611,11 @@ export default function ViralHooksPage() {
             </span>
             <div className="mb-4">
               <h2 className="text-3xl sm:text-4xl font-bold text-[#FCF4EB]">
-                8 viral hooks to study
+                <CountUpNum value={8} className="text-transparent bg-clip-text bg-gradient-to-r from-[#9D8FE0] to-[#F5C3C6]" /> reels to study
               </h2>
             </div>
             <p className="text-[#FCF4EB]/45 max-w-xl mx-auto leading-relaxed">
-              Watch each one and identify which formula it uses. The best way to internalize these patterns is to analyze them in the wild. Links to the original reels are included below each video.
+              Watch each one and identify which visual techniques it uses. Pause on frame one. Watch the first 3 seconds twice before you watch the full video. The original reels are linked below each.
             </p>
           </motion.div>
 
@@ -777,128 +626,100 @@ export default function ViralHooksPage() {
           </div>
         </section>
 
-        {/* ================================================================ */}
-        {/* SECTION 5: ANATOMY                                               */}
-        {/* ================================================================ */}
-        <section className="max-w-5xl mx-auto px-6 py-14">
+        {/* ================================================================
+            HOW TO STUDY A VISUAL HOOK
+        ================================================================ */}
+        <section className="relative z-10 max-w-5xl mx-auto px-6 py-14">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="rounded-2xl overflow-hidden"
+            style={{
+              background: 'linear-gradient(135deg, rgba(124,105,199,0.07) 0%, rgba(157,143,224,0.04) 100%)',
+              border: '1px solid rgba(124,105,199,0.15)',
+            }}
           >
-            <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
-              Hook Anatomy
-            </span>
-            <div className="mb-4">
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#FCF4EB]">
-                What every great hook has in common
-              </h2>
+            <div className="px-8 py-10">
+              <div className="text-center mb-8">
+                <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
+                  How to use this
+                </span>
+                <div className="mb-3">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-[#FCF4EB]">
+                    Four questions to ask before you watch the rest
+                  </h2>
+                </div>
+              </div>
+              <div className="grid gap-5 sm:grid-cols-2">
+                {[
+                  {
+                    q: '01',
+                    title: 'Pause on frame one',
+                    body: 'Before you press play: what does the thumbnail communicate? Is it a person, a setting, an action? Does anything look unexpected or out of place? What emotion does the first frame alone suggest?',
+                  },
+                  {
+                    q: '02',
+                    title: 'Watch the first 3 seconds, no sound',
+                    body: 'Mute the video and watch the opening. Does it still hold your attention? What visual event happens and when? Is there text, and does it appear before or after motion starts?',
+                  },
+                  {
+                    q: '03',
+                    title: 'Name the technique',
+                    body: 'Which of the 7 techniques above does this hook use? Most use more than one. Write them down. The ones that recur across multiple reels are worth practicing.',
+                  },
+                  {
+                    q: '04',
+                    title: 'Ask: could I reproduce this?',
+                    body: 'Not the topic. The visual structure. Could you film something with the same framing, the same text timing, the same visual contrast? If yes, you have extracted a reusable template.',
+                  },
+                ].map((item, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 14 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.08 }}
+                    className="flex items-start gap-4"
+                  >
+                    <div className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold font-mono text-[#9D8FE0]"
+                      style={{ background: 'rgba(124,105,199,0.15)', border: '1px solid rgba(124,105,199,0.25)' }}>
+                      {item.q}
+                    </div>
+                    <div>
+                      <h3 className="text-[#FCF4EB] font-semibold text-sm mb-1">{item.title}</h3>
+                      <p className="text-[#FCF4EB]/44 text-sm leading-relaxed">{item.body}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </motion.div>
-
-          <div className="grid gap-5 sm:grid-cols-2">
-            {ANATOMY.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className="glow-card bg-white/[0.04] border border-white/[0.08] rounded-2xl p-7"
-              >
-                <div className="flex items-center gap-3 mb-3">
-                  <div
-                    className="w-2 h-2 rounded-full flex-shrink-0"
-                    style={{ background: 'linear-gradient(135deg, #9D8FE0, #F5C3C6)' }}
-                  />
-                  <h3 className="text-[#FCF4EB] font-bold text-base">{item.label}</h3>
-                </div>
-                <p className="text-[#FCF4EB]/44 text-sm leading-relaxed">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
         </section>
 
-        {/* ================================================================ */}
-        {/* SECTION 6: MASTERMIND CTA                                        */}
-        {/* ================================================================ */}
+        {/* ================================================================
+            MASTERMIND CTA
+        ================================================================ */}
         <MastermindCTA />
 
-        {/* ================================================================ */}
-        {/* SECTION 7: PARTICIPANT REACTIONS                                 */}
-        {/* ================================================================ */}
+        {/* ================================================================
+            PARTICIPANT REACTIONS
+        ================================================================ */}
         <MastermindReactionsSection />
 
-        {/* ================================================================ */}
-        {/* SECTION 8: AI PROMPTS                                            */}
-        {/* ================================================================ */}
-        <section className="max-w-5xl mx-auto px-6 py-16">
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <div className="text-center mb-10">
-              <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
-                AI Prompts
-              </span>
-              <div className="mb-4">
-                <h2 className="text-3xl sm:text-4xl font-bold text-[#FCF4EB]">
-                  Let Claude write the hooks
-                </h2>
-              </div>
-              <p className="text-[#FCF4EB]/45 max-w-xl mx-auto leading-relaxed">
-                Three prompts you can paste straight into{' '}
-                <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" className="text-[#9D8FE0] hover:text-[#BDB3E8] transition-colors">Claude</a>
-                {' '}or{' '}
-                <a href="https://claude.ai/claude-code" target="_blank" rel="noopener noreferrer" className="text-[#9D8FE0] hover:text-[#BDB3E8] transition-colors">Claude Code</a>.
-                Fill in the brackets, hit send, and get a batch of hooks in seconds.
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              {AI_PROMPTS.map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 14 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="rounded-xl overflow-hidden border border-white/[0.08]"
-                >
-                  <div className="flex items-center justify-between px-4 py-3 bg-white/[0.04] border-b border-white/[0.06]">
-                    <div className="flex items-center gap-3">
-                      <span className="text-[#9D8FE0] text-xs font-bold font-mono">{String(i + 1).padStart(2, '0')}</span>
-                      <span className="text-[#FCF4EB]/70 text-sm font-medium">{item.title}</span>
-                    </div>
-                    <PromptCopyButton text={item.prompt} />
-                  </div>
-                  <pre
-                    className="p-5 text-sm font-mono leading-[1.75] text-[#FCF4EB]/72 whitespace-pre-wrap break-words"
-                    style={{ background: '#0d0d0d' }}
-                  >
-                    <code>{item.prompt}</code>
-                  </pre>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </section>
-
-        {/* ================================================================ */}
-        {/* SECTION 9: SECOND CTA                                            */}
-        {/* ================================================================ */}
-        <section className="max-w-5xl mx-auto px-6 py-10 pb-20">
+        {/* ================================================================
+            FOOTER NOTE
+        ================================================================ */}
+        <section className="relative z-10 max-w-5xl mx-auto px-6 py-10 pb-20">
           <motion.div
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center"
           >
-            <p className="text-[#FCF4EB]/30 text-sm">
+            <p className="text-[#FCF4EB]/28 text-sm">
               This guide is free.{' '}
-              <a href={MASTERMIND_URL} target="_blank" rel="noopener noreferrer" className="text-[#9D8FE0] hover:text-[#BDB3E8] transition-colors underline underline-offset-2 decoration-[#7C69C7]/40">
+              <a href={MASTERMIND_URL} target="_blank" rel="noopener noreferrer" className="text-[#9D8FE0] hover:text-[#BDB3E8] transition-colors underline underline-offset-2 decoration-[#7C69C7]/35">
                 The Mastermind
               </a>
               {' '}is where the real work happens.

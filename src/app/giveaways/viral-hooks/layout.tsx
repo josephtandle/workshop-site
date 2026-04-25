@@ -5,18 +5,18 @@ const BASE = 'https://workshop.mastermindshq.business'
 const URL = `${BASE}/giveaways/viral-hooks`
 
 export const metadata: Metadata = {
-  title: 'Understanding Viral Hooks -- Free Guide',
-  description: '7 proven hook formulas, 8 real reel examples, and AI prompts to generate hooks for any topic. Free from the Business Automation Mastermind.',
+  title: 'Understanding Visual Hooks -- Free Guide',
+  description: '7 visual techniques that appear in scroll-stopping reels, with 8 real examples to study frame by frame. Free from the Business Automation Mastermind.',
   keywords: [
-    'viral hooks', 'Instagram Reels hooks', 'hook formulas', 'content creation', 'stop the scroll',
-    'reel hooks', 'social media hooks', 'AI content', 'Claude Code', 'Business Automation Mastermind', 'Joe Che',
+    'visual hooks', 'Instagram Reels hooks', 'scroll-stopping content', 'content creation', 'stop the scroll',
+    'reel hooks', 'social media hooks', 'visual techniques', 'Business Automation Mastermind', 'Joe Che',
   ],
   authors: [{ name: 'Joe Che', url: 'https://www.mastermindshq.business' }],
   robots: { index: true, follow: true },
   alternates: { canonical: URL },
   openGraph: {
-    title: 'Understanding Viral Hooks -- Free Guide',
-    description: '7 proven hook formulas. 8 viral reel examples. 3 AI prompts to generate hooks for any topic. Free from the Business Automation Mastermind.',
+    title: 'Understanding Visual Hooks -- Free Guide',
+    description: '7 visual techniques that appear in scroll-stopping reels. 8 real examples to study. Free from the Business Automation Mastermind.',
     url: URL,
     siteName: 'Business Automation Mastermind Workshop',
     type: 'website',
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Understanding Viral Hooks -- Free Guide',
-    description: '7 formulas. 8 examples. 3 AI prompts. Everything you need to stop the scroll. Free.',
+    title: 'Understanding Visual Hooks -- Free Guide',
+    description: '7 visual techniques. 8 real reel examples. What scroll-stopping content actually looks like. Free.',
     creator: '@joecheuk',
   },
 }
