@@ -102,11 +102,10 @@ export default function Session7DescriptGuide() {
                 { href: '#part-b', label: 'Part B: Studio Sound' },
                 { href: '#part-c', label: 'Part C: Edit with Text, Not a Timeline' },
                 { href: '#part-d', label: 'Part D: Overdub (Paid Plan)' },
-                { href: '#part-e', label: 'Part E: Create Social Clips' },
-                { href: '#part-f', label: 'Part F: AI Clip Suggestions' },
-                { href: '#part-g', label: 'Part G: Captions' },
-                { href: '#part-h', label: 'Part H: Resize for Social' },
-                { href: '#part-i', label: 'Part I: Export' },
+                { href: '#part-e', label: 'Part E: AI Clip Suggestions' },
+                { href: '#part-f', label: 'Part F: Captions' },
+                { href: '#part-g', label: 'Part G: Resize for Social' },
+                { href: '#part-h', label: 'Part H: Export' },
               ].map((item) => (
                 <li key={item.href}>
                   <a href={item.href} className="text-sm text-[#FCF4EB]/70 hover:text-[#7C69C7] transition-colors">
@@ -241,38 +240,14 @@ export default function Session7DescriptGuide() {
         <section id="part-e" className="mb-14">
           <div className="mb-6 pt-4">
             <h2 className="gradient-text text-3xl font-extrabold pb-1">
-              Part E: Create Social Clips
-            </h2>
-          </div>
-          <p className="text-[#FCF4EB]/60 text-sm mb-6 leading-relaxed">
-            Once your recording is cleaned up, you pull clips directly from the transcript. Each clip becomes its own sequence inside your project.
-          </p>
-
-          <StepCard number={6} title="Highlight a section and turn it into a clip">
-            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-              In the transcript, highlight the section you want to clip. Aim for 10 to 90 seconds. Right-click and select <strong className="text-[#FCF4EB]">Create Clip</strong>.
-            </p>
-            <p className="text-[#FCF4EB]/70 leading-relaxed">
-              The clip appears in your project as its own sequence. Rename it so you know what it is: something like <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">best-quote-april-27</code> or <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">story-opening</code>. Build your content calendar from these names.
-            </p>
-            <ProTip type="tip">
-              Keep clips between 15 and 60 seconds for Instagram Reels and TikTok. Clips under 30 seconds tend to get the best completion rates.
-            </ProTip>
-          </StepCard>
-        </section>
-
-        {/* Part F */}
-        <section id="part-f" className="mb-14">
-          <div className="mb-6 pt-4">
-            <h2 className="gradient-text text-3xl font-extrabold pb-1">
-              Part F: AI Clip Suggestions
+              Part E: AI Clip Suggestions
             </h2>
           </div>
           <p className="text-[#FCF4EB]/60 text-sm mb-6 leading-relaxed">
             Descript can surface the best moments from your recording automatically. Use it as a shortlist, then apply your own judgment to pick the winner.
           </p>
 
-          <StepCard number={7} title="Let Descript suggest your best clips">
+          <StepCard number={6} title="Let Descript suggest your best clips">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Go to <strong className="text-[#FCF4EB]">Edit &gt; Detect Highlights</strong>, or look for the <strong className="text-[#FCF4EB]">Highlights</strong> tab in the right panel depending on your version of Descript.
             </p>
@@ -284,7 +259,7 @@ export default function Session7DescriptGuide() {
             </p>
           </StepCard>
 
-          <StepCard number={8} title="Pick the winner from the shortlist">
+          <StepCard number={7} title="Pick the winner from the shortlist">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Before you create a clip, ask yourself these two questions:
             </p>
@@ -309,18 +284,18 @@ export default function Session7DescriptGuide() {
           </StepCard>
         </section>
 
-        {/* Part G */}
-        <section id="part-g" className="mb-14">
+        {/* Part F */}
+        <section id="part-f" className="mb-14">
           <div className="mb-6 pt-4">
             <h2 className="gradient-text text-3xl font-extrabold pb-1">
-              Part G: Captions
+              Part F: Captions
             </h2>
           </div>
           <p className="text-[#FCF4EB]/60 text-sm mb-6 leading-relaxed">
             Most people watch social video with the sound off. Captions are not optional. Descript generates them from your transcript in one click.
           </p>
 
-          <StepCard number={9} title="Generate and style captions for your clip">
+          <StepCard number={8} title="Generate and style captions for your clip">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Open your clip sequence. In the right panel, click the <strong className="text-[#FCF4EB]">Captions</strong> tab, or go to <strong className="text-[#FCF4EB]">Edit &gt; Captions</strong>.
             </p>
@@ -336,18 +311,18 @@ export default function Session7DescriptGuide() {
           </StepCard>
         </section>
 
-        {/* Part H */}
-        <section id="part-h" className="mb-14">
+        {/* Part G */}
+        <section id="part-g" className="mb-14">
           <div className="mb-6 pt-4">
             <h2 className="gradient-text text-3xl font-extrabold pb-1">
-              Part H: Resize for Social
+              Part G: Resize for Social
             </h2>
           </div>
           <p className="text-[#FCF4EB]/60 text-sm mb-6 leading-relaxed">
             Your long-form recording is probably 16:9 (widescreen). Social content needs to be vertical for Reels and TikTok, or square for feed posts. Descript handles the reframe for you.
           </p>
 
-          <StepCard number={10} title="Switch your clip to vertical or square format">
+          <StepCard number={9} title="Switch your clip to vertical or square format">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               With your clip sequence open, go to <strong className="text-[#FCF4EB]">Timeline &gt; Aspect Ratio</strong> or <strong className="text-[#FCF4EB]">Edit &gt; Resize</strong>. Choose:
             </p>
@@ -378,18 +353,18 @@ export default function Session7DescriptGuide() {
           </StepCard>
         </section>
 
-        {/* Part I */}
-        <section id="part-i" className="mb-14">
+        {/* Part H */}
+        <section id="part-h" className="mb-14">
           <div className="mb-6 pt-4">
             <h2 className="gradient-text text-3xl font-extrabold pb-1">
-              Part I: Export
+              Part H: Export
             </h2>
           </div>
           <p className="text-[#FCF4EB]/60 text-sm mb-6 leading-relaxed">
             Export each clip as a separate file. Name them clearly so you know exactly what is in each one when you go to post.
           </p>
 
-          <StepCard number={11} title="Export your clip as a video file">
+          <StepCard number={10} title="Export your clip as a video file">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               With your clip sequence open, go to <strong className="text-[#FCF4EB]">File &gt; Export &gt; Export Video</strong>.
             </p>

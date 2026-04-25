@@ -88,57 +88,65 @@ export default function Session7Guide() {
           <p className="text-[#FCF4EB]/60 text-sm mb-6 leading-relaxed">
             Mission Control is a personal task board that runs entirely on your laptop. Nothing
             is stored in the cloud, nothing requires a subscription. You install it once and it
-            runs forever. Node.js is already on your machine from Session 2, and Claude Code is
-            already installed, so this installation is a single command.
+            runs forever. Node.js is already on your machine from Session 2, so this is a
+            two-command install.
           </p>
 
-          <StepCard number={1} title="Clone the Mission Control repo">
+          <StepCard number={1} title="Clone and install Mission Control">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-              Open your terminal and run this command. It downloads Mission Control to your machine:
+              Open your terminal and run this single command. It clones the repo, installs
+              everything, and starts the server in one go:
             </p>
             <CodeBlock
               filename="Terminal"
-              code={`git clone https://github.com/josephtandle/mastermind-mission-control`}
-            />
-            <ProTip type="info">
-              This URL will be live before the session. If you run it early and it does not work yet,
-              check back the day before.
-            </ProTip>
-          </StepCard>
-
-          <StepCard number={2} title="Run the install script">
-            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-              Run this command to install dependencies, start the server, and open the app in your browser:
-            </p>
-            <CodeBlock
-              filename="Terminal"
-              code={`cd mastermind-mission-control && bash install.sh`}
-            />
-            <p className="text-[#FCF4EB]/70 leading-relaxed mt-4 mb-4">
-              The install script handles everything. Your browser should open automatically to{' '}
-              <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">http://localhost:3001</code>.
-            </p>
-            <ProTip type="tip">
-              If the browser does not open automatically, go to{' '}
-              <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">http://localhost:3001</code>{' '}
-              in your browser manually. The server is running, the tab just did not pop up on its own.
-            </ProTip>
-          </StepCard>
-
-          <StepCard number={3} title="How to reopen it later">
-            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-              After this session, whenever you want Mission Control open again, run these two
-              things in your terminal:
-            </p>
-            <CodeBlock
-              filename="Terminal"
-              code={`cd mastermind-mission-control && npm start`}
+              code={`git clone https://github.com/josephtandle/mastermind-mission-control && cd mastermind-mission-control && bash install.sh`}
             />
             <p className="text-[#FCF4EB]/70 leading-relaxed mt-4">
-              Then go to{' '}
-              <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">http://localhost:3001</code>{' '}
-              in your browser. That is it. Your data is saved locally, so everything you added before
-              will still be there.
+              The install script handles everything: dependencies, database setup, and starting
+              the server. It takes about two minutes the first time.
+            </p>
+            <ProTip type="tip">
+              If you run into any issues during install, make sure Node.js is installed on your
+              machine first. You would have done this in Session 2. If not, go to{' '}
+              <a href="https://nodejs.org" target="_blank" rel="noopener" className="text-[#7C69C7] hover:underline">nodejs.org</a>{' '}
+              and install the LTS version before running the command above.
+            </ProTip>
+          </StepCard>
+
+          <StepCard number={2} title="Open Mission Control in your browser">
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              Once the install finishes, go to this address in your browser:
+            </p>
+            <a
+              href="http://localhost:3001"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 bg-white/[0.05] border border-white/[0.10] hover:border-[#7C69C7]/50 rounded-xl px-5 py-4 transition-all duration-150 group mb-4"
+            >
+              <div className="w-9 h-9 rounded-full bg-[#7C69C7]/20 border border-[#7C69C7]/40 flex items-center justify-center flex-shrink-0">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <rect x="2" y="3" width="12" height="9" rx="1.5" stroke="#9D8FE0" strokeWidth="1.5"/>
+                  <path d="M5 13h6" stroke="#9D8FE0" strokeWidth="1.5" strokeLinecap="round"/>
+                  <path d="M8 11v2" stroke="#9D8FE0" strokeWidth="1.5" strokeLinecap="round"/>
+                </svg>
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-[#FCF4EB] font-semibold text-sm group-hover:text-[#9D8FE0] transition-colors">
+                  Open Mission Control
+                </p>
+                <p className="text-[#FCF4EB]/40 text-xs mt-0.5">
+                  localhost:3001
+                </p>
+              </div>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="flex-shrink-0 text-[#FCF4EB]/30 group-hover:text-[#7C69C7] transition-colors">
+                <path d="M2.5 11.5l9-9M5 2.5h6.5v6.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </a>
+            <p className="text-[#FCF4EB]/70 leading-relaxed">
+              Any time you want Mission Control open again, just go back to that address. Your
+              board and all your cards will still be there. If the server is not running, open
+              your terminal, go to the mastermind-mission-control folder, and run{' '}
+              <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">npm start</code>.
             </p>
           </StepCard>
         </section>
@@ -220,7 +228,7 @@ export default function Session7Guide() {
             owner would actually run. Look through them to understand how the board is meant to work.
           </p>
 
-          <StepCard number={4} title="See the five sample projects">
+          <StepCard number={3} title="See the five sample projects">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               The five pre-loaded sample projects are:
             </p>
@@ -245,7 +253,7 @@ export default function Session7Guide() {
             </p>
           </StepCard>
 
-          <StepCard number={5} title="Filter cards by project">
+          <StepCard number={4} title="Filter cards by project">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               At the top of the board there is a projects dropdown. Click it and select any project
               to filter the board to show only that project&rsquo;s cards. Click it again and select
@@ -258,7 +266,7 @@ export default function Session7Guide() {
             </ProTip>
           </StepCard>
 
-          <StepCard number={6} title="Add a new project">
+          <StepCard number={5} title="Add a new project">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               To create a new project: click the Projects dropdown at the top of the board, then
               select{' '}
@@ -271,7 +279,7 @@ export default function Session7Guide() {
             </ProTip>
           </StepCard>
 
-          <StepCard number={7} title="Clear the samples when you are ready">
+          <StepCard number={6} title="Clear the samples when you are ready">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Once you have explored the sample cards and understand how the board works, you can
               remove them all at once: go to{' '}
@@ -302,7 +310,7 @@ export default function Session7Guide() {
             business. You are going to add that as your first card.
           </p>
 
-          <StepCard number={8} title="Create the card">
+          <StepCard number={7} title="Create the card">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Click the{' '}
               <strong className="text-[#FCF4EB]">+</strong> button at the top of the Backlog
@@ -315,7 +323,7 @@ export default function Session7Guide() {
             </ProTip>
           </StepCard>
 
-          <StepCard number={9} title="Assign it to a project and add detail">
+          <StepCard number={8} title="Assign it to a project and add detail">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Inside the card, choose a project from the dropdown. Then add a description: a sentence
               or two about what done looks like, any context Claude will need later, and any relevant
@@ -335,7 +343,7 @@ export default function Session7Guide() {
             </ProTip>
           </StepCard>
 
-          <StepCard number={10} title="Move the card by drag and drop">
+          <StepCard number={9} title="Move the card by drag and drop">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Click and hold the card, then drag it to a different column. Try moving it to Doing,
               then to Review, then back to Backlog. That is how work moves through the board.
@@ -357,7 +365,8 @@ export default function Session7Guide() {
           </div>
           <p className="text-[#FCF4EB]/60 text-sm mb-6 leading-relaxed">
             You have seen the AI (Auto Execute) column in the board tour. This part explains what
-            it actually does and what is coming in the next session.
+            it actually does and what is coming in the next session. It also teaches you a shortcut
+            for adding cards instantly using only plain English.
           </p>
 
           <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-6 mb-6">
@@ -381,7 +390,7 @@ export default function Session7Guide() {
             </p>
           </div>
 
-          <StepCard number={11} title="Read the sample AI cards">
+          <StepCard number={10} title="Read the sample AI cards">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               The sample data includes cards already in the AI (Auto Execute) column. Open a few
               of them and read the titles and descriptions. These are real examples of tasks that
@@ -399,25 +408,85 @@ export default function Session7Guide() {
             </ProTip>
           </StepCard>
 
-          <StepCard number={12} title="Add one task you want Claude to handle automatically">
+          <StepCard number={11} title="Teach Claude your shorthand for the task board">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-              Before the end of the session, add at least one card to Backlog that you are
-              planning to move into the AI column once Session 8 is done. Write the description
-              the way you would want to brief Claude: clear outcome, relevant context, nothing
-              left ambiguous.
+              You are going to give Claude a one-time instruction so that whenever you say{' '}
+              <strong className="text-[#FCF4EB]">&ldquo;add this to the MC task board&rdquo;</strong>,
+              it knows exactly what to do: create a card in Mission Control with the right title,
+              description, and column, without you having to explain it every time.
+            </p>
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              Paste this into Claude Code. It adds a permanent note to your CLAUDE.md file, which
+              is the file Claude reads at the start of every session to understand your setup:
+            </p>
+            <CodeBlock
+              filename="Paste into Claude Code"
+              code={`Add the following to my CLAUDE.md file:
+
+## Mission Control Task Board
+
+My personal task board runs at http://localhost:3001.
+
+When I say "add this to the MC task board" or "add a card to Mission Control":
+- Create a new card via POST http://localhost:3001/api/cards
+- Body: { "title": "[card title]", "description": "[description]", "status": "backlog" }
+- Put it in Backlog unless I specify a different column
+- Confirm when done and tell me the card title`}
+            />
+            <p className="text-[#FCF4EB]/70 leading-relaxed mt-4">
+              After Claude adds this, you never have to explain the board again. It becomes part
+              of your permanent setup.
+            </p>
+            <ProTip type="info">
+              CLAUDE.md is a file in your home folder that Claude reads automatically every
+              time you start a session. Anything you put there becomes a standing instruction.
+              Think of it as a briefing document for your AI.
+            </ProTip>
+          </StepCard>
+
+          <StepCard number={12} title="Add your first real AI task">
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              The board already has sample AI tasks to show you the format. Now add one of your
+              own. Paste this into Claude Code, fill in your details, and it will create the card:
             </p>
             <CodeBlock
               filename="Paste into Claude Code"
               editable
-              code={`I have a task board called Mission Control running at http://localhost:3001. Help me write a really good card description for an AI column task.
+              code={`Add a card to my MC task board in the AI Auto Execute column with this exact title and description:
 
-The task is: [DESCRIBE THE TASK YOU WANT CLAUDE TO HANDLE]
+Title: Research my top 3 competitors
 
-Write a title and description for this card that is specific enough for Claude to execute without asking any follow-up questions.`}
+Description: Search Google for "[your industry] competitors" and "[your product or service] alternatives". Find the 3 competitors that come up most often.
+
+For each competitor:
+1. Visit their website and find their pricing page
+2. List every pricing tier: name, price, what is included
+3. Copy their homepage headline word for word
+4. Find one customer review that mentions their biggest weakness
+5. Write 2 sentences on how they are positioned differently from me
+
+Save the results as competitor-research.md on my Desktop. Use one section per competitor.`}
             />
-            <ProTip type="info">
-              You do not need to move it to the AI column yet. Just get it written well. The
-              wiring happens next session.
+            <p className="text-[#FCF4EB]/70 leading-relaxed mt-4 mb-4">
+              Once the card is on the board, the task executor picks it up automatically and
+              runs it with Claude Code. It checks the AI column once an hour. When it finishes,
+              your card moves to Done or Review on its own.
+            </p>
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              You can also chain research into action. This prompt researches, installs, and
+              logs the result to your board in one shot:
+            </p>
+            <CodeBlock
+              filename="Paste into Claude Code"
+              editable
+              code={`Research the [skill or tool name] Claude Code skill. Check if it's well-maintained and actually useful for someone running a small business. If it looks good, install it on my machine. Then add a card to my MC task board in the Backlog column: title "[Skill Name] installed", description what it does and why I installed it.`}
+            />
+            <ProTip type="tip">
+              The best AI column tasks have a clear outcome you can check: a file saved, a list
+              written, a report generated. Vague tasks like &ldquo;improve my marketing&rdquo;
+              give Claude nothing to execute. Specific tasks like &ldquo;research my top 3
+              competitors and save as competitor-research.md&rdquo; run on their own without
+              any follow-up.
             </ProTip>
           </StepCard>
         </section>
