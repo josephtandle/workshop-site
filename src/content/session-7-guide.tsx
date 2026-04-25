@@ -92,7 +92,7 @@ export default function Session7Guide() {
             two-command install.
           </p>
 
-          <StepCard number={1} title="Clone and install Mission Control">
+          <StepCard number={1} title="Clone and install Mission Control (approximately 10 minutes)">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Open your terminal and run this single command. It clones the repo, installs
               everything, and starts the server in one go:
