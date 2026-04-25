@@ -48,7 +48,7 @@ export default function Session7Guide() {
             </p>
             <ol className="space-y-2">
               {[
-                { href: '#part-a', label: 'Part A: Install Mission Control' },
+                { href: '#part-a', label: 'Part A: Install and Wire Up Mission Control' },
                 { href: '#part-b', label: 'Part B: Tour the Task Board' },
                 { href: '#part-c', label: 'Part C: Explore Sample Projects' },
                 { href: '#part-d', label: 'Part D: Add Your First Real Card' },
@@ -113,7 +113,30 @@ export default function Session7Guide() {
             </ProTip>
           </StepCard>
 
-          <StepCard number={2} title="Open Mission Control in your browser">
+          <StepCard number={2} title="Wire up the task executor to Claude">
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              After the install, the task executor needs to know where Claude lives on your
+              machine. If it was not picked up automatically, paste this into Claude Code to fix it:
+            </p>
+            <CodeBlock
+              filename="Paste into Claude Code"
+              code={`Find the Claude binary and wire up the task executor to use it.
+
+1. Locate the claude executable on this machine. Try these in order:
+   - Run which claude (Mac/Linux) or where claude (Windows)
+   - Check common install paths: ~/.local/bin/claude, /usr/local/bin/claude, %APPDATA%\\npm\\claude.cmd (Windows)
+   - If none found, check the output of npm list -g claude or npm root -g
+2. Open executor.py in this project directory.
+3. Find the subprocess.run call that invokes claude. Replace the bare "claude" string with the full absolute path you found in step 1.
+4. Save the file.
+5. Test it by running python3 executor.py (or python executor.py on Windows). If a card is in the AI Auto Execute column, it should run. If the column is empty, confirm the script exits cleanly with "No pending cards in AI column."
+6. Write DONE when the executor runs without a "not found" error.
+
+Deploy when you're done.`}
+            />
+          </StepCard>
+
+          <StepCard number={3} title="Open Mission Control in your browser">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Once the install finishes, go to this address in your browser:
             </p>
@@ -228,7 +251,7 @@ export default function Session7Guide() {
             owner would actually run. Look through them to understand how the board is meant to work.
           </p>
 
-          <StepCard number={3} title="See the five sample projects">
+          <StepCard number={4} title="See the five sample projects">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               The five pre-loaded sample projects are:
             </p>
@@ -253,7 +276,7 @@ export default function Session7Guide() {
             </p>
           </StepCard>
 
-          <StepCard number={4} title="Filter cards by project">
+          <StepCard number={5} title="Filter cards by project">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               At the top of the board there is a projects dropdown. Click it and select any project
               to filter the board to show only that project&rsquo;s cards. Click it again and select
@@ -266,7 +289,7 @@ export default function Session7Guide() {
             </ProTip>
           </StepCard>
 
-          <StepCard number={5} title="Add a new project">
+          <StepCard number={6} title="Add a new project">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               To create a new project: click the Projects dropdown at the top of the board, then
               select{' '}
@@ -279,7 +302,7 @@ export default function Session7Guide() {
             </ProTip>
           </StepCard>
 
-          <StepCard number={6} title="Clear the samples when you are ready">
+          <StepCard number={7} title="Clear the samples when you are ready">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Once you have explored the sample cards and understand how the board works, you can
               remove them all at once: go to{' '}
@@ -310,7 +333,7 @@ export default function Session7Guide() {
             business. You are going to add that as your first card.
           </p>
 
-          <StepCard number={7} title="Create the card">
+          <StepCard number={8} title="Create the card">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Click the{' '}
               <strong className="text-[#FCF4EB]">+</strong> button at the top of the Backlog
@@ -323,7 +346,7 @@ export default function Session7Guide() {
             </ProTip>
           </StepCard>
 
-          <StepCard number={8} title="Assign it to a project and add detail">
+          <StepCard number={9} title="Assign it to a project and add detail">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Inside the card, choose a project from the dropdown. Then add a description: a sentence
               or two about what done looks like, any context Claude will need later, and any relevant
@@ -343,7 +366,7 @@ export default function Session7Guide() {
             </ProTip>
           </StepCard>
 
-          <StepCard number={9} title="Move the card by drag and drop">
+          <StepCard number={10} title="Move the card by drag and drop">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Click and hold the card, then drag it to a different column. Try moving it to Doing,
               then to Review, then back to Backlog. That is how work moves through the board.
@@ -390,7 +413,7 @@ export default function Session7Guide() {
             </p>
           </div>
 
-          <StepCard number={10} title="Read the sample AI cards">
+          <StepCard number={11} title="Read the sample AI cards">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               The sample data includes cards already in the AI (Auto Execute) column. Open a few
               of them and read the titles and descriptions. These are real examples of tasks that
@@ -408,7 +431,7 @@ export default function Session7Guide() {
             </ProTip>
           </StepCard>
 
-          <StepCard number={11} title="Teach Claude your shorthand for the task board">
+          <StepCard number={12} title="Teach Claude your shorthand for the task board">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               You are going to give Claude a one-time instruction so that whenever you say{' '}
               <strong className="text-[#FCF4EB]">&ldquo;add this to the MC task board&rdquo;</strong>,
@@ -444,7 +467,7 @@ When I say "add this to the MC task board" or "add a card to Mission Control":
             </ProTip>
           </StepCard>
 
-          <StepCard number={12} title="Add your first real AI task">
+          <StepCard number={13} title="Add your first real AI task">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               The board already has sample AI tasks to show you the format. Now add one of your
               own. Paste this into Claude Code, fill in your details, and it will create the card:
