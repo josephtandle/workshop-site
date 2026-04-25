@@ -85,6 +85,14 @@ export const giveaways: Giveaway[] = [
     badge: 'Skill',
     badgeVariant: 'purple',
   },
+  {
+    slug: 'viral-hooks',
+    title: 'Understanding Viral Hooks',
+    description: '7 proven hook formulas, 8 real reel examples, and AI prompts to generate hooks for any topic. Use it yourself, share it, or give it away.',
+    icon: '◎',
+    badge: 'Guide',
+    badgeVariant: 'pink',
+  },
 ]
 
 export function getGiveaway(slug: string): Giveaway | undefined {
