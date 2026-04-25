@@ -112,16 +112,27 @@ function CountUpNum({ value, className }: { value: number; className?: string })
 // ---------------------------------------------------------------------------
 // Video Card
 // ---------------------------------------------------------------------------
-function VideoCard({ reel, index }: { reel: typeof REELS[0]; index: number }) {
+function VideoCard({ reel, index, isPlaying, onPlay }: {
+  reel: typeof REELS[0]
+  index: number
+  isPlaying: boolean
+  onPlay: () => void
+}) {
   const videoRef = useRef<HTMLVideoElement>(null)
-  const [playing, setPlaying] = useState(false)
+
+  // Pause this video whenever another one starts
+  useEffect(() => {
+    const v = videoRef.current
+    if (!v) return
+    if (!isPlaying && !v.paused) v.pause()
+  }, [isPlaying])
 
   const togglePlay = useCallback(() => {
     const v = videoRef.current
     if (!v) return
-    if (v.paused) { v.play(); setPlaying(true) }
-    else { v.pause(); setPlaying(false) }
-  }, [])
+    if (v.paused) { onPlay(); v.play() }
+    else { v.pause() }
+  }, [onPlay])
 
   return (
     <motion.div
@@ -139,12 +150,11 @@ function VideoCard({ reel, index }: { reel: typeof REELS[0]; index: number }) {
         className="w-full h-full object-cover"
         playsInline
         loop
-        onEnded={() => setPlaying(false)}
       />
 
       {/* Play overlay */}
       <AnimatePresence>
-        {!playing && (
+        {!isPlaying && (
           <motion.div
             key="play"
             initial={{ opacity: 0, scale: 0.85 }}
@@ -240,6 +250,7 @@ function MastermindCTA() {
 export default function VisualHooksPage() {
   const particleCanvasRef = useRef<HTMLCanvasElement>(null)
   const [expandedTech, setExpandedTech] = useState<number | null>(null)
+  const [playingId, setPlayingId] = useState<string | null>(null)
 
   // Load Cormorant Garamond
   useEffect(() => {
@@ -621,7 +632,13 @@ export default function VisualHooksPage() {
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {REELS.map((reel, i) => (
-              <VideoCard key={reel.id} reel={reel} index={i} />
+              <VideoCard
+                key={reel.id}
+                reel={reel}
+                index={i}
+                isPlaying={playingId === reel.id}
+                onPlay={() => setPlayingId(reel.id)}
+              />
             ))}
           </div>
         </section>
