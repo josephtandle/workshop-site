@@ -172,6 +172,60 @@ Deploy when you're done.`}
               <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">npm start</code>.
             </p>
           </StepCard>
+
+          <StepCard number={4} title="Wire up the task browser">
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              Paste this into Claude Code to verify the file browser paths and lazy loading are
+              working correctly on your machine:
+            </p>
+            <CodeBlock
+              filename="Paste into Claude Code"
+              code={`Wire up the Mission Control file browser — verify paths and lazy loading.
+
+You are setting up the Mission Control file browser on this machine. Complete all steps.
+
+STEP 1 — DETECT HOME DIRECTORY
+Run this and note the output:
+  Mac/Linux: python3 -c "import os; print(os.path.expanduser('~'))"
+  Windows:   python -c "import os; print(os.path.expanduser('~'))"
+
+STEP 2 — VERIFY INITIAL LOAD
+Run:
+  curl -s -o /dev/null -w "%{http_code} | %{size_download} bytes | %{time_total}s" "http://localhost:3001/api/repo/tree?depth=2"
+
+Expected: 200 | under 200000 bytes | under 2 seconds
+If the server is not running, start it first: cd mission-control && npm run dev
+
+STEP 3 — VERIFY LAZY EXPAND WORKS
+Pick any subdirectory from the home directory and test the expand endpoint:
+  Mac/Linux: DIR=$(python3 -c "import os; print(os.path.expanduser('~/Desktop'))"); curl -s -o /dev/null -w "%{http_code} | %{size_download} bytes" "http://localhost:3001/api/repo/tree?path=$(python3 -c 'import urllib.parse, os; print(urllib.parse.quote(os.path.expanduser("~/Desktop")))')&depth=1"
+  Windows: Use Postman or browser: http://localhost:3001/api/repo/tree?path=C%3A%5CUsers%5CYOURNAME%5CDesktop&depth=1
+
+Expected: 200 | under 50000 bytes
+
+STEP 4 — FIX EXECUTOR PATH
+Find the claude binary and update executor.py:
+  Mac/Linux: which claude
+  Windows:   where claude
+
+Open mission-control/executor.py. Find the subprocess.run call. Replace "claude" with the full path you just found. Save the file.
+
+STEP 5 — CONFIRM EVERYTHING
+Run the executor with no pending cards to confirm it starts cleanly:
+  python3 executor.py   (Mac/Linux)
+  python executor.py    (Windows)
+
+Expected last line: "No pending cards in AI column"
+
+Write DONE when all 5 steps pass. If any step fails, write the error and NEEDS_REVIEW.
+
+---
+How the two-level loading works:
+- Depth 2 on initial load — you see your top-level folders and their immediate contents without clicking anything. No blank tree, no spinner on first open.
+- Depth 1 on expand — when you click into a folder that has not been loaded yet, it fetches just that folder's direct children. One network request per expand, each one tiny.
+- Already-loaded nodes — if children are already in the tree from the depth-2 initial load, expanding is instant with no network call at all.`}
+            />
+          </StepCard>
         </section>
 
         {/* Part B */}
@@ -251,7 +305,7 @@ Deploy when you're done.`}
             owner would actually run. Look through them to understand how the board is meant to work.
           </p>
 
-          <StepCard number={4} title="See the five sample projects">
+          <StepCard number={5} title="See the five sample projects">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               The five pre-loaded sample projects are:
             </p>
@@ -276,7 +330,7 @@ Deploy when you're done.`}
             </p>
           </StepCard>
 
-          <StepCard number={5} title="Filter cards by project">
+          <StepCard number={6} title="Filter cards by project">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               At the top of the board there is a projects dropdown. Click it and select any project
               to filter the board to show only that project&rsquo;s cards. Click it again and select
@@ -289,7 +343,7 @@ Deploy when you're done.`}
             </ProTip>
           </StepCard>
 
-          <StepCard number={6} title="Add a new project">
+          <StepCard number={7} title="Add a new project">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               To create a new project: click the Projects dropdown at the top of the board, then
               select{' '}
@@ -302,7 +356,7 @@ Deploy when you're done.`}
             </ProTip>
           </StepCard>
 
-          <StepCard number={7} title="Clear the samples when you are ready">
+          <StepCard number={8} title="Clear the samples when you are ready">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Once you have explored the sample cards and understand how the board works, you can
               remove them all at once: go to{' '}
@@ -333,7 +387,7 @@ Deploy when you're done.`}
             business. You are going to add that as your first card.
           </p>
 
-          <StepCard number={8} title="Create the card">
+          <StepCard number={9} title="Create the card">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Click the{' '}
               <strong className="text-[#FCF4EB]">+</strong> button at the top of the Backlog
@@ -346,7 +400,7 @@ Deploy when you're done.`}
             </ProTip>
           </StepCard>
 
-          <StepCard number={9} title="Assign it to a project and add detail">
+          <StepCard number={10} title="Assign it to a project and add detail">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Inside the card, choose a project from the dropdown. Then add a description: a sentence
               or two about what done looks like, any context Claude will need later, and any relevant
@@ -366,7 +420,7 @@ Deploy when you're done.`}
             </ProTip>
           </StepCard>
 
-          <StepCard number={10} title="Move the card by drag and drop">
+          <StepCard number={11} title="Move the card by drag and drop">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Click and hold the card, then drag it to a different column. Try moving it to Doing,
               then to Review, then back to Backlog. That is how work moves through the board.
@@ -413,7 +467,7 @@ Deploy when you're done.`}
             </p>
           </div>
 
-          <StepCard number={11} title="Read the sample AI cards">
+          <StepCard number={12} title="Read the sample AI cards">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               The sample data includes cards already in the AI (Auto Execute) column. Open a few
               of them and read the titles and descriptions. These are real examples of tasks that
@@ -431,7 +485,7 @@ Deploy when you're done.`}
             </ProTip>
           </StepCard>
 
-          <StepCard number={12} title="Teach Claude your shorthand for the task board">
+          <StepCard number={13} title="Teach Claude your shorthand for the task board">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               You are going to give Claude a one-time instruction so that whenever you say{' '}
               <strong className="text-[#FCF4EB]">&ldquo;add this to the MC task board&rdquo;</strong>,
@@ -467,7 +521,7 @@ When I say "add this to the MC task board" or "add a card to Mission Control":
             </ProTip>
           </StepCard>
 
-          <StepCard number={13} title="Add your first real AI task">
+          <StepCard number={14} title="Add your first real AI task">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               The board already has sample AI tasks to show you the format. Now add one of your
               own. Paste this into Claude Code, fill in your details, and it will create the card:
