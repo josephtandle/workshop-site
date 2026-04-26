@@ -308,6 +308,60 @@ export default function Session2Guide() {
           </ProTip>
         </StepCard>
 
+        {/* Bonus: Web Design Arsenal */}
+        <div
+          className="rounded-2xl p-8 sm:p-12 mb-8"
+          style={{
+            background: 'linear-gradient(135deg, rgba(245,195,198,0.12) 0%, rgba(124,105,199,0.10) 100%)',
+            border: '1px solid rgba(245,195,198,0.20)',
+          }}
+        >
+          <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6 bg-[#F5C3C6]/15 text-[#F5C3C6] border border-[#F5C3C6]/25">
+            Bonus
+          </span>
+          <h2 className="text-4xl sm:text-5xl font-bold text-[#FCF4EB] mb-4 leading-tight">
+            The Web Design Arsenal
+          </h2>
+          <p className="text-[#FCF4EB]/65 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
+            Want to go further? This single prompt installs 24 of the best web design tools and animation libraries so your AI builds genuinely gorgeous websites from the start.
+          </p>
+          <CodeBlock
+            filename="Paste into Claude Code"
+            code={`Set up my professional web design toolkit so I can
+build incredibly gorgeous websites fast.
+
+Step 1 -- Install Claude Code design skills:
+git clone https://github.com/anthropics/frontend-design ~/.claude/skills/frontend-design
+git clone https://github.com/Koomook/claude-frontend-skills ~/.claude/skills/claude-frontend-skills
+git clone https://github.com/greensock/gsap-skills ~/.claude/skills/gsap-skills
+git clone https://github.com/Dammyjay93/interface-design ~/.claude/skills/interface-design
+git clone https://github.com/Owl-Listener/designer-skills ~/.claude/skills/designer-skills
+git clone https://github.com/freshtechbro/claudedesignskills ~/.claude/skills/claudedesignskills
+
+Step 2 -- Install mobile-first and responsive skills:
+git clone https://github.com/szilu/ux-designer-skill ~/.claude/skills/ux-designer
+git clone https://github.com/HermeticOrmus/LibreUIUX-Claude-Code ~/.claude/skills/libreUIUX
+
+Step 3 -- Install animation and effects libraries:
+npm install gsap lenis framer-motion animejs \\
+  @formkit/auto-animate split-type typed.js \\
+  countup.js canvas-confetti tsparticles \\
+  vanta three @barba/core scrollreveal aos vivus
+
+Step 4 -- Confirm and quick-start:
+When complete, show me a quick-start example:
+add smooth scroll and an animated text reveal
+to a hero section for a landing page.`}
+          />
+          <p className="text-[#FCF4EB]/35 text-xs mt-5 leading-relaxed">
+            Run this from inside your website project folder. Every library links to its GitHub page on the{' '}
+            <a href="https://workshop.mastermindshq.business/giveaways/web-design-arsenal" target="_blank" rel="noopener noreferrer" className="text-[#F5C3C6]/70 hover:text-[#F5C3C6] transition-colors underline">
+              Web Design Arsenal page
+            </a>{' '}
+            where you can review everything before installing.
+          </p>
+        </div>
+
         {/* Step 5: Build the page */}
         <StepCard number={4} title="Build your personal brand page">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
@@ -483,62 +537,6 @@ Place it in the about section next to my bio. Style it with a rounded border and
             &ldquo;Deploy my website to production&rdquo; to push it live. Your URL stays the same.
           </ProTip>
         </StepCard>
-      </section>
-
-      {/* Bonus: Web Design Arsenal */}
-      <section className="mb-16">
-        <div
-          className="rounded-2xl p-8 sm:p-12"
-          style={{
-            background: 'linear-gradient(135deg, rgba(245,195,198,0.12) 0%, rgba(124,105,199,0.10) 100%)',
-            border: '1px solid rgba(245,195,198,0.20)',
-          }}
-        >
-          <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6 bg-[#F5C3C6]/15 text-[#F5C3C6] border border-[#F5C3C6]/25">
-            Bonus
-          </span>
-          <h2 className="text-4xl sm:text-5xl font-bold text-[#FCF4EB] mb-4 leading-tight">
-            The Web Design Arsenal
-          </h2>
-          <p className="text-[#FCF4EB]/65 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
-            Want to go further? This single prompt installs 24 of the best web design tools and animation libraries so your AI builds genuinely gorgeous websites from the start.
-          </p>
-          <CodeBlock
-            filename="Paste into Claude Code"
-            code={`Set up my professional web design toolkit so I can
-build incredibly gorgeous websites fast.
-
-Step 1 -- Install Claude Code design skills:
-git clone https://github.com/anthropics/frontend-design ~/.claude/skills/frontend-design
-git clone https://github.com/Koomook/claude-frontend-skills ~/.claude/skills/claude-frontend-skills
-git clone https://github.com/greensock/gsap-skills ~/.claude/skills/gsap-skills
-git clone https://github.com/Dammyjay93/interface-design ~/.claude/skills/interface-design
-git clone https://github.com/Owl-Listener/designer-skills ~/.claude/skills/designer-skills
-git clone https://github.com/freshtechbro/claudedesignskills ~/.claude/skills/claudedesignskills
-
-Step 2 -- Install mobile-first and responsive skills:
-git clone https://github.com/szilu/ux-designer-skill ~/.claude/skills/ux-designer
-git clone https://github.com/HermeticOrmus/LibreUIUX-Claude-Code ~/.claude/skills/libreUIUX
-
-Step 3 -- Install animation and effects libraries:
-npm install gsap lenis framer-motion animejs \\
-  @formkit/auto-animate split-type typed.js \\
-  countup.js canvas-confetti tsparticles \\
-  vanta three @barba/core scrollreveal aos vivus
-
-Step 4 -- Confirm and quick-start:
-When complete, show me a quick-start example:
-add smooth scroll and an animated text reveal
-to a hero section for a landing page.`}
-          />
-          <p className="text-[#FCF4EB]/35 text-xs mt-5 leading-relaxed">
-            Run this from inside your website project folder. Every library links to its GitHub page on the{' '}
-            <a href="https://workshop.mastermindshq.business/giveaways/web-design-arsenal" target="_blank" rel="noopener noreferrer" className="text-[#F5C3C6]/70 hover:text-[#F5C3C6] transition-colors underline">
-              Web Design Arsenal page
-            </a>{' '}
-            where you can review everything before installing.
-          </p>
-        </div>
       </section>
 
       {/* Wrap-up */}

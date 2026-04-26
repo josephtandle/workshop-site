@@ -420,31 +420,31 @@ export default function WebDesignArsenalPage() {
         }
       `}</style>
 
-      <div className="min-h-screen bg-[#151515] text-[#FCF4EB] overflow-x-hidden">
+      <div className="bg-[#151515] text-[#FCF4EB] overflow-x-hidden" style={{ minHeight: '100vh' }}>
+
+        {/* Aurora glow blobs — fixed at page level so they persist while scrolling */}
+        <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
+          <div
+            className="aurora-a absolute top-[10%] left-[15%] w-[600px] h-[600px] rounded-full opacity-[0.09]"
+            style={{ background: 'radial-gradient(circle, #8B79D4 0%, transparent 70%)', filter: 'blur(80px)' }}
+          />
+          <div
+            className="aurora-b absolute top-[30%] right-[10%] w-[500px] h-[500px] rounded-full opacity-[0.07]"
+            style={{ background: 'radial-gradient(circle, #F5C3C6 0%, transparent 70%)', filter: 'blur(90px)' }}
+          />
+        </div>
+
+        {/* Floating particles canvas — fixed so particles float across the whole page */}
+        <canvas
+          ref={particleCanvasRef}
+          className="fixed inset-0 w-full h-full pointer-events-none"
+          style={{ zIndex: 0 }}
+        />
 
         {/* ================================================================ */}
         {/* SECTION 1: HERO -- full-bleed image with parallax + fade to black */}
         {/* ================================================================ */}
-        <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 pb-8 pt-16 sm:pt-20 overflow-hidden">
-
-
-          {/* Aurora glow blobs (subtle, on top of image) */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            <div
-              className="aurora-a absolute top-[10%] left-[15%] w-[600px] h-[600px] rounded-full opacity-[0.09]"
-              style={{ background: 'radial-gradient(circle, #8B79D4 0%, transparent 70%)', filter: 'blur(80px)' }}
-            />
-            <div
-              className="aurora-b absolute top-[30%] right-[10%] w-[500px] h-[500px] rounded-full opacity-[0.07]"
-              style={{ background: 'radial-gradient(circle, #F5C3C6 0%, transparent 70%)', filter: 'blur(90px)' }}
-            />
-          </div>
-
-          {/* Floating particles canvas */}
-          <canvas
-            ref={particleCanvasRef}
-            className="absolute inset-0 w-full h-full pointer-events-none"
-          />
+        <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 pb-8 pt-16 sm:pt-20 overflow-hidden" style={{ zIndex: 1 }}>
 
           {/* Content */}
           <div className="relative z-10 max-w-5xl mx-auto">
@@ -549,7 +549,7 @@ export default function WebDesignArsenalPage() {
         {/* ================================================================ */}
         {/* SECTION 2: HOW IT WORKS                                          */}
         {/* ================================================================ */}
-        <section className="max-w-5xl mx-auto px-6 py-14">
+        <section className="relative max-w-5xl mx-auto px-6 py-14" style={{ zIndex: 1 }}>
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -585,7 +585,7 @@ export default function WebDesignArsenalPage() {
         {/* ================================================================ */}
         {/* SECTION 3: PARTICIPANT TESTIMONIAL                               */}
         {/* ================================================================ */}
-        <section className="max-w-5xl mx-auto px-6 py-4">
+        <section className="relative max-w-5xl mx-auto px-6 py-4" style={{ zIndex: 1 }}>
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -621,7 +621,7 @@ export default function WebDesignArsenalPage() {
         {/* ================================================================ */}
         {/* SECTION 6: PARTICIPANT TESTIMONIALS                              */}
         {/* ================================================================ */}
-        <section className="max-w-5xl mx-auto px-6 py-14">
+        <section className="relative max-w-5xl mx-auto px-6 py-14" style={{ zIndex: 1 }}>
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -689,7 +689,7 @@ export default function WebDesignArsenalPage() {
         {/* ================================================================ */}
         {/* SECTION 7: THE ONE PROMPT                                         */}
         {/* ================================================================ */}
-        <section className="max-w-5xl mx-auto px-6 py-16">
+        <section className="relative max-w-5xl mx-auto px-6 py-16" style={{ zIndex: 1 }}>
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -737,7 +737,7 @@ export default function WebDesignArsenalPage() {
         {/* ================================================================ */}
         {/* SECTION 8: STATS                                                  */}
         {/* ================================================================ */}
-        <section className="max-w-5xl mx-auto px-6 pt-6 pb-14">
+        <section className="relative max-w-5xl mx-auto px-6 pt-6 pb-14" style={{ zIndex: 1 }}>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
               { idx: 0, label: 'skills and libraries' },
@@ -764,7 +764,7 @@ export default function WebDesignArsenalPage() {
         {/* ================================================================ */}
         {/* SECTION 9: WHAT'S INSTALLED                                      */}
         {/* ================================================================ */}
-        <section className="max-w-5xl mx-auto px-6 py-14">
+        <section className="relative max-w-5xl mx-auto px-6 py-14" style={{ zIndex: 1 }}>
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -849,7 +849,8 @@ export default function WebDesignArsenalPage() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="max-w-2xl mx-auto px-6 pb-16 text-center"
+          className="relative max-w-2xl mx-auto px-6 pb-16 text-center"
+          style={{ zIndex: 1 }}
         >
           <p className="text-[#FCF4EB]/22 text-sm leading-relaxed italic">
             P.S. This page took 4 minutes to build with these exact tools. I only looked at it once :)
@@ -857,7 +858,7 @@ export default function WebDesignArsenalPage() {
         </motion.div>
 
         {/* Footer */}
-        <div className="text-center pb-10">
+        <div className="relative text-center pb-10" style={{ zIndex: 1 }}>
           <a
             href={MASTERMIND_URL}
             target="_blank"
@@ -880,7 +881,7 @@ function MastermindCTA() {
   const magnet = useMagnet(0.28)
 
   return (
-    <section className="max-w-5xl mx-auto px-6 py-14">
+    <section className="relative max-w-5xl mx-auto px-6 py-14" style={{ zIndex: 1 }}>
       <motion.div
         initial={{ opacity: 0, y: 18 }}
         whileInView={{ opacity: 1, y: 0 }}
