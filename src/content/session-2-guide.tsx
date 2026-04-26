@@ -267,7 +267,7 @@ export default function Session2Guide() {
           </p>
           <CodeBlock
             filename="Paste into Claude Code"
-            code={`Create me a folder that I'm going to make my website in and go into that folder.`}
+            code={`Create me a folder called my new website and tell me the path to where you just put it.`}
           />
 
           <ProTip type="tip" className="mt-4">
