@@ -3,6 +3,53 @@
 import { useState, useCallback, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
+// ---------------------------------------------------------------------------
+// Particle canvas hook
+// ---------------------------------------------------------------------------
+function useParticleCanvas() {
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+  useEffect(() => {
+    const canvas = canvasRef.current
+    if (!canvas) return
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return
+    const resize = () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight }
+    resize()
+    window.addEventListener('resize', resize)
+    type Particle = { x: number; y: number; r: number; dx: number; dy: number; alpha: number; color: string }
+    const colors = ['#8B79D4', '#F5C3C6', '#9D8FE0', '#BDB3E8', '#FCF4EB']
+    const particles: Particle[] = Array.from({ length: 70 }, () => ({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      r: Math.random() * 1.6 + 0.4,
+      dx: (Math.random() - 0.5) * 0.4,
+      dy: Math.random() * 0.7 + 0.3,
+      alpha: Math.random() * 0.22 + 0.05,
+      color: colors[Math.floor(Math.random() * colors.length)],
+    }))
+    let animId = 0
+    const draw = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      particles.forEach((p) => {
+        ctx.beginPath()
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
+        ctx.fillStyle = p.color
+        ctx.globalAlpha = p.alpha
+        ctx.fill()
+        p.x += p.dx; p.y += p.dy
+        if (p.y > canvas.height + 5) { p.y = -5; p.x = Math.random() * canvas.width }
+        if (p.x < -5) p.x = canvas.width + 5
+        if (p.x > canvas.width + 5) p.x = -5
+      })
+      ctx.globalAlpha = 1
+      animId = requestAnimationFrame(draw)
+    }
+    draw()
+    return () => { cancelAnimationFrame(animId); window.removeEventListener('resize', resize) }
+  }, [])
+  return canvasRef
+}
+
 const MASTERMIND_URL = 'https://www.mastermindshq.business'
 
 // ---------------------------------------------------------------------------
@@ -172,6 +219,7 @@ function useMagnet(strength = 0.28) {
 export default function AgentInfrastructurePage() {
   const [open, setOpen] = useState<Set<string>>(() => new Set([SECTIONS[0].id]))
   const magnet = useMagnet()
+  const particleCanvasRef = useParticleCanvas()
 
   const toggle = useCallback((id: string) => {
     setOpen(prev => {
@@ -217,20 +265,27 @@ export default function AgentInfrastructurePage() {
         .glow-btn:hover { box-shadow: 0 0 32px rgba(124,105,199,0.45), 0 0 60px rgba(124,105,199,0.2); }
       `}</style>
 
-      <div className="min-h-screen bg-[#151515] text-[#FCF4EB] overflow-x-hidden">
+      <div className="bg-[#151515] text-[#FCF4EB] overflow-x-hidden" style={{ minHeight: '100vh' }}>
+
+        {/* Full-page falling particles */}
+        <canvas
+          ref={particleCanvasRef}
+          className="fixed inset-0 w-full h-full pointer-events-none"
+          style={{ zIndex: 0 }}
+        />
+
+        {/* Fixed aurora blobs — visible across full page */}
+        <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
+          <div className="aurora-a absolute top-[8%] left-[12%] w-[700px] h-[700px] rounded-full opacity-[0.08]"
+            style={{ background: 'radial-gradient(circle, #8B79D4 0%, transparent 70%)', filter: 'blur(90px)' }} />
+          <div className="aurora-b absolute top-[55%] right-[8%] w-[550px] h-[550px] rounded-full opacity-[0.06]"
+            style={{ background: 'radial-gradient(circle, #F5C3C6 0%, transparent 70%)', filter: 'blur(100px)' }} />
+        </div>
 
         {/* ================================================================
             HERO
         ================================================================ */}
-        <section className="relative min-h-[92vh] flex flex-col items-center justify-center text-center px-6 pt-10 pb-10">
-
-          {/* Aurora blobs */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            <div className="aurora-a absolute top-[8%] left-[12%] w-[700px] h-[700px] rounded-full opacity-[0.08]"
-              style={{ background: 'radial-gradient(circle, #8B79D4 0%, transparent 70%)', filter: 'blur(90px)' }} />
-            <div className="aurora-b absolute top-[35%] right-[8%] w-[550px] h-[550px] rounded-full opacity-[0.06]"
-              style={{ background: 'radial-gradient(circle, #F5C3C6 0%, transparent 70%)', filter: 'blur(100px)' }} />
-          </div>
+        <section className="relative min-h-[92vh] flex flex-col items-center justify-center text-center px-6 pt-10 pb-10" style={{ zIndex: 1 }}>
 
           {/* Badge */}
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
@@ -298,7 +353,7 @@ export default function AgentInfrastructurePage() {
         {/* ================================================================
             INTRO
         ================================================================ */}
-        <section className="max-w-3xl mx-auto px-6 pb-16">
+        <section className="relative max-w-3xl mx-auto px-6 pb-16" style={{ zIndex: 1 }}>
           <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="rounded-2xl p-8 sm:p-10"
             style={{ background: 'linear-gradient(135deg, rgba(124,105,199,0.07) 0%, rgba(157,143,224,0.04) 100%)', border: '1px solid rgba(124,105,199,0.14)' }}>
@@ -317,7 +372,7 @@ export default function AgentInfrastructurePage() {
         {/* ================================================================
             SECTIONS
         ================================================================ */}
-        <section className="max-w-4xl mx-auto px-6 pb-20 space-y-4">
+        <section className="relative max-w-4xl mx-auto px-6 pb-20 space-y-4" style={{ zIndex: 1 }}>
           {SECTIONS.map((section, si) => {
             const isOpen = open.has(section.id)
             return (
@@ -389,7 +444,7 @@ export default function AgentInfrastructurePage() {
         {/* ================================================================
             HOW IT ALL FITS
         ================================================================ */}
-        <section className="max-w-4xl mx-auto px-6 pb-20">
+        <section className="relative max-w-4xl mx-auto px-6 pb-20" style={{ zIndex: 1 }}>
           <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="rounded-2xl overflow-hidden"
             style={{ background: 'linear-gradient(135deg, rgba(245,195,198,0.07) 0%, rgba(124,105,199,0.06) 100%)', border: '1px solid rgba(245,195,198,0.12)' }}>
@@ -430,7 +485,7 @@ export default function AgentInfrastructurePage() {
         {/* ================================================================
             MASTERMIND CTA
         ================================================================ */}
-        <section className="max-w-4xl mx-auto px-6 pb-20">
+        <section className="relative max-w-4xl mx-auto px-6 pb-20" style={{ zIndex: 1 }}>
           <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="rounded-2xl overflow-hidden text-center"
             style={{ background: 'linear-gradient(135deg, rgba(124,105,199,0.10) 0%, rgba(245,195,198,0.08) 100%)', border: '1px solid rgba(124,105,199,0.18)' }}>
@@ -466,7 +521,7 @@ export default function AgentInfrastructurePage() {
         </section>
 
         {/* Footer */}
-        <div className="text-center pb-12">
+        <div className="relative text-center pb-12" style={{ zIndex: 1 }}>
           <a href={MASTERMIND_URL} target="_blank" rel="noopener noreferrer"
             className="text-[#FCF4EB]/14 text-xs uppercase tracking-widest hover:text-[#FCF4EB]/35 transition-colors">
             Business Automation Mastermind
