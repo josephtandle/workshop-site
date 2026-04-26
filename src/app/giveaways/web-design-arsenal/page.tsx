@@ -22,13 +22,13 @@ const COMPATIBLE_TOOLS = [
     name: 'Codex',
     logo: '⬡',
     badge: 'npm only',
-    detail: 'Run Step 3 only. Skip the /plugin commands.',
+    detail: 'Run Step 3 only. Skip the git clone steps.',
   },
   {
     name: 'Gemini CLI',
     logo: '✦',
     badge: 'npm only',
-    detail: 'Run Step 3 only. Skip the /plugin commands.',
+    detail: 'Run Step 3 only. Skip the git clone steps.',
   },
 ]
 
@@ -38,18 +38,16 @@ build incredibly gorgeous websites fast.
 -- For Claude Code users (all 4 steps) --------------------
 
 Step 1 -- Install Claude Code design skills:
-/plugin marketplace add anthropics/frontend-design
-/plugin marketplace add Koomook/claude-frontend-skills
-/plugin marketplace add greensock/gsap-skills
-/plugin marketplace add Dammyjay93/interface-design
-/plugin marketplace add Owl-Listener/designer-skills
-/plugin marketplace add freshtechbro/claudedesignskills
+git clone https://github.com/anthropics/frontend-design ~/.claude/skills/frontend-design
+git clone https://github.com/Koomook/claude-frontend-skills ~/.claude/skills/claude-frontend-skills
+git clone https://github.com/greensock/gsap-skills ~/.claude/skills/gsap-skills
+git clone https://github.com/Dammyjay93/interface-design ~/.claude/skills/interface-design
+git clone https://github.com/Owl-Listener/designer-skills ~/.claude/skills/designer-skills
+git clone https://github.com/freshtechbro/claudedesignskills ~/.claude/skills/claudedesignskills
 
 Step 2 -- Install mobile-first and responsive skills:
-Clone https://github.com/szilu/ux-designer-skill
-  into .claude/skills/ux-designer/
-Clone https://github.com/HermeticOrmus/LibreUIUX-Claude-Code
-  into .claude/skills/libreUIUX/
+git clone https://github.com/szilu/ux-designer-skill ~/.claude/skills/ux-designer
+git clone https://github.com/HermeticOrmus/LibreUIUX-Claude-Code ~/.claude/skills/libreUIUX
 
 -- For all tools (Claude Code, Codex, Gemini CLI) ---------
 
