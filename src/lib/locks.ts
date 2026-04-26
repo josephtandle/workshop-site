@@ -13,4 +13,6 @@ export const LOCKS = {
   session6HookWriter: true,
   session7Guide: true,
   session7Prep: true,
+  session8Guide: false,
+  session8Prep: true,
 }

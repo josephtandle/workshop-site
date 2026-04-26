@@ -98,6 +98,19 @@ export const sessions: Session[] = [
     hasPrep: true,
     hasBonus: false,
   },
+  {
+    slug: '8',
+    number: 8,
+    title: 'Claude Sees Your Screen and Reads the Web',
+    description:
+      'Enable computer-use so Claude can click, type, and operate any app on your screen. Then use Web Fetch to let Claude read any page on the internet and bring the data back to your agent.',
+    date: '',
+    hasGuide: true,
+    hasPrep: true,
+    hasBonus: false,
+    guideTitle: 'Session 8 Workshop Guide',
+    prepDescription: 'Update Claude Code to the latest version and confirm your plan before we start.',
+  },
 ]
 
 export function getSession(slug: string): Session | undefined {
