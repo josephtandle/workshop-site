@@ -288,6 +288,66 @@ export default function SquarespaceEscapePage() {
         </section>
 
         {/* ================================================================ */}
+        {/* THE REAL COST                                                     */}
+        {/* ================================================================ */}
+        <section className="max-w-5xl mx-auto px-6 py-14">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-10"
+          >
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#FCF4EB] mb-3">
+              How much is Squarespace costing you?
+            </h2>
+            <p className="text-[#FCF4EB]/50 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
+              Most small business owners are on the Core plan. That is{' '}
+              <span className="text-[#F5C3C6] font-semibold">$23 per month</span>, billed
+              annually, just to keep their site alive.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+            {[
+              { amount: '$23', label: 'per month', sub: 'Core plan, most common tier' },
+              { amount: '$276', label: 'per year', sub: 'What it adds up to quietly' },
+              { amount: '$0', label: 'what this costs', sub: 'One prompt. Free forever.' },
+            ].map((stat, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="glow-card bg-white/[0.04] border border-white/[0.08] rounded-2xl p-8 text-center"
+              >
+                <div
+                  className="text-5xl font-extrabold mb-2 tabular-nums"
+                  style={{
+                    fontFamily: 'monospace',
+                    color: i === 2 ? '#9D8FE0' : '#F5C3C6',
+                  }}
+                >
+                  {stat.amount}
+                </div>
+                <p className="text-[#FCF4EB] font-semibold text-sm mb-1">{stat.label}</p>
+                <p className="text-[#FCF4EB]/35 text-xs">{stat.sub}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center text-[#FCF4EB]/40 text-sm max-w-lg mx-auto leading-relaxed"
+          >
+            Run this tool. Export your whole site in one afternoon. Then cancel.
+            That is <span className="text-[#9D8FE0]">$276 back in your pocket</span> every single year.
+          </motion.p>
+        </section>
+
+        {/* ================================================================ */}
         {/* WHAT YOU GET                                                      */}
         {/* ================================================================ */}
         <section className="max-w-5xl mx-auto px-6 py-14">
