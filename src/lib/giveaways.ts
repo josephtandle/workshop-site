@@ -93,6 +93,22 @@ export const giveaways: Giveaway[] = [
     badge: 'Guide',
     badgeVariant: 'pink',
   },
+  {
+    slug: 'squarespace-escape',
+    title: 'Squarespace Escape Kit',
+    description: 'One Claude Code prompt that scrapes your entire Squarespace site. Every page saved as HTML. Every image downloaded at full resolution. Delivered as a zip file.',
+    icon: '◈',
+    badge: 'Prompt',
+    badgeVariant: 'purple',
+  },
+  {
+    slug: 'cult-brand-playbook',
+    title: 'The Cult Brand Playbook',
+    description: 'The 7-element system behind Apple, Nike, Supreme, and CrossFit. Stop competing on features. Start competing on identity.',
+    icon: '✦',
+    badge: 'Playbook',
+    badgeVariant: 'purple',
+  },
 ]
 
 export function getGiveaway(slug: string): Giveaway | undefined {
