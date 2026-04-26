@@ -109,6 +109,14 @@ export const giveaways: Giveaway[] = [
     badge: 'Playbook',
     badgeVariant: 'purple',
   },
+  {
+    slug: 'agent-infrastructure',
+    title: 'Advanced Infrastructure for Multi-Agent AI Operating Systems',
+    description: 'Six layers that turn a collection of agents into a system that gets smarter every day. Memory, navigation, self-learning, coordination, dispatch, and composability.',
+    icon: '◈',
+    badge: 'Guide',
+    badgeVariant: 'purple',
+  },
 ]
 
 export function getGiveaway(slug: string): Giveaway | undefined {
