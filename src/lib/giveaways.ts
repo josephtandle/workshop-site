@@ -14,6 +14,14 @@ export interface Giveaway {
 // ---------------------------------------------------------------------------
 export const giveaways: Giveaway[] = [
   {
+    slug: 'cross-cli-compatibility-routing',
+    title: 'Cross CLI Compatibility Routing',
+    description: 'A universal routing guide and migration prompt for keeping Claude Code, Codex, and Gemini CLI aligned without rewriting your workflow.',
+    icon: '◇',
+    badge: 'Guide',
+    badgeVariant: 'pink',
+  },
+  {
     slug: 'web-design-arsenal',
     title: 'Web Design Arsenal',
     description: 'Install 6 Claude Code design skills and 20+ animation libraries in one prompt. Build gorgeous websites fast.',
@@ -116,6 +124,14 @@ export const giveaways: Giveaway[] = [
     icon: '◈',
     badge: 'Guide',
     badgeVariant: 'purple',
+  },
+  {
+    slug: 'cross-cli-compatibility-routing',
+    title: 'Cross CLI Compatibility Routing',
+    description: 'A lane-based routing architecture for recipes, skills, and workflows, plus a universal migration prompt and direct-download PDF.',
+    icon: '◎',
+    badge: 'Guide',
+    badgeVariant: 'pink',
   },
 ]
 
