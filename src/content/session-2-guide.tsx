@@ -43,7 +43,13 @@ export default function Session2Guide() {
         <p className="text-[#FCF4EB]/50 text-xs uppercase tracking-widest font-semibold mb-1">Workshop Recording</p>
         <p className="text-[#FCF4EB]/40 text-sm">Follow along with the live session. Hit play and the video will stick to the top as you scroll.</p>
       </div>
-      <StickyVideoPlayer videoId="JU7S-w2r42k" title="Session 2: Building Your First Website with AI" />
+      <StickyVideoPlayer
+        videos={[
+          { id: 'JU7S-w2r42k', label: 'Cohort 1 Video Replay' },
+          { id: '0FJ6O1jNG8g', label: 'Cohort 2 Video Replay' },
+        ]}
+        title="Session 2: Building Your First Website with AI"
+      />
     </div>
 
     <div className="max-w-3xl mx-auto px-6 pb-16">

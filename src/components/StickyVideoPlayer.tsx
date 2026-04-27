@@ -1,14 +1,22 @@
 'use client'
 
-import { useState, useRef, useEffect, useCallback } from 'react'
+import { useState, useRef, useEffect, useCallback, type MouseEvent } from 'react'
+
+interface VideoOption {
+  id: string
+  label: string
+}
 
 interface StickyVideoPlayerProps {
   videoId?: string
+  videos?: VideoOption[]
   src?: string
   title?: string
 }
 
-export default function StickyVideoPlayer({ videoId, src, title = 'Workshop Recording' }: StickyVideoPlayerProps) {
+export default function StickyVideoPlayer({ videoId, videos, src, title = 'Workshop Recording' }: StickyVideoPlayerProps) {
+  const initialVideoId = videos ? videos[videos.length - 1].id : (videoId ?? '')
+  const [activeVideoId, setActiveVideoId] = useState(initialVideoId)
   const [isSticky, setIsSticky] = useState(false)
   const [hasStarted, setHasStarted] = useState(false)
   const [isExpanded, setIsExpanded] = useState(false)
@@ -107,7 +115,36 @@ export default function StickyVideoPlayer({ videoId, src, title = 'Workshop Reco
     return () => window.removeEventListener('keydown', handleKey)
   }, [isExpanded])
 
-  const iframeSrc = videoId ? `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&enablejsapi=1` : ''
+  const resolvedVideoId = videos ? activeVideoId : (videoId ?? '')
+  const iframeSrc = resolvedVideoId ? `https://www.youtube.com/embed/${resolvedVideoId}?rel=0&modestbranding=1&enablejsapi=1` : ''
+
+  const handleSwitchVideo = useCallback((id: string) => {
+    setActiveVideoId(id)
+    setHasStarted(false)
+  }, [])
+
+  // Magnetic button refs and state
+  const magneticRefs = useRef<(HTMLButtonElement | null)[]>([])
+  const magneticTransforms = useRef<{ x: number; y: number }[]>([])
+
+  const handleMagneticMove = useCallback((e: MouseEvent<HTMLButtonElement>, index: number) => {
+    const btn = magneticRefs.current[index]
+    if (!btn) return
+    const rect = btn.getBoundingClientRect()
+    const cx = rect.left + rect.width / 2
+    const cy = rect.top + rect.height / 2
+    const dx = (e.clientX - cx) * 0.35
+    const dy = (e.clientY - cy) * 0.35
+    magneticTransforms.current[index] = { x: dx, y: dy }
+    btn.style.transform = `translate(${dx}px, ${dy}px)`
+  }, [])
+
+  const handleMagneticLeave = useCallback((index: number) => {
+    const btn = magneticRefs.current[index]
+    if (!btn) return
+    magneticTransforms.current[index] = { x: 0, y: 0 }
+    btn.style.transform = 'translate(0px, 0px)'
+  }, [])
 
   // Compute the animated style for the video wrapper (src/local video only)
   const getVideoStyle = (): React.CSSProperties => {
@@ -159,9 +196,46 @@ export default function StickyVideoPlayer({ videoId, src, title = 'Workshop Reco
   // Keep the iframe always mounted inside the placeholder so it never reloads.
   // When sticky, CSS `position: fixed` pops it out of the placeholder's layout
   // while the placeholder stays in flow to maintain page height.
-  if (videoId && !src) {
+  if ((videoId || videos) && !src) {
     return (
       <>
+        {/* Cohort tab switcher (only when multiple videos provided) */}
+        {videos && videos.length > 1 && (
+          <div className="flex items-center gap-3 mb-5">
+            {videos.map((v, i) => {
+              const isActive = activeVideoId === v.id
+              return (
+                <button
+                  key={v.id}
+                  ref={(el) => { magneticRefs.current[i] = el }}
+                  onClick={() => handleSwitchVideo(v.id)}
+                  onMouseMove={(e) => handleMagneticMove(e, i)}
+                  onMouseLeave={() => handleMagneticLeave(i)}
+                  style={{ transition: 'transform 0.25s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.25s ease, background 0.2s ease' }}
+                  className={`relative px-6 py-3 rounded-full text-sm font-bold transition-colors select-none ${
+                    isActive
+                      ? 'text-white'
+                      : 'bg-white/[0.06] text-[#FCF4EB]/55 border border-white/[0.10] hover:bg-white/[0.10] hover:text-[#FCF4EB]/85 hover:border-white/[0.18]'
+                  }`}
+                >
+                  {isActive && (
+                    <span
+                      aria-hidden="true"
+                      className="absolute inset-0 rounded-full"
+                      style={{
+                        background: 'linear-gradient(135deg, #9D8FE0 0%, #7C69C7 50%, #5B4FAF 100%)',
+                        boxShadow: '0 0 20px rgba(124,105,199,0.55), 0 4px 16px rgba(124,105,199,0.35), inset 0 1px 0 rgba(255,255,255,0.18)',
+                        borderRadius: 'inherit',
+                      }}
+                    />
+                  )}
+                  <span className="relative z-10">{v.label}</span>
+                </button>
+              )
+            })}
+          </div>
+        )}
+
         {/* Placeholder: always in flow, maintains vertical space, IntersectionObserver target */}
         <div
           ref={placeholderRef}
@@ -207,6 +281,25 @@ export default function StickyVideoPlayer({ videoId, src, title = 'Workshop Reco
                 onClick={handlePlay}
                 aria-label="Play video"
               />
+            )}
+
+            {/* Sticky cohort switcher */}
+            {isSticky && hasStarted && videos && videos.length > 1 && (
+              <div className="absolute top-2 left-2 flex items-center gap-1 z-20">
+                {videos.map((v) => (
+                  <button
+                    key={v.id}
+                    onClick={() => handleSwitchVideo(v.id)}
+                    className={`px-2.5 py-1 rounded-full text-[10px] font-semibold transition-all backdrop-blur-sm ${
+                      activeVideoId === v.id
+                        ? 'bg-[#7C69C7] text-white'
+                        : 'bg-black/60 text-white/60 hover:text-white'
+                    }`}
+                  >
+                    {v.label}
+                  </button>
+                ))}
+              </div>
             )}
 
             {/* Sticky controls */}
