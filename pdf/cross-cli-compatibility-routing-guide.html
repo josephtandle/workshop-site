@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cross CLI Compatibility Routing</title>
+    <style>
+      @page {
+        size: 14in 11in;
+        margin: 0;
+      }
+
+      :root {
+        --bg: #120f1c;
+        --panel: #1b1527;
+        --panel-strong: #231b31;
+        --panel-soft: rgba(252, 244, 235, 0.05);
+        --panel-border: rgba(252, 244, 235, 0.1);
+        --cream: #fcf4eb;
+        --cream-soft: rgba(252, 244, 235, 0.72);
+        --cream-muted: rgba(252, 244, 235, 0.5);
+        --purple: #7c69c7;
+        --purple-soft: #a896ea;
+        --pink: #f5c3c6;
+        --rose: #d67ab0;
+        --shadow: 0 22px 64px rgba(0, 0, 0, 0.28);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 1008px;
+        height: 792px;
+        margin: 0;
+        background:
+          radial-gradient(circle at top left, rgba(124, 105, 199, 0.28), transparent 38%),
+          radial-gradient(circle at top right, rgba(245, 195, 198, 0.16), transparent 30%),
+          linear-gradient(180deg, #1a1330 0%, #100d16 100%);
+        color: var(--cream);
+        font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      body {
+        padding: 24px;
+      }
+
+      .page {
+        position: relative;
+        width: 960px;
+        height: 744px;
+        padding: 22px 24px 20px;
+        border-radius: 26px;
+        overflow: hidden;
+        background:
+          linear-gradient(180deg, rgba(28, 21, 39, 0.98) 0%, rgba(18, 15, 28, 0.98) 100%);
+        border: 1px solid rgba(252, 244, 235, 0.08);
+        box-shadow: var(--shadow);
+      }
+
+      .page::before,
+      .page::after {
+        content: "";
+        position: absolute;
+        border-radius: 999px;
+        filter: blur(58px);
+        pointer-events: none;
+        opacity: 0.8;
+      }
+
+      .page::before {
+        top: -72px;
+        left: -36px;
+        width: 260px;
+        height: 260px;
+        background: radial-gradient(circle, rgba(124, 105, 199, 0.32), transparent 72%);
+      }
+
+      .page::after {
+        top: -36px;
+        right: -34px;
+        width: 220px;
+        height: 220px;
+        background: radial-gradient(circle, rgba(245, 195, 198, 0.18), transparent 72%);
+      }
+
+      .grid-overlay {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(252, 244, 235, 0.018) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(252, 244, 235, 0.018) 1px, transparent 1px);
+        background-size: 24px 24px;
+        mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.18), transparent 92%);
+        pointer-events: none;
+      }
+
+      .content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .hero {
+        padding-bottom: 14px;
+        border-bottom: 1px solid rgba(252, 244, 235, 0.1);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(124, 105, 199, 0.22);
+        background: rgba(124, 105, 199, 0.08);
+        color: #f4cb70;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 12px 0 6px;
+        font-size: 50px;
+        line-height: 0.96;
+        letter-spacing: -0.05em;
+        font-weight: 800;
+      }
+
+      .summary {
+        max-width: 860px;
+        color: var(--cream-soft);
+        font-size: 14px;
+        line-height: 1.34;
+      }
+
+      .summary p {
+        margin: 0;
+      }
+
+      .summary p + p {
+        margin-top: 4px;
+      }
+
+      .pill-row {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 14px;
+      }
+
+      .pill {
+        min-height: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 7px 10px;
+        border-radius: 999px;
+        background: rgba(124, 105, 199, 0.08);
+        border: 1px solid rgba(252, 244, 235, 0.08);
+        color: rgba(252, 244, 235, 0.92);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        text-align: center;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      }
+
+      .main {
+        display: grid;
+        grid-template-columns: 210px 1fr;
+        gap: 14px;
+        padding-top: 12px;
+        flex: 1;
+        min-height: 0;
+      }
+
+      .sidebar {
+        display: grid;
+        gap: 10px;
+      }
+
+      .info-card {
+        border-radius: 22px;
+        padding: 14px 14px 12px;
+        background:
+          linear-gradient(180deg, rgba(124, 105, 199, 0.08), rgba(252, 244, 235, 0.03));
+        border: 1px solid rgba(252, 244, 235, 0.08);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+      }
+
+      .info-card h2 {
+        margin: 0 0 10px;
+        font-size: 18px;
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+      }
+
+      .info-card p {
+        margin: 0;
+        color: var(--cream-soft);
+        font-size: 12px;
+        line-height: 1.36;
+      }
+
+      .diagram-shell {
+        border-radius: 26px;
+        padding: 12px 12px 10px;
+        background:
+          linear-gradient(180deg, rgba(252, 244, 235, 0.045), rgba(124, 105, 199, 0.035));
+        border: 1px solid rgba(252, 244, 235, 0.08);
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .diagram {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        flex: 1;
+      }
+
+      .node {
+        width: 100%;
+        text-align: center;
+        border-radius: 20px;
+        padding: 10px 14px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(252, 244, 235, 0.11);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+      }
+
+      .node h3,
+      .node h4,
+      .lane-card h4,
+      .lane-chip {
+        margin: 0;
+      }
+
+      .node.user {
+        width: 320px;
+      }
+
+      .node.routing {
+        width: 398px;
+        background: linear-gradient(180deg, rgba(124, 105, 199, 0.22), rgba(124, 105, 199, 0.11));
+        border-color: rgba(168, 150, 234, 0.46);
+      }
+
+      .node.index {
+        width: 470px;
+      }
+
+      .node.selector {
+        width: 336px;
+        background: linear-gradient(180deg, rgba(124, 105, 199, 0.16), rgba(124, 105, 199, 0.08));
+      }
+
+      .node h3 {
+        font-size: 20px;
+        letter-spacing: -0.04em;
+        line-height: 1.04;
+      }
+
+      .node.user h3 {
+        font-size: 24px;
+      }
+
+      .node p {
+        margin: 4px 0 0;
+        color: var(--cream-soft);
+        font-size: 11px;
+        line-height: 1.22;
+      }
+
+      .connector {
+        position: relative;
+        width: 4px;
+        height: 10px;
+        background: linear-gradient(180deg, rgba(252, 244, 235, 0.22), rgba(124, 105, 199, 0.82));
+        border-radius: 999px;
+      }
+
+      .connector::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -3px;
+        width: 0;
+        height: 0;
+        margin-left: -8px;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 9px solid rgba(252, 244, 235, 0.58);
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.16));
+      }
+
+      .connector.purple::after {
+        border-top-color: rgba(124, 105, 199, 0.92);
+      }
+
+      .branch {
+        width: 100%;
+        margin-top: 0;
+      }
+
+      .branch-labels {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        margin-bottom: 4px;
+      }
+
+      .branch-label {
+        text-align: center;
+        font-size: 11px;
+        line-height: 1.3;
+        color: var(--cream-muted);
+      }
+
+      .branch-rails {
+        position: relative;
+        height: 16px;
+        margin: 0 42px 1px;
+      }
+
+      .branch-rails::before {
+        content: "";
+        position: absolute;
+        left: 16%;
+        right: 16%;
+        top: 1px;
+        height: 3px;
+        border-radius: 999px;
+        background: linear-gradient(
+          90deg,
+          rgba(252, 244, 235, 0.18),
+          rgba(252, 244, 235, 0.5),
+          rgba(252, 244, 235, 0.18)
+        );
+      }
+
+      .stub {
+        position: absolute;
+        top: 0;
+        width: 4px;
+        height: 16px;
+        border-radius: 999px;
+        background: rgba(252, 244, 235, 0.44);
+      }
+
+      .stub::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -2px;
+        margin-left: -8px;
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 9px solid rgba(252, 244, 235, 0.52);
+      }
+
+      .stub.one {
+        left: calc(16% - 2px);
+      }
+
+      .stub.two {
+        left: calc(50% - 2px);
+      }
+
+      .stub.three {
+        left: calc(84% - 2px);
+      }
+
+      .lane-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .lane-card {
+        min-height: 112px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        border-radius: 22px;
+        padding: 10px 10px 8px;
+        border: 1px dashed rgba(252, 244, 235, 0.12);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(124, 105, 199, 0.04));
+      }
+
+      .lane-card.recipe {
+        background: linear-gradient(180deg, rgba(252, 244, 235, 0.05), rgba(124, 105, 199, 0.03));
+      }
+
+      .lane-card.worker {
+        background: linear-gradient(180deg, rgba(124, 105, 199, 0.09), rgba(252, 244, 235, 0.03));
+      }
+
+      .lane-card.workflow {
+        background: linear-gradient(180deg, rgba(245, 195, 198, 0.09), rgba(252, 244, 235, 0.03));
+      }
+
+      .lane-card h4 {
+        font-size: 17px;
+        line-height: 1.06;
+        letter-spacing: -0.03em;
+        margin-bottom: 8px;
+      }
+
+      .lane-chip {
+        width: 100%;
+        min-height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 6px 10px;
+        border-radius: 20px;
+        font-size: 16px;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+      }
+
+      .lane-card.recipe .lane-chip {
+        color: var(--cream);
+        background: rgba(252, 244, 235, 0.08);
+        border: 1px solid rgba(244, 203, 112, 0.45);
+      }
+
+      .lane-card.worker .lane-chip {
+        color: var(--cream);
+        background: rgba(124, 105, 199, 0.22);
+        border: 1px solid rgba(168, 150, 234, 0.4);
+      }
+
+      .lane-card.workflow .lane-chip {
+        color: var(--cream);
+        background: rgba(214, 122, 176, 0.18);
+        border: 1px solid rgba(245, 195, 198, 0.42);
+      }
+
+      .lane-card p {
+        margin: 8px 0 0;
+        color: var(--cream-soft);
+        font-size: 10px;
+        line-height: 1.32;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="grid-overlay"></div>
+      <div class="content">
+        <section class="hero">
+          <div class="eyebrow">Masterminds HQ Bonus Resource</div>
+          <h1>Cross CLI Compatibility Routing</h1>
+          <div class="summary">
+            <p>
+              A lean architecture for making large agent, skill, recipe, and workflow systems
+              smarter, faster, easier to route, and easier to scale.
+            </p>
+            <p>Start with a tiny bootstrap. Expand only after the right lane is chosen.</p>
+          </div>
+          <div class="pill-row">
+            <div class="pill">Bootstrap: ROUTING-SLIM.md</div>
+            <div class="pill">Global Discovery: capabilities-index.json</div>
+            <div class="pill">Lanes: recipe / worker-skill / workflow</div>
+            <div class="pill">Principle: expand only as necessary</div>
+          </div>
+        </section>
+
+        <section class="main">
+          <aside class="sidebar">
+            <div class="info-card">
+              <h2>What this fixes</h2>
+              <p>
+                Most multi-agent systems get slower and less reliable because discovery, execution,
+                and fallback blur together.
+              </p>
+            </div>
+            <div class="info-card">
+              <h2>Core rule</h2>
+              <p>
+                The global router decides the lane. The lane-native system decides the exact
+                executor. That preserves deterministic recipe logic and keeps adaptive work
+                adaptive.
+              </p>
+            </div>
+            <div class="info-card">
+              <h2>Why it scales</h2>
+              <p>
+                New capabilities enter through small manifests, one generated index, and strict
+                boundaries. That reduces drift and keeps context loads small even as the catalog
+                grows.
+              </p>
+            </div>
+          </aside>
+
+          <div class="diagram-shell">
+            <div class="diagram">
+              <div class="node user">
+                <h3>User Request</h3>
+                <p>A task enters the system</p>
+              </div>
+
+              <div class="connector"></div>
+
+              <div class="node routing">
+                <h3>ROUTING-SLIM.md</h3>
+                <p>Tiny bootstrap only. No catalog dump. No execution prose.</p>
+              </div>
+
+              <div class="connector purple"></div>
+
+              <div class="node index">
+                <h3>capabilities-index.json</h3>
+                <p>
+                  Generated coarse discovery across recipes, workers, skills, and workflows
+                </p>
+              </div>
+
+              <div class="connector"></div>
+
+              <div class="node selector">
+                <h3>Lane Selector</h3>
+                <p>Choose the execution lane first</p>
+              </div>
+
+              <div class="branch">
+                <div class="branch-labels">
+                  <div class="branch-label">Deterministic operational work</div>
+                  <div class="branch-label">Ambiguous, novel, or compositional work</div>
+                  <div class="branch-label">Explicit orchestration pattern</div>
+                </div>
+                <div class="branch-rails">
+                  <div class="stub one"></div>
+                  <div class="stub two"></div>
+                  <div class="stub three"></div>
+                </div>
+                <div class="lane-grid">
+                  <div class="lane-card recipe">
+                    <h4>Recipe Lane</h4>
+                    <div class="lane-chip">task-dispatcher.js</div>
+                    <p>Loads *.recipe.json and owns scoring, validation, and precedence</p>
+                  </div>
+
+                  <div class="lane-card worker">
+                    <h4>Worker / Skill Lane</h4>
+                    <div class="lane-chip">Selected Runtime</div>
+                    <p>
+                      Loads the chosen worker or skill and may call recipes by explicit ID
+                    </p>
+                  </div>
+
+                  <div class="lane-card workflow">
+                    <h4>Workflow Lane</h4>
+                    <div class="lane-chip">Workflow Runner</div>
+                    <p>Reusable orchestration pattern such as Dalio Council</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

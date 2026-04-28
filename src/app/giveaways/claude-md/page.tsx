@@ -92,7 +92,7 @@ No trailing summaries of what was just done. If it fits in one sentence, use one
 ## Iron Laws
 
 (Non-negotiable rules. The red circle means it is required, not optional.
-Replace the OpenClaw-specific ones with your own project context.)
+Replace the MyOS-specific ones with your own project context.)
 
 🔴 **Read before writing.** Check your context/memory files before starting any task.
 🔴 **Never report done without verifying.** Run the code, check the output. "It should work" is not done.

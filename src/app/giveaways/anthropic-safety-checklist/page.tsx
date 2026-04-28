@@ -41,12 +41,12 @@ const checklistItems = [
       'Delete account-rotation logic. One human account for human use, API credentials for automation.',
   },
   {
-    id: 'openclaw-safe',
-    title: 'Use OpenClaw with Claude Code the safe way',
+    id: 'myos-safe',
+    title: 'Use MyOS with Claude Code the safe way',
     risk:
-      'OpenClaw becomes risky when it silently turns Claude Code into an unattended backend or routes product/background work through a personal Claude session.',
+      'MyOS becomes risky when it silently turns Claude Code into an unattended backend or routes product/background work through a personal Claude session.',
     fix:
-      'Interactive OpenClaw + Claude Code is fine for human-guided work. Product paths, bots, and background flows should run through API-backed providers instead.',
+      'Interactive MyOS + Claude Code is fine for human-guided work. Product paths, bots, and background flows should run through API-backed providers instead.',
   },
   {
     id: 'credits',
@@ -62,7 +62,7 @@ const saferPatterns = [
   'Human-operated Claude Code for coding, debugging, and guided repo work',
   'Anthropic API keys for real automation and background execution',
   'Provider-backed deployments through Anthropic Console, Bedrock, Vertex, or Foundry when teams need scale or governance',
-  'OpenClaw routing that keeps consumer Claude use interactive and moves automation to API-backed providers',
+  'MyOS routing that keeps consumer Claude use interactive and moves automation to API-backed providers',
 ] as const
 
 const sourceLinks = [
@@ -80,13 +80,13 @@ const sourceLinks = [
   },
 ] as const
 
-const auditPrompt = `Audit my current Claude / Claude Code / OpenClaw setup for Anthropic policy and enforcement risk.
+const auditPrompt = `Audit my current Claude / Claude Code / MyOS setup for Anthropic policy and enforcement risk.
 
 Check this repository and my local setup for any of the following patterns:
 1. Using a personal Claude login, OAuth token, local session, or consumer auth to power unattended agents, bots, cron jobs, daemons, or product workflows
 2. Wrapping Claude Code or the Claude CLI inside a third-party shell, browser wrapper, gateway, router, relay, or embedded terminal product
 3. Account switching, token sync, multi-account failover, or any logic designed to rotate between Claude accounts
-4. OpenClaw or local tools routing background work through consumer Claude sessions instead of API-backed providers
+4. MyOS or local tools routing background work through consumer Claude sessions instead of API-backed providers
 5. Workflows that assume bonus usage credits are a safe budget for automation
 
 Search for obvious files, scripts, env vars, cron jobs, launch agents, and code paths related to:
@@ -96,7 +96,7 @@ Search for obvious files, scripts, env vars, cron jobs, launch agents, and code 
 - consumer OAuth/session reuse
 - unattended claude calls
 - background bots using Claude Code
-- OpenClaw paths that call Claude outside normal interactive use
+- MyOS paths that call Claude outside normal interactive use
 
 Then produce:
 - a short risk summary
@@ -180,9 +180,9 @@ export default function AnthropicSafetyChecklistPage() {
                     </p>
                   </div>
                   <div className="rounded-xl border border-[#FCF4EB]/[0.10] bg-[rgba(245,195,198,0.06)] p-4">
-                    <p className="text-[#FCF4EB]/40 text-xs uppercase tracking-widest mb-2">OpenClaw note</p>
+                    <p className="text-[#FCF4EB]/40 text-xs uppercase tracking-widest mb-2">MyOS note</p>
                     <p className="text-[#FCF4EB] leading-relaxed">
-                      OpenClaw itself is not the problem. The risk appears when OpenClaw is used to turn Claude Code
+                      MyOS itself is not the problem. The risk appears when MyOS is used to turn Claude Code
                       into a hidden unattended backend instead of an interactive tool.
                     </p>
                   </div>

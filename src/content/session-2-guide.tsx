@@ -46,7 +46,7 @@ export default function Session2Guide() {
       <StickyVideoPlayer
         videos={[
           { id: 'JU7S-w2r42k', label: 'Cohort 1 Video Replay' },
-          { id: '0FJ6O1jNG8g', label: 'Cohort 2 Video Replay' },
+          { id: 'FWaVKo-Ua7s', label: 'Cohort 2 Video Replay' },
         ]}
         title="Session 2: Building Your First Website with AI"
       />

@@ -4,6 +4,7 @@ import StepCard from '@/components/StepCard'
 import CodeBlock from '@/components/CodeBlock'
 import ProTip from '@/components/ProTip'
 import { celebrate } from '@/lib/celebrate'
+import StickyVideoPlayer from '@/components/StickyVideoPlayer'
 
 export default function Session7Guide() {
   return (
@@ -63,6 +64,15 @@ export default function Session7Guide() {
             </ol>
           </div>
         </div>
+      </div>
+
+      {/* Workshop Recording — sticky video player */}
+      <div className="max-w-3xl mx-auto px-6 mb-14">
+        <div className="mb-4">
+          <p className="text-[#FCF4EB]/50 text-xs uppercase tracking-widest font-semibold mb-1">Workshop Recording</p>
+          <p className="text-[#FCF4EB]/40 text-sm">Follow along with the live session. Hit play and the video will stick to the top as you scroll.</p>
+        </div>
+        <StickyVideoPlayer videoId="5u7ArWgKNOU" title="Cohort 1, Session 7: Business Automation Masterminds" />
       </div>
 
       <div className="max-w-3xl mx-auto px-6 pb-16">
