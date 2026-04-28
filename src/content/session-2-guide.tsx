@@ -273,7 +273,7 @@ export default function Session2Guide() {
           </p>
           <CodeBlock
             filename="Paste into Claude Code"
-            code={`Create me a folder that I'm going to make my website in and go into that folder.`}
+            code={`Create me a folder called my new website and tell me the path to where you just put it.`}
           />
 
           <ProTip type="tip" className="mt-4">
@@ -314,22 +314,13 @@ export default function Session2Guide() {
           </ProTip>
         </StepCard>
 
-        {/* Bonus: Web Design Arsenal */}
-        <div
-          className="rounded-2xl p-8 sm:p-12 mb-8"
-          style={{
-            background: 'linear-gradient(135deg, rgba(245,195,198,0.12) 0%, rgba(124,105,199,0.10) 100%)',
-            border: '1px solid rgba(245,195,198,0.20)',
-          }}
-        >
-          <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6 bg-[#F5C3C6]/15 text-[#F5C3C6] border border-[#F5C3C6]/25">
+        {/* Step 4: Web Design Arsenal */}
+        <StepCard number={4} title="Set Up Your Web Design Toolkit">
+          <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4 bg-[#F5C3C6]/15 text-[#F5C3C6] border border-[#F5C3C6]/25">
             Bonus
           </span>
-          <h2 className="text-4xl sm:text-5xl font-bold text-[#FCF4EB] mb-4 leading-tight">
-            The Web Design Arsenal
-          </h2>
-          <p className="text-[#FCF4EB]/65 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
-            Want to go further? This single prompt installs 24 of the best web design tools and animation libraries so your AI builds genuinely gorgeous websites from the start.
+          <p className="text-[#FCF4EB]/65 text-sm leading-relaxed mb-5">
+            This single prompt installs 24 of the best web design tools and animation libraries so your AI builds genuinely gorgeous websites from the start.
           </p>
           <CodeBlock
             filename="Paste into Claude Code"
@@ -366,10 +357,10 @@ to a hero section for a landing page.`}
             </a>{' '}
             where you can review everything before installing.
           </p>
-        </div>
+        </StepCard>
 
         {/* Step 5: Build the page */}
-        <StepCard number={4} title="Build your personal brand page">
+        <StepCard number={5} title="Build your personal brand page">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
             Fill in your own details below, replacing everything in brackets. Then copy and paste it
             into Claude Code.
@@ -382,15 +373,15 @@ to a hero section for a landing page.`}
           <CodeBlock
             filename="Paste into Claude Code"
             editable
-            code={`Build me a simple personal brand website as a single index.html file.
+            code={`Build me a personal brand website as a single index.html file.
 
 - Hero section with my name "[YOUR NAME]" and tagline "[YOUR TAGLINE]"
 - Three service cards: [SERVICE 1], [SERVICE 2], [SERVICE 3]
 - About section: "[YOUR BIO]"
 - CTA button that says "[YOUR BUTTON TEXT]" linking to "[YOUR LINK]"
-- Clean, modern design. Mobile responsive.
+- Mobile responsive.
 
-Use HTML, CSS, and vanilla JavaScript only.`}
+Using all the web design toolkit we just downloaded, make it genuinely gorgeous — rich animations, visual depth, and a layout that looks professionally designed.`}
           />
           <p className="text-[#FCF4EB]/70 leading-relaxed mt-5 mb-2">
             Once Claude finishes, open the file in your browser to see it:
@@ -422,7 +413,7 @@ Use HTML, CSS, and vanilla JavaScript only.`}
           something that feels professional and polished. Paste each one exactly as written.
         </p>
 
-        <StepCard number={5} title="Add scroll animations and glassmorphism">
+        <StepCard number={6} title="Add scroll animations and glassmorphism">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
             Paste this exactly as written. No edits needed.
           </p>
@@ -441,7 +432,7 @@ Keep all my content exactly as it is.`}
           />
         </StepCard>
 
-        <StepCard number={6} title="Add pro-level interactions">
+        <StepCard number={7} title="Add pro-level interactions">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
             When the previous effects are looking great, paste this to take it further. Paste exactly as written.
           </p>
@@ -474,7 +465,7 @@ Do not change any content or layout.`}
           Your site is ready. Now put it on the internet, add your photo, and start customizing.
         </p>
 
-        <StepCard number={7} title="Deploy to Vercel">
+        <StepCard number={8} title="Deploy to Vercel">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
             Tell Claude Code to deploy. It will handle everything including logging into{' '}
             <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">Vercel</a>{' '}
@@ -496,7 +487,7 @@ Do not change any content or layout.`}
           </ProTip>
         </StepCard>
 
-        <StepCard number={8} title="Add your photo">
+        <StepCard number={9} title="Add your photo">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
             Tell Claude to place your photo on the page. Edit the file name below if yours is different.
           </p>
@@ -516,7 +507,7 @@ Place it in the about section next to my bio. Style it with a rounded border and
           />
         </StepCard>
 
-        <StepCard number={9} title="Customize and explore">
+        <StepCard number={10} title="Customize and explore">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
             Now it is yours. There are no wrong moves. Try asking Claude things like:
           </p>
