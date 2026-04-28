@@ -16,8 +16,8 @@ export default function TabNav() {
     href === '/' ? pathname === '/' : pathname.startsWith(href)
 
   return (
-    <div className="max-w-5xl mx-auto px-6">
-      <div className="flex items-end gap-1 border-b border-white/[0.08]">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6">
+      <div className="flex items-end gap-0.5 sm:gap-1 border-b border-white/[0.08]">
         {TABS.map((tab) => {
           const isActive = active(tab.href)
           return (
@@ -25,7 +25,7 @@ export default function TabNav() {
               key={tab.href}
               href={tab.href}
               className={`
-                relative px-5 py-2.5 text-sm font-medium rounded-t-xl border-t border-l border-r
+                relative flex-1 sm:flex-none min-w-0 px-2 sm:px-5 py-2.5 text-center text-xs sm:text-sm font-medium rounded-t-xl border-t border-l border-r
                 transition-all duration-150 whitespace-nowrap translate-y-px
                 ${isActive
                   ? 'bg-white/[0.06] border-white/[0.12] text-[#FCF4EB]'

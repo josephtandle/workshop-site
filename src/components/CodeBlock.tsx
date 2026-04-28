@@ -68,7 +68,7 @@ export default function CodeBlock({ code, language, filename, editable }: CodeBl
         />
       ) : (
         <pre
-          className="overflow-x-auto p-4 text-sm font-mono leading-relaxed text-[#FCF4EB]/80"
+          className="overflow-x-auto whitespace-pre-wrap break-words p-4 text-sm font-mono leading-relaxed text-[#FCF4EB]/80 sm:whitespace-pre sm:break-normal"
           style={{ background: '#0d0d0d' }}
         >
           <code>{code}</code>
