@@ -101,15 +101,27 @@ export const sessions: Session[] = [
   {
     slug: '8',
     number: 8,
-    title: 'Claude Sees Your Screen and Reads the Web',
+    title: 'Safety and the Ultimate Web Fetch',
     description:
-      'Enable computer-use so Claude can click, type, and operate any app on your screen. Then use Web Fetch to let Claude read any page on the internet and bring the data back to your agent.',
+      'Install Ultimate Web Fetch, understand the tools inside it, and practice safe web fetching, scraping, browser automation, and media downloads.',
     date: '',
     hasGuide: true,
     hasPrep: true,
     hasBonus: false,
     guideTitle: 'Session 8 Workshop Guide',
     prepDescription: 'Update Claude Code to the latest version and confirm your plan before we start.',
+  },
+  {
+    slug: '9',
+    number: 9,
+    title: 'Computer-Use: Claude Clicks, Types, and Tests',
+    description:
+      'Enable computer-use, grant the right screen permissions, and practice having Claude open apps, fill forms, take screenshots, and QA-test websites.',
+    date: '',
+    hasGuide: true,
+    hasPrep: false,
+    hasBonus: false,
+    guideTitle: 'Session 9 Workshop Guide',
   },
 ]
 

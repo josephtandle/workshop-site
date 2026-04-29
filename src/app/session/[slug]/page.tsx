@@ -9,7 +9,7 @@ interface Props {
 }
 
 export function generateStaticParams() {
-  return [{ slug: '1' }, { slug: '2' }, { slug: '3' }, { slug: '4' }, { slug: '5' }, { slug: '6' }, { slug: '7' }, { slug: '8' }]
+  return [{ slug: '1' }, { slug: '2' }, { slug: '3' }, { slug: '4' }, { slug: '5' }, { slug: '6' }, { slug: '7' }, { slug: '8' }, { slug: '9' }]
 }
 
 export async function generateMetadata({ params }: Props) {
@@ -173,7 +173,7 @@ export default async function SessionIndexPage({ params }: Props) {
         {/* Guide page */}
         {session.hasGuide && (
           <Reveal delay={2} className="h-full">
-            {(slug === '5' && LOCKS.session5Guide === false) || (slug === '6' && !LOCKS.session6Guide) || (slug === '7' && !LOCKS.session7Guide) || (slug === '8' && !LOCKS.session8Guide) ? (
+            {(slug === '5' && LOCKS.session5Guide === false) || (slug === '6' && !LOCKS.session6Guide) || (slug === '7' && !LOCKS.session7Guide) || (slug === '8' && !LOCKS.session8Guide) || (slug === '9' && !LOCKS.session9Guide) ? (
               <div
                 className="flex flex-col h-full bg-white/[0.02] border border-white/[0.05] rounded-2xl p-8 cursor-not-allowed select-none"
                 aria-disabled="true"

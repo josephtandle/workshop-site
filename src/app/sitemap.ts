@@ -14,6 +14,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/session/3`, lastModified: NOW, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE}/session/4`, lastModified: NOW, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE}/session/5`, lastModified: NOW, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE}/session/6`, lastModified: NOW, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE}/session/7`, lastModified: NOW, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE}/session/8`, lastModified: NOW, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE}/session/9`, lastModified: NOW, changeFrequency: 'monthly', priority: 0.9 },
 
     // Session sub-pages
     { url: `${BASE}/session/1/bonus`,       lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
@@ -27,6 +31,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/session/5/prep`,        lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/session/5/guide`,       lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/session/5/guide-brain`, lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/session/6/guide`,       lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/session/6/prep`,        lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/session/7/guide`,       lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/session/7/prep`,        lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/session/8/guide`,       lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/session/8/prep`,        lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/session/9/guide`,       lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
 
     // Giveaways
     { url: `${BASE}/giveaways/cross-cli-compatibility-routing`, lastModified: NOW, changeFrequency: 'monthly', priority: 0.8 },

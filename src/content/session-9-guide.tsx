@@ -1,0 +1,191 @@
+'use client'
+
+import StepCard from '@/components/StepCard'
+import CodeBlock from '@/components/CodeBlock'
+import ProTip from '@/components/ProTip'
+
+export default function Session9Guide() {
+  return (
+    <>
+      <div className="max-w-3xl mx-auto px-6 py-16 pb-0">
+        <div className="mb-10">
+          <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
+            Session Nine
+          </p>
+          <h1 className="gradient-text text-5xl font-extrabold leading-tight mb-5 pb-1">
+            Computer-Use: Claude Clicks, Types, and Tests
+          </h1>
+          <p className="text-[#FCF4EB]/70 text-lg leading-relaxed mb-6">
+            This session gives Claude controlled access to your screen so it can open apps, click buttons,
+            fill forms, take screenshots, and QA-test real workflows while you stay in charge.
+          </p>
+
+          <div className="flex flex-wrap gap-6 text-sm text-[#FCF4EB]/50 mb-8">
+            <span className="flex items-center gap-2">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <circle cx="8" cy="8" r="6.5" stroke="currentColor" strokeWidth="1.5"/>
+                <path d="M8 5v3.5l2 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+              </svg>
+              Duration ~90 minutes
+            </span>
+            <span className="flex items-center gap-2">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M2 14l3-9 4 6 2-3 3 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              Intermediate
+            </span>
+          </div>
+
+          <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-6">
+            <p className="text-[#FCF4EB]/50 text-xs uppercase tracking-widest mb-4 font-semibold">In This Session</p>
+            <ol className="space-y-2">
+              <li><a href="#permissions" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">Claude Dangerously Skip Permissions</a></li>
+              <li><a href="#computer-use" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">Computer-Use Setup</a></li>
+              <li><a href="#practice" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">First Computer-Use Tasks</a></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-3xl mx-auto px-6 py-10">
+        <section id="permissions" className="mb-16">
+          <div className="mb-8">
+            <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Start Here</span>
+            <h2 className="text-3xl font-bold text-[#FCF4EB] mt-3">Claude Dangerously Skip Permissions</h2>
+          </div>
+
+          <StepCard number={1} title="Start Claude in Dangerously Skip Permissions">
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              Start the workshop in the project folder you intend to use. This keeps the live build moving without
+              stopping for every small permission prompt.
+            </p>
+            <CodeBlock
+              filename="Claude Code prompt"
+              code={`Start Claude Code in Dangerously Skip Permissions for this workshop session.
+
+Before making changes:
+1. Confirm I am in the right project folder.
+2. Tell me which folder you are working in.
+3. Do not touch unrelated projects or personal files.
+4. Pause and ask before deleting, overwriting, or moving anything outside this workshop project.`}
+              editable
+            />
+            <ProTip type="warning" className="mt-4">
+              Dangerously Skip Permissions is powerful. Use it only in the project folder you mean to edit.
+            </ProTip>
+          </StepCard>
+        </section>
+
+        <section id="computer-use" className="mb-16">
+          <div className="flex items-center gap-3 mb-8">
+            <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Setup</span>
+            <h2 className="text-2xl font-bold text-[#FCF4EB]">Computer-Use Setup</h2>
+          </div>
+
+          <StepCard number={2} title="Open the MCP server menu">
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              Start a Claude Code session in your terminal. Then type the following and press Enter:
+            </p>
+            <CodeBlock filename="Claude Code" code={`/mcp`} />
+            <p className="text-[#FCF4EB]/70 leading-relaxed mt-4">
+              A menu appears showing all available MCP servers. Scroll down until you find <strong className="text-[#FCF4EB]">computer-use</strong>.
+              Select it and choose <strong className="text-[#FCF4EB]">Enable</strong>.
+            </p>
+            <ProTip type="tip" className="mt-4">
+              MCP stands for Model Context Protocol. It is the system that gives Claude access to tools beyond
+              the built-in ones. Computer-use is a built-in MCP server that ships with Claude Code but is off by default.
+            </ProTip>
+          </StepCard>
+
+          <StepCard number={3} title="Grant macOS permissions">
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              The first time you use computer-use, macOS will ask you to grant two permissions:
+            </p>
+            <div className="space-y-3 mb-4">
+              <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
+                <p className="text-[#FCF4EB] font-semibold text-sm mb-1">Accessibility</p>
+                <p className="text-[#FCF4EB]/60 text-sm">
+                  Lets Claude click buttons, type into fields, and scroll through pages.
+                  Go to System Settings, Privacy and Security, Accessibility, and toggle on Terminal or your terminal app.
+                </p>
+              </div>
+              <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
+                <p className="text-[#FCF4EB] font-semibold text-sm mb-1">Screen Recording</p>
+                <p className="text-[#FCF4EB]/60 text-sm">
+                  Lets Claude see what is on your screen so it can navigate. Same path: System Settings,
+                  Privacy and Security, Screen and System Audio Recording. Toggle on your terminal app.
+                </p>
+              </div>
+            </div>
+            <p className="text-[#FCF4EB]/70 leading-relaxed">
+              After granting both permissions, you may need to restart Claude Code once. Then you are ready.
+            </p>
+            <ProTip type="warning" className="mt-4">
+              These permissions are session-scoped. Claude will ask which apps it is allowed to control
+              each session before touching them. You can press Escape at any time to stop it immediately.
+            </ProTip>
+          </StepCard>
+        </section>
+
+        <section id="practice" className="mb-16">
+          <div className="flex items-center gap-3 mb-8">
+            <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Practice</span>
+            <h2 className="text-2xl font-bold text-[#FCF4EB]">First Computer-Use Tasks</h2>
+          </div>
+
+          <StepCard number={4} title="Test it with a simple task">
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              With computer-use enabled, start a new Claude Code session and give it a simple instruction.
+              This prompt asks Claude to open your browser and take a screenshot of a website:
+            </p>
+            <CodeBlock
+              filename="Claude Code prompt"
+              code={`Open Safari, go to [https://www.mindfulnessmode.com/what-is-consciousness-tom-campbell-part-1/], take a screenshot, and tell me what you see on the homepage.`}
+              editable
+            />
+            <p className="text-[#FCF4EB]/70 leading-relaxed mt-4">
+              Claude will open the browser, navigate to the URL, capture what is on screen, and describe it back to you.
+              This is the foundation. Everything else builds on this.
+            </p>
+          </StepCard>
+
+          <StepCard number={5} title="Try a form-filling task">
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              Computer-use shines when an app has no API. Try having Claude fill in a form for you.
+              This prompt works for any tool you use that has a web interface:
+            </p>
+            <CodeBlock
+              filename="Claude Code prompt"
+              code={`Open [TOOL NAME, e.g. Notion / Airtable / your CRM], navigate to [PAGE OR SECTION], and create a new entry with the following details:
+
+Name: [NAME]
+Description: [DESCRIPTION]
+Status: [STATUS]
+
+Take a screenshot when it is done so I can confirm.`}
+              editable
+            />
+            <ProTip type="tip" className="mt-4">
+              Computer-use works best when you are specific. Tell Claude exactly where to go and exactly what to fill in.
+              The more detail you give, the less it has to guess.
+            </ProTip>
+          </StepCard>
+
+          <StepCard number={6} title="Test your own website">
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              One of the most useful things computer-use can do is QA-test your site the way a real visitor would.
+              Use this prompt to have Claude click through your sign-up flow and report any issues:
+            </p>
+            <CodeBlock
+              filename="Claude Code prompt"
+              code={`Open [YOUR WEBSITE URL] in Safari. Act like a new visitor who wants to sign up.
+Click through the entire sign-up flow from the homepage. Take screenshots at each step.
+Report back: did anything look broken, confusing, or hard to find?`}
+              editable
+            />
+          </StepCard>
+        </section>
+      </div>
+    </>
+  )
+}
