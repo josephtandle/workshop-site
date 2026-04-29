@@ -2,8 +2,8 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { motion } from 'framer-motion'
-import confetti from 'canvas-confetti'
 import CodeBlock from '@/components/CodeBlock'
+import { copyWithConfetti } from '@/lib/copyWithConfetti'
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -665,16 +665,10 @@ function BigCopyButton({ prompt }: { prompt: string }) {
   const [copied, setCopied] = useState(false)
   const magnet = useMagnet(0.22)
 
-  const handleCopy = useCallback(async () => {
+  const handleCopy = useCallback(async (event: React.MouseEvent<HTMLButtonElement>) => {
     try {
-      await navigator.clipboard.writeText(prompt)
+      await copyWithConfetti(prompt, event)
       setCopied(true)
-      confetti({
-        particleCount: 120,
-        spread: 80,
-        colors: ['#8B79D4', '#BDB3E8', '#F5C3C6', '#FCF4EB'],
-        origin: { y: 0.55 },
-      })
       setTimeout(() => setCopied(false), 2500)
     } catch { /* noop */ }
   }, [prompt])

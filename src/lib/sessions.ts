@@ -101,9 +101,9 @@ export const sessions: Session[] = [
   {
     slug: '8',
     number: 8,
-    title: 'Safety and the Ultimate Web Fetch',
+    title: 'Safety and WebFetch',
     description:
-      'Install Ultimate Web Fetch, understand the tools inside it, and practice safe web fetching, scraping, browser automation, and media downloads.',
+      'Install WebFetch, understand the tools inside it, and practice safe web fetching, scraping, browser automation, and media downloads.',
     date: '',
     hasGuide: true,
     hasPrep: true,

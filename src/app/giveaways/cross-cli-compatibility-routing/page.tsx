@@ -2,11 +2,11 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import confetti from 'canvas-confetti'
 import Reveal from '@/components/Reveal'
 import CodeBlock from '@/components/CodeBlock'
 import ProTip from '@/components/ProTip'
 import MastermindReactionsSection from '@/components/sections/MastermindReactionsSection'
+import { copyWithConfetti } from '@/lib/copyWithConfetti'
 import {
   FLOW_STEPS,
   LANE_CARDS,
@@ -49,16 +49,10 @@ function PromptButtons({ prompt }: { prompt: string }) {
   const [copied, setCopied] = useState(false)
   const magnet = useMagnet()
 
-  const handleCopy = useCallback(async () => {
+  const handleCopy = useCallback(async (event: React.MouseEvent<HTMLButtonElement>) => {
     try {
-      await navigator.clipboard.writeText(prompt)
+      await copyWithConfetti(prompt, event)
       setCopied(true)
-      confetti({
-        particleCount: 90,
-        spread: 70,
-        colors: ['#7C69C7', '#F5C3C6', '#FCF4EB'],
-        origin: { y: 0.55 },
-      })
       window.setTimeout(() => setCopied(false), 2200)
     } catch {
       // noop

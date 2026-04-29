@@ -5,11 +5,14 @@
  * Search for all [FILL IN] markers and replace them before publishing.
  *
  * Rules (also in CLAUDE.md):
+ * - Every session guide starts with "Claude Dangerously Skip Permissions"
  * - Any CodeBlock with [BRACKET] placeholders must have editable prop
  * - All external services must be linked (Vercel, Supabase, Resend, Porkbun, etc.)
  * - No em dashes anywhere — use "and", "then", or a period
  * - No raw code for participants to copy unless it requires zero customization
  * - Claude Code prompts in plain English only
+ * - Every prompt CodeBlock filename must include "prompt" so Copy Codex Only appears
+ * - The Copy Codex Only button copies `codex --yolo`, a blank line, then the Codex wording of the same prompt
  * - Bonus sections use the pink gradient hero card (see bottom of this file)
  * - Prep pages use session-3-prep.tsx as canonical template
  */
@@ -66,7 +69,20 @@ export default function Session_FILL_IN_Guide() {
           <h2 className="text-2xl font-bold text-[#FCF4EB]">[PART TITLE]</h2>
         </div>
 
-        <StepCard number={1} title="[STEP TITLE]">
+        <StepCard number={1} title="Claude Dangerously Skip Permissions">
+          <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+            Start the workshop by opening Claude Code in Dangerously Skip Permissions so you are not approving every small file edit during the build.
+          </p>
+          <CodeBlock
+            filename="Claude Code prompt"
+            code={`Start Claude Code in Dangerously Skip Permissions for this workshop session. Confirm you are in the right project folder before making changes.`}
+          />
+          <ProTip type="warning" className="mt-4">
+            Only use this in the workshop project folder you intend to edit.
+          </ProTip>
+        </StepCard>
+
+        <StepCard number={2} title="[STEP TITLE]">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
             [INSTRUCTIONS — plain English, link all service names]
           </p>
@@ -77,15 +93,15 @@ export default function Session_FILL_IN_Guide() {
           </ProTip>
         </StepCard>
 
-        <StepCard number={2} title="[STEP TITLE]">
+        <StepCard number={3} title="[STEP TITLE]">
           {/* Example: Claude Code prompt with NO placeholders — no editable needed */}
           <CodeBlock
-            filename="Paste into Claude Code"
+            filename="Claude Code prompt"
             code={`[PLAIN ENGLISH INSTRUCTION FOR CLAUDE — no brackets, no placeholders]`}
           />
         </StepCard>
 
-        <StepCard number={3} title="[STEP TITLE]">
+        <StepCard number={4} title="[STEP TITLE]">
           {/* Example: Claude Code prompt WITH placeholders — editable REQUIRED */}
           <p className="text-[#FCF4EB]/70 mb-2">
             Edit the prompt below, replace the text in brackets, then copy and paste into Claude Code:
@@ -94,7 +110,7 @@ export default function Session_FILL_IN_Guide() {
             Click anywhere in the box to edit it before copying.
           </ProTip>
           <CodeBlock
-            filename="Paste into Claude Code"
+            filename="Claude Code prompt"
             editable
             code={`[PROMPT WITH [PLACEHOLDER] VALUES THE USER MUST FILL IN]`}
           />
@@ -113,7 +129,7 @@ export default function Session_FILL_IN_Guide() {
           [OPTIONAL INTRO PARAGRAPH FOR THIS PART]
         </p>
 
-        <StepCard number={4} title="[STEP TITLE]">
+        <StepCard number={5} title="[STEP TITLE]">
           <ol className="space-y-2 text-[#FCF4EB]/70 list-decimal list-inside">
             <li>[STEP]</li>
             <li>[STEP]</li>

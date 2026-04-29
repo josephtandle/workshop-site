@@ -76,7 +76,7 @@ export default function Session8Guide() {
             Section 8
           </p>
           <h1 className="gradient-text text-5xl font-extrabold leading-tight mb-5 pb-1">
-            Safety and the Ultimate Web Fetch
+            Safety and WebFetch
           </h1>
           <p className="text-[#FCF4EB]/70 text-lg leading-relaxed mb-6">
             This session gives Claude a practical internet toolkit: fetch pages, scrape data, save visual proof,
@@ -103,9 +103,10 @@ export default function Session8Guide() {
           <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-6">
             <p className="text-[#FCF4EB]/50 text-xs uppercase tracking-widest mb-4 font-semibold">In This Session</p>
             <ol className="space-y-2">
-              <li><a href="#part-a" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">The Ultimate Web Fetch</a></li>
-              <li><a href="#tools" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">Tools Inside the Ultimate WebFetch</a></li>
-              <li><a href="#install" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">Installing Ultimate WebFetch</a></li>
+              <li><a href="#setup" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">Claude Dangerously Skip Permissions</a></li>
+              <li><a href="#part-a" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">WebFetch</a></li>
+              <li><a href="#tools" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">Tools Inside WebFetch</a></li>
+              <li><a href="#install" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">Install and Register WebFetch</a></li>
               <li><a href="#examples" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">Using WebFetch Examples</a></li>
               <li><a href="#use-cases" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">WebFetch Real-World Use Cases</a></li>
               <li><a href="#mlx-whisper" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">Local Whisper and Diarization</a></li>
@@ -115,19 +116,49 @@ export default function Session8Guide() {
       </div>
 
       <div className="max-w-3xl mx-auto px-6 py-10">
+        <section id="setup" className="mb-16">
+          <div className="mb-8">
+            <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Start Here</span>
+            <h2 className="text-3xl font-bold text-[#FCF4EB] mt-3">Claude Dangerously Skip Permissions</h2>
+          </div>
+
+          <StepCard number={1} title="Run Claude in the open terminal">
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              In your open terminal, start Claude in the workshop project folder before you install WebFetch.
+            </p>
+            <CodeBlock
+              filename="Terminal"
+              code={`claude --dangerously-skip-permissions`}
+            />
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              After Claude opens, paste this setup prompt:
+            </p>
+            <CodeBlock
+              filename="Claude Code prompt"
+              code={`We are working in the workshop project folder.
+
+Before making changes:
+1. Confirm which folder you are in.
+2. Stay inside this project folder.
+3. Pause and ask before deleting, overwriting, or moving anything outside this project.
+4. When I give you WebFetch install prompts, keep the steps simple and use commands that match my operating system.`}
+              editable
+            />
+          </StepCard>
+        </section>
 
         {/* ====================================================
-            THE ULTIMATE WEB FETCH
+            WEBFETCH
         ==================================================== */}
         <section id="part-a" className="mb-16">
           <div className="mb-8">
-            <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">The Ultimate Web Fetch</span>
+            <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">WebFetch</span>
             <h2 className="text-3xl font-bold text-[#FCF4EB] mt-3">Take the Internet Apart</h2>
           </div>
 
           <div className="bg-[linear-gradient(135deg,rgba(124,105,199,0.18),rgba(245,195,198,0.08))] border border-white/[0.10] rounded-2xl p-7 mb-6">
             <p className="text-[#FCF4EB]/82 text-lg leading-relaxed mb-5">
-              The Ultimate Web Fetch is an agent built by Joe Che which wraps some of the most useful Web Fetch
+              WebFetch is an agent built by Joe Che which wraps some of the most useful web fetch
               tools together, allowing you to easily take things from the internet and bring them into Claude in a
               clean, usable form.
             </p>
@@ -145,7 +176,7 @@ export default function Session8Guide() {
               { title: 'Scraping Data', desc: 'Pull page text, tables, links, prices, headlines, and repeated elements into structured output.' },
               { title: 'Grabbing Videos', desc: 'Download public or authorized video and audio for transcription, clipping, analysis, and archiving.' },
               { title: 'Moving Your Mouse and Clicking', desc: 'Have your computer move your mouse, click things for you, scroll pages, and reveal dynamic content when a real browser is required.' },
-              { title: 'One Ultimate Package', desc: 'A compilation of multiple skills in one Ultimate WebFetch workflow, so Claude can route the task instead of making you choose the tool by hand.' },
+              { title: 'One WebFetch Package', desc: 'A compilation of multiple skills in one WebFetch workflow, so Claude can route the task instead of making you choose the tool by hand.' },
             ].map(({ title, desc }) => (
               <div key={title} className="bg-white/[0.045] border border-white/[0.09] rounded-xl p-5">
                 <p className="text-[#FCF4EB] font-semibold text-base mb-2">{title}</p>
@@ -161,7 +192,7 @@ export default function Session8Guide() {
         <section id="tools" className="mb-16">
           <div className="mt-8 mb-4">
             <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Tool Stack</span>
-            <h2 className="text-2xl font-bold text-[#FCF4EB] mt-3 mb-3">Tools Inside the Ultimate WebFetch</h2>
+            <h2 className="text-2xl font-bold text-[#FCF4EB] mt-3 mb-3">Tools Inside WebFetch</h2>
             <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
               These are the practical commands Claude can use after the tool is installed and registered in your
               skills file. Each one is meant for a different kind of web task.
@@ -213,7 +244,7 @@ export default function Session8Guide() {
           <div className="mt-10 mb-4">
             <p className="text-[#FCF4EB] font-semibold mb-2">The engines underneath</p>
             <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
-              Ultimate Web Fetch is a router. It looks at the job and chooses the best local engine instead of
+              WebFetch is a router. It looks at the job and chooses the best local engine instead of
               making you remember which tool fits which situation.
             </p>
           </div>
@@ -299,18 +330,18 @@ export default function Session8Guide() {
         </section>
 
         {/* ====================================================
-            INSTALL ULTIMATE WEBFETCH
+            INSTALL WEBFETCH
         ==================================================== */}
         <section id="install" className="mb-16">
           <div className="flex items-center gap-3 mb-8">
             <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Install</span>
-            <h2 className="text-2xl font-bold text-[#FCF4EB]">Installing Ultimate WebFetch</h2>
+            <h2 className="text-2xl font-bold text-[#FCF4EB]">Install and Register WebFetch</h2>
           </div>
 
-          <StepCard number={1} title="Install it and register the skills">
+          <StepCard number={2} title="Install and register skills">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-              Start Claude Code in your terminal, copy this entire prompt, and paste it in. Claude will download
-              the public GitHub repo, install the dependencies, verify the tool, and add the skill notes to your
+              Paste this prompt into the Claude session you already opened. Claude will download the public GitHub repo,
+              install the dependencies, verify the tool, and add the skill notes to your
               <strong className="text-[#FCF4EB]"> skills.md</strong> or <strong className="text-[#FCF4EB]">SKILLS.md</strong> file.
             </p>
             <p className="text-[#FCF4EB]/60 text-sm leading-relaxed mb-4">
@@ -320,7 +351,7 @@ export default function Session8Guide() {
             </p>
             <CodeBlock
               filename="Claude Code prompt"
-              code={`Install Ultimate Web Fetch from GitHub and register its skills for this workspace.
+              code={`Install WebFetch from GitHub and register its skills for this workspace.
 
 Repository:
 https://github.com/josephtandle/ultimate-web-fetch
@@ -346,7 +377,7 @@ Do the following carefully:
 12. Test one fetch command. Prefer webfetch if the global command works; otherwise use node src/index.js:
    webfetch fetch https://example.com --format markdown
 13. Find my workspace skills.md or SKILLS.md file. If neither exists, create SKILLS.md in the most appropriate workspace/root folder.
-14. Append a section called "Ultimate Web Fetch" without deleting or rewriting any existing skills.
+14. Append a section called "WebFetch" without deleting or rewriting any existing skills.
 15. In that section, register these skills:
    - webfetch fetch: read a public webpage and return Markdown, text, JSON, or HTML
    - webfetch extract: pull specific elements with CSS selectors
@@ -360,7 +391,7 @@ Do the following carefully:
    Preferred command if global install worked: webfetch
    Fallback command if local path is needed: resolve the home-directory-relative path to the installed repo, then run node src/index.js.
 17. Do not store cookies, downloaded media, screenshots, cache files, or private tokens in skills.md or SKILLS.md.
-18. Report exactly what changed, where Ultimate Web Fetch was installed, whether the global webfetch command works, and whether preflight passed.`}
+18. Report exactly what changed, where WebFetch was installed, whether the global webfetch command works, and whether preflight passed.`}
               editable
             />
           </StepCard>
@@ -375,13 +406,13 @@ Do the following carefully:
             <h2 className="text-2xl font-bold text-[#FCF4EB]">Using WebFetch Examples</h2>
           </div>
 
-          <StepCard number={2} title="Fetch a competitor's pricing page">
+          <StepCard number={3} title="Fetch a competitor's pricing page">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-              Web Fetch is instant market research. Give Claude a URL and it will read the page and analyze it for you:
+              WebFetch is instant market research. Give Claude a URL and it will read the page and analyze it for you:
             </p>
             <CodeBlock
               filename="Claude Code prompt"
-              code={`Fetch the pricing page at [COMPETITOR URL] and summarize:
+              code={`Using WebFetch, fetch the pricing page at [masterminds_hq] and summarize:
 - What plans do they offer and at what price?
 - What is included in each plan?
 - What are they emphasizing as their main selling points?
@@ -390,14 +421,14 @@ Do the following carefully:
             />
           </StepCard>
 
-          <StepCard number={3} title="Research process before a sales call">
+          <StepCard number={4} title="Research process before a sales call">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Before a call, have Claude pull together everything publicly available about the person or company:
             </p>
             <CodeBlock
               filename="Claude Code prompt"
-              code={`I have a sales call in 30 minutes with [NAME] from [COMPANY].
-Fetch their website at [URL] and give me:
+              code={`I have a sales call in 30 minutes with Elon Musk from SpaceX.
+Using WebFetch, research their public website and give me:
 - What the company does in one sentence
 - Who their likely customers are
 - Any recent content or initiatives worth mentioning
@@ -406,23 +437,15 @@ Fetch their website at [URL] and give me:
             />
           </StepCard>
 
-          <StepCard number={4} title="Download Joe's Instagram video">
+          <StepCard number={5} title="Download an Instagram video">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-              Use Joe's public Instagram post as the class demo. Claude should still confirm authorization before
+              Use a public Instagram post as the class demo. Claude should still confirm authorization before
               using browser cookies or touching private media.
             </p>
             <CodeBlock
               filename="Claude Code prompt"
-              code={`Use Ultimate Web Fetch to download this public or authorized video:
-
-https://www.instagram.com/reel/DXjFr6DE37Q/
-
-Find the install path from my registered skills.md/SKILLS.md entry, or resolve it dynamically from my home directory under Tools/ultimate-web-fetch.
-Do not hard-code an absolute path.
-
-Create a downloads folder inside my home directory for this demo, run the media command with the correct shell syntax for my operating system, and tell me the exact file path that was saved.
-
-If the page requires browser cookies, stop first and ask me to confirm that I am authorized to access and download the content. Do not use cookies automatically.`}
+              code={`Using WebFetch, download this Instagram [my Instagram]:
+https://www.instagram.com/reel/DXjFr6DE37Q/`}
               editable
             />
             <ProTip type="warning" className="mt-4">
@@ -505,7 +528,7 @@ If the page requires browser cookies, stop first and ask me to confirm that I am
             <h2 className="text-2xl font-bold text-[#FCF4EB]">Install Local Whisper and Diarization</h2>
           </div>
 
-          <StepCard number={5} title="Install Whisper, model downloads, and pyannote">
+          <StepCard number={6} title="Install Whisper, model downloads, and pyannote">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Use one Claude prompt to set up local transcription for your operating system. On Apple Silicon Macs,
               Claude should use MLX Whisper. On Windows, Linux, or Intel Macs, Claude should use faster-whisper.
@@ -563,15 +586,15 @@ Do the following carefully:
             />
           </StepCard>
 
-          <StepCard number={6} title="Transcribe the downloaded video">
+          <StepCard number={7} title="Transcribe the downloaded video">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-              Point your local Whisper install at the media file you downloaded with Ultimate Web Fetch. Use the
+              Point your local Whisper install at the media file you downloaded with WebFetch. Use the
               small model for a live demo, then switch to the larger model when quality matters. The exact command
               depends on whether your installer chose MLX Whisper or faster-whisper.
             </p>
             <CodeBlock
               filename="Claude Code prompt"
-              code={`Use my local-whisper install to transcribe the media file I downloaded with Ultimate Web Fetch.
+              code={`Use my local-whisper install to transcribe the media file I downloaded with WebFetch.
 
 Media file:
 [PASTE THE FILE PATH HERE]

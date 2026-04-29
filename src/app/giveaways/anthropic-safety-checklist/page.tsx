@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
-import confetti from 'canvas-confetti'
+import { copyWithConfetti } from '@/lib/copyWithConfetti'
 
 const MASTERMIND_URL = 'https://www.mastermindshq.business'
 const JOE_EMAIL = 'joe@mastermindshq.business'
@@ -888,9 +888,9 @@ function MastermindCTA() {
 
 function InlineCopyButton({ text }: { text: string }) {
   const [copied, setCopied] = useState(false)
-  const handleCopy = useCallback(async () => {
+  const handleCopy = useCallback(async (event: React.MouseEvent<HTMLButtonElement>) => {
     try {
-      await navigator.clipboard.writeText(text)
+      await copyWithConfetti(text, event)
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
     } catch { /* noop */ }
@@ -909,16 +909,10 @@ function PromptCopyButton({ prompt }: { prompt: string }) {
   const [copied, setCopied] = useState(false)
   const magnet = useMagnet(0.22)
 
-  const handleCopy = useCallback(async () => {
+  const handleCopy = useCallback(async (event: React.MouseEvent<HTMLButtonElement>) => {
     try {
-      await navigator.clipboard.writeText(prompt)
+      await copyWithConfetti(prompt, event)
       setCopied(true)
-      confetti({
-        particleCount: 140,
-        spread: 85,
-        colors: ['#8B79D4', '#BDB3E8', '#F5C3C6', '#FCF4EB'],
-        origin: { y: 0.55 },
-      })
       setTimeout(() => setCopied(false), 2500)
     } catch { /* noop */ }
   }, [prompt])

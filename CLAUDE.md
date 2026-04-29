@@ -70,10 +70,16 @@ Deep-link where possible (e.g., Supabase SQL Editor, Resend API Keys page).
 ## Claude Code Prompts
 
 When writing Claude Code prompts for participants:
+- Every session guide must start with a setup step titled **Claude Dangerously Skip Permissions**
+- That first setup step must tell Claude Code users to start their session in Dangerously Skip Permissions before they begin the workshop
 - Write them in plain English, not code
 - Structure as clear numbered or bulleted instructions
 - Include all context Claude needs (table names, field names, behavior on edge cases)
 - Never require participants to understand what the prompt is doing technically
+- Every participant prompt block must include the shared `Copy Codex Only` button for Codex members
+- The Codex version must start with `codex --yolo`, then a blank line, then the Codex wording of the same prompt
+- Use the shared `CodeBlock` component for prompts so the format stays consistent across all pages
+- Prompt block filenames must include the word `prompt` so the Codex copy button appears automatically
 
 ---
 

@@ -4,6 +4,7 @@ import { useState, useRef, useCallback } from 'react'
 import Link from 'next/link'
 import confetti from 'canvas-confetti'
 import CodeBlock from '@/components/CodeBlock'
+import { copyWithConfetti } from '@/lib/copyWithConfetti'
 
 // ─── Hook Lab prompt (embedded constant) ─────────────────────────────────────
 const HOOK_LAB_PROMPT = `Paste this entire file into Claude.ai, then paste your brand voice profile directly below it. Claude will run the Hook Lab and return five scored hooks plus winners, testing guidance, and a personal teaching note.
@@ -738,23 +739,17 @@ export default function HookWriterPage() {
     if (selected) saveToStorage(selected, next)
   }
 
-  async function handleCopy(e: React.MouseEvent<HTMLButtonElement>) {
+  async function handleCopy(event: React.MouseEvent<HTMLButtonElement>) {
     const text = buildCopyText(form)
-    await navigator.clipboard.writeText(text)
-    confetti({
-      particleCount: 120,
-      spread: 80,
-      origin: { x: e.clientX / window.innerWidth, y: e.clientY / window.innerHeight },
-      colors: ['#7C69C7', '#9D8FE0', '#F5C3C6', '#FCF4EB'],
-    })
+    await copyWithConfetti(text, event)
     setPromptText(text)
     setShowPrompt(true)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }
 
-  async function handlePromptCopy() {
-    await navigator.clipboard.writeText(promptText)
+  async function handlePromptCopy(event: React.MouseEvent<HTMLButtonElement>) {
+    await copyWithConfetti(promptText, event)
     setPromptCopied(true)
     setTimeout(() => setPromptCopied(false), 2000)
   }
