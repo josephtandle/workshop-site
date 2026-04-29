@@ -86,6 +86,8 @@ When writing Claude Code prompts for participants:
 - Button taxonomy: the normal `Copy` button is the primary action and uses a flatter dark-purple glass treatment; `Copy Codex Only` is secondary, light gray, and visually quieter
 - Copy buttons should have a subtle magnetic hover effect that follows the pointer slightly without shifting layout or feeling jumpy
 - Every copy action must use the shared copy helper so confetti fires from the clicked button location
+- Session guide visuals should reuse the Masterminds homepage language: particle field, purple/rose glass, shimmer lines, soft glow borders, and polished hover states
+- Step number indicators should remain prominent and easy to scan, with slightly larger circular badges than plain list numbering
 
 ---
 

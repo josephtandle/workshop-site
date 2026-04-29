@@ -224,31 +224,46 @@ Do the following carefully:
             <h2 className="text-3xl font-bold text-[#FCF4EB] mt-3">Take the Internet Apart</h2>
           </div>
 
-          <div className="bg-[linear-gradient(135deg,rgba(124,105,199,0.18),rgba(245,195,198,0.08))] border border-white/[0.10] rounded-2xl p-7 mb-6">
-            <p className="text-[#FCF4EB]/82 text-lg leading-relaxed mb-5">
-              WebFetch is an agent built by Joe Che which wraps some of the most useful web fetch
-              tools together, allowing you to easily take things from the internet and bring them into Claude in a
-              clean, usable form.
-            </p>
-            <p className="text-[#FCF4EB]/65 leading-relaxed">
-              Think of it as a workshop-grade internet toolkit. It helps Claude choose the right method for the job:
-              quick page reading when the site is simple, a real browser when the site is dynamic, media downloading
-              when you are allowed to save a video, and explicit safety checks when cookies, private pages, or browser
-              control are involved.
-            </p>
+          <div className="webfetch-hero-glass rounded-2xl p-7 mb-7">
+            <div className="relative z-10">
+              <div className="flex items-center gap-2 mb-5">
+                <span className="h-2 w-2 rounded-full bg-[#9D8FE0] shadow-[0_0_18px_rgba(157,143,224,0.75)]" />
+                <span className="text-[10px] uppercase tracking-[0.22em] text-[#FCF4EB]/42 font-semibold">
+                  Local Internet Toolkit
+                </span>
+              </div>
+              <p className="text-[#FCF4EB]/86 text-lg leading-relaxed mb-5">
+                WebFetch is an agent built by Joe Che which wraps some of the most useful web fetch
+                tools together, allowing you to easily take things from the internet and bring them into Claude in a
+                clean, usable form.
+              </p>
+              <p className="text-[#FCF4EB]/64 leading-relaxed">
+                Think of it as a workshop-grade internet toolkit. It helps Claude choose the right method for the job:
+                quick page reading when the site is simple, a real browser when the site is dynamic, media downloading
+                when you are allowed to save a video, and explicit safety checks when cookies, private pages, or browser
+                control are involved.
+              </p>
+            </div>
           </div>
 
           <p className="text-[#FCF4EB] font-semibold mb-4">This includes:</p>
           <div className="grid sm:grid-cols-2 gap-4">
             {[
-              { title: 'Scraping Data', desc: 'Pull page text, tables, links, prices, headlines, and repeated elements into structured output.' },
-              { title: 'Grabbing Videos', desc: 'Download public or authorized video and audio for transcription, clipping, analysis, and archiving.' },
-              { title: 'Moving Your Mouse and Clicking', desc: 'Have your computer move your mouse, click things for you, scroll pages, and reveal dynamic content when a real browser is required.' },
-              { title: 'One WebFetch Package', desc: 'A compilation of multiple skills in one WebFetch workflow, so Claude can route the task instead of making you choose the tool by hand.' },
-            ].map(({ title, desc }) => (
-              <div key={title} className="bg-white/[0.045] border border-white/[0.09] rounded-xl p-5">
-                <p className="text-[#FCF4EB] font-semibold text-base mb-2">{title}</p>
-                <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">{desc}</p>
+              { icon: 'research' as const, title: 'Scraping Data', desc: 'Pull page text, tables, links, prices, headlines, and repeated elements into structured output.' },
+              { icon: 'monitoring' as const, title: 'Grabbing Videos', desc: 'Download public or authorized video and audio for transcription, clipping, analysis, and archiving.' },
+              { icon: 'form' as const, title: 'Moving Your Mouse and Clicking', desc: 'Have your computer move your mouse, click things for you, scroll pages, and reveal dynamic content when a real browser is required.' },
+              { icon: 'pricing' as const, title: 'One WebFetch Package', desc: 'A compilation of multiple skills in one WebFetch workflow, so Claude can route the task instead of making you choose the tool by hand.' },
+            ].map(({ icon, title, desc }) => (
+              <div key={title} className="webfetch-feature-card group rounded-xl p-5">
+                <div className="relative z-10 flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg flex items-center justify-center text-[#CFC5FF] bg-[#7C69C7]/16 border border-[#9D8FE0]/24 group-hover:bg-[#7C69C7]/26 transition-colors">
+                    <WebFetchUseCaseIcon type={icon} />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-[#FCF4EB] font-semibold text-base mb-2">{title}</p>
+                    <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">{desc}</p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>

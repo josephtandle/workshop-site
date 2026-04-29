@@ -33,11 +33,8 @@ function MagneticCopyButton({ children, className = '', variant, ...props }: Mag
   const [offset, setOffset] = useState({ x: 0, y: 0 })
   const variantClass =
     variant === 'primary'
-      ? `bg-[#5E4EA6]/80 hover:bg-[#6F5FBC]/85 border border-white/[0.16]
-        text-[#FCF4EB] shadow-[inset_0_1px_0_rgba(255,255,255,0.18)]
-        backdrop-blur-sm`
-      : `bg-white/[0.06] hover:bg-white/[0.10] border border-white/[0.14]
-        text-[#FCF4EB]/55 hover:text-[#FCF4EB]/75`
+      ? 'copy-button-glass copy-button-primary'
+      : 'copy-button-glass copy-button-secondary'
 
   const handleMouseMove = (event: MouseEvent<HTMLButtonElement>) => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
@@ -59,7 +56,7 @@ function MagneticCopyButton({ children, className = '', variant, ...props }: Mag
       {...props}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className={`px-3 py-1 rounded-md text-xs font-semibold transition-[transform,background-color,border-color,color] duration-150 ease-out select-none ${variantClass} ${className}`}
+      className={`px-3.5 py-1.5 text-xs font-semibold transition-[transform,background-color,border-color,color,box-shadow] duration-150 ease-out select-none ${variantClass} ${className}`}
       style={{ transform: `translate3d(${offset.x}px, ${offset.y}px, 0)`, ...props.style }}
     >
       {children}

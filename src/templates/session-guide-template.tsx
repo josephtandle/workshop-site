@@ -19,6 +19,8 @@
  * - Normal Copy is the primary flat dark-purple glass button; Copy Codex Only is secondary light gray
  * - Copy buttons should have a subtle magnetic hover effect that follows the pointer slightly without shifting layout
  * - Every copy action must use the shared copy helper so confetti starts from the clicked button
+ * - Session guide visuals reuse the homepage language: particles, purple/rose glass, shimmer lines, glow borders, and polished hover states
+ * - Step number indicators should use prominent circular badges that are larger than plain list numbering
  * - Bonus sections use the pink gradient hero card (see bottom of this file)
  * - Prep pages use session-3-prep.tsx as canonical template
  */

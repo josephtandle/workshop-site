@@ -8,10 +8,10 @@ interface StepCardProps {
 
 export default function StepCard({ number, title, children }: StepCardProps) {
   return (
-    <div className="group card-hover card-shimmer bg-white/[0.05] border border-white/[0.10] rounded-2xl p-6 my-4">
-      <div className="flex items-start gap-4">
+    <div className="group card-hover card-shimmer bg-white/[0.055] border border-white/[0.11] rounded-2xl p-6 my-4 backdrop-blur-sm">
+      <div className="flex items-start gap-5">
         <div
-          className="number-glow flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold"
+          className="number-glow flex-shrink-0 w-11 h-11 rounded-full flex items-center justify-center text-base font-bold"
           style={{ background: 'rgba(124, 105, 199, 0.20)', color: '#7C69C7', border: '1.5px solid rgba(124, 105, 199, 0.35)' }}
         >
           {number}
