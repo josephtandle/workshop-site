@@ -666,38 +666,14 @@ Handle the common paths for me:
             </div>
           </div>
 
-          <StepCard number={8} title="Install GuardDog in Claude Code">
+          <StepCard number={8} title="Install GuardDog">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-              Paste this into Claude Code. Claude should run the install, run setup, and confirm the command is ready
-              before you use GuardDog to inspect packages.
+              Use the Copy Claude Code button for Claude Code. Use the Copy Codex Only button for Codex. Both versions
+              should install GuardDog, run setup, and confirm the command is ready before you use it to inspect packages.
             </p>
             <CodeBlock
               filename="Claude Code prompt"
               code={`Install GuardDog and confirm it is ready to use on this computer.
-
-Run these commands:
-npm install -g github:josephtandle/guardog
-guardog setup
-
-After setup:
-1. Confirm the guardog command is available.
-2. Tell me where npm installed the global command.
-3. Run a harmless version or help check if GuardDog supports one.
-4. Explain how I should use GuardDog before installing unfamiliar packages.`}
-              editable
-            />
-          </StepCard>
-
-          <StepCard number={9} title="Install GuardDog in Codex">
-            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-              Codex members can use the same install flow, but keep this separate copy block so the prompt opens the
-              Codex session in the right mode first.
-            </p>
-            <CodeBlock
-              filename="Codex prompt"
-              code={`codex --yolo
-
-Install GuardDog and confirm it is ready to use on this computer.
 
 Run these commands:
 npm install -g github:josephtandle/guardog
@@ -728,9 +704,11 @@ After setup:
               <h2 className="gradient-text text-3xl font-extrabold mt-3 mb-4 pb-1">
                 You have now unlocked the system.
               </h2>
-              <p className="text-[#FCF4EB]/72 text-lg leading-relaxed">
-                Any information on the internet is now easily in your hands.
-              </p>
+              <div className="space-y-3 text-[#FCF4EB]/72 text-lg leading-relaxed">
+                <p>We now have a system.</p>
+                <p>We have our first line of defense to protect us.</p>
+                <p>We have a way to easily get any information from the internet into your hands.</p>
+              </div>
             </div>
           </div>
         </section>

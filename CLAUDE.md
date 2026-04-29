@@ -80,6 +80,7 @@ When writing Claude Code prompts for participants:
 - Do not use language that talks down to students. Never call prompts, users, or steps "dummy-proof" in participant-facing copy.
 - Put user-editable variables in square brackets, such as `[https://www.example.com]`, `[person name]`, or `[company name]`
 - Every participant prompt block must include the shared `Copy Codex Only` button for Codex members
+- Every participant prompt block must show a `Copy Claude Code` button that copies the exact Claude Code prompt beside it
 - The Codex version must start with `codex --yolo`, then a blank line, then the Codex wording of the same prompt
 - Use the shared `CodeBlock` component for prompts so the format stays consistent across all pages
 - Prompt block filenames must include the word `prompt` so the Codex copy button appears automatically

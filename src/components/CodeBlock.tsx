@@ -69,6 +69,8 @@ export default function CodeBlock({ code, language, filename, editable, codexPro
   const [codexCopied, setCodexCopied] = useState(false)
   const [value, setValue] = useState(code)
   const showCodexCopy = codexPrompt ?? filename?.toLowerCase().includes('prompt') ?? false
+  const copyLabel = showCodexCopy ? 'Copy Claude Code' : 'Copy'
+  const copiedLabel = showCodexCopy ? 'Copied Claude Code!' : 'Copied!'
 
   const handleCopy = async (event: MouseEvent<HTMLButtonElement>) => {
     try {
@@ -113,7 +115,7 @@ export default function CodeBlock({ code, language, filename, editable, codexPro
             </span>
           )}
           <MagneticCopyButton onClick={handleCopy} variant="primary">
-            {copied ? 'Copied!' : 'Copy'}
+            {copied ? copiedLabel : copyLabel}
           </MagneticCopyButton>
         </div>
       </div>

@@ -15,6 +15,7 @@
  * - Prompts must be complete and respectful: handle missing files, multiple matches, operating systems, and previous-step failures
  * - Never use language that talks down to students, including "dummy-proof" in participant-facing copy
  * - Every prompt CodeBlock filename must include "prompt" so Copy Codex Only appears
+ * - Every prompt CodeBlock shows Copy Claude Code for the exact Claude Code prompt beside it
  * - The Copy Codex Only button copies `codex --yolo`, a blank line, then the Codex wording of the same prompt
  * - Normal Copy is the primary flat dark-purple glass button; Copy Codex Only is secondary light gray
  * - Copy buttons should have a subtle magnetic hover effect that follows the pointer slightly without shifting layout
