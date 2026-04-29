@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react'
 
 export const metadata = {
-  title: 'Anthropic Safety Checklist',
-  description: 'Essential safety checklist for deploying Claude Code and autonomous agents in production.',
+  title: 'Anthropic Ban Risk Audit Prompt',
+  description: 'A thorough codebase audit prompt for checking Claude, profile switching, human operation, and API routing ban risk.',
 }
 
 export default function AnthropicSafetyLayout({ children }: { children: ReactNode }) {
