@@ -595,20 +595,27 @@ Do the following carefully:
             </p>
             <CodeBlock
               filename="Claude Code prompt"
-              code={`Use my local-whisper install to transcribe the video I downloaded with WebFetch.
+              code={`Transcribe the Instagram video I downloaded with WebFetch.
 
 Source Instagram URL:
 [https://www.instagram.com/p/DXjFr6DE37Q/]
 
-Media file:
-[PASTE THE FILE PATH HERE]
-
-Use the notes file created during install to choose the correct command for my operating system and Whisper backend.
-First run the fast/small model for a live demo.
-Then show me the command for the larger model.
-Save the transcript and SRT file next to the media file.
-If pyannote diarization is ready, also create a speaker-labeled version.
-If pyannote model access is not ready, transcribe without speaker labels and tell me exactly what is missing.`}
+Make this one-click and dummy-proof:
+1. Find the media file WebFetch downloaded for the source URL above.
+2. Search the normal download locations first:
+   - this project folder
+   - my Downloads folder
+   - any WebFetch output, media, downloads, or cache folder inside my home directory
+3. If there is exactly one likely matching media file, use it.
+4. If there are multiple likely files, show me the filenames, sizes, and modified times, then ask me to choose.
+5. If no matching file exists, use WebFetch to download the source Instagram URL first, then continue.
+6. Use the notes file created during the local-whisper install to choose the correct command for my operating system and Whisper backend.
+7. First run the fast/small model for a live demo.
+8. Then show me the command for the larger model.
+9. Save the transcript and SRT file next to the media file.
+10. If pyannote diarization is ready, also create a speaker-labeled version.
+11. If pyannote model access is not ready, transcribe without speaker labels and tell me exactly what is missing.
+12. Finish by reporting the source URL, media file path, transcript path, SRT path, and whether speaker labels were created.`}
               editable
             />
           </StepCard>

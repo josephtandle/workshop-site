@@ -6,15 +6,15 @@ const copyColors = ['#7C69C7', '#9D8FE0', '#F5C3C6', '#FCF4EB']
 
 type CopyClick = {
   clientX: number
+  clientY: number
   currentTarget: EventTarget & Element
 }
 
 function getOrigin(event?: CopyClick) {
   if (!event || typeof window === 'undefined') return { y: 0.72 }
 
-  const rect = event.currentTarget.getBoundingClientRect()
   const x = Math.min(0.98, Math.max(0.02, event.clientX / window.innerWidth))
-  const y = Math.min(0.98, Math.max(0.02, (rect.top - 10) / window.innerHeight))
+  const y = Math.min(0.98, Math.max(0.02, (event.clientY - 12) / window.innerHeight))
 
   return { x, y }
 }

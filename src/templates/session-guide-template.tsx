@@ -12,8 +12,11 @@
  * - No em dashes anywhere — use "and", "then", or a period
  * - No raw code for participants to copy unless it requires zero customization
  * - Claude Code prompts in plain English only
+ * - Prompts must be dummy-proof: handle missing files, multiple matches, operating systems, and previous-step failures
  * - Every prompt CodeBlock filename must include "prompt" so Copy Codex Only appears
  * - The Copy Codex Only button copies `codex --yolo`, a blank line, then the Codex wording of the same prompt
+ * - Normal Copy is the primary dark-purple button; Copy Codex Only is secondary light gray
+ * - Every copy action must use the shared copy helper so confetti starts from the clicked button
  * - Bonus sections use the pink gradient hero card (see bottom of this file)
  * - Prep pages use session-3-prep.tsx as canonical template
  */

@@ -76,11 +76,14 @@ When writing Claude Code prompts for participants:
 - Structure as clear numbered or bulleted instructions
 - Include all context Claude needs (table names, field names, behavior on edge cases)
 - Never require participants to understand what the prompt is doing technically
+- Make prompts dummy-proof: think through missing files, multiple matches, operating systems, previous-step failures, and what the agent should do next instead of leaving placeholders like "paste file here"
 - Put user-editable variables in square brackets, such as `[https://www.example.com]`, `[person name]`, or `[company name]`
 - Every participant prompt block must include the shared `Copy Codex Only` button for Codex members
 - The Codex version must start with `codex --yolo`, then a blank line, then the Codex wording of the same prompt
 - Use the shared `CodeBlock` component for prompts so the format stays consistent across all pages
 - Prompt block filenames must include the word `prompt` so the Codex copy button appears automatically
+- Button taxonomy: the normal `Copy` button is the primary action and uses the darker purple treatment; `Copy Codex Only` is secondary, light gray, and visually quieter
+- Every copy action must use the shared copy helper so confetti fires from the clicked button location
 
 ---
 

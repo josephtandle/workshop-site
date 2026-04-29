@@ -74,9 +74,9 @@ export default function CodeBlock({ code, language, filename, editable, codexPro
           )}
           <button
           onClick={handleCopy}
-          className="px-3 py-1 rounded-md text-xs font-medium
-            bg-white/[0.08] hover:bg-white/[0.14] border border-white/[0.10]
-            text-[#FCF4EB]/60 hover:text-[#FCF4EB]/90
+          className="px-3 py-1 rounded-md text-xs font-semibold
+            bg-[#5E4EA6] hover:bg-[#6F5FBC] border border-[#8B7ADB]/45
+            text-[#FCF4EB] shadow-sm shadow-black/20
             transition-all duration-150 select-none"
         >
           {copied ? 'Copied!' : 'Copy'}
@@ -99,8 +99,8 @@ export default function CodeBlock({ code, language, filename, editable, codexPro
               <button
                 onClick={handleCodexCopy}
                 className="px-3 py-1.5 rounded-md text-xs font-semibold
-                  bg-[#7C69C7]/25 hover:bg-[#7C69C7]/35 border border-[#7C69C7]/40
-                  text-[#CFC5FF] hover:text-[#FCF4EB] shadow-lg shadow-black/20
+                  bg-white/[0.06] hover:bg-white/[0.10] border border-white/[0.14]
+                  text-[#FCF4EB]/55 hover:text-[#FCF4EB]/75
                   transition-all duration-150 select-none"
               >
                 {codexCopied ? 'Copied Codex!' : 'Copy Codex Only'}
@@ -120,8 +120,8 @@ export default function CodeBlock({ code, language, filename, editable, codexPro
               <button
                 onClick={handleCodexCopy}
                 className="px-3 py-1.5 rounded-md text-xs font-semibold
-                  bg-[#7C69C7]/25 hover:bg-[#7C69C7]/35 border border-[#7C69C7]/40
-                  text-[#CFC5FF] hover:text-[#FCF4EB] shadow-lg shadow-black/20
+                  bg-white/[0.06] hover:bg-white/[0.10] border border-white/[0.14]
+                  text-[#FCF4EB]/55 hover:text-[#FCF4EB]/75
                   transition-all duration-150 select-none"
               >
                 {codexCopied ? 'Copied Codex!' : 'Copy Codex Only'}
