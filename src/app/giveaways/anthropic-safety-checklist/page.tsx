@@ -1,451 +1,954 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
-import Link from 'next/link'
-import CodeBlock from '@/components/CodeBlock'
-import Reveal from '@/components/Reveal'
-import ProTip from '@/components/ProTip'
-import { celebrate as launchConfetti } from '@/lib/celebrate'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { motion } from 'framer-motion'
+import confetti from 'canvas-confetti'
 
-const checklistItems = [
-  {
-    id: 'interactive-only',
-    title: 'Keep Claude Code human-operated',
-    risk:
-      'Do not use a personal Claude login as the engine for unattended jobs, bots, cron tasks, or agent daemons.',
-    fix:
-      'Use Claude Code interactively with a human at the keyboard. If you need background automation, move that workflow to API-backed infrastructure.',
-  },
-  {
-    id: 'oauth-agents',
-    title: 'Do not use OAuth/session credentials to run agents',
-    risk:
-      'Personal Claude session access is not a safe foundation for running autonomous agents or productized workflows.',
-    fix:
-      'Use Anthropic API keys, or an approved provider path such as Anthropic Console, Bedrock, Vertex, or Foundry when you need real automation.',
-  },
-  {
-    id: 'wrappers',
-    title: 'Do not wrap Claude or the CLI inside your own product shell',
-    risk:
-      'If your app or service is effectively a hidden browser shell, wrapper, or relay around Claude Code or the consumer product, that is a bad pattern.',
-    fix:
-      'Build your product on supported APIs and provider abstractions instead of tunneling a consumer Claude session through your own interface.',
-  },
-  {
-    id: 'account-switching',
-    title: 'Never rotate or switch between accounts to keep automation alive',
-    risk:
-      'Account switching, token sync, or other multi-account workarounds create exactly the kind of signals you do not want.',
-    fix:
-      'Delete account-rotation logic. One human account for human use, API credentials for automation.',
-  },
-  {
-    id: 'myos-safe',
-    title: 'Use MyOS with Claude Code the safe way',
-    risk:
-      'MyOS becomes risky when it silently turns Claude Code into an unattended backend or routes product/background work through a personal Claude session.',
-    fix:
-      'Interactive MyOS + Claude Code is fine for human-guided work. Product paths, bots, and background flows should run through API-backed providers instead.',
-  },
-  {
-    id: 'credits',
-    title: 'Do not treat extra usage credits like real automation budget',
-    risk:
-      'Those credits can disappear extremely fast under agentic workloads. Burning through $20 in a few minutes is easy if you treat consumer usage like API infrastructure.',
-    fix:
-      'Use consumer usage for interactive work only. Budget automation separately with API pricing, monitoring, and hard limits.',
-  },
-] as const
+const MASTERMIND_URL = 'https://www.mastermindshq.business'
+const JOE_EMAIL = 'joe@mastermindshq.business'
 
-const saferPatterns = [
-  'Human-operated Claude Code for coding, debugging, and guided repo work',
-  'Anthropic API keys for real automation and background execution',
-  'Provider-backed deployments through Anthropic Console, Bedrock, Vertex, or Foundry when teams need scale or governance',
-  'MyOS routing that keeps consumer Claude use interactive and moves automation to API-backed providers',
-] as const
-
-const sourceLinks = [
+const COMPATIBLE_TOOLS = [
   {
-    label: 'Anthropic Consumer Terms',
-    href: 'https://www.anthropic.com/legal/consumer-terms',
+    name: 'Claude Code',
+    logo: '◆',
+    badge: 'Primary',
+    detail: 'Best for the full repository and local setup audit.',
   },
   {
-    label: 'Using agents according to Anthropic usage policy',
-    href: 'https://support.claude.com/en/articles/12005017-using-agents-according-to-our-usage-policy',
+    name: 'Codex',
+    logo: '⬡',
+    badge: 'Works',
+    detail: 'Use it to inspect code, configs, scripts, and automation paths.',
   },
   {
-    label: 'Claude Code enterprise deployment overview',
-    href: 'https://code.claude.com/docs/en/third-party-integrations',
+    name: 'Gemini CLI',
+    logo: '✦',
+    badge: 'Works',
+    detail: 'Use it to run the same structured safety review.',
   },
-] as const
+]
 
-const auditPrompt = `Audit my current Claude / Claude Code / MyOS setup for Anthropic policy and enforcement risk.
+const AUDIT_AREAS = [
+  {
+    name: 'Human Operation',
+    count: 5,
+    checks: [
+      {
+        name: 'Human-visible usage',
+        desc: 'Confirms Claude Code is used by a human in the foreground, not as a hidden backend.',
+      },
+      {
+        name: 'No unattended jobs',
+        desc: 'Looks for cron, launchd, CI, queues, daemons, and scripts that run Claude without a human.',
+      },
+      {
+        name: 'No product shell',
+        desc: 'Flags browser wrappers, relays, embedded terminals, or app interfaces that hide consumer Claude use.',
+      },
+      {
+        name: 'Operator approval points',
+        desc: 'Checks that risky actions require a human decision before execution.',
+      },
+      {
+        name: 'Clear usage boundary',
+        desc: 'Separates personal assistant work from automation, customer workflows, and production jobs.',
+      },
+    ],
+  },
+  {
+    name: 'Profile and Account Risk',
+    count: 6,
+    checks: [
+      {
+        name: 'Do not switch profiles',
+        desc: 'Finds account rotation, profile switching, token sync, failover accounts, and session swapping.',
+      },
+      {
+        name: 'One human account',
+        desc: 'Checks that each human uses their own account only for human-operated work.',
+      },
+      {
+        name: 'No shared session files',
+        desc: 'Looks for copied browser profiles, exported cookies, synced OAuth files, and shared Claude sessions.',
+      },
+      {
+        name: 'No account exhaustion logic',
+        desc: 'Flags logic that switches users after rate limits, caps, bans, or usage limits.',
+      },
+      {
+        name: 'No device laundering',
+        desc: 'Checks for multi-device or multi-browser tricks meant to keep consumer usage alive.',
+      },
+      {
+        name: 'No identity masking',
+        desc: 'Flags proxies, profile scripts, or automation designed to make one operator look like many humans.',
+      },
+    ],
+  },
+  {
+    name: 'API Routing',
+    count: 6,
+    checks: [
+      {
+        name: 'Automated tasks go to APIs',
+        desc: 'Verifies bots, agents, queues, scheduled jobs, and product workflows use provider APIs.',
+      },
+      {
+        name: 'No OAuth as infrastructure',
+        desc: 'Flags personal Claude OAuth, local sessions, and browser cookies used as automation credentials.',
+      },
+      {
+        name: 'Provider-backed execution',
+        desc: 'Checks for Anthropic API, Bedrock, Vertex, Foundry, or another approved provider path.',
+      },
+      {
+        name: 'Budget and rate limits',
+        desc: 'Looks for API spend controls, quotas, retry limits, and alerting on automated paths.',
+      },
+      {
+        name: 'Credential separation',
+        desc: 'Separates human auth, development keys, production keys, and customer-facing automation.',
+      },
+      {
+        name: 'MyOS dispatch safety',
+        desc: 'Confirms shared routing sends model work through the intended provider lane.',
+      },
+    ],
+  },
+  {
+    name: 'Codebase Evidence',
+    count: 7,
+    checks: [
+      {
+        name: 'Scripts and package commands',
+        desc: 'Reviews package scripts, shell scripts, Makefiles, task runners, and agent launchers.',
+      },
+      {
+        name: 'Environment variables',
+        desc: 'Inspects variable names for Claude OAuth, sessions, browser profile paths, API keys, and provider routing.',
+      },
+      {
+        name: 'Scheduled automation',
+        desc: 'Checks cron, launchd plists, GitHub Actions, workers, queues, and deployment hooks.',
+      },
+      {
+        name: 'Browser control',
+        desc: 'Flags CDP, Playwright, Puppeteer, browser profile reuse, and automated Claude web sessions.',
+      },
+      {
+        name: 'LLM routers',
+        desc: 'Inspects model dispatchers, provider abstractions, fallback chains, and direct provider calls.',
+      },
+      {
+        name: 'Agent frameworks',
+        desc: 'Reviews autonomous loops, retries, memory workers, task agents, and background orchestration.',
+      },
+      {
+        name: 'Documentation drift',
+        desc: 'Checks README files, handoffs, recipes, and runbooks for instructions that encourage unsafe use.',
+      },
+    ],
+  },
+]
 
-Check this repository and my local setup for any of the following patterns:
-1. Using a personal Claude login, OAuth token, local session, or consumer auth to power unattended agents, bots, cron jobs, daemons, or product workflows
-2. Wrapping Claude Code or the Claude CLI inside a third-party shell, browser wrapper, gateway, router, relay, or embedded terminal product
-3. Account switching, token sync, multi-account failover, or any logic designed to rotate between Claude accounts
-4. MyOS or local tools routing background work through consumer Claude sessions instead of API-backed providers
-5. Workflows that assume bonus usage credits are a safe budget for automation
+const THE_PROMPT = `You are my Anthropic safety audit agent.
 
-Search for obvious files, scripts, env vars, cron jobs, launch agents, and code paths related to:
-- switch-claude-account
-- token-sync
-- claude-router
-- consumer OAuth/session reuse
-- unattended claude calls
-- background bots using Claude Code
-- MyOS paths that call Claude outside normal interactive use
+Audit this codebase and local project setup for ban risk. Your job is to tell me how likely I am to get banned or restricted based on my current code, scripts, credentials, workflows, and operating habits.
 
-Then produce:
-- a short risk summary
-- a table or bullet list of findings by severity
-- the exact files or jobs involved
-- the safer replacement for each risky pattern
-- a “safe to keep” list for interactive human-operated workflows
+Use this standard:
+- Low risk means Claude Code or consumer Claude is used by a human in the foreground, and automated work is routed to supported APIs.
+- Medium risk means there are unclear boundaries, weak documentation, risky scripts that are not currently active, or automation paths that need refactoring before they scale.
+- High risk means the project appears to use consumer Claude, Claude Code, Claude web sessions, OAuth tokens, browser profiles, account switching, or personal sessions as infrastructure for bots, agents, product features, scheduled jobs, or unattended automation.
 
-Do not be vague. Be explicit and conservative.`
+Non-negotiable safety protocols to enforce:
+1. Do not switch profiles.
+2. Ensure everything done through consumer Claude or Claude Code is done by a human.
+3. Direct any automated tasks to the APIs.
+
+Inspect the codebase for these specific risks:
+
+1. Profile switching and account rotation
+- Search for scripts, commands, docs, or config that switch Claude accounts, rotate profiles, sync tokens, copy sessions, load different browser profiles, or fail over between accounts.
+- Look for names like switch-profile, switch-account, account-rotation, token-sync, oauth-sync, profile-sync, session-sync, browser-profile, claude-profile, rate-limit-fallback, quota-fallback, and account-pool.
+- Flag any logic that tries to keep work alive by changing users, sessions, accounts, devices, browser profiles, or identity surfaces.
+- Explain why this is risky and what to delete or replace.
+
+2. Human-operated use versus unattended automation
+- Identify every place Claude, Claude Code, the Claude CLI, a browser, or an LLM router can be invoked.
+- Classify each path as human-operated, semi-automated with human approval, or unattended.
+- Check package scripts, shell scripts, cron jobs, launchd agents, GitHub Actions, CI, queues, workers, daemons, webhooks, background jobs, and long-running agents.
+- Flag anything that uses a personal Claude session for background work, autonomous loops, retries, customer-facing features, scraping, content generation, monitoring, or scheduled execution.
+- Confirm that human-operated use stays visible, intentional, and under direct human control.
+
+3. API routing for automation
+- Find all automated tasks that call an AI model or model router.
+- Verify that those automated tasks use supported APIs such as Anthropic API, Anthropic Console, AWS Bedrock, Google Vertex AI, Foundry, OpenAI API, or another explicit provider API.
+- Flag any automated task that uses OAuth, browser cookies, local Claude sessions, copied credentials, consumer app sessions, or Claude Code as a backend.
+- Recommend a concrete API-backed replacement for each unsafe automation path.
+
+4. Consumer product wrapping
+- Look for any product shell, gateway, relay, browser wrapper, embedded terminal, proxy, hidden iframe, CLI wrapper, or local service that makes consumer Claude or Claude Code appear inside another app.
+- Flag patterns where users, customers, teammates, or background jobs indirectly access a personal Claude login.
+- Recommend replacing those paths with a proper API endpoint, provider abstraction, queue worker, or approved integration.
+
+5. Credential and environment audit
+- Review .env examples, config files, CI secrets names, launch scripts, documentation, and local setup instructions.
+- Look for CLAUDE_SESSION, CLAUDE_OAUTH, CLAUDE_COOKIE, CLAUDE_PROFILE, ANTHROPIC_AUTH_TOKEN, browser profile paths, copied session stores, API keys, provider keys, and fallback credentials.
+- Separate human credentials from automation credentials.
+- Flag credentials that are ambiguous, reused across lanes, committed by mistake, or used by both humans and unattended workflows.
+
+6. Browser automation and local session risk
+- Search for Playwright, Puppeteer, Chrome DevTools Protocol, browser-route scripts, remote debugging ports, profile directories, cookie jars, and local storage files.
+- Decide whether browser automation is controlling public web pages, internal tools, or Claude consumer sessions.
+- Flag browser automation that logs into Claude, drives Claude web, extracts Claude responses, or uses a personal Claude session as a machine interface.
+- Keep normal browser QA separate from model execution.
+
+7. MyOS, routers, agents, and fallback chains
+- Inspect any MyOS dispatch, model router, task-class routing, provider selection, agent registry, skills, recipes, tools, or workflow files.
+- Check whether background agents, daemons, or product workflows can fall back to consumer Claude or Claude Code.
+- Flag hardcoded model/provider shortcuts that bypass the official routing lane.
+- Verify that deterministic tools run deterministically, human Claude use stays human, and automated model work goes to APIs.
+
+8. Usage-budget misunderstanding
+- Look for docs or comments that treat consumer usage credits, subscriptions, browser sessions, or Claude Code access as automation budget.
+- Flag any workload that could burn through usage in minutes through loops, retries, parallel agents, or unattended queues.
+- Recommend API budgets, rate limits, spend caps, observability, and kill switches for automation.
+
+9. Evidence standards
+- Do not guess.
+- Cite exact files, scripts, commands, environment variable names, and workflows.
+- If you cannot inspect something, say what you could not inspect and why.
+- Be conservative. If a path can plausibly run unattended through a consumer session, mark it at least Medium risk.
+
+Output format:
+
+1. Overall ban-risk rating
+- Choose Low, Medium, or High.
+- Give a confidence level from 0 to 100%.
+- Give a one-paragraph explanation in plain English.
+
+2. Ban-risk scorecard
+- Human-operated only: Pass, Warning, or Fail.
+- Do not switch profiles: Pass, Warning, or Fail.
+- Automated tasks use APIs: Pass, Warning, or Fail.
+- No consumer-product wrapping: Pass, Warning, or Fail.
+- Credentials separated by lane: Pass, Warning, or Fail.
+- Browser automation stays away from Claude consumer sessions: Pass, Warning, or Fail.
+- MyOS or router fallbacks are provider-safe: Pass, Warning, or Fail.
+
+3. Findings by severity
+For each finding, include:
+- Severity: Critical, High, Medium, or Low.
+- Evidence: exact file, command, job, variable, or workflow.
+- Why it creates ban risk.
+- What to change.
+- Safer replacement.
+
+4. Keep, change, delete
+- Keep: safe patterns that are fine to continue.
+- Change: patterns that need refactoring.
+- Delete: patterns that should be removed entirely, especially account switching, profile rotation, token sync, and session reuse.
+
+5. Refactor plan
+- Give a step-by-step plan to move every automated path to APIs.
+- Include where API keys should live.
+- Include where human approval should remain required.
+- Include the minimum tests or checks to prove the risky behavior is gone.
+
+6. Final plain-English verdict
+- Tell me whether I am probably safe, need cleanup, or need urgent refactoring before continuing.
+- If the assessment is High risk, include this exact sentence:
+Reach out to Joe if you want a full safety audit and code refactoring so that you won't get banned in the future.
+- Also include this email for help: joe@mastermindshq.business
+
+Start by listing the files and automation surfaces you will inspect, then perform the audit.`
+
+const HOW_IT_WORKS = [
+  {
+    step: '01',
+    title: 'Copy the prompt',
+    body: 'Use the audit prompt as-is. It tells your AI coding tool exactly what to inspect and how to score the risk.',
+  },
+  {
+    step: '02',
+    title: 'Run it inside your project',
+    body: 'Paste it into Claude Code, Codex, or Gemini CLI at the root of the codebase you want checked.',
+  },
+  {
+    step: '03',
+    title: 'Fix the risky paths',
+    body: 'Delete profile switching, keep human work human, and move unattended workflows to provider APIs.',
+  },
+]
+
+const SAFETY_PROTOCOLS = [
+  'Do not switch profiles, accounts, sessions, devices, or browser identities to keep Claude usage alive.',
+  'Ensure everything done through consumer Claude or Claude Code is done by a human in the foreground.',
+  'Direct automated tasks to APIs with real keys, budgets, rate limits, logging, and kill switches.',
+]
+
+function useMagnet(strength = 0.3) {
+  const ref = useRef<HTMLAnchorElement | HTMLButtonElement | null>(null)
+  const onMouseMove = useCallback((e: React.MouseEvent<HTMLElement>) => {
+    const el = ref.current
+    if (!el) return
+    const rect = el.getBoundingClientRect()
+    const x = (e.clientX - rect.left - rect.width / 2) * strength
+    const y = (e.clientY - rect.top - rect.height / 2) * strength
+    el.style.transform = `translate(${x}px, ${y}px)`
+    el.style.transition = 'transform 0.1s ease-out'
+  }, [strength])
+  const onMouseLeave = useCallback(() => {
+    const el = ref.current
+    if (!el) return
+    el.style.transform = 'translate(0px, 0px)'
+    el.style.transition = 'transform 0.4s ease-out'
+  }, [])
+  return { ref, onMouseMove, onMouseLeave }
+}
 
 export default function AnthropicSafetyChecklistPage() {
-  const [checked, setChecked] = useState<Record<string, boolean>>({})
-  const [celebrate, setCelebrate] = useState(false)
-
-  const completedCount = useMemo(
-    () => checklistItems.filter((item) => checked[item.id]).length,
-    [checked]
+  const [openCategories, setOpenCategories] = useState<Set<string>>(
+    () => new Set(AUDIT_AREAS.map((category) => category.name)),
   )
 
-  const allDone = completedCount === checklistItems.length
+  const particleCanvasRef = useRef<HTMLCanvasElement>(null)
+  const statRefs = useRef<(HTMLSpanElement | null)[]>([null, null, null])
+
+  const totalChecks = useMemo(
+    () => AUDIT_AREAS.reduce((total, category) => total + category.count, 0),
+    [],
+  )
+
+  const toggleCategory = useCallback((name: string) => {
+    setOpenCategories((prev) => {
+      const next = new Set(prev)
+      next.has(name) ? next.delete(name) : next.add(name)
+      return next
+    })
+  }, [])
 
   useEffect(() => {
-    if (!allDone) return
-    launchConfetti()
-    setCelebrate(true)
-    const timeout = setTimeout(() => setCelebrate(false), 2200)
-    return () => clearTimeout(timeout)
-  }, [allDone])
+    if (document.querySelector('link[data-font="cormorant"]')) return
+    const link = document.createElement('link')
+    link.href = 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,600;1,700&display=swap'
+    link.rel = 'stylesheet'
+    link.setAttribute('data-font', 'cormorant')
+    document.head.appendChild(link)
+  }, [])
 
-  const toggleItem = (id: string) => {
-    setChecked((current) => {
-      const nextValue = !current[id]
-      if (nextValue) {
-        launchConfetti()
-      }
-      return { ...current, [id]: nextValue }
+  useEffect(() => {
+    const canvas = particleCanvasRef.current
+    if (!canvas) return
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return
+
+    const resize = () => {
+      canvas.width = canvas.offsetWidth
+      canvas.height = canvas.offsetHeight
+    }
+    resize()
+    window.addEventListener('resize', resize)
+
+    type Particle = { x: number; y: number; r: number; dx: number; dy: number; alpha: number; color: string }
+    const colors = ['#8B79D4', '#F5C3C6', '#9D8FE0', '#FCF4EB']
+    const particles: Particle[] = Array.from({ length: 46 }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 1.6 + 0.4,
+      dx: (Math.random() - 0.5) * 0.24,
+      dy: Math.random() * 0.34 + 0.12,
+      alpha: Math.random() * 0.28 + 0.05,
+      color: colors[Math.floor(Math.random() * colors.length)],
+    }))
+
+    let animId = 0
+    const draw = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      particles.forEach((particle) => {
+        ctx.beginPath()
+        ctx.arc(particle.x, particle.y, particle.r, 0, Math.PI * 2)
+        ctx.fillStyle = particle.color
+        ctx.globalAlpha = particle.alpha
+        ctx.fill()
+        particle.x += particle.dx
+        particle.y += particle.dy
+        if (particle.y > canvas.height + 5) {
+          particle.y = -5
+          particle.x = Math.random() * canvas.width
+        }
+        if (particle.x < -5) particle.x = canvas.width + 5
+        if (particle.x > canvas.width + 5) particle.x = -5
+      })
+      ctx.globalAlpha = 1
+      animId = requestAnimationFrame(draw)
+    }
+    draw()
+    return () => {
+      cancelAnimationFrame(animId)
+      window.removeEventListener('resize', resize)
+    }
+  }, [])
+
+  useEffect(() => {
+    const values = [totalChecks, 3, 1]
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return
+          const el = entry.target as HTMLElement
+          const idx = statRefs.current.indexOf(el as HTMLSpanElement)
+          if (idx === -1) return
+          ;(async () => {
+            const { CountUp } = await import('countup.js')
+            const cu = new CountUp(el, values[idx], { duration: 2.1, separator: '' })
+            if (!cu.error) cu.start()
+          })()
+          observer.unobserve(el)
+        })
+      },
+      { threshold: 0.8 },
+    )
+    statRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref)
     })
+    return () => observer.disconnect()
+  }, [totalChecks])
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'Anthropic Ban Risk Audit Prompt',
+    description:
+      'A free prompt that audits a codebase for Claude, Claude Code, profile switching, account rotation, and API routing risks.',
+    author: {
+      '@type': 'Person',
+      name: 'Joe Che',
+      email: JOE_EMAIL,
+      url: MASTERMIND_URL,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Business Automation Mastermind',
+      url: MASTERMIND_URL,
+    },
+    step: [
+      {
+        '@type': 'HowToStep',
+        name: 'Copy the audit prompt',
+        text: 'Copy the free Anthropic safety audit prompt.',
+        position: 1,
+      },
+      {
+        '@type': 'HowToStep',
+        name: 'Run it in your codebase',
+        text: 'Paste the prompt into Claude Code, Codex, or Gemini CLI at the project root.',
+        position: 2,
+      },
+      {
+        '@type': 'HowToStep',
+        name: 'Refactor risky automation',
+        text: 'Move unattended work to APIs, remove profile switching, and keep consumer Claude use human-operated.',
+        position: 3,
+      },
+    ],
+    tool: [
+      { '@type': 'HowToTool', name: 'Claude Code' },
+      { '@type': 'HowToTool', name: 'Codex' },
+      { '@type': 'HowToTool', name: 'Gemini CLI' },
+    ],
   }
 
   return (
-    <main>
-      <section className="relative overflow-hidden py-20 sm:py-24 px-6">
-        <div className="absolute inset-0 pointer-events-none">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <style>{`
+        @keyframes aurora-drift {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          33% { transform: translate(30px, -40px) scale(1.1); }
+          66% { transform: translate(-20px, 25px) scale(0.93); }
+        }
+        @keyframes aurora-drift-2 {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          40% { transform: translate(-35px, 30px) scale(1.07); }
+          70% { transform: translate(45px, -15px) scale(0.96); }
+        }
+        .aurora-a { animation: aurora-drift 16s ease-in-out infinite; }
+        .aurora-b { animation: aurora-drift-2 20s ease-in-out infinite; }
+        .glow-card {
+          transition: box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .glow-card:hover {
+          box-shadow: 0 0 28px rgba(124, 105, 199, 0.12), 0 0 0 1px rgba(124, 105, 199, 0.18);
+          border-color: rgba(124, 105, 199, 0.22) !important;
+        }
+        .glow-btn {
+          transition: box-shadow 0.2s ease, background-color 0.15s ease, transform 0.1s ease-out;
+        }
+        .glow-btn:hover {
+          box-shadow: 0 0 32px rgba(124, 105, 199, 0.45), 0 0 60px rgba(124, 105, 199, 0.2);
+        }
+        .glow-btn-pink:hover {
+          box-shadow: 0 0 32px rgba(245, 195, 198, 0.5), 0 0 60px rgba(245, 195, 198, 0.2);
+        }
+      `}</style>
+
+      <div className="bg-[#151515] text-[#FCF4EB] overflow-x-hidden" style={{ minHeight: '100vh' }}>
+        <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
           <div
-            className="aurora-orb absolute top-[-14%] left-[5%] h-[420px] w-[420px] rounded-full opacity-24"
-            style={{ background: 'radial-gradient(circle, rgba(124, 105, 199, 0.55) 0%, transparent 70%)' }}
+            className="aurora-a absolute top-[8%] left-[12%] w-[600px] h-[600px] rounded-full opacity-[0.09]"
+            style={{ background: 'radial-gradient(circle, #8B79D4 0%, transparent 70%)', filter: 'blur(80px)' }}
           />
           <div
-            className="aurora-orb absolute top-[10%] right-[10%] h-[220px] w-[220px] rounded-full opacity-14"
-            style={{ background: 'radial-gradient(circle, rgba(124, 105, 199, 0.34) 0%, transparent 72%)' }}
+            className="aurora-b absolute top-[32%] right-[8%] w-[520px] h-[520px] rounded-full opacity-[0.07]"
+            style={{ background: 'radial-gradient(circle, #F5C3C6 0%, transparent 70%)', filter: 'blur(90px)' }}
           />
         </div>
 
-        <div className="relative max-w-6xl mx-auto">
-          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-start">
-            <div>
-              <Reveal>
-                <h1 className="gradient-text text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.05] mb-5 max-w-5xl">
-                  How to avoid getting banned by Anthropic
-                </h1>
-              </Reveal>
-              <Reveal delay={1}>
-                <p className="text-[#FCF4EB]/68 text-lg sm:text-xl leading-relaxed max-w-3xl">
-                  This is the practical version: the patterns most likely to put your Claude setup in a bad place,
-                  the safer replacement for each one, and a copyable prompt you can use to audit your own stack.
-                </p>
-              </Reveal>
-            </div>
+        <canvas
+          ref={particleCanvasRef}
+          className="fixed inset-0 w-full h-full pointer-events-none"
+          style={{ zIndex: 0 }}
+        />
 
-            <Reveal delay={2}>
-              <div className="rounded-2xl border border-[#FCF4EB]/[0.12] bg-[linear-gradient(180deg,rgba(252,244,235,0.06),rgba(245,195,198,0.06))] p-6 sm:p-7 shadow-[0_20px_60px_rgba(0,0,0,0.22)]">
-                <p className="text-xs uppercase tracking-[0.22em] text-[#FCF4EB]/45 font-semibold mb-5">
-                  Read this correctly
-                </p>
-                <div className="space-y-4">
-                  <div className="rounded-xl border border-[#FCF4EB]/[0.10] bg-[rgba(252,244,235,0.05)] p-4">
-                    <p className="text-[#FCF4EB]/40 text-xs uppercase tracking-widest mb-2">Core idea</p>
-                    <p className="text-[#FCF4EB] leading-relaxed">
-                      The safest line is simple: keep consumer Claude usage human-operated, and move automation to
-                      API-backed infrastructure.
-                    </p>
-                  </div>
-                  <div className="rounded-xl border border-[#FCF4EB]/[0.10] bg-[rgba(245,195,198,0.06)] p-4">
-                    <p className="text-[#FCF4EB]/40 text-xs uppercase tracking-widest mb-2">MyOS note</p>
-                    <p className="text-[#FCF4EB] leading-relaxed">
-                      MyOS itself is not the problem. The risk appears when MyOS is used to turn Claude Code
-                      into a hidden unattended backend instead of an interactive tool.
-                    </p>
-                  </div>
+        <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 pb-8 pt-16 sm:pt-20 overflow-hidden" style={{ zIndex: 1 }}>
+          <div className="relative z-10 max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-10 bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
+                Free from the{' '}
+                <a href={MASTERMIND_URL} target="_blank" rel="noopener noreferrer" className="hover:text-[#BDB3E8] transition-colors underline underline-offset-2 decoration-[#7C69C7]/40">
+                  Business Automation Mastermind
+                </a>
+              </span>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.35 }}
+              className="mb-3 text-transparent bg-clip-text bg-gradient-to-r from-[#9D8FE0] to-[#F5C3C6]"
+              style={{
+                fontFamily: '"Cormorant Garamond", Georgia, serif',
+                fontStyle: 'italic',
+                fontWeight: 700,
+                fontSize: 'clamp(2.1rem, 6vw, 4.5rem)',
+                lineHeight: 1.08,
+                letterSpacing: '0',
+                paddingBottom: '0.05em',
+              }}
+            >
+              Will Anthropic Ban Your Setup?
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="text-[#FCF4EB] font-bold mb-8"
+              style={{
+                fontFamily: '"Cormorant Garamond", Georgia, serif',
+                fontSize: 'clamp(1rem, 2.8vw, 2.2rem)',
+                lineHeight: 1.1,
+              }}
+            >
+              A codebase audit prompt for Claude, profiles, sessions, and automation.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 1.0 }}
+              className="text-[#FCF4EB]/58 text-base sm:text-xl leading-relaxed max-w-2xl mx-auto mb-12"
+            >
+              Paste this into your AI coding tool. It checks whether your current behavior looks human-operated,
+              whether profile switching exists, and whether automated work is properly routed to APIs.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1.2 }}
+              className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5 mb-14"
+            >
+              <span className="text-[#FCF4EB]/28 text-xs uppercase tracking-widest">Works in</span>
+              {COMPATIBLE_TOOLS.map((tool) => (
+                <div
+                  key={tool.name}
+                  className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/[0.05] border border-white/[0.09] hover:border-[#7C69C7]/35 transition-all duration-200"
+                  title={tool.detail}
+                >
+                  <span className="text-[#9D8FE0] text-sm">{tool.logo}</span>
+                  <span className="text-[#FCF4EB]/75 text-sm font-medium">{tool.name}</span>
+                  <span
+                    className="text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-full"
+                    style={{
+                      background: tool.badge === 'Primary' ? 'rgba(124,105,199,0.18)' : 'rgba(255,255,255,0.06)',
+                      color: tool.badge === 'Primary' ? '#9D8FE0' : '#FCF4EB44',
+                      border: tool.badge === 'Primary' ? '1px solid rgba(124,105,199,0.3)' : '1px solid rgba(255,255,255,0.08)',
+                    }}
+                  >
+                    {tool.badge}
+                  </span>
                 </div>
-              </div>
-            </Reveal>
+              ))}
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 1.4 }}
+              className="flex items-center justify-center gap-2 text-[#FCF4EB]/22 text-sm mt-8"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="animate-bounce">
+                <path d="M12 5v14M5 12l7 7 7-7" />
+              </svg>
+              <span>Scroll to get the prompt</span>
+            </motion.div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="max-w-6xl mx-auto px-6 pb-12">
-        <ProTip type="warning">
-          This page is practical guidance, not legal advice. Use the official Anthropic links below when you want to
-          verify the policy language yourself.
-        </ProTip>
-      </section>
-
-      <section className="max-w-6xl mx-auto px-6 pb-10">
-        <Reveal>
-          <div className="mb-6">
-            <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-2">
-              Interactive checklist
-            </p>
+        <section className="relative max-w-5xl mx-auto px-6 py-14" style={{ zIndex: 1 }}>
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
             <h2 className="text-2xl sm:text-3xl font-bold text-[#FCF4EB]">
-              Work down this list and fix every risky pattern you find
+              Find the risky pattern before the platform does
             </h2>
+          </motion.div>
+          <div className="grid gap-5 sm:grid-cols-3">
+            {HOW_IT_WORKS.map((item, index) => (
+              <motion.div
+                key={item.step}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="glow-card bg-white/[0.04] border border-white/[0.08] rounded-2xl p-7"
+              >
+                <div className="text-4xl font-extrabold text-[#7C69C7]/20 mb-5 font-mono">{item.step}</div>
+                <h3 className="text-[#FCF4EB] font-bold text-base mb-2">{item.title}</h3>
+                <p className="text-[#FCF4EB]/44 text-sm leading-relaxed">{item.body}</p>
+              </motion.div>
+            ))}
           </div>
-        </Reveal>
+        </section>
 
-        <div className="mb-6 rounded-2xl border border-[#FCF4EB]/[0.10] bg-[linear-gradient(180deg,rgba(252,244,235,0.05),rgba(245,195,198,0.05))] px-5 py-4">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <p className="text-[#FCF4EB]/45 text-xs uppercase tracking-[0.22em] font-semibold mb-1">Checklist progress</p>
-              <p className="text-[#FCF4EB] text-lg font-semibold">
-                {completedCount} of {checklistItems.length} complete
+        <section className="relative max-w-5xl mx-auto px-6 py-4" style={{ zIndex: 1 }}>
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="glow-card bg-white/[0.03] border border-white/[0.07] rounded-2xl p-8 md:p-10"
+          >
+            <div className="grid gap-5 md:grid-cols-3">
+              {SAFETY_PROTOCOLS.map((protocol, index) => (
+                <div key={protocol} className="rounded-xl border border-white/[0.08] bg-white/[0.035] p-5">
+                  <p className="text-[#9D8FE0] text-xs font-bold uppercase tracking-widest mb-3">
+                    Protocol {index + 1}
+                  </p>
+                  <p className="text-[#FCF4EB]/74 text-sm leading-relaxed">{protocol}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </section>
+
+        <MastermindCTA />
+
+        <section className="relative max-w-5xl mx-auto px-6 py-16" style={{ zIndex: 1 }}>
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="text-center mb-10">
+              <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
+                The Prompt
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#FCF4EB] mb-4">
+                Copy. Paste. Get your risk rating.
+              </h2>
+              <p className="text-[#FCF4EB]/45 max-w-xl mx-auto leading-relaxed">
+                This is built for real codebases. It asks for evidence, file paths, risk scoring, and a concrete
+                refactor plan instead of vague safety advice.
               </p>
             </div>
-            <div className="h-2 w-full sm:max-w-[260px] rounded-full bg-white/[0.07] overflow-hidden">
-              <div
-                className="h-full rounded-full transition-all duration-300"
-                style={{
-                  width: `${(completedCount / checklistItems.length) * 100}%`,
-                  background: 'linear-gradient(90deg, #7C69C7 0%, #F5C3C6 100%)',
-                }}
-              />
-            </div>
-          </div>
-          {celebrate && allDone && (
-            <p className="mt-3 text-sm font-semibold text-[#F5C3C6]">
-              All clear. You worked through every risk item on the page.
-            </p>
-          )}
-        </div>
 
-        <div className="grid gap-4">
-          {checklistItems.map((item, index) => {
-            const isChecked = !!checked[item.id]
-
-            return (
-              <Reveal key={item.id} delay={index + 1}>
-                <div
-                  className={`card-hover w-full rounded-[28px] border p-5 sm:p-6 text-left transition-all ${
-                    isChecked
-                      ? 'border-[#F5C3C6]/35 bg-[linear-gradient(180deg,rgba(245,195,198,0.16),rgba(252,244,235,0.06))]'
-                      : 'border-[#FCF4EB]/[0.10] bg-[linear-gradient(180deg,rgba(124,105,199,0.16),rgba(252,244,235,0.04))]'
-                  }`}
-                >
-                  <div className="grid gap-4 lg:grid-cols-[auto_1fr]">
-                    <div className="flex items-center gap-3 lg:items-start lg:flex-col">
-                      <span
-                        className={`number-glow flex h-11 w-11 items-center justify-center rounded-xl border text-lg font-bold ${
-                          isChecked
-                            ? 'border-[#F5C3C6]/40 bg-[#F5C3C6]/20 text-[#FCF4EB]'
-                            : 'border-[#7C69C7]/30 bg-[#7C69C7]/18 text-[#9D8FE0]'
-                        }`}
-                      >
-                        {index + 1}
-                      </span>
-                      <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#FCF4EB]/40">
-                        Stage {index + 1}
-                      </span>
-                    </div>
-
-                    <div className="grid gap-4 lg:grid-cols-[1fr_1fr]">
-                      <div>
-                        <div className="mb-3 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                          <h3 className="text-xl font-bold text-[#FCF4EB]">{item.title}</h3>
-                          <button
-                            type="button"
-                            onClick={() => toggleItem(item.id)}
-                            className={`inline-flex items-center gap-2 self-start rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-widest transition-all ${
-                              isChecked
-                                ? 'border-[#F5C3C6]/45 bg-[#F5C3C6]/18 text-[#FCF4EB]'
-                                : 'border-[#FCF4EB]/20 bg-white/[0.04] text-[#FCF4EB]/65'
-                            }`}
-                            aria-pressed={isChecked}
-                            aria-label={`Mark ${item.title} as complete`}
-                          >
-                            <span
-                              className={`flex h-5 w-5 items-center justify-center rounded-md border text-[12px] ${
-                                isChecked
-                                  ? 'border-[#F5C3C6]/50 bg-[#F5C3C6]/20 text-[#FCF4EB]'
-                                  : 'border-[#FCF4EB]/25 bg-white/[0.04] text-transparent'
-                              }`}
-                              aria-hidden="true"
-                            >
-                              ✓
-                            </span>
-                            {isChecked ? 'Checked' : 'Check this'}
-                          </button>
-                        </div>
-                        <p className="text-[#FCF4EB]/72 leading-relaxed">
-                          {item.risk}
-                        </p>
-                      </div>
-                      <div className="rounded-2xl border border-[#FCF4EB]/[0.08] bg-[rgba(252,244,235,0.05)] p-4">
-                        <p className="text-xs uppercase tracking-widest text-[#FCF4EB]/45 mb-2">Safer replacement</p>
-                        <p className="text-[#FCF4EB] leading-relaxed">{item.fix}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-            )
-          })}
-        </div>
-      </section>
-
-      <section className="max-w-6xl mx-auto px-6 pb-10">
-        <div className="glow-divider" />
-      </section>
-
-      <section className="max-w-6xl mx-auto px-6 pb-16">
-        <Reveal>
-          <div className="mb-6">
-            <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-2">
-              Safer patterns
-            </p>
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#FCF4EB]">
-              What a low-risk Claude setup usually looks like
-            </h2>
-          </div>
-        </Reveal>
-
-        <div className="grid gap-4 sm:grid-cols-2">
-          {saferPatterns.map((pattern, index) => (
-            <Reveal key={pattern} delay={index + 1}>
-              <div className="card-hover rounded-2xl border border-[#FCF4EB]/[0.08] bg-[linear-gradient(180deg,rgba(252,244,235,0.05),rgba(245,195,198,0.04))] p-5">
-                <p className="text-[#FCF4EB] leading-relaxed">{pattern}</p>
+            <div className="my-6 rounded-xl overflow-hidden border border-white/[0.08] border-l-2 border-l-[#7C69C7]">
+              <div className="flex items-center justify-between px-4 py-2 bg-white/[0.04] border-b border-white/[0.06]">
+                <span className="text-xs text-[#FCF4EB]/40 font-mono">anthropic-ban-risk-audit</span>
+                <InlineCopyButton text={THE_PROMPT} />
               </div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      <section className="max-w-6xl mx-auto px-6 pb-16">
-        <Reveal>
-          <div className="mb-6">
-            <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-2">
-              Audit prompt
-            </p>
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#FCF4EB]">
-              Paste this into Claude Code and let it audit your setup
-            </h2>
-          </div>
-        </Reveal>
-
-        <div className="rounded-[28px] border border-[#FCF4EB]/[0.10] bg-[linear-gradient(180deg,rgba(124,105,199,0.14),rgba(252,244,235,0.04))] p-6 sm:p-7">
-          <p className="text-[#FCF4EB]/60 text-sm leading-relaxed mb-3">
-            This prompt is designed to catch the exact patterns that tend to create avoidable Anthropic risk.
-          </p>
-          <CodeBlock code={auditPrompt} filename="Paste into Claude Code" editable />
-        </div>
-      </section>
-
-      <section className="max-w-6xl mx-auto px-6 pb-16">
-        <Reveal>
-          <div className="mb-6">
-            <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-2">
-              Official links
-            </p>
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#FCF4EB]">
-              If you want to verify the source material yourself
-            </h2>
-          </div>
-        </Reveal>
-
-        <div className="grid gap-4 md:grid-cols-3">
-          {sourceLinks.map((source, index) => (
-            <Reveal key={source.href} delay={index + 1}>
-              <a
-                href={source.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="card-hover block rounded-2xl border border-[#FCF4EB]/[0.08] bg-[linear-gradient(180deg,rgba(252,244,235,0.05),rgba(245,195,198,0.04))] p-5"
+              <pre
+                className="p-5 text-sm font-mono leading-[1.75] text-[#FCF4EB]/82 max-h-[620px] overflow-auto"
+                style={{ background: '#0d0d0d', whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
               >
-                <p className="text-[#FCF4EB] font-semibold mb-2">{source.label}</p>
-                <p className="text-sm text-[#FCF4EB]/55 break-all">{source.href}</p>
-              </a>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      <section className="max-w-6xl mx-auto px-6 pb-24">
-        <Reveal>
-          <div
-            className="card-hover rounded-[32px] p-8 sm:p-10 lg:p-12"
-            style={{
-              background:
-                'linear-gradient(135deg, rgba(245, 195, 198, 0.14) 0%, rgba(124, 105, 199, 0.12) 42%, rgba(252, 244, 235, 0.08) 100%)',
-              border: '1px solid rgba(252,244,235,0.10)',
-            }}
-          >
-            <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
-              <div>
-                <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
-                  Masterminds HQ
-                </p>
-                <h2 className="text-3xl sm:text-4xl font-extrabold text-[#FCF4EB] leading-tight mb-4">
-                  If you want safer AI systems, build them with the right operating model
-                </h2>
-                <p className="max-w-2xl text-[#FCF4EB]/68 text-lg leading-relaxed mb-6">
-                  Masterminds HQ is for founders who want more than prompts. It is about designing practical systems,
-                  better workflows, stronger business automation, and cleaner AI infrastructure that does not quietly
-                  create risk.
-                </p>
-
-                <div className="grid gap-3 sm:grid-cols-3">
-                  <div className="rounded-2xl border border-[#FCF4EB]/[0.08] bg-[rgba(252,244,235,0.05)] p-4">
-                    <p className="text-xs uppercase tracking-widest text-[#FCF4EB]/40 mb-2">Learn how to</p>
-                    <p className="text-[#FCF4EB] font-semibold leading-relaxed">Build agents that do real work</p>
-                  </div>
-                  <div className="rounded-2xl border border-[#FCF4EB]/[0.08] bg-[rgba(245,195,198,0.08)] p-4">
-                    <p className="text-xs uppercase tracking-widest text-[#FCF4EB]/40 mb-2">Learn how to</p>
-                    <p className="text-[#FCF4EB] font-semibold leading-relaxed">Upgrade your business with AI leverage</p>
-                  </div>
-                  <div className="rounded-2xl border border-[#FCF4EB]/[0.08] bg-[rgba(252,244,235,0.05)] p-4">
-                    <p className="text-xs uppercase tracking-widest text-[#FCF4EB]/40 mb-2">Related topics</p>
-                    <p className="text-[#FCF4EB] font-semibold leading-relaxed">
-                      Safe automation, operator systems, prompts, workflows, and business infrastructure
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="rounded-[28px] border border-[#FCF4EB]/[0.10] bg-[linear-gradient(180deg,rgba(252,244,235,0.07),rgba(245,195,198,0.08))] p-6 sm:p-7 shadow-[0_18px_60px_rgba(0,0,0,0.20)]">
-                <h3 className="text-2xl font-bold text-[#FCF4EB] mb-3">See whether Masterminds HQ fits where you are now</h3>
-                <p className="text-[#FCF4EB]/68 leading-relaxed mb-6">
-                  The main site gives the clearest overview of the mastermind, the live sessions, the community, the
-                  resource vault, and the kind of practical business automation support Joe is actually offering.
-                </p>
-                <Link
-                  href="https://www.mastermindshq.business/"
-                  className="inline-flex items-center rounded-xl bg-[#FCF4EB] px-5 py-3 text-sm font-semibold text-[#151515] transition-transform hover:-translate-y-0.5"
-                >
-                  Visit mastermindshq.business
-                </Link>
-              </div>
+                <code>{THE_PROMPT}</code>
+              </pre>
             </div>
+
+            <PromptCopyButton prompt={THE_PROMPT} />
+
+            <p className="text-[#FCF4EB]/25 text-[11px] text-center mt-5 max-w-md mx-auto leading-relaxed">
+              This is practical technical guidance, not legal advice. When in doubt, use supported provider APIs for automation.
+            </p>
+          </motion.div>
+        </section>
+
+        <section className="relative max-w-5xl mx-auto px-6 pt-6 pb-14" style={{ zIndex: 1 }}>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              { idx: 0, label: 'specific checks in the prompt' },
+              { idx: 1, label: 'non-negotiable safety protocols' },
+              { idx: 2, label: 'plain-English risk rating' },
+            ].map((stat) => (
+              <motion.div
+                key={stat.idx}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: stat.idx * 0.08 }}
+                className="glow-card bg-white/[0.04] border border-white/[0.08] rounded-2xl p-8 text-center"
+              >
+                <div className="text-5xl font-extrabold mb-3 tabular-nums" style={{ fontFamily: 'monospace', color: '#9D8FE0' }}>
+                  <span ref={(el) => { statRefs.current[stat.idx] = el }}>0</span>
+                </div>
+                <p className="text-[#FCF4EB]/40 text-sm">{stat.label}</p>
+              </motion.div>
+            ))}
           </div>
-        </Reveal>
-      </section>
-    </main>
+        </section>
+
+        <section className="relative max-w-5xl mx-auto px-6 py-14" style={{ zIndex: 1 }}>
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-10"
+          >
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#FCF4EB] mb-3">
+              Everything the prompt checks
+            </h2>
+            <p className="text-[#FCF4EB]/35 text-sm max-w-lg mx-auto">
+              It audits behavior, code, credentials, automation, and the exact boundary between human work and API work.
+            </p>
+          </motion.div>
+
+          <div className="space-y-3">
+            {AUDIT_AREAS.map((category, index) => {
+              const isOpen = openCategories.has(category.name)
+              return (
+                <motion.div
+                  key={category.name}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.05 }}
+                  className="glow-card bg-white/[0.04] border border-white/[0.08] rounded-xl overflow-hidden"
+                >
+                  <button
+                    onClick={() => toggleCategory(category.name)}
+                    className="w-full flex items-center justify-between px-6 py-4 text-left hover:bg-white/[0.025] transition-colors"
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="text-[#FCF4EB] font-semibold text-sm sm:text-base">{category.name}</span>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#9D8FE0] bg-[#7C69C7]/12 border border-[#7C69C7]/20 px-2 py-0.5 rounded-full">
+                        {category.count}
+                      </span>
+                    </div>
+                    <svg
+                      width="15" height="15" viewBox="0 0 24 24" fill="none"
+                      stroke="#9D8FE0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+                      className={`flex-shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+                    >
+                      <path d="M6 9l6 6 6-6" />
+                    </svg>
+                  </button>
+
+                  {isOpen && (
+                    <div className="border-t border-white/[0.06] px-6 pb-5 pt-3">
+                      <div className="grid gap-1 sm:grid-cols-2">
+                        {category.checks.map((check) => (
+                          <div
+                            key={check.name}
+                            className="flex items-start gap-3 p-3 rounded-lg hover:bg-white/[0.05] transition-colors"
+                          >
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#7C69C7] mt-[7px] flex-shrink-0" />
+                            <div>
+                              <span className="text-[#9D8FE0] text-sm font-medium">
+                                {check.name}
+                              </span>
+                              <p className="text-[#FCF4EB]/34 text-xs leading-relaxed mt-0.5">
+                                {check.desc}
+                              </p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </motion.div>
+              )
+            })}
+          </div>
+        </section>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="relative max-w-2xl mx-auto px-6 pb-16 text-center"
+          style={{ zIndex: 1 }}
+        >
+          <p className="text-[#FCF4EB]/22 text-sm leading-relaxed italic">
+            Need help with a high-risk result? Email {JOE_EMAIL} and ask for a full safety audit.
+          </p>
+        </motion.div>
+
+        <div className="relative text-center pb-10" style={{ zIndex: 1 }}>
+          <a
+            href={MASTERMIND_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#FCF4EB]/14 text-xs uppercase tracking-widest hover:text-[#FCF4EB]/35 transition-colors"
+          >
+            Business Automation Mastermind
+          </a>
+        </div>
+      </div>
+    </>
+  )
+}
+
+function MastermindCTA() {
+  const magnet = useMagnet(0.28)
+
+  return (
+    <section className="relative max-w-5xl mx-auto px-6 py-14" style={{ zIndex: 1 }}>
+      <motion.div
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="rounded-2xl overflow-hidden"
+        style={{
+          background: 'linear-gradient(135deg, rgba(245,195,198,0.10) 0%, rgba(124,105,199,0.08) 100%)',
+          border: '1px solid rgba(245,195,198,0.15)',
+        }}
+      >
+        <div className="px-6 sm:px-14 pb-12 pt-8 text-center">
+          <h2 className="text-2xl sm:text-5xl font-bold text-[#FCF4EB] mb-4">
+            Want safer AI systems?
+          </h2>
+
+          <p className="text-xl sm:text-3xl font-bold mb-5">
+            <a href={MASTERMIND_URL} target="_blank" rel="noopener noreferrer" className="text-transparent bg-clip-text bg-gradient-to-r from-[#9D8FE0] to-[#F5C3C6] hover:opacity-80 transition-opacity">
+              Join the Business Automation Mastermind
+            </a>
+          </p>
+
+          <p className="text-[#FCF4EB]/52 max-w-xl mx-auto mb-8 leading-relaxed text-base sm:text-lg">
+            A small, focused group of business owners who meet weekly to build useful automation, clean workflows,
+            and AI systems that keep the human and API lanes separate.
+          </p>
+
+          <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center items-center mb-9">
+            {['Human work stays human', 'Automated work uses APIs', 'Risky profile switching gets removed'].map((item) => (
+              <div key={item} className="flex items-center gap-2 text-[#FCF4EB]/58 text-sm">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#F5C3C6] flex-shrink-0" />
+                {item}
+              </div>
+            ))}
+          </div>
+
+          <a
+            ref={magnet.ref as React.RefObject<HTMLAnchorElement>}
+            href={MASTERMIND_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onMouseMove={magnet.onMouseMove}
+            onMouseLeave={magnet.onMouseLeave}
+            className="block sm:inline-block w-full sm:w-auto px-10 py-4 rounded-xl bg-[#F5C3C6] hover:bg-[#f0b8bc] text-[#151515] font-bold text-base active:scale-[0.98] glow-btn glow-btn-pink text-center"
+          >
+            Learn More
+          </a>
+        </div>
+      </motion.div>
+    </section>
+  )
+}
+
+function InlineCopyButton({ text }: { text: string }) {
+  const [copied, setCopied] = useState(false)
+  const handleCopy = useCallback(async () => {
+    try {
+      await navigator.clipboard.writeText(text)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch { /* noop */ }
+  }, [text])
+  return (
+    <button
+      onClick={handleCopy}
+      className="px-3 py-1 rounded-md text-xs font-medium bg-white/[0.08] hover:bg-white/[0.14] border border-white/[0.10] text-[#FCF4EB]/60 hover:text-[#FCF4EB]/90 transition-all duration-150 select-none"
+    >
+      {copied ? 'Copied!' : 'Copy'}
+    </button>
+  )
+}
+
+function PromptCopyButton({ prompt }: { prompt: string }) {
+  const [copied, setCopied] = useState(false)
+  const magnet = useMagnet(0.22)
+
+  const handleCopy = useCallback(async () => {
+    try {
+      await navigator.clipboard.writeText(prompt)
+      setCopied(true)
+      confetti({
+        particleCount: 140,
+        spread: 85,
+        colors: ['#8B79D4', '#BDB3E8', '#F5C3C6', '#FCF4EB'],
+        origin: { y: 0.55 },
+      })
+      setTimeout(() => setCopied(false), 2500)
+    } catch { /* noop */ }
+  }, [prompt])
+
+  return (
+    <div className="mt-5 flex justify-center">
+      <button
+        ref={magnet.ref as React.RefObject<HTMLButtonElement>}
+        onClick={handleCopy}
+        onMouseMove={magnet.onMouseMove}
+        onMouseLeave={magnet.onMouseLeave}
+        className="inline-flex items-center gap-2.5 px-10 py-4 rounded-xl bg-[#7C69C7] hover:bg-[#6B5AB8] text-white font-semibold text-base active:scale-[0.97] glow-btn shadow-xl shadow-[#7C69C7]/25"
+      >
+        {copied ? (
+          <>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M20 6L9 17l-5-5" />
+            </svg>
+            Copied!
+          </>
+        ) : (
+          <>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+            Copy the Prompt
+          </>
+        )}
+      </button>
+    </div>
   )
 }
