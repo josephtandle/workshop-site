@@ -110,6 +110,8 @@ export default function Session8Guide() {
               <li><a href="#tools" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">Tools Inside WebFetch</a></li>
               <li><a href="#use-cases" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">WebFetch Real-World Use Cases</a></li>
               <li><a href="#mlx-whisper" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">Local Whisper and Diarization</a></li>
+              <li><a href="#guarddog" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">Installing GuardDog</a></li>
+              <li><a href="#wrap-up" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">Wrap-Up</a></li>
             </ol>
           </div>
         </div>
@@ -631,6 +633,106 @@ Handle the common paths for me:
               editable
             />
           </StepCard>
+        </section>
+
+        {/* ====================================================
+            INSTALLING GUARDDOG
+        ==================================================== */}
+        <section id="guarddog" className="mb-16">
+          <div className="mb-8">
+            <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Safety Layer</span>
+            <h2 className="text-3xl font-bold text-[#FCF4EB] mt-3">Installing GuardDog</h2>
+          </div>
+
+          <div className="webfetch-hero-glass rounded-2xl p-7 mb-6">
+            <div className="relative z-10">
+              <div className="flex items-center gap-2 mb-5">
+                <span className="h-2 w-2 rounded-full bg-[#F5C3C6] shadow-[0_0_18px_rgba(245,195,198,0.62)]" />
+                <span className="text-[10px] uppercase tracking-[0.22em] text-[#FCF4EB]/42 font-semibold">
+                  Package Safety Check
+                </span>
+              </div>
+              <p className="text-[#FCF4EB]/84 text-lg leading-relaxed mb-5">
+                GuardDog is a command-line safety tool that checks packages before you install or trust them. It is
+                designed to spot risky patterns like credential harvesters, obfuscated scripts, suspicious install
+                hooks, crypto miners, reverse shells, and other common supply-chain attacks.
+              </p>
+              <p className="text-[#FCF4EB]/64 leading-relaxed">
+                This install is intentionally simple: one npm install command, then one setup command. It works as a
+                one-click style install across platforms that support Node and npm, including macOS, Windows, and
+                Linux. Students still get the commands in their own copy blocks so Claude Code users and Codex users
+                can paste the safest version for their tool.
+              </p>
+            </div>
+          </div>
+
+          <StepCard number={8} title="Install GuardDog in Claude Code">
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              Paste this into Claude Code. Claude should run the install, run setup, and confirm the command is ready
+              before you use GuardDog to inspect packages.
+            </p>
+            <CodeBlock
+              filename="Claude Code prompt"
+              code={`Install GuardDog and confirm it is ready to use on this computer.
+
+Run these commands:
+npm install -g github:josephtandle/guardog
+guardog setup
+
+After setup:
+1. Confirm the guardog command is available.
+2. Tell me where npm installed the global command.
+3. Run a harmless version or help check if GuardDog supports one.
+4. Explain how I should use GuardDog before installing unfamiliar packages.`}
+              editable
+            />
+          </StepCard>
+
+          <StepCard number={9} title="Install GuardDog in Codex">
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              Codex members can use the same install flow, but keep this separate copy block so the prompt opens the
+              Codex session in the right mode first.
+            </p>
+            <CodeBlock
+              filename="Codex prompt"
+              code={`codex --yolo
+
+Install GuardDog and confirm it is ready to use on this computer.
+
+Run these commands:
+npm install -g github:josephtandle/guardog
+guardog setup
+
+After setup:
+1. Confirm the guardog command is available.
+2. Tell me where npm installed the global command.
+3. Run a harmless version or help check if GuardDog supports one.
+4. Explain how I should use GuardDog before installing unfamiliar packages.`}
+              editable
+            />
+          </StepCard>
+
+          <ProTip type="warning">
+            GuardDog is a safety layer, not a guarantee. Use it before installing unfamiliar packages, but still read
+            package names carefully, prefer trusted sources, and avoid running commands you do not understand.
+          </ProTip>
+        </section>
+
+        {/* ====================================================
+            WRAP-UP
+        ==================================================== */}
+        <section id="wrap-up" className="mb-4">
+          <div className="webfetch-hero-glass rounded-2xl p-8">
+            <div className="relative z-10">
+              <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Wrap-Up</span>
+              <h2 className="gradient-text text-3xl font-extrabold mt-3 mb-4 pb-1">
+                You have now unlocked the system.
+              </h2>
+              <p className="text-[#FCF4EB]/72 text-lg leading-relaxed">
+                Any information on the internet is now easily in your hands.
+              </p>
+            </div>
+          </div>
         </section>
 
       </div>
