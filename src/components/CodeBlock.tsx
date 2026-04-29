@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import type { MouseEvent } from 'react'
+import type { ButtonHTMLAttributes, MouseEvent, ReactNode } from 'react'
 import { copyWithConfetti } from '@/lib/copyWithConfetti'
 
 interface CodeBlockProps {
@@ -22,6 +22,49 @@ function toCodexPrompt(prompt: string) {
   if (/^\s*codex\s+--yolo\b/i.test(codexPrompt)) return codexPrompt
 
   return `codex --yolo\n\n${codexPrompt}`
+}
+
+type MagneticCopyButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+  children: ReactNode
+  variant: 'primary' | 'secondary'
+}
+
+function MagneticCopyButton({ children, className = '', variant, ...props }: MagneticCopyButtonProps) {
+  const [offset, setOffset] = useState({ x: 0, y: 0 })
+  const variantClass =
+    variant === 'primary'
+      ? `bg-[#5E4EA6]/80 hover:bg-[#6F5FBC]/85 border border-white/[0.16]
+        text-[#FCF4EB] shadow-[inset_0_1px_0_rgba(255,255,255,0.18)]
+        backdrop-blur-sm`
+      : `bg-white/[0.06] hover:bg-white/[0.10] border border-white/[0.14]
+        text-[#FCF4EB]/55 hover:text-[#FCF4EB]/75`
+
+  const handleMouseMove = (event: MouseEvent<HTMLButtonElement>) => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
+    const rect = event.currentTarget.getBoundingClientRect()
+    const x = ((event.clientX - rect.left) / rect.width - 0.5) * 5
+    const y = ((event.clientY - rect.top) / rect.height - 0.5) * 4
+    setOffset({ x, y })
+    props.onMouseMove?.(event)
+  }
+
+  const handleMouseLeave = (event: MouseEvent<HTMLButtonElement>) => {
+    setOffset({ x: 0, y: 0 })
+    props.onMouseLeave?.(event)
+  }
+
+  return (
+    <button
+      {...props}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className={`px-3 py-1 rounded-md text-xs font-semibold transition-[transform,background-color,border-color,color] duration-150 ease-out select-none ${variantClass} ${className}`}
+      style={{ transform: `translate3d(${offset.x}px, ${offset.y}px, 0)`, ...props.style }}
+    >
+      {children}
+    </button>
+  )
 }
 
 export default function CodeBlock({ code, language, filename, editable, codexPrompt }: CodeBlockProps) {
@@ -72,16 +115,9 @@ export default function CodeBlock({ code, language, filename, editable, codexPro
               Edit before copying
             </span>
           )}
-          <button
-          onClick={handleCopy}
-          className="px-3 py-1 rounded-md text-xs font-semibold
-            bg-[#5E4EA6]/80 hover:bg-[#6F5FBC]/85 border border-white/[0.16]
-            text-[#FCF4EB] shadow-[inset_0_1px_0_rgba(255,255,255,0.18)]
-            backdrop-blur-sm
-            transition-all duration-150 select-none"
-        >
-          {copied ? 'Copied!' : 'Copy'}
-          </button>
+          <MagneticCopyButton onClick={handleCopy} variant="primary">
+            {copied ? 'Copied!' : 'Copy'}
+          </MagneticCopyButton>
         </div>
       </div>
 
@@ -97,15 +133,9 @@ export default function CodeBlock({ code, language, filename, editable, codexPro
           />
           {showCodexCopy && (
             <div className="flex justify-end px-4 pt-3 pb-4 border-t border-white/[0.06]">
-              <button
-                onClick={handleCodexCopy}
-                className="px-3 py-1.5 rounded-md text-xs font-semibold
-                  bg-white/[0.06] hover:bg-white/[0.10] border border-white/[0.14]
-                  text-[#FCF4EB]/55 hover:text-[#FCF4EB]/75
-                  transition-all duration-150 select-none"
-              >
+              <MagneticCopyButton onClick={handleCodexCopy} variant="secondary" className="py-1.5">
                 {codexCopied ? 'Copied Codex!' : 'Copy Codex Only'}
-              </button>
+              </MagneticCopyButton>
             </div>
           )}
         </div>
@@ -118,15 +148,9 @@ export default function CodeBlock({ code, language, filename, editable, codexPro
           </pre>
           {showCodexCopy && (
             <div className="flex justify-end px-4 pt-3 pb-4 border-t border-white/[0.06]">
-              <button
-                onClick={handleCodexCopy}
-                className="px-3 py-1.5 rounded-md text-xs font-semibold
-                  bg-white/[0.06] hover:bg-white/[0.10] border border-white/[0.14]
-                  text-[#FCF4EB]/55 hover:text-[#FCF4EB]/75
-                  transition-all duration-150 select-none"
-              >
+              <MagneticCopyButton onClick={handleCodexCopy} variant="secondary" className="py-1.5">
                 {codexCopied ? 'Copied Codex!' : 'Copy Codex Only'}
-              </button>
+              </MagneticCopyButton>
             </div>
           )}
         </div>

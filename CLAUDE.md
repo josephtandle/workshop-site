@@ -84,6 +84,7 @@ When writing Claude Code prompts for participants:
 - Use the shared `CodeBlock` component for prompts so the format stays consistent across all pages
 - Prompt block filenames must include the word `prompt` so the Codex copy button appears automatically
 - Button taxonomy: the normal `Copy` button is the primary action and uses a flatter dark-purple glass treatment; `Copy Codex Only` is secondary, light gray, and visually quieter
+- Copy buttons should have a subtle magnetic hover effect that follows the pointer slightly without shifting layout or feeling jumpy
 - Every copy action must use the shared copy helper so confetti fires from the clicked button location
 
 ---
