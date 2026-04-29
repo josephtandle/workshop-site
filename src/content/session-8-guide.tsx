@@ -104,10 +104,10 @@ export default function Session8Guide() {
             <p className="text-[#FCF4EB]/50 text-xs uppercase tracking-widest mb-4 font-semibold">In This Session</p>
             <ol className="space-y-2">
               <li><a href="#setup" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">Claude Dangerously Skip Permissions</a></li>
-              <li><a href="#part-a" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">WebFetch</a></li>
-              <li><a href="#tools" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">Tools Inside WebFetch</a></li>
               <li><a href="#install" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">Install and Register WebFetch</a></li>
+              <li><a href="#part-a" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">WebFetch</a></li>
               <li><a href="#examples" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">Using WebFetch Examples</a></li>
+              <li><a href="#tools" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">Tools Inside WebFetch</a></li>
               <li><a href="#use-cases" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">WebFetch Real-World Use Cases</a></li>
               <li><a href="#mlx-whisper" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">Local Whisper and Diarization</a></li>
             </ol>
@@ -142,6 +142,74 @@ Before making changes:
 2. Stay inside this project folder.
 3. Pause and ask before deleting, overwriting, or moving anything outside this project.
 4. When I give you WebFetch install prompts, keep the steps simple and use commands that match my operating system.`}
+              editable
+            />
+          </StepCard>
+        </section>
+
+        {/* ====================================================
+            INSTALL WEBFETCH
+        ==================================================== */}
+        <section id="install" className="mb-16">
+          <div className="flex items-center gap-3 mb-8">
+            <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Install</span>
+            <h2 className="text-2xl font-bold text-[#FCF4EB]">Install and Register WebFetch</h2>
+          </div>
+
+          <StepCard number={2} title="Install and register skills">
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              Paste this prompt into the Claude session you already opened. Claude will download the public GitHub repo,
+              install the dependencies, verify the tool, and add the skill notes to your
+              <strong className="text-[#FCF4EB]"> skills.md</strong> or <strong className="text-[#FCF4EB]">SKILLS.md</strong> file.
+            </p>
+            <p className="text-[#FCF4EB]/60 text-sm leading-relaxed mb-4">
+              Use <strong className="text-[#FCF4EB]">npm</strong> for the persistent install. Use
+              <strong className="text-[#FCF4EB]"> npx</strong> only for one-time setup commands like installing
+              Playwright's Chromium browser.
+            </p>
+            <CodeBlock
+              filename="Claude Code prompt"
+              code={`Install WebFetch from GitHub and register its skills for this workspace.
+
+Repository:
+https://github.com/josephtandle/ultimate-web-fetch
+
+Do the following carefully:
+1. Detect whether I am on macOS, Windows, or Linux before choosing commands.
+2. Use a normal persistent install, not an ephemeral npx-only run.
+3. Resolve my home directory dynamically and install into a Tools/ultimate-web-fetch folder inside that home directory.
+   Use ~ on macOS/Linux and $env:USERPROFILE or $HOME on Windows. Do not hard-code an absolute path.
+4. Use PowerShell-safe commands on Windows and shell-safe commands on macOS/Linux.
+5. If the folder already exists, pull the latest main branch. Otherwise clone the repo.
+6. Run npm install inside the repo.
+7. Run npx playwright install chromium.
+8. Try to make the command available globally by running npm install -g . from inside the repo.
+   If global npm install fails because of permissions, do not use sudo and do not force it. Use the local node src/index.js path instead.
+9. If required command paths are missing, or if FFmpeg or yt-dlp are missing, find the correct install command for my operating system and install them too.
+   On macOS, use Homebrew if available.
+   On Windows, use winget or the official installer command.
+   On Linux, use the detected package manager.
+   If admin permission is required, explain exactly what I need to approve.
+10. Run npm run check.
+11. Run node src/index.js preflight.
+12. Test one fetch command. Prefer webfetch if the global command works; otherwise use node src/index.js:
+   webfetch fetch https://example.com --format markdown
+13. Find my workspace skills.md or SKILLS.md file. If neither exists, create SKILLS.md in the most appropriate workspace/root folder.
+14. Append a section called "WebFetch" without deleting or rewriting any existing skills.
+15. In that section, register these skills:
+   - webfetch fetch: read a public webpage and return Markdown, text, JSON, or HTML
+   - webfetch extract: pull specific elements with CSS selectors
+   - webfetch screenshot: capture full-page or visible-page screenshots
+   - webfetch pdf: save a page as a PDF
+   - webfetch media: download public or authorized video/audio for offline analysis
+   - webfetch batch: fetch multiple URLs from one manifest
+   - webfetch cache: reuse recent fetches and clear cached pages when needed
+   - webfetch preflight: verify local tools before a workshop or client task
+16. Add usage examples for each skill using the correct command for my installation.
+   Preferred command if global install worked: webfetch
+   Fallback command if local path is needed: resolve the home-directory-relative path to the installed repo, then run node src/index.js.
+17. Do not store cookies, downloaded media, screenshots, cache files, or private tokens in skills.md or SKILLS.md.
+18. Report exactly what changed, where WebFetch was installed, whether the global webfetch command works, and whether preflight passed.`}
               editable
             />
           </StepCard>
@@ -184,6 +252,65 @@ Before making changes:
               </div>
             ))}
           </div>
+        </section>
+
+        {/* ====================================================
+            USING WEBFETCH EXAMPLES
+        ==================================================== */}
+        <section id="examples" className="mb-16">
+          <div className="flex items-center gap-3 mb-8">
+            <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Examples</span>
+            <h2 className="text-2xl font-bold text-[#FCF4EB]">Using WebFetch Examples</h2>
+          </div>
+
+          <StepCard number={3} title="Fetch a competitor's pricing page">
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              WebFetch is instant market research. Give Claude a URL and it will read the page and analyze it for you:
+            </p>
+            <CodeBlock
+              filename="Claude Code prompt"
+              code={`Using WebFetch, fetch the pricing page at [https://www.mastermindshq.business] and summarize:
+- What plans do they offer and at what price?
+- What is included in each plan?
+- What are they emphasizing as their main selling points?
+- What is missing that we offer?`}
+              editable
+            />
+          </StepCard>
+
+          <StepCard number={4} title="Research process before a sales call">
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              Before a call, have Claude pull together everything publicly available about the person or company:
+            </p>
+            <CodeBlock
+              filename="Claude Code prompt"
+              code={`I have a sales call in 30 minutes with [Elon Musk] from [SpaceX].
+Using WebFetch, research their public website and give me:
+- What the company does in one sentence
+- Who their likely customers are
+- Any recent content or initiatives worth mentioning
+- One smart question I could ask that shows I did my homework`}
+              editable
+            />
+          </StepCard>
+
+          <StepCard number={5} title="Download an Instagram video">
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              Use a public Instagram post as the class demo. Claude should still confirm authorization before
+              using browser cookies or touching private media.
+            </p>
+            <CodeBlock
+              filename="Claude Code prompt"
+              code={`Using WebFetch, download this Instagram [https://www.instagram.com/p/DXjFr6DE37Q/].`}
+              editable
+            />
+            <ProTip type="warning" className="mt-4">
+              This is usually against the terms of service for most companies and websites. While it is not illegal,
+              things against terms of service can be dangerous to your account and could potentially be infringing on
+              the rights of other creatives. Please use responsibly and wisely. I am not responsible for any negative
+              consequences of using this. This is a tool, like having a knife in your house; it is a tool to be used wisely.
+            </ProTip>
+          </StepCard>
         </section>
 
         {/* ====================================================
@@ -330,133 +457,6 @@ Before making changes:
         </section>
 
         {/* ====================================================
-            INSTALL WEBFETCH
-        ==================================================== */}
-        <section id="install" className="mb-16">
-          <div className="flex items-center gap-3 mb-8">
-            <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Install</span>
-            <h2 className="text-2xl font-bold text-[#FCF4EB]">Install and Register WebFetch</h2>
-          </div>
-
-          <StepCard number={2} title="Install and register skills">
-            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-              Paste this prompt into the Claude session you already opened. Claude will download the public GitHub repo,
-              install the dependencies, verify the tool, and add the skill notes to your
-              <strong className="text-[#FCF4EB]"> skills.md</strong> or <strong className="text-[#FCF4EB]">SKILLS.md</strong> file.
-            </p>
-            <p className="text-[#FCF4EB]/60 text-sm leading-relaxed mb-4">
-              Use <strong className="text-[#FCF4EB]">npm</strong> for the persistent install. Use
-              <strong className="text-[#FCF4EB]"> npx</strong> only for one-time setup commands like installing
-              Playwright's Chromium browser.
-            </p>
-            <CodeBlock
-              filename="Claude Code prompt"
-              code={`Install WebFetch from GitHub and register its skills for this workspace.
-
-Repository:
-https://github.com/josephtandle/ultimate-web-fetch
-
-Do the following carefully:
-1. Detect whether I am on macOS, Windows, or Linux before choosing commands.
-2. Use a normal persistent install, not an ephemeral npx-only run.
-3. Resolve my home directory dynamically and install into a Tools/ultimate-web-fetch folder inside that home directory.
-   Use ~ on macOS/Linux and $env:USERPROFILE or $HOME on Windows. Do not hard-code an absolute path.
-4. Use PowerShell-safe commands on Windows and shell-safe commands on macOS/Linux.
-5. If the folder already exists, pull the latest main branch. Otherwise clone the repo.
-6. Run npm install inside the repo.
-7. Run npx playwright install chromium.
-8. Try to make the command available globally by running npm install -g . from inside the repo.
-   If global npm install fails because of permissions, do not use sudo and do not force it. Use the local node src/index.js path instead.
-9. If required command paths are missing, or if FFmpeg or yt-dlp are missing, find the correct install command for my operating system and install them too.
-   On macOS, use Homebrew if available.
-   On Windows, use winget or the official installer command.
-   On Linux, use the detected package manager.
-   If admin permission is required, explain exactly what I need to approve.
-10. Run npm run check.
-11. Run node src/index.js preflight.
-12. Test one fetch command. Prefer webfetch if the global command works; otherwise use node src/index.js:
-   webfetch fetch https://example.com --format markdown
-13. Find my workspace skills.md or SKILLS.md file. If neither exists, create SKILLS.md in the most appropriate workspace/root folder.
-14. Append a section called "WebFetch" without deleting or rewriting any existing skills.
-15. In that section, register these skills:
-   - webfetch fetch: read a public webpage and return Markdown, text, JSON, or HTML
-   - webfetch extract: pull specific elements with CSS selectors
-   - webfetch screenshot: capture full-page or visible-page screenshots
-   - webfetch pdf: save a page as a PDF
-   - webfetch media: download public or authorized video/audio for offline analysis
-   - webfetch batch: fetch multiple URLs from one manifest
-   - webfetch cache: reuse recent fetches and clear cached pages when needed
-   - webfetch preflight: verify local tools before a workshop or client task
-16. Add usage examples for each skill using the correct command for my installation.
-   Preferred command if global install worked: webfetch
-   Fallback command if local path is needed: resolve the home-directory-relative path to the installed repo, then run node src/index.js.
-17. Do not store cookies, downloaded media, screenshots, cache files, or private tokens in skills.md or SKILLS.md.
-18. Report exactly what changed, where WebFetch was installed, whether the global webfetch command works, and whether preflight passed.`}
-              editable
-            />
-          </StepCard>
-        </section>
-
-        {/* ====================================================
-            USING WEBFETCH EXAMPLES
-        ==================================================== */}
-        <section id="examples" className="mb-16">
-          <div className="flex items-center gap-3 mb-8">
-            <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Examples</span>
-            <h2 className="text-2xl font-bold text-[#FCF4EB]">Using WebFetch Examples</h2>
-          </div>
-
-          <StepCard number={3} title="Fetch a competitor's pricing page">
-            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-              WebFetch is instant market research. Give Claude a URL and it will read the page and analyze it for you:
-            </p>
-            <CodeBlock
-              filename="Claude Code prompt"
-              code={`Using WebFetch, fetch the pricing page at [https://www.mastermindshq.business] and summarize:
-- What plans do they offer and at what price?
-- What is included in each plan?
-- What are they emphasizing as their main selling points?
-- What is missing that we offer?`}
-              editable
-            />
-          </StepCard>
-
-          <StepCard number={4} title="Research process before a sales call">
-            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-              Before a call, have Claude pull together everything publicly available about the person or company:
-            </p>
-            <CodeBlock
-              filename="Claude Code prompt"
-              code={`I have a sales call in 30 minutes with [Elon Musk] from [SpaceX].
-Using WebFetch, research their public website and give me:
-- What the company does in one sentence
-- Who their likely customers are
-- Any recent content or initiatives worth mentioning
-- One smart question I could ask that shows I did my homework`}
-              editable
-            />
-          </StepCard>
-
-          <StepCard number={5} title="Download an Instagram video">
-            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-              Use a public Instagram post as the class demo. Claude should still confirm authorization before
-              using browser cookies or touching private media.
-            </p>
-            <CodeBlock
-              filename="Claude Code prompt"
-              code={`Using WebFetch, download this Instagram [https://www.instagram.com/p/DXjFr6DE37Q/].`}
-              editable
-            />
-            <ProTip type="warning" className="mt-4">
-              This is usually against the terms of service for most companies and websites. While it is not illegal,
-              things against terms of service can be dangerous to your account and could potentially be infringing on
-              the rights of other creatives. Please use responsibly and wisely. I am not responsible for any negative
-              consequences of using this. This is a tool, like having a knife in your house; it is a tool to be used wisely.
-            </ProTip>
-          </StepCard>
-        </section>
-
-        {/* ====================================================
             WEBFETCH REAL-WORLD USE CASES
         ==================================================== */}
         <section id="use-cases" className="mb-16">
@@ -515,9 +515,6 @@ Using WebFetch, research their public website and give me:
             ))}
           </div>
 
-          <ProTip type="info">
-            Session 8 focuses on WebFetch. Session 9 moves into computer-use, where Claude can act on the research inside real apps.
-          </ProTip>
         </section>
 
         {/* ====================================================
@@ -600,7 +597,7 @@ Do the following carefully:
 Source Instagram URL:
 [https://www.instagram.com/p/DXjFr6DE37Q/]
 
-Make this one-click and dummy-proof:
+Handle the common paths for me:
 1. Find the media file WebFetch downloaded for the source URL above.
 2. Search the normal download locations first:
    - this project folder

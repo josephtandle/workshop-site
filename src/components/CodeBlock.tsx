@@ -75,8 +75,9 @@ export default function CodeBlock({ code, language, filename, editable, codexPro
           <button
           onClick={handleCopy}
           className="px-3 py-1 rounded-md text-xs font-semibold
-            bg-[#5E4EA6] hover:bg-[#6F5FBC] border border-[#8B7ADB]/45
-            text-[#FCF4EB] shadow-sm shadow-black/20
+            bg-[#5E4EA6]/80 hover:bg-[#6F5FBC]/85 border border-white/[0.16]
+            text-[#FCF4EB] shadow-[inset_0_1px_0_rgba(255,255,255,0.18)]
+            backdrop-blur-sm
             transition-all duration-150 select-none"
         >
           {copied ? 'Copied!' : 'Copy'}
