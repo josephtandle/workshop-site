@@ -16,12 +16,13 @@
  * - Never use language that talks down to students, including "dummy-proof" in participant-facing copy
  * - Every prompt CodeBlock filename must include "prompt" so Copy Codex Only appears
  * - Every prompt CodeBlock shows Copy Claude Code for the exact Claude Code prompt beside it
- * - The Copy Codex Only button copies `codex --yolo`, a blank line, then the Codex wording of the same prompt
+ * - The Copy Codex Only button copies only the Codex wording of the same prompt; do not prepend codex --yolo
  * - Normal Copy is the primary flat dark-purple glass button; Copy Codex Only is secondary light gray
  * - Copy buttons should have a subtle magnetic hover effect that follows the pointer slightly without shifting layout
  * - Every copy action must use the shared copy helper so confetti starts from the clicked button
  * - Session guide visuals reuse the homepage language: particles, purple/rose glass, shimmer lines, glow borders, and polished hover states
  * - Step number indicators should use prominent circular badges that are larger than plain list numbering
+ * - Feature icons should use larger square tiles with no visible border, soft glass fill, and clear icon scale
  * - Bonus sections use the pink gradient hero card (see bottom of this file)
  * - Prep pages use session-3-prep.tsx as canonical template
  */

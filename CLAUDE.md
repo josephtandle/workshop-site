@@ -81,7 +81,7 @@ When writing Claude Code prompts for participants:
 - Put user-editable variables in square brackets, such as `[https://www.example.com]`, `[person name]`, or `[company name]`
 - Every participant prompt block must include the shared `Copy Codex Only` button for Codex members
 - Every participant prompt block must show a `Copy Claude Code` button that copies the exact Claude Code prompt beside it
-- The Codex version must start with `codex --yolo`, then a blank line, then the Codex wording of the same prompt
+- The Codex version must copy only the Codex wording of the same prompt; do not prepend `codex --yolo`
 - Use the shared `CodeBlock` component for prompts so the format stays consistent across all pages
 - Prompt block filenames must include the word `prompt` so the Codex copy button appears automatically
 - Button taxonomy: the normal `Copy` button is the primary action and uses a flatter dark-purple glass treatment; `Copy Codex Only` is secondary, light gray, and visually quieter
@@ -89,6 +89,7 @@ When writing Claude Code prompts for participants:
 - Every copy action must use the shared copy helper so confetti fires from the clicked button location
 - Session guide visuals should reuse the Masterminds homepage language: particle field, purple/rose glass, shimmer lines, soft glow borders, and polished hover states
 - Step number indicators should remain prominent and easy to scan, with slightly larger circular badges than plain list numbering
+- Session guide feature icons should use larger square tiles with no visible border, soft glass fill, and clear icon scale
 
 ---
 

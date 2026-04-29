@@ -258,7 +258,7 @@ Do the following carefully:
             ].map(({ icon, title, desc }) => (
               <div key={title} className="webfetch-feature-card group rounded-xl p-5">
                 <div className="relative z-10 flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg flex items-center justify-center text-[#CFC5FF] bg-[#7C69C7]/16 border border-[#9D8FE0]/24 group-hover:bg-[#7C69C7]/26 transition-colors">
+                  <div className="aspect-square w-14 rounded-xl flex items-center justify-center text-[#CFC5FF] bg-[#7C69C7]/18 group-hover:bg-[#7C69C7]/28 shadow-[inset_0_1px_0_rgba(255,255,255,0.10),0_12px_30px_rgba(0,0,0,0.18)] transition-colors [&_svg]:h-7 [&_svg]:w-7">
                     <WebFetchUseCaseIcon type={icon} />
                   </div>
                   <div className="min-w-0">
@@ -517,7 +517,7 @@ Using WebFetch, research their public website and give me:
             ].map(({ icon, title, desc }, index) => (
               <div key={title} className="group bg-[linear-gradient(145deg,rgba(255,255,255,0.065),rgba(255,255,255,0.025))] border border-white/[0.10] rounded-xl p-5 shadow-[0_18px_50px_rgba(0,0,0,0.16)]">
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="w-10 h-10 rounded-lg flex items-center justify-center text-[#9D8FE0] bg-[#7C69C7]/15 border border-[#7C69C7]/25 group-hover:bg-[#7C69C7]/22 transition-colors">
+                  <div className="aspect-square w-14 rounded-xl flex items-center justify-center text-[#CFC5FF] bg-[#7C69C7]/18 group-hover:bg-[#7C69C7]/28 shadow-[inset_0_1px_0_rgba(255,255,255,0.10),0_12px_30px_rgba(0,0,0,0.18)] transition-colors [&_svg]:h-7 [&_svg]:w-7">
                     <WebFetchUseCaseIcon type={icon} />
                   </div>
                   <div>

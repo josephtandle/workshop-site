@@ -19,9 +19,7 @@ function toCodexPrompt(prompt: string) {
     .replace(/\bCLAUDE\.md\b/g, 'AGENTS.md')
     .replace(/\bclaude\.md\b/g, 'agents.md')
 
-  if (/^\s*codex\s+--yolo\b/i.test(codexPrompt)) return codexPrompt
-
-  return `codex --yolo\n\n${codexPrompt}`
+  return codexPrompt.replace(/^\s*codex\s+--yolo\s*/i, '').trimStart()
 }
 
 type MagneticCopyButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
