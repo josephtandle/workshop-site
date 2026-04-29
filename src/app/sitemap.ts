@@ -52,5 +52,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Lead magnets
     { url: `${BASE}/lead-magnets/ultimate-claudemd`,        lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
+
+    // Resource vault
+    { url: `${BASE}/resource-vault`,                        lastModified: NOW, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/resource-vault/reza-website-control`,   lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/resource-vault/wordpress-api`,          lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
   ]
 }

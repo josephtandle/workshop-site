@@ -46,6 +46,44 @@ export default function ResourceVaultPage() {
                 Featured resources
               </p>
               <a
+                href="/resource-vault/reza-website-control"
+                className="block rounded-2xl p-6 transition-all hover:scale-[1.01] mb-4"
+                style={{
+                  background: 'rgba(124, 105, 199, 0.07)',
+                  border: '1px solid rgba(124, 105, 199, 0.22)',
+                }}
+              >
+                <div className="flex items-start gap-5">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold flex-shrink-0"
+                    style={{
+                      background: 'rgba(124, 105, 199, 0.18)',
+                      color: '#9D8FE0',
+                      border: '1.5px solid rgba(124, 105, 199, 0.30)',
+                    }}
+                  >
+                    ◆
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-[#FCF4EB] font-semibold text-base mb-1">Reza Process to take control of his website</p>
+                    <p className="text-[#FCF4EB]/45 text-xs mb-3">Step-by-step guide</p>
+                    <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
+                      Find the hosting, get the designer's Git repo, set up Git and GitHub access, pull the site into Claude Code, then practice by building a safe lead magnet page.
+                    </p>
+                  </div>
+                  <div
+                    className="flex-shrink-0 text-xs font-semibold px-3 py-1.5 rounded-full"
+                    style={{
+                      background: 'rgba(124, 105, 199, 0.15)',
+                      color: '#9D8FE0',
+                      border: '1px solid rgba(124, 105, 199, 0.25)',
+                    }}
+                  >
+                    View guide
+                  </div>
+                </div>
+              </a>
+              <a
                 href="/resource-vault/wordpress-api"
                 className="block rounded-2xl p-6 transition-all hover:scale-[1.01] mb-4"
                 style={{
