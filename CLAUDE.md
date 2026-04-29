@@ -76,6 +76,7 @@ When writing Claude Code prompts for participants:
 - Structure as clear numbered or bulleted instructions
 - Include all context Claude needs (table names, field names, behavior on edge cases)
 - Never require participants to understand what the prompt is doing technically
+- Put user-editable variables in square brackets, such as `[https://www.example.com]`, `[person name]`, or `[company name]`
 - Every participant prompt block must include the shared `Copy Codex Only` button for Codex members
 - The Codex version must start with `codex --yolo`, then a blank line, then the Codex wording of the same prompt
 - Use the shared `CodeBlock` component for prompts so the format stays consistent across all pages

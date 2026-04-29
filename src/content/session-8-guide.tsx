@@ -412,7 +412,7 @@ Do the following carefully:
             </p>
             <CodeBlock
               filename="Claude Code prompt"
-              code={`Using WebFetch, fetch the pricing page at [masterminds_hq] and summarize:
+              code={`Using WebFetch, fetch the pricing page at [https://www.mastermindshq.business] and summarize:
 - What plans do they offer and at what price?
 - What is included in each plan?
 - What are they emphasizing as their main selling points?
@@ -427,7 +427,7 @@ Do the following carefully:
             </p>
             <CodeBlock
               filename="Claude Code prompt"
-              code={`I have a sales call in 30 minutes with Elon Musk from SpaceX.
+              code={`I have a sales call in 30 minutes with [Elon Musk] from [SpaceX].
 Using WebFetch, research their public website and give me:
 - What the company does in one sentence
 - Who their likely customers are
@@ -444,13 +444,14 @@ Using WebFetch, research their public website and give me:
             </p>
             <CodeBlock
               filename="Claude Code prompt"
-              code={`Using WebFetch, download this Instagram [my Instagram]:
-https://www.instagram.com/reel/DXjFr6DE37Q/`}
+              code={`Using WebFetch, download this Instagram [https://www.instagram.com/p/DXjFr6DE37Q/].`}
               editable
             />
             <ProTip type="warning" className="mt-4">
-              Do not use this to bypass paywalls, private accounts, or platform rules. For class, use your own post,
-              a participant-approved post, or a public test URL.
+              This is usually against the terms of service for most companies and websites. While it is not illegal,
+              things against terms of service can be dangerous to your account and could potentially be infringing on
+              the rights of other creatives. Please use responsibly and wisely. I am not responsible for any negative
+              consequences of using this. This is a tool, like having a knife in your house; it is a tool to be used wisely.
             </ProTip>
           </StepCard>
         </section>
@@ -594,7 +595,10 @@ Do the following carefully:
             </p>
             <CodeBlock
               filename="Claude Code prompt"
-              code={`Use my local-whisper install to transcribe the media file I downloaded with WebFetch.
+              code={`Use my local-whisper install to transcribe the video I downloaded with WebFetch.
+
+Source Instagram URL:
+[https://www.instagram.com/p/DXjFr6DE37Q/]
 
 Media file:
 [PASTE THE FILE PATH HERE]

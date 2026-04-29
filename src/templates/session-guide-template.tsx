@@ -7,6 +7,7 @@
  * Rules (also in CLAUDE.md):
  * - Every session guide starts with "Claude Dangerously Skip Permissions"
  * - Any CodeBlock with [BRACKET] placeholders must have editable prop
+ * - Put participant-editable variables in square brackets, such as [URL], [person name], or [company name]
  * - All external services must be linked (Vercel, Supabase, Resend, Porkbun, etc.)
  * - No em dashes anywhere — use "and", "then", or a period
  * - No raw code for participants to copy unless it requires zero customization
