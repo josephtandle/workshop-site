@@ -62,6 +62,14 @@ export const giveaways: Giveaway[] = [
     badgeVariant: 'purple',
   },
   {
+    slug: 'client-launch-checklist',
+    title: 'Client Launch Checklist',
+    description: 'A concrete Session 3 lead magnet example with first name and email capture, instant delivery copy, and a realistic service-business offer.',
+    icon: '◇',
+    badge: 'Session 3',
+    badgeVariant: 'pink',
+  },
+  {
     slug: 'logo-maker-guide',
     title: 'How to Get a Great Logo',
     description: 'Every path covered: free tools, paid options, hiring a designer, and how to build your own logo maker with APIs. Includes API comparison and limitations.',
