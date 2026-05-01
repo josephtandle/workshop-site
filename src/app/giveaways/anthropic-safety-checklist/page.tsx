@@ -171,48 +171,39 @@ Inspect the codebase for these specific risks:
 - Search for scripts, commands, docs, or config that switch Claude accounts, rotate profiles, sync tokens, copy sessions, load different browser profiles, or fail over between accounts.
 - Look for names like switch-profile, switch-account, account-rotation, token-sync, oauth-sync, profile-sync, session-sync, browser-profile, claude-profile, rate-limit-fallback, quota-fallback, and account-pool.
 - Flag any logic that tries to keep work alive by changing users, sessions, accounts, devices, browser profiles, or identity surfaces.
-- Explain why this is risky and what to delete or replace.
 
 2. Human-operated use versus unattended automation
 - Identify every place Claude, Claude Code, the Claude CLI, a browser, or an LLM router can be invoked.
 - Classify each path as human-operated, semi-automated with human approval, or unattended.
 - Check package scripts, shell scripts, cron jobs, launchd agents, GitHub Actions, CI, queues, workers, daemons, webhooks, background jobs, and long-running agents.
 - Flag anything that uses a personal Claude session for background work, autonomous loops, retries, customer-facing features, scraping, content generation, monitoring, or scheduled execution.
-- Confirm that human-operated use stays visible, intentional, and under direct human control.
 
 3. API routing for automation
 - Find all automated tasks that call an AI model or model router.
 - Verify that those automated tasks use supported APIs such as Anthropic API, Anthropic Console, AWS Bedrock, Google Vertex AI, Foundry, OpenAI API, or another explicit provider API.
 - Flag any automated task that uses OAuth, browser cookies, local Claude sessions, copied credentials, consumer app sessions, or Claude Code as a backend.
-- Recommend a concrete API-backed replacement for each unsafe automation path.
 
 4. Consumer product wrapping
 - Look for any product shell, gateway, relay, browser wrapper, embedded terminal, proxy, hidden iframe, CLI wrapper, or local service that makes consumer Claude or Claude Code appear inside another app.
 - Flag patterns where users, customers, teammates, or background jobs indirectly access a personal Claude login.
-- Recommend replacing those paths with a proper API endpoint, provider abstraction, queue worker, or approved integration.
 
 5. Credential and environment audit
 - Review .env examples, config files, CI secrets names, launch scripts, documentation, and local setup instructions.
 - Look for CLAUDE_SESSION, CLAUDE_OAUTH, CLAUDE_COOKIE, CLAUDE_PROFILE, ANTHROPIC_AUTH_TOKEN, browser profile paths, copied session stores, API keys, provider keys, and fallback credentials.
-- Separate human credentials from automation credentials.
 - Flag credentials that are ambiguous, reused across lanes, committed by mistake, or used by both humans and unattended workflows.
 
 6. Browser automation and local session risk
 - Search for Playwright, Puppeteer, Chrome DevTools Protocol, browser-route scripts, remote debugging ports, profile directories, cookie jars, and local storage files.
-- Decide whether browser automation is controlling public web pages, internal tools, or Claude consumer sessions.
 - Flag browser automation that logs into Claude, drives Claude web, extracts Claude responses, or uses a personal Claude session as a machine interface.
-- Keep normal browser QA separate from model execution.
 
 7. MyOS, routers, agents, and fallback chains
 - Inspect any MyOS dispatch, model router, task-class routing, provider selection, agent registry, skills, recipes, tools, or workflow files.
 - Check whether background agents, daemons, or product workflows can fall back to consumer Claude or Claude Code.
 - Flag hardcoded model/provider shortcuts that bypass the official routing lane.
-- Verify that deterministic tools run deterministically, human Claude use stays human, and automated model work goes to APIs.
 
 8. Usage-budget misunderstanding
 - Look for docs or comments that treat consumer usage credits, subscriptions, browser sessions, or Claude Code access as automation budget.
 - Flag any workload that could burn through usage in minutes through loops, retries, parallel agents, or unattended queues.
-- Recommend API budgets, rate limits, spend caps, observability, and kill switches for automation.
 
 9. Evidence standards
 - Do not guess.
@@ -220,14 +211,32 @@ Inspect the codebase for these specific risks:
 - If you cannot inspect something, say what you could not inspect and why.
 - Be conservative. If a path can plausibly run unattended through a consumer session, mark it at least Medium risk.
 
+Strict output rules:
+- Output only the 4 sections below.
+- Do not add any extra sections.
+- Do not include “Findings by severity.”
+- Do not include “Keep, change, delete.”
+- Do not include “Refactor plan.”
+- Do not list individual files at the top as a long inventory.
+
 Output format:
 
-1. Overall ban-risk rating
-- Choose Low, Medium, or High.
-- Give a confidence level from 0 to 100%.
-- Give a one-paragraph explanation in plain English.
+1. Files inspected
+- Write exactly one summary sentence in this format:
+I inspected all your files at [folder path] and all subfolders.
+- After that, optionally add 1-3 short sentences only if:
+  - important surfaces existed outside that folder, or
+  - something could not be inspected.
 
-2. Ban-risk scorecard
+2. Overall ban-risk rating
+- Write the rating and confidence in exactly this format:
+High. Confidence: [X]%.
+- On the next line, write exactly:
+You are at very high risk of getting banned.
+- Then write one short plain-English paragraph explaining why.
+- If the rating is Medium or Low, keep the same format but replace the warning sentence with an equivalent warning level.
+
+3. Ban-risk scorecard
 - Human-operated only: Pass, Warning, or Fail.
 - Do not switch profiles: Pass, Warning, or Fail.
 - Automated tasks use APIs: Pass, Warning, or Fail.
@@ -236,32 +245,14 @@ Output format:
 - Browser automation stays away from Claude consumer sessions: Pass, Warning, or Fail.
 - MyOS or router fallbacks are provider-safe: Pass, Warning, or Fail.
 
-3. Findings by severity
-For each finding, include:
-- Severity: Critical, High, Medium, or Low.
-- Evidence: exact file, command, job, variable, or workflow.
-- Why it creates ban risk.
-- What to change.
-- Safer replacement.
-
-4. Keep, change, delete
-- Keep: safe patterns that are fine to continue.
-- Change: patterns that need refactoring.
-- Delete: patterns that should be removed entirely, especially account switching, profile rotation, token sync, and session reuse.
-
-5. Refactor plan
-- Give a step-by-step plan to move every automated path to APIs.
-- Include where API keys should live.
-- Include where human approval should remain required.
-- Include the minimum tests or checks to prove the risky behavior is gone.
-
-6. Final plain-English verdict
+4. Final plain-English verdict
 - Tell me whether I am probably safe, need cleanup, or need urgent refactoring before continuing.
 - If the assessment is High risk, include this exact sentence:
 Reach out to Joe if you want a full safety audit and code refactoring so that you won't get banned in the future.
-- Also include this email for help: joe@mastermindshq.business
+- Also include this exact email:
+joe@mastermindshq.business
 
-Start by listing the files and automation surfaces you will inspect, then perform the audit.`
+Start by inspecting the codebase, then return the result in exactly the 4 sections above.`
 
 const HOW_IT_WORKS = [
   {
@@ -557,7 +548,7 @@ export default function AnthropicSafetyChecklistPage() {
                 lineHeight: 1.1,
               }}
             >
-              A codebase audit prompt for Claude, profiles, sessions, and automation.
+              One-prop risk rating
             </motion.p>
 
             <motion.p
@@ -810,7 +801,15 @@ export default function AnthropicSafetyChecklistPage() {
           style={{ zIndex: 1 }}
         >
           <p className="text-[#FCF4EB]/22 text-sm leading-relaxed italic">
-            Need help with a high-risk result? Email {JOE_EMAIL} and ask for a full safety audit.
+            If you're medium to high risk, take the time to refactor your code. If you'd like me and my team to do
+            this for you, please reach out at{' '}
+            <a
+              href={`mailto:${JOE_EMAIL}`}
+              className="text-[#FCF4EB]/38 underline underline-offset-4 decoration-[#F5C3C6]/45 hover:text-[#F5C3C6] transition-colors"
+            >
+              {JOE_EMAIL}
+            </a>
+            .
           </p>
         </motion.div>
 
@@ -831,6 +830,7 @@ export default function AnthropicSafetyChecklistPage() {
 
 function MastermindCTA() {
   const magnet = useMagnet(0.28)
+  const emailHref = `mailto:${JOE_EMAIL}?subject=${encodeURIComponent('Anthropic safety audit and compliance help')}`
 
   return (
     <section className="relative max-w-5xl mx-auto px-6 py-14" style={{ zIndex: 1 }}>
@@ -844,41 +844,35 @@ function MastermindCTA() {
           border: '1px solid rgba(245,195,198,0.15)',
         }}
       >
-        <div className="px-6 sm:px-14 pb-12 pt-8 text-center">
-          <h2 className="text-2xl sm:text-5xl font-bold text-[#FCF4EB] mb-4">
-            Want safer AI systems?
+        <div className="px-6 sm:px-14 py-12 sm:py-16 text-center">
+          <p className="text-[11px] font-bold uppercase tracking-[0.32em] text-[#F5C3C6]/70 mb-5">
+            Need Help Refactoring?
+          </p>
+
+          <h2
+            className="text-transparent bg-clip-text bg-gradient-to-r from-[#FCF4EB] via-[#F5C3C6] to-[#9D8FE0] mb-6"
+            style={{
+              fontFamily: '"Cormorant Garamond", Georgia, serif',
+              fontStyle: 'italic',
+              fontWeight: 700,
+              fontSize: 'clamp(2.3rem, 6vw, 4.6rem)',
+              lineHeight: 1,
+              letterSpacing: '-0.02em',
+            }}
+          >
+            Medium-to-high risk?
+            <br />
+            Let&apos;s make it safe.
           </h2>
-
-          <p className="text-xl sm:text-3xl font-bold mb-5">
-            <a href={MASTERMIND_URL} target="_blank" rel="noopener noreferrer" className="text-transparent bg-clip-text bg-gradient-to-r from-[#9D8FE0] to-[#F5C3C6] hover:opacity-80 transition-opacity">
-              Join the Business Automation Mastermind
-            </a>
-          </p>
-
-          <p className="text-[#FCF4EB]/52 max-w-xl mx-auto mb-8 leading-relaxed text-base sm:text-lg">
-            A small, focused group of business owners who meet weekly to build useful automation, clean workflows,
-            and AI systems that keep the human and API lanes separate.
-          </p>
-
-          <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center items-center mb-9">
-            {['Human work stays human', 'Automated work uses APIs', 'Risky profile switching gets removed'].map((item) => (
-              <div key={item} className="flex items-center gap-2 text-[#FCF4EB]/58 text-sm">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#F5C3C6] flex-shrink-0" />
-                {item}
-              </div>
-            ))}
-          </div>
 
           <a
             ref={magnet.ref as React.RefObject<HTMLAnchorElement>}
-            href={MASTERMIND_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={emailHref}
             onMouseMove={magnet.onMouseMove}
             onMouseLeave={magnet.onMouseLeave}
-            className="block sm:inline-block w-full sm:w-auto px-10 py-4 rounded-xl bg-[#F5C3C6] hover:bg-[#f0b8bc] text-[#151515] font-bold text-base active:scale-[0.98] glow-btn glow-btn-pink text-center"
+            className="block sm:inline-block w-full sm:w-auto px-12 py-4 rounded-xl bg-[#F5C3C6] hover:bg-[#f0b8bc] text-[#151515] font-bold text-base sm:text-lg active:scale-[0.98] glow-btn glow-btn-pink text-center shadow-[0_18px_60px_rgba(245,195,198,0.2)]"
           >
-            Learn More
+            Email Joe
           </a>
         </div>
       </motion.div>
