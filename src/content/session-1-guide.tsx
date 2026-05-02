@@ -12,7 +12,7 @@ export default function Session1Guide() {
         <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
           Session One
         </p>
-        <h1 className="text-4xl font-bold text-[#FCF4EB] leading-tight mb-5">
+        <h1 className="gradient-text text-5xl font-extrabold leading-tight mb-5 pb-1">
           Setting the Mastermind Container
         </h1>
         <p className="text-[#FCF4EB]/70 text-lg leading-relaxed mb-8">

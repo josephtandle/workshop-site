@@ -150,7 +150,7 @@ body {
 .number-glow:hover {
   box-shadow: 0 0 0 4px rgba(124, 105, 199, 0.15), 0 0 20px rgba(124, 105, 199, 0.45);
   background: rgba(124, 105, 199, 0.32) !important;
-  transform: scale(1.08);
+  transform: scale(1.30);
 }
 
 /* ─── ProTip ──────────────────────────────────────────── */
@@ -237,7 +237,7 @@ details[open] > summary svg { transform: rotate(180deg); }
   border: 1px solid rgba(252,244,235,0.13);
   background:
     radial-gradient(circle at 12% 0%, rgba(157,143,224,0.24), transparent 34%),
-    radial-gradient(circle at 88% 18%, rgba(245,195,198,0.16), transparent 30%),
+    radial-gradient(circle at 88% 18%, rgba(255,220,230,0.16), transparent 30%),
     linear-gradient(145deg, rgba(255,255,255,0.085), rgba(255,255,255,0.026));
   box-shadow:
     0 22px 70px rgba(0,0,0,0.30),

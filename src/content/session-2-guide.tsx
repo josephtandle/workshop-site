@@ -13,7 +13,7 @@ export default function Session2Guide() {
         <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
           Session Two
         </p>
-        <h1 className="text-4xl font-bold text-[#FCF4EB] leading-tight mb-5">
+        <h1 className="gradient-text text-5xl font-extrabold leading-tight mb-5 pb-1">
           Building Your First Website with AI
         </h1>
         <p className="text-[#FCF4EB]/70 text-lg leading-relaxed mb-8">
@@ -26,14 +26,34 @@ export default function Session2Guide() {
           <span><span className="text-[#FCF4EB]/30 mr-2">Difficulty</span>Beginner</span>
         </div>
 
-        <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-6">
-          <p className="text-[#FCF4EB]/50 text-xs uppercase tracking-widest mb-4 font-semibold">In This Session</p>
-          <ol className="space-y-2">
-            <li><a href="#part-a" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">Part A — Set Up and Build Your Page</a></li>
-            <li><a href="#part-b" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">Part B — Add Visual Effects</a></li>
-            <li><a href="#part-c" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">Part C — Deploy and Make It Yours</a></li>
+        <details className="rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(124,105,199,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]">
+          <summary className="flex items-center justify-between px-6 py-5 cursor-pointer select-none">
+            <div className="flex items-center gap-3">
+              <span className="h-2 w-2 rounded-full bg-[#9D8FE0] shadow-[0_0_12px_rgba(157,143,224,0.70)]" />
+              <span className="text-xs uppercase tracking-[0.20em] text-[#FCF4EB]/65 font-semibold">Table of Contents</span>
+            </div>
+            <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[rgba(124,105,199,0.15)] border border-[rgba(124,105,199,0.28)] text-[#9D8FE0]">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+          </summary>
+          <div className="border-t border-white/[0.07] mx-5" />
+          <ol className="px-6 py-5 space-y-3">
+            {[
+              { href: '#part-a', label: 'Part A — Set Up and Build Your Page' },
+              { href: '#part-b', label: 'Part B — Add Visual Effects' },
+              { href: '#part-c', label: 'Part C — Deploy and Make It Yours' },
+            ].map(({ href, label }, i) => (
+              <li key={href} className="flex items-center gap-3 group/item">
+                <span className="number-glow flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold tabular-nums" style={{ background: 'rgba(124,105,199,0.18)', color: '#9D8FE0', border: '1.5px solid rgba(124,105,199,0.30)' }}>
+                  {i + 1}
+                </span>
+                <a href={href} className="text-[#FCF4EB]/58 hover:text-[#9D8FE0] text-sm leading-snug transition-colors duration-150">{label}</a>
+              </li>
+            ))}
           </ol>
-        </div>
+        </details>
       </div>
     </div>
 

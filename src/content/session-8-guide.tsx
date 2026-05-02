@@ -100,20 +100,51 @@ export default function Session8Guide() {
           </div>
 
           {/* Table of Contents */}
-          <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-6">
-            <p className="text-[#FCF4EB]/50 text-xs uppercase tracking-widest mb-4 font-semibold">In This Session</p>
-            <ol className="space-y-2">
-              <li><a href="#setup" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">Claude Dangerously Skip Permissions</a></li>
-              <li><a href="#install" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">Install and Register WebFetch</a></li>
-              <li><a href="#part-a" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">WebFetch</a></li>
-              <li><a href="#examples" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">Using WebFetch Examples</a></li>
-              <li><a href="#tools" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">Tools Inside WebFetch</a></li>
-              <li><a href="#use-cases" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">WebFetch Real-World Use Cases</a></li>
-              <li><a href="#mlx-whisper" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">Local Whisper and Diarization</a></li>
-              <li><a href="#guarddog" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">Installing GuardDog</a></li>
-              <li><a href="#wrap-up" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors text-sm">Wrap-Up</a></li>
+          <details className="rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(124,105,199,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]">
+            <summary className="flex items-center justify-between px-6 py-5 cursor-pointer select-none">
+              <div className="flex items-center gap-3">
+                <span className="h-2 w-2 rounded-full bg-[#9D8FE0] shadow-[0_0_12px_rgba(157,143,224,0.70)]" />
+                <span className="text-xs uppercase tracking-[0.20em] text-[#FCF4EB]/65 font-semibold">Table of Contents</span>
+              </div>
+              <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[rgba(124,105,199,0.15)] border border-[rgba(124,105,199,0.28)] text-[#9D8FE0]">
+                <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+            </summary>
+
+            <div className="border-t border-white/[0.07] mx-5" />
+
+            <ol className="px-6 py-5 space-y-3">
+              {[
+                { href: '#setup',      label: 'Claude Dangerously Skip Permissions' },
+                { href: '#install',    label: 'Install and Register WebFetch' },
+                { href: '#part-a',     label: 'WebFetch' },
+                { href: '#examples',   label: 'Using WebFetch Examples' },
+                { href: '#tools',      label: 'Tools Inside WebFetch' },
+                { href: '#use-cases',  label: 'WebFetch Real-World Use Cases' },
+                { href: '#mlx-whisper',label: 'Local Whisper and Diarization' },
+                { href: '#guarddog',   label: 'Installing GuardDog' },
+                { href: '#virustotal', label: 'VirusTotal API Key' },
+                { href: '#wrap-up',    label: 'Wrap-Up' },
+              ].map(({ href, label }, i) => (
+                <li key={href} className="flex items-center gap-3 group/item">
+                  <span
+                    className="number-glow flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold tabular-nums"
+                    style={{ background: 'rgba(124,105,199,0.18)', color: '#9D8FE0', border: '1.5px solid rgba(124,105,199,0.30)' }}
+                  >
+                    {i + 1}
+                  </span>
+                  <a
+                    href={href}
+                    className="text-[#FCF4EB]/58 hover:text-[#9D8FE0] text-sm leading-snug transition-colors duration-150"
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))}
             </ol>
-          </div>
+          </details>
         </div>
       </div>
 
@@ -131,20 +162,6 @@ export default function Session8Guide() {
             <CodeBlock
               filename="Terminal"
               code={`claude --dangerously-skip-permissions`}
-            />
-            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-              After Claude opens, paste this setup prompt:
-            </p>
-            <CodeBlock
-              filename="Claude Code prompt"
-              code={`We are working in the workshop project folder.
-
-Before making changes:
-1. Confirm which folder you are in.
-2. Stay inside this project folder.
-3. Pause and ask before deleting, overwriting, or moving anything outside this project.
-4. When I give you WebFetch install prompts, keep the steps simple and use commands that match my operating system.`}
-              editable
             />
           </StepCard>
         </section>
@@ -187,31 +204,45 @@ Do the following carefully:
 7. Run npx playwright install chromium.
 8. Try to make the command available globally by running npm install -g . from inside the repo.
    If global npm install fails because of permissions, do not use sudo and do not force it. Use the local node src/index.js path instead.
-9. If required command paths are missing, or if FFmpeg or yt-dlp are missing, find the correct install command for my operating system and install them too.
-   On macOS, use Homebrew if available.
-   On Windows, use winget or the official installer command.
-   On Linux, use the detected package manager.
-   If admin permission is required, explain exactly what I need to approve.
+9. Install all required dependencies for the operating system:
+   - If FFmpeg or yt-dlp are missing, install them via Homebrew (macOS), winget (Windows), or the detected package manager (Linux).
+   - On macOS, Homebrew-managed Python blocks pip installs due to PEP 668 — do not use --break-system-packages and do not pip install into the system Python.
+     Instead, create a Python 3.12 virtualenv at ~/Tools/ultimate-web-fetch/.venv using:
+     python3.12 -m venv ~/Tools/ultimate-web-fetch/.venv
+     Install scrapling, browser-use, langchain-openai, and shot-scraper into it:
+     ~/Tools/ultimate-web-fetch/.venv/bin/pip install scrapling browser-use langchain-openai shot-scraper
+     Then run: ~/Tools/ultimate-web-fetch/.venv/bin/shot-scraper install
+     Create a .env file in the repo root with these two lines. Resolve the home directory dynamically — do not hardcode the username:
+     WEBFETCH_PYTHON=<resolved-home>/Tools/ultimate-web-fetch/.venv/bin/python3.12
+     SHOT_SCRAPER_BIN=<resolved-home>/Tools/ultimate-web-fetch/.venv/bin/shot-scraper
+   - On Windows or Linux, use a virtualenv in the same Tools/ultimate-web-fetch folder and create the same .env file with the correct resolved paths.
+   - If admin permission is required for any step, explain exactly what I need to approve.
 10. Run npm run check.
-11. Run node src/index.js preflight.
-12. Test one fetch command. Prefer webfetch if the global command works; otherwise use node src/index.js:
-   webfetch fetch https://example.com --format markdown
-13. Find my workspace skills.md or SKILLS.md file. If neither exists, create SKILLS.md in the most appropriate workspace/root folder.
-14. Append a section called "WebFetch" without deleting or rewriting any existing skills.
-15. In that section, register these skills:
-   - webfetch fetch: read a public webpage and return Markdown, text, JSON, or HTML
-   - webfetch extract: pull specific elements with CSS selectors
-   - webfetch screenshot: capture full-page or visible-page screenshots
-   - webfetch pdf: save a page as a PDF
-   - webfetch media: download public or authorized video/audio for offline analysis
-   - webfetch batch: fetch multiple URLs from one manifest
-   - webfetch cache: reuse recent fetches and clear cached pages when needed
-   - webfetch preflight: verify local tools before a workshop or client task
-16. Add usage examples for each skill using the correct command for my installation.
-   Preferred command if global install worked: webfetch
-   Fallback command if local path is needed: resolve the home-directory-relative path to the installed repo, then run node src/index.js.
-17. Do not store cookies, downloaded media, screenshots, cache files, or private tokens in skills.md or SKILLS.md.
-18. Report exactly what changed, where WebFetch was installed, whether the global webfetch command works, and whether preflight passed.`}
+11. Run node src/index.js preflight from inside the repo directory — not the global webfetch command — so it reads the .env file.
+    The global webfetch preflight will not pick up the .env unless run from the repo directory.
+12. After preflight, every line in the output must show "installed": true.
+    If any tool still shows false, do not proceed — diagnose and fix it before continuing.
+    "All core tools ready" in the status line is not enough; check each tool individually.
+13. Test one fetch command. Prefer webfetch if the global command works; otherwise use node src/index.js:
+    webfetch fetch https://example.com --format markdown
+14. Find my workspace skills.md or SKILLS.md file. If neither exists, create SKILLS.md in the most appropriate workspace/root folder.
+15. Append a section called "WebFetch" without deleting or rewriting any existing skills.
+16. In that section, register these skills:
+    - webfetch fetch: read a public webpage and return Markdown, text, JSON, or HTML
+    - webfetch extract: pull specific elements with CSS selectors
+    - webfetch screenshot: capture full-page or visible-page screenshots
+    - webfetch pdf: save a page as a PDF
+    - webfetch media: download public or authorized video/audio for offline analysis
+    - webfetch batch: fetch multiple URLs from one manifest
+    - webfetch cache: reuse recent fetches and clear cached pages when needed
+    - webfetch preflight: verify local tools before a workshop or client task
+17. Add usage examples for each skill using the correct command for my installation.
+    Preferred command if global install worked: webfetch
+    Fallback command if local path is needed: resolve the home-directory-relative path to the installed repo, then run node src/index.js.
+18. Do not store cookies, downloaded media, screenshots, cache files, or private tokens in skills.md or SKILLS.md.
+19. Report exactly what changed, where WebFetch was installed, whether the global webfetch command works, and whether preflight passed.
+
+Make sure to install all of the required dependencies necessary to install everything.`}
               editable
             />
           </StepCard>
@@ -543,20 +574,29 @@ Using WebFetch, research their public website and give me:
             <h2 className="text-2xl font-bold text-[#FCF4EB]">Install Local Whisper and Diarization</h2>
           </div>
 
-          <StepCard number={6} title="Install Whisper, model downloads, and pyannote">
+          <StepCard number={6} title="Install Whisper, model downloads, and diarization">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Use one Claude prompt to set up local transcription for your operating system. On Apple Silicon Macs,
               Claude should use MLX Whisper. On Windows, Linux, or Intel Macs, Claude should use faster-whisper.
-              The setup also installs pyannote.audio for speaker diarization.
+              The setup installs two diarization options so you can choose what fits your recording.
             </p>
             <p className="text-[#FCF4EB]/60 text-sm leading-relaxed mb-4">
-              Diarization means speaker labels. Whisper transcribes words; pyannote is the separate tool that can
-              identify who spoke when. It is reliable on macOS and Linux; on Windows, install and smoke-test it,
-              but continue transcription if the pyannote environment does not cooperate.
+              Diarization means speaker labels — Whisper transcribes the words, diarization identifies who said them.
+              You have two options:
             </p>
+            <ul className="space-y-2 mb-4 pl-1">
+              <li className="flex items-start gap-2 text-sm text-[#FCF4EB]/60 leading-relaxed">
+                <span className="text-[#7C69C7] mt-0.5">→</span>
+                <span><strong className="text-[#FCF4EB]">simple-diarizer</strong> — fully local, no account needed, installs in one command. Best for short or medium recordings with a small number of speakers.</span>
+              </li>
+              <li className="flex items-start gap-2 text-sm text-[#FCF4EB]/60 leading-relaxed">
+                <span className="text-[#7C69C7] mt-0.5">→</span>
+                <span><strong className="text-[#FCF4EB]">pyannote.audio</strong> — more powerful for long recordings with many speakers. Requires a free Hugging Face account and accepting the model terms once. Sign up at huggingface.co — it is free.</span>
+              </li>
+            </ul>
             <CodeBlock
               filename="Claude Code prompt"
-              code={`Install local Whisper transcription and pyannote diarization for this computer.
+              code={`Install local Whisper transcription and both diarization options for this computer.
 
 Do the following carefully:
 1. Detect whether I am on macOS, Windows, or Linux.
@@ -569,34 +609,39 @@ Do the following carefully:
    On macOS, use Homebrew if available.
    On Windows, use winget or the official FFmpeg install command.
    On Linux, use the detected package manager.
-7. Install Hugging Face tooling and diarization dependencies:
-   pip install --upgrade pip
-   pip install huggingface_hub pyannote.audio torch torchaudio
-8. If this is an Apple Silicon Mac, also install:
+7. Install simple-diarizer — the fully local option, no account required:
+   pip install simple-diarizer
+8. Install pyannote.audio — the more powerful option for long recordings with many speakers:
+   pip install pyannote.audio torch torchaudio
+   Note: pyannote requires a free Hugging Face account and accepting the model terms at huggingface.co.
+   Install the package now. The speaker model download (step 13) will only work once the user has a token.
+9. If this is an Apple Silicon Mac, also install:
    pip install mlx-whisper
-9. If this is Windows, Linux, or an Intel Mac, install:
-   pip install faster-whisper
-10. Download the Whisper models now so class does not pause later.
+10. If this is Windows, Linux, or an Intel Mac, install:
+    pip install faster-whisper
+11. Download the Whisper models now so class does not pause later.
     Apple Silicon MLX downloads:
     - mlx-community/whisper-tiny
     - mlx-community/whisper-large-v3-mlx
     Windows/Linux/Intel Mac faster-whisper downloads:
     - Systran/faster-whisper-small
     - Systran/faster-whisper-large-v3
-11. Store downloaded models under a models folder inside the local-whisper folder.
-12. Install pyannote.audio as part of this setup and run an import smoke test. On Windows, treat pyannote as best-effort: if install or model loading fails, keep Whisper working and report the exact blocker.
-13. If I already have a Hugging Face token and accepted pyannote model terms, download pyannote/speaker-diarization-3.1 into the models folder too.
-14. If I do not have a Hugging Face token or pyannote access yet, do not fail the install. Tell me diarization code is installed, but the speaker model download needs Hugging Face access.
+12. Store downloaded models under a models folder inside the local-whisper folder.
+13. If I already have a Hugging Face token and accepted the pyannote model terms, download pyannote/speaker-diarization-3.1 into the models folder.
+    If I do not have a token yet, do not fail the install — tell me the package is ready and the speaker model download needs Hugging Face access.
+14. Run import smoke tests for both simple_diarizer and pyannote.audio.
 15. Create a short README or notes file inside the local-whisper folder with:
     - how to activate the environment on this operating system
     - the exact transcription command for this operating system
-    - the exact diarization command or next step
+    - the simple-diarizer command for quick speaker labels
+    - the pyannote command for detailed multi-speaker diarization
     - where the downloaded models are stored
 16. Run smoke tests:
     - Python imports for the installed Whisper package
+    - Python import for simple_diarizer
     - Python import for pyannote.audio
     - ffmpeg -version
-17. Report what was installed, which Whisper backend was chosen, which models downloaded, and whether pyannote is ready or waiting for Hugging Face access.`}
+17. Report what was installed, which Whisper backend was chosen, which models downloaded, whether simple-diarizer is ready, and whether pyannote is ready or waiting for Hugging Face access.`}
               editable
             />
           </StepCard>
@@ -627,8 +672,9 @@ Handle the common paths for me:
 7. First run the fast/small model for a live demo.
 8. Then show me the command for the larger model.
 9. Save the transcript and SRT file next to the media file.
-10. If pyannote diarization is ready, also create a speaker-labeled version.
-11. If pyannote model access is not ready, transcribe without speaker labels and tell me exactly what is missing.
+10. For speaker labels, use simple-diarizer by default — it requires no account and works immediately.
+    If the recording is long or has many speakers, use pyannote instead (only if the speaker model is already downloaded).
+11. If neither diarizer is ready, transcribe without speaker labels and tell me exactly what is missing.
 12. Finish by reporting the source URL, media file path, transcript path, SRT path, and whether speaker labels were created.`}
               editable
             />
@@ -691,6 +737,69 @@ After setup:
           <ProTip type="warning">
             GuardDog is a safety layer, not a guarantee. Use it before installing unfamiliar packages, but still read
             package names carefully, prefer trusted sources, and avoid running commands you do not understand.
+          </ProTip>
+        </section>
+
+        {/* ====================================================
+            VIRUSTOTAL
+        ==================================================== */}
+        <section id="virustotal" className="mb-16">
+          <div className="mb-8">
+            <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Safety Layer</span>
+            <h2 className="text-3xl font-bold text-[#FCF4EB] mt-3">Get Your VirusTotal API Key</h2>
+          </div>
+
+          <div className="webfetch-hero-glass rounded-2xl p-7 mb-6">
+            <div className="relative z-10">
+              <div className="flex items-center gap-2 mb-5">
+                <span className="h-2 w-2 rounded-full bg-[#F5C3C6] shadow-[0_0_18px_rgba(245,195,198,0.62)]" />
+                <span className="text-[10px] uppercase tracking-[0.22em] text-[#FCF4EB]/42 font-semibold">
+                  File and URL Scanner
+                </span>
+              </div>
+              <p className="text-[#FCF4EB]/84 text-lg leading-relaxed mb-5">
+                VirusTotal is a free online scanner that checks files, URLs, domains, and IP addresses against
+                over 70 antivirus engines and security tools at once. Where GuardDog checks package code for
+                suspicious patterns before you install, VirusTotal lets you scan the actual file or URL against
+                the world&apos;s largest collective threat database.
+              </p>
+              <p className="text-[#FCF4EB]/64 leading-relaxed">
+                The free API tier gives you <strong className="text-[#FCF4EB]">500 requests per day</strong> with
+                a rate limit of <strong className="text-[#FCF4EB]">4 requests per minute</strong>. That is more
+                than enough for personal use, client work, and workshop exercises. You only need a free account —
+                no credit card required.
+              </p>
+            </div>
+          </div>
+
+          <StepCard number={9} title="Create a free VirusTotal account and get your API key">
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              Paste this into Claude to walk through the account setup and get your key saved somewhere useful.
+            </p>
+            <CodeBlock
+              filename="Claude Code prompt"
+              code={`Help me get a free VirusTotal API key and set it up on this computer.
+
+1. Open https://www.virustotal.com in my browser.
+2. Tell me to click Sign In and create a free account if I do not already have one. No credit card is needed.
+3. Once I confirm I am logged in, tell me to go to my profile (top-right avatar) and click API Key.
+4. Tell me to copy the key shown there.
+5. Save my API key to my environment by adding this line to my shell profile (~/.zshrc on macOS or ~/.bashrc on Linux):
+   export VIRUSTOTAL_API_KEY="<my key>"
+   Resolve the home directory dynamically. Do not hard-code a path.
+6. Reload the shell profile so the key is available immediately.
+7. Confirm the key is accessible by running: echo $VIRUSTOTAL_API_KEY
+8. Remind me of the free tier limits: 500 requests per day, 4 requests per minute.
+9. Show me one example scan command using curl so I can test the key is working:
+   curl --request GET "https://www.virustotal.com/api/v3/urls/<encoded-url>" --header "x-apikey: $VIRUSTOTAL_API_KEY"
+   Replace <encoded-url> with a base64-encoded version of https://example.com`}
+              editable
+            />
+          </StepCard>
+
+          <ProTip type="warning">
+            Your API key is private. Do not paste it into prompts, commit it to a repo, or share it in screenshots.
+            Saving it as an environment variable keeps it out of your code and chat history.
           </ProTip>
         </section>
 

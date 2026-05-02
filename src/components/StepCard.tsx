@@ -17,7 +17,7 @@ export default function StepCard({ number, title, children }: StepCardProps) {
           {number}
         </div>
         <div className="flex-1 min-w-0">
-          <h3 className="text-base font-semibold text-[#FCF4EB] mb-3 leading-snug group-hover:text-white transition-colors duration-200">
+          <h3 className="text-lg font-semibold text-[#FCF4EB] mb-3 leading-snug group-hover:text-white transition-colors duration-200">
             {title}
           </h3>
           <div className="text-sm text-[#FCF4EB]/70 leading-relaxed space-y-2">
