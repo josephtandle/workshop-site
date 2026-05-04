@@ -5,9 +5,7 @@ import ProTip from '@/components/ProTip'
 import { celebrate } from '@/lib/celebrate'
 
 const ITEMS = [
-  { id: 'update-claude',   label: 'Update Claude Code to the latest version', required: true, anchor: '#update-claude' },
-  { id: 'confirm-plan',    label: 'Confirm you are on Pro or Max plan',        required: true, anchor: '#confirm-plan' },
-  { id: 'macos-check',     label: 'Confirm you are on macOS Monterey or later', required: true, anchor: '#macos-check' },
+  { id: 'update-claude', label: 'Update Claude Code to the latest version', required: true, anchor: '#update-claude' },
 ]
 
 function Checkbox({ checked, onChange }: { checked: boolean; onChange: () => void }) {
@@ -112,15 +110,9 @@ export default function Session8Prep() {
         <h1 className="text-3xl sm:text-4xl font-bold text-[#FCF4EB] leading-tight mb-5">
           Prep Requirements
         </h1>
-        <p className="text-[#FCF4EB]/70 text-base sm:text-lg leading-relaxed mb-6">
-          Three quick checks before you arrive. The whole thing takes under five minutes.
+        <p className="text-[#FCF4EB]/70 text-base sm:text-lg leading-relaxed">
+          One thing before you arrive. Takes under a minute.
         </p>
-        <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl px-5 py-4">
-          <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
-            Computer-use requires macOS and a Pro or Max plan. If you are on the free plan,
-            upgrade before the session so you can follow along from the first minute.
-          </p>
-        </div>
       </div>
 
       <div className="mb-12 bg-white/[0.04] border border-white/[0.08] rounded-xl px-5 sm:px-6 py-5">
@@ -178,64 +170,18 @@ export default function Session8Prep() {
           onToggle={() => toggle('update-claude')}
         >
           <p>
-            Computer-use requires Claude Code version 2.1.85 or later. Open your terminal and run the update command below.
+            Open your terminal and run the update command below.
           </p>
           <div className="bg-black/30 border border-white/[0.08] rounded-xl px-5 py-4 font-mono text-sm text-[#FCF4EB]/80">
             claude update
           </div>
           <p>
-            After it finishes, run <span className="font-mono text-[#FCF4EB]/80">claude --version</span> to confirm you are on 2.1.85 or higher.
+            After it finishes, run <span className="font-mono text-[#FCF4EB]/80">claude --version</span> to confirm it completed.
           </p>
           <ProTip type="tip">
-            If you see "command not found" when running claude, you need to install Claude Code first.
+            If you see "command not found," you need to install Claude Code first.
             Ask in the group chat and someone will get you sorted before the session.
           </ProTip>
-        </SectionCard>
-
-        <SectionCard
-          id="confirm-plan"
-          number={2}
-          title="Confirm you are on Pro or Max plan"
-          badge={{ label: 'Required', required: true }}
-          checked={checked.has('confirm-plan')}
-          onToggle={() => toggle('confirm-plan')}
-        >
-          <p>
-            Computer-use is only available on the Pro and Max plans. Check your plan at{' '}
-            <a
-              href="https://claude.ai/settings/billing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#7C69C7] hover:text-[#9D8FE0] underline underline-offset-2"
-            >
-              claude.ai/settings/billing
-            </a>.
-          </p>
-          <p>
-            If you are on the free plan, upgrade before the session. Pro is $20/month and includes everything we use in the Mastermind.
-          </p>
-          <ProTip type="warning">
-            Web Fetch works on all plans. Computer-use does not. If you cannot upgrade before the session,
-            you can still follow along for the Web Fetch portion and enable computer-use later.
-          </ProTip>
-        </SectionCard>
-
-        <SectionCard
-          id="macos-check"
-          number={3}
-          title="Confirm you are on macOS Monterey or later"
-          badge={{ label: 'Required', required: true }}
-          checked={checked.has('macos-check')}
-          onToggle={() => toggle('macos-check')}
-        >
-          <p>
-            Computer-use on the CLI is macOS only. Windows users can use computer-use via the Claude desktop app,
-            but the setup is slightly different. We will cover both paths in the session.
-          </p>
-          <p>
-            To check your macOS version: click the Apple menu in the top left, then "About This Mac."
-            You need Monterey (12.0) or later.
-          </p>
         </SectionCard>
 
       </div>
