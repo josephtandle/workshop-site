@@ -30,11 +30,12 @@ function Checkbox({ checked, onChange }: { checked: boolean; onChange: () => voi
 }
 
 function SectionCard({
-  id, number, title, badge, checked, onToggle, children,
+  id, number, title, time, badge, checked, onToggle, children,
 }: {
   id: string
   number: number
   title: string
+  time: string
   badge: { label: string; required: boolean }
   checked: boolean
   onToggle: () => void
@@ -62,6 +63,7 @@ function SectionCard({
               {badge.label}
             </span>
           </div>
+          <p className="text-[#FCF4EB]/40 text-xs">{time}</p>
         </div>
         <Checkbox checked={checked} onChange={onToggle} />
       </div>
@@ -165,6 +167,7 @@ export default function Session8Prep() {
           id="update-claude"
           number={1}
           title="Update Claude Code to the latest version"
+          time="1 minute"
           badge={{ label: 'Required', required: true }}
           checked={checked.has('update-claude')}
           onToggle={() => toggle('update-claude')}
