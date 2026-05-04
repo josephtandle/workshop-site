@@ -117,7 +117,7 @@ export default function Session6Guide() {
               That is the only editing you need to do:
             </p>
             <CodeBlock
-              filename="Paste into Claude Code"
+              filename="Claude Code prompt"
               editable
               code={`Agent name: [YOUR AGENT NAME]
 Your name: [YOUR NAME]
@@ -298,7 +298,7 @@ Do not ask "would you like me to..." or "should I..." or "do you want me to..." 
               files, a Notes export, anything. Paste this and fill in the location:
             </p>
             <CodeBlock
-              filename="Paste into Claude Code"
+              filename="Claude Code prompt"
               editable
               code={`I want to build my voice profile. My writing samples are here: [DESCRIBE WHERE YOUR FILES ARE — for example: "a folder called MyVoice on my Desktop" or "three text files in ~/Documents/writing"].
 
@@ -316,7 +316,7 @@ Read those files. These are samples of my actual writing — emails, posts, note
               session — no external app needed:
             </p>
             <CodeBlock
-              filename="Paste into Claude Code"
+              filename="Claude Code prompt"
               code={`Read my voice profile file and show me the full contents here.`}
             />
             <p className="text-[#FCF4EB]/70 leading-relaxed mt-4 mb-4">
@@ -335,7 +335,7 @@ Read those files. These are samples of my actual writing — emails, posts, note
               Paste any bland, AI-sounding text into Claude Code, then run:
             </p>
             <CodeBlock
-              filename="Paste into Claude Code"
+              filename="Claude Code prompt"
               code={`Run /speak-human --my-voice on the text above.`}
             />
             <p className="text-[#FCF4EB]/70 leading-relaxed mt-4">
@@ -432,7 +432,7 @@ Read those files. These are samples of my actual writing — emails, posts, note
               Here is a real example that uses both concepts at once. Paste this into Claude Code:
             </p>
             <CodeBlock
-              filename="Paste into Claude Code"
+              filename="Claude Code prompt"
               code={`I want you to spin up four background agents using Haiku to read through my brain dump folder. Each agent should cover a different section and pull out the most important themes, ideas, and action items it finds.
 
 Then use Opus as the orchestrating agent to take everything the four Haiku agents found and reorganize it — make the brain dump more structured, cleaner, and easier to navigate than it was before.
@@ -479,7 +479,7 @@ My brain dump is at: ~/Desktop/brain_dump_map`}
               Paste this into Claude Code and fill in your topic:
             </p>
             <CodeBlock
-              filename="Paste into Claude Code"
+              filename="Claude Code prompt"
               editable
               code={`/hooklab [WHAT YOUR CONTENT IS ABOUT, for example: "how I use AI to manage my DMs" or "why most coaches waste time on content"]`}
             />
@@ -490,7 +490,7 @@ My brain dump is at: ~/Desktop/brain_dump_map`}
               Run this version to get hooks that sound like you:
             </p>
             <CodeBlock
-              filename="Paste into Claude Code"
+              filename="Claude Code prompt"
               editable
               code={`/hooklab [YOUR TOPIC] --my-voice`}
             />
@@ -524,7 +524,7 @@ My brain dump is at: ~/Desktop/brain_dump_map`}
               tools the right way for your machine:
             </p>
             <CodeBlock
-              filename="Paste into Claude Code"
+              filename="Claude Code prompt"
               code={`Check what operating system I am on, then install yt-dlp and FFmpeg using the correct method for my system. If I am on a Mac, use Homebrew. If I am on Windows, use the appropriate package manager or direct download. Confirm both are installed and working when you are done.`}
             />
             <ProTip type="info">
@@ -540,7 +540,7 @@ My brain dump is at: ~/Desktop/brain_dump_map`}
               the URL filled in:
             </p>
             <CodeBlock
-              filename="Paste into Claude Code"
+              filename="Claude Code prompt"
               editable
               code={`Download this Instagram reel using yt-dlp: [PASTE THE REEL URL HERE]
 
@@ -565,7 +565,7 @@ Then use the transcript to:
               Fill in your Instagram handles and email address, then paste:
             </p>
             <CodeBlock
-              filename="Paste into Claude Code"
+              filename="Claude Code prompt"
               editable
               code={`Set up my daily hook research agent.
 
@@ -672,6 +672,12 @@ Use Claude's scheduled remote agents to run this automatically every day. Set it
         </section>
 
       </div>
+
+      <p className="text-center text-xs text-white/20 pb-8">
+        Using Codex instead of Claude Code?{' '}
+        <a href="/session/2/guide-codex" className="underline hover:text-white/50 transition-colors">Codex version of this page</a>
+      </p>
+
     </>
   )
 }

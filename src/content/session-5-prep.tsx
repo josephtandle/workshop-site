@@ -341,6 +341,12 @@ export default function Session5Prep() {
           If you get stuck on any of the export steps, reach out before the session and someone will help.
         </p>
       </div>
+
+      <p className="text-center text-xs text-white/20 pb-8">
+        Using Codex instead of Claude Code?{' '}
+        <a href="/session/2/guide-codex" className="underline hover:text-white/50 transition-colors">Codex version of this page</a>
+      </p>
+
     </div>
   )
 }

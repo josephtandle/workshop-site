@@ -148,7 +148,7 @@ export default function Session3Guide() {
           of this happens without you doing anything.
         </p>
 
-        <StepCard number={5} title="Open your terminal and start Claude Code">
+        <StepCard number={1} title="Open your terminal and start Claude Code">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-5">First, open your terminal:</p>
           <div className="space-y-3 mb-6">
             <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
@@ -180,7 +180,7 @@ export default function Session3Guide() {
           </ProTip>
         </StepCard>
 
-        <StepCard number={6} title="Tell Claude to build your lead magnet page">
+        <StepCard number={2} title="Tell Claude to build your lead magnet page">
           <p className="text-[#FCF4EB]/70 mb-2">
             Edit the prompt below directly — replace the text in brackets with your own details.
             When you are done, hit Copy and paste it into Claude Code.
@@ -189,7 +189,7 @@ export default function Session3Guide() {
             Click anywhere in the box below to edit it. Replace every line in brackets before copying.
           </ProTip>
           <CodeBlock
-            filename="Paste into Claude Code"
+            filename="Claude Code prompt"
             editable
             code={`Build a lead magnet landing page at /lead-magnet for my Next.js site.
 
@@ -223,7 +223,7 @@ The page should have:
           their name and email get saved here automatically. You can log in any time and see your whole list.
         </p>
 
-        <StepCard number={7} title="Create your Supabase project">
+        <StepCard number={3} title="Create your Supabase project">
           <ol className="space-y-2 text-[#FCF4EB]/70 list-decimal list-inside">
             <li>Go to <a href="https://supabase.com/dashboard" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">supabase.com/dashboard</a> and click <span className="text-[#FCF4EB]">New Project</span></li>
             <li>Give it a name like your business name or &ldquo;my-leads&rdquo;</li>
@@ -233,28 +233,76 @@ The page should have:
           </ol>
         </StepCard>
 
-        <StepCard number={8} title="Create your API keys and give them to Claude">
+        <StepCard number={4} title="Get your Supabase Personal Access Token">
+          <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+            When Claude sets up your database tables and security rules, it often uses the Supabase CLI behind the scenes to run SQL. The CLI needs a Personal Access Token — a separate account-level key that lets Claude authenticate and execute commands against your project.
+          </p>
+          <ol className="space-y-2 text-[#FCF4EB]/70 list-decimal list-inside mb-4">
+            <li>Go to <a href="https://supabase.com/dashboard/account/tokens" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">supabase.com/dashboard/account/tokens</a> (or click your avatar at the top right &rarr; Account &rarr; Access Tokens)</li>
+            <li>Click <span className="text-[#FCF4EB] font-semibold">Generate new token</span></li>
+            <li>Name it something like &ldquo;claude-workshop&rdquo;</li>
+            <li>Copy the token immediately &mdash; you cannot view it again after closing the modal</li>
+            <li>Go to Claude Code and paste this:</li>
+          </ol>
+          <CodeBlock
+            filename="Claude Code prompt"
+            editable
+            code={`My Supabase Personal Access Token is [PASTE YOUR PAT HERE]
+Please remember this.`}
+          />
+          <ProTip type="warning" className="mt-4">
+            Your PAT gives Claude access to all your Supabase projects. Never paste it into a code file or share it publicly — treat it like a password.
+          </ProTip>
+        </StepCard>
+
+        <StepCard number={5} title="Create your API keys and give them to Claude">
           <ol className="space-y-2 text-[#FCF4EB]/70 list-decimal list-inside mb-4">
             <li>In your Supabase project, click the gear icon and go to <a href="https://supabase.com/dashboard/project/_/settings/api" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">Settings &gt; API Keys</a></li>
             <li>Click <span className="text-[#FCF4EB] font-semibold">Create new API Keys</span></li>
             <li>Copy your <span className="text-[#FCF4EB] font-semibold">Project URL</span> (looks like https://abcdef.supabase.co)</li>
             <li>Copy the <span className="text-[#FCF4EB] font-semibold">Publishable key</span> (starts with <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-sm text-[#FCF4EB]">sb_publishable_</code>)</li>
+            <li>Copy the <span className="text-[#FCF4EB] font-semibold">Secret key</span> (labeled Service Role or Secret — you will need this in the next step)</li>
             <li>Go to Claude Code in your terminal and paste this with your values filled in:</li>
           </ol>
           <CodeBlock
-            filename="Paste into Claude Code"
+            filename="Claude Code prompt"
             editable
             code={`My Supabase URL is [PASTE YOUR PROJECT URL HERE]
 My Supabase publishable key is [PASTE YOUR PUBLISHABLE KEY HERE]
+My Supabase service role key is [PASTE YOUR SECRET KEY HERE]
 Please always remember these.`}
           />
           <ProTip type="warning" className="mt-4">
-            You only need the <span className="text-[#FCF4EB] font-semibold">publishable key</span>.
-            Do not copy the secret key. The publishable key is the safe one for your website to use.
+            The <span className="text-[#FCF4EB] font-semibold">publishable key</span> is safe for the browser.
+            The <span className="text-[#FCF4EB] font-semibold">service role key</span> bypasses all security rules and must never go in client-side code — Claude will keep it server-side only.
+          </ProTip>
+          <ProTip type="info" className="mt-3">
+            Claude may give you a heads-up about pasting API keys directly into the chat. This is very low risk for a workshop setting — later sessions cover more advanced ways to manage secrets safely. If Claude asks, just agree and continue.
           </ProTip>
         </StepCard>
 
-        <StepCard number={9} title="Get your Resend key and give it to Claude">
+        <StepCard number={6} title="Lock down your subscriber table with Row Level Security">
+          <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+            By default, anyone who finds your Supabase URL can read or delete your entire subscriber
+            list. Row Level Security fixes that — the website can only add new subscribers, and
+            nothing else is exposed. Your server needs one extra key to keep duplicate checking working.
+          </p>
+          <CodeBlock
+            filename="Claude Code prompt"
+            code={`Enable Row Level Security on my Supabase subscribers table.
+
+Allow anyone to submit a new row through the form, but block all reading, editing, and deleting from the public. Use my service role key server-side so duplicate checking still works. Add the service role key to my .env.local and to my Vercel environment variables.
+
+Show me confirmation that RLS is on and the policy is active.`}
+          />
+          <ProTip type="warning" className="mt-4">
+            The service role key bypasses all security rules. It belongs only in{' '}
+            <code className="bg-white/[0.06] px-1.5 py-0.5 rounded text-xs">.env.local</code> and
+            your Vercel environment variables — never in any code that runs in the browser.
+          </ProTip>
+        </StepCard>
+
+        <StepCard number={7} title="Get your Resend key and give it to Claude">
           <ol className="space-y-2 text-[#FCF4EB]/70 list-decimal list-inside mb-4">
             <li>Go to <a href="https://resend.com" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">resend.com</a> and sign in (create a free account if you have not yet)</li>
             <li>Click <a href="https://resend.com/api-keys" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">API Keys</a> in the left sidebar</li>
@@ -262,7 +310,7 @@ Please always remember these.`}
             <li>Copy the key immediately, then go back to Claude Code and paste this:</li>
           </ol>
           <CodeBlock
-            filename="Paste into Claude Code"
+            filename="Claude Code prompt"
             editable
             code={`My Resend API key is [PASTE YOUR RESEND KEY HERE]
 Please always remember this.`}
@@ -272,13 +320,13 @@ Please always remember this.`}
           </ProTip>
         </StepCard>
 
-        <StepCard number={10} title="Tell Claude to set up the form backend and subscriber database">
+        <StepCard number={8} title="Tell Claude to set up the form backend and subscriber database">
           <p className="text-[#FCF4EB]/70 mb-4">
             Now that Claude has your Supabase credentials, tell it to set up everything your lead magnet
             form needs to work on the server side:
           </p>
           <CodeBlock
-            filename="Paste into Claude Code"
+            filename="Claude Code prompt"
             code={`Set up the backend for my lead magnet form using my Supabase credentials.
 
 1. Create a database table to store my email subscribers. It should save their first name, email, which lead magnet they signed up for, and the date.
@@ -308,16 +356,16 @@ Please always remember this.`}
           two more to push it live.
         </p>
 
-        <StepCard number={11} title="Tell Claude to set up the full integration">
+        <StepCard number={9} title="Tell Claude to set up the full integration">
           <CodeBlock
-            filename="Paste into Claude Code"
+            filename="Claude Code prompt"
             editable
             code={`Using my Supabase and Resend credentials, set up my email capture:
 
 1. Install @supabase/supabase-js and resend
 2. Create a .env.local file with all three keys
 3. Update my /api/subscribe route to:
-   - Save the subscriber's first name, email, and which lead magnet they signed up for
+   - Save the subscriber's first name, last name, email, and which lead magnet they signed up for
    - Send them the right welcome email through Resend
    - Greet them by first name in the email
    - Include a download button linking to [YOUR RESOURCE URL]
@@ -326,19 +374,19 @@ Please always remember this.`}
           />
         </StepCard>
 
-        <StepCard number={12} title="Tell Claude to add your keys to Vercel">
+        <StepCard number={10} title="Tell Claude to add your keys to Vercel">
           <p className="text-[#FCF4EB]/70 mb-4">
             Claude can add your environment variables to Vercel directly:
           </p>
           <CodeBlock
-            filename="Paste into Claude Code"
+            filename="Claude Code prompt"
             code={`Add my Supabase and Resend environment variables to my Vercel project.`}
           />
         </StepCard>
 
-        <StepCard number={13} title="Tell Claude to deploy">
+        <StepCard number={11} title="Tell Claude to deploy">
           <CodeBlock
-            filename="Paste into Claude Code"
+            filename="Claude Code prompt"
             code={`Deploy my website to production.`}
           />
           <ol className="mt-4 space-y-2 text-[#FCF4EB]/70 list-decimal list-inside">
@@ -503,7 +551,7 @@ Please always remember this.`}
                 Once Resend shows a green Verified badge, go to Claude Code and paste this:
               </p>
               <CodeBlock
-                filename="Paste into Claude Code"
+                filename="Claude Code prompt"
                 editable
                 code={`Update my welcome email to send from [YOUR NAME] <hello@yourdomain.com> instead of onboarding@resend.dev.`}
               />
@@ -514,7 +562,7 @@ Please always remember this.`}
                 Once Claude has updated the code, tell it:
               </p>
               <CodeBlock
-                filename="Paste into Claude Code"
+                filename="Claude Code prompt"
                 code={`Deploy my website to production.`}
               />
             </div>
@@ -523,6 +571,12 @@ Please always remember this.`}
       </section>
 
     </div>
+
+      <p className="text-center text-xs text-white/20 pb-8">
+        Using Codex instead of Claude Code?{' '}
+        <a href="/session/2/guide-codex" className="underline hover:text-white/50 transition-colors">Codex version of this page</a>
+      </p>
+
     </div>
   );
 }

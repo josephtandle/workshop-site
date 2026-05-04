@@ -138,7 +138,7 @@ export default function Session7Guide() {
               machine. If it was not picked up automatically, paste this into Claude Code to fix it:
             </p>
             <CodeBlock
-              filename="Paste into Claude Code"
+              filename="Claude Code prompt"
               code={`Find the Claude binary and wire up the task executor to use it.
 
 1. Locate the claude executable on this machine. Try these in order:
@@ -198,7 +198,7 @@ Deploy when you're done.`}
               working correctly on your machine:
             </p>
             <CodeBlock
-              filename="Paste into Claude Code"
+              filename="Claude Code prompt"
               code={`Wire up the Mission Control file browser — verify paths and lazy loading.
 
 You are setting up the Mission Control file browser on this machine. Complete all steps.
@@ -516,7 +516,7 @@ How the two-level loading works:
               is the file Claude reads at the start of every session to understand your setup:
             </p>
             <CodeBlock
-              filename="Paste into Claude Code"
+              filename="Claude Code prompt"
               code={`Add the following to my CLAUDE.md file:
 
 ## Mission Control Task Board
@@ -546,7 +546,7 @@ When I say "add this to the MC task board" or "add a card to Mission Control":
               own. Paste this into Claude Code, fill in your details, and it will create the card:
             </p>
             <CodeBlock
-              filename="Paste into Claude Code"
+              filename="Claude Code prompt"
               editable
               code={`Add a card to my MC task board in the AI Auto Execute column with this exact title and description:
 
@@ -573,7 +573,7 @@ Save the results as competitor-research.md on my Desktop. Use one section per co
               logs the result to your board in one shot:
             </p>
             <CodeBlock
-              filename="Paste into Claude Code"
+              filename="Claude Code prompt"
               editable
               code={`Research the [skill or tool name] Claude Code skill. Check if it's well-maintained and actually useful for someone running a small business. If it looks good, install it on my machine. Then add a card to my MC task board in the Backlog column: title "[Skill Name] installed", description what it does and why I installed it.`}
             />
@@ -660,6 +660,12 @@ Save the results as competitor-research.md on my Desktop. Use one section per co
         </section>
 
       </div>
+
+      <p className="text-center text-xs text-white/20 pb-8">
+        Using Codex instead of Claude Code?{' '}
+        <a href="/session/2/guide-codex" className="underline hover:text-white/50 transition-colors">Codex version of this page</a>
+      </p>
+
     </>
   )
 }

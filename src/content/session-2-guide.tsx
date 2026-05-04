@@ -292,7 +292,7 @@ export default function Session2Guide() {
             Once Claude Code is running, paste this in:
           </p>
           <CodeBlock
-            filename="Paste into Claude Code"
+            filename="Claude Code prompt"
             code={`Create me a folder called my new website and tell me the path to where you just put it.`}
           />
 
@@ -343,7 +343,7 @@ export default function Session2Guide() {
             This single prompt installs 24 of the best web design tools and animation libraries so your AI builds genuinely gorgeous websites from the start.
           </p>
           <CodeBlock
-            filename="Paste into Claude Code"
+            filename="Claude Code prompt"
             code={`Set up my professional web design toolkit so I can
 build incredibly gorgeous websites fast.
 
@@ -391,7 +391,7 @@ to a hero section for a landing page.`}
             your own information before copying.
           </ProTip>
           <CodeBlock
-            filename="Paste into Claude Code"
+            filename="Claude Code prompt"
             editable
             code={`Build me a personal brand website as a single index.html file.
 
@@ -438,7 +438,7 @@ Using all the web design toolkit we just downloaded, make it genuinely gorgeous 
             Paste this exactly as written. No edits needed.
           </p>
           <CodeBlock
-            filename="Paste into Claude Code"
+            filename="Claude Code prompt"
             code={`Upgrade my website with these visual effects:
 
 - Animated gradient mesh background in the hero that slowly shifts
@@ -457,7 +457,7 @@ Keep all my content exactly as it is.`}
             When the previous effects are looking great, paste this to take it further. Paste exactly as written.
           </p>
           <CodeBlock
-            filename="Paste into Claude Code"
+            filename="Claude Code prompt"
             code={`Now add these pro effects:
 
 1. Lenis smooth scroll
@@ -492,7 +492,7 @@ Do not change any content or layout.`}
             and pushing your files live.
           </p>
           <CodeBlock
-            filename="Paste into Claude Code"
+            filename="Claude Code prompt"
             code={`Deploy my website to production.`}
           />
           <p className="text-[#FCF4EB]/70 leading-relaxed mt-4">
@@ -512,7 +512,7 @@ Do not change any content or layout.`}
             Tell Claude to place your photo on the page. Edit the file name below if yours is different.
           </p>
           <CodeBlock
-            filename="Paste into Claude Code"
+            filename="Claude Code prompt"
             editable
             code={`Add my photo to the website. The file is called [photo.jpg] and it's in the same folder as index.html.
 
@@ -522,7 +522,7 @@ Place it in the about section next to my bio. Style it with a rounded border and
             Once it looks good, deploy again to update your live site:
           </p>
           <CodeBlock
-            filename="Paste into Claude Code"
+            filename="Claude Code prompt"
             code={`Deploy my website to production.`}
           />
         </StepCard>

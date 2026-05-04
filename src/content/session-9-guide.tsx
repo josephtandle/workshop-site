@@ -206,6 +206,12 @@ Report back: did anything look broken, confusing, or hard to find?`}
           </StepCard>
         </section>
       </div>
+
+      <p className="text-center text-xs text-white/20 pb-8">
+        Using Codex instead of Claude Code?{' '}
+        <a href="/session/2/guide-codex" className="underline hover:text-white/50 transition-colors">Codex version of this page</a>
+      </p>
+
     </>
   )
 }
