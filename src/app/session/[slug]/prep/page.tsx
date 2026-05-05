@@ -4,7 +4,6 @@ import { getSession } from '@/lib/sessions'
 import Session1Prep from '@/content/session-1-prep'
 import Session2Prep from '@/content/session-2-prep'
 import Session3Prep from '@/content/session-3-prep'
-import Session4Prep from '@/content/session-4-prep'
 import Session5Prep from '@/content/session-5-prep'
 import Session6Prep from '@/content/session-6-prep'
 import Session7Prep from '@/content/session-7-prep'
@@ -14,7 +13,7 @@ const prepComponents: Record<string, ComponentType> = {
   '1': Session1Prep,
   '2': Session2Prep,
   '3': Session3Prep,
-  '4': Session4Prep,
+  '4': Session5Prep,
   '5': Session5Prep,
   '6': Session6Prep,
   '7': Session7Prep,

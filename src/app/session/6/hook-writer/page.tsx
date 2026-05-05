@@ -342,7 +342,7 @@ const PARTICIPANTS: Participant[] = [
     neverSay: '"hustle," "crush it," "grind," "game-changer," "unlock your potential," "level up," "high-vibe," "quantum," "manifest," "10x your business"',
     voiceSentence: "I've built 22 businesses, and the one thing none of them came with was a manual for how to stop being the most important part of them.",
     topic: 'I taught 16 business owners to use AI this week. The ones who thought they were "not technical" went the furthest.',
-    details: 'Mastermind HQ Session 5. Coaches, healers, consultants. None of them coders. All of them now using Claude to run their business. The pattern of who adapts fastest and why.',
+    details: 'Mastermind HQ Session 6. Coaches, healers, consultants. None of them coders. All of them now using Claude to run their business. The pattern of who adapts fastest and why.',
   },
   {
     slug: 'johanna',
@@ -761,7 +761,7 @@ export default function HookWriterPage() {
       <nav className="mb-10 text-sm flex items-center gap-2" style={{ color: 'rgba(252,244,235,0.4)' }}>
         <Link href="/" className="hover:text-[#7C69C7] transition-colors">All Sessions</Link>
         <span>/</span>
-        <Link href="/session/5" className="hover:text-[#7C69C7] transition-colors">Session 5</Link>
+        <Link href="/session/6" className="hover:text-[#7C69C7] transition-colors">Session 6</Link>
         <span>/</span>
         <span style={{ color: 'rgba(252,244,235,0.6)' }}>Hook Writer: Part 1</span>
       </nav>
@@ -769,7 +769,7 @@ export default function HookWriterPage() {
       {/* Header */}
       <div className="mb-12">
         <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#7C69C7' }}>
-          Session 5
+          Session 6
         </p>
         <h1 className="gradient-text text-4xl md:text-5xl font-extrabold leading-tight mb-4">
           Hook Writer: Part 1
@@ -1187,7 +1187,7 @@ export default function HookWriterPage() {
       {/* Back link */}
       <div className="mt-8 pt-8" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
         <Link
-          href="/session/5"
+          href="/session/6"
           className="inline-flex items-center gap-2 text-sm transition-colors"
           style={{ color: 'rgba(252,244,235,0.4)' }}
           onMouseEnter={e => (e.currentTarget.style.color = '#7C69C7')}
@@ -1196,7 +1196,7 @@ export default function HookWriterPage() {
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path d="M13 8H3M7 12l-4-4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-          Back to Session 5
+          Back to Session 6
         </Link>
       </div>
 

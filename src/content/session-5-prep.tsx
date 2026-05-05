@@ -9,6 +9,8 @@ const ITEMS = [
   { id: 'chatgpt', label: 'Export from ChatGPT', anchor: '#chatgpt' },
   { id: 'claude',  label: 'Export from Claude',  anchor: '#claude'  },
   { id: 'urls',    label: 'Gather your online presence', anchor: '#urls' },
+  { id: 'phone-download', label: 'Download Claude on your phone and log in', anchor: '#phone-download' },
+  { id: 'resend-domain',  label: 'Make sure your Resend domain is verified', anchor: '#resend-domain' },
 ]
 
 function Checkbox({ checked, onChange }: { checked: boolean; onChange: () => void }) {
@@ -111,7 +113,7 @@ export default function Session5Prep() {
       {/* Page Header */}
       <div className="mb-10">
         <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
-          Before Session Five
+          Before Session Four
         </p>
         <h1 className="text-3xl sm:text-4xl font-bold text-[#FCF4EB] leading-tight mb-5">
           Get Your Brain Dump Ready
@@ -332,6 +334,99 @@ export default function Session5Prep() {
             You will paste these into a prompt during the session. Having them ready saves
             time and means Claude gets a more complete picture of you.
           </p>
+        </SectionCard>
+
+        {/* 4. Download Claude on phone */}
+        <SectionCard
+          id="phone-download"
+          number={4}
+          title="Download Claude on your phone and log in"
+          badge={{ label: 'Before the session', color: 'purple' }}
+          checked={checked.has('phone-download')}
+          onToggle={() => toggle('phone-download')}
+        >
+          <p>
+            <span className="text-[#FCF4EB] font-semibold">What it is:</span> Claude has a free mobile app
+            for both iPhone and Android. In this session you will use it to continue conversations from your
+            laptop, run slash commands on the go, and see how much you can accomplish without ever opening a computer.
+          </p>
+
+          <div className="flex flex-wrap gap-3">
+            <a
+              href="https://apps.apple.com/app/claude-ai/id6473753684"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-white/[0.06] border border-white/[0.10] hover:border-[#7C69C7]/40 text-[#FCF4EB]/80 text-sm px-4 py-2 rounded-xl transition-colors"
+            >
+              App Store (iPhone)
+            </a>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.anthropic.claude"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-white/[0.06] border border-white/[0.10] hover:border-[#7C69C7]/40 text-[#FCF4EB]/80 text-sm px-4 py-2 rounded-xl transition-colors"
+            >
+              Google Play (Android)
+            </a>
+          </div>
+
+          <ol className="space-y-2 list-decimal list-inside">
+            <li>Download the app from the store above</li>
+            <li>Open a tab, log in using the same account you use on your laptop</li>
+            <li>Complete the verification if prompted</li>
+            <li>Confirm the app opens and shows your account name</li>
+          </ol>
+
+          <ProTip type="info">
+            If you signed up with Google on your laptop, use &ldquo;Continue with Google&rdquo; on the phone too.
+            Make sure it is the same Google account.
+          </ProTip>
+        </SectionCard>
+
+        {/* 5. Resend domain */}
+        <SectionCard
+          id="resend-domain"
+          number={5}
+          title="Make sure your Resend domain is verified"
+          badge={{ label: 'Before the session', color: 'muted' }}
+          checked={checked.has('resend-domain')}
+          onToggle={() => toggle('resend-domain')}
+        >
+          <p>
+            In Session 3 you created a{' '}
+            <a href="https://resend.com" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">
+              Resend
+            </a>{' '}
+            account. In this session you will use it to send yourself a daily email of fresh hook ideas.
+            For that to work, your domain needs to be verified, or sandbox mode needs to be active.
+          </p>
+
+          <div className="space-y-3">
+            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
+              <p className="text-[#FCF4EB] font-semibold text-sm mb-1">Option A: Full domain verification (preferred)</p>
+              <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
+                If you verified your domain in Session 3, you are all set. Log into{' '}
+                <a href="https://resend.com/domains" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">
+                  Resend Domains
+                </a>{' '}
+                and confirm your domain shows a green &ldquo;Verified&rdquo; status.
+                If it is not verified yet, do it before the session, DNS changes can take up to 24 hours to propagate.
+              </p>
+            </div>
+
+            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
+              <p className="text-[#FCF4EB] font-semibold text-sm mb-1">Option B: Sandbox mode (works for today)</p>
+              <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
+                If your domain is not verified, sandbox mode lets you send emails to yourself for testing.
+                You can only email your own verified address, but that is enough for the session exercise.
+                No setup needed, sandbox is on by default in new accounts.
+              </p>
+            </div>
+          </div>
+
+          <ProTip type="warning">
+            If your domain is not verified yet, that is okay. Sandbox mode is enough for the live exercise.
+          </ProTip>
         </SectionCard>
       </div>
 

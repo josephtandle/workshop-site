@@ -118,7 +118,7 @@ export default function Session7Guide() {
             </p>
             <CodeBlock
               filename="Terminal"
-              code={`git clone https://github.com/josephtandle/mastermind-mission-control && cd mastermind-mission-control && bash install.sh`}
+              code={`git clone https://github.com/josephtandle/mastermind-mission-control-app && cd mastermind-mission-control-app && bash install.sh`}
             />
             <p className="text-[#FCF4EB]/70 leading-relaxed mt-4">
               The install script handles everything: dependencies, database setup, and starting

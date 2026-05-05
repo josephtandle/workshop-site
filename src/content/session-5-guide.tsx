@@ -59,10 +59,10 @@ export default function Session5Guide() {
         {/* Page Header */}
         <div className="mb-10">
           <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
-            Session Five
+            Session Four
           </p>
-          <h1 className="gradient-text text-5xl font-extrabold leading-tight mb-5 pb-1">
-            Give Claude Code Your Brain
+          <h1 className="text-4xl font-bold text-[#FCF4EB] leading-tight mb-5">
+            Creating Your Second Brain and Putting It in Your Pocket
           </h1>
           <p className="text-[#FCF4EB]/70 text-lg leading-relaxed mb-6">
             We are going to take everything you have ever told an AI and turn it into an organized
@@ -87,34 +87,26 @@ export default function Session5Guide() {
           </div>
 
           {/* Table of Contents */}
-          <details className="rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(124,105,199,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]">
-            <summary className="flex items-center justify-between px-6 py-5 cursor-pointer select-none">
-              <div className="flex items-center gap-3">
-                <span className="h-2 w-2 rounded-full bg-[#9D8FE0] shadow-[0_0_12px_rgba(157,143,224,0.70)]" />
-                <span className="text-xs uppercase tracking-[0.20em] text-[#FCF4EB]/65 font-semibold">Table of Contents</span>
-              </div>
-              <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[rgba(124,105,199,0.15)] border border-[rgba(124,105,199,0.28)] text-[#9D8FE0]">
-                <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-            </summary>
-            <div className="border-t border-white/[0.07] mx-5" />
-            <ol className="px-6 py-5 space-y-3">
+          <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl px-5 sm:px-6 py-5">
+            <p className="text-[#FCF4EB]/50 text-xs uppercase tracking-widest font-semibold mb-4">
+              In This Session
+            </p>
+            <ol className="space-y-2">
               {[
                 { href: '#part-a', label: 'Part A: Open Claude Code' },
-                { href: '#part-b', label: 'Part B: Run your Brain Dump' },
-                { href: '#part-c', label: 'Part C: Review, load context, and test it' },
-              ].map((item, i) => (
-                <li key={item.href} className="flex items-center gap-3 group/item">
-                  <span className="number-glow flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold tabular-nums" style={{ background: 'rgba(124,105,199,0.18)', color: '#9D8FE0', border: '1.5px solid rgba(124,105,199,0.30)' }}>
-                    {i + 1}
-                  </span>
-                  <a href={item.href} className="text-[#FCF4EB]/58 hover:text-[#9D8FE0] text-sm leading-snug transition-colors duration-150">{item.label}</a>
+                { href: '#part-b', label: 'Part B: Giving Your Orchestration Agent a Personality' },
+                { href: '#part-c', label: 'Part C: Run your Brain Dump' },
+                { href: '#part-d', label: 'Part D: Review, load context, and test it' },
+                { href: '#part-e', label: 'Part E: Claude on Your Phone' },
+              ].map((item) => (
+                <li key={item.href}>
+                  <a href={item.href} className="text-sm text-[#FCF4EB]/70 hover:text-[#7C69C7] transition-colors">
+                    {item.label}
+                  </a>
                 </li>
               ))}
             </ol>
-          </details>
+          </div>
         </div>
       </div>
 
@@ -124,7 +116,7 @@ export default function Session5Guide() {
           <p className="text-[#FCF4EB]/50 text-xs uppercase tracking-widest font-semibold mb-1">Workshop Recording</p>
           <p className="text-[#FCF4EB]/40 text-sm">Follow along with the live session. Hit play and the video will stick to the top as you scroll.</p>
         </div>
-        <StickyVideoPlayer videoId="dSk7aAUAOKc" title="Session 5: Give Claude Code Your Brain" />
+        <StickyVideoPlayer videoId="dSk7aAUAOKc" title="Session 4: Give Claude Code Your Brain" />
       </div>
 
       <div className="max-w-3xl mx-auto px-6 pb-16">
@@ -169,14 +161,68 @@ export default function Session5Guide() {
         {/* Part B */}
         <section id="part-b" className="mb-14">
           <h2 className="text-2xl font-bold text-[#FCF4EB] mb-2 pt-4">
-            Part B: Run your Brain Dump
+            Part B: Giving Your Orchestration Agent a Personality
+          </h2>
+          <p className="text-[#FCF4EB]/60 text-sm mb-6 leading-relaxed">
+            Joe&rsquo;s orchestration agent is called Uni. Yours is about to get a name. A SOUL.md
+            file tells Claude who it is and how it works with you — it loads every session and
+            shapes everything Claude does from that point on.
+          </p>
+
+          <StepCard number={3} title="Name your agent and write its soul">
+            <p className="mb-4">
+              Change the two lines at the top, then paste the whole thing into Claude Code.
+              That is the only editing you need to do:
+            </p>
+            <CodeBlock
+              filename="Paste into Claude Code"
+              editable
+              code={`Agent name: [YOUR AGENT NAME]
+Your name: [YOUR NAME]
+
+Do two things:
+
+1. Add this to my ~/SOUL.md file. Create it if it does not exist, or append to the bottom if it does. Do not overwrite anything already there.
+
+2. Add this line to my ~/CLAUDE.md: "Read ~/SOUL.md at the start of every session. That file defines who you are and how you work with me."
+
+---
+
+You are now [YOUR AGENT NAME].
+
+Your owner is [YOUR NAME]. You are their personal AI assistant. You are resourceful, direct, and autonomous.
+
+Act first, always. Do not ask your owner to do something you can do yourself. If the answer exists anywhere in the project, go find it. Asking them to do your job is a failure mode.
+
+Be relentlessly resourceful. When you do not know something, research it. Read files. Search the web. Explore the codebase. Exhaust every option before considering asking.
+
+Do the whole job. Do not do half the work and hand the rest back. If a question implies a task, do the task. If a request reveals a problem, fix the problem.
+
+Have opinions. An assistant with no personality is just a search engine.
+
+Earn trust. Careful with external actions. Bold with internal ones. Ask before sending emails, posting publicly, or spending money. Everything else, just do it.
+
+Do not ask "would you like me to..." or "should I..." or "do you want me to..." Just do it. Never narrate what you are doing. When you are stuck, research harder and try a different approach. Ask your owner only as an absolute last resort, and when you do, bring your findings and a specific question.`}
+            />
+            <ProTip type="tip">
+              Keep evolving it. If Claude does something you love, tell it to add that behavior
+              to SOUL.md. If something annoys you, remove it. It becomes a living document of
+              exactly how you want your assistant to work.
+            </ProTip>
+          </StepCard>
+        </section>
+
+        {/* Part C */}
+        <section id="part-c" className="mb-14">
+          <h2 className="text-2xl font-bold text-[#FCF4EB] mb-2 pt-4">
+            Part C: Run your Brain Dump
           </h2>
           <p className="text-[#FCF4EB]/60 text-sm mb-6 leading-relaxed">
             Fill in your URLs at the top, paste the prompt into Claude Code, and press Enter.
             Then join the group discussion. Claude will work in the background while we mastermind.
           </p>
 
-          <StepCard number={3} title="Drag your export file into the window">
+          <StepCard number={4} title="Drag your export file into the window">
             <p className="mb-3">
               <a href="/session/4/prep" className="text-[#7C69C7] hover:underline font-medium">Before the session</a>, you were asked to export your conversation history from
               ChatGPT or Claude as a{' '}
@@ -192,7 +238,7 @@ export default function Session5Guide() {
             </ProTip>
           </StepCard>
 
-          <StepCard number={4} title="Paste and run the Brain Dump prompt">
+          <StepCard number={5} title="Paste and run the Brain Dump prompt">
             <p className="mb-4">
               Fill in your URLs at the top, then copy the whole thing and paste it into Claude Code.
             </p>
@@ -231,17 +277,17 @@ Here is what I need you to do:
           </StepCard>
         </section>
 
-        {/* Part C */}
-        <section id="part-c" className="mb-14">
+        {/* Part D */}
+        <section id="part-d" className="mb-14">
           <h2 className="text-2xl font-bold text-[#FCF4EB] mb-2 pt-4">
-            Part C: Review, load context, and test it
+            Part D: Review, load context, and test it
           </h2>
           <p className="text-[#FCF4EB]/60 text-sm mb-6 leading-relaxed">
             Once Claude finishes processing, work through the steps below.
           </p>
 
           {/* Step 5 — Review */}
-          <StepCard number={5} title="Review your brain_dump_map">
+          <StepCard number={6} title="Review your brain_dump_map">
             <p className="mb-4">
               Open the folder Claude just created and check what is in there.
             </p>
@@ -293,7 +339,7 @@ Here is what I need you to do:
           </StepCard>
 
           {/* Step 6 — Load CLAUDE.md */}
-          <StepCard number={6} title="Load your context">
+          <StepCard number={7} title="Load your context">
             <p className="mb-4">
               The Brain Dump just updated your CLAUDE.md with a Personal Context section.
               Paste this prompt and Claude will read it right now, without needing to restart.
@@ -308,7 +354,7 @@ Here is what I need you to do:
           </StepCard>
 
           {/* Step 7 — Test it */}
-          <StepCard number={7} title="Ask Claude about yourself">
+          <StepCard number={8} title="Ask Claude about yourself">
             <p className="mb-4">
               Now test it. These questions can only be answered if Claude properly read your
               Brain Dump. Try them one at a time and see what comes back.
@@ -348,13 +394,113 @@ Here is what I need you to do:
           </div>
         </section>
 
+        {/* Part E */}
+        <section id="part-e" className="mb-14">
+          <h2 className="text-2xl font-bold text-[#FCF4EB] mb-2 pt-4">
+            Part E: Claude on Your Phone
+          </h2>
+          <p className="text-[#FCF4EB]/60 text-sm mb-6 leading-relaxed">
+            This session lives on your phone permanently. It becomes your portal — a quick way
+            to reach your brain dump, ask your agent a question, or keep working when you are
+            away from your laptop. You do not close it. You leave it open forever.
+          </p>
+
+          <StepCard number={9} title="Rename your session in the terminal">
+            <p className="mb-4">
+              In Claude Code, run this command with your own name at the end:
+            </p>
+            <CodeBlock
+              filename="Claude Code"
+              editable
+              code={`/rename [YOUR NAME]`}
+            />
+            <p className="mt-4 mb-4">
+              Replace{' '}
+              <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">[YOUR NAME]</code>{' '}
+              with your actual name — something like{' '}
+              <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">Sarah</code>{' '}
+              or{' '}
+              <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">Sarah&rsquo;s AI Work</code>.
+              This is the session you will come back to from your phone.
+            </p>
+            <ProTip type="tip">
+              Named sessions sync automatically across all your devices. Name it once and it shows
+              up everywhere you are logged in to{' '}
+              <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">
+                Claude.ai
+              </a>.
+            </ProTip>
+          </StepCard>
+
+          <StepCard number={10} title="Find that session on your phone">
+            <p className="mb-4">
+              Open the{' '}
+              <a
+                href="https://claude.ai/download"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#7C69C7] hover:underline"
+              >
+                Claude app
+              </a>
+              {' '}on your phone. Tap the menu icon at the top left to open the sidebar.
+            </p>
+            <p className="mb-4">
+              Tap <strong className="text-[#FCF4EB]">Code</strong> (the{' '}
+              <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">&lt;/&gt;</code>{' '}
+              icon). You will see a list of all your Claude Code sessions by name. The one you
+              just renamed will be right at the top.
+            </p>
+
+            <div className="flex gap-3 my-5">
+              <div className="flex-1">
+                <img
+                  src="/images/session-6/claude-phone-menu.jpg"
+                  alt="Claude app sidebar showing the Code menu item"
+                  className="w-full rounded-xl border border-white/[0.08]"
+                />
+                <p className="text-[#FCF4EB]/40 text-xs mt-2 text-center">Tap Code in the sidebar</p>
+              </div>
+              <div className="flex-1">
+                <img
+                  src="/images/session-6/claude-phone-sessions.jpg"
+                  alt="Claude Code sessions list on phone showing named sessions"
+                  className="w-full rounded-xl border border-white/[0.08]"
+                />
+                <p className="text-[#FCF4EB]/40 text-xs mt-2 text-center">Your sessions listed by name</p>
+              </div>
+            </div>
+
+            <p className="mb-4">
+              Tap your session. You are now in the same session you were working in on your
+              laptop, synced in real time.
+            </p>
+            <ProTip type="info">
+              This is the Code section, not the Chats section. Claude Code sessions live here,
+              separate from your regular Claude.ai conversations. Leave this session open. It
+              is your portal now.
+            </ProTip>
+          </StepCard>
+
+          <StepCard number={11} title="Try a slash command on your phone">
+            <p className="mb-4">
+              Tap into the message field, then type a forward slash{' '}
+              <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">/</code>.
+              A menu of your installed skills appears. Tap any skill to run it.
+            </p>
+            <p>
+              Try{' '}
+              <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">/speak-human</code>{' '}
+              — you will use it in the next session to build your voice profile.
+            </p>
+            <ProTip type="info">
+              Slash commands work identically on phone and laptop. Any skill you install on one
+              device is available everywhere you are logged in.
+            </ProTip>
+          </StepCard>
+        </section>
+
       </div>
-
-      <p className="text-center text-xs text-white/20 pb-8">
-        Using Codex instead of Claude Code?{' '}
-        <a href="/session/2/guide-codex" className="underline hover:text-white/50 transition-colors">Codex version of this page</a>
-      </p>
-
     </>
   )
 }

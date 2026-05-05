@@ -51,11 +51,11 @@ export default async function SessionIndexPage({ params }: Props) {
 
       {/* Cards */}
       <div className="grid md:grid-cols-2 gap-6 items-stretch">
-        {/* Hook writing prep card — Session 5 only */}
-        {slug === '5' && (
+        {/* Hook writing prep card — Session 6 only */}
+        {slug === '6' && (
           <Reveal delay={1} className="h-full">
             <Link
-              href="/session/5/prep-hooks"
+              href="/session/6/prep-hooks"
               className="group card-hover card-shimmer flex flex-col h-full bg-white/[0.05] border border-white/[0.10] rounded-2xl p-8"
             >
               <div className="flex items-start justify-between mb-5">
@@ -172,7 +172,7 @@ export default async function SessionIndexPage({ params }: Props) {
 
         {/* Guide page */}
         {session.hasGuide && (
-          <Reveal delay={2} className="h-full">
+          <Reveal delay={2} className={`h-full ${slug === '4' ? 'order-4' : ''}`}>
             {(slug === '5' && LOCKS.session5Guide === false) || (slug === '6' && !LOCKS.session6Guide) || (slug === '7' && !LOCKS.session7Guide) || (slug === '8' && !LOCKS.session8Guide) || (slug === '9' && !LOCKS.session9Guide) ? (
               <div
                 className="flex flex-col h-full bg-white/[0.02] border border-white/[0.05] rounded-2xl p-8 cursor-not-allowed select-none"
@@ -257,11 +257,11 @@ export default async function SessionIndexPage({ params }: Props) {
           </Reveal>
         )}
 
-        {/* 3 — Custom Domain — Session 3 only */}
-        {slug === '3' && (
-          <Reveal delay={3} className="h-full">
+        {/* Custom Domain — Session 4 only */}
+        {slug === '4' && (
+          <Reveal delay={2} className="h-full order-2">
             <Link
-              href="/session/3/custom-domain"
+              href="/session/4/custom-domain"
               className="group card-hover card-shimmer flex flex-col h-full bg-white/[0.05] border border-white/[0.10] rounded-2xl p-8"
             >
               <div className="flex items-start justify-between mb-5">
@@ -298,11 +298,11 @@ export default async function SessionIndexPage({ params }: Props) {
           </Reveal>
         )}
 
-        {/* 4 — Resend Homework — Session 3 only */}
-        {slug === '3' && (
-          <Reveal delay={4} className="h-full">
+        {/* Resend Homework — Session 4 only */}
+        {slug === '4' && (
+          <Reveal delay={3} className="h-full order-3">
             <Link
-              href="/session/3/homework"
+              href="/session/4/homework"
               className="group card-hover card-shimmer flex flex-col h-full bg-white/[0.05] border border-white/[0.10] rounded-2xl p-8"
             >
               <div className="flex items-start justify-between mb-5">
@@ -339,10 +339,10 @@ export default async function SessionIndexPage({ params }: Props) {
           </Reveal>
         )}
 
-        {slug === '4' && (
+        {slug === '5' && (
           <Reveal delay={3} className="h-full">
             <Link
-              href="/session/4/wrapup"
+              href="/session/5/wrapup"
               className="group card-hover card-shimmer flex flex-col h-full bg-white/[0.05] border border-white/[0.10] rounded-2xl p-8"
             >
               <div className="flex items-start justify-between mb-5">
@@ -379,8 +379,8 @@ export default async function SessionIndexPage({ params }: Props) {
           </Reveal>
         )}
 
-        {/* Hook Writer — Session 5 only */}
-        {slug === '5' && (
+        {/* Hook Writer — Session 6 only */}
+        {slug === '6' && (
           <Reveal delay={3} className="h-full">
             {LOCKS.session5HookWriter === false ? (
               <div
@@ -424,7 +424,7 @@ export default async function SessionIndexPage({ params }: Props) {
               </div>
             ) : (
             <Link
-              href="/session/5/hook-writer"
+              href="/session/6/hook-writer"
               className="group card-hover card-shimmer flex flex-col h-full bg-white/[0.05] border border-white/[0.10] rounded-2xl p-8"
             >
               <div className="flex items-start justify-between mb-5">

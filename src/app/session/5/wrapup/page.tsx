@@ -5,7 +5,7 @@ import Reveal from '@/components/Reveal'
 import StaggerList, { StaggerItem } from '@/components/StaggerList'
 
 export const metadata = {
-  title: 'Session 4 Wrap-Up: Mastermind Alignment — Masterminds Workshop',
+  title: 'Session 5 Wrap-Up: Mastermind Alignment — Masterminds Workshop',
   description: 'Recording, summary, participant wins, and suggested improvements from our first Mastermind Alignment call.',
 }
 
@@ -84,7 +84,7 @@ const takeaways = [
   "We're preparing to brain dump every conversation we've ever had with AI into one place, so our AI tools know exactly who we are and what we're building.",
 ]
 
-export default function Session4WrapUp() {
+export default function Session5WrapUp() {
   return (
     <main>
       {/* ── Hero ─────────────────────────────────────────── */}
@@ -92,7 +92,7 @@ export default function Session4WrapUp() {
         <nav className="text-sm text-[#FCF4EB]/40 flex items-center gap-2 flex-wrap mb-12">
           <Link href="/" className="hover:text-[#7C69C7] transition-colors">All Sessions</Link>
           <span>/</span>
-          <Link href="/session/4" className="hover:text-[#7C69C7] transition-colors">Session 4</Link>
+          <Link href="/session/5" className="hover:text-[#7C69C7] transition-colors">Session 5</Link>
           <span>/</span>
           <span className="text-[#FCF4EB]/60">Wrap-Up</span>
         </nav>
@@ -100,7 +100,7 @@ export default function Session4WrapUp() {
         <div className="relative mb-14">
           <div className="absolute -inset-x-6 -inset-y-4 bg-gradient-to-r from-[#7C69C7]/12 via-[#9D8FE0]/16 to-[#F5C3C6]/10 blur-3xl rounded-full pointer-events-none" />
           <p className="relative text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
-            Session Four
+            Session Five
           </p>
           <h1 className="relative gradient-text text-4xl md:text-5xl font-extrabold leading-tight mb-5">
             Mastermind Alignment
@@ -215,7 +215,7 @@ export default function Session4WrapUp() {
           <hr className="glow-divider mb-8" />
           <div className="flex items-center justify-between flex-wrap gap-4">
             <Link
-              href="/session/4"
+              href="/session/5"
               className="inline-flex items-center gap-2 text-sm text-[#FCF4EB]/40 hover:text-[#7C69C7] transition-colors"
             >
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">

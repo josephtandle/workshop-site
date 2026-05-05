@@ -4,6 +4,7 @@ import type { ReactNode } from 'react'
 import StepCard from '@/components/StepCard'
 import CodeBlock from '@/components/CodeBlock'
 import ProTip from '@/components/ProTip'
+import StickyVideoPlayer from '@/components/StickyVideoPlayer'
 
 type UseCaseIcon = 'reporting' | 'research' | 'form' | 'qa' | 'monitoring' | 'pricing'
 
@@ -148,6 +149,15 @@ export default function Session8Guide() {
         </div>
       </div>
 
+      {/* Workshop Recording — sticky video player */}
+      <div className="max-w-3xl mx-auto px-6 mb-14">
+        <div className="mb-4">
+          <p className="text-[#FCF4EB]/50 text-xs uppercase tracking-widest font-semibold mb-1">Workshop Recording</p>
+          <p className="text-[#FCF4EB]/40 text-sm">Follow along with the live session. Hit play and the video will stick to the top as you scroll.</p>
+        </div>
+        <StickyVideoPlayer videoId="UbGAEebl03A" title="Cohort 1, Session 8: Business Automation Masterminds" />
+      </div>
+
       <div className="max-w-3xl mx-auto px-6 py-10">
         <section id="setup" className="mb-16">
           <div className="mb-8">
@@ -174,7 +184,6 @@ export default function Session8Guide() {
             <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Install</span>
             <h2 className="text-2xl font-bold text-[#FCF4EB]">Install and Register WebFetch</h2>
           </div>
-
           <StepCard number={2} title="Install and register skills">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Paste this prompt into the Claude session you already opened. Claude will download the public GitHub repo,
@@ -640,6 +649,7 @@ Do the following carefully:
     - Python imports for the installed Whisper package
     - Python import for simple_diarizer
     - Python import for pyannote.audio
+import StickyVideoPlayer from '@/components/StickyVideoPlayer';
     - ffmpeg -version
 17. Report what was installed, which Whisper backend was chosen, which models downloaded, whether simple-diarizer is ready, and whether pyannote is ready or waiting for Hugging Face access.`}
               editable

@@ -107,7 +107,13 @@ export default function Session3Guide() {
           <p className="text-[#FCF4EB]/50 text-xs uppercase tracking-widest font-semibold mb-1">Workshop Recording</p>
           <p className="text-[#FCF4EB]/40 text-sm">Follow along with the live session. Hit play and the video will stick to the top as you scroll.</p>
         </div>
-        <StickyVideoPlayer videoId="MQS_V0xjMxk" title="Cohort 1, Session 3: Business Automation Masterminds" />
+        <StickyVideoPlayer
+        videos={[
+          { id: 'MQS_V0xjMxk', label: 'Cohort 1 Video Replay' },
+          { id: 'u8w3YtQtEZM', label: 'Cohort 2 Video Replay' },
+        ]}
+        title="Session 3: Business Automation Masterminds"
+      />
       </div>
 
     </div>

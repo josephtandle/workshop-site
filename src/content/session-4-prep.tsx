@@ -108,7 +108,7 @@ export default function Session4Prep() {
       {/* Page Header */}
       <div className="mb-10">
         <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
-          Before Session Five
+          Before Session Six
         </p>
         <h1 className="text-3xl sm:text-4xl font-bold text-[#FCF4EB] leading-tight mb-5">
           Prepare for Hook Writing Project

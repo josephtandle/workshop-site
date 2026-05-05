@@ -8,7 +8,7 @@ interface Props {
 }
 
 export function generateStaticParams() {
-  return [{ slug: '5' }]
+  return [{ slug: '4' }]
 }
 
 export async function generateMetadata({ params }: Props) {
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props) {
 
 export default async function SessionGuideBrainPage({ params }: Props) {
   const { slug } = await params
-  if (slug !== '5') notFound()
+  if (slug !== '4') notFound()
   const session = getSession(slug)
   if (!session) notFound()
 

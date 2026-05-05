@@ -3,7 +3,6 @@
 import StepCard from '@/components/StepCard'
 import CodeBlock from '@/components/CodeBlock'
 import ProTip from '@/components/ProTip'
-import { celebrate } from '@/lib/celebrate'
 import StickyVideoPlayer from '@/components/StickyVideoPlayer'
 
 export default function Session6Guide() {
@@ -17,13 +16,12 @@ export default function Session6Guide() {
             Session Six
           </p>
           <h1 className="gradient-text text-5xl font-extrabold leading-tight mb-5 pb-1">
-            Claude on Your Phone, Your Voice, and Your Daily Hook Feed
+            Your Voice and Your Daily Hook Feed
           </h1>
           <p className="text-[#FCF4EB]/70 text-lg leading-relaxed mb-6">
-            By the end of this session you will have a named AI assistant with its own
-            personality, Claude on your phone as a permanent portal, a voice profile that
-            writes in your actual voice, and a daily agent that emails you fresh hook ideas
-            every morning.
+            By the end of this session you will have a voice profile that writes in your actual
+            voice, a Hook Writer setup that uses that voice, and a daily agent that emails you
+            fresh hook ideas every morning.
           </p>
 
           <div className="flex flex-wrap gap-6 text-sm text-[#FCF4EB]/50 mb-8">
@@ -43,37 +41,25 @@ export default function Session6Guide() {
           </div>
 
           {/* Table of Contents */}
-          <details className="rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(124,105,199,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]">
-            <summary className="flex items-center justify-between px-6 py-5 cursor-pointer select-none">
-              <div className="flex items-center gap-3">
-                <span className="h-2 w-2 rounded-full bg-[#9D8FE0] shadow-[0_0_12px_rgba(157,143,224,0.70)]" />
-                <span className="text-xs uppercase tracking-[0.20em] text-[#FCF4EB]/65 font-semibold">Table of Contents</span>
-              </div>
-              <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[rgba(124,105,199,0.15)] border border-[rgba(124,105,199,0.28)] text-[#9D8FE0]">
-                <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-            </summary>
-            <div className="border-t border-white/[0.07] mx-5" />
-            <ol className="px-6 py-5 space-y-3">
+          <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl px-5 sm:px-6 py-5">
+            <p className="text-[#FCF4EB]/50 text-xs uppercase tracking-widest font-semibold mb-4">
+              In This Session
+            </p>
+            <ol className="space-y-2">
               {[
-                { href: '#part-a', label: 'Part A: Giving Your Orchestration Agent a Personality' },
-                { href: '#part-b', label: 'Part B: Claude on Your Phone' },
-                { href: '#part-c', label: 'Part C: Build Your Voice Profile' },
-                { href: '#part-d', label: 'Part D: Model Switching and Background Agents' },
-                { href: '#part-e', label: 'Part E: Hook Writer Part 1' },
-                { href: '#part-f', label: 'Part F: Your Daily Hook Research Agent' },
-              ].map((item, i) => (
-                <li key={item.href} className="flex items-center gap-3 group/item">
-                  <span className="number-glow flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold tabular-nums" style={{ background: 'rgba(124,105,199,0.18)', color: '#9D8FE0', border: '1.5px solid rgba(124,105,199,0.30)' }}>
-                    {i + 1}
-                  </span>
-                  <a href={item.href} className="text-[#FCF4EB]/58 hover:text-[#9D8FE0] text-sm leading-snug transition-colors duration-150">{item.label}</a>
+                { href: '#part-a', label: 'Part A: Build Your Voice Profile' },
+                { href: '#part-b', label: 'Part B: Model Switching and Background Agents' },
+                { href: '#part-c', label: 'Part C: Hook Writer Part 1' },
+                { href: '#part-d', label: 'Part D: Your Daily Hook Research Agent' },
+              ].map((item) => (
+                <li key={item.href}>
+                  <a href={item.href} className="text-sm text-[#FCF4EB]/70 hover:text-[#7C69C7] transition-colors">
+                    {item.label}
+                  </a>
                 </li>
               ))}
             </ol>
-          </details>
+          </div>
         </div>
       </div>
 
@@ -102,172 +88,7 @@ export default function Session6Guide() {
         <section id="part-a" className="mb-14">
           <div className="mb-6 pt-4">
             <h2 className="gradient-text text-3xl font-extrabold pb-1">
-              Part A: Giving Your Orchestration Agent a Personality
-            </h2>
-          </div>
-          <p className="text-[#FCF4EB]/60 text-sm mb-6 leading-relaxed">
-            Joe&rsquo;s orchestration agent is called Uni. Yours is about to get a name. A SOUL.md
-            file tells Claude who it is and how it works with you — it loads every session and
-            shapes everything Claude does from that point on.
-          </p>
-
-          <StepCard number={1} title="Name your agent and write its soul">
-            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-              Change the two lines at the top, then paste the whole thing into Claude Code.
-              That is the only editing you need to do:
-            </p>
-            <CodeBlock
-              filename="Claude Code prompt"
-              editable
-              code={`Agent name: [YOUR AGENT NAME]
-Your name: [YOUR NAME]
-
-Do two things:
-
-1. Add this to my ~/SOUL.md file. Create it if it does not exist, or append to the bottom if it does. Do not overwrite anything already there.
-
-2. Add this line to my ~/CLAUDE.md: "Read ~/SOUL.md at the start of every session. That file defines who you are and how you work with me."
-
----
-
-You are now [YOUR AGENT NAME].
-
-Your owner is [YOUR NAME]. You are their personal AI assistant. You are resourceful, direct, and autonomous.
-
-Act first, always. Do not ask your owner to do something you can do yourself. If the answer exists anywhere in the project, go find it. Asking them to do your job is a failure mode.
-
-Be relentlessly resourceful. When you do not know something, research it. Read files. Search the web. Explore the codebase. Exhaust every option before considering asking.
-
-Do the whole job. Do not do half the work and hand the rest back. If a question implies a task, do the task. If a request reveals a problem, fix the problem.
-
-Have opinions. An assistant with no personality is just a search engine.
-
-Earn trust. Careful with external actions. Bold with internal ones. Ask before sending emails, posting publicly, or spending money. Everything else, just do it.
-
-Do not ask "would you like me to..." or "should I..." or "do you want me to..." Just do it. Never narrate what you are doing. When you are stuck, research harder and try a different approach. Ask your owner only as an absolute last resort, and when you do, bring your findings and a specific question.`}
-            />
-            <ProTip type="tip">
-              Keep evolving it. If Claude does something you love, tell it to add that behavior
-              to SOUL.md. If something annoys you, remove it. It becomes a living document of
-              exactly how you want your assistant to work.
-            </ProTip>
-          </StepCard>
-        </section>
-
-        {/* Part B */}
-        <section id="part-b" className="mb-14">
-          <div className="mb-6 pt-4">
-            <h2 className="gradient-text text-3xl font-extrabold pb-1">
-              Part B: Claude on Your Phone
-            </h2>
-          </div>
-          <p className="text-[#FCF4EB]/60 text-sm mb-6 leading-relaxed">
-            This session lives on your phone permanently. It becomes your portal — a quick way
-            to reach your brain dump, ask your agent a question, or keep working when you are
-            away from your laptop. You do not close it. You leave it open forever.
-          </p>
-
-          <StepCard number={2} title="Rename your session in the terminal">
-            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-              In Claude Code, run this command with your own name at the end:
-            </p>
-            <CodeBlock
-              filename="Claude Code"
-              editable
-              code={`/rename [YOUR NAME]`}
-            />
-            <p className="text-[#FCF4EB]/70 leading-relaxed mt-4 mb-4">
-              Replace{' '}
-              <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">[YOUR NAME]</code>{' '}
-              with your actual name — something like{' '}
-              <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">Sarah</code>{' '}
-              or{' '}
-              <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">Sarah&rsquo;s AI Work</code>.
-              This is the session you will come back to from your phone.
-            </p>
-            <ProTip type="tip">
-              Named sessions sync automatically across all your devices. Name it once and it shows
-              up everywhere you are logged in to{' '}
-              <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">
-                Claude.ai
-              </a>.
-            </ProTip>
-          </StepCard>
-
-          <StepCard number={3} title="Find that session on your phone">
-            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-              Open the{' '}
-              <a
-                href="https://claude.ai/download"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#7C69C7] hover:underline"
-              >
-                Claude app
-              </a>
-              {' '}on your phone. Tap the menu icon at the top left to open the sidebar.
-            </p>
-            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-              Tap <strong className="text-[#FCF4EB]">Code</strong> (the{' '}
-              <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">&lt;/&gt;</code>{' '}
-              icon). You will see a list of all your Claude Code sessions by name. The one you
-              just renamed will be right at the top.
-            </p>
-
-            {/* Screenshots */}
-            <div className="flex gap-3 my-5">
-              <div className="flex-1">
-                <img
-                  src="/images/session-6/claude-phone-menu.jpg"
-                  alt="Claude app sidebar showing the Code menu item"
-                  className="w-full rounded-xl border border-white/[0.08]"
-                />
-                <p className="text-[#FCF4EB]/40 text-xs mt-2 text-center">Tap Code in the sidebar</p>
-              </div>
-              <div className="flex-1">
-                <img
-                  src="/images/session-6/claude-phone-sessions.jpg"
-                  alt="Claude Code sessions list on phone showing named sessions"
-                  className="w-full rounded-xl border border-white/[0.08]"
-                />
-                <p className="text-[#FCF4EB]/40 text-xs mt-2 text-center">Your sessions listed by name</p>
-              </div>
-            </div>
-
-            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-              Tap your session. You are now in the same session you were working in on your
-              laptop, synced in real time.
-            </p>
-            <ProTip type="info">
-              This is the Code section, not the Chats section. Claude Code sessions live here,
-              separate from your regular Claude.ai conversations. Leave this session open. It
-              is your portal now.
-            </ProTip>
-          </StepCard>
-
-          <StepCard number={4} title="Try a slash command on your phone">
-            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-              Tap into the message field, then type a forward slash{' '}
-              <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">/</code>.
-              A menu of your installed skills appears. Tap any skill to run it.
-            </p>
-            <p className="text-[#FCF4EB]/70 leading-relaxed">
-              Try{' '}
-              <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">/speak-human</code>{' '}
-              — you will use it in Part C to build your voice profile.
-            </p>
-            <ProTip type="info">
-              Slash commands work identically on phone and laptop. Any skill you install on one
-              device is available everywhere you are logged in.
-            </ProTip>
-          </StepCard>
-        </section>
-
-        {/* Part C */}
-        <section id="part-c" className="mb-14">
-          <div className="mb-6 pt-4">
-            <h2 className="gradient-text text-3xl font-extrabold pb-1">
-              Part C: Build Your Voice Profile
+              Part A: Build Your Voice Profile
             </h2>
           </div>
           <p className="text-[#FCF4EB]/60 text-sm mb-6 leading-relaxed">
@@ -277,7 +98,7 @@ Do not ask "would you like me to..." or "should I..." or "do you want me to..." 
             Claude will rewrite anything in your specific voice, not a generic AI voice.
           </p>
 
-          <StepCard number={5} title="Install the Speak Human skill">
+          <StepCard number={1} title="Install the Speak Human skill">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Run this command in your terminal. It downloads and installs the skill in one step:
             </p>
@@ -292,13 +113,13 @@ Do not ask "would you like me to..." or "should I..." or "do you want me to..." 
             </ProTip>
           </StepCard>
 
-          <StepCard number={6} title="Point Claude at your writing samples">
+          <StepCard number={2} title="Point Claude at your writing samples">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Tell Claude where your writing samples are. They can be anywhere — a folder, a few
               files, a Notes export, anything. Paste this and fill in the location:
             </p>
             <CodeBlock
-              filename="Claude Code prompt"
+              filename="Paste into Claude Code"
               editable
               code={`I want to build my voice profile. My writing samples are here: [DESCRIBE WHERE YOUR FILES ARE — for example: "a folder called MyVoice on my Desktop" or "three text files in ~/Documents/writing"].
 
@@ -310,13 +131,13 @@ Read those files. These are samples of my actual writing — emails, posts, note
             </ProTip>
           </StepCard>
 
-          <StepCard number={7} title="Open and read your voice profile">
+          <StepCard number={3} title="Open and read your voice profile">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Paste this to have Claude read the file and show it to you right here in the
               session — no external app needed:
             </p>
             <CodeBlock
-              filename="Claude Code prompt"
+              filename="Paste into Claude Code"
               code={`Read my voice profile file and show me the full contents here.`}
             />
             <p className="text-[#FCF4EB]/70 leading-relaxed mt-4 mb-4">
@@ -330,12 +151,12 @@ Read those files. These are samples of my actual writing — emails, posts, note
             </p>
           </StepCard>
 
-          <StepCard number={8} title="Test it live">
+          <StepCard number={4} title="Test it live">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Paste any bland, AI-sounding text into Claude Code, then run:
             </p>
             <CodeBlock
-              filename="Claude Code prompt"
+              filename="Paste into Claude Code"
               code={`Run /speak-human --my-voice on the text above.`}
             />
             <p className="text-[#FCF4EB]/70 leading-relaxed mt-4">
@@ -345,11 +166,11 @@ Read those files. These are samples of my actual writing — emails, posts, note
           </StepCard>
         </section>
 
-        {/* Part D */}
-        <section id="part-d" className="mb-14">
+        {/* Part B */}
+        <section id="part-b" className="mb-14">
           <div className="mb-6 pt-4">
             <h2 className="gradient-text text-3xl font-extrabold pb-1">
-              Part D: Model Switching and Background Agents
+              Part B: Model Switching and Background Agents
             </h2>
           </div>
           <p className="text-[#FCF4EB]/60 text-sm mb-6 leading-relaxed">
@@ -358,7 +179,7 @@ Read those files. These are samples of my actual writing — emails, posts, note
             do something else.
           </p>
 
-          <StepCard number={9} title="Switch models mid-session">
+          <StepCard number={5} title="Switch models mid-session">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Type this in Claude Code and a menu appears. Pick the model you want for this session:
             </p>
@@ -372,7 +193,7 @@ Read those files. These are samples of my actual writing — emails, posts, note
             </p>
           </StepCard>
 
-          <StepCard number={10} title="Know which model to use">
+          <StepCard number={6} title="Know which model to use">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Claude has three tiers. Each one is a different trade-off between speed, cost, and
               intelligence.
@@ -427,12 +248,12 @@ Read those files. These are samples of my actual writing — emails, posts, note
             </ProTip>
           </StepCard>
 
-          <StepCard number={11} title="Put agents to work on your brain dump">
+          <StepCard number={7} title="Put agents to work on your brain dump">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Here is a real example that uses both concepts at once. Paste this into Claude Code:
             </p>
             <CodeBlock
-              filename="Claude Code prompt"
+              filename="Paste into Claude Code"
               code={`I want you to spin up four background agents using Haiku to read through my brain dump folder. Each agent should cover a different section and pull out the most important themes, ideas, and action items it finds.
 
 Then use Opus as the orchestrating agent to take everything the four Haiku agents found and reorganize it — make the brain dump more structured, cleaner, and easier to navigate than it was before.
@@ -447,11 +268,11 @@ My brain dump is at: ~/Desktop/brain_dump_map`}
           </StepCard>
         </section>
 
-        {/* Part E */}
-        <section id="part-e" className="mb-14">
+        {/* Part C */}
+        <section id="part-c" className="mb-14">
           <div className="mb-6 pt-4">
             <h2 className="gradient-text text-3xl font-extrabold pb-1">
-              Part E: Hook Writer Part 1
+              Part C: Hook Writer Part 1
             </h2>
           </div>
           <p className="text-[#FCF4EB]/60 text-sm mb-6 leading-relaxed">
@@ -460,7 +281,7 @@ My brain dump is at: ~/Desktop/brain_dump_map`}
             the skill and gets you generating hooks. Part 2 connects it to live Instagram research.
           </p>
 
-          <StepCard number={12} title="Install Hook Writer">
+          <StepCard number={8} title="Install Hook Writer">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Open your terminal and run this command:
             </p>
@@ -474,23 +295,23 @@ My brain dump is at: ~/Desktop/brain_dump_map`}
             </ProTip>
           </StepCard>
 
-          <StepCard number={13} title="Generate your first hooks">
+          <StepCard number={9} title="Generate your first hooks">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Paste this into Claude Code and fill in your topic:
             </p>
             <CodeBlock
-              filename="Claude Code prompt"
+              filename="Paste into Claude Code"
               editable
               code={`/hooklab [WHAT YOUR CONTENT IS ABOUT, for example: "how I use AI to manage my DMs" or "why most coaches waste time on content"]`}
             />
           </StepCard>
 
-          <StepCard number={14} title="Add your voice profile">
+          <StepCard number={10} title="Add your voice profile">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Run this version to get hooks that sound like you:
             </p>
             <CodeBlock
-              filename="Claude Code prompt"
+              filename="Paste into Claude Code"
               editable
               code={`/hooklab [YOUR TOPIC] --my-voice`}
             />
@@ -499,16 +320,16 @@ My brain dump is at: ~/Desktop/brain_dump_map`}
               <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">--my-voice</code>.
               The difference is usually striking. The{' '}
               <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">--my-voice</code>{' '}
-              version pulls directly from the voice profile you built in Part C.
+              version pulls directly from the voice profile you built in Part A.
             </ProTip>
           </StepCard>
         </section>
 
-        {/* Part F */}
-        <section id="part-f" className="mb-14">
+        {/* Part D */}
+        <section id="part-d" className="mb-14">
           <div className="mb-6 pt-4">
             <h2 className="gradient-text text-3xl font-extrabold pb-1">
-              Part F: Your Daily Hook Research Agent
+              Part D: Your Daily Hook Research Agent
             </h2>
           </div>
           <p className="text-[#FCF4EB]/60 text-sm mb-6 leading-relaxed">
@@ -518,13 +339,13 @@ My brain dump is at: ~/Desktop/brain_dump_map`}
             run every morning and email you fresh hook ideas automatically.
           </p>
 
-          <StepCard number={15} title="Install yt-dlp and FFmpeg">
+          <StepCard number={11} title="Install yt-dlp and FFmpeg">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Paste this into Claude Code. It will detect your operating system and install both
               tools the right way for your machine:
             </p>
             <CodeBlock
-              filename="Claude Code prompt"
+              filename="Paste into Claude Code"
               code={`Check what operating system I am on, then install yt-dlp and FFmpeg using the correct method for my system. If I am on a Mac, use Homebrew. If I am on Windows, use the appropriate package manager or direct download. Confirm both are installed and working when you are done.`}
             />
             <ProTip type="info">
@@ -533,14 +354,14 @@ My brain dump is at: ~/Desktop/brain_dump_map`}
             </ProTip>
           </StepCard>
 
-          <StepCard number={16} title="Download and transcribe a reel">
+          <StepCard number={12} title="Download and transcribe a reel">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Everyone does this together. Go to one of the accounts from your prep list, open
               any recent reel, and copy the URL from your browser. Then paste this prompt with
               the URL filled in:
             </p>
             <CodeBlock
-              filename="Claude Code prompt"
+              filename="Paste into Claude Code"
               editable
               code={`Download this Instagram reel using yt-dlp: [PASTE THE REEL URL HERE]
 
@@ -560,12 +381,12 @@ Then use the transcript to:
             </ProTip>
           </StepCard>
 
-          <StepCard number={17} title="Set up the daily email agent">
+          <StepCard number={13} title="Set up the daily email agent">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Fill in your Instagram handles and email address, then paste:
             </p>
             <CodeBlock
-              filename="Claude Code prompt"
+              filename="Paste into Claude Code"
               editable
               code={`Set up my daily hook research agent.
 
@@ -605,8 +426,8 @@ Use Claude's scheduled remote agents to run this automatically every day. Set it
               <h2 className="gradient-text text-3xl font-extrabold pb-1">You just built something real.</h2>
             </div>
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-10">
-              You have a named AI assistant with its own personality, Claude on your phone as a
-              permanent portal, a voice profile that writes in your voice, and a daily agent
+              You have a voice profile that writes in your voice, Hook Writer running from that
+              voice, and a daily agent
               sending you hook ideas every morning. That is a full content machine, running on
               its own.
             </p>
@@ -625,10 +446,10 @@ Use Claude's scheduled remote agents to run this automatically every day. Set it
                     <span className="text-[#7C69C7] text-sm font-bold">1</span>
                   </div>
                   <div>
-                    <p className="text-[#FCF4EB] font-semibold text-sm mb-1">Share your agent&rsquo;s name</p>
+                    <p className="text-[#FCF4EB] font-semibold text-sm mb-1">Share your first hooks</p>
                     <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
-                      Post your agent&rsquo;s name and the one-line personality you gave it. Everyone
-                      is curious what the group came up with.
+                      Post the first hooks Hook Writer generated with your voice profile. The group
+                      will tell you which one would make them stop scrolling.
                     </p>
                   </div>
                 </div>
@@ -672,12 +493,6 @@ Use Claude's scheduled remote agents to run this automatically every day. Set it
         </section>
 
       </div>
-
-      <p className="text-center text-xs text-white/20 pb-8">
-        Using Codex instead of Claude Code?{' '}
-        <a href="/session/2/guide-codex" className="underline hover:text-white/50 transition-colors">Codex version of this page</a>
-      </p>
-
     </>
   )
 }
