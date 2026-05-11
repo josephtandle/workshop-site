@@ -345,6 +345,72 @@ RESEND_FROM_EMAIL=hello@yourdomain.com`}
               CRM Approval and Delivery Queue before trusting it on your own real leads.
             </ProTip>
           </StepCard>
+
+          <StepCard number={10} title="Create a template">
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              Open <strong className="text-[#FCF4EB]">Templates</strong> and create a message you would actually want a
+              new lead to receive. The template is the content the automation sends when a lead reaches the matching stage.
+            </p>
+            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
+              <p className="text-[#FCF4EB] font-semibold text-sm mb-2">How to create it</p>
+              <ol className="space-y-2 text-[#FCF4EB]/60 text-sm">
+                <li>1. Click the button to add a new template.</li>
+                <li>2. Give the template a clear name so you can recognize it later.</li>
+                <li>3. Choose the channel you want to use, which for this demo should be email.</li>
+                <li>4. Write a subject line and body that fit someone who just became interested.</li>
+                <li>5. Save the template, then reopen it once to confirm the content saved correctly.</li>
+              </ol>
+            </div>
+            <p className="text-[#FCF4EB]/70 leading-relaxed mt-4">
+              Keep the copy simple. For the demo, one short follow-up email is enough as long as it is clearly saved and
+              available in the template list.
+            </p>
+          </StepCard>
+
+          <StepCard number={11} title="Create an automation">
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              Go to <strong className="text-[#FCF4EB]">Automations</strong> and create a rule that uses the template you
+              just made. The automation connects a pipeline stage change to a specific outgoing message.
+            </p>
+            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
+              <p className="text-[#FCF4EB] font-semibold text-sm mb-2">Setup process</p>
+              <ol className="space-y-2 text-[#FCF4EB]/60 text-sm">
+                <li>1. Click to add a new automation.</li>
+                <li>2. Name it something obvious, like `Interested follow-up`.</li>
+                <li>3. Leave the project set to the pipeline you are testing.</li>
+                <li>4. Set the destination stage to <strong className="text-[#FCF4EB]">Interested</strong>.</li>
+                <li>5. Choose <strong className="text-[#FCF4EB]">Email</strong> as the channel.</li>
+                <li>6. Select the template you created in the previous step.</li>
+                <li>7. Save the automation and make sure it is enabled.</li>
+              </ol>
+            </div>
+            <ProTip type="tip" className="mt-4">
+              The automation is not useful until the stage, channel, and template all line up. Check those three settings
+              before you move on.
+            </ProTip>
+          </StepCard>
+
+          <StepCard number={12} title="Test the automation">
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              Create or use a test card that contains your own email address, then move that card into a column that has
+              the automation attached to it.
+            </p>
+            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
+              <p className="text-[#FCF4EB] font-semibold text-sm mb-2">Exact test flow</p>
+              <ol className="space-y-2 text-[#FCF4EB]/60 text-sm">
+                <li>1. Make sure the test lead record contains your real email address.</li>
+                <li>2. Open the Pipeline view.</li>
+                <li>3. Drag that test card into the <strong className="text-[#FCF4EB]">Interested</strong> column.</li>
+                <li>4. Use the <strong className="text-[#FCF4EB]">Interested</strong> column specifically, because the demo includes an automation for that stage.</li>
+                <li>5. Check the Approval or Delivery Queue and confirm the message was generated.</li>
+                <li>6. Confirm the email arrives in your inbox before treating the automation as working.</li>
+              </ol>
+            </div>
+            <p className="text-[#FCF4EB]/70 leading-relaxed mt-4">
+              If nothing happens, go back and verify the template exists, the automation is enabled, and the card was
+              dropped into <strong className="text-[#FCF4EB]">Interested</strong> rather than a different stage.
+            </p>
+          </StepCard>
         </section>
       </div>
 
