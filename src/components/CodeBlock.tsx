@@ -131,7 +131,7 @@ export default function CodeBlock({ code, language, filename, editable, codexPro
           {showCodexCopy && (
             <div className="flex justify-end px-4 pt-3 pb-4 border-t border-white/[0.06]">
               <MagneticCopyButton onClick={handleCodexCopy} variant="secondary" className="py-1.5">
-                {codexCopied ? 'Copied Codex!' : 'Copy Codex Only'}
+                {codexCopied ? 'Copied Codex!' : 'Copy Codex only'}
               </MagneticCopyButton>
             </div>
           )}
@@ -146,7 +146,7 @@ export default function CodeBlock({ code, language, filename, editable, codexPro
           {showCodexCopy && (
             <div className="flex justify-end px-4 pt-3 pb-4 border-t border-white/[0.06]">
               <MagneticCopyButton onClick={handleCodexCopy} variant="secondary" className="py-1.5">
-                {codexCopied ? 'Copied Codex!' : 'Copy Codex Only'}
+                {codexCopied ? 'Copied Codex!' : 'Copy Codex only'}
               </MagneticCopyButton>
             </div>
           )}

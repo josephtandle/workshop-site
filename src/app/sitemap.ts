@@ -48,6 +48,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/giveaways/anthropic-safety-checklist`,  lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/giveaways/lead-magnet`,                 lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/giveaways/benchmark`,                   lastModified: NOW, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${BASE}/giveaways/maccleaner`,                 lastModified: NOW, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/giveaways/speak-human`,                 lastModified: NOW, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE}/giveaways/ray-dalio-council`,           lastModified: NOW, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE}/giveaways/cross-cli-compatibility-routing`, lastModified: NOW, changeFrequency: 'monthly', priority: 0.8 },
@@ -57,6 +58,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Resource vault
     { url: `${BASE}/resource-vault`,                        lastModified: NOW, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/resource-vault/connecting-to-xero`,    lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/resource-vault/connecting-to-google-sheets`, lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/resource-vault/reza-website-control`,   lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/resource-vault/wordpress-api`,          lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
   ]

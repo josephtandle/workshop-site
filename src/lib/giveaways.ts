@@ -94,6 +94,14 @@ export const giveaways: Giveaway[] = [
     badgeVariant: 'purple',
   },
   {
+    slug: 'maccleaner',
+    title: 'MacCleaner',
+    description: 'A safe Mac cleanup script that previews first, requires confirmation before deleting anything, and uses an external drive for old backups when one is available.',
+    icon: '✦',
+    badge: 'Mac Tool',
+    badgeVariant: 'purple',
+  },
+  {
     slug: 'ray-dalio-council',
     title: 'Ray Dalio Council',
     description: 'A Claude Code skill that runs a believability-weighted decision council. Five scouts argue your question. One synthesizer weighs them. PROCEED, HOLD, or INVESTIGATE.',

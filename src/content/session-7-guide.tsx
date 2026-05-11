@@ -3,8 +3,8 @@
 import StepCard from '@/components/StepCard'
 import CodeBlock from '@/components/CodeBlock'
 import ProTip from '@/components/ProTip'
-import { celebrate } from '@/lib/celebrate'
 import StickyVideoPlayer from '@/components/StickyVideoPlayer'
+import { celebrate } from '@/lib/celebrate'
 
 export default function Session7Guide() {
   return (
@@ -42,47 +42,38 @@ export default function Session7Guide() {
             </span>
           </div>
 
-          <details className="rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(124,105,199,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]">
-            <summary className="flex items-center justify-between px-6 py-5 cursor-pointer select-none">
-              <div className="flex items-center gap-3">
-                <span className="h-2 w-2 rounded-full bg-[#9D8FE0] shadow-[0_0_12px_rgba(157,143,224,0.70)]" />
-                <span className="text-xs uppercase tracking-[0.20em] text-[#FCF4EB]/65 font-semibold">Table of Contents</span>
-              </div>
-              <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[rgba(124,105,199,0.15)] border border-[rgba(124,105,199,0.28)] text-[#9D8FE0]">
-                <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-            </summary>
-            <div className="border-t border-white/[0.07] mx-5" />
-            <ol className="px-6 py-5 space-y-3">
+          {/* Table of Contents */}
+          <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl px-5 sm:px-6 py-5">
+            <p className="text-[#FCF4EB]/50 text-xs uppercase tracking-widest font-semibold mb-4">
+              In This Session
+            </p>
+            <ol className="space-y-2">
               {[
                 { href: '#part-a', label: 'Part A: Install and Wire Up Mission Control' },
                 { href: '#part-b', label: 'Part B: Tour the Task Board' },
                 { href: '#part-c', label: 'Part C: Explore Sample Projects' },
                 { href: '#part-d', label: 'Part D: Add Your First Real Card' },
                 { href: '#part-e', label: 'Part E: The AI Column (Preview)' },
-              ].map(({ href, label }, i) => (
-                <li key={href} className="flex items-center gap-3 group/item">
-                  <span className="number-glow flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold tabular-nums" style={{ background: 'rgba(124,105,199,0.18)', color: '#9D8FE0', border: '1.5px solid rgba(124,105,199,0.30)' }}>
-                    {i + 1}
-                  </span>
-                  <a href={href} className="text-[#FCF4EB]/58 hover:text-[#9D8FE0] text-sm leading-snug transition-colors duration-150">{label}</a>
+              ].map((item) => (
+                <li key={item.href}>
+                  <a href={item.href} className="text-sm text-[#FCF4EB]/70 hover:text-[#7C69C7] transition-colors">
+                    {item.label}
+                  </a>
                 </li>
               ))}
             </ol>
-          </details>
+          </div>
         </div>
       </div>
+    {/* Workshop Recording — sticky video player */}
+    <div className="max-w-3xl mx-auto px-6 mb-14">
+      <div className="mb-4">
+        <p className="text-[#FCF4EB]/50 text-xs uppercase tracking-widest font-semibold mb-1">Workshop Recording</p>
+        <p className="text-[#FCF4EB]/40 text-sm">Follow along with the live session. Hit play and the video will stick to the top as you scroll.</p>
+      </div>
+      <StickyVideoPlayer videoId="6P8W1O682oE" title="Cohort 1, Session 7: Business Automation Masterminds" />
+    </div>
 
-      {/* Workshop Recording — sticky video player */}
-      <div className="max-w-3xl mx-auto px-6 mb-14">
-        <div className="mb-4">
-          <p className="text-[#FCF4EB]/50 text-xs uppercase tracking-widest font-semibold mb-1">Workshop Recording</p>
-          <p className="text-[#FCF4EB]/40 text-sm">Follow along with the live session. Hit play and the video will stick to the top as you scroll.</p>
-        </div>
-        <StickyVideoPlayer videoId="5u7ArWgKNOU" title="Cohort 1, Session 7: Business Automation Masterminds" />
-      </div>
 
       <div className="max-w-3xl mx-auto px-6 pb-16">
 
@@ -118,7 +109,7 @@ export default function Session7Guide() {
             </p>
             <CodeBlock
               filename="Terminal"
-              code={`git clone https://github.com/josephtandle/mastermind-mission-control-app && cd mastermind-mission-control-app && bash install.sh`}
+              code={`git clone https://github.com/josephtandle/mastermind-mission-control && cd mastermind-mission-control && bash install.sh`}
             />
             <p className="text-[#FCF4EB]/70 leading-relaxed mt-4">
               The install script handles everything: dependencies, database setup, and starting
@@ -138,7 +129,7 @@ export default function Session7Guide() {
               machine. If it was not picked up automatically, paste this into Claude Code to fix it:
             </p>
             <CodeBlock
-              filename="Claude Code prompt"
+              filename="Paste into Claude Code"
               code={`Find the Claude binary and wire up the task executor to use it.
 
 1. Locate the claude executable on this machine. Try these in order:
@@ -198,7 +189,7 @@ Deploy when you're done.`}
               working correctly on your machine:
             </p>
             <CodeBlock
-              filename="Claude Code prompt"
+              filename="Paste into Claude Code"
               code={`Wire up the Mission Control file browser — verify paths and lazy loading.
 
 You are setting up the Mission Control file browser on this machine. Complete all steps.
@@ -516,7 +507,7 @@ How the two-level loading works:
               is the file Claude reads at the start of every session to understand your setup:
             </p>
             <CodeBlock
-              filename="Claude Code prompt"
+              filename="Paste into Claude Code"
               code={`Add the following to my CLAUDE.md file:
 
 ## Mission Control Task Board
@@ -546,7 +537,7 @@ When I say "add this to the MC task board" or "add a card to Mission Control":
               own. Paste this into Claude Code, fill in your details, and it will create the card:
             </p>
             <CodeBlock
-              filename="Claude Code prompt"
+              filename="Paste into Claude Code"
               editable
               code={`Add a card to my MC task board in the AI Auto Execute column with this exact title and description:
 
@@ -573,7 +564,7 @@ Save the results as competitor-research.md on my Desktop. Use one section per co
               logs the result to your board in one shot:
             </p>
             <CodeBlock
-              filename="Claude Code prompt"
+              filename="Paste into Claude Code"
               editable
               code={`Research the [skill or tool name] Claude Code skill. Check if it's well-maintained and actually useful for someone running a small business. If it looks good, install it on my machine. Then add a card to my MC task board in the Backlog column: title "[Skill Name] installed", description what it does and why I installed it.`}
             />
@@ -660,12 +651,6 @@ Save the results as competitor-research.md on my Desktop. Use one section per co
         </section>
 
       </div>
-
-      <p className="text-center text-xs text-white/20 pb-8">
-        Using Codex instead of Claude Code?{' '}
-        <a href="/session/2/guide-codex" className="underline hover:text-white/50 transition-colors">Codex version of this page</a>
-      </p>
-
     </>
   )
 }

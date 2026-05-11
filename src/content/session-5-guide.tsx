@@ -87,26 +87,44 @@ export default function Session5Guide() {
           </div>
 
           {/* Table of Contents */}
-          <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl px-5 sm:px-6 py-5">
-            <p className="text-[#FCF4EB]/50 text-xs uppercase tracking-widest font-semibold mb-4">
-              In This Session
-            </p>
-            <ol className="space-y-2">
+          <details className="rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(124,105,199,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]">
+            <summary className="flex items-center justify-between px-6 py-5 cursor-pointer select-none">
+              <div className="flex items-center gap-3">
+                <span className="h-2 w-2 rounded-full bg-[#9D8FE0] shadow-[0_0_12px_rgba(157,143,224,0.70)]" />
+                <span className="text-xs uppercase tracking-[0.20em] text-[#FCF4EB]/65 font-semibold">Table of Contents</span>
+              </div>
+              <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[rgba(124,105,199,0.15)] border border-[rgba(124,105,199,0.28)] text-[#9D8FE0]">
+                <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+            </summary>
+            <div className="border-t border-white/[0.07] mx-5" />
+            <ol className="px-6 py-5 space-y-3">
               {[
                 { href: '#part-a', label: 'Part A: Open Claude Code' },
                 { href: '#part-b', label: 'Part B: Giving Your Orchestration Agent a Personality' },
                 { href: '#part-c', label: 'Part C: Run your Brain Dump' },
                 { href: '#part-d', label: 'Part D: Review, load context, and test it' },
                 { href: '#part-e', label: 'Part E: Claude on Your Phone' },
-              ].map((item) => (
-                <li key={item.href}>
-                  <a href={item.href} className="text-sm text-[#FCF4EB]/70 hover:text-[#7C69C7] transition-colors">
-                    {item.label}
+              ].map(({ href, label }, i) => (
+                <li key={href} className="flex items-center gap-3 group/item">
+                  <span
+                    className="number-glow flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold tabular-nums"
+                    style={{ background: 'rgba(124,105,199,0.18)', color: '#9D8FE0', border: '1.5px solid rgba(124,105,199,0.30)' }}
+                  >
+                    {i + 1}
+                  </span>
+                  <a
+                    href={href}
+                    className="text-[#FCF4EB]/58 hover:text-[#9D8FE0] text-sm leading-snug transition-colors duration-150"
+                  >
+                    {label}
                   </a>
                 </li>
               ))}
             </ol>
-          </div>
+          </details>
         </div>
       </div>
 
@@ -164,52 +182,59 @@ export default function Session5Guide() {
             Part B: Giving Your Orchestration Agent a Personality
           </h2>
           <p className="text-[#FCF4EB]/60 text-sm mb-6 leading-relaxed">
-            Joe&rsquo;s orchestration agent is called Uni. Yours is about to get a name. A SOUL.md
-            file tells Claude who it is and how it works with you — it loads every session and
-            shapes everything Claude does from that point on.
+            Joe&rsquo;s orchestration agent is called Uni. Yours is about to get a name. This is the
+            moment where you start building the three files that make Claude feel personal:
+            your SOUL.md, your USER.md, and a CLAUDE.md that actually fits your setup.
           </p>
 
-          <StepCard number={3} title="Name your agent and write its soul">
+          <StepCard number={3} title="Build your own version of Joe’s setup">
+            <p className="mb-3">
+              Joe&apos;s full template lives here:{' '}
+              <a
+                href="/giveaways/claude-md"
+                className="text-[#7C69C7] hover:underline font-medium"
+              >
+                Ultimate CLAUDE.md
+              </a>
+              . Do not copy it blindly.
+            </p>
             <p className="mb-4">
-              Change the two lines at the top, then paste the whole thing into Claude Code.
-              That is the only editing you need to do:
+              Do not copy his setup word for word. Use it to help Claude name your agent, write
+              its soul, create your USER.md, and build a CLAUDE.md that matches how you actually
+              want to work.
             </p>
             <CodeBlock
-              filename="Paste into Claude Code"
+              filename="Claude Code prompt"
               editable
-              code={`Agent name: [YOUR AGENT NAME]
-Your name: [YOUR NAME]
+              code={`Build Your Own Version Of Joe's Setup
 
-Do two things:
+Please open https://workshop.mastermindshq.business/giveaways/claude-md and help me build my own setup from it.
 
-1. Add this to my ~/SOUL.md file. Create it if it does not exist, or append to the bottom if it does. Do not overwrite anything already there.
+I do not want a word-for-word copy of Joe's file.
 
-2. Add this line to my ~/CLAUDE.md: "Read ~/SOUL.md at the start of every session. That file defines who you are and how you work with me."
+Here is what I want you to do:
 
----
+1. Help me name my agent
+2. Create or update my ~/SOUL.md so it describes who my agent is and how it should work with me
+3. Create my ~/USER.md so Claude has a concise picture of who I am, what I am building, what matters to me, and how I like to work
+4. Read the Ultimate CLAUDE.md template on that page
+5. Break the template into sections and explain in one sentence what each section does
+6. Help me decide which sections I want to keep, change, or skip
+7. Keep only the parts that fit how I want to work
+8. Rewrite any Joe-specific, MyOS-specific, or advanced sections so they make sense for my setup
+9. Remove anything that feels too technical, too opinionated, or irrelevant for me
+10. If a section assumes files or systems I do not have yet, either turn it into a simple placeholder or leave it out
+11. Create or update my CLAUDE.md with the final version
+12. Show me the finished SOUL.md, USER.md, and CLAUDE.md files and explain how I can keep evolving them over time
 
-You are now [YOUR AGENT NAME].
-
-Your owner is [YOUR NAME]. You are their personal AI assistant. You are resourceful, direct, and autonomous.
-
-Act first, always. Do not ask your owner to do something you can do yourself. If the answer exists anywhere in the project, go find it. Asking them to do your job is a failure mode.
-
-Be relentlessly resourceful. When you do not know something, research it. Read files. Search the web. Explore the codebase. Exhaust every option before considering asking.
-
-Do the whole job. Do not do half the work and hand the rest back. If a question implies a task, do the task. If a request reveals a problem, fix the problem.
-
-Have opinions. An assistant with no personality is just a search engine.
-
-Earn trust. Careful with external actions. Bold with internal ones. Ask before sending emails, posting publicly, or spending money. Everything else, just do it.
-
-Do not ask "would you like me to..." or "should I..." or "do you want me to..." Just do it. Never narrate what you are doing. When you are stuck, research harder and try a different approach. Ask your owner only as an absolute last resort, and when you do, bring your findings and a specific question.`}
+If I am unsure, recommend the simplest useful version first.`}
             />
             <ProTip type="tip">
-              Keep evolving it. If Claude does something you love, tell it to add that behavior
-              to SOUL.md. If something annoys you, remove it. It becomes a living document of
-              exactly how you want your assistant to work.
+              You are allowed to steal 10 percent, 50 percent, or all of it. The goal is not to
+              sound like Joe. The goal is to make Claude fit you.
             </ProTip>
           </StepCard>
+
         </section>
 
         {/* Part C */}
@@ -222,7 +247,7 @@ Do not ask "would you like me to..." or "should I..." or "do you want me to..." 
             Then join the group discussion. Claude will work in the background while we mastermind.
           </p>
 
-          <StepCard number={4} title="Drag your export file into the window">
+          <StepCard number={5} title="Drag your export file into the window">
             <p className="mb-3">
               <a href="/session/4/prep" className="text-[#7C69C7] hover:underline font-medium">Before the session</a>, you were asked to export your conversation history from
               ChatGPT or Claude as a{' '}
@@ -238,7 +263,7 @@ Do not ask "would you like me to..." or "should I..." or "do you want me to..." 
             </ProTip>
           </StepCard>
 
-          <StepCard number={5} title="Paste and run the Brain Dump prompt">
+          <StepCard number={6} title="Paste and run the Brain Dump prompt">
             <p className="mb-4">
               Fill in your URLs at the top, then copy the whole thing and paste it into Claude Code.
             </p>
@@ -287,7 +312,7 @@ Here is what I need you to do:
           </p>
 
           {/* Step 5 — Review */}
-          <StepCard number={6} title="Review your brain_dump_map">
+          <StepCard number={7} title="Review your brain_dump_map">
             <p className="mb-4">
               Open the folder Claude just created and check what is in there.
             </p>
@@ -338,23 +363,61 @@ Here is what I need you to do:
             )}
           </StepCard>
 
+          <StepCard number={8} title="Create your USER.md automatically">
+            <p className="mb-4">
+              Now that your brain dump exists, have Claude turn it into a clean USER.md automatically.
+              This file should summarize who you are, what you are building, and how Claude should
+              work with you, using your brain dump as the source material.
+            </p>
+            <CodeBlock
+              filename="Claude Code prompt"
+              editable
+              code={`Please create or update my ~/USER.md file automatically using my brain_dump_map.
+
+I want USER.md to help Claude understand who I am and how to support me without me repeating myself every session.
+
+Use my brain_dump_map, BRAIN_DUMP.md, and any clearly relevant files inside it as the source material.
+
+Create a clean USER.md that includes:
+
+1. A short summary of who I am
+2. What I am building right now
+3. My main goals
+4. My current projects, clients, businesses, or priorities
+5. My working style, preferences, personality, and decision-making patterns
+6. Anything Claude should remember to support me better over time
+
+Keep it concise, useful, and easy to update.
+
+If something important is still missing, list the missing pieces at the end and ask me only the highest-value follow-up questions.`}
+            />
+            <ProTip type="tip">
+              Think of USER.md as your owner&rsquo;s manual. It should be distilled from your brain
+              dump, not written from scratch every time.
+            </ProTip>
+          </StepCard>
+
           {/* Step 6 — Load CLAUDE.md */}
-          <StepCard number={7} title="Load your context">
+          <StepCard number={9} title="Load your context">
             <p className="mb-4">
               The Brain Dump just updated your CLAUDE.md with a Personal Context section.
-              Paste this prompt and Claude will read it right now, without needing to restart.
+              Paste this prompt and Claude will load it now as your context for this session and
+              treat it as your standing context for future sessions too.
             </p>
 
-            <CodeBlock code="Please read my CLAUDE.md file and use it as your context for the rest of this session." language="prompt" />
+            <CodeBlock
+              code="Please read my CLAUDE.md file and treat it as my context and default instructions for this session and for all new sessions or new context going forward."
+              language="prompt"
+            />
 
             <p>
-              From now on, every time you open Claude Code it will load this automatically.
-              You will not need to ask again.
+              This makes CLAUDE.md the anchor file Claude should always read when loading your
+              work context, unless you explicitly say otherwise.
             </p>
           </StepCard>
 
           {/* Step 7 — Test it */}
-          <StepCard number={8} title="Ask Claude about yourself">
+          <StepCard number={10} title="Ask Claude about yourself">
             <p className="mb-4">
               Now test it. These questions can only be answered if Claude properly read your
               Brain Dump. Try them one at a time and see what comes back.
@@ -405,7 +468,7 @@ Here is what I need you to do:
             away from your laptop. You do not close it. You leave it open forever.
           </p>
 
-          <StepCard number={9} title="Rename your session in the terminal">
+          <StepCard number={11} title="Rename your session in the terminal">
             <p className="mb-4">
               In Claude Code, run this command with your own name at the end:
             </p>
@@ -432,7 +495,7 @@ Here is what I need you to do:
             </ProTip>
           </StepCard>
 
-          <StepCard number={10} title="Find that session on your phone">
+          <StepCard number={12} title="Find that session on your phone">
             <p className="mb-4">
               Open the{' '}
               <a
@@ -482,7 +545,7 @@ Here is what I need you to do:
             </ProTip>
           </StepCard>
 
-          <StepCard number={11} title="Try a slash command on your phone">
+          <StepCard number={13} title="Try a slash command on your phone">
             <p className="mb-4">
               Tap into the message field, then type a forward slash{' '}
               <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">/</code>.

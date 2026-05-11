@@ -1,0 +1,60 @@
+<svg width="900" height="1500" viewBox="0 0 900 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1500" rx="18" fill="#F7F7FA"/>
+  <rect x="10" y="10" width="880" height="1480" rx="16" stroke="#D6D8E1" stroke-width="2"/>
+
+  <text x="50" y="90" fill="#374151" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">App name</text>
+  <rect x="50" y="110" width="800" height="72" rx="6" fill="#FFFFFF" stroke="#BFC7D5" stroke-width="2"/>
+  <text x="82" y="157" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="18">MyOS</text>
+  <rect x="756" y="128" width="42" height="42" rx="7" fill="#E34B4B"/>
+  <circle cx="771" cy="149" r="3.6" fill="#FFFFFF"/>
+  <circle cx="782" cy="149" r="3.6" fill="#FFFFFF"/>
+  <circle cx="793" cy="149" r="3.6" fill="#FFFFFF"/>
+
+  <text x="50" y="260" fill="#374151" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">Integration type</text>
+  <rect x="50" y="285" width="800" height="430" rx="4" fill="#FFFFFF" stroke="#AEB8C9" stroke-width="2"/>
+  <line x1="50" y1="429" x2="850" y2="429" stroke="#AEB8C9" stroke-width="2"/>
+  <line x1="50" y1="573" x2="850" y2="573" stroke="#AEB8C9" stroke-width="2"/>
+
+  <circle cx="88" cy="353" r="17" fill="#FFFFFF" stroke="#7C8698" stroke-width="2"/>
+  <text x="124" y="359" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">Web app</text>
+  <text x="124" y="404" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="18">Standard auth code</text>
+  <text x="124" y="468" fill="#6B7280" font-family="Arial, Helvetica, sans-serif" font-size="16">Connect up to 5 organisations before moving to the</text>
+  <text x="124" y="510" fill="#6B7280" font-family="Arial, Helvetica, sans-serif" font-size="16">Small plan</text>
+
+  <circle cx="88" cy="497" r="17" fill="#FFFFFF" stroke="#7C8698" stroke-width="2"/>
+  <text x="124" y="503" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">Mobile or desktop app</text>
+  <text x="124" y="548" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="18">Auth code with PKCE. For native apps that</text>
+  <text x="124" y="590" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="18">can&apos;t securely store a client secret.</text>
+  <text x="124" y="654" fill="#6B7280" font-family="Arial, Helvetica, sans-serif" font-size="16">Connect up to 5 organisations before moving to the</text>
+  <text x="124" y="696" fill="#6B7280" font-family="Arial, Helvetica, sans-serif" font-size="16">Small plan</text>
+
+  <circle cx="88" cy="641" r="17" fill="#1478D4"/>
+  <circle cx="88" cy="641" r="7.5" fill="#FFFFFF"/>
+  <text x="124" y="647" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">Custom connection</text>
+  <text x="124" y="692" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="18">Premium one-to-one integration that utilises</text>
+  <text x="124" y="734" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="18">the client credentials grant type</text>
+  <text x="124" y="798" fill="#6B7280" font-family="Arial, Helvetica, sans-serif" font-size="16">Available to Xero organisations in AU, NZ &amp; US</text>
+
+  <text x="50" y="760" fill="#2563EB" font-family="Arial, Helvetica, sans-serif" font-size="16">Learn more about integration types ↗</text>
+
+  <text x="50" y="855" fill="#374151" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">Will you use Xero data to train, fine-tune, adapt, or</text>
+  <text x="50" y="887" fill="#374151" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">enhance an AI model?</text>
+  <rect x="50" y="915" width="800" height="85" rx="4" fill="#FFFFFF" stroke="#AEB8C9" stroke-width="2"/>
+  <circle cx="88" cy="957" r="17" fill="#FFFFFF" stroke="#7C8698" stroke-width="2"/>
+  <text x="124" y="964" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="18">Yes</text>
+  <rect x="50" y="1000" width="800" height="85" rx="4" fill="#FFFFFF" stroke="#AEB8C9" stroke-width="2"/>
+  <circle cx="88" cy="1042" r="17" fill="#1478D4"/>
+  <circle cx="88" cy="1042" r="7.5" fill="#FFFFFF"/>
+  <text x="124" y="1049" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="18">No</text>
+  <text x="50" y="1130" fill="#2563EB" font-family="Arial, Helvetica, sans-serif" font-size="16">Learn more about the AI requirements ↗</text>
+
+  <text x="50" y="1225" fill="#374151" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">Do you understand and agree to meet Xero&apos;s minimum</text>
+  <text x="50" y="1257" fill="#374151" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">security requirements?</text>
+  <rect x="50" y="1285" width="800" height="85" rx="4" fill="#FFFFFF" stroke="#AEB8C9" stroke-width="2"/>
+  <circle cx="88" cy="1327" r="17" fill="#1478D4"/>
+  <circle cx="88" cy="1327" r="7.5" fill="#FFFFFF"/>
+  <text x="124" y="1334" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="18">Yes</text>
+  <rect x="50" y="1370" width="800" height="85" rx="4" fill="#FFFFFF" stroke="#AEB8C9" stroke-width="2"/>
+  <circle cx="88" cy="1412" r="17" fill="#FFFFFF" stroke="#7C8698" stroke-width="2"/>
+  <text x="124" y="1419" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="18">No</text>
+</svg>

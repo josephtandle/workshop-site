@@ -1,0 +1,32 @@
+<svg width="900" height="980" viewBox="0 0 900 980" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="980" rx="18" fill="#F7F7FA"/>
+  <rect x="10" y="10" width="880" height="960" rx="16" stroke="#D6D8E1" stroke-width="2"/>
+
+  <text x="50" y="95" fill="#374151" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">Will you use Xero data to train, fine-tune, adapt, or</text>
+  <text x="50" y="127" fill="#374151" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">enhance an AI model?</text>
+  <rect x="50" y="155" width="800" height="85" rx="4" fill="#FFFFFF" stroke="#AEB8C9" stroke-width="2"/>
+  <circle cx="88" cy="197" r="17" fill="#FFFFFF" stroke="#7C8698" stroke-width="2"/>
+  <text x="124" y="204" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="18">Yes</text>
+  <rect x="50" y="240" width="800" height="85" rx="4" fill="#FFFFFF" stroke="#AEB8C9" stroke-width="2"/>
+  <circle cx="88" cy="282" r="17" fill="#1478D4"/>
+  <circle cx="88" cy="282" r="7.5" fill="#FFFFFF"/>
+  <text x="124" y="289" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="18">No</text>
+  <text x="50" y="370" fill="#2563EB" font-family="Arial, Helvetica, sans-serif" font-size="16">Learn more about the AI requirements ↗</text>
+
+  <text x="50" y="465" fill="#374151" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">Do you understand and agree to meet Xero&apos;s minimum</text>
+  <text x="50" y="497" fill="#374151" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">security requirements?</text>
+  <rect x="50" y="525" width="800" height="85" rx="4" fill="#FFFFFF" stroke="#AEB8C9" stroke-width="2"/>
+  <circle cx="88" cy="567" r="17" fill="#1478D4"/>
+  <circle cx="88" cy="567" r="7.5" fill="#FFFFFF"/>
+  <text x="124" y="574" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="18">Yes</text>
+  <rect x="50" y="610" width="800" height="85" rx="4" fill="#FFFFFF" stroke="#AEB8C9" stroke-width="2"/>
+  <circle cx="88" cy="652" r="17" fill="#FFFFFF" stroke="#7C8698" stroke-width="2"/>
+  <text x="124" y="659" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="18">No</text>
+  <text x="50" y="740" fill="#2563EB" font-family="Arial, Helvetica, sans-serif" font-size="16">Learn about the security requirements ↗</text>
+
+  <text x="50" y="835" fill="#374151" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">Company or application URL</text>
+  <rect x="50" y="860" width="800" height="78" rx="4" fill="#FFFFFF" stroke="#AEB8C9" stroke-width="2"/>
+  <text x="82" y="908" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="18">https://www.mastermindshq.business/</text>
+
+  <rect x="50" y="980" width="0" height="0" fill="none"/>
+</svg>

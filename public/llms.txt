@@ -35,6 +35,7 @@
 - [Anthropic Safety Checklist](/giveaways/anthropic-safety-checklist): Safety and review checklist for AI-assisted projects.
 - [Lead Magnet](/giveaways/lead-magnet): Free resources for business owners learning to use AI.
 - [Benchmark](/giveaways/benchmark): AI benchmarking resource.
+- [MacCleaner](/giveaways/maccleaner): A safe Mac cleanup installer that starts in preview mode, requires confirmation before deleting anything, and handles external-drive backup archiving only when a drive is available.
 - [Cross CLI Compatibility Routing](/giveaways/cross-cli-compatibility-routing): A lane-based routing architecture for recipes, skills, and workflows, with a universal migration prompt and direct-download PDF for restructuring large AI capability systems.
 - [Ultimate CLAUDE.md](/lead-magnets/ultimate-claudemd): The definitive CLAUDE.md template for Claude Code projects.
 

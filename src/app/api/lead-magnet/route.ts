@@ -5,11 +5,58 @@ const RESEND_API_KEY = process.env.RESEND_API_KEY
 
 async function sendViaResend(email: string, source: string) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://workshop.mastermindshq.business'
+  const macCleanerPageUrl = `${siteUrl}/giveaways/maccleaner`
+  const macCleanerInstallerUrl = `${siteUrl}/downloads/maccleaner-installer.sh`
 
   let subject: string
   let html: string
 
-  if (source === 'cult-brand-playbook') {
+  if (source === 'maccleaner') {
+    subject = 'Your MacCleaner installer'
+    html = `
+      <div style="font-family: system-ui, sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #ffffff;">
+        <p style="font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 24px;">MacCleaner</p>
+
+        <h1 style="font-size: 28px; font-weight: 800; line-height: 1.2; margin-bottom: 16px; color: #111;">
+          Your MacCleaner installer is ready.
+        </h1>
+
+        <p style="font-size: 16px; color: #444; line-height: 1.7; margin-bottom: 18px;">
+          This is the safe version. The first run shows a preview only. Nothing destructive happens until you explicitly confirm the cleanup.
+        </p>
+
+        <div style="background: #f5f0ff; border-left: 3px solid #7C69C7; padding: 16px 20px; border-radius: 0 8px 8px 0; margin-bottom: 24px;">
+          <p style="font-size: 14px; color: #333; margin: 0; line-height: 1.7;">
+            <strong>What it does:</strong><br>
+            - previews cleanup first<br>
+            - requires confirmation before deleting anything<br>
+            - archives old iPhone backups to an external drive if one is available<br>
+            - skips that archive step safely if no external drive is connected
+          </p>
+        </div>
+
+        <p style="margin-bottom: 20px;">
+          <a href="${macCleanerInstallerUrl}"
+             style="display: inline-block; background: #7C69C7; color: white; padding: 14px 28px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 16px;">
+            Download the installer script
+          </a>
+        </p>
+
+        <p style="font-size: 14px; color: #555; line-height: 1.7; margin-bottom: 16px;">
+          Want the walkthrough page too? It explains what gets cleaned, what gets skipped, and how the preview mode works.
+        </p>
+
+        <p style="margin-bottom: 28px;">
+          <a href="${macCleanerPageUrl}" style="color: #7C69C7; font-weight: 600; text-decoration: none;">
+            Open the MacCleaner guide
+          </a>
+        </p>
+
+        <p style="font-size: 14px; color: #999; margin-top: 32px;">Joe Che</p>
+        <p style="font-size: 12px; color: #bbb; margin-top: 8px;">Sent by Masterminds HQ. You can unsubscribe any time.</p>
+      </div>
+    `
+  } else if (source === 'cult-brand-playbook') {
     subject = 'The Cult Brand Playbook'
     html = `
       <div style="font-family: system-ui, sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #ffffff;">
@@ -175,6 +222,7 @@ async function sendViaResend(email: string, source: string) {
 
 // Map the giveaway page source to the CRM source key and giveaway label
 const GIVEAWAY_SOURCE_MAP: Record<string, string> = {
+  'maccleaner': 'giveaway-maccleaner',
   'cult-brand-playbook': 'giveaway-cult-brand-playbook',
   'web-design-arsenal': 'giveaway-web-design-arsenal',
   'lead-magnet': 'giveaway-unlearning-success',

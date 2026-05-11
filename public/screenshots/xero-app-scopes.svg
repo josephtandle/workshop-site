@@ -1,0 +1,62 @@
+<svg width="900" height="1400" viewBox="0 0 900 1400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1400" rx="18" fill="#F7F7FA"/>
+  <rect x="10" y="10" width="880" height="1380" rx="16" stroke="#D6D8E1" stroke-width="2"/>
+
+  <text x="450" y="72" text-anchor="middle" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">Authorisation</text>
+
+  <text x="50" y="132" fill="#374151" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">Scopes</text>
+  <rect x="50" y="150" width="800" height="82" rx="6" fill="#FFFFFF" stroke="#AEB8C9" stroke-width="2"/>
+  <text x="82" y="201" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="18">40 scopes selected</text>
+  <path d="M798 184L816 202L834 184" stroke="#4B5563" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="50" y="248" width="800" height="1100" rx="6" fill="#FFFFFF" stroke="#AEB8C9" stroke-width="2"/>
+  <rect x="50" y="248" width="800" height="64" fill="#FFFFFF"/>
+  <text x="92" y="290" fill="#6B7280" font-family="Arial, Helvetica, sans-serif" font-size="16">Accounting</text>
+
+  <rect x="50" y="312" width="800" height="84" fill="#F2F4F8"/>
+  <rect x="82" y="338" width="36" height="36" rx="4" fill="#1478D4"/>
+  <path d="M90 356L99 365L112 348" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="148" y="362" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="18">accounting.attachments</text>
+
+  <rect x="82" y="430" width="36" height="36" rx="4" fill="#1478D4"/>
+  <path d="M90 448L99 457L112 440" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="148" y="454" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="18">accounting.attachments.read</text>
+
+  <rect x="82" y="522" width="36" height="36" rx="4" fill="#1478D4"/>
+  <path d="M90 540L99 549L112 532" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="148" y="546" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="18">accounting.banktransactions</text>
+
+  <rect x="82" y="614" width="36" height="36" rx="4" fill="#1478D4"/>
+  <path d="M90 632L99 641L112 624" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="148" y="638" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="18">accounting.banktransactions.read</text>
+
+  <rect x="82" y="706" width="36" height="36" rx="4" fill="#1478D4"/>
+  <path d="M90 724L99 733L112 716" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="148" y="730" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="18">accounting.budgets.read</text>
+
+  <rect x="82" y="798" width="36" height="36" rx="4" fill="#1478D4"/>
+  <path d="M90 816L99 825L112 808" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="148" y="822" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="18">accounting.contacts</text>
+
+  <rect x="82" y="890" width="36" height="36" rx="4" fill="#1478D4"/>
+  <path d="M90 908L99 917L112 900" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="148" y="914" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="18">accounting.contacts.read</text>
+
+  <rect x="82" y="982" width="36" height="36" rx="4" fill="#1478D4"/>
+  <path d="M90 1000L99 1009L112 992" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="148" y="1006" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="18">accounting.invoices</text>
+
+  <rect x="82" y="1074" width="36" height="36" rx="4" fill="#1478D4"/>
+  <path d="M90 1092L99 1101L112 1084" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="148" y="1098" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="18">accounting.invoices.read</text>
+
+  <rect x="82" y="1166" width="36" height="36" rx="4" fill="#1478D4"/>
+  <path d="M90 1184L99 1193L112 1176" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="148" y="1190" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="18">accounting.manualjournals</text>
+
+  <rect x="82" y="1258" width="36" height="36" rx="4" fill="#1478D4"/>
+  <path d="M90 1276L99 1285L112 1268" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="148" y="1282" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="18">accounting.manualjournals.read</text>
+
+  <rect x="824" y="324" width="12" height="310" rx="6" fill="#D1D5DB"/>
+</svg>

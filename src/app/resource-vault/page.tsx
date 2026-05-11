@@ -46,6 +46,122 @@ export default function ResourceVaultPage() {
                 Featured resources
               </p>
               <a
+                href="/resource-vault/automated-ghost-computer-use"
+                className="block rounded-2xl p-6 transition-all hover:scale-[1.01] mb-4"
+                style={{
+                  background: 'rgba(124, 105, 199, 0.07)',
+                  border: '1px solid rgba(124, 105, 199, 0.22)',
+                }}
+              >
+                <div className="flex items-start gap-5">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold flex-shrink-0"
+                    style={{
+                      background: 'rgba(124, 105, 199, 0.18)',
+                      color: '#9D8FE0',
+                      border: '1.5px solid rgba(124, 105, 199, 0.30)',
+                    }}
+                  >
+                    ✺
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-[#FCF4EB] font-semibold text-base mb-1">Automated Ghost Computer Use</p>
+                    <p className="text-[#FCF4EB]/45 text-xs mb-3">Claude clicks, types, and QA-tests for you</p>
+                    <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
+                      Turn on Claude computer-use, grant the right macOS permissions, and practice ghost-style browser automation for screenshots, forms, and website QA.
+                    </p>
+                  </div>
+                  <div
+                    className="flex-shrink-0 text-xs font-semibold px-3 py-1.5 rounded-full"
+                    style={{
+                      background: 'rgba(124, 105, 199, 0.15)',
+                      color: '#9D8FE0',
+                      border: '1px solid rgba(124, 105, 199, 0.25)',
+                    }}
+                  >
+                    View guide
+                  </div>
+                </div>
+              </a>
+              <a
+                href="/resource-vault/connecting-to-xero"
+                className="block rounded-2xl p-6 transition-all hover:scale-[1.01] mb-4"
+                style={{
+                  background: 'rgba(124, 105, 199, 0.07)',
+                  border: '1px solid rgba(124, 105, 199, 0.22)',
+                }}
+              >
+                <div className="flex items-start gap-5">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold flex-shrink-0"
+                    style={{
+                      background: 'rgba(124, 105, 199, 0.18)',
+                      color: '#9D8FE0',
+                      border: '1.5px solid rgba(124, 105, 199, 0.30)',
+                    }}
+                  >
+                    ◎
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-[#FCF4EB] font-semibold text-base mb-1">Connecting to Xero</p>
+                    <p className="text-[#FCF4EB]/45 text-xs mb-3">CultureRoot finance stack + Xero API setup</p>
+                    <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
+                      Connect Claude Code to Xero using the simplest path first, verify the API, and use
+                      prompt kits built around Eric Horn&apos;s real stack: Mercury, Deel, Xero, Dashlane,
+                      Notion, Discord, and more.
+                    </p>
+                  </div>
+                  <div
+                    className="flex-shrink-0 text-xs font-semibold px-3 py-1.5 rounded-full"
+                    style={{
+                      background: 'rgba(124, 105, 199, 0.15)',
+                      color: '#9D8FE0',
+                      border: '1px solid rgba(124, 105, 199, 0.25)',
+                    }}
+                  >
+                    View guide
+                  </div>
+                </div>
+              </a>
+              <a
+                href="/resource-vault/connecting-to-google-sheets"
+                className="block rounded-2xl p-6 transition-all hover:scale-[1.01] mb-4"
+                style={{
+                  background: 'rgba(124, 105, 199, 0.07)',
+                  border: '1px solid rgba(124, 105, 199, 0.22)',
+                }}
+              >
+                <div className="flex items-start gap-5">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold flex-shrink-0"
+                    style={{
+                      background: 'rgba(124, 105, 199, 0.18)',
+                      color: '#9D8FE0',
+                      border: '1.5px solid rgba(124, 105, 199, 0.30)',
+                    }}
+                  >
+                    ✦
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-[#FCF4EB] font-semibold text-base mb-1">Connecting to Google Sheets</p>
+                    <p className="text-[#FCF4EB]/45 text-xs mb-3">Composio Connect + Eric Horn investor database</p>
+                    <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
+                      Connect Claude Code to Google Sheets through Composio Connect, then build Eric Horn&apos;s CultureRoot investor outreach database and enrich investor rows with web research.
+                    </p>
+                  </div>
+                  <div
+                    className="flex-shrink-0 text-xs font-semibold px-3 py-1.5 rounded-full"
+                    style={{
+                      background: 'rgba(124, 105, 199, 0.15)',
+                      color: '#9D8FE0',
+                      border: '1px solid rgba(124, 105, 199, 0.25)',
+                    }}
+                  >
+                    View guide
+                  </div>
+                </div>
+              </a>
+              <a
                 href="/resource-vault/reza-website-control"
                 className="block rounded-2xl p-6 transition-all hover:scale-[1.01] mb-4"
                 style={{
