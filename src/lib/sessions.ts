@@ -114,14 +114,14 @@ export const sessions: Session[] = [
   {
     slug: '9',
     number: 9,
-    title: 'Computer-Use: Claude Clicks, Types, and Tests',
+    title: "Joe's Magic CRM Installation",
     description:
-      'Enable computer-use, grant the right screen permissions, and practice having Claude open apps, fill forms, take screenshots, and QA-test websites.',
+      'Install the All Sorted CRM module into your existing Mission Control setup, validate the live CRM routes, and start using the sample pipeline, templates, automations, and settings right away.',
     date: '',
     hasGuide: true,
     hasPrep: false,
     hasBonus: false,
-    guideTitle: 'Session 9 Workshop Guide',
+    guideTitle: "Joe's Magic CRM Installation",
   },
 ]
 
