@@ -68,6 +68,23 @@ Rules:
 - do not remove or overwrite existing CRM data
 - after patching, tell me exactly what you changed and what you verified`
 
+const RESEND_TEST_PROMPT = `Test whether Resend email sending is working in this Mission Control repo.
+
+Tasks:
+1. Check the environment files for RESEND_API_KEY and RESEND_FROM_EMAIL.
+2. Confirm whether both values exist and are non-empty.
+3. If either value is missing, stop and tell me exactly what is missing.
+4. If both values exist, verify the CRM email settings are using the correct sender.
+5. Send one safe test email to my own email address only.
+6. Report whether the send request succeeded or failed.
+7. If it failed, tell me the exact error and what needs to be fixed before I continue with CRM automations.
+
+Rules:
+- only send the test to my own email address
+- do not send to any real lead
+- do not change unrelated code
+- tell me clearly whether Resend is working or not working`
+
 export default function Session9Guide() {
   return (
     <>
@@ -319,7 +336,24 @@ export default function Session9Guide() {
             </p>
           </StepCard>
 
-          <StepCard number={8} title="Configure Resend ONLY">
+          <StepCard number={8} title="Run a quick Resend test first">
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              Before you start building automations, run a quick Claude Code check so you know whether Resend is already
+              working in this Mission Control install. That lets you catch email problems before you waste time testing
+              the pipeline.
+            </p>
+            <CodeBlock
+              filename="Claude Code resend test prompt"
+              code={RESEND_TEST_PROMPT}
+              editable
+            />
+            <p className="text-[#FCF4EB]/70 leading-relaxed mt-4">
+              If Claude reports that Resend is not working yet, fix that first. It is much easier to solve email setup
+              before you start debugging templates and automation rules.
+            </p>
+          </StepCard>
+
+          <StepCard number={9} title="Configure Resend ONLY">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               If it was not found automatically, email stays disabled until you add your own values. Open your Mission
               Control project&apos;s `.env.local` and add:
@@ -334,7 +368,26 @@ RESEND_FROM_EMAIL=hello@yourdomain.com`}
             </p>
           </StepCard>
 
-          <StepCard number={9} title="Turn on a starter automation and test it">
+          <StepCard number={10} title="Update your CRM Settings before testing">
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              Go back into <strong className="text-[#FCF4EB]">CRM Settings</strong> and make sure the defaults are set
+              for a fast demo run using your own email.
+            </p>
+            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
+              <p className="text-[#FCF4EB] font-semibold text-sm mb-2">Change these settings now</p>
+              <ol className="space-y-2 text-[#FCF4EB]/60 text-sm">
+                <li>1. Set <strong className="text-[#FCF4EB]">Default delay</strong> to <strong className="text-[#FCF4EB]">0</strong> or <strong className="text-[#FCF4EB]">1</strong> minute for now.</li>
+                <li>2. Set <strong className="text-[#FCF4EB]">Email send from</strong> to the address you want the demo emails to come from.</li>
+                <li>3. Set <strong className="text-[#FCF4EB]">Send test email to</strong> to your own inbox.</li>
+              </ol>
+            </div>
+            <p className="text-[#FCF4EB]/70 leading-relaxed mt-4">
+              Save those settings before you continue. That makes the demo fast, and it ensures the test email goes to
+              the inbox you are actually watching.
+            </p>
+          </StepCard>
+
+          <StepCard number={11} title="Review a starter automation and queue flow">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Go to <strong className="text-[#FCF4EB]">Templates</strong> to review the starter copy, then go to
               <strong className="text-[#FCF4EB]"> Automations</strong> and enable one example email automation.
@@ -346,7 +399,7 @@ RESEND_FROM_EMAIL=hello@yourdomain.com`}
             </ProTip>
           </StepCard>
 
-          <StepCard number={10} title="Create a template">
+          <StepCard number={12} title="Create a template">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Open <strong className="text-[#FCF4EB]">Templates</strong> and create a message you would actually want a
               new lead to receive. The template is the content the automation sends when a lead reaches the matching stage.
@@ -367,7 +420,7 @@ RESEND_FROM_EMAIL=hello@yourdomain.com`}
             </p>
           </StepCard>
 
-          <StepCard number={11} title="Create an automation">
+          <StepCard number={13} title="Create an automation">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Go to <strong className="text-[#FCF4EB]">Automations</strong> and create a rule that uses the template you
               just made. The automation connects a pipeline stage change to a specific outgoing message.
@@ -390,7 +443,7 @@ RESEND_FROM_EMAIL=hello@yourdomain.com`}
             </ProTip>
           </StepCard>
 
-          <StepCard number={12} title="Test the automation">
+          <StepCard number={14} title="Test the automation">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Create or use a test card that contains your own email address, then move that card into a column that has
               the automation attached to it.
@@ -403,12 +456,13 @@ RESEND_FROM_EMAIL=hello@yourdomain.com`}
                 <li>3. Drag that test card into the <strong className="text-[#FCF4EB]">Interested</strong> column.</li>
                 <li>4. Use the <strong className="text-[#FCF4EB]">Interested</strong> column specifically, because the demo includes an automation for that stage.</li>
                 <li>5. Check the Approval or Delivery Queue and confirm the message was generated.</li>
-                <li>6. Confirm the email arrives in your inbox before treating the automation as working.</li>
+                <li>6. Make sure you actually receive the email in your inbox before treating the automation as working.</li>
               </ol>
             </div>
             <p className="text-[#FCF4EB]/70 leading-relaxed mt-4">
               If nothing happens, go back and verify the template exists, the automation is enabled, and the card was
-              dropped into <strong className="text-[#FCF4EB]">Interested</strong> rather than a different stage.
+              dropped into <strong className="text-[#FCF4EB]">Interested</strong> rather than a different stage. The test
+              is only complete once the email reaches your inbox.
             </p>
           </StepCard>
         </section>
