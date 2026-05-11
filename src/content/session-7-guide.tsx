@@ -71,7 +71,7 @@ export default function Session7Guide() {
         <p className="text-[#FCF4EB]/50 text-xs uppercase tracking-widest font-semibold mb-1">Workshop Recording</p>
         <p className="text-[#FCF4EB]/40 text-sm">Follow along with the live session. Hit play and the video will stick to the top as you scroll.</p>
       </div>
-      <StickyVideoPlayer videoId="6P8W1O682oE" title="Cohort 1, Session 7: Business Automation Masterminds" />
+      <StickyVideoPlayer videoId="5u7ArWgKNOU" title="Cohort 1, Session 7: Business Automation Masterminds" />
     </div>
 
 
