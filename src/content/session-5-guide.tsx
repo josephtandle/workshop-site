@@ -134,7 +134,13 @@ export default function Session5Guide() {
           <p className="text-[#FCF4EB]/50 text-xs uppercase tracking-widest font-semibold mb-1">Workshop Recording</p>
           <p className="text-[#FCF4EB]/40 text-sm">Follow along with the live session. Hit play and the video will stick to the top as you scroll.</p>
         </div>
-        <StickyVideoPlayer videoId="dSk7aAUAOKc" title="Session 4: Give Claude Code Your Brain" />
+        <StickyVideoPlayer
+          videos={[
+            { id: 'dSk7aAUAOKc', label: 'Cohort 1 Video Replay' },
+            { id: 'dPaxfmIInzs', label: 'Cohort 2 Video Replay' },
+          ]}
+          title="Session 4: Give Claude Code Your Brain"
+        />
       </div>
 
       <div className="max-w-3xl mx-auto px-6 pb-16">
