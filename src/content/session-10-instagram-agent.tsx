@@ -45,14 +45,15 @@ const INSTAGRAM_LOGIN_PROMPT = `Help me get the Instagram agent ready to use on 
 
 Tasks:
 1. Confirm the Instagram agent is installed and callable.
-2. Tell me which browser session or login flow this setup expects for Instagram.
-3. If the agent needs its own login step, walk me through it exactly.
-4. Wait while I log into the Instagram account that this agent will use.
-5. After login, verify the session is saved correctly.
-6. Test one safe read-only command, such as:
+2. Use the real Instagram agent login flow for this setup.
+3. Run the correct login command for the agent.
+4. If any manual verification, challenge, or browser confirmation is required, stop and tell me exactly what I need to do.
+5. Wait while I log into the Instagram account that this agent will use.
+6. After login, verify the session is saved correctly.
+7. Test one safe read-only command, such as:
    - instagram status
    - instagram read-dms --limit 5
-7. Tell me clearly whether the login is complete and the agent is ready.
+8. Tell me clearly whether the login is complete and the agent is ready.
 
 Rules:
 - Do not send any DMs.
@@ -66,8 +67,8 @@ Verify that the agent works for read-only lead capture tasks.
 
 Tasks:
 1. Confirm the Instagram command works on this machine.
-2. Read the most recent direct message conversation.
-3. Tell me what the last direct message was.
+2. Read the most recent DM thread summary first.
+3. Tell me what the last direct message was from that latest thread.
 4. Summarize what the command returned without exposing anything unnecessary.
 5. Tell me:
    - which commands passed
@@ -86,7 +87,7 @@ Goal:
 Show me how this would work for lead capture without doing anything risky.
 
 Tasks:
-1. Read the latest 10 DM conversations.
+1. Read the latest 20 DM conversations.
 2. Identify which ones look like real business leads, which ones are not leads, and which ones are unclear.
 3. Do not send any messages.
 4. Do not create duplicates if a lead already exists.
@@ -112,11 +113,13 @@ Goal:
 Check whether the agent can read engagement on my latest post.
 
 Tasks:
-1. Find my most recent Instagram post.
-2. Read the comments on that post.
-3. Tell me how many comments there are.
-4. Give me all of the comments in a clean list.
-5. If there are replies or nested comments, show that clearly if possible.
+1. First check whether the current Instagram agent can directly identify my latest post URL or shortcode.
+2. If it can, use that.
+3. If it cannot, stop and ask me to paste the URL of my latest post, because the read-comments command needs a post URL or shortcode.
+4. Read the comments on that post.
+5. Tell me how many comments there are.
+6. Give me all of the comments in a clean list.
+7. If there are replies or nested comments, show that clearly if possible.
 
 Rules:
 - Do not reply to any comments.
