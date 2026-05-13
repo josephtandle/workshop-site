@@ -46,6 +46,44 @@ export default function ResourceVaultPage() {
                 Featured resources
               </p>
               <a
+                href="/resource-vault/how-to-stand-out-in-the-age-of-ai"
+                className="block rounded-2xl p-6 transition-all hover:scale-[1.01] mb-4"
+                style={{
+                  background: 'rgba(124, 105, 199, 0.07)',
+                  border: '1px solid rgba(124, 105, 199, 0.22)',
+                }}
+              >
+                <div className="flex items-start gap-5">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold flex-shrink-0"
+                    style={{
+                      background: 'rgba(124, 105, 199, 0.18)',
+                      color: '#9D8FE0',
+                      border: '1.5px solid rgba(124, 105, 199, 0.30)',
+                    }}
+                  >
+                    ✺
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-[#FCF4EB] font-semibold text-base mb-1">How to Stand Out in the Age of AI</p>
+                    <p className="text-[#FCF4EB]/45 text-xs mb-3">Tiyana positioning workshop draft</p>
+                    <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
+                      Review the Part 1 workshop overview, prep guide, live facilitation guide, and positioning builder together in one place before it moves into the portal.
+                    </p>
+                  </div>
+                  <div
+                    className="flex-shrink-0 text-xs font-semibold px-3 py-1.5 rounded-full"
+                    style={{
+                      background: 'rgba(124, 105, 199, 0.15)',
+                      color: '#9D8FE0',
+                      border: '1px solid rgba(124, 105, 199, 0.25)',
+                    }}
+                  >
+                    Review draft
+                  </div>
+                </div>
+              </a>
+              <a
                 href="/resource-vault/automated-ghost-computer-use"
                 className="block rounded-2xl p-6 transition-all hover:scale-[1.01] mb-4"
                 style={{
