@@ -41,6 +41,89 @@ Important:
 - Do not frame it as a mass-DM tool.
 - If anything requires manual approval or login, stop and tell me exactly what needs to happen next.`
 
+const INSTAGRAM_LOGIN_PROMPT = `Help me get the Instagram agent ready to use on this machine.
+
+Tasks:
+1. Confirm the Instagram agent is installed and callable.
+2. Tell me which browser session or login flow this setup expects for Instagram.
+3. If the agent needs its own login step, walk me through it exactly.
+4. Wait while I log into the Instagram account that this agent will use.
+5. After login, verify the session is saved correctly.
+6. Test one safe read-only command, such as:
+   - instagram status
+   - instagram read-dms --limit 5
+7. Tell me clearly whether the login is complete and the agent is ready.
+
+Rules:
+- Do not send any DMs.
+- Do not post anything.
+- Keep this as a setup and verification pass only.`
+
+const INSTAGRAM_TEST_PROMPT = `Test my Instagram agent in the safest useful way.
+
+Goal:
+Verify that the agent works for read-only lead capture tasks.
+
+Tasks:
+1. Confirm the Instagram command works on this machine.
+2. Read the most recent direct message conversation.
+3. Tell me what the last direct message was.
+4. Summarize what the command returned without exposing anything unnecessary.
+5. Tell me:
+   - which commands passed
+   - whether the agent is ready for CRM capture workflows
+   - what the next recommended command should be
+
+Rules:
+- Do not send any DMs.
+- Do not post content.
+- Do not change account settings.
+- This is read-only testing only.`
+
+const INSTAGRAM_CRM_TEST_PROMPT = `Use my Instagram agent and CRM together in a safe test run.
+
+Goal:
+Show me how this would work for lead capture without doing anything risky.
+
+Tasks:
+1. Read the latest 10 DM conversations.
+2. Identify which ones look like real business leads, which ones are not leads, and which ones are unclear.
+3. Do not send any messages.
+4. Do not create duplicates if a lead already exists.
+5. Add or update only the real leads in the CRM with:
+   - Instagram username
+   - display name if available
+   - source = Instagram DM
+   - short summary
+   - stage
+   - next step
+   - notes
+6. At the end, show me exactly what was added or updated.
+
+Rules:
+- Read and capture only.
+- No outreach.
+- No posting.
+- If CRM write access fails, stop and explain the blocker.`
+
+const INSTAGRAM_COMMENTS_TEST_PROMPT = `Use my Instagram agent in read-only mode.
+
+Goal:
+Check whether the agent can read engagement on my latest post.
+
+Tasks:
+1. Find my most recent Instagram post.
+2. Read the comments on that post.
+3. Tell me how many comments there are.
+4. Give me all of the comments in a clean list.
+5. If there are replies or nested comments, show that clearly if possible.
+
+Rules:
+- Do not reply to any comments.
+- Do not post anything.
+- Do not modify the account.
+- This is a read-only test only.`
+
 export default function Session10InstagramAgent() {
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
@@ -86,7 +169,36 @@ export default function Session10InstagramAgent() {
           </div>
         </StepCard>
 
-        <StepCard number={3} title="What the Instagram agent can do">
+        <StepCard number={3} title="What success looks like">
+          <div className="space-y-3 text-sm text-[#FCF4EB]/70">
+            <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-4">
+              <p className="text-[#FCF4EB] font-semibold mb-1">The install path is saved</p>
+              <p>The installer writes the resolved absolute path into `~/.instagram-agent/install.json`.</p>
+            </div>
+            <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-4">
+              <p className="text-[#FCF4EB] font-semibold mb-1">The command works</p>
+              <p>`instagram status` returns a result, or the fallback launcher command works from the saved install directory.</p>
+            </div>
+            <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-4">
+              <p className="text-[#FCF4EB] font-semibold mb-1">You can read the inbox</p>
+              <p>The next useful command is `instagram read-dms --limit 20` so you can start reviewing conversations for CRM capture.</p>
+            </div>
+          </div>
+        </StepCard>
+
+        <StepCard number={4} title="Log into the Instagram account this agent will use">
+          <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+            Before this is actually useful, you need a live Instagram login session for the account you want the agent to read.
+            Do not skip this. Installation alone is not enough.
+          </p>
+          <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+            The important requirement is that you log into the Instagram account in the browser or session that this agent is using,
+            then verify the login was saved successfully before you try any CRM workflow.
+          </p>
+          <CodeBlock filename="Claude Code prompt" code={INSTAGRAM_LOGIN_PROMPT} editable />
+        </StepCard>
+
+        <StepCard number={5} title="What the Instagram agent can do">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
             Once installed, this agent gives you a practical Instagram toolbelt. Some of these are useful right away.
             Others are capabilities you should treat very carefully.
@@ -122,7 +234,7 @@ export default function Session10InstagramAgent() {
           </div>
         </StepCard>
 
-        <StepCard number={4} title="Recommended uses and non-uses">
+        <StepCard number={6} title="Recommended uses and non-uses">
           <div className="grid md:grid-cols-2 gap-4">
             <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-5">
               <p className="text-[#FCF4EB] font-semibold mb-2">Recommended uses</p>
@@ -149,7 +261,7 @@ export default function Session10InstagramAgent() {
           </div>
         </StepCard>
 
-        <StepCard number={5} title="Reality and dangers">
+        <StepCard number={7} title="Reality and dangers">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
             This agent uses an unofficial private API. That means it can be useful, but it is not the same as having a clean,
             officially supported Meta integration.
@@ -168,7 +280,20 @@ export default function Session10InstagramAgent() {
           </div>
         </StepCard>
 
-        <StepCard number={6} title="The right long-term way to do it">
+        <StepCard number={8} title="Test it safely">
+          <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+            Do not jump straight into broad use. Run a safe read-only test first, then a small CRM capture test once you know the login,
+            session, and command path are working.
+          </p>
+          <p className="text-[#FCF4EB] font-semibold text-sm mb-2">Test 1: read the latest direct message</p>
+          <CodeBlock filename="Claude Code prompt" code={INSTAGRAM_TEST_PROMPT} editable />
+          <p className="text-[#FCF4EB] font-semibold text-sm mb-2 mt-5">Test 2: read the last 20 DMs and capture real leads into the CRM</p>
+          <CodeBlock filename="Claude Code prompt" code={INSTAGRAM_CRM_TEST_PROMPT} editable />
+          <p className="text-[#FCF4EB] font-semibold text-sm mb-2 mt-5">Test 3: read the comments on your latest post</p>
+          <CodeBlock filename="Claude Code prompt" code={INSTAGRAM_COMMENTS_TEST_PROMPT} editable />
+        </StepCard>
+
+        <StepCard number={9} title="The right long-term way to do it">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
             The proper production path is the official Meta API. That is the real route if you want a stable, compliant,
             long-term Instagram integration.
@@ -198,22 +323,6 @@ export default function Session10InstagramAgent() {
           </ProTip>
         </StepCard>
 
-        <StepCard number={7} title="What success looks like">
-          <div className="space-y-3 text-sm text-[#FCF4EB]/70">
-            <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-4">
-              <p className="text-[#FCF4EB] font-semibold mb-1">The install path is saved</p>
-              <p>The installer writes the resolved absolute path into `~/.instagram-agent/install.json`.</p>
-            </div>
-            <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-4">
-              <p className="text-[#FCF4EB] font-semibold mb-1">The command works</p>
-              <p>`instagram status` returns a result, or the fallback launcher command works from the saved install directory.</p>
-            </div>
-            <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-4">
-              <p className="text-[#FCF4EB] font-semibold mb-1">You can read the inbox</p>
-              <p>The next useful command is `instagram read-dms --limit 20` so you can start reviewing conversations for CRM capture.</p>
-            </div>
-          </div>
-        </StepCard>
       </div>
     </div>
   )
