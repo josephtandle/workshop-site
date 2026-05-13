@@ -1,11 +1,24 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import TianaSessionFooter from '@/components/TianaSessionFooter'
 import TianaAiPositioningWorkshop from '@/content/tiana-ai-positioning-workshop'
 
-export const metadata = {
+const PAGE_URL = 'https://workshop.mastermindshq.business/resource-vault/how-to-stand-out-in-the-age-of-ai'
+
+export const metadata: Metadata = {
   title: 'How to Stand Out in the Age of AI',
   description:
     'Workshop Masterminds HQ draft for Tiyana Gori\'s messaging and positioning workshop with editable copy-and-paste prompts throughout.',
+  alternates: {
+    canonical: PAGE_URL,
+  },
+  openGraph: {
+    title: 'How to Stand Out in the Age of AI',
+    description:
+      'Tiyana Gori\'s messaging and positioning workshop with editable copy-and-paste prompts throughout.',
+    url: PAGE_URL,
+    type: 'article',
+  },
 }
 
 export default function HowToStandOutDraftPage() {
