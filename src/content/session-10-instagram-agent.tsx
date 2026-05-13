@@ -272,17 +272,7 @@ export default function Session10InstagramAgent() {
                         : 'radial-gradient(circle, rgba(124,105,199,0.30) 0%, transparent 70%)',
                   }}
                 />
-                <div className="relative flex items-start gap-4">
-                  <div
-                    className="number-glow flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold"
-                    style={{
-                      background: 'linear-gradient(135deg, rgba(124,105,199,0.22) 0%, rgba(245,195,198,0.14) 100%)',
-                      color: '#FCF4EB',
-                      border: '1px solid rgba(124,105,199,0.32)',
-                    }}
-                  >
-                    {index + 1}
-                  </div>
+                <div className="relative min-w-0">
                   <div className="min-w-0 flex-1">
                     <p className="text-[11px] uppercase tracking-[0.18em] text-[#9D8FE0] font-semibold mb-2">{label}</p>
                     <p className="text-[#FCF4EB] font-semibold text-[17px] leading-snug mb-2">{title}</p>
