@@ -40,6 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/session/8/guide`,       lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/session/8/prep`,        lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/session/9/guide`,       lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/resource-vault/how-to-stand-out-in-the-age-of-ai`, lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
 
     // Giveaways
     { url: `${BASE}/giveaways/cross-cli-compatibility-routing`, lastModified: NOW, changeFrequency: 'monthly', priority: 0.8 },
