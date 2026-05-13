@@ -377,8 +377,6 @@ export const events: EventDefinition[] = [
           'This is for people who want a guided working session, not another abstract AI talk. If you are serious about modern creator content, this is the room.',
         primaryLabel: 'Buy Ticket',
         primaryHref: 'https://buy.stripe.com/6oU7sL2npdRg1lPfc9cEw0x',
-        secondaryLabel: 'Workshop Listing',
-        secondaryHref: 'https://events.mastermindshq.business/masterminds-workshops/ai-avatar-content-creation',
         note: 'Promo codes can be entered directly during checkout.',
       },
     ],

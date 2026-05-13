@@ -11,6 +11,13 @@ function sectionTitleClass(sectionId?: string) {
   return 'text-[1.7rem] font-extrabold leading-[0.94] tracking-tight md:text-[2.65rem]'
 }
 
+function sectionEyebrowClass(sectionId?: string) {
+  if (sectionId === 'hero-capabilities' || sectionId === 'outcomes') {
+    return 'mb-3 text-base font-semibold uppercase tracking-[0.18em] text-[#BDB3E8] md:text-xl'
+  }
+  return 'mb-3 text-[11px] font-semibold uppercase tracking-[0.26em] text-[#BDB3E8]'
+}
+
 function SectionShell({
   eyebrow,
   title,
@@ -29,7 +36,7 @@ function SectionShell({
       {(eyebrow || title || intro) && (
         <div className="mb-5">
           {eyebrow ? (
-            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.26em] text-[#BDB3E8]">
+            <p className={sectionEyebrowClass(sectionId)}>
               {eyebrow}
             </p>
           ) : null}
@@ -186,11 +193,11 @@ function HostsSection({ section }: { section: Extract<EventSection, { type: 'hos
         {section.hosts.map((host) => (
           <article
             key={host.name}
-            className="overflow-hidden rounded-[1.8rem] border border-white/10 bg-[linear-gradient(145deg,rgba(252,244,235,0.09),rgba(252,244,235,0.025))] shadow-[0_22px_70px_rgba(0,0,0,0.28)] md:grid md:grid-cols-[280px_minmax(0,1fr)]"
+            className="overflow-hidden rounded-[1.8rem] border border-white/10 bg-[linear-gradient(145deg,rgba(252,244,235,0.09),rgba(252,244,235,0.025))] shadow-[0_22px_70px_rgba(0,0,0,0.28)] md:grid md:grid-cols-[280px_minmax(0,1fr)] md:items-stretch"
           >
             <div className="border-b border-white/10 bg-[radial-gradient(circle_at_top,rgba(139,121,212,0.18),transparent_55%),linear-gradient(180deg,rgba(252,244,235,0.06),rgba(252,244,235,0.01))] md:border-b-0 md:border-r">
-              <div className="h-[260px] w-full overflow-hidden md:h-[280px] md:w-[280px]">
-                <Image src={host.photoSrc} alt={host.name} width={720} height={960} className="h-full w-full object-cover object-center" />
+              <div className="relative h-[260px] w-full overflow-hidden md:h-full md:min-h-[320px] md:w-full">
+                <Image src={host.photoSrc} alt={host.name} fill className="object-cover object-center" />
               </div>
             </div>
             <div className="grid gap-4 p-6 md:p-7">
@@ -224,7 +231,7 @@ function CtaSection({
     <SectionShell eyebrow={section.eyebrow} title={section.title} sectionId={section.id}>
       <div className="grid gap-6 rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(252,244,235,0.08),rgba(124,105,199,0.08))] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.26)] md:p-8">
         <div>
-          <p className="max-w-2xl text-base leading-8 text-[#FCF4EB]/72 md:text-lg">{section.body}</p>
+          <p className="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">{section.body}</p>
           {event.pricing.promoCodes?.length ? (
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
               {event.pricing.promoCodes.map((promoCode) => (
@@ -360,16 +367,18 @@ export default function EventPageView({
 
           <Reveal delay={4}>
             <div className="mt-4 flex flex-wrap gap-3">
-              <Link
-                href={event.pricing.checkoutHref}
-                target="_blank"
-                rel="noreferrer"
-                className="copy-button-glass copy-button-primary inline-flex min-w-[220px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold shadow-[0_16px_38px_rgba(124,105,199,0.22)]"
-              >
-                Buy Ticket
-              </Link>
-              <div className="rounded-xl border border-white/10 bg-white/[0.04] px-5 py-4 text-sm leading-6 text-[#FCF4EB]/62">
-                Promo codes can be entered directly during checkout.
+              <div className="flex flex-col gap-2">
+                <Link
+                  href={event.pricing.checkoutHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="copy-button-glass copy-button-primary inline-flex min-w-[220px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold shadow-[0_16px_38px_rgba(124,105,199,0.22)]"
+                >
+                  Buy Ticket
+                </Link>
+                <p className="pl-1 text-xs leading-5 text-[#FCF4EB]/42">
+                  Promo codes can be entered directly during checkout.
+                </p>
               </div>
             </div>
           </Reveal>
@@ -381,7 +390,7 @@ export default function EventPageView({
               </div>
               <div className="space-y-5 p-6 md:p-7">
                 <div>
-                  <p className="text-sm leading-7 text-[#FCF4EB]/68">{event.description}</p>
+                  <p className="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">{event.description}</p>
                 </div>
                 <div className="rounded-[1.4rem] border border-white/10 bg-[#100f12]/72 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
                   <div className="flex flex-wrap items-end gap-3">
@@ -396,26 +405,18 @@ export default function EventPageView({
                       {formatEventPrice(event, promo ?? undefined)}
                     </span>
                   </div>
-                  <p className="mt-3 text-sm leading-6 text-[#FCF4EB]/55">
-                    {promo ? `${promo.code} applied on this page. Enter your code again during checkout if needed.` : event.pricing.checkoutNote}
-                  </p>
-                  <div className="mt-4 flex flex-wrap gap-3">
+                  <div className="mt-4 flex flex-col items-start gap-2">
                     <Link
                       href={event.pricing.checkoutHref}
                       target="_blank"
                       rel="noreferrer"
-                      className="copy-button-glass copy-button-primary inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold"
+                      className="copy-button-glass copy-button-primary inline-flex min-w-[220px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold shadow-[0_16px_38px_rgba(124,105,199,0.22)]"
                     >
                       Buy Ticket
                     </Link>
-                    <Link
-                      href="https://events.mastermindshq.business/masterminds-workshops/ai-avatar-content-creation"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] px-5 py-3 text-sm font-semibold text-[#FCF4EB]/74 transition hover:bg-white/[0.06] hover:text-[#FCF4EB]"
-                    >
-                      View Workshop Listing
-                    </Link>
+                    <p className="pl-1 text-xs leading-5 text-[#FCF4EB]/42">
+                      {promo ? `${promo.code} applied on this page. Enter your code again during checkout if needed.` : event.pricing.checkoutNote}
+                    </p>
                   </div>
                 </div>
               </div>
