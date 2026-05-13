@@ -136,6 +136,24 @@ Rules:
 - Do not modify the account.
 - This is a read-only test only.`
 
+const SUCCESS_SIGNALS = [
+  {
+    label: 'Saved path',
+    title: 'The install path is saved',
+    body: 'The installer writes the resolved absolute path into `~/.instagram-agent/install.json`.',
+  },
+  {
+    label: 'Ready',
+    title: 'The command works',
+    body: '`instagram status` returns a result, or the fallback launcher command works from the saved install directory.',
+  },
+  {
+    label: 'Inbox access',
+    title: 'You can read the inbox',
+    body: 'The next useful command is `instagram read-dms --limit 20` so you can start reviewing conversations for CRM capture.',
+  },
+]
+
 export default function Session10InstagramAgent() {
   return (
     <div className="max-w-3xl mx-auto px-6 py-16">
@@ -239,19 +257,40 @@ export default function Session10InstagramAgent() {
         </StepCard>
 
         <StepCard number={3} title="What success looks like">
-          <div className="space-y-3">
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
-              <p className="text-[#FCF4EB] font-semibold text-sm mb-1">The install path is saved</p>
-              <p className="text-[#FCF4EB]/60 text-sm">The installer writes the resolved absolute path into `~/.instagram-agent/install.json`.</p>
-            </div>
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
-              <p className="text-[#FCF4EB] font-semibold text-sm mb-1">The command works</p>
-              <p className="text-[#FCF4EB]/60 text-sm">`instagram status` returns a result, or the fallback launcher command works from the saved install directory.</p>
-            </div>
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
-              <p className="text-[#FCF4EB] font-semibold text-sm mb-1">You can read the inbox</p>
-              <p className="text-[#FCF4EB]/60 text-sm">The next useful command is `instagram read-dms --limit 20` so you can start reviewing conversations for CRM capture.</p>
-            </div>
+          <div className="space-y-4">
+            {SUCCESS_SIGNALS.map(({ label, title, body }, index) => (
+              <div
+                key={title}
+                className="group card-hover card-shimmer relative overflow-hidden rounded-[24px] border border-white/[0.10] bg-[linear-gradient(145deg,rgba(255,255,255,0.065),rgba(255,255,255,0.025))] p-5 shadow-[0_18px_50px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.04)]"
+              >
+                <div
+                  className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full opacity-60 blur-2xl"
+                  style={{
+                    background:
+                      index === 1
+                        ? 'radial-gradient(circle, rgba(245,195,198,0.32) 0%, transparent 70%)'
+                        : 'radial-gradient(circle, rgba(124,105,199,0.30) 0%, transparent 70%)',
+                  }}
+                />
+                <div className="relative flex items-start gap-4">
+                  <div
+                    className="number-glow flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold"
+                    style={{
+                      background: 'linear-gradient(135deg, rgba(124,105,199,0.22) 0%, rgba(245,195,198,0.14) 100%)',
+                      color: '#FCF4EB',
+                      border: '1px solid rgba(124,105,199,0.32)',
+                    }}
+                  >
+                    {index + 1}
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-[11px] uppercase tracking-[0.18em] text-[#9D8FE0] font-semibold mb-2">{label}</p>
+                    <p className="text-[#FCF4EB] font-semibold text-[17px] leading-snug mb-2">{title}</p>
+                    <p className="text-[#FCF4EB]/58 text-sm leading-relaxed">{body}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </StepCard>
 
