@@ -95,14 +95,14 @@ export default function CodeBlock({ code, language, filename, editable, codexPro
   return (
     <div className="my-6 rounded-xl overflow-hidden border border-white/[0.08] border-l-2 border-l-[#7C69C7]">
       {/* Header bar — copy button always lives here */}
-      <div className="flex items-center justify-between px-4 py-2 bg-white/[0.04] border-b border-white/[0.06]">
-        <span className="text-xs text-[#FCF4EB]/40 font-mono">
+      <div className="flex flex-col gap-3 bg-white/[0.04] px-4 py-3 border-b border-white/[0.06] sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:py-2">
+        <span className="min-w-0 text-xs text-[#FCF4EB]/40 font-mono break-words">
           {filename ?? language ?? ''}
         </span>
-        <div className="flex flex-wrap items-center justify-end gap-2">
+        <div className="flex w-full flex-col items-stretch gap-2 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:justify-end">
           {editable && (
             <span
-              className="text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 rounded-full"
+              className="w-fit text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 rounded-full"
               style={{
                 background: 'rgba(124, 105, 199, 0.15)',
                 color: '#9D8FE0',
@@ -129,7 +129,7 @@ export default function CodeBlock({ code, language, filename, editable, codexPro
             style={{ background: '#0d0d0d' }}
           />
           {showCodexCopy && (
-            <div className="flex justify-end px-4 pt-3 pb-4 border-t border-white/[0.06]">
+            <div className="flex justify-stretch sm:justify-end px-4 pt-3 pb-4 border-t border-white/[0.06]">
               <MagneticCopyButton onClick={handleCodexCopy} variant="secondary" className="py-1.5">
                 {codexCopied ? 'Copied Codex!' : 'Copy Codex only'}
               </MagneticCopyButton>
@@ -139,12 +139,12 @@ export default function CodeBlock({ code, language, filename, editable, codexPro
       ) : (
         <div style={{ background: '#0d0d0d' }}>
           <pre
-            className="overflow-x-auto whitespace-pre-wrap break-words p-4 text-sm font-mono leading-relaxed text-[#FCF4EB]/80 sm:whitespace-pre sm:break-normal"
+            className="overflow-x-auto whitespace-pre-wrap break-words p-4 text-[13px] font-mono leading-relaxed text-[#FCF4EB]/80 sm:text-sm sm:whitespace-pre sm:break-normal"
           >
             <code>{code}</code>
           </pre>
           {showCodexCopy && (
-            <div className="flex justify-end px-4 pt-3 pb-4 border-t border-white/[0.06]">
+            <div className="flex justify-stretch sm:justify-end px-4 pt-3 pb-4 border-t border-white/[0.06]">
               <MagneticCopyButton onClick={handleCodexCopy} variant="secondary" className="py-1.5">
                 {codexCopied ? 'Copied Codex!' : 'Copy Codex only'}
               </MagneticCopyButton>

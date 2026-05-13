@@ -156,20 +156,20 @@ const SUCCESS_SIGNALS = [
 
 export default function Session10InstagramAgent() {
   return (
-    <div className="max-w-3xl mx-auto px-6 py-16">
+    <div className="max-w-3xl mx-auto px-4 py-12 sm:px-6 sm:py-16">
       <div className="mb-14">
         <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
           Session 10
         </p>
-        <h1 className="gradient-text text-5xl font-extrabold leading-tight mb-5 pb-1">
+        <h1 className="gradient-text mb-5 pb-1 text-4xl font-extrabold leading-[1.05] sm:text-5xl sm:leading-tight">
           Instagram Agent and Lead Capture
         </h1>
-        <p className="text-[#FCF4EB]/70 text-lg leading-relaxed mb-8">
+        <p className="mb-8 text-base leading-relaxed text-[#FCF4EB]/70 sm:text-lg">
           This is the first practical step for bringing Instagram into your sales system. The goal is not mass outreach.
           The goal is to read DMs, review inbound interest, capture real leads into a CRM, and make follow-up cleaner.
         </p>
 
-        <div className="flex flex-wrap gap-6 text-sm text-[#FCF4EB]/50 mb-8">
+        <div className="mb-8 flex flex-col gap-3 text-sm text-[#FCF4EB]/50 sm:flex-row sm:flex-wrap sm:gap-6">
           <span className="flex items-center gap-2">
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <circle cx="8" cy="8" r="6.5" stroke="currentColor" strokeWidth="1.5" />
@@ -186,19 +186,19 @@ export default function Session10InstagramAgent() {
         </div>
 
         <details className="rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(124,105,199,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]">
-          <summary className="flex items-center justify-between px-6 py-5 cursor-pointer select-none">
-            <div className="flex items-center gap-3">
+          <summary className="flex cursor-pointer items-center justify-between gap-3 px-4 py-4 select-none sm:px-6 sm:py-5">
+            <div className="min-w-0 flex items-center gap-3">
               <span className="h-2 w-2 rounded-full bg-[#9D8FE0] shadow-[0_0_12px_rgba(157,143,224,0.70)]" />
-              <span className="text-xs uppercase tracking-[0.20em] text-[#FCF4EB]/65 font-semibold">Table of Contents</span>
+              <span className="text-[11px] uppercase tracking-[0.18em] text-[#FCF4EB]/65 font-semibold sm:text-xs sm:tracking-[0.20em]">Table of Contents</span>
             </div>
-            <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[rgba(124,105,199,0.15)] border border-[rgba(124,105,199,0.28)] text-[#9D8FE0]">
+            <div className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border border-[rgba(124,105,199,0.28)] bg-[rgba(124,105,199,0.15)] text-[#9D8FE0]">
               <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
           </summary>
-          <div className="border-t border-white/[0.07] mx-5" />
-          <ol className="px-6 py-5 space-y-3">
+          <div className="mx-4 border-t border-white/[0.07] sm:mx-5" />
+          <ol className="space-y-3 px-4 py-4 sm:px-6 sm:py-5">
             {[
               { href: '#permissions', label: 'Start Here — Claude Dangerously Skip Permissions' },
               { href: '#install', label: 'Install — Install and log into the Instagram agent' },
@@ -208,12 +208,12 @@ export default function Session10InstagramAgent() {
             ].map(({ href, label }, i) => (
               <li key={href} className="flex items-center gap-3 group/item">
                 <span
-                  className="number-glow flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold tabular-nums"
+                  className="number-glow flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full text-[10px] font-bold tabular-nums"
                   style={{ background: 'rgba(124,105,199,0.18)', color: '#9D8FE0', border: '1.5px solid rgba(124,105,199,0.30)' }}
                 >
                   {i + 1}
                 </span>
-                <a href={href} className="text-[#FCF4EB]/58 hover:text-[#9D8FE0] text-sm leading-snug transition-colors duration-150">
+                <a href={href} className="min-w-0 text-sm leading-snug text-[#FCF4EB]/58 transition-colors duration-150 hover:text-[#9D8FE0]">
                   {label}
                 </a>
               </li>
@@ -225,7 +225,7 @@ export default function Session10InstagramAgent() {
       <section id="permissions" className="mb-16">
         <div className="mb-8">
           <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Start Here</span>
-          <h2 className="text-3xl font-bold text-[#FCF4EB] mt-3">Claude Dangerously Skip Permissions</h2>
+          <h2 className="mt-3 text-2xl font-bold text-[#FCF4EB] sm:text-3xl">Claude Dangerously Skip Permissions</h2>
         </div>
 
         <StepCard number={1} title="Open your terminal and start Claude Code">
@@ -240,7 +240,7 @@ export default function Session10InstagramAgent() {
       </section>
 
       <section id="install" className="mb-16">
-        <div className="flex items-center gap-3 mb-8">
+        <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
           <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Install</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Install and Log Into the Instagram Agent</h2>
         </div>
@@ -298,7 +298,7 @@ export default function Session10InstagramAgent() {
       </section>
 
       <section id="capabilities" className="mb-16">
-        <div className="flex items-center gap-3 mb-8">
+        <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
           <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Capabilities</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">What It Can Do and How to Use It</h2>
         </div>
@@ -308,7 +308,7 @@ export default function Session10InstagramAgent() {
             Once installed, this agent gives you a practical Instagram toolbelt. The safest and most useful part is the read-and-research side.
           </p>
           <div className="space-y-4">
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
+            <div className="rounded-xl border border-white/[0.08] bg-white/[0.04] p-4">
               <p className="text-[#FCF4EB] font-semibold text-sm mb-2">What it can do</p>
               <ul className="space-y-1 text-[#FCF4EB]/60 text-sm">
                 <li>Can read DMs</li>
@@ -320,7 +320,7 @@ export default function Session10InstagramAgent() {
                 <li>Can post carousels</li>
               </ul>
             </div>
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
+            <div className="rounded-xl border border-white/[0.08] bg-white/[0.04] p-4">
               <p className="text-[#FCF4EB] font-semibold text-sm mb-2">Recommended first use</p>
               <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
                 Start with `read-dms`, `read-comments`, and profile research. That is the cleanest path for reviewing inbound
@@ -332,7 +332,7 @@ export default function Session10InstagramAgent() {
 
         <StepCard number={6} title="Recommended uses and recommended non-uses">
           <div className="space-y-4">
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
+            <div className="rounded-xl border border-white/[0.08] bg-white/[0.04] p-4">
               <p className="text-[#FCF4EB] font-semibold text-sm mb-2">Recommended uses</p>
               <ul className="space-y-1 text-[#FCF4EB]/60 text-sm">
                 <li>read Instagram DM threads</li>
@@ -359,7 +359,7 @@ export default function Session10InstagramAgent() {
       </section>
 
       <section id="reality" className="mb-16">
-        <div className="flex items-center gap-3 mb-8">
+        <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
           <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Reality</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Risks and the Right Long-Term Path</h2>
         </div>
@@ -372,7 +372,7 @@ export default function Session10InstagramAgent() {
           <ProTip type="warning">
             Treat this as a first-step workflow for visibility and CRM capture, not as the final production system.
           </ProTip>
-          <div className="mt-4 bg-[#F5C3C6]/[0.06] border border-[#F5C3C6]/20 rounded-xl p-4">
+          <div className="mt-4 rounded-xl border border-[#F5C3C6]/20 bg-[#F5C3C6]/[0.06] p-4">
             <p className="text-[#FCF4EB] font-semibold text-sm mb-2">Main risks</p>
             <ul className="space-y-1 text-[#FCF4EB]/60 text-sm">
               <li>account restrictions or rate limits if you act too aggressively</li>
@@ -392,7 +392,7 @@ export default function Session10InstagramAgent() {
             This is not a quick workshop task. It is a real integration project, and it can take days to months to get fully
             working depending on your accounts, business structure, permissions, review requirements, and how far you want to take it.
           </p>
-          <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
+          <div className="rounded-xl border border-white/[0.08] bg-white/[0.04] p-4">
             <p className="text-[#FCF4EB] font-semibold text-sm mb-2">What that process usually involves</p>
             <ol className="space-y-2 text-[#FCF4EB]/60 text-sm">
               <li>1. Convert to the right professional Instagram and Facebook business setup.</li>
@@ -415,7 +415,7 @@ export default function Session10InstagramAgent() {
       </section>
 
       <section id="tests" className="mb-16">
-        <div className="flex items-center gap-3 mb-8">
+        <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
           <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Tests</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Try the Agent Safely</h2>
         </div>
