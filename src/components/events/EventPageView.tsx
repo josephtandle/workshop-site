@@ -3,6 +3,7 @@ import Link from 'next/link'
 import type { EventDefinition, EventPromoCode, EventSection } from '@/lib/events'
 import { formatEventPrice } from '@/lib/events'
 import Reveal from '@/components/Reveal'
+import EventRegistrationSection from '@/components/events/EventRegistrationSection'
 
 function sectionTitleClass(sectionId?: string) {
   if (sectionId === 'creative-lab' || sectionId === 'outcomes') {
@@ -272,9 +273,7 @@ function CtaSection({
           </p>
           <div className="grid gap-3">
             <Link
-              href={section.primaryHref}
-              target="_blank"
-              rel="noreferrer"
+              href="#register"
               className="copy-button-glass copy-button-primary inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold"
             >
               {section.primaryLabel}
@@ -324,9 +323,13 @@ function renderSection(section: EventSection, event: EventDefinition, promo: Eve
 export default function EventPageView({
   event,
   promo,
+  publishableKey,
+  initialPromoCode,
 }: {
   event: EventDefinition
   promo: EventPromoCode | null
+  publishableKey: string | null
+  initialPromoCode?: string | null
 }) {
   return (
     <main className="pb-24">
@@ -369,9 +372,7 @@ export default function EventPageView({
             <div className="mt-4 flex flex-wrap gap-3">
               <div className="flex flex-col gap-2">
                 <Link
-                  href={event.pricing.checkoutHref}
-                  target="_blank"
-                  rel="noreferrer"
+                  href="#register"
                   className="copy-button-glass copy-button-primary inline-flex min-w-[220px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold shadow-[0_16px_38px_rgba(124,105,199,0.22)]"
                 >
                   Buy Ticket
@@ -407,9 +408,7 @@ export default function EventPageView({
                   </div>
                   <div className="mt-4 flex flex-col items-start gap-2">
                     <Link
-                      href={event.pricing.checkoutHref}
-                      target="_blank"
-                      rel="noreferrer"
+                      href="#register"
                       className="copy-button-glass copy-button-primary inline-flex min-w-[220px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold shadow-[0_16px_38px_rgba(124,105,199,0.22)]"
                     >
                       Buy Ticket
@@ -426,6 +425,7 @@ export default function EventPageView({
       </section>
 
       {event.sections.map((section) => renderSection(section, event, promo))}
+      <EventRegistrationSection event={event} publishableKey={publishableKey} initialPromoCode={initialPromoCode} />
     </main>
   )
 }

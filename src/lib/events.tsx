@@ -211,8 +211,8 @@ export const events: EventDefinition[] = [
       currencySymbol: '$',
       fullPrice: 97,
       checkoutHref: 'https://buy.stripe.com/6oU7sL2npdRg1lPfc9cEw0x',
-      checkoutNote: 'Promo codes can be entered directly in the Stripe checkout.',
-      promoFieldHint: 'Bring your code with you. Promo codes are entered during checkout.',
+      checkoutNote: 'Enter your details below and complete checkout on this page.',
+      promoFieldHint: 'Click Enter promo code to reveal the field before checkout.',
       promoCodes: [
         {
           code: 'EARLY20',
