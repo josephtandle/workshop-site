@@ -1,7 +1,16 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 
 export default function SiteHeader() {
+  const pathname = usePathname()
+
+  if (pathname?.match(/^\/events\/[^/]+$/)) {
+    return null
+  }
+
   return (
     <header className="header-glow fixed top-0 left-0 right-0 z-50 bg-[rgba(21,21,21,0.75)] backdrop-blur-[12px] border-b border-white/[0.06]">
       <div className="max-w-6xl mx-auto px-6 py-3 flex items-center">

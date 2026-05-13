@@ -1,13 +1,20 @@
 'use client'
 
-import { useMemo, useState, useTransition } from 'react'
+import { useEffect, useRef, useMemo, useState, useTransition } from 'react'
 import { EmbeddedCheckout, EmbeddedCheckoutProvider } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
-import type { EventDefinition } from '@/lib/events'
-import { formatEventPrice } from '@/lib/events'
+
+export type EventRegistrationData = {
+  slug: string
+  pricing: {
+    currencySymbol: string
+    fullPrice: number
+    checkoutNote: string
+  }
+}
 
 type Props = {
-  event: EventDefinition
+  event: EventRegistrationData
   publishableKey: string | null
   initialPromoCode?: string | null
 }
@@ -22,29 +29,79 @@ export default function EventRegistrationSection({
   const [promoOpen, setPromoOpen] = useState(Boolean(initialPromoCode))
   const [promoCode, setPromoCode] = useState(initialPromoCode ?? '')
   const [appliedPromoCode, setAppliedPromoCode] = useState<string | null>(initialPromoCode ?? null)
+  const [appliedAmount, setAppliedAmount] = useState<number | null>(null)
+  const [promoMessage, setPromoMessage] = useState<string | null>(null)
+  const [promoError, setPromoError] = useState<string | null>(null)
   const [clientSecret, setClientSecret] = useState<string | null>(null)
+  const [completionMessage, setCompletionMessage] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [isPending, startTransition] = useTransition()
+  const [isApplyingPromo, startApplyTransition] = useTransition()
+  const checkoutRef = useRef<HTMLDivElement | null>(null)
 
   const stripePromise = useMemo(
     () => (publishableKey ? loadStripe(publishableKey) : null),
     [publishableKey],
   )
 
-  const appliedPromo = useMemo(
-    () =>
-      appliedPromoCode
-        ? event.pricing.promoCodes?.find((promo) => promo.code.toUpperCase() === appliedPromoCode.toUpperCase()) ?? null
-        : null,
-    [appliedPromoCode, event.pricing.promoCodes],
-  )
+  useEffect(() => {
+    if (!clientSecret || !checkoutRef.current) return
 
-  const displayedPrice = formatEventPrice(event, appliedPromo ?? undefined)
+    const timeout = window.setTimeout(() => {
+      const top = window.scrollY + checkoutRef.current!.getBoundingClientRect().top - 24
+      window.scrollTo({ top, behavior: 'smooth' })
+    }, 120)
+
+    return () => window.clearTimeout(timeout)
+  }, [clientSecret])
+
+  const displayedPrice = `${event.pricing.currencySymbol}${Number.isInteger(appliedAmount ?? event.pricing.fullPrice) ? String(appliedAmount ?? event.pricing.fullPrice) : (appliedAmount ?? event.pricing.fullPrice).toFixed(2)}`
+
+  function handleApplyPromo() {
+    const nextPromo = promoCode.trim()
+    if (!nextPromo) {
+      setPromoError('Enter a promo code first.')
+      setPromoMessage(null)
+      setAppliedPromoCode(null)
+      setAppliedAmount(null)
+      return
+    }
+
+    startApplyTransition(async () => {
+      setPromoError(null)
+      setPromoMessage(null)
+
+      try {
+        const response = await fetch('/api/events/validate-promo', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            slug: event.slug,
+            promoCode: nextPromo,
+          }),
+        })
+
+        const payload = await response.json()
+        if (!response.ok) {
+          throw new Error(payload.error || 'Unable to validate promo code.')
+        }
+
+        setAppliedPromoCode(payload.appliedPromoCode ?? null)
+        setAppliedAmount(typeof payload.amount === 'number' ? payload.amount : null)
+        setPromoMessage(payload.message || 'Promo code applied.')
+      } catch (applyError) {
+        const message = applyError instanceof Error ? applyError.message : 'Unable to validate promo code.'
+        setAppliedPromoCode(null)
+        setAppliedAmount(null)
+        setPromoMessage(null)
+        setPromoError(message)
+      }
+    })
+  }
 
   function handleSubmit(formData: FormData) {
     const nextName = String(formData.get('attendeeName') || '').trim()
     const nextEmail = String(formData.get('attendeeEmail') || '').trim()
-    const nextPromo = String(formData.get('promoCode') || '').trim()
 
     if (!nextName || !nextEmail) {
       setError('Please enter your name and email.')
@@ -58,6 +115,7 @@ export default function EventRegistrationSection({
 
     startTransition(async () => {
       setError(null)
+      setCompletionMessage(null)
       setAttendeeName(nextName)
       setAttendeeEmail(nextEmail)
 
@@ -69,7 +127,7 @@ export default function EventRegistrationSection({
             slug: event.slug,
             attendeeName: nextName,
             attendeeEmail: nextEmail,
-            promoCode: nextPromo,
+            promoCode: appliedPromoCode ?? '',
           }),
         })
 
@@ -79,6 +137,13 @@ export default function EventRegistrationSection({
         }
 
         setAppliedPromoCode(payload.appliedPromoCode)
+        setAppliedAmount(typeof payload.amount === 'number' ? payload.amount : null)
+        if (payload.completed) {
+          setClientSecret(null)
+          setCompletionMessage(payload.message || 'Ticket reserved.')
+          return
+        }
+
         setClientSecret(payload.clientSecret)
       } catch (submitError) {
         const message = submitError instanceof Error ? submitError.message : 'Unable to start checkout.'
@@ -88,10 +153,10 @@ export default function EventRegistrationSection({
   }
 
   return (
-    <section id="register" className="mx-auto max-w-6xl px-6 py-8 md:py-10 scroll-mt-24">
+    <section id="register" className="mx-auto max-w-6xl px-6 py-8 md:py-10">
       <div className="mb-5">
-        <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.26em] text-[#BDB3E8]">Registration</p>
-        <h2 className="event-gradient-title text-[1.7rem] font-extrabold leading-[0.94] tracking-tight md:text-[2.65rem]">
+        <p className="mb-3 text-[12px] font-semibold uppercase tracking-[0.24em] text-[#BDB3E8] md:text-[13px]">Reserve Your Spot</p>
+        <h2 className="event-gradient-title text-[2.2rem] font-extrabold leading-[0.92] tracking-tight md:text-[4.1rem]">
           Reserve your seat and check out below.
         </h2>
         <p className="mt-4 text-base leading-8 text-[#FCF4EB]/68 md:text-lg">
@@ -108,7 +173,7 @@ export default function EventRegistrationSection({
                 <input
                   name="attendeeName"
                   defaultValue={attendeeName}
-                  className="rounded-xl border border-white/10 bg-[#0f0f10]/72 px-4 py-3 text-[#FCF4EB] outline-none transition focus:border-[#7C69C7]/55"
+                  className="rounded-xl border border-black/10 bg-white px-4 py-3 text-black placeholder:text-black/35 outline-none transition focus:border-[#7C69C7]/55"
                   placeholder="Your name"
                 />
               </label>
@@ -118,7 +183,7 @@ export default function EventRegistrationSection({
                   name="attendeeEmail"
                   type="email"
                   defaultValue={attendeeEmail}
-                  className="rounded-xl border border-white/10 bg-[#0f0f10]/72 px-4 py-3 text-[#FCF4EB] outline-none transition focus:border-[#7C69C7]/55"
+                  className="rounded-xl border border-black/10 bg-white px-4 py-3 text-black placeholder:text-black/35 outline-none transition focus:border-[#7C69C7]/55"
                   placeholder="you@example.com"
                 />
               </label>
@@ -140,11 +205,31 @@ export default function EventRegistrationSection({
                   <input
                     name="promoCode"
                     value={promoCode}
-                    onChange={(event) => setPromoCode(event.target.value)}
-                    className="rounded-xl border border-white/10 bg-[#0f0f10]/72 px-4 py-3 text-[#FCF4EB] outline-none transition focus:border-[#7C69C7]/55"
-                    placeholder="EARLY20"
+                    onChange={(event) => {
+                      setPromoCode(event.target.value)
+                      setPromoError(null)
+                      setPromoMessage(null)
+                      setAppliedPromoCode(null)
+                      setAppliedAmount(null)
+                    }}
+                    className="rounded-xl border border-black/10 bg-white px-4 py-3 text-black placeholder:text-black/35 outline-none transition focus:border-[#7C69C7]/55"
+                    placeholder="Promo code"
                   />
                 </label>
+              ) : null}
+              {promoOpen ? (
+                <div className="flex flex-col items-start gap-2">
+                  <button
+                    type="button"
+                    onClick={handleApplyPromo}
+                    disabled={isApplyingPromo}
+                    className="inline-flex items-center justify-center rounded-xl border border-white/14 bg-white/[0.06] px-4 py-2 text-sm font-semibold text-[#FCF4EB] transition hover:bg-white/[0.1] disabled:cursor-wait disabled:opacity-70"
+                  >
+                    {isApplyingPromo ? 'Applying...' : 'Apply'}
+                  </button>
+                  {promoMessage ? <p className="text-sm text-[#BDE7C0]">{promoMessage}</p> : null}
+                  {promoError ? <p className="text-sm text-[#F5C3C6]">{promoError}</p> : null}
+                </div>
               ) : null}
             </div>
 
@@ -156,9 +241,7 @@ export default function EventRegistrationSection({
               >
                 {isPending ? 'Preparing Checkout...' : 'Continue To Checkout'}
               </button>
-              <p className="text-xs leading-5 text-[#FCF4EB]/42">
-                Promo codes stay on this page. Payment opens below after you continue.
-              </p>
+              {completionMessage ? <p className="text-sm text-[#BDE7C0]">{completionMessage}</p> : null}
               {error ? <p className="text-sm text-[#F5C3C6]">{error}</p> : null}
             </div>
           </form>
@@ -166,7 +249,7 @@ export default function EventRegistrationSection({
           <aside className="rounded-[1.6rem] border border-white/10 bg-[#0f0f10]/72 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
             <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#BDB3E8]">Your ticket</p>
             <div className="mt-3 flex items-end gap-3">
-              {appliedPromo ? (
+              {appliedPromoCode ? (
                 <span className="text-base text-[#FCF4EB]/35 line-through">
                   {event.pricing.currencySymbol}
                   {event.pricing.fullPrice}
@@ -174,9 +257,9 @@ export default function EventRegistrationSection({
               ) : null}
               <span className="font-serif text-4xl leading-none text-[#FCF4EB]">{displayedPrice}</span>
             </div>
-            {appliedPromo ? (
+            {appliedPromoCode ? (
               <p className="mt-3 text-sm leading-6 text-[#FCF4EB]/58">
-                {appliedPromo.code} applied. {appliedPromo.description}
+                {appliedPromoCode} applied to this order.
               </p>
             ) : (
               <p className="mt-3 text-sm leading-6 text-[#FCF4EB]/58">{event.pricing.checkoutNote}</p>
@@ -185,7 +268,7 @@ export default function EventRegistrationSection({
         </div>
 
         {clientSecret && stripePromise ? (
-          <div className="mt-8 rounded-[1.6rem] border border-white/10 bg-[#0f0f10]/72 p-3 md:p-5">
+          <div ref={checkoutRef} className="mt-8 rounded-[1.6rem] border border-white/10 bg-white p-3 text-black md:p-5">
             <EmbeddedCheckoutProvider stripe={stripePromise} options={{ clientSecret }}>
               <EmbeddedCheckout />
             </EmbeddedCheckoutProvider>

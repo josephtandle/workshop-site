@@ -2,12 +2,28 @@ import { NextResponse } from 'next/server'
 import { getEventBySlug, resolvePromoCode } from '@/lib/events'
 import { createStripeClient } from '@/lib/stripe'
 
-function getBaseUrl() {
-  return (
-    process.env.NEXT_PUBLIC_SITE_URL ||
-    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ||
-    'https://workshop.mastermindshq.business'
-  )
+function toOrigin(value: string | null | undefined) {
+  if (!value) return null
+
+  try {
+    return new URL(value).origin
+  } catch {
+    try {
+      return new URL(`https://${value.replace(/^\/+|\/+$/g, '')}`).origin
+    } catch {
+      return null
+    }
+  }
+}
+
+function getBaseUrl(request: Request) {
+  const envOrigin = toOrigin(process.env.NEXT_PUBLIC_SITE_URL)
+  if (envOrigin) return envOrigin
+
+  const requestOrigin = toOrigin(request.url)
+  if (requestOrigin) return requestOrigin
+
+  return 'https://workshop.mastermindshq.business'
 }
 
 export async function POST(request: Request) {
@@ -35,9 +51,18 @@ export async function POST(request: Request) {
         : event.pricing.fullPrice
 
     const unitAmount = Math.round(amount * 100)
-    const stripe = createStripeClient()
-    const baseUrl = getBaseUrl().replace(/\/$/, '')
+    if (unitAmount === 0) {
+      return NextResponse.json({
+        completed: true,
+        freeCheckout: true,
+        appliedPromoCode: promo?.code ?? null,
+        amount,
+        message: 'Free ticket reserved. No payment needed.',
+      })
+    }
 
+    const stripe = createStripeClient()
+    const baseUrl = getBaseUrl(request)
     const session = await stripe.checkout.sessions.create({
       ui_mode: 'embedded_page',
       mode: 'payment',
@@ -78,6 +103,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({
       clientSecret: session.client_secret,
+      completed: false,
       appliedPromoCode: promo?.code ?? null,
       amount,
     })

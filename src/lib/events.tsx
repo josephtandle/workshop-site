@@ -226,6 +226,18 @@ export const events: EventDefinition[] = [
           description: 'Save $15 for invited community guests.',
           amountOff: 15,
         },
+        {
+          code: 'test',
+          label: 'Test 99',
+          description: 'Test promo for 99% off.',
+          percentOff: 99,
+        },
+        {
+          code: 'test100',
+          label: 'Test 100',
+          description: 'Test promo for a free ticket.',
+          percentOff: 100,
+        },
       ],
     },
     sections: [
@@ -367,17 +379,6 @@ export const events: EventDefinition[] = [
         intro:
           'This section lives near the bottom on purpose. By the time someone gets here, they should already understand the value of the workshop and then meet the people leading it.',
         hosts: [],
-      },
-      {
-        type: 'cta',
-        id: 'final-cta',
-        eyebrow: 'Reserve Your Spot',
-        title: 'Bring a laptop, a charger, and one real idea worth turning into content.',
-        body:
-          'This is for people who want a guided working session, not another abstract AI talk. If you are serious about modern creator content, this is the room.',
-        primaryLabel: 'Buy Ticket',
-        primaryHref: 'https://buy.stripe.com/6oU7sL2npdRg1lPfc9cEw0x',
-        note: 'Promo codes can be entered directly during checkout.',
       },
     ],
     metadata: {

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import EventPageView from '@/components/events/EventPageView'
-import { getEventBySlug, resolvePromoCode } from '@/lib/events'
+import { getEventBySlug } from '@/lib/events'
 import { getStripePublishableKey } from '@/lib/stripe'
 
 type PageProps = {
@@ -32,15 +32,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function EventDetailPage({ params, searchParams }: PageProps) {
   const { slug } = await params
-  const { promo } = await searchParams
+  await searchParams
   const event = getEventBySlug(slug)
 
   if (!event) {
     notFound()
   }
 
-  const activePromo = resolvePromoCode(event, promo)
   const publishableKey = getStripePublishableKey()
+  const publicEvent = {
+    ...event,
+    pricing: {
+      ...event.pricing,
+      promoCodes: undefined,
+    },
+  }
 
-  return <EventPageView event={event} promo={activePromo} publishableKey={publishableKey} initialPromoCode={promo ?? null} />
+  return <EventPageView event={publicEvent} promo={null} publishableKey={publishableKey} initialPromoCode={null} />
 }

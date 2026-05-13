@@ -4,6 +4,8 @@ import type { EventDefinition, EventPromoCode, EventSection } from '@/lib/events
 import { formatEventPrice } from '@/lib/events'
 import Reveal from '@/components/Reveal'
 import EventRegistrationSection from '@/components/events/EventRegistrationSection'
+import type { EventRegistrationData } from '@/components/events/EventRegistrationSection'
+import ScrollToRegisterButton from '@/components/events/ScrollToRegisterButton'
 
 function sectionTitleClass(sectionId?: string) {
   if (sectionId === 'creative-lab' || sectionId === 'outcomes') {
@@ -13,10 +15,7 @@ function sectionTitleClass(sectionId?: string) {
 }
 
 function sectionEyebrowClass(sectionId?: string) {
-  if (sectionId === 'hero-capabilities' || sectionId === 'outcomes') {
-    return 'mb-3 text-base font-semibold uppercase tracking-[0.18em] text-[#BDB3E8] md:text-xl'
-  }
-  return 'mb-3 text-[11px] font-semibold uppercase tracking-[0.26em] text-[#BDB3E8]'
+  return 'mb-3 text-[12px] font-semibold uppercase tracking-[0.24em] text-[#BDB3E8] md:text-[13px]'
 }
 
 function SectionShell({
@@ -233,19 +232,6 @@ function CtaSection({
       <div className="grid gap-6 rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(252,244,235,0.08),rgba(124,105,199,0.08))] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.26)] md:p-8">
         <div>
           <p className="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">{section.body}</p>
-          {event.pricing.promoCodes?.length ? (
-            <div className="mt-6 grid gap-3 sm:grid-cols-2">
-              {event.pricing.promoCodes.map((promoCode) => (
-                <div key={promoCode.code} className="rounded-[1.35rem] border border-white/10 bg-white/[0.04] p-4">
-                  <div className="flex items-center justify-between gap-3">
-                    <span className="text-sm font-semibold text-[#FCF4EB]">{promoCode.code}</span>
-                    <span className="text-[10px] uppercase tracking-[0.18em] text-[#F5C3C6]">{promoCode.label}</span>
-                  </div>
-                  <p className="mt-2 text-sm leading-6 text-[#FCF4EB]/58">{promoCode.description}</p>
-                </div>
-              ))}
-            </div>
-          ) : null}
           {event.pricing.promoFieldHint ? (
             <p className="mt-4 text-xs leading-6 text-[#FCF4EB]/42">{event.pricing.promoFieldHint}</p>
           ) : null}
@@ -272,12 +258,11 @@ function CtaSection({
             {promo ? promo.description : event.pricing.checkoutNote}
           </p>
           <div className="grid gap-3">
-            <Link
-              href="#register"
+            <ScrollToRegisterButton
               className="copy-button-glass copy-button-primary inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold"
             >
               {section.primaryLabel}
-            </Link>
+            </ScrollToRegisterButton>
             {section.secondaryHref && section.secondaryLabel ? (
               <Link
                 href={section.secondaryHref}
@@ -331,6 +316,15 @@ export default function EventPageView({
   publishableKey: string | null
   initialPromoCode?: string | null
 }) {
+  const registrationEvent: EventRegistrationData = {
+    slug: event.slug,
+    pricing: {
+      currencySymbol: event.pricing.currencySymbol,
+      fullPrice: event.pricing.fullPrice,
+      checkoutNote: event.pricing.checkoutNote,
+    },
+  }
+
   return (
     <main className="pb-24">
       <section className="overflow-hidden px-6 pb-6 pt-8 md:pb-10 md:pt-10">
@@ -371,14 +365,13 @@ export default function EventPageView({
           <Reveal delay={4}>
             <div className="mt-4 flex flex-wrap gap-3">
               <div className="flex flex-col gap-2">
-                <Link
-                  href="#register"
+                <ScrollToRegisterButton
                   className="copy-button-glass copy-button-primary inline-flex min-w-[220px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold shadow-[0_16px_38px_rgba(124,105,199,0.22)]"
                 >
                   Buy Ticket
-                </Link>
+                </ScrollToRegisterButton>
                 <p className="pl-1 text-xs leading-5 text-[#FCF4EB]/42">
-                  Promo codes can be entered directly during checkout.
+                  Have a promo code? Enter it in the registration section below.
                 </p>
               </div>
             </div>
@@ -407,14 +400,13 @@ export default function EventPageView({
                     </span>
                   </div>
                   <div className="mt-4 flex flex-col items-start gap-2">
-                    <Link
-                      href="#register"
+                    <ScrollToRegisterButton
                       className="copy-button-glass copy-button-primary inline-flex min-w-[220px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold shadow-[0_16px_38px_rgba(124,105,199,0.22)]"
                     >
                       Buy Ticket
-                    </Link>
+                    </ScrollToRegisterButton>
                     <p className="pl-1 text-xs leading-5 text-[#FCF4EB]/42">
-                      {promo ? `${promo.code} applied on this page. Enter your code again during checkout if needed.` : event.pricing.checkoutNote}
+                      {promo ? `${promo.code} is active for this order.` : 'Enter your details below and complete checkout on this page.'}
                     </p>
                   </div>
                 </div>
@@ -425,7 +417,7 @@ export default function EventPageView({
       </section>
 
       {event.sections.map((section) => renderSection(section, event, promo))}
-      <EventRegistrationSection event={event} publishableKey={publishableKey} initialPromoCode={initialPromoCode} />
+      <EventRegistrationSection event={registrationEvent} publishableKey={publishableKey} initialPromoCode={initialPromoCode} />
     </main>
   )
 }
