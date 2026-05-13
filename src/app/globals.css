@@ -61,6 +61,15 @@ body {
   margin-bottom: -0.15em;
 }
 
+.event-gradient-title {
+  background: linear-gradient(90deg, #FCF4EB 0%, #b7a6f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding-bottom: 0.12em;
+  margin-bottom: -0.12em;
+}
+
 .card-glow-border {
   position: relative;
   border-radius: 1rem;
