@@ -309,23 +309,15 @@ export default function Session10InstagramAgent() {
           </p>
           <div className="space-y-4">
             <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
-              <p className="text-[#FCF4EB] font-semibold text-sm mb-2">Read and research</p>
+              <p className="text-[#FCF4EB] font-semibold text-sm mb-2">What it can do</p>
               <ul className="space-y-1 text-[#FCF4EB]/60 text-sm">
-                <li>`read-dms`</li>
-                <li>`read-comments`</li>
-                <li>`get-profile`</li>
-                <li>`resolve-user`</li>
-              </ul>
-            </div>
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
-              <p className="text-[#FCF4EB] font-semibold text-sm mb-2">Publish and respond</p>
-              <ul className="space-y-1 text-[#FCF4EB]/60 text-sm">
-                <li>`send-dm`</li>
-                <li>`reply-comment`</li>
-                <li>`post-feed`</li>
-                <li>`post-story`</li>
-                <li>`post-reel`</li>
-                <li>`post-carousel`</li>
+                <li>Can read DMs</li>
+                <li>Can read comments</li>
+                <li>Can get information from profiles</li>
+                <li>Can send DMs</li>
+                <li>Can post to your story</li>
+                <li>Can post reels</li>
+                <li>Can post carousels</li>
               </ul>
             </div>
             <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">

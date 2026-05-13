@@ -20,8 +20,13 @@
  * - Normal Copy is the primary flat dark-purple glass button; Copy Codex Only is secondary light gray
  * - Copy buttons should have a subtle magnetic hover effect that follows the pointer slightly without shifting layout
  * - Every copy action must use the shared copy helper so confetti starts from the clicked button
+ * - Session guides default to `max-w-3xl` and a single-column reading width
+ * - Session guides must include a table of contents block near the top
  * - Session guide visuals reuse the homepage language: particles, purple/rose glass, shimmer lines, glow borders, and polished hover states
  * - Step number indicators should use prominent circular badges that are larger than plain list numbering
+ * - Do not add nested sub-number badges inside inner cards or success boxes. Use labels, pills, bullets, or headings instead
+ * - Do not use two-column taxonomy blocks in workshop guides unless Joe explicitly asks for them. Default to stacked single-column sections
+ * - If a prompt is important enough to show, give it its own numbered StepCard instead of burying multiple prompts inside one step
  * - Feature icons should use larger square tiles with no visible border, soft glass fill, and clear icon scale
  * - Bonus sections use the pink gradient hero card (see bottom of this file)
  * - Prep pages use session-3-prep.tsx as canonical template
@@ -170,10 +175,16 @@ export default function Session_FILL_IN_Guide() {
         </p>
 
         <StepCard number={5} title="[STEP TITLE]">
-          <ol className="space-y-2 text-[#FCF4EB]/70 list-decimal list-inside">
-            <li>[STEP]</li>
-            <li>[STEP]</li>
-          </ol>
+          <div className="space-y-3">
+            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
+              <p className="text-[#FCF4EB] font-semibold text-sm mb-1">[LABEL]</p>
+              <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">[DETAIL]</p>
+            </div>
+            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
+              <p className="text-[#FCF4EB] font-semibold text-sm mb-1">[LABEL]</p>
+              <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">[DETAIL]</p>
+            </div>
+          </div>
         </StepCard>
       </section>
 
@@ -210,23 +221,13 @@ export default function Session_FILL_IN_Guide() {
               [WHAT TO SHARE AND WHY — e.g., share your live link, ask people to test it, etc.]
             </p>
             <div className="space-y-4">
-              <div className="flex gap-4 items-start">
-                <div className="w-8 h-8 rounded-full bg-[#7C69C7]/20 border border-[#7C69C7]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span className="text-[#7C69C7] text-sm font-bold">1</span>
-                </div>
-                <div>
-                  <p className="text-[#FCF4EB] font-semibold text-sm mb-1">[ACTION 1]</p>
-                  <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">[EXPLANATION]</p>
-                </div>
+              <div className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-4">
+                <p className="text-[#FCF4EB] font-semibold text-sm mb-1">[ACTION 1]</p>
+                <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">[EXPLANATION]</p>
               </div>
-              <div className="flex gap-4 items-start">
-                <div className="w-8 h-8 rounded-full bg-[#7C69C7]/20 border border-[#7C69C7]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span className="text-[#7C69C7] text-sm font-bold">2</span>
-                </div>
-                <div>
-                  <p className="text-[#FCF4EB] font-semibold text-sm mb-1">[ACTION 2]</p>
-                  <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">[EXPLANATION]</p>
-                </div>
+              <div className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-4">
+                <p className="text-[#FCF4EB] font-semibold text-sm mb-1">[ACTION 2]</p>
+                <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">[EXPLANATION]</p>
               </div>
             </div>
           </div>
