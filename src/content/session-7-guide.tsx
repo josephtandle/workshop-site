@@ -6,6 +6,12 @@ import ProTip from '@/components/ProTip'
 import StickyVideoPlayer from '@/components/StickyVideoPlayer'
 import { celebrate } from '@/lib/celebrate'
 
+const TOC_PANEL_CLASS =
+  'rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(124,105,199,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]'
+
+const FEATURE_CARD_CLASS =
+  'relative overflow-hidden rounded-[24px] border border-white/[0.10] bg-[linear-gradient(145deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] p-5 shadow-[0_16px_42px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.04)]'
+
 export default function Session7Guide() {
   return (
     <>
@@ -43,11 +49,20 @@ export default function Session7Guide() {
           </div>
 
           {/* Table of Contents */}
-          <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl px-5 sm:px-6 py-5">
-            <p className="text-[#FCF4EB]/50 text-xs uppercase tracking-widest font-semibold mb-4">
-              In This Session
-            </p>
-            <ol className="space-y-2">
+          <details className={TOC_PANEL_CLASS}>
+            <summary className="flex items-center justify-between px-6 py-5 cursor-pointer select-none">
+              <div className="flex items-center gap-3">
+                <span className="h-2 w-2 rounded-full bg-[#9D8FE0] shadow-[0_0_12px_rgba(157,143,224,0.70)]" />
+                <span className="text-xs uppercase tracking-[0.20em] text-[#FCF4EB]/65 font-semibold">Table of Contents</span>
+              </div>
+              <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[rgba(124,105,199,0.15)] border border-[rgba(124,105,199,0.28)] text-[#9D8FE0]">
+                <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+            </summary>
+            <div className="border-t border-white/[0.07] mx-5" />
+            <ol className="px-6 py-5 space-y-3">
               {[
                 { href: '#part-a', label: 'Part A: Install and Wire Up Mission Control' },
                 { href: '#part-b', label: 'Part B: Tour the Task Board' },
@@ -56,13 +71,13 @@ export default function Session7Guide() {
                 { href: '#part-e', label: 'Part E: The AI Column (Preview)' },
               ].map((item) => (
                 <li key={item.href}>
-                  <a href={item.href} className="text-sm text-[#FCF4EB]/70 hover:text-[#7C69C7] transition-colors">
+                  <a href={item.href} className="text-sm text-[#FCF4EB]/58 hover:text-[#9D8FE0] transition-colors">
                     {item.label}
                   </a>
                 </li>
               ))}
             </ol>
-          </div>
+          </details>
         </div>
       </div>
     {/* Workshop Recording — sticky video player */}
@@ -78,7 +93,8 @@ export default function Session7Guide() {
       <div className="max-w-3xl mx-auto px-6 pb-16">
 
         {/* Always start with dangerously-skip-permissions */}
-        <div className="mb-10 bg-white/[0.04] border border-white/[0.08] rounded-xl p-5">
+        <div className={FEATURE_CARD_CLASS + ' mb-10'}>
+          <div className="pointer-events-none absolute -right-10 top-[-28px] h-24 w-24 rounded-full bg-[#7C69C7]/10 blur-2xl" />
           <p className="text-[#FCF4EB] font-semibold text-sm mb-2">Always start Claude Code this way</p>
           <p className="text-[#FCF4EB]/60 text-sm leading-relaxed mb-3">
             Every time you open Claude Code, use this command instead of just typing{' '}
@@ -282,7 +298,8 @@ How the two-level loading works:
                 description: 'Good ideas you are not doing now and do not want to lose. Not rejected, just parked. Different from Backlog, which is active. Icebox is long-term maybe.',
               },
             ].map((col) => (
-              <div key={col.name} className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-5">
+              <div key={col.name} className={FEATURE_CARD_CLASS}>
+                <div className="pointer-events-none absolute -right-10 top-[-28px] h-24 w-24 rounded-full bg-[#7C69C7]/10 blur-2xl" />
                 <div className="flex items-center gap-3 mb-2">
                   <span className="inline-block px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider bg-[#7C69C7]/20 text-[#7C69C7] border border-[#7C69C7]/30">
                     {col.name}
@@ -456,7 +473,8 @@ How the two-level loading works:
             for adding cards instantly using only plain English.
           </p>
 
-          <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-6 mb-6">
+          <div className={FEATURE_CARD_CLASS + ' mb-6'}>
+            <div className="pointer-events-none absolute -right-10 top-[-28px] h-24 w-24 rounded-full bg-[#7C69C7]/10 blur-2xl" />
             <p className="text-[#FCF4EB] font-semibold text-sm mb-3">How the AI column works</p>
             <p className="text-[#FCF4EB]/70 text-sm leading-relaxed mb-4">
               In Session 8, you will wire Claude into Mission Control so it watches the AI

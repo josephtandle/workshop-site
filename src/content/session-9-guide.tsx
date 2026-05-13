@@ -172,6 +172,12 @@ Rules:
 - Do not invent facts.
 - Keep the final CRM note concise and actionable.`
 
+const POLISHED_PANEL_CLASS =
+  'relative overflow-hidden rounded-[24px] border border-white/[0.10] bg-[linear-gradient(145deg,rgba(255,255,255,0.065),rgba(255,255,255,0.025))] p-5 shadow-[0_18px_50px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.04)]'
+
+const POLISHED_LIST_PANEL_CLASS =
+  'relative overflow-hidden rounded-[22px] border border-white/[0.10] bg-[linear-gradient(145deg,rgba(255,255,255,0.055),rgba(255,255,255,0.02))] p-4 shadow-[0_14px_36px_rgba(0,0,0,0.14),inset_0_1px_0_rgba(255,255,255,0.035)]'
+
 export default function Session9Guide() {
   return (
     <>
@@ -329,16 +335,42 @@ export default function Session9Guide() {
               CRM in the nav, the pages load on port 3000, the sample data is visible, and the validation checks pass.
             </p>
             <div className="space-y-3">
-              <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
-                <p className="text-[#FCF4EB] font-semibold text-sm mb-1">Must pass</p>
-                <ul className="space-y-1 text-[#FCF4EB]/60 text-sm">
-                  <li>`CRM` appears in the main Mission Control nav</li>
-                  <li>`/app/crm`, `pipeline`, `templates`, `automations`, and `settings` load</li>
-                  <li>Sample leads appear in the pipeline</li>
-                  <li>Starter templates and automations are present</li>
-                  <li>If Resend already existed, email is auto-wired</li>
-                </ul>
-              </div>
+              {[
+                {
+                  label: 'Navigation',
+                  title: 'The CRM shows up in Mission Control',
+                  body: '`CRM` appears in the main Mission Control nav so you know the module is live.',
+                },
+                {
+                  label: 'Routes',
+                  title: 'The core CRM pages load',
+                  body: '`/app/crm`, `pipeline`, `templates`, `automations`, and `settings` all open cleanly.',
+                },
+                {
+                  label: 'Data',
+                  title: 'Sample leads appear in the pipeline',
+                  body: 'You should see believable sample data instead of an empty board.',
+                },
+                {
+                  label: 'Assets',
+                  title: 'Templates and automations are present',
+                  body: 'The starter templates and starter automations are available for testing.',
+                },
+                {
+                  label: 'Email',
+                  title: 'Existing Resend config is wired automatically',
+                  body: 'If Resend already existed in the repo, the CRM should pick it up without extra setup.',
+                },
+              ].map(({ label, title, body }) => (
+                <div key={title} className={POLISHED_PANEL_CLASS}>
+                  <div className="pointer-events-none absolute -right-10 top-[-28px] h-24 w-24 rounded-full bg-[#7C69C7]/10 blur-2xl" />
+                  <p className="relative z-10 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#9D8FE0]/90 mb-2">
+                    {label}
+                  </p>
+                  <p className="relative z-10 text-[#FCF4EB] font-semibold text-base mb-1.5">{title}</p>
+                  <p className="relative z-10 text-[#FCF4EB]/62 text-sm leading-relaxed">{body}</p>
+                </div>
+              ))}
             </div>
           </StepCard>
         </section>
@@ -354,7 +386,8 @@ export default function Session9Guide() {
               The package installs Golden Claw sample CRM data so you are not staring at an empty board. That gives you
               real cards to move, sample templates to inspect, and sample automations to turn on when you are ready.
             </p>
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
+            <div className={POLISHED_LIST_PANEL_CLASS}>
+              <div className="pointer-events-none absolute -right-10 top-[-26px] h-24 w-24 rounded-full bg-[#7C69C7]/10 blur-2xl" />
               <p className="text-[#FCF4EB] font-semibold text-sm mb-2">What is included</p>
               <ul className="space-y-1 text-[#FCF4EB]/60 text-sm">
                 <li>50+ believable sample leads across different stages</li>
@@ -370,7 +403,8 @@ export default function Session9Guide() {
               Go into <strong className="text-[#FCF4EB]">CRM Settings</strong> and update the three values you will use
               right away:
             </p>
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
+            <div className={POLISHED_LIST_PANEL_CLASS}>
+              <div className="pointer-events-none absolute -right-10 top-[-26px] h-24 w-24 rounded-full bg-[#7C69C7]/10 blur-2xl" />
               <ol className="space-y-2 text-[#FCF4EB]/60 text-sm">
                 <li>1. Change <strong className="text-[#FCF4EB]">Default delay</strong></li>
                 <li>2. Change <strong className="text-[#FCF4EB]">Email send from</strong></li>
@@ -388,7 +422,8 @@ export default function Session9Guide() {
               Open the Pipeline view and drag cards from one column to another as if you are working real leads through a
               sales process. Drop each card exactly where you want it to sit in that column.
             </p>
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
+            <div className={POLISHED_LIST_PANEL_CLASS}>
+              <div className="pointer-events-none absolute -right-10 top-[-26px] h-24 w-24 rounded-full bg-[#7C69C7]/10 blur-2xl" />
               <p className="text-[#FCF4EB] font-semibold text-sm mb-2">What to practice</p>
               <ul className="space-y-1 text-[#FCF4EB]/60 text-sm">
                 <li>Move a lead from `Possible Candidate` to `Interested`</li>
@@ -407,7 +442,8 @@ export default function Session9Guide() {
               Use the add button in the pipeline or contacts view to create a new manual lead. Add enough information so
               the lead is real and actionable instead of just being a blank card.
             </p>
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
+            <div className={POLISHED_LIST_PANEL_CLASS}>
+              <div className="pointer-events-none absolute -right-10 top-[-26px] h-24 w-24 rounded-full bg-[#7C69C7]/10 blur-2xl" />
               <p className="text-[#FCF4EB] font-semibold text-sm mb-2">Good fields to fill out</p>
               <ul className="space-y-1 text-[#FCF4EB]/60 text-sm">
                 <li>Name</li>
@@ -496,7 +532,8 @@ RESEND_FROM_EMAIL=hello@yourdomain.com`}
               Go back into <strong className="text-[#FCF4EB]">CRM Settings</strong> and make sure the defaults are set
               for a fast demo run using your own email.
             </p>
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
+            <div className={POLISHED_LIST_PANEL_CLASS}>
+              <div className="pointer-events-none absolute -right-10 top-[-26px] h-24 w-24 rounded-full bg-[#7C69C7]/10 blur-2xl" />
               <p className="text-[#FCF4EB] font-semibold text-sm mb-2">Change these settings now</p>
               <ol className="space-y-2 text-[#FCF4EB]/60 text-sm">
                 <li>1. Set <strong className="text-[#FCF4EB]">Default delay</strong> to <strong className="text-[#FCF4EB]">0</strong> or <strong className="text-[#FCF4EB]">1</strong> minute for now.</li>
@@ -527,7 +564,8 @@ RESEND_FROM_EMAIL=hello@yourdomain.com`}
               Open <strong className="text-[#FCF4EB]">Templates</strong> and create a message you would actually want a
               new lead to receive. The template is the content the automation sends when a lead reaches the matching stage.
             </p>
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
+            <div className={POLISHED_LIST_PANEL_CLASS}>
+              <div className="pointer-events-none absolute -right-10 top-[-26px] h-24 w-24 rounded-full bg-[#7C69C7]/10 blur-2xl" />
               <p className="text-[#FCF4EB] font-semibold text-sm mb-2">How to create it</p>
               <ol className="space-y-2 text-[#FCF4EB]/60 text-sm">
                 <li>1. Click the button to add a new template.</li>
@@ -548,7 +586,8 @@ RESEND_FROM_EMAIL=hello@yourdomain.com`}
               Go to <strong className="text-[#FCF4EB]">Automations</strong> and create a rule that uses the template you
               just made. The automation connects a pipeline stage change to a specific outgoing message.
             </p>
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
+            <div className={POLISHED_LIST_PANEL_CLASS}>
+              <div className="pointer-events-none absolute -right-10 top-[-26px] h-24 w-24 rounded-full bg-[#7C69C7]/10 blur-2xl" />
               <p className="text-[#FCF4EB] font-semibold text-sm mb-2">Setup process</p>
               <ol className="space-y-2 text-[#FCF4EB]/60 text-sm">
                 <li>1. Click to add a new automation.</li>
@@ -571,7 +610,8 @@ RESEND_FROM_EMAIL=hello@yourdomain.com`}
               Create or use a test card that contains your own email address, then move that card into a column that has
               the automation attached to it.
             </p>
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
+            <div className={POLISHED_LIST_PANEL_CLASS}>
+              <div className="pointer-events-none absolute -right-10 top-[-26px] h-24 w-24 rounded-full bg-[#7C69C7]/10 blur-2xl" />
               <p className="text-[#FCF4EB] font-semibold text-sm mb-2">Exact test flow</p>
               <ol className="space-y-2 text-[#FCF4EB]/60 text-sm">
                 <li>1. Make sure the test lead record contains your real email address.</li>

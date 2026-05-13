@@ -176,11 +176,11 @@ export default function Session_FILL_IN_Guide() {
 
         <StepCard number={5} title="[STEP TITLE]">
           <div className="space-y-3">
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
+            <div className="relative overflow-hidden rounded-[22px] border border-white/[0.10] bg-[linear-gradient(145deg,rgba(255,255,255,0.055),rgba(255,255,255,0.02))] p-4 shadow-[0_14px_36px_rgba(0,0,0,0.14),inset_0_1px_0_rgba(255,255,255,0.035)]">
               <p className="text-[#FCF4EB] font-semibold text-sm mb-1">[LABEL]</p>
               <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">[DETAIL]</p>
             </div>
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
+            <div className="relative overflow-hidden rounded-[22px] border border-white/[0.10] bg-[linear-gradient(145deg,rgba(255,255,255,0.055),rgba(255,255,255,0.02))] p-4 shadow-[0_14px_36px_rgba(0,0,0,0.14),inset_0_1px_0_rgba(255,255,255,0.035)]">
               <p className="text-[#FCF4EB] font-semibold text-sm mb-1">[LABEL]</p>
               <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">[DETAIL]</p>
             </div>
@@ -278,11 +278,11 @@ export default function Session_FILL_IN_Guide() {
           </p>
 
           <div className="space-y-4">
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-5">
+            <div className="relative overflow-hidden rounded-[24px] border border-white/[0.10] bg-[linear-gradient(145deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] p-5 shadow-[0_16px_42px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.04)]">
               <p className="text-[#FCF4EB] font-semibold mb-2">Step 1 — [TITLE]</p>
               <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">[INSTRUCTIONS]</p>
             </div>
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-5">
+            <div className="relative overflow-hidden rounded-[24px] border border-white/[0.10] bg-[linear-gradient(145deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] p-5 shadow-[0_16px_42px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.04)]">
               <p className="text-[#FCF4EB] font-semibold mb-2">Step 2 — [TITLE]</p>
               <p className="text-[#FCF4EB]/60 text-sm leading-relaxed mb-3">[INSTRUCTIONS]</p>
               {/* Example: editable code block inside bonus step */}
@@ -292,7 +292,7 @@ export default function Session_FILL_IN_Guide() {
                 code={`[PROMPT WITH [PLACEHOLDER] VALUES]`}
               />
             </div>
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-5">
+            <div className="relative overflow-hidden rounded-[24px] border border-white/[0.10] bg-[linear-gradient(145deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] p-5 shadow-[0_16px_42px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.04)]">
               <p className="text-[#FCF4EB] font-semibold mb-2">Step 3 — Tell Claude Code to deploy</p>
               <p className="text-[#FCF4EB]/60 text-sm leading-relaxed mb-3">
                 Once Claude has updated the code, tell it:
