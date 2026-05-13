@@ -123,6 +123,19 @@ export const sessions: Session[] = [
     hasBonus: false,
     guideTitle: "Joe's Magic CRM Installation",
   },
+  {
+    slug: '10',
+    number: 10,
+    title: 'Instagram Agent and Lead Capture',
+    description:
+      'Install the Instagram agent, understand the risks and recommended boundaries, and start using Instagram as a lead source for CRM capture and cleaner follow-up.',
+    date: '',
+    hasGuide: true,
+    hasPrep: false,
+    hasBonus: false,
+    guidePath: 'instagram',
+    guideTitle: 'Session 10: Instagram Agent and Lead Capture',
+  },
 ]
 
 export function getSession(slug: string): Session | undefined {

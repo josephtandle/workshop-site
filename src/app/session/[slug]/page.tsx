@@ -9,7 +9,7 @@ interface Props {
 }
 
 export function generateStaticParams() {
-  return [{ slug: '1' }, { slug: '2' }, { slug: '3' }, { slug: '4' }, { slug: '5' }, { slug: '6' }, { slug: '7' }, { slug: '8' }, { slug: '9' }]
+  return [{ slug: '1' }, { slug: '2' }, { slug: '3' }, { slug: '4' }, { slug: '5' }, { slug: '6' }, { slug: '7' }, { slug: '8' }, { slug: '9' }, { slug: '10' }]
 }
 
 export async function generateMetadata({ params }: Props) {
