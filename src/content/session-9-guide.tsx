@@ -85,6 +85,93 @@ Rules:
 - do not change unrelated code
 - tell me clearly whether Resend is working or not working`
 
+const INSTAGRAM_DM_TRIAGE_PROMPT = `Use my installed Instagram agent and my CRM together.
+
+Goal:
+Read the last 20 Instagram DM conversations, identify which ones are actual leads, and add only the real leads into my CRM with useful information filled in.
+
+Rules:
+1. First verify the Instagram agent works on this machine.
+2. If the global command works, use it. If not, find the saved install path and use the fallback launcher command.
+3. Read the last 20 DM conversations.
+4. For each conversation, decide whether it is:
+   - a real lead
+   - not a lead
+   - unclear / needs manual review
+5. Treat someone as a lead only if there is real business intent, such as:
+   - asking about working together
+   - asking about services, pricing, availability, or booking
+   - showing serious interest that could reasonably become a sales conversation
+6. Ignore obvious spam, friends chatting casually, low-signal reactions, and anything that is not a real business opportunity.
+7. For each real lead, add a CRM contact or lead record with as much of this as you can find:
+   - Instagram username
+   - display name
+   - lead source = Instagram DM
+   - short summary of what they want
+   - current stage = New Lead or Interested, whichever fits better
+   - next step
+   - notes from the conversation
+8. If a lead already exists in the CRM, do not create a duplicate. Update the existing record instead.
+9. At the end, give me:
+   - how many DMs were reviewed
+   - which conversations were treated as real leads
+   - which ones were unclear
+   - exactly what was added or updated in the CRM
+
+Important:
+- Do not send any DMs.
+- Do not post anything.
+- This is read, qualify, and capture only.
+- If anything blocks the CRM write, stop and tell me exactly what failed.`
+
+const INBOUND_LEAD_CAPTURE_PROMPT = `Help me use my CRM for inbound leads that are already coming in from DMs, referrals, email, or WhatsApp.
+
+Goal:
+Create a clean workflow for capturing leads into the CRM so I stop losing track of people who are already interested.
+
+Tasks:
+1. Check how leads are currently created in this CRM.
+2. Show me the minimum useful fields I should fill in every time.
+3. Then create 3 realistic example lead records based on these sources:
+   - one Instagram DM
+   - one referral
+   - one email inquiry
+4. For each example, fill in:
+   - name
+   - source
+   - business or context
+   - what they want
+   - current stage
+   - next step
+   - notes
+5. After that, tell me the simplest operating rule for how I should use this CRM daily.
+
+Rules:
+- Optimize for a workflow I can really keep using.
+- Keep the process lightweight.
+- Do not add fake complexity or unnecessary fields.`
+
+const LEAD_ENRICHMENT_PROMPT = `Use the tools from prior sessions to make one CRM lead more useful.
+
+Goal:
+Take one lead record and enrich it using the tools we already learned so the next follow-up is smarter and easier.
+
+Tasks:
+1. Pick one lead in my CRM that has thin information.
+2. Use available tools such as web fetch, profile lookup, or website research to gather only high-value context.
+3. Add useful notes back into the CRM, such as:
+   - what they do
+   - who they help
+   - relevant offer or project context
+   - any detail that would help me follow up intelligently
+4. Then suggest the best next step for that lead.
+5. Show me exactly what changed in the CRM.
+
+Rules:
+- Only use public information or information already in my systems.
+- Do not invent facts.
+- Keep the final CRM note concise and actionable.`
+
 export default function Session9Guide() {
   return (
     <>
@@ -165,6 +252,7 @@ export default function Session9Guide() {
                 { href: '#permissions', label: 'Claude Dangerously Skip Permissions' },
                 { href: '#crm-install', label: 'Install The CRM Module' },
                 { href: '#crm-use', label: 'Use The CRM' },
+                { href: '#lead-capture-tests', label: 'Lead Capture Tests And Prompts' },
               ].map(({ href, label }, i) => (
                 <li key={href} className="flex items-center gap-3 group/item">
                   <span className="number-glow flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold tabular-nums" style={{ background: 'rgba(124,105,199,0.18)', color: '#9D8FE0', border: '1.5px solid rgba(124,105,199,0.30)' }}>
@@ -353,7 +441,42 @@ export default function Session9Guide() {
             </p>
           </StepCard>
 
-          <StepCard number={9} title="Configure Resend ONLY">
+          <StepCard number={9} title="Lead-capture test: read the last 20 Instagram DMs and add real leads">
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              Once the Instagram agent is installed, this is the first real sales workflow to practice. The point is not
+              to automate outreach. The point is to review inbound conversations, identify actual opportunities, and get
+              the right people into the CRM with useful notes.
+            </p>
+            <CodeBlock filename="Claude Code prompt" code={INSTAGRAM_DM_TRIAGE_PROMPT} editable />
+          </StepCard>
+
+          <StepCard number={10} title="Lead-capture test: create example inbound leads from different sources">
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              Not all leads start on Instagram. Use this prompt to practice the same CRM logic for referrals, email
+              inquiries, and other inbound channels so your operating system is bigger than one platform.
+            </p>
+            <CodeBlock filename="Claude Code prompt" code={INBOUND_LEAD_CAPTURE_PROMPT} editable />
+          </StepCard>
+
+          <StepCard number={11} title="Lead-capture test: enrich one lead before follow-up">
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              This ties Session 8 and Session 9 together. Use research and web fetch to make one CRM lead more
+              actionable before you follow up.
+            </p>
+            <CodeBlock filename="Claude Code prompt" code={LEAD_ENRICHMENT_PROMPT} editable />
+            <ProTip type="tip" className="mt-4">
+              The CRM stores the lead, and your research tools make the next message or call sharper.
+            </ProTip>
+          </StepCard>
+        </section>
+
+        <section id="lead-capture-tests" className="mb-16">
+          <div className="flex items-center gap-3 mb-8">
+            <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Tests</span>
+            <h2 className="text-2xl font-bold text-[#FCF4EB]">Lead Capture Tests And Prompts</h2>
+          </div>
+
+          <StepCard number={12} title="Configure Resend ONLY">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               If it was not found automatically, email stays disabled until you add your own values. Open your Mission
               Control project&apos;s `.env.local` and add:
@@ -368,7 +491,7 @@ RESEND_FROM_EMAIL=hello@yourdomain.com`}
             </p>
           </StepCard>
 
-          <StepCard number={10} title="Update your CRM Settings before testing">
+          <StepCard number={13} title="Update your CRM Settings before testing">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Go back into <strong className="text-[#FCF4EB]">CRM Settings</strong> and make sure the defaults are set
               for a fast demo run using your own email.
@@ -387,7 +510,7 @@ RESEND_FROM_EMAIL=hello@yourdomain.com`}
             </p>
           </StepCard>
 
-          <StepCard number={11} title="Review a starter automation and queue flow">
+          <StepCard number={14} title="Review a starter automation and queue flow">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Go to <strong className="text-[#FCF4EB]">Templates</strong> to review the starter copy, then go to
               <strong className="text-[#FCF4EB]"> Automations</strong> and enable one example email automation.
@@ -399,7 +522,7 @@ RESEND_FROM_EMAIL=hello@yourdomain.com`}
             </ProTip>
           </StepCard>
 
-          <StepCard number={12} title="Create a template">
+          <StepCard number={15} title="Create a template">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Open <strong className="text-[#FCF4EB]">Templates</strong> and create a message you would actually want a
               new lead to receive. The template is the content the automation sends when a lead reaches the matching stage.
@@ -420,7 +543,7 @@ RESEND_FROM_EMAIL=hello@yourdomain.com`}
             </p>
           </StepCard>
 
-          <StepCard number={13} title="Create an automation">
+          <StepCard number={16} title="Create an automation">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Go to <strong className="text-[#FCF4EB]">Automations</strong> and create a rule that uses the template you
               just made. The automation connects a pipeline stage change to a specific outgoing message.
@@ -443,7 +566,7 @@ RESEND_FROM_EMAIL=hello@yourdomain.com`}
             </ProTip>
           </StepCard>
 
-          <StepCard number={14} title="Test the automation">
+          <StepCard number={17} title="Test the automation">
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
               Create or use a test card that contains your own email address, then move that card into a column that has
               the automation attached to it.
