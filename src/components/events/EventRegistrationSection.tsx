@@ -33,16 +33,54 @@ export default function EventRegistrationSection({
   const [promoMessage, setPromoMessage] = useState<string | null>(null)
   const [promoError, setPromoError] = useState<string | null>(null)
   const [clientSecret, setClientSecret] = useState<string | null>(null)
+  const [checkoutSessionId, setCheckoutSessionId] = useState<string | null>(null)
   const [completionMessage, setCompletionMessage] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [isPending, startTransition] = useTransition()
   const [isApplyingPromo, startApplyTransition] = useTransition()
   const checkoutRef = useRef<HTMLDivElement | null>(null)
+  const checkoutSessionIdRef = useRef<string | null>(null)
+  const finalizedSessionIdsRef = useRef<Set<string>>(new Set())
 
   const stripePromise = useMemo(
     () => (publishableKey ? loadStripe(publishableKey) : null),
     [publishableKey],
   )
+
+  useEffect(() => {
+    checkoutSessionIdRef.current = checkoutSessionId
+  }, [checkoutSessionId])
+
+  async function finalizeRegistration(sessionId: string) {
+    if (!sessionId || finalizedSessionIdsRef.current.has(sessionId)) {
+      return
+    }
+
+    finalizedSessionIdsRef.current.add(sessionId)
+
+    try {
+      const response = await fetch('/api/events/finalize-registration', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          slug: event.slug,
+          sessionId,
+        }),
+      })
+
+      const payload = await response.json()
+      if (!response.ok) {
+        throw new Error(payload.error || 'Unable to finalize registration.')
+      }
+
+      setClientSecret(null)
+      setCompletionMessage(payload.message || 'Registration confirmed.')
+    } catch (finalizeError) {
+      const message = finalizeError instanceof Error ? finalizeError.message : 'Unable to finalize registration.'
+      setError(message)
+      finalizedSessionIdsRef.current.delete(sessionId)
+    }
+  }
 
   useEffect(() => {
     if (!clientSecret || !checkoutRef.current) return
@@ -54,6 +92,32 @@ export default function EventRegistrationSection({
 
     return () => window.clearTimeout(timeout)
   }, [clientSecret])
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const sessionId = params.get('session_id')
+    const checkoutStatus = params.get('checkout')
+
+    if (checkoutStatus === 'success' && sessionId) {
+      void finalizeRegistration(sessionId)
+    }
+  }, [])
+
+  const embeddedCheckoutOptions = useMemo(
+    () =>
+      clientSecret
+        ? {
+            clientSecret,
+            onComplete: () => {
+              const sessionId = checkoutSessionIdRef.current
+              if (sessionId) {
+                void finalizeRegistration(sessionId)
+              }
+            },
+          }
+        : null,
+    [clientSecret],
+  )
 
   const displayedPrice = `${event.pricing.currencySymbol}${Number.isInteger(appliedAmount ?? event.pricing.fullPrice) ? String(appliedAmount ?? event.pricing.fullPrice) : (appliedAmount ?? event.pricing.fullPrice).toFixed(2)}`
 
@@ -140,10 +204,12 @@ export default function EventRegistrationSection({
         setAppliedAmount(typeof payload.amount === 'number' ? payload.amount : null)
         if (payload.completed) {
           setClientSecret(null)
+          setCheckoutSessionId(null)
           setCompletionMessage(payload.message || 'Ticket reserved.')
           return
         }
 
+        setCheckoutSessionId(payload.sessionId ?? null)
         setClientSecret(payload.clientSecret)
       } catch (submitError) {
         const message = submitError instanceof Error ? submitError.message : 'Unable to start checkout.'
@@ -267,9 +333,9 @@ export default function EventRegistrationSection({
           </aside>
         </div>
 
-        {clientSecret && stripePromise ? (
+        {clientSecret && stripePromise && embeddedCheckoutOptions ? (
           <div ref={checkoutRef} className="mt-8 rounded-[1.6rem] border border-white/10 bg-white p-3 text-black md:p-5">
-            <EmbeddedCheckoutProvider stripe={stripePromise} options={{ clientSecret }}>
+            <EmbeddedCheckoutProvider stripe={stripePromise} options={embeddedCheckoutOptions}>
               <EmbeddedCheckout />
             </EmbeddedCheckoutProvider>
           </div>

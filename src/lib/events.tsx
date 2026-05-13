@@ -125,6 +125,11 @@ export type EventDefinition = {
     promoCodes?: EventPromoCode[]
     promoFieldHint?: string
   }
+  legacyRegistration?: {
+    eventId: string
+    eventDate: string
+    fallbackTicketId: string
+  }
   sections: EventSection[]
   metadata?: Partial<Metadata>
 }
@@ -239,6 +244,11 @@ export const events: EventDefinition[] = [
           percentOff: 100,
         },
       ],
+    },
+    legacyRegistration: {
+      eventId: '9YGs4u',
+      eventDate: '2026-05-30',
+      fallbackTicketId: 'wab8lo',
     },
     sections: [
       {

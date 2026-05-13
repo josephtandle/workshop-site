@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server'
 import { getEventBySlug, resolvePromoCode } from '@/lib/events'
+import { syncLegacyRegistration } from '@/lib/legacy-event-schedule'
 import { createStripeClient } from '@/lib/stripe'
+
+export const runtime = 'nodejs'
 
 function toOrigin(value: string | null | undefined) {
   if (!value) return null
@@ -52,6 +55,14 @@ export async function POST(request: Request) {
 
     const unitAmount = Math.round(amount * 100)
     if (unitAmount === 0) {
+      await syncLegacyRegistration({
+        event,
+        attendeeName,
+        attendeeEmail,
+        amount,
+        status: 'paid',
+      })
+
       return NextResponse.json({
         completed: true,
         freeCheckout: true,
@@ -103,6 +114,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({
       clientSecret: session.client_secret,
+      sessionId: session.id,
       completed: false,
       appliedPromoCode: promo?.code ?? null,
       amount,
