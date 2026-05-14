@@ -252,7 +252,15 @@ export default function EventRegistrationSection({
     <section id="register" className="mx-auto max-w-6xl px-6 py-8 md:py-10">
       {successState ? (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/72 px-6 backdrop-blur-md">
-          <div className="w-full max-w-xl rounded-[2rem] border border-white/12 bg-[#151517] p-7 text-center shadow-[0_30px_120px_rgba(0,0,0,0.45)] md:p-9">
+          <div className="relative w-full max-w-xl rounded-[2rem] border border-white/12 bg-[#151517] p-7 text-center shadow-[0_30px_120px_rgba(0,0,0,0.45)] md:p-9">
+            <button
+              type="button"
+              aria-label="Close"
+              onClick={() => setSuccessState(null)}
+              className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-[#8B79D4] bg-black text-white transition hover:bg-[#1a1a2e]"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
             <p className="text-[12px] font-semibold uppercase tracking-[0.24em] text-[#BDB3E8]">Registration Confirmed</p>
             <h3 className="event-gradient-title mt-3 text-[2rem] font-extrabold leading-[0.95] tracking-tight md:text-[3.2rem]">
               {successState.title}

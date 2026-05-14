@@ -221,11 +221,12 @@ export const events: EventDefinition[] = [
       {
         name: 'Joe Che',
         firstName: 'Joe',
-        role: 'Founder • Community Builder',
+        role: 'Founder • AI Entrepreneur • Community Builder',
         photoSrc: '/mastermind-participants/joe-che.jpeg',
         bio: [
-          'Joe Che is a founder, entrepreneur, and community builder based in Bali. He has built 24 companies across software, education, and AI, and hosts the Connection Dinner to bring together the sharpest minds in Canggu for honest, off-the-record conversation.',
-          'The dinner is small by design. Joe curates who is in the room so the conversation stays real.',
+          'Joe Che is the founder of 24 companies and the builder of two AI companies, including All Sorted AI, a practical AI operating system for service-based small business owners.',
+          'He previously built the largest software and business training company in New York City, where he trained more than 90,000 people, including Fortune 5 executives, the CIA, Microsoft, and Tyra Banks.',
+          'Today, Joe mentors entrepreneurs inside his Business Automation Mastermind and helps founders use AI to create cleaner operations, stronger offers, faster execution, and more freedom.',
         ],
       },
     ],
@@ -237,12 +238,23 @@ export const events: EventDefinition[] = [
       donationMode: true,
       minDonation: 0,
     },
+    privateLocationReminder: {
+      eventStartIso: '2026-05-27T18:00:00+08:00',
+      leadHours: 4,
+      exactAddress: 'Mostly Restaurant, Jl. Pantai Pererenan No.114, Pererenan, Mengwi, Bali 80351',
+      googleMapsUrl:
+        'https://www.google.com/maps/search/?api=1&query=Mostly+Restaurant+Jl.+Pantai+Pererenan+No.114+Pererenan+Mengwi+Bali',
+      parkingInstructions: [
+        'Arrival is at 6:00 PM. Doors close at 6:30 PM.',
+        'The restaurant is on Jalan Pantai Pererenan, just off the main Pererenan strip.',
+      ],
+    },
     postPurchase: {
       setupPageTitle: 'You\'re confirmed for the dinner.',
       setupPageIntro: 'We\'ll send you the exact address closer to the date.',
       setupPageBody: [
-        'The dinner is at Mostly Restaurant, Pererenan, Canggu. Doors open at 6:00 PM.',
-        'Keep an eye on your email for any updates from Joe. See you there.',
+        'The dinner is at Mostly Restaurant, Pererenan, Canggu. Arrive at 6:00 PM. Doors close at 6:30 PM.',
+        'You will receive a reminder email with the address four hours before the dinner. See you there.',
       ],
       setupItems: [],
     },
@@ -253,17 +265,12 @@ export const events: EventDefinition[] = [
         eyebrow: 'What To Expect',
         title: 'A real dinner. A real room.',
         intro: 'This is not a conference. It is not a networking event. It is a dinner.',
-        columns: 3,
+        columns: 2,
         items: [
           {
             kicker: 'Curated',
             title: 'A small, intentional table',
             body: 'Every seat is invited. The room is built so the conversation stays high-quality and the connections are worth having.',
-          },
-          {
-            kicker: 'Candid',
-            title: 'No pitches. No panels.',
-            body: 'Just real conversation between people doing real things. The format is dinner, not a presentation.',
           },
           {
             kicker: 'Monthly',
@@ -273,25 +280,28 @@ export const events: EventDefinition[] = [
         ],
       },
       {
-        type: 'image',
-        id: 'dinner-photo',
-        eyebrow: 'At Mostly Restaurant',
-        imageSrc: '/events/connection-dinner-canggu/cover.jpg',
-        imageAlt: 'Guests at the Canggu Connection Dinner at Mostly Restaurant',
-        caption: 'Mostly Restaurant, Pererenan, Canggu. The venue for every Canggu dinner.',
-      },
-      {
         type: 'split',
         id: 'pkp',
         eyebrow: '100% of Donations Go To PKP',
         title: 'Supporting PKP Community Centre',
         body: [
-          'PKP Community Centre empowers rural Bali women through hands-on job skills training in sewing, cooking, and English, and provides a safe haven for those affected by domestic violence.',
-          'Every dollar donated at this dinner goes directly to PKP. The suggested amount is $10, but you decide what feels right. $0 is always welcome.',
+          'Every dollar donated at this dinner goes directly to PKP. The suggested amount is $10, but you decide what feels right.',
         ],
-        imageSrc: '/events/connection-dinner-canggu/pkp-women-branded.jpg',
+        imageSrc: '/events/connection-dinner-canggu/pkp-catering.jpg',
         imageAlt: 'PKP Community Centre women, Bali',
         caption: 'PKP Community Centre, Bali — pkpcommunitycentre.org',
+      },
+      {
+        type: 'html',
+        id: 'vip',
+        eyebrow: 'VIP Connection Dinner',
+        html: `
+          <div class="rounded-[1.4rem] border border-[#8B79D4]/30 bg-white/[0.04] px-6 py-5">
+            <p class="text-sm leading-7 text-[#FCF4EB]/72">
+              Those who attend the Connection Dinner receive <strong class="text-[#FCF4EB]">VIP status at Mostly Restaurant</strong>, which includes discounted pricing on future visits.
+            </p>
+          </div>
+        `,
       },
       {
         type: 'hosts',
