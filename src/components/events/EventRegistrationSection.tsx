@@ -1,6 +1,42 @@
 'use client'
 
 import { useEffect, useRef, useMemo, useState, useTransition } from 'react'
+
+function useAnimatedNumber(target: number, duration = 750): number {
+  const [value, setValue] = useState(target)
+  const frameRef = useRef<number | null>(null)
+  const prevTargetRef = useRef(target)
+
+  useEffect(() => {
+    const from = prevTargetRef.current
+    prevTargetRef.current = target
+    if (from === target) return
+
+    if (frameRef.current !== null) cancelAnimationFrame(frameRef.current)
+
+    const start = performance.now()
+    const diff = target - from
+
+    function step(now: number) {
+      const t = Math.min((now - start) / duration, 1)
+      const eased = 1 - Math.pow(1 - t, 3)
+      setValue(from + diff * eased)
+      if (t < 1) {
+        frameRef.current = requestAnimationFrame(step)
+      } else {
+        setValue(target)
+        frameRef.current = null
+      }
+    }
+
+    frameRef.current = requestAnimationFrame(step)
+    return () => {
+      if (frameRef.current !== null) cancelAnimationFrame(frameRef.current)
+    }
+  }, [target, duration])
+
+  return value
+}
 import { EmbeddedCheckout, EmbeddedCheckoutProvider } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
 import { celebrate } from '@/lib/celebrate'
@@ -150,7 +186,13 @@ export default function EventRegistrationSection({
   )
 
   const effectivePrice = event.pricing.donationMode ? donationAmount : (appliedAmount ?? event.pricing.fullPrice)
-  const displayedPrice = `${event.pricing.currencySymbol}${Number.isInteger(effectivePrice) ? String(effectivePrice) : effectivePrice.toFixed(2)}`
+  const animatedPrice = useAnimatedNumber(effectivePrice)
+  const isAnimating = Math.round(animatedPrice * 100) !== Math.round(effectivePrice * 100)
+  const displayedPrice = `${event.pricing.currencySymbol}${
+    isAnimating
+      ? Math.round(animatedPrice)
+      : (Number.isInteger(effectivePrice) ? String(effectivePrice) : effectivePrice.toFixed(2))
+  }`
 
   function handleApplyPromo() {
     const nextPromo = promoCode.trim()
