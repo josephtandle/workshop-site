@@ -73,6 +73,7 @@ export async function cancelRegistration(cancelToken: string): Promise<{
   eventSlug: string
   attendeeName: string
   attendeeEmail: string
+  wasAlreadyCancelled: boolean
 }> {
   const { data: reg, error: findError } = await supabase
     .from('event_registrations')
@@ -90,6 +91,7 @@ export async function cancelRegistration(cancelToken: string): Promise<{
       eventSlug: reg.event_slug,
       attendeeName: reg.attendee_name,
       attendeeEmail: reg.attendee_email,
+      wasAlreadyCancelled: true,
     }
   }
 
@@ -107,6 +109,7 @@ export async function cancelRegistration(cancelToken: string): Promise<{
     eventSlug: reg.event_slug,
     attendeeName: reg.attendee_name,
     attendeeEmail: reg.attendee_email,
+    wasAlreadyCancelled: false,
   }
 }
 

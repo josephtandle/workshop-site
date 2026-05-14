@@ -5,7 +5,7 @@ import { sendWaitlistSpotNotificationEmail } from '@/lib/event-confirmation-emai
 
 export const runtime = 'nodejs'
 
-async function notifyWaitlist(eventSlug: string) {
+async function notifyWaitlist(eventSlug: string, cancelToken: string) {
   const event = getEventBySlug(eventSlug)
   if (!event) return
 
@@ -23,7 +23,8 @@ async function notifyWaitlist(eventSlug: string) {
         email: entry.email,
         removeToken: entry.removeToken,
         variant: 'cancellation',
-        idempotencyKey: `waitlist-spot-cancellation/${eventSlug}/${entry.email}/${Date.now()}`,
+        // Stable key: one notification per cancellation event per waitlist person
+        idempotencyKey: `waitlist-spot-cancel/${eventSlug}/${entry.email.trim().toLowerCase()}/${cancelToken}`,
       })
     } catch (err) {
       console.error('waitlist notify on cancel error', entry.email, err)
@@ -39,12 +40,14 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    const { eventSlug } = await cancelRegistration(token)
+    const { eventSlug, wasAlreadyCancelled } = await cancelRegistration(token)
 
-    // Fire-and-forget waitlist notification
-    notifyWaitlist(eventSlug).catch((err) => {
-      console.error('waitlist notify error after cancel', err)
-    })
+    // Only notify waitlist for a fresh cancellation — not if this link was already used
+    if (!wasAlreadyCancelled) {
+      notifyWaitlist(eventSlug, token).catch((err) => {
+        console.error('waitlist notify error after cancel', err)
+      })
+    }
 
     return NextResponse.json({ success: true, message: 'Your seat has been cancelled.' })
   } catch (err) {

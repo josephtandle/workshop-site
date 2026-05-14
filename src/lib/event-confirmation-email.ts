@@ -250,6 +250,14 @@ async function sendResendEmail(input: {
   return response.json()
 }
 
+export function buildConfirmationIdempotencyKey(slug: string, email: string): string {
+  return `confirm/${slug}/${email.trim().toLowerCase()}`
+}
+
+export function buildWaitlistJoinIdempotencyKey(slug: string, email: string): string {
+  return `waitlist-join/${slug}/${email.trim().toLowerCase()}`
+}
+
 export async function sendEventConfirmationEmail(input: {
   event: EventDefinition
   attendeeName: string
@@ -263,6 +271,7 @@ export async function sendEventConfirmationEmail(input: {
     attendeeEmail: input.attendeeEmail,
     subject,
     html,
+    idempotencyKey: buildConfirmationIdempotencyKey(input.event.slug, input.attendeeEmail),
   })
 }
 
@@ -397,6 +406,7 @@ export async function sendWaitlistConfirmationEmail(input: {
     attendeeEmail: input.email,
     subject,
     html,
+    idempotencyKey: buildWaitlistJoinIdempotencyKey(input.event.slug, input.email),
   })
 }
 

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "npx tsx --tsconfig tsconfig.json --test tests/**/*.test.ts"
   },
   "dependencies": {
     "@stripe/react-stripe-js": "^6.3.0",
