@@ -43,6 +43,7 @@ import { celebrate } from '@/lib/celebrate'
 
 export type EventRegistrationData = {
   slug: string
+  durationLabel?: string
   pricing: {
     currencySymbol: string
     fullPrice: number
@@ -442,7 +443,9 @@ export default function EventRegistrationSection({
             <div className="pointer-events-none absolute inset-x-10 top-0 h-px bg-[#BDB3E8]/70" />
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#BDB3E8]">Your Ticket</p>
             <h3 className="mt-2 font-serif text-2xl font-bold tracking-tight text-[#FCF4EB]">Event Seat</h3>
-            <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#FCF4EB]/42">One-day intensive bootcamp</p>
+            {event.durationLabel ? (
+              <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#FCF4EB]/42">{event.durationLabel}</p>
+            ) : null}
             <div className="my-7 border-t border-white/10" />
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#FCF4EB]/42">
               {event.pricing.donationMode ? 'Your Donation' : appliedPromoCode ? 'Promo Price' : 'Event Price'}
