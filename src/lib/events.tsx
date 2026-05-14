@@ -64,6 +64,7 @@ export type EventSection =
       title?: string
       imageSrc: string
       imageAlt: string
+      videoSrc?: string
       caption?: string
     }
   | {
@@ -77,6 +78,17 @@ export type EventSection =
       type: 'custom'
       id: string
       render: ReactNode
+    }
+  | {
+      type: 'quoteCard'
+      id: string
+      quote: string
+      name: string
+      bio?: string
+      location?: string
+      imageSrc: string
+      imageAlt: string
+      videoSrc?: string
     }
   | {
       type: 'hosts'
@@ -124,11 +136,31 @@ export type EventDefinition = {
     checkoutNote: string
     promoCodes?: EventPromoCode[]
     promoFieldHint?: string
+    donationMode?: boolean
+    minDonation?: number
   }
   legacyRegistration?: {
     eventId: string
     eventDate: string
     fallbackTicketId: string
+  }
+  privateLocationReminder?: {
+    eventStartIso: string
+    leadHours: number
+    exactAddress: string
+    googleMapsUrl: string
+    parkingInstructions?: string[]
+  }
+  postPurchase?: {
+    setupPageTitle: string
+    setupPageIntro: string
+    setupPageBody: string[]
+    setupItems: Array<{
+      name: string
+      href: string
+      description: string
+      stepLabel: string
+    }>
   }
   sections: EventSection[]
   metadata?: Partial<Metadata>
@@ -155,6 +187,128 @@ export function formatEventPrice(event: EventDefinition, promo?: EventPromoCode)
 
 export const events: EventDefinition[] = [
   {
+    slug: 'connection-dinner-canggu',
+    status: 'live',
+    title: 'Canggu Connection Dinner',
+    shortTitle: 'Connection Dinner',
+    eyebrow: 'Monthly Gathering',
+    summary: 'An intimate gathering of intelligent, driven individuals shaping the future of Canggu.',
+    description:
+      'A curated, invite-only dinner for entrepreneurs, creators, and change-makers in Canggu. Meet people doing real things. No pitches. Just good conversation over great food.',
+    dateLabel: 'Wednesday, May 27, 2026',
+    timeLabel: '6:00 PM',
+    locationLabel: 'Mostly Restaurant, Pererenan, Canggu',
+    durationLabel: 'Evening',
+    heroImage: '/events/connection-dinner-canggu/cover.jpg',
+    heroAlt: 'Canggu Connection Dinner at Mostly Restaurant',
+    badge: 'This Month',
+    audience: [
+      'Entrepreneurs',
+      'Founders',
+      'Creators',
+      'Remote workers',
+      'Coaches',
+      'Investors',
+      'Change-makers',
+    ],
+    outcomes: [
+      'Real conversations with people doing interesting things',
+      'A seat at a curated table, not a random networking event',
+      'Connections that matter',
+      'A good meal at one of Canggu\'s best restaurants',
+    ],
+    hosts: [
+      {
+        name: 'Joe Che',
+        firstName: 'Joe',
+        role: 'Founder • Community Builder',
+        photoSrc: '/mastermind-participants/joe-che.jpeg',
+        bio: [
+          'Joe Che is a founder, entrepreneur, and community builder based in Bali. He has built 24 companies across software, education, and AI, and hosts the Connection Dinner to bring together the sharpest minds in Canggu for honest, off-the-record conversation.',
+          'The dinner is small by design. Joe curates who is in the room so the conversation stays real.',
+        ],
+      },
+    ],
+    pricing: {
+      currencySymbol: '$',
+      fullPrice: 10,
+      checkoutHref: '',
+      checkoutNote: 'Your donation goes directly to PKP Community Centre.',
+      donationMode: true,
+      minDonation: 0,
+    },
+    postPurchase: {
+      setupPageTitle: 'You\'re confirmed for the dinner.',
+      setupPageIntro: 'We\'ll send you the exact address closer to the date.',
+      setupPageBody: [
+        'The dinner is at Mostly Restaurant, Pererenan, Canggu. Doors open at 6:00 PM.',
+        'Keep an eye on your email for any updates from Joe. See you there.',
+      ],
+      setupItems: [],
+    },
+    sections: [
+      {
+        type: 'cards',
+        id: 'about',
+        eyebrow: 'What To Expect',
+        title: 'A real dinner. A real room.',
+        intro: 'This is not a conference. It is not a networking event. It is a dinner.',
+        columns: 3,
+        items: [
+          {
+            kicker: 'Curated',
+            title: 'A small, intentional table',
+            body: 'Every seat is invited. The room is built so the conversation stays high-quality and the connections are worth having.',
+          },
+          {
+            kicker: 'Candid',
+            title: 'No pitches. No panels.',
+            body: 'Just real conversation between people doing real things. The format is dinner, not a presentation.',
+          },
+          {
+            kicker: 'Monthly',
+            title: 'The same table, every month',
+            body: 'The Connection Dinner happens monthly in Canggu. Some faces return. New ones join. The room always surprises you.',
+          },
+        ],
+      },
+      {
+        type: 'image',
+        id: 'dinner-photo',
+        eyebrow: 'At Mostly Restaurant',
+        imageSrc: '/events/connection-dinner-canggu/cover.jpg',
+        imageAlt: 'Guests at the Canggu Connection Dinner at Mostly Restaurant',
+        caption: 'Mostly Restaurant, Pererenan, Canggu. The venue for every Canggu dinner.',
+      },
+      {
+        type: 'split',
+        id: 'pkp',
+        eyebrow: '100% of Donations Go To PKP',
+        title: 'Supporting PKP Community Centre',
+        body: [
+          'PKP Community Centre empowers rural Bali women through hands-on job skills training in sewing, cooking, and English, and provides a safe haven for those affected by domestic violence.',
+          'Every dollar donated at this dinner goes directly to PKP. The suggested amount is $10, but you decide what feels right. $0 is always welcome.',
+        ],
+        imageSrc: '/events/connection-dinner-canggu/pkp-women-branded.jpg',
+        imageAlt: 'PKP Community Centre women, Bali',
+        caption: 'PKP Community Centre, Bali — pkpcommunitycentre.org',
+      },
+      {
+        type: 'hosts',
+        id: 'hosts',
+        eyebrow: 'Hosted By',
+        title: 'Joe Che',
+        intro: '',
+        hosts: [],
+      },
+    ],
+    metadata: {
+      title: 'Canggu Connection Dinner — May 27, 2026',
+      description:
+        'An intimate gathering of entrepreneurs, creators, and change-makers in Canggu. Donations go to PKP Community Centre.',
+    },
+  },
+  {
     slug: 'ai-avatar-content-creation',
     status: 'live',
     title: 'AI Avatar Content Creation Lab',
@@ -165,9 +319,9 @@ export const events: EventDefinition[] = [
     description:
       'Learn how to create AI avatars, cinematic b-roll, vertical videos, and repeatable content systems in one hands-on Bali workshop led by Joe Che and Helix Wolfson.',
     dateLabel: 'Saturday, May 30, 2026',
-    timeLabel: '11:30 AM to 6:00 PM',
+    timeLabel: '10:30 AM to 5:00 PM',
     locationLabel: 'Pererenan, Canggu',
-    durationLabel: 'One intensive day',
+    durationLabel: 'One-day intensive bootcamp',
     heroImage: '/events/ai-avatar-content-creation/flyer.jpg',
     heroAlt: 'AI Avatar Content Creation Lab flyer',
     badge: 'Live Workshop',
@@ -220,28 +374,34 @@ export const events: EventDefinition[] = [
       promoFieldHint: 'Click Enter promo code to reveal the field before checkout.',
       promoCodes: [
         {
-          code: 'EARLY20',
-          label: 'Early supporter',
-          description: 'Save 20% for early registration.',
-          percentOff: 20,
+          code: 'helix33',
+          label: 'Helix 33',
+          description: 'Save 33% with Helix.',
+          percentOff: 33,
         },
         {
-          code: 'COMMUNITY15',
-          label: 'Community rate',
-          description: 'Save $15 for invited community guests.',
-          amountOff: 15,
+          code: 'Joe33',
+          label: 'Joe 33',
+          description: 'Save 33% with Joe.',
+          percentOff: 33,
         },
         {
-          code: 'test',
-          label: 'Test 99',
-          description: 'Test promo for 99% off.',
+          code: 'Guest100',
+          label: 'Guest 100',
+          description: 'Guest pass for a free ticket.',
+          percentOff: 100,
+        },
+        {
+          code: 'Guest99',
+          label: 'Guest 99',
+          description: 'Guest pass for 99% off.',
           percentOff: 99,
         },
         {
-          code: 'test100',
-          label: 'Test 100',
-          description: 'Test promo for a free ticket.',
-          percentOff: 100,
+          code: 'Mastermind50',
+          label: 'Mastermind 50',
+          description: 'Save 50% with the Mastermind rate.',
+          percentOff: 50,
         },
       ],
     },
@@ -249,6 +409,38 @@ export const events: EventDefinition[] = [
       eventId: '9YGs4u',
       eventDate: '2026-05-30',
       fallbackTicketId: 'wab8lo',
+    },
+    privateLocationReminder: {
+      eventStartIso: '2026-05-30T10:30:00+08:00',
+      leadHours: 4,
+      exactAddress:
+        'Happy Days Villa No. 2, Jalan Pura Gede Batur, off Jalan Pantai Pererenan, Canggu 80361, Bali, Indonesia',
+      googleMapsUrl:
+        'https://www.google.com/maps/search/?api=1&query=Happy+Days+Villa+No.+2%2C+Jalan+Pura+Gede+Batur%2C+off+Jalan+Pantai+Pererenan%2C+Canggu+80361%2C+Bali%2C+Indonesia',
+      parkingInstructions: [],
+    },
+    postPurchase: {
+      setupPageTitle: 'Great, your seat is reserved.',
+      setupPageIntro:
+        'Before the workshop, there are two free accounts you need to create so you can follow the class live without delays.',
+      setupPageBody: [
+        'Start with Higgsfield first. That is where the cinematic AI video workflow happens, including the tools we will use for b-roll, motion, and multi-model experimentation.',
+        'After that, create your HeyGen account so you are ready for avatar, talking-head, and translation workflows during the event.',
+      ],
+      setupItems: [
+        {
+          name: 'Higgsfield',
+          href: 'https://higgsfield.ai',
+          description: 'Create this first for cinematic AI video workflows, including Kling, Seedance, lip sync tools, and multi-model experimentation.',
+          stepLabel: 'Step 1',
+        },
+        {
+          name: 'HeyGen',
+          href: 'https://www.heygen.com',
+          description: 'Create this second for AI avatars, AI clones, voice translation, and talking-head style content.',
+          stepLabel: 'Step 2',
+        },
+      ],
     },
     sections: [
       {
@@ -278,18 +470,24 @@ export const events: EventDefinition[] = [
         ],
       },
       {
-        type: 'checklist',
-        id: 'outcomes',
-        eyebrow: 'What You Will Leave With',
-        title: 'Real assets, clearer direction, and a workflow you can keep using',
-        intro: 'By the end of the day, the goal is not more theory. The goal is traction.',
-        items: [
-          'A strong content angle tied to a real business or creator objective',
-          'Visual direction for an avatar, spokesperson, or AI-assisted content style',
-          'Hooks and scripts for short-form content',
-          'A stronger understanding of current AI video and avatar tools',
-          'The start of your first AI-powered content asset or campaign',
-        ],
+        type: 'image',
+        id: 'bright-harbor-commercial',
+        eyebrow: 'Example Commercial',
+        title: 'This commercial was created by Helix in two hours',
+        imageSrc: '/events/ai-avatar-content-creation/symbol.jpg',
+        imageAlt: 'Bright Harbor AI commercial example created by Helix',
+        videoSrc: '/events/ai-avatar-content-creation/bright-harbor-video-email.mp4',
+        caption: 'A fast production example of the kind of commercial direction this workshop is built around.',
+      },
+      {
+        type: 'quoteCard',
+        id: 'fitness-influencer-ad',
+        quote:
+          'You do NOT need more motivation.\nYou need systems.\nI stopped trying to “feel inspired” every day and built routines that work even when I don’t feel like showing up.\nThat’s when everything changed.\nBody. Energy. Confidence. Discipline.',
+        name: 'AI Fitness Ad Influencer',
+        imageSrc: '/events/ai-avatar-content-creation/symbol.jpg',
+        imageAlt: 'AI filmmaking symbol with director chair and film reels',
+        videoSrc: '/events/ai-avatar-content-creation/ai-fitness-ad-influencer.mp4',
       },
       {
         type: 'split',
@@ -303,6 +501,16 @@ export const events: EventDefinition[] = [
         imageSrc: '/events/ai-avatar-content-creation/workstation.jpg',
         imageAlt: 'AI content creation workstation with visual assets in motion',
         caption: 'The class is built like a guided studio session, not a generic software demo.',
+      },
+      {
+        type: 'quoteCard',
+        id: 'creator-content-ad',
+        quote:
+          'I used to spend DAYS making content.\nNow I can create a week’s worth in one afternoon with AI.\nScripts, visuals, voiceovers, editing — all streamlined.\nThe crazy part?\nMost people still can’t tell what’s AI and what isn’t.\nIf you’re a creator, coach, or business owner and you’re not learning these tools right now… you’re already behind.',
+        name: 'AI Health Coach',
+        imageSrc: '/events/ai-avatar-content-creation/workstation.jpg',
+        imageAlt: 'AI content creation workstation with visual assets in motion',
+        videoSrc: '/events/ai-avatar-content-creation/ai-health-coach.mp4',
       },
       {
         type: 'cards',
@@ -347,6 +555,20 @@ export const events: EventDefinition[] = [
         ],
       },
       {
+        type: 'checklist',
+        id: 'outcomes',
+        eyebrow: 'What You Will Leave With',
+        title: 'Real assets, clearer direction, and a workflow you can keep using',
+        intro: 'By the end of the day, the goal is not more theory. The goal is traction.',
+        items: [
+          'A strong content angle tied to a real business or creator objective',
+          'Visual direction for an avatar, spokesperson, or AI-assisted content style',
+          'Hooks and scripts for short-form content',
+          'A stronger understanding of current AI video and avatar tools',
+          'The start of your first AI-powered content asset or campaign',
+        ],
+      },
+      {
         type: 'html',
         id: 'tools',
         eyebrow: 'Tools To Set Up Before Class',
@@ -371,15 +593,6 @@ export const events: EventDefinition[] = [
             </article>
           </div>
         `,
-      },
-      {
-        type: 'image',
-        id: 'visual-marker',
-        eyebrow: 'Visual Direction',
-        title: 'The standard is intentional, not generic',
-        imageSrc: '/events/ai-avatar-content-creation/symbol.jpg',
-        imageAlt: 'AI filmmaking symbol with director chair and film reels',
-        caption: 'The workshop is built to help people make content that feels considered, not templated.',
       },
       {
         type: 'hosts',

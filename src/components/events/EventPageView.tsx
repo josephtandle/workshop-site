@@ -82,14 +82,14 @@ function ChecklistSection({ section }: { section: Extract<EventSection, { type: 
         {section.items.map((item, index) => (
           <div
             key={item}
-            className="group rounded-[1.5rem] border border-white/10 bg-[linear-gradient(180deg,rgba(252,244,235,0.06),rgba(252,244,235,0.025))] p-5 shadow-[0_18px_50px_rgba(0,0,0,0.22)] md:flex md:items-center md:gap-6"
+            className="card-hover card-shimmer group rounded-[1.6rem] border border-white/10 bg-white/[0.04] p-5 shadow-[0_20px_56px_rgba(0,0,0,0.22)] md:flex md:items-center md:gap-6 md:p-6"
           >
             <div className="mb-4 flex items-center gap-3 md:mb-0">
               <div className="number-glow flex h-14 w-14 items-center justify-center rounded-full border border-[#7C69C7]/38 bg-[rgba(18,10,44,0.88)] text-lg font-bold tracking-tight text-[#FCF4EB] shadow-[0_0_0_6px_rgba(124,105,199,0.12),0_0_30px_rgba(124,105,199,0.28)] md:h-16 md:w-16 md:text-xl">
                 {String(index + 1).padStart(2, '0')}
               </div>
             </div>
-            <p className="text-base leading-7 text-[#FCF4EB]/82 md:flex-1">{item}</p>
+            <p className="text-[1.8rem] font-bold leading-[1] tracking-tight text-[#FCF4EB] md:flex-1 md:text-[2.1rem]">{item}</p>
           </div>
         ))}
       </div>
@@ -161,10 +161,23 @@ function SplitSection({ section }: { section: Extract<EventSection, { type: 'spl
 
 function ImageSection({ section }: { section: Extract<EventSection, { type: 'image' }> }) {
   const compactVisual = section.id === 'visual-marker'
+  const media = section.videoSrc ? (
+    <video
+      className="h-full w-full object-cover"
+      src={section.videoSrc}
+      aria-label={section.imageAlt}
+      controls
+      playsInline
+      preload="metadata"
+    />
+  ) : (
+    <Image src={section.imageSrc} alt={section.imageAlt} width={1400} height={900} className="h-full w-full object-cover" />
+  )
+
   return (
     <SectionShell eyebrow={section.eyebrow} title={section.title} sectionId={section.id}>
       <figure className={`overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] shadow-[0_24px_70px_rgba(0,0,0,0.28)] ${compactVisual ? 'mx-auto max-w-sm md:max-w-md' : ''}`}>
-        <Image src={section.imageSrc} alt={section.imageAlt} width={1400} height={900} className="h-full w-full object-cover" />
+        {media}
         {section.caption ? (
           <figcaption className="border-t border-white/10 px-6 py-4 text-sm leading-6 text-[#FCF4EB]/58">
             {section.caption}
@@ -183,6 +196,99 @@ function HtmlSection({ section }: { section: Extract<EventSection, { type: 'html
         dangerouslySetInnerHTML={{ __html: section.html }}
       />
     </SectionShell>
+  )
+}
+
+function QuoteCardSection({ section }: { section: Extract<EventSection, { type: 'quoteCard' }> }) {
+  const renderMedia = () =>
+    section.videoSrc ? (
+      <video
+        className="h-full w-full object-cover object-center"
+        src={section.videoSrc}
+        aria-label={section.imageAlt}
+        autoPlay
+        controls
+        loop
+        muted
+        playsInline
+        preload="metadata"
+      />
+    ) : (
+      <Image
+        src={section.imageSrc}
+        alt={section.imageAlt}
+        width={900}
+        height={900}
+        className="h-full w-full object-cover object-center"
+      />
+    )
+
+  return (
+    <section className="mx-auto max-w-6xl px-6 py-6 md:py-8">
+      <div
+        className="relative overflow-hidden rounded-3xl border border-white/[0.08]"
+        style={{ background: 'linear-gradient(135deg, rgba(20,14,36,0.97) 0%, rgba(10,7,20,1) 100%)' }}
+      >
+        <div
+          className="pointer-events-none absolute -left-16 -top-16 h-72 w-72 rounded-full blur-[100px]"
+          style={{ background: 'rgba(139,121,212,0.18)' }}
+        />
+        <div
+          className="pointer-events-none absolute -bottom-16 -right-16 h-64 w-64 rounded-full blur-[100px]"
+          style={{ background: 'rgba(189,179,232,0.10)' }}
+        />
+
+        <div className="relative z-10 flex flex-col md:hidden">
+          <div className="relative max-h-[364px] w-full overflow-hidden rounded-t-[1.5rem]">
+            <div className="h-[364px] w-full">{renderMedia()}</div>
+            <div
+              className="pointer-events-none absolute inset-x-0 bottom-0 h-24"
+              style={{ background: 'linear-gradient(to bottom, transparent, rgba(10,7,20,0.97))' }}
+            />
+          </div>
+
+          <div className="flex flex-col px-6 py-6">
+            <div
+              className="select-none font-serif leading-none"
+              style={{ fontSize: '3rem', color: 'rgba(139,121,212,0.40)', lineHeight: 1 }}
+            >
+              &ldquo;
+            </div>
+            <blockquote className="mb-5 whitespace-pre-line font-serif text-base italic leading-relaxed text-[#FCF4EB]/90">
+              {section.quote}
+            </blockquote>
+            <div className="border-t border-white/[0.10] pt-4">
+              <p className="text-sm font-semibold text-[#FCF4EB]">{section.name}</p>
+              {section.bio ? <p className="mt-0.5 text-xs text-[#FCF4EB]/55">{section.bio}</p> : null}
+              {section.location ? <p className="mt-0.5 text-xs text-[#FCF4EB]/35">{section.location}</p> : null}
+            </div>
+          </div>
+        </div>
+
+        <div className="relative z-10 hidden flex-row items-stretch gap-0 md:flex">
+          <div className="relative w-[15.5rem] flex-shrink-0 overflow-hidden rounded-l-[1.5rem]">
+            {renderMedia()}
+          </div>
+
+          <div className="flex flex-1 flex-col justify-center px-10 py-8">
+            <div
+              className="select-none font-serif leading-none"
+              style={{ fontSize: '3.5rem', color: 'rgba(139,121,212,0.40)', lineHeight: 1 }}
+            >
+              &ldquo;
+            </div>
+            <blockquote className="mb-5 whitespace-pre-line font-serif text-lg italic leading-relaxed text-[#FCF4EB]/85">
+              {section.quote}
+            </blockquote>
+            <div className="border-t border-white/[0.10] pt-4">
+              <p className="text-sm font-semibold text-[#FCF4EB]">{section.name}</p>
+              {section.bio ? <p className="mt-0.5 text-xs text-[#FCF4EB]/55">{section.bio}</p> : null}
+              {section.location ? <p className="mt-0.5 text-xs text-[#FCF4EB]/35">{section.location}</p> : null}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   )
 }
 
@@ -294,6 +400,8 @@ function renderSection(section: EventSection, event: EventDefinition, promo: Eve
       return <ImageSection key={section.id} section={section} />
     case 'html':
       return <HtmlSection key={section.id} section={section} />
+    case 'quoteCard':
+      return <QuoteCardSection key={section.id} section={section} />
     case 'hosts':
       return <HostsSection key={section.id} section={section} />
     case 'cta':
@@ -316,13 +424,23 @@ export default function EventPageView({
   publishableKey: string | null
   initialPromoCode?: string | null
 }) {
+  const hasSetupItems = (event.postPurchase?.setupItems?.length ?? 0) > 0
   const registrationEvent: EventRegistrationData = {
     slug: event.slug,
     pricing: {
       currencySymbol: event.pricing.currencySymbol,
       fullPrice: event.pricing.fullPrice,
       checkoutNote: event.pricing.checkoutNote,
+      donationMode: event.pricing.donationMode,
+      minDonation: event.pricing.minDonation,
     },
+    successLabel: hasSetupItems ? 'Start Account Setup' : 'View Event Details',
+    successDetail: event.postPurchase
+      ? event.pricing.donationMode
+        ? 'Thank you. A confirmation email is on its way from joe@mastermindshq.business.'
+        : undefined
+      : undefined,
+    successRedirect: hasSetupItems ? undefined : `/events/${event.slug}`,
   }
 
   return (
@@ -385,30 +503,6 @@ export default function EventPageView({
               <div className="space-y-5 p-6 md:p-7">
                 <div>
                   <p className="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">{event.description}</p>
-                </div>
-                <div className="rounded-[1.4rem] border border-white/10 bg-[#100f12]/72 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
-                  <div className="flex flex-wrap items-end gap-3">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#BDB3E8]">Buy Ticket</p>
-                    {promo ? (
-                      <span className="text-base text-[#FCF4EB]/35 line-through">
-                        {event.pricing.currencySymbol}
-                        {event.pricing.fullPrice}
-                      </span>
-                    ) : null}
-                    <span className="font-serif text-4xl leading-none text-[#FCF4EB]">
-                      {formatEventPrice(event, promo ?? undefined)}
-                    </span>
-                  </div>
-                  <div className="mt-4 flex flex-col items-start gap-2">
-                    <ScrollToRegisterButton
-                      className="copy-button-glass copy-button-primary inline-flex min-w-[220px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold shadow-[0_16px_38px_rgba(124,105,199,0.22)]"
-                    >
-                      Buy Ticket
-                    </ScrollToRegisterButton>
-                    <p className="pl-1 text-xs leading-5 text-[#FCF4EB]/42">
-                      {promo ? `${promo.code} is active for this order.` : 'Enter your details below and complete checkout on this page.'}
-                    </p>
-                  </div>
                 </div>
               </div>
             </aside>

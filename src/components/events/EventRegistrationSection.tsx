@@ -3,6 +3,7 @@
 import { useEffect, useRef, useMemo, useState, useTransition } from 'react'
 import { EmbeddedCheckout, EmbeddedCheckoutProvider } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
+import { celebrate } from '@/lib/celebrate'
 
 export type EventRegistrationData = {
   slug: string
@@ -10,13 +11,23 @@ export type EventRegistrationData = {
     currencySymbol: string
     fullPrice: number
     checkoutNote: string
+    donationMode?: boolean
+    minDonation?: number
   }
+  successLabel?: string
+  successDetail?: string
+  successRedirect?: string
 }
 
 type Props = {
   event: EventRegistrationData
   publishableKey: string | null
   initialPromoCode?: string | null
+}
+
+type SuccessState = {
+  title: string
+  detail: string
 }
 
 export default function EventRegistrationSection({
@@ -26,6 +37,7 @@ export default function EventRegistrationSection({
 }: Props) {
   const [attendeeName, setAttendeeName] = useState('')
   const [attendeeEmail, setAttendeeEmail] = useState('')
+  const [donationAmount, setDonationAmount] = useState(event.pricing.fullPrice)
   const [promoOpen, setPromoOpen] = useState(Boolean(initialPromoCode))
   const [promoCode, setPromoCode] = useState(initialPromoCode ?? '')
   const [appliedPromoCode, setAppliedPromoCode] = useState<string | null>(initialPromoCode ?? null)
@@ -35,6 +47,7 @@ export default function EventRegistrationSection({
   const [clientSecret, setClientSecret] = useState<string | null>(null)
   const [checkoutSessionId, setCheckoutSessionId] = useState<string | null>(null)
   const [completionMessage, setCompletionMessage] = useState<string | null>(null)
+  const [successState, setSuccessState] = useState<SuccessState | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [isPending, startTransition] = useTransition()
   const [isApplyingPromo, startApplyTransition] = useTransition()
@@ -50,6 +63,19 @@ export default function EventRegistrationSection({
   useEffect(() => {
     checkoutSessionIdRef.current = checkoutSessionId
   }, [checkoutSessionId])
+
+  function markSuccess(detail?: string) {
+    setClientSecret(null)
+    setCheckoutSessionId(null)
+    setCompletionMessage('Your seat has been reserved.')
+    setSuccessState({
+      title: 'Your seat has been reserved.',
+      detail:
+        detail ||
+        event.successDetail ||
+        'Great, your seat is reserved. Watch your inbox for a confirmation email from joe@mastermindshq.business. Then I will take you to the setup page for the two free accounts you need before the workshop.',
+    })
+  }
 
   async function finalizeRegistration(sessionId: string) {
     if (!sessionId || finalizedSessionIdsRef.current.has(sessionId)) {
@@ -73,8 +99,7 @@ export default function EventRegistrationSection({
         throw new Error(payload.error || 'Unable to finalize registration.')
       }
 
-      setClientSecret(null)
-      setCompletionMessage(payload.message || 'Registration confirmed.')
+      markSuccess(payload.message || 'Payment received and registration confirmed.')
     } catch (finalizeError) {
       const message = finalizeError instanceof Error ? finalizeError.message : 'Unable to finalize registration.'
       setError(message)
@@ -103,6 +128,11 @@ export default function EventRegistrationSection({
     }
   }, [])
 
+  useEffect(() => {
+    if (!successState) return
+    celebrate()
+  }, [successState])
+
   const embeddedCheckoutOptions = useMemo(
     () =>
       clientSecret
@@ -119,7 +149,8 @@ export default function EventRegistrationSection({
     [clientSecret],
   )
 
-  const displayedPrice = `${event.pricing.currencySymbol}${Number.isInteger(appliedAmount ?? event.pricing.fullPrice) ? String(appliedAmount ?? event.pricing.fullPrice) : (appliedAmount ?? event.pricing.fullPrice).toFixed(2)}`
+  const effectivePrice = event.pricing.donationMode ? donationAmount : (appliedAmount ?? event.pricing.fullPrice)
+  const displayedPrice = `${event.pricing.currencySymbol}${Number.isInteger(effectivePrice) ? String(effectivePrice) : effectivePrice.toFixed(2)}`
 
   function handleApplyPromo() {
     const nextPromo = promoCode.trim()
@@ -192,6 +223,7 @@ export default function EventRegistrationSection({
             attendeeName: nextName,
             attendeeEmail: nextEmail,
             promoCode: appliedPromoCode ?? '',
+            ...(event.pricing.donationMode ? { donationAmount } : {}),
           }),
         })
 
@@ -203,9 +235,7 @@ export default function EventRegistrationSection({
         setAppliedPromoCode(payload.appliedPromoCode)
         setAppliedAmount(typeof payload.amount === 'number' ? payload.amount : null)
         if (payload.completed) {
-          setClientSecret(null)
-          setCheckoutSessionId(null)
-          setCompletionMessage(payload.message || 'Ticket reserved.')
+          markSuccess(payload.message || 'Free ticket reserved. No payment needed.')
           return
         }
 
@@ -220,6 +250,29 @@ export default function EventRegistrationSection({
 
   return (
     <section id="register" className="mx-auto max-w-6xl px-6 py-8 md:py-10">
+      {successState ? (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/72 px-6 backdrop-blur-md">
+          <div className="w-full max-w-xl rounded-[2rem] border border-white/12 bg-[#151517] p-7 text-center shadow-[0_30px_120px_rgba(0,0,0,0.45)] md:p-9">
+            <p className="text-[12px] font-semibold uppercase tracking-[0.24em] text-[#BDB3E8]">Registration Confirmed</p>
+            <h3 className="event-gradient-title mt-3 text-[2rem] font-extrabold leading-[0.95] tracking-tight md:text-[3.2rem]">
+              {successState.title}
+            </h3>
+            <p className="mt-4 text-base leading-8 text-[#FCF4EB]/74 md:text-lg">
+              {successState.detail}
+            </p>
+            <button
+              type="button"
+              onClick={() => {
+                setSuccessState(null)
+                window.location.href = event.successRedirect ?? `/events/${event.slug}/setup`
+              }}
+              className="copy-button-glass copy-button-primary mt-7 inline-flex min-w-[220px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold shadow-[0_16px_38px_rgba(124,105,199,0.22)]"
+            >
+              {event.successLabel ?? 'Start Account Setup'}
+            </button>
+          </div>
+        </div>
+      ) : null}
       <div className="mb-5">
         <p className="mb-3 text-[12px] font-semibold uppercase tracking-[0.24em] text-[#BDB3E8] md:text-[13px]">Reserve Your Spot</p>
         <h2 className="event-gradient-title text-[2.2rem] font-extrabold leading-[0.92] tracking-tight md:text-[4.1rem]">
@@ -255,8 +308,31 @@ export default function EventRegistrationSection({
               </label>
             </div>
 
+            {event.pricing.donationMode ? (
+              <label className="grid gap-2">
+                <span className="text-sm font-semibold text-[#FCF4EB]">
+                  Donation amount <span className="font-normal text-[#FCF4EB]/55">(suggested: $10 — minimum: $0)</span>
+                </span>
+                <div className="flex items-center gap-0 rounded-xl border border-black/10 bg-white overflow-hidden focus-within:border-[#7C69C7]/55 transition w-48">
+                  <span className="pl-4 pr-1 text-black/55 font-semibold select-none">$</span>
+                  <input
+                    type="number"
+                    min={event.pricing.minDonation ?? 0}
+                    step={1}
+                    value={donationAmount}
+                    onChange={(e) => {
+                      const v = parseFloat(e.target.value)
+                      setDonationAmount(isNaN(v) ? 0 : Math.max(event.pricing.minDonation ?? 0, v))
+                    }}
+                    className="flex-1 py-3 pr-4 text-black outline-none bg-transparent"
+                  />
+                </div>
+                <p className="text-sm text-[#FCF4EB]/55">{event.pricing.checkoutNote}</p>
+              </label>
+            ) : null}
+
             <div className="flex flex-col items-start gap-2">
-              {!promoOpen ? (
+              {!promoOpen && !event.pricing.donationMode ? (
                 <button
                   type="button"
                   onClick={() => setPromoOpen(true)}
@@ -312,23 +388,28 @@ export default function EventRegistrationSection({
             </div>
           </form>
 
-          <aside className="rounded-[1.6rem] border border-white/10 bg-[#0f0f10]/72 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#BDB3E8]">Your ticket</p>
-            <div className="mt-3 flex items-end gap-3">
-              {appliedPromoCode ? (
-                <span className="text-base text-[#FCF4EB]/35 line-through">
-                  {event.pricing.currencySymbol}
-                  {event.pricing.fullPrice}
-                </span>
-              ) : null}
-              <span className="font-serif text-4xl leading-none text-[#FCF4EB]">{displayedPrice}</span>
-            </div>
-            {appliedPromoCode ? (
-              <p className="mt-3 text-sm leading-6 text-[#FCF4EB]/58">
+          <aside className="relative overflow-hidden rounded-[1.6rem] border border-[#8B79D4]/55 bg-[#0C0715] px-6 py-7 text-center shadow-[0_0_0_1px_rgba(139,121,212,0.10),0_24px_70px_rgba(0,0,0,0.32)]">
+            <div className="pointer-events-none absolute inset-x-10 top-0 h-px bg-[#BDB3E8]/70" />
+            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#BDB3E8]">Your Ticket</p>
+            <h3 className="mt-2 font-serif text-2xl font-bold tracking-tight text-[#FCF4EB]">Event Seat</h3>
+            <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#FCF4EB]/42">One-day intensive bootcamp</p>
+            <div className="my-7 border-t border-white/10" />
+            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#FCF4EB]/42">
+              {event.pricing.donationMode ? 'Your Donation' : appliedPromoCode ? 'Promo Price' : 'Event Price'}
+            </p>
+            {!event.pricing.donationMode && appliedPromoCode ? (
+              <p className="mt-3 text-base text-[#FCF4EB]/35 line-through">
+                {event.pricing.currencySymbol}
+                {event.pricing.fullPrice}
+              </p>
+            ) : null}
+            <p className="mt-2 font-serif text-[4.6rem] leading-none tracking-tight text-[#FCF4EB]">{displayedPrice}</p>
+            {!event.pricing.donationMode && appliedPromoCode ? (
+              <p className="mt-4 text-sm font-semibold leading-6 text-[#BDB3E8]">
                 {appliedPromoCode} applied to this order.
               </p>
             ) : (
-              <p className="mt-3 text-sm leading-6 text-[#FCF4EB]/58">{event.pricing.checkoutNote}</p>
+              <p className="mt-4 text-sm leading-6 text-[#FCF4EB]/58">{event.pricing.checkoutNote}</p>
             )}
           </aside>
         </div>

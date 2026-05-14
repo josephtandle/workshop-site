@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { getEventBySlug, resolvePromoCode } from '@/lib/events'
+import { sendEventConfirmationEmail } from '@/lib/event-confirmation-email'
 import { syncLegacyRegistration } from '@/lib/legacy-event-schedule'
 import { createStripeClient } from '@/lib/stripe'
 
@@ -36,6 +37,7 @@ export async function POST(request: Request) {
     const attendeeName = typeof body.attendeeName === 'string' ? body.attendeeName.trim() : ''
     const attendeeEmail = typeof body.attendeeEmail === 'string' ? body.attendeeEmail.trim() : ''
     const promoCode = typeof body.promoCode === 'string' ? body.promoCode.trim() : ''
+    const rawDonationAmount = typeof body.donationAmount === 'number' ? body.donationAmount : null
 
     if (!slug || !attendeeName || !attendeeEmail) {
       return NextResponse.json({ error: 'Missing required fields.' }, { status: 400 })
@@ -46,16 +48,21 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Event not found.' }, { status: 404 })
     }
 
-    const promo = resolvePromoCode(event, promoCode || null)
-    const amount = promo?.amountOff
-      ? Math.max(0, event.pricing.fullPrice - promo.amountOff)
-      : promo?.percentOff
-        ? Math.max(0, event.pricing.fullPrice * (1 - promo.percentOff / 100))
-        : event.pricing.fullPrice
+    let amount: number
+    const promo = event.pricing.donationMode ? null : resolvePromoCode(event, promoCode || null)
+    if (event.pricing.donationMode && rawDonationAmount !== null) {
+      amount = Math.max(event.pricing.minDonation ?? 0, rawDonationAmount)
+    } else {
+      amount = promo?.amountOff
+        ? Math.max(0, event.pricing.fullPrice - promo.amountOff)
+        : promo?.percentOff
+          ? Math.max(0, event.pricing.fullPrice * (1 - promo.percentOff / 100))
+          : event.pricing.fullPrice
+    }
 
     const unitAmount = Math.round(amount * 100)
     if (unitAmount === 0) {
-      await syncLegacyRegistration({
+      const syncResult = await syncLegacyRegistration({
         event,
         attendeeName,
         attendeeEmail,
@@ -63,12 +70,25 @@ export async function POST(request: Request) {
         status: 'paid',
       })
 
+      let message = 'Free ticket reserved. No payment needed.'
+      try {
+        await sendEventConfirmationEmail({
+          event,
+          attendeeName,
+          attendeeEmail,
+        })
+      } catch (error) {
+        console.error('event confirmation email error', error)
+        message = `${message} Confirmation email failed to send automatically.`
+      }
+
       return NextResponse.json({
         completed: true,
         freeCheckout: true,
         appliedPromoCode: promo?.code ?? null,
         amount,
-        message: 'Free ticket reserved. No payment needed.',
+        message,
+        syncStatus: syncResult.status,
       })
     }
 
