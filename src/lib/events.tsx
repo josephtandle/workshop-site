@@ -163,6 +163,17 @@ export type EventDefinition = {
     }>
   }
   ctaLabel?: string
+  capacity?: number
+  emailConfig?: {
+    headerLabel?: string | null
+    detailsLabel?: string
+    contactName?: string
+    contactWhatsAppLink?: string
+    contactWhatsAppDisplay?: string
+    mapsUrl?: string
+    skipSetupInstructions?: boolean
+    signatureName?: string
+  }
   sections: EventSection[]
   metadata?: Partial<Metadata>
 }
@@ -190,19 +201,19 @@ export const events: EventDefinition[] = [
   {
     slug: 'connection-dinner-canggu',
     status: 'live',
-    title: 'Canggu Connection Dinner',
-    shortTitle: 'Connection Dinner',
+    title: "Joe Che's VIP Connection Dinner",
+    shortTitle: 'VIP Connection Dinner',
     eyebrow: 'Monthly Gathering',
     summary: 'A monthly dinner for entrepreneurs, founders, and people doing interesting things in Canggu.',
     description:
-      'Once a month I bring together a small room of people I find genuinely interesting for dinner at Mostly in Pererenan. No pitches, no panels, no agenda. Real conversation over really good food.',
+      'Once a month I bring together a small room of people I find genuinely interesting for dinner at Mostly in Pererenan. Real conversation over really good food.',
     ctaLabel: 'Save Your Seat',
     dateLabel: 'Wednesday, May 27, 2026',
     timeLabel: '6:00 PM',
     locationLabel: 'Mostly Restaurant, Pererenan, Canggu',
     durationLabel: 'Your Reserved Seat',
     heroImage: '/events/connection-dinner-canggu/venue-room.jpg',
-    heroAlt: 'Canggu Connection Dinner at Mostly Restaurant',
+    heroAlt: "Joe Che's VIP Connection Dinner at Mostly Restaurant",
     badge: 'This Month',
     audience: [
       'Entrepreneurs',
@@ -232,6 +243,18 @@ export const events: EventDefinition[] = [
         ],
       },
     ],
+    capacity: 30,
+    emailConfig: {
+      headerLabel: null,
+      detailsLabel: 'Event Details',
+      contactName: 'Joe Che',
+      contactWhatsAppLink: 'https://wa.me/16462304209',
+      contactWhatsAppDisplay: '(646) 230-4209',
+      mapsUrl:
+        'https://www.google.com/maps/search/?api=1&query=Mostly+Restaurant+Jl.+Pantai+Pererenan+No.114+Pererenan+Mengwi+Bali',
+      skipSetupInstructions: true,
+      signatureName: 'Joe Che',
+    },
     pricing: {
       currencySymbol: '$',
       fullPrice: 10,
@@ -262,35 +285,17 @@ export const events: EventDefinition[] = [
     },
     sections: [
       {
-        type: 'story',
+        type: 'html',
         id: 'invite',
         eyebrow: "You're Invited",
-        title: 'An evening worth showing up for.',
-        body: [
-          'Once a month I bring together a small room of people I find genuinely interesting for dinner at Mostly in Pererenan. Entrepreneurs, founders, builders. Some artists. A few people working on things I have not seen before.',
-          'No panels. No pitches. No agenda. Just dinner and real conversation.',
-          'We start at 6 PM and close the doors at 6:30 so we can stay present with each other for the evening. The food is good. The people are better.',
-        ],
-      },
-      {
-        type: 'cards',
-        id: 'about',
-        eyebrow: 'What To Expect',
-        title: 'A real dinner. A real room.',
-        intro: 'This is not a conference. It is not a networking event. It is a dinner.',
-        columns: 2,
-        items: [
-          {
-            kicker: 'Curated',
-            title: 'A small, intentional table',
-            body: 'Every seat is invited. The room is built so the conversation stays high-quality and the connections are worth having.',
-          },
-          {
-            kicker: 'Monthly',
-            title: 'The same table, every month',
-            body: 'The Connection Dinner happens monthly in Canggu. Some faces return. New ones join. The room always surprises you.',
-          },
-        ],
+        html: `
+          <div class="not-prose">
+            <h2 class="text-[2.8rem] font-extrabold leading-[1.0] tracking-tight text-[#FCF4EB] md:text-[3.5rem] mb-5">A monthly dinner.</h2>
+            <p class="text-[1.25rem] font-semibold text-[#FCF4EB]/85 mb-7 leading-relaxed">Just dinner and real connection conversations.</p>
+            <p class="text-base leading-8 text-[#FCF4EB]/68 mb-4">Once a month I bring together a small room of people I find genuinely interesting for dinner at Mostly in Pererenan. Entrepreneurs, founders, builders. Some artists. A few people working on things I have not seen before.</p>
+            <p class="text-base leading-8 text-[#FCF4EB]/68">We start at 6 PM and close the doors at 6:30 so we can stay present with each other for the evening. The food is good. The people are better.</p>
+          </div>
+        `,
       },
       {
         type: 'html',
@@ -385,9 +390,9 @@ export const events: EventDefinition[] = [
       },
     ],
     metadata: {
-      title: 'Canggu Connection Dinner, May 27, 2026',
+      title: "Joe Che's VIP Connection Dinner, May 27, 2026",
       description:
-        'An intimate gathering of entrepreneurs, creators, and change-makers in Canggu. Donations go to PKP Community Centre.',
+        'A monthly dinner for entrepreneurs, founders, and people doing interesting things in Canggu. Donations go to PKP Community Centre.',
     },
   },
   {

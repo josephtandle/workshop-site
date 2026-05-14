@@ -3,6 +3,7 @@ import { getEventBySlug, resolvePromoCode } from '@/lib/events'
 import { sendEventConfirmationEmail } from '@/lib/event-confirmation-email'
 import { syncLegacyRegistration } from '@/lib/legacy-event-schedule'
 import { createStripeClient } from '@/lib/stripe'
+import { saveRegistration } from '@/lib/event-registration-db'
 
 export const runtime = 'nodejs'
 
@@ -71,16 +72,34 @@ export async function POST(request: Request) {
       })
 
       let message = 'Free ticket reserved. No payment needed.'
+
+      // Save registration to Supabase and include cancel token in confirmation email
+      let cancelToken: string | undefined
+      try {
+        const saved = await saveRegistration({
+          eventSlug: slug,
+          attendeeName,
+          attendeeEmail,
+          amountPaid: amount,
+        })
+        cancelToken = saved.cancelToken
+      } catch (regErr) {
+        console.error('event registration save error', regErr)
+      }
+
       try {
         await sendEventConfirmationEmail({
           event,
           attendeeName,
           attendeeEmail,
+          cancelToken,
         })
       } catch (error) {
         console.error('event confirmation email error', error)
         message = `${message} Confirmation email failed to send automatically.`
       }
+
+      // TODO: For paid checkouts, save registration via Stripe webhook (separate task).
 
       return NextResponse.json({
         completed: true,
