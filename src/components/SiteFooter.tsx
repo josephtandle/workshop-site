@@ -3,6 +3,14 @@ export default function SiteFooter() {
     <footer className="footer-glow border-t border-white/[0.06] mt-24 py-10">
       <div className="max-w-6xl mx-auto px-6 flex flex-col items-center gap-6">
 
+        {/* Bio with links */}
+        <p className="text-sm leading-7 text-[#FCF4EB]/52 text-center max-w-lg">
+          Joe Che is the founder of{' '}
+          <a href="https://getallsorted.ai" target="_blank" rel="noopener noreferrer" className="text-[#BDB3E8] transition hover:text-[#FCF4EB]">All Sorted AI</a>
+          {' '}and host of the{' '}
+          <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" className="text-[#BDB3E8] transition hover:text-[#FCF4EB]">Business Automation Mastermind</a>.
+        </p>
+
         {/* Social icons */}
         <div className="flex items-center gap-5">
           <a

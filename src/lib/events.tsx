@@ -162,6 +162,7 @@ export type EventDefinition = {
       stepLabel: string
     }>
   }
+  ctaLabel?: string
   sections: EventSection[]
   metadata?: Partial<Metadata>
 }
@@ -192,9 +193,10 @@ export const events: EventDefinition[] = [
     title: 'Canggu Connection Dinner',
     shortTitle: 'Connection Dinner',
     eyebrow: 'Monthly Gathering',
-    summary: 'An intimate gathering of intelligent, driven individuals shaping the future of Canggu.',
+    summary: 'A monthly dinner for entrepreneurs, founders, and people doing interesting things in Canggu.',
     description:
-      'A curated, invite-only dinner for entrepreneurs, creators, and change-makers in Canggu. Meet people doing real things. No pitches. Just good conversation over great food.',
+      'Once a month I bring together a small room of people I find genuinely interesting for dinner at Mostly in Pererenan. No pitches, no panels, no agenda. Real conversation over really good food.',
+    ctaLabel: 'Save Your Seat',
     dateLabel: 'Wednesday, May 27, 2026',
     timeLabel: '6:00 PM',
     locationLabel: 'Mostly Restaurant, Pererenan, Canggu',
@@ -260,6 +262,17 @@ export const events: EventDefinition[] = [
     },
     sections: [
       {
+        type: 'story',
+        id: 'invite',
+        eyebrow: "You're Invited",
+        title: 'An evening worth showing up for.',
+        body: [
+          'Once a month I bring together a small room of people I find genuinely interesting for dinner at Mostly in Pererenan. Entrepreneurs, founders, builders. Some artists. A few people working on things I have not seen before.',
+          'No panels. No pitches. No agenda. Just dinner and real conversation.',
+          'We start at 6 PM and close the doors at 6:30 so we can stay present with each other for the evening. The food is good. The people are better.',
+        ],
+      },
+      {
         type: 'cards',
         id: 'about',
         eyebrow: 'What To Expect',
@@ -308,13 +321,23 @@ export const events: EventDefinition[] = [
       },
       {
         type: 'html',
+        id: 'mid-cta',
+        html: `
+          <div class="not-prose text-center py-2">
+            <a href="#register" class="copy-button-glass copy-button-primary inline-flex min-w-[220px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold no-underline">
+              Save Your Seat
+            </a>
+          </div>
+        `,
+      },
+      {
+        type: 'html',
         id: 'dress-code',
         eyebrow: 'Dress Code',
         html: `
-          <div class="rounded-[1.4rem] border border-[#8B79D4]/30 bg-white/[0.04] px-6 py-5">
-            <p class="text-sm leading-7 text-[#FCF4EB]/72">
-              The dinner is an occasion worth dressing for. We ask that guests arrive in smart casual at minimum — think a nice dinner out, not the beach. Please leave the yoga clothes and flip-flops for another day.
-            </p>
+          <div class="not-prose">
+            <p class="text-[1.8rem] font-bold leading-[1.05] tracking-tight text-[#FCF4EB] md:text-[2.1rem]">The dinner is an occasion worth dressing for.</p>
+            <p class="mt-4 text-base leading-8 text-[#FCF4EB]/68">Smart casual at minimum. Think a nice dinner out, not the beach. Leave the yoga clothes and flip-flops for another day.</p>
           </div>
         `,
       },
@@ -362,7 +385,7 @@ export const events: EventDefinition[] = [
       },
     ],
     metadata: {
-      title: 'Canggu Connection Dinner — May 27, 2026',
+      title: 'Canggu Connection Dinner, May 27, 2026',
       description:
         'An intimate gathering of entrepreneurs, creators, and change-makers in Canggu. Donations go to PKP Community Centre.',
     },

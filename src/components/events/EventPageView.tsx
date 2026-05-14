@@ -9,9 +9,12 @@ import ScrollToRegisterButton from '@/components/events/ScrollToRegisterButton'
 
 function sectionTitleClass(sectionId?: string) {
   if (sectionId === 'creative-lab' || sectionId === 'outcomes') {
-    return 'text-[1.95rem] font-extrabold leading-[0.92] tracking-tight md:text-[3.15rem]'
+    return 'text-[1.95rem] font-extrabold leading-[1.05] tracking-tight md:text-[3.15rem]'
   }
-  return 'text-[1.7rem] font-extrabold leading-[0.94] tracking-tight md:text-[2.65rem]'
+  if (sectionId === 'about') {
+    return 'text-[1.95rem] font-extrabold leading-[1.0] tracking-tight md:text-[3rem]'
+  }
+  return 'text-[1.7rem] font-extrabold leading-[1.05] tracking-tight md:text-[2.65rem]'
 }
 
 function sectionEyebrowClass(sectionId?: string) {
@@ -41,7 +44,7 @@ function SectionShell({
             </p>
           ) : null}
           {title ? (
-            <h2 className={`event-gradient-title ${sectionTitleClass(sectionId)}`}>
+            <h2 className={`${sectionId === 'about' ? 'gradient-text' : 'event-gradient-title'} ${sectionTitleClass(sectionId)}`}>
               {title}
             </h2>
           ) : null}
@@ -455,7 +458,7 @@ export default function EventPageView({
             </Reveal>
           ) : null}
           <Reveal delay={1}>
-            <h1 className="event-gradient-title max-w-[15ch] text-[1.7rem] font-extrabold leading-[0.92] tracking-tight sm:text-[2.2rem] md:max-w-none md:text-[3.1rem] lg:text-[3.7rem]">
+            <h1 className="event-gradient-title max-w-[15ch] text-[1.7rem] font-extrabold leading-[1.05] tracking-tight sm:text-[2.2rem] md:max-w-none md:text-[3.1rem] lg:text-[3.7rem]">
               {event.title}
             </h1>
           </Reveal>
@@ -486,7 +489,7 @@ export default function EventPageView({
                 <ScrollToRegisterButton
                   className="copy-button-glass copy-button-primary inline-flex min-w-[220px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold shadow-[0_16px_38px_rgba(124,105,199,0.22)]"
                 >
-                  Buy Ticket
+                  {event.ctaLabel ?? 'Buy Ticket'}
                 </ScrollToRegisterButton>
                 <p className="pl-1 text-xs leading-5 text-[#FCF4EB]/42">
                   Have a promo code? Enter it in the registration section below.
