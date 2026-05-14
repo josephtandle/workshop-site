@@ -558,7 +558,7 @@ export const events: EventDefinition[] = [
         title: 'This commercial was created by Helix in two hours',
         imageSrc: '/events/ai-avatar-content-creation/symbol.jpg',
         imageAlt: 'Bright Harbor AI commercial example created by Helix',
-        videoSrc: '/events/ai-avatar-content-creation/bright-harbor-video-email.mp4',
+        videoSrc: 'https://media.mastermindshq.business/events/ai-avatar-content-creation/bright-harbor-video-email.mp4',
         caption: 'A fast production example of the kind of commercial direction this workshop is built around.',
       },
       {
@@ -569,7 +569,7 @@ export const events: EventDefinition[] = [
         name: 'AI Fitness Ad Influencer',
         imageSrc: '/events/ai-avatar-content-creation/symbol.jpg',
         imageAlt: 'AI filmmaking symbol with director chair and film reels',
-        videoSrc: '/events/ai-avatar-content-creation/ai-fitness-ad-influencer.mp4',
+        videoSrc: 'https://media.mastermindshq.business/events/ai-avatar-content-creation/ai-fitness-ad-influencer.mp4',
       },
       {
         type: 'split',
@@ -592,7 +592,7 @@ export const events: EventDefinition[] = [
         name: 'AI Health Coach',
         imageSrc: '/events/ai-avatar-content-creation/workstation.jpg',
         imageAlt: 'AI content creation workstation with visual assets in motion',
-        videoSrc: '/events/ai-avatar-content-creation/ai-health-coach.mp4',
+        videoSrc: 'https://media.mastermindshq.business/events/ai-avatar-content-creation/ai-health-coach.mp4',
       },
       {
         type: 'cards',
