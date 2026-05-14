@@ -4,22 +4,9 @@ import { sendEventConfirmationEmail } from '@/lib/event-confirmation-email'
 import { syncLegacyRegistration } from '@/lib/legacy-event-schedule'
 import { createStripeClient } from '@/lib/stripe'
 import { saveRegistration } from '@/lib/event-registration-db'
+import { toOrigin } from '@/lib/url-utils'
 
 export const runtime = 'nodejs'
-
-function toOrigin(value: string | null | undefined) {
-  if (!value) return null
-
-  try {
-    return new URL(value).origin
-  } catch {
-    try {
-      return new URL(`https://${value.replace(/^\/+|\/+$/g, '')}`).origin
-    } catch {
-      return null
-    }
-  }
-}
 
 function getBaseUrl(request: Request) {
   const envOrigin = toOrigin(process.env.NEXT_PUBLIC_SITE_URL)
