@@ -198,7 +198,7 @@ export const events: EventDefinition[] = [
     dateLabel: 'Wednesday, May 27, 2026',
     timeLabel: '6:00 PM',
     locationLabel: 'Mostly Restaurant, Pererenan, Canggu',
-    durationLabel: 'Evening',
+    durationLabel: 'Your Reserved Seat',
     heroImage: '/events/connection-dinner-canggu/cover.jpg',
     heroAlt: 'Canggu Connection Dinner at Mostly Restaurant',
     badge: 'This Month',
