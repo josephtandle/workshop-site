@@ -199,7 +199,7 @@ export const events: EventDefinition[] = [
     timeLabel: '6:00 PM',
     locationLabel: 'Mostly Restaurant, Pererenan, Canggu',
     durationLabel: 'Your Reserved Seat',
-    heroImage: '/events/connection-dinner-canggu/cover.jpg',
+    heroImage: '/events/connection-dinner-canggu/venue-room.jpg',
     heroAlt: 'Canggu Connection Dinner at Mostly Restaurant',
     badge: 'This Month',
     audience: [
@@ -300,14 +300,9 @@ export const events: EventDefinition[] = [
         id: 'gallery',
         eyebrow: 'Past Dinners',
         html: `
-          <div class="grid gap-2">
-            <img src="/events/connection-dinner-canggu/venue-room.jpg" alt="Connection Dinner at Mostly Restaurant" class="w-full rounded-2xl object-cover" style="height:22rem;object-position:center;" />
-            <div class="grid grid-cols-2 gap-2">
-              <img src="/events/connection-dinner-canggu/guests-1.jpg" alt="Guests at the Connection Dinner" class="w-full rounded-2xl object-cover" style="height:16rem;object-position:center top;" />
-              <img src="/events/connection-dinner-canggu/guests-3.jpg" alt="Guests at the Connection Dinner" class="w-full rounded-2xl object-cover" style="height:16rem;object-position:center top;" />
-              <img src="/events/connection-dinner-canggu/guests-2.jpg" alt="Guests at the Connection Dinner" class="w-full rounded-2xl object-cover" style="height:16rem;object-position:center top;" />
-              <img src="/events/connection-dinner-canggu/guests-4.jpg" alt="Guests at the Connection Dinner" class="w-full rounded-2xl object-cover" style="height:16rem;object-position:center;" />
-            </div>
+          <div class="not-prose grid grid-cols-2 gap-3">
+            <img src="/events/connection-dinner-canggu/guests-1.jpg" alt="Joe and guests at the Connection Dinner" style="width:100%;border-radius:1rem;display:block;" />
+            <img src="/events/connection-dinner-canggu/guests-3.jpg" alt="Guests at the Connection Dinner" style="width:100%;border-radius:1rem;display:block;" />
           </div>
         `,
       },
@@ -334,6 +329,16 @@ export const events: EventDefinition[] = [
         imageSrc: '/events/connection-dinner-canggu/pkp-catering.jpg',
         imageAlt: 'PKP Community Centre women, Bali',
         caption: 'PKP Community Centre, Bali — pkpcommunitycentre.org',
+      },
+      {
+        type: 'html',
+        id: 'pkp-photos',
+        html: `
+          <div class="not-prose grid grid-cols-2 gap-3">
+            <img src="/events/connection-dinner-canggu/guests-2.jpg" alt="Guests at the Connection Dinner" style="width:100%;border-radius:1rem;display:block;" />
+            <img src="/events/connection-dinner-canggu/guests-4.jpg" alt="Joe and a guest at the Connection Dinner" style="width:100%;border-radius:1rem;display:block;" />
+          </div>
+        `,
       },
       {
         type: 'html',
