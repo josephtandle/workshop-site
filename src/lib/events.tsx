@@ -280,6 +280,50 @@ export const events: EventDefinition[] = [
         ],
       },
       {
+        type: 'html',
+        id: 'mostly-video',
+        eyebrow: 'The Venue',
+        html: `
+          <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:1rem;">
+            <iframe
+              src="https://www.youtube.com/embed/qUciw2hjnhk?rel=0"
+              style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              title="Mostly Restaurant, Bali"
+            ></iframe>
+          </div>
+        `,
+      },
+      {
+        type: 'html',
+        id: 'gallery',
+        eyebrow: 'Past Dinners',
+        html: `
+          <div class="grid gap-2">
+            <img src="/events/connection-dinner-canggu/venue-room.jpg" alt="Connection Dinner at Mostly Restaurant" class="w-full rounded-2xl object-cover" style="height:22rem;object-position:center;" />
+            <div class="grid grid-cols-2 gap-2">
+              <img src="/events/connection-dinner-canggu/guests-1.jpg" alt="Guests at the Connection Dinner" class="w-full rounded-2xl object-cover" style="height:16rem;object-position:center top;" />
+              <img src="/events/connection-dinner-canggu/guests-3.jpg" alt="Guests at the Connection Dinner" class="w-full rounded-2xl object-cover" style="height:16rem;object-position:center top;" />
+              <img src="/events/connection-dinner-canggu/guests-2.jpg" alt="Guests at the Connection Dinner" class="w-full rounded-2xl object-cover" style="height:16rem;object-position:center top;" />
+              <img src="/events/connection-dinner-canggu/guests-4.jpg" alt="Guests at the Connection Dinner" class="w-full rounded-2xl object-cover" style="height:16rem;object-position:center;" />
+            </div>
+          </div>
+        `,
+      },
+      {
+        type: 'html',
+        id: 'dress-code',
+        eyebrow: 'Dress Code',
+        html: `
+          <div class="rounded-[1.4rem] border border-[#8B79D4]/30 bg-white/[0.04] px-6 py-5">
+            <p class="text-sm leading-7 text-[#FCF4EB]/72">
+              The dinner is an occasion worth dressing for. We ask that guests arrive in smart casual at minimum — think a nice dinner out, not the beach. Please leave the yoga clothes and flip-flops for another day.
+            </p>
+          </div>
+        `,
+      },
+      {
         type: 'split',
         id: 'pkp',
         eyebrow: '100% of Donations Go To PKP',
