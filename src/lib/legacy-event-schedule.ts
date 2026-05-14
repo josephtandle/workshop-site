@@ -1,4 +1,6 @@
 import { getEventBySlug, type EventDefinition } from '@/lib/events'
+import { sendEventConfirmationEmail } from '@/lib/event-confirmation-email'
+import { dedupeAttendeesByEmail } from './location-reminder'
 import { createStripeClient } from '@/lib/stripe'
 
 type SyncStatus = 'already_paid' | 'marked_paid' | 'imported'
@@ -25,6 +27,11 @@ type LegacySaleRow = {
   amount: number
   paymentMethod: string
   status: string
+}
+
+export type LegacyEventAttendee = {
+  attendeeName: string
+  attendeeEmail: string
 }
 
 type EventScheduleConfig = {
@@ -439,11 +446,15 @@ export async function finalizeLegacyCheckoutSession(
 
   const paymentIntent =
     typeof session.payment_intent === 'string' ? null : session.payment_intent
+  const confirmationEmailAlreadySent =
+    paymentIntent?.metadata?.confirmation_email_sent === 'complete'
 
   if (paymentIntent?.metadata?.legacy_sync_status === 'complete') {
     return {
       status: 'already_paid',
-      message: 'Legacy attendee already synced.',
+      message: confirmationEmailAlreadySent
+        ? 'Legacy attendee already synced.'
+        : 'Legacy attendee already synced. Confirmation email pending retry.',
     }
   }
 
@@ -462,18 +473,69 @@ export async function finalizeLegacyCheckoutSession(
     status: 'paid',
   })
 
+  let emailSendError: string | null = null
+  if (!confirmationEmailAlreadySent) {
+    try {
+      await sendEventConfirmationEmail({
+        event: input.event,
+        attendeeName,
+        attendeeEmail,
+      })
+    } catch (error) {
+      emailSendError = error instanceof Error ? error.message : 'Unknown confirmation email error.'
+      console.error('event confirmation email error', error)
+    }
+  }
+
   if (paymentIntent?.id) {
     await stripe.paymentIntents.update(paymentIntent.id, {
       metadata: {
         ...paymentIntent.metadata,
         legacy_sync_status: 'complete',
+        confirmation_email_sent: emailSendError ? 'error' : 'complete',
       },
     })
   }
 
-  return status
+  return emailSendError
+    ? {
+        status: status.status,
+        message: `${status.message} Confirmation email failed to send automatically.`,
+      }
+    : status
 }
 
 export function getLegacyEventBySlug(slug: string) {
   return getEventBySlug(slug)
+}
+
+export async function listLegacyPaidAttendeesForEvent(
+  event: EventDefinition,
+): Promise<LegacyEventAttendee[]> {
+  if (!event.legacyRegistration) {
+    return []
+  }
+
+  const config = getEventScheduleConfig()
+  if (!config) {
+    throw new Error('Event Schedule credentials are not configured.')
+  }
+
+  const session = await authenticateEventSchedule(config)
+  const sales = await listLegacySalesForEmail(config, session, event.title)
+
+  return dedupeAttendeesByEmail(
+    sales
+      .filter(
+        (sale) =>
+          sale.status === 'paid' &&
+          sale.event === event.title &&
+          sale.eventDate === event.legacyRegistration?.eventDate &&
+          sale.email,
+      )
+      .map((sale) => ({
+        attendeeName: sale.name.trim(),
+        attendeeEmail: sale.email.trim(),
+      })),
+  )
 }
