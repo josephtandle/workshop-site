@@ -385,9 +385,8 @@ export const events: EventDefinition[] = [
         type: 'hosts',
         id: 'hosts',
         eyebrow: 'Facilitating Team',
-        title: 'Joe and Helix are both on the page and in the room',
-        intro:
-          'This section lives near the bottom on purpose. By the time someone gets here, they should already understand the value of the workshop and then meet the people leading it.',
+        title: 'Joe and Helix',
+        intro: '',
         hosts: [],
       },
     ],
