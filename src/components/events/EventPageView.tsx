@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import type { EventDefinition, EventPromoCode, EventSection } from '@/lib/events'
 import { formatEventPrice } from '@/lib/events'
+import { buildGoogleCalendarUrl } from '@/lib/calendar'
 import Reveal from '@/components/Reveal'
 import EventRegistrationSection from '@/components/events/EventRegistrationSection'
 import type { EventRegistrationData } from '@/components/events/EventRegistrationSection'
@@ -428,6 +429,22 @@ export default function EventPageView({
   initialPromoCode?: string | null
 }) {
   const hasSetupItems = (event.postPurchase?.setupItems?.length ?? 0) > 0
+
+  const calendarEvent = event.calendarEvent
+    ? {
+        googleUrl: buildGoogleCalendarUrl({
+          title: event.title,
+          startIso: event.calendarEvent.startIso,
+          endIso: event.calendarEvent.endIso,
+          location: event.locationLabel,
+          description: event.privateLocationReminder
+            ? 'Exact address will be emailed to you before the event.'
+            : undefined,
+        }),
+        icalUrl: `/api/events/${event.slug}/calendar`,
+      }
+    : undefined
+
   const registrationEvent: EventRegistrationData = {
     slug: event.slug,
     durationLabel: event.pricing.donationMode ? undefined : event.durationLabel,
@@ -438,6 +455,7 @@ export default function EventPageView({
       donationMode: event.pricing.donationMode,
       minDonation: event.pricing.minDonation,
     },
+    calendarEvent,
     successLabel: hasSetupItems ? 'Start Account Setup' : 'View Event Details',
     successDetail: event.postPurchase
       ? event.pricing.donationMode

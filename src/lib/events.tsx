@@ -163,6 +163,10 @@ export type EventDefinition = {
     }>
   }
   ctaLabel?: string
+  calendarEvent?: {
+    startIso: string
+    endIso: string
+  }
   capacity?: number
   emailConfig?: {
     headerLabel?: string | null
@@ -243,6 +247,10 @@ export const events: EventDefinition[] = [
         ],
       },
     ],
+    calendarEvent: {
+      startIso: '2026-05-27T18:00:00+08:00',
+      endIso: '2026-05-27T21:00:00+08:00',
+    },
     capacity: 30,
     emailConfig: {
       headerLabel: null,
@@ -491,6 +499,10 @@ export const events: EventDefinition[] = [
           percentOff: 50,
         },
       ],
+    },
+    calendarEvent: {
+      startIso: '2026-05-30T10:30:00+08:00',
+      endIso: '2026-05-30T17:00:00+08:00',
     },
     legacyRegistration: {
       eventId: '9YGs4u',

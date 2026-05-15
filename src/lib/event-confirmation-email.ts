@@ -1,5 +1,6 @@
 import type { EventDefinition } from '@/lib/events'
 import { buildLocationReminderIdempotencyKey } from './location-reminder'
+import { buildGoogleCalendarUrl } from './calendar'
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
 
@@ -27,6 +28,29 @@ function buildConfirmationEmailHtml(event: EventDefinition, attendeeName: string
     cfg && 'headerLabel' in cfg && (cfg.headerLabel === null || cfg.headerLabel === '')
       ? ''
       : `<p style="margin: 0 0 12px; font-size: 12px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: #cfc7ee;">${cfg?.headerLabel ?? 'Masterminds HQ Workshop'}</p>`
+
+  const calendarButtonsHtml = event.calendarEvent
+    ? (() => {
+        const googleUrl = buildGoogleCalendarUrl({
+          title: event.title,
+          startIso: event.calendarEvent!.startIso,
+          endIso: event.calendarEvent!.endIso,
+          location: event.locationLabel,
+          description: event.privateLocationReminder
+            ? 'Exact address will be emailed to you before the event.'
+            : undefined,
+        })
+        const icalUrl = `${siteUrl}/api/events/${event.slug}/calendar`
+        return `<div style="margin: 20px 0 24px; display: flex; gap: 10px; flex-wrap: wrap;">
+          <a href="${googleUrl}" style="display:inline-block; background: transparent; color: #7C69C7; border: 1.5px solid #7C69C7; text-decoration:none; padding:10px 18px; border-radius:10px; font-size:13px; font-weight:700; white-space:nowrap;">
+            Add to Google Calendar
+          </a>
+          <a href="${icalUrl}" style="display:inline-block; background: transparent; color: #7C69C7; border: 1.5px solid #7C69C7; text-decoration:none; padding:10px 18px; border-radius:10px; font-size:13px; font-weight:700; white-space:nowrap;">
+            Download iCal
+          </a>
+        </div>`
+      })()
+    : ''
 
   const mapsButtonHtml = cfg?.mapsUrl
     ? `<div style="margin-top: 16px;">
@@ -65,6 +89,8 @@ function buildConfirmationEmailHtml(event: EventDefinition, attendeeName: string
             <p style="margin: 0${mapsButtonHtml ? ' 0 10px' : ''}; font-size: 15px; line-height: 1.7; color: #2d2442;"><strong>Location:</strong> ${event.locationLabel}</p>
             ${mapsButtonHtml}
           </div>
+
+          ${calendarButtonsHtml}
 
           <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.75; color: #4b4263;">
             The event is in <strong style="color:#16121f;">Pererenan, Canggu</strong>. You will receive an email with the exact location four hours before the event.
