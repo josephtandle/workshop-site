@@ -430,7 +430,7 @@ export default function EventPageView({
   const hasSetupItems = (event.postPurchase?.setupItems?.length ?? 0) > 0
   const registrationEvent: EventRegistrationData = {
     slug: event.slug,
-    durationLabel: event.durationLabel,
+    durationLabel: event.pricing.donationMode ? undefined : event.durationLabel,
     pricing: {
       currencySymbol: event.pricing.currencySymbol,
       fullPrice: event.pricing.fullPrice,
