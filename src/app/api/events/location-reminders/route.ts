@@ -1,4 +1,5 @@
 import { NextResponse, type NextRequest } from 'next/server'
+import { timingSafeEqual } from 'crypto'
 import { getEventBySlug, getLiveEvents } from '@/lib/events'
 import { sendEventLocationReminderEmail } from '@/lib/event-confirmation-email'
 import { listLegacyPaidAttendeesForEvent } from '@/lib/legacy-event-schedule'
@@ -9,7 +10,10 @@ export const runtime = 'nodejs'
 function isAuthorized(request: NextRequest) {
   const secret = process.env.CRON_SECRET?.trim()
   if (!secret) return false
-  return request.headers.get('authorization') === `Bearer ${secret}`
+  const expected = `Bearer ${secret}`
+  const provided = request.headers.get('authorization') ?? ''
+  if (provided.length !== expected.length) return false
+  return timingSafeEqual(Buffer.from(provided), Buffer.from(expected))
 }
 
 export async function GET(request: NextRequest) {

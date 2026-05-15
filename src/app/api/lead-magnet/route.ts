@@ -3,7 +3,7 @@ import { createClient } from '@supabase/supabase-js'
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
 
-async function sendViaResend(email: string, source: string) {
+async function sendViaResend(email: string, source: string, idempotencyKey: string) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://workshop.mastermindshq.business'
   const macCleanerPageUrl = `${siteUrl}/giveaways/maccleaner`
   const macCleanerInstallerUrl = `${siteUrl}/downloads/maccleaner-installer.sh`
@@ -207,6 +207,7 @@ async function sendViaResend(email: string, source: string) {
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${RESEND_API_KEY}`,
+      'Idempotency-Key': idempotencyKey,
     },
     body: JSON.stringify({
       from: 'Joe Che <joe@mastermindshq.business>',
@@ -247,12 +248,14 @@ async function ingestIntoCrm(email: string, source: string) {
   if (!res.ok) throw new Error(`CRM ingest failed: ${res.status}`)
 }
 
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
 export async function POST(request: Request) {
   try {
     const { email, source = 'lead-magnet' } = await request.json()
 
-    if (!email || typeof email !== 'string') {
-      return NextResponse.json({ error: 'Email is required' }, { status: 400 })
+    if (!email || typeof email !== 'string' || email.length > 256 || !EMAIL_RE.test(email.trim())) {
+      return NextResponse.json({ error: 'Valid email is required' }, { status: 400 })
     }
 
     // Save to Supabase leads table (non-blocking)
@@ -274,7 +277,8 @@ export async function POST(request: Request) {
     )
 
     // Send confirmation via Resend
-    await sendViaResend(email, source)
+    const idempotencyKey = `lead-magnet/${source}/${email.trim().toLowerCase()}`
+    await sendViaResend(email, source, idempotencyKey)
 
     return NextResponse.json({ success: true })
   } catch (error) {

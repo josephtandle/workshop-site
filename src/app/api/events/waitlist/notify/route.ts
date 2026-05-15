@@ -1,4 +1,5 @@
 import { NextResponse, type NextRequest } from 'next/server'
+import { timingSafeEqual } from 'crypto'
 import { getLiveEvents } from '@/lib/events'
 import { getActiveWaitlist, hasOpenSpots } from '@/lib/event-registration-db'
 import { sendWaitlistSpotNotificationEmail } from '@/lib/event-confirmation-email'
@@ -11,7 +12,10 @@ const WINDOW_MINUTES = 60
 function isAuthorized(request: NextRequest) {
   const secret = process.env.CRON_SECRET?.trim()
   if (!secret) return false
-  return request.headers.get('authorization') === `Bearer ${secret}`
+  const expected = `Bearer ${secret}`
+  const provided = request.headers.get('authorization') ?? ''
+  if (provided.length !== expected.length) return false
+  return timingSafeEqual(Buffer.from(provided), Buffer.from(expected))
 }
 
 function buildIdempotencyKey(slug: string, email: string, windowLabel: string): string {

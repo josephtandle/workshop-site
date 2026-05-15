@@ -14,6 +14,10 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Missing checkout session details.' }, { status: 400 })
     }
 
+    if (!/^cs_[a-zA-Z0-9_]{1,200}$/.test(sessionId)) {
+      return NextResponse.json({ error: 'Invalid session ID.' }, { status: 400 })
+    }
+
     const event = getEventBySlug(slug)
     if (!event) {
       return NextResponse.json({ error: 'Event not found.' }, { status: 404 })
@@ -28,7 +32,6 @@ export async function POST(request: Request) {
     })
   } catch (error) {
     console.error('event finalize registration error', error)
-    const message = error instanceof Error ? error.message : 'Unable to finalize registration.'
-    return NextResponse.json({ error: message }, { status: 500 })
+    return NextResponse.json({ error: 'Unable to finalize registration.' }, { status: 500 })
   }
 }

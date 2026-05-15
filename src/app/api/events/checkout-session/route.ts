@@ -31,6 +31,17 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Missing required fields.' }, { status: 400 })
     }
 
+    if (attendeeName.length > 256 || attendeeEmail.length > 256) {
+      return NextResponse.json({ error: 'Invalid input.' }, { status: 400 })
+    }
+
+    if (
+      rawDonationAmount !== null &&
+      (!Number.isFinite(rawDonationAmount) || rawDonationAmount < 0 || rawDonationAmount > 99999)
+    ) {
+      return NextResponse.json({ error: 'Invalid donation amount.' }, { status: 400 })
+    }
+
     const event = getEventBySlug(slug)
     if (!event) {
       return NextResponse.json({ error: 'Event not found.' }, { status: 404 })
@@ -46,6 +57,10 @@ export async function POST(request: Request) {
         : promo?.percentOff
           ? Math.max(0, event.pricing.fullPrice * (1 - promo.percentOff / 100))
           : event.pricing.fullPrice
+    }
+
+    if (!Number.isFinite(amount) || amount < 0) {
+      return NextResponse.json({ error: 'Invalid amount.' }, { status: 400 })
     }
 
     const unitAmount = Math.round(amount * 100)

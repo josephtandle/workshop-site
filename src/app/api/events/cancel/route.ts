@@ -82,7 +82,6 @@ export async function GET(request: NextRequest) {
     return htmlPage(heading, body)
   } catch (err) {
     console.error('cancel registration error', err)
-    const message = err instanceof Error ? err.message : 'Unknown error.'
-    return htmlPage('Something went wrong', message, 400)
+    return htmlPage('Something went wrong', 'An error occurred. Please try again or contact joe@mastermindshq.business.', 400)
   }
 }

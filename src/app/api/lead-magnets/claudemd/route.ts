@@ -123,7 +123,7 @@ The more context Claude has, the less you have to explain each session.)
 **mastermindshq.business**
 **Free to use, share, and adapt.**`
 
-async function sendViaResend(firstName: string, email: string) {
+async function sendViaResend(firstName: string, email: string, idempotencyKey: string) {
   const fileBase64 = Buffer.from(FILE_CONTENT).toString('base64')
   const escapedContent = FILE_CONTENT.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 
@@ -165,6 +165,7 @@ async function sendViaResend(firstName: string, email: string) {
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${RESEND_API_KEY}`,
+      'Idempotency-Key': idempotencyKey,
     },
     body: JSON.stringify({
       from: 'Joe Che <joe@mastermindshq.business>',
@@ -184,12 +185,17 @@ async function sendViaResend(firstName: string, email: string) {
   return res.json()
 }
 
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
 export async function POST(request: Request) {
   try {
     const { firstName, email } = await request.json()
 
-    if (!firstName || !email) {
-      return NextResponse.json({ error: 'firstName and email are required' }, { status: 400 })
+    if (
+      !firstName || typeof firstName !== 'string' || firstName.trim().length === 0 || firstName.length > 256 ||
+      !email || typeof email !== 'string' || email.length > 256 || !EMAIL_RE.test(email.trim())
+    ) {
+      return NextResponse.json({ error: 'firstName and valid email are required' }, { status: 400 })
     }
 
     // Save to Supabase leads table
@@ -220,7 +226,8 @@ export async function POST(request: Request) {
     }).catch((err) => console.error('CRM ingest error (non-blocking):', err))
 
     // Send via Resend
-    await sendViaResend(firstName, email)
+    const idempotencyKey = `lead-magnet/claude-md/${email.trim().toLowerCase()}`
+    await sendViaResend(firstName, email, idempotencyKey)
 
     return NextResponse.json({ success: true })
   } catch (error) {

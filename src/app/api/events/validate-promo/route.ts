@@ -11,6 +11,10 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Missing required fields.' }, { status: 400 })
     }
 
+    if (promoCode.length > 64) {
+      return NextResponse.json({ valid: false, error: 'Promo code not recognized.' }, { status: 404 })
+    }
+
     const event = getEventBySlug(slug)
     if (!event) {
       return NextResponse.json({ error: 'Event not found.' }, { status: 404 })

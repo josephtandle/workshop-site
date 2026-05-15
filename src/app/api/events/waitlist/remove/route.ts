@@ -45,7 +45,6 @@ export async function GET(request: NextRequest) {
     )
   } catch (err) {
     console.error('waitlist remove error', err)
-    const message = err instanceof Error ? err.message : 'Unknown error.'
-    return htmlPage('Something went wrong', message, 400)
+    return htmlPage('Something went wrong', 'An error occurred. Please try again or contact joe@mastermindshq.business.', 400)
   }
 }
