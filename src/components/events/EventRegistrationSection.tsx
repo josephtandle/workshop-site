@@ -199,6 +199,30 @@ export default function EventRegistrationSection({
       : (Number.isInteger(effectivePrice) ? String(effectivePrice) : effectivePrice.toFixed(2))
   }`
 
+  async function openCheckout(name: string, email: string, promo: string) {
+    const response = await fetch('/api/events/checkout-session', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        slug: event.slug,
+        attendeeName: name,
+        attendeeEmail: email,
+        promoCode: promo,
+        ...(event.pricing.donationMode ? { donationAmount } : {}),
+      }),
+    })
+    const payload = await response.json()
+    if (!response.ok) throw new Error(payload.error || 'Unable to start checkout.')
+    setAppliedPromoCode(payload.appliedPromoCode)
+    setAppliedAmount(typeof payload.amount === 'number' ? payload.amount : null)
+    if (payload.completed) {
+      markSuccess(payload.message || 'Free ticket reserved. No payment needed.')
+      return
+    }
+    setCheckoutSessionId(payload.sessionId ?? null)
+    setClientSecret(payload.clientSecret)
+  }
+
   function handleApplyPromo() {
     const nextPromo = promoCode.trim()
     if (!nextPromo) {
@@ -231,6 +255,11 @@ export default function EventRegistrationSection({
         setAppliedPromoCode(payload.appliedPromoCode ?? null)
         setAppliedAmount(typeof payload.amount === 'number' ? payload.amount : null)
         setPromoMessage(payload.message || 'Promo code applied.')
+
+        // If Stripe checkout is already open, reopen it with the updated price.
+        if (clientSecret && attendeeName && attendeeEmail) {
+          await openCheckout(attendeeName, attendeeEmail, payload.appliedPromoCode ?? nextPromo)
+        }
       } catch (applyError) {
         const message = applyError instanceof Error ? applyError.message : 'Unable to validate promo code.'
         setAppliedPromoCode(null)
@@ -262,32 +291,7 @@ export default function EventRegistrationSection({
       setAttendeeEmail(nextEmail)
 
       try {
-        const response = await fetch('/api/events/checkout-session', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            slug: event.slug,
-            attendeeName: nextName,
-            attendeeEmail: nextEmail,
-            promoCode: promoCode.trim() || appliedPromoCode || '',
-            ...(event.pricing.donationMode ? { donationAmount } : {}),
-          }),
-        })
-
-        const payload = await response.json()
-        if (!response.ok) {
-          throw new Error(payload.error || 'Unable to start checkout.')
-        }
-
-        setAppliedPromoCode(payload.appliedPromoCode)
-        setAppliedAmount(typeof payload.amount === 'number' ? payload.amount : null)
-        if (payload.completed) {
-          markSuccess(payload.message || 'Free ticket reserved. No payment needed.')
-          return
-        }
-
-        setCheckoutSessionId(payload.sessionId ?? null)
-        setClientSecret(payload.clientSecret)
+        await openCheckout(nextName, nextEmail, promoCode.trim() || appliedPromoCode || '')
       } catch (submitError) {
         const message = submitError instanceof Error ? submitError.message : 'Unable to start checkout.'
         setError(message)
@@ -493,7 +497,7 @@ export default function EventRegistrationSection({
 
         {clientSecret && stripePromise && embeddedCheckoutOptions ? (
           <div ref={checkoutRef} className="mt-8 rounded-[1.6rem] border border-white/10 bg-white p-3 text-black md:p-5">
-            <EmbeddedCheckoutProvider stripe={stripePromise} options={embeddedCheckoutOptions}>
+            <EmbeddedCheckoutProvider key={clientSecret} stripe={stripePromise} options={embeddedCheckoutOptions}>
               <EmbeddedCheckout />
             </EmbeddedCheckoutProvider>
           </div>
