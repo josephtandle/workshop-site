@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
+import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
 
@@ -234,7 +235,8 @@ const GIVEAWAY_SOURCE_MAP: Record<string, string> = {
 
 async function ingestIntoCrm(email: string, source: string) {
   const crmSource = GIVEAWAY_SOURCE_MAP[source] ?? `giveaway-${source}`
-  const res = await fetch('http://localhost:3000/api/crm', {
+  const crmBase = process.env.MISSION_CONTROL_URL ?? 'http://localhost:3000'
+  const res = await fetch(`${crmBase}/api/crm`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -252,6 +254,11 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export async function POST(request: Request) {
   try {
+    const { ok: rateLimitOk } = await checkRateLimit(`lead-magnet:${getClientIp(request)}`, 10, 60)
+    if (!rateLimitOk) {
+      return NextResponse.json({ error: 'Too many requests. Please try again shortly.' }, { status: 429 })
+    }
+
     const { email, source = 'lead-magnet' } = await request.json()
 
     if (!email || typeof email !== 'string' || email.length > 256 || !EMAIL_RE.test(email.trim())) {

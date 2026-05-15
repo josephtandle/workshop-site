@@ -1,8 +1,14 @@
 import { NextResponse } from 'next/server'
 import { getEventBySlug, resolvePromoCode } from '@/lib/events'
+import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
 
 export async function POST(request: Request) {
   try {
+    const { ok: rateLimitOk } = await checkRateLimit(`validate-promo:${getClientIp(request)}`, 30, 60)
+    if (!rateLimitOk) {
+      return NextResponse.json({ valid: false, error: 'Too many requests. Please try again shortly.' }, { status: 429 })
+    }
+
     const body = await request.json()
     const slug = typeof body.slug === 'string' ? body.slug : ''
     const promoCode = typeof body.promoCode === 'string' ? body.promoCode.trim() : ''

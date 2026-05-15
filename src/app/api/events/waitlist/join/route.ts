@@ -2,6 +2,7 @@ import { NextResponse, type NextRequest } from 'next/server'
 import { addToWaitlist, isAlreadyOnWaitlist, isAlreadyRegistered } from '@/lib/event-registration-db'
 import { getEventBySlug } from '@/lib/events'
 import { sendWaitlistConfirmationEmail } from '@/lib/event-confirmation-email'
+import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
 
 export const runtime = 'nodejs'
 
@@ -9,6 +10,11 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export async function POST(request: NextRequest) {
   try {
+    const { ok: rateLimitOk } = await checkRateLimit(`waitlist-join:${getClientIp(request)}`, 10, 60)
+    if (!rateLimitOk) {
+      return NextResponse.json({ error: 'Too many requests. Please try again shortly.' }, { status: 429 })
+    }
+
     const body = await request.json()
     const eventSlug = typeof body.eventSlug === 'string' ? body.eventSlug.trim() : ''
     const name = typeof body.name === 'string' ? body.name.trim() : ''

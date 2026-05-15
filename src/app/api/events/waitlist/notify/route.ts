@@ -4,6 +4,7 @@ import { getLiveEvents } from '@/lib/events'
 import { getActiveWaitlist, hasOpenSpots } from '@/lib/event-registration-db'
 import { sendWaitlistSpotNotificationEmail } from '@/lib/event-confirmation-email'
 import { resolveNotifyWindow } from '@/lib/waitlist-notify-windows'
+import { supabase } from '@/lib/supabase'
 
 export const runtime = 'nodejs'
 
@@ -55,6 +56,17 @@ export async function GET(request: NextRequest) {
     }
 
     const { windowLabel, variant } = win
+
+    // Acquire a per-window lock so concurrent cron invocations skip duplicate work.
+    // Resend idempotency keys are the email-level safety net; this prevents redundant DB queries.
+    const lockKey = `waitlist-notify/${event.slug}/${windowLabel}/${now.toISOString().slice(0, 10)}`
+    const { error: lockError } = await supabase
+      .from('cron_window_locks')
+      .insert({ lock_key: lockKey })
+    if (lockError) {
+      results.push({ slug: event.slug, window: windowLabel, waitlistCount: 0, sentCount: 0, errors: [] })
+      continue
+    }
 
     const open = await hasOpenSpots(event)
     if (!open) {

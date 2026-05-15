@@ -5,6 +5,7 @@ import { syncLegacyRegistration } from '@/lib/legacy-event-schedule'
 import { createStripeClient } from '@/lib/stripe'
 import { saveRegistration } from '@/lib/event-registration-db'
 import { toOrigin } from '@/lib/url-utils'
+import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
 
 export const runtime = 'nodejs'
 
@@ -20,6 +21,11 @@ function getBaseUrl(request: Request) {
 
 export async function POST(request: Request) {
   try {
+    const { ok: rateLimitOk } = await checkRateLimit(`checkout:${getClientIp(request)}`, 10, 60)
+    if (!rateLimitOk) {
+      return NextResponse.json({ error: 'Too many requests. Please try again shortly.' }, { status: 429 })
+    }
+
     const body = await request.json()
     const slug = typeof body.slug === 'string' ? body.slug : ''
     const attendeeName = typeof body.attendeeName === 'string' ? body.attendeeName.trim() : ''

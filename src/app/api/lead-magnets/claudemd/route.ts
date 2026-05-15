@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
+import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
 
@@ -189,6 +190,11 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export async function POST(request: Request) {
   try {
+    const { ok: rateLimitOk } = await checkRateLimit(`claudemd:${getClientIp(request)}`, 10, 60)
+    if (!rateLimitOk) {
+      return NextResponse.json({ error: 'Too many requests. Please try again shortly.' }, { status: 429 })
+    }
+
     const { firstName, email } = await request.json()
 
     if (
@@ -212,7 +218,8 @@ export async function POST(request: Request) {
     }
 
     // Ingest into Mission Control CRM (non-blocking)
-    fetch('http://localhost:3000/api/crm', {
+    const crmBase = process.env.MISSION_CONTROL_URL ?? 'http://localhost:3000'
+    fetch(`${crmBase}/api/crm`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
