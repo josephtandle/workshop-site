@@ -31,24 +31,42 @@ export function buildIcalString(params: {
   endIso: string
   location?: string
   description?: string
+  // When set, produces a METHOD:REQUEST invite (Accept/Decline in email clients).
+  // Omit for a plain METHOD:PUBLISH download.
+  organizer?: { name: string; email: string }
+  attendee?: { name: string; email: string }
+  // Increment on updates so clients replace rather than duplicate the event.
+  sequence?: number
 }): string {
   const start = toIcalDate(params.startIso)
   const end = toIcalDate(params.endIso)
   const stamp = toIcalDate(new Date().toISOString())
+  const method = params.organizer ? 'REQUEST' : 'PUBLISH'
 
   const lines = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
     'PRODID:-//Masterminds HQ//Workshop Site//EN',
     'CALSCALE:GREGORIAN',
-    'METHOD:PUBLISH',
+    `METHOD:${method}`,
     'BEGIN:VEVENT',
     `UID:${params.uid}`,
     `DTSTAMP:${stamp}`,
     `DTSTART:${start}`,
     `DTEND:${end}`,
+    `SEQUENCE:${params.sequence ?? 0}`,
     `SUMMARY:${escapeIcal(params.title)}`,
   ]
+  if (params.organizer) {
+    lines.push(
+      `ORGANIZER;CN=${escapeIcal(params.organizer.name)}:mailto:${params.organizer.email}`,
+    )
+  }
+  if (params.attendee) {
+    lines.push(
+      `ATTENDEE;RSVP=TRUE;CN=${escapeIcal(params.attendee.name)}:mailto:${params.attendee.email}`,
+    )
+  }
   if (params.location) lines.push(`LOCATION:${escapeIcal(params.location)}`)
   if (params.description) lines.push(`DESCRIPTION:${escapeIcal(params.description)}`)
   lines.push('END:VEVENT', 'END:VCALENDAR')

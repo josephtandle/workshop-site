@@ -166,6 +166,7 @@ export type EventDefinition = {
   calendarEvent?: {
     startIso: string
     endIso: string
+    googleCalendarEventId?: string
   }
   capacity?: number
   emailConfig?: {
@@ -250,6 +251,7 @@ export const events: EventDefinition[] = [
     calendarEvent: {
       startIso: '2026-05-27T18:00:00+08:00',
       endIso: '2026-05-27T21:00:00+08:00',
+      googleCalendarEventId: '0gu029anp7kbu1ljvi6chvic1g',
     },
     capacity: 30,
     emailConfig: {
@@ -503,6 +505,7 @@ export const events: EventDefinition[] = [
     calendarEvent: {
       startIso: '2026-05-30T10:30:00+08:00',
       endIso: '2026-05-30T17:00:00+08:00',
+      googleCalendarEventId: 'tgq3bqi8jfsa0itg7l74e8iev8',
     },
     legacyRegistration: {
       eventId: '9YGs4u',

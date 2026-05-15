@@ -1,6 +1,6 @@
 import type { EventDefinition } from '@/lib/events'
 import { buildLocationReminderIdempotencyKey } from './location-reminder'
-import { buildGoogleCalendarUrl } from './calendar'
+import { buildGoogleCalendarUrl, buildIcalString } from './calendar'
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
 
@@ -243,11 +243,18 @@ function buildLocationReminderEmailHtml(event: EventDefinition, attendeeName: st
   `
 }
 
+type ResendAttachment = {
+  filename: string
+  content: string
+  content_type: string
+}
+
 async function sendResendEmail(input: {
   attendeeEmail: string
   subject: string
   html: string
   idempotencyKey?: string
+  attachments?: ResendAttachment[]
 }) {
   if (!RESEND_API_KEY) {
     throw new Error('Resend API key is not configured.')
@@ -265,6 +272,7 @@ async function sendResendEmail(input: {
       to: [input.attendeeEmail],
       subject: input.subject,
       html: input.html,
+      ...(input.attachments?.length ? { attachments: input.attachments } : {}),
     }),
   })
 
@@ -293,11 +301,36 @@ export async function sendEventConfirmationEmail(input: {
   const subject = `Your seat is reserved for ${input.event.title}`
   const html = buildConfirmationEmailHtml(input.event, input.attendeeName, input.cancelToken)
 
+  const attachments = input.event.calendarEvent
+    ? [
+        {
+          filename: `${input.event.slug}.ics`,
+          content: Buffer.from(
+            buildIcalString({
+              uid: `${input.event.slug}@mastermindshq.business`,
+              title: input.event.title,
+              startIso: input.event.calendarEvent.startIso,
+              endIso: input.event.calendarEvent.endIso,
+              location: input.event.locationLabel,
+              description: input.event.privateLocationReminder
+                ? 'Exact address will be emailed to you before the event.'
+                : undefined,
+              organizer: { name: 'Joe Che', email: 'joe@mastermindshq.business' },
+              attendee: { name: input.attendeeName, email: input.attendeeEmail },
+              sequence: 0,
+            }),
+          ).toString('base64'),
+          content_type: 'text/calendar; method=REQUEST',
+        },
+      ]
+    : []
+
   return sendResendEmail({
     attendeeEmail: input.attendeeEmail,
     subject,
     html,
     idempotencyKey: buildConfirmationIdempotencyKey(input.event.slug, input.attendeeEmail),
+    attachments,
   })
 }
 
@@ -311,6 +344,31 @@ export async function sendEventLocationReminderEmail(input: {
     throw new Error(`Event ${input.event.slug} is missing private location reminder details.`)
   }
 
+  // SEQUENCE:1 on the same UID causes email clients to update the existing
+  // calendar event from the confirmation email rather than creating a duplicate.
+  const attachments =
+    input.event.calendarEvent
+      ? [
+          {
+            filename: `${input.event.slug}-location.ics`,
+            content: Buffer.from(
+              buildIcalString({
+                uid: `${input.event.slug}@mastermindshq.business`,
+                title: input.event.title,
+                startIso: input.event.calendarEvent.startIso,
+                endIso: input.event.calendarEvent.endIso,
+                location: location.exactAddress,
+                description: `Full address: ${location.exactAddress}`,
+                organizer: { name: 'Joe Che', email: 'joe@mastermindshq.business' },
+                attendee: { name: input.attendeeName, email: input.attendeeEmail },
+                sequence: 1,
+              }),
+            ).toString('base64'),
+            content_type: 'text/calendar; method=REQUEST',
+          },
+        ]
+      : []
+
   return sendResendEmail({
     attendeeEmail: input.attendeeEmail,
     subject: `Exact location for ${input.event.title}`,
@@ -320,6 +378,7 @@ export async function sendEventLocationReminderEmail(input: {
       attendeeEmail: input.attendeeEmail,
       eventStartIso: location.eventStartIso,
     }),
+    attachments,
   })
 }
 
