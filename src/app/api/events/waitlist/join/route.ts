@@ -1,9 +1,11 @@
 import { NextResponse, type NextRequest } from 'next/server'
-import { addToWaitlist } from '@/lib/event-registration-db'
+import { addToWaitlist, isAlreadyOnWaitlist, isAlreadyRegistered } from '@/lib/event-registration-db'
 import { getEventBySlug } from '@/lib/events'
 import { sendWaitlistConfirmationEmail } from '@/lib/event-confirmation-email'
 
 export const runtime = 'nodejs'
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export async function POST(request: NextRequest) {
   try {
@@ -16,9 +18,32 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Missing required fields.' }, { status: 400 })
     }
 
+    if (!EMAIL_RE.test(email)) {
+      return NextResponse.json({ error: 'Invalid email address.' }, { status: 400 })
+    }
+
     const event = getEventBySlug(eventSlug)
     if (!event) {
       return NextResponse.json({ error: 'Event not found.' }, { status: 404 })
+    }
+
+    const [alreadyRegistered, alreadyWaitlisted] = await Promise.all([
+      isAlreadyRegistered(eventSlug, email),
+      isAlreadyOnWaitlist(eventSlug, email),
+    ])
+
+    if (alreadyRegistered) {
+      return NextResponse.json(
+        { error: 'You are already registered for this event.' },
+        { status: 409 },
+      )
+    }
+
+    if (alreadyWaitlisted) {
+      return NextResponse.json(
+        { error: 'You are already on the waitlist for this event.' },
+        { status: 409 },
+      )
     }
 
     const { removeToken } = await addToWaitlist({ eventSlug, name, email })

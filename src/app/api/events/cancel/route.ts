@@ -1,9 +1,36 @@
-import { NextResponse, type NextRequest } from 'next/server'
+import { type NextRequest } from 'next/server'
 import { cancelRegistration, getActiveWaitlist, hasOpenSpots } from '@/lib/event-registration-db'
 import { getEventBySlug } from '@/lib/events'
 import { sendWaitlistSpotNotificationEmail } from '@/lib/event-confirmation-email'
 
 export const runtime = 'nodejs'
+
+function htmlPage(title: string, message: string, status = 200) {
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>${title}</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background: #0f0f0f; color: #f0f0f0; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 1.5rem; box-sizing: border-box; }
+    .card { max-width: 480px; text-align: center; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin: 0 0 0.75rem; }
+    p { color: #a0a0a0; margin: 0; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>${title}</h1>
+    <p>${message}</p>
+  </div>
+</body>
+</html>`
+  return new Response(html, {
+    status,
+    headers: { 'Content-Type': 'text/html; charset=utf-8' },
+  })
+}
 
 async function notifyWaitlist(eventSlug: string, cancelToken: string) {
   const event = getEventBySlug(eventSlug)
@@ -23,7 +50,6 @@ async function notifyWaitlist(eventSlug: string, cancelToken: string) {
         email: entry.email,
         removeToken: entry.removeToken,
         variant: 'cancellation',
-        // Stable key: one notification per cancellation event per waitlist person
         idempotencyKey: `waitlist-spot-cancel/${eventSlug}/${entry.email.trim().toLowerCase()}/${cancelToken}`,
       })
     } catch (err) {
@@ -36,23 +62,27 @@ export async function GET(request: NextRequest) {
   const token = request.nextUrl.searchParams.get('token')
 
   if (!token) {
-    return NextResponse.json({ error: 'Missing token.' }, { status: 400 })
+    return htmlPage('Invalid Link', 'This cancellation link is invalid or has expired.', 400)
   }
 
   try {
-    const { eventSlug, wasAlreadyCancelled } = await cancelRegistration(token)
+    const { eventSlug, attendeeName, wasAlreadyCancelled } = await cancelRegistration(token)
 
-    // Only notify waitlist for a fresh cancellation — not if this link was already used
     if (!wasAlreadyCancelled) {
       notifyWaitlist(eventSlug, token).catch((err) => {
         console.error('waitlist notify error after cancel', err)
       })
     }
 
-    return NextResponse.json({ success: true, message: 'Your seat has been cancelled.' })
+    const heading = wasAlreadyCancelled ? 'Already cancelled' : 'Seat cancelled'
+    const body = wasAlreadyCancelled
+      ? `Your seat was already cancelled, ${attendeeName}. Nothing further to do.`
+      : `Your seat has been cancelled, ${attendeeName}. We hope to see you at a future event.`
+
+    return htmlPage(heading, body)
   } catch (err) {
     console.error('cancel registration error', err)
     const message = err instanceof Error ? err.message : 'Unknown error.'
-    return NextResponse.json({ error: message }, { status: 400 })
+    return htmlPage('Something went wrong', message, 400)
   }
 }

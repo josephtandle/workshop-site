@@ -1,3 +1,4 @@
+import { randomUUID } from 'crypto'
 import { supabase } from '@/lib/supabase'
 import { generateToken } from '@/lib/event-tokens'
 import type { EventDefinition } from '@/lib/events'
@@ -32,41 +33,65 @@ export async function saveRegistration(input: {
   stripeSessionId?: string
   amountPaid?: number
 }): Promise<{ id: string; cancelToken: string }> {
-  // Insert without cancel_token first to get the UUID, then derive the token
-  const tempToken = generateToken(`cancel-temp:${input.eventSlug}:${input.attendeeEmail}:${Date.now()}`)
+  // Pre-generate UUID so the cancel token can be derived in a single insert — no two-step update.
+  const id = randomUUID()
+  const cancelToken = generateToken(`cancel:${id}`)
 
-  const { data, error } = await supabase
+  const { error } = await supabase
     .from('event_registrations')
     .insert({
+      id,
       event_slug: input.eventSlug,
       attendee_name: input.attendeeName,
-      attendee_email: input.attendeeEmail,
+      attendee_email: input.attendeeEmail.trim().toLowerCase(),
       stripe_session_id: input.stripeSessionId ?? null,
       amount_paid: input.amountPaid ?? 0,
-      cancel_token: tempToken,
+      cancel_token: cancelToken,
       status: 'confirmed',
     })
-    .select('id')
-    .single()
 
-  if (error || !data) {
+  if (error) {
+    // Unique constraint violation — already registered
+    if (error.code === '23505') {
+      throw new Error('This email address is already registered for this event.')
+    }
     console.error('saveRegistration insert error', error)
     throw new Error('Failed to save registration.')
   }
 
-  const cancelToken = generateToken(`cancel:${data.id}`)
+  return { id, cancelToken }
+}
 
-  const { error: updateError } = await supabase
+export async function isAlreadyRegistered(eventSlug: string, email: string): Promise<boolean> {
+  const { count, error } = await supabase
     .from('event_registrations')
-    .update({ cancel_token: cancelToken })
-    .eq('id', data.id)
+    .select('*', { count: 'exact', head: true })
+    .eq('event_slug', eventSlug)
+    .eq('attendee_email', email.trim().toLowerCase())
+    .eq('status', 'confirmed')
 
-  if (updateError) {
-    console.error('saveRegistration token update error', updateError)
-    throw new Error('Failed to finalize registration token.')
+  if (error) {
+    console.error('isAlreadyRegistered error', error)
+    return false
   }
 
-  return { id: data.id, cancelToken }
+  return (count ?? 0) > 0
+}
+
+export async function isAlreadyOnWaitlist(eventSlug: string, email: string): Promise<boolean> {
+  const { count, error } = await supabase
+    .from('event_waitlist')
+    .select('*', { count: 'exact', head: true })
+    .eq('event_slug', eventSlug)
+    .eq('email', email.trim().toLowerCase())
+    .eq('status', 'active')
+
+  if (error) {
+    console.error('isAlreadyOnWaitlist error', error)
+    return false
+  }
+
+  return (count ?? 0) > 0
 }
 
 export async function cancelRegistration(cancelToken: string): Promise<{
@@ -133,38 +158,30 @@ export async function addToWaitlist(input: {
   name: string
   email: string
 }): Promise<{ id: string; removeToken: string }> {
-  const tempToken = generateToken(`waitlist-temp:${input.eventSlug}:${input.email}:${Date.now()}`)
+  const id = randomUUID()
+  const normalizedEmail = input.email.trim().toLowerCase()
+  const removeToken = generateToken(`waitlist:${id}`)
 
-  const { data, error } = await supabase
+  const { error } = await supabase
     .from('event_waitlist')
     .insert({
+      id,
       event_slug: input.eventSlug,
       name: input.name,
-      email: input.email,
-      remove_token: tempToken,
+      email: normalizedEmail,
+      remove_token: removeToken,
       status: 'active',
     })
-    .select('id')
-    .single()
 
-  if (error || !data) {
+  if (error) {
+    if (error.code === '23505') {
+      throw new Error('This email address is already on the waitlist for this event.')
+    }
     console.error('addToWaitlist insert error', error)
     throw new Error('Failed to add to waitlist.')
   }
 
-  const removeToken = generateToken(`waitlist:${data.id}`)
-
-  const { error: updateError } = await supabase
-    .from('event_waitlist')
-    .update({ remove_token: removeToken })
-    .eq('id', data.id)
-
-  if (updateError) {
-    console.error('addToWaitlist token update error', updateError)
-    throw new Error('Failed to finalize waitlist token.')
-  }
-
-  return { id: data.id, removeToken }
+  return { id, removeToken }
 }
 
 export async function removeFromWaitlist(removeToken: string): Promise<void> {
