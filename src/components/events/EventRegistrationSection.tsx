@@ -269,7 +269,7 @@ export default function EventRegistrationSection({
             slug: event.slug,
             attendeeName: nextName,
             attendeeEmail: nextEmail,
-            promoCode: appliedPromoCode ?? '',
+            promoCode: promoCode.trim() || appliedPromoCode || '',
             ...(event.pricing.donationMode ? { donationAmount } : {}),
           }),
         })
