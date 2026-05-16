@@ -14,6 +14,14 @@ export interface Giveaway {
 // ---------------------------------------------------------------------------
 export const giveaways: Giveaway[] = [
   {
+    slug: 'ig-settings',
+    title: 'Instagram Settings Growth Checklist',
+    description: 'The account settings checklist for making your Instagram profile public, recommendable, remixable, measurable, and ready for clean Reels uploads.',
+    icon: '◎',
+    badge: 'Instagram',
+    badgeVariant: 'pink',
+  },
+  {
     slug: 'cross-cli-compatibility-routing',
     title: 'Cross CLI Compatibility Routing',
     description: 'A universal routing guide and migration prompt for keeping Claude Code, Codex, and Gemini CLI aligned without rewriting your workflow.',
