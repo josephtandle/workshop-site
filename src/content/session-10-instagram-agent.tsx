@@ -38,6 +38,40 @@ Important:
 - Do not frame it as a mass-DM tool.
 - If anything requires manual approval or login, stop and tell me exactly what needs to happen next.`
 
+const INSTAGRAM_CREDENTIALS_PROMPT = `Here are my Instagram login credentials for the Instagram agent:
+
+Instagram username / handle without @:
+[EDIT THIS — example: joe.che.official]
+
+Instagram password:
+[EDIT THIS, or tell me to open the env file so I can type the password there directly]
+
+Help me add these login credentials for the Instagram agent.
+
+Tasks:
+1. Confirm the Instagram agent is installed and callable.
+2. Find the installed Instagram agent folder from ~/.instagram-agent/install.json.
+3. Use the regular .env file inside that installed Instagram agent folder:
+   - macOS/Linux example: <install-dir>/.env
+   - Windows example: <install-dir>\\.env
+4. Do not create instagram.env or instagramagent.env.
+5. If INSTAGRAM_AGENT_ENV is already set, tell me the exact path and ask whether I want to keep using it or move the values into the regular <install-dir>/.env file.
+6. Open or create the regular .env file locally with this template:
+   IG_USERNAME=my-instagram-handle
+   IG_PASSWORD=my-instagram-password
+7. Use the Instagram handle for IG_USERNAME, not the email, unless the handle fails.
+8. If I left the password placeholder unchanged, pause and tell me to edit the file directly on my computer.
+9. Do not ask me to paste my Instagram password again.
+10. After I say the file is saved, verify only that IG_USERNAME and IG_PASSWORD are present and non-empty. Do not print the password.
+11. Then tell me the next command to run:
+   instagram login
+
+Rules:
+- Do not send DMs.
+- Do not post anything.
+- Do not print my password.
+- Do not store the password anywhere except the Instagram agent's regular .env file.`
+
 const INSTAGRAM_LOGIN_PROMPT = `Help me get the Instagram agent ready to use on this machine.
 
 Tasks:
@@ -80,7 +114,7 @@ Rules:
 const INSTAGRAM_CRM_TEST_PROMPT = `Use my Instagram agent and CRM together in a safe test run.
 
 Goal:
-Read the last 20 DM conversations, identify which ones are actual leads, and add only the real leads into my CRM with useful information filled in.
+Read the last 20 DM conversations, identify which ones are actual leads, and add only the real leads into my All Sorted CRM with useful information filled in.
 
 Tasks:
 1. First verify the Instagram agent works on this machine.
@@ -99,6 +133,7 @@ Tasks:
    - Instagram username
    - display name
    - lead source = Instagram DM
+   - journey source = inbound Instagram conversation
    - short summary of what they want
    - current stage = New Lead or Interested, whichever fits better
    - next step
@@ -115,6 +150,44 @@ Rules:
 - No outreach.
 - No posting.
 - If CRM write access fails, stop and explain the blocker.`
+
+const INSTAGRAM_GIVEAWAY_CAPTURE_PROMPT = `Use my Instagram agent and All Sorted CRM together for a giveaway or landing-page lead source.
+
+Goal:
+Trace the lead journey from the public source into CRM follow-up, without sending anything automatically.
+
+Tasks:
+1. Confirm the Instagram agent works on this machine.
+2. Identify the source we are analyzing:
+   - giveaway landing page
+   - Instagram post or Reel comments
+   - Instagram DM replies
+   - a lead magnet signup page
+3. If the source is a post or Reel, read comments and identify people who appear to be asking for the giveaway, resource, booking link, or offer.
+4. If the source is DMs, read the relevant recent conversations and identify which ones came from the giveaway, lead magnet, or public post.
+5. For every real lead, add or update the person in All Sorted CRM.
+6. Include these fields where available:
+   - name or display name
+   - Instagram username
+   - lead source = Instagram Giveaway, Instagram DM, Instagram Comment, or Landing Page
+   - journey step = giveaway/comment/landing-page/signup/DM/follow-up
+   - what they asked for
+   - current stage = New Lead, Interested, or Needs Review
+   - recommended next step
+   - notes with the source URL or campaign name if known
+7. Do not create duplicates. Match existing CRM records by Instagram username, email, phone, or name when possible.
+8. At the end, show:
+   - how many people were reviewed
+   - how many became CRM leads
+   - how many need manual review
+   - exactly what was added or updated
+
+Rules:
+- Read, qualify, and capture only.
+- Do not send DMs.
+- Do not reply to comments.
+- Do not post anything.
+- If All Sorted CRM write access fails, stop and explain the blocker.`
 
 const INSTAGRAM_COMMENTS_TEST_PROMPT = `Use my Instagram agent in read-only mode.
 
@@ -150,8 +223,34 @@ const SUCCESS_SIGNALS = [
   {
     label: 'Inbox access',
     title: 'You can read the inbox',
-    body: 'The next useful command is `instagram read-dms --limit 20` so you can start reviewing conversations for CRM capture.',
+    body: 'The next useful command is `instagram read-dms --limit 20` so you can start reviewing conversations for All Sorted CRM capture.',
   },
+]
+
+const LEAD_JOURNEY_STEPS = [
+  {
+    title: 'Public source',
+    body: 'The person first appears through a giveaway page, lead magnet page, Instagram post, Reel comment, profile visit, or internet lead source.',
+  },
+  {
+    title: 'Intent signal',
+    body: 'They comment a keyword, ask for the resource, reply to a story, send a DM, book a call, or submit a landing-page form.',
+  },
+  {
+    title: 'All Sorted CRM capture',
+    body: 'The agent records the source, campaign, Instagram handle, what they asked for, journey step, stage, next step, and notes.',
+  },
+  {
+    title: 'Human follow-up',
+    body: 'You review the lead, decide whether it is real, and only then send a thoughtful reply or move them into a follow-up workflow.',
+  },
+]
+
+const CRM_FIELD_MAP = [
+  ['Lead source', 'Instagram DM, Instagram Comment, Instagram Giveaway, Landing Page, or Referral'],
+  ['Journey step', 'giveaway, comment, landing-page, signup, DM, follow-up, booked-call'],
+  ['Stage', 'New Lead, Interested, Needs Review, or Not a Lead'],
+  ['Next step', 'The single next action: reply, research, book, send resource, or ignore'],
 ]
 
 export default function Session10InstagramAgent() {
@@ -166,7 +265,8 @@ export default function Session10InstagramAgent() {
         </h1>
         <p className="mb-8 text-base leading-relaxed text-[#FCF4EB]/70 sm:text-lg">
           This is the first practical step for bringing Instagram into your sales system. The goal is not mass outreach.
-          The goal is to read DMs, review inbound interest, capture real leads into a CRM, and make follow-up cleaner.
+          The goal is to track the journey from public lead source to intent signal, capture real leads into All Sorted CRM,
+          and make follow-up cleaner.
         </p>
 
         <div className="mb-8 flex flex-col gap-3 text-sm text-[#FCF4EB]/50 sm:flex-row sm:flex-wrap sm:gap-6">
@@ -202,8 +302,11 @@ export default function Session10InstagramAgent() {
             {[
               { href: '#permissions', label: 'Start Here — Claude Dangerously Skip Permissions' },
               { href: '#install', label: 'Install — Install and log into the Instagram agent' },
+              { href: '#open-instagram', label: 'Open Instagram — Log into the right account' },
+              { href: '#credentials', label: 'Credentials — Add your Instagram login credentials' },
               { href: '#capabilities', label: 'Capabilities — What it can do and how to use it' },
               { href: '#reality', label: 'Reality — Risks and the right long-term path' },
+              { href: '#journey', label: 'Journey — Landing page, giveaway, DM, CRM' },
               { href: '#tests', label: 'Tests — Try the agent safely' },
             ].map(({ href, label }, i) => (
               <li key={href} className="flex items-center gap-3 group/item">
@@ -284,14 +387,50 @@ export default function Session10InstagramAgent() {
           </div>
         </StepCard>
 
-        <StepCard number={4} title="Log into the Instagram account this agent will use">
+        <div id="open-instagram">
+          <StepCard number={4} title="Open Instagram">
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-5">
+              Open Instagram in your browser and make sure you are using the account this agent should read.
+            </p>
+            <a
+              href="https://www.instagram.com/"
+              className="group inline-flex w-full items-center justify-between gap-4 rounded-2xl border border-[#7C69C7]/35 bg-[#7C69C7]/20 px-5 py-5 text-left shadow-[0_18px_50px_rgba(124,105,199,0.18)] transition hover:border-[#9D8FE0]/55 hover:bg-[#7C69C7]/28 sm:px-6"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="min-w-0">
+                <span className="block text-xs font-semibold uppercase tracking-[0.22em] text-[#BDB3E8]">Open in browser</span>
+                <span className="mt-2 block text-xl font-bold leading-tight text-[#FCF4EB] sm:text-2xl">instagram.com</span>
+              </span>
+              <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/10 text-[#FCF4EB] transition group-hover:translate-x-1">
+                <svg width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M4 12L12 4M6 4h6v6" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </span>
+            </a>
+          </StepCard>
+        </div>
+
+        <div id="credentials">
+          <StepCard number={5} title="Add your Instagram login credentials">
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              This is its own setup step. The agent needs the Instagram account username or handle plus the password for the first login,
+              unless a saved session already exists. Add those login credentials to the local Instagram agent env file before running the login test.
+            </p>
+            <ProTip type="warning" className="mt-4">
+              Do not paste your Instagram password into Claude, Codex, or any chat. Put it directly in the local env file.
+            </ProTip>
+            <CodeBlock filename="Claude Code prompt" code={INSTAGRAM_CREDENTIALS_PROMPT} editable />
+          </StepCard>
+        </div>
+
+        <StepCard number={6} title="Log into the Instagram account this agent will use">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
             Before this is actually useful, you need a live Instagram login session for the account you want the agent to read.
             Installation alone is not enough.
           </p>
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-            Open <a href="https://www.instagram.com/" className="underline hover:text-white" target="_blank" rel="noopener noreferrer">Instagram</a>,
-            log into the correct account, and then make sure the agent saves the session successfully before you try any CRM workflow.
+            Log into the correct account, then make sure the agent saves the session successfully before you try any CRM workflow.
           </p>
           <CodeBlock filename="Claude Code prompt" code={INSTAGRAM_LOGIN_PROMPT} editable />
         </StepCard>
@@ -303,7 +442,7 @@ export default function Session10InstagramAgent() {
           <h2 className="text-2xl font-bold text-[#FCF4EB]">What It Can Do and How to Use It</h2>
         </div>
 
-        <StepCard number={5} title="What the Instagram agent can do">
+        <StepCard number={7} title="What the Instagram agent can do">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
             Once installed, this agent gives you a practical Instagram toolbelt. The safest and most useful part is the read-and-research side.
           </p>
@@ -324,13 +463,13 @@ export default function Session10InstagramAgent() {
               <p className="text-[#FCF4EB] font-semibold text-sm mb-2">Recommended first use</p>
               <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
                 Start with `read-dms`, `read-comments`, and profile research. That is the cleanest path for reviewing inbound
-                interest and moving real opportunities into your CRM.
+                interest and moving real opportunities into All Sorted CRM.
               </p>
             </div>
           </div>
         </StepCard>
 
-        <StepCard number={6} title="Recommended uses and recommended non-uses">
+        <StepCard number={8} title="Recommended uses and recommended non-uses">
           <div className="space-y-4">
             <div className="rounded-xl border border-white/[0.08] bg-white/[0.04] p-4">
               <p className="text-[#FCF4EB] font-semibold text-sm mb-2">Recommended uses</p>
@@ -338,7 +477,7 @@ export default function Session10InstagramAgent() {
                 <li>read Instagram DM threads</li>
                 <li>review comments and interest signals</li>
                 <li>research profiles before a reply or sales call</li>
-                <li>capture leads into your CRM</li>
+                <li>capture leads into All Sorted CRM</li>
                 <li>prepare better follow-up notes</li>
                 <li>review inbound activity before a launch or offer push</li>
               </ul>
@@ -364,7 +503,7 @@ export default function Session10InstagramAgent() {
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Risks and the Right Long-Term Path</h2>
         </div>
 
-        <StepCard number={7} title="Reality and dangers">
+        <StepCard number={9} title="Reality and dangers">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
             This agent uses an unofficial private API. That means it can be useful, but it is not the same as having a clean,
             officially supported Meta integration.
@@ -378,12 +517,12 @@ export default function Session10InstagramAgent() {
               <li>account restrictions or rate limits if you act too aggressively</li>
               <li>fragile behavior because unofficial APIs can change without notice</li>
               <li>false confidence if you mistake a first-step tool for a production-safe system</li>
-              <li>operational mess if you mix research, outreach, and automation without clear boundaries</li>
+              <li>operational mess if you mix research, lead capture, outreach, and automation without clear boundaries</li>
             </ul>
           </div>
         </StepCard>
 
-        <StepCard number={8} title="The right long-term way to do it">
+        <StepCard number={10} title="The right long-term way to do it">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
             The proper production path is the official Meta API. That is the real route if you want a stable, compliant,
             long-term Instagram integration.
@@ -414,27 +553,65 @@ export default function Session10InstagramAgent() {
         </StepCard>
       </section>
 
+      <section id="journey" className="mb-16">
+        <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
+          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Journey</span>
+          <h2 className="text-2xl font-bold text-[#FCF4EB]">From Lead Source to All Sorted CRM</h2>
+        </div>
+
+        <StepCard number={11} title="Track where the person came from">
+          <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+            The useful system is not just Instagram inbox access. The useful system is knowing where someone entered,
+            what signal they gave, and what should happen next.
+          </p>
+          <div className="space-y-4">
+            {LEAD_JOURNEY_STEPS.map(({ title, body }, index) => (
+              <div key={title} className="rounded-xl border border-white/[0.08] bg-white/[0.04] p-4">
+                <p className="text-[#FCF4EB] font-semibold text-sm mb-2">{index + 1}. {title}</p>
+                <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">{body}</p>
+              </div>
+            ))}
+          </div>
+        </StepCard>
+
+        <StepCard number={12} title="Use consistent CRM fields">
+          <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+            Every captured lead should carry enough source context that you can analyze the journey later instead of only
+            seeing a name in a pipeline column.
+          </p>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {CRM_FIELD_MAP.map(([label, value]) => (
+              <div key={label} className="rounded-xl border border-white/[0.08] bg-white/[0.04] p-4">
+                <p className="text-[#FCF4EB] font-semibold text-sm mb-2">{label}</p>
+                <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">{value}</p>
+              </div>
+            ))}
+          </div>
+          <CodeBlock filename="Claude Code prompt" code={INSTAGRAM_GIVEAWAY_CAPTURE_PROMPT} editable />
+        </StepCard>
+      </section>
+
       <section id="tests" className="mb-16">
         <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
           <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Tests</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Try the Agent Safely</h2>
         </div>
 
-        <StepCard number={9} title="Go read and tell me what the last direct message was">
+        <StepCard number={13} title="Go read and tell me what the last direct message was">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
             This is the safest first test. It verifies the login session and confirms the agent can read your inbox without taking action.
           </p>
           <CodeBlock filename="Claude Code prompt" code={INSTAGRAM_LAST_DM_PROMPT} editable />
         </StepCard>
 
-        <StepCard number={10} title="Go read the last 20 messages and capture real leads into the CRM">
+        <StepCard number={14} title="Go read the last 20 messages and capture real leads into All Sorted CRM">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
             This is the actual sales workflow. Review inbound conversations, decide which ones are real opportunities, and organize them properly.
           </p>
           <CodeBlock filename="Claude Code prompt" code={INSTAGRAM_CRM_TEST_PROMPT} editable />
         </StepCard>
 
-        <StepCard number={11} title="Go look at my last post, read the comments, tell me how many there were, and give me all the comments">
+        <StepCard number={15} title="Go look at my last post, read the comments, tell me how many there were, and give me all the comments">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
             This tests comment-reading in a safe way. If the agent cannot identify your latest post URL by itself, it should ask you for the link.
           </p>

@@ -46,6 +46,15 @@ export async function POST(request: Request) {
         status: result.status,
       },
     })
+    await trackInsightEvent('delivery_completed', {
+      route: '/events/finalize-registration',
+      checkoutId: sessionId,
+      properties: {
+        event_slug: event.slug,
+        delivery_type: 'paid_event_registration',
+        status: result.status,
+      },
+    })
 
     return NextResponse.json({
       ok: true,

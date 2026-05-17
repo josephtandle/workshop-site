@@ -200,6 +200,9 @@ export default function EventRegistrationSection({
   }`
 
   async function openCheckout(name: string, email: string, promo: string) {
+    const journeyKey = 'insight_journey_id'
+    const journeyId = window.localStorage.getItem(journeyKey) || window.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2)}`
+    window.localStorage.setItem(journeyKey, journeyId)
     const response = await fetch('/api/events/checkout-session', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -208,6 +211,10 @@ export default function EventRegistrationSection({
         attendeeName: name,
         attendeeEmail: email,
         promoCode: promo,
+        journeyId,
+        acquisitionRoute: window.location.pathname,
+        acquisitionQuery: window.location.search,
+        referrer: document.referrer || undefined,
         ...(event.pricing.donationMode ? { donationAmount } : {}),
       }),
     })

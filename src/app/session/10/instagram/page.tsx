@@ -3,7 +3,7 @@ import Session10InstagramAgent from '@/content/session-10-instagram-agent'
 
 export const metadata = {
   title: 'Session 10: Instagram Agent and Lead Capture',
-  description: 'Install the Instagram agent from GitHub, understand the recommended safety boundaries, and use Instagram as a lead source for CRM capture.',
+  description: 'Install the Instagram agent from GitHub, understand the recommended safety boundaries, and track Instagram, giveaway, and landing-page leads into All Sorted CRM.',
 }
 
 export default function Session10InstagramPage() {

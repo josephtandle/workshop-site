@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
 import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
+import { trackInsightEvent } from '@/lib/insight-to-fix'
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
 
@@ -259,11 +260,18 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Too many requests. Please try again shortly.' }, { status: 429 })
     }
 
-    const { email, source = 'lead-magnet' } = await request.json()
+    const { email, source = 'lead-magnet', journeyId = null } = await request.json()
 
     if (!email || typeof email !== 'string' || email.length > 256 || !EMAIL_RE.test(email.trim())) {
       return NextResponse.json({ error: 'Valid email is required' }, { status: 400 })
     }
+
+    await trackInsightEvent('giveaway_lead_captured', {
+      route: '/giveaways',
+      email,
+      sessionId: typeof journeyId === 'string' ? journeyId : null,
+      properties: { source },
+    })
 
     // Save to Supabase leads table (non-blocking)
     try {
@@ -286,6 +294,24 @@ export async function POST(request: Request) {
     // Send confirmation via Resend
     const idempotencyKey = `lead-magnet/${source}/${email.trim().toLowerCase()}`
     await sendViaResend(email, source, idempotencyKey)
+    await trackInsightEvent('initial_email_sent', {
+      route: '/api/lead-magnet',
+      email,
+      sessionId: typeof journeyId === 'string' ? journeyId : null,
+      properties: { source, email_type: 'lead_magnet_delivery' },
+    })
+    await trackInsightEvent('welcome_email_sent', {
+      route: '/api/lead-magnet',
+      email,
+      sessionId: typeof journeyId === 'string' ? journeyId : null,
+      properties: { source, email_type: 'lead_magnet_delivery' },
+    })
+    await trackInsightEvent('delivery_completed', {
+      route: '/api/lead-magnet',
+      email,
+      sessionId: typeof journeyId === 'string' ? journeyId : null,
+      properties: { source, delivery_type: 'lead_magnet' },
+    })
 
     return NextResponse.json({ success: true })
   } catch (error) {

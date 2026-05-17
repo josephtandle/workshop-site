@@ -128,7 +128,7 @@ export const sessions: Session[] = [
     number: 10,
     title: 'Instagram Agent and Lead Capture',
     description:
-      'Install the Instagram agent, understand the risks and recommended boundaries, and start using Instagram as a lead source for CRM capture and cleaner follow-up.',
+      'Install the Instagram agent, understand the risks and recommended boundaries, and track Instagram, giveaway, and landing-page leads into All Sorted CRM.',
     date: '',
     hasGuide: true,
     hasPrep: false,

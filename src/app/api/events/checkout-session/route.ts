@@ -36,6 +36,10 @@ export async function POST(request: Request) {
     const attendeeName = typeof body.attendeeName === 'string' ? body.attendeeName.trim() : ''
     const attendeeEmail = typeof body.attendeeEmail === 'string' ? body.attendeeEmail.trim() : ''
     const promoCode = typeof body.promoCode === 'string' ? body.promoCode.trim() : ''
+    const journeyId = typeof body.journeyId === 'string' ? body.journeyId.trim() : ''
+    const acquisitionRoute = typeof body.acquisitionRoute === 'string' ? body.acquisitionRoute.trim() : '/events'
+    const acquisitionQuery = typeof body.acquisitionQuery === 'string' ? body.acquisitionQuery.trim() : ''
+    const referrer = typeof body.referrer === 'string' ? body.referrer.trim() : ''
     const rawDonationAmount = typeof body.donationAmount === 'number' ? body.donationAmount : null
 
     if (!slug || !attendeeName || !attendeeEmail) {
@@ -97,6 +101,18 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Invalid amount.' }, { status: 400 })
     }
 
+    await trackInsightEvent('lead_acquired', {
+      route: acquisitionRoute,
+      email: attendeeEmail,
+      sessionId: journeyId,
+      properties: {
+        acquisition_query: acquisitionQuery,
+        referrer,
+        event_slug: event.slug,
+        source: 'event_registration',
+      },
+    })
+
     const unitAmount = Math.round(amount * 100)
     if (unitAmount === 0) {
       const syncResult = await syncLegacyRegistration({
@@ -130,15 +146,40 @@ export async function POST(request: Request) {
           attendeeEmail,
           cancelToken,
         })
+        await trackInsightEvent('initial_email_sent', {
+          route: '/events/checkout',
+          email: attendeeEmail,
+          sessionId: journeyId,
+          properties: { event_slug: event.slug, email_type: 'event_confirmation' },
+        })
+        await trackInsightEvent('welcome_email_sent', {
+          route: '/events/checkout',
+          email: attendeeEmail,
+          sessionId: journeyId,
+          properties: { event_slug: event.slug, email_type: 'event_confirmation' },
+        })
+        await trackInsightEvent('delivery_completed', {
+          route: '/events/checkout',
+          email: attendeeEmail,
+          sessionId: journeyId,
+          properties: { event_slug: event.slug, delivery_type: 'free_event_registration' },
+        })
       } catch (error) {
         console.error('event confirmation email error', error)
         message = `${message} Confirmation email failed to send automatically.`
+        await trackInsightEvent('initial_email_failed', {
+          route: '/events/checkout',
+          email: attendeeEmail,
+          sessionId: journeyId,
+          properties: { event_slug: event.slug, reason: 'confirmation_email_failed' },
+        })
       }
 
       // TODO: For paid checkouts, save registration via Stripe webhook (separate task).
       await trackInsightEvent('checkout_completed', {
         route: '/events/checkout',
         email: attendeeEmail,
+        sessionId: journeyId,
         properties: {
           event_slug: event.slug,
           free_checkout: true,
@@ -202,6 +243,7 @@ export async function POST(request: Request) {
       route: '/events/checkout',
       email: attendeeEmail,
       checkoutId: session.id,
+      sessionId: journeyId,
       properties: {
         event_slug: event.slug,
         amount,

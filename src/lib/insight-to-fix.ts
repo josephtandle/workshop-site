@@ -8,6 +8,7 @@ export async function trackInsightEvent(eventType: string, payload: {
   email?: string | null
   contactId?: string | null
   checkoutId?: string | null
+  sessionId?: string | null
   properties?: Record<string, unknown>
 }) {
   const collectorUrl = getInsightCollectorUrl()
@@ -26,6 +27,7 @@ export async function trackInsightEvent(eventType: string, payload: {
         email: payload.email || undefined,
         contact_id: payload.contactId || undefined,
         checkout_id: payload.checkoutId || undefined,
+        session_id: payload.sessionId || undefined,
         properties: payload.properties || {},
       }),
     })
