@@ -6,6 +6,7 @@ import { createStripeClient } from '@/lib/stripe'
 import { saveRegistration } from '@/lib/event-registration-db'
 import { toOrigin } from '@/lib/url-utils'
 import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
+import { trackInsightEvent } from '@/lib/insight-to-fix'
 
 export const runtime = 'nodejs'
 
@@ -23,6 +24,10 @@ export async function POST(request: Request) {
   try {
     const { ok: rateLimitOk } = await checkRateLimit(`checkout:${getClientIp(request)}`, 10, 60)
     if (!rateLimitOk) {
+      await trackInsightEvent('checkout_failed', {
+        route: '/events/checkout',
+        properties: { reason: 'rate_limited' },
+      })
       return NextResponse.json({ error: 'Too many requests. Please try again shortly.' }, { status: 429 })
     }
 
@@ -34,10 +39,18 @@ export async function POST(request: Request) {
     const rawDonationAmount = typeof body.donationAmount === 'number' ? body.donationAmount : null
 
     if (!slug || !attendeeName || !attendeeEmail) {
+      await trackInsightEvent('checkout_failed', {
+        route: '/events/checkout',
+        properties: { reason: 'missing_required_fields', slug },
+      })
       return NextResponse.json({ error: 'Missing required fields.' }, { status: 400 })
     }
 
     if (attendeeName.length > 256 || attendeeEmail.length > 256) {
+      await trackInsightEvent('checkout_failed', {
+        route: '/events/checkout',
+        properties: { reason: 'invalid_input_length', slug },
+      })
       return NextResponse.json({ error: 'Invalid input.' }, { status: 400 })
     }
 
@@ -45,11 +58,21 @@ export async function POST(request: Request) {
       rawDonationAmount !== null &&
       (!Number.isFinite(rawDonationAmount) || rawDonationAmount < 0 || rawDonationAmount > 99999)
     ) {
+      await trackInsightEvent('checkout_failed', {
+        route: '/events/checkout',
+        email: attendeeEmail,
+        properties: { reason: 'invalid_donation_amount', slug },
+      })
       return NextResponse.json({ error: 'Invalid donation amount.' }, { status: 400 })
     }
 
     const event = getEventBySlug(slug)
     if (!event) {
+      await trackInsightEvent('checkout_failed', {
+        route: '/events/checkout',
+        email: attendeeEmail,
+        properties: { reason: 'event_not_found', slug },
+      })
       return NextResponse.json({ error: 'Event not found.' }, { status: 404 })
     }
 
@@ -66,6 +89,11 @@ export async function POST(request: Request) {
     }
 
     if (!Number.isFinite(amount) || amount < 0) {
+      await trackInsightEvent('checkout_failed', {
+        route: '/events/checkout',
+        email: attendeeEmail,
+        properties: { reason: 'invalid_amount', slug },
+      })
       return NextResponse.json({ error: 'Invalid amount.' }, { status: 400 })
     }
 
@@ -108,6 +136,17 @@ export async function POST(request: Request) {
       }
 
       // TODO: For paid checkouts, save registration via Stripe webhook (separate task).
+      await trackInsightEvent('checkout_completed', {
+        route: '/events/checkout',
+        email: attendeeEmail,
+        properties: {
+          event_slug: event.slug,
+          free_checkout: true,
+          amount,
+          sync_status: syncResult.status,
+          confirmation_email_warning: message !== 'Free ticket reserved. No payment needed.',
+        },
+      })
 
       return NextResponse.json({
         completed: true,
@@ -159,6 +198,17 @@ export async function POST(request: Request) {
       },
     })
 
+    await trackInsightEvent('checkout_session_created', {
+      route: '/events/checkout',
+      email: attendeeEmail,
+      checkoutId: session.id,
+      properties: {
+        event_slug: event.slug,
+        amount,
+        applied_promo_code: promo?.code ?? null,
+      },
+    })
+
     return NextResponse.json({
       clientSecret: session.client_secret,
       sessionId: session.id,
@@ -168,6 +218,10 @@ export async function POST(request: Request) {
     })
   } catch (error) {
     console.error('event checkout session error', error)
+    await trackInsightEvent('checkout_failed', {
+      route: '/events/checkout',
+      properties: { reason: 'exception' },
+    })
     return NextResponse.json({ error: 'Unable to create checkout session.' }, { status: 500 })
   }
 }
