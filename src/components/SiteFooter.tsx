@@ -5,7 +5,7 @@ export default function SiteFooter() {
 
         {/* Bio with links */}
         <p className="text-sm leading-7 text-[#FCF4EB]/52 text-center max-w-lg">
-          Joe Che is the founder of{' '}
+          Joe Che is the founder and CEO of{' '}
           <a href="https://getallsorted.ai" target="_blank" rel="noopener noreferrer" className="text-[#BDB3E8] transition hover:text-[#FCF4EB]">All Sorted AI</a>
           {' '}and host of the{' '}
           <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" className="text-[#BDB3E8] transition hover:text-[#FCF4EB]">Business Automation Mastermind</a>.

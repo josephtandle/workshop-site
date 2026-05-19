@@ -6,6 +6,7 @@ import { buildGoogleCalendarUrl } from '@/lib/calendar'
 import Reveal from '@/components/Reveal'
 import EventRegistrationSection from '@/components/events/EventRegistrationSection'
 import type { EventRegistrationData } from '@/components/events/EventRegistrationSection'
+import HeroVideo from '@/components/events/HeroVideo'
 import ScrollToRegisterButton from '@/components/events/ScrollToRegisterButton'
 
 function sectionTitleClass(sectionId?: string) {
@@ -429,6 +430,16 @@ export default function EventPageView({
   initialPromoCode?: string | null
 }) {
   const hasSetupItems = (event.postPurchase?.setupItems?.length ?? 0) > 0
+  const heroMedia = event.heroVideoSrc ? (
+    <HeroVideo
+      className="h-full w-full object-cover"
+      src={event.heroVideoSrc}
+      poster={event.heroVideoPoster}
+      alt={event.heroAlt}
+    />
+  ) : (
+    <Image src={event.heroImage} alt={event.heroAlt} fill className="object-cover" />
+  )
 
   const calendarEvent = event.calendarEvent
     ? {
@@ -518,9 +529,9 @@ export default function EventPageView({
           </Reveal>
 
           <Reveal delay={5}>
-            <aside className="mt-6 overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(160deg,rgba(252,244,235,0.08),rgba(124,105,199,0.12))] shadow-[0_28px_80px_rgba(0,0,0,0.28)]">
-              <div className="relative aspect-[16/9] overflow-hidden border-b border-white/10">
-                <Image src={event.heroImage} alt={event.heroAlt} fill className="object-cover" />
+            <aside className={`mt-6 overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(160deg,rgba(252,244,235,0.08),rgba(124,105,199,0.12))] shadow-[0_28px_80px_rgba(0,0,0,0.28)] ${event.heroVideoSrc ? 'mx-auto w-full sm:max-w-[75%] lg:max-w-[30%]' : ''}`}>
+              <div className={`relative overflow-hidden border-b border-white/10 ${event.heroVideoSrc ? 'aspect-[9/16]' : 'aspect-[16/9]'}`}>
+                {heroMedia}
               </div>
               <div className="space-y-5 p-6 md:p-7">
                 <div>

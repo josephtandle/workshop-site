@@ -277,9 +277,9 @@ export default function EventRegistrationSection({
     })
   }
 
-  function handleSubmit(formData: FormData) {
-    const nextName = String(formData.get('attendeeName') || '').trim()
-    const nextEmail = String(formData.get('attendeeEmail') || '').trim()
+  function handleSubmit() {
+    const nextName = attendeeName.trim()
+    const nextEmail = attendeeEmail.trim()
 
     if (!nextName || !nextEmail) {
       setError('Please enter your name and email.')
@@ -369,28 +369,57 @@ export default function EventRegistrationSection({
         </p>
       </div>
 
-      <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(252,244,235,0.08),rgba(124,105,199,0.08))] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.26)] md:p-8">
+      <div className="event-registration-shell rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(252,244,235,0.08),rgba(124,105,199,0.08))] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.26)] md:p-8">
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
-          <form action={handleSubmit} className="grid gap-5">
+          <form action={handleSubmit} autoComplete="off" className="grid gap-5">
             <div className="grid gap-5 md:grid-cols-2">
               <label className="grid gap-2">
-                <span className="text-sm font-semibold text-[#FCF4EB]">Full name</span>
-                <input
-                  name="attendeeName"
-                  defaultValue={attendeeName}
-                  className="rounded-xl border border-black/10 bg-white px-4 py-3 text-black placeholder:text-black/35 outline-none transition focus:border-[#7C69C7]/55"
-                  placeholder="Your name"
-                />
+                <span className="min-h-[14px] text-sm font-semibold leading-none text-[#FCF4EB]">Full name</span>
+                <div className="relative h-16">
+                  <div
+                    aria-label="Full name"
+                    className="event-registration-editable h-16 w-full rounded-xl border border-black/10 bg-white px-4 pr-12 text-black outline-none transition focus:border-[#7C69C7]/55"
+                    contentEditable
+                    data-placeholder="Your name"
+                    onInput={(event) => {
+                      setAttendeeName(event.currentTarget.textContent ?? '')
+                    }}
+                    onKeyDown={(event) => {
+                      if (event.key === 'Enter') {
+                        event.preventDefault()
+                      }
+                    }}
+                    role="textbox"
+                    spellCheck={false}
+                    suppressContentEditableWarning
+                  >
+                    {attendeeName}
+                  </div>
+                </div>
               </label>
               <label className="grid gap-2">
-                <span className="text-sm font-semibold text-[#FCF4EB]">Email</span>
-                <input
-                  name="attendeeEmail"
-                  type="email"
-                  defaultValue={attendeeEmail}
-                  className="rounded-xl border border-black/10 bg-white px-4 py-3 text-black placeholder:text-black/35 outline-none transition focus:border-[#7C69C7]/55"
-                  placeholder="you@example.com"
-                />
+                <span className="min-h-[14px] text-sm font-semibold leading-none text-[#FCF4EB]">Email</span>
+                <div className="relative h-16">
+                  <div
+                    aria-label="Email"
+                    className="event-registration-editable h-16 w-full rounded-xl border border-black/10 bg-white px-4 pr-12 text-black outline-none transition focus:border-[#7C69C7]/55"
+                    contentEditable
+                    data-placeholder="you@example.com"
+                    onInput={(event) => {
+                      setAttendeeEmail((event.currentTarget.textContent ?? '').replace(/\s+/g, ''))
+                    }}
+                    onKeyDown={(event) => {
+                      if (event.key === 'Enter') {
+                        event.preventDefault()
+                      }
+                    }}
+                    role="textbox"
+                    spellCheck={false}
+                    suppressContentEditableWarning
+                  >
+                    {attendeeEmail}
+                  </div>
+                </div>
               </label>
             </div>
 

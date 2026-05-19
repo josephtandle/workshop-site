@@ -10,7 +10,7 @@ const UID = 'test-event@mastermindshq.business'
 // --- buildGoogleCalendarUrl ---
 
 test('buildGoogleCalendarUrl: produces Google Calendar render URL', () => {
-  const url = buildGoogleCalendarUrl({ title: 'AI Avatar Lab', startIso: START, endIso: END })
+  const url = buildGoogleCalendarUrl({ title: 'AI Content Lab', startIso: START, endIso: END })
   assert.ok(url.startsWith('https://calendar.google.com/calendar/render'))
 })
 
@@ -93,8 +93,8 @@ test('buildIcalString: SEQUENCE is set when provided', () => {
 })
 
 test('buildIcalString: SUMMARY contains the title', () => {
-  const ical = buildIcalString({ uid: UID, title: 'AI Avatar Lab', startIso: START, endIso: END })
-  assert.ok(ical.includes('SUMMARY:AI Avatar Lab'))
+  const ical = buildIcalString({ uid: UID, title: 'AI Content Lab', startIso: START, endIso: END })
+  assert.ok(ical.includes('SUMMARY:AI Content Lab'))
 })
 
 test('buildIcalString: special characters in title are escaped', () => {

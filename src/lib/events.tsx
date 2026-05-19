@@ -125,6 +125,8 @@ export type EventDefinition = {
   durationLabel: string
   heroImage: string
   heroAlt: string
+  heroVideoSrc?: string
+  heroVideoPoster?: string
   badge?: string
   audience: string[]
   outcomes: string[]
@@ -408,8 +410,8 @@ export const events: EventDefinition[] = [
   {
     slug: 'ai-avatar-content-creation',
     status: 'live',
-    title: 'AI Avatar Content Creation Lab',
-    shortTitle: 'AI Avatar Lab',
+    title: 'AI Content Creation Lab',
+    shortTitle: 'AI Content Lab',
     eyebrow: '',
     summary:
       'A one-day cinematic AI content workshop for founders, creators, and brands who want content that looks modern, intentional, and commercially usable.',
@@ -420,7 +422,9 @@ export const events: EventDefinition[] = [
     locationLabel: 'Pererenan, Canggu',
     durationLabel: 'One-day intensive bootcamp',
     heroImage: '/events/ai-avatar-content-creation/flyer.jpg',
-    heroAlt: 'AI Avatar Content Creation Lab flyer',
+    heroAlt: 'AI Content Creation Lab flyer',
+    heroVideoSrc: '/events/ai-avatar-content-creation/ai-content-creation-v2.mp4',
+    heroVideoPoster: '/events/ai-avatar-content-creation/ai-content-creation-v2-poster-48s.jpg',
     badge: 'Live Workshop',
     audience: [
       'Creators',
@@ -500,6 +504,12 @@ export const events: EventDefinition[] = [
           description: 'Save 50% with the Mastermind rate.',
           percentOff: 50,
         },
+        {
+          code: 'UF',
+          label: 'UF 20',
+          description: 'Save 20% with UF.',
+          percentOff: 20,
+        },
       ],
     },
     calendarEvent: {
@@ -570,16 +580,6 @@ export const events: EventDefinition[] = [
             body: 'Turn one good idea into hooks, scripts, visuals, and multiple usable content pieces instead of starting from zero every time.',
           },
         ],
-      },
-      {
-        type: 'image',
-        id: 'bright-harbor-commercial',
-        eyebrow: 'Example Commercial',
-        title: 'This commercial was created by Helix in two hours',
-        imageSrc: '/events/ai-avatar-content-creation/symbol.jpg',
-        imageAlt: 'Bright Harbor AI commercial example created by Helix',
-        videoSrc: 'https://media.mastermindshq.business/events/ai-avatar-content-creation/bright-harbor-video-email.mp4',
-        caption: 'A fast production example of the kind of commercial direction this workshop is built around.',
       },
       {
         type: 'quoteCard',
@@ -706,7 +706,7 @@ export const events: EventDefinition[] = [
       },
     ],
     metadata: {
-      title: 'AI Avatar Content Creation Lab',
+      title: 'AI Content Creation Lab',
       description:
         'A cinematic AI content workshop in Bali with Joe Che and Helix Wolfson. Learn avatars, AI video, hooks, and repeatable content systems.',
     },

@@ -218,6 +218,38 @@ body {
 }
 
 /* ─── Icon hover glow ─────────────────────────────────── */
+
+.event-registration-input {
+  appearance: none;
+  min-height: 4rem;
+}
+
+.event-registration-editable {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.event-registration-editable:empty::before {
+  content: attr(data-placeholder);
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.event-registration-shell [data-lastpass-icon-root] {
+  display: none !important;
+}
+
+.event-registration-input:-webkit-autofill,
+.event-registration-input:-webkit-autofill:hover,
+.event-registration-input:-webkit-autofill:focus,
+.event-registration-input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #fff inset;
+  -webkit-text-fill-color: #151515;
+  caret-color: #151515;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: background-color 9999s ease-in-out 0s;
+}
 .icon-hover {
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
