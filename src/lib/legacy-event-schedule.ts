@@ -1,5 +1,6 @@
 import { getEventBySlug, type EventDefinition } from '@/lib/events'
 import { sendEventConfirmationEmail } from '@/lib/event-confirmation-email'
+import { saveRegistration } from '@/lib/event-registration-db'
 import { dedupeAttendeesByEmail } from './location-reminder'
 import { createStripeClient } from '@/lib/stripe'
 
@@ -473,6 +474,23 @@ export async function finalizeLegacyCheckoutSession(
     status: 'paid',
   })
 
+  let cancelToken: string | undefined
+  try {
+    const saved = await saveRegistration({
+      eventSlug: input.event.slug,
+      attendeeName,
+      attendeeEmail,
+      stripeSessionId: session.id,
+      amountPaid: (session.amount_total ?? 0) / 100,
+    })
+    cancelToken = saved.cancelToken
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Unknown registration save error.'
+    if (message !== 'This email address is already registered for this event.') {
+      console.error('event registration save error', error)
+    }
+  }
+
   let emailSendError: string | null = null
   if (!confirmationEmailAlreadySent) {
     try {
@@ -480,6 +498,7 @@ export async function finalizeLegacyCheckoutSession(
         event: input.event,
         attendeeName,
         attendeeEmail,
+        cancelToken,
       })
     } catch (error) {
       emailSendError = error instanceof Error ? error.message : 'Unknown confirmation email error.'

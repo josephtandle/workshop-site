@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import { getEventBySlug, resolvePromoCode } from '@/lib/events'
 import { sendEventConfirmationEmail } from '@/lib/event-confirmation-email'
 import { syncLegacyRegistration } from '@/lib/legacy-event-schedule'
-import { createStripeClient } from '@/lib/stripe'
+import { createStripeClient, getStripePublishableKey } from '@/lib/stripe'
 import { saveRegistration } from '@/lib/event-registration-db'
 import { toOrigin } from '@/lib/url-utils'
 import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
@@ -175,7 +175,6 @@ export async function POST(request: Request) {
         })
       }
 
-      // TODO: For paid checkouts, save registration via Stripe webhook (separate task).
       await trackInsightEvent('checkout_completed', {
         route: '/events/checkout',
         email: attendeeEmail,
@@ -201,11 +200,19 @@ export async function POST(request: Request) {
 
     const stripe = createStripeClient()
     const baseUrl = getBaseUrl(request)
+    const publishableKey = getStripePublishableKey()
     const session = await stripe.checkout.sessions.create({
-      ui_mode: 'embedded_page',
+      ...(publishableKey
+        ? {
+            ui_mode: 'embedded_page' as const,
+            return_url: `${baseUrl}/events/${event.slug}?checkout=success&session_id={CHECKOUT_SESSION_ID}`,
+            redirect_on_completion: 'if_required' as const,
+          }
+        : {
+            success_url: `${baseUrl}/events/${event.slug}?checkout=success&session_id={CHECKOUT_SESSION_ID}`,
+            cancel_url: `${baseUrl}/events/${event.slug}?checkout=cancelled`,
+          }),
       mode: 'payment',
-      return_url: `${baseUrl}/events/${event.slug}?checkout=success&session_id={CHECKOUT_SESSION_ID}`,
-      redirect_on_completion: 'if_required',
       customer_email: attendeeEmail,
       billing_address_collection: 'auto',
       customer_creation: 'always',
@@ -253,6 +260,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({
       clientSecret: session.client_secret,
+      checkoutUrl: session.url,
       sessionId: session.id,
       completed: false,
       appliedPromoCode: promo?.code ?? null,

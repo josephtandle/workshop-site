@@ -226,6 +226,10 @@ export default function EventRegistrationSection({
       markSuccess(payload.message || 'Free ticket reserved. No payment needed.')
       return
     }
+    if (typeof payload.checkoutUrl === 'string' && payload.checkoutUrl) {
+      window.location.assign(payload.checkoutUrl)
+      return
+    }
     setCheckoutSessionId(payload.sessionId ?? null)
     setClientSecret(payload.clientSecret)
   }
@@ -286,11 +290,6 @@ export default function EventRegistrationSection({
       return
     }
 
-    if (!publishableKey) {
-      setError('Stripe publishable key is missing. Add it to the site config to enable embedded checkout.')
-      return
-    }
-
     startTransition(async () => {
       setError(null)
       setCompletionMessage(null)
@@ -310,7 +309,7 @@ export default function EventRegistrationSection({
     <section id="register" className="mx-auto max-w-6xl px-6 py-8 md:py-10">
       {successState ? (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/72 px-6 backdrop-blur-md">
-          <div className="relative w-full max-w-xl rounded-[2rem] border border-white/12 bg-[#151517] p-7 text-center shadow-[0_30px_120px_rgba(0,0,0,0.45)] md:p-9">
+          <div className="relative w-full max-w-xl rounded-[2rem] border border-white/12 bg-[#151517] px-7 pb-7 pt-14 text-center shadow-[0_30px_120px_rgba(0,0,0,0.45)] md:px-9 md:pb-9 md:pt-16">
             <button
               type="button"
               aria-label="Close"
@@ -365,7 +364,9 @@ export default function EventRegistrationSection({
           Reserve your seat and check out below.
         </h2>
         <p className="mt-4 text-base leading-8 text-[#FCF4EB]/68 md:text-lg">
-          Enter your information here. Once you continue, checkout opens on this page instead of sending you away.
+          {publishableKey
+            ? 'Enter your information here. Once you continue, checkout opens on this page instead of sending you away.'
+            : 'Enter your information here. Once you continue, Stripe opens securely to complete your checkout.'}
         </p>
       </div>
 
@@ -376,49 +377,40 @@ export default function EventRegistrationSection({
               <label className="grid gap-2">
                 <span className="min-h-[14px] text-sm font-semibold leading-none text-[#FCF4EB]">Full name</span>
                 <div className="relative h-16">
-                  <div
+                  <textarea
                     aria-label="Full name"
-                    className="event-registration-editable h-16 w-full rounded-xl border border-black/10 bg-white px-4 pr-12 text-black outline-none transition focus:border-[#7C69C7]/55"
-                    contentEditable
-                    data-placeholder="Your name"
-                    onInput={(event) => {
-                      setAttendeeName(event.currentTarget.textContent ?? '')
-                    }}
-                    onKeyDown={(event) => {
-                      if (event.key === 'Enter') {
-                        event.preventDefault()
-                      }
-                    }}
-                    role="textbox"
+                    autoCapitalize="words"
+                    autoComplete="off"
+                    className="event-registration-textarea h-16 w-full rounded-xl border border-black/10 bg-white px-4 pr-12 text-black placeholder:text-black/35 outline-none transition focus:border-[#7C69C7]/55"
+                    data-1p-ignore="true"
+                    data-lpignore="true"
+                    name="registrationFieldA"
+                    onChange={(event) => setAttendeeName(event.target.value)}
+                    placeholder="Your name"
+                    rows={1}
                     spellCheck={false}
-                    suppressContentEditableWarning
-                  >
-                    {attendeeName}
-                  </div>
+                    value={attendeeName}
+                  />
                 </div>
               </label>
               <label className="grid gap-2">
                 <span className="min-h-[14px] text-sm font-semibold leading-none text-[#FCF4EB]">Email</span>
                 <div className="relative h-16">
-                  <div
+                  <textarea
                     aria-label="Email"
-                    className="event-registration-editable h-16 w-full rounded-xl border border-black/10 bg-white px-4 pr-12 text-black outline-none transition focus:border-[#7C69C7]/55"
-                    contentEditable
-                    data-placeholder="you@example.com"
-                    onInput={(event) => {
-                      setAttendeeEmail((event.currentTarget.textContent ?? '').replace(/\s+/g, ''))
-                    }}
-                    onKeyDown={(event) => {
-                      if (event.key === 'Enter') {
-                        event.preventDefault()
-                      }
-                    }}
-                    role="textbox"
+                    autoCapitalize="none"
+                    autoComplete="off"
+                    className="event-registration-textarea h-16 w-full rounded-xl border border-black/10 bg-white px-4 pr-12 text-black placeholder:text-black/35 outline-none transition focus:border-[#7C69C7]/55"
+                    data-1p-ignore="true"
+                    data-lpignore="true"
+                    dir="ltr"
+                    name="registrationFieldB"
+                    onChange={(event) => setAttendeeEmail(event.target.value.replace(/\s+/g, ''))}
+                    placeholder="you@example.com"
+                    rows={1}
                     spellCheck={false}
-                    suppressContentEditableWarning
-                  >
-                    {attendeeEmail}
-                  </div>
+                    value={attendeeEmail}
+                  />
                 </div>
               </label>
             </div>

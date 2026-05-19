@@ -8,6 +8,7 @@ import EventRegistrationSection from '@/components/events/EventRegistrationSecti
 import type { EventRegistrationData } from '@/components/events/EventRegistrationSection'
 import HeroVideo from '@/components/events/HeroVideo'
 import ScrollToRegisterButton from '@/components/events/ScrollToRegisterButton'
+import EventMediaVideo from '@/components/events/EventMediaVideo'
 
 function sectionTitleClass(sectionId?: string) {
   if (sectionId === 'creative-lab' || sectionId === 'outcomes') {
@@ -167,7 +168,7 @@ function SplitSection({ section }: { section: Extract<EventSection, { type: 'spl
 function ImageSection({ section }: { section: Extract<EventSection, { type: 'image' }> }) {
   const compactVisual = section.id === 'visual-marker'
   const media = section.videoSrc ? (
-    <video
+    <EventMediaVideo
       className="h-full w-full object-cover"
       src={section.videoSrc}
       aria-label={section.imageAlt}
@@ -207,14 +208,12 @@ function HtmlSection({ section }: { section: Extract<EventSection, { type: 'html
 function QuoteCardSection({ section }: { section: Extract<EventSection, { type: 'quoteCard' }> }) {
   const renderMedia = () =>
     section.videoSrc ? (
-      <video
+      <EventMediaVideo
         className="h-full w-full object-cover object-center"
         src={section.videoSrc}
         aria-label={section.imageAlt}
-        autoPlay
         controls
         loop
-        muted
         playsInline
         preload="metadata"
       />

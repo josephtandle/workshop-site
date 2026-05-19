@@ -5,13 +5,7 @@ export function getStripeSecretKey() {
 }
 
 export function getStripePublishableKey() {
-  const explicit = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || process.env.STRIPE_PUBLISHABLE_KEY
-  if (explicit) return explicit
-
-  const secretKey = getStripeSecretKey()
-  if (!secretKey || !secretKey.startsWith('sk_')) return null
-
-  return `pk_${secretKey.slice(3)}`
+  return process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || process.env.STRIPE_PUBLISHABLE_KEY || null
 }
 
 export function createStripeClient() {

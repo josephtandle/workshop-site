@@ -8,40 +8,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Home
     { url: BASE, lastModified: NOW, changeFrequency: 'weekly', priority: 1 },
 
-    // Sessions
-    { url: `${BASE}/session/1`, lastModified: NOW, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE}/session/2`, lastModified: NOW, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE}/session/3`, lastModified: NOW, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE}/session/4`, lastModified: NOW, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE}/session/5`, lastModified: NOW, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE}/session/6`, lastModified: NOW, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE}/session/7`, lastModified: NOW, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE}/session/8`, lastModified: NOW, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE}/session/9`, lastModified: NOW, changeFrequency: 'monthly', priority: 0.9 },
-
-    // Session sub-pages
-    { url: `${BASE}/session/1/bonus`,       lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/session/2/guide`,       lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/session/2/prep`,        lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/session/3/guide`,       lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/session/3/prep`,        lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/session/3/bonus`,       lastModified: NOW, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${BASE}/session/4/prep`,        lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/session/4/guide-brain`, lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/session/4/custom-domain`, lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/session/4/homework`,    lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/session/5/wrapup`,      lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/session/6/guide`,       lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/session/6/prep`,        lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/session/6/prep-hooks`,  lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/session/6/hook-writer`, lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/session/7/guide`,       lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/session/7/prep`,        lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/session/8/guide`,       lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/session/8/prep`,        lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/session/9/guide`,       lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/resource-vault/how-to-stand-out-in-the-age-of-ai`, lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
-
     // Giveaways
     { url: `${BASE}/giveaways/cross-cli-compatibility-routing`, lastModified: NOW, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/giveaways/claude-md`,                   lastModified: NOW, changeFrequency: 'monthly', priority: 0.9 },
@@ -56,12 +22,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Lead magnets
     { url: `${BASE}/lead-magnets/ultimate-claudemd`,        lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
-
-    // Resource vault
-    { url: `${BASE}/resource-vault`,                        lastModified: NOW, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/resource-vault/connecting-to-xero`,    lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/resource-vault/connecting-to-google-sheets`, lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/resource-vault/reza-website-control`,   lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/resource-vault/wordpress-api`,          lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
   ]
 }

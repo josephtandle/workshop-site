@@ -224,16 +224,12 @@ body {
   min-height: 4rem;
 }
 
-.event-registration-editable {
-  display: flex;
-  align-items: center;
+.event-registration-textarea {
+  resize: none;
   overflow: hidden;
-  white-space: nowrap;
-}
-
-.event-registration-editable:empty::before {
-  content: attr(data-placeholder);
-  color: rgba(0, 0, 0, 0.35);
+  line-height: 1.5rem;
+  padding-top: 1.15rem;
+  padding-bottom: 1.1rem;
 }
 
 .event-registration-shell [data-lastpass-icon-root] {

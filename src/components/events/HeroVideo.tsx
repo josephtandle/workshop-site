@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef, useState } from 'react'
+import EventMediaVideo from '@/components/events/EventMediaVideo'
 
 type Props = {
   src: string
@@ -22,7 +23,7 @@ export default function HeroVideo({ src, poster, alt, className }: Props) {
 
   return (
     <div className="relative h-full w-full">
-      <video
+      <EventMediaVideo
         ref={videoRef}
         className={className}
         src={src}
