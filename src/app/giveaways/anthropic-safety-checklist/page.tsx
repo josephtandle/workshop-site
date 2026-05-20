@@ -300,11 +300,11 @@ function useMagnet(strength = 0.3) {
 }
 
 export default function AnthropicSafetyChecklistPage() {
+  const [emailModalOpen, setEmailModalOpen] = useState(false)
   const [openCategories, setOpenCategories] = useState<Set<string>>(
     () => new Set(AUDIT_AREAS.map((category) => category.name)),
   )
 
-  const [emailModalOpen, setEmailModalOpen] = useState(false)
   const particleCanvasRef = useRef<HTMLCanvasElement>(null)
   const statRefs = useRef<(HTMLSpanElement | null)[]>([null, null, null])
 
@@ -826,6 +826,7 @@ export default function AnthropicSafetyChecklistPage() {
           </a>
         </div>
       </div>
+
       <GiveawayEmailModal slug="anthropic-safety-checklist" isOpen={emailModalOpen} onClose={() => setEmailModalOpen(false)} />
     </>
   )

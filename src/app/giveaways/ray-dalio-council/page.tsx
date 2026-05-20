@@ -774,10 +774,10 @@ function InstallCopyButton({ command, onAfterCopy }: { command: string; onAfterC
     try {
       await copyWithConfetti(command, event)
       setCopied(true)
-      window.open(GITHUB_URL, '_blank', 'noopener,noreferrer')
       setTimeout(() => setCopied(false), 3500)
+      onAfterCopy?.()
     } catch { /* noop */ }
-  }, [command])
+  }, [command, onAfterCopy])
 
   return (
     <div className="flex flex-col items-center gap-3 mt-6">
