@@ -351,24 +351,25 @@ export default function GuardogPage() {
             className="absolute top-8 sm:top-10 left-0 right-0 flex justify-center"
           >
             <div className="p-[1px] rounded-full bg-gradient-to-r from-[#8B79D4] to-[#F5C3C6] inline-block">
-              <div className="px-5 py-2 rounded-full bg-[#151515] flex items-center gap-2">
-                <span className="text-[#9D8FE0] text-xs">✦</span>
+              <div className="px-3 py-1.5 sm:px-5 sm:py-2 rounded-full bg-[#151515] flex items-center gap-1.5 sm:gap-2 whitespace-nowrap max-w-[92vw]">
+                <span className="text-[#9D8FE0] text-[11px] sm:text-xs">✦</span>
                 <span
-                  className="font-semibold text-xs text-transparent bg-clip-text bg-gradient-to-r from-[#9D8FE0] to-[#F5C3C6]"
+                  className="font-semibold text-[11px] sm:text-xs text-transparent bg-clip-text bg-gradient-to-r from-[#9D8FE0] to-[#F5C3C6]"
                 >
                   Free
                 </span>
-                <span className="text-[#FCF4EB]/32 text-xs">from the</span>
+                <span className="hidden sm:inline text-[#FCF4EB]/32 text-xs">from the</span>
                 <a
                   href={MASTERMIND_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#FCF4EB]/60 text-xs font-medium hover:text-[#FCF4EB]/90 transition-colors"
+                  className="text-[#FCF4EB]/60 text-[11px] sm:text-xs font-medium hover:text-[#FCF4EB]/90 transition-colors"
                 >
-                  Business Automation Mastermind
+                  <span className="sm:hidden">Mastermind</span>
+                  <span className="hidden sm:inline">Business Automation Mastermind</span>
                 </a>
-                <span className="text-[#FCF4EB]/20 text-xs">·</span>
-                <span className="text-[#FCF4EB]/40 text-xs">by Joe Che</span>
+                <span className="text-[#FCF4EB]/20 text-[11px] sm:text-xs">·</span>
+                <span className="text-[#FCF4EB]/40 text-[11px] sm:text-xs">by Joe Che</span>
               </div>
             </div>
           </motion.div>
@@ -376,11 +377,11 @@ export default function GuardogPage() {
           {/* Aurora glow blobs */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <div
-              className="aurora-a absolute top-[10%] left-[15%] w-[600px] h-[600px] rounded-full opacity-[0.09]"
+              className="aurora-a absolute top-[10%] left-[15%] w-[320px] h-[320px] sm:w-[500px] sm:h-[500px] md:w-[600px] md:h-[600px] rounded-full opacity-[0.09]"
               style={{ background: 'radial-gradient(circle, #8B79D4 0%, transparent 70%)', filter: 'blur(80px)' }}
             />
             <div
-              className="aurora-b absolute top-[30%] right-[10%] w-[500px] h-[500px] rounded-full opacity-[0.07]"
+              className="aurora-b absolute top-[30%] right-[10%] w-[280px] h-[280px] sm:w-[420px] sm:h-[420px] md:w-[500px] md:h-[500px] rounded-full opacity-[0.07]"
               style={{ background: 'radial-gradient(circle, #F5C3C6 0%, transparent 70%)', filter: 'blur(90px)' }}
             />
           </div>
@@ -515,7 +516,7 @@ export default function GuardogPage() {
               border: '1px solid rgba(124,105,199,0.15)',
             }}
           >
-            <div className="px-8 py-10">
+            <div className="px-5 py-8 sm:px-8 sm:py-10">
               <div className="text-center mb-8">
                 <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
                   Think of it as
@@ -741,8 +742,8 @@ export default function GuardogPage() {
                 <InlineCopyButton text={SETUP_PROMPT} />
               </div>
               <pre
-                className="p-5 text-sm font-mono leading-[1.75] text-[#FCF4EB]/82"
-                style={{ background: '#0d0d0d', whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}
+                className="p-3 sm:p-5 text-[12px] sm:text-sm font-mono leading-[1.7] text-[#FCF4EB]/82"
+                style={{ background: '#0d0d0d', whiteSpace: 'pre-wrap', wordBreak: 'normal', overflowWrap: 'anywhere' }}
               >
                 <code>{SETUP_PROMPT}</code>
               </pre>
@@ -775,7 +776,7 @@ export default function GuardogPage() {
               border: '1px solid rgba(245,195,198,0.12)',
             }}
           >
-            <div className="px-8 py-10">
+            <div className="px-5 py-8 sm:px-8 sm:py-10">
               <div className="flex items-start gap-4 mb-6">
                 <div
                   className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
