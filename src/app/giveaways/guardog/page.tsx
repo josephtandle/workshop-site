@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import MastermindReactionsSection from '@/components/sections/MastermindReactionsSection'
+import GiveawayEmailModal from '@/components/giveaways/GiveawayEmailModal'
 import { copyWithConfetti } from '@/lib/copyWithConfetti'
 
 // ---------------------------------------------------------------------------
@@ -125,6 +126,7 @@ export default function GuardogPage() {
   const [openSections, setOpenSections] = useState<Set<string>>(
     () => new Set(SCANNER_SECTIONS.map((s) => s.name)),
   )
+  const [emailModalOpen, setEmailModalOpen] = useState(false)
 
   const particleCanvasRef = useRef<HTMLCanvasElement>(null)
   const statRefs = useRef<(HTMLSpanElement | null)[]>([null, null, null])
@@ -747,7 +749,7 @@ export default function GuardogPage() {
             </div>
 
             {/* Big copy button */}
-            <SetupCopyButton prompt={SETUP_PROMPT} />
+            <SetupCopyButton prompt={SETUP_PROMPT} onAfterCopy={() => setEmailModalOpen(true)} />
 
             <p className="text-[#FCF4EB]/20 text-[11px] text-center mt-5 max-w-md mx-auto leading-relaxed">
               Requires Node.js and npm.{' '}
@@ -957,6 +959,12 @@ export default function GuardogPage() {
         </div>
 
       </div>
+
+      <GiveawayEmailModal
+        slug="guardog"
+        isOpen={emailModalOpen}
+        onClose={() => setEmailModalOpen(false)}
+      />
     </>
   )
 }
@@ -1045,7 +1053,7 @@ function InlineCopyButton({ text }: { text: string }) {
 // ---------------------------------------------------------------------------
 // Big setup copy button
 // ---------------------------------------------------------------------------
-function SetupCopyButton({ prompt }: { prompt: string }) {
+function SetupCopyButton({ prompt, onAfterCopy }: { prompt: string; onAfterCopy?: () => void }) {
   const [copied, setCopied] = useState(false)
   const magnet = useMagnet(0.28)
 
@@ -1054,8 +1062,9 @@ function SetupCopyButton({ prompt }: { prompt: string }) {
       await copyWithConfetti(prompt, event)
       setCopied(true)
       setTimeout(() => setCopied(false), 3500)
+      onAfterCopy?.()
     } catch { /* noop */ }
-  }, [prompt])
+  }, [prompt, onAfterCopy])
 
   return (
     <div className="flex flex-col items-center gap-3 mt-6">

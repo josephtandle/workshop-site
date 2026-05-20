@@ -9,11 +9,78 @@ async function sendViaResend(email: string, source: string, idempotencyKey: stri
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://workshop.mastermindshq.business'
   const macCleanerPageUrl = `${siteUrl}/giveaways/maccleaner`
   const macCleanerInstallerUrl = `${siteUrl}/downloads/maccleaner-installer.sh`
+  const guardogPageUrl = `${siteUrl}/giveaways/guardog`
 
   let subject: string
   let html: string
 
-  if (source === 'maccleaner') {
+  if (source === 'guardog') {
+    subject = 'Your GuardDog setup prompt'
+    html = `
+      <div style="font-family: system-ui, sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #ffffff;">
+        <p style="font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 24px;">GuardDog</p>
+
+        <h1 style="font-size: 26px; font-weight: 800; line-height: 1.25; margin-bottom: 16px; color: #111;">
+          Here&rsquo;s your GuardDog setup prompt.
+        </h1>
+
+        <p style="font-size: 16px; color: #444; line-height: 1.7; margin-bottom: 20px;">
+          Paste this into Claude Code or Codex and it will install GuardDog, walk you through getting a free VirusTotal API key, and confirm everything works. About a minute end to end.
+        </p>
+
+        <pre style="background: #0f0f12; color: #f0eee6; padding: 20px; border-radius: 10px; font-size: 13px; line-height: 1.65; white-space: pre-wrap; word-break: break-word; margin-bottom: 24px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;">Set up GuardDog on this computer and get a free VirusTotal API key.
+
+--- STEP 1: Install GuardDog ---
+
+Run these commands in the terminal:
+npm install -g github:josephtandle/guardog
+guardog setup
+
+After setup:
+1. Confirm the guardog command is available globally.
+2. Tell me where npm installed the global command.
+3. Explain how I use GuardDog before installing unfamiliar packages.
+
+--- STEP 2: Get a free VirusTotal API key ---
+
+VirusTotal scans packages against 70+ antivirus engines. The free tier gives 500 requests per day at 4 requests per minute. No credit card required.
+
+1. Open https://www.virustotal.com in my browser.
+2. Create a free account if I do not already have one (click Sign In).
+3. Once I confirm I am logged in, go to my profile icon (top-right) and click API Key.
+4. Tell me to copy the key shown there.
+5. Add the key to my shell profile. On macOS add to ~/.zshrc, on Linux add to ~/.bashrc:
+   export VIRUSTOTAL_API_KEY="&lt;paste my key here&gt;"
+   Resolve the home directory dynamically. Do not hard-code any paths.
+6. Reload the shell profile so the key is active immediately.
+7. Confirm the key loaded: echo $VIRUSTOTAL_API_KEY
+
+--- STEP 3: Confirm everything works ---
+
+Run: guardog analyze lodash npm
+Show me the result and explain the verdict (SILENT, WHINE, or BARK).
+Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before installing any unfamiliar package.</pre>
+
+        <p style="margin-bottom: 24px;">
+          <a href="${guardogPageUrl}"
+             style="display: inline-block; background: #7C69C7; color: white; padding: 13px 26px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 15px;">
+            Open the GuardDog page
+          </a>
+        </p>
+
+        <p style="font-size: 15px; color: #444; line-height: 1.7; margin-bottom: 16px;">
+          Lately I&rsquo;ve been building new free skills like this one almost every week. You&rsquo;ll get them as they drop. Real tools I&rsquo;m actually using in my own business, not theory.
+        </p>
+
+        <p style="font-size: 15px; color: #444; line-height: 1.7; margin-bottom: 28px;">
+          Hit reply and tell me what you&rsquo;re building. I read every one.
+        </p>
+
+        <p style="font-size: 14px; color: #999; margin-top: 24px;">Joe Che</p>
+        <p style="font-size: 12px; color: #bbb; margin-top: 8px;">Sent by Masterminds HQ. You can unsubscribe any time.</p>
+      </div>
+    `
+  } else if (source === 'maccleaner') {
     subject = 'Your MacCleaner installer'
     html = `
       <div style="font-family: system-ui, sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #ffffff;">
@@ -232,6 +299,7 @@ const GIVEAWAY_SOURCE_MAP: Record<string, string> = {
   'claude-md': 'giveaway-claude-md',
   'benchmark': 'giveaway-benchmark',
   'anthropic-safety-checklist': 'giveaway-anthropic-checklist',
+  'guardog': 'giveaway-guardog',
 }
 
 async function ingestIntoCrm(email: string, source: string) {
