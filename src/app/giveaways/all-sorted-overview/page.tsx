@@ -428,7 +428,7 @@ export default function AllSortedOverviewPage() {
         slug="all-sorted-overview"
         isOpen={emailModalOpen}
         onClose={() => setEmailModalOpen(false)}
-        headingOverride="Sending the All Sorted overview to your inbox."
+        headingOverride="Where should I send the overview?"
         showCopiedBadge={false}
       />
     </>
