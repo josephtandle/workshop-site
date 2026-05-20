@@ -14,7 +14,44 @@ async function sendViaResend(email: string, source: string, idempotencyKey: stri
   let subject: string
   let html: string
 
-  if (source === 'guardog') {
+  if (source === 'all-sorted-overview') {
+    subject = 'The All Sorted overview'
+    html = `
+      <div style="font-family: system-ui, sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #ffffff;">
+        <p style="font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 24px;">All Sorted</p>
+
+        <h1 style="font-size: 26px; font-weight: 800; line-height: 1.25; margin-bottom: 16px; color: #111;">
+          Here&rsquo;s the All Sorted overview.
+        </h1>
+
+        <p style="font-size: 16px; color: #444; line-height: 1.7; margin-bottom: 20px;">
+          The full list of 30 things All Sorted does for your business is on the overview page. I&rsquo;d rather you read it where the design actually works.
+        </p>
+
+        <p style="margin-bottom: 24px;">
+          <a href="${siteUrl}/giveaways/all-sorted-overview"
+             style="display: inline-block; background: #7C69C7; color: white; padding: 13px 26px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 15px;">
+            Open the overview
+          </a>
+        </p>
+
+        <p style="font-size: 15px; color: #444; line-height: 1.7; margin-bottom: 16px;">
+          Short version: 126 agents, 57 skills, 45+ integrations, already configured. CRM, bookkeeping, voice transcription, content generation, social posting, strategic advisors. One installed system instead of 20 tabs.
+        </p>
+
+        <p style="font-size: 15px; color: #444; line-height: 1.7; margin-bottom: 16px;">
+          All Sorted opens to founding members soon. You&rsquo;re on the list. I&rsquo;ll write you when it&rsquo;s time.
+        </p>
+
+        <p style="font-size: 15px; color: #444; line-height: 1.7; margin-bottom: 28px;">
+          Hit reply and tell me what part of your business is the biggest mess right now. I read every one.
+        </p>
+
+        <p style="font-size: 14px; color: #999; margin-top: 24px;">Joe Che</p>
+        <p style="font-size: 12px; color: #bbb; margin-top: 8px;">Sent by Masterminds HQ. You can unsubscribe any time.</p>
+      </div>
+    `
+  } else if (source === 'guardog') {
     subject = 'Your GuardDog setup prompt'
     html = `
       <div style="font-family: system-ui, sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #ffffff;">
@@ -300,6 +337,7 @@ const GIVEAWAY_SOURCE_MAP: Record<string, string> = {
   'benchmark': 'giveaway-benchmark',
   'anthropic-safety-checklist': 'giveaway-anthropic-checklist',
   'guardog': 'giveaway-guardog',
+  'all-sorted-overview': 'giveaway-all-sorted-overview',
 }
 
 async function ingestIntoCrm(email: string, source: string) {

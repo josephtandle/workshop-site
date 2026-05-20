@@ -6,11 +6,15 @@ type Props = {
   slug: string
   isOpen: boolean
   onClose: () => void
+  /** If set, replaces the default "Your prompt is ready to paste..." heading. */
+  headingOverride?: string
+  /** Default true. Set false for overview/guide giveaways where nothing was copied. */
+  showCopiedBadge?: boolean
 }
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-export default function GiveawayEmailModal({ slug, isOpen, onClose }: Props) {
+export default function GiveawayEmailModal({ slug, isOpen, onClose, headingOverride, showCopiedBadge = true }: Props) {
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState<string | null>(null)
@@ -113,11 +117,13 @@ export default function GiveawayEmailModal({ slug, isOpen, onClose }: Props) {
           </>
         ) : (
           <>
-            <p className="text-[12px] font-semibold uppercase tracking-[0.24em] text-[#BDB3E8]">
-              ✓ Copied
-            </p>
-            <h3 className="mt-3 text-[1.05rem] sm:text-[1.55rem] font-extrabold leading-[1.25] sm:leading-[1.15] text-[#FCF4EB]">
-              Your prompt is ready to paste into Claude Code or Codex.
+            {showCopiedBadge ? (
+              <p className="text-[12px] font-semibold uppercase tracking-[0.24em] text-[#BDB3E8]">
+                ✓ Copied
+              </p>
+            ) : null}
+            <h3 className={`${showCopiedBadge ? 'mt-3' : ''} text-[1.05rem] sm:text-[1.55rem] font-extrabold leading-[1.25] sm:leading-[1.15] text-[#FCF4EB]`}>
+              {headingOverride || 'Your prompt is ready to paste into Claude Code or Codex.'}
             </h3>
             <p className="mt-3 sm:mt-4 text-[13px] sm:text-[15px] leading-[1.55] sm:leading-7 text-[#FCF4EB]/70">
               Every week I&apos;m building new free skills like this one, sometimes a few at a time. There&apos;s also a book and a couple of courses I&apos;m currently creating. Drop your email and I&apos;ll send everything over as it comes out. Unsubscribe anytime.
