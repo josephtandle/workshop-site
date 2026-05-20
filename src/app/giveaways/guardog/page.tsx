@@ -792,7 +792,7 @@ export default function GuardogPage() {
               </div>
 
               <p className="text-[#FCF4EB]/60 leading-relaxed mb-6">
-                GuardDog already scans package code, checks live vulnerability databases, and runs 30+ malicious pattern checks on its own. VirusTotal adds a second layer: it submits the package to <strong className="text-[#FCF4EB]/80">70+ antivirus engines</strong> simultaneously and checks the result against the world&apos;s largest collective threat database. Think of it as GuardDog asking 70 security firms at once.
+                GuardDog already scans package code, checks live vulnerability databases, and runs 30+ malicious pattern checks on its own. VirusTotal adds a second layer: it submits the package to <strong className="text-[#FCF4EB]/80">70+ antivirus engines</strong>{' '}simultaneously and checks the result against the world&apos;s largest collective threat database. Think of it as GuardDog asking 70 security firms at once.
               </p>
 
               <div className="grid gap-4 sm:grid-cols-3 mb-6">
