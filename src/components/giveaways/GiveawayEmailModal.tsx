@@ -113,7 +113,7 @@ export default function GiveawayEmailModal({ slug, isOpen, onClose }: Props) {
               Your prompt is ready to paste into Claude Code or Codex.
             </h3>
             <p className="mt-4 text-[15px] leading-7 text-[#FCF4EB]/70">
-              Lately I&apos;ve been building new free skills like this one almost every week. Drop your email and I&apos;ll send them as they come out.
+              Lately I&apos;ve been building new free skills like this one almost every week. Drop your email and I&apos;ll send them as they come out. Unsubscribe anytime.
             </p>
 
             <form onSubmit={handleSubmit} className="mt-5 flex flex-col gap-3">
@@ -139,15 +139,12 @@ export default function GiveawayEmailModal({ slug, isOpen, onClose }: Props) {
               {errorMsg ? (
                 <p className="text-[13px] text-[#F5C3C6]">{errorMsg}</p>
               ) : null}
-              <p className="text-[11px] text-[#FCF4EB]/30">
-                Unsubscribe anytime.
-              </p>
             </form>
 
             <button
               type="button"
               onClick={onClose}
-              className="mt-5 text-[13px] text-[#FCF4EB]/40 underline-offset-2 transition hover:text-[#FCF4EB]/70 hover:underline"
+              className="mt-5 text-[15px] font-medium text-[#FCF4EB]/55 underline-offset-2 transition hover:text-[#FCF4EB]/85 hover:underline"
             >
               No thanks, I&apos;m good.
             </button>
