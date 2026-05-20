@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { copyWithConfetti } from '@/lib/copyWithConfetti'
 
+import GiveawayEmailModal from '@/components/giveaways/GiveawayEmailModal'
 const MASTERMIND_URL = 'https://www.mastermindshq.business'
 const JOE_EMAIL = 'joe@mastermindshq.business'
 
@@ -303,6 +304,7 @@ export default function AnthropicSafetyChecklistPage() {
     () => new Set(AUDIT_AREAS.map((category) => category.name)),
   )
 
+  const [emailModalOpen, setEmailModalOpen] = useState(false)
   const particleCanvasRef = useRef<HTMLCanvasElement>(null)
   const statRefs = useRef<(HTMLSpanElement | null)[]>([null, null, null])
 
@@ -677,7 +679,7 @@ export default function AnthropicSafetyChecklistPage() {
             <div className="my-6 rounded-xl overflow-hidden border border-white/[0.08] border-l-2 border-l-[#7C69C7]">
               <div className="flex items-center justify-between px-4 py-2 bg-white/[0.04] border-b border-white/[0.06]">
                 <span className="text-xs text-[#FCF4EB]/40 font-mono">anthropic-ban-risk-audit</span>
-                <InlineCopyButton text={THE_PROMPT} />
+                <InlineCopyButton text={THE_PROMPT} onAfterCopy={() => setEmailModalOpen(true)} />
               </div>
               <pre
                 className="p-5 text-sm font-mono leading-[1.75] text-[#FCF4EB]/82 max-h-[620px] overflow-auto"
@@ -687,7 +689,7 @@ export default function AnthropicSafetyChecklistPage() {
               </pre>
             </div>
 
-            <PromptCopyButton prompt={THE_PROMPT} />
+            <PromptCopyButton prompt={THE_PROMPT} onAfterCopy={() => setEmailModalOpen(true)} />
 
             <p className="text-[#FCF4EB]/25 text-[11px] text-center mt-5 max-w-md mx-auto leading-relaxed">
               This is practical technical guidance, not legal advice. When in doubt, use supported provider APIs for automation.
@@ -824,6 +826,7 @@ export default function AnthropicSafetyChecklistPage() {
           </a>
         </div>
       </div>
+      <GiveawayEmailModal slug="anthropic-safety-checklist" isOpen={emailModalOpen} onClose={() => setEmailModalOpen(false)} />
     </>
   )
 }
@@ -880,13 +883,14 @@ function MastermindCTA() {
   )
 }
 
-function InlineCopyButton({ text }: { text: string }) {
+function InlineCopyButton({ text, onAfterCopy }: { text: string; onAfterCopy?: () => void }) {
   const [copied, setCopied] = useState(false)
   const handleCopy = useCallback(async (event: React.MouseEvent<HTMLButtonElement>) => {
     try {
       await copyWithConfetti(text, event)
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
+      onAfterCopy?.()
     } catch { /* noop */ }
   }, [text])
   return (
@@ -899,7 +903,7 @@ function InlineCopyButton({ text }: { text: string }) {
   )
 }
 
-function PromptCopyButton({ prompt }: { prompt: string }) {
+function PromptCopyButton({ prompt, onAfterCopy }: { prompt: string; onAfterCopy?: () => void }) {
   const [copied, setCopied] = useState(false)
   const magnet = useMagnet(0.22)
 
@@ -908,6 +912,7 @@ function PromptCopyButton({ prompt }: { prompt: string }) {
       await copyWithConfetti(prompt, event)
       setCopied(true)
       setTimeout(() => setCopied(false), 2500)
+      onAfterCopy?.()
     } catch { /* noop */ }
   }, [prompt])
 

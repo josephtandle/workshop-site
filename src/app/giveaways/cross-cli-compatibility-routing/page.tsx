@@ -7,6 +7,7 @@ import CodeBlock from '@/components/CodeBlock'
 import ProTip from '@/components/ProTip'
 import MastermindReactionsSection from '@/components/sections/MastermindReactionsSection'
 import { copyWithConfetti } from '@/lib/copyWithConfetti'
+import GiveawayEmailModal from '@/components/giveaways/GiveawayEmailModal'
 import {
   FLOW_STEPS,
   LANE_CARDS,
@@ -45,7 +46,7 @@ function useMagnet(strength = 0.24) {
   return { ref, onMouseMove, onMouseLeave }
 }
 
-function PromptButtons({ prompt }: { prompt: string }) {
+function PromptButtons({ prompt, onAfterCopy }: { prompt: string; onAfterCopy?: () => void }) {
   const [copied, setCopied] = useState(false)
   const magnet = useMagnet()
 
@@ -106,6 +107,7 @@ function DownloadButtons() {
 }
 
 export default function CrossCliCompatibilityRoutingPage() {
+  const [emailModalOpen, setEmailModalOpen] = useState(false)
   useEffect(() => {
     if (document.querySelector('link[data-font="cormorant"]')) return
     const link = document.createElement('link')
@@ -408,7 +410,7 @@ export default function CrossCliCompatibilityRoutingPage() {
             </p>
           </Reveal>
 
-          <PromptButtons prompt={MIGRATION_PROMPT} />
+          <PromptButtons prompt={MIGRATION_PROMPT} onAfterCopy={() => setEmailModalOpen(true)} />
           <CodeBlock
             code={MIGRATION_PROMPT}
             language="txt"
@@ -437,6 +439,7 @@ export default function CrossCliCompatibilityRoutingPage() {
         <MastermindCTA />
         <MastermindReactionsSection />
       </main>
+      <GiveawayEmailModal slug="cross-cli-compatibility-routing" isOpen={emailModalOpen} onClose={() => setEmailModalOpen(false)} />
     </>
   )
 }

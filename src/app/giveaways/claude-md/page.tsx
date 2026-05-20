@@ -7,6 +7,7 @@ import confetti from 'canvas-confetti'
 import MastermindReactionsSection from '@/components/sections/MastermindReactionsSection'
 import { copyWithConfetti } from '@/lib/copyWithConfetti'
 
+import GiveawayEmailModal from '@/components/giveaways/GiveawayEmailModal'
 // ---------------------------------------------------------------------------
 // Constants
 // ---------------------------------------------------------------------------
@@ -216,6 +217,7 @@ export default function ClaudeMdPage() {
     () => new Set(FILE_SECTIONS.map((s) => s.name)),
   )
 
+  const [emailModalOpen, setEmailModalOpen] = useState(false)
   const particleCanvasRef = useRef<HTMLCanvasElement>(null)
   const statRefs = useRef<(HTMLSpanElement | null)[]>([null, null, null])
 
@@ -433,7 +435,7 @@ export default function ClaudeMdPage() {
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="absolute top-8 sm:top-10 left-0 right-0 flex justify-center"
+            className="relative z-10 mb-6 flex justify-center sm:absolute sm:top-10 sm:left-0 sm:right-0 sm:mb-0"
           >
             <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
               Free from the{' '}
@@ -446,11 +448,11 @@ export default function ClaudeMdPage() {
           {/* Aurora glow blobs */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <div
-              className="aurora-a absolute top-[10%] left-[15%] w-[600px] h-[600px] rounded-full opacity-[0.09]"
+              className="aurora-a absolute top-[10%] left-[15%] w-[320px] h-[320px] sm:w-[500px] sm:h-[500px] md:w-[600px] md:h-[600px] rounded-full opacity-[0.09]"
               style={{ background: 'radial-gradient(circle, #8B79D4 0%, transparent 70%)', filter: 'blur(80px)' }}
             />
             <div
-              className="aurora-b absolute top-[30%] right-[10%] w-[500px] h-[500px] rounded-full opacity-[0.07]"
+              className="aurora-b absolute top-[30%] right-[10%] w-[280px] h-[280px] sm:w-[420px] sm:h-[420px] md:w-[500px] md:h-[500px] rounded-full opacity-[0.07]"
               style={{ background: 'radial-gradient(circle, #F5C3C6 0%, transparent 70%)', filter: 'blur(90px)' }}
             />
           </div>
@@ -615,7 +617,7 @@ export default function ClaudeMdPage() {
             <div className="my-6 rounded-xl overflow-hidden border border-white/[0.08] border-l-2 border-l-[#7C69C7]">
               <div className="flex items-center justify-between px-4 py-2 bg-white/[0.04] border-b border-white/[0.06]">
                 <span className="text-xs text-[#FCF4EB]/40 font-mono">CLAUDE.md</span>
-                <InlineCopyButton text={THE_FILE} />
+                <InlineCopyButton text={THE_FILE} onAfterCopy={() => setEmailModalOpen(true)} />
               </div>
               <pre
                 className="p-5 text-sm font-mono leading-[1.75] text-[#FCF4EB]/82"
@@ -626,7 +628,7 @@ export default function ClaudeMdPage() {
             </div>
 
             {/* CTA buttons: copy + download */}
-            <FileActionButtons fileContent={THE_FILE} />
+            <FileActionButtons fileContent={THE_FILE} onAfterCopy={() => setEmailModalOpen(true)} />
 
             <p className="text-[#FCF4EB]/20 text-[11px] text-center mt-5 max-w-md mx-auto leading-relaxed">
               Free to use, share, and adapt. This is exactly the format Joe uses in every project. Customize the sections that are marked as placeholders and delete the ones you do not need.
@@ -765,6 +767,7 @@ export default function ClaudeMdPage() {
         </div>
 
       </div>
+      <GiveawayEmailModal slug="claude-md" isOpen={emailModalOpen} onClose={() => setEmailModalOpen(false)} />
     </>
   )
 }
@@ -831,13 +834,14 @@ function MastermindCTA() {
 // ---------------------------------------------------------------------------
 // Inline copy button (for the code block header)
 // ---------------------------------------------------------------------------
-function InlineCopyButton({ text }: { text: string }) {
+function InlineCopyButton({ text, onAfterCopy }: { text: string; onAfterCopy?: () => void }) {
   const [copied, setCopied] = useState(false)
   const handleCopy = useCallback(async (event: React.MouseEvent<HTMLButtonElement>) => {
     try {
       await copyWithConfetti(text, event)
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
+      onAfterCopy?.()
     } catch { /* noop */ }
   }, [text])
   return (
@@ -853,7 +857,7 @@ function InlineCopyButton({ text }: { text: string }) {
 // ---------------------------------------------------------------------------
 // Copy + Download buttons
 // ---------------------------------------------------------------------------
-function FileActionButtons({ fileContent }: { fileContent: string }) {
+function FileActionButtons({ fileContent, onAfterCopy }: { fileContent: string; onAfterCopy?: () => void }) {
   const [copied, setCopied] = useState(false)
   const magnet = useMagnet(0.22)
 
@@ -862,6 +866,7 @@ function FileActionButtons({ fileContent }: { fileContent: string }) {
       await copyWithConfetti(fileContent, event)
       setCopied(true)
       setTimeout(() => setCopied(false), 2500)
+      onAfterCopy?.()
     } catch { /* noop */ }
   }, [fileContent])
 

@@ -6,6 +6,7 @@ import Image from 'next/image'
 import gsap from 'gsap'
 import { copyWithConfetti } from '@/lib/copyWithConfetti'
 
+import GiveawayEmailModal from '@/components/giveaways/GiveawayEmailModal'
 // ---------------------------------------------------------------------------
 // Constants
 // ---------------------------------------------------------------------------
@@ -151,6 +152,7 @@ export default function WebDesignArsenalPage() {
   const [openCategories, setOpenCategories] = useState<Set<string>>(
     () => new Set(SKILL_CATEGORIES.map((c) => c.name)),
   )
+  const [emailModalOpen, setEmailModalOpen] = useState(false)
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [emailLoading, setEmailLoading] = useState(false)
@@ -425,11 +427,11 @@ export default function WebDesignArsenalPage() {
         {/* Aurora glow blobs — fixed at page level so they persist while scrolling */}
         <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
           <div
-            className="aurora-a absolute top-[10%] left-[15%] w-[600px] h-[600px] rounded-full opacity-[0.09]"
+            className="aurora-a absolute top-[10%] left-[15%] w-[320px] h-[320px] sm:w-[500px] sm:h-[500px] md:w-[600px] md:h-[600px] rounded-full opacity-[0.09]"
             style={{ background: 'radial-gradient(circle, #8B79D4 0%, transparent 70%)', filter: 'blur(80px)' }}
           />
           <div
-            className="aurora-b absolute top-[30%] right-[10%] w-[500px] h-[500px] rounded-full opacity-[0.07]"
+            className="aurora-b absolute top-[30%] right-[10%] w-[280px] h-[280px] sm:w-[420px] sm:h-[420px] md:w-[500px] md:h-[500px] rounded-full opacity-[0.07]"
             style={{ background: 'radial-gradient(circle, #F5C3C6 0%, transparent 70%)', filter: 'blur(90px)' }}
           />
         </div>
@@ -715,7 +717,7 @@ export default function WebDesignArsenalPage() {
             <div className="my-6 rounded-xl overflow-hidden border border-white/[0.08] border-l-2 border-l-[#7C69C7]">
               <div className="flex items-center justify-between px-4 py-2 bg-white/[0.04] border-b border-white/[0.06]">
                 <span className="text-xs text-[#FCF4EB]/40 font-mono">web-design-toolkit-install</span>
-                <InlineCopyButton text={THE_PROMPT} />
+                <InlineCopyButton text={THE_PROMPT} onAfterCopy={() => setEmailModalOpen(true)} />
               </div>
               <pre
                 className="p-5 text-sm font-mono leading-[1.75] text-[#FCF4EB]/82"
@@ -726,7 +728,7 @@ export default function WebDesignArsenalPage() {
             </div>
 
             {/* Big CTA copy button */}
-            <PromptCopyButton prompt={THE_PROMPT} />
+            <PromptCopyButton prompt={THE_PROMPT} onAfterCopy={() => setEmailModalOpen(true)} />
 
             <p className="text-[#FCF4EB]/20 text-[11px] text-center mt-5 max-w-md mx-auto leading-relaxed">
               I already scanned these packages for anything malicious and everything checked out. I still encourage everyone to do their own scan before installing anything new.
@@ -870,6 +872,7 @@ export default function WebDesignArsenalPage() {
         </div>
 
       </div>
+      <GiveawayEmailModal slug="web-design-arsenal" isOpen={emailModalOpen} onClose={() => setEmailModalOpen(false)} />
     </>
   )
 }
@@ -937,13 +940,14 @@ function MastermindCTA() {
 // ---------------------------------------------------------------------------
 // Inline copy button (for the code block header)
 // ---------------------------------------------------------------------------
-function InlineCopyButton({ text }: { text: string }) {
+function InlineCopyButton({ text, onAfterCopy }: { text: string; onAfterCopy?: () => void }) {
   const [copied, setCopied] = useState(false)
   const handleCopy = useCallback(async (event: React.MouseEvent<HTMLButtonElement>) => {
     try {
       await copyWithConfetti(text, event)
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
+      onAfterCopy?.()
     } catch { /* noop */ }
   }, [text])
   return (
@@ -959,7 +963,7 @@ function InlineCopyButton({ text }: { text: string }) {
 // ---------------------------------------------------------------------------
 // Big CTA copy button with confetti
 // ---------------------------------------------------------------------------
-function PromptCopyButton({ prompt }: { prompt: string }) {
+function PromptCopyButton({ prompt, onAfterCopy }: { prompt: string; onAfterCopy?: () => void }) {
   const [copied, setCopied] = useState(false)
   const magnet = useMagnet(0.22)
 
@@ -968,6 +972,7 @@ function PromptCopyButton({ prompt }: { prompt: string }) {
       await copyWithConfetti(prompt, event)
       setCopied(true)
       setTimeout(() => setCopied(false), 2500)
+      onAfterCopy?.()
     } catch { /* noop */ }
   }, [prompt])
 

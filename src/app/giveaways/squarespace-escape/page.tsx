@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import CodeBlock from '@/components/CodeBlock'
 import { copyWithConfetti } from '@/lib/copyWithConfetti'
 
+import GiveawayEmailModal from '@/components/giveaways/GiveawayEmailModal'
 // ---------------------------------------------------------------------------
 // Constants
 // ---------------------------------------------------------------------------
@@ -133,6 +134,7 @@ function useMagnet(strength = 0.3) {
 // Page
 // ---------------------------------------------------------------------------
 export default function SquarespaceEscapePage() {
+  const [emailModalOpen, setEmailModalOpen] = useState(false)
   const particleCanvasRef = useRef<HTMLCanvasElement>(null)
 
   // Fonts
@@ -239,11 +241,11 @@ export default function SquarespaceEscapePage() {
           {/* Aurora blobs */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <div
-              className="aurora-a absolute top-[10%] left-[15%] w-[600px] h-[600px] rounded-full opacity-[0.09]"
+              className="aurora-a absolute top-[10%] left-[15%] w-[320px] h-[320px] sm:w-[500px] sm:h-[500px] md:w-[600px] md:h-[600px] rounded-full opacity-[0.09]"
               style={{ background: 'radial-gradient(circle, #8B79D4 0%, transparent 70%)', filter: 'blur(80px)' }}
             />
             <div
-              className="aurora-b absolute top-[30%] right-[10%] w-[500px] h-[500px] rounded-full opacity-[0.07]"
+              className="aurora-b absolute top-[30%] right-[10%] w-[280px] h-[280px] sm:w-[420px] sm:h-[420px] md:w-[500px] md:h-[500px] rounded-full opacity-[0.07]"
               style={{ background: 'radial-gradient(circle, #F5C3C6 0%, transparent 70%)', filter: 'blur(90px)' }}
             />
           </div>
@@ -463,7 +465,7 @@ export default function SquarespaceEscapePage() {
               editable
             />
 
-            <BigCopyButton prompt={THE_PROMPT} />
+            <BigCopyButton prompt={THE_PROMPT} onAfterCopy={() => setEmailModalOpen(true)} />
 
             <p className="text-[#FCF4EB]/20 text-[11px] text-center mt-5 max-w-md mx-auto leading-relaxed">
               This runs on your own computer and does not send your site data anywhere.
@@ -594,6 +596,7 @@ export default function SquarespaceEscapePage() {
         </div>
 
       </div>
+      <GiveawayEmailModal slug="squarespace-escape" isOpen={emailModalOpen} onClose={() => setEmailModalOpen(false)} />
     </>
   )
 }
@@ -661,8 +664,9 @@ function MastermindCTA() {
 // ---------------------------------------------------------------------------
 // Big CTA copy button with confetti
 // ---------------------------------------------------------------------------
-function BigCopyButton({ prompt }: { prompt: string }) {
+function BigCopyButton({ prompt, onAfterCopy }: { prompt: string; onAfterCopy?: () => void }) {
   const [copied, setCopied] = useState(false)
+  const [emailModalOpen, setEmailModalOpen] = useState(false)
   const magnet = useMagnet(0.22)
 
   const handleCopy = useCallback(async (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -670,6 +674,7 @@ function BigCopyButton({ prompt }: { prompt: string }) {
       await copyWithConfetti(prompt, event)
       setCopied(true)
       setTimeout(() => setCopied(false), 2500)
+      onAfterCopy?.()
     } catch { /* noop */ }
   }, [prompt])
 

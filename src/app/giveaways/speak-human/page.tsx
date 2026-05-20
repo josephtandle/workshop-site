@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import MastermindReactionsSection from '@/components/sections/MastermindReactionsSection'
 import { copyWithConfetti } from '@/lib/copyWithConfetti'
 
+import GiveawayEmailModal from '@/components/giveaways/GiveawayEmailModal'
 // ---------------------------------------------------------------------------
 // Constants
 // ---------------------------------------------------------------------------
@@ -96,6 +97,7 @@ export default function SpeakHumanPage() {
     () => new Set(SKILL_SECTIONS.map((s) => s.name)),
   )
 
+  const [emailModalOpen, setEmailModalOpen] = useState(false)
   const particleCanvasRef = useRef<HTMLCanvasElement>(null)
   const statRefs = useRef<(HTMLSpanElement | null)[]>([null, null, null])
 
@@ -313,7 +315,7 @@ export default function SpeakHumanPage() {
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="absolute top-8 sm:top-10 left-0 right-0 flex justify-center"
+            className="relative z-10 mb-6 flex justify-center sm:absolute sm:top-10 sm:left-0 sm:right-0 sm:mb-0"
           >
             <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
               Free from the{' '}
@@ -326,11 +328,11 @@ export default function SpeakHumanPage() {
           {/* Aurora glow blobs */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <div
-              className="aurora-a absolute top-[10%] left-[15%] w-[600px] h-[600px] rounded-full opacity-[0.09]"
+              className="aurora-a absolute top-[10%] left-[15%] w-[320px] h-[320px] sm:w-[500px] sm:h-[500px] md:w-[600px] md:h-[600px] rounded-full opacity-[0.09]"
               style={{ background: 'radial-gradient(circle, #8B79D4 0%, transparent 70%)', filter: 'blur(80px)' }}
             />
             <div
-              className="aurora-b absolute top-[30%] right-[10%] w-[500px] h-[500px] rounded-full opacity-[0.07]"
+              className="aurora-b absolute top-[30%] right-[10%] w-[280px] h-[280px] sm:w-[420px] sm:h-[420px] md:w-[500px] md:h-[500px] rounded-full opacity-[0.07]"
               style={{ background: 'radial-gradient(circle, #F5C3C6 0%, transparent 70%)', filter: 'blur(90px)' }}
             />
           </div>
@@ -495,18 +497,18 @@ export default function SpeakHumanPage() {
             <div className="my-6 rounded-xl overflow-hidden border border-white/[0.08] border-l-2 border-l-[#7C69C7]">
               <div className="flex items-center justify-between px-4 py-2 bg-white/[0.04] border-b border-white/[0.06]">
                 <span className="text-xs text-[#FCF4EB]/40 font-mono">Terminal</span>
-                <InlineCopyButton text={INSTALL_COMMAND} />
+                <InlineCopyButton text={INSTALL_COMMAND} onAfterCopy={() => setEmailModalOpen(true)} />
               </div>
               <pre
                 className="p-5 text-sm font-mono leading-[1.75] text-[#FCF4EB]/82"
-                style={{ background: '#0d0d0d', whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}
+                style={{ background: '#0d0d0d', whiteSpace: 'pre-wrap', wordBreak: 'normal', overflowWrap: 'anywhere' }}
               >
                 <code>{INSTALL_COMMAND}</code>
               </pre>
             </div>
 
             {/* Big copy button */}
-            <InstallCopyButton command={INSTALL_COMMAND} />
+            <InstallCopyButton command={INSTALL_COMMAND} onAfterCopy={() => setEmailModalOpen(true)} />
 
             <p className="text-[#FCF4EB]/20 text-[11px] text-center mt-5 max-w-md mx-auto leading-relaxed">
               Requires Git. Copies the skill to <code className="font-mono">~/.claude/skills/speak-human</code>. If your Claude Code skills live somewhere else,{' '}
@@ -650,6 +652,7 @@ export default function SpeakHumanPage() {
         </div>
 
       </div>
+      <GiveawayEmailModal slug="speak-human" isOpen={emailModalOpen} onClose={() => setEmailModalOpen(false)} />
     </>
   )
 }
@@ -716,13 +719,14 @@ function MastermindCTA() {
 // ---------------------------------------------------------------------------
 // Inline copy button (code block header)
 // ---------------------------------------------------------------------------
-function InlineCopyButton({ text }: { text: string }) {
+function InlineCopyButton({ text, onAfterCopy }: { text: string; onAfterCopy?: () => void }) {
   const [copied, setCopied] = useState(false)
   const handleCopy = useCallback(async (event: React.MouseEvent<HTMLButtonElement>) => {
     try {
       await copyWithConfetti(text, event)
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
+      onAfterCopy?.()
     } catch { /* noop */ }
   }, [text])
   return (
@@ -738,7 +742,7 @@ function InlineCopyButton({ text }: { text: string }) {
 // ---------------------------------------------------------------------------
 // Big install copy button (with confetti + GitHub star nudge)
 // ---------------------------------------------------------------------------
-function InstallCopyButton({ command }: { command: string }) {
+function InstallCopyButton({ command, onAfterCopy }: { command: string; onAfterCopy?: () => void }) {
   const [copied, setCopied] = useState(false)
   const magnet = useMagnet(0.28)
 
