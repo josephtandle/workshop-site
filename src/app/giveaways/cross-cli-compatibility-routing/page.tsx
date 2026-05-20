@@ -55,10 +55,11 @@ function PromptButtons({ prompt, onAfterCopy }: { prompt: string; onAfterCopy?: 
       await copyWithConfetti(prompt, event)
       setCopied(true)
       window.setTimeout(() => setCopied(false), 2200)
+      onAfterCopy?.()
     } catch {
       // noop
     }
-  }, [prompt])
+  }, [prompt, onAfterCopy])
 
   return (
     <div className="mt-5 flex flex-col sm:flex-row gap-3">
