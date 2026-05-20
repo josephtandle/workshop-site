@@ -41,6 +41,13 @@ export default function GiveawayEmailModal({ slug, isOpen, onClose }: Props) {
     }
   }, [])
 
+  useEffect(() => {
+    if (!isOpen) return
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => { document.body.style.overflow = prev }
+  }, [isOpen])
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     const trimmed = email.trim()
@@ -77,9 +84,9 @@ export default function GiveawayEmailModal({ slug, isOpen, onClose }: Props) {
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/72 px-6 backdrop-blur-md">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/88 px-4 sm:px-6 backdrop-blur-md">
       <div
-        className="relative w-full max-w-md rounded-[1.5rem] sm:rounded-[2rem] border border-white/12 bg-[#151517] px-5 pb-6 pt-10 sm:px-7 sm:pb-7 sm:pt-12 text-center shadow-[0_30px_120px_rgba(0,0,0,0.45)]"
+        className="relative w-full max-w-md rounded-[1.25rem] sm:rounded-[2rem] border border-white/12 bg-[#151517] px-4 pb-5 pt-8 sm:px-7 sm:pb-7 sm:pt-12 text-center shadow-[0_30px_120px_rgba(0,0,0,0.45)]"
         role="dialog"
         aria-modal="true"
       >
@@ -109,30 +116,33 @@ export default function GiveawayEmailModal({ slug, isOpen, onClose }: Props) {
             <p className="text-[12px] font-semibold uppercase tracking-[0.24em] text-[#BDB3E8]">
               ✓ Copied
             </p>
-            <h3 className="mt-3 text-[1.2rem] sm:text-[1.55rem] font-extrabold leading-[1.2] sm:leading-[1.15] text-[#FCF4EB]">
+            <h3 className="mt-3 text-[1.05rem] sm:text-[1.55rem] font-extrabold leading-[1.25] sm:leading-[1.15] text-[#FCF4EB]">
               Your prompt is ready to paste into Claude Code or Codex.
             </h3>
-            <p className="mt-4 text-[15px] leading-7 text-[#FCF4EB]/70">
+            <p className="mt-3 sm:mt-4 text-[13px] sm:text-[15px] leading-[1.55] sm:leading-7 text-[#FCF4EB]/70">
               Every week I&apos;m building new free skills like this one, sometimes a few at a time. There&apos;s also a book and a couple of courses I&apos;m currently creating. Drop your email and I&apos;ll send everything over as it comes out. Unsubscribe anytime.
             </p>
 
-            <form onSubmit={handleSubmit} noValidate className="mt-5 flex flex-col gap-3">
+            <form onSubmit={handleSubmit} noValidate className="mt-4 sm:mt-5 flex flex-col gap-2.5 sm:gap-3">
               <input
                 ref={inputRef}
                 type="email"
                 inputMode="email"
                 autoComplete="email"
+                data-form-type="other"
+                data-lpignore="true"
+                data-1p-ignore="true"
                 placeholder="you@yourdomain.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 disabled={status === 'submitting'}
                 aria-required="true"
-                className="w-full appearance-none rounded-xl border border-white/12 bg-black/40 px-4 py-3 text-[15px] text-[#FCF4EB] placeholder:text-[#FCF4EB]/30 focus:border-[#8B79D4] focus:outline-none"
+                className="w-full appearance-none rounded-xl border border-white/12 bg-black/40 px-4 py-2.5 sm:py-3 text-[14px] sm:text-[15px] text-[#FCF4EB] placeholder:text-[#FCF4EB]/30 focus:border-[#8B79D4] focus:outline-none"
               />
               <button
                 type="submit"
                 disabled={status === 'submitting'}
-                className="inline-flex items-center justify-center rounded-xl bg-[#7C69C7] px-6 py-3.5 text-[15px] font-bold text-[#FCF4EB] transition hover:bg-[#6e5db8] active:scale-[0.98] disabled:opacity-60"
+                className="inline-flex items-center justify-center rounded-xl bg-[#7C69C7] px-6 py-3 sm:py-3.5 text-[14px] sm:text-[15px] font-bold text-[#FCF4EB] transition hover:bg-[#6e5db8] active:scale-[0.98] disabled:opacity-60"
               >
                 {status === 'submitting' ? 'Sending...' : 'Send me future skills'}
               </button>
