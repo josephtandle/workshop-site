@@ -69,7 +69,7 @@ export default function MastermindReactionsSection() {
           <div className="text-center mb-10">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-cream mb-3">
               Real reactions from{' '}
-              <span className="gradient-text">Cohort 1</span>
+              <span className="gradient-text">Business Automation Mastermind members</span>
             </h2>
             <p className="text-cream/35 text-sm max-w-md mx-auto">
               What members said after their sessions.
