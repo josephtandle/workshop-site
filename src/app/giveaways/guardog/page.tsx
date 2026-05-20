@@ -13,6 +13,34 @@ const GITHUB_URL = 'https://github.com/josephtandle/guardog'
 
 const INSTALL_COMMAND = `git clone https://github.com/josephtandle/guardog.git ~/guardog && cd ~/guardog && ./install.sh`
 
+const CLAUDE_INSTALL_PROMPT = `Install GuardDog and confirm it is ready to use on this computer.
+
+Run these commands:
+npm install -g github:josephtandle/guardog
+guardog setup
+
+After setup:
+1. Confirm the guardog command is available.
+2. Tell me where npm installed the global command.
+3. Run a harmless version or help check if GuardDog supports one.
+4. Explain how I should use GuardDog before installing unfamiliar packages.`
+
+const VIRUSTOTAL_PROMPT = `Help me get a free VirusTotal API key and set it up on this computer.
+
+1. Open https://www.virustotal.com in my browser.
+2. Tell me to click Sign In and create a free account if I do not already have one. No credit card is needed.
+3. Once I confirm I am logged in, tell me to go to my profile (top-right avatar) and click API Key.
+4. Tell me to copy the key shown there.
+5. Save my API key to my environment by adding this line to my shell profile (~/.zshrc on macOS or ~/.bashrc on Linux):
+   export VIRUSTOTAL_API_KEY="<my key>"
+   Resolve the home directory dynamically. Do not hard-code a path.
+6. Reload the shell profile so the key is available immediately.
+7. Confirm the key is accessible by running: echo $VIRUSTOTAL_API_KEY
+8. Remind me of the free tier limits: 500 requests per day, 4 requests per minute.
+9. Show me one example scan command using curl so I can test the key is working:
+   curl --request GET "https://www.virustotal.com/api/v3/urls/<encoded-url>" --header "x-apikey: $VIRUSTOTAL_API_KEY"
+   Replace <encoded-url> with a base64-encoded version of https://example.com`
+
 const SCANNER_SECTIONS = [
   {
     name: 'CVE Database',
@@ -736,6 +764,69 @@ export default function GuardogPage() {
               for the manual install path.
             </p>
           </motion.div>
+        </section>
+
+        {/* ================================================================ */}
+        {/* SECTION 6B: CLAUDE CODE PROMPTS                                  */}
+        {/* ================================================================ */}
+        <section className="max-w-5xl mx-auto px-6 pb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-10"
+          >
+            <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
+              Claude Code Prompts
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#FCF4EB] mb-4">
+              Prefer to let Claude handle the install?
+            </h2>
+            <p className="text-[#FCF4EB]/45 max-w-xl mx-auto leading-relaxed">
+              Copy either prompt into Claude Code and it will walk you through the full setup, confirm everything is working, and explain how to use it.
+            </p>
+          </motion.div>
+
+          <div className="space-y-6">
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="rounded-xl overflow-hidden border border-white/[0.08]"
+              style={{ borderLeftWidth: 2, borderLeftColor: '#7C69C7' }}
+            >
+              <div className="flex items-center justify-between px-4 py-2 bg-white/[0.04] border-b border-white/[0.06]">
+                <span className="text-xs text-[#FCF4EB]/40 font-mono">Claude Code prompt — Install GuardDog</span>
+                <InlineCopyButton text={CLAUDE_INSTALL_PROMPT} />
+              </div>
+              <pre
+                className="p-5 text-sm font-mono leading-[1.75] text-[#FCF4EB]/82"
+                style={{ background: '#0d0d0d', whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}
+              >
+                <code>{CLAUDE_INSTALL_PROMPT}</code>
+              </pre>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="rounded-xl overflow-hidden border border-white/[0.08]"
+              style={{ borderLeftWidth: 2, borderLeftColor: '#F5C3C6' }}
+            >
+              <div className="flex items-center justify-between px-4 py-2 bg-white/[0.04] border-b border-white/[0.06]">
+                <span className="text-xs text-[#FCF4EB]/40 font-mono">Claude Code prompt — VirusTotal API Key (optional, free)</span>
+                <InlineCopyButton text={VIRUSTOTAL_PROMPT} />
+              </div>
+              <pre
+                className="p-5 text-sm font-mono leading-[1.75] text-[#FCF4EB]/82"
+                style={{ background: '#0d0d0d', whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}
+              >
+                <code>{VIRUSTOTAL_PROMPT}</code>
+              </pre>
+            </motion.div>
+          </div>
         </section>
 
         {/* ================================================================ */}
