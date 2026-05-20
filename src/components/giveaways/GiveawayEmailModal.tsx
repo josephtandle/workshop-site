@@ -113,7 +113,7 @@ export default function GiveawayEmailModal({ slug, isOpen, onClose }: Props) {
               Your prompt is ready to paste into Claude Code or Codex.
             </h3>
             <p className="mt-4 text-[15px] leading-7 text-[#FCF4EB]/70">
-              Lately I&apos;ve been building new free skills like this one almost every week. Drop your email and I&apos;ll send them as they come out. Unsubscribe anytime.
+              Every week I&apos;m building new free skills like this one, sometimes a few at a time. There&apos;s also a book and a couple of courses I&apos;m currently creating. Drop your email and I&apos;ll send everything over as it comes out. Unsubscribe anytime.
             </p>
 
             <form onSubmit={handleSubmit} className="mt-5 flex flex-col gap-3">
