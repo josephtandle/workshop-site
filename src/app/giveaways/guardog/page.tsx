@@ -365,6 +365,8 @@ export default function GuardogPage() {
                 >
                   Business Automation Mastermind
                 </a>
+                <span className="text-[#FCF4EB]/20 text-xs">·</span>
+                <span className="text-[#FCF4EB]/40 text-xs">by Joe Che</span>
               </div>
             </div>
           </motion.div>
@@ -758,6 +760,71 @@ export default function GuardogPage() {
         </section>
 
         {/* ================================================================ */}
+        {/* SECTION 6B: VIRUSTOTAL EXPLAINER                                 */}
+        {/* ================================================================ */}
+        <section className="max-w-5xl mx-auto px-6 pb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="rounded-2xl overflow-hidden"
+            style={{
+              background: 'linear-gradient(135deg, rgba(245,195,198,0.06) 0%, rgba(124,105,199,0.05) 100%)',
+              border: '1px solid rgba(245,195,198,0.12)',
+            }}
+          >
+            <div className="px-8 py-10">
+              <div className="flex items-start gap-4 mb-6">
+                <div
+                  className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
+                  style={{ background: 'rgba(245,195,198,0.12)', border: '1px solid rgba(245,195,198,0.2)' }}
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F5C3C6" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  </svg>
+                </div>
+                <div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#F5C3C6]/60">Step 2 in the prompt — Optional but recommended</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-[#FCF4EB]">What is VirusTotal and why should you add it?</h3>
+                </div>
+              </div>
+
+              <p className="text-[#FCF4EB]/60 leading-relaxed mb-6">
+                GuardDog already scans package code, checks live vulnerability databases, and runs 30+ malicious pattern checks on its own. VirusTotal adds a second layer: it submits the package to <strong className="text-[#FCF4EB]/80">70+ antivirus engines</strong> simultaneously and checks the result against the world&apos;s largest collective threat database. Think of it as GuardDog asking 70 security firms at once.
+              </p>
+
+              <div className="grid gap-4 sm:grid-cols-3 mb-6">
+                {[
+                  { label: 'Requests per day', value: '500', note: 'Free tier' },
+                  { label: 'Requests per minute', value: '4', note: 'Rate limit' },
+                  { label: 'Credit card required', value: 'No', note: 'Free account' },
+                ].map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="rounded-xl p-4 text-center"
+                    style={{ background: 'rgba(245,195,198,0.06)', border: '1px solid rgba(245,195,198,0.1)' }}
+                  >
+                    <div className="text-2xl font-extrabold text-[#F5C3C6] mb-1">{stat.value}</div>
+                    <div className="text-[#FCF4EB]/50 text-xs">{stat.label}</div>
+                    <div className="text-[#FCF4EB]/25 text-[10px] mt-0.5 uppercase tracking-wide">{stat.note}</div>
+                  </div>
+                ))}
+              </div>
+
+              <p className="text-[#FCF4EB]/40 text-sm leading-relaxed">
+                The prompt handles the full setup: it opens{' '}
+                <a href="https://www.virustotal.com" target="_blank" rel="noopener noreferrer" className="text-[#F5C3C6]/70 hover:text-[#F5C3C6] transition-colors underline underline-offset-2">
+                  virustotal.com
+                </a>
+                , walks you through creating a free account, copies your API key into your shell profile, and confirms it is working. You can skip this step — GuardDog works without it — but 500 free scans per day is more than most people will ever use.
+              </p>
+            </div>
+          </motion.div>
+        </section>
+
+        {/* ================================================================ */}
         {/* SECTION 7: STATS                                                  */}
         {/* ================================================================ */}
         <section className="max-w-5xl mx-auto px-6 pt-6 pb-14">
@@ -877,7 +944,7 @@ export default function GuardogPage() {
         </motion.div>
 
         {/* Footer */}
-        <div className="text-center pb-10">
+        <div className="text-center pb-10 flex flex-col items-center gap-1.5">
           <a
             href={MASTERMIND_URL}
             target="_blank"
@@ -886,6 +953,7 @@ export default function GuardogPage() {
           >
             Business Automation Mastermind
           </a>
+          <span className="text-[#FCF4EB]/10 text-xs">Created by Joe Che</span>
         </div>
 
       </div>
