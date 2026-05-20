@@ -739,7 +739,7 @@ export default function GuardogPage() {
             <div className="my-6 rounded-xl overflow-hidden border border-white/[0.08]" style={{ borderLeftWidth: 2, borderLeftColor: '#7C69C7' }}>
               <div className="flex items-center justify-between px-4 py-2 bg-white/[0.04] border-b border-white/[0.06]">
                 <span className="text-xs text-[#FCF4EB]/40 font-mono">Claude Code / Codex prompt</span>
-                <InlineCopyButton text={SETUP_PROMPT} />
+                <InlineCopyButton text={SETUP_PROMPT} onAfterCopy={() => setEmailModalOpen(true)} />
               </div>
               <pre
                 className="p-3 sm:p-5 text-[12px] sm:text-sm font-mono leading-[1.7] text-[#FCF4EB]/82"
@@ -1032,15 +1032,16 @@ function MastermindCTA() {
 // ---------------------------------------------------------------------------
 // Inline copy button (code block header)
 // ---------------------------------------------------------------------------
-function InlineCopyButton({ text }: { text: string }) {
+function InlineCopyButton({ text, onAfterCopy }: { text: string; onAfterCopy?: () => void }) {
   const [copied, setCopied] = useState(false)
   const handleCopy = useCallback(async (event: React.MouseEvent<HTMLButtonElement>) => {
     try {
       await copyWithConfetti(text, event)
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
+      onAfterCopy?.()
     } catch { /* noop */ }
-  }, [text])
+  }, [text, onAfterCopy])
   return (
     <button
       onClick={handleCopy}

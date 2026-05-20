@@ -36,6 +36,22 @@ input::-webkit-search-cancel-button {
   appearance: none !important;
 }
 
+/* Suppress password-manager injected icons (LastPass, 1Password, Dashlane,
+   Bitwarden, Samsung Pass). They visually intrude on tight modal inputs. */
+[data-lastpass-icon-root],
+[data-lastpass-root],
+com-1password-button,
+[data-1p-root],
+[data-dashlane-rid],
+[data-bitwarden-watching],
+[data-samsung-pass-injection] {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  pointer-events: none !important;
+}
+
 ::selection {
   background: rgba(124, 105, 199, 0.4);
   color: #FCF4EB;
