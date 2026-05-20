@@ -11,35 +11,38 @@ import { copyWithConfetti } from '@/lib/copyWithConfetti'
 const MASTERMIND_URL = 'https://www.mastermindshq.business'
 const GITHUB_URL = 'https://github.com/josephtandle/guardog'
 
-const INSTALL_COMMAND = `git clone https://github.com/josephtandle/guardog.git ~/guardog && cd ~/guardog && ./install.sh`
+const SETUP_PROMPT = `Set up GuardDog on this computer and get a free VirusTotal API key.
 
-const CLAUDE_INSTALL_PROMPT = `Install GuardDog and confirm it is ready to use on this computer.
+--- STEP 1: Install GuardDog ---
 
-Run these commands:
+Run these commands in the terminal:
 npm install -g github:josephtandle/guardog
 guardog setup
 
 After setup:
-1. Confirm the guardog command is available.
+1. Confirm the guardog command is available globally.
 2. Tell me where npm installed the global command.
-3. Run a harmless version or help check if GuardDog supports one.
-4. Explain how I should use GuardDog before installing unfamiliar packages.`
+3. Explain how I use GuardDog before installing unfamiliar packages.
 
-const VIRUSTOTAL_PROMPT = `Help me get a free VirusTotal API key and set it up on this computer.
+--- STEP 2: Get a free VirusTotal API key ---
+
+VirusTotal scans packages against 70+ antivirus engines. The free tier gives 500 requests per day at 4 requests per minute. No credit card required.
 
 1. Open https://www.virustotal.com in my browser.
-2. Tell me to click Sign In and create a free account if I do not already have one. No credit card is needed.
-3. Once I confirm I am logged in, tell me to go to my profile (top-right avatar) and click API Key.
+2. Create a free account if I do not already have one (click Sign In).
+3. Once I confirm I am logged in, go to my profile icon (top-right) and click API Key.
 4. Tell me to copy the key shown there.
-5. Save my API key to my environment by adding this line to my shell profile (~/.zshrc on macOS or ~/.bashrc on Linux):
-   export VIRUSTOTAL_API_KEY="<my key>"
-   Resolve the home directory dynamically. Do not hard-code a path.
-6. Reload the shell profile so the key is available immediately.
-7. Confirm the key is accessible by running: echo $VIRUSTOTAL_API_KEY
-8. Remind me of the free tier limits: 500 requests per day, 4 requests per minute.
-9. Show me one example scan command using curl so I can test the key is working:
-   curl --request GET "https://www.virustotal.com/api/v3/urls/<encoded-url>" --header "x-apikey: $VIRUSTOTAL_API_KEY"
-   Replace <encoded-url> with a base64-encoded version of https://example.com`
+5. Add the key to my shell profile. On macOS add to ~/.zshrc, on Linux add to ~/.bashrc:
+   export VIRUSTOTAL_API_KEY="<paste my key here>"
+   Resolve the home directory dynamically. Do not hard-code any paths.
+6. Reload the shell profile so the key is active immediately.
+7. Confirm the key loaded: echo $VIRUSTOTAL_API_KEY
+
+--- STEP 3: Confirm everything works ---
+
+Run: guardog analyze lodash npm
+Show me the result and explain the verdict (SILENT, WHINE, or BARK).
+Remind me to run guardog analyze <package-name> <npm or pypi> before installing any unfamiliar package.`
 
 const SCANNER_SECTIONS = [
   {
@@ -436,21 +439,11 @@ export default function GuardogPage() {
               <div className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/[0.05] border border-[#7C69C7]/35 transition-all duration-200">
                 <span className="text-[#9D8FE0] text-sm">◆</span>
                 <span className="text-[#FCF4EB]/75 text-sm font-medium">Claude Code</span>
-                <span
-                  className="text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-full"
-                  style={{
-                    background: 'rgba(124,105,199,0.18)',
-                    color: '#9D8FE0',
-                    border: '1px solid rgba(124,105,199,0.3)',
-                  }}
-                >
-                  Skill
-                </span>
               </div>
               <span className="text-[#FCF4EB]/28 text-xs">+</span>
               <div className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/[0.05] border border-white/[0.10] transition-all duration-200">
-                <span className="text-[#FCF4EB]/50 text-sm font-mono">$</span>
-                <span className="text-[#FCF4EB]/75 text-sm font-medium">Terminal</span>
+                <span className="text-[#FCF4EB]/50 text-sm font-mono">{'</>'}</span>
+                <span className="text-[#FCF4EB]/75 text-sm font-medium">Codex</span>
               </div>
             </motion.div>
 
@@ -463,7 +456,7 @@ export default function GuardogPage() {
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="animate-bounce">
                 <path d="M12 5v14M5 12l7 7 7-7" />
               </svg>
-              <span>Scroll to get the install command</span>
+              <span>Scroll to get the setup prompt</span>
             </motion.div>
           </div>
         </section>
@@ -484,9 +477,9 @@ export default function GuardogPage() {
           </motion.div>
           <div className="grid gap-5 sm:grid-cols-3">
             {[
-              { step: '01', title: 'Copy the install command', body: 'One line. Copy it from the box below.' },
-              { step: '02', title: 'Run it in your terminal', body: 'It clones Guardog, installs dependencies, drops the Claude Code skill in the right place, and walks you through adding a free VirusTotal key. Done in under a minute.' },
-              { step: '03', title: 'Type /guardog before you install', body: 'In Claude Code: /guardog express npm. In terminal: node ~/guardog/src/index.js analyze express npm. You get SILENT, WHINE, or BARK.' },
+              { step: '01', title: 'Copy the setup prompt', body: 'One prompt handles everything. Copy it from the box below.' },
+              { step: '02', title: 'Paste into Claude Code or Codex', body: 'It installs GuardDog, walks you through getting a free VirusTotal key (500 scans per day, no credit card), and confirms everything is working.' },
+              { step: '03', title: 'Scan before you install', body: 'In Claude Code: /guardog express npm. In terminal: guardog analyze express npm. You get SILENT, WHINE, or BARK.' },
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -715,7 +708,7 @@ export default function GuardogPage() {
         <MastermindReactionsSection />
 
         {/* ================================================================ */}
-        {/* SECTION 6: THE INSTALL COMMAND                                   */}
+        {/* SECTION 6: SETUP PROMPT                                          */}
         {/* ================================================================ */}
         <section className="max-w-5xl mx-auto px-6 py-16">
           <motion.div
@@ -725,108 +718,43 @@ export default function GuardogPage() {
           >
             <div className="text-center mb-10">
               <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
-                The Tool
+                Setup Prompt
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold text-[#FCF4EB] mb-4">
                 Copy. Paste. Done.
               </h2>
               <p className="text-[#FCF4EB]/45 max-w-xl mx-auto leading-relaxed">
-                In the{' '}
-                <a href={MASTERMIND_URL} target="_blank" rel="noopener noreferrer" className="text-[#9D8FE0] hover:text-[#BDB3E8] transition-colors">
-                  Business Automation Mastermind
-                </a>
-                , we run Guardog before installing anything new. One command in your terminal and it is ready to use in Claude Code and from the command line.
+                One prompt installs GuardDog, gets your free VirusTotal API key, and confirms everything is working. Paste it into{' '}
+                <span className="text-[#9D8FE0]">Claude Code</span> or{' '}
+                <span className="text-[#9D8FE0]">Codex</span>.
               </p>
             </div>
 
-            {/* Install command block */}
-            <div className="my-6 rounded-xl overflow-hidden border border-white/[0.08] border-l-2 border-l-[#7C69C7]">
+            {/* Single combined prompt block */}
+            <div className="my-6 rounded-xl overflow-hidden border border-white/[0.08]" style={{ borderLeftWidth: 2, borderLeftColor: '#7C69C7' }}>
               <div className="flex items-center justify-between px-4 py-2 bg-white/[0.04] border-b border-white/[0.06]">
-                <span className="text-xs text-[#FCF4EB]/40 font-mono">Terminal</span>
-                <InlineCopyButton text={INSTALL_COMMAND} />
+                <span className="text-xs text-[#FCF4EB]/40 font-mono">Claude Code / Codex prompt</span>
+                <InlineCopyButton text={SETUP_PROMPT} />
               </div>
               <pre
                 className="p-5 text-sm font-mono leading-[1.75] text-[#FCF4EB]/82"
                 style={{ background: '#0d0d0d', whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}
               >
-                <code>{INSTALL_COMMAND}</code>
+                <code>{SETUP_PROMPT}</code>
               </pre>
             </div>
 
             {/* Big copy button */}
-            <InstallCopyButton command={INSTALL_COMMAND} />
+            <SetupCopyButton prompt={SETUP_PROMPT} />
 
             <p className="text-[#FCF4EB]/20 text-[11px] text-center mt-5 max-w-md mx-auto leading-relaxed">
-              Requires Git and Node.js. The installer handles everything else, including the optional VirusTotal setup.{' '}
+              Requires Node.js and npm.{' '}
               <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="text-[#9D8FE0]/60 hover:text-[#9D8FE0] transition-colors underline underline-offset-2">
                 View on GitHub
               </a>{' '}
               for the manual install path.
             </p>
           </motion.div>
-        </section>
-
-        {/* ================================================================ */}
-        {/* SECTION 6B: CLAUDE CODE PROMPTS                                  */}
-        {/* ================================================================ */}
-        <section className="max-w-5xl mx-auto px-6 pb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-10"
-          >
-            <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
-              Claude Code Prompts
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#FCF4EB] mb-4">
-              Prefer to let Claude handle the install?
-            </h2>
-            <p className="text-[#FCF4EB]/45 max-w-xl mx-auto leading-relaxed">
-              Copy either prompt into Claude Code and it will walk you through the full setup, confirm everything is working, and explain how to use it.
-            </p>
-          </motion.div>
-
-          <div className="space-y-6">
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="rounded-xl overflow-hidden border border-white/[0.08]"
-              style={{ borderLeftWidth: 2, borderLeftColor: '#7C69C7' }}
-            >
-              <div className="flex items-center justify-between px-4 py-2 bg-white/[0.04] border-b border-white/[0.06]">
-                <span className="text-xs text-[#FCF4EB]/40 font-mono">Claude Code prompt — Install GuardDog</span>
-                <InlineCopyButton text={CLAUDE_INSTALL_PROMPT} />
-              </div>
-              <pre
-                className="p-5 text-sm font-mono leading-[1.75] text-[#FCF4EB]/82"
-                style={{ background: '#0d0d0d', whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}
-              >
-                <code>{CLAUDE_INSTALL_PROMPT}</code>
-              </pre>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="rounded-xl overflow-hidden border border-white/[0.08]"
-              style={{ borderLeftWidth: 2, borderLeftColor: '#F5C3C6' }}
-            >
-              <div className="flex items-center justify-between px-4 py-2 bg-white/[0.04] border-b border-white/[0.06]">
-                <span className="text-xs text-[#FCF4EB]/40 font-mono">Claude Code prompt — VirusTotal API Key (optional, free)</span>
-                <InlineCopyButton text={VIRUSTOTAL_PROMPT} />
-              </div>
-              <pre
-                className="p-5 text-sm font-mono leading-[1.75] text-[#FCF4EB]/82"
-                style={{ background: '#0d0d0d', whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}
-              >
-                <code>{VIRUSTOTAL_PROMPT}</code>
-              </pre>
-            </motion.div>
-          </div>
         </section>
 
         {/* ================================================================ */}
@@ -1047,20 +975,19 @@ function InlineCopyButton({ text }: { text: string }) {
 }
 
 // ---------------------------------------------------------------------------
-// Big install copy button (with confetti + GitHub star nudge)
+// Big setup copy button
 // ---------------------------------------------------------------------------
-function InstallCopyButton({ command }: { command: string }) {
+function SetupCopyButton({ prompt }: { prompt: string }) {
   const [copied, setCopied] = useState(false)
   const magnet = useMagnet(0.28)
 
   const handleCopy = useCallback(async (event: React.MouseEvent<HTMLButtonElement>) => {
     try {
-      await copyWithConfetti(command, event)
+      await copyWithConfetti(prompt, event)
       setCopied(true)
-      window.open(GITHUB_URL, '_blank', 'noopener,noreferrer')
       setTimeout(() => setCopied(false), 3500)
     } catch { /* noop */ }
-  }, [command])
+  }, [prompt])
 
   return (
     <div className="flex flex-col items-center gap-3 mt-6">
@@ -1071,17 +998,8 @@ function InstallCopyButton({ command }: { command: string }) {
         onMouseLeave={magnet.onMouseLeave}
         className="block w-full sm:inline-block sm:w-auto px-10 py-4 rounded-xl bg-[#7C69C7] hover:bg-[#6e5db8] text-[#FCF4EB] font-bold text-base active:scale-[0.98] glow-btn text-center"
       >
-        {copied ? 'Copied! Run it in your terminal.' : 'Copy Install Command'}
+        {copied ? 'Copied! Paste it into Claude Code or Codex.' : 'Copy Setup Prompt'}
       </button>
-      {copied && (
-        <motion.p
-          initial={{ opacity: 0, y: 6 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-[#FCF4EB]/40 text-xs text-center"
-        >
-          We opened the GitHub repo too. A star helps others find it.
-        </motion.p>
-      )}
     </div>
   )
 }
