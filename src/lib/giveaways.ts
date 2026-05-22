@@ -102,6 +102,14 @@ export const giveaways: Giveaway[] = [
     badgeVariant: 'purple',
   },
   {
+    slug: 'hooklab',
+    title: 'HookLab',
+    description: 'A Claude Code skill from Joe Che’s public GitHub that generates scored Instagram Reel hooks from your brand voice, live niche research, or a specific CTA.',
+    icon: '◎',
+    badge: 'Skill',
+    badgeVariant: 'purple',
+  },
+  {
     slug: 'guardog',
     title: 'Guardog',
     description: 'Scan npm and PyPI packages for malware, CVEs, and suspicious patterns before you install them. One command to set up.',
