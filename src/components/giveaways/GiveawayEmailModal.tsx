@@ -90,6 +90,7 @@ export default function GiveawayEmailModal({ slug, isOpen, onClose, headingOverr
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/88 px-4 sm:px-6 backdrop-blur-md">
       <div
+        data-giveaway-email-modal="true"
         className="relative w-full max-w-md rounded-[1.25rem] sm:rounded-[2rem] border border-white/12 bg-[#151517] px-4 pb-5 pt-8 sm:px-7 sm:pb-7 sm:pt-12 text-center shadow-[0_30px_120px_rgba(0,0,0,0.45)]"
         role="dialog"
         aria-modal="true"
@@ -126,7 +127,7 @@ export default function GiveawayEmailModal({ slug, isOpen, onClose, headingOverr
               {headingOverride || 'Your prompt is ready to paste into Claude Code or Codex.'}
             </h3>
             <p className="mt-3 sm:mt-4 text-[13px] sm:text-[15px] leading-[1.55] sm:leading-7 text-[#FCF4EB]/70">
-              Every week I&apos;m building new free skills like this one, sometimes a few at a time. There&apos;s also a book and a couple of courses I&apos;m currently creating. Drop your email and I&apos;ll send everything over as it comes out. Unsubscribe anytime.
+              Drop your email and I&apos;ll send you more detailed instructions, setup notes, and everything I ship as it comes out. Every week there is something new. Unsubscribe anytime.
             </p>
 
             <form onSubmit={handleSubmit} noValidate className="mt-4 sm:mt-5 flex flex-col gap-2.5 sm:gap-3">
