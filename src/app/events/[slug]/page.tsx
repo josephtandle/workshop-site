@@ -6,7 +6,20 @@ import { getStripePublishableKey } from '@/lib/stripe'
 
 type PageProps = {
   params: Promise<{ slug: string }>
-  searchParams: Promise<{ promo?: string; checkout?: string; session_id?: string }>
+  searchParams: Promise<EventSearchParams>
+}
+
+type EventSearchParams = {
+  promo?: string
+  promoCode?: string
+  code?: string
+  discount?: string
+  checkout?: string
+  session_id?: string
+}
+
+function getPromoParam(searchParams: EventSearchParams) {
+  return searchParams.promo ?? searchParams.promoCode ?? searchParams.code ?? searchParams.discount ?? null
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -32,7 +45,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function EventDetailPage({ params, searchParams }: PageProps) {
   const { slug } = await params
-  const { promo: promoParam } = await searchParams
+  const promoParam = getPromoParam(await searchParams)
   const event = getEventBySlug(slug)
 
   if (!event) {

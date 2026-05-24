@@ -192,6 +192,10 @@ function getDiscountedPrice(fullPrice: number, promo?: EventPromoCode) {
   return fullPrice
 }
 
+export function getEventDiscountedPrice(event: EventDefinition, promo?: EventPromoCode | null) {
+  return getDiscountedPrice(event.pricing.fullPrice, promo ?? undefined)
+}
+
 export function resolvePromoCode(event: EventDefinition, promoCode?: string | null) {
   const normalized = promoCode?.trim().toUpperCase()
   if (!normalized) return null
@@ -199,7 +203,7 @@ export function resolvePromoCode(event: EventDefinition, promoCode?: string | nu
 }
 
 export function formatEventPrice(event: EventDefinition, promo?: EventPromoCode) {
-  const value = getDiscountedPrice(event.pricing.fullPrice, promo)
+  const value = getEventDiscountedPrice(event, promo)
   const rounded = Number.isInteger(value) ? String(value) : value.toFixed(2)
   return `${event.pricing.currencySymbol}${rounded}`
 }

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import type { EventDefinition, EventPromoCode, EventSection } from '@/lib/events'
-import { formatEventPrice } from '@/lib/events'
+import { formatEventPrice, getEventDiscountedPrice } from '@/lib/events'
 import { buildGoogleCalendarUrl } from '@/lib/calendar'
 import Reveal from '@/components/Reveal'
 import EventRegistrationSection from '@/components/events/EventRegistrationSection'
@@ -474,6 +474,7 @@ export default function EventPageView({
       : undefined,
     successRedirect: hasSetupItems ? undefined : `/events/${event.slug}`,
   }
+  const initialPromoAmount = promo ? getEventDiscountedPrice(event, promo) : null
 
   return (
     <main className="pb-24">
@@ -543,7 +544,13 @@ export default function EventPageView({
       </section>
 
       {event.sections.map((section) => renderSection(section, event, promo))}
-      <EventRegistrationSection event={registrationEvent} publishableKey={publishableKey} initialPromoCode={initialPromoCode} />
+      <EventRegistrationSection
+        event={registrationEvent}
+        publishableKey={publishableKey}
+        initialPromoCode={initialPromoCode}
+        initialPromoAmount={initialPromoAmount}
+        initialPromoMessage={promo ? promo.description || 'Promo code applied.' : null}
+      />
     </main>
   )
 }

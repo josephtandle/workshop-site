@@ -64,6 +64,8 @@ type Props = {
   event: EventRegistrationData
   publishableKey: string | null
   initialPromoCode?: string | null
+  initialPromoAmount?: number | null
+  initialPromoMessage?: string | null
 }
 
 type SuccessState = {
@@ -75,6 +77,8 @@ export default function EventRegistrationSection({
   event,
   publishableKey,
   initialPromoCode,
+  initialPromoAmount,
+  initialPromoMessage,
 }: Props) {
   const [attendeeName, setAttendeeName] = useState('')
   const [attendeeEmail, setAttendeeEmail] = useState('')
@@ -82,8 +86,8 @@ export default function EventRegistrationSection({
   const [promoOpen, setPromoOpen] = useState(Boolean(initialPromoCode))
   const [promoCode, setPromoCode] = useState(initialPromoCode ?? '')
   const [appliedPromoCode, setAppliedPromoCode] = useState<string | null>(initialPromoCode ?? null)
-  const [appliedAmount, setAppliedAmount] = useState<number | null>(null)
-  const [promoMessage, setPromoMessage] = useState<string | null>(null)
+  const [appliedAmount, setAppliedAmount] = useState<number | null>(initialPromoAmount ?? null)
+  const [promoMessage, setPromoMessage] = useState<string | null>(initialPromoMessage ?? null)
   const [promoError, setPromoError] = useState<string | null>(null)
   const [clientSecret, setClientSecret] = useState<string | null>(null)
   const [checkoutSessionId, setCheckoutSessionId] = useState<string | null>(null)
@@ -104,6 +108,17 @@ export default function EventRegistrationSection({
   useEffect(() => {
     checkoutSessionIdRef.current = checkoutSessionId
   }, [checkoutSessionId])
+
+  useEffect(() => {
+    if (!initialPromoCode) return
+
+    setPromoOpen(true)
+    setPromoCode(initialPromoCode)
+    setAppliedPromoCode(initialPromoCode)
+    setAppliedAmount(initialPromoAmount ?? null)
+    setPromoMessage(initialPromoMessage || 'Promo code applied.')
+    setPromoError(null)
+  }, [initialPromoCode, initialPromoAmount, initialPromoMessage])
 
   function markSuccess(detail?: string) {
     setClientSecret(null)
