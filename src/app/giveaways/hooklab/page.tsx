@@ -5,13 +5,12 @@ import { motion } from 'framer-motion'
 import MastermindReactionsSection from '@/components/sections/MastermindReactionsSection'
 import GiveawayEmailModal from '@/components/giveaways/GiveawayEmailModal'
 import { copyWithConfetti } from '@/lib/copyWithConfetti'
+import { INSTALL_PROMPT } from './content'
 
 // ---------------------------------------------------------------------------
 // Constants
 // ---------------------------------------------------------------------------
 const MASTERMIND_URL = 'https://www.mastermindshq.business'
-const GITHUB_URL = 'https://github.com/josephtandle/ultimate-hooklab-skill'
-const INSTALL_COMMAND = 'curl -fsSL https://raw.githubusercontent.com/josephtandle/ultimate-hooklab-skill/main/install.sh | bash'
 const MANYCHAT_KEYWORD = 'hooklab'
 
 const MODES = [
@@ -357,7 +356,7 @@ export default function HookLabPage() {
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="animate-bounce">
                 <path d="M12 5v14M5 12l7 7 7-7" />
               </svg>
-              <span>Scroll to get the install command</span>
+              <span>Scroll to get the install prompt</span>
             </motion.div>
           </div>
         </section>
@@ -378,8 +377,8 @@ export default function HookLabPage() {
           </motion.div>
           <div className="grid gap-5 sm:grid-cols-3">
             {[
-              { step: '01', title: 'Copy the install command', body: 'One command handles everything. Copy it from the box below and paste it into your terminal.' },
-              { step: '02', title: 'Run it in your terminal', body: 'It installs HookLab, creates your brand voice template, registers the /hooklab skill, and adds the research dependencies.' },
+              { step: '01', title: 'Copy the install prompt', body: 'One prompt handles everything. Copy it from the box below and paste it directly into Claude Code.' },
+              { step: '02', title: 'Let Claude Code install it', body: 'Claude reads the prompt and creates the /hooklab skill file in your Claude Code setup automatically. Nothing to configure.' },
               { step: '03', title: 'Type /hooklab in Claude Code', body: 'Fill in your brand voice, research accounts, and weekly topic. HookLab generates 15 hooks, scores every one, and surfaces 5 winners.' },
             ].map((item, i) => (
               <motion.div
@@ -506,7 +505,7 @@ export default function HookLabPage() {
         </section>
 
         {/* ================================================================ */}
-        {/* SECTION 6: INSTALL COMMAND                                       */}
+        {/* SECTION 6: INSTALL PROMPT                                        */}
         {/* ================================================================ */}
         <section className="max-w-5xl mx-auto px-6 py-16">
           <motion.div
@@ -516,40 +515,32 @@ export default function HookLabPage() {
           >
             <div className="text-center mb-10">
               <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
-                Install Command
+                Install Prompt
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold text-[#FCF4EB] mb-4">
-                Copy. Paste. Done.
+                Copy. Paste into Claude Code. Done.
               </h2>
               <p className="text-[#FCF4EB]/45 max-w-xl mx-auto leading-relaxed">
-                One command installs HookLab, creates your brand voice template, registers{' '}
-                <span className="text-[#9D8FE0] font-mono">/hooklab</span> in{' '}
-                <span className="text-[#9D8FE0]">Claude Code</span>, and adds the research dependencies.
+                Paste this prompt into{' '}
+                <span className="text-[#9D8FE0]">Claude Code</span> and it will create the{' '}
+                <span className="text-[#9D8FE0] font-mono">/hooklab</span> skill file for you automatically.
               </p>
             </div>
 
             <div className="my-6 rounded-xl overflow-hidden border border-white/[0.08]" style={{ borderLeftWidth: 2, borderLeftColor: '#7C69C7' }}>
               <div className="flex items-center justify-between px-4 py-2 bg-white/[0.04] border-b border-white/[0.06]">
-                <span className="text-xs text-[#FCF4EB]/40 font-mono">Terminal</span>
-                <InlineCopyButton text={INSTALL_COMMAND} onAfterCopy={() => setEmailModalOpen(true)} />
+                <span className="text-xs text-[#FCF4EB]/40 font-mono">Claude Code prompt</span>
+                <InlineCopyButton text={INSTALL_PROMPT} onAfterCopy={() => setEmailModalOpen(true)} />
               </div>
               <pre
-                className="p-3 sm:p-5 text-[12px] sm:text-sm font-mono leading-[1.7] text-[#FCF4EB]/82"
+                className="p-3 sm:p-5 text-[12px] sm:text-sm font-mono leading-[1.7] text-[#FCF4EB]/82 max-h-64 overflow-y-auto"
                 style={{ background: '#0d0d0d', whiteSpace: 'pre-wrap', wordBreak: 'normal', overflowWrap: 'anywhere' }}
               >
-                <code>{INSTALL_COMMAND}</code>
+                <code>{INSTALL_PROMPT}</code>
               </pre>
             </div>
 
             <InstallCopyButton onAfterCopy={() => setEmailModalOpen(true)} />
-
-            <p className="text-[#FCF4EB]/20 text-[11px] text-center mt-5 max-w-md mx-auto leading-relaxed">
-              Requires Node.js and npm.{' '}
-              <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="text-[#9D8FE0]/60 hover:text-[#9D8FE0] transition-colors underline underline-offset-2">
-                View on GitHub
-              </a>{' '}
-              for the manual install path.
-            </p>
           </motion.div>
         </section>
 
@@ -675,7 +666,7 @@ function InstallCopyButton({ onAfterCopy }: { onAfterCopy?: () => void }) {
 
   const handleCopy = useCallback(async (event: React.MouseEvent<HTMLButtonElement>) => {
     try {
-      await copyWithConfetti(INSTALL_COMMAND, event)
+      await copyWithConfetti(INSTALL_PROMPT, event)
       setCopied(true)
       setTimeout(() => setCopied(false), 3500)
       onAfterCopy?.()
@@ -691,7 +682,7 @@ function InstallCopyButton({ onAfterCopy }: { onAfterCopy?: () => void }) {
         onMouseLeave={magnet.onMouseLeave}
         className="block w-full sm:inline-block sm:w-auto px-10 py-4 rounded-xl bg-[#7C69C7] hover:bg-[#6e5db8] text-[#FCF4EB] font-bold text-base active:scale-[0.98] glow-btn text-center"
       >
-        {copied ? 'Copied! Run it in your terminal.' : 'Copy install command'}
+        {copied ? 'Copied! Paste it into Claude Code.' : 'Copy install prompt'}
       </button>
     </div>
   )
