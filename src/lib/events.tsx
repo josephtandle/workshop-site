@@ -510,6 +510,11 @@ export const events: EventDefinition[] = [
           description: 'Save 20% with UF.',
           percentOff: 20,
         },
+        {
+          code: 'MARINA',
+          label: 'Marina',
+          description: 'Referral code for Marina. Standard ticket price.',
+        },
       ],
     },
     calendarEvent: {
