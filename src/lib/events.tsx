@@ -513,7 +513,8 @@ export const events: EventDefinition[] = [
         {
           code: 'MARINA',
           label: 'Marina',
-          description: 'Referral code for Marina. Standard ticket price.',
+          description: 'Save 10% with Marina.',
+          percentOff: 10,
         },
       ],
     },
