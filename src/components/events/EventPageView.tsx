@@ -457,6 +457,8 @@ export default function EventPageView({
 
   const registrationEvent: EventRegistrationData = {
     slug: event.slug,
+    title: event.title,
+    manuallyClosed: event.manuallyClosed,
     durationLabel: event.pricing.donationMode ? undefined : event.durationLabel,
     pricing: {
       currencySymbol: event.pricing.currencySymbol,

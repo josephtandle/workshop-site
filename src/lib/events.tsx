@@ -171,6 +171,7 @@ export type EventDefinition = {
     googleCalendarEventId?: string
   }
   capacity?: number
+  manuallyClosed?: boolean
   emailConfig?: {
     headerLabel?: string | null
     detailsLabel?: string
@@ -259,7 +260,8 @@ export const events: EventDefinition[] = [
       endIso: '2026-05-27T21:00:00+08:00',
       googleCalendarEventId: '0gu029anp7kbu1ljvi6chvic1g',
     },
-    capacity: 30,
+    capacity: 24,
+    manuallyClosed: true,
     emailConfig: {
       headerLabel: null,
       detailsLabel: 'Event Details',

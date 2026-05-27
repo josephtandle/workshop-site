@@ -40,9 +40,11 @@ function useAnimatedNumber(target: number, duration = 750): number {
 import { EmbeddedCheckout, EmbeddedCheckoutProvider } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
 import { celebrate } from '@/lib/celebrate'
+import WaitlistJoinForm from '@/components/events/WaitlistJoinForm'
 
 export type EventRegistrationData = {
   slug: string
+  title?: string
   durationLabel?: string
   pricing: {
     currencySymbol: string
@@ -58,6 +60,7 @@ export type EventRegistrationData = {
   successLabel?: string
   successDetail?: string
   successRedirect?: string
+  manuallyClosed?: boolean
 }
 
 type Props = {
@@ -73,6 +76,8 @@ type SuccessState = {
   detail: string
 }
 
+type CheckoutMode = 'embedded' | 'hosted'
+
 export default function EventRegistrationSection({
   event,
   publishableKey,
@@ -80,6 +85,9 @@ export default function EventRegistrationSection({
   initialPromoAmount,
   initialPromoMessage,
 }: Props) {
+  if (event.manuallyClosed) {
+    return <WaitlistJoinForm eventSlug={event.slug} eventTitle={event.title} />
+  }
   const [attendeeName, setAttendeeName] = useState('')
   const [attendeeEmail, setAttendeeEmail] = useState('')
   const [donationAmount, setDonationAmount] = useState(event.pricing.fullPrice)
@@ -91,6 +99,7 @@ export default function EventRegistrationSection({
   const [promoError, setPromoError] = useState<string | null>(null)
   const [clientSecret, setClientSecret] = useState<string | null>(null)
   const [checkoutSessionId, setCheckoutSessionId] = useState<string | null>(null)
+  const [embeddedFallbackVisible, setEmbeddedFallbackVisible] = useState(false)
   const [completionMessage, setCompletionMessage] = useState<string | null>(null)
   const [successState, setSuccessState] = useState<SuccessState | null>(null)
   const [error, setError] = useState<string | null>(null)
@@ -175,6 +184,19 @@ export default function EventRegistrationSection({
   }, [clientSecret])
 
   useEffect(() => {
+    if (!clientSecret || !stripePromise) {
+      setEmbeddedFallbackVisible(false)
+      return
+    }
+
+    const timeout = window.setTimeout(() => {
+      setEmbeddedFallbackVisible(true)
+    }, 8000)
+
+    return () => window.clearTimeout(timeout)
+  }, [clientSecret, stripePromise])
+
+  useEffect(() => {
     const params = new URLSearchParams(window.location.search)
     const sessionId = params.get('session_id')
     const checkoutStatus = params.get('checkout')
@@ -214,10 +236,11 @@ export default function EventRegistrationSection({
       : (Number.isInteger(effectivePrice) ? String(effectivePrice) : effectivePrice.toFixed(2))
   }`
 
-  async function openCheckout(name: string, email: string, promo: string) {
+  async function openCheckout(name: string, email: string, promo: string, checkoutMode: CheckoutMode = 'embedded') {
     const journeyKey = 'insight_journey_id'
     const journeyId = window.localStorage.getItem(journeyKey) || window.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2)}`
     window.localStorage.setItem(journeyKey, journeyId)
+    setEmbeddedFallbackVisible(false)
     const response = await fetch('/api/events/checkout-session', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -230,11 +253,18 @@ export default function EventRegistrationSection({
         acquisitionRoute: window.location.pathname,
         acquisitionQuery: window.location.search,
         referrer: document.referrer || undefined,
+        checkoutMode,
         ...(event.pricing.donationMode ? { donationAmount } : {}),
       }),
     })
     const payload = await response.json()
-    if (!response.ok) throw new Error(payload.error || 'Unable to start checkout.')
+    if (!response.ok) {
+      if (checkoutMode !== 'hosted' && response.status >= 500) {
+        await openCheckout(name, email, promo, 'hosted')
+        return
+      }
+      throw new Error(payload.error || 'Unable to start checkout.')
+    }
     setAppliedPromoCode(payload.appliedPromoCode)
     setAppliedAmount(typeof payload.amount === 'number' ? payload.amount : null)
     if (payload.completed) {
@@ -245,8 +275,35 @@ export default function EventRegistrationSection({
       window.location.assign(payload.checkoutUrl)
       return
     }
+
+    if (!payload.clientSecret) {
+      if (checkoutMode !== 'hosted') {
+        await openCheckout(name, email, promo, 'hosted')
+        return
+      }
+      throw new Error('Unable to start checkout.')
+    }
+
     setCheckoutSessionId(payload.sessionId ?? null)
     setClientSecret(payload.clientSecret)
+  }
+
+  async function openHostedFallback() {
+    const nextName = attendeeName.trim()
+    const nextEmail = attendeeEmail.trim()
+
+    if (!nextName || !nextEmail) {
+      setError('Please enter your name and email.')
+      return
+    }
+
+    setError(null)
+    try {
+      await openCheckout(nextName, nextEmail, promoCode.trim() || appliedPromoCode || '', 'hosted')
+    } catch (fallbackError) {
+      const message = fallbackError instanceof Error ? fallbackError.message : 'Unable to start checkout.'
+      setError(message)
+    }
   }
 
   function handleApplyPromo() {
@@ -543,6 +600,20 @@ export default function EventRegistrationSection({
             <EmbeddedCheckoutProvider key={clientSecret} stripe={stripePromise} options={embeddedCheckoutOptions}>
               <EmbeddedCheckout />
             </EmbeddedCheckoutProvider>
+            {embeddedFallbackVisible ? (
+              <div className="mt-4 rounded-xl border border-[#8B79D4]/25 bg-[#151517] p-4 text-[#FCF4EB]">
+                <p className="text-sm leading-6 text-[#FCF4EB]/72">
+                  If the checkout form is not loading, open the secure Stripe checkout page instead.
+                </p>
+                <button
+                  type="button"
+                  onClick={openHostedFallback}
+                  className="mt-3 inline-flex items-center justify-center rounded-lg border border-[#8B79D4]/45 px-4 py-2 text-sm font-semibold text-[#BDB3E8] transition hover:border-[#8B79D4] hover:text-white"
+                >
+                  Open secure Stripe checkout
+                </button>
+              </div>
+            ) : null}
           </div>
         ) : null}
       </div>
