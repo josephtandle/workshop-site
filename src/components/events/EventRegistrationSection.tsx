@@ -78,6 +78,8 @@ type SuccessState = {
 
 type CheckoutMode = 'embedded' | 'hosted'
 
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
 export default function EventRegistrationSection({
   event,
   publishableKey,
@@ -290,10 +292,15 @@ export default function EventRegistrationSection({
 
   async function openHostedFallback() {
     const nextName = attendeeName.trim()
-    const nextEmail = attendeeEmail.trim()
+    const nextEmail = attendeeEmail.trim().toLowerCase()
 
     if (!nextName || !nextEmail) {
       setError('Please enter your name and email.')
+      return
+    }
+
+    if (!EMAIL_RE.test(nextEmail)) {
+      setError('Please enter a valid email address, like name@example.com.')
       return
     }
 
@@ -355,10 +362,15 @@ export default function EventRegistrationSection({
 
   function handleSubmit() {
     const nextName = attendeeName.trim()
-    const nextEmail = attendeeEmail.trim()
+    const nextEmail = attendeeEmail.trim().toLowerCase()
 
     if (!nextName || !nextEmail) {
       setError('Please enter your name and email.')
+      return
+    }
+
+    if (!EMAIL_RE.test(nextEmail)) {
+      setError('Please enter a valid email address, like name@example.com.')
       return
     }
 

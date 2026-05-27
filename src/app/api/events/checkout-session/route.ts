@@ -16,6 +16,8 @@ import { toStripeUnitAmount } from '@/lib/stripe-amount'
 
 export const runtime = 'nodejs'
 
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
 function getBaseUrl(request: Request) {
   const envOrigin = toOrigin(process.env.NEXT_PUBLIC_SITE_URL)
   if (envOrigin) return envOrigin
@@ -40,7 +42,7 @@ export async function POST(request: Request) {
     const body = await request.json()
     const slug = typeof body.slug === 'string' ? body.slug : ''
     const attendeeName = typeof body.attendeeName === 'string' ? body.attendeeName.trim() : ''
-    const attendeeEmail = typeof body.attendeeEmail === 'string' ? body.attendeeEmail.trim() : ''
+    const attendeeEmail = typeof body.attendeeEmail === 'string' ? body.attendeeEmail.trim().toLowerCase() : ''
     const promoCode = typeof body.promoCode === 'string' ? body.promoCode.trim() : ''
     const journeyId = typeof body.journeyId === 'string' ? body.journeyId.trim() : ''
     const acquisitionRoute = typeof body.acquisitionRoute === 'string' ? body.acquisitionRoute.trim() : '/events'
@@ -63,6 +65,14 @@ export async function POST(request: Request) {
         properties: { reason: 'invalid_input_length', slug },
       })
       return NextResponse.json({ error: 'Invalid input.' }, { status: 400 })
+    }
+
+    if (!EMAIL_RE.test(attendeeEmail)) {
+      await trackInsightEvent('checkout_failed', {
+        route: '/events/checkout',
+        properties: { reason: 'invalid_email', slug },
+      })
+      return NextResponse.json({ error: 'Please enter a valid email address.' }, { status: 400 })
     }
 
     if (
