@@ -436,9 +436,7 @@ export default function EventRegistrationSection({
           Reserve your seat and check out below.
         </h2>
         <p className="mt-4 text-base leading-8 text-[#FCF4EB]/68 md:text-lg">
-          {publishableKey
-            ? 'Enter your information here. Once you continue, checkout opens on this page instead of sending you away.'
-            : 'Enter your information here. Once you continue, Stripe opens securely to complete your checkout.'}
+          Enter your information here. Once you continue, Stripe opens securely to complete your checkout.
         </p>
       </div>
 
