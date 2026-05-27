@@ -178,7 +178,7 @@ export async function addToWaitlist(input: {
       throw new Error('This email address is already on the waitlist for this event.')
     }
     console.error('addToWaitlist insert error', error)
-    throw new Error(`Failed to add to waitlist. supabase=${error.code || '?'} msg=${error.message || '?'} details=${error.details || '?'}`)
+    throw new Error('Failed to add to waitlist.')
   }
 
   return { id, removeToken }

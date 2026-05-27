@@ -63,8 +63,6 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ success: true })
   } catch (err) {
     console.error('waitlist join error', err)
-    const message = err instanceof Error ? err.message : 'Unable to join waitlist.'
-    const detail = err && typeof err === 'object' && 'code' in err ? String((err as { code: unknown }).code) : undefined
-    return NextResponse.json({ error: 'Unable to join waitlist.', _debug: { message, detail } }, { status: 500 })
+    return NextResponse.json({ error: 'Unable to join waitlist.' }, { status: 500 })
   }
 }
