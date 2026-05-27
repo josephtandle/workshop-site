@@ -3,6 +3,7 @@ import { sendEventConfirmationEmail } from '@/lib/event-confirmation-email'
 import { saveRegistration } from '@/lib/event-registration-db'
 import { dedupeAttendeesByEmail } from './location-reminder'
 import { createStripeClient } from '@/lib/stripe'
+import { trackInsightEvent } from '@/lib/insight-to-fix'
 
 type SyncStatus = 'already_paid' | 'marked_paid' | 'imported'
 
@@ -488,6 +489,15 @@ export async function finalizeLegacyCheckoutSession(
     const message = error instanceof Error ? error.message : 'Unknown registration save error.'
     if (message !== 'This email address is already registered for this event.') {
       console.error('event registration save error', error)
+      await trackInsightEvent('registration_mirror_failed', {
+        route: '/events/finalize-registration',
+        email: attendeeEmail,
+        checkoutId: session.id,
+        properties: {
+          event_slug: input.event.slug,
+          reason: message,
+        },
+      })
     }
   }
 
