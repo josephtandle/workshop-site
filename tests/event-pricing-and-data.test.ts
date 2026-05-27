@@ -25,6 +25,20 @@ test('all live events have required string fields', () => {
   }
 })
 
+test('all live events have valid calendar start and end times for automatic closure', () => {
+  for (const event of getLiveEvents()) {
+    assert.ok(event.calendarEvent?.startIso, `${event.slug}: missing calendarEvent.startIso`)
+    assert.ok(event.calendarEvent?.endIso, `${event.slug}: missing calendarEvent.endIso`)
+
+    const startMs = new Date(event.calendarEvent.startIso).getTime()
+    const endMs = new Date(event.calendarEvent.endIso).getTime()
+
+    assert.ok(Number.isFinite(startMs), `${event.slug}: invalid calendarEvent.startIso`)
+    assert.ok(Number.isFinite(endMs), `${event.slug}: invalid calendarEvent.endIso`)
+    assert.ok(endMs > startMs, `${event.slug}: calendarEvent.endIso must be after startIso`)
+  }
+})
+
 test('connection dinner has capacity and emailConfig set', () => {
   const dinner = getEventBySlug('connection-dinner-canggu')
   assert.ok(dinner, 'connection dinner event must exist')
