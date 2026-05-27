@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { getEventBySlug, resolvePromoCode } from '@/lib/events'
+import { getEventBySlug } from '@/lib/events'
 import { sendEventConfirmationEmail } from '@/lib/event-confirmation-email'
 import { syncLegacyRegistration } from '@/lib/legacy-event-schedule'
 import { createStripeClient, getStripePublishableKey } from '@/lib/stripe'
@@ -7,6 +7,12 @@ import { saveRegistration } from '@/lib/event-registration-db'
 import { toOrigin } from '@/lib/url-utils'
 import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
 import { trackInsightEvent } from '@/lib/insight-to-fix'
+import {
+  buildEventCheckoutSessionParams,
+  resolveCheckoutMode,
+  resolveEventCheckoutAmount,
+} from '@/lib/event-checkout'
+import { toStripeUnitAmount } from '@/lib/stripe-amount'
 
 export const runtime = 'nodejs'
 
@@ -41,6 +47,7 @@ export async function POST(request: Request) {
     const acquisitionQuery = typeof body.acquisitionQuery === 'string' ? body.acquisitionQuery.trim() : ''
     const referrer = typeof body.referrer === 'string' ? body.referrer.trim() : ''
     const rawDonationAmount = typeof body.donationAmount === 'number' ? body.donationAmount : null
+    const requestedCheckoutMode = typeof body.checkoutMode === 'string' ? body.checkoutMode.trim() : null
 
     if (!slug || !attendeeName || !attendeeEmail) {
       await trackInsightEvent('checkout_failed', {
@@ -80,17 +87,11 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Event not found.' }, { status: 404 })
     }
 
-    let amount: number
-    const promo = event.pricing.donationMode ? null : resolvePromoCode(event, promoCode || null)
-    if (event.pricing.donationMode && rawDonationAmount !== null) {
-      amount = Math.max(event.pricing.minDonation ?? 0, rawDonationAmount)
-    } else {
-      amount = promo?.amountOff
-        ? Math.max(0, event.pricing.fullPrice - promo.amountOff)
-        : promo?.percentOff
-          ? Math.max(0, event.pricing.fullPrice * (1 - promo.percentOff / 100))
-          : event.pricing.fullPrice
-    }
+    const { amount, promo } = resolveEventCheckoutAmount({
+      event,
+      promoCode,
+      rawDonationAmount,
+    })
 
     if (!Number.isFinite(amount) || amount < 0) {
       await trackInsightEvent('checkout_failed', {
@@ -113,7 +114,19 @@ export async function POST(request: Request) {
       },
     })
 
-    const unitAmount = Math.round(amount * 100)
+    const unitAmount = toStripeUnitAmount(amount)
+    if (unitAmount === null) {
+      await trackInsightEvent('checkout_failed', {
+        route: '/events/checkout',
+        email: attendeeEmail,
+        properties: { reason: 'amount_below_stripe_minimum', slug, amount },
+      })
+      return NextResponse.json(
+        { error: 'Donation amount must be $0 or at least $0.50.' },
+        { status: 400 },
+      )
+    }
+
     if (unitAmount === 0) {
       const syncResult = await syncLegacyRegistration({
         event,
@@ -201,50 +214,19 @@ export async function POST(request: Request) {
     const stripe = createStripeClient()
     const baseUrl = getBaseUrl(request)
     const publishableKey = getStripePublishableKey()
-    const session = await stripe.checkout.sessions.create({
-      ...(publishableKey
-        ? {
-            ui_mode: 'embedded_page' as const,
-            return_url: `${baseUrl}/events/${event.slug}?checkout=success&session_id={CHECKOUT_SESSION_ID}`,
-            redirect_on_completion: 'if_required' as const,
-          }
-        : {
-            success_url: `${baseUrl}/events/${event.slug}?checkout=success&session_id={CHECKOUT_SESSION_ID}`,
-            cancel_url: `${baseUrl}/events/${event.slug}?checkout=cancelled`,
-          }),
-      mode: 'payment',
-      customer_email: attendeeEmail,
-      billing_address_collection: 'auto',
-      customer_creation: 'always',
-      allow_promotion_codes: false,
-      line_items: [
-        {
-          quantity: 1,
-          price_data: {
-            currency: 'usd',
-            unit_amount: unitAmount,
-            product_data: {
-              name: event.title,
-              description: event.description,
-            },
-          },
-        },
-      ],
-      metadata: {
-        event_slug: event.slug,
-        attendee_name: attendeeName,
-        attendee_email: attendeeEmail,
-        promo_code: promo?.code ?? '',
-      },
-      payment_intent_data: {
-        metadata: {
-          event_slug: event.slug,
-          attendee_name: attendeeName,
-          attendee_email: attendeeEmail,
-          promo_code: promo?.code ?? '',
-        },
-      },
-    })
+    const embeddedCheckoutEnabled = process.env.EVENTS_EMBEDDED_CHECKOUT === '1' && Boolean(publishableKey)
+    const checkoutMode = resolveCheckoutMode(requestedCheckoutMode, embeddedCheckoutEnabled)
+    const session = await stripe.checkout.sessions.create(
+      buildEventCheckoutSessionParams({
+        event,
+        attendeeName,
+        attendeeEmail,
+        amount,
+        promo,
+        baseUrl,
+        mode: checkoutMode,
+      }),
+    )
 
     await trackInsightEvent('checkout_session_created', {
       route: '/events/checkout',
@@ -255,6 +237,7 @@ export async function POST(request: Request) {
         event_slug: event.slug,
         amount,
         applied_promo_code: promo?.code ?? null,
+        checkout_mode: checkoutMode,
       },
     })
 
@@ -265,6 +248,7 @@ export async function POST(request: Request) {
       completed: false,
       appliedPromoCode: promo?.code ?? null,
       amount,
+      checkoutMode,
     })
   } catch (error) {
     console.error('event checkout session error', error)
