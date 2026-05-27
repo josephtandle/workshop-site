@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { isValidEmail, normaliseEmail } from '@/lib/email-validation'
 
 type Props = {
   durationLabel?: string
@@ -19,9 +20,13 @@ export default function WaitlistJoinForm({ durationLabel, eventSlug, eventTitle 
     event.preventDefault()
     setError(null)
     const trimmedName = name.trim()
-    const trimmedEmail = email.trim()
+    const trimmedEmail = normaliseEmail(email)
     if (!trimmedName || !trimmedEmail) {
       setError('Please enter your name and email.')
+      return
+    }
+    if (!isValidEmail(trimmedEmail)) {
+      setError('Please enter a valid email address, like name@example.com.')
       return
     }
     setSubmitting(true)
@@ -68,7 +73,7 @@ export default function WaitlistJoinForm({ durationLabel, eventSlug, eventTitle 
           </div>
         ) : (
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
-            <form onSubmit={handleSubmit} autoComplete="off" className="grid gap-5">
+            <form onSubmit={handleSubmit} autoComplete="off" noValidate className="grid gap-5">
               <div className="grid gap-5 md:grid-cols-2">
                 <label className="grid gap-2">
                   <span className="min-h-[14px] text-sm font-semibold leading-none text-[#FCF4EB]">Full name</span>
@@ -80,7 +85,7 @@ export default function WaitlistJoinForm({ durationLabel, eventSlug, eventTitle 
                       onChange={(e) => setName(e.target.value)}
                       className="h-16 w-full rounded-xl border border-black/10 bg-white px-4 text-black placeholder:text-black/35 outline-none transition focus:border-[#7C69C7]/55"
                       placeholder="Your name"
-                      required
+                      aria-invalid={Boolean(error && !name.trim())}
                     />
                   </div>
                 </label>
@@ -88,13 +93,15 @@ export default function WaitlistJoinForm({ durationLabel, eventSlug, eventTitle 
                   <span className="min-h-[14px] text-sm font-semibold leading-none text-[#FCF4EB]">Email</span>
                   <div className="relative h-16">
                     <input
-                      type="email"
+                      type="text"
                       autoCapitalize="none"
+                      autoComplete="email"
+                      inputMode="email"
                       value={email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      onChange={(e) => setEmail(e.target.value.replace(/\s+/g, ''))}
                       className="h-16 w-full rounded-xl border border-black/10 bg-white px-4 text-black placeholder:text-black/35 outline-none transition focus:border-[#7C69C7]/55"
                       placeholder="you@example.com"
-                      required
+                      aria-invalid={Boolean(error && !isValidEmail(email))}
                     />
                   </div>
                 </label>
@@ -122,8 +129,8 @@ export default function WaitlistJoinForm({ durationLabel, eventSlug, eventTitle 
                 <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#FCF4EB]/42">{durationLabel}</p>
               ) : null}
               <div className="my-7 border-t border-white/10" />
-              <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#FCF4EB]/42">Waitlist Price</p>
-              <p className="mt-2 font-serif text-[4.6rem] leading-none tracking-tight text-[#FCF4EB]">$0</p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#FCF4EB]/42">Status</p>
+              <p className="mt-3 font-serif text-[3.5rem] leading-none tracking-tight text-[#FCF4EB]">Waitlist</p>
               <p className="mt-4 text-sm leading-6 text-[#FCF4EB]/58">No payment today. We will email you if a seat opens.</p>
             </aside>
           </div>

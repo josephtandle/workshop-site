@@ -2,6 +2,7 @@ import assert from 'node:assert/strict'
 import test from 'node:test'
 
 import { events, getLiveEvents, getEventBySlug, resolvePromoCode, formatEventPrice } from '../src/lib/events'
+import { isEventEnded } from '../src/lib/event-status'
 import { resolveNotifyWindow, hoursUntilEvent } from '../src/lib/waitlist-notify-windows'
 import { toOrigin } from '../src/lib/url-utils'
 
@@ -128,6 +129,13 @@ test('formatEventPrice never returns a negative price', () => {
   // Synthetic over-discount: amountOff greater than the full price
   const bigDiscount = { code: 'BIG', label: 'Big', description: '', amountOff: 9999 }
   assert.equal(formatEventPrice(event, bigDiscount), '$0')
+})
+
+test('isEventEnded detects events after their calendar end time', () => {
+  const dinner = getEventBySlug('connection-dinner-canggu')
+  assert.ok(dinner)
+  assert.equal(isEventEnded(dinner, new Date('2026-05-27T12:59:59.000Z')), false)
+  assert.equal(isEventEnded(dinner, new Date('2026-05-27T13:00:00.000Z')), true)
 })
 
 // ─── Cron notify window detection ─────────────────────────────────────────────

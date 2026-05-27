@@ -1,11 +1,10 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
+import { isValidEmail, normaliseEmail } from '../src/lib/email-validation'
 
 // ─── Email format validation (pure regex — no Supabase dependency) ─────────────
 
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-
-const validate = (e: string) => EMAIL_RE.test(e)
+const validate = isValidEmail
 
 test('email validation accepts valid addresses', () => {
   assert.ok(validate('joe@mastermindshq.business'))
@@ -30,9 +29,14 @@ test('email validation rejects addresses with spaces', () => {
   assert.equal(validate('spaces in@email.com'), false)
 })
 
+test('email validation rejects numeric or mixed numeric top-level domains', () => {
+  assert.equal(validate('dfosdf@test.com2'), false)
+  assert.equal(validate('dfosdf@test.123'), false)
+})
+
 // ─── Email normalisation ───────────────────────────────────────────────────────
 
-const normalise = (e: string) => e.trim().toLowerCase()
+const normalise = normaliseEmail
 
 test('email normalisation: uppercase and mixed-case treated equally', () => {
   assert.equal(normalise('Joe@MastermindsHQ.Business'), normalise('joe@mastermindshq.business'))

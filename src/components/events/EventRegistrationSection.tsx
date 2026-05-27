@@ -40,6 +40,7 @@ function useAnimatedNumber(target: number, duration = 750): number {
 import { EmbeddedCheckout, EmbeddedCheckoutProvider } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
 import { celebrate } from '@/lib/celebrate'
+import { isValidEmail } from '@/lib/email-validation'
 import WaitlistJoinForm from '@/components/events/WaitlistJoinForm'
 
 export type EventRegistrationData = {
@@ -61,6 +62,7 @@ export type EventRegistrationData = {
   successDetail?: string
   successRedirect?: string
   manuallyClosed?: boolean
+  eventEnded?: boolean
 }
 
 type Props = {
@@ -78,8 +80,6 @@ type SuccessState = {
 
 type CheckoutMode = 'embedded' | 'hosted'
 
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-
 export default function EventRegistrationSection({
   event,
   publishableKey,
@@ -87,6 +87,32 @@ export default function EventRegistrationSection({
   initialPromoAmount,
   initialPromoMessage,
 }: Props) {
+  if (event.eventEnded) {
+    return (
+      <section id="register" className="mx-auto max-w-6xl px-6 py-8 md:py-10">
+        <div className="mb-5">
+          <p className="mb-3 text-[12px] font-semibold uppercase tracking-[0.24em] text-[#BDB3E8] md:text-[13px]">Event Ended</p>
+          <h2 className="event-gradient-title text-[2.2rem] font-extrabold leading-[0.92] tracking-tight md:text-[4.1rem]">
+            This event has ended.
+          </h2>
+          <p className="mt-4 text-base leading-8 text-[#FCF4EB]/68 md:text-lg">
+            Registration, waitlist, and checkout are now closed for this event.
+          </p>
+        </div>
+
+        <div className="event-registration-shell rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(252,244,235,0.08),rgba(124,105,199,0.08))] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.26)] md:p-8">
+          <button
+            type="button"
+            disabled
+            className="copy-button-glass inline-flex min-w-[220px] cursor-not-allowed items-center justify-center rounded-xl border border-white/12 bg-white/[0.05] px-6 py-4 text-base font-semibold text-[#FCF4EB]/55"
+          >
+            This event has ended
+          </button>
+        </div>
+      </section>
+    )
+  }
+
   if (event.manuallyClosed) {
     return (
       <WaitlistJoinForm
@@ -305,7 +331,7 @@ export default function EventRegistrationSection({
       return
     }
 
-    if (!EMAIL_RE.test(nextEmail)) {
+    if (!isValidEmail(nextEmail)) {
       setError('Please enter a valid email address, like name@example.com.')
       return
     }
@@ -375,7 +401,7 @@ export default function EventRegistrationSection({
       return
     }
 
-    if (!EMAIL_RE.test(nextEmail)) {
+    if (!isValidEmail(nextEmail)) {
       setError('Please enter a valid email address, like name@example.com.')
       return
     }

@@ -13,10 +13,10 @@ import {
   resolveEventCheckoutAmount,
 } from '@/lib/event-checkout'
 import { toStripeUnitAmount } from '@/lib/stripe-amount'
+import { isValidEmail } from '@/lib/email-validation'
+import { isEventEnded } from '@/lib/event-status'
 
 export const runtime = 'nodejs'
-
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 function getBaseUrl(request: Request) {
   const envOrigin = toOrigin(process.env.NEXT_PUBLIC_SITE_URL)
@@ -67,7 +67,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Invalid input.' }, { status: 400 })
     }
 
-    if (!EMAIL_RE.test(attendeeEmail)) {
+    if (!isValidEmail(attendeeEmail)) {
       await trackInsightEvent('checkout_failed', {
         route: '/events/checkout',
         properties: { reason: 'invalid_email', slug },
@@ -95,6 +95,15 @@ export async function POST(request: Request) {
         properties: { reason: 'event_not_found', slug },
       })
       return NextResponse.json({ error: 'Event not found.' }, { status: 404 })
+    }
+
+    if (isEventEnded(event)) {
+      await trackInsightEvent('checkout_failed', {
+        route: '/events/checkout',
+        email: attendeeEmail,
+        properties: { reason: 'event_ended', slug },
+      })
+      return NextResponse.json({ error: 'This event has ended.' }, { status: 410 })
     }
 
     const { amount, promo } = resolveEventCheckoutAmount({

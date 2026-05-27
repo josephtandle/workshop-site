@@ -3,10 +3,10 @@ import { addToWaitlist, isAlreadyOnWaitlist, isAlreadyRegistered } from '@/lib/e
 import { getEventBySlug } from '@/lib/events'
 import { sendWaitlistConfirmationEmail } from '@/lib/event-confirmation-email'
 import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
+import { isValidEmail } from '@/lib/email-validation'
+import { isEventEnded } from '@/lib/event-status'
 
 export const runtime = 'nodejs'
-
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export async function POST(request: NextRequest) {
   try {
@@ -24,13 +24,17 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Missing required fields.' }, { status: 400 })
     }
 
-    if (!EMAIL_RE.test(email)) {
-      return NextResponse.json({ error: 'Invalid email address.' }, { status: 400 })
+    if (!isValidEmail(email)) {
+      return NextResponse.json({ error: 'Please enter a valid email address.' }, { status: 400 })
     }
 
     const event = getEventBySlug(eventSlug)
     if (!event) {
       return NextResponse.json({ error: 'Event not found.' }, { status: 404 })
+    }
+
+    if (isEventEnded(event)) {
+      return NextResponse.json({ error: 'This event has ended.' }, { status: 410 })
     }
 
     const [alreadyRegistered, alreadyWaitlisted] = await Promise.all([

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import type { EventDefinition, EventPromoCode, EventSection } from '@/lib/events'
 import { formatEventPrice, getEventDiscountedPrice } from '@/lib/events'
 import { buildGoogleCalendarUrl } from '@/lib/calendar'
+import { isEventEnded } from '@/lib/event-status'
 import Reveal from '@/components/Reveal'
 import EventRegistrationSection from '@/components/events/EventRegistrationSection'
 import type { EventRegistrationData } from '@/components/events/EventRegistrationSection'
@@ -194,7 +195,23 @@ function ImageSection({ section }: { section: Extract<EventSection, { type: 'ima
   )
 }
 
-function HtmlSection({ section }: { section: Extract<EventSection, { type: 'html' }> }) {
+function HtmlSection({ section, eventEnded }: { section: Extract<EventSection, { type: 'html' }>; eventEnded: boolean }) {
+  if (eventEnded && section.html.includes('href="#register"')) {
+    return (
+      <SectionShell eyebrow={section.eyebrow} title={section.title} sectionId={section.id}>
+        <div className="event-html prose prose-invert max-w-none rounded-[1.8rem] border border-white/10 bg-white/[0.035] p-6 text-center shadow-[0_18px_60px_rgba(0,0,0,0.22)] md:p-8">
+          <button
+            type="button"
+            disabled
+            className="copy-button-glass copy-button-primary inline-flex min-w-[220px] cursor-not-allowed items-center justify-center rounded-xl px-6 py-4 text-base font-semibold opacity-65"
+          >
+            This event has ended
+          </button>
+        </div>
+      </SectionShell>
+    )
+  }
+
   return (
     <SectionShell eyebrow={section.eyebrow} title={section.title} sectionId={section.id}>
       <div
@@ -328,14 +345,24 @@ function HostsSection({ section }: { section: Extract<EventSection, { type: 'hos
   )
 }
 
+function EndedButton({ className }: { className: string }) {
+  return (
+    <button type="button" disabled className={`${className} cursor-not-allowed opacity-65`}>
+      This event has ended
+    </button>
+  )
+}
+
 function CtaSection({
   section,
   event,
   promo,
+  eventEnded,
 }: {
   section: Extract<EventSection, { type: 'cta' }>
   event: EventDefinition
   promo: EventPromoCode | null
+  eventEnded: boolean
 }) {
   return (
     <SectionShell eyebrow={section.eyebrow} title={section.title} sectionId={section.id}>
@@ -368,11 +395,15 @@ function CtaSection({
             {promo ? promo.description : event.pricing.checkoutNote}
           </p>
           <div className="grid gap-3">
-            <ScrollToRegisterButton
-              className="copy-button-glass copy-button-primary inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold"
-            >
-              {section.primaryLabel}
-            </ScrollToRegisterButton>
+            {eventEnded ? (
+              <EndedButton className="copy-button-glass copy-button-primary inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold" />
+            ) : (
+              <ScrollToRegisterButton
+                className="copy-button-glass copy-button-primary inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold"
+              >
+                {section.primaryLabel}
+              </ScrollToRegisterButton>
+            )}
             {section.secondaryHref && section.secondaryLabel ? (
               <Link
                 href={section.secondaryHref}
@@ -390,7 +421,7 @@ function CtaSection({
   )
 }
 
-function renderSection(section: EventSection, event: EventDefinition, promo: EventPromoCode | null) {
+function renderSection(section: EventSection, event: EventDefinition, promo: EventPromoCode | null, eventEnded: boolean) {
   switch (section.type) {
     case 'story':
       return <StorySection key={section.id} section={section} />
@@ -403,13 +434,13 @@ function renderSection(section: EventSection, event: EventDefinition, promo: Eve
     case 'image':
       return <ImageSection key={section.id} section={section} />
     case 'html':
-      return <HtmlSection key={section.id} section={section} />
+      return <HtmlSection key={section.id} section={section} eventEnded={eventEnded} />
     case 'quoteCard':
       return <QuoteCardSection key={section.id} section={section} />
     case 'hosts':
       return <HostsSection key={section.id} section={section} />
     case 'cta':
-      return <CtaSection key={section.id} section={section} event={event} promo={promo} />
+      return <CtaSection key={section.id} section={section} event={event} promo={promo} eventEnded={eventEnded} />
     case 'custom':
       return <section key={section.id}>{section.render}</section>
     default:
@@ -429,6 +460,7 @@ export default function EventPageView({
   initialPromoCode?: string | null
 }) {
   const hasSetupItems = (event.postPurchase?.setupItems?.length ?? 0) > 0
+  const eventEnded = isEventEnded(event)
   const heroMedia = event.heroVideoSrc ? (
     <HeroVideo
       className="h-full w-full object-cover"
@@ -459,6 +491,7 @@ export default function EventPageView({
     slug: event.slug,
     title: event.title,
     manuallyClosed: event.manuallyClosed,
+    eventEnded,
     durationLabel: event.pricing.donationMode ? undefined : event.durationLabel,
     pricing: {
       currencySymbol: event.pricing.currencySymbol,
@@ -518,14 +551,20 @@ export default function EventPageView({
           <Reveal delay={4}>
             <div className="mt-4 flex flex-wrap gap-3">
               <div className="flex flex-col gap-2">
-                <ScrollToRegisterButton
-                  className="copy-button-glass copy-button-primary inline-flex min-w-[220px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold shadow-[0_16px_38px_rgba(124,105,199,0.22)]"
-                >
-                  {event.ctaLabel ?? 'Buy Ticket'}
-                </ScrollToRegisterButton>
-                <p className="pl-1 text-xs leading-5 text-[#FCF4EB]/42">
-                  Have a promo code? Enter it in the registration section below.
-                </p>
+                {eventEnded ? (
+                  <EndedButton className="copy-button-glass copy-button-primary inline-flex min-w-[220px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold shadow-[0_16px_38px_rgba(124,105,199,0.22)]" />
+                ) : (
+                  <ScrollToRegisterButton
+                    className="copy-button-glass copy-button-primary inline-flex min-w-[220px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold shadow-[0_16px_38px_rgba(124,105,199,0.22)]"
+                  >
+                    {event.ctaLabel ?? 'Buy Ticket'}
+                  </ScrollToRegisterButton>
+                )}
+                {!eventEnded ? (
+                  <p className="pl-1 text-xs leading-5 text-[#FCF4EB]/42">
+                    Have a promo code? Enter it in the registration section below.
+                  </p>
+                ) : null}
               </div>
             </div>
           </Reveal>
@@ -545,7 +584,7 @@ export default function EventPageView({
         </div>
       </section>
 
-      {event.sections.map((section) => renderSection(section, event, promo))}
+      {event.sections.map((section) => renderSection(section, event, promo, eventEnded))}
       <EventRegistrationSection
         event={registrationEvent}
         publishableKey={publishableKey}

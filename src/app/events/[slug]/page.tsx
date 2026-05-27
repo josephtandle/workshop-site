@@ -18,6 +18,8 @@ type EventSearchParams = {
   session_id?: string
 }
 
+export const dynamic = 'force-dynamic'
+
 function getPromoParam(searchParams: EventSearchParams) {
   return searchParams.promo ?? searchParams.promoCode ?? searchParams.code ?? searchParams.discount ?? null
 }
