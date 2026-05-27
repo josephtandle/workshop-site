@@ -2,6 +2,14 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "crons": [
     {
+      "path": "/api/events/abandoned-checkout-followups",
+      "schedule": "15 1 * * *"
+    },
+    {
+      "path": "/api/events/abandoned-checkout-followups-t12h",
+      "schedule": "20 * * * *"
+    },
+    {
       "path": "/api/events/location-reminders",
       "schedule": "30 23 29 5 *"
     },

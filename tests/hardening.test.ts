@@ -3,6 +3,7 @@ import test from 'node:test'
 
 import { resolveNotifyWindow, hoursUntilEvent } from '../src/lib/waitlist-notify-windows'
 import { resolvePromoCode, getEventBySlug } from '../src/lib/events'
+import { toStripeUnitAmount } from '../src/lib/stripe-amount'
 
 // ---------------------------------------------------------------------------
 // Email validation (mirrors the regex used across API routes)
@@ -101,6 +102,21 @@ test('donation amount: NaN is invalid', () => {
 test('donation amount: over cap is invalid', () => {
   assert.ok(!isDonationAmountValid(100000))
   assert.ok(!isDonationAmountValid(9999999))
+})
+
+test('stripe amount: zero is handled as free checkout', () => {
+  assert.equal(toStripeUnitAmount(0), 0)
+})
+
+test('stripe amount: sub-minimum paid USD amount is rejected before session creation', () => {
+  assert.equal(toStripeUnitAmount(0.01), null)
+  assert.equal(toStripeUnitAmount(0.49), null)
+})
+
+test('stripe amount: minimum paid USD amount and normal ticket prices convert to cents', () => {
+  assert.equal(toStripeUnitAmount(0.5), 50)
+  assert.equal(toStripeUnitAmount(10), 1000)
+  assert.equal(toStripeUnitAmount(64.99), 6499)
 })
 
 // ---------------------------------------------------------------------------

@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "abandoned-checkout-control": "node scripts/abandoned-checkout-control.mjs",
+    "abandoned-checkout-run": "npx tsx scripts/abandoned-checkout-run.ts",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
