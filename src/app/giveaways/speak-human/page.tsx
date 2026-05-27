@@ -11,6 +11,7 @@ import GiveawayEmailModal from '@/components/giveaways/GiveawayEmailModal'
 // ---------------------------------------------------------------------------
 const MASTERMIND_URL = 'https://www.mastermindshq.business'
 const GITHUB_URL = 'https://github.com/josephtandle/speak-human'
+const MANYCHAT_KEYWORD = 'human'
 
 const INSTALL_COMMAND = `git clone https://github.com/josephtandle/speak-human && cp -r speak-human/speak-human ~/.claude/skills/speak-human && rm -rf speak-human`
 
@@ -317,8 +318,12 @@ export default function SpeakHumanPage() {
             transition={{ duration: 0.5 }}
             className="relative z-10 mb-6 flex justify-center sm:absolute sm:top-10 sm:left-0 sm:right-0 sm:mb-0"
           >
-            <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
-              Free from the{' '}
+              <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
+              Free from Joe&apos;s{' '}
+              <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="hover:text-[#BDB3E8] transition-colors underline underline-offset-2 decoration-[#7C69C7]/40">
+                public GitHub repo
+              </a>
+              {' '}and the{' '}
               <a href={MASTERMIND_URL} target="_blank" rel="noopener noreferrer" className="hover:text-[#BDB3E8] transition-colors underline underline-offset-2 decoration-[#7C69C7]/40">
                 Business Automation Mastermind
               </a>
@@ -419,6 +424,15 @@ export default function SpeakHumanPage() {
               </svg>
               <span>Scroll to get the install command</span>
             </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 2.15 }}
+              className="mt-4 text-[#FCF4EB]/28 text-xs uppercase tracking-[0.22em]"
+            >
+              ManyChat keyword: {MANYCHAT_KEYWORD}
+            </motion.p>
           </div>
         </section>
 
@@ -438,9 +452,9 @@ export default function SpeakHumanPage() {
           </motion.div>
           <div className="grid gap-5 sm:grid-cols-3">
             {[
-              { step: '01', title: 'Copy the install command', body: 'One line. Copy it from the box below.' },
-              { step: '02', title: 'Run it in your terminal', body: 'Paste it in your terminal and run. It clones the repo, drops the skill in the right place, and cleans up. Done in seconds.' },
-              { step: '03', title: 'Type /speak-human', body: 'Open Claude Code and type /speak-human followed by any text or file. Your writing comes back sounding like a person wrote it.' },
+              { step: '01', title: 'Copy the install command', body: 'One line from Joe\'s GitHub repo. It installs the local Claude Code skill, not an external API.' },
+              { step: '02', title: 'Run it in your terminal', body: 'It clones the public repo, copies the skill into ~/.claude/skills/speak-human, then removes the temporary clone.' },
+              { step: '03', title: 'Type /speak-human', body: 'Use it on pasted text or a file. It detects AI patterns, protects real passages, then rewrites the synthetic parts in a human voice.' },
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -485,7 +499,11 @@ export default function SpeakHumanPage() {
                 Copy. Paste. Done.
               </h2>
               <p className="text-[#FCF4EB]/45 max-w-xl mx-auto leading-relaxed">
-                In the{' '}
+                The command comes from{' '}
+                <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="text-[#9D8FE0] hover:text-[#BDB3E8] transition-colors">
+                  Joe&apos;s public GitHub repo
+                </a>
+                . In the{' '}
                 <a href={MASTERMIND_URL} target="_blank" rel="noopener noreferrer" className="text-[#9D8FE0] hover:text-[#BDB3E8] transition-colors">
                   Business Automation Mastermind
                 </a>
@@ -516,6 +534,9 @@ export default function SpeakHumanPage() {
                 check the README
               </a>{' '}
               for the manual install path.
+            </p>
+            <p className="text-[#FCF4EB]/20 text-[11px] text-center mt-3 max-w-md mx-auto leading-relaxed">
+              Coming from Instagram or ManyChat? The giveaway keyword is <span className="font-bold uppercase text-[#9D8FE0]/75">{MANYCHAT_KEYWORD}</span>.
             </p>
           </motion.div>
         </section>
@@ -652,7 +673,12 @@ export default function SpeakHumanPage() {
         </div>
 
       </div>
-      <GiveawayEmailModal slug="speak-human" isOpen={emailModalOpen} onClose={() => setEmailModalOpen(false)} />
+      <GiveawayEmailModal
+        slug={MANYCHAT_KEYWORD}
+        isOpen={emailModalOpen}
+        onClose={() => setEmailModalOpen(false)}
+        headingOverride="Want the Speak Human install notes by email too?"
+      />
     </>
   )
 }

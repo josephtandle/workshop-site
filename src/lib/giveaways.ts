@@ -96,7 +96,7 @@ export const giveaways: Giveaway[] = [
   {
     slug: 'speak-human',
     title: 'Speak Human',
-    description: 'A Claude Code skill that strips AI writing patterns and rewrites in your actual voice. Learns from your podcasts, books, and content. One command to install.',
+    description: 'A Claude Code skill from Joe Che’s public GitHub that strips AI writing patterns, protects real passages, and rewrites copy in a human voice. One command to install.',
     icon: '✦',
     badge: 'Skill',
     badgeVariant: 'purple',

@@ -3,6 +3,7 @@
 import confetti from 'canvas-confetti'
 
 const copyColors = ['#7C69C7', '#9D8FE0', '#F5C3C6', '#FCF4EB']
+export const COPY_WITH_CONFETTI_SUCCESS_EVENT = 'copy-with-confetti:success'
 
 type CopyClick = {
   clientX: number
@@ -29,4 +30,10 @@ export async function copyWithConfetti(text: string, event?: CopyClick) {
     colors: copyColors,
     origin: getOrigin(event),
   })
+
+  if (typeof window !== 'undefined') {
+    window.setTimeout(() => {
+      window.dispatchEvent(new CustomEvent(COPY_WITH_CONFETTI_SUCCESS_EVENT))
+    }, 0)
+  }
 }
