@@ -7,7 +7,7 @@
     },
     {
       "path": "/api/events/reconcile-registrations",
-      "schedule": "25 * * * *"
+      "schedule": "0 20 * * *"
     }
   ]
 }
