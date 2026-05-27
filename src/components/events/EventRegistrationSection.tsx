@@ -88,7 +88,13 @@ export default function EventRegistrationSection({
   initialPromoMessage,
 }: Props) {
   if (event.manuallyClosed) {
-    return <WaitlistJoinForm eventSlug={event.slug} eventTitle={event.title} />
+    return (
+      <WaitlistJoinForm
+        durationLabel={event.durationLabel}
+        eventSlug={event.slug}
+        eventTitle={event.title}
+      />
+    )
   }
   const [attendeeName, setAttendeeName] = useState('')
   const [attendeeEmail, setAttendeeEmail] = useState('')
