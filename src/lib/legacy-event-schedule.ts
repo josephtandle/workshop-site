@@ -539,13 +539,24 @@ export async function finalizeLegacyCheckoutSession(
     }
   }
 
-  const status = await syncLegacyRegistration({
-    event: input.event,
-    attendeeName,
-    attendeeEmail,
-    amount: (session.amount_total ?? 0) / 100,
-    status: 'paid',
-  })
+  let legacySyncError: string | null = null
+  let status: { status: SyncStatus; message: string }
+  try {
+    status = await syncLegacyRegistration({
+      event: input.event,
+      attendeeName,
+      attendeeEmail,
+      amount: (session.amount_total ?? 0) / 100,
+      status: 'paid',
+    })
+  } catch (error) {
+    legacySyncError = error instanceof Error ? error.message : 'Unknown legacy sync error.'
+    console.error('legacy registration sync error', error)
+    status = {
+      status: 'imported',
+      message: 'Legacy registration sync failed. Workshop registration continued.',
+    }
+  }
 
   let cancelToken: string | undefined
   try {
@@ -619,7 +630,7 @@ export async function finalizeLegacyCheckoutSession(
     await stripe.paymentIntents.update(paymentIntent.id, {
       metadata: {
         ...paymentIntent.metadata,
-        legacy_sync_status: 'complete',
+        legacy_sync_status: legacySyncError ? 'error' : 'complete',
         confirmation_email_sent: emailSendError ? 'error' : 'complete',
         ...(input.event.slug === 'ai-avatar-content-creation'
           ? {
@@ -631,10 +642,10 @@ export async function finalizeLegacyCheckoutSession(
     })
   }
 
-  return emailSendError || setupEmailError || portalAccessEmailError
+  return legacySyncError || emailSendError || setupEmailError || portalAccessEmailError
     ? {
         status: status.status,
-        message: `${status.message} ${emailSendError ? 'Confirmation email failed to send automatically.' : ''}${setupEmailError ? ' Setup email failed to send automatically.' : ''}${portalAccessEmailError ? ' Portal access email failed to send automatically.' : ''}`.trim(),
+        message: `${status.message} ${legacySyncError ? 'Legacy Event Schedule sync failed automatically.' : ''}${emailSendError ? ' Confirmation email failed to send automatically.' : ''}${setupEmailError ? ' Setup email failed to send automatically.' : ''}${portalAccessEmailError ? ' Portal access email failed to send automatically.' : ''}`.trim(),
       }
     : status
 }
