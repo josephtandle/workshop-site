@@ -3,7 +3,7 @@ import Link from 'next/link'
 import type { EventDefinition, EventPromoCode, EventSection } from '@/lib/events'
 import { formatEventPrice, getEventDiscountedPrice } from '@/lib/events'
 import { buildGoogleCalendarUrl } from '@/lib/calendar'
-import { isEventEnded } from '@/lib/event-status'
+import { isEventEnded, isEventRegistrationClosed } from '@/lib/event-status'
 import Reveal from '@/components/Reveal'
 import EventRegistrationSection from '@/components/events/EventRegistrationSection'
 import type { EventRegistrationData } from '@/components/events/EventRegistrationSection'
@@ -461,6 +461,7 @@ export default function EventPageView({
 }) {
   const hasSetupItems = (event.postPurchase?.setupItems?.length ?? 0) > 0
   const eventEnded = isEventEnded(event)
+  const registrationClosed = isEventRegistrationClosed(event)
   const heroMedia = event.heroVideoSrc ? (
     <HeroVideo
       className="h-full w-full object-cover"
@@ -490,7 +491,7 @@ export default function EventPageView({
   const registrationEvent: EventRegistrationData = {
     slug: event.slug,
     title: event.title,
-    manuallyClosed: event.manuallyClosed,
+    manuallyClosed: registrationClosed,
     eventEnded,
     durationLabel: event.pricing.donationMode ? undefined : event.durationLabel,
     pricing: {

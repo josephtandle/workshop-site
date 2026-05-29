@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import { getEventBySlug } from '@/lib/events'
-import { sendEventConfirmationEmail } from '@/lib/event-confirmation-email'
+import { sendAiContentCreationSetupEmail, sendEventConfirmationEmail } from '@/lib/event-confirmation-email'
 import { syncLegacyRegistration } from '@/lib/legacy-event-schedule'
 import { createStripeClient, getStripePublishableKey } from '@/lib/stripe'
 import { saveRegistration } from '@/lib/event-registration-db'
@@ -14,7 +14,7 @@ import {
 } from '@/lib/event-checkout'
 import { toStripeUnitAmount } from '@/lib/stripe-amount'
 import { isValidEmail } from '@/lib/email-validation'
-import { isEventEnded } from '@/lib/event-status'
+import { isEventEnded, isEventRegistrationClosed } from '@/lib/event-status'
 
 export const runtime = 'nodejs'
 
@@ -106,6 +106,15 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'This event has ended.' }, { status: 410 })
     }
 
+    if (isEventRegistrationClosed(event)) {
+      await trackInsightEvent('checkout_failed', {
+        route: '/events/checkout',
+        email: attendeeEmail,
+        properties: { reason: 'registration_closed', slug },
+      })
+      return NextResponse.json({ error: 'Registration is now closed for this event.' }, { status: 410 })
+    }
+
     const { amount, promo } = resolveEventCheckoutAmount({
       event,
       promoCode,
@@ -178,6 +187,12 @@ export async function POST(request: Request) {
           attendeeEmail,
           cancelToken,
         })
+        if (event.slug === 'ai-avatar-content-creation') {
+          await sendAiContentCreationSetupEmail({
+            attendeeName,
+            attendeeEmail,
+          })
+        }
         await trackInsightEvent('initial_email_sent', {
           route: '/events/checkout',
           email: attendeeEmail,

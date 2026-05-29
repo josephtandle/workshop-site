@@ -170,6 +170,7 @@ export type EventDefinition = {
     endIso: string
     googleCalendarEventId?: string
   }
+  registrationClosesIso?: string
   capacity?: number
   manuallyClosed?: boolean
   emailConfig?: {
@@ -529,6 +530,7 @@ export const events: EventDefinition[] = [
       endIso: '2026-05-30T17:00:00+08:00',
       googleCalendarEventId: 'tgq3bqi8jfsa0itg7l74e8iev8',
     },
+    registrationClosesIso: '2026-05-30T10:15:00+08:00',
     legacyRegistration: {
       eventId: '9YGs4u',
       eventDate: '2026-05-30',
@@ -538,9 +540,9 @@ export const events: EventDefinition[] = [
       eventStartIso: '2026-05-30T10:30:00+08:00',
       leadHours: 4,
       exactAddress:
-        'Happy Days Villa No. 2, Jalan Pura Gede Batur, off Jalan Pantai Pererenan, Canggu 80361, Bali, Indonesia',
+        'Happy Days Villa 1, Jalan Pura Gede Batur, Pererenan, Mengwi, Kabupaten Badung, Bali 80351, Indonesia',
       googleMapsUrl:
-        'https://www.google.com/maps/search/?api=1&query=Happy+Days+Villa+No.+2%2C+Jalan+Pura+Gede+Batur%2C+off+Jalan+Pantai+Pererenan%2C+Canggu+80361%2C+Bali%2C+Indonesia',
+        'https://maps.app.goo.gl/auASnDX9wmS96a1n9',
       parkingInstructions: [],
     },
     postPurchase: {

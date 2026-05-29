@@ -7,7 +7,7 @@
     },
     {
       "path": "/api/events/abandoned-checkout-followups-t12h",
-      "schedule": "20 * * * *"
+      "schedule": "20 8 * * *"
     },
     {
       "path": "/api/events/location-reminders",

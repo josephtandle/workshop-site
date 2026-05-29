@@ -1,5 +1,5 @@
 import { getEventBySlug, type EventDefinition } from '@/lib/events'
-import { sendEventConfirmationEmail } from '@/lib/event-confirmation-email'
+import { sendAiContentCreationSetupEmail, sendEventConfirmationEmail } from '@/lib/event-confirmation-email'
 import { saveRegistration } from '@/lib/event-registration-db'
 import { dedupeAttendeesByEmail } from './location-reminder'
 import { createStripeClient } from '@/lib/stripe'
@@ -34,6 +34,40 @@ type LegacySaleRow = {
 export type LegacyEventAttendee = {
   attendeeName: string
   attendeeEmail: string
+}
+
+async function sendAiContentCreationPortalAccess(input: {
+  attendeeName: string
+  attendeeEmail: string
+  stripeCustomerId: string | null
+}) {
+  const secret = process.env.PORTAL_INTERNAL_ACCESS_SECRET?.trim() || process.env.CRON_SECRET?.trim()
+  if (!secret) {
+    throw new Error('Portal internal access secret is not configured.')
+  }
+
+  const portalBaseUrl = (process.env.PORTAL_BASE_URL || 'https://portal.mastermindshq.business')
+    .trim()
+    .replace(/\/+$/g, '')
+
+  const response = await fetch(`${portalBaseUrl}/api/internal/ai-content-creation/access-link`, {
+    method: 'POST',
+    headers: {
+      authorization: `Bearer ${secret}`,
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      email: input.attendeeEmail,
+      fullName: input.attendeeName,
+      stripeCustomerId: input.stripeCustomerId,
+    }),
+    cache: 'no-store',
+  })
+
+  if (!response.ok) {
+    const detail = await response.text().catch(() => '')
+    throw new Error(`Portal access link request failed: ${response.status}${detail ? ` ${detail}` : ''}`)
+  }
 }
 
 type EventScheduleConfig = {
@@ -450,21 +484,59 @@ export async function finalizeLegacyCheckoutSession(
     typeof session.payment_intent === 'string' ? null : session.payment_intent
   const confirmationEmailAlreadySent =
     paymentIntent?.metadata?.confirmation_email_sent === 'complete'
-
-  if (paymentIntent?.metadata?.legacy_sync_status === 'complete') {
-    return {
-      status: 'already_paid',
-      message: confirmationEmailAlreadySent
-        ? 'Legacy attendee already synced.'
-        : 'Legacy attendee already synced. Confirmation email pending retry.',
-    }
-  }
+  const setupEmailAlreadySent =
+    paymentIntent?.metadata?.ai_content_setup_email_sent === 'complete'
 
   const attendeeName = session.metadata?.attendee_name?.trim()
   const attendeeEmail = session.metadata?.attendee_email?.trim() || session.customer_email?.trim()
 
   if (!attendeeName || !attendeeEmail) {
     throw new Error('Checkout session is missing attendee details.')
+  }
+
+  if (paymentIntent?.metadata?.legacy_sync_status === 'complete') {
+    const metadataUpdates: Record<string, string> = {}
+
+    if (
+      input.event.slug === 'ai-avatar-content-creation' &&
+      paymentIntent.metadata.portal_access_email_sent !== 'complete'
+    ) {
+      await sendAiContentCreationPortalAccess({
+        attendeeName,
+        attendeeEmail,
+        stripeCustomerId: typeof session.customer === 'string' ? session.customer : session.customer?.id ?? null,
+      })
+
+      metadataUpdates.portal_access_email_sent = 'complete'
+    }
+
+    if (
+      input.event.slug === 'ai-avatar-content-creation' &&
+      paymentIntent.metadata.ai_content_setup_email_sent !== 'complete'
+    ) {
+      await sendAiContentCreationSetupEmail({
+        attendeeName,
+        attendeeEmail,
+      })
+
+      metadataUpdates.ai_content_setup_email_sent = 'complete'
+    }
+
+    if (Object.keys(metadataUpdates).length > 0) {
+      await stripe.paymentIntents.update(paymentIntent.id, {
+        metadata: {
+          ...paymentIntent.metadata,
+          ...metadataUpdates,
+        },
+      })
+    }
+
+    return {
+      status: 'already_paid',
+      message: confirmationEmailAlreadySent
+        ? 'Legacy attendee already synced.'
+        : 'Legacy attendee already synced. Confirmation email pending retry.',
+    }
   }
 
   const status = await syncLegacyRegistration({
@@ -516,20 +588,53 @@ export async function finalizeLegacyCheckoutSession(
     }
   }
 
+  let setupEmailError: string | null = null
+  if (input.event.slug === 'ai-avatar-content-creation' && !setupEmailAlreadySent) {
+    try {
+      await sendAiContentCreationSetupEmail({
+        attendeeName,
+        attendeeEmail,
+      })
+    } catch (error) {
+      setupEmailError = error instanceof Error ? error.message : 'Unknown setup email error.'
+      console.error('ai content setup email error', error)
+    }
+  }
+
+  let portalAccessEmailError: string | null = null
+  if (input.event.slug === 'ai-avatar-content-creation') {
+    try {
+      await sendAiContentCreationPortalAccess({
+        attendeeName,
+        attendeeEmail,
+        stripeCustomerId: typeof session.customer === 'string' ? session.customer : session.customer?.id ?? null,
+      })
+    } catch (error) {
+      portalAccessEmailError = error instanceof Error ? error.message : 'Unknown portal access email error.'
+      console.error('portal access email error', error)
+    }
+  }
+
   if (paymentIntent?.id) {
     await stripe.paymentIntents.update(paymentIntent.id, {
       metadata: {
         ...paymentIntent.metadata,
         legacy_sync_status: 'complete',
         confirmation_email_sent: emailSendError ? 'error' : 'complete',
+        ...(input.event.slug === 'ai-avatar-content-creation'
+          ? {
+              portal_access_email_sent: portalAccessEmailError ? 'error' : 'complete',
+              ai_content_setup_email_sent: setupEmailError ? 'error' : 'complete',
+            }
+          : {}),
       },
     })
   }
 
-  return emailSendError
+  return emailSendError || setupEmailError || portalAccessEmailError
     ? {
         status: status.status,
-        message: `${status.message} Confirmation email failed to send automatically.`,
+        message: `${status.message} ${emailSendError ? 'Confirmation email failed to send automatically.' : ''}${setupEmailError ? ' Setup email failed to send automatically.' : ''}${portalAccessEmailError ? ' Portal access email failed to send automatically.' : ''}`.trim(),
       }
     : status
 }

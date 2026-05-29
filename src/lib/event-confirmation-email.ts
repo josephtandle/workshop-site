@@ -8,6 +8,89 @@ function getSiteUrl() {
   return (process.env.NEXT_PUBLIC_SITE_URL || 'https://workshop.mastermindshq.business').replace(/\/+$/g, '')
 }
 
+function getFirstName(name: string) {
+  return name.trim().split(/\s+/)[0] || ''
+}
+
+function buildAiContentCreationSetupEmailHtml(attendeeName: string) {
+  const firstName = getFirstName(attendeeName)
+  const workshopAddress =
+    'Happy Days Villa 1, Jalan Pura Gede Batur, Pererenan, Mengwi, Kabupaten Badung, Bali 80351'
+  const workshopMapsUrl = 'https://maps.app.goo.gl/auASnDX9wmS96a1n9'
+
+  return `
+    <div style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f6f2ff; margin: 0; padding: 32px 16px; color: #1a1a1a;">
+      <div style="max-width: 640px; margin: 0 auto; background: #ffffff; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 80px rgba(26, 14, 56, 0.12); border: 1px solid rgba(124, 105, 199, 0.12);">
+        <div style="background: linear-gradient(135deg, #110f17 0%, #1a1526 55%, #7C69C7 100%); padding: 36px 32px 32px;">
+          <p style="margin: 0 0 12px; font-size: 12px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: #cfc7ee;">Workshop Setup</p>
+          <h1 style="margin: 0; font-size: 34px; line-height: 1.02; font-weight: 800; color: #ffffff;">${firstName ? `${firstName}, ` : ''}get set up for Saturday</h1>
+          <p style="margin: 18px 0 0; font-size: 17px; line-height: 1.7; color: rgba(252,244,235,0.84);">Hey ${firstName || 'there'},</p>
+        </div>
+
+        <div style="padding: 30px 32px 24px;">
+          <div style="margin: 0 0 24px; padding: 20px; border-radius: 16px; background: #fbf9ff; border: 1px solid rgba(124, 105, 199, 0.14);">
+            <h2 style="margin: 0 0 10px; font-size: 20px; color: #16121f;">Location</h2>
+            <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.75; color: #4b4263;"><strong style="color:#16121f;">Happy Days Villa 1</strong><br>${workshopAddress}</p>
+            <p style="margin: 0; font-size: 15px; line-height: 1.75; color: #4b4263;"><a href="${workshopMapsUrl}" style="color:#7C69C7; font-weight:700; text-decoration:none;">Open Google Maps</a></p>
+          </div>
+
+          <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.75; color: #4b4263;">We are getting really excited for this Saturday's <strong style="color:#16121f;">AI Content Creation Lab</strong> in Pererenan, and we have a lot of fun stuff planned for the day.</p>
+          <p style="margin: 0 0 22px; font-size: 15px; line-height: 1.75; color: #4b4263;">To make sure we can spend the day creating instead of troubleshooting accounts, please take 10-15 minutes beforehand to get set up on the platforms we will be using.</p>
+          <p style="margin: 0 0 22px; font-size: 15px; line-height: 1.75; color: #4b4263;"><strong style="color:#16121f;">Please arrive on time.</strong> We are starting at 10:30 AM sharp and want everyone ready to create from the beginning.</p>
+
+          <div style="margin: 24px 0; padding: 20px; border-radius: 16px; background: #fbf9ff; border: 1px solid rgba(124, 105, 199, 0.14);">
+            <h2 style="margin: 0 0 8px; font-size: 20px; color: #16121f;">Higgsfield</h2>
+            <p style="margin: 0 0 12px; font-size: 14px; line-height: 1.65; color: #4b4263;">AI images and video.</p>
+            <p style="margin: 0 0 10px; font-size: 14px; line-height: 1.65; color: #4b4263;">We recommend starting with either Basic ($5) if you just want to experiment, or Plus ($49) if you think you will be generating a lot of video. You can always scale up later.</p>
+            <a href="https://higgsfield.ai/" style="color:#7C69C7; font-weight:700; text-decoration:none;">Open Higgsfield</a>
+          </div>
+
+          <div style="margin: 24px 0; padding: 20px; border-radius: 16px; background: #fbf9ff; border: 1px solid rgba(124, 105, 199, 0.14);">
+            <h2 style="margin: 0 0 8px; font-size: 20px; color: #16121f;">HeyGen</h2>
+            <p style="margin: 0 0 12px; font-size: 14px; line-height: 1.65; color: #4b4263;">AI avatars, digital clones, and talking-head content.</p>
+            <p style="margin: 0 0 10px; font-size: 14px; line-height: 1.65; color: #4b4263;">The free tier is fine to start. If you want access to voice cloning and more avatar features, the Creator plan ($29) is the best place to begin.</p>
+            <a href="https://www.heygen.com/" style="color:#7C69C7; font-weight:700; text-decoration:none;">Open HeyGen</a>
+          </div>
+
+          <div style="margin: 24px 0; padding: 20px; border-radius: 16px; background: #fbf9ff; border: 1px solid rgba(124, 105, 199, 0.14);">
+            <h2 style="margin: 0 0 8px; font-size: 20px; color: #16121f;">CapCut</h2>
+            <p style="margin: 0 0 12px; font-size: 14px; line-height: 1.65; color: #4b4263;">Editing, captions, pacing, and assembly.</p>
+            <p style="margin: 0 0 10px; font-size: 14px; line-height: 1.65; color: #4b4263;">No paid plan needed. Just make sure you have signed up and downloaded it before class.</p>
+            <a href="https://www.capcut.com/" style="color:#7C69C7; font-weight:700; text-decoration:none;">Open CapCut</a>
+          </div>
+
+          <div style="margin: 28px 0 18px;">
+            <a href="https://forms.gle/7YKYqJcznbf6U8U19" style="display:inline-block; background:#7C69C7; color:#ffffff; text-decoration:none; padding:14px 24px; border-radius:12px; font-size:16px; font-weight:700; box-shadow:0 14px 32px rgba(124,105,199,0.24);">Fill out the workshop form</a>
+          </div>
+
+          <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.75; color: #4b4263;">This part is important. We will review these beforehand so we can tailor the workshop around what you actually want to create, whether that is personal branding, AI influencers, ads, social content, avatars, products, storytelling, or creator workflows.</p>
+          <p style="margin: 0 0 22px; font-size: 15px; line-height: 1.75; color: #4b4263;">The more thoughtful your answers are, the more useful and personalized the day will feel.</p>
+
+          <div style="margin: 28px 0 18px;">
+            <a href="https://chat.whatsapp.com/HRpALDP0o3AE3dJDEMwhvW?s=cl&amp;p=i&amp;mlu=4" style="display:inline-block; background:#16121f; color:#ffffff; text-decoration:none; padding:14px 24px; border-radius:12px; font-size:16px; font-weight:700;">Join the WhatsApp group</a>
+          </div>
+
+          <div style="margin: 26px 0; padding: 20px; border-radius: 16px; background: #fff8fb; border: 1px solid rgba(245, 195, 198, 0.42);">
+            <h2 style="margin: 0 0 10px; font-size: 20px; color: #16121f;">Workshop details</h2>
+            <p style="margin: 0; font-size: 15px; line-height: 1.8; color: #4b4263;"><strong>Saturday, May 30</strong><br>10:30 AM - 5:00 PM</p>
+            <p style="margin: 16px 0 0; font-size: 15px; line-height: 1.8; color: #4b4263;">We will break for lunch around 1:30 PM.</p>
+          </div>
+
+          <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.75; color: #4b4263;"><strong style="color:#16121f;">Please note:</strong> we will not be providing food or drinks other than water, so please plan accordingly and bring or order whatever you need for the day.</p>
+          <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.75; color: #4b4263;"><strong style="color:#16121f;">Bring:</strong></p>
+          <ul style="margin: 0 0 24px 20px; padding: 0; color: #4b4263; font-size: 15px; line-height: 1.75;">
+            <li>Laptop + charger</li>
+            <li>Headphones if you have them</li>
+            <li>An idea, business, brand, or creator concept you would like to explore</li>
+          </ul>
+
+          <p style="margin: 0; font-size: 15px; line-height: 1.75; color: #4b4263;">Looking forward to building some amazing content with you all.<br><br>Helix &amp; Joe</p>
+        </div>
+      </div>
+    </div>
+  `
+}
+
 function buildConfirmationEmailHtml(event: EventDefinition, attendeeName: string, cancelToken?: string) {
   const siteUrl = getSiteUrl()
   const setupUrl = `${siteUrl}/events/${event.slug}/setup`
@@ -292,6 +375,10 @@ export function buildWaitlistJoinIdempotencyKey(slug: string, email: string): st
   return `waitlist-join/${slug}/${email.trim().toLowerCase()}`
 }
 
+export function buildAiContentCreationSetupIdempotencyKey(email: string): string {
+  return `ai-content-creation-setup/ai-avatar-content-creation/${email.trim().toLowerCase()}`
+}
+
 export async function sendEventConfirmationEmail(input: {
   event: EventDefinition
   attendeeName: string
@@ -331,6 +418,18 @@ export async function sendEventConfirmationEmail(input: {
     html,
     idempotencyKey: buildConfirmationIdempotencyKey(input.event.slug, input.attendeeEmail),
     attachments,
+  })
+}
+
+export async function sendAiContentCreationSetupEmail(input: {
+  attendeeName: string
+  attendeeEmail: string
+}) {
+  return sendResendEmail({
+    attendeeEmail: input.attendeeEmail,
+    subject: 'Before Saturday: AI Content Creation Lab setup',
+    html: buildAiContentCreationSetupEmailHtml(input.attendeeName),
+    idempotencyKey: buildAiContentCreationSetupIdempotencyKey(input.attendeeEmail),
   })
 }
 
