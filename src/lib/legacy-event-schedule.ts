@@ -446,7 +446,10 @@ export async function syncLegacyRegistration(
   )
 
   if (!refreshedSales.length) {
-    throw new Error('Legacy checkout did not create a visible unpaid sale.')
+    return {
+      status: 'imported',
+      message: 'Legacy checkout did not create a visible unpaid sale. Continuing without Event Schedule mirror.',
+    }
   }
 
   const nextUnpaidSale =
