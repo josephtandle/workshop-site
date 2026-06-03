@@ -173,6 +173,14 @@ export const giveaways: Giveaway[] = [
     badge: 'Guide',
     badgeVariant: 'pink',
   },
+  {
+    slug: 'geometry-dash-fun-build',
+    title: 'Geometry Dash Fun Build',
+    description: 'A fully working Geometry Dash clone in p5.js. Copy the code, paste it into editor.p5js.org, and play in under 2 minutes. Change colors, physics, and level design.',
+    icon: '◆',
+    badge: 'Game Build',
+    badgeVariant: 'purple',
+  },
 ]
 
 export function getGiveaway(slug: string): Giveaway | undefined {
