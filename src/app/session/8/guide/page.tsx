@@ -2,8 +2,8 @@ import Link from 'next/link'
 import Session8Guide from '@/content/session-8-guide'
 
 export const metadata = {
-  title: 'Section 8: Safety and WebFetch',
-  description: 'Install WebFetch, understand the tools inside it, and practice safe web fetching, scraping, browser automation, and media downloads.',
+  title: 'Section 8: Safety, WebFetch, and Git',
+  description: 'Install WebFetch, practice safe web workflows, and turn your real local projects into Git repos with Claude handling setup and guardrails.',
 }
 
 export default function Session8GuidePage() {
