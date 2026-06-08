@@ -380,7 +380,7 @@ export default function ComparePage() {
                 paddingBottom: '0.05em',
               }}
             >
-              The Four Versions of Claude
+              The 5 Versions of Claude
             </motion.h1>
 
             <motion.p
@@ -404,9 +404,10 @@ export default function ComparePage() {
               transition={{ duration: 0.55, delay: 1.6 }}
               className="text-[#FCF4EB]/55 text-base sm:text-lg leading-relaxed max-w-xl mx-auto mb-8"
             >
-              Most people discover Claude through the chat interface and stop there. There are four
-              distinct products. The terminal is the power layer. Everything else is built on top of it
-              or is a subset of it.
+              Most people discover Claude through the chat interface and stop there. There are five
+              distinct products. Four sit in the table below, where the terminal is the power layer and
+              everything else is built on top of it or a subset of it. The fifth is a different category,
+              covered after the table.
             </motion.p>
 
             <motion.div

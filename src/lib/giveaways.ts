@@ -175,8 +175,8 @@ export const giveaways: Giveaway[] = [
   },
   {
     slug: 'compare',
-    title: 'The Four Versions of Claude',
-    description: 'Chat, Cowork, Code Desktop, Terminal. A side-by-side comparison of what each one does, where it stops, and why the terminal is the power layer.',
+    title: 'The 5 Versions of Claude',
+    description: 'Chat, Cowork, Code Desktop, Terminal, and Claude Design. A side-by-side comparison of what each one does, where it stops, and why the terminal is the power layer.',
     icon: '⬡',
     badge: 'Guide',
     badgeVariant: 'purple',
