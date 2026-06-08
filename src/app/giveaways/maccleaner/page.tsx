@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Reveal from '@/components/Reveal'
 import GiveawayForm from './GiveawayForm'
+import GiveawayAutoModal from '@/components/giveaways/GiveawayAutoModal'
 
 export const metadata: Metadata = {
   title: 'MacCleaner',
@@ -177,6 +178,10 @@ export default function MacCleanerPage() {
           </Reveal>
         </div>
       </section>
+      <GiveawayAutoModal
+        slug="maccleaner"
+        headingOverride="Want more practical tools in your inbox?"
+      />
     </main>
   )
 }

@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import GiveawayAutoModal from '@/components/giveaways/GiveawayAutoModal'
 
 // ---------------------------------------------------------------------------
 // Particle canvas hook
@@ -529,6 +530,10 @@ export default function AgentInfrastructurePage() {
         </div>
 
       </div>
+      <GiveawayAutoModal
+        slug="agent-infrastructure"
+        headingOverride="Want more agent infrastructure breakdowns in your inbox?"
+      />
     </>
   )
 }

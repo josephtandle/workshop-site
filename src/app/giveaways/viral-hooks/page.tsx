@@ -3,6 +3,7 @@
 import { useEffect, useRef, useCallback, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import MastermindReactionsSection from '@/components/sections/MastermindReactionsSection'
+import GiveawayAutoModal from '@/components/giveaways/GiveawayAutoModal'
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -789,6 +790,10 @@ export default function VisualHooksPage() {
         </section>
 
       </div>
+      <GiveawayAutoModal
+        slug="viral-hooks"
+        headingOverride="Want more hook breakdowns in your inbox?"
+      />
     </>
   )
 }

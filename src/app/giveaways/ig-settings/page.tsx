@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import GiveawayAutoModal from '@/components/giveaways/GiveawayAutoModal'
 
 const CHECKLIST = [
   {
@@ -221,6 +222,10 @@ export default function IgSettingsGiveawayPage() {
           Use this before posting a new campaign, giveaway, founder story, or educational Reel.
         </p>
       </section>
+      <GiveawayAutoModal
+        slug="ig-settings"
+        headingOverride="Want more Instagram playbooks in your inbox?"
+      />
     </main>
   )
 }

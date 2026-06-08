@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import MastermindReactionsSection from '@/components/sections/MastermindReactionsSection'
 import GiveawayEmailModal from '@/components/giveaways/GiveawayEmailModal'
+import GiveawayAutoModal from '@/components/giveaways/GiveawayAutoModal'
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -430,6 +431,10 @@ export default function AllSortedOverviewPage() {
         onClose={() => setEmailModalOpen(false)}
         headingOverride="Where should I send the overview?"
         showCopiedBadge={false}
+      />
+      <GiveawayAutoModal
+        slug="all-sorted-overview"
+        headingOverride="Want updates from All Sorted in your inbox?"
       />
     </>
   )

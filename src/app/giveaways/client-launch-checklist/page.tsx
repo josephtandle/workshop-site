@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Reveal from '@/components/Reveal'
 import LeadMagnetExampleForm from './LeadMagnetExampleForm'
+import GiveawayAutoModal from '@/components/giveaways/GiveawayAutoModal'
 
 export const metadata: Metadata = {
   title: 'Client Launch Checklist',
@@ -166,6 +167,10 @@ export default function ClientLaunchChecklistPage() {
           </div>
         </Reveal>
       </section>
+      <GiveawayAutoModal
+        slug="client-launch-checklist"
+        headingOverride="Want more launch playbooks in your inbox?"
+      />
     </main>
   )
 }

@@ -1,12 +1,9 @@
 'use client'
 
-import { Fragment, useEffect, useRef, useCallback, useState } from 'react'
+import { Fragment, useEffect, useRef, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import MastermindReactionsSection from '@/components/sections/MastermindReactionsSection'
-import GiveawayEmailModal from '@/components/giveaways/GiveawayEmailModal'
-
-const AUTO_POPUP_DELAY_MS = 20000
-const AUTO_POPUP_SESSION_KEY = 'giveaway-auto-modal-shown-compare'
+import GiveawayAutoModal from '@/components/giveaways/GiveawayAutoModal'
 
 const MASTERMIND_URL = 'https://www.mastermindshq.business'
 const CLAUDE_DESIGN_URL = 'https://www.anthropic.com/news/claude-design-anthropic-labs'
@@ -231,20 +228,6 @@ function CellContent({ value }: { value: Cell }) {
 
 export default function ComparePage() {
   const particleCanvasRef = useRef<HTMLCanvasElement>(null)
-  const [emailModalOpen, setEmailModalOpen] = useState(false)
-
-  // Auto-open email modal once per session for non-copy-prompt giveaways.
-  // The rule (PROCESS.md): if there is no copy-prompt to drive the email modal,
-  // open it on a timer so the visitor still has a path onto the mailing list.
-  useEffect(() => {
-    if (typeof window === 'undefined') return
-    if (window.sessionStorage.getItem(AUTO_POPUP_SESSION_KEY)) return
-    const t = window.setTimeout(() => {
-      setEmailModalOpen(true)
-      try { window.sessionStorage.setItem(AUTO_POPUP_SESSION_KEY, '1') } catch { /* noop */ }
-    }, AUTO_POPUP_DELAY_MS)
-    return () => window.clearTimeout(t)
-  }, [])
 
   useEffect(() => {
     if (document.querySelector('link[data-font="cormorant"]')) return
@@ -733,11 +716,8 @@ export default function ComparePage() {
         </div>
       </div>
 
-      <GiveawayEmailModal
+      <GiveawayAutoModal
         slug="compare"
-        isOpen={emailModalOpen}
-        onClose={() => setEmailModalOpen(false)}
-        showCopiedBadge={false}
         headingOverride="Want this kind of breakdown in your inbox?"
       />
     </>

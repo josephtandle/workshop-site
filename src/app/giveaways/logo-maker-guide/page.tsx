@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import MastermindReactionsSection from '@/components/sections/MastermindReactionsSection'
+import GiveawayAutoModal from '@/components/giveaways/GiveawayAutoModal'
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -871,6 +872,10 @@ export default function LogoMakerGuidePage() {
         </div>
 
       </div>
+      <GiveawayAutoModal
+        slug="logo-maker-guide"
+        headingOverride="Want more design playbooks in your inbox?"
+      />
     </>
   )
 }

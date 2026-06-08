@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Reveal from '@/components/Reveal'
 import GiveawayForm from './GiveawayForm'
+import GiveawayAutoModal from '@/components/giveaways/GiveawayAutoModal'
 
 export const metadata: Metadata = {
   title: 'The Cult Brand Playbook',
@@ -224,6 +225,10 @@ export default function CultBrandPlaybookPage() {
         </div>
       </section>
 
+      <GiveawayAutoModal
+        slug="cult-brand-playbook"
+        headingOverride="Want more brand playbooks in your inbox?"
+      />
     </main>
   )
 }

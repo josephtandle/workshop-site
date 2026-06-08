@@ -29,23 +29,8 @@ const GIVEAWAYS_DIR = join(__dirname, '..', 'src', 'app', 'giveaways')
 
 // Pages that pre-date the hardened template. Do not extend this list without
 // also commenting why in PROCESS.md / LESSONS.md.
-//
-// TODO 2026-06-08: 9 legacy giveaway pages (everything below `benchmark`) need
-// the email modal backfilled. Each currently has no email-capture path for its
-// visitors — a real conversion gap. As pages get rebuilt on the hardened
-// template, remove their slugs from this list.
 const EXEMPT_SLUGS = new Set<string>([
-  'benchmark',               // legacy comparison page, flagged as DO NOT CLONE in the file header
-  'agent-infrastructure',    // legacy: no GiveawayEmailModal import
-  'all-sorted-overview',     // legacy: imports modal but wires neither trigger
-  'client-launch-checklist', // legacy: no GiveawayEmailModal import
-  'cult-brand-playbook',     // legacy: no GiveawayEmailModal import
-  'human',                   // legacy: no GiveawayEmailModal import
-  'ig-settings',             // legacy: no GiveawayEmailModal import
-  'lead-magnet',             // legacy: no GiveawayEmailModal import
-  'logo-maker-guide',        // legacy: no GiveawayEmailModal import
-  'maccleaner',              // legacy: no GiveawayEmailModal import
-  'viral-hooks',             // legacy: no GiveawayEmailModal import
+  'human', // re-export of speak-human/page.tsx (which is conforming). Single line: `export { default } from '../speak-human/page'`
 ])
 
 interface Page {
@@ -71,21 +56,23 @@ function listGiveawayPages(): Page[] {
 }
 
 function importsModal(src: string): boolean {
-  return /from\s+['"]@\/components\/giveaways\/GiveawayEmailModal['"]/.test(src)
+  // Either the bare email modal or the auto-modal wrapper counts as wiring the
+  // capture surface. The auto-modal imports GiveawayEmailModal internally.
+  return (
+    /from\s+['"]@\/components\/giveaways\/GiveawayEmailModal['"]/.test(src) ||
+    /from\s+['"]@\/components\/giveaways\/GiveawayAutoModal['"]/.test(src)
+  )
 }
 
 function hasCopyPromptTrigger(src: string): boolean {
-  // Either the inline onAfterCopy pattern or a copyWithConfetti caller that
-  // also calls setEmailModalOpen(true).
   return /onAfterCopy\s*=\s*\{?\s*\(\s*\)\s*=>\s*setEmailModalOpen\(true\)/.test(src)
 }
 
 function hasAutoPopupTrigger(src: string): boolean {
-  // The session key must appear somewhere — either at the sessionStorage call
-  // site (literal string) or in a hoisted constant. Both forms are valid.
+  // Preferred: <GiveawayAutoModal slug="..." headingOverride="..." />
+  if (/<GiveawayAutoModal\b/.test(src)) return true
+  // Legacy inline pattern: setTimeout + sessionStorage key + setEmailModalOpen(true).
   const hasSessionKey = /['"]giveaway-auto-modal-shown-/.test(src)
-  // setTimeout (window.setTimeout or bare) whose callback opens the modal.
-  // The body may have other statements before/after setEmailModalOpen(true).
   const opensViaTimer = /setTimeout\s*\([\s\S]{0,200}?setEmailModalOpen\s*\(\s*true\s*\)/.test(src)
   return hasSessionKey && opensViaTimer
 }
@@ -129,11 +116,14 @@ test('non-copy-prompt giveaways set showCopiedBadge={false} on the modal', () =>
     if (hasCopyPromptTrigger(page.source)) continue
     if (!hasAutoPopupTrigger(page.source)) continue
 
-    // Auto-popup page — there was no copy, so the "✓ Copied" badge must be off.
+    // <GiveawayAutoModal> sets showCopiedBadge={false} internally — no inline check needed.
+    if (/<GiveawayAutoModal\b/.test(page.source)) continue
+
+    // Legacy inline auto-popup must still set the prop directly.
     assert.match(
       page.source,
       /showCopiedBadge\s*=\s*\{?\s*false\s*\}?/,
-      `giveaway/${page.slug}/page.tsx uses the auto-popup trigger but does not pass showCopiedBadge={false} to GiveawayEmailModal. The "✓ Copied" badge is misleading when nothing was copied.`,
+      `giveaway/${page.slug}/page.tsx uses the inline auto-popup trigger but does not pass showCopiedBadge={false} to GiveawayEmailModal. The "✓ Copied" badge is misleading when nothing was copied.`,
     )
   }
 })

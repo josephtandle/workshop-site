@@ -9,6 +9,7 @@
 import Link from 'next/link'
 import Reveal from '@/components/Reveal'
 import ProTip from '@/components/ProTip'
+import GiveawayAutoModal from '@/components/giveaways/GiveawayAutoModal'
 
 const comparisons = [
   {
@@ -351,6 +352,10 @@ export default function BenchmarkPage() {
           </div>
         </Reveal>
       </section>
+      <GiveawayAutoModal
+        slug="benchmark"
+        headingOverride="Want this kind of comparison in your inbox?"
+      />
     </main>
   )
 }

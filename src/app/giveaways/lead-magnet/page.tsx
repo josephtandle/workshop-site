@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import GiveawayAutoModal from '@/components/giveaways/GiveawayAutoModal'
 
 const STORIES = [
   { name: 'Joe Che', quote: 'Success now means flow, resonance, and authenticity — not grinding to prove something.' },
@@ -219,6 +220,10 @@ export default function LeadMagnetPage() {
       <div className="text-center pb-12">
         <p className="text-[#FCF4EB]/20 text-xs uppercase tracking-widest">Masterminds HQ</p>
       </div>
+      <GiveawayAutoModal
+        slug="lead-magnet"
+        headingOverride="Want more from the Mastermind cohort in your inbox?"
+      />
     </div>
   )
 }
