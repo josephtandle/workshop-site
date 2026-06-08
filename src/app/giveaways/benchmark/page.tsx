@@ -1,3 +1,11 @@
+// ⚠️ DO NOT CLONE THIS PAGE.
+// This is a legacy giveaway that pre-dates the hardened template.
+// It is missing canvas particles, aurora blobs, Cormorant Garamond hero,
+// MastermindCTA, MastermindReactionsSection, magnetic CTA buttons, and the
+// "Created by Joe Che" attribution.
+// For new giveaways, clone src/app/giveaways/guardog/page.tsx instead.
+// Rules: ~/.myos/workspace/projects/mastermind/giveaways/PROCESS.md
+// Lessons: ~/.myos/workspace/projects/mastermind/giveaways/LESSONS.md
 import Link from 'next/link'
 import Reveal from '@/components/Reveal'
 import ProTip from '@/components/ProTip'
