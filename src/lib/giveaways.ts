@@ -174,6 +174,14 @@ export const giveaways: Giveaway[] = [
     badgeVariant: 'pink',
   },
   {
+    slug: 'compare',
+    title: 'The Four Versions of Claude',
+    description: 'Chat, Cowork, Code Desktop, Terminal. A side-by-side comparison of what each one does, where it stops, and why the terminal is the power layer.',
+    icon: '⬡',
+    badge: 'Guide',
+    badgeVariant: 'purple',
+  },
+  {
     slug: 'geometry-dash-fun-build',
     title: 'Geometry Dash Fun Build',
     description: 'A fully working Geometry Dash clone in p5.js. Copy the code, paste it into editor.p5js.org, and play in under 2 minutes. Change colors, physics, and level design.',
