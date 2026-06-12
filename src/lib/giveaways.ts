@@ -174,19 +174,19 @@ export const giveaways: Giveaway[] = [
     badgeVariant: 'pink',
   },
   {
-    slug: 'compare',
-    title: 'The 5 Versions of Claude',
-    description: 'Chat, Cowork, Code Desktop, Terminal, and Claude Design. A side-by-side comparison of what each one does, where it stops, and why the terminal is the power layer.',
-    icon: '⬡',
-    badge: 'Guide',
-    badgeVariant: 'purple',
-  },
-  {
     slug: 'geometry-dash-fun-build',
     title: 'Geometry Dash Fun Build',
     description: 'A fully working Geometry Dash clone in p5.js. Copy the code, paste it into editor.p5js.org, and play in under 2 minutes. Change colors, physics, and level design.',
     icon: '◆',
     badge: 'Game Build',
+    badgeVariant: 'purple',
+  },
+  {
+    slug: 'intuition-quiz',
+    title: 'Rate Your Intuition',
+    description: 'An 8-question quiz that rates your intuition across 5 evidence-based levels — from blocked to fully integrated. Backed by Klein, Kahneman, Gladwell, and Gigerenzen.',
+    icon: '✦',
+    badge: 'Quiz',
     badgeVariant: 'purple',
   },
 ]
