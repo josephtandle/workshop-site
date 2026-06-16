@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2X with AI Playbook</title>
+  <meta name="description" content="A Masterminds HQ workshop deck on relevance, systems, and AI leverage. Learn how to 2X your business by sharpening your message, building the right systems, and using AI where it compounds." />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <meta name="theme-color" content="#151515" />
+  <link rel="canonical" href="https://decks.mastermindshq.business/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Masterminds HQ" />
+  <meta property="og:title" content="2X with AI Playbook" />
+  <meta property="og:description" content="A Masterminds HQ workshop deck on relevance, systems, and AI leverage." />
+  <meta property="og:url" content="https://decks.mastermindshq.business/" />
+  <meta property="og:image" content="https://workshop.mastermindshq.business/hero-joe-creation-banner.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="2X with AI Playbook" />
+  <meta name="twitter:description" content="A Masterminds HQ workshop deck on relevance, systems, and AI leverage." />
+  <meta name="twitter:image" content="https://workshop.mastermindshq.business/hero-joe-creation-banner.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "PresentationDigitalDocument",
+      "name": "2X with AI Playbook",
+      "description": "A Masterminds HQ workshop deck on relevance, systems, and AI leverage.",
+      "url": "https://decks.mastermindshq.business/",
+      "inLanguage": "en",
+      "keywords": [
+        "AI workshop",
+        "business systems",
+        "marketing messaging",
+        "lead generation",
+        "CRM",
+        "Masterminds HQ"
+      ],
+      "author": {
+        "@type": "Person",
+        "name": "Joe Che",
+        "url": "https://www.mastermindshq.business/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Masterminds HQ",
+        "url": "https://www.mastermindshq.business/"
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --bg: #151515;
+      --bg-soft: #130f18;
+      --panel: rgba(16, 12, 22, 0.56);
+      --panel-strong: rgba(23, 16, 31, 0.82);
+      --text: #fcf4eb;
+      --muted: rgba(252,244,235,0.7);
+      --line: rgba(252,244,235,0.14);
+      --line-soft: rgba(252,244,235,0.08);
+      --purple: #7c69c7;
+      --purple-soft: #b8acf0;
+      --pink: #f5c3c6;
+      --shadow: 0 36px 120px rgba(0,0,0,0.42);
+      --max: 1460px;
+      --content-max: 1040px;
+      --pad: clamp(26px, 3vw, 44px);
+      --radius-lg: 34px;
+      --radius-md: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 12% 0%, rgba(124,105,199,0.18), transparent 30%),
+        radial-gradient(circle at 86% 8%, rgba(245,195,198,0.1), transparent 24%),
+        linear-gradient(180deg, #171418 0%, #110d15 100%);
+      color: var(--text);
+      font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+      overflow-y: auto;
+      overflow-x: hidden;
+      text-rendering: optimizeLegibility;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: radial-gradient(circle at center, black 42%, transparent 100%);
+      pointer-events: none;
+      opacity: 0.3;
+    }
+
+    .deck-shell {
+      min-height: 100vh;
+    }
+
+    .rail {
+      position: fixed;
+      top: 18px;
+      left: 18px;
+      bottom: 18px;
+      width: 260px;
+      padding: 22px 20px 20px;
+      border: 1px solid var(--line-soft);
+      border-radius: 30px;
+      backdrop-filter: blur(18px);
+      background:
+        linear-gradient(180deg, rgba(11, 9, 15, 0.92), rgba(11, 9, 15, 0.72)),
+        radial-gradient(circle at top left, rgba(124,105,199,0.16), transparent 42%);
+      box-shadow: 0 26px 80px rgba(0,0,0,0.32);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 30;
+    }
+
+    .rail-header {
+      display: grid;
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+
+    .brand-chip {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(245,195,198,0.16);
+      background: linear-gradient(135deg, rgba(124,105,199,0.16), rgba(245,195,198,0.08));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+      font-size: 10px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: rgba(252,244,235,0.86);
+      font-weight: 700;
+    }
+
+    .brand-chip::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, var(--pink), var(--purple-soft));
+      box-shadow: 0 0 18px rgba(245,195,198,0.4);
+    }
+
+    .rail-label {
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--purple-soft);
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .rail-title {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(34px, 2.8vw, 46px);
+      line-height: 0.9;
+      letter-spacing: -0.03em;
+      margin: 0 0 14px;
+    }
+
+    .rail-copy {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+      margin: 0 0 28px;
+      max-width: 22ch;
+    }
+
+    .deck-meta {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(252,244,235,0.08);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(252,244,235,0.52);
+    }
+
+    .meta-row strong {
+      color: var(--text);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+    }
+
+    .slide-nav {
+      display: grid;
+      gap: 10px;
+      overflow: auto;
+      padding-right: 4px;
+    }
+
+    .slide-nav a {
+      color: rgba(252,244,235,0.55);
+      text-decoration: none;
+      padding: 13px 14px 14px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.032), rgba(255,255,255,0.012));
+      border: 1px solid rgba(255,255,255,0.05);
+      transition: 180ms ease;
+      font-size: 13px;
+      line-height: 1.35;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide-nav a:hover,
+    .slide-nav a:focus-visible {
+      color: var(--text);
+      border-color: rgba(124,105,199,0.32);
+      background: rgba(124,105,199,0.1);
+      transform: translateX(3px);
+      outline: none;
+    }
+
+    .slide-nav a::after {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--pink), var(--purple-soft));
+      opacity: 0;
+      transition: opacity 180ms ease;
+    }
+
+    .slide-nav a:hover::after,
+    .slide-nav a:focus-visible::after {
+      opacity: 1;
+    }
+
+    .slide-nav strong {
+      display: inline-block;
+      width: 28px;
+      color: rgba(184,172,240,0.82);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 16px;
+    }
+
+    .rail-foot {
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      display: grid;
+      gap: 8px;
+      color: rgba(252,244,235,0.46);
+      font-size: 12px;
+    }
+
+    .rail-foot .keys {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .rail-foot kbd {
+      font: inherit;
+      padding: 5px 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--text);
+    }
+
+    main {
+      min-width: 0;
+      padding-left: 296px;
+    }
+
+    .slide {
+      min-height: 100vh;
+      display: grid;
+      align-items: center;
+      padding: var(--pad);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(10, 8, 14, 0.9) 0%, rgba(10, 8, 14, 0.8) 38%, rgba(10, 8, 14, 0.44) 100%),
+        linear-gradient(180deg, rgba(9, 7, 12, 0.24), rgba(9, 7, 12, 0.76)),
+        var(--slide-art, linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)));
+      background-size: cover;
+      background-position: var(--art-position, center);
+      opacity: var(--art-opacity, 1);
+      z-index: 0;
+    }
+
+    .slide::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 78% 20%, rgba(124,105,199,0.18), transparent 22%),
+        radial-gradient(circle at 84% 74%, rgba(245,195,198,0.12), transparent 18%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .slide-inner {
+      width: min(100%, var(--max));
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      padding: clamp(28px, 4vw, 56px);
+      display: grid;
+      gap: 26px;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      backdrop-filter: none;
+      isolation: isolate;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--purple-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      font-weight: 700;
+      font-size: 11px;
+      margin-bottom: 16px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(13, 10, 18, 0.44);
+      border: 1px solid rgba(255,255,255,0.09);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+
+    .kicker::before {
+      content: "";
+      width: 36px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--purple), transparent);
+    }
+
+    h1, h2, h3, p, ul { margin: 0; }
+
+    .title {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-style: italic;
+      font-size: clamp(58px, 8vw, 112px);
+      line-height: 0.9;
+      letter-spacing: -0.03em;
+      font-weight: 700;
+      max-width: 18ch;
+      color: transparent;
+      background: linear-gradient(90deg, #fcf4eb 0%, #d8cbfb 48%, #f5c3c6 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      text-wrap: balance;
+    }
+
+    .headline {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-style: italic;
+      font-size: clamp(44px, 5.5vw, 82px);
+      line-height: 0.92;
+      letter-spacing: -0.024em;
+      font-weight: 700;
+      max-width: 18ch;
+      color: transparent;
+      background: linear-gradient(90deg, #fcf4eb 0%, #d8cbfb 46%, #f5c3c6 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      text-wrap: pretty;
+    }
+
+    .subhead {
+      color: var(--muted);
+      font-size: clamp(18px, 2vw, 27px);
+      line-height: 1.55;
+      max-width: 34ch;
+      margin-top: 18px;
+      text-wrap: pretty;
+    }
+
+    .statement {
+      display: grid;
+      gap: 16px;
+      margin-top: 26px;
+      max-width: 24ch;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(28px, 3.2vw, 46px);
+      line-height: 1;
+      font-weight: 600;
+    }
+
+    .statement .accent { color: var(--purple-soft); }
+
+    .title-stack {
+      display: grid;
+      gap: 22px;
+      width: min(100%, 1180px);
+      padding: clamp(28px, 3.4vw, 42px);
+      background:
+        linear-gradient(135deg, rgba(12, 9, 17, 0.78), rgba(12, 9, 17, 0.34)),
+        radial-gradient(circle at top right, rgba(124,105,199,0.18), transparent 30%);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .content-stack {
+      display: grid;
+      gap: 22px;
+      align-content: start;
+      width: min(100%, var(--content-max));
+      padding: clamp(26px, 3vw, 38px);
+      background:
+        linear-gradient(135deg, rgba(12, 9, 17, 0.82), rgba(12, 9, 17, 0.48)),
+        radial-gradient(circle at top right, rgba(124,105,199,0.14), transparent 26%);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    .content-stack::after,
+    .title-stack::after {
+      content: "";
+      position: absolute;
+      inset: 16px;
+      border: 1px solid rgba(252,244,235,0.05);
+      border-radius: calc(var(--radius-lg) - 12px);
+      pointer-events: none;
+    }
+
+    .content-stack,
+    .title-stack {
+      position: relative;
+    }
+
+    .layout-right .content-stack,
+    .layout-right .title-stack {
+      margin-left: auto;
+    }
+
+    .layout-center .content-stack,
+    .layout-center .title-stack {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .agenda-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 6px;
+      max-width: 880px;
+    }
+
+    .agenda-item,
+    .support-card,
+    .focus-card,
+    .closing-card {
+      padding: 18px 18px 20px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+
+    .agenda-item strong,
+    .support-card strong,
+    .focus-card strong,
+    .closing-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--purple-soft);
+    }
+
+    .agenda-item span,
+    .support-card span,
+    .focus-card span,
+    .closing-card span {
+      display: block;
+      font-size: 18px;
+      line-height: 1.4;
+      color: rgba(252,244,235,0.9);
+    }
+
+    .callout {
+      margin-top: 30px;
+      display: inline-block;
+      padding: 18px 22px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(124,105,199,0.24), rgba(245,195,198,0.12));
+      border: 1px solid rgba(157,143,224,0.26);
+      color: var(--text);
+      font-size: clamp(18px, 2vw, 26px);
+      line-height: 1.35;
+      max-width: 28ch;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+    }
+
+    .motif {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      pointer-events: none;
+    }
+
+    .motif svg {
+      width: 78%;
+      height: 78%;
+      opacity: 0.92;
+    }
+
+    .grid-five {
+      margin-top: 32px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .grid-five .cell:last-child {
+      grid-column: 1 / -1;
+    }
+
+    .cell {
+      padding: 22px 22px 24px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.03));
+      min-height: 124px;
+      position: relative;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+    }
+
+    .cell::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--purple), var(--pink));
+      opacity: 0.72;
+    }
+
+    .cell-title {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--purple-soft);
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .cell-copy {
+      font-size: clamp(18px, 1.9vw, 24px);
+      line-height: 1.35;
+      max-width: 22ch;
+    }
+
+    .section-break .slide-inner {
+      gap: 22px;
+    }
+
+    .note {
+      margin-top: 18px;
+      color: rgba(252,244,235,0.46);
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .slide-counter {
+      position: absolute;
+      right: 0;
+      top: 0;
+      color: rgba(252,244,235,0.34);
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+    }
+
+    .support-grid,
+    .prompt-list,
+    .system-list {
+      display: grid;
+      gap: 14px;
+      max-width: 720px;
+    }
+
+    .support-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 8px;
+    }
+
+    .prompt-list,
+    .system-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 6px;
+    }
+
+    .prompt-list li,
+    .system-list li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 14px 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.035);
+      color: rgba(252,244,235,0.9);
+      line-height: 1.45;
+    }
+
+    .prompt-list li::before,
+    .system-list li::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      margin-top: 0.45em;
+      border-radius: 50%;
+      background: linear-gradient(180deg, var(--pink), var(--purple-soft));
+      box-shadow: 0 0 20px rgba(245,195,198,0.26);
+    }
+
+    .stack-intro {
+      margin-top: 22px;
+      max-width: 54ch;
+      color: rgba(252,244,235,0.72);
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .title-slide .title {
+      max-width: 20ch;
+      font-size: clamp(54px, 6.9vw, 100px);
+    }
+
+    .arrow-hero {
+      margin-top: 10px;
+      width: min(720px, 100%);
+      height: 12px;
+      background: linear-gradient(90deg, rgba(124,105,199,0.04), rgba(124,105,199,0.68));
+      border-radius: 999px;
+      position: relative;
+      overflow: visible;
+    }
+
+    .arrow-hero::after {
+      content: "";
+      position: absolute;
+      right: -2px;
+      top: 50%;
+      width: 52px;
+      height: 52px;
+      border-top: 14px solid transparent;
+      border-bottom: 14px solid transparent;
+      border-left: 30px solid var(--pink);
+      transform: translateY(-50%);
+      filter: drop-shadow(0 0 26px rgba(245,195,198,0.26));
+    }
+
+    .stepping-stones {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      align-items: end;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 54px;
+      gap: 18px;
+    }
+
+    .stone {
+      border-radius: 24px 24px 12px 12px;
+      background: linear-gradient(180deg, rgba(124,105,199,0.8), rgba(124,105,199,0.18));
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.15);
+    }
+
+    .stone:nth-child(1) { height: 26%; }
+    .stone:nth-child(2) { height: 48%; }
+    .stone:nth-child(3) {
+      height: 72%;
+      background: linear-gradient(180deg, rgba(245,195,198,0.84), rgba(124,105,199,0.25));
+    }
+
+    .crowd {
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 62%;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 14px;
+      padding: 38px;
+      align-items: end;
+    }
+
+    .crowd div {
+      border-radius: 999px 999px 20px 20px;
+      background: rgba(255,255,255,0.08);
+      height: 55%;
+    }
+
+    .crowd div:nth-child(4) {
+      height: 74%;
+      background: linear-gradient(180deg, rgba(245,195,198,0.9), rgba(124,105,199,0.28));
+      box-shadow: 0 0 70px rgba(245,195,198,0.18);
+    }
+
+    .spotlight {
+      position: absolute;
+      top: -10%;
+      left: 50%;
+      width: 42%;
+      height: 92%;
+      transform: translateX(-50%);
+      background: linear-gradient(180deg, rgba(245,195,198,0.16), transparent 72%);
+      clip-path: polygon(46% 0%, 54% 0%, 100% 100%, 0% 100%);
+      filter: blur(2px);
+    }
+
+    .key-lock {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+    }
+
+    .lock-ring {
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      border: 16px solid rgba(252,244,235,0.16);
+      position: relative;
+      box-shadow: 0 0 60px rgba(124,105,199,0.16);
+    }
+
+    .lock-ring::before {
+      content: "";
+      position: absolute;
+      inset: 50% auto auto 50%;
+      width: 34px;
+      height: 130px;
+      background: linear-gradient(180deg, var(--pink), rgba(245,195,198,0.2));
+      transform: translate(-50%, -50%);
+      border-radius: 18px;
+    }
+
+    .key {
+      position: absolute;
+      width: 300px;
+      height: 18px;
+      background: linear-gradient(90deg, rgba(124,105,199,0.25), var(--purple));
+      border-radius: 999px;
+      left: 14%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .key::before {
+      content: "";
+      position: absolute;
+      left: -36px;
+      top: 50%;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      border: 12px solid var(--text);
+      transform: translateY(-50%);
+    }
+
+    .key::after {
+      content: "";
+      position: absolute;
+      right: 16px;
+      top: 18px;
+      width: 74px;
+      height: 42px;
+      border-left: 12px solid var(--pink);
+      border-right: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+    }
+
+    .gears {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+    }
+
+    .gear-wrap {
+      width: 78%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .gear {
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 18px solid rgba(124,105,199,0.28);
+      position: relative;
+      background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 55%);
+    }
+
+    .gear.lg { width: 220px; }
+    .gear.md { width: 156px; }
+    .gear.sm { width: 118px; }
+
+    .gear::before {
+      content: "";
+      position: absolute;
+      inset: -18px;
+      background:
+        conic-gradient(from 0deg, transparent 0 10%, rgba(245,195,198,0.85) 10% 14%, transparent 14% 22%, rgba(124,105,199,0.82) 22% 26%, transparent 26% 34%, rgba(245,195,198,0.85) 34% 38%, transparent 38% 46%, rgba(124,105,199,0.82) 46% 50%, transparent 50% 58%, rgba(245,195,198,0.85) 58% 62%, transparent 62% 70%, rgba(124,105,199,0.82) 70% 74%, transparent 74% 82%, rgba(245,195,198,0.85) 82% 86%, transparent 86% 100%);
+      mask: radial-gradient(circle at center, transparent 0 56%, black 57% 100%);
+      border-radius: 50%;
+    }
+
+    .fruit-branch {
+      position: absolute;
+      inset: 0;
+    }
+
+    .branch {
+      position: absolute;
+      width: 72%;
+      height: 12px;
+      left: 12%;
+      top: 30%;
+      background: linear-gradient(90deg, rgba(252,244,235,0.18), rgba(252,244,235,0.05));
+      transform: rotate(-16deg);
+      border-radius: 999px;
+    }
+
+    .fruit {
+      position: absolute;
+      width: 78px;
+      height: 78px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, var(--pink), var(--purple));
+      box-shadow: 0 0 46px rgba(245,195,198,0.18);
+      right: 22%;
+      top: 21%;
+    }
+
+    .hand {
+      position: absolute;
+      width: 38%;
+      height: 32%;
+      right: 12%;
+      bottom: 12%;
+      border-radius: 60px 24px 24px 60px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(135deg, rgba(245,195,198,0.42), rgba(124,105,199,0.12));
+      transform: rotate(-18deg);
+    }
+
+    .paths {
+      position: absolute;
+      inset: 0;
+    }
+
+    .path-line {
+      position: absolute;
+      left: 10%;
+      width: 48%;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(124,105,199,0.10), rgba(124,105,199,0.88));
+      transform-origin: left center;
+      border-radius: 999px;
+    }
+
+    .path-line:nth-child(1) { top: 28%; transform: rotate(14deg); }
+    .path-line:nth-child(2) { top: 47%; transform: rotate(3deg); }
+    .path-line:nth-child(3) { top: 64%; transform: rotate(-11deg); }
+    .path-target {
+      position: absolute;
+      right: 18%;
+      top: 40%;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 1px solid rgba(245,195,198,0.24);
+      box-shadow: inset 0 0 36px rgba(255,255,255,0.06), 0 0 54px rgba(124,105,199,0.12);
+    }
+
+    .path-target::before,
+    .path-target::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      inset: 22px;
+      border: 1px solid rgba(124,105,199,0.36);
+    }
+
+    .path-target::after {
+      inset: 44px;
+      background: radial-gradient(circle, var(--pink), transparent 70%);
+      border-color: transparent;
+    }
+
+    .gift {
+      position: absolute;
+      left: 50%;
+      bottom: 18%;
+      width: 220px;
+      height: 180px;
+      transform: translateX(-50%);
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(124,105,199,0.2));
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 22px;
+    }
+
+    .gift::before,
+    .gift::after {
+      content: "";
+      position: absolute;
+      background: linear-gradient(180deg, var(--pink), rgba(245,195,198,0.45));
+    }
+
+    .gift::before {
+      width: 20px;
+      inset: 0 auto 0 50%;
+      transform: translateX(-50%);
+    }
+
+    .gift::after {
+      height: 20px;
+      inset: 50% 0 auto 0;
+      transform: translateY(-50%);
+    }
+
+    .gift-light {
+      position: absolute;
+      left: 50%;
+      top: 18%;
+      width: 44%;
+      height: 46%;
+      transform: translateX(-50%);
+      background: radial-gradient(circle, rgba(245,195,198,0.46), transparent 60%);
+      filter: blur(12px);
+    }
+
+    .gift-lid {
+      position: absolute;
+      left: 50%;
+      top: 30%;
+      width: 240px;
+      height: 34px;
+      transform: translateX(-50%) rotate(-10deg);
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(245,195,198,0.85), rgba(124,105,199,0.45));
+    }
+
+    .crm-grid {
+      position: absolute;
+      inset: 34px;
+      display: grid;
+      grid-template-rows: 72px repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .crm-grid .row {
+      border-radius: 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.07);
+      position: relative;
+    }
+
+    .crm-grid .row::before {
+      content: "";
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      width: 48px;
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(245,195,198,0.42);
+      transform: translateY(-50%);
+    }
+
+    .crm-grid .row::after {
+      content: "";
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      width: 84px;
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(124,105,199,0.52);
+      transform: translateY(-50%);
+    }
+
+    .signal {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+    }
+
+    .signal-bar {
+      width: 110px;
+      height: 16px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(252,244,235,0.22), var(--pink));
+      position: relative;
+      transform: rotate(-12deg);
+    }
+
+    .signal-bar::before,
+    .signal-bar::after {
+      content: "";
+      position: absolute;
+      left: 72%;
+      width: 260px;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(124,105,199,0.84), transparent);
+      transform-origin: left center;
+    }
+
+    .signal-bar::before { top: -66px; transform: rotate(-14deg); }
+    .signal-bar::after { top: 74px; transform: rotate(16deg); }
+
+    .signal-extra {
+      position: absolute;
+      left: 58%;
+      top: 50%;
+      width: 260px;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(245,195,198,0.82), transparent);
+      transform: rotate(2deg);
+    }
+
+    .panels {
+      position: absolute;
+      inset: 42px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .panels div {
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.08));
+      box-shadow: inset 0 -120px 120px rgba(124,105,199,0.08);
+      position: relative;
+    }
+
+    .panels div::after {
+      content: "";
+      position: absolute;
+      inset: auto 18px 18px 18px;
+      height: 8px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--purple), var(--pink));
+    }
+
+    .bullseye {
+      position: absolute;
+      right: 11%;
+      top: 16%;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: inset 0 0 46px rgba(255,255,255,0.02);
+    }
+
+    .bullseye::before,
+    .bullseye::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      inset: 26px;
+      border: 1px solid rgba(124,105,199,0.26);
+    }
+
+    .bullseye::after {
+      inset: 58px;
+      border: 18px solid rgba(245,195,198,0.22);
+      box-shadow: inset 0 0 24px rgba(245,195,198,0.2);
+    }
+
+    .bullseye-core {
+      position: absolute;
+      inset: 92px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--pink), var(--purple));
+      box-shadow: 0 0 48px rgba(245,195,198,0.18);
+    }
+
+    .bull-arrow {
+      position: absolute;
+      left: 10%;
+      top: 54%;
+      width: 54%;
+      height: 16px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(124,105,199,0.2), var(--purple));
+      transform: translateY(-50%);
+    }
+
+    .bull-arrow::after {
+      content: "";
+      position: absolute;
+      right: -2px;
+      top: 50%;
+      border-top: 16px solid transparent;
+      border-bottom: 16px solid transparent;
+      border-left: 34px solid var(--pink);
+      transform: translateY(-50%);
+    }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      z-index: 10;
+      padding: 10px;
+      border-radius: 18px;
+      background: rgba(12,11,16,0.84);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.08);
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .mobile-nav button {
+      appearance: none;
+      border: 0;
+      border-radius: 12px;
+      padding: 14px 18px;
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      font: inherit;
+      font-weight: 700;
+      flex: 1;
+    }
+
+    #slide-1::before,
+    #slide-11::before {
+      background:
+        linear-gradient(90deg, rgba(8,7,12,0.88) 0%, rgba(8,7,12,0.74) 46%, rgba(8,7,12,0.24) 100%),
+        linear-gradient(180deg, rgba(8,7,12,0.16), rgba(8,7,12,0.78)),
+        var(--slide-art);
+      background-size: cover;
+      background-position: var(--art-position, center);
+    }
+
+    #slide-2 .support-grid,
+    #slide-11 .grid-five {
+      max-width: 100%;
+    }
+
+    #slide-4 .statement,
+    #slide-12 .closing-card span {
+      max-width: 18ch;
+    }
+
+    #slide-4 .headline {
+      max-width: 20ch;
+      font-size: clamp(42px, 5vw, 74px);
+    }
+
+    #slide-12 .headline {
+      max-width: 20ch;
+      font-size: clamp(42px, 5vw, 74px);
+    }
+
+    #slide-6 .callout,
+    #slide-8 .callout,
+    #slide-9 .callout,
+    #slide-10 .focus-card {
+      max-width: 30ch;
+    }
+
+    #slide-11 .slide-inner {
+      width: min(100%, 1320px);
+    }
+
+    #slide-11 .headline {
+      max-width: 16ch;
+    }
+
+    #slide-11 .grid-five .cell {
+      backdrop-filter: blur(14px);
+      background: linear-gradient(180deg, rgba(12,9,17,0.74), rgba(12,9,17,0.52));
+    }
+
+    @media (max-width: 980px) {
+      .rail {
+        display: none;
+      }
+
+      main {
+        padding-left: 0;
+      }
+
+      .slide {
+        min-height: auto;
+        padding: 20px 16px 100px;
+      }
+
+      .slide-inner {
+        padding: 6px 0 0;
+      }
+
+      .grid-five {
+        grid-template-columns: 1fr;
+      }
+
+      .agenda-strip,
+      .support-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .slide-counter {
+        position: static;
+        margin-bottom: 20px;
+        writing-mode: initial;
+        transform: none;
+      }
+
+      .grid-five .cell:last-child {
+        grid-column: auto;
+      }
+
+      .content-stack,
+      .title-stack {
+        padding: 22px;
+      }
+
+      .title {
+        font-size: clamp(46px, 14vw, 74px);
+        max-width: 11ch;
+      }
+
+      .headline {
+        font-size: clamp(34px, 10vw, 54px);
+        line-height: 0.94;
+        max-width: 12ch;
+      }
+
+      .statement {
+        font-size: clamp(24px, 7.8vw, 38px);
+      }
+
+      .mobile-nav {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="deck-shell">
+    <aside class="rail">
+      <div>
+        <div class="rail-header">
+          <div class="brand-chip">Masterminds HQ</div>
+          <div>
+            <div class="rail-label">Workshop Deck</div>
+            <h1 class="rail-title">2X with AI<br>Playbook</h1>
+            <p class="rail-copy">A presentation-first workshop deck on relevance, systems, and AI amplification.</p>
+          </div>
+        </div>
+
+        <div class="deck-meta">
+          <div class="meta-row"><span>Audience</span><strong>Founders + Operators</strong></div>
+          <div class="meta-row"><span>Goal</span><strong>Clarity before scale</strong></div>
+        </div>
+
+        <nav class="slide-nav" aria-label="Slide navigation">
+          <a href="#slide-1"><strong>01</strong> Title</a>
+          <a href="#slide-2"><strong>02</strong> The Arc</a>
+          <a href="#slide-3"><strong>03</strong> Find Your Relevance</a>
+          <a href="#slide-4"><strong>04</strong> Messaging</a>
+          <a href="#slide-5"><strong>05</strong> Build the Systems</a>
+          <a href="#slide-6"><strong>06</strong> Warm Leads</a>
+          <a href="#slide-7"><strong>07</strong> Traction Channels</a>
+          <a href="#slide-8"><strong>08</strong> Giveaways</a>
+          <a href="#slide-9"><strong>09</strong> CRM</a>
+          <a href="#slide-10"><strong>10</strong> Amplify with AI</a>
+          <a href="#slide-11"><strong>11</strong> AI Across the Stack</a>
+          <a href="#slide-12"><strong>12</strong> Takeaway</a>
+        </nav>
+      </div>
+
+      <div class="rail-foot">
+        <div>Keyboard navigation works.</div>
+        <div class="keys">
+          <kbd>&uarr;</kbd>
+          <kbd>&darr;</kbd>
+          <kbd>PgUp</kbd>
+          <kbd>PgDn</kbd>
+        </div>
+      </div>
+    </aside>
+
+    <main id="deck">
+      <section class="slide title-slide slide-wide-art layout-left" id="slide-1" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-01-title-upward-trajectory-gpt-image-2.png'); --art-position:center;">
+        <div class="slide-inner">
+          <div class="slide-counter">Slide 01</div>
+          <div class="title-stack">
+            <div class="kicker">2X with AI Playbook</div>
+            <h2 class="title">How to 2X Your Business</h2>
+            <p class="subhead">Not by adding more noise. By getting relevant, building the systems, and letting AI multiply what already works.</p>
+            <div class="agenda-strip" aria-label="Core presentation arc">
+              <div class="agenda-item">
+                <strong>Step 1</strong>
+                <span>Get unmistakably relevant.</span>
+              </div>
+              <div class="agenda-item">
+                <strong>Step 2</strong>
+                <span>Build the operating system.</span>
+              </div>
+              <div class="agenda-item">
+                <strong>Step 3</strong>
+                <span>Let AI accelerate the right parts.</span>
+              </div>
+            </div>
+          </div>
+          <div class="arrow-hero" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section class="slide layout-left" id="slide-2" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-02-the-arc-stepping-stones-gpt-image-2.png'); --art-position:center;">
+        <div class="slide-inner">
+          <div class="content-stack">
+            <div class="slide-counter">Slide 02</div>
+            <div class="kicker">The Arc</div>
+            <h2 class="headline">Find your relevance. Build the systems. Amplify with AI.</h2>
+            <p class="subhead">If the order is wrong, AI only makes confusion faster.</p>
+            <div class="support-grid">
+              <div class="support-card">
+                <strong>Relevance</strong>
+                <span>Get the message and audience right first.</span>
+              </div>
+              <div class="support-card">
+                <strong>Systems</strong>
+                <span>Turn instincts into repeatable machinery.</span>
+              </div>
+              <div class="support-card">
+                <strong>AI</strong>
+                <span>Use leverage only after the machine exists.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide section-break layout-left" id="slide-3" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-03-find-your-relevance-spotlight-gpt-image-2.png'); --art-position:center right;">
+        <div class="slide-inner">
+          <div class="content-stack">
+            <div class="slide-counter">Slide 03</div>
+            <div class="kicker">Part 1</div>
+            <h2 class="headline">Find Your Relevance</h2>
+            <p class="subhead">Before tactics, get clear on who you serve and what only you can say.</p>
+            <ul class="prompt-list" aria-label="Relevance prompts">
+              <li>Who already trusts you, and why do they come back?</li>
+              <li>What painful problem do you solve better than generic advice ever will?</li>
+              <li>What can you say with proof, taste, and lived specificity?</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide layout-left" id="slide-4" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-04-messaging-key-lock-recognition-gpt-image-2.png'); --art-position:center;">
+        <div class="slide-inner">
+          <div class="content-stack">
+            <div class="slide-counter">Slide 04</div>
+            <div class="kicker">Messaging</div>
+            <h2 class="headline">Who you are. What you say. Why it lands.</h2>
+            <div class="statement">
+              <div>Specificity beats performance.</div>
+              <div class="accent">Relevance beats cleverness every time.</div>
+            </div>
+            <div class="focus-card">
+              <strong>Presenter cue</strong>
+              <span>Make the audience feel the difference between sounding impressive and sounding useful.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide section-break layout-left" id="slide-5" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-05-build-the-systems-gpt-image-2.png'); --art-position:center;">
+        <div class="slide-inner">
+          <div class="content-stack">
+            <div class="slide-counter">Slide 05</div>
+            <div class="kicker">Part 2</div>
+            <h2 class="headline">Build the Systems</h2>
+            <p class="subhead">The four systems that compound: leads, channels, giveaways, CRM.</p>
+            <ul class="system-list" aria-label="Core systems">
+              <li>Warm leads: the easiest place to recover momentum.</li>
+              <li>Traction channels: where discoverability becomes a habit.</li>
+              <li>Giveaways: value-first trust builders that earn attention.</li>
+              <li>CRM: the memory layer that keeps growth from leaking.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide layout-left" id="slide-6" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-06-warm-leads-gpt-image-2.png'); --art-position:center;">
+        <div class="slide-inner">
+          <div class="content-stack">
+            <div class="slide-counter">Slide 06</div>
+            <div class="kicker">Warm Leads</div>
+            <h2 class="headline">The cheapest growth lever. Almost always under-worked.</h2>
+            <div class="callout">Start with the people already paying attention.</div>
+            <p class="stack-intro">This slide should feel like relief: you do not need a bigger audience before you work the warm one properly.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide layout-left" id="slide-7" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-07-traction-channels-gpt-image-2.png'); --art-position:center;">
+        <div class="slide-inner">
+          <div class="content-stack">
+            <div class="slide-counter">Slide 07</div>
+            <div class="kicker">Traction Channels</div>
+            <h2 class="headline">Find more of the right people.</h2>
+            <p class="subhead">Pick two channels, work them until they work.</p>
+            <div class="focus-card">
+              <strong>Rule</strong>
+              <span>Depth beats dabbling. Channel discipline is usually the missing advantage.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide layout-left" id="slide-8" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-08-giveaways-gpt-image-2.png'); --art-position:center;">
+        <div class="slide-inner">
+          <div class="content-stack">
+            <div class="slide-counter">Slide 08</div>
+            <div class="kicker">Giveaways</div>
+            <h2 class="headline">Top-of-funnel and trust builder in one.</h2>
+            <div class="callout">Give something real before you ask for anything.</div>
+            <p class="stack-intro">The best giveaway is a sample of how you think, how you solve, and how it feels to work with you.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide layout-left" id="slide-9" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-09-crm-control-room-gpt-image-2.png'); --art-position:center;">
+        <div class="slide-inner">
+          <div class="content-stack">
+            <div class="slide-counter">Slide 09</div>
+            <div class="kicker">CRM</div>
+            <h2 class="headline">The system that holds it all together.</h2>
+            <div class="callout">If it’s not in the CRM, it didn’t happen.</div>
+            <div class="focus-card">
+              <strong>Why it matters</strong>
+              <span>Without memory, every follow-up depends on mood, luck, and whoever happens to remember.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide section-break layout-left" id="slide-10" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-10-amplify-with-ai-signal-wave-gpt-image-2.png'); --art-position:center;">
+        <div class="slide-inner">
+          <div class="content-stack">
+            <div class="slide-counter">Slide 10</div>
+            <div class="kicker">Part 3</div>
+            <h2 class="headline">Amplify with AI</h2>
+            <p class="subhead">Once the systems exist, AI multiplies them.</p>
+            <div class="focus-card">
+              <strong>Core point</strong>
+              <span>AI is a force multiplier, not a substitute for relevance, judgment, or process.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide-wide-art layout-center" id="slide-11" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-11-ai-across-the-stack-modular-system-gpt-image-2.png'); --art-position:center;">
+        <div class="slide-inner">
+          <div class="slide-counter">Slide 11</div>
+          <div class="kicker">AI Across the Stack</div>
+          <h2 class="headline">Once the machine exists, AI starts compounding across every layer.</h2>
+          <p class="stack-intro">This is where the room should see leverage clearly: the same core system gets faster, sharper, and easier to sustain.</p>
+          <div class="grid-five">
+            <div class="cell">
+              <div class="cell-title">Messaging</div>
+              <div class="cell-copy">Sharpen and test variations.</div>
+            </div>
+            <div class="cell">
+              <div class="cell-title">Leads</div>
+              <div class="cell-copy">Research, personalize, follow up.</div>
+            </div>
+            <div class="cell">
+              <div class="cell-title">Channels</div>
+              <div class="cell-copy">Produce content at pace.</div>
+            </div>
+            <div class="cell">
+              <div class="cell-title">Giveaways</div>
+              <div class="cell-copy">Generate, package, deliver.</div>
+            </div>
+            <div class="cell">
+              <div class="cell-title">CRM</div>
+              <div class="cell-copy">Auto-enrich, summarize, surface what’s hot.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide layout-left" id="slide-12" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-12-bullseye-focus-arrow-gpt-image-2.png'); --art-position:center;">
+        <div class="slide-inner">
+          <div class="content-stack">
+            <div class="slide-counter">Slide 12</div>
+            <div class="kicker">Takeaway</div>
+            <h2 class="headline">You don’t 2X by adding more.</h2>
+            <p class="subhead">You 2X by getting relevant, building the systems, and letting AI do the heavy lifting.</p>
+            <div class="closing-card">
+              <strong>Leave them with this</strong>
+              <span>Better message. Better machine. Better leverage.</span>
+            </div>
+            <p class="note">Masterminds HQ</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="mobile-nav" aria-label="Mobile slide navigation">
+    <button type="button" data-dir="-1">Previous</button>
+    <button type="button" data-dir="1">Next</button>
+  </div>
+
+  <script>
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      currentIndex = Math.max(0, Math.min(slides.length - 1, index));
+      slides[currentIndex].scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function nearestSlideIndex() {
+      const midpoint = window.scrollY + window.innerHeight * 0.42;
+      let best = 0;
+      let distance = Infinity;
+      slides.forEach((slide, index) => {
+        const d = Math.abs(slide.offsetTop - midpoint);
+        if (d < distance) {
+          distance = d;
+          best = index;
+        }
+      });
+      return best;
+    }
+
+    window.addEventListener('keydown', (event) => {
+      if (['ArrowDown', 'PageDown', 'ArrowRight', ' '].includes(event.key)) {
+        event.preventDefault();
+        showSlide(nearestSlideIndex() + 1);
+      }
+      if (['ArrowUp', 'PageUp', 'ArrowLeft'].includes(event.key)) {
+        event.preventDefault();
+        showSlide(nearestSlideIndex() - 1);
+      }
+      if (event.key === 'Home') {
+        event.preventDefault();
+        showSlide(0);
+      }
+      if (event.key === 'End') {
+        event.preventDefault();
+        showSlide(slides.length - 1);
+      }
+    });
+
+    document.querySelectorAll('.mobile-nav button').forEach((button) => {
+      button.addEventListener('click', () => {
+        const dir = Number(button.dataset.dir || '0');
+        showSlide(nearestSlideIndex() + dir);
+      });
+    });
+  </script>
+</body>
+</html>

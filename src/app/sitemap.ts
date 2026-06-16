@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     // Home
     { url: BASE, lastModified: NOW, changeFrequency: 'weekly', priority: 1 },
+    { url: 'https://decks.mastermindshq.business/', lastModified: NOW, changeFrequency: 'monthly', priority: 0.9 },
 
     // Giveaways
     { url: `${BASE}/giveaways/cross-cli-compatibility-routing`, lastModified: NOW, changeFrequency: 'monthly', priority: 0.8 },

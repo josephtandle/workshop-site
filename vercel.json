@@ -1,5 +1,17 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "decks.mastermindshq.business"
+        }
+      ],
+      "destination": "/2x-with-ai-playbook.html"
+    }
+  ],
   "crons": [
     {
       "path": "/api/events/abandoned-checkout-followups",

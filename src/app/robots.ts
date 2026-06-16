@@ -6,6 +6,8 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://workshop.mastermindshq.business/sitemap.xml',
+    sitemap: [
+      'https://workshop.mastermindshq.business/sitemap.xml',
+    ],
   }
 }

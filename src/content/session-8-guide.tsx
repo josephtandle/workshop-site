@@ -128,6 +128,7 @@ export default function Session8Guide() {
                 { href: '#guarddog',   label: 'Installing GuardDog' },
                 { href: '#virustotal', label: 'VirusTotal API Key' },
                 { href: '#wrap-up',    label: 'Wrap-Up' },
+                { href: '#git-memory', label: 'Git: Turn Your Projects Into Repos' },
               ].map(({ href, label }, i) => (
                 <li key={href} className="flex items-center gap-3 group/item">
                   <span
@@ -830,6 +831,183 @@ After setup:
               </div>
             </div>
           </div>
+        </section>
+
+        <section id="git-memory" className="mt-16 mb-4">
+          <div className="mb-8">
+            <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Project Memory</span>
+            <h2 className="text-3xl font-bold text-[#FCF4EB] mt-3">Git: Turn Your Projects Into Safe Systems</h2>
+          </div>
+
+          <div className="webfetch-hero-glass rounded-2xl p-7 mb-6">
+            <div className="relative z-10">
+              <div className="flex items-center gap-2 mb-5">
+                <span className="h-2 w-2 rounded-full bg-[#9D8FE0] shadow-[0_0_18px_rgba(157,143,224,0.75)]" />
+                <span className="text-[10px] uppercase tracking-[0.22em] text-[#FCF4EB]/42 font-semibold">
+                  Save Points and Recovery
+                </span>
+              </div>
+              <p className="text-[#FCF4EB]/84 text-lg leading-relaxed mb-5">
+                Up to now, most of your Claude builds have lived as folders and files. That is enough to start,
+                but it is not enough once the project matters. Git gives each real project memory: what changed,
+                when it changed, and how to go back if Claude or a human breaks something.
+              </p>
+              <p className="text-[#FCF4EB]/64 leading-relaxed">
+                For this cohort, Git is not a programming class. It is a safety system. Claude should set it up,
+                decide which project folders deserve their own repos, create the right guardrails in
+                <strong className="text-[#FCF4EB]"> CLAUDE.md</strong>, make clean baseline commits, and then keep
+                working in the same session so Git becomes part of the workflow instead of a separate chore.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid sm:grid-cols-3 gap-4 mb-8">
+            {[
+              {
+                title: 'Local Git First',
+                desc: 'Every serious project should become a local repo on the student machine before we worry about cloud backup or advanced workflows.',
+              },
+              {
+                title: 'Private Remote Second',
+                desc: 'If the project matters, Claude should recommend a private GitHub repo next. Public repos are not the default for this class.',
+              },
+              {
+                title: 'Meaningful Checkpoints',
+                desc: 'Claude should commit at working milestones, before risky refactors, and before deploys, not after every tiny change.',
+              },
+            ].map(({ title, desc }) => (
+              <div
+                key={title}
+                className="bg-[linear-gradient(145deg,rgba(255,255,255,0.065),rgba(255,255,255,0.025))] border border-white/[0.10] rounded-xl p-5 shadow-[0_18px_50px_rgba(0,0,0,0.18)]"
+              >
+                <p className="text-[#FCF4EB] font-semibold text-sm mb-2">{title}</p>
+                <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <StepCard number={10} title="Paste one bootstrap prompt and let Claude set up Git properly">
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              This prompt is designed to work across macOS, Windows, and Linux. Claude should install Git if it is
+              missing, inspect the student&apos;s real project folders, create separate repos where appropriate,
+              update each project&apos;s <strong className="text-[#FCF4EB]">CLAUDE.md</strong> rules, make safe
+              baseline commits, and keep going until the setup is actually complete.
+            </p>
+            <CodeBlock
+              filename="Claude Code prompt"
+              code={`I want you to set up Git safely across my real local projects and keep going until the work is actually complete.
+
+First, detect my operating system, shell, home directory, and likely project locations.
+
+Your job:
+- Find my real project folders
+- Decide which ones should become separate Git repositories
+- Install anything required to make Git work on this machine
+- Create or improve each repo safely
+- Update each project's CLAUDE.md rules
+- Make baseline commits where it is safe to do so
+- Then print a full report of what you did and what you decided
+
+Rules for deciding repo boundaries:
+- Make one repo per real project, website, app, automation, tool, or reusable system
+- Do not create one giant repo for my whole home folder, Desktop, Documents, or Downloads
+- Skip caches, dependencies, build output, exports, archives, and random clutter
+- Skip ambiguous folders until you have looked deeper
+- If a folder clearly contains more than one unrelated project, do not initialize at the parent level. Split it into the real project folders instead
+- Prefer folders that already contain code, HTML, CSS, JavaScript, TypeScript, Python, package.json, requirements.txt, pyproject.toml, Docker files, or clearly named business project assets
+
+Cross-platform install rules:
+1. Check whether git is already installed by running git --version
+2. If git is missing, install it using the safest normal package manager for this OS:
+   - macOS: use Homebrew if available. If Homebrew is missing, check whether Apple's command line tools already provide git. If not, guide me through the shortest install path and keep going once git is available
+   - Windows: use winget if available. If winget is unavailable, use the next normal package-manager path you can verify
+   - Linux: detect the package manager and install git using apt, dnf, yum, pacman, or zypper
+3. Verify git works after install
+4. If git user.name or user.email is missing, configure them globally and ask me for the values only if you cannot discover them safely from my environment
+
+For each clear project folder:
+1. Check whether it is already a Git repo
+2. If it is already a clean, healthy repo, do not reinitialize it. Inspect its status and CLAUDE.md, then report whether it already follows the intended workflow
+3. If it is not a repo, initialize Git
+4. Create or improve a .gitignore file appropriate to the project stack
+5. Create or update CLAUDE.md with these rules:
+   - this folder is a standalone project and should be treated as its own Git repository
+   - commit at meaningful checkpoints, not every tiny edit
+   - commit before risky refactors
+   - commit before deploys
+   - after a working bug fix or completed milestone, create a clear commit
+   - never commit secrets, API keys, .env files, credentials, dependency folders, caches, or build output
+   - keep commits focused and clearly named
+   - if the working tree is messy or mixed, explain the issue before committing
+6. Inspect the folder for secrets before committing. Explicitly exclude .env files, credential files, service-account JSON files, node_modules, dist, build, .next, coverage, caches, and generated binaries
+7. Make an initial baseline commit only if the repo is in a safe enough state to commit
+8. If the folder is too messy for a clean initial commit, stop short of committing and explain exactly why
+
+Decision rules for remote backup:
+- Default to local Git first
+- Recommend a private GitHub repo next for important, ongoing, client-facing, revenue-producing, or painful-to-lose projects
+- Do not recommend public GitHub by default
+- Only suggest public GitHub if the project is clearly meant to be open source or public
+
+Important safety rules:
+- Never initialize Git in my whole home folder or another broad personal parent folder
+- Never commit secrets or credentials
+- Never rewrite history
+- Never force push
+- Never fake completion. If something is incomplete, say so clearly
+- Keep working until all clear project folders have been classified and handled
+
+At the end, print a structured report with these exact sections:
+1. Git installation status
+2. Repos already present
+3. New repos created
+4. Folders skipped on purpose
+5. Folders that need my decision
+6. Projects that should stay local only
+7. Projects that should get a private GitHub repo next
+8. CLAUDE.md files created or updated
+9. Initial commits created
+10. Risks, messy folders, or secret-related concerns
+
+For every repo you touched, include:
+- folder path
+- whether it was already a repo
+- whether you created or changed .gitignore
+- whether you created or changed CLAUDE.md
+- whether you made a commit
+- the commit message if you made one
+- whether you recommend local only or private GitHub next
+
+When the report is done, stay in this same session and ask me which project I want to keep working on first now that the Git setup is complete.`}
+              editable
+            />
+          </StepCard>
+
+          <StepCard number={11} title="Keep working in the same session after the setup commit">
+            <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+              Once Claude finishes the Git bootstrap, do not close the session. Pick one repo it created or cleaned
+              up and continue building from there. That is the point of this exercise: Git becomes part of your
+              working rhythm immediately instead of living in a separate tutorial.
+            </p>
+            <CodeBlock
+              filename="Follow-up prompt"
+              code={`Great. Keep working in this same session.
+
+Use the repo you just identified as the best next project.
+Before major changes, check git status.
+After a real working milestone, create a clear commit.
+If anything breaks, use Git history to recover instead of guessing.
+
+Now continue the actual project work on:
+[PUT YOUR PROJECT NAME OR FOLDER HERE]`}
+              editable
+            />
+          </StepCard>
+
+          <ProTip type="warning">
+            Public GitHub is not the default for this class. Start with local Git. Use private GitHub repos for the
+            projects you would hate to lose.
+          </ProTip>
         </section>
 
       </div>

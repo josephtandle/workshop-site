@@ -103,7 +103,7 @@ export const sessions: Session[] = [
     number: 8,
     title: 'Safety and WebFetch',
     description:
-      'Install WebFetch, understand the tools inside it, and practice safe web fetching, scraping, browser automation, and media downloads.',
+      'Install WebFetch, practice safe web workflows, and add Git project memory so Claude can turn real local projects into proper repos.',
     date: '',
     hasGuide: true,
     hasPrep: true,
