@@ -39,8 +39,8 @@ export const giveaways: Giveaway[] = [
   },
   {
     slug: 'web-design-arsenal',
-    title: 'Web Design Arsenal',
-    description: 'Install 6 Claude Code design skills and 20+ animation libraries in one prompt. Build gorgeous websites fast.',
+    title: 'Web Designer Agent Kit',
+    description: 'Install your first Claude Code Web Designer agent plus 22 curated design, motion, WebGL, SEO, and GEO skills with one no-overwrite prompt.',
     icon: '✦',
     badge: 'Claude Code',
     badgeVariant: 'purple',
@@ -48,7 +48,7 @@ export const giveaways: Giveaway[] = [
   {
     slug: 'claude-md',
     title: "Joe's Ultimate CLAUDE.md",
-    description: "A ready-to-use CLAUDE.md template that programs Claude Code with your rules and context before you type a word.",
+    description: "A ready-to-use context starter for CLAUDE.md, USER.md, and SOUL.md so Claude Code understands your rules, identity, and project before you type a word.",
     icon: '◆',
     badge: 'Template',
     badgeVariant: 'purple',

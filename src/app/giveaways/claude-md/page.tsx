@@ -107,12 +107,12 @@ Replace the MyOS-specific ones with your own project context.)
 ## Session Startup
 
 (Optional but powerful. Tell Claude what to read at the start of every session.
-Replace these with your own files -- or create USER.md and MEMORY.md for your project.
+Replace these with your own files -- or create USER.md and SOUL.md for your project.
 Delete this whole section if you don't have these files yet.)
 
 Before doing anything, read:
 1. \`USER.md\` -- who you're helping (background, goals, preferences)
-2. \`MEMORY.md\` -- long-term notes and context
+2. \`SOUL.md\` -- the working identity, values, and standards for this project
 3. Any active handoff or notes file
 
 ---
@@ -173,7 +173,7 @@ const FILE_SECTIONS = [
     name: 'Session Startup',
     count: 1,
     items: [
-      { name: 'Auto-read list (USER.md, MEMORY.md)', url: 'https://www.mastermindshq.business', desc: 'Claude reads your key context files at the start of every session. Your preferences are loaded before you say a word.' },
+      { name: 'Auto-read list (USER.md, SOUL.md)', url: 'https://www.mastermindshq.business', desc: 'Claude reads your key context files at the start of every session. Your preferences and working identity are loaded before you say a word.' },
     ],
   },
   {

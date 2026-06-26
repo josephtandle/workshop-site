@@ -334,48 +334,80 @@ export default function Session2Guide() {
           </ProTip>
         </StepCard>
 
-        {/* Step 4: Web Design Arsenal */}
-        <StepCard number={4} title="Set Up Your Web Design Toolkit">
+        {/* Step 4: Web Designer Agent */}
+        <StepCard number={4} title="Install your Web Designer Agent">
           <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4 bg-[#F5C3C6]/15 text-[#F5C3C6] border border-[#F5C3C6]/25">
             Bonus
           </span>
           <p className="text-[#FCF4EB]/65 text-sm leading-relaxed mb-5">
-            This single prompt installs 24 of the best web design tools and animation libraries so your AI builds genuinely gorgeous websites from the start.
+            This prompt installs your first Claude Code agent plus 22 curated web design, animation, 3D, SEO, and GEO skills. It works on Mac and Windows, and it will not overwrite existing files.
           </p>
           <CodeBlock
-            filename="Claude Code prompt"
-            code={`Set up my professional web design toolkit so I can
-build incredibly gorgeous websites fast.
+            filename="Prompt 1: install CLAUDE.md, USER.md, and SOUL.md"
+            code={`Create my Mastermind starter context files in this website project.
 
-Step 1 -- Install Claude Code design skills:
-git clone https://github.com/anthropics/frontend-design ~/.claude/skills/frontend-design
-git clone https://github.com/Koomook/claude-frontend-skills ~/.claude/skills/claude-frontend-skills
-git clone https://github.com/greensock/gsap-skills ~/.claude/skills/gsap-skills
-git clone https://github.com/Dammyjay93/interface-design ~/.claude/skills/interface-design
-git clone https://github.com/Owl-Listener/designer-skills ~/.claude/skills/designer-skills
-git clone https://github.com/freshtechbro/claudedesignskills ~/.claude/skills/claudedesignskills
+You are working inside my current project folder. Treat "." as the project root on both Mac and Windows.
 
-Step 2 -- Install mobile-first and responsive skills:
-git clone https://github.com/szilu/ux-designer-skill ~/.claude/skills/ux-designer
-git clone https://github.com/HermeticOrmus/LibreUIUX-Claude-Code ~/.claude/skills/libreUIUX
+Create these files only if they do not already exist:
+- ./CLAUDE.md
+- ./USER.md
+- ./SOUL.md
 
-Step 3 -- Install animation and effects libraries:
-npm install gsap lenis framer-motion animejs \\
-  @formkit/auto-animate split-type typed.js \\
-  countup.js canvas-confetti tsparticles \\
-  vanta three @barba/core scrollreveal aos vivus
+Rules:
+- Do not overwrite existing files.
+- If ./CLAUDE.md, ./USER.md, or ./SOUL.md already exists, leave it untouched.
+- If a file exists, write your proposed replacement to ./.masterminds-context/ instead.
+- Use only relative project paths in your commands and explanations.
+- USER.md should be basic and mostly empty so I can fill it in.
+- SOUL.md should follow the spirit of UNI/Ooni: practical, identity-aware, values-aware, focused on helping me build real assets and business systems.
+- CLAUDE.md should be excellent: clear startup rules, no-overwrite rules, verification standards, web design standards, agent/skill usage, and instructions to read USER.md and SOUL.md.
 
-Step 4 -- Confirm and quick-start:
-When complete, show me a quick-start example:
-add smooth scroll and an animated text reveal
-to a hero section for a landing page.`}
+CLAUDE.md must tell Claude Code:
+- Read ./USER.md and ./SOUL.md before meaningful work.
+- Use the Web Designer agent for website work.
+- Protect existing files.
+- Verify before saying something is finished.
+- Build websites with strong design, mobile responsiveness, accessibility, SEO, AEO/GEO basics, and tasteful motion.
+- Keep responses direct, practical, and specific.
+
+After creating the files, show me:
+- created files
+- skipped files
+- proposed replacement files
+- the next command I should run.`}
+          />
+          <CodeBlock
+            filename="Mac terminal commands"
+            code={`git clone https://github.com/josephtandle/web-designer-agent-kit .masterminds-web-designer-agent-kit
+node .masterminds-web-designer-agent-kit/scripts/install-context.mjs --target=.
+node .masterminds-web-designer-agent-kit/scripts/install-web-designer-kit.mjs
+node .masterminds-web-designer-agent-kit/scripts/health-check.mjs --project=.`}
+          />
+          <CodeBlock
+            filename="Windows PowerShell commands"
+            code={`git clone https://github.com/josephtandle/web-designer-agent-kit .masterminds-web-designer-agent-kit
+node .\\.masterminds-web-designer-agent-kit\\scripts\\install-context.mjs --target=.
+node .\\.masterminds-web-designer-agent-kit\\scripts\\install-web-designer-kit.mjs
+node .\\.masterminds-web-designer-agent-kit\\scripts\\health-check.mjs --project=.`}
+          />
+          <CodeBlock
+            filename="Prompt 2: verify the install"
+            code={`Verify my Web Designer Agent Kit installation.
+
+Use relative paths for this project:
+- Mac: .masterminds-web-designer-agent-kit/scripts/health-check.mjs
+- Windows: .\\.masterminds-web-designer-agent-kit\\scripts\\health-check.mjs
+
+Check that:
+- The Web Designer agent is installed in Claude Code.
+- The 22 selected design, motion, WebGL, SEO, and GEO skills are registered.
+- ./CLAUDE.md, ./USER.md, and ./SOUL.md exist or have safe proposed replacements in ./.masterminds-context/.
+- Nothing was overwritten.
+
+Then tell me what is ready and what, if anything, still needs attention.`}
           />
           <p className="text-[#FCF4EB]/35 text-xs mt-5 leading-relaxed">
-            Run this from inside your website project folder. Every library links to its GitHub page on the{' '}
-            <a href="https://workshop.mastermindshq.business/giveaways/web-design-arsenal" target="_blank" rel="noopener noreferrer" className="text-[#F5C3C6]/70 hover:text-[#F5C3C6] transition-colors underline">
-              Web Design Arsenal page
-            </a>{' '}
-            where you can review everything before installing.
+            Run these from inside your website project folder. The folder named <span className="font-mono bg-white/[0.08] px-1 rounded text-xs">.masterminds-web-designer-agent-kit</span> stays inside the project, so the commands work the same way on Mac and Windows.
           </p>
         </StepCard>
 
@@ -393,7 +425,7 @@ to a hero section for a landing page.`}
           <CodeBlock
             filename="Claude Code prompt"
             editable
-            code={`Build me a personal brand website as a single index.html file.
+            code={`Use my Web Designer agent and build me a personal brand website as a single index.html file.
 
 - Hero section with my name "[YOUR NAME]" and tagline "[YOUR TAGLINE]"
 - Three service cards: [SERVICE 1], [SERVICE 2], [SERVICE 3]
@@ -401,7 +433,7 @@ to a hero section for a landing page.`}
 - CTA button that says "[YOUR BUTTON TEXT]" linking to "[YOUR LINK]"
 - Mobile responsive.
 
-Using all the web design toolkit we just downloaded, make it genuinely gorgeous — rich animations, visual depth, and a layout that looks professionally designed.`}
+Make it genuinely gorgeous: rich animations, visual depth, tasteful motion, strong typography, and a layout that looks professionally designed.`}
           />
           <p className="text-[#FCF4EB]/70 leading-relaxed mt-5 mb-2">
             Once Claude finishes, open the file in your browser to see it:

@@ -16,108 +16,115 @@ const COMPATIBLE_TOOLS = [
   {
     name: 'Claude Code',
     logo: '◆',
-    badge: 'Full install',
-    detail: 'Skills + npm libraries. All 4 steps work natively.',
+    badge: 'Agent install',
+    detail: 'Installs the Web Designer agent, curated skills, and project context files.',
   },
   {
-    name: 'Codex',
+    name: 'Mac',
     logo: '⬡',
-    badge: 'npm only',
-    detail: 'Run Step 3 only. Skip the git clone steps.',
+    badge: 'Relative paths',
+    detail: 'Run the Mac commands from inside your project folder.',
   },
   {
-    name: 'Gemini CLI',
+    name: 'Windows',
     logo: '✦',
-    badge: 'npm only',
-    detail: 'Run Step 3 only. Skip the git clone steps.',
+    badge: 'PowerShell',
+    detail: 'Run the Windows commands from inside your project folder.',
   },
 ]
 
-const THE_PROMPT = `Set up my professional web design toolkit so I can
-build incredibly gorgeous websites fast.
+const THE_PROMPT = `Install Joe Che's Web Designer Agent Kit.
 
--- For Claude Code users (all 4 steps) --------------------
+You are working inside my current website project folder. Treat "." as the project root on both Mac and Windows.
 
-Step 1 -- Install Claude Code design skills:
-git clone https://github.com/anthropics/frontend-design ~/.claude/skills/frontend-design
-git clone https://github.com/Koomook/claude-frontend-skills ~/.claude/skills/claude-frontend-skills
-git clone https://github.com/greensock/gsap-skills ~/.claude/skills/gsap-skills
-git clone https://github.com/Dammyjay93/interface-design ~/.claude/skills/interface-design
-git clone https://github.com/Owl-Listener/designer-skills ~/.claude/skills/designer-skills
-git clone https://github.com/freshtechbro/claudedesignskills ~/.claude/skills/claudedesignskills
+Rules:
+- Detect whether I am on Mac, Windows PowerShell, or Windows Command Prompt.
+- Use the matching terminal commands.
+- Do not overwrite any existing files.
+- If a target skill, agent, CLAUDE.md, USER.md, or SOUL.md already exists, leave it alone and report it as skipped.
+- If git, node, or npm is missing, stop and tell me exactly what to install.
+- If one external skill repo fails, continue installing the rest and report the failure clearly.
+- Use relative project paths for the repo folder and context files.
+- Clone the kit into ./.masterminds-web-designer-agent-kit.
+- After installing, run the health check with --project=.
 
-Step 2 -- Install mobile-first and responsive skills:
-git clone https://github.com/szilu/ux-designer-skill ~/.claude/skills/ux-designer
-git clone https://github.com/HermeticOrmus/LibreUIUX-Claude-Code ~/.claude/skills/libreUIUX
+Steps:
+1. Check:
+   git --version
+   node --version
+   npm --version
+2. If the repo is not already in this project, clone it:
+   git clone https://github.com/josephtandle/web-designer-agent-kit .masterminds-web-designer-agent-kit
+3. Install context files:
+   Mac:
+   node .masterminds-web-designer-agent-kit/scripts/install-context.mjs --target=.
 
--- For all tools (Claude Code, Codex, Gemini CLI) ---------
+   Windows PowerShell:
+   node .\\.masterminds-web-designer-agent-kit\\scripts\\install-context.mjs --target=.
+4. Install the agent and skills:
+   Mac:
+   node .masterminds-web-designer-agent-kit/scripts/install-web-designer-kit.mjs
 
-Step 3 -- Install animation and effects libraries:
-npm install gsap lenis framer-motion animejs \\
-  @formkit/auto-animate split-type typed.js \\
-  countup.js canvas-confetti tsparticles \\
-  vanta three @barba/core scrollreveal aos vivus
+   Windows PowerShell:
+   node .\\.masterminds-web-designer-agent-kit\\scripts\\install-web-designer-kit.mjs
+5. Run the health check:
+   Mac:
+   node .masterminds-web-designer-agent-kit/scripts/health-check.mjs --project=.
 
-Step 4 -- Confirm and quick-start:
-When complete, show me a quick-start example:
-add smooth scroll and an animated text reveal
-to a hero section for a landing page.`
+   Windows PowerShell:
+   node .\\.masterminds-web-designer-agent-kit\\scripts\\health-check.mjs --project=.
+6. Tell me:
+   - installed skills
+   - skipped skills
+   - failed skills
+   - created/skipped CLAUDE.md, USER.md, and SOUL.md files
+   - the next prompt to paste`
 
 const SKILL_CATEGORIES = [
   {
-    name: 'Claude Code Design Skills',
-    count: 6,
+    name: 'Agent and Design Foundation',
+    count: 5,
     skills: [
-      { name: 'frontend-design (Official Anthropic)', url: 'https://github.com/anthropics/claude-code/tree/main/plugins/frontend-design', desc: 'Forces bold aesthetic decisions before a line of code. 240+ styles, 127 font pairings.' },
-      { name: 'claude-frontend-skills', url: 'https://github.com/Koomook/claude-frontend-skills', desc: 'Anti-AI-slop framework. 10+ bold modes: brutalist, luxury, retro-futuristic.' },
-      { name: 'gsap-skills', url: 'https://github.com/greensock/gsap-skills', desc: 'Official from the GSAP team. Teaches perfect animation code and ScrollTrigger.' },
-      { name: 'interface-design', url: 'https://github.com/Dammyjay93/interface-design', desc: 'Linear, Notion, and Stripe-inspired. Maintains design memory across sessions.' },
-      { name: 'designer-skills (63 skills)', url: 'https://github.com/Owl-Listener/designer-skills', desc: 'Built by a designer for designers. 63 skills covering the full design workflow.' },
-      { name: 'claude-design-skills', url: 'https://github.com/freshtechbro/claudedesignskills', desc: '22 skills for 3D, animation, and interactive web. GSAP, Framer Motion, Locomotive Scroll.' },
+      { name: 'web-designer agent', url: 'https://github.com/josephtandle/web-designer-agent-kit', desc: 'The dedicated Claude Code agent that orchestrates the full website build.' },
+      { name: 'masterminds-web-designer', url: 'https://github.com/josephtandle/web-designer-agent-kit', desc: 'Mastermind-specific web design operating loop and quality standard.' },
+      { name: 'frontend-design', url: 'https://github.com/josephtandle/web-designer-agent-kit', desc: 'Strong frontend design fallback for layout, hierarchy, and polish.' },
+      { name: 'impeccable', url: 'https://github.com/pbakaus/impeccable', desc: 'Anti-slop visual quality standard for more premium, intentional interfaces.' },
+      { name: 'modern-web-design', url: 'https://github.com/freshtechbro/claudedesignskills', desc: 'Modern page composition, interface polish, and design direction.' },
     ],
   },
   {
-    name: 'Mobile-First and Responsive',
-    count: 4,
+    name: 'Animation and Scroll',
+    count: 7,
     skills: [
-      { name: 'ux-designer-skill 2026', url: 'https://github.com/szilu/ux-designer-skill', desc: '22 reference files. Dedicated mobile UX guide. Synthesizes NNG, WCAG 2.2, Material Design, Apple HIG.' },
-      { name: 'LibreUIUX-Claude-Code', url: 'https://github.com/HermeticOrmus/LibreUIUX-Claude-Code', desc: '152 agents, 74 skills. Mobile constraints force clarity. Clarity scales up beautifully.' },
-      { name: 'elite-frontend-ux', url: 'https://gist.github.com/majidmanzarpour/8b95e5e0e78d7eeacd3ee54606c7acc6', desc: 'True mobile-first: 44px touch targets, 16px min body text, WCAG 2.1 AA.' },
-      { name: 'responsive-breakpoint-analyzer', url: 'https://github.com/ia23a-lachnita/claude-code-plugins-plus-fix-skills', desc: 'Auto-validates breakpoints and generates production-ready responsive code.' },
+      { name: 'gsap-core', url: 'https://github.com/greensock/gsap-skills', desc: 'Professional animation fundamentals from the GSAP team.' },
+      { name: 'gsap-timeline', url: 'https://github.com/greensock/gsap-skills', desc: 'Orchestrated animation sequences for hero sections and page moments.' },
+      { name: 'gsap-scrolltrigger', url: 'https://github.com/greensock/gsap-skills', desc: 'Scroll-linked animation patterns used on premium websites.' },
+      { name: 'gsap-performance', url: 'https://github.com/greensock/gsap-skills', desc: 'Animation performance guidance so effects stay smooth.' },
+      { name: 'motion-framer', url: 'https://github.com/freshtechbro/claudedesignskills', desc: 'Framer Motion style interaction and component animation guidance.' },
+      { name: 'scroll-reveal-libraries', url: 'https://github.com/freshtechbro/claudedesignskills', desc: 'Tasteful reveal effects for sections, cards, and calls to action.' },
+      { name: 'animejs', url: 'https://github.com/freshtechbro/claudedesignskills', desc: 'Lightweight animation patterns for text, SVG, and microinteractions.' },
     ],
   },
   {
-    name: 'Scroll and Animation',
-    count: 6,
+    name: '3D and WebGL Effects',
+    count: 5,
     skills: [
-      { name: 'gsap', url: 'https://github.com/greensock/GSAP', desc: 'Industry standard. Used on virtually every award-winning website. ScrollTrigger defines the modern agency look.' },
-      { name: 'lenis', url: 'https://github.com/darkroomengineering/lenis', desc: 'Gold standard smooth scroll. GPU-accelerated, inertia-based. Makes every scroll feel premium.' },
-      { name: 'framer-motion', url: 'https://github.com/motiondivision/motion', desc: '30M+ monthly downloads. Layout animations, gestures, scroll-linked effects.' },
-      { name: 'animejs', url: 'https://github.com/juliangarnier/anime', desc: 'Lightweight. SVG morphing, motion paths, timeline orchestration.' },
-      { name: 'scrollreveal', url: 'https://github.com/jlmakes/scrollreveal', desc: 'Elements animate as they enter the viewport. Zero dependencies.' },
-      { name: 'aos', url: 'https://github.com/michalsnik/aos', desc: '28K+ GitHub stars. CSS3 scroll animations via data attributes. Instant wow factor.' },
+      { name: 'threejs-webgl', url: 'https://github.com/freshtechbro/claudedesignskills', desc: 'Three.js and WebGL guidance for immersive site moments.' },
+      { name: 'react-three-fiber', url: 'https://github.com/freshtechbro/claudedesignskills', desc: 'React-friendly 3D scene patterns.' },
+      { name: 'lightweight-3d-effects', url: 'https://github.com/freshtechbro/claudedesignskills', desc: 'Fast 3D visual effects that do not require a heavy 3D app workflow.' },
+      { name: 'web3d-integration-patterns', url: 'https://github.com/freshtechbro/claudedesignskills', desc: 'Patterns for integrating 3D without breaking usability.' },
+      { name: 'animated-component-libraries', url: 'https://github.com/freshtechbro/claudedesignskills', desc: 'Reusable animated UI component ideas for faster builds.' },
     ],
   },
   {
-    name: 'Particles, 3D, and Visual Effects',
-    count: 4,
+    name: 'SEO and GEO',
+    count: 5,
     skills: [
-      { name: 'tsparticles', url: 'https://github.com/tsparticles/tsparticles', desc: 'Particles, confetti, fireworks. React, Vue, Svelte, Angular components ready to drop in.' },
-      { name: 'vanta', url: 'https://github.com/tengbao/vanta', desc: 'Animated 3D WebGL backgrounds in 5 lines. WAVES, BIRDS, NET, GLOBE, FOG. Mouse-responsive.' },
-      { name: 'three.js', url: 'https://github.com/mrdoob/three.js', desc: 'World\'s most-used 3D JavaScript library. 100K+ stars. Foundation for every impressive 3D web experience.' },
-      { name: 'canvas-confetti', url: 'https://github.com/catdad/canvas-confetti', desc: 'Performant confetti from any position. Customizable shapes, colors, and physics.' },
-    ],
-  },
-  {
-    name: 'Typography, Text, and Extras',
-    count: 6,
-    skills: [
-      { name: 'split-type', url: 'https://github.com/lukePeavey/SplitType', desc: 'Splits text into characters, words, and lines for independent animation. The engine behind premium text reveals.' },
-      { name: 'typed.js', url: 'https://github.com/mattboldt/typed.js', desc: 'The canonical typewriter effect library. Configurable speed, loops, smart backspace.' },
-      { name: 'countup.js', url: 'https://github.com/inorganik/CountUp.js', desc: 'Animates numbers counting up. Makes stats and metrics come alive.' },
-      { name: 'vivus', url: 'https://github.com/maxwellito/vivus', desc: 'Animates SVGs with a hand-drawing effect. Logo reveals that draw themselves.' },
-      { name: '@barba/core', url: 'https://github.com/barbajs/barba', desc: 'Cinematic page transitions. Makes multi-page sites feel like SPAs.' },
-      { name: '@formkit/auto-animate', url: 'https://github.com/formkit/auto-animate', desc: 'Zero-config: one line makes DOM mutations and list reordering look polished.' },
+      { name: 'geo-content-optimizer', url: 'https://github.com/aaron-he-zhu/seo-geo-claude-skills', desc: 'Generative engine optimization for AI-search-friendly pages.' },
+      { name: 'meta-tags-optimizer', url: 'https://github.com/aaron-he-zhu/seo-geo-claude-skills', desc: 'Search and social metadata essentials.' },
+      { name: 'schema-markup-generator', url: 'https://github.com/aaron-he-zhu/seo-geo-claude-skills', desc: 'Structured data suggestions for businesses, offers, and FAQs.' },
+      { name: 'technical-seo-checker', url: 'https://github.com/aaron-he-zhu/seo-geo-claude-skills', desc: 'Basic crawlability and technical SEO checks.' },
+      { name: 'content-quality-auditor', url: 'https://github.com/aaron-he-zhu/seo-geo-claude-skills', desc: 'Improves page usefulness, clarity, and credibility.' },
     ],
   },
 ]
@@ -292,7 +299,7 @@ export default function WebDesignArsenalPage() {
 
   // CountUp animated stats
   useEffect(() => {
-    const values = [24, 3, 1]
+    const values = [22, 1, 0]
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -337,9 +344,9 @@ export default function WebDesignArsenalPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'HowTo',
-    name: 'Build Gorgeous Websites with AI Using Claude Code',
+    name: 'Install the Web Designer Agent Kit for Claude Code',
     description:
-      'A free prompt that installs 24 of the best web design tools and libraries in seconds. No coding experience needed. Works with Claude Code.',
+      'A free prompt that installs a Web Designer agent, 22 curated web design skills, and starter context files for Claude Code.',
     author: {
       '@type': 'Person',
       name: 'Joe Che',
@@ -354,26 +361,26 @@ export default function WebDesignArsenalPage() {
       {
         '@type': 'HowToStep',
         name: 'Copy the prompt',
-        text: 'Copy the free web design toolkit install prompt.',
+        text: 'Copy the free Web Designer Agent Kit install prompt.',
         position: 1,
       },
       {
         '@type': 'HowToStep',
-        name: 'Paste into your AI tool',
-        text: 'Open Claude Code, Codex, or Gemini CLI and paste. Everything installs automatically.',
+        name: 'Paste into Claude Code',
+        text: 'Open Claude Code inside your website project folder and paste. The agent, skills, and context files install safely.',
         position: 2,
       },
       {
         '@type': 'HowToStep',
         name: 'Describe what you want',
-        text: 'Your AI now has professional design intelligence. Describe your site and it builds something beautiful.',
+        text: 'Your Web Designer agent now has professional design intelligence. Describe your site and it builds something beautiful.',
         position: 3,
       },
     ],
     tool: [
       { '@type': 'HowToTool', name: 'Claude Code' },
-      { '@type': 'HowToTool', name: 'Codex' },
-      { '@type': 'HowToTool', name: 'Gemini CLI' },
+      { '@type': 'HowToTool', name: 'Git' },
+      { '@type': 'HowToTool', name: 'Node.js' },
     ],
     totalTime: 'PT3H',
     supply: [
@@ -492,7 +499,7 @@ export default function WebDesignArsenalPage() {
                 lineHeight: 1.1,
               }}
             >
-              The best 24 tools. One prompt.
+              One agent. 22 design skills. One safe prompt.
             </motion.p>
 
             <motion.p
@@ -501,7 +508,7 @@ export default function WebDesignArsenalPage() {
               transition={{ duration: 0.55, delay: 1.6 }}
               className="text-[#FCF4EB]/55 text-base sm:text-xl leading-relaxed max-w-xl mx-auto mb-12"
             >
-              Paste it into your AI coding tool. Your entire professional design toolkit installs automatically -- and you start building.
+              Paste it into Claude Code from your project folder. Your Web Designer agent, curated skills, and starter context files install without overwriting existing work.
             </motion.p>
 
             {/* Works in strip */}
@@ -523,9 +530,9 @@ export default function WebDesignArsenalPage() {
                   <span
                     className="text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-full"
                     style={{
-                      background: tool.badge === 'Full install' ? 'rgba(124,105,199,0.18)' : 'rgba(255,255,255,0.06)',
-                      color: tool.badge === 'Full install' ? '#9D8FE0' : '#FCF4EB44',
-                      border: tool.badge === 'Full install' ? '1px solid rgba(124,105,199,0.3)' : '1px solid rgba(255,255,255,0.08)',
+                      background: tool.badge === 'Agent install' ? 'rgba(124,105,199,0.18)' : 'rgba(255,255,255,0.06)',
+                      color: tool.badge === 'Agent install' ? '#9D8FE0' : '#FCF4EB44',
+                      border: tool.badge === 'Agent install' ? '1px solid rgba(124,105,199,0.3)' : '1px solid rgba(255,255,255,0.08)',
                     }}
                   >
                     {tool.badge}
@@ -565,8 +572,8 @@ export default function WebDesignArsenalPage() {
           <div className="grid gap-5 sm:grid-cols-3">
             {[
               { step: '01', title: 'Copy the prompt', body: 'Hit Copy above. The entire install command lands in your clipboard.' },
-              { step: '02', title: 'Paste into your AI tool', body: 'Open Claude Code, Codex, or Gemini CLI and paste. Everything installs automatically.' },
-              { step: '03', title: 'Describe what you want', body: 'Your AI now has professional design intelligence. Describe your site and it builds something genuinely beautiful.' },
+              { step: '02', title: 'Paste into Claude Code', body: 'Open Claude Code from your project folder and paste. The kit installs with no silent overwrites.' },
+              { step: '03', title: 'Describe what you want', body: 'Your Web Designer agent now has professional design intelligence. Describe your site and it builds something genuinely beautiful.' },
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -716,7 +723,7 @@ export default function WebDesignArsenalPage() {
             {/* Inline code block with text wrapping */}
             <div className="my-6 rounded-xl overflow-hidden border border-white/[0.08] border-l-2 border-l-[#7C69C7]">
               <div className="flex items-center justify-between px-4 py-2 bg-white/[0.04] border-b border-white/[0.06]">
-                <span className="text-xs text-[#FCF4EB]/40 font-mono">web-design-toolkit-install</span>
+                <span className="text-xs text-[#FCF4EB]/40 font-mono">web-designer-agent-kit-install</span>
                 <InlineCopyButton text={THE_PROMPT} onAfterCopy={() => setEmailModalOpen(true)} />
               </div>
               <pre
@@ -731,7 +738,7 @@ export default function WebDesignArsenalPage() {
             <PromptCopyButton prompt={THE_PROMPT} onAfterCopy={() => setEmailModalOpen(true)} />
 
             <p className="text-[#FCF4EB]/20 text-[11px] text-center mt-5 max-w-md mx-auto leading-relaxed">
-              I already scanned these packages for anything malicious and everything checked out. I still encourage everyone to do their own scan before installing anything new.
+              The installer is designed to skip existing files by default and report exactly what changed. Review the public repo before installing anything new.
             </p>
           </motion.div>
         </section>
@@ -742,9 +749,9 @@ export default function WebDesignArsenalPage() {
         <section className="relative max-w-5xl mx-auto px-6 pt-6 pb-14" style={{ zIndex: 1 }}>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
-              { idx: 0, label: 'skills and libraries' },
-              { idx: 1, label: 'AI coding tools supported' },
-              { idx: 2, label: 'prompt to install everything' },
+              { idx: 0, label: 'curated skills' },
+              { idx: 1, label: 'Web Designer agent' },
+              { idx: 2, label: 'silent overwrites' },
             ].map((stat) => (
               <motion.div
                 key={stat.idx}
