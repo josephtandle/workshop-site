@@ -281,15 +281,14 @@ export default function Session2Guide() {
           </details>
         </StepCard>
 
-        {/* Step 3: Create project folder */}
-        <StepCard number={2} title="Create your project folder and open Claude Code">
+        {/* Step 1/2: Start Claude and create project folder */}
+        <StepCard number={2} title="Open Terminal and start Claude">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-            Open your terminal and start Claude Code with the command below. Then give Claude the plain-English
-            instruction to set up your project folder.
+            Open your terminal and start Claude Code with this command:
           </p>
           <CodeBlock filename="Terminal" code={`claude --dangerously-skip-permissions`} />
           <p className="text-[#FCF4EB]/70 leading-relaxed mt-5 mb-3">
-            Once Claude Code is running, paste this in:
+            Once Claude Code is running, paste this in so it creates your website project folder:
           </p>
           <CodeBlock
             filename="Claude Code prompt"
@@ -302,8 +301,78 @@ export default function Session2Guide() {
           </ProTip>
         </StepCard>
 
-        {/* Step 4: Add photo */}
-        <StepCard number={3} title="Add your photo to the folder">
+        {/* Step 2/3: Starter context files */}
+        <StepCard number={3} title="Install CLAUDE.md, USER.md, and SOUL.md">
+          <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
+            These three files give Claude Code useful memory for this website project before you install the Web Designer agent.
+            They are project files, so everything uses relative paths from your website folder.
+          </p>
+          <div className="grid md:grid-cols-3 gap-3 mb-5">
+            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
+              <p className="text-[#FCF4EB] font-semibold text-sm mb-1">CLAUDE.md</p>
+              <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
+                The operating rules: file safety, verification, simple routing, web design standards, and when to use the Web Designer agent.
+              </p>
+            </div>
+            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
+              <p className="text-[#FCF4EB] font-semibold text-sm mb-1">USER.md</p>
+              <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
+                Your business profile: name, offer, audience, voice, website goal, services, proof, and links.
+              </p>
+            </div>
+            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
+              <p className="text-[#FCF4EB] font-semibold text-sm mb-1">SOUL.md</p>
+              <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
+                The working identity: practical, values-aware, identity-aware, resourceful, and focused on building real assets.
+              </p>
+            </div>
+          </div>
+          <CodeBlock
+            filename="Claude Code prompt"
+            code={`Install only my Mastermind starter context files for this website project.
+
+You are working inside my current website project folder. Treat "." as the project root on both Mac and Windows.
+
+Goal:
+- Install ./CLAUDE.md
+- Install ./USER.md
+- Install ./SOUL.md
+
+Use Joe Che's public Web Designer Agent Kit only for the context-file installer. Do not install the Web Designer agent yet. Do not install skills yet.
+
+Rules:
+- Do not overwrite existing files.
+- If ./CLAUDE.md, ./USER.md, or ./SOUL.md already exists, leave it untouched.
+- If a file exists, write the proposed replacement to ./.masterminds-context/ instead.
+- Use relative project paths in commands and explanations.
+- CLAUDE.md should include Joe's Ultimate CLAUDE.md ideas: read before writing, verify before done, protect files, no secrets, simple task routing, autonomy with clear stop points, and web design standards.
+- SOUL.md should follow the relevant UNI/Ooni spirit: genuinely useful, resourceful before asking, privacy-aware, values-aware, identity-aware, continuity through files, and focused on helping me build real assets.
+- USER.md should be useful but easy to fill in: basic info, business, audience, offer, voice, website goals, services, proof, visual references, and contact links.
+
+Run the correct commands for my system:
+
+Mac:
+git clone https://github.com/josephtandle/web-designer-agent-kit .masterminds-web-designer-agent-kit
+node .masterminds-web-designer-agent-kit/scripts/install-context.mjs --target=.
+
+Windows PowerShell:
+git clone https://github.com/josephtandle/web-designer-agent-kit .masterminds-web-designer-agent-kit
+node .\\.masterminds-web-designer-agent-kit\\scripts\\install-context.mjs --target=.
+
+After installing, show me:
+- created files
+- skipped files
+- proposed replacement files
+- a short explanation of what each file does
+- the next step`}
+          />
+          <ProTip type="tip" className="mt-4">
+            This is intentionally not the full MyOS routing system. It gives you the useful parts for Session 2 without turning your first website into an advanced agent-operations project.
+          </ProTip>
+        </StepCard>
+
+        {/* Step 3/4: Add photo */}
+        <StepCard number={4} title="Add your photo to the folder">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
             Before we build, move your photo into the project folder. Make sure it is named{' '}
             <span className="font-mono bg-white/[0.08] px-1.5 py-0.5 rounded text-sm">photo.jpg</span>.
@@ -334,59 +403,60 @@ export default function Session2Guide() {
           </ProTip>
         </StepCard>
 
-        {/* Step 4: Web Designer Agent */}
-        <StepCard number={4} title="Install your Web Designer Agent">
+        {/* Step 4/5: Web Designer Agent */}
+        <StepCard number={5} title="Install your Web Designer Agent">
           <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4 bg-[#F5C3C6]/15 text-[#F5C3C6] border border-[#F5C3C6]/25">
             Bonus
           </span>
           <p className="text-[#FCF4EB]/65 text-sm leading-relaxed mb-5">
-            This prompt installs your first Claude Code agent plus 22 curated web design, animation, 3D, SEO, and GEO skills. It works on Mac and Windows, and it will not overwrite existing files.
+            This installs your first Claude Code agent plus 22 curated web design, animation, 3D, SEO, and GEO skills. It works on Mac and Windows, and it will not overwrite existing files.
           </p>
           <CodeBlock
-            filename="Prompt 1: install CLAUDE.md, USER.md, and SOUL.md"
-            code={`Create my Mastermind starter context files in this website project.
+            filename="Claude Code prompt"
+            code={`Install my Web Designer Agent Kit for this website project.
 
-You are working inside my current project folder. Treat "." as the project root on both Mac and Windows.
+You are working inside my current website project folder. Treat "." as the project root on both Mac and Windows.
 
-Create these files only if they do not already exist:
-- ./CLAUDE.md
-- ./USER.md
-- ./SOUL.md
+Install only the Web Designer agent and the 22 curated web design skills. My ./CLAUDE.md, ./USER.md, and ./SOUL.md files were installed in the previous step, so do not replace them.
 
 Rules:
 - Do not overwrite existing files.
-- If ./CLAUDE.md, ./USER.md, or ./SOUL.md already exists, leave it untouched.
-- If a file exists, write your proposed replacement to ./.masterminds-context/ instead.
-- Use only relative project paths in your commands and explanations.
-- USER.md should be basic and mostly empty so I can fill it in.
-- SOUL.md should follow the spirit of UNI/Ooni: practical, identity-aware, values-aware, focused on helping me build real assets and business systems.
-- CLAUDE.md should be excellent: clear startup rules, no-overwrite rules, verification standards, web design standards, agent/skill usage, and instructions to read USER.md and SOUL.md.
+- If a target skill or agent already exists, leave it alone and report it as skipped.
+- If git, node, or npm is missing, stop and tell me exactly what to install.
+- Use relative project paths for this project.
+- Use the existing ./.masterminds-web-designer-agent-kit folder if it already exists.
+- If the kit folder is missing, clone it into ./.masterminds-web-designer-agent-kit.
+- After installing, run the health check with --project=.
 
-CLAUDE.md must tell Claude Code:
-- Read ./USER.md and ./SOUL.md before meaningful work.
-- Use the Web Designer agent for website work.
-- Protect existing files.
-- Verify before saying something is finished.
-- Build websites with strong design, mobile responsiveness, accessibility, SEO, AEO/GEO basics, and tasteful motion.
-- Keep responses direct, practical, and specific.
+Use the correct commands for my system:
 
-After creating the files, show me:
-- created files
-- skipped files
-- proposed replacement files
-- the next command I should run.`}
+Mac:
+git clone https://github.com/josephtandle/web-designer-agent-kit .masterminds-web-designer-agent-kit
+node .masterminds-web-designer-agent-kit/scripts/install-web-designer-kit.mjs
+node .masterminds-web-designer-agent-kit/scripts/health-check.mjs --project=.
+
+Windows PowerShell:
+git clone https://github.com/josephtandle/web-designer-agent-kit .masterminds-web-designer-agent-kit
+node .\\.masterminds-web-designer-agent-kit\\scripts\\install-web-designer-kit.mjs
+node .\\.masterminds-web-designer-agent-kit\\scripts\\health-check.mjs --project=.
+
+Then tell me:
+- installed skills
+- skipped skills
+- failed skills
+- whether the Web Designer agent is ready
+- whether ./CLAUDE.md, ./USER.md, and ./SOUL.md are present
+- the next prompt to paste`}
           />
           <CodeBlock
             filename="Mac terminal commands"
             code={`git clone https://github.com/josephtandle/web-designer-agent-kit .masterminds-web-designer-agent-kit
-node .masterminds-web-designer-agent-kit/scripts/install-context.mjs --target=.
 node .masterminds-web-designer-agent-kit/scripts/install-web-designer-kit.mjs
 node .masterminds-web-designer-agent-kit/scripts/health-check.mjs --project=.`}
           />
           <CodeBlock
             filename="Windows PowerShell commands"
             code={`git clone https://github.com/josephtandle/web-designer-agent-kit .masterminds-web-designer-agent-kit
-node .\\.masterminds-web-designer-agent-kit\\scripts\\install-context.mjs --target=.
 node .\\.masterminds-web-designer-agent-kit\\scripts\\install-web-designer-kit.mjs
 node .\\.masterminds-web-designer-agent-kit\\scripts\\health-check.mjs --project=.`}
           />
@@ -411,8 +481,8 @@ Then tell me what is ready and what, if anything, still needs attention.`}
           </p>
         </StepCard>
 
-        {/* Step 5: Build the page */}
-        <StepCard number={5} title="Build your personal brand page">
+        {/* Step 5/6: Build the page */}
+        <StepCard number={6} title="Build your personal brand page">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
             Fill in your own details below, replacing everything in brackets. Then copy and paste it
             into Claude Code.
