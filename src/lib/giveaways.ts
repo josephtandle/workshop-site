@@ -110,6 +110,14 @@ export const giveaways: Giveaway[] = [
     badgeVariant: 'purple',
   },
   {
+    slug: 'fable-worth-it-audit',
+    title: 'Fable Worth-It Audit',
+    description: 'A codebase audit prompt that finds where Claude Fable 5 is actually worth the cost, and where Sonnet is the smarter default.',
+    icon: '◆',
+    badge: 'Prompt',
+    badgeVariant: 'purple',
+  },
+  {
     slug: 'guardog',
     title: 'Guardog',
     description: 'Scan npm and PyPI packages for malware, CVEs, and suspicious patterns before you install them. One command to set up.',
