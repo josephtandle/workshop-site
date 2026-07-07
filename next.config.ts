@@ -29,6 +29,32 @@ const nextConfig: NextConfig = {
       },
     ]
   },
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: '/',
+          has: [
+            {
+              type: 'host',
+              value: 'decks.mastermindshq.business',
+            },
+          ],
+          destination: '/2x-with-ai-playbook.html',
+        },
+        {
+          source: '/',
+          has: [
+            {
+              type: 'host',
+              value: 'passiveincome.mastermindshq.business',
+            },
+          ],
+          destination: '/ai-agent-income',
+        },
+      ],
+    }
+  },
 }
 
 export default nextConfig
