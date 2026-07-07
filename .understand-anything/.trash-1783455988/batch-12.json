@@ -1,0 +1,173 @@
+{
+  "nodes": [
+    {
+      "id": "config:vercel.json",
+      "type": "config",
+      "name": "Vercel Deployment Configuration",
+      "filePath": "vercel.json",
+      "summary": "Vercel deployment config defining host-based rewrites for two domains (decks.mastermindshq.business and passiveincome.mastermindshq.business) and four scheduled cron jobs for API endpoints (abandoned-checkout-followups, abandoned-checkout-followups-t12h, location-reminders, reconcile-registrations)",
+      "tags": [
+        "deployment",
+        "vercel",
+        "routing",
+        "crons",
+        "domain-rewrites",
+        "scheduled-tasks"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "id": "config:package.json",
+      "type": "config",
+      "name": "NPM Package Configuration",
+      "filePath": "package.json",
+      "summary": "Next.js 16.2.3 project with React 19 as the core framework. Key dependencies include Stripe for payments, Supabase for backend, Resend for email, Framer Motion for animations, Three.js and Vanta for 3D effects, and canvas-confetti for UI effects. Dev tools include TypeScript, Tailwind CSS, PostCSS, and ESLint. Defines build, dev, test, and payment-related scripts.",
+      "tags": [
+        "package-manager",
+        "next.js",
+        "react",
+        "stripe",
+        "supabase",
+        "animations",
+        "3d-graphics",
+        "email",
+        "typescript",
+        "tailwind"
+      ],
+      "complexity": "high"
+    },
+    {
+      "id": "config:tsconfig.json",
+      "type": "config",
+      "name": "TypeScript Compiler Configuration",
+      "filePath": "tsconfig.json",
+      "summary": "TypeScript configuration targeting ES2017 with strict mode enabled. Configures Next.js plugin, path aliasing (@/* mapped to ./src/*), JSX with React 17+ transform, incremental compilation, and bundler module resolution.",
+      "tags": [
+        "typescript",
+        "compiler-config",
+        "next.js-integration",
+        "path-aliasing",
+        "strict-mode"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "document:.impeccable.md",
+      "type": "document",
+      "name": "Design Context and Brand Guidelines",
+      "filePath": ".impeccable.md",
+      "summary": "Comprehensive design documentation covering user personas (workshop participants and giveaway visitors), brand personality (practical, premium, human), aesthetic direction (dark background, cream text, purple/pink accents, AI-native feel), design principles (teach without intimidation, clarity over cleverness, premium polish), and thematic split between workshop-guided and giveaway-conversion modes.",
+      "tags": [
+        "design-system",
+        "brand-guidelines",
+        "user-personas",
+        "aesthetic-direction",
+        "design-principles",
+        "ui-ux"
+      ],
+      "language": "markdown"
+    },
+    {
+      "id": "document:AGENTS.md",
+      "type": "document",
+      "name": "GitNexus Code Intelligence Guide",
+      "filePath": "AGENTS.md",
+      "summary": "Developer documentation for GitNexus code intelligence tool integration. Covers best practices: run impact analysis before editing symbols, detect changes before committing, use gitnexus_query for execution flows, and gitnexus_context for symbol relationships. Lists available CLI commands for exploration, impact analysis, debugging, and refactoring. Project indexed with 2959 symbols, 4550 relationships, and 123 execution flows.",
+      "tags": [
+        "development-practices",
+        "code-intelligence",
+        "gitnexus",
+        "impact-analysis",
+        "code-navigation"
+      ],
+      "language": "markdown"
+    },
+    {
+      "id": "document:CLAUDE.md",
+      "type": "document",
+      "name": "Claude Code Guidelines and GitNexus Integration",
+      "filePath": "CLAUDE.md",
+      "summary": "Project-level guidelines for Claude-assisted development. Emphasizes GitNexus integration with same requirements as AGENTS.md: impact analysis before editing, change detection before commits, and safe code navigation. Provides resources for architecture understanding, code exploration, impact analysis, debugging, and refactoring workflows.",
+      "tags": [
+        "development-practices",
+        "claude-code",
+        "gitnexus",
+        "code-quality",
+        "safety-guidelines"
+      ],
+      "language": "markdown"
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:package.json",
+      "target": "config:tsconfig.json",
+      "type": "configures",
+      "weight": 0.9,
+      "description": "package.json declares TypeScript and Next.js which requires tsconfig.json configuration"
+    },
+    {
+      "source": "config:vercel.json",
+      "target": "config:package.json",
+      "type": "references",
+      "weight": 0.7,
+      "description": "Vercel cron jobs reference API endpoints that are defined as scripts in package.json"
+    },
+    {
+      "source": "config:package.json",
+      "target": "document:.impeccable.md",
+      "type": "documents",
+      "weight": 0.6,
+      "description": "Design framework applies to the Next.js/React application built with dependencies in package.json"
+    },
+    {
+      "source": "document:.impeccable.md",
+      "target": "config:package.json",
+      "type": "constrains",
+      "weight": 0.6,
+      "description": "Design guidelines constrain technology choices (animations via Framer Motion, 3D effects via Three.js/Vanta)"
+    },
+    {
+      "source": "document:AGENTS.md",
+      "target": "config:package.json",
+      "type": "documents",
+      "weight": 0.5,
+      "description": "AGENTS.md documents development practices and code intelligence for the project"
+    },
+    {
+      "source": "document:CLAUDE.md",
+      "target": "config:package.json",
+      "type": "documents",
+      "weight": 0.5,
+      "description": "CLAUDE.md documents Claude-assisted development workflow for the project"
+    },
+    {
+      "source": "document:AGENTS.md",
+      "target": "config:tsconfig.json",
+      "type": "references",
+      "weight": 0.4,
+      "description": "AGENTS.md references GitNexus tools which analyze TypeScript codebase configured by tsconfig.json"
+    },
+    {
+      "source": "document:CLAUDE.md",
+      "target": "config:tsconfig.json",
+      "type": "references",
+      "weight": 0.4,
+      "description": "CLAUDE.md references GitNexus tools which analyze TypeScript codebase configured by tsconfig.json"
+    },
+    {
+      "source": "config:vercel.json",
+      "target": "config:tsconfig.json",
+      "type": "related",
+      "weight": 0.3,
+      "description": "Vercel deployment config and TypeScript configuration are both project infrastructure components"
+    },
+    {
+      "source": "config:vercel.json",
+      "target": "document:.impeccable.md",
+      "type": "implements",
+      "weight": 0.4,
+      "description": "Vercel routing implements domain-specific experiences (giveaway vs workshop modes) aligned with design split"
+    }
+  ]
+}

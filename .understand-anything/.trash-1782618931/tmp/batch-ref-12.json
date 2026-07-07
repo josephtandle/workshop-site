@@ -1,0 +1,50 @@
+{
+  "batchIndex": 12,
+  "files": [
+    {
+      "path": "public/2x-with-ai-playbook.html",
+      "language": "html",
+      "sizeLines": 1614,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "public/ai-os-architecture.html",
+      "language": "html",
+      "sizeLines": 201,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "public/automation-audit-sample.html",
+      "language": "html",
+      "sizeLines": 650,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "public/coach-kit-onboarding-matrix.html",
+      "language": "html",
+      "sizeLines": 1108,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "public/lead-magnet.html",
+      "language": "html",
+      "sizeLines": 816,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "public/llms.txt",
+      "language": "txt",
+      "sizeLines": 48,
+      "fileCategory": "docs"
+    }
+  ],
+  "batchImportData": {
+    "public/2x-with-ai-playbook.html": [],
+    "public/ai-os-architecture.html": [],
+    "public/automation-audit-sample.html": [],
+    "public/coach-kit-onboarding-matrix.html": [],
+    "public/lead-magnet.html": [],
+    "public/llms.txt": []
+  },
+  "neighborMap": {}
+}

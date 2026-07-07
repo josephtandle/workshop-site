@@ -1,0 +1,52 @@
+[
+  {
+    "id": "layer:api-routes",
+    "name": "API Routes",
+    "description": "Next.js App Router API route handlers for events, Stripe webhooks, lead magnets, subscriptions, waitlists, and calendar endpoints."
+  },
+  {
+    "id": "layer:pages-routes",
+    "name": "Pages & Routes (UI)",
+    "description": "Next.js App Router pages, layouts, route-segment content/forms, and route metadata (sitemap, robots, global styles) for marketing, giveaways, sessions, events, lead magnets, and the resource vault."
+  },
+  {
+    "id": "layer:shared-ui",
+    "name": "Shared UI Components",
+    "description": "Reusable React UI components: animations, hero/video, header/footer, cards, navigation, and giveaway/event modals shared across pages."
+  },
+  {
+    "id": "layer:content",
+    "name": "Session & Page Content",
+    "description": "Per-session content checklist components plus reusable page/guide templates that supply structured content to routes."
+  },
+  {
+    "id": "layer:domain-libs",
+    "name": "Domain & Data Libraries",
+    "description": "Domain logic and data-access libraries: events catalog, checkout, Stripe, Supabase client, email, calendar, tokens, locks, sessions, and utilities."
+  },
+  {
+    "id": "layer:database",
+    "name": "Database (Migrations & Schema)",
+    "description": "Supabase SQL migrations defining tables, constraints, rate-limit/cron locks, and abandoned-checkout schema."
+  },
+  {
+    "id": "layer:ops-scripts",
+    "name": "Ops Scripts",
+    "description": "Standalone operational and automation scripts for abandoned-checkout runs, reconciliation, backfills, reminders, and PDF rendering."
+  },
+  {
+    "id": "layer:tests",
+    "name": "Tests",
+    "description": "Automated test suite covering checkout, email, tokens, calendar, pricing, validation, and hardening."
+  },
+  {
+    "id": "layer:docs-assets",
+    "name": "Documentation & Static Assets",
+    "description": "Project docs, agent/skill guides, and static HTML/markdown/download assets served publicly or used for reference."
+  },
+  {
+    "id": "layer:build-config",
+    "name": "Build & Tooling Config",
+    "description": "Build, TypeScript, deployment, styling, and tooling configuration files."
+  }
+]

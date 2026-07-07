@@ -1,0 +1,29 @@
+Warning: merge-batch-graphs: 1 batch file(s) with unrecognized filenames will be DROPPED — files: batch-existing.json — fix the file-analyzer agent to use only batch-<N>.json or batch-<N>-part-<K>.json patterns
+Found 3 batch files (2 logical batches, 0 multi-part):
+  batch-12.json: 6 nodes, 10 edges
+  batch-14.json: 25 nodes, 32 edges
+
+Input: 31 nodes, 42 edges
+
+Fixed (72 corrections):
+    12 × bare path → file: (missing prefix)
+     9 × bare path → document: (missing prefix)
+     9 × complexity "low" → "simple"
+     8 × complexity "medium" → "moderate"
+     2 × complexity "high" → "complex"
+    32 × edge references rewritten after ID normalization
+
+Could not fix (25 issues — needs agent review):
+    12 × unknown node type "code" (not in schema, kept as-is)
+     1 × unknown node type "markup" (not in schema, kept as-is)
+    12 × complexity None → defaulted to "moderate"
+
+Output: 31 nodes, 42 edges
+
+Warning: dropped 1 batch file(s) with unrecognized filenames — files: batch-existing.json — fix the file-analyzer agent to use only batch-<N>.json or batch-<N>-part-<K>.json patterns (every node/edge in these files was excluded from the final graph)
+
+Imports edge recovery:
+  Recovered 0 `imports` edges from importMap (251 entries scanned)
+  Skipped 137 importMap source files with no `file:` node in graph
+
+Written to /Users/myos/.myos/workspace/projects/mastermind/workshop-site/.understand-anything/intermediate/assembled-graph.json (30 KB)

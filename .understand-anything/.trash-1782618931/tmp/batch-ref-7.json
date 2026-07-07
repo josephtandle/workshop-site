@@ -1,0 +1,798 @@
+{
+  "batchIndex": 7,
+  "files": [
+    {
+      "path": "src/app/session/9/guide/page.tsx",
+      "language": "typescript",
+      "sizeLines": 52,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/app/session/[slug]/guide/page.tsx",
+      "language": "typescript",
+      "sizeLines": 98,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/CodeBlock.tsx",
+      "language": "typescript",
+      "sizeLines": 157,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/ProTip.tsx",
+      "language": "typescript",
+      "sizeLines": 49,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/StepCard.tsx",
+      "language": "typescript",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/StickyVideoPlayer.tsx",
+      "language": "typescript",
+      "sizeLines": 476,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/TianaSessionFooter.tsx",
+      "language": "typescript",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/content/session-1-guide.tsx",
+      "language": "typescript",
+      "sizeLines": 120,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/content/session-10-instagram-agent.tsx",
+      "language": "typescript",
+      "sizeLines": 623,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/content/session-2-guide-codex.tsx",
+      "language": "typescript",
+      "sizeLines": 569,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/content/session-2-guide.tsx",
+      "language": "typescript",
+      "sizeLines": 736,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/content/session-3-guide.tsx",
+      "language": "typescript",
+      "sizeLines": 588,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/content/session-5-guide.tsx",
+      "language": "typescript",
+      "sizeLines": 575,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/content/session-6-guide.tsx",
+      "language": "typescript",
+      "sizeLines": 517,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/content/session-7-descript-guide.tsx",
+      "language": "typescript",
+      "sizeLines": 473,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/content/session-7-guide.tsx",
+      "language": "typescript",
+      "sizeLines": 674,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/content/session-8-guide.tsx",
+      "language": "typescript",
+      "sizeLines": 1022,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/content/session-9-guide.tsx",
+      "language": "typescript",
+      "sizeLines": 641,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/content/tiana-ai-positioning-workshop.tsx",
+      "language": "typescript",
+      "sizeLines": 1273,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/templates/session-guide-template.tsx",
+      "language": "typescript",
+      "sizeLines": 311,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "src/app/session/9/guide/page.tsx": [
+      "src/content/session-9-guide.tsx"
+    ],
+    "src/app/session/[slug]/guide/page.tsx": [
+      "src/content/session-1-guide.tsx",
+      "src/content/session-2-guide.tsx",
+      "src/content/session-3-guide.tsx",
+      "src/content/session-6-guide.tsx",
+      "src/content/session-7-guide.tsx",
+      "src/lib/locks.ts",
+      "src/lib/sessions.ts"
+    ],
+    "src/components/CodeBlock.tsx": [
+      "src/lib/copyWithConfetti.ts"
+    ],
+    "src/components/ProTip.tsx": [],
+    "src/components/StepCard.tsx": [],
+    "src/components/StickyVideoPlayer.tsx": [],
+    "src/components/TianaSessionFooter.tsx": [],
+    "src/content/session-1-guide.tsx": [
+      "src/components/StickyVideoPlayer.tsx"
+    ],
+    "src/content/session-10-instagram-agent.tsx": [
+      "src/components/CodeBlock.tsx",
+      "src/components/ProTip.tsx",
+      "src/components/StepCard.tsx"
+    ],
+    "src/content/session-2-guide-codex.tsx": [
+      "src/components/CodeBlock.tsx",
+      "src/components/ProTip.tsx",
+      "src/components/StepCard.tsx",
+      "src/components/StickyVideoPlayer.tsx"
+    ],
+    "src/content/session-2-guide.tsx": [
+      "src/components/CodeBlock.tsx",
+      "src/components/ProTip.tsx",
+      "src/components/StepCard.tsx",
+      "src/components/StickyVideoPlayer.tsx"
+    ],
+    "src/content/session-3-guide.tsx": [
+      "src/components/CodeBlock.tsx",
+      "src/components/ProTip.tsx",
+      "src/components/StepCard.tsx",
+      "src/components/StickyVideoPlayer.tsx"
+    ],
+    "src/content/session-5-guide.tsx": [
+      "src/components/CodeBlock.tsx",
+      "src/components/ProTip.tsx",
+      "src/components/StepCard.tsx",
+      "src/components/StickyVideoPlayer.tsx",
+      "src/lib/celebrate.ts"
+    ],
+    "src/content/session-6-guide.tsx": [
+      "src/components/CodeBlock.tsx",
+      "src/components/ProTip.tsx",
+      "src/components/StepCard.tsx",
+      "src/components/StickyVideoPlayer.tsx"
+    ],
+    "src/content/session-7-descript-guide.tsx": [
+      "src/components/CodeBlock.tsx",
+      "src/components/ProTip.tsx",
+      "src/components/StepCard.tsx"
+    ],
+    "src/content/session-7-guide.tsx": [
+      "src/components/CodeBlock.tsx",
+      "src/components/ProTip.tsx",
+      "src/components/StepCard.tsx",
+      "src/components/StickyVideoPlayer.tsx",
+      "src/lib/celebrate.ts"
+    ],
+    "src/content/session-8-guide.tsx": [
+      "src/components/CodeBlock.tsx",
+      "src/components/ProTip.tsx",
+      "src/components/StepCard.tsx",
+      "src/components/StickyVideoPlayer.tsx"
+    ],
+    "src/content/session-9-guide.tsx": [
+      "src/components/CodeBlock.tsx",
+      "src/components/ProTip.tsx",
+      "src/components/StepCard.tsx"
+    ],
+    "src/content/tiana-ai-positioning-workshop.tsx": [
+      "src/components/CodeBlock.tsx",
+      "src/components/ProTip.tsx",
+      "src/components/StepCard.tsx"
+    ],
+    "src/templates/session-guide-template.tsx": [
+      "src/components/CodeBlock.tsx",
+      "src/components/ProTip.tsx",
+      "src/components/StepCard.tsx"
+    ]
+  },
+  "neighborMap": {
+    "src/app/session/[slug]/guide/page.tsx": [
+      {
+        "path": "src/lib/locks.ts",
+        "batchIndex": 2,
+        "symbols": [
+          "LOCKS"
+        ]
+      },
+      {
+        "path": "src/lib/sessions.ts",
+        "batchIndex": 2,
+        "symbols": [
+          "sessions",
+          "getSession"
+        ]
+      }
+    ],
+    "src/components/CodeBlock.tsx": [
+      {
+        "path": "src/lib/copyWithConfetti.ts",
+        "batchIndex": 1,
+        "symbols": [
+          "COPY_WITH_CONFETTI_SUCCESS_EVENT",
+          "copyWithConfetti"
+        ]
+      },
+      {
+        "path": "src/app/bonus/auto-lead-magnet/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "AutoLeadMagnetPage"
+        ]
+      },
+      {
+        "path": "src/app/giveaways/cross-cli-compatibility-routing/page.tsx",
+        "batchIndex": 1,
+        "symbols": [
+          "CrossCliCompatibilityRoutingPage"
+        ]
+      },
+      {
+        "path": "src/app/giveaways/squarespace-escape/page.tsx",
+        "batchIndex": 1,
+        "symbols": [
+          "SquarespaceEscapePage"
+        ]
+      },
+      {
+        "path": "src/app/resource-vault/automated-ghost-computer-use/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "AutomatedGhostComputerUsePage"
+        ]
+      },
+      {
+        "path": "src/app/resource-vault/connecting-to-google-sheets/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "ConnectingToGoogleSheetsPage"
+        ]
+      },
+      {
+        "path": "src/app/resource-vault/connecting-to-xero/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "ConnectingToXeroPage"
+        ]
+      },
+      {
+        "path": "src/app/resource-vault/eric-investor-pipeline/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "EricInvestorPipelinePage"
+        ]
+      },
+      {
+        "path": "src/app/resource-vault/reza-website-control/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "RezaWebsiteControlPage"
+        ]
+      },
+      {
+        "path": "src/app/resource-vault/wordpress-api/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "WordPressAPIPage"
+        ]
+      },
+      {
+        "path": "src/app/session/2/auto-lead-magnet/page 2.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "AutoLeadMagnetPage"
+        ]
+      },
+      {
+        "path": "src/app/session/2/auto-lead-magnet/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "AutoLeadMagnetPage"
+        ]
+      },
+      {
+        "path": "src/app/session/3/custom-domain/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "CustomDomainPage"
+        ]
+      },
+      {
+        "path": "src/app/session/3/homework/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "Session3Homework"
+        ]
+      },
+      {
+        "path": "src/app/session/4/custom-domain/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "CustomDomainPage"
+        ]
+      },
+      {
+        "path": "src/app/session/4/homework/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "Session3Homework"
+        ]
+      },
+      {
+        "path": "src/app/session/5/hook-writer/page 2.tsx",
+        "batchIndex": 1,
+        "symbols": [
+          "HookWriterPage"
+        ]
+      },
+      {
+        "path": "src/app/session/5/hook-writer/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "HookWriterPage"
+        ]
+      },
+      {
+        "path": "src/app/session/6/hook-writer/page.tsx",
+        "batchIndex": 1,
+        "symbols": [
+          "HookWriterPage"
+        ]
+      }
+    ],
+    "src/components/ProTip.tsx": [
+      {
+        "path": "src/app/giveaways/benchmark/page.tsx",
+        "batchIndex": 1,
+        "symbols": [
+          "BenchmarkPage"
+        ]
+      },
+      {
+        "path": "src/app/giveaways/cross-cli-compatibility-routing/page.tsx",
+        "batchIndex": 1,
+        "symbols": [
+          "CrossCliCompatibilityRoutingPage"
+        ]
+      },
+      {
+        "path": "src/app/resource-vault/automated-ghost-computer-use/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "AutomatedGhostComputerUsePage"
+        ]
+      },
+      {
+        "path": "src/app/resource-vault/connecting-to-google-sheets/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "ConnectingToGoogleSheetsPage"
+        ]
+      },
+      {
+        "path": "src/app/resource-vault/connecting-to-xero/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "ConnectingToXeroPage"
+        ]
+      },
+      {
+        "path": "src/app/resource-vault/eric-investor-pipeline/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "EricInvestorPipelinePage"
+        ]
+      },
+      {
+        "path": "src/app/resource-vault/reza-website-control/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "RezaWebsiteControlPage"
+        ]
+      },
+      {
+        "path": "src/app/resource-vault/wordpress-api/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "WordPressAPIPage"
+        ]
+      },
+      {
+        "path": "src/app/session/3/custom-domain/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "CustomDomainPage"
+        ]
+      },
+      {
+        "path": "src/app/session/3/homework/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "Session3Homework"
+        ]
+      },
+      {
+        "path": "src/app/session/4/custom-domain/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "CustomDomainPage"
+        ]
+      },
+      {
+        "path": "src/app/session/4/homework/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "Session3Homework"
+        ]
+      },
+      {
+        "path": "src/content/session-1-bonus.tsx",
+        "batchIndex": 2,
+        "symbols": [
+          "Session1Bonus"
+        ]
+      },
+      {
+        "path": "src/content/session-1-prep-codex.tsx",
+        "batchIndex": 6,
+        "symbols": [
+          "Session1PrepCodex"
+        ]
+      },
+      {
+        "path": "src/content/session-1-prep.tsx",
+        "batchIndex": 6,
+        "symbols": [
+          "Session1Prep"
+        ]
+      },
+      {
+        "path": "src/content/session-2-prep.tsx",
+        "batchIndex": 6,
+        "symbols": [
+          "Session2Prep"
+        ]
+      },
+      {
+        "path": "src/content/session-3-prep.tsx",
+        "batchIndex": 6,
+        "symbols": [
+          "Session3Prep"
+        ]
+      },
+      {
+        "path": "src/content/session-5-prep.tsx",
+        "batchIndex": 6,
+        "symbols": [
+          "Session5Prep"
+        ]
+      },
+      {
+        "path": "src/content/session-6-prep.tsx",
+        "batchIndex": 6,
+        "symbols": [
+          "Session6Prep"
+        ]
+      },
+      {
+        "path": "src/content/session-7-prep.tsx",
+        "batchIndex": 6,
+        "symbols": [
+          "Session7Prep"
+        ]
+      },
+      {
+        "path": "src/content/session-8-prep.tsx",
+        "batchIndex": 6,
+        "symbols": [
+          "Session8Prep"
+        ]
+      }
+    ],
+    "src/components/StepCard.tsx": [
+      {
+        "path": "src/app/resource-vault/automated-ghost-computer-use/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "AutomatedGhostComputerUsePage"
+        ]
+      },
+      {
+        "path": "src/app/resource-vault/connecting-to-google-sheets/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "ConnectingToGoogleSheetsPage"
+        ]
+      },
+      {
+        "path": "src/app/resource-vault/connecting-to-xero/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "ConnectingToXeroPage"
+        ]
+      },
+      {
+        "path": "src/app/resource-vault/eric-investor-pipeline/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "EricInvestorPipelinePage"
+        ]
+      },
+      {
+        "path": "src/app/resource-vault/reza-website-control/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "RezaWebsiteControlPage"
+        ]
+      },
+      {
+        "path": "src/app/resource-vault/wordpress-api/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "WordPressAPIPage"
+        ]
+      },
+      {
+        "path": "src/app/session/3/custom-domain/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "CustomDomainPage"
+        ]
+      },
+      {
+        "path": "src/app/session/3/homework/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "Session3Homework"
+        ]
+      },
+      {
+        "path": "src/app/session/4/custom-domain/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "CustomDomainPage"
+        ]
+      },
+      {
+        "path": "src/app/session/4/homework/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "Session3Homework"
+        ]
+      },
+      {
+        "path": "src/content/session-1-bonus.tsx",
+        "batchIndex": 2,
+        "symbols": [
+          "Session1Bonus"
+        ]
+      }
+    ],
+    "src/components/StickyVideoPlayer.tsx": [
+      {
+        "path": "src/app/resource-vault/wordpress-api/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "WordPressAPIPage"
+        ]
+      },
+      {
+        "path": "src/app/session/3/homework/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "Session3Homework"
+        ]
+      },
+      {
+        "path": "src/app/session/4/homework/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "Session3Homework"
+        ]
+      },
+      {
+        "path": "src/app/session/4/wrapup/page 2.tsx",
+        "batchIndex": 2,
+        "symbols": [
+          "metadata",
+          "Session4WrapUp"
+        ]
+      },
+      {
+        "path": "src/app/session/4/wrapup/page.tsx",
+        "batchIndex": 2,
+        "symbols": [
+          "metadata",
+          "Session4WrapUp"
+        ]
+      },
+      {
+        "path": "src/app/session/5/wrapup/page.tsx",
+        "batchIndex": 2,
+        "symbols": [
+          "metadata",
+          "Session5WrapUp"
+        ]
+      },
+      {
+        "path": "src/content/session-1-prep-codex.tsx",
+        "batchIndex": 6,
+        "symbols": [
+          "Session1PrepCodex"
+        ]
+      },
+      {
+        "path": "src/content/session-1-prep.tsx",
+        "batchIndex": 6,
+        "symbols": [
+          "Session1Prep"
+        ]
+      }
+    ],
+    "src/components/TianaSessionFooter.tsx": [
+      {
+        "path": "src/app/resource-vault/how-to-stand-out-in-the-age-of-ai/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "HowToStandOutDraftPage"
+        ]
+      }
+    ],
+    "src/content/session-10-instagram-agent.tsx": [
+      {
+        "path": "src/app/session/10/instagram/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "Session10InstagramPage"
+        ]
+      }
+    ],
+    "src/content/session-2-guide-codex.tsx": [
+      {
+        "path": "src/app/session/2/guide-codex/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "Session2GuideCodexPage"
+        ]
+      }
+    ],
+    "src/content/session-5-guide.tsx": [
+      {
+        "path": "src/lib/celebrate.ts",
+        "batchIndex": 6,
+        "symbols": [
+          "celebrate"
+        ]
+      },
+      {
+        "path": "src/app/session/[slug]/guide-brain/page.tsx",
+        "batchIndex": 2,
+        "symbols": [
+          "generateStaticParams",
+          "generateMetadata",
+          "SessionGuideBrainPage"
+        ]
+      }
+    ],
+    "src/content/session-7-descript-guide.tsx": [
+      {
+        "path": "src/app/session/7/descript/page 2.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "Session7DescriptPage"
+        ]
+      },
+      {
+        "path": "src/app/session/7/descript/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "Session7DescriptPage"
+        ]
+      }
+    ],
+    "src/content/session-7-guide.tsx": [
+      {
+        "path": "src/lib/celebrate.ts",
+        "batchIndex": 6,
+        "symbols": [
+          "celebrate"
+        ]
+      },
+      {
+        "path": "src/app/session/7/guide/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "Session7GuidePage"
+        ]
+      }
+    ],
+    "src/content/session-8-guide.tsx": [
+      {
+        "path": "src/app/session/8/guide/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "Session8GuidePage"
+        ]
+      }
+    ],
+    "src/content/tiana-ai-positioning-workshop.tsx": [
+      {
+        "path": "src/app/resource-vault/how-to-stand-out-in-the-age-of-ai/page.tsx",
+        "batchIndex": 4,
+        "symbols": [
+          "metadata",
+          "HowToStandOutDraftPage"
+        ]
+      }
+    ]
+  }
+}

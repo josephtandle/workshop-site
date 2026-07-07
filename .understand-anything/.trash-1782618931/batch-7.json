@@ -1,0 +1,208 @@
+{
+  "nodes": [
+    { "id": "file:src/app/session/9/guide/page.tsx", "type": "file", "name": "session/9/guide/page.tsx", "filePath": "src/app/session/9/guide/page.tsx", "summary": "Next.js App Router page for the Session 9 guide route; sets page metadata and renders the Session9Guide content component.", "tags": ["nextjs", "page", "session-guide", "route", "session-9"], "complexity": "low" },
+    { "id": "function:src/app/session/9/guide/page.tsx:Session9GuidePage", "type": "function", "name": "Session9GuidePage", "lineRange": "9-52", "summary": "Default page component for /session/9/guide that wires layout/metadata and renders the Session 9 guide content.", "tags": ["nextjs", "page-component", "session-9", "react", "default-export"], "complexity": "low" },
+
+    { "id": "file:src/app/session/[slug]/guide/page.tsx", "type": "file", "name": "session/[slug]/guide/page.tsx", "filePath": "src/app/session/[slug]/guide/page.tsx", "summary": "Dynamic Next.js App Router page that resolves a session by slug, enforces locks, generates static params/metadata, and renders the matching session guide content.", "tags": ["nextjs", "dynamic-route", "session-guide", "ssg", "metadata"], "complexity": "medium" },
+    { "id": "function:src/app/session/[slug]/guide/page.tsx:generateStaticParams", "type": "function", "name": "generateStaticParams", "lineRange": "24-32", "summary": "Produces the list of static slug params for pre-rendering all session guide pages at build time.", "tags": ["nextjs", "ssg", "static-params", "session", "build"], "complexity": "low" },
+    { "id": "function:src/app/session/[slug]/guide/page.tsx:generateMetadata", "type": "function", "name": "generateMetadata", "lineRange": "34-42", "summary": "Generates per-slug page metadata (title/description) for the dynamic session guide route.", "tags": ["nextjs", "metadata", "seo", "session", "dynamic-route"], "complexity": "low" },
+    { "id": "function:src/app/session/[slug]/guide/page.tsx:SessionGuidePage", "type": "function", "name": "SessionGuidePage", "lineRange": "44-98", "summary": "Resolves the session from the slug, applies lock gating, and renders the corresponding session guide content component.", "tags": ["nextjs", "page-component", "session-routing", "locks", "react"], "complexity": "medium" },
+
+    { "id": "file:src/components/CodeBlock.tsx", "type": "file", "name": "CodeBlock.tsx", "filePath": "src/components/CodeBlock.tsx", "summary": "Reusable client component rendering copyable code/prompt blocks with editable text, Codex prompt conversion, and confetti-on-copy buttons.", "tags": ["react", "client-component", "code-block", "copy", "ui"], "complexity": "medium" },
+    { "id": "function:src/components/CodeBlock.tsx:MagneticCopyButton", "type": "function", "name": "MagneticCopyButton", "lineRange": "30-63", "summary": "Glassy copy button with a magnetic hover effect that translates toward the cursor while respecting reduced-motion preferences.", "tags": ["react", "ui", "button", "animation", "accessibility"], "complexity": "medium" },
+    { "id": "function:src/components/CodeBlock.tsx:CodeBlock", "type": "function", "name": "CodeBlock", "lineRange": "65-157", "summary": "Default-exported code block component managing copy state, editable values, and dual Claude/Codex copy actions with confetti feedback.", "tags": ["react", "code-block", "copy", "state", "default-export"], "complexity": "high" },
+
+    { "id": "file:src/components/ProTip.tsx", "type": "file", "name": "ProTip.tsx", "filePath": "src/components/ProTip.tsx", "summary": "Presentational component rendering a styled 'pro tip' callout box used across session guides.", "tags": ["react", "component", "callout", "ui", "pro-tip"], "complexity": "low" },
+    { "id": "function:src/components/ProTip.tsx:ProTip", "type": "function", "name": "ProTip", "lineRange": "33-49", "summary": "Renders a highlighted pro-tip callout with title and children content.", "tags": ["react", "component", "callout", "ui", "default-export"], "complexity": "low" },
+
+    { "id": "file:src/components/StepCard.tsx", "type": "file", "name": "StepCard.tsx", "filePath": "src/components/StepCard.tsx", "summary": "Presentational card component displaying a numbered step with heading and body used in session walkthroughs.", "tags": ["react", "component", "step-card", "ui", "guide"], "complexity": "low" },
+    { "id": "function:src/components/StepCard.tsx:StepCard", "type": "function", "name": "StepCard", "lineRange": "9-30", "summary": "Renders a numbered step card with a title and content for step-by-step guide layouts.", "tags": ["react", "component", "step-card", "ui", "default-export"], "complexity": "low" },
+
+    { "id": "file:src/components/StickyVideoPlayer.tsx", "type": "file", "name": "StickyVideoPlayer.tsx", "filePath": "src/components/StickyVideoPlayer.tsx", "summary": "Client component for an HTML5 video player that becomes a floating sticky/minimizable player on scroll, supports multiple video options, and preserves playback position.", "tags": ["react", "client-component", "video-player", "sticky", "ui"], "complexity": "high" },
+    { "id": "function:src/components/StickyVideoPlayer.tsx:StickyVideoPlayer", "type": "function", "name": "StickyVideoPlayer", "lineRange": "17-476", "summary": "Default-exported video player managing sticky/expanded/minimized states, scroll measurement, video switching, and saved playback time.", "tags": ["react", "video-player", "sticky", "scroll", "default-export"], "complexity": "high" },
+
+    { "id": "file:src/components/TianaSessionFooter.tsx", "type": "file", "name": "TianaSessionFooter.tsx", "filePath": "src/components/TianaSessionFooter.tsx", "summary": "Footer component rendered at the end of Tiana workshop session pages.", "tags": ["react", "component", "footer", "tiana", "ui"], "complexity": "low" },
+    { "id": "function:src/components/TianaSessionFooter.tsx:TianaSessionFooter", "type": "function", "name": "TianaSessionFooter", "lineRange": "1-27", "summary": "Renders the Tiana workshop session footer block with closing content.", "tags": ["react", "component", "footer", "tiana", "default-export"], "complexity": "low" },
+
+    { "id": "file:src/content/session-1-guide.tsx", "type": "file", "name": "session-1-guide.tsx", "filePath": "src/content/session-1-guide.tsx", "summary": "Content component for the Session 1 workshop guide, embedding the recording via StickyVideoPlayer and walkthrough copy.", "tags": ["react", "content", "session-guide", "session-1", "workshop"], "complexity": "medium" },
+    { "id": "function:src/content/session-1-guide.tsx:Session1Guide", "type": "function", "name": "Session1Guide", "lineRange": "5-120", "summary": "Renders the Session 1 guide content including the sticky video player and instructional sections.", "tags": ["react", "content", "session-1", "video", "default-export"], "complexity": "medium" },
+
+    { "id": "file:src/content/session-10-instagram-agent.tsx", "type": "file", "name": "session-10-instagram-agent.tsx", "filePath": "src/content/session-10-instagram-agent.tsx", "summary": "Long-form Session 10 content teaching how to build an Instagram agent, with code blocks, pro tips, and step cards.", "tags": ["react", "content", "session-10", "instagram-agent", "workshop"], "complexity": "high" },
+    { "id": "function:src/content/session-10-instagram-agent.tsx:Session10InstagramAgent", "type": "function", "name": "Session10InstagramAgent", "lineRange": "256-623", "summary": "Renders the Session 10 Instagram agent guide content with step-by-step instructions and copyable prompts.", "tags": ["react", "content", "session-10", "instagram", "default-export"], "complexity": "high" },
+
+    { "id": "file:src/content/session-2-guide-codex.tsx", "type": "file", "name": "session-2-guide-codex.tsx", "filePath": "src/content/session-2-guide-codex.tsx", "summary": "Codex-variant content component for the Session 2 workshop guide with code blocks, tips, step cards, and the sticky video player.", "tags": ["react", "content", "session-2", "codex", "workshop"], "complexity": "high" },
+    { "id": "function:src/content/session-2-guide-codex.tsx:Session2GuideCodex", "type": "function", "name": "Session2GuideCodex", "lineRange": "6-569", "summary": "Renders the Codex-flavored Session 2 guide content with prompts adapted for Codex.", "tags": ["react", "content", "session-2", "codex", "default-export"], "complexity": "high" },
+
+    { "id": "file:src/content/session-2-guide.tsx", "type": "file", "name": "session-2-guide.tsx", "filePath": "src/content/session-2-guide.tsx", "summary": "Content component for the Session 2 workshop guide with code blocks, pro tips, step cards, and embedded recording.", "tags": ["react", "content", "session-2", "session-guide", "workshop"], "complexity": "high" },
+    { "id": "function:src/content/session-2-guide.tsx:Session2Guide", "type": "function", "name": "Session2Guide", "lineRange": "6-736", "summary": "Renders the Session 2 guide content including walkthrough steps, prompts, and the sticky video player.", "tags": ["react", "content", "session-2", "video", "default-export"], "complexity": "high" },
+
+    { "id": "file:src/content/session-3-guide.tsx", "type": "file", "name": "session-3-guide.tsx", "filePath": "src/content/session-3-guide.tsx", "summary": "Content component for the Session 3 workshop guide covering custom domains/DNS, with a DnsRecord helper and shared UI components.", "tags": ["react", "content", "session-3", "dns", "workshop"], "complexity": "high" },
+    { "id": "function:src/content/session-3-guide.tsx:DnsRecord", "type": "function", "name": "DnsRecord", "lineRange": "6-46", "summary": "Helper component rendering a formatted DNS record row used in the Session 3 custom-domain instructions.", "tags": ["react", "component", "dns", "session-3", "ui"], "complexity": "medium" },
+    { "id": "function:src/content/session-3-guide.tsx:Session3Guide", "type": "function", "name": "Session3Guide", "lineRange": "48-588", "summary": "Renders the Session 3 guide content including DNS setup steps, prompts, and the sticky video player.", "tags": ["react", "content", "session-3", "video", "default-export"], "complexity": "high" },
+
+    { "id": "file:src/content/session-5-guide.tsx", "type": "file", "name": "session-5-guide.tsx", "filePath": "src/content/session-5-guide.tsx", "summary": "Content component for the Session 5 workshop guide with an interactive Checkbox helper, code blocks, and celebrate effects.", "tags": ["react", "content", "session-5", "checkbox", "workshop"], "complexity": "high" },
+    { "id": "function:src/content/session-5-guide.tsx:Checkbox", "type": "function", "name": "Checkbox", "lineRange": "10-29", "summary": "Interactive checkbox helper used to mark off completed Session 5 steps.", "tags": ["react", "component", "checkbox", "session-5", "interactive"], "complexity": "low" },
+    { "id": "function:src/content/session-5-guide.tsx:Session5Guide", "type": "function", "name": "Session5Guide", "lineRange": "37-575", "summary": "Renders the Session 5 guide content with checklist interactivity, prompts, and celebrate animations.", "tags": ["react", "content", "session-5", "celebrate", "default-export"], "complexity": "high" },
+
+    { "id": "file:src/content/session-6-guide.tsx", "type": "file", "name": "session-6-guide.tsx", "filePath": "src/content/session-6-guide.tsx", "summary": "Content component for the Session 6 workshop guide with code blocks, pro tips, step cards, and embedded recording.", "tags": ["react", "content", "session-6", "session-guide", "workshop"], "complexity": "high" },
+    { "id": "function:src/content/session-6-guide.tsx:Session6Guide", "type": "function", "name": "Session6Guide", "lineRange": "14-517", "summary": "Renders the Session 6 guide content including walkthrough steps, prompts, and the sticky video player.", "tags": ["react", "content", "session-6", "video", "default-export"], "complexity": "high" },
+
+    { "id": "file:src/content/session-7-descript-guide.tsx", "type": "file", "name": "session-7-descript-guide.tsx", "filePath": "src/content/session-7-descript-guide.tsx", "summary": "Content component for the Session 7 Descript-focused guide with code blocks, pro tips, and step cards.", "tags": ["react", "content", "session-7", "descript", "workshop"], "complexity": "high" },
+    { "id": "function:src/content/session-7-descript-guide.tsx:Session7DescriptGuide", "type": "function", "name": "Session7DescriptGuide", "lineRange": "7-473", "summary": "Renders the Session 7 Descript guide content with step-by-step editing instructions and prompts.", "tags": ["react", "content", "session-7", "descript", "default-export"], "complexity": "high" },
+
+    { "id": "file:src/content/session-7-guide.tsx", "type": "file", "name": "session-7-guide.tsx", "filePath": "src/content/session-7-guide.tsx", "summary": "Content component for the Session 7 workshop guide with code blocks, step cards, celebrate effects, and embedded recording.", "tags": ["react", "content", "session-7", "celebrate", "workshop"], "complexity": "high" },
+    { "id": "function:src/content/session-7-guide.tsx:Session7Guide", "type": "function", "name": "Session7Guide", "lineRange": "15-674", "summary": "Renders the Session 7 guide content including walkthrough steps, prompts, the sticky video player, and celebrate animations.", "tags": ["react", "content", "session-7", "video", "default-export"], "complexity": "high" },
+
+    { "id": "file:src/content/session-8-guide.tsx", "type": "file", "name": "session-8-guide.tsx", "filePath": "src/content/session-8-guide.tsx", "summary": "Large Session 8 workshop guide content covering WebFetch use cases, with an icon helper, code blocks, and the sticky video player.", "tags": ["react", "content", "session-8", "webfetch", "workshop"], "complexity": "high" },
+    { "id": "function:src/content/session-8-guide.tsx:WebFetchUseCaseIcon", "type": "function", "name": "WebFetchUseCaseIcon", "lineRange": "11-67", "summary": "Helper component rendering icons for the various WebFetch use cases shown in the Session 8 guide.", "tags": ["react", "component", "icon", "session-8", "webfetch"], "complexity": "medium" },
+    { "id": "function:src/content/session-8-guide.tsx:Session8Guide", "type": "function", "name": "Session8Guide", "lineRange": "69-1022", "summary": "Renders the Session 8 guide content with WebFetch use cases, prompts, and the sticky video player.", "tags": ["react", "content", "session-8", "video", "default-export"], "complexity": "high" },
+
+    { "id": "file:src/content/session-9-guide.tsx", "type": "file", "name": "session-9-guide.tsx", "filePath": "src/content/session-9-guide.tsx", "summary": "Content component for the Session 9 workshop guide with code blocks, pro tips, and step cards.", "tags": ["react", "content", "session-9", "session-guide", "workshop"], "complexity": "high" },
+    { "id": "function:src/content/session-9-guide.tsx:Session9Guide", "type": "function", "name": "Session9Guide", "lineRange": "181-641", "summary": "Renders the Session 9 guide content with step-by-step instructions and copyable prompts.", "tags": ["react", "content", "session-9", "guide", "default-export"], "complexity": "high" },
+
+    { "id": "file:src/content/tiana-ai-positioning-workshop.tsx", "type": "file", "name": "tiana-ai-positioning-workshop.tsx", "filePath": "src/content/tiana-ai-positioning-workshop.tsx", "summary": "Large standalone content module for Tiana's AI positioning workshop, defining several layout sub-components (Section, PromptCard, TeachingCard, etc.) and the main workshop body.", "tags": ["react", "content", "tiana", "workshop", "positioning"], "complexity": "high" },
+    { "id": "function:src/content/tiana-ai-positioning-workshop.tsx:Section", "type": "function", "name": "Section", "lineRange": "7-39", "summary": "Layout sub-component rendering a titled section wrapper for the Tiana positioning workshop.", "tags": ["react", "component", "layout", "tiana", "section"], "complexity": "low" },
+    { "id": "function:src/content/tiana-ai-positioning-workshop.tsx:PromptCard", "type": "function", "name": "PromptCard", "lineRange": "41-75", "summary": "Sub-component rendering a styled prompt card within the Tiana positioning workshop content.", "tags": ["react", "component", "prompt-card", "tiana", "ui"], "complexity": "medium" },
+    { "id": "function:src/content/tiana-ai-positioning-workshop.tsx:TeachingCard", "type": "function", "name": "TeachingCard", "lineRange": "77-107", "summary": "Sub-component rendering a teaching/concept card within the Tiana positioning workshop content.", "tags": ["react", "component", "teaching-card", "tiana", "ui"], "complexity": "medium" },
+    { "id": "function:src/content/tiana-ai-positioning-workshop.tsx:FrameworkBlock", "type": "function", "name": "FrameworkBlock", "lineRange": "109-121", "summary": "Sub-component rendering a framework callout block in the Tiana positioning workshop.", "tags": ["react", "component", "framework", "tiana", "ui"], "complexity": "low" },
+    { "id": "function:src/content/tiana-ai-positioning-workshop.tsx:StructureCard", "type": "function", "name": "StructureCard", "lineRange": "123-160", "summary": "Sub-component rendering a structured card layout for the Tiana positioning workshop.", "tags": ["react", "component", "structure-card", "tiana", "ui"], "complexity": "medium" },
+    { "id": "function:src/content/tiana-ai-positioning-workshop.tsx:BulletList", "type": "function", "name": "BulletList", "lineRange": "162-173", "summary": "Sub-component rendering a styled bullet list for the Tiana positioning workshop content.", "tags": ["react", "component", "bullet-list", "tiana", "ui"], "complexity": "low" },
+    { "id": "function:src/content/tiana-ai-positioning-workshop.tsx:TianaAiPositioningWorkshop", "type": "function", "name": "TianaAiPositioningWorkshop", "lineRange": "182-1273", "summary": "Default-exported main component rendering the full Tiana AI positioning workshop content using the local layout sub-components.", "tags": ["react", "content", "tiana", "workshop", "default-export"], "complexity": "high" },
+
+    { "id": "file:src/templates/session-guide-template.tsx", "type": "file", "name": "session-guide-template.tsx", "filePath": "src/templates/session-guide-template.tsx", "summary": "Boilerplate template for authoring new session guide content components, with fill-in placeholders and shared UI imports.", "tags": ["react", "template", "session-guide", "scaffold", "boilerplate"], "complexity": "medium" },
+    { "id": "function:src/templates/session-guide-template.tsx:Session_FILL_IN_Guide", "type": "function", "name": "Session_FILL_IN_Guide", "lineRange": "39-311", "summary": "Template component skeleton with placeholder sections to be filled in when creating a new session guide.", "tags": ["react", "template", "scaffold", "session-guide", "default-export"], "complexity": "medium" }
+  ],
+  "edges": [
+    { "source": "file:src/app/session/9/guide/page.tsx", "target": "function:src/app/session/9/guide/page.tsx:Session9GuidePage", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/app/session/9/guide/page.tsx", "target": "function:src/app/session/9/guide/page.tsx:Session9GuidePage", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:src/app/session/9/guide/page.tsx", "target": "file:src/content/session-9-guide.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:src/app/session/[slug]/guide/page.tsx", "target": "function:src/app/session/[slug]/guide/page.tsx:generateStaticParams", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/app/session/[slug]/guide/page.tsx", "target": "function:src/app/session/[slug]/guide/page.tsx:generateMetadata", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/app/session/[slug]/guide/page.tsx", "target": "function:src/app/session/[slug]/guide/page.tsx:SessionGuidePage", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/app/session/[slug]/guide/page.tsx", "target": "function:src/app/session/[slug]/guide/page.tsx:generateStaticParams", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:src/app/session/[slug]/guide/page.tsx", "target": "function:src/app/session/[slug]/guide/page.tsx:generateMetadata", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:src/app/session/[slug]/guide/page.tsx", "target": "function:src/app/session/[slug]/guide/page.tsx:SessionGuidePage", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:src/app/session/[slug]/guide/page.tsx", "target": "file:src/content/session-1-guide.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/app/session/[slug]/guide/page.tsx", "target": "file:src/content/session-2-guide.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/app/session/[slug]/guide/page.tsx", "target": "file:src/content/session-3-guide.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/app/session/[slug]/guide/page.tsx", "target": "file:src/content/session-6-guide.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/app/session/[slug]/guide/page.tsx", "target": "file:src/content/session-7-guide.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/app/session/[slug]/guide/page.tsx", "target": "file:src/lib/locks.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/app/session/[slug]/guide/page.tsx", "target": "file:src/lib/sessions.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:src/components/CodeBlock.tsx", "target": "function:src/components/CodeBlock.tsx:MagneticCopyButton", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/components/CodeBlock.tsx", "target": "function:src/components/CodeBlock.tsx:CodeBlock", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/components/CodeBlock.tsx", "target": "function:src/components/CodeBlock.tsx:CodeBlock", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:src/components/CodeBlock.tsx", "target": "file:src/lib/copyWithConfetti.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "function:src/components/CodeBlock.tsx:CodeBlock", "target": "function:src/components/CodeBlock.tsx:MagneticCopyButton", "type": "calls", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:src/components/ProTip.tsx", "target": "function:src/components/ProTip.tsx:ProTip", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/components/ProTip.tsx", "target": "function:src/components/ProTip.tsx:ProTip", "type": "exports", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:src/components/StepCard.tsx", "target": "function:src/components/StepCard.tsx:StepCard", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/components/StepCard.tsx", "target": "function:src/components/StepCard.tsx:StepCard", "type": "exports", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:src/components/StickyVideoPlayer.tsx", "target": "function:src/components/StickyVideoPlayer.tsx:StickyVideoPlayer", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/components/StickyVideoPlayer.tsx", "target": "function:src/components/StickyVideoPlayer.tsx:StickyVideoPlayer", "type": "exports", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:src/components/TianaSessionFooter.tsx", "target": "function:src/components/TianaSessionFooter.tsx:TianaSessionFooter", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/components/TianaSessionFooter.tsx", "target": "function:src/components/TianaSessionFooter.tsx:TianaSessionFooter", "type": "exports", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:src/content/session-1-guide.tsx", "target": "function:src/content/session-1-guide.tsx:Session1Guide", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/content/session-1-guide.tsx", "target": "function:src/content/session-1-guide.tsx:Session1Guide", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:src/content/session-1-guide.tsx", "target": "file:src/components/StickyVideoPlayer.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:src/content/session-10-instagram-agent.tsx", "target": "function:src/content/session-10-instagram-agent.tsx:Session10InstagramAgent", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/content/session-10-instagram-agent.tsx", "target": "function:src/content/session-10-instagram-agent.tsx:Session10InstagramAgent", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:src/content/session-10-instagram-agent.tsx", "target": "file:src/components/CodeBlock.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/content/session-10-instagram-agent.tsx", "target": "file:src/components/ProTip.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/content/session-10-instagram-agent.tsx", "target": "file:src/components/StepCard.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:src/content/session-2-guide-codex.tsx", "target": "function:src/content/session-2-guide-codex.tsx:Session2GuideCodex", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/content/session-2-guide-codex.tsx", "target": "function:src/content/session-2-guide-codex.tsx:Session2GuideCodex", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:src/content/session-2-guide-codex.tsx", "target": "file:src/components/CodeBlock.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/content/session-2-guide-codex.tsx", "target": "file:src/components/ProTip.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/content/session-2-guide-codex.tsx", "target": "file:src/components/StepCard.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/content/session-2-guide-codex.tsx", "target": "file:src/components/StickyVideoPlayer.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:src/content/session-2-guide.tsx", "target": "function:src/content/session-2-guide.tsx:Session2Guide", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/content/session-2-guide.tsx", "target": "function:src/content/session-2-guide.tsx:Session2Guide", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:src/content/session-2-guide.tsx", "target": "file:src/components/CodeBlock.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/content/session-2-guide.tsx", "target": "file:src/components/ProTip.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/content/session-2-guide.tsx", "target": "file:src/components/StepCard.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/content/session-2-guide.tsx", "target": "file:src/components/StickyVideoPlayer.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:src/content/session-3-guide.tsx", "target": "function:src/content/session-3-guide.tsx:DnsRecord", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/content/session-3-guide.tsx", "target": "function:src/content/session-3-guide.tsx:Session3Guide", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/content/session-3-guide.tsx", "target": "function:src/content/session-3-guide.tsx:Session3Guide", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:src/content/session-3-guide.tsx", "target": "file:src/components/CodeBlock.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/content/session-3-guide.tsx", "target": "file:src/components/ProTip.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/content/session-3-guide.tsx", "target": "file:src/components/StepCard.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/content/session-3-guide.tsx", "target": "file:src/components/StickyVideoPlayer.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:src/content/session-5-guide.tsx", "target": "function:src/content/session-5-guide.tsx:Checkbox", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/content/session-5-guide.tsx", "target": "function:src/content/session-5-guide.tsx:Session5Guide", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/content/session-5-guide.tsx", "target": "function:src/content/session-5-guide.tsx:Session5Guide", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:src/content/session-5-guide.tsx", "target": "file:src/components/CodeBlock.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/content/session-5-guide.tsx", "target": "file:src/components/ProTip.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/content/session-5-guide.tsx", "target": "file:src/components/StepCard.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/content/session-5-guide.tsx", "target": "file:src/components/StickyVideoPlayer.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/content/session-5-guide.tsx", "target": "file:src/lib/celebrate.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:src/content/session-6-guide.tsx", "target": "function:src/content/session-6-guide.tsx:Session6Guide", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/content/session-6-guide.tsx", "target": "function:src/content/session-6-guide.tsx:Session6Guide", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:src/content/session-6-guide.tsx", "target": "file:src/components/CodeBlock.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/content/session-6-guide.tsx", "target": "file:src/components/ProTip.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/content/session-6-guide.tsx", "target": "file:src/components/StepCard.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/content/session-6-guide.tsx", "target": "file:src/components/StickyVideoPlayer.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:src/content/session-7-descript-guide.tsx", "target": "function:src/content/session-7-descript-guide.tsx:Session7DescriptGuide", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/content/session-7-descript-guide.tsx", "target": "function:src/content/session-7-descript-guide.tsx:Session7DescriptGuide", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:src/content/session-7-descript-guide.tsx", "target": "file:src/components/CodeBlock.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/content/session-7-descript-guide.tsx", "target": "file:src/components/ProTip.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/content/session-7-descript-guide.tsx", "target": "file:src/components/StepCard.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:src/content/session-7-guide.tsx", "target": "function:src/content/session-7-guide.tsx:Session7Guide", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/content/session-7-guide.tsx", "target": "function:src/content/session-7-guide.tsx:Session7Guide", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:src/content/session-7-guide.tsx", "target": "file:src/components/CodeBlock.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/content/session-7-guide.tsx", "target": "file:src/components/ProTip.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/content/session-7-guide.tsx", "target": "file:src/components/StepCard.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/content/session-7-guide.tsx", "target": "file:src/components/StickyVideoPlayer.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/content/session-7-guide.tsx", "target": "file:src/lib/celebrate.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:src/content/session-8-guide.tsx", "target": "function:src/content/session-8-guide.tsx:WebFetchUseCaseIcon", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/content/session-8-guide.tsx", "target": "function:src/content/session-8-guide.tsx:Session8Guide", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/content/session-8-guide.tsx", "target": "function:src/content/session-8-guide.tsx:Session8Guide", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:src/content/session-8-guide.tsx", "target": "file:src/components/CodeBlock.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/content/session-8-guide.tsx", "target": "file:src/components/ProTip.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/content/session-8-guide.tsx", "target": "file:src/components/StepCard.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/content/session-8-guide.tsx", "target": "file:src/components/StickyVideoPlayer.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:src/content/session-9-guide.tsx", "target": "function:src/content/session-9-guide.tsx:Session9Guide", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/content/session-9-guide.tsx", "target": "function:src/content/session-9-guide.tsx:Session9Guide", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:src/content/session-9-guide.tsx", "target": "file:src/components/CodeBlock.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/content/session-9-guide.tsx", "target": "file:src/components/ProTip.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/content/session-9-guide.tsx", "target": "file:src/components/StepCard.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:src/content/tiana-ai-positioning-workshop.tsx", "target": "function:src/content/tiana-ai-positioning-workshop.tsx:Section", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/content/tiana-ai-positioning-workshop.tsx", "target": "function:src/content/tiana-ai-positioning-workshop.tsx:PromptCard", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/content/tiana-ai-positioning-workshop.tsx", "target": "function:src/content/tiana-ai-positioning-workshop.tsx:TeachingCard", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/content/tiana-ai-positioning-workshop.tsx", "target": "function:src/content/tiana-ai-positioning-workshop.tsx:FrameworkBlock", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/content/tiana-ai-positioning-workshop.tsx", "target": "function:src/content/tiana-ai-positioning-workshop.tsx:StructureCard", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/content/tiana-ai-positioning-workshop.tsx", "target": "function:src/content/tiana-ai-positioning-workshop.tsx:BulletList", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/content/tiana-ai-positioning-workshop.tsx", "target": "function:src/content/tiana-ai-positioning-workshop.tsx:TianaAiPositioningWorkshop", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/content/tiana-ai-positioning-workshop.tsx", "target": "function:src/content/tiana-ai-positioning-workshop.tsx:TianaAiPositioningWorkshop", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "function:src/content/tiana-ai-positioning-workshop.tsx:TianaAiPositioningWorkshop", "target": "function:src/content/tiana-ai-positioning-workshop.tsx:Section", "type": "calls", "direction": "forward", "weight": 0.8 },
+    { "source": "function:src/content/tiana-ai-positioning-workshop.tsx:TianaAiPositioningWorkshop", "target": "function:src/content/tiana-ai-positioning-workshop.tsx:PromptCard", "type": "calls", "direction": "forward", "weight": 0.8 },
+    { "source": "file:src/content/tiana-ai-positioning-workshop.tsx", "target": "file:src/components/CodeBlock.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/content/tiana-ai-positioning-workshop.tsx", "target": "file:src/components/ProTip.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/content/tiana-ai-positioning-workshop.tsx", "target": "file:src/components/StepCard.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:src/templates/session-guide-template.tsx", "target": "function:src/templates/session-guide-template.tsx:Session_FILL_IN_Guide", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/templates/session-guide-template.tsx", "target": "function:src/templates/session-guide-template.tsx:Session_FILL_IN_Guide", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:src/templates/session-guide-template.tsx", "target": "file:src/components/CodeBlock.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/templates/session-guide-template.tsx", "target": "file:src/components/ProTip.tsx", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:src/templates/session-guide-template.tsx", "target": "file:src/components/StepCard.tsx", "type": "imports", "direction": "forward", "weight": 0.7 }
+  ]
+}

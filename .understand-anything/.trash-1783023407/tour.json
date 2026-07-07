@@ -1,0 +1,220 @@
+[
+  {
+    "order": 1,
+    "title": "Project Foundation: Root Layout and Global Setup",
+    "description": "Start here to understand the entire site's structure. The root layout sets up SEO, analytics, global styling, and theme configuration for all pages.",
+    "nodeIds": [
+      "file:src/app/layout.tsx",
+      "file:src/app/page.tsx"
+    ],
+    "languageLesson": "Next.js App Router: The root layout.tsx is the outermost page wrapper. All child routes render inside its <children /> placeholder. Use metadata export for per-page SEO."
+  },
+  {
+    "order": 2,
+    "title": "Home Page Structure: Displaying Sessions",
+    "description": "Learn how the home page imports session data and renders a grid of session cards using animations. This is the entry point visitors see.",
+    "nodeIds": [
+      "file:src/app/page.tsx",
+      "file:src/lib/sessions.ts",
+      "file:src/components/SessionCard.tsx"
+    ],
+    "languageLesson": "React patterns: Data flows from lib/sessions.ts → page.tsx → SessionCard components. The sessions array is a single source of truth."
+  },
+  {
+    "order": 3,
+    "title": "Core UI Animations: StaggerList and Reveal",
+    "description": "Explore the reusable animation components that create the staggered entrance effect on the home page and throughout the site.",
+    "nodeIds": [
+      "file:src/components/StaggerList.tsx",
+      "file:src/components/Reveal.tsx",
+      "file:src/components/TabNav.tsx"
+    ],
+    "languageLesson": "React Context and hooks: StaggerList uses React Context to coordinate timing between children. Reveal uses CSS animations with JavaScript delays."
+  },
+  {
+    "order": 4,
+    "title": "Session Pages: The Guide Pattern",
+    "description": "Session pages follow a consistent pattern for displaying guide content, prep materials, and bonus content. See how dynamic routing and content composition work.",
+    "nodeIds": [
+      "file:src/app/session/[slug]/page.tsx",
+      "file:src/app/session/[slug]/guide/page.tsx",
+      "file:src/app/session/[slug]/prep/page.tsx"
+    ],
+    "languageLesson": "Next.js dynamic routes: [slug] creates routes like /session/1, /session/2, etc. Each route uses the slug parameter to fetch the right content."
+  },
+  {
+    "order": 5,
+    "title": "Content Management: Session Content Files",
+    "description": "Content is stored in tsx files inside src/content/. Each session has prep, guide, and bonus content files that page components import and render.",
+    "nodeIds": [
+      "file:src/content/session-1-prep.tsx",
+      "file:src/content/session-1-guide.tsx",
+      "file:src/content/session-2-prep.tsx"
+    ],
+    "languageLesson": "TypeScript/TSX: Content files export React components and data objects. Use type safety with interfaces for structured content."
+  },
+  {
+    "order": 6,
+    "title": "Reusable Content Components",
+    "description": "Building blocks for rendering structured content: step cards, code blocks, tips, screenshots. These components are used across all session guides.",
+    "nodeIds": [
+      "file:src/components/StepCard.tsx",
+      "file:src/components/CodeBlock.tsx",
+      "file:src/components/ProTip.tsx",
+      "file:src/components/ScreenshotCard.tsx"
+    ],
+    "languageLesson": "Component composition: Reusable content components accept props to customize text, code, and styling. This DRY principle scales across 10+ sessions."
+  },
+  {
+    "order": 7,
+    "title": "Giveaway Landing Pages: Lead Capture System",
+    "description": "The giveaway system drives lead generation. Each giveaway page has an auto-opening email modal, copy-to-clipboard buttons, and email verification.",
+    "nodeIds": [
+      "file:src/app/giveaways/layout.tsx",
+      "file:src/app/giveaways/page.tsx",
+      "file:src/app/giveaways/anthropic-safety-checklist/page.tsx"
+    ],
+    "languageLesson": "Next.js nested layouts: The giveaways layout wraps all child routes with shared email-gate logic and metadata."
+  },
+  {
+    "order": 8,
+    "title": "Email Capture Flow: Modals and Gates",
+    "description": "Learn how the email modal appears, validates input, and submits data. The copy-email gate shows options to copy content or enter email.",
+    "nodeIds": [
+      "file:src/components/giveaways/GiveawayEmailModal.tsx",
+      "file:src/components/giveaways/GiveawayCopyEmailGate.tsx",
+      "file:src/components/giveaways/GiveawayAutoModal.tsx"
+    ],
+    "languageLesson": "React state management: Use useState for modal visibility, form status, and error messages. useEffect hooks manage side effects like focus and keyboard listeners."
+  },
+  {
+    "order": 9,
+    "title": "API Routes: Lead Capture Backend",
+    "description": "API routes handle form submissions, email validation, and data persistence. See how giveaway signups are recorded.",
+    "nodeIds": [
+      "file:src/app/api/lead-magnet/route.ts",
+      "file:src/app/api/lead-magnets/claudemd/route.ts"
+    ],
+    "languageLesson": "Next.js API routes: POST handlers receive form data, validate it, and store it. Use try/catch for error handling and return JSON responses."
+  },
+  {
+    "order": 10,
+    "title": "Events System: Registration and Webhooks",
+    "description": "Events (live workshops) have registration, waitlist, payment processing, and webhook handling. This is the business logic layer.",
+    "nodeIds": [
+      "file:src/lib/events.tsx",
+      "file:src/lib/event-registration-db.ts",
+      "file:src/lib/event-confirmation-email.ts"
+    ],
+    "languageLesson": "TypeScript interfaces: Define EventDefinition, Registration, and related types. Use type safety to prevent bugs in business logic."
+  },
+  {
+    "order": 11,
+    "title": "Event Pages: Registration UI",
+    "description": "Event pages display details, registration forms, media, and confirmation flows. See how UI flows connect to backend registration.",
+    "nodeIds": [
+      "file:src/app/events/[slug]/page.tsx",
+      "file:src/components/events/EventPageView.tsx",
+      "file:src/components/events/EventRegistrationSection.tsx"
+    ],
+    "languageLesson": "Next.js dynamic routes for events: /events/[slug] routes render event-specific content, pricing, and registration forms."
+  },
+  {
+    "order": 12,
+    "title": "Payment Processing: Stripe Integration",
+    "description": "Stripe webhooks handle payment confirmation, registration finalization, and abandoned checkout followups.",
+    "nodeIds": [
+      "file:src/app/api/stripe/webhook/route.ts",
+      "file:src/lib/stripe.ts",
+      "file:src/lib/event-checkout.ts"
+    ],
+    "languageLesson": "Webhook security: Verify webhook signatures before processing. Use idempotency keys to prevent duplicate processing."
+  },
+  {
+    "order": 13,
+    "title": "Email Automation: Reminders and Followups",
+    "description": "Automated emails for confirmations, reminders, abandoned checkouts, and location details. See the email infrastructure.",
+    "nodeIds": [
+      "file:src/lib/abandoned-checkout-followups.ts",
+      "file:src/lib/location-reminder.ts",
+      "file:src/app/api/events/location-reminders/route.ts"
+    ],
+    "languageLesson": "Email automation patterns: Idempotency keys, time-window calculations, and deduplication prevent duplicate sends."
+  },
+  {
+    "order": 14,
+    "title": "Utility Helpers and Data Helpers",
+    "description": "Learn the helper functions that support content rendering, date handling, copy-to-clipboard, and analytics.",
+    "nodeIds": [
+      "file:src/lib/copyWithConfetti.ts",
+      "file:src/lib/calendar.ts",
+      "file:src/lib/giveaways.ts",
+      "file:src/lib/insight-to-fix.ts"
+    ],
+    "languageLesson": "Utility patterns: Keep business logic in pure functions. Use TypeScript type safety for helper function arguments."
+  },
+  {
+    "order": 15,
+    "title": "Navigation and Global Components",
+    "description": "Site-wide components: header, footer, particles background. These appear on every page and establish the visual identity.",
+    "nodeIds": [
+      "file:src/components/SiteHeader.tsx",
+      "file:src/components/SiteFooter.tsx",
+      "file:src/components/PageParticles.tsx",
+      "file:src/components/VantaHero.tsx"
+    ],
+    "languageLesson": "Component reusability: Global components render consistently. Use CSS classes and theming for consistent styling across the site."
+  },
+  {
+    "order": 16,
+    "title": "Participant Display: Carousels and Social Proof",
+    "description": "Showcase participants and testimonials using carousels. Learn how to render lists of data with animations.",
+    "nodeIds": [
+      "file:src/components/ParticipantCarousel.tsx",
+      "file:src/components/sections/MastermindReactionsSection.tsx"
+    ],
+    "languageLesson": "React component patterns: Use .map() to render lists. Manage carousel state with useState for current index."
+  },
+  {
+    "order": 17,
+    "title": "Session Wrapup Pages: Celebrations and Demos",
+    "description": "Wrapup pages celebrate session completions with participant reactions, takeaways, and next steps.",
+    "nodeIds": [
+      "file:src/app/session/4/wrapup/page.tsx",
+      "file:src/app/session/5/wrapup/page.tsx"
+    ],
+    "languageLesson": "Page composition: Combine animations, carousels, and staggered lists to create an engaging wrapup experience."
+  },
+  {
+    "order": 18,
+    "title": "Video Integration: Sticky Players and Embeds",
+    "description": "Learn how to embed video content using React components that follow users as they scroll.",
+    "nodeIds": [
+      "file:src/components/StickyVideoPlayer.tsx",
+      "file:src/components/events/HeroVideo.tsx",
+      "file:src/components/events/EventMediaVideo.tsx"
+    ],
+    "languageLesson": "DOM manipulation in React: useEffect with scroll listeners to track video position. useRef to access DOM nodes."
+  },
+  {
+    "order": 19,
+    "title": "Configuration and Data Flow",
+    "description": "Understand how configuration files, environment variables, and data sources flow through the application.",
+    "nodeIds": [
+      "file:src/lib/rate-limit.ts",
+      "file:src/lib/event-tokens.ts",
+      "file:src/lib/legacy-event-schedule.ts"
+    ],
+    "languageLesson": "Security patterns: Token generation, rate limiting, and secret verification. Environment variable usage for sensitive data."
+  },
+  {
+    "order": 20,
+    "title": "Meta and SEO Setup: Sitemap and Robots",
+    "description": "Configure search engine crawling and sitemaps to ensure all content is discoverable.",
+    "nodeIds": [
+      "file:src/app/sitemap.ts",
+      "file:src/app/robots.ts"
+    ],
+    "languageLesson": "Next.js SEO: Use dynamic sitemap and robots.txt generation. Export metadata from pages for per-page SEO."
+  }
+]

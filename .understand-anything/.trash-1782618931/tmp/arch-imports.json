@@ -1,0 +1,2480 @@
+[
+  {
+    "source": "file:src/app/giveaways/agent-infrastructure/page.tsx",
+    "target": "file:src/components/giveaways/GiveawayAutoModal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/all-sorted-overview/page.tsx",
+    "target": "file:src/components/giveaways/GiveawayAutoModal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/all-sorted-overview/page.tsx",
+    "target": "file:src/components/giveaways/GiveawayEmailModal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/all-sorted-overview/page.tsx",
+    "target": "file:src/components/sections/MastermindReactionsSection.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/anthropic-safety-checklist/page.tsx",
+    "target": "file:src/components/giveaways/GiveawayEmailModal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/anthropic-safety-checklist/page.tsx",
+    "target": "file:src/lib/copyWithConfetti.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/benchmark/page.tsx",
+    "target": "file:src/components/giveaways/GiveawayAutoModal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/benchmark/page.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/benchmark/page.tsx",
+    "target": "file:src/components/Reveal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/claude-md/page.tsx",
+    "target": "file:src/components/giveaways/GiveawayEmailModal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/claude-md/page.tsx",
+    "target": "file:src/components/sections/MastermindReactionsSection.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/claude-md/page.tsx",
+    "target": "file:src/lib/copyWithConfetti.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/compare/page.tsx",
+    "target": "file:src/components/giveaways/GiveawayAutoModal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/compare/page.tsx",
+    "target": "file:src/components/sections/MastermindReactionsSection.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/cross-cli-compatibility-routing/page.tsx",
+    "target": "file:src/app/giveaways/cross-cli-compatibility-routing/content.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/cross-cli-compatibility-routing/page.tsx",
+    "target": "file:src/components/CodeBlock.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/cross-cli-compatibility-routing/page.tsx",
+    "target": "file:src/components/giveaways/GiveawayEmailModal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/cross-cli-compatibility-routing/page.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/cross-cli-compatibility-routing/page.tsx",
+    "target": "file:src/components/Reveal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/cross-cli-compatibility-routing/page.tsx",
+    "target": "file:src/components/sections/MastermindReactionsSection.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/cross-cli-compatibility-routing/page.tsx",
+    "target": "file:src/lib/copyWithConfetti.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/geometry-dash-fun-build/page.tsx",
+    "target": "file:src/components/giveaways/GiveawayEmailModal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/geometry-dash-fun-build/page.tsx",
+    "target": "file:src/components/sections/MastermindReactionsSection.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/geometry-dash-fun-build/page.tsx",
+    "target": "file:src/lib/copyWithConfetti.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/guardog/page.tsx",
+    "target": "file:src/components/giveaways/GiveawayEmailModal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/guardog/page.tsx",
+    "target": "file:src/components/sections/MastermindReactionsSection.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/guardog/page.tsx",
+    "target": "file:src/lib/copyWithConfetti.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/hooklab/page.tsx",
+    "target": "file:src/app/giveaways/hooklab/content.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/hooklab/page.tsx",
+    "target": "file:src/components/giveaways/GiveawayEmailModal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/hooklab/page.tsx",
+    "target": "file:src/components/sections/MastermindReactionsSection.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/hooklab/page.tsx",
+    "target": "file:src/lib/copyWithConfetti.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/ig-settings/page.tsx",
+    "target": "file:src/components/giveaways/GiveawayAutoModal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/intuition-quiz/page.tsx",
+    "target": "file:src/components/giveaways/GiveawayEmailModal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/intuition-quiz/page.tsx",
+    "target": "file:src/components/sections/MastermindReactionsSection.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/layout.tsx",
+    "target": "file:src/components/giveaways/GiveawayCopyEmailGate.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/lead-magnet/page.tsx",
+    "target": "file:src/components/giveaways/GiveawayAutoModal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/logo-maker-guide/page.tsx",
+    "target": "file:src/components/giveaways/GiveawayAutoModal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/logo-maker-guide/page.tsx",
+    "target": "file:src/components/sections/MastermindReactionsSection.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/ray-dalio-council/page.tsx",
+    "target": "file:src/components/giveaways/GiveawayEmailModal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/ray-dalio-council/page.tsx",
+    "target": "file:src/components/sections/MastermindReactionsSection.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/ray-dalio-council/page.tsx",
+    "target": "file:src/lib/copyWithConfetti.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/speak-human/page.tsx",
+    "target": "file:src/components/giveaways/GiveawayEmailModal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/speak-human/page.tsx",
+    "target": "file:src/components/sections/MastermindReactionsSection.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/speak-human/page.tsx",
+    "target": "file:src/lib/copyWithConfetti.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/squarespace-escape/page.tsx",
+    "target": "file:src/components/CodeBlock.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/squarespace-escape/page.tsx",
+    "target": "file:src/components/giveaways/GiveawayEmailModal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/squarespace-escape/page.tsx",
+    "target": "file:src/lib/copyWithConfetti.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/viral-hooks/page.tsx",
+    "target": "file:src/components/giveaways/GiveawayAutoModal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/viral-hooks/page.tsx",
+    "target": "file:src/components/sections/MastermindReactionsSection.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/web-design-arsenal/page.tsx",
+    "target": "file:src/components/giveaways/GiveawayEmailModal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/web-design-arsenal/page.tsx",
+    "target": "file:src/lib/copyWithConfetti.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/5/hook-writer/page 2.tsx",
+    "target": "file:src/components/CodeBlock.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/5/hook-writer/page 2.tsx",
+    "target": "file:src/lib/copyWithConfetti.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/6/hook-writer/page.tsx",
+    "target": "file:src/components/CodeBlock.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/6/hook-writer/page.tsx",
+    "target": "file:src/lib/copyWithConfetti.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/components/giveaways/GiveawayAutoModal.tsx",
+    "target": "file:src/components/giveaways/GiveawayEmailModal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/components/giveaways/GiveawayCopyEmailGate.tsx",
+    "target": "file:src/components/giveaways/GiveawayEmailModal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/components/giveaways/GiveawayCopyEmailGate.tsx",
+    "target": "file:src/lib/copyWithConfetti.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/components/sections/MastermindReactionsSection.tsx",
+    "target": "file:src/components/Reveal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/lib/abandoned-checkout-followups.ts",
+    "target": "file:src/lib/events.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/lib/abandoned-checkout-followups.ts",
+    "target": "file:src/lib/stripe.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/lib/abandoned-checkout-followups.ts",
+    "target": "file:src/lib/url-utils.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/lib/event-checkout.ts",
+    "target": "file:src/lib/events.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/lib/event-checkout.ts",
+    "target": "file:src/lib/stripe-amount.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/lib/event-confirmation-email.ts",
+    "target": "file:src/lib/calendar.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/lib/event-confirmation-email.ts",
+    "target": "file:src/lib/events.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/lib/event-confirmation-email.ts",
+    "target": "file:src/lib/location-reminder.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/waitlist/join/route.ts",
+    "target": "file:src/lib/email-validation.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/waitlist/join/route.ts",
+    "target": "file:src/lib/event-confirmation-email.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/waitlist/join/route.ts",
+    "target": "file:src/lib/event-registration-db.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/waitlist/join/route.ts",
+    "target": "file:src/lib/event-status.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/waitlist/join/route.ts",
+    "target": "file:src/lib/events.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/waitlist/join/route.ts",
+    "target": "file:src/lib/rate-limit.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/waitlist/notify/route.ts",
+    "target": "file:src/lib/event-confirmation-email.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/waitlist/notify/route.ts",
+    "target": "file:src/lib/event-registration-db.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/waitlist/notify/route.ts",
+    "target": "file:src/lib/events.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/waitlist/notify/route.ts",
+    "target": "file:src/lib/waitlist-notify-windows.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/waitlist/remove/route.ts",
+    "target": "file:src/lib/event-registration-db.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/lead-magnet/route.ts",
+    "target": "file:src/lib/insight-to-fix.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/lead-magnet/route.ts",
+    "target": "file:src/lib/rate-limit.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/lead-magnets/claudemd/route.ts",
+    "target": "file:src/lib/rate-limit.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/lead-magnets/passive-income-100/route.ts",
+    "target": "file:src/lib/rate-limit.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/stripe/webhook/route.ts",
+    "target": "file:src/lib/events.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/stripe/webhook/route.ts",
+    "target": "file:src/lib/insight-to-fix.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/stripe/webhook/route.ts",
+    "target": "file:src/lib/legacy-event-schedule.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/stripe/webhook/route.ts",
+    "target": "file:src/lib/stripe.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/events/[slug]/page.tsx",
+    "target": "file:src/components/events/EventPageView.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/events/[slug]/page.tsx",
+    "target": "file:src/lib/events.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/events/[slug]/page.tsx",
+    "target": "file:src/lib/stripe.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/events/[slug]/setup/page.tsx",
+    "target": "file:src/lib/events.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:scripts/abandoned-checkout-run.ts",
+    "target": "file:src/lib/abandoned-checkout-followups.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/abandoned-checkout-followups-t12h/route.ts",
+    "target": "file:src/lib/abandoned-checkout-followups.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/abandoned-checkout-followups/route.ts",
+    "target": "file:src/lib/abandoned-checkout-followups.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/cancel/route.ts",
+    "target": "file:src/lib/event-confirmation-email.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/cancel/route.ts",
+    "target": "file:src/lib/event-registration-db.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/cancel/route.ts",
+    "target": "file:src/lib/events.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/checkout-session/route.ts",
+    "target": "file:src/lib/email-validation.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/checkout-session/route.ts",
+    "target": "file:src/lib/event-checkout.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/checkout-session/route.ts",
+    "target": "file:src/lib/event-confirmation-email.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/checkout-session/route.ts",
+    "target": "file:src/lib/event-registration-db.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/checkout-session/route.ts",
+    "target": "file:src/lib/event-status.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/checkout-session/route.ts",
+    "target": "file:src/lib/events.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/checkout-session/route.ts",
+    "target": "file:src/lib/insight-to-fix.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/checkout-session/route.ts",
+    "target": "file:src/lib/legacy-event-schedule.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/checkout-session/route.ts",
+    "target": "file:src/lib/rate-limit.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/checkout-session/route.ts",
+    "target": "file:src/lib/stripe-amount.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/checkout-session/route.ts",
+    "target": "file:src/lib/stripe.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/checkout-session/route.ts",
+    "target": "file:src/lib/url-utils.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/finalize-registration/route.ts",
+    "target": "file:src/lib/events.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/finalize-registration/route.ts",
+    "target": "file:src/lib/insight-to-fix.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/finalize-registration/route.ts",
+    "target": "file:src/lib/legacy-event-schedule.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/location-reminders/route.ts",
+    "target": "file:src/lib/event-confirmation-email.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/location-reminders/route.ts",
+    "target": "file:src/lib/events.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/location-reminders/route.ts",
+    "target": "file:src/lib/legacy-event-schedule.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/location-reminders/route.ts",
+    "target": "file:src/lib/location-reminder.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/reconcile-registrations/route.ts",
+    "target": "file:src/lib/event-tokens.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/reconcile-registrations/route.ts",
+    "target": "file:src/lib/stripe.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/validate-promo/route.ts",
+    "target": "file:src/lib/events.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/validate-promo/route.ts",
+    "target": "file:src/lib/rate-limit.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/bonus/auto-lead-magnet/page.tsx",
+    "target": "file:src/components/CodeBlock.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/resource-vault/automated-ghost-computer-use/page.tsx",
+    "target": "file:src/components/CodeBlock.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/resource-vault/automated-ghost-computer-use/page.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/resource-vault/automated-ghost-computer-use/page.tsx",
+    "target": "file:src/components/StepCard.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/resource-vault/connecting-to-google-sheets/page.tsx",
+    "target": "file:src/components/CodeBlock.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/resource-vault/connecting-to-google-sheets/page.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/resource-vault/connecting-to-google-sheets/page.tsx",
+    "target": "file:src/components/StepCard.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/resource-vault/connecting-to-xero/page.tsx",
+    "target": "file:src/components/CodeBlock.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/resource-vault/connecting-to-xero/page.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/resource-vault/connecting-to-xero/page.tsx",
+    "target": "file:src/components/ScreenshotCard.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/resource-vault/connecting-to-xero/page.tsx",
+    "target": "file:src/components/StepCard.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/resource-vault/eric-investor-pipeline/page.tsx",
+    "target": "file:src/components/CodeBlock.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/resource-vault/eric-investor-pipeline/page.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/resource-vault/eric-investor-pipeline/page.tsx",
+    "target": "file:src/components/StepCard.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/resource-vault/how-to-stand-out-in-the-age-of-ai/page.tsx",
+    "target": "file:src/components/TianaSessionFooter.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/resource-vault/how-to-stand-out-in-the-age-of-ai/page.tsx",
+    "target": "file:src/content/tiana-ai-positioning-workshop.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/resource-vault/reza-website-control/page.tsx",
+    "target": "file:src/components/CodeBlock.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/resource-vault/reza-website-control/page.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/resource-vault/reza-website-control/page.tsx",
+    "target": "file:src/components/StepCard.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/resource-vault/wordpress-api/page.tsx",
+    "target": "file:src/components/CodeBlock.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/resource-vault/wordpress-api/page.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/resource-vault/wordpress-api/page.tsx",
+    "target": "file:src/components/StepCard.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/resource-vault/wordpress-api/page.tsx",
+    "target": "file:src/components/StickyVideoPlayer.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/10/instagram/page.tsx",
+    "target": "file:src/content/session-10-instagram-agent.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/2/auto-lead-magnet/page 2.tsx",
+    "target": "file:src/components/CodeBlock.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/2/auto-lead-magnet/page.tsx",
+    "target": "file:src/components/CodeBlock.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/2/guide-codex/page.tsx",
+    "target": "file:src/content/session-2-guide-codex.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/3/custom-domain/page.tsx",
+    "target": "file:src/components/CodeBlock.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/3/custom-domain/page.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/3/custom-domain/page.tsx",
+    "target": "file:src/components/StepCard.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/3/homework/page.tsx",
+    "target": "file:src/components/CodeBlock.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/3/homework/page.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/3/homework/page.tsx",
+    "target": "file:src/components/StepCard.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/3/homework/page.tsx",
+    "target": "file:src/components/StickyVideoPlayer.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/4/custom-domain/page.tsx",
+    "target": "file:src/components/CodeBlock.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/4/custom-domain/page.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/4/custom-domain/page.tsx",
+    "target": "file:src/components/StepCard.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/4/homework/page.tsx",
+    "target": "file:src/components/CodeBlock.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/4/homework/page.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/4/homework/page.tsx",
+    "target": "file:src/components/StepCard.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/4/homework/page.tsx",
+    "target": "file:src/components/StickyVideoPlayer.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/5/hook-writer/page.tsx",
+    "target": "file:src/components/CodeBlock.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/7/descript/page 2.tsx",
+    "target": "file:src/content/session-7-descript-guide.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/7/descript/page.tsx",
+    "target": "file:src/content/session-7-descript-guide.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/7/guide/page.tsx",
+    "target": "file:src/content/session-7-guide.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/8/guide/page.tsx",
+    "target": "file:src/content/session-8-guide.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/lib/event-registration-db.ts",
+    "target": "file:src/lib/event-tokens.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/lib/event-registration-db.ts",
+    "target": "file:src/lib/events.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/lib/event-registration-db.ts",
+    "target": "file:src/lib/supabase.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/lib/event-status.ts",
+    "target": "file:src/lib/events.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/lib/rate-limit.ts",
+    "target": "file:src/lib/supabase.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/lib/legacy-event-schedule.ts",
+    "target": "file:src/lib/event-confirmation-email.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/lib/legacy-event-schedule.ts",
+    "target": "file:src/lib/event-registration-db.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/lib/legacy-event-schedule.ts",
+    "target": "file:src/lib/events.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/lib/legacy-event-schedule.ts",
+    "target": "file:src/lib/insight-to-fix.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/lib/legacy-event-schedule.ts",
+    "target": "file:src/lib/location-reminder.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/lib/legacy-event-schedule.ts",
+    "target": "file:src/lib/stripe.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:tests/abandoned-checkout-followups.test.ts",
+    "target": "file:src/lib/abandoned-checkout-followups.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:tests/email-content.test.ts",
+    "target": "file:src/lib/event-confirmation-email.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:tests/email-content.test.ts",
+    "target": "file:src/lib/events.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:tests/email-idempotency.test.ts",
+    "target": "file:src/lib/event-confirmation-email.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:tests/email-idempotency.test.ts",
+    "target": "file:src/lib/events.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:tests/event-checkout.test.ts",
+    "target": "file:src/lib/event-checkout.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:tests/event-checkout.test.ts",
+    "target": "file:src/lib/events.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:tests/event-location-reminder.test.ts",
+    "target": "file:src/lib/event-confirmation-email.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:tests/event-location-reminder.test.ts",
+    "target": "file:src/lib/events.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:tests/event-location-reminder.test.ts",
+    "target": "file:src/lib/location-reminder.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:tests/event-pricing-and-data.test.ts",
+    "target": "file:src/lib/event-status.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:tests/event-pricing-and-data.test.ts",
+    "target": "file:src/lib/events.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:tests/event-pricing-and-data.test.ts",
+    "target": "file:src/lib/url-utils.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:tests/event-pricing-and-data.test.ts",
+    "target": "file:src/lib/waitlist-notify-windows.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:tests/event-tokens.test.ts",
+    "target": "file:src/lib/event-tokens.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:tests/hardening.test.ts",
+    "target": "file:src/lib/events.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:tests/hardening.test.ts",
+    "target": "file:src/lib/stripe-amount.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:tests/hardening.test.ts",
+    "target": "file:src/lib/waitlist-notify-windows.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/bonus-workshops/page.tsx",
+    "target": "file:src/components/TabNav.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/events/page.tsx",
+    "target": "file:src/components/Reveal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/events/page.tsx",
+    "target": "file:src/lib/events.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/client-launch-checklist/page.tsx",
+    "target": "file:src/app/giveaways/client-launch-checklist/LeadMagnetExampleForm.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/client-launch-checklist/page.tsx",
+    "target": "file:src/components/giveaways/GiveawayAutoModal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/client-launch-checklist/page.tsx",
+    "target": "file:src/components/Reveal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/cult-brand-playbook/page.tsx",
+    "target": "file:src/app/giveaways/cult-brand-playbook/GiveawayForm.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/cult-brand-playbook/page.tsx",
+    "target": "file:src/components/giveaways/GiveawayAutoModal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/cult-brand-playbook/page.tsx",
+    "target": "file:src/components/Reveal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/maccleaner/page.tsx",
+    "target": "file:src/app/giveaways/maccleaner/GiveawayForm.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/maccleaner/page.tsx",
+    "target": "file:src/components/giveaways/GiveawayAutoModal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/maccleaner/page.tsx",
+    "target": "file:src/components/Reveal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/page.tsx",
+    "target": "file:src/components/Reveal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/page.tsx",
+    "target": "file:src/components/StaggerList.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/page.tsx",
+    "target": "file:src/components/TabNav.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/giveaways/page.tsx",
+    "target": "file:src/lib/giveaways.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/page.tsx",
+    "target": "file:src/components/Reveal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/page.tsx",
+    "target": "file:src/components/SessionCard.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/page.tsx",
+    "target": "file:src/components/StaggerList.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/page.tsx",
+    "target": "file:src/components/TabNav.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/page.tsx",
+    "target": "file:src/lib/sessions.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/resource-vault/page.tsx",
+    "target": "file:src/components/TabNav.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/4/wrapup/page 2.tsx",
+    "target": "file:src/components/ParticipantCarousel.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/4/wrapup/page 2.tsx",
+    "target": "file:src/components/Reveal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/4/wrapup/page 2.tsx",
+    "target": "file:src/components/StaggerList.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/4/wrapup/page 2.tsx",
+    "target": "file:src/components/StickyVideoPlayer.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/4/wrapup/page.tsx",
+    "target": "file:src/components/ParticipantCarousel.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/4/wrapup/page.tsx",
+    "target": "file:src/components/Reveal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/4/wrapup/page.tsx",
+    "target": "file:src/components/StaggerList.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/4/wrapup/page.tsx",
+    "target": "file:src/components/StickyVideoPlayer.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/5/wrapup/page.tsx",
+    "target": "file:src/components/ParticipantCarousel.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/5/wrapup/page.tsx",
+    "target": "file:src/components/Reveal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/5/wrapup/page.tsx",
+    "target": "file:src/components/StaggerList.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/5/wrapup/page.tsx",
+    "target": "file:src/components/StickyVideoPlayer.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/1/prep-codex/page 2.tsx",
+    "target": "file:src/content/session-1-prep-codex.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/1/prep-codex/page.tsx",
+    "target": "file:src/content/session-1-prep-codex.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/5/prep-hooks/page 2.tsx",
+    "target": "file:src/content/session-4-prep.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/5/prep-hooks/page.tsx",
+    "target": "file:src/content/session-4-prep.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/6/prep-hooks/page.tsx",
+    "target": "file:src/content/session-4-prep.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/7/prep/page 2.tsx",
+    "target": "file:src/content/session-7-prep.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/7/prep/page.tsx",
+    "target": "file:src/content/session-7-prep.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/8/prep/page.tsx",
+    "target": "file:src/content/session-8-prep.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/[slug]/prep/page.tsx",
+    "target": "file:src/content/session-1-prep.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/[slug]/prep/page.tsx",
+    "target": "file:src/content/session-2-prep.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/[slug]/prep/page.tsx",
+    "target": "file:src/content/session-3-prep.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/[slug]/prep/page.tsx",
+    "target": "file:src/content/session-5-prep.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/[slug]/prep/page.tsx",
+    "target": "file:src/content/session-6-prep.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/[slug]/prep/page.tsx",
+    "target": "file:src/content/session-7-prep.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/[slug]/prep/page.tsx",
+    "target": "file:src/lib/sessions.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-1-prep-codex.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-1-prep-codex.tsx",
+    "target": "file:src/components/StickyVideoPlayer.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-1-prep-codex.tsx",
+    "target": "file:src/lib/celebrate.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-1-prep.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-1-prep.tsx",
+    "target": "file:src/components/StickyVideoPlayer.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-1-prep.tsx",
+    "target": "file:src/lib/celebrate.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-2-prep.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-2-prep.tsx",
+    "target": "file:src/lib/celebrate.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-3-prep.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-3-prep.tsx",
+    "target": "file:src/lib/celebrate.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-4-prep.tsx",
+    "target": "file:src/lib/celebrate.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-5-prep.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-5-prep.tsx",
+    "target": "file:src/components/ScreenshotCard.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-5-prep.tsx",
+    "target": "file:src/lib/celebrate.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-6-prep.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-6-prep.tsx",
+    "target": "file:src/lib/celebrate.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-7-prep.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-7-prep.tsx",
+    "target": "file:src/lib/celebrate.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-8-prep.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-8-prep.tsx",
+    "target": "file:src/lib/celebrate.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/9/guide/page.tsx",
+    "target": "file:src/content/session-9-guide.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/[slug]/guide/page.tsx",
+    "target": "file:src/content/session-1-guide.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/[slug]/guide/page.tsx",
+    "target": "file:src/content/session-2-guide.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/[slug]/guide/page.tsx",
+    "target": "file:src/content/session-3-guide.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/[slug]/guide/page.tsx",
+    "target": "file:src/content/session-6-guide.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/[slug]/guide/page.tsx",
+    "target": "file:src/content/session-7-guide.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/[slug]/guide/page.tsx",
+    "target": "file:src/lib/locks.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/[slug]/guide/page.tsx",
+    "target": "file:src/lib/sessions.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/components/CodeBlock.tsx",
+    "target": "file:src/lib/copyWithConfetti.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-1-guide.tsx",
+    "target": "file:src/components/StickyVideoPlayer.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-10-instagram-agent.tsx",
+    "target": "file:src/components/CodeBlock.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-10-instagram-agent.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-10-instagram-agent.tsx",
+    "target": "file:src/components/StepCard.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-2-guide-codex.tsx",
+    "target": "file:src/components/CodeBlock.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-2-guide-codex.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-2-guide-codex.tsx",
+    "target": "file:src/components/StepCard.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-2-guide-codex.tsx",
+    "target": "file:src/components/StickyVideoPlayer.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-2-guide.tsx",
+    "target": "file:src/components/CodeBlock.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-2-guide.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-2-guide.tsx",
+    "target": "file:src/components/StepCard.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-2-guide.tsx",
+    "target": "file:src/components/StickyVideoPlayer.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-3-guide.tsx",
+    "target": "file:src/components/CodeBlock.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-3-guide.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-3-guide.tsx",
+    "target": "file:src/components/StepCard.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-3-guide.tsx",
+    "target": "file:src/components/StickyVideoPlayer.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-5-guide.tsx",
+    "target": "file:src/components/CodeBlock.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-5-guide.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-5-guide.tsx",
+    "target": "file:src/components/StepCard.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-5-guide.tsx",
+    "target": "file:src/components/StickyVideoPlayer.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-5-guide.tsx",
+    "target": "file:src/lib/celebrate.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-6-guide.tsx",
+    "target": "file:src/components/CodeBlock.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-6-guide.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-6-guide.tsx",
+    "target": "file:src/components/StepCard.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-6-guide.tsx",
+    "target": "file:src/components/StickyVideoPlayer.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-7-descript-guide.tsx",
+    "target": "file:src/components/CodeBlock.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-7-descript-guide.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-7-descript-guide.tsx",
+    "target": "file:src/components/StepCard.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-7-guide.tsx",
+    "target": "file:src/components/CodeBlock.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-7-guide.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-7-guide.tsx",
+    "target": "file:src/components/StepCard.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-7-guide.tsx",
+    "target": "file:src/components/StickyVideoPlayer.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-7-guide.tsx",
+    "target": "file:src/lib/celebrate.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-8-guide.tsx",
+    "target": "file:src/components/CodeBlock.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-8-guide.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-8-guide.tsx",
+    "target": "file:src/components/StepCard.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-8-guide.tsx",
+    "target": "file:src/components/StickyVideoPlayer.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-9-guide.tsx",
+    "target": "file:src/components/CodeBlock.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-9-guide.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-9-guide.tsx",
+    "target": "file:src/components/StepCard.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/tiana-ai-positioning-workshop.tsx",
+    "target": "file:src/components/CodeBlock.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/tiana-ai-positioning-workshop.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/tiana-ai-positioning-workshop.tsx",
+    "target": "file:src/components/StepCard.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/templates/session-guide-template.tsx",
+    "target": "file:src/components/CodeBlock.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/templates/session-guide-template.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/templates/session-guide-template.tsx",
+    "target": "file:src/components/StepCard.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/[slug]/calendar/route.ts",
+    "target": "file:src/lib/calendar.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/[slug]/calendar/route.ts",
+    "target": "file:src/lib/events.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/components/events/EventPageView.tsx",
+    "target": "file:src/components/events/EventMediaVideo.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/components/events/EventPageView.tsx",
+    "target": "file:src/components/events/EventRegistrationSection.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/components/events/EventPageView.tsx",
+    "target": "file:src/components/events/HeroVideo.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/components/events/EventPageView.tsx",
+    "target": "file:src/components/events/ScrollToRegisterButton.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/components/events/EventPageView.tsx",
+    "target": "file:src/components/Reveal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/components/events/EventPageView.tsx",
+    "target": "file:src/lib/calendar.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/components/events/EventPageView.tsx",
+    "target": "file:src/lib/event-status.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/components/events/EventPageView.tsx",
+    "target": "file:src/lib/events.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/components/events/EventRegistrationSection.tsx",
+    "target": "file:src/components/events/WaitlistJoinForm.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/components/events/EventRegistrationSection.tsx",
+    "target": "file:src/lib/celebrate.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/components/events/EventRegistrationSection.tsx",
+    "target": "file:src/lib/email-validation.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/components/events/HeroVideo.tsx",
+    "target": "file:src/components/events/EventMediaVideo.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/components/events/WaitlistJoinForm.tsx",
+    "target": "file:src/lib/email-validation.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:tests/calendar.test.ts",
+    "target": "file:src/lib/calendar.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:tests/waitlist-join-validation.test.ts",
+    "target": "file:src/lib/email-validation.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/[slug]/bonus/page 2.tsx",
+    "target": "file:src/content/session-1-bonus.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/[slug]/bonus/page 2.tsx",
+    "target": "file:src/lib/sessions.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/[slug]/bonus/page.tsx",
+    "target": "file:src/content/session-1-bonus.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/[slug]/bonus/page.tsx",
+    "target": "file:src/lib/sessions.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/[slug]/guide-brain/page.tsx",
+    "target": "file:src/content/session-5-guide.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/[slug]/guide-brain/page.tsx",
+    "target": "file:src/lib/sessions.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/[slug]/page.tsx",
+    "target": "file:src/components/Reveal.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/[slug]/page.tsx",
+    "target": "file:src/lib/locks.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/session/[slug]/page.tsx",
+    "target": "file:src/lib/sessions.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-1-bonus.tsx",
+    "target": "file:src/components/ProTip.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/content/session-1-bonus.tsx",
+    "target": "file:src/components/StepCard.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/layout.tsx",
+    "target": "file:src/app/globals.css",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/layout.tsx",
+    "target": "file:src/components/PageParticles.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/layout.tsx",
+    "target": "file:src/components/SiteFooter.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/layout.tsx",
+    "target": "file:src/components/SiteHeader.tsx",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/waitlist/notify/route.ts",
+    "target": "file:src/lib/supabase.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/abandoned-checkout-followups-t12h/route.ts",
+    "target": "file:src/lib/supabase.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/abandoned-checkout-followups/route.ts",
+    "target": "file:src/lib/supabase.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  },
+  {
+    "source": "file:src/app/api/events/reconcile-registrations/route.ts",
+    "target": "file:src/lib/supabase.ts",
+    "type": "imports",
+    "direction": "forward",
+    "weight": 0.7
+  }
+]

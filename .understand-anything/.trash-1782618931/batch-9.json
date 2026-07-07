@@ -1,0 +1,265 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/app/session/[slug]/bonus/page 2.tsx",
+      "type": "file",
+      "name": "bonus/page 2.tsx",
+      "filePath": "src/app/session/[slug]/bonus/page 2.tsx",
+      "summary": "Duplicate Next.js dynamic route page for a session bonus page. Resolves the slug param, looks up the session, 404s when missing, and renders bonus content. Appears to be a stray copy of bonus/page.tsx.",
+      "tags": ["nextjs", "route", "session", "bonus", "duplicate"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/app/session/[slug]/bonus/page.tsx",
+      "type": "file",
+      "name": "bonus/page.tsx",
+      "filePath": "src/app/session/[slug]/bonus/page.tsx",
+      "summary": "Next.js dynamic route page for a session's bonus content. Pre-generates static params, builds metadata from the session, and renders the bonus view, calling notFound() for unknown slugs.",
+      "tags": ["nextjs", "route", "session", "bonus", "ssg"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/app/session/[slug]/guide-brain/page.tsx",
+      "type": "file",
+      "name": "guide-brain/page.tsx",
+      "filePath": "src/app/session/[slug]/guide-brain/page.tsx",
+      "summary": "Next.js route rendering the Session 4 'Second Brain' workshop guide. Restricted to slug 4, wraps the Session5Guide content with breadcrumb and footer navigation.",
+      "tags": ["nextjs", "route", "session", "guide", "second-brain"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/app/session/[slug]/page.tsx",
+      "type": "file",
+      "name": "session/[slug]/page.tsx",
+      "filePath": "src/app/session/[slug]/page.tsx",
+      "summary": "Main session index/landing page for each workshop session. Renders breadcrumb, header, and a large grid of cards (prep, guide, bonus, hooks) gated by per-session flags and the LOCKS map, with Reveal animations.",
+      "tags": ["nextjs", "route", "session", "landing", "locks"],
+      "complexity": "high"
+    },
+    {
+      "id": "file:src/content/session-1-bonus.tsx",
+      "type": "file",
+      "name": "session-1-bonus.tsx",
+      "filePath": "src/content/session-1-bonus.tsx",
+      "summary": "React content component for the Session 1 bonus material. Composes StepCard and ProTip with local PriceCard and SummaryCard helpers to present pricing, summaries, and step-by-step bonus instructions.",
+      "tags": ["react", "content", "session", "bonus", "ui"],
+      "complexity": "high"
+    },
+    {
+      "id": "file:src/lib/locks.ts",
+      "type": "file",
+      "name": "locks.ts",
+      "filePath": "src/lib/locks.ts",
+      "summary": "Content lock configuration. Exports the LOCKS object whose boolean flags gate visibility of per-session guides, prep, and Hook Writer content across the site.",
+      "tags": ["config", "locks", "content-gating", "session", "flags"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/lib/sessions.ts",
+      "type": "file",
+      "name": "sessions.ts",
+      "filePath": "src/lib/sessions.ts",
+      "summary": "Central session catalog. Defines the Session interface, the ordered sessions data array (10 workshop sessions with titles, descriptions, and capability flags), and the getSession lookup helper.",
+      "tags": ["data", "session", "catalog", "lib", "lookup"],
+      "complexity": "medium"
+    },
+    {
+      "id": "function:src/app/session/[slug]/bonus/page 2.tsx:generateStaticParams",
+      "type": "function",
+      "name": "generateStaticParams",
+      "lineRange": "15-17",
+      "summary": "Returns the static slug params used to pre-render the bonus route at build time.",
+      "tags": ["nextjs", "ssg", "params", "route", "bonus"],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/app/session/[slug]/bonus/page 2.tsx:generateMetadata",
+      "type": "function",
+      "name": "generateMetadata",
+      "lineRange": "19-28",
+      "summary": "Awaits the slug param, looks up the session via getSession, and builds page title/description metadata for the bonus route.",
+      "tags": ["nextjs", "metadata", "seo", "session", "bonus"],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/app/session/[slug]/bonus/page 2.tsx:SessionBonusPage",
+      "type": "function",
+      "name": "SessionBonusPage",
+      "lineRange": "30-65",
+      "summary": "Default page component rendering bonus content for a session; resolves the slug, fetches the session, and calls notFound() when the session is missing.",
+      "tags": ["nextjs", "component", "session", "bonus", "page"],
+      "complexity": "medium"
+    },
+    {
+      "id": "function:src/app/session/[slug]/bonus/page.tsx:generateStaticParams",
+      "type": "function",
+      "name": "generateStaticParams",
+      "lineRange": "15-17",
+      "summary": "Returns the static slug params used to pre-render the bonus route at build time.",
+      "tags": ["nextjs", "ssg", "params", "route", "bonus"],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/app/session/[slug]/bonus/page.tsx:generateMetadata",
+      "type": "function",
+      "name": "generateMetadata",
+      "lineRange": "19-28",
+      "summary": "Awaits the slug param, looks up the session via getSession, and builds page title/description metadata for the bonus route.",
+      "tags": ["nextjs", "metadata", "seo", "session", "bonus"],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/app/session/[slug]/bonus/page.tsx:SessionBonusPage",
+      "type": "function",
+      "name": "SessionBonusPage",
+      "lineRange": "30-65",
+      "summary": "Default page component rendering bonus content for a session; resolves the slug, fetches the session, and calls notFound() when the session is missing.",
+      "tags": ["nextjs", "component", "session", "bonus", "page"],
+      "complexity": "medium"
+    },
+    {
+      "id": "function:src/app/session/[slug]/guide-brain/page.tsx:generateStaticParams",
+      "type": "function",
+      "name": "generateStaticParams",
+      "lineRange": "10-12",
+      "summary": "Returns the static params (slug 4 only) for pre-rendering the Second Brain guide route.",
+      "tags": ["nextjs", "ssg", "params", "route", "guide"],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/app/session/[slug]/guide-brain/page.tsx:generateMetadata",
+      "type": "function",
+      "name": "generateMetadata",
+      "lineRange": "14-22",
+      "summary": "Resolves the slug param and the session, then builds title and description metadata for the Second Brain workshop guide page.",
+      "tags": ["nextjs", "metadata", "seo", "session", "guide"],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/app/session/[slug]/guide-brain/page.tsx:SessionGuideBrainPage",
+      "type": "function",
+      "name": "SessionGuideBrainPage",
+      "lineRange": "24-75",
+      "summary": "Default page component for the Session 4 Second Brain guide; enforces slug 4, 404s otherwise, and renders the Session5Guide content with breadcrumb and footer navigation.",
+      "tags": ["nextjs", "component", "session", "guide", "second-brain"],
+      "complexity": "medium"
+    },
+    {
+      "id": "function:src/app/session/[slug]/page.tsx:generateStaticParams",
+      "type": "function",
+      "name": "generateStaticParams",
+      "lineRange": "11-13",
+      "summary": "Returns slug params 1 through 10 to pre-render all session index pages at build time.",
+      "tags": ["nextjs", "ssg", "params", "route", "session"],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/app/session/[slug]/page.tsx:generateMetadata",
+      "type": "function",
+      "name": "generateMetadata",
+      "lineRange": "15-23",
+      "summary": "Resolves the slug, looks up the session, and builds 'Session N: title' metadata for the session index page.",
+      "tags": ["nextjs", "metadata", "seo", "session", "index"],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/app/session/[slug]/page.tsx:SessionIndexPage",
+      "type": "function",
+      "name": "SessionIndexPage",
+      "lineRange": "25-561",
+      "summary": "Large default session landing component. Resolves the session, 404s when missing, and renders breadcrumb, header, and a conditional grid of prep/guide/bonus/hook cards gated by session flags and the LOCKS map with Reveal animations.",
+      "tags": ["nextjs", "component", "session", "landing", "locks"],
+      "complexity": "high"
+    },
+    {
+      "id": "function:src/content/session-1-bonus.tsx:PriceCard",
+      "type": "function",
+      "name": "PriceCard",
+      "lineRange": "5-23",
+      "summary": "Presentational card showing a title, price, and detail line styled for the bonus pricing section.",
+      "tags": ["react", "component", "ui", "card", "pricing"],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/content/session-1-bonus.tsx:SummaryCard",
+      "type": "function",
+      "name": "SummaryCard",
+      "lineRange": "25-46",
+      "summary": "Presentational summary card rendering a title and body with one of three accent color themes (purple, pink, cream).",
+      "tags": ["react", "component", "ui", "card", "summary"],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/content/session-1-bonus.tsx:Session1Bonus",
+      "type": "function",
+      "name": "Session1Bonus",
+      "lineRange": "48-349",
+      "summary": "Default exported content component for Session 1 bonus material, composing StepCard, ProTip, PriceCard, and SummaryCard into a long instructional bonus layout.",
+      "tags": ["react", "component", "content", "session", "bonus"],
+      "complexity": "high"
+    },
+    {
+      "id": "function:src/lib/sessions.ts:getSession",
+      "type": "function",
+      "name": "getSession",
+      "lineRange": "141-143",
+      "summary": "Lookup helper that returns the Session matching a given slug from the sessions array, or undefined if none matches.",
+      "tags": ["lib", "lookup", "session", "data", "helper"],
+      "complexity": "low"
+    }
+  ],
+  "edges": [
+    {"source": "file:src/app/session/[slug]/bonus/page 2.tsx", "target": "function:src/app/session/[slug]/bonus/page 2.tsx:generateStaticParams", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/app/session/[slug]/bonus/page 2.tsx", "target": "function:src/app/session/[slug]/bonus/page 2.tsx:generateMetadata", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/app/session/[slug]/bonus/page 2.tsx", "target": "function:src/app/session/[slug]/bonus/page 2.tsx:SessionBonusPage", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/app/session/[slug]/bonus/page.tsx", "target": "function:src/app/session/[slug]/bonus/page.tsx:generateStaticParams", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/app/session/[slug]/bonus/page.tsx", "target": "function:src/app/session/[slug]/bonus/page.tsx:generateMetadata", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/app/session/[slug]/bonus/page.tsx", "target": "function:src/app/session/[slug]/bonus/page.tsx:SessionBonusPage", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/app/session/[slug]/guide-brain/page.tsx", "target": "function:src/app/session/[slug]/guide-brain/page.tsx:generateStaticParams", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/app/session/[slug]/guide-brain/page.tsx", "target": "function:src/app/session/[slug]/guide-brain/page.tsx:generateMetadata", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/app/session/[slug]/guide-brain/page.tsx", "target": "function:src/app/session/[slug]/guide-brain/page.tsx:SessionGuideBrainPage", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/app/session/[slug]/page.tsx", "target": "function:src/app/session/[slug]/page.tsx:generateStaticParams", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/app/session/[slug]/page.tsx", "target": "function:src/app/session/[slug]/page.tsx:generateMetadata", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/app/session/[slug]/page.tsx", "target": "function:src/app/session/[slug]/page.tsx:SessionIndexPage", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/content/session-1-bonus.tsx", "target": "function:src/content/session-1-bonus.tsx:PriceCard", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/content/session-1-bonus.tsx", "target": "function:src/content/session-1-bonus.tsx:SummaryCard", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/content/session-1-bonus.tsx", "target": "function:src/content/session-1-bonus.tsx:Session1Bonus", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/lib/sessions.ts", "target": "function:src/lib/sessions.ts:getSession", "type": "contains", "direction": "forward", "weight": 1.0},
+
+    {"source": "file:src/app/session/[slug]/bonus/page 2.tsx", "target": "function:src/app/session/[slug]/bonus/page 2.tsx:generateStaticParams", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/app/session/[slug]/bonus/page 2.tsx", "target": "function:src/app/session/[slug]/bonus/page 2.tsx:generateMetadata", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/app/session/[slug]/bonus/page 2.tsx", "target": "function:src/app/session/[slug]/bonus/page 2.tsx:SessionBonusPage", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/app/session/[slug]/bonus/page.tsx", "target": "function:src/app/session/[slug]/bonus/page.tsx:generateStaticParams", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/app/session/[slug]/bonus/page.tsx", "target": "function:src/app/session/[slug]/bonus/page.tsx:generateMetadata", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/app/session/[slug]/bonus/page.tsx", "target": "function:src/app/session/[slug]/bonus/page.tsx:SessionBonusPage", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/app/session/[slug]/guide-brain/page.tsx", "target": "function:src/app/session/[slug]/guide-brain/page.tsx:generateStaticParams", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/app/session/[slug]/guide-brain/page.tsx", "target": "function:src/app/session/[slug]/guide-brain/page.tsx:generateMetadata", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/app/session/[slug]/guide-brain/page.tsx", "target": "function:src/app/session/[slug]/guide-brain/page.tsx:SessionGuideBrainPage", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/app/session/[slug]/page.tsx", "target": "function:src/app/session/[slug]/page.tsx:generateStaticParams", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/app/session/[slug]/page.tsx", "target": "function:src/app/session/[slug]/page.tsx:generateMetadata", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/app/session/[slug]/page.tsx", "target": "function:src/app/session/[slug]/page.tsx:SessionIndexPage", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/content/session-1-bonus.tsx", "target": "function:src/content/session-1-bonus.tsx:Session1Bonus", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/lib/sessions.ts", "target": "function:src/lib/sessions.ts:getSession", "type": "exports", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:src/app/session/[slug]/bonus/page 2.tsx", "target": "file:src/content/session-1-bonus.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/app/session/[slug]/bonus/page 2.tsx", "target": "file:src/lib/sessions.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/app/session/[slug]/bonus/page.tsx", "target": "file:src/content/session-1-bonus.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/app/session/[slug]/bonus/page.tsx", "target": "file:src/lib/sessions.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/app/session/[slug]/guide-brain/page.tsx", "target": "file:src/content/session-5-guide.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/app/session/[slug]/guide-brain/page.tsx", "target": "file:src/lib/sessions.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/app/session/[slug]/page.tsx", "target": "file:src/components/Reveal.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/app/session/[slug]/page.tsx", "target": "file:src/lib/locks.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/app/session/[slug]/page.tsx", "target": "file:src/lib/sessions.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/content/session-1-bonus.tsx", "target": "file:src/components/ProTip.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/content/session-1-bonus.tsx", "target": "file:src/components/StepCard.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "function:src/app/session/[slug]/bonus/page 2.tsx:generateMetadata", "target": "function:src/lib/sessions.ts:getSession", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:src/app/session/[slug]/bonus/page 2.tsx:SessionBonusPage", "target": "function:src/lib/sessions.ts:getSession", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:src/app/session/[slug]/bonus/page.tsx:generateMetadata", "target": "function:src/lib/sessions.ts:getSession", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:src/app/session/[slug]/bonus/page.tsx:SessionBonusPage", "target": "function:src/lib/sessions.ts:getSession", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:src/app/session/[slug]/guide-brain/page.tsx:generateMetadata", "target": "function:src/lib/sessions.ts:getSession", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:src/app/session/[slug]/guide-brain/page.tsx:SessionGuideBrainPage", "target": "function:src/lib/sessions.ts:getSession", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:src/app/session/[slug]/page.tsx:generateMetadata", "target": "function:src/lib/sessions.ts:getSession", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:src/app/session/[slug]/page.tsx:SessionIndexPage", "target": "function:src/lib/sessions.ts:getSession", "type": "calls", "direction": "forward", "weight": 0.8}
+  ]
+}

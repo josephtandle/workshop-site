@@ -1,0 +1,1044 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 20,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/app/bonus-workshops/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 51,
+      "nonEmptyLines": 47,
+      "functions": [
+        {
+          "name": "BonusWorkshopsPage",
+          "startLine": 8,
+          "endLine": 51,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "metadata",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "BonusWorkshopsPage",
+          "line": 8,
+          "isDefault": true
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/events/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 57,
+      "functions": [
+        {
+          "name": "EventsIndexPage",
+          "startLine": 10,
+          "endLine": 61,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "metadata",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "EventsIndexPage",
+          "line": 10,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "EventsIndexPage",
+          "callee": "getLiveEvents",
+          "lineNumber": 11
+        },
+        {
+          "caller": "EventsIndexPage",
+          "callee": "events.map",
+          "lineNumber": 37
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/giveaways/client-launch-checklist/LeadMagnetExampleForm.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 113,
+      "nonEmptyLines": 99,
+      "functions": [
+        {
+          "name": "LeadMagnetExampleForm",
+          "startLine": 7,
+          "endLine": 113,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "LeadMagnetExampleForm",
+          "line": 7,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "LeadMagnetExampleForm",
+          "callee": "useState",
+          "lineNumber": 8
+        },
+        {
+          "caller": "LeadMagnetExampleForm",
+          "callee": "useState",
+          "lineNumber": 9
+        },
+        {
+          "caller": "LeadMagnetExampleForm",
+          "callee": "useState",
+          "lineNumber": 10
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "event.preventDefault",
+          "lineNumber": 13
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "firstName.trim",
+          "lineNumber": 15
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "email.trim",
+          "lineNumber": 15
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setStatus",
+          "lineNumber": 16
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setStatus",
+          "lineNumber": 20
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "fetch",
+          "lineNumber": 23
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "JSON.stringify",
+          "lineNumber": 26
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "firstName.trim",
+          "lineNumber": 27
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "email.trim",
+          "lineNumber": 28
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setStatus",
+          "lineNumber": 38
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setStatus",
+          "lineNumber": 40
+        },
+        {
+          "caller": "LeadMagnetExampleForm",
+          "callee": "setFirstName",
+          "lineNumber": 70
+        },
+        {
+          "caller": "LeadMagnetExampleForm",
+          "callee": "setEmail",
+          "lineNumber": 83
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/giveaways/client-launch-checklist/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 176,
+      "nonEmptyLines": 163,
+      "functions": [
+        {
+          "name": "ClientLaunchChecklistPage",
+          "startLine": 39,
+          "endLine": 176,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "metadata",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "ClientLaunchChecklistPage",
+          "line": 39,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ClientLaunchChecklistPage",
+          "callee": "[\n                  ['14', 'launch checks'],\n                  ['30 min', 'to review'],\n                  ['1 page', 'printable PDF'],\n                ].map",
+          "lineNumber": 78
+        },
+        {
+          "caller": "ClientLaunchChecklistPage",
+          "callee": "CHECKLIST_ITEMS.map",
+          "lineNumber": 126
+        },
+        {
+          "caller": "ClientLaunchChecklistPage",
+          "callee": "USE_CASES.map",
+          "lineNumber": 141
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/giveaways/cult-brand-playbook/GiveawayForm.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 66,
+      "nonEmptyLines": 61,
+      "functions": [
+        {
+          "name": "GiveawayForm",
+          "startLine": 6,
+          "endLine": 66,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "GiveawayForm",
+          "line": 6,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "GiveawayForm",
+          "callee": "useState",
+          "lineNumber": 7
+        },
+        {
+          "caller": "GiveawayForm",
+          "callee": "useState",
+          "lineNumber": 8
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "e.preventDefault",
+          "lineNumber": 11
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "email.trim",
+          "lineNumber": 12
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setStatus",
+          "lineNumber": 13
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "fetch",
+          "lineNumber": 15
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "JSON.stringify",
+          "lineNumber": 18
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "email.trim",
+          "lineNumber": 18
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setStatus",
+          "lineNumber": 21
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setStatus",
+          "lineNumber": 23
+        },
+        {
+          "caller": "GiveawayForm",
+          "callee": "setEmail",
+          "lineNumber": 47
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/giveaways/cult-brand-playbook/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 234,
+      "nonEmptyLines": 218,
+      "functions": [
+        {
+          "name": "CultBrandPlaybookPage",
+          "startLine": 73,
+          "endLine": 234,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "metadata",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "CultBrandPlaybookPage",
+          "line": 73,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "CultBrandPlaybookPage",
+          "callee": "BRANDS.map",
+          "lineNumber": 120
+        },
+        {
+          "caller": "CultBrandPlaybookPage",
+          "callee": "ELEMENTS.map",
+          "lineNumber": 158
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/giveaways/maccleaner/GiveawayForm.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 78,
+      "nonEmptyLines": 72,
+      "functions": [
+        {
+          "name": "GiveawayForm",
+          "startLine": 8,
+          "endLine": 78,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "GiveawayForm",
+          "line": 8,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "GiveawayForm",
+          "callee": "useState",
+          "lineNumber": 9
+        },
+        {
+          "caller": "GiveawayForm",
+          "callee": "useState",
+          "lineNumber": 10
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "e.preventDefault",
+          "lineNumber": 13
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "email.trim",
+          "lineNumber": 14
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setStatus",
+          "lineNumber": 15
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "fetch",
+          "lineNumber": 17
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "JSON.stringify",
+          "lineNumber": 20
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "email.trim",
+          "lineNumber": 20
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setStatus",
+          "lineNumber": 23
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setStatus",
+          "lineNumber": 25
+        },
+        {
+          "caller": "GiveawayForm",
+          "callee": "setEmail",
+          "lineNumber": 59
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/giveaways/maccleaner/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 187,
+      "nonEmptyLines": 173,
+      "functions": [
+        {
+          "name": "MacCleanerPage",
+          "startLine": 58,
+          "endLine": 187,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "metadata",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "MacCleanerPage",
+          "line": 58,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "MacCleanerPage",
+          "callee": "CLEANUP_AREAS.map",
+          "lineNumber": 94
+        },
+        {
+          "caller": "MacCleanerPage",
+          "callee": "SAFETY_RULES.map",
+          "lineNumber": 123
+        },
+        {
+          "caller": "MacCleanerPage",
+          "callee": "STEPS.map",
+          "lineNumber": 151
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/giveaways/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 109,
+      "nonEmptyLines": 102,
+      "functions": [
+        {
+          "name": "GiveawaysIndexPage",
+          "startLine": 25,
+          "endLine": 109,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "metadata",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "GiveawaysIndexPage",
+          "line": 25,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "GiveawaysIndexPage",
+          "callee": "giveaways.map",
+          "lineNumber": 58
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 52,
+      "functions": [
+        {
+          "name": "HomePage",
+          "startLine": 12,
+          "endLine": 57,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "metadata",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "HomePage",
+          "line": 12,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "HomePage",
+          "callee": "[...sessions].sort",
+          "lineNumber": 13
+        },
+        {
+          "caller": "HomePage",
+          "callee": "sorted.map",
+          "lineNumber": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/resource-vault/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 384,
+      "nonEmptyLines": 376,
+      "functions": [
+        {
+          "name": "ResourceVaultPage",
+          "startLine": 8,
+          "endLine": 384,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "metadata",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "ResourceVaultPage",
+          "line": 8,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ResourceVaultPage",
+          "callee": "[\n                  {\n                    icon: '◈',\n                    title: 'Pitch Decks',\n                    desc: 'Real decks I have used or reviewed. Look them over, borrow the structure, adapt the framing.',\n                    variant: 'purple' as const,\n                  },\n                  {\n                    icon: '⬡',\n                    title: 'Financial Models',\n                    desc: 'Potential models and frameworks for thinking about revenue, costs, and growth projections.',\n                    variant: 'pink' as const,\n                  },\n                  {\n                    icon: '✦',\n                    title: 'Training Guides',\n                    desc: 'Step-by-step guides on topics I have built playbooks for over the years.',\n                    variant: 'purple' as const,\n                  },\n                ].map",
+          "lineNumber": 326
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/session/4/wrapup/page 2.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 241,
+      "nonEmptyLines": 222,
+      "functions": [
+        {
+          "name": "Session4WrapUp",
+          "startLine": 87,
+          "endLine": 241,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "metadata",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "Session4WrapUp",
+          "line": 87,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Session4WrapUp",
+          "callee": "takeaways.map",
+          "lineNumber": 139
+        },
+        {
+          "caller": "Session4WrapUp",
+          "callee": "improvements.map",
+          "lineNumber": 197
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/session/4/wrapup/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 241,
+      "nonEmptyLines": 222,
+      "functions": [
+        {
+          "name": "Session4WrapUp",
+          "startLine": 87,
+          "endLine": 241,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "metadata",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "Session4WrapUp",
+          "line": 87,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Session4WrapUp",
+          "callee": "takeaways.map",
+          "lineNumber": 139
+        },
+        {
+          "caller": "Session4WrapUp",
+          "callee": "improvements.map",
+          "lineNumber": 197
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/session/5/wrapup/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 241,
+      "nonEmptyLines": 222,
+      "functions": [
+        {
+          "name": "Session5WrapUp",
+          "startLine": 87,
+          "endLine": 241,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "metadata",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "Session5WrapUp",
+          "line": 87,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Session5WrapUp",
+          "callee": "takeaways.map",
+          "lineNumber": 139
+        },
+        {
+          "caller": "Session5WrapUp",
+          "callee": "improvements.map",
+          "lineNumber": 197
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/ParticipantCarousel.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 166,
+      "nonEmptyLines": 149,
+      "functions": [
+        {
+          "name": "Avatar",
+          "startLine": 13,
+          "endLine": 32,
+          "params": [
+            "{ photo, name }"
+          ]
+        },
+        {
+          "name": "ParticipantCarousel",
+          "startLine": 34,
+          "endLine": 166,
+          "params": [
+            "{ participants }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ParticipantCarousel",
+          "line": 34,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ParticipantCarousel",
+          "callee": "participants.map",
+          "lineNumber": 81
+        },
+        {
+          "caller": "ParticipantCarousel",
+          "callee": "p.name.split",
+          "lineNumber": 89
+        },
+        {
+          "caller": "ParticipantCarousel",
+          "callee": "participants.map",
+          "lineNumber": 110
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/Reveal.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 35,
+      "functions": [
+        {
+          "name": "Reveal",
+          "startLine": 13,
+          "endLine": 40,
+          "params": [
+            "{\n  children,\n  delay = 0,\n  className = '',\n  direction = 'up',\n}"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Reveal",
+          "line": 13,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Reveal",
+          "callee": "useRef",
+          "lineNumber": 19
+        },
+        {
+          "caller": "Reveal",
+          "callee": "useInView",
+          "lineNumber": 20
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/SessionCard.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 110,
+      "nonEmptyLines": 103,
+      "functions": [
+        {
+          "name": "SessionCard",
+          "startLine": 15,
+          "endLine": 110,
+          "params": [
+            "{\n  slug,\n  number,\n  title,\n  description,\n  hasGuide,\n  hasPrep,\n  hasBonus,\n  hasWrapup,\n}"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SessionCard",
+          "line": 15,
+          "isDefault": true
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/StaggerList.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 43,
+      "functions": [
+        {
+          "name": "StaggerList",
+          "startLine": 12,
+          "endLine": 30,
+          "params": [
+            "{ children, className = '', staggerDelay = 0.07 }"
+          ]
+        },
+        {
+          "name": "StaggerItem",
+          "startLine": 32,
+          "endLine": 48,
+          "params": [
+            "{ children, className = '' }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "StaggerList",
+          "line": 12,
+          "isDefault": true
+        },
+        {
+          "name": "StaggerItem",
+          "line": 32,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "StaggerList",
+          "callee": "useRef",
+          "lineNumber": 13
+        },
+        {
+          "caller": "StaggerList",
+          "callee": "useInView",
+          "lineNumber": 14
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/TabNav.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 44,
+      "functions": [
+        {
+          "name": "TabNav",
+          "startLine": 12,
+          "endLine": 49,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TabNav",
+          "line": 12,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "TabNav",
+          "callee": "usePathname",
+          "lineNumber": 13
+        },
+        {
+          "caller": "active",
+          "callee": "pathname.startsWith",
+          "lineNumber": 16
+        },
+        {
+          "caller": "TabNav",
+          "callee": "TABS.map",
+          "lineNumber": 21
+        },
+        {
+          "caller": "TabNav",
+          "callee": "active",
+          "lineNumber": 22
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/lib/giveaways.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 196,
+      "nonEmptyLines": 194,
+      "functions": [
+        {
+          "name": "getGiveaway",
+          "startLine": 194,
+          "endLine": 196,
+          "params": [
+            "slug"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "giveaways",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "getGiveaway",
+          "line": 194,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getGiveaway",
+          "callee": "giveaways.find",
+          "lineNumber": 195
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

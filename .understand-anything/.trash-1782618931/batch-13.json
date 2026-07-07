@@ -1,0 +1,59 @@
+{
+  "nodes": [
+    {
+      "id": "file:public/2x-with-ai-playbook.html",
+      "type": "file",
+      "name": "2x-with-ai-playbook.html",
+      "filePath": "public/2x-with-ai-playbook.html",
+      "summary": "Static HTML workshop deck titled '2X with AI Playbook' for Masterminds HQ, teaching how to double a business through sharper messaging, the right systems, and compounding AI leverage. Large self-contained slide/marketing page with embedded styling.",
+      "tags": ["html", "marketing", "workshop", "playbook", "static-page"],
+      "complexity": "medium"
+    },
+    {
+      "id": "file:public/ai-os-architecture.html",
+      "type": "file",
+      "name": "ai-os-architecture.html",
+      "filePath": "public/ai-os-architecture.html",
+      "summary": "Static HTML page 'AI Operating System Architecture' for Mastermind HQ, presenting the structure and components of an AI operating system as a visual reference page (embedded full-screen by the ai-os-architecture Next.js route).",
+      "tags": ["html", "architecture", "ai-os", "reference", "static-page"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:public/automation-audit-sample.html",
+      "type": "file",
+      "name": "automation-audit-sample.html",
+      "filePath": "public/automation-audit-sample.html",
+      "summary": "Static HTML sample automation-audit deliverable showcasing example systems and automations, closing with a CTA inviting prospects to have the systems built for them rather than only being told what to build.",
+      "tags": ["html", "automation", "audit", "lead-gen", "static-page"],
+      "complexity": "medium"
+    },
+    {
+      "id": "file:public/coach-kit-onboarding-matrix.html",
+      "type": "file",
+      "name": "coach-kit-onboarding-matrix.html",
+      "filePath": "public/coach-kit-onboarding-matrix.html",
+      "summary": "Static HTML 'Coach Kit Onboarding Matrix' for Studio Solay, a large onboarding/matrix reference page laying out coaching kit onboarding steps and resources.",
+      "tags": ["html", "onboarding", "coach-kit", "matrix", "static-page"],
+      "complexity": "medium"
+    },
+    {
+      "id": "file:public/lead-magnet.html",
+      "type": "file",
+      "name": "lead-magnet.html",
+      "filePath": "public/lead-magnet.html",
+      "summary": "Static HTML lead magnet landing page 'Free Workshop Guide — Build Your First Website with AI' for Masterminds HQ, designed to capture leads with a free guide offer for building a first website using AI.",
+      "tags": ["html", "lead-magnet", "landing-page", "marketing", "static-page"],
+      "complexity": "medium"
+    },
+    {
+      "id": "document:public/llms.txt",
+      "type": "document",
+      "name": "llms.txt",
+      "filePath": "public/llms.txt",
+      "summary": "LLM-facing site index (llms.txt) for the Business Automation Mastermind workshop site, listing sessions with their guide/prep/bonus links, free giveaways (Speak Human, Ray Dalio Council, Cross CLI Routing, Ultimate CLAUDE.md, Web Designer Agent Kit, MacCleaner, etc.), and about/homepage/sitemap metadata.",
+      "tags": ["llms-txt", "documentation", "site-index", "seo", "geo"],
+      "complexity": "low"
+    }
+  ],
+  "edges": []
+}

@@ -1,0 +1,402 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 7,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/app/session/[slug]/bonus/page 2.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 65,
+      "nonEmptyLines": 56,
+      "functions": [
+        {
+          "name": "generateStaticParams",
+          "startLine": 15,
+          "endLine": 17,
+          "params": []
+        },
+        {
+          "name": "generateMetadata",
+          "startLine": 19,
+          "endLine": 28,
+          "params": [
+            "{ params }"
+          ]
+        },
+        {
+          "name": "SessionBonusPage",
+          "startLine": 30,
+          "endLine": 65,
+          "params": [
+            "{ params }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "generateStaticParams",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "generateMetadata",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "SessionBonusPage",
+          "line": 30,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "generateMetadata",
+          "callee": "getSession",
+          "lineNumber": 21
+        },
+        {
+          "caller": "SessionBonusPage",
+          "callee": "getSession",
+          "lineNumber": 32
+        },
+        {
+          "caller": "SessionBonusPage",
+          "callee": "notFound",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/session/[slug]/bonus/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 65,
+      "nonEmptyLines": 56,
+      "functions": [
+        {
+          "name": "generateStaticParams",
+          "startLine": 15,
+          "endLine": 17,
+          "params": []
+        },
+        {
+          "name": "generateMetadata",
+          "startLine": 19,
+          "endLine": 28,
+          "params": [
+            "{ params }"
+          ]
+        },
+        {
+          "name": "SessionBonusPage",
+          "startLine": 30,
+          "endLine": 65,
+          "params": [
+            "{ params }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "generateStaticParams",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "generateMetadata",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "SessionBonusPage",
+          "line": 30,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "generateMetadata",
+          "callee": "getSession",
+          "lineNumber": 21
+        },
+        {
+          "caller": "SessionBonusPage",
+          "callee": "getSession",
+          "lineNumber": 32
+        },
+        {
+          "caller": "SessionBonusPage",
+          "callee": "notFound",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/session/[slug]/guide-brain/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 75,
+      "nonEmptyLines": 68,
+      "functions": [
+        {
+          "name": "generateStaticParams",
+          "startLine": 10,
+          "endLine": 12,
+          "params": []
+        },
+        {
+          "name": "generateMetadata",
+          "startLine": 14,
+          "endLine": 22,
+          "params": [
+            "{ params }"
+          ]
+        },
+        {
+          "name": "SessionGuideBrainPage",
+          "startLine": 24,
+          "endLine": 75,
+          "params": [
+            "{ params }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "generateStaticParams",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "generateMetadata",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "SessionGuideBrainPage",
+          "line": 24,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "generateMetadata",
+          "callee": "getSession",
+          "lineNumber": 16
+        },
+        {
+          "caller": "SessionGuideBrainPage",
+          "callee": "notFound",
+          "lineNumber": 26
+        },
+        {
+          "caller": "SessionGuideBrainPage",
+          "callee": "getSession",
+          "lineNumber": 27
+        },
+        {
+          "caller": "SessionGuideBrainPage",
+          "callee": "notFound",
+          "lineNumber": 28
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/session/[slug]/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 561,
+      "nonEmptyLines": 544,
+      "functions": [
+        {
+          "name": "generateStaticParams",
+          "startLine": 11,
+          "endLine": 13,
+          "params": []
+        },
+        {
+          "name": "generateMetadata",
+          "startLine": 15,
+          "endLine": 23,
+          "params": [
+            "{ params }"
+          ]
+        },
+        {
+          "name": "SessionIndexPage",
+          "startLine": 25,
+          "endLine": 561,
+          "params": [
+            "{ params }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "generateStaticParams",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "generateMetadata",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "SessionIndexPage",
+          "line": 25,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "generateMetadata",
+          "callee": "getSession",
+          "lineNumber": 17
+        },
+        {
+          "caller": "SessionIndexPage",
+          "callee": "getSession",
+          "lineNumber": 27
+        },
+        {
+          "caller": "SessionIndexPage",
+          "callee": "notFound",
+          "lineNumber": 28
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/content/session-1-bonus.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 349,
+      "nonEmptyLines": 327,
+      "functions": [
+        {
+          "name": "PriceCard",
+          "startLine": 5,
+          "endLine": 23,
+          "params": [
+            "{\n  title,\n  price,\n  detail,\n}"
+          ]
+        },
+        {
+          "name": "SummaryCard",
+          "startLine": 25,
+          "endLine": 46,
+          "params": [
+            "{\n  title,\n  body,\n  accent,\n}"
+          ]
+        },
+        {
+          "name": "Session1Bonus",
+          "startLine": 48,
+          "endLine": 349,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Session1Bonus",
+          "line": 48,
+          "isDefault": true
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/lib/locks.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 19,
+      "exports": [
+        {
+          "name": "LOCKS",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/lib/sessions.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 143,
+      "nonEmptyLines": 141,
+      "functions": [
+        {
+          "name": "getSession",
+          "startLine": 141,
+          "endLine": 143,
+          "params": [
+            "slug"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "sessions",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "getSession",
+          "line": 141,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getSession",
+          "callee": "sessions.find",
+          "lineNumber": 142
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

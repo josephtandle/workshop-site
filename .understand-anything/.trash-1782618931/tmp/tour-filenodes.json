@@ -1,0 +1,1815 @@
+[
+  {
+    "id": "file:src/app/giveaways/agent-infrastructure/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/giveaways/agent-infrastructure/page.tsx",
+    "summary": "Giveaway landing page promoting agent infrastructure, with an animated particle canvas hero, magnetic hover effects, and an auto-opening email capture modal.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/all-sorted-overview/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/giveaways/all-sorted-overview/page.tsx",
+    "summary": "Giveaway landing page for the All Sorted overview offer with magnetic hover, email modal, reactions section, and a Mastermind CTA.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/anthropic-safety-checklist/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/giveaways/anthropic-safety-checklist/page.tsx",
+    "summary": "Large giveaway page presenting an Anthropic safety checklist with copyable prompts, inline copy buttons, and email gating.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/benchmark/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/giveaways/benchmark/page.tsx",
+    "summary": "Giveaway page presenting a benchmark comparison with reveal animations, pro tips, and an auto-opening email modal.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/claude-md/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/giveaways/claude-md/page.tsx",
+    "summary": "Giveaway page distributing a CLAUDE.md template with file action buttons, inline copy, email modal, and reactions section.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/compare/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/giveaways/compare/page.tsx",
+    "summary": "Giveaway comparison page rendering a feature comparison table with cell content helpers, magnetic hover, and CTA.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/cross-cli-compatibility-routing/content.ts",
+    "name": "content.ts",
+    "filePath": "src/app/giveaways/cross-cli-compatibility-routing/content.ts",
+    "summary": "Content data module exporting copy strings, flow steps, lane cards, and prompts for the cross-CLI compatibility routing giveaway page.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/cross-cli-compatibility-routing/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/giveaways/cross-cli-compatibility-routing/page.tsx",
+    "summary": "Giveaway page for cross-CLI compatibility routing, composing content data with code blocks, prompt/download buttons, reveals, and email gating.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/geometry-dash-fun-build/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/giveaways/geometry-dash-fun-build/page.tsx",
+    "summary": "Giveaway page for a Geometry Dash style fun build with copyable game code, inline copy buttons, email modal, and reactions.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/guardog/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/giveaways/guardog/page.tsx",
+    "summary": "Large giveaway page for the Guardog tool with setup copy buttons, inline copy, email gating, and reactions section.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/hooklab/content.ts",
+    "name": "content.ts",
+    "filePath": "src/app/giveaways/hooklab/content.ts",
+    "summary": "Content data module exporting the HookLab install prompt string used by the HookLab giveaway page.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/hooklab/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/giveaways/hooklab/page.tsx",
+    "summary": "Giveaway page for HookLab composing install prompt content with copy buttons, email modal, and reactions section.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/ig-settings/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/giveaways/ig-settings/page.tsx",
+    "summary": "Giveaway page showing recommended Instagram settings via phone mockups and screenshot cards, with auto email modal.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/intuition-quiz/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/giveaways/intuition-quiz/page.tsx",
+    "summary": "Interactive giveaway quiz page scoring intuition with start/next buttons, level computation, magnetic hover, and CTA.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/layout.tsx",
+    "name": "layout.tsx",
+    "filePath": "src/app/giveaways/layout.tsx",
+    "summary": "Next.js layout for the giveaways route segment, exposing metadata and wrapping children with the copy-email gate.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/lead-magnet/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/giveaways/lead-magnet/page.tsx",
+    "summary": "Lead-magnet giveaway page with an auto-opening email capture modal and supporting marketing copy.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/logo-maker-guide/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/giveaways/logo-maker-guide/page.tsx",
+    "summary": "Giveaway page presenting a logo-maker guide with magnetic hover, auto email modal, reactions, and Mastermind CTA.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/ray-dalio-council/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/giveaways/ray-dalio-council/page.tsx",
+    "summary": "Giveaway page for the Ray Dalio Council tool with install copy buttons, inline copy, email gating, and reactions.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/speak-human/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/giveaways/speak-human/page.tsx",
+    "summary": "Giveaway page for the Speak Human skill with install copy buttons, inline copy, email gating, and reactions section.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/squarespace-escape/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/giveaways/squarespace-escape/page.tsx",
+    "summary": "Giveaway page for escaping Squarespace with a big copy button, code blocks, and email modal gating.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/viral-hooks/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/giveaways/viral-hooks/page.tsx",
+    "summary": "Giveaway page showcasing viral hook examples with animated count-up numbers, video cards, magnetic hover, and CTA.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/web-design-arsenal/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/giveaways/web-design-arsenal/page.tsx",
+    "summary": "Large giveaway page for a web design arsenal with copyable prompts, inline copy buttons, email gating, and magnetic hover.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/5/hook-writer/page 2.tsx",
+    "name": "page 2.tsx",
+    "filePath": "src/app/session/5/hook-writer/page 2.tsx",
+    "summary": "Session 5 hook-writer tool page building participant hook copy from form fields, with name cards and copy export (duplicate of session 6).",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/6/hook-writer/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/session/6/hook-writer/page.tsx",
+    "summary": "Session 6 hook-writer tool page building participant hook copy from form fields, with name cards and copy export.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/components/giveaways/GiveawayAutoModal.tsx",
+    "name": "GiveawayAutoModal.tsx",
+    "filePath": "src/components/giveaways/GiveawayAutoModal.tsx",
+    "summary": "Wrapper component that auto-opens the giveaway email modal on mount for pages that need passive lead capture.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/components/giveaways/GiveawayCopyEmailGate.tsx",
+    "name": "GiveawayCopyEmailGate.tsx",
+    "filePath": "src/components/giveaways/GiveawayCopyEmailGate.tsx",
+    "summary": "Copy-gate component that requires an email before allowing copy actions on giveaway pages, deriving the giveaway slug from the route.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/components/giveaways/GiveawayEmailModal.tsx",
+    "name": "GiveawayEmailModal.tsx",
+    "filePath": "src/components/giveaways/GiveawayEmailModal.tsx",
+    "summary": "Reusable email capture modal for giveaways, collecting and submitting visitor email for lead generation.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/components/sections/MastermindReactionsSection.tsx",
+    "name": "MastermindReactionsSection.tsx",
+    "filePath": "src/components/sections/MastermindReactionsSection.tsx",
+    "summary": "Marketing section displaying Mastermind participant reactions with reveal-on-scroll animation.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/lib/copyWithConfetti.ts",
+    "name": "copyWithConfetti.ts",
+    "filePath": "src/lib/copyWithConfetti.ts",
+    "summary": "Utility that copies text to the clipboard and dispatches a success event to trigger confetti feedback, with an origin helper.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/lib/abandoned-checkout-followups.ts",
+    "name": "abandoned-checkout-followups.ts",
+    "filePath": "src/lib/abandoned-checkout-followups.ts",
+    "summary": "Core library for abandoned-checkout follow-up automation: eligibility, candidate evaluation, idempotent claim/send, and Resend email delivery.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/lib/event-checkout.ts",
+    "name": "event-checkout.ts",
+    "filePath": "src/lib/event-checkout.ts",
+    "summary": "Helpers to resolve checkout mode and amount and to build Stripe checkout session params for events.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/lib/event-confirmation-email.ts",
+    "name": "event-confirmation-email.ts",
+    "filePath": "src/lib/event-confirmation-email.ts",
+    "summary": "Library building and sending event confirmation, setup, location-reminder, and waitlist emails via Resend with iCal and Google Calendar links.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/join/route.ts",
+    "name": "waitlist/join/route.ts",
+    "filePath": "src/app/api/events/waitlist/join/route.ts",
+    "summary": "POST route adding a user to an event waitlist with validation and a confirmation email.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/notify/route.ts",
+    "name": "waitlist/notify/route.ts",
+    "filePath": "src/app/api/events/waitlist/notify/route.ts",
+    "summary": "Cron GET route notifying waitlisted users when event spots open, using window locks and idempotency.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/remove/route.ts",
+    "name": "waitlist/remove/route.ts",
+    "filePath": "src/app/api/events/waitlist/remove/route.ts",
+    "summary": "GET route removing a user from a waitlist via a tokenized link.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/api/lead-magnet/route.ts",
+    "name": "lead-magnet/route.ts",
+    "filePath": "src/app/api/lead-magnet/route.ts",
+    "summary": "POST route capturing lead emails, sending a lead-magnet email via Resend, and ingesting into the CRM.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/api/lead-magnets/claudemd/route.ts",
+    "name": "lead-magnets/claudemd/route.ts",
+    "filePath": "src/app/api/lead-magnets/claudemd/route.ts",
+    "summary": "POST route delivering the CLAUDE.md giveaway file via a Resend email with CRM ingest.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/api/lead-magnets/passive-income-100/route.ts",
+    "name": "lead-magnets/passive-income-100/route.ts",
+    "filePath": "src/app/api/lead-magnets/passive-income-100/route.ts",
+    "summary": "POST route for the 100 AI Agent Incomes prelaunch lead magnet via Resend and CRM.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/api/stripe/webhook/route.ts",
+    "name": "stripe/webhook/route.ts",
+    "filePath": "src/app/api/stripe/webhook/route.ts",
+    "summary": "POST route verifying Stripe webhook signatures and finalizing legacy checkout registrations.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/events/[slug]/page.tsx",
+    "name": "events/[slug]/page.tsx",
+    "filePath": "src/app/events/[slug]/page.tsx",
+    "summary": "Event detail page server component with dynamic SEO metadata and Stripe checkout context.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/events/[slug]/setup/page.tsx",
+    "name": "events/[slug]/setup/page.tsx",
+    "filePath": "src/app/events/[slug]/setup/page.tsx",
+    "summary": "Post-purchase setup page server component rendering event setup instructions.",
+    "type": "file"
+  },
+  {
+    "id": "file:scripts/abandoned-checkout-run.ts",
+    "name": "abandoned-checkout-run.ts",
+    "filePath": "scripts/abandoned-checkout-run.ts",
+    "summary": "CLI script to preview or live-run abandoned-checkout follow-up emails for events.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/api/events/abandoned-checkout-followups-t12h/route.ts",
+    "name": "abandoned-checkout-followups-t12h/route.ts",
+    "filePath": "src/app/api/events/abandoned-checkout-followups-t12h/route.ts",
+    "summary": "Cron GET route that runs the T-12h abandoned-checkout follow-up workflow with per-event window locking.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/api/events/abandoned-checkout-followups/route.ts",
+    "name": "abandoned-checkout-followups/route.ts",
+    "filePath": "src/app/api/events/abandoned-checkout-followups/route.ts",
+    "summary": "Cron GET route running the day-1 abandoned-checkout follow-up workflow with per-event window locking.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/api/events/cancel/route.ts",
+    "name": "cancel/route.ts",
+    "filePath": "src/app/api/events/cancel/route.ts",
+    "summary": "GET route handling registration cancellation links and notifying the waitlist when a spot opens.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/api/events/checkout-session/route.ts",
+    "name": "checkout-session/route.ts",
+    "filePath": "src/app/api/events/checkout-session/route.ts",
+    "summary": "POST route creating Stripe checkout sessions for event registration with validation, rate limiting, and confirmation emails.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/api/events/finalize-registration/route.ts",
+    "name": "finalize-registration/route.ts",
+    "filePath": "src/app/api/events/finalize-registration/route.ts",
+    "summary": "POST route finalizing a legacy Stripe checkout session into a confirmed registration.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/api/events/location-reminders/route.ts",
+    "name": "location-reminders/route.ts",
+    "filePath": "src/app/api/events/location-reminders/route.ts",
+    "summary": "Cron GET route sending exact-location reminder emails to paid attendees before events.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/api/events/reconcile-registrations/route.ts",
+    "name": "reconcile-registrations/route.ts",
+    "filePath": "src/app/api/events/reconcile-registrations/route.ts",
+    "summary": "Cron GET route reconciling Stripe checkout sessions against stored registrations to repair drift.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/api/events/validate-promo/route.ts",
+    "name": "validate-promo/route.ts",
+    "filePath": "src/app/api/events/validate-promo/route.ts",
+    "summary": "POST route validating a promo code against an event and returning discounted pricing.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/bonus/auto-lead-magnet/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/bonus/auto-lead-magnet/page.tsx",
+    "summary": "Bonus workshop page presenting a step-by-step guide for building an automated lead magnet, rendering inline code snippets via the CodeBlock component.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/resource-vault/automated-ghost-computer-use/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/resource-vault/automated-ghost-computer-use/page.tsx",
+    "summary": "Resource vault guide page walking through automated 'ghost' computer-use browser automation, with step cards, pro tips, and code blocks.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/resource-vault/connecting-to-google-sheets/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/resource-vault/connecting-to-google-sheets/page.tsx",
+    "summary": "Long resource vault tutorial for connecting an agent or app to Google Sheets, built from step cards, pro tips, and code examples.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/resource-vault/connecting-to-xero/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/resource-vault/connecting-to-xero/page.tsx",
+    "summary": "Resource vault tutorial for connecting to the Xero accounting API, using step cards, screenshots, pro tips, and code blocks.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/resource-vault/eric-investor-pipeline/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/resource-vault/eric-investor-pipeline/page.tsx",
+    "summary": "Resource vault case-study page documenting Eric's automated investor pipeline build, with step cards, pro tips, and code snippets.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/resource-vault/how-to-stand-out-in-the-age-of-ai/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/resource-vault/how-to-stand-out-in-the-age-of-ai/page.tsx",
+    "summary": "Thin resource vault page that renders the Tiana AI positioning workshop content plus a session footer.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/resource-vault/reza-website-control/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/resource-vault/reza-website-control/page.tsx",
+    "summary": "Resource vault guide showing Reza's workflow for controlling a website with an agent, using step cards, pro tips, and code blocks.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/resource-vault/wordpress-api/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/resource-vault/wordpress-api/page.tsx",
+    "summary": "Resource vault tutorial for using the WordPress API, combining a sticky video player with step cards, pro tips, and code examples.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/10/instagram/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/session/10/instagram/page.tsx",
+    "summary": "Session 10 page that renders the Instagram agent content module for the workshop.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/2/auto-lead-magnet/page 2.tsx",
+    "name": "page 2.tsx",
+    "filePath": "src/app/session/2/auto-lead-magnet/page 2.tsx",
+    "summary": "Duplicate Session 2 auto lead magnet guide page (backup copy) rendering the lead-magnet build walkthrough with code snippets.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/2/auto-lead-magnet/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/session/2/auto-lead-magnet/page.tsx",
+    "summary": "Session 2 page presenting the step-by-step automated lead magnet build guide with inline CodeBlock snippets.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/2/guide-codex/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/session/2/guide-codex/page.tsx",
+    "summary": "Session 2 page that renders the Codex guide content module for the workshop.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/3/custom-domain/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/session/3/custom-domain/page.tsx",
+    "summary": "Session 3 guide for connecting a custom domain, defining a DnsRecord helper type and rendering DNS setup steps with code and pro tips.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/3/homework/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/session/3/homework/page.tsx",
+    "summary": "Session 3 homework page with a sticky video player, DNS record helper, step cards, pro tips, and code examples for the assignment.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/4/custom-domain/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/session/4/custom-domain/page.tsx",
+    "summary": "Session 4 custom domain guide (mirrors Session 3) with a DnsRecord helper and DNS configuration steps, code, and pro tips.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/4/homework/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/session/4/homework/page.tsx",
+    "summary": "Session 4 homework page (reuses the Session3Homework component) with sticky video, DNS helper, step cards, and code examples.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/5/hook-writer/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/session/5/hook-writer/page.tsx",
+    "summary": "Interactive Session 5 Hook Writer tool: client component with participant data, a form state model, name-card selector, editable fields, and copy-text generation for Instagram hook prompts.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/7/descript/page 2.tsx",
+    "name": "page 2.tsx",
+    "filePath": "src/app/session/7/descript/page 2.tsx",
+    "summary": "Duplicate Session 7 Descript guide page (backup copy) rendering the Descript content module.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/7/descript/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/session/7/descript/page.tsx",
+    "summary": "Session 7 page that renders the Descript editing guide content module.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/7/guide/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/session/7/guide/page.tsx",
+    "summary": "Session 7 page that renders the main Session 7 guide content module.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/8/guide/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/session/8/guide/page.tsx",
+    "summary": "Session 8 page that renders the main Session 8 guide content module.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/lib/event-registration-db.ts",
+    "name": "event-registration-db.ts",
+    "filePath": "src/lib/event-registration-db.ts",
+    "summary": "Supabase-backed data layer for event registrations and waitlists: saves/cancels registrations, generates cancel tokens, counts confirmed seats, and manages waitlist entries.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/lib/event-status.ts",
+    "name": "event-status.ts",
+    "filePath": "src/lib/event-status.ts",
+    "summary": "Pure helpers that derive event lifecycle status (ended, registration closed) from an event's calendar and close dates.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/lib/event-tokens.ts",
+    "name": "event-tokens.ts",
+    "filePath": "src/lib/event-tokens.ts",
+    "summary": "HMAC-SHA256 token generation and constant-time verification using CRON_SECRET, used for signed cancel/cron links.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/lib/events.tsx",
+    "name": "events.tsx",
+    "filePath": "src/lib/events.tsx",
+    "summary": "Canonical static event catalog (EventDefinition list) plus pricing/promo helpers and slug/live-event lookups; central source of truth for the events site.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/lib/insight-to-fix.ts",
+    "name": "insight-to-fix.ts",
+    "filePath": "src/lib/insight-to-fix.ts",
+    "summary": "Fire-and-forget analytics client that posts checkout/funnel events to the insight-to-fix collector with a short timeout, swallowing errors.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/lib/legacy-event-schedule.ts",
+    "name": "legacy-event-schedule.ts",
+    "filePath": "src/lib/legacy-event-schedule.ts",
+    "summary": "Bridge to the legacy EventSchedule system: authenticates, parses CSV sales exports, reconciles/marks paid sales, and finalizes legacy checkout sessions while syncing registrations and emails.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/lib/location-reminder.ts",
+    "name": "location-reminder.ts",
+    "filePath": "src/lib/location-reminder.ts",
+    "summary": "Helpers for event location-reminder emails: idempotency key building, due-window calculation, and attendee email de-duplication.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/lib/rate-limit.ts",
+    "name": "rate-limit.ts",
+    "filePath": "src/lib/rate-limit.ts",
+    "summary": "Sliding-window rate limiter backed by a Supabase rate_limit_log table plus a client-IP extractor; fails open on errors.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/lib/stripe-amount.ts",
+    "name": "stripe-amount.ts",
+    "filePath": "src/lib/stripe-amount.ts",
+    "summary": "Converts a dollar amount to Stripe integer cents, enforcing the 50-cent minimum charge threshold.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/lib/stripe.ts",
+    "name": "stripe.ts",
+    "filePath": "src/lib/stripe.ts",
+    "summary": "Stripe client factory and key resolvers reading secret/publishable keys from environment with live/test fallbacks.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/lib/supabase.ts",
+    "name": "supabase.ts",
+    "filePath": "src/lib/supabase.ts",
+    "summary": "Initializes and exports the shared Supabase client using environment URL and secret key.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/lib/url-utils.ts",
+    "name": "url-utils.ts",
+    "filePath": "src/lib/url-utils.ts",
+    "summary": "Normalizes a string into a URL origin, tolerating missing scheme and returning null on failure.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/lib/waitlist-notify-windows.ts",
+    "name": "waitlist-notify-windows.ts",
+    "filePath": "src/lib/waitlist-notify-windows.ts",
+    "summary": "Computes hours-until-event and resolves which waitlist notification window (t5h cancellation or t2h) applies.",
+    "type": "file"
+  },
+  {
+    "id": "file:tests/abandoned-checkout-followups.test.ts",
+    "name": "abandoned-checkout-followups.test.ts",
+    "filePath": "tests/abandoned-checkout-followups.test.ts",
+    "summary": "Unit tests for abandoned-checkout follow-up logic: eligibility windows, idempotency keys, subjects, and send candidate selection.",
+    "type": "file"
+  },
+  {
+    "id": "file:tests/email-content.test.ts",
+    "name": "email-content.test.ts",
+    "filePath": "tests/email-content.test.ts",
+    "summary": "Tests asserting confirmation and event email HTML/content correctness via mocked fetch.",
+    "type": "file"
+  },
+  {
+    "id": "file:tests/email-idempotency.test.ts",
+    "name": "email-idempotency.test.ts",
+    "filePath": "tests/email-idempotency.test.ts",
+    "summary": "Tests that event/confirmation emails are sent at most once using idempotency keys with mocked fetch.",
+    "type": "file"
+  },
+  {
+    "id": "file:tests/event-checkout.test.ts",
+    "name": "event-checkout.test.ts",
+    "filePath": "tests/event-checkout.test.ts",
+    "summary": "Tests for event checkout session params, mode resolution, and amount calculation.",
+    "type": "file"
+  },
+  {
+    "id": "file:tests/event-location-reminder.test.ts",
+    "name": "event-location-reminder.test.ts",
+    "filePath": "tests/event-location-reminder.test.ts",
+    "summary": "Tests for location-reminder due windows, dedup, and reminder email sending.",
+    "type": "file"
+  },
+  {
+    "id": "file:tests/event-pricing-and-data.test.ts",
+    "name": "event-pricing-and-data.test.ts",
+    "filePath": "tests/event-pricing-and-data.test.ts",
+    "summary": "Tests covering event pricing/promo helpers, status derivation, URL origin parsing, and waitlist windows.",
+    "type": "file"
+  },
+  {
+    "id": "file:tests/event-tokens.test.ts",
+    "name": "event-tokens.test.ts",
+    "filePath": "tests/event-tokens.test.ts",
+    "summary": "Tests HMAC token generation and constant-time verification, including tamper rejection.",
+    "type": "file"
+  },
+  {
+    "id": "file:tests/hardening.test.ts",
+    "name": "hardening.test.ts",
+    "filePath": "tests/hardening.test.ts",
+    "summary": "Security/robustness tests: donation amount validation, Stripe minimum enforcement, and waitlist window edge cases.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/bonus-workshops/page.tsx",
+    "name": "bonus-workshops/page.tsx",
+    "filePath": "src/app/bonus-workshops/page.tsx",
+    "summary": "Next.js App Router page for the bonus workshops section. Renders a tabbed navigation layout and static workshop content for mastermind participants.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/events/page.tsx",
+    "name": "events/page.tsx",
+    "filePath": "src/app/events/page.tsx",
+    "summary": "Events index page that lists live events. Pulls event data via getLiveEvents from the events lib and renders cards with reveal animations.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/client-launch-checklist/LeadMagnetExampleForm.tsx",
+    "name": "LeadMagnetExampleForm.tsx",
+    "filePath": "src/app/giveaways/client-launch-checklist/LeadMagnetExampleForm.tsx",
+    "summary": "Client-side lead capture form for the client launch checklist giveaway. Collects first name and email, validates, and POSTs to the subscribe API with status feedback.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/client-launch-checklist/page.tsx",
+    "name": "client-launch-checklist/page.tsx",
+    "filePath": "src/app/giveaways/client-launch-checklist/page.tsx",
+    "summary": "Giveaway landing page for the client launch checklist lead magnet. Renders hero metrics, checklist items, use cases, the lead form, and an auto-popup giveaway modal.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/cult-brand-playbook/GiveawayForm.tsx",
+    "name": "cult-brand-playbook/GiveawayForm.tsx",
+    "filePath": "src/app/giveaways/cult-brand-playbook/GiveawayForm.tsx",
+    "summary": "Client-side email capture form for the cult brand playbook giveaway. Validates email and POSTs to the subscribe API, showing submission status.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/cult-brand-playbook/page.tsx",
+    "name": "cult-brand-playbook/page.tsx",
+    "filePath": "src/app/giveaways/cult-brand-playbook/page.tsx",
+    "summary": "Giveaway landing page for the cult brand playbook lead magnet. Showcases example brands and brand elements, includes the email form and auto giveaway modal.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/maccleaner/GiveawayForm.tsx",
+    "name": "maccleaner/GiveawayForm.tsx",
+    "filePath": "src/app/giveaways/maccleaner/GiveawayForm.tsx",
+    "summary": "Client-side email capture form for the Mac cleaner giveaway. Validates email and submits to the subscribe API with status feedback.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/maccleaner/page.tsx",
+    "name": "maccleaner/page.tsx",
+    "filePath": "src/app/giveaways/maccleaner/page.tsx",
+    "summary": "Giveaway landing page for the Mac cleaner lead magnet. Presents cleanup areas, safety rules, and steps, plus the email form and auto giveaway modal.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/page.tsx",
+    "name": "giveaways/page.tsx",
+    "filePath": "src/app/giveaways/page.tsx",
+    "summary": "Giveaways index page that renders the giveaway registry as a staggered animated grid of cards using TabNav, Reveal, and StaggerList components.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/page.tsx",
+    "summary": "Site home page that sorts the sessions registry and renders SessionCards in a staggered animated grid with tab navigation.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/resource-vault/page.tsx",
+    "name": "resource-vault/page.tsx",
+    "filePath": "src/app/resource-vault/page.tsx",
+    "summary": "Large resource vault page presenting curated resources (pitch decks, financial models, training guides) in categorized sections with tab navigation.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/4/wrapup/page 2.tsx",
+    "name": "session/4/wrapup/page 2.tsx",
+    "filePath": "src/app/session/4/wrapup/page 2.tsx",
+    "summary": "Duplicate/backup variant of the Session 4 wrap-up page. Renders takeaways, improvements, participant carousel, and a sticky video player.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/4/wrapup/page.tsx",
+    "name": "session/4/wrapup/page.tsx",
+    "filePath": "src/app/session/4/wrapup/page.tsx",
+    "summary": "Session 4 wrap-up page rendering session takeaways, improvements, a participant carousel, and a sticky video player.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/5/wrapup/page.tsx",
+    "name": "session/5/wrapup/page.tsx",
+    "filePath": "src/app/session/5/wrapup/page.tsx",
+    "summary": "Session 5 wrap-up page rendering session takeaways, improvements, a participant carousel, and a sticky video player.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/components/ParticipantCarousel.tsx",
+    "name": "ParticipantCarousel.tsx",
+    "filePath": "src/components/ParticipantCarousel.tsx",
+    "summary": "Reusable carousel component displaying mastermind participants with avatar fallbacks derived from names and animated transitions.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/components/Reveal.tsx",
+    "name": "Reveal.tsx",
+    "filePath": "src/components/Reveal.tsx",
+    "summary": "Client component using framer-motion useInView to animate children into view with configurable direction and delay on scroll.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/components/SessionCard.tsx",
+    "name": "SessionCard.tsx",
+    "filePath": "src/components/SessionCard.tsx",
+    "summary": "Card component displaying a session summary with number, title, description, and availability badges for guide, prep, bonus, and wrap-up content.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/components/StaggerList.tsx",
+    "name": "StaggerList.tsx",
+    "filePath": "src/components/StaggerList.tsx",
+    "summary": "Framer-motion stagger container and item components that animate child elements in sequence when scrolled into view.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/components/TabNav.tsx",
+    "name": "TabNav.tsx",
+    "filePath": "src/components/TabNav.tsx",
+    "summary": "Client navigation component that renders top-level tabs and highlights the active tab based on the current pathname.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/lib/giveaways.ts",
+    "name": "giveaways.ts",
+    "filePath": "src/lib/giveaways.ts",
+    "summary": "Giveaway registry module defining the Giveaway interface, the giveaways data array, and a lookup helper. New giveaway pages are registered here to populate the index.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/1/prep-codex/page 2.tsx",
+    "name": "page 2.tsx",
+    "filePath": "src/app/session/1/prep-codex/page 2.tsx",
+    "summary": "Next.js route page for the Session 1 Codex-variant prep checklist; renders Session1PrepCodex content inside a breadcrumb/footer shell.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/1/prep-codex/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/session/1/prep-codex/page.tsx",
+    "summary": "Next.js route page for the Session 1 Codex-variant prep checklist; renders Session1PrepCodex content inside a breadcrumb/footer shell.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/5/prep-hooks/page 2.tsx",
+    "name": "page 2.tsx",
+    "filePath": "src/app/session/5/prep-hooks/page 2.tsx",
+    "summary": "Next.js route page for the Session 5 hooks prep variant; renders Session4Prep content within the standard page shell.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/5/prep-hooks/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/session/5/prep-hooks/page.tsx",
+    "summary": "Next.js route page for the Session 5 hooks prep variant; renders Session4Prep content within the standard page shell.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/6/prep-hooks/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/session/6/prep-hooks/page.tsx",
+    "summary": "Next.js route page for the Session 6 hooks prep variant; renders Session4Prep content within the standard page shell.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/7/prep/page 2.tsx",
+    "name": "page 2.tsx",
+    "filePath": "src/app/session/7/prep/page 2.tsx",
+    "summary": "Next.js route page for the Session 7 prep checklist; renders Session7Prep content inside a breadcrumb/footer shell.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/7/prep/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/session/7/prep/page.tsx",
+    "summary": "Next.js route page for the Session 7 prep checklist; renders Session7Prep content inside a breadcrumb/footer shell.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/8/prep/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/session/8/prep/page.tsx",
+    "summary": "Next.js route page for the Session 8 prep checklist; renders Session8Prep content inside a breadcrumb/footer shell.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/[slug]/prep/page.tsx",
+    "name": "page.tsx",
+    "filePath": "src/app/session/[slug]/prep/page.tsx",
+    "summary": "Dynamic Next.js route that maps a session slug to the matching prep content component, generating static params and metadata from the sessions registry.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/components/ScreenshotCard.tsx",
+    "name": "ScreenshotCard.tsx",
+    "filePath": "src/components/ScreenshotCard.tsx",
+    "summary": "Presentational figure component rendering a captioned screenshot image with rounded border styling.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/content/session-1-prep-codex.tsx",
+    "name": "session-1-prep-codex.tsx",
+    "filePath": "src/content/session-1-prep-codex.tsx",
+    "summary": "Client component for the Session 1 Codex-variant prep checklist with toggleable section cards, sticky welcome video, and confetti on completion.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/content/session-1-prep.tsx",
+    "name": "session-1-prep.tsx",
+    "filePath": "src/content/session-1-prep.tsx",
+    "summary": "Client component for the Session 1 prep checklist with toggleable section cards, sticky welcome video, and confetti on completion.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/content/session-2-prep.tsx",
+    "name": "session-2-prep.tsx",
+    "filePath": "src/content/session-2-prep.tsx",
+    "summary": "Client component for the Session 2 prep checklist with toggleable section cards and confetti on completion.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/content/session-3-prep.tsx",
+    "name": "session-3-prep.tsx",
+    "filePath": "src/content/session-3-prep.tsx",
+    "summary": "Client component for the Session 3 prep checklist (longest variant) with toggleable section cards and confetti on completion.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/content/session-4-prep.tsx",
+    "name": "session-4-prep.tsx",
+    "filePath": "src/content/session-4-prep.tsx",
+    "summary": "Client component for the Session 4 prep checklist with toggleable section cards and confetti on completion.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/content/session-5-prep.tsx",
+    "name": "session-5-prep.tsx",
+    "filePath": "src/content/session-5-prep.tsx",
+    "summary": "Client component for the Session 5 prep checklist with toggleable section cards, embedded screenshots, and confetti on completion.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/content/session-6-prep.tsx",
+    "name": "session-6-prep.tsx",
+    "filePath": "src/content/session-6-prep.tsx",
+    "summary": "Client component for the Session 6 prep checklist with toggleable section cards and confetti on completion.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/content/session-7-prep.tsx",
+    "name": "session-7-prep.tsx",
+    "filePath": "src/content/session-7-prep.tsx",
+    "summary": "Client component for the Session 7 prep checklist with toggleable section cards and confetti on completion.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/content/session-8-prep.tsx",
+    "name": "session-8-prep.tsx",
+    "filePath": "src/content/session-8-prep.tsx",
+    "summary": "Client component for the Session 8 prep checklist with toggleable section cards and confetti on completion.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/lib/celebrate.ts",
+    "name": "celebrate.ts",
+    "filePath": "src/lib/celebrate.ts",
+    "summary": "Utility that fires a two-burst canvas-confetti celebration in the brand palette, respecting reduced-motion preferences.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/9/guide/page.tsx",
+    "name": "session/9/guide/page.tsx",
+    "filePath": "src/app/session/9/guide/page.tsx",
+    "summary": "Next.js App Router page for the Session 9 guide route; sets page metadata and renders the Session9Guide content component.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/[slug]/guide/page.tsx",
+    "name": "session/[slug]/guide/page.tsx",
+    "filePath": "src/app/session/[slug]/guide/page.tsx",
+    "summary": "Dynamic Next.js App Router page that resolves a session by slug, enforces locks, generates static params/metadata, and renders the matching session guide content.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/components/CodeBlock.tsx",
+    "name": "CodeBlock.tsx",
+    "filePath": "src/components/CodeBlock.tsx",
+    "summary": "Reusable client component rendering copyable code/prompt blocks with editable text, Codex prompt conversion, and confetti-on-copy buttons.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/components/ProTip.tsx",
+    "name": "ProTip.tsx",
+    "filePath": "src/components/ProTip.tsx",
+    "summary": "Presentational component rendering a styled 'pro tip' callout box used across session guides.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/components/StepCard.tsx",
+    "name": "StepCard.tsx",
+    "filePath": "src/components/StepCard.tsx",
+    "summary": "Presentational card component displaying a numbered step with heading and body used in session walkthroughs.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/components/StickyVideoPlayer.tsx",
+    "name": "StickyVideoPlayer.tsx",
+    "filePath": "src/components/StickyVideoPlayer.tsx",
+    "summary": "Client component for an HTML5 video player that becomes a floating sticky/minimizable player on scroll, supports multiple video options, and preserves playback position.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/components/TianaSessionFooter.tsx",
+    "name": "TianaSessionFooter.tsx",
+    "filePath": "src/components/TianaSessionFooter.tsx",
+    "summary": "Footer component rendered at the end of Tiana workshop session pages.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/content/session-1-guide.tsx",
+    "name": "session-1-guide.tsx",
+    "filePath": "src/content/session-1-guide.tsx",
+    "summary": "Content component for the Session 1 workshop guide, embedding the recording via StickyVideoPlayer and walkthrough copy.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/content/session-10-instagram-agent.tsx",
+    "name": "session-10-instagram-agent.tsx",
+    "filePath": "src/content/session-10-instagram-agent.tsx",
+    "summary": "Long-form Session 10 content teaching how to build an Instagram agent, with code blocks, pro tips, and step cards.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/content/session-2-guide-codex.tsx",
+    "name": "session-2-guide-codex.tsx",
+    "filePath": "src/content/session-2-guide-codex.tsx",
+    "summary": "Codex-variant content component for the Session 2 workshop guide with code blocks, tips, step cards, and the sticky video player.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/content/session-2-guide.tsx",
+    "name": "session-2-guide.tsx",
+    "filePath": "src/content/session-2-guide.tsx",
+    "summary": "Content component for the Session 2 workshop guide with code blocks, pro tips, step cards, and embedded recording.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/content/session-3-guide.tsx",
+    "name": "session-3-guide.tsx",
+    "filePath": "src/content/session-3-guide.tsx",
+    "summary": "Content component for the Session 3 workshop guide covering custom domains/DNS, with a DnsRecord helper and shared UI components.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/content/session-5-guide.tsx",
+    "name": "session-5-guide.tsx",
+    "filePath": "src/content/session-5-guide.tsx",
+    "summary": "Content component for the Session 5 workshop guide with an interactive Checkbox helper, code blocks, and celebrate effects.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/content/session-6-guide.tsx",
+    "name": "session-6-guide.tsx",
+    "filePath": "src/content/session-6-guide.tsx",
+    "summary": "Content component for the Session 6 workshop guide with code blocks, pro tips, step cards, and embedded recording.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/content/session-7-descript-guide.tsx",
+    "name": "session-7-descript-guide.tsx",
+    "filePath": "src/content/session-7-descript-guide.tsx",
+    "summary": "Content component for the Session 7 Descript-focused guide with code blocks, pro tips, and step cards.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/content/session-7-guide.tsx",
+    "name": "session-7-guide.tsx",
+    "filePath": "src/content/session-7-guide.tsx",
+    "summary": "Content component for the Session 7 workshop guide with code blocks, step cards, celebrate effects, and embedded recording.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/content/session-8-guide.tsx",
+    "name": "session-8-guide.tsx",
+    "filePath": "src/content/session-8-guide.tsx",
+    "summary": "Large Session 8 workshop guide content covering WebFetch use cases, with an icon helper, code blocks, and the sticky video player.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/content/session-9-guide.tsx",
+    "name": "session-9-guide.tsx",
+    "filePath": "src/content/session-9-guide.tsx",
+    "summary": "Content component for the Session 9 workshop guide with code blocks, pro tips, and step cards.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/content/tiana-ai-positioning-workshop.tsx",
+    "name": "tiana-ai-positioning-workshop.tsx",
+    "filePath": "src/content/tiana-ai-positioning-workshop.tsx",
+    "summary": "Large standalone content module for Tiana's AI positioning workshop, defining several layout sub-components (Section, PromptCard, TeachingCard, etc.) and the main workshop body.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/templates/session-guide-template.tsx",
+    "name": "session-guide-template.tsx",
+    "filePath": "src/templates/session-guide-template.tsx",
+    "summary": "Boilerplate template for authoring new session guide content components, with fill-in placeholders and shared UI imports.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/api/events/[slug]/calendar/route.ts",
+    "name": "route.ts",
+    "filePath": "src/app/api/events/[slug]/calendar/route.ts",
+    "summary": "Next.js API route that serves an .ics calendar file for an event; looks up the event by slug and streams a generated iCal string as a downloadable attachment.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/components/events/EventMediaVideo.tsx",
+    "name": "EventMediaVideo.tsx",
+    "filePath": "src/components/events/EventMediaVideo.tsx",
+    "summary": "Client video component for event media that coordinates single-active-video playback by dispatching and listening to a window event when this video plays or its volume changes.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/components/events/EventPageView.tsx",
+    "name": "EventPageView.tsx",
+    "filePath": "src/components/events/EventPageView.tsx",
+    "summary": "Main event landing page renderer composed of many section sub-components (story, checklist, cards, split, image, html, quote, hosts, cta) that switch on section type and wire in pricing, calendar, and registration.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/components/events/EventRegistrationSection.tsx",
+    "name": "EventRegistrationSection.tsx",
+    "filePath": "src/components/events/EventRegistrationSection.tsx",
+    "summary": "Client registration and checkout section that drives Stripe embedded/hosted checkout, promo code application, donation amounts, waitlist fallback, success finalization, and celebratory confetti on completion.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/components/events/HeroVideo.tsx",
+    "name": "HeroVideo.tsx",
+    "filePath": "src/components/events/HeroVideo.tsx",
+    "summary": "Client hero video component with a poster and play overlay that starts playback on click and tracks whether the video has started.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/components/events/ScrollToRegisterButton.tsx",
+    "name": "ScrollToRegisterButton.tsx",
+    "filePath": "src/components/events/ScrollToRegisterButton.tsx",
+    "summary": "Client button that smooth-scrolls the page to the registration section and updates the URL hash without a navigation.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/components/events/WaitlistJoinForm.tsx",
+    "name": "WaitlistJoinForm.tsx",
+    "filePath": "src/components/events/WaitlistJoinForm.tsx",
+    "summary": "Client waitlist signup form that validates name and email, posts to the waitlist join API, and shows success or error states.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/lib/calendar.ts",
+    "name": "calendar.ts",
+    "filePath": "src/lib/calendar.ts",
+    "summary": "Calendar utility library providing iCal date formatting, text escaping, Google Calendar URL construction, and full .ics string generation for events.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/lib/email-validation.ts",
+    "name": "email-validation.ts",
+    "filePath": "src/lib/email-validation.ts",
+    "summary": "Small shared email validation module exposing an email regex, a normalisation helper, and an isValidEmail check.",
+    "type": "file"
+  },
+  {
+    "id": "file:tests/calendar.test.ts",
+    "name": "calendar.test.ts",
+    "filePath": "tests/calendar.test.ts",
+    "summary": "Unit tests for the calendar library covering Google Calendar URL building and iCal string generation.",
+    "type": "file"
+  },
+  {
+    "id": "file:tests/waitlist-join-validation.test.ts",
+    "name": "waitlist-join-validation.test.ts",
+    "filePath": "tests/waitlist-join-validation.test.ts",
+    "summary": "Unit tests for email validation used by the waitlist join flow, exercising normalisation and validity checks.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/[slug]/bonus/page 2.tsx",
+    "name": "bonus/page 2.tsx",
+    "filePath": "src/app/session/[slug]/bonus/page 2.tsx",
+    "summary": "Duplicate Next.js dynamic route page for a session bonus page. Resolves the slug param, looks up the session, 404s when missing, and renders bonus content. Appears to be a stray copy of bonus/page.tsx.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/[slug]/bonus/page.tsx",
+    "name": "bonus/page.tsx",
+    "filePath": "src/app/session/[slug]/bonus/page.tsx",
+    "summary": "Next.js dynamic route page for a session's bonus content. Pre-generates static params, builds metadata from the session, and renders the bonus view, calling notFound() for unknown slugs.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/[slug]/guide-brain/page.tsx",
+    "name": "guide-brain/page.tsx",
+    "filePath": "src/app/session/[slug]/guide-brain/page.tsx",
+    "summary": "Next.js route rendering the Session 4 'Second Brain' workshop guide. Restricted to slug 4, wraps the Session5Guide content with breadcrumb and footer navigation.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/session/[slug]/page.tsx",
+    "name": "session/[slug]/page.tsx",
+    "filePath": "src/app/session/[slug]/page.tsx",
+    "summary": "Main session index/landing page for each workshop session. Renders breadcrumb, header, and a large grid of cards (prep, guide, bonus, hooks) gated by per-session flags and the LOCKS map, with Reveal animations.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/content/session-1-bonus.tsx",
+    "name": "session-1-bonus.tsx",
+    "filePath": "src/content/session-1-bonus.tsx",
+    "summary": "React content component for the Session 1 bonus material. Composes StepCard and ProTip with local PriceCard and SummaryCard helpers to present pricing, summaries, and step-by-step bonus instructions.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/lib/locks.ts",
+    "name": "locks.ts",
+    "filePath": "src/lib/locks.ts",
+    "summary": "Content lock configuration. Exports the LOCKS object whose boolean flags gate visibility of per-session guides, prep, and Hook Writer content across the site.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/lib/sessions.ts",
+    "name": "sessions.ts",
+    "filePath": "src/lib/sessions.ts",
+    "summary": "Central session catalog. Defines the Session interface, the ordered sessions data array (10 workshop sessions with titles, descriptions, and capability flags), and the getSession lookup helper.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/layout.tsx",
+    "name": "layout.tsx",
+    "filePath": "src/app/layout.tsx",
+    "summary": "Next.js App Router root layout for the Masterminds Workshop site. Configures the Plus Jakarta Sans font, site-wide SEO metadata (title template, OpenGraph, Twitter cards, robots, canonical URL), injects the Meta Pixel tracking script, and renders the global dark-theme body with background particles, floating gradient orbs, the site header, page children, and footer.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/components/PageParticles.tsx",
+    "name": "PageParticles.tsx",
+    "filePath": "src/components/PageParticles.tsx",
+    "summary": "Client component rendering a full-screen fixed canvas with an animated particle field. Spawns 66 drifting particles, repels them from the cursor within a radius, and adds a trailing wake based on smoothed mouse velocity, redrawing each frame via requestAnimationFrame with resize/mousemove listeners cleaned up on unmount.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/components/SiteFooter.tsx",
+    "name": "SiteFooter.tsx",
+    "filePath": "src/components/SiteFooter.tsx",
+    "summary": "Static site footer presenting Joe Che's bio with links to All Sorted AI and the Business Automation Mastermind, social icon links (Instagram, LinkedIn, TikTok) rendered as inline SVGs, and a copyright line.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/components/SiteHeader.tsx",
+    "name": "SiteHeader.tsx",
+    "filePath": "src/components/SiteHeader.tsx",
+    "summary": "Client component rendering the fixed, blurred top navigation bar with the Masterminds HQ Workshop logo and brand wordmark. Hides itself on individual event detail routes (/events/[slug]) using the current pathname.",
+    "type": "file"
+  },
+  {
+    "id": "schema:supabase/migrations/001_event_registrations.sql",
+    "name": "001_event_registrations.sql",
+    "filePath": "supabase/migrations/001_event_registrations.sql",
+    "summary": "Initial Supabase migration defining the core event commerce schema: registrations, waitlist, and per-event email automation rules.",
+    "type": "schema"
+  },
+  {
+    "id": "file:supabase/migrations/002_unique_email_constraints.sql",
+    "name": "002_unique_email_constraints.sql",
+    "filePath": "supabase/migrations/002_unique_email_constraints.sql",
+    "summary": "Migration adding partial unique indexes to enforce one confirmed registration and one active waitlist entry per email per event.",
+    "type": "file"
+  },
+  {
+    "id": "schema:supabase/migrations/003_rate_limit_and_cron_locks.sql",
+    "name": "003_rate_limit_and_cron_locks.sql",
+    "filePath": "supabase/migrations/003_rate_limit_and_cron_locks.sql",
+    "summary": "Migration adding infrastructure tables for request rate limiting and cron window locking to prevent overlapping scheduled jobs.",
+    "type": "schema"
+  },
+  {
+    "id": "schema:supabase/migrations/004_abandoned_checkout_followups.sql",
+    "name": "004_abandoned_checkout_followups.sql",
+    "filePath": "supabase/migrations/004_abandoned_checkout_followups.sql",
+    "summary": "Migration defining the abandoned-checkout follow-up subsystem: automation controls, per-recipient follow-up state, and suppression list tables.",
+    "type": "schema"
+  },
+  {
+    "id": "file:supabase/migrations/005_abandoned_checkout_live_claims.sql",
+    "name": "005_abandoned_checkout_live_claims.sql",
+    "filePath": "supabase/migrations/005_abandoned_checkout_live_claims.sql",
+    "summary": "Migration adding live-send claim columns plus an atomic claim function so only one worker can send each abandoned-checkout follow-up.",
+    "type": "file"
+  },
+  {
+    "id": "file:supabase/migrations/006_abandoned_checkout_t12h_seed.sql",
+    "name": "006_abandoned_checkout_t12h_seed.sql",
+    "filePath": "supabase/migrations/006_abandoned_checkout_t12h_seed.sql",
+    "summary": "Seed migration inserting the default (off-mode) automation control row for the 12-hour abandoned-checkout follow-up.",
+    "type": "file"
+  },
+  {
+    "id": "table:supabase/migrations/001_event_registrations.sql:event_registrations",
+    "name": "event_registrations",
+    "filePath": "supabase/migrations/001_event_registrations.sql",
+    "summary": "Stores paid event registrations including attendee details, Stripe session id, amount paid, cancel token, and status.",
+    "type": "table"
+  },
+  {
+    "id": "table:supabase/migrations/001_event_registrations.sql:event_waitlist",
+    "name": "event_waitlist",
+    "filePath": "supabase/migrations/001_event_registrations.sql",
+    "summary": "Tracks waitlist signups per event with name, email, removal token, and status.",
+    "type": "table"
+  },
+  {
+    "id": "table:supabase/migrations/001_event_registrations.sql:event_email_rules",
+    "name": "event_email_rules",
+    "filePath": "supabase/migrations/001_event_registrations.sql",
+    "summary": "Defines per-event email automation rules with trigger type, target audience, body preview, and active flag.",
+    "type": "table"
+  },
+  {
+    "id": "table:supabase/migrations/003_rate_limit_and_cron_locks.sql:rate_limit_log",
+    "name": "rate_limit_log",
+    "filePath": "supabase/migrations/003_rate_limit_and_cron_locks.sql",
+    "summary": "Append-only log of rate-limited request keys with timestamps used to enforce throttling windows.",
+    "type": "table"
+  },
+  {
+    "id": "table:supabase/migrations/003_rate_limit_and_cron_locks.sql:cron_window_locks",
+    "name": "cron_window_locks",
+    "filePath": "supabase/migrations/003_rate_limit_and_cron_locks.sql",
+    "summary": "Holds cron window lock keys to ensure scheduled jobs do not run concurrently within the same window.",
+    "type": "table"
+  },
+  {
+    "id": "table:supabase/migrations/004_abandoned_checkout_followups.sql:event_automation_controls",
+    "name": "event_automation_controls",
+    "filePath": "supabase/migrations/004_abandoned_checkout_followups.sql",
+    "summary": "Master control table keyed by automation_key storing mode (off/test/live) and test recipient list for each automation.",
+    "type": "table"
+  },
+  {
+    "id": "table:supabase/migrations/004_abandoned_checkout_followups.sql:event_checkout_followup_state",
+    "name": "event_checkout_followup_state",
+    "filePath": "supabase/migrations/004_abandoned_checkout_followups.sql",
+    "summary": "Per-recipient follow-up state tracking sent/test timestamps, source checkout session, suppression, and error fields for abandoned-checkout emails.",
+    "type": "table"
+  },
+  {
+    "id": "table:supabase/migrations/004_abandoned_checkout_followups.sql:event_checkout_followup_suppressions",
+    "name": "event_checkout_followup_suppressions",
+    "filePath": "supabase/migrations/004_abandoned_checkout_followups.sql",
+    "summary": "Suppression list of emails per event that should be excluded from abandoned-checkout follow-up sends.",
+    "type": "table"
+  },
+  {
+    "id": "document:.impeccable.md",
+    "name": ".impeccable.md",
+    "filePath": ".impeccable.md",
+    "summary": "Design context brief for the Masterminds workshop site: defines the two audiences (workshop participants and giveaway visitors), a practical/premium/human brand personality, the dark-background cream-text purple/pink aesthetic, anti-luxury references, and six design principles emphasizing clarity for non-technical beginners.",
+    "type": "document"
+  },
+  {
+    "id": "document:AGENTS.md",
+    "name": "AGENTS.md",
+    "filePath": "AGENTS.md",
+    "summary": "GitNexus code-intelligence guidance for the workshop-site repo: mandates impact analysis before editing symbols, change detection before commits, risk warnings, and lists GitNexus MCP resources and CLI skill files for exploring, debugging, and refactoring.",
+    "type": "document"
+  },
+  {
+    "id": "document:CLAUDE.md",
+    "name": "CLAUDE.md",
+    "filePath": "CLAUDE.md",
+    "summary": "Claude-facing GitNexus code-intelligence instructions for the workshop-site repo, mirroring AGENTS.md: required impact analysis and change detection, prohibitions on unsafe edits/renames, and a table of GitNexus resources and CLI skill references.",
+    "type": "document"
+  },
+  {
+    "id": "config:package.json",
+    "name": "package.json",
+    "filePath": "package.json",
+    "summary": "npm manifest for the masterminds-workshop Next.js 16 / React 19 site. Declares dev/build/start/lint/test scripts plus abandoned-checkout automation scripts, and dependencies including Stripe, Supabase, Resend, Framer Motion, GSAP, Three.js, Vanta, Lenis, and TypeScript/Tailwind tooling.",
+    "type": "config"
+  },
+  {
+    "id": "config:tsconfig.json",
+    "name": "tsconfig.json",
+    "filePath": "tsconfig.json",
+    "summary": "TypeScript compiler configuration for the workshop site, defining compilerOptions plus include and exclude globs that control which files are type-checked during Next.js builds and tests.",
+    "type": "config"
+  },
+  {
+    "id": "config:vercel.json",
+    "name": "vercel.json",
+    "filePath": "vercel.json",
+    "summary": "Vercel deployment config: a host-based rewrite mapping decks.mastermindshq.business to the 2x-with-ai-playbook static page, and four cron schedules driving abandoned-checkout followups (daily and T+12h), location reminders, and registration reconciliation API routes.",
+    "type": "config"
+  },
+  {
+    "id": "file:public/2x-with-ai-playbook.html",
+    "name": "2x-with-ai-playbook.html",
+    "filePath": "public/2x-with-ai-playbook.html",
+    "summary": "Static HTML workshop deck titled '2X with AI Playbook' for Masterminds HQ, teaching how to double a business through sharper messaging, the right systems, and compounding AI leverage. Large self-contained slide/marketing page with embedded styling.",
+    "type": "file"
+  },
+  {
+    "id": "file:public/ai-os-architecture.html",
+    "name": "ai-os-architecture.html",
+    "filePath": "public/ai-os-architecture.html",
+    "summary": "Static HTML page 'AI Operating System Architecture' for Mastermind HQ, presenting the structure and components of an AI operating system as a visual reference page (embedded full-screen by the ai-os-architecture Next.js route).",
+    "type": "file"
+  },
+  {
+    "id": "file:public/automation-audit-sample.html",
+    "name": "automation-audit-sample.html",
+    "filePath": "public/automation-audit-sample.html",
+    "summary": "Static HTML sample automation-audit deliverable showcasing example systems and automations, closing with a CTA inviting prospects to have the systems built for them rather than only being told what to build.",
+    "type": "file"
+  },
+  {
+    "id": "file:public/coach-kit-onboarding-matrix.html",
+    "name": "coach-kit-onboarding-matrix.html",
+    "filePath": "public/coach-kit-onboarding-matrix.html",
+    "summary": "Static HTML 'Coach Kit Onboarding Matrix' for Studio Solay, a large onboarding/matrix reference page laying out coaching kit onboarding steps and resources.",
+    "type": "file"
+  },
+  {
+    "id": "file:public/lead-magnet.html",
+    "name": "lead-magnet.html",
+    "filePath": "public/lead-magnet.html",
+    "summary": "Static HTML lead magnet landing page 'Free Workshop Guide — Build Your First Website with AI' for Masterminds HQ, designed to capture leads with a free guide offer for building a first website using AI.",
+    "type": "file"
+  },
+  {
+    "id": "document:public/llms.txt",
+    "name": "llms.txt",
+    "filePath": "public/llms.txt",
+    "summary": "LLM-facing site index (llms.txt) for the Business Automation Mastermind workshop site, listing sessions with their guide/prep/bonus links, free giveaways (Speak Human, Ray Dalio Council, Cross CLI Routing, Ultimate CLAUDE.md, Web Designer Agent Kit, MacCleaner, etc.), and about/homepage/sitemap metadata.",
+    "type": "document"
+  },
+  {
+    "id": "config:.claude/settings.json",
+    "name": ".claude/settings.json",
+    "filePath": ".claude/settings.json",
+    "summary": "Claude Code project settings for the workshop site, configuring permissions and tooling behavior for the repo.",
+    "type": "config"
+  },
+  {
+    "id": "document:.claude/skills/gitnexus/gitnexus-cli/SKILL.md",
+    "name": "gitnexus-cli SKILL.md",
+    "filePath": ".claude/skills/gitnexus/gitnexus-cli/SKILL.md",
+    "summary": "GitNexus skill doc describing CLI commands for indexing, status, cleaning, and wiki generation.",
+    "type": "document"
+  },
+  {
+    "id": "document:.claude/skills/gitnexus/gitnexus-debugging/SKILL.md",
+    "name": "gitnexus-debugging SKILL.md",
+    "filePath": ".claude/skills/gitnexus/gitnexus-debugging/SKILL.md",
+    "summary": "GitNexus skill doc for tracing bugs and understanding why execution flows fail.",
+    "type": "document"
+  },
+  {
+    "id": "document:.claude/skills/gitnexus/gitnexus-exploring/SKILL.md",
+    "name": "gitnexus-exploring SKILL.md",
+    "filePath": ".claude/skills/gitnexus/gitnexus-exploring/SKILL.md",
+    "summary": "GitNexus skill doc for exploring architecture and answering how-does-X-work questions.",
+    "type": "document"
+  },
+  {
+    "id": "document:.claude/skills/gitnexus/gitnexus-guide/SKILL.md",
+    "name": "gitnexus-guide SKILL.md",
+    "filePath": ".claude/skills/gitnexus/gitnexus-guide/SKILL.md",
+    "summary": "GitNexus reference doc for tools, resources, and schema.",
+    "type": "document"
+  },
+  {
+    "id": "document:.claude/skills/gitnexus/gitnexus-impact-analysis/SKILL.md",
+    "name": "gitnexus-impact-analysis SKILL.md",
+    "filePath": ".claude/skills/gitnexus/gitnexus-impact-analysis/SKILL.md",
+    "summary": "GitNexus skill doc for blast-radius and impact analysis before editing symbols.",
+    "type": "document"
+  },
+  {
+    "id": "document:.claude/skills/gitnexus/gitnexus-refactoring/SKILL.md",
+    "name": "gitnexus-refactoring SKILL.md",
+    "filePath": ".claude/skills/gitnexus/gitnexus-refactoring/SKILL.md",
+    "summary": "GitNexus skill doc for safe rename, extract, split, and refactor operations using the call graph.",
+    "type": "document"
+  },
+  {
+    "id": "document:docs/giveaways/LESSONS.md",
+    "name": "giveaways LESSONS.md",
+    "filePath": "docs/giveaways/LESSONS.md",
+    "summary": "Retrospective lessons learned from running lead-magnet giveaway campaigns.",
+    "type": "document"
+  },
+  {
+    "id": "document:docs/giveaways/PROCESS.md",
+    "name": "giveaways PROCESS.md",
+    "filePath": "docs/giveaways/PROCESS.md",
+    "summary": "Detailed operational process for producing and shipping giveaway lead magnets end to end.",
+    "type": "document"
+  },
+  {
+    "id": "file:next-env.d.ts",
+    "name": "next-env.d.ts",
+    "filePath": "next-env.d.ts",
+    "summary": "Auto-generated Next.js TypeScript ambient type declarations reference file.",
+    "type": "file"
+  },
+  {
+    "id": "file:next.config.ts",
+    "name": "next.config.ts",
+    "filePath": "next.config.ts",
+    "summary": "Next.js configuration defining Turbopack root and redirect rules such as /session to the external portal.",
+    "type": "file"
+  },
+  {
+    "id": "file:pdf/cross-cli-compatibility-routing-guide.html",
+    "name": "cross-cli-compatibility-routing-guide.html",
+    "filePath": "pdf/cross-cli-compatibility-routing-guide.html",
+    "summary": "Styled HTML source for the cross-CLI compatibility routing guide, rendered to PDF as a giveaway asset.",
+    "type": "file"
+  },
+  {
+    "id": "file:pdf/render-cross-cli-compatibility-routing-guide.js",
+    "name": "render-cross-cli-compatibility-routing-guide.js",
+    "filePath": "pdf/render-cross-cli-compatibility-routing-guide.js",
+    "summary": "Node script that renders the routing-guide HTML to PDF via headless Chrome.",
+    "type": "file"
+  },
+  {
+    "id": "file:postcss.config.mjs",
+    "name": "postcss.config.mjs",
+    "filePath": "postcss.config.mjs",
+    "summary": "PostCSS configuration enabling Tailwind/autoprefixer plugins for the build pipeline.",
+    "type": "file"
+  },
+  {
+    "id": "file:public/downloads/allsorted-crm-module-v1.5.zip.sha256",
+    "name": "allsorted-crm-module-v1.5.zip.sha256",
+    "filePath": "public/downloads/allsorted-crm-module-v1.5.zip.sha256",
+    "summary": "SHA-256 checksum file for verifying the All Sorted CRM module download archive.",
+    "type": "file"
+  },
+  {
+    "id": "file:public/downloads/maccleaner-installer.sh",
+    "name": "maccleaner-installer.sh",
+    "filePath": "public/downloads/maccleaner-installer.sh",
+    "summary": "Public installer shell script that downloads and unpacks the MacCleaner package into a temp dir with a cleanup trap.",
+    "type": "file"
+  },
+  {
+    "id": "document:public/giveaways/cross-cli-compatibility-routing-prompt.md",
+    "name": "cross-cli-compatibility-routing-prompt.md",
+    "filePath": "public/giveaways/cross-cli-compatibility-routing-prompt.md",
+    "summary": "Public giveaway prompt document for cross-CLI compatibility routing, distributed to leads.",
+    "type": "document"
+  },
+  {
+    "id": "file:scripts/abandoned-checkout-control.mjs",
+    "name": "abandoned-checkout-control.mjs",
+    "filePath": "scripts/abandoned-checkout-control.mjs",
+    "summary": "CLI script to inspect and toggle abandoned-checkout email automation settings stored in Supabase.",
+    "type": "file"
+  },
+  {
+    "id": "file:scripts/backfill-event-registrations.mjs",
+    "name": "backfill-event-registrations.mjs",
+    "filePath": "scripts/backfill-event-registrations.mjs",
+    "summary": "Script that backfills Supabase event_registrations from paid Stripe checkout sessions for a given event slug.",
+    "type": "file"
+  },
+  {
+    "id": "file:scripts/send-dinner-tonight-reminder.mjs",
+    "name": "send-dinner-tonight-reminder.mjs",
+    "filePath": "scripts/send-dinner-tonight-reminder.mjs",
+    "summary": "Script that emails confirmed dinner attendees a same-day reminder with a self-serve cancel link via Resend.",
+    "type": "file"
+  },
+  {
+    "id": "file:scripts/sync-abandoned-checkout-suppressions.mjs",
+    "name": "sync-abandoned-checkout-suppressions.mjs",
+    "filePath": "scripts/sync-abandoned-checkout-suppressions.mjs",
+    "summary": "Script that syncs local checkout-attempt suppression entries into the Supabase suppression list.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/100-ai/page.tsx",
+    "name": "100-ai/page.tsx",
+    "filePath": "src/app/100-ai/page.tsx",
+    "summary": "Next.js client page for the $100 passive-income AI offer with a live countdown timer and marketing layout.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/ai-os-architecture/page.tsx",
+    "name": "ai-os-architecture/page.tsx",
+    "filePath": "src/app/ai-os-architecture/page.tsx",
+    "summary": "Next.js page that embeds the AI OS architecture HTML via a full-viewport iframe with SEO metadata.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/api/lead-magnets/claudemd/route 2.ts",
+    "name": "claudemd route 2.ts",
+    "filePath": "src/app/api/lead-magnets/claudemd/route 2.ts",
+    "summary": "API route that captures a lead to Supabase and emails the embedded CLAUDE.md lead magnet via Resend.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/api/subscribe/route.ts",
+    "name": "subscribe/route.ts",
+    "filePath": "src/app/api/subscribe/route.ts",
+    "summary": "API route handling newsletter subscribe POST requests with first-name and email validation.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/agent-infrastructure/layout.tsx",
+    "name": "agent-infrastructure/layout.tsx",
+    "filePath": "src/app/giveaways/agent-infrastructure/layout.tsx",
+    "summary": "Next.js App Router layout for the Agent Infrastructure giveaway route; exports page metadata (SEO title, description, OpenGraph/Twitter) and a layout component that renders child content.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/all-sorted-overview/layout.tsx",
+    "name": "all-sorted-overview/layout.tsx",
+    "filePath": "src/app/giveaways/all-sorted-overview/layout.tsx",
+    "summary": "Next.js App Router layout for the All Sorted Overview giveaway route; exports page metadata (SEO title, description, OpenGraph/Twitter) and a layout component that renders child content.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/anthropic-safety-checklist/layout.tsx",
+    "name": "anthropic-safety-checklist/layout.tsx",
+    "filePath": "src/app/giveaways/anthropic-safety-checklist/layout.tsx",
+    "summary": "Next.js App Router layout for the Anthropic Safety Checklist giveaway route; exports page metadata (SEO title, description, OpenGraph/Twitter) and a layout component that renders child content.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/benchmark/layout.tsx",
+    "name": "benchmark/layout.tsx",
+    "filePath": "src/app/giveaways/benchmark/layout.tsx",
+    "summary": "Next.js App Router layout for the Benchmark giveaway route; exports page metadata (SEO title, description, OpenGraph/Twitter) and a layout component that renders child content.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/claude-md/layout.tsx",
+    "name": "claude-md/layout.tsx",
+    "filePath": "src/app/giveaways/claude-md/layout.tsx",
+    "summary": "Next.js App Router layout for the Claude Md giveaway route; exports page metadata (SEO title, description, OpenGraph/Twitter) and a layout component that renders child content.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/client-launch-checklist/layout.tsx",
+    "name": "client-launch-checklist/layout.tsx",
+    "filePath": "src/app/giveaways/client-launch-checklist/layout.tsx",
+    "summary": "Next.js App Router layout for the Client Launch Checklist giveaway route; exports page metadata (SEO title, description, OpenGraph/Twitter) and a layout component that renders child content.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/compare/layout.tsx",
+    "name": "compare/layout.tsx",
+    "filePath": "src/app/giveaways/compare/layout.tsx",
+    "summary": "Next.js App Router layout for the Compare giveaway route; exports page metadata (SEO title, description, OpenGraph/Twitter) and a layout component that renders child content.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/cross-cli-compatibility-routing/layout.tsx",
+    "name": "cross-cli-compatibility-routing/layout.tsx",
+    "filePath": "src/app/giveaways/cross-cli-compatibility-routing/layout.tsx",
+    "summary": "Next.js App Router layout for the Cross Cli Compatibility Routing giveaway route; exports page metadata (SEO title, description, OpenGraph/Twitter) and a layout component that renders child content.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/geometry-dash-fun-build/layout.tsx",
+    "name": "geometry-dash-fun-build/layout.tsx",
+    "filePath": "src/app/giveaways/geometry-dash-fun-build/layout.tsx",
+    "summary": "Next.js App Router layout for the Geometry Dash Fun Build giveaway route; exports page metadata (SEO title, description, OpenGraph/Twitter) and a layout component that renders child content.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/guardog/layout.tsx",
+    "name": "guardog/layout.tsx",
+    "filePath": "src/app/giveaways/guardog/layout.tsx",
+    "summary": "Next.js App Router layout for the Guardog giveaway route; exports page metadata (SEO title, description, OpenGraph/Twitter) and a layout component that renders child content.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/hooklab/layout.tsx",
+    "name": "hooklab/layout.tsx",
+    "filePath": "src/app/giveaways/hooklab/layout.tsx",
+    "summary": "Next.js App Router layout for the Hooklab giveaway route; exports page metadata (SEO title, description, OpenGraph/Twitter) and a layout component that renders child content.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/human/layout.tsx",
+    "name": "human/layout.tsx",
+    "filePath": "src/app/giveaways/human/layout.tsx",
+    "summary": "Next.js App Router layout for the Human giveaway route; exports page metadata (SEO title, description, OpenGraph/Twitter) and a layout component that renders child content.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/human/page.tsx",
+    "name": "human/page.tsx",
+    "filePath": "src/app/giveaways/human/page.tsx",
+    "summary": "Next.js route page for the human giveaway; re-exports the page component for this route segment.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/ig-settings/layout.tsx",
+    "name": "ig-settings/layout.tsx",
+    "filePath": "src/app/giveaways/ig-settings/layout.tsx",
+    "summary": "Next.js App Router layout for the Ig Settings giveaway route; exports page metadata (SEO title, description, OpenGraph/Twitter) and a layout component that renders child content.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/intuition-quiz/layout.tsx",
+    "name": "intuition-quiz/layout.tsx",
+    "filePath": "src/app/giveaways/intuition-quiz/layout.tsx",
+    "summary": "Next.js App Router layout for the Intuition Quiz giveaway route; exports page metadata (SEO title, description, OpenGraph/Twitter) and a layout component that renders child content.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/lead-magnet/layout.tsx",
+    "name": "lead-magnet/layout.tsx",
+    "filePath": "src/app/giveaways/lead-magnet/layout.tsx",
+    "summary": "Next.js App Router layout for the Lead Magnet giveaway route; exports page metadata (SEO title, description, OpenGraph/Twitter) and a layout component that renders child content.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/logo-maker-guide/layout.tsx",
+    "name": "logo-maker-guide/layout.tsx",
+    "filePath": "src/app/giveaways/logo-maker-guide/layout.tsx",
+    "summary": "Next.js App Router layout for the Logo Maker Guide giveaway route; exports page metadata (SEO title, description, OpenGraph/Twitter) and a layout component that renders child content.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/maccleaner/layout.tsx",
+    "name": "maccleaner/layout.tsx",
+    "filePath": "src/app/giveaways/maccleaner/layout.tsx",
+    "summary": "Next.js App Router layout for the Maccleaner giveaway route; exports page metadata (SEO title, description, OpenGraph/Twitter) and a layout component that renders child content.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/ray-dalio-council/layout.tsx",
+    "name": "ray-dalio-council/layout.tsx",
+    "filePath": "src/app/giveaways/ray-dalio-council/layout.tsx",
+    "summary": "Next.js App Router layout for the Ray Dalio Council giveaway route; exports page metadata (SEO title, description, OpenGraph/Twitter) and a layout component that renders child content.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/speak-human/layout.tsx",
+    "name": "speak-human/layout.tsx",
+    "filePath": "src/app/giveaways/speak-human/layout.tsx",
+    "summary": "Next.js App Router layout for the Speak Human giveaway route; exports page metadata (SEO title, description, OpenGraph/Twitter) and a layout component that renders child content.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/viral-hooks/layout.tsx",
+    "name": "viral-hooks/layout.tsx",
+    "filePath": "src/app/giveaways/viral-hooks/layout.tsx",
+    "summary": "Next.js App Router layout for the Viral Hooks giveaway route; exports page metadata (SEO title, description, OpenGraph/Twitter) and a layout component that renders child content.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/giveaways/web-design-arsenal/layout.tsx",
+    "name": "web-design-arsenal/layout.tsx",
+    "filePath": "src/app/giveaways/web-design-arsenal/layout.tsx",
+    "summary": "Next.js App Router layout for the Web Design Arsenal giveaway route; exports page metadata (SEO title, description, OpenGraph/Twitter) and a layout component that renders child content.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/globals.css",
+    "name": "globals.css",
+    "filePath": "src/app/globals.css",
+    "summary": "Global stylesheet for the workshop marketing site: defines Tailwind layers, CSS custom properties (theme tokens, colors, fonts), base resets, and shared utility/animation classes used across all pages.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/lead-magnets/layout.tsx",
+    "name": "lead-magnets/layout.tsx",
+    "filePath": "src/app/lead-magnets/layout.tsx",
+    "summary": "Next.js App Router layout for the Lead Magnets lead magnet route; exports page metadata (SEO title, description, OpenGraph/Twitter) and a layout component that renders child content.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/lead-magnets/ultimate-claudemd/layout.tsx",
+    "name": "ultimate-claudemd/layout.tsx",
+    "filePath": "src/app/lead-magnets/ultimate-claudemd/layout.tsx",
+    "summary": "Next.js App Router layout for the Ultimate Claudemd lead magnet route; exports page metadata (SEO title, description, OpenGraph/Twitter) and a layout component that renders child content.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/lead-magnets/ultimate-claudemd/page.tsx",
+    "name": "ultimate-claudemd/page.tsx",
+    "filePath": "src/app/lead-magnets/ultimate-claudemd/page.tsx",
+    "summary": "Client lead-magnet landing page for Joe Che's Ultimate CLAUDE.md file. Renders a hero, benefits list, and an email-capture form that POSTs first name and email to /api/lead-magnets/claudemd, showing success or error state.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/robots.ts",
+    "name": "robots.ts",
+    "filePath": "src/app/robots.ts",
+    "summary": "Next.js metadata route exporting a robots() handler that allows all user agents and points crawlers to the workshop site's sitemap.xml.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/app/sitemap.ts",
+    "name": "sitemap.ts",
+    "filePath": "src/app/sitemap.ts",
+    "summary": "Next.js metadata route exporting a sitemap() handler that lists the home page, decks domain, all giveaway pages, and the ultimate-claudemd lead magnet with change frequencies and priorities.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/components/PrepChecklistItem.tsx",
+    "name": "PrepChecklistItem.tsx",
+    "filePath": "src/components/PrepChecklistItem.tsx",
+    "summary": "Presentational component rendering a numbered prep-checklist row with a title, a Required/Optional badge, and arbitrary children content styled in the workshop's purple/pink theme.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/components/VantaHero.tsx",
+    "name": "VantaHero.tsx",
+    "filePath": "src/components/VantaHero.tsx",
+    "summary": "Client hero component that lazily loads Three.js and the Vanta NET effect into a background ref, with cleanup, and overlays breadcrumb navigation plus session title and description.",
+    "type": "file"
+  },
+  {
+    "id": "file:src/templates/tool-page-template.tsx",
+    "name": "tool-page-template.tsx",
+    "filePath": "src/templates/tool-page-template.tsx",
+    "summary": "Boilerplate starter template for interactive tool pages with [FILL IN] markers, breadcrumb, page header, empty tool body, and back link, documenting the project's styling rules.",
+    "type": "file"
+  },
+  {
+    "id": "config:tailwind.config.ts",
+    "name": "tailwind.config.ts",
+    "filePath": "tailwind.config.ts",
+    "summary": "Tailwind CSS configuration defining the workshop theme: brand colors (dark, cream, purple, pink), Plus Jakarta font, and custom keyframes and animations (float, gradient-shift, fade-in-up, glow-pulse, shimmer).",
+    "type": "config"
+  },
+  {
+    "id": "file:tests/giveaway-email-collection.test.ts",
+    "name": "giveaway-email-collection.test.ts",
+    "filePath": "tests/giveaway-email-collection.test.ts",
+    "summary": "Node test suite asserting the giveaway email-capture contract: the modal POSTs email/source/journeyId to /api/lead-magnet, client and server share the same EMAIL_RE regex, the API validates, rate-limits, persists to Supabase leads, and sends via Resend, and per-page slugs match directory names.",
+    "type": "file"
+  },
+  {
+    "id": "file:tests/giveaway-template-structure.test.ts",
+    "name": "giveaway-template-structure.test.ts",
+    "filePath": "tests/giveaway-template-structure.test.ts",
+    "summary": "Node test suite enforcing giveaway page structure: every page imports GiveawayEmailModal (or is exempt), wires either the copy-prompt or auto-popup trigger, and inline auto-popups set showCopiedBadge to false.",
+    "type": "file"
+  }
+]

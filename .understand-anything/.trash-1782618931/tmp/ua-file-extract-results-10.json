@@ -1,0 +1,275 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 4,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/app/layout.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 94,
+      "nonEmptyLines": 90,
+      "functions": [
+        {
+          "name": "RootLayout",
+          "startLine": 51,
+          "endLine": 94,
+          "params": [
+            "{\n  children,\n}"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "metadata",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "RootLayout",
+          "line": 51,
+          "isDefault": true
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/PageParticles.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 110,
+      "nonEmptyLines": 92,
+      "functions": [
+        {
+          "name": "PageParticles",
+          "startLine": 11,
+          "endLine": 110,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "PageParticles",
+          "line": 11,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "PageParticles",
+          "callee": "useRef",
+          "lineNumber": 12
+        },
+        {
+          "caller": "PageParticles",
+          "callee": "useEffect",
+          "lineNumber": 14
+        },
+        {
+          "caller": "PageParticles",
+          "callee": "canvas.getContext",
+          "lineNumber": 17
+        },
+        {
+          "caller": "PageParticles",
+          "callee": "resize",
+          "lineNumber": 24
+        },
+        {
+          "caller": "PageParticles",
+          "callee": "window.addEventListener",
+          "lineNumber": 25
+        },
+        {
+          "caller": "PageParticles",
+          "callee": "window.addEventListener",
+          "lineNumber": 37
+        },
+        {
+          "caller": "PageParticles",
+          "callee": "Array.from",
+          "lineNumber": 40
+        },
+        {
+          "caller": "PageParticles",
+          "callee": "Math.random",
+          "lineNumber": 41
+        },
+        {
+          "caller": "PageParticles",
+          "callee": "Math.random",
+          "lineNumber": 42
+        },
+        {
+          "caller": "PageParticles",
+          "callee": "Math.random",
+          "lineNumber": 43
+        },
+        {
+          "caller": "PageParticles",
+          "callee": "Math.random",
+          "lineNumber": 44
+        },
+        {
+          "caller": "PageParticles",
+          "callee": "Math.random",
+          "lineNumber": 45
+        },
+        {
+          "caller": "PageParticles",
+          "callee": "Math.random",
+          "lineNumber": 46
+        },
+        {
+          "caller": "PageParticles",
+          "callee": "Math.floor",
+          "lineNumber": 47
+        },
+        {
+          "caller": "PageParticles",
+          "callee": "Math.random",
+          "lineNumber": 47
+        },
+        {
+          "caller": "draw",
+          "callee": "ctx.clearRect",
+          "lineNumber": 52
+        },
+        {
+          "caller": "draw",
+          "callee": "particles.forEach",
+          "lineNumber": 58
+        },
+        {
+          "caller": "draw",
+          "callee": "Math.sqrt",
+          "lineNumber": 61
+        },
+        {
+          "caller": "draw",
+          "callee": "ctx.beginPath",
+          "lineNumber": 79
+        },
+        {
+          "caller": "draw",
+          "callee": "ctx.arc",
+          "lineNumber": 80
+        },
+        {
+          "caller": "draw",
+          "callee": "ctx.fill",
+          "lineNumber": 83
+        },
+        {
+          "caller": "draw",
+          "callee": "Math.random",
+          "lineNumber": 88
+        },
+        {
+          "caller": "draw",
+          "callee": "requestAnimationFrame",
+          "lineNumber": 93
+        },
+        {
+          "caller": "PageParticles",
+          "callee": "draw",
+          "lineNumber": 95
+        },
+        {
+          "caller": "PageParticles",
+          "callee": "cancelAnimationFrame",
+          "lineNumber": 98
+        },
+        {
+          "caller": "PageParticles",
+          "callee": "window.removeEventListener",
+          "lineNumber": 99
+        },
+        {
+          "caller": "PageParticles",
+          "callee": "window.removeEventListener",
+          "lineNumber": 100
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/SiteFooter.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 65,
+      "functions": [
+        {
+          "name": "SiteFooter",
+          "startLine": 1,
+          "endLine": 70,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "SiteFooter",
+          "line": 1,
+          "isDefault": true
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/SiteHeader.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 29,
+      "functions": [
+        {
+          "name": "SiteHeader",
+          "startLine": 7,
+          "endLine": 33,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "SiteHeader",
+          "line": 7,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "SiteHeader",
+          "callee": "usePathname",
+          "lineNumber": 8
+        },
+        {
+          "caller": "SiteHeader",
+          "callee": "pathname?.match",
+          "lineNumber": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

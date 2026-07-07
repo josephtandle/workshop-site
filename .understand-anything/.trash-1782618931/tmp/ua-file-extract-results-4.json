@@ -1,0 +1,2373 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 21,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/lib/event-registration-db.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 240,
+      "nonEmptyLines": 206,
+      "functions": [
+        {
+          "name": "saveRegistration",
+          "startLine": 29,
+          "endLine": 63,
+          "params": [
+            "input"
+          ]
+        },
+        {
+          "name": "isAlreadyRegistered",
+          "startLine": 65,
+          "endLine": 79,
+          "params": [
+            "eventSlug",
+            "email"
+          ]
+        },
+        {
+          "name": "isAlreadyOnWaitlist",
+          "startLine": 81,
+          "endLine": 95,
+          "params": [
+            "eventSlug",
+            "email"
+          ]
+        },
+        {
+          "name": "cancelRegistration",
+          "startLine": 97,
+          "endLine": 139,
+          "params": [
+            "cancelToken"
+          ]
+        },
+        {
+          "name": "getConfirmedCount",
+          "startLine": 141,
+          "endLine": 154,
+          "params": [
+            "eventSlug"
+          ]
+        },
+        {
+          "name": "addToWaitlist",
+          "startLine": 156,
+          "endLine": 185,
+          "params": [
+            "input"
+          ]
+        },
+        {
+          "name": "removeFromWaitlist",
+          "startLine": 187,
+          "endLine": 212,
+          "params": [
+            "removeToken"
+          ]
+        },
+        {
+          "name": "getActiveWaitlist",
+          "startLine": 214,
+          "endLine": 234,
+          "params": [
+            "eventSlug"
+          ]
+        },
+        {
+          "name": "hasOpenSpots",
+          "startLine": 236,
+          "endLine": 240,
+          "params": [
+            "event"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "saveRegistration",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "isAlreadyRegistered",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "isAlreadyOnWaitlist",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "cancelRegistration",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "getConfirmedCount",
+          "line": 141,
+          "isDefault": false
+        },
+        {
+          "name": "addToWaitlist",
+          "line": 156,
+          "isDefault": false
+        },
+        {
+          "name": "removeFromWaitlist",
+          "line": 187,
+          "isDefault": false
+        },
+        {
+          "name": "getActiveWaitlist",
+          "line": 214,
+          "isDefault": false
+        },
+        {
+          "name": "hasOpenSpots",
+          "line": 236,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "saveRegistration",
+          "callee": "randomUUID",
+          "lineNumber": 37
+        },
+        {
+          "caller": "saveRegistration",
+          "callee": "generateToken",
+          "lineNumber": 38
+        },
+        {
+          "caller": "saveRegistration",
+          "callee": "supabase\n    .from('event_registrations')\n    .insert",
+          "lineNumber": 40
+        },
+        {
+          "caller": "saveRegistration",
+          "callee": "supabase\n    .from",
+          "lineNumber": 40
+        },
+        {
+          "caller": "saveRegistration",
+          "callee": "input.attendeeEmail.trim().toLowerCase",
+          "lineNumber": 46
+        },
+        {
+          "caller": "saveRegistration",
+          "callee": "input.attendeeEmail.trim",
+          "lineNumber": 46
+        },
+        {
+          "caller": "saveRegistration",
+          "callee": "console.error",
+          "lineNumber": 58
+        },
+        {
+          "caller": "isAlreadyRegistered",
+          "callee": "supabase\n    .from('event_registrations')\n    .select('*', { count: 'exact', head: true })\n    .eq('event_slug', eventSlug)\n    .eq('attendee_email', email.trim().toLowerCase())\n    .eq",
+          "lineNumber": 66
+        },
+        {
+          "caller": "isAlreadyRegistered",
+          "callee": "supabase\n    .from('event_registrations')\n    .select('*', { count: 'exact', head: true })\n    .eq('event_slug', eventSlug)\n    .eq",
+          "lineNumber": 66
+        },
+        {
+          "caller": "isAlreadyRegistered",
+          "callee": "supabase\n    .from('event_registrations')\n    .select('*', { count: 'exact', head: true })\n    .eq",
+          "lineNumber": 66
+        },
+        {
+          "caller": "isAlreadyRegistered",
+          "callee": "supabase\n    .from('event_registrations')\n    .select",
+          "lineNumber": 66
+        },
+        {
+          "caller": "isAlreadyRegistered",
+          "callee": "supabase\n    .from",
+          "lineNumber": 66
+        },
+        {
+          "caller": "isAlreadyRegistered",
+          "callee": "email.trim().toLowerCase",
+          "lineNumber": 70
+        },
+        {
+          "caller": "isAlreadyRegistered",
+          "callee": "email.trim",
+          "lineNumber": 70
+        },
+        {
+          "caller": "isAlreadyRegistered",
+          "callee": "console.error",
+          "lineNumber": 74
+        },
+        {
+          "caller": "isAlreadyOnWaitlist",
+          "callee": "supabase\n    .from('event_waitlist')\n    .select('*', { count: 'exact', head: true })\n    .eq('event_slug', eventSlug)\n    .eq('email', email.trim().toLowerCase())\n    .eq",
+          "lineNumber": 82
+        },
+        {
+          "caller": "isAlreadyOnWaitlist",
+          "callee": "supabase\n    .from('event_waitlist')\n    .select('*', { count: 'exact', head: true })\n    .eq('event_slug', eventSlug)\n    .eq",
+          "lineNumber": 82
+        },
+        {
+          "caller": "isAlreadyOnWaitlist",
+          "callee": "supabase\n    .from('event_waitlist')\n    .select('*', { count: 'exact', head: true })\n    .eq",
+          "lineNumber": 82
+        },
+        {
+          "caller": "isAlreadyOnWaitlist",
+          "callee": "supabase\n    .from('event_waitlist')\n    .select",
+          "lineNumber": 82
+        },
+        {
+          "caller": "isAlreadyOnWaitlist",
+          "callee": "supabase\n    .from",
+          "lineNumber": 82
+        },
+        {
+          "caller": "isAlreadyOnWaitlist",
+          "callee": "email.trim().toLowerCase",
+          "lineNumber": 86
+        },
+        {
+          "caller": "isAlreadyOnWaitlist",
+          "callee": "email.trim",
+          "lineNumber": 86
+        },
+        {
+          "caller": "isAlreadyOnWaitlist",
+          "callee": "console.error",
+          "lineNumber": 90
+        },
+        {
+          "caller": "cancelRegistration",
+          "callee": "supabase\n    .from('event_registrations')\n    .select('id, event_slug, attendee_name, attendee_email, status')\n    .eq('cancel_token', cancelToken)\n    .single",
+          "lineNumber": 103
+        },
+        {
+          "caller": "cancelRegistration",
+          "callee": "supabase\n    .from('event_registrations')\n    .select('id, event_slug, attendee_name, attendee_email, status')\n    .eq",
+          "lineNumber": 103
+        },
+        {
+          "caller": "cancelRegistration",
+          "callee": "supabase\n    .from('event_registrations')\n    .select",
+          "lineNumber": 103
+        },
+        {
+          "caller": "cancelRegistration",
+          "callee": "supabase\n    .from",
+          "lineNumber": 103
+        },
+        {
+          "caller": "cancelRegistration",
+          "callee": "console.error",
+          "lineNumber": 110
+        },
+        {
+          "caller": "cancelRegistration",
+          "callee": "supabase\n    .from('event_registrations')\n    .update({ status: 'cancelled', cancelled_at: new Date().toISOString() })\n    .eq",
+          "lineNumber": 123
+        },
+        {
+          "caller": "cancelRegistration",
+          "callee": "supabase\n    .from('event_registrations')\n    .update",
+          "lineNumber": 123
+        },
+        {
+          "caller": "cancelRegistration",
+          "callee": "supabase\n    .from",
+          "lineNumber": 123
+        },
+        {
+          "caller": "cancelRegistration",
+          "callee": "new Date().toISOString",
+          "lineNumber": 125
+        },
+        {
+          "caller": "cancelRegistration",
+          "callee": "console.error",
+          "lineNumber": 129
+        },
+        {
+          "caller": "getConfirmedCount",
+          "callee": "supabase\n    .from('event_registrations')\n    .select('*', { count: 'exact', head: true })\n    .eq('event_slug', eventSlug)\n    .eq",
+          "lineNumber": 142
+        },
+        {
+          "caller": "getConfirmedCount",
+          "callee": "supabase\n    .from('event_registrations')\n    .select('*', { count: 'exact', head: true })\n    .eq",
+          "lineNumber": 142
+        },
+        {
+          "caller": "getConfirmedCount",
+          "callee": "supabase\n    .from('event_registrations')\n    .select",
+          "lineNumber": 142
+        },
+        {
+          "caller": "getConfirmedCount",
+          "callee": "supabase\n    .from",
+          "lineNumber": 142
+        },
+        {
+          "caller": "getConfirmedCount",
+          "callee": "console.error",
+          "lineNumber": 149
+        },
+        {
+          "caller": "addToWaitlist",
+          "callee": "randomUUID",
+          "lineNumber": 161
+        },
+        {
+          "caller": "addToWaitlist",
+          "callee": "input.email.trim().toLowerCase",
+          "lineNumber": 162
+        },
+        {
+          "caller": "addToWaitlist",
+          "callee": "input.email.trim",
+          "lineNumber": 162
+        },
+        {
+          "caller": "addToWaitlist",
+          "callee": "generateToken",
+          "lineNumber": 163
+        },
+        {
+          "caller": "addToWaitlist",
+          "callee": "supabase\n    .from('event_waitlist')\n    .insert",
+          "lineNumber": 165
+        },
+        {
+          "caller": "addToWaitlist",
+          "callee": "supabase\n    .from",
+          "lineNumber": 165
+        },
+        {
+          "caller": "addToWaitlist",
+          "callee": "console.error",
+          "lineNumber": 180
+        },
+        {
+          "caller": "removeFromWaitlist",
+          "callee": "supabase\n    .from('event_waitlist')\n    .select('id, status')\n    .eq('remove_token', removeToken)\n    .single",
+          "lineNumber": 188
+        },
+        {
+          "caller": "removeFromWaitlist",
+          "callee": "supabase\n    .from('event_waitlist')\n    .select('id, status')\n    .eq",
+          "lineNumber": 188
+        },
+        {
+          "caller": "removeFromWaitlist",
+          "callee": "supabase\n    .from('event_waitlist')\n    .select",
+          "lineNumber": 188
+        },
+        {
+          "caller": "removeFromWaitlist",
+          "callee": "supabase\n    .from",
+          "lineNumber": 188
+        },
+        {
+          "caller": "removeFromWaitlist",
+          "callee": "console.error",
+          "lineNumber": 195
+        },
+        {
+          "caller": "removeFromWaitlist",
+          "callee": "supabase\n    .from('event_waitlist')\n    .update({ status: 'removed' })\n    .eq",
+          "lineNumber": 203
+        },
+        {
+          "caller": "removeFromWaitlist",
+          "callee": "supabase\n    .from('event_waitlist')\n    .update",
+          "lineNumber": 203
+        },
+        {
+          "caller": "removeFromWaitlist",
+          "callee": "supabase\n    .from",
+          "lineNumber": 203
+        },
+        {
+          "caller": "removeFromWaitlist",
+          "callee": "console.error",
+          "lineNumber": 209
+        },
+        {
+          "caller": "getActiveWaitlist",
+          "callee": "supabase\n    .from('event_waitlist')\n    .select('name, email, remove_token')\n    .eq('event_slug', eventSlug)\n    .eq('status', 'active')\n    .order",
+          "lineNumber": 217
+        },
+        {
+          "caller": "getActiveWaitlist",
+          "callee": "supabase\n    .from('event_waitlist')\n    .select('name, email, remove_token')\n    .eq('event_slug', eventSlug)\n    .eq",
+          "lineNumber": 217
+        },
+        {
+          "caller": "getActiveWaitlist",
+          "callee": "supabase\n    .from('event_waitlist')\n    .select('name, email, remove_token')\n    .eq",
+          "lineNumber": 217
+        },
+        {
+          "caller": "getActiveWaitlist",
+          "callee": "supabase\n    .from('event_waitlist')\n    .select",
+          "lineNumber": 217
+        },
+        {
+          "caller": "getActiveWaitlist",
+          "callee": "supabase\n    .from",
+          "lineNumber": 217
+        },
+        {
+          "caller": "getActiveWaitlist",
+          "callee": "console.error",
+          "lineNumber": 225
+        },
+        {
+          "caller": "getActiveWaitlist",
+          "callee": "(data ?? []).map",
+          "lineNumber": 229
+        },
+        {
+          "caller": "hasOpenSpots",
+          "callee": "getConfirmedCount",
+          "lineNumber": 238
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 9,
+        "functionCount": 9,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/lib/event-status.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 15,
+      "functions": [
+        {
+          "name": "isEventEnded",
+          "startLine": 3,
+          "endLine": 8,
+          "params": [
+            "event",
+            "now"
+          ]
+        },
+        {
+          "name": "isEventRegistrationClosed",
+          "startLine": 10,
+          "endLine": 19,
+          "params": [
+            "event",
+            "now"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isEventEnded",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "isEventRegistrationClosed",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isEventEnded",
+          "callee": "new Date(event.calendarEvent.endIso).getTime",
+          "lineNumber": 6
+        },
+        {
+          "caller": "isEventEnded",
+          "callee": "Number.isFinite",
+          "lineNumber": 7
+        },
+        {
+          "caller": "isEventEnded",
+          "callee": "now.getTime",
+          "lineNumber": 7
+        },
+        {
+          "caller": "isEventRegistrationClosed",
+          "callee": "new Date(event.registrationClosesIso).getTime",
+          "lineNumber": 17
+        },
+        {
+          "caller": "isEventRegistrationClosed",
+          "callee": "Number.isFinite",
+          "lineNumber": 18
+        },
+        {
+          "caller": "isEventRegistrationClosed",
+          "callee": "now.getTime",
+          "lineNumber": 18
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/lib/event-tokens.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 12,
+      "functions": [
+        {
+          "name": "getSecret",
+          "startLine": 3,
+          "endLine": 5,
+          "params": []
+        },
+        {
+          "name": "generateToken",
+          "startLine": 7,
+          "endLine": 9,
+          "params": [
+            "payload"
+          ]
+        },
+        {
+          "name": "verifyToken",
+          "startLine": 11,
+          "endLine": 15,
+          "params": [
+            "payload",
+            "token"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "generateToken",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "verifyToken",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "generateToken",
+          "callee": "createHmac('sha256', getSecret()).update(payload).digest",
+          "lineNumber": 8
+        },
+        {
+          "caller": "generateToken",
+          "callee": "createHmac('sha256', getSecret()).update",
+          "lineNumber": 8
+        },
+        {
+          "caller": "generateToken",
+          "callee": "createHmac",
+          "lineNumber": 8
+        },
+        {
+          "caller": "generateToken",
+          "callee": "getSecret",
+          "lineNumber": 8
+        },
+        {
+          "caller": "verifyToken",
+          "callee": "generateToken",
+          "lineNumber": 12
+        },
+        {
+          "caller": "verifyToken",
+          "callee": "timingSafeEqual",
+          "lineNumber": 14
+        },
+        {
+          "caller": "verifyToken",
+          "callee": "Buffer.from",
+          "lineNumber": 14
+        },
+        {
+          "caller": "verifyToken",
+          "callee": "Buffer.from",
+          "lineNumber": 14
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/lib/events.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 747,
+      "nonEmptyLines": 735,
+      "functions": [
+        {
+          "name": "getDiscountedPrice",
+          "startLine": 190,
+          "endLine": 195,
+          "params": [
+            "fullPrice",
+            "promo"
+          ]
+        },
+        {
+          "name": "getEventDiscountedPrice",
+          "startLine": 197,
+          "endLine": 199,
+          "params": [
+            "event",
+            "promo"
+          ]
+        },
+        {
+          "name": "resolvePromoCode",
+          "startLine": 201,
+          "endLine": 205,
+          "params": [
+            "event",
+            "promoCode"
+          ]
+        },
+        {
+          "name": "formatEventPrice",
+          "startLine": 207,
+          "endLine": 211,
+          "params": [
+            "event",
+            "promo"
+          ]
+        },
+        {
+          "name": "getEventBySlug",
+          "startLine": 741,
+          "endLine": 743,
+          "params": [
+            "slug"
+          ]
+        },
+        {
+          "name": "getLiveEvents",
+          "startLine": 745,
+          "endLine": 747,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "getEventDiscountedPrice",
+          "line": 197,
+          "isDefault": false
+        },
+        {
+          "name": "resolvePromoCode",
+          "line": 201,
+          "isDefault": false
+        },
+        {
+          "name": "formatEventPrice",
+          "line": 207,
+          "isDefault": false
+        },
+        {
+          "name": "events",
+          "line": 213,
+          "isDefault": false
+        },
+        {
+          "name": "getEventBySlug",
+          "line": 741,
+          "isDefault": false
+        },
+        {
+          "name": "getLiveEvents",
+          "line": 745,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getDiscountedPrice",
+          "callee": "Math.max",
+          "lineNumber": 192
+        },
+        {
+          "caller": "getDiscountedPrice",
+          "callee": "Math.max",
+          "lineNumber": 193
+        },
+        {
+          "caller": "getEventDiscountedPrice",
+          "callee": "getDiscountedPrice",
+          "lineNumber": 198
+        },
+        {
+          "caller": "resolvePromoCode",
+          "callee": "promoCode?.trim().toUpperCase",
+          "lineNumber": 202
+        },
+        {
+          "caller": "resolvePromoCode",
+          "callee": "promoCode?.trim",
+          "lineNumber": 202
+        },
+        {
+          "caller": "resolvePromoCode",
+          "callee": "event.pricing.promoCodes?.find",
+          "lineNumber": 204
+        },
+        {
+          "caller": "resolvePromoCode",
+          "callee": "promo.code.toUpperCase",
+          "lineNumber": 204
+        },
+        {
+          "caller": "formatEventPrice",
+          "callee": "getEventDiscountedPrice",
+          "lineNumber": 208
+        },
+        {
+          "caller": "formatEventPrice",
+          "callee": "Number.isInteger",
+          "lineNumber": 209
+        },
+        {
+          "caller": "formatEventPrice",
+          "callee": "String",
+          "lineNumber": 209
+        },
+        {
+          "caller": "formatEventPrice",
+          "callee": "value.toFixed",
+          "lineNumber": 209
+        },
+        {
+          "caller": "getEventBySlug",
+          "callee": "events.find",
+          "lineNumber": 742
+        },
+        {
+          "caller": "getLiveEvents",
+          "callee": "events.filter",
+          "lineNumber": 746
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/lib/insight-to-fix.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 35,
+      "functions": [
+        {
+          "name": "getInsightCollectorUrl",
+          "startLine": 1,
+          "endLine": 4,
+          "params": []
+        },
+        {
+          "name": "trackInsightEvent",
+          "startLine": 6,
+          "endLine": 37,
+          "params": [
+            "eventType",
+            "payload"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "trackInsightEvent",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "trackInsightEvent",
+          "callee": "getInsightCollectorUrl",
+          "lineNumber": 14
+        },
+        {
+          "caller": "trackInsightEvent",
+          "callee": "fetch",
+          "lineNumber": 18
+        },
+        {
+          "caller": "trackInsightEvent",
+          "callee": "AbortSignal.timeout",
+          "lineNumber": 21
+        },
+        {
+          "caller": "trackInsightEvent",
+          "callee": "JSON.stringify",
+          "lineNumber": 22
+        },
+        {
+          "caller": "trackInsightEvent",
+          "callee": "console.warn",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/lib/legacy-event-schedule.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 689,
+      "nonEmptyLines": 592,
+      "functions": [
+        {
+          "name": "sendAiContentCreationPortalAccess",
+          "startLine": 39,
+          "endLine": 71,
+          "params": [
+            "input"
+          ]
+        },
+        {
+          "name": "getEventScheduleConfig",
+          "startLine": 84,
+          "endLine": 99,
+          "params": []
+        },
+        {
+          "name": "extractCsrfToken",
+          "startLine": 101,
+          "endLine": 109,
+          "params": [
+            "html"
+          ]
+        },
+        {
+          "name": "splitSetCookieHeader",
+          "startLine": 111,
+          "endLine": 113,
+          "params": [
+            "headerValue"
+          ]
+        },
+        {
+          "name": "collectSetCookies",
+          "startLine": 115,
+          "endLine": 122,
+          "params": [
+            "headers"
+          ]
+        },
+        {
+          "name": "mergeCookieHeader",
+          "startLine": 124,
+          "endLine": 148,
+          "params": [
+            "existingHeader",
+            "setCookieHeaders"
+          ]
+        },
+        {
+          "name": "authenticateEventSchedule",
+          "startLine": 150,
+          "endLine": 209,
+          "params": [
+            "config"
+          ]
+        },
+        {
+          "name": "parseCsvLine",
+          "startLine": 211,
+          "endLine": 240,
+          "params": [
+            "line"
+          ]
+        },
+        {
+          "name": "parseLegacySalesCsv",
+          "startLine": 242,
+          "endLine": 259,
+          "params": [
+            "csvText"
+          ]
+        },
+        {
+          "name": "amountsMatch",
+          "startLine": 261,
+          "endLine": 263,
+          "params": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "listLegacySalesForEmail",
+          "startLine": 265,
+          "endLine": 286,
+          "params": [
+            "config",
+            "session",
+            "attendeeEmail"
+          ]
+        },
+        {
+          "name": "findLegacySaleId",
+          "startLine": 288,
+          "endLine": 311,
+          "params": [
+            "config",
+            "session",
+            "attendeeEmail"
+          ]
+        },
+        {
+          "name": "markLegacySalePaid",
+          "startLine": 313,
+          "endLine": 334,
+          "params": [
+            "config",
+            "session",
+            "saleId"
+          ]
+        },
+        {
+          "name": "seedLegacySaleViaPublicCheckout",
+          "startLine": 336,
+          "endLine": 390,
+          "params": [
+            "config",
+            "input"
+          ]
+        },
+        {
+          "name": "syncLegacyRegistration",
+          "startLine": 392,
+          "endLine": 468,
+          "params": [
+            "input"
+          ]
+        },
+        {
+          "name": "finalizeLegacyCheckoutSession",
+          "startLine": 470,
+          "endLine": 654,
+          "params": [
+            "input"
+          ]
+        },
+        {
+          "name": "getLegacyEventBySlug",
+          "startLine": 656,
+          "endLine": 658,
+          "params": [
+            "slug"
+          ]
+        },
+        {
+          "name": "listLegacyPaidAttendeesForEvent",
+          "startLine": 660,
+          "endLine": 689,
+          "params": [
+            "event"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "syncLegacyRegistration",
+          "line": 392,
+          "isDefault": false
+        },
+        {
+          "name": "finalizeLegacyCheckoutSession",
+          "line": 470,
+          "isDefault": false
+        },
+        {
+          "name": "getLegacyEventBySlug",
+          "line": 656,
+          "isDefault": false
+        },
+        {
+          "name": "listLegacyPaidAttendeesForEvent",
+          "line": 660,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "sendAiContentCreationPortalAccess",
+          "callee": "process.env.PORTAL_INTERNAL_ACCESS_SECRET?.trim",
+          "lineNumber": 44
+        },
+        {
+          "caller": "sendAiContentCreationPortalAccess",
+          "callee": "process.env.CRON_SECRET?.trim",
+          "lineNumber": 44
+        },
+        {
+          "caller": "sendAiContentCreationPortalAccess",
+          "callee": "(process.env.PORTAL_BASE_URL || 'https://portal.mastermindshq.business')\n    .trim()\n    .replace",
+          "lineNumber": 49
+        },
+        {
+          "caller": "sendAiContentCreationPortalAccess",
+          "callee": "(process.env.PORTAL_BASE_URL || 'https://portal.mastermindshq.business')\n    .trim",
+          "lineNumber": 49
+        },
+        {
+          "caller": "sendAiContentCreationPortalAccess",
+          "callee": "fetch",
+          "lineNumber": 53
+        },
+        {
+          "caller": "sendAiContentCreationPortalAccess",
+          "callee": "JSON.stringify",
+          "lineNumber": 59
+        },
+        {
+          "caller": "sendAiContentCreationPortalAccess",
+          "callee": "response.text().catch",
+          "lineNumber": 68
+        },
+        {
+          "caller": "sendAiContentCreationPortalAccess",
+          "callee": "response.text",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getEventScheduleConfig",
+          "callee": "process.env.EVENTSCHEDULE_ADMIN_EMAIL?.trim",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getEventScheduleConfig",
+          "callee": "process.env.EVENTSCHEDULE_ADMIN_PASSWORD?.trim",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getEventScheduleConfig",
+          "callee": "(process.env.EVENTSCHEDULE_BASE_URL || 'https://events.mastermindshq.business')\n      .trim()\n      .replace",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getEventScheduleConfig",
+          "callee": "(process.env.EVENTSCHEDULE_BASE_URL || 'https://events.mastermindshq.business')\n      .trim",
+          "lineNumber": 93
+        },
+        {
+          "caller": "extractCsrfToken",
+          "callee": "html.match",
+          "lineNumber": 102
+        },
+        {
+          "caller": "extractCsrfToken",
+          "callee": "html.match",
+          "lineNumber": 105
+        },
+        {
+          "caller": "splitSetCookieHeader",
+          "callee": "headerValue.split",
+          "lineNumber": 112
+        },
+        {
+          "caller": "collectSetCookies",
+          "callee": "(headers as Headers & { getSetCookie?: () => string[] }).getSetCookie",
+          "lineNumber": 116
+        },
+        {
+          "caller": "collectSetCookies",
+          "callee": "headers.get",
+          "lineNumber": 119
+        },
+        {
+          "caller": "collectSetCookies",
+          "callee": "splitSetCookieHeader",
+          "lineNumber": 121
+        },
+        {
+          "caller": "appendCookie",
+          "callee": "cookie.split",
+          "lineNumber": 128
+        },
+        {
+          "caller": "appendCookie",
+          "callee": "pair.indexOf",
+          "lineNumber": 129
+        },
+        {
+          "caller": "appendCookie",
+          "callee": "pair.slice(0, separatorIndex).trim",
+          "lineNumber": 131
+        },
+        {
+          "caller": "appendCookie",
+          "callee": "pair.slice",
+          "lineNumber": 131
+        },
+        {
+          "caller": "appendCookie",
+          "callee": "pair.slice(separatorIndex + 1).trim",
+          "lineNumber": 132
+        },
+        {
+          "caller": "appendCookie",
+          "callee": "pair.slice",
+          "lineNumber": 132
+        },
+        {
+          "caller": "appendCookie",
+          "callee": "jar.set",
+          "lineNumber": 134
+        },
+        {
+          "caller": "mergeCookieHeader",
+          "callee": "existingHeader.split",
+          "lineNumber": 137
+        },
+        {
+          "caller": "mergeCookieHeader",
+          "callee": "appendCookie",
+          "lineNumber": 138
+        },
+        {
+          "caller": "mergeCookieHeader",
+          "callee": "appendCookie",
+          "lineNumber": 142
+        },
+        {
+          "caller": "mergeCookieHeader",
+          "callee": "Array.from(jar.entries())\n    .map(([name, value]) => `${name}=${value}`)\n    .join",
+          "lineNumber": 145
+        },
+        {
+          "caller": "mergeCookieHeader",
+          "callee": "Array.from(jar.entries())\n    .map",
+          "lineNumber": 145
+        },
+        {
+          "caller": "mergeCookieHeader",
+          "callee": "Array.from",
+          "lineNumber": 145
+        },
+        {
+          "caller": "mergeCookieHeader",
+          "callee": "jar.entries",
+          "lineNumber": 145
+        },
+        {
+          "caller": "authenticateEventSchedule",
+          "callee": "fetch",
+          "lineNumber": 151
+        },
+        {
+          "caller": "authenticateEventSchedule",
+          "callee": "loginPage.text",
+          "lineNumber": 162
+        },
+        {
+          "caller": "authenticateEventSchedule",
+          "callee": "extractCsrfToken",
+          "lineNumber": 163
+        },
+        {
+          "caller": "authenticateEventSchedule",
+          "callee": "mergeCookieHeader",
+          "lineNumber": 164
+        },
+        {
+          "caller": "authenticateEventSchedule",
+          "callee": "collectSetCookies",
+          "lineNumber": 164
+        },
+        {
+          "caller": "authenticateEventSchedule",
+          "callee": "fetch",
+          "lineNumber": 172
+        },
+        {
+          "caller": "authenticateEventSchedule",
+          "callee": "loginBody.toString",
+          "lineNumber": 180
+        },
+        {
+          "caller": "authenticateEventSchedule",
+          "callee": "mergeCookieHeader",
+          "lineNumber": 185
+        },
+        {
+          "caller": "authenticateEventSchedule",
+          "callee": "collectSetCookies",
+          "lineNumber": 185
+        },
+        {
+          "caller": "authenticateEventSchedule",
+          "callee": "fetch",
+          "lineNumber": 191
+        },
+        {
+          "caller": "authenticateEventSchedule",
+          "callee": "salesPage.text",
+          "lineNumber": 203
+        },
+        {
+          "caller": "authenticateEventSchedule",
+          "callee": "extractCsrfToken",
+          "lineNumber": 206
+        },
+        {
+          "caller": "parseCsvLine",
+          "callee": "cells.push",
+          "lineNumber": 230
+        },
+        {
+          "caller": "parseCsvLine",
+          "callee": "cells.push",
+          "lineNumber": 238
+        },
+        {
+          "caller": "parseLegacySalesCsv",
+          "callee": "csvText.replace(/^\\uFEFF/, '').split(/\\r?\\n/g).filter",
+          "lineNumber": 243
+        },
+        {
+          "caller": "parseLegacySalesCsv",
+          "callee": "csvText.replace(/^\\uFEFF/, '').split",
+          "lineNumber": 243
+        },
+        {
+          "caller": "parseLegacySalesCsv",
+          "callee": "csvText.replace",
+          "lineNumber": 243
+        },
+        {
+          "caller": "parseLegacySalesCsv",
+          "callee": "lines.slice(1).map",
+          "lineNumber": 246
+        },
+        {
+          "caller": "parseLegacySalesCsv",
+          "callee": "lines.slice",
+          "lineNumber": 246
+        },
+        {
+          "caller": "parseLegacySalesCsv",
+          "callee": "parseCsvLine",
+          "lineNumber": 247
+        },
+        {
+          "caller": "parseLegacySalesCsv",
+          "callee": "Number",
+          "lineNumber": 253
+        },
+        {
+          "caller": "parseLegacySalesCsv",
+          "callee": "Number",
+          "lineNumber": 254
+        },
+        {
+          "caller": "parseLegacySalesCsv",
+          "callee": "(cells[14] || '').toLowerCase",
+          "lineNumber": 256
+        },
+        {
+          "caller": "amountsMatch",
+          "callee": "Math.abs",
+          "lineNumber": 262
+        },
+        {
+          "caller": "listLegacySalesForEmail",
+          "callee": "fetch",
+          "lineNumber": 270
+        },
+        {
+          "caller": "listLegacySalesForEmail",
+          "callee": "encodeURIComponent",
+          "lineNumber": 271
+        },
+        {
+          "caller": "listLegacySalesForEmail",
+          "callee": "parseLegacySalesCsv",
+          "lineNumber": 285
+        },
+        {
+          "caller": "listLegacySalesForEmail",
+          "callee": "response.text",
+          "lineNumber": 285
+        },
+        {
+          "caller": "findLegacySaleId",
+          "callee": "fetch",
+          "lineNumber": 293
+        },
+        {
+          "caller": "findLegacySaleId",
+          "callee": "encodeURIComponent",
+          "lineNumber": 294
+        },
+        {
+          "caller": "findLegacySaleId",
+          "callee": "response.text",
+          "lineNumber": 308
+        },
+        {
+          "caller": "findLegacySaleId",
+          "callee": "html.match",
+          "lineNumber": 309
+        },
+        {
+          "caller": "markLegacySalePaid",
+          "callee": "fetch",
+          "lineNumber": 318
+        },
+        {
+          "caller": "markLegacySalePaid",
+          "callee": "JSON.stringify",
+          "lineNumber": 327
+        },
+        {
+          "caller": "seedLegacySaleViaPublicCheckout",
+          "callee": "fetch",
+          "lineNumber": 345
+        },
+        {
+          "caller": "seedLegacySaleViaPublicCheckout",
+          "callee": "pageResponse.text",
+          "lineNumber": 359
+        },
+        {
+          "caller": "seedLegacySaleViaPublicCheckout",
+          "callee": "extractCsrfToken",
+          "lineNumber": 360
+        },
+        {
+          "caller": "seedLegacySaleViaPublicCheckout",
+          "callee": "mergeCookieHeader",
+          "lineNumber": 361
+        },
+        {
+          "caller": "seedLegacySaleViaPublicCheckout",
+          "callee": "collectSetCookies",
+          "lineNumber": 361
+        },
+        {
+          "caller": "seedLegacySaleViaPublicCheckout",
+          "callee": "fetch",
+          "lineNumber": 374
+        },
+        {
+          "caller": "seedLegacySaleViaPublicCheckout",
+          "callee": "form.toString",
+          "lineNumber": 382
+        },
+        {
+          "caller": "syncLegacyRegistration",
+          "callee": "getEventScheduleConfig",
+          "lineNumber": 402
+        },
+        {
+          "caller": "syncLegacyRegistration",
+          "callee": "authenticateEventSchedule",
+          "lineNumber": 407
+        },
+        {
+          "caller": "syncLegacyRegistration",
+          "callee": "(await listLegacySalesForEmail(config, session, input.attendeeEmail)).filter",
+          "lineNumber": 408
+        },
+        {
+          "caller": "syncLegacyRegistration",
+          "callee": "listLegacySalesForEmail",
+          "lineNumber": 408
+        },
+        {
+          "caller": "syncLegacyRegistration",
+          "callee": "sale.email.toLowerCase",
+          "lineNumber": 410
+        },
+        {
+          "caller": "syncLegacyRegistration",
+          "callee": "input.attendeeEmail.toLowerCase",
+          "lineNumber": 410
+        },
+        {
+          "caller": "syncLegacyRegistration",
+          "callee": "matchingSales.find",
+          "lineNumber": 415
+        },
+        {
+          "caller": "syncLegacyRegistration",
+          "callee": "matchingSales.find",
+          "lineNumber": 423
+        },
+        {
+          "caller": "syncLegacyRegistration",
+          "callee": "amountsMatch",
+          "lineNumber": 424
+        },
+        {
+          "caller": "syncLegacyRegistration",
+          "callee": "findLegacySaleId",
+          "lineNumber": 428
+        },
+        {
+          "caller": "syncLegacyRegistration",
+          "callee": "markLegacySalePaid",
+          "lineNumber": 430
+        },
+        {
+          "caller": "syncLegacyRegistration",
+          "callee": "seedLegacySaleViaPublicCheckout",
+          "lineNumber": 438
+        },
+        {
+          "caller": "syncLegacyRegistration",
+          "callee": "(await listLegacySalesForEmail(config, session, input.attendeeEmail)).filter",
+          "lineNumber": 440
+        },
+        {
+          "caller": "syncLegacyRegistration",
+          "callee": "listLegacySalesForEmail",
+          "lineNumber": 440
+        },
+        {
+          "caller": "syncLegacyRegistration",
+          "callee": "sale.email.toLowerCase",
+          "lineNumber": 442
+        },
+        {
+          "caller": "syncLegacyRegistration",
+          "callee": "input.attendeeEmail.toLowerCase",
+          "lineNumber": 442
+        },
+        {
+          "caller": "syncLegacyRegistration",
+          "callee": "refreshedSales.find",
+          "lineNumber": 456
+        },
+        {
+          "caller": "syncLegacyRegistration",
+          "callee": "amountsMatch",
+          "lineNumber": 456
+        },
+        {
+          "caller": "syncLegacyRegistration",
+          "callee": "findLegacySaleId",
+          "lineNumber": 457
+        },
+        {
+          "caller": "syncLegacyRegistration",
+          "callee": "markLegacySalePaid",
+          "lineNumber": 462
+        },
+        {
+          "caller": "finalizeLegacyCheckoutSession",
+          "callee": "createStripeClient",
+          "lineNumber": 473
+        },
+        {
+          "caller": "finalizeLegacyCheckoutSession",
+          "callee": "stripe.checkout.sessions.retrieve",
+          "lineNumber": 474
+        },
+        {
+          "caller": "finalizeLegacyCheckoutSession",
+          "callee": "session.metadata?.attendee_name?.trim",
+          "lineNumber": 493
+        },
+        {
+          "caller": "finalizeLegacyCheckoutSession",
+          "callee": "session.metadata?.attendee_email?.trim",
+          "lineNumber": 494
+        },
+        {
+          "caller": "finalizeLegacyCheckoutSession",
+          "callee": "session.customer_email?.trim",
+          "lineNumber": 494
+        },
+        {
+          "caller": "finalizeLegacyCheckoutSession",
+          "callee": "sendAiContentCreationPortalAccess",
+          "lineNumber": 507
+        },
+        {
+          "caller": "finalizeLegacyCheckoutSession",
+          "callee": "sendAiContentCreationSetupEmail",
+          "lineNumber": 520
+        },
+        {
+          "caller": "finalizeLegacyCheckoutSession",
+          "callee": "Object.keys",
+          "lineNumber": 528
+        },
+        {
+          "caller": "finalizeLegacyCheckoutSession",
+          "callee": "stripe.paymentIntents.update",
+          "lineNumber": 529
+        },
+        {
+          "caller": "finalizeLegacyCheckoutSession",
+          "callee": "syncLegacyRegistration",
+          "lineNumber": 548
+        },
+        {
+          "caller": "finalizeLegacyCheckoutSession",
+          "callee": "console.error",
+          "lineNumber": 557
+        },
+        {
+          "caller": "finalizeLegacyCheckoutSession",
+          "callee": "saveRegistration",
+          "lineNumber": 566
+        },
+        {
+          "caller": "finalizeLegacyCheckoutSession",
+          "callee": "console.error",
+          "lineNumber": 577
+        },
+        {
+          "caller": "finalizeLegacyCheckoutSession",
+          "callee": "trackInsightEvent",
+          "lineNumber": 578
+        },
+        {
+          "caller": "finalizeLegacyCheckoutSession",
+          "callee": "sendEventConfirmationEmail",
+          "lineNumber": 593
+        },
+        {
+          "caller": "finalizeLegacyCheckoutSession",
+          "callee": "console.error",
+          "lineNumber": 601
+        },
+        {
+          "caller": "finalizeLegacyCheckoutSession",
+          "callee": "sendAiContentCreationSetupEmail",
+          "lineNumber": 608
+        },
+        {
+          "caller": "finalizeLegacyCheckoutSession",
+          "callee": "console.error",
+          "lineNumber": 614
+        },
+        {
+          "caller": "finalizeLegacyCheckoutSession",
+          "callee": "sendAiContentCreationPortalAccess",
+          "lineNumber": 621
+        },
+        {
+          "caller": "finalizeLegacyCheckoutSession",
+          "callee": "console.error",
+          "lineNumber": 628
+        },
+        {
+          "caller": "finalizeLegacyCheckoutSession",
+          "callee": "stripe.paymentIntents.update",
+          "lineNumber": 633
+        },
+        {
+          "caller": "finalizeLegacyCheckoutSession",
+          "callee": "`${status.message} ${legacySyncError ? 'Legacy Event Schedule sync failed automatically.' : ''}${emailSendError ? ' Confirmation email failed to send automatically.' : ''}${setupEmailError ? ' Setup email failed to send automatically.' : ''}${portalAccessEmailError ? ' Portal access email failed to send automatically.' : ''}`.trim",
+          "lineNumber": 651
+        },
+        {
+          "caller": "getLegacyEventBySlug",
+          "callee": "getEventBySlug",
+          "lineNumber": 657
+        },
+        {
+          "caller": "listLegacyPaidAttendeesForEvent",
+          "callee": "getEventScheduleConfig",
+          "lineNumber": 667
+        },
+        {
+          "caller": "listLegacyPaidAttendeesForEvent",
+          "callee": "authenticateEventSchedule",
+          "lineNumber": 672
+        },
+        {
+          "caller": "listLegacyPaidAttendeesForEvent",
+          "callee": "listLegacySalesForEmail",
+          "lineNumber": 673
+        },
+        {
+          "caller": "listLegacyPaidAttendeesForEvent",
+          "callee": "dedupeAttendeesByEmail",
+          "lineNumber": 675
+        },
+        {
+          "caller": "listLegacyPaidAttendeesForEvent",
+          "callee": "sales\n      .filter(\n        (sale) =>\n          sale.status === 'paid' &&\n          sale.event === event.title &&\n          sale.eventDate === event.legacyRegistration?.eventDate &&\n          sale.email,\n      )\n      .map",
+          "lineNumber": 676
+        },
+        {
+          "caller": "listLegacyPaidAttendeesForEvent",
+          "callee": "sales\n      .filter",
+          "lineNumber": 676
+        },
+        {
+          "caller": "listLegacyPaidAttendeesForEvent",
+          "callee": "sale.name.trim",
+          "lineNumber": 685
+        },
+        {
+          "caller": "listLegacyPaidAttendeesForEvent",
+          "callee": "sale.email.trim",
+          "lineNumber": 686
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 4,
+        "functionCount": 18,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/lib/location-reminder.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 34,
+      "functions": [
+        {
+          "name": "buildLocationReminderIdempotencyKey",
+          "startLine": 3,
+          "endLine": 10,
+          "params": [
+            "input"
+          ]
+        },
+        {
+          "name": "isLocationReminderDue",
+          "startLine": 12,
+          "endLine": 26,
+          "params": [
+            "input"
+          ]
+        },
+        {
+          "name": "dedupeAttendeesByEmail",
+          "startLine": 28,
+          "endLine": 40,
+          "params": [
+            "attendees"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "buildLocationReminderIdempotencyKey",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "isLocationReminderDue",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "dedupeAttendeesByEmail",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "buildLocationReminderIdempotencyKey",
+          "callee": "input.attendeeEmail.trim().toLowerCase",
+          "lineNumber": 8
+        },
+        {
+          "caller": "buildLocationReminderIdempotencyKey",
+          "callee": "input.attendeeEmail.trim",
+          "lineNumber": 8
+        },
+        {
+          "caller": "isLocationReminderDue",
+          "callee": "new Date(input.eventStartIso).getTime",
+          "lineNumber": 20
+        },
+        {
+          "caller": "isLocationReminderDue",
+          "callee": "reminderAt.getTime",
+          "lineNumber": 23
+        },
+        {
+          "caller": "dedupeAttendeesByEmail",
+          "callee": "attendee.attendeeEmail.trim().toLowerCase",
+          "lineNumber": 33
+        },
+        {
+          "caller": "dedupeAttendeesByEmail",
+          "callee": "attendee.attendeeEmail.trim",
+          "lineNumber": 33
+        },
+        {
+          "caller": "dedupeAttendeesByEmail",
+          "callee": "seen.has",
+          "lineNumber": 34
+        },
+        {
+          "caller": "dedupeAttendeesByEmail",
+          "callee": "seen.add",
+          "lineNumber": 35
+        },
+        {
+          "caller": "dedupeAttendeesByEmail",
+          "callee": "unique.push",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/lib/rate-limit.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 36,
+      "functions": [
+        {
+          "name": "getClientIp",
+          "startLine": 3,
+          "endLine": 6,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "checkRateLimit",
+          "startLine": 13,
+          "endLine": 43,
+          "params": [
+            "key",
+            "limit",
+            "windowSeconds"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getClientIp",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "checkRateLimit",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getClientIp",
+          "callee": "request.headers.get",
+          "lineNumber": 4
+        },
+        {
+          "caller": "getClientIp",
+          "callee": "forwarded.split(',')[0]?.trim",
+          "lineNumber": 5
+        },
+        {
+          "caller": "getClientIp",
+          "callee": "forwarded.split",
+          "lineNumber": 5
+        },
+        {
+          "caller": "checkRateLimit",
+          "callee": "new Date(Date.now() - windowSeconds * 1000).toISOString",
+          "lineNumber": 19
+        },
+        {
+          "caller": "checkRateLimit",
+          "callee": "Date.now",
+          "lineNumber": 19
+        },
+        {
+          "caller": "checkRateLimit",
+          "callee": "supabase\n      .from('rate_limit_log')\n      .select('id', { count: 'exact', head: true })\n      .eq('key', key)\n      .gte",
+          "lineNumber": 21
+        },
+        {
+          "caller": "checkRateLimit",
+          "callee": "supabase\n      .from('rate_limit_log')\n      .select('id', { count: 'exact', head: true })\n      .eq",
+          "lineNumber": 21
+        },
+        {
+          "caller": "checkRateLimit",
+          "callee": "supabase\n      .from('rate_limit_log')\n      .select",
+          "lineNumber": 21
+        },
+        {
+          "caller": "checkRateLimit",
+          "callee": "supabase\n      .from",
+          "lineNumber": 21
+        },
+        {
+          "caller": "checkRateLimit",
+          "callee": "supabase.from('rate_limit_log').insert",
+          "lineNumber": 29
+        },
+        {
+          "caller": "checkRateLimit",
+          "callee": "supabase.from",
+          "lineNumber": 29
+        },
+        {
+          "caller": "checkRateLimit",
+          "callee": "supabase\n      .from('rate_limit_log')\n      .delete()\n      .eq('key', key)\n      .lt('created_at', windowStart)\n      .then",
+          "lineNumber": 32
+        },
+        {
+          "caller": "checkRateLimit",
+          "callee": "supabase\n      .from('rate_limit_log')\n      .delete()\n      .eq('key', key)\n      .lt",
+          "lineNumber": 32
+        },
+        {
+          "caller": "checkRateLimit",
+          "callee": "supabase\n      .from('rate_limit_log')\n      .delete()\n      .eq",
+          "lineNumber": 32
+        },
+        {
+          "caller": "checkRateLimit",
+          "callee": "supabase\n      .from('rate_limit_log')\n      .delete",
+          "lineNumber": 32
+        },
+        {
+          "caller": "checkRateLimit",
+          "callee": "supabase\n      .from",
+          "lineNumber": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/lib/stripe-amount.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 11,
+      "nonEmptyLines": 8,
+      "functions": [
+        {
+          "name": "toStripeUnitAmount",
+          "startLine": 3,
+          "endLine": 11,
+          "params": [
+            "amount"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MIN_STRIPE_USD_CHARGE_CENTS",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "toStripeUnitAmount",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "toStripeUnitAmount",
+          "callee": "Math.round",
+          "lineNumber": 4
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/lib/stripe.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 14,
+      "functions": [
+        {
+          "name": "getStripeSecretKey",
+          "startLine": 3,
+          "endLine": 5,
+          "params": []
+        },
+        {
+          "name": "getStripePublishableKey",
+          "startLine": 7,
+          "endLine": 9,
+          "params": []
+        },
+        {
+          "name": "createStripeClient",
+          "startLine": 11,
+          "endLine": 18,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "getStripeSecretKey",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "getStripePublishableKey",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "createStripeClient",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createStripeClient",
+          "callee": "getStripeSecretKey",
+          "lineNumber": 12
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/lib/supabase.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 6,
+      "exports": [
+        {
+          "name": "supabase",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/lib/url-utils.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 12,
+      "functions": [
+        {
+          "name": "toOrigin",
+          "startLine": 1,
+          "endLine": 13,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "toOrigin",
+          "line": 1,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "toOrigin",
+          "callee": "value.replace",
+          "lineNumber": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/lib/waitlist-notify-windows.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 13,
+      "functions": [
+        {
+          "name": "hoursUntilEvent",
+          "startLine": 6,
+          "endLine": 8,
+          "params": [
+            "eventStartIso",
+            "now"
+          ]
+        },
+        {
+          "name": "resolveNotifyWindow",
+          "startLine": 10,
+          "endLine": 16,
+          "params": [
+            "eventStartIso",
+            "now"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "hoursUntilEvent",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "resolveNotifyWindow",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "hoursUntilEvent",
+          "callee": "new Date(eventStartIso).getTime",
+          "lineNumber": 7
+        },
+        {
+          "caller": "hoursUntilEvent",
+          "callee": "now.getTime",
+          "lineNumber": 7
+        },
+        {
+          "caller": "resolveNotifyWindow",
+          "callee": "hoursUntilEvent",
+          "lineNumber": 11
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "tests/abandoned-checkout-followups.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 223,
+      "nonEmptyLines": 197,
+      "functions": [
+        {
+          "name": "makeCandidate",
+          "startLine": 26,
+          "endLine": 40,
+          "params": [
+            "slug",
+            "attendeeEmail"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "makeCandidate",
+          "callee": "resolveEventFromSlug",
+          "lineNumber": 27
+        },
+        {
+          "caller": "makeCandidate",
+          "callee": "assert.ok",
+          "lineNumber": 28
+        },
+        {
+          "caller": "makeCandidate",
+          "callee": "shouldIncludeFinanceLine",
+          "lineNumber": 38
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "tests/email-content.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 307,
+      "nonEmptyLines": 258,
+      "functions": [
+        {
+          "name": "withMockFetch",
+          "startLine": 15,
+          "endLine": 34,
+          "params": [
+            "fn"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "withMockFetch",
+          "callee": "JSON.parse",
+          "lineNumber": 22
+        },
+        {
+          "caller": "withMockFetch",
+          "callee": "captured.push",
+          "lineNumber": 23
+        },
+        {
+          "caller": "withMockFetch",
+          "callee": "JSON.stringify",
+          "lineNumber": 24
+        },
+        {
+          "caller": "withMockFetch",
+          "callee": "fn(captured).finally",
+          "lineNumber": 30
+        },
+        {
+          "caller": "withMockFetch",
+          "callee": "fn",
+          "lineNumber": 30
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "tests/email-idempotency.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 193,
+      "nonEmptyLines": 150,
+      "functions": [
+        {
+          "name": "mockFetch",
+          "startLine": 17,
+          "endLine": 36,
+          "params": [
+            "responses"
+          ]
+        },
+        {
+          "name": "withMockFetch",
+          "startLine": 38,
+          "endLine": 52,
+          "params": [
+            "fn"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "fake",
+          "callee": "captured.push",
+          "lineNumber": 23
+        },
+        {
+          "caller": "fake",
+          "callee": "Object.fromEntries",
+          "lineNumber": 24
+        },
+        {
+          "caller": "fake",
+          "callee": "Object.entries",
+          "lineNumber": 25
+        },
+        {
+          "caller": "fake",
+          "callee": "JSON.parse",
+          "lineNumber": 27
+        },
+        {
+          "caller": "fake",
+          "callee": "JSON.stringify",
+          "lineNumber": 29
+        },
+        {
+          "caller": "withMockFetch",
+          "callee": "mockFetch",
+          "lineNumber": 43
+        },
+        {
+          "caller": "withMockFetch",
+          "callee": "fn(captured).finally",
+          "lineNumber": 48
+        },
+        {
+          "caller": "withMockFetch",
+          "callee": "fn",
+          "lineNumber": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "tests/event-checkout.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 113,
+      "nonEmptyLines": 96,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "tests/event-location-reminder.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 115,
+      "nonEmptyLines": 96,
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "tests/event-pricing-and-data.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 239,
+      "nonEmptyLines": 196,
+      "functions": [
+        {
+          "name": "nowAt",
+          "startLine": 159,
+          "endLine": 162,
+          "params": [
+            "hoursBeforeEvent"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "nowAt",
+          "callee": "new Date(EVENT_START).getTime",
+          "lineNumber": 160
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "tests/event-tokens.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 46,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "tests/hardening.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 258,
+      "nonEmptyLines": 207,
+      "functions": [
+        {
+          "name": "isDonationAmountValid",
+          "startLine": 70,
+          "endLine": 72,
+          "params": [
+            "v"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isDonationAmountValid",
+          "callee": "Number.isFinite",
+          "lineNumber": 71
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

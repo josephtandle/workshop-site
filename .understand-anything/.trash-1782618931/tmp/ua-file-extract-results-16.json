@@ -1,0 +1,522 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 9,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/app/lead-magnets/ultimate-claudemd/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 189,
+      "nonEmptyLines": 174,
+      "functions": [
+        {
+          "name": "UltimateClaudeMDPage",
+          "startLine": 14,
+          "endLine": 189,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "UltimateClaudeMDPage",
+          "line": 14,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "UltimateClaudeMDPage",
+          "callee": "useState",
+          "lineNumber": 15
+        },
+        {
+          "caller": "UltimateClaudeMDPage",
+          "callee": "useState",
+          "lineNumber": 16
+        },
+        {
+          "caller": "UltimateClaudeMDPage",
+          "callee": "useState",
+          "lineNumber": 17
+        },
+        {
+          "caller": "UltimateClaudeMDPage",
+          "callee": "useState",
+          "lineNumber": 18
+        },
+        {
+          "caller": "UltimateClaudeMDPage",
+          "callee": "useState",
+          "lineNumber": 19
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "e.preventDefault",
+          "lineNumber": 22
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setLoading",
+          "lineNumber": 24
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setError",
+          "lineNumber": 25
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "fetch",
+          "lineNumber": 27
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "JSON.stringify",
+          "lineNumber": 30
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setSubmitted",
+          "lineNumber": 33
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setError",
+          "lineNumber": 35
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setLoading",
+          "lineNumber": 37
+        },
+        {
+          "caller": "Form",
+          "callee": "setFirstName",
+          "lineNumber": 47
+        },
+        {
+          "caller": "Form",
+          "callee": "setEmail",
+          "lineNumber": 56
+        },
+        {
+          "caller": "UltimateClaudeMDPage",
+          "callee": "BENEFITS.map",
+          "lineNumber": 146
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/robots.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 12,
+      "functions": [
+        {
+          "name": "robots",
+          "startLine": 3,
+          "endLine": 13,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "robots",
+          "line": 3,
+          "isDefault": true
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/sitemap.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 23,
+      "functions": [
+        {
+          "name": "sitemap",
+          "startLine": 6,
+          "endLine": 27,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "sitemap",
+          "line": 6,
+          "isDefault": true
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/PrepChecklistItem.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 65,
+      "nonEmptyLines": 63,
+      "functions": [
+        {
+          "name": "PrepChecklistItem",
+          "startLine": 10,
+          "endLine": 65,
+          "params": [
+            "{\n  number,\n  title,\n  required = true,\n  children,\n}"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PrepChecklistItem",
+          "line": 10,
+          "isDefault": true
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/VantaHero.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 94,
+      "nonEmptyLines": 82,
+      "functions": [
+        {
+          "name": "VantaHero",
+          "startLine": 14,
+          "endLine": 94,
+          "params": [
+            "{ sessionNumber, title, description, slug, subpage }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "VantaHero",
+          "line": 14,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "VantaHero",
+          "callee": "useRef",
+          "lineNumber": 15
+        },
+        {
+          "caller": "VantaHero",
+          "callee": "useRef",
+          "lineNumber": 16
+        },
+        {
+          "caller": "VantaHero",
+          "callee": "useEffect",
+          "lineNumber": 18
+        },
+        {
+          "caller": "init",
+          "callee": "import",
+          "lineNumber": 22
+        },
+        {
+          "caller": "init",
+          "callee": "import",
+          "lineNumber": 24
+        },
+        {
+          "caller": "init",
+          "callee": "NET",
+          "lineNumber": 28
+        },
+        {
+          "caller": "VantaHero",
+          "callee": "init",
+          "lineNumber": 42
+        },
+        {
+          "caller": "VantaHero",
+          "callee": "effectRef.current?.destroy",
+          "lineNumber": 46
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/templates/tool-page-template.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 82,
+      "nonEmptyLines": 74,
+      "functions": [
+        {
+          "name": "ToolPageTemplate",
+          "startLine": 19,
+          "endLine": 82,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ToolPageTemplate",
+          "line": 19,
+          "isDefault": true
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "tailwind.config.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 53,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "tests/giveaway-email-collection.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 190,
+      "nonEmptyLines": 167,
+      "functions": [
+        {
+          "name": "extractEmailRegex",
+          "startLine": 64,
+          "endLine": 70,
+          "params": [
+            "src"
+          ]
+        },
+        {
+          "name": "listGiveawayPages",
+          "startLine": 142,
+          "endLine": 157,
+          "params": []
+        },
+        {
+          "name": "extractModalSlugs",
+          "startLine": 159,
+          "endLine": 170,
+          "params": [
+            "src"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "extractEmailRegex",
+          "callee": "src.match",
+          "lineNumber": 65
+        },
+        {
+          "caller": "extractEmailRegex",
+          "callee": "eval",
+          "lineNumber": 68
+        },
+        {
+          "caller": "listGiveawayPages",
+          "callee": "readdirSync",
+          "lineNumber": 143
+        },
+        {
+          "caller": "listGiveawayPages",
+          "callee": "entry.isDirectory",
+          "lineNumber": 146
+        },
+        {
+          "caller": "listGiveawayPages",
+          "callee": "join",
+          "lineNumber": 147
+        },
+        {
+          "caller": "listGiveawayPages",
+          "callee": "statSync",
+          "lineNumber": 149
+        },
+        {
+          "caller": "listGiveawayPages",
+          "callee": "stat.isFile",
+          "lineNumber": 150
+        },
+        {
+          "caller": "listGiveawayPages",
+          "callee": "pages.push",
+          "lineNumber": 154
+        },
+        {
+          "caller": "listGiveawayPages",
+          "callee": "readFileSync",
+          "lineNumber": 154
+        },
+        {
+          "caller": "extractModalSlugs",
+          "callee": "re.exec",
+          "lineNumber": 167
+        },
+        {
+          "caller": "extractModalSlugs",
+          "callee": "slugs.push",
+          "lineNumber": 167
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "tests/giveaway-template-structure.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 129,
+      "nonEmptyLines": 114,
+      "functions": [
+        {
+          "name": "listGiveawayPages",
+          "startLine": 41,
+          "endLine": 56,
+          "params": []
+        },
+        {
+          "name": "importsModal",
+          "startLine": 58,
+          "endLine": 65,
+          "params": [
+            "src"
+          ]
+        },
+        {
+          "name": "hasCopyPromptTrigger",
+          "startLine": 67,
+          "endLine": 69,
+          "params": [
+            "src"
+          ]
+        },
+        {
+          "name": "hasAutoPopupTrigger",
+          "startLine": 71,
+          "endLine": 78,
+          "params": [
+            "src"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "listGiveawayPages",
+          "callee": "readdirSync",
+          "lineNumber": 42
+        },
+        {
+          "caller": "listGiveawayPages",
+          "callee": "entry.isDirectory",
+          "lineNumber": 45
+        },
+        {
+          "caller": "listGiveawayPages",
+          "callee": "join",
+          "lineNumber": 46
+        },
+        {
+          "caller": "listGiveawayPages",
+          "callee": "statSync",
+          "lineNumber": 48
+        },
+        {
+          "caller": "listGiveawayPages",
+          "callee": "stat.isFile",
+          "lineNumber": 49
+        },
+        {
+          "caller": "listGiveawayPages",
+          "callee": "pages.push",
+          "lineNumber": 53
+        },
+        {
+          "caller": "listGiveawayPages",
+          "callee": "readFileSync",
+          "lineNumber": 53
+        },
+        {
+          "caller": "importsModal",
+          "callee": "/from\\s+['\"]@\\/components\\/giveaways\\/GiveawayEmailModal['\"]/.test",
+          "lineNumber": 62
+        },
+        {
+          "caller": "importsModal",
+          "callee": "/from\\s+['\"]@\\/components\\/giveaways\\/GiveawayAutoModal['\"]/.test",
+          "lineNumber": 63
+        },
+        {
+          "caller": "hasCopyPromptTrigger",
+          "callee": "/onAfterCopy\\s*=\\s*\\{?\\s*\\(\\s*\\)\\s*=>\\s*setEmailModalOpen\\(true\\)/.test",
+          "lineNumber": 68
+        },
+        {
+          "caller": "hasAutoPopupTrigger",
+          "callee": "/<GiveawayAutoModal\\b/.test",
+          "lineNumber": 73
+        },
+        {
+          "caller": "hasAutoPopupTrigger",
+          "callee": "/['\"]giveaway-auto-modal-shown-/.test",
+          "lineNumber": 75
+        },
+        {
+          "caller": "hasAutoPopupTrigger",
+          "callee": "/setTimeout\\s*\\([\\s\\S]{0,200}?setEmailModalOpen\\s*\\(\\s*true\\s*\\)/.test",
+          "lineNumber": 76
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    }
+  ]
+}

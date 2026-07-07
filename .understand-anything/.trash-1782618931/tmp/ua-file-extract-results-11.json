@@ -1,0 +1,270 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 6,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "supabase/migrations/001_event_registrations.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 35,
+      "nonEmptyLines": 33,
+      "definitions": [
+        {
+          "name": "event_registrations",
+          "kind": "table",
+          "fields": [
+            "id",
+            "event_slug",
+            "attendee_name",
+            "attendee_email",
+            "stripe_session_id",
+            "amount_paid",
+            "cancel_token",
+            "status",
+            "cancelled_at"
+          ],
+          "startLine": 1,
+          "endLine": 12
+        },
+        {
+          "name": "event_waitlist",
+          "kind": "table",
+          "fields": [
+            "id",
+            "event_slug",
+            "name",
+            "email",
+            "remove_token",
+            "status"
+          ],
+          "startLine": 14,
+          "endLine": 22
+        },
+        {
+          "name": "event_email_rules",
+          "kind": "table",
+          "fields": [
+            "id",
+            "event_slug",
+            "rule_name",
+            "trigger_type",
+            "target_audience",
+            "body_preview",
+            "active",
+            "created_at"
+          ],
+          "startLine": 24,
+          "endLine": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 3
+      }
+    },
+    {
+      "path": "supabase/migrations/002_unique_email_constraints.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 10,
+      "nonEmptyLines": 9,
+      "definitions": [
+        {
+          "name": "event_registrations_unique_confirmed_email",
+          "kind": "index",
+          "fields": [],
+          "startLine": 3,
+          "endLine": 3
+        },
+        {
+          "name": "event_waitlist_unique_active_email",
+          "kind": "index",
+          "fields": [],
+          "startLine": 8,
+          "endLine": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 2
+      }
+    },
+    {
+      "path": "supabase/migrations/003_rate_limit_and_cron_locks.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 20,
+      "nonEmptyLines": 19,
+      "definitions": [
+        {
+          "name": "rate_limit_log",
+          "kind": "table",
+          "fields": [
+            "id",
+            "created_at"
+          ],
+          "startLine": 3,
+          "endLine": 7
+        },
+        {
+          "name": "cron_window_locks",
+          "kind": "table",
+          "fields": [
+            "id",
+            "lock_key",
+            "created_at"
+          ],
+          "startLine": 16,
+          "endLine": 20
+        },
+        {
+          "name": "rate_limit_log_key_created",
+          "kind": "index",
+          "fields": [],
+          "startLine": 8,
+          "endLine": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 3
+      }
+    },
+    {
+      "path": "supabase/migrations/004_abandoned_checkout_followups.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 53,
+      "nonEmptyLines": 47,
+      "definitions": [
+        {
+          "name": "event_automation_controls",
+          "kind": "table",
+          "fields": [
+            "automation_key",
+            "mode",
+            "test_recipients",
+            "created_at",
+            "updated_at"
+          ],
+          "startLine": 1,
+          "endLine": 7
+        },
+        {
+          "name": "event_checkout_followup_state",
+          "kind": "table",
+          "fields": [
+            "id",
+            "followup_type",
+            "event_slug",
+            "attendee_email",
+            "attendee_name",
+            "source_checkout_session_id",
+            "source_checkout_created_at",
+            "live_sent_at",
+            "last_test_sent_at",
+            "last_test_source_checkout_session_id",
+            "suppressed_at",
+            "suppression_reason",
+            "last_error_at",
+            "last_error_message",
+            "created_at",
+            "updated_at"
+          ],
+          "startLine": 17,
+          "endLine": 34
+        },
+        {
+          "name": "event_checkout_followup_suppressions",
+          "kind": "table",
+          "fields": [
+            "id",
+            "event_slug",
+            "email",
+            "reason",
+            "active",
+            "created_at",
+            "updated_at"
+          ],
+          "startLine": 42,
+          "endLine": 50
+        },
+        {
+          "name": "event_checkout_followup_state_unique",
+          "kind": "index",
+          "fields": [],
+          "startLine": 36,
+          "endLine": 36
+        },
+        {
+          "name": "event_checkout_followup_state_upsert_unique",
+          "kind": "index",
+          "fields": [],
+          "startLine": 39,
+          "endLine": 39
+        },
+        {
+          "name": "event_checkout_followup_suppressions_lookup",
+          "kind": "index",
+          "fields": [],
+          "startLine": 52,
+          "endLine": 52
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 6
+      }
+    },
+    {
+      "path": "supabase/migrations/005_abandoned_checkout_live_claims.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 68,
+      "nonEmptyLines": 64,
+      "definitions": [
+        {
+          "name": "event_checkout_followup_live_claim_lookup",
+          "kind": "index",
+          "fields": [],
+          "startLine": 5,
+          "endLine": 5
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 1
+      }
+    },
+    {
+      "path": "supabase/migrations/006_abandoned_checkout_t12h_seed.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 7,
+      "nonEmptyLines": 7,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 0
+      }
+    }
+  ]
+}

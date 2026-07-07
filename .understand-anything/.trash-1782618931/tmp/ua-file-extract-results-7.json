@@ -1,0 +1,1392 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 20,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/app/session/9/guide/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 48,
+      "functions": [
+        {
+          "name": "Session9GuidePage",
+          "startLine": 9,
+          "endLine": 52,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "metadata",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "Session9GuidePage",
+          "line": 9,
+          "isDefault": true
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/session/[slug]/guide/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 98,
+      "nonEmptyLines": 89,
+      "functions": [
+        {
+          "name": "generateStaticParams",
+          "startLine": 24,
+          "endLine": 32,
+          "params": []
+        },
+        {
+          "name": "generateMetadata",
+          "startLine": 34,
+          "endLine": 42,
+          "params": [
+            "{ params }"
+          ]
+        },
+        {
+          "name": "SessionGuidePage",
+          "startLine": 44,
+          "endLine": 98,
+          "params": [
+            "{ params }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "generateStaticParams",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "generateMetadata",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "SessionGuidePage",
+          "line": 44,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "generateMetadata",
+          "callee": "getSession",
+          "lineNumber": 36
+        },
+        {
+          "caller": "SessionGuidePage",
+          "callee": "getSession",
+          "lineNumber": 46
+        },
+        {
+          "caller": "SessionGuidePage",
+          "callee": "notFound",
+          "lineNumber": 47
+        },
+        {
+          "caller": "SessionGuidePage",
+          "callee": "notFound",
+          "lineNumber": 48
+        },
+        {
+          "caller": "SessionGuidePage",
+          "callee": "notFound",
+          "lineNumber": 49
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/CodeBlock.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 157,
+      "nonEmptyLines": 141,
+      "functions": [
+        {
+          "name": "toCodexPrompt",
+          "startLine": 15,
+          "endLine": 23,
+          "params": [
+            "prompt"
+          ]
+        },
+        {
+          "name": "MagneticCopyButton",
+          "startLine": 30,
+          "endLine": 63,
+          "params": [
+            "{ children, className = '', variant, ...props }"
+          ]
+        },
+        {
+          "name": "CodeBlock",
+          "startLine": 65,
+          "endLine": 157,
+          "params": [
+            "{ code, language, filename, editable, codexPrompt }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CodeBlock",
+          "line": 65,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "toCodexPrompt",
+          "callee": "prompt\n    .replace(/\\bClaude Code\\b/g, 'Codex')\n    .replace(/\\bClaude\\b/g, 'Codex')\n    .replace(/\\bCLAUDE\\.md\\b/g, 'AGENTS.md')\n    .replace",
+          "lineNumber": 16
+        },
+        {
+          "caller": "toCodexPrompt",
+          "callee": "prompt\n    .replace(/\\bClaude Code\\b/g, 'Codex')\n    .replace(/\\bClaude\\b/g, 'Codex')\n    .replace",
+          "lineNumber": 16
+        },
+        {
+          "caller": "toCodexPrompt",
+          "callee": "prompt\n    .replace(/\\bClaude Code\\b/g, 'Codex')\n    .replace",
+          "lineNumber": 16
+        },
+        {
+          "caller": "toCodexPrompt",
+          "callee": "prompt\n    .replace",
+          "lineNumber": 16
+        },
+        {
+          "caller": "toCodexPrompt",
+          "callee": "codexPrompt.replace(/^\\s*codex\\s+--yolo\\s*/i, '').trimStart",
+          "lineNumber": 22
+        },
+        {
+          "caller": "toCodexPrompt",
+          "callee": "codexPrompt.replace",
+          "lineNumber": 22
+        },
+        {
+          "caller": "MagneticCopyButton",
+          "callee": "useState",
+          "lineNumber": 31
+        },
+        {
+          "caller": "handleMouseMove",
+          "callee": "window.matchMedia",
+          "lineNumber": 38
+        },
+        {
+          "caller": "handleMouseMove",
+          "callee": "event.currentTarget.getBoundingClientRect",
+          "lineNumber": 40
+        },
+        {
+          "caller": "handleMouseMove",
+          "callee": "setOffset",
+          "lineNumber": 43
+        },
+        {
+          "caller": "handleMouseMove",
+          "callee": "props.onMouseMove",
+          "lineNumber": 44
+        },
+        {
+          "caller": "handleMouseLeave",
+          "callee": "setOffset",
+          "lineNumber": 48
+        },
+        {
+          "caller": "handleMouseLeave",
+          "callee": "props.onMouseLeave",
+          "lineNumber": 49
+        },
+        {
+          "caller": "CodeBlock",
+          "callee": "useState",
+          "lineNumber": 66
+        },
+        {
+          "caller": "CodeBlock",
+          "callee": "useState",
+          "lineNumber": 67
+        },
+        {
+          "caller": "CodeBlock",
+          "callee": "useState",
+          "lineNumber": 68
+        },
+        {
+          "caller": "CodeBlock",
+          "callee": "filename?.toLowerCase().includes",
+          "lineNumber": 69
+        },
+        {
+          "caller": "CodeBlock",
+          "callee": "filename?.toLowerCase",
+          "lineNumber": 69
+        },
+        {
+          "caller": "handleCopy",
+          "callee": "copyWithConfetti",
+          "lineNumber": 75
+        },
+        {
+          "caller": "handleCopy",
+          "callee": "setCopied",
+          "lineNumber": 76
+        },
+        {
+          "caller": "handleCopy",
+          "callee": "setTimeout",
+          "lineNumber": 77
+        },
+        {
+          "caller": "handleCopy",
+          "callee": "setCopied",
+          "lineNumber": 77
+        },
+        {
+          "caller": "handleCodexCopy",
+          "callee": "copyWithConfetti",
+          "lineNumber": 85
+        },
+        {
+          "caller": "handleCodexCopy",
+          "callee": "toCodexPrompt",
+          "lineNumber": 85
+        },
+        {
+          "caller": "handleCodexCopy",
+          "callee": "setCodexCopied",
+          "lineNumber": 86
+        },
+        {
+          "caller": "handleCodexCopy",
+          "callee": "setTimeout",
+          "lineNumber": 87
+        },
+        {
+          "caller": "handleCodexCopy",
+          "callee": "setCodexCopied",
+          "lineNumber": 87
+        },
+        {
+          "caller": "CodeBlock",
+          "callee": "Math.max",
+          "lineNumber": 93
+        },
+        {
+          "caller": "CodeBlock",
+          "callee": "value.split",
+          "lineNumber": 93
+        },
+        {
+          "caller": "CodeBlock",
+          "callee": "setValue",
+          "lineNumber": 125
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/ProTip.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 44,
+      "functions": [
+        {
+          "name": "ProTip",
+          "startLine": 33,
+          "endLine": 49,
+          "params": [
+            "{ type = 'tip', title, className, children }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProTip",
+          "line": 33,
+          "isDefault": true
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/StepCard.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 28,
+      "functions": [
+        {
+          "name": "StepCard",
+          "startLine": 9,
+          "endLine": 30,
+          "params": [
+            "{ number, title, children }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "StepCard",
+          "line": 9,
+          "isDefault": true
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/StickyVideoPlayer.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 476,
+      "nonEmptyLines": 435,
+      "functions": [
+        {
+          "name": "StickyVideoPlayer",
+          "startLine": 17,
+          "endLine": 476,
+          "params": [
+            "{ videoId, videos, src, title = 'Workshop Recording' }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "StickyVideoPlayer",
+          "line": 17,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "useState",
+          "lineNumber": 19
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "useState",
+          "lineNumber": 20
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "useState",
+          "lineNumber": 21
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "useState",
+          "lineNumber": 22
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "useState",
+          "lineNumber": 23
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "useRef",
+          "lineNumber": 24
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "useState",
+          "lineNumber": 25
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "useRef",
+          "lineNumber": 26
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "useRef",
+          "lineNumber": 27
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "useCallback",
+          "lineNumber": 34
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "setInlineRect",
+          "lineNumber": 36
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "placeholderRef.current.getBoundingClientRect",
+          "lineNumber": 36
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "useEffect",
+          "lineNumber": 41
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "measureInline",
+          "lineNumber": 43
+        },
+        {
+          "caller": "onScroll",
+          "callee": "measureInline",
+          "lineNumber": 44
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "window.addEventListener",
+          "lineNumber": 45
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "window.addEventListener",
+          "lineNumber": 46
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "window.removeEventListener",
+          "lineNumber": 48
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "window.removeEventListener",
+          "lineNumber": 49
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "useEffect",
+          "lineNumber": 54
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "setIsSticky",
+          "lineNumber": 62
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "observer.observe",
+          "lineNumber": 70
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "observer.disconnect",
+          "lineNumber": 71
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "useCallback",
+          "lineNumber": 74
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "setHasStarted",
+          "lineNumber": 75
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "useCallback",
+          "lineNumber": 78
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "useEffect",
+          "lineNumber": 83
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "video.play().catch",
+          "lineNumber": 88
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "video.play",
+          "lineNumber": 88
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "useCallback",
+          "lineNumber": 91
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "setIsMinimized",
+          "lineNumber": 92
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "setIsSticky",
+          "lineNumber": 93
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "useCallback",
+          "lineNumber": 96
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "setIsMinimized",
+          "lineNumber": 97
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "useCallback",
+          "lineNumber": 100
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "setIsExpanded",
+          "lineNumber": 101
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "useCallback",
+          "lineNumber": 104
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "setIsExpanded",
+          "lineNumber": 105
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "useEffect",
+          "lineNumber": 109
+        },
+        {
+          "caller": "handleKey",
+          "callee": "setIsExpanded",
+          "lineNumber": 112
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "window.addEventListener",
+          "lineNumber": 114
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "window.removeEventListener",
+          "lineNumber": 115
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "useCallback",
+          "lineNumber": 121
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "setActiveVideoId",
+          "lineNumber": 122
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "setHasStarted",
+          "lineNumber": 123
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "useRef",
+          "lineNumber": 127
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "useRef",
+          "lineNumber": 128
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "useCallback",
+          "lineNumber": 130
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "btn.getBoundingClientRect",
+          "lineNumber": 133
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "useCallback",
+          "lineNumber": 142
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "videos.map",
+          "lineNumber": 205
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "handleSwitchVideo",
+          "lineNumber": 211
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "handleMagneticMove",
+          "lineNumber": 212
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "handleMagneticLeave",
+          "lineNumber": 213
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "videos.map",
+          "lineNumber": 289
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "handleSwitchVideo",
+          "lineNumber": 292
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "e.stopPropagation",
+          "lineNumber": 342
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "getVideoStyle",
+          "lineNumber": 401
+        },
+        {
+          "caller": "StickyVideoPlayer",
+          "callee": "e.stopPropagation",
+          "lineNumber": 452
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/TianaSessionFooter.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 27,
+      "functions": [
+        {
+          "name": "TianaSessionFooter",
+          "startLine": 1,
+          "endLine": 27,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TianaSessionFooter",
+          "line": 1,
+          "isDefault": true
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/content/session-1-guide.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 120,
+      "nonEmptyLines": 106,
+      "functions": [
+        {
+          "name": "Session1Guide",
+          "startLine": 5,
+          "endLine": 120,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Session1Guide",
+          "line": 5,
+          "isDefault": true
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/content/session-10-instagram-agent.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 623,
+      "nonEmptyLines": 565,
+      "functions": [
+        {
+          "name": "Session10InstagramAgent",
+          "startLine": 256,
+          "endLine": 623,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Session10InstagramAgent",
+          "line": 256,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Session10InstagramAgent",
+          "callee": "[\n              { href: '#permissions', label: 'Start Here — Claude Dangerously Skip Permissions' },\n              { href: '#install', label: 'Install — Install and log into the Instagram agent' },\n              { href: '#open-instagram', label: 'Open Instagram — Log into the right account' },\n              { href: '#credentials', label: 'Credentials — Add your Instagram login credentials' },\n              { href: '#capabilities', label: 'Capabilities — What it can do and how to use it' },\n              { href: '#reality', label: 'Reality — Risks and the right long-term path' },\n              { href: '#journey', label: 'Journey — Landing page, giveaway, DM, CRM' },\n              { href: '#tests', label: 'Tests — Try the agent safely' },\n            ].map",
+          "lineNumber": 302
+        },
+        {
+          "caller": "Session10InstagramAgent",
+          "callee": "SUCCESS_SIGNALS.map",
+          "lineNumber": 364
+        },
+        {
+          "caller": "Session10InstagramAgent",
+          "callee": "LEAD_JOURNEY_STEPS.map",
+          "lineNumber": 568
+        },
+        {
+          "caller": "Session10InstagramAgent",
+          "callee": "CRM_FIELD_MAP.map",
+          "lineNumber": 583
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/content/session-2-guide-codex.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 569,
+      "nonEmptyLines": 526,
+      "functions": [
+        {
+          "name": "Session2GuideCodex",
+          "startLine": 6,
+          "endLine": 569,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Session2GuideCodex",
+          "line": 6,
+          "isDefault": true
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/content/session-2-guide.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 736,
+      "nonEmptyLines": 673,
+      "functions": [
+        {
+          "name": "Session2Guide",
+          "startLine": 6,
+          "endLine": 736,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Session2Guide",
+          "line": 6,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Session2Guide",
+          "callee": "[\n              { href: '#part-a', label: 'Part A — Set Up and Build Your Page' },\n              { href: '#part-b', label: 'Part B — Add Visual Effects' },\n              { href: '#part-c', label: 'Part C — Deploy and Make It Yours' },\n            ].map",
+          "lineNumber": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/content/session-3-guide.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 588,
+      "nonEmptyLines": 548,
+      "functions": [
+        {
+          "name": "DnsRecord",
+          "startLine": 6,
+          "endLine": 46,
+          "params": [
+            "{\n  type,\n  host,\n  ttl,\n  valueLabel,\n  value,\n}"
+          ]
+        },
+        {
+          "name": "Session3Guide",
+          "startLine": 48,
+          "endLine": 588,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Session3Guide",
+          "line": 48,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Session3Guide",
+          "callee": "[\n              { href: '/session/3/custom-domain', label: 'Part A — Custom Domain Setup ↗' },\n              { href: '#lead-magnet', label: 'Part B — Build Your Lead Magnet Page' },\n              { href: '#supabase', label: 'Part C — Set Up Supabase' },\n              { href: '#wire-up', label: 'Part D — Wire It All Together' },\n              { href: '#bonus', label: 'Bonus — Send Emails from Your Own Domain' },\n            ].map",
+          "lineNumber": 86
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/content/session-5-guide.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 575,
+      "nonEmptyLines": 513,
+      "functions": [
+        {
+          "name": "Checkbox",
+          "startLine": 10,
+          "endLine": 29,
+          "params": [
+            "{ checked, onChange }"
+          ]
+        },
+        {
+          "name": "Session5Guide",
+          "startLine": 37,
+          "endLine": 575,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Session5Guide",
+          "line": 37,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Session5Guide",
+          "callee": "useState",
+          "lineNumber": 38
+        },
+        {
+          "caller": "toggleReview",
+          "callee": "setReviewChecked",
+          "lineNumber": 41
+        },
+        {
+          "caller": "toggleReview",
+          "callee": "next.has",
+          "lineNumber": 43
+        },
+        {
+          "caller": "toggleReview",
+          "callee": "next.delete",
+          "lineNumber": 44
+        },
+        {
+          "caller": "toggleReview",
+          "callee": "next.add",
+          "lineNumber": 46
+        },
+        {
+          "caller": "toggleReview",
+          "callee": "celebrate",
+          "lineNumber": 47
+        },
+        {
+          "caller": "Session5Guide",
+          "callee": "[\n                { href: '#part-a', label: 'Part A: Open Claude Code' },\n                { href: '#part-b', label: 'Part B: Giving Your Orchestration Agent a Personality' },\n                { href: '#part-c', label: 'Part C: Run your Brain Dump' },\n                { href: '#part-d', label: 'Part D: Review, load context, and test it' },\n                { href: '#part-e', label: 'Part E: Claude on Your Phone' },\n              ].map",
+          "lineNumber": 104
+        },
+        {
+          "caller": "Session5Guide",
+          "callee": "REVIEW_ITEMS.map",
+          "lineNumber": 327
+        },
+        {
+          "caller": "Session5Guide",
+          "callee": "reviewChecked.has",
+          "lineNumber": 333
+        },
+        {
+          "caller": "Session5Guide",
+          "callee": "toggleReview",
+          "lineNumber": 334
+        },
+        {
+          "caller": "Session5Guide",
+          "callee": "reviewChecked.has",
+          "lineNumber": 338
+        },
+        {
+          "caller": "Session5Guide",
+          "callee": "[\n                'Tell me about the projects I am currently working on.',\n                'Tell me the things I am most curious about.',\n                'Tell me my astrological sign.',\n                'What was the last idea I got excited about?',\n                'Who are my most important clients or collaborators?',\n                'What should I focus on to move my business forward?',\n              ].map",
+          "lineNumber": 433
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/content/session-6-guide.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 517,
+      "nonEmptyLines": 473,
+      "functions": [
+        {
+          "name": "Session6Guide",
+          "startLine": 14,
+          "endLine": 517,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Session6Guide",
+          "line": 14,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Session6Guide",
+          "callee": "[\n                { href: '#part-a', label: 'Part A: Build Your Voice Profile' },\n                { href: '#part-b', label: 'Part B: Model Switching and Background Agents' },\n                { href: '#part-c', label: 'Part C: Hook Writer Part 1' },\n                { href: '#part-d', label: 'Part D: Your Daily Hook Research Agent' },\n              ].map",
+          "lineNumber": 64
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/content/session-7-descript-guide.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 473,
+      "nonEmptyLines": 442,
+      "functions": [
+        {
+          "name": "Session7DescriptGuide",
+          "startLine": 7,
+          "endLine": 473,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Session7DescriptGuide",
+          "line": 7,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Session7DescriptGuide",
+          "callee": "[\n                { href: '#part-a', label: 'Part A: Import Your File' },\n                { href: '#part-b', label: 'Part B: Studio Sound' },\n                { href: '#part-c', label: 'Part C: Edit with Text, Not a Timeline' },\n                { href: '#part-d', label: 'Part D: Overdub (Paid Plan)' },\n                { href: '#part-e', label: 'Part E: AI Clip Suggestions' },\n                { href: '#part-f', label: 'Part F: Captions' },\n                { href: '#part-g', label: 'Part G: Resize for Social' },\n                { href: '#part-h', label: 'Part H: Export' },\n              ].map",
+          "lineNumber": 100
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/content/session-7-guide.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 674,
+      "nonEmptyLines": 617,
+      "functions": [
+        {
+          "name": "Session7Guide",
+          "startLine": 15,
+          "endLine": 674,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Session7Guide",
+          "line": 15,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Session7Guide",
+          "callee": "[\n                { href: '#part-a', label: 'Part A: Install and Wire Up Mission Control' },\n                { href: '#part-b', label: 'Part B: Tour the Task Board' },\n                { href: '#part-c', label: 'Part C: Explore Sample Projects' },\n                { href: '#part-d', label: 'Part D: Add Your First Real Card' },\n                { href: '#part-e', label: 'Part E: The AI Column (Preview)' },\n              ].map",
+          "lineNumber": 66
+        },
+        {
+          "caller": "Session7Guide",
+          "callee": "[\n              {\n                name: 'Backlog',\n                description: 'Ideas and tasks you have not started yet. Think of it as your inbox for future work. Everything that comes to mind goes here first.',\n              },\n              {\n                name: 'AI (Auto Execute)',\n                description: 'The automation column. Cards you move here get picked up by Claude automatically and executed without you doing anything. This is Phase 2, coming in the next session. For now, read the sample cards to see what kinds of tasks this is designed for.',\n              },\n              {\n                name: 'Doing',\n                description: 'Tasks you are actively working on right now. Keep this column short, three to five cards maximum. If it gets long, some of those things are not actually in progress.',\n              },\n              {\n                name: 'Human Must Do',\n                description: 'Tasks that only a human can handle: phone calls, important decisions, relationship conversations, anything requiring your physical presence or judgment. Claude will never touch these.',\n              },\n              {\n                name: 'Review',\n                description: 'Work that is done but needs a second look before it is finished. Claude might move a card here after completing a task so you can check its output.',\n              },\n              {\n                name: 'Done',\n                description: 'Completed. Cards move here when the work is finished and approved.',\n              },\n              {\n                name: 'Icebox',\n                description: 'Good ideas you are not doing now and do not want to lose. Not rejected, just parked. Different from Backlog, which is active. Icebox is long-term maybe.',\n              },\n            ].map",
+          "lineNumber": 271
+        },
+        {
+          "caller": "Session7Guide",
+          "callee": "[\n                { name: 'Email Automation System', description: 'Setting up automated sequences for leads and onboarding' },\n                { name: 'Client Onboarding Portal', description: 'A structured flow for bringing new clients into your process' },\n                { name: 'Content Strategy Hub', description: 'Planning, scheduling, and tracking content across platforms' },\n                { name: 'Revenue Growth Tracker', description: 'Monitoring income, sources, and monthly targets' },\n                { name: 'Infrastructure Setup', description: 'The tools, systems, and tech stack running your business' },\n              ].map",
+          "lineNumber": 340
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/content/session-8-guide.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 1022,
+      "nonEmptyLines": 946,
+      "functions": [
+        {
+          "name": "WebFetchUseCaseIcon",
+          "startLine": 11,
+          "endLine": 67,
+          "params": [
+            "{ type }"
+          ]
+        },
+        {
+          "name": "Session8Guide",
+          "startLine": 69,
+          "endLine": 1022,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Session8Guide",
+          "line": 69,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Session8Guide",
+          "callee": "[\n                { href: '#setup',      label: 'Claude Dangerously Skip Permissions' },\n                { href: '#install',    label: 'Install and Register WebFetch' },\n                { href: '#part-a',     label: 'WebFetch' },\n                { href: '#examples',   label: 'Using WebFetch Examples' },\n                { href: '#tools',      label: 'Tools Inside WebFetch' },\n                { href: '#use-cases',  label: 'WebFetch Real-World Use Cases' },\n                { href: '#mlx-whisper',label: 'Local Whisper and Diarization' },\n                { href: '#guarddog',   label: 'Installing GuardDog' },\n                { href: '#virustotal', label: 'VirusTotal API Key' },\n                { href: '#wrap-up',    label: 'Wrap-Up' },\n                { href: '#git-memory', label: 'Git: Turn Your Projects Into Repos' },\n              ].map",
+          "lineNumber": 120
+        },
+        {
+          "caller": "Session8Guide",
+          "callee": "[\n              { icon: 'research' as const, title: 'Scraping Data', desc: 'Pull page text, tables, links, prices, headlines, and repeated elements into structured output.' },\n              { icon: 'monitoring' as const, title: 'Grabbing Videos', desc: 'Download public or authorized video and audio for transcription, clipping, analysis, and archiving.' },\n              { icon: 'form' as const, title: 'Moving Your Mouse and Clicking', desc: 'Have your computer move your mouse, click things for you, scroll pages, and reveal dynamic content when a real browser is required.' },\n              { icon: 'pricing' as const, title: 'One WebFetch Package', desc: 'A compilation of multiple skills in one WebFetch workflow, so Claude can route the task instead of making you choose the tool by hand.' },\n            ].map",
+          "lineNumber": 294
+        },
+        {
+          "caller": "Session8Guide",
+          "callee": "[\n              {\n                title: 'Fetch: Page Reader',\n                desc: 'Reads a public webpage and gives Claude the useful content back as Markdown, text, JSON, or raw HTML. Use it for articles, pricing pages, landing pages, help docs, product pages, and competitor research.',\n              },\n              {\n                title: 'Extract: Precision Puller',\n                desc: 'Pulls a precise piece of a page with a CSS selector. Use it when you want every link, every headline, every price, all buttons, a table, or one repeated element instead of a full-page summary.',\n              },\n              {\n                title: 'Screenshot: Visual Proof',\n                desc: 'Captures a page visually. Use it for design QA, before-and-after checks, proof that a page rendered correctly, or when Claude needs to inspect layout rather than just text.',\n              },\n              {\n                title: 'PDF: Permanent Record',\n                desc: 'Saves a webpage as a PDF. Use it for client research archives, receipts, policy pages, references, or anything you want to preserve exactly as it appeared at the time.',\n              },\n              {\n                title: 'Media: Video and Audio Capture',\n                desc: 'Downloads public or authorized video/audio through yt-dlp for offline analysis, transcription, clipping, or reference. This is the command students will use for demos like public Reels, YouTube videos, podcast clips, or approved client media.',\n              },\n              {\n                title: 'Batch: Many URLs at Once',\n                desc: 'Runs the same fetch workflow across a list of URLs. Use it for competitor lists, source lists, lead research, content monitoring, or pulling many product pages into one research pass.',\n              },\n              {\n                title: 'Cache: Faster Iteration',\n                desc: 'Reuses recent fetches so Claude does not keep hitting the same page while you iterate. Clear the cache when a page changed or when you need a fresh read.',\n              },\n              {\n                title: 'Preflight + Status: Readiness Check',\n                desc: 'Checks whether the local install is healthy: Node, Playwright, optional Python tools, shot-scraper, and yt-dlp. Status shows what the agent is doing or what failed.',\n              },\n            ].map",
+          "lineNumber": 388
+        },
+        {
+          "caller": "Session8Guide",
+          "callee": "[\n              {\n                icon: 'reporting' as const,\n                title: 'Daily reporting',\n                desc: 'Have Claude log into your analytics dashboard every morning, take a screenshot, and summarize the numbers in a WhatsApp message.',\n              },\n              {\n                icon: 'research' as const,\n                title: 'Lead research',\n                desc: 'Paste a list of company names. Claude fetches each website and builds a one-line summary for each prospect.',\n              },\n              {\n                icon: 'form' as const,\n                title: 'Form automation',\n                desc: 'You describe what you want to create. Claude opens your project management tool and fills in the form.',\n              },\n              {\n                icon: 'qa' as const,\n                title: 'QA testing',\n                desc: 'Ship a new page on your site. Claude clicks through it as a real visitor and flags anything broken or confusing.',\n              },\n              {\n                icon: 'monitoring' as const,\n                title: 'Content monitoring',\n                desc: 'Fetch your industry news sources every morning and get a 3-bullet briefing on what is worth knowing.',\n              },\n              {\n                icon: 'pricing' as const,\n                title: 'Pricing intelligence',\n                desc: 'Fetch the pricing pages of 5 competitors and get a side-by-side breakdown with recommendations for your own pricing.',\n              },\n            ].map",
+          "lineNumber": 527
+        },
+        {
+          "caller": "Session8Guide",
+          "callee": "String(index + 1).padStart",
+          "lineNumber": 566
+        },
+        {
+          "caller": "Session8Guide",
+          "callee": "String",
+          "lineNumber": 566
+        },
+        {
+          "caller": "Session8Guide",
+          "callee": "[\n              {\n                title: 'Local Git First',\n                desc: 'Every serious project should become a local repo on the student machine before we worry about cloud backup or advanced workflows.',\n              },\n              {\n                title: 'Private Remote Second',\n                desc: 'If the project matters, Claude should recommend a private GitHub repo next. Public repos are not the default for this class.',\n              },\n              {\n                title: 'Meaningful Checkpoints',\n                desc: 'Claude should commit at working milestones, before risky refactors, and before deploys, not after every tiny change.',\n              },\n            ].map",
+          "lineNumber": 865
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/content/session-9-guide.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 641,
+      "nonEmptyLines": 587,
+      "functions": [
+        {
+          "name": "Session9Guide",
+          "startLine": 181,
+          "endLine": 641,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Session9Guide",
+          "line": 181,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Session9Guide",
+          "callee": "[\n                { href: '#permissions', label: 'Claude Dangerously Skip Permissions' },\n                { href: '#crm-install', label: 'Install The CRM Module' },\n                { href: '#crm-use', label: 'Use The CRM' },\n                { href: '#lead-capture-tests', label: 'Lead Capture Tests And Prompts' },\n              ].map",
+          "lineNumber": 257
+        },
+        {
+          "caller": "Session9Guide",
+          "callee": "[\n                {\n                  label: 'Navigation',\n                  title: 'The CRM shows up in Mission Control',\n                  body: '`CRM` appears in the main Mission Control nav so you know the module is live.',\n                },\n                {\n                  label: 'Routes',\n                  title: 'The core CRM pages load',\n                  body: '`/app/crm`, `pipeline`, `templates`, `automations`, and `settings` all open cleanly.',\n                },\n                {\n                  label: 'Data',\n                  title: 'Sample leads appear in the pipeline',\n                  body: 'You should see believable sample data instead of an empty board.',\n                },\n                {\n                  label: 'Assets',\n                  title: 'Templates and automations are present',\n                  body: 'The starter templates and starter automations are available for testing.',\n                },\n                {\n                  label: 'Email',\n                  title: 'Existing Resend config is wired automatically',\n                  body: 'If Resend already existed in the repo, the CRM should pick it up without extra setup.',\n                },\n              ].map",
+          "lineNumber": 338
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/content/tiana-ai-positioning-workshop.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 1273,
+      "nonEmptyLines": 1093,
+      "functions": [
+        {
+          "name": "Section",
+          "startLine": 7,
+          "endLine": 39,
+          "params": [
+            "{\n  id,\n  number,\n  label,\n  title,\n  children,\n}"
+          ]
+        },
+        {
+          "name": "PromptCard",
+          "startLine": 41,
+          "endLine": 75,
+          "params": [
+            "{\n  id,\n  number,\n  title,\n  intro,\n  filename = 'Claude Code prompt',\n  prompt,\n}"
+          ]
+        },
+        {
+          "name": "TeachingCard",
+          "startLine": 77,
+          "endLine": 107,
+          "params": [
+            "{\n  id,\n  step,\n  eyebrow,\n  title,\n  children,\n}"
+          ]
+        },
+        {
+          "name": "FrameworkBlock",
+          "startLine": 109,
+          "endLine": 121,
+          "params": [
+            "{ lines }"
+          ]
+        },
+        {
+          "name": "StructureCard",
+          "startLine": 123,
+          "endLine": 160,
+          "params": [
+            "{\n  number,\n  title,\n  time,\n  items,\n}"
+          ]
+        },
+        {
+          "name": "BulletList",
+          "startLine": 162,
+          "endLine": 173,
+          "params": [
+            "{ items }"
+          ]
+        },
+        {
+          "name": "TianaAiPositioningWorkshop",
+          "startLine": 182,
+          "endLine": 1273,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TianaAiPositioningWorkshop",
+          "line": 182,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "FrameworkBlock",
+          "callee": "lines.map",
+          "lineNumber": 113
+        },
+        {
+          "caller": "StructureCard",
+          "callee": "items.map",
+          "lineNumber": 149
+        },
+        {
+          "caller": "BulletList",
+          "callee": "items.map",
+          "lineNumber": 165
+        },
+        {
+          "caller": "TianaAiPositioningWorkshop",
+          "callee": "[\n              {\n                heading: 'Sections',\n                items: [\n                  { href: '#overview', label: 'Overview', number: '0' },\n                  { href: '#before-you-start', label: 'Get Your Messaging Ready', number: '1-6' },\n                  { href: '#live-guide', label: 'Opening and Client Journey', number: '7-21' },\n                  { href: '#step-positioning-foundation', label: 'Market Positioning and Close', number: '22-39' },\n                  { href: '#positioning-builder', label: 'Workbook', number: '40-46' },\n                ],\n              },\n            ].map",
+          "lineNumber": 226
+        },
+        {
+          "caller": "TianaAiPositioningWorkshop",
+          "callee": "group.items.map",
+          "lineNumber": 241
+        },
+        {
+          "caller": "TianaAiPositioningWorkshop",
+          "callee": "[\n              {\n                badge: 'Before You Start',\n                title: 'Get Your Messaging Ready',\n                description: 'Gather your current messaging and run the AI Description Test as a baseline. Takes ten minutes. Makes the opening exercise significantly more useful.',\n              },\n              {\n                badge: 'Live Guide',\n                title: 'The AI Era and Where You Stand: Session Guide',\n                description: 'Step-by-step guide for following along. All exercises, frameworks, and discussion prompts included. Designed as a mastermind. Discussion happens throughout, not at the end.',\n                featured: true,\n              },\n              {\n                badge: 'During the Session',\n                title: 'Positioning Statement Builder',\n                description: 'Build your first-draft positioning statement using the competitive alternative framework. Includes the awareness check and the lead generation connection.',\n              },\n            ].map",
+          "lineNumber": 271
+        },
+        {
+          "caller": "TianaAiPositioningWorkshop",
+          "callee": "[\n                  ['1', 'Unaware', 'This is just how business works.'],\n                  ['2', 'Problem Aware', \"Something isn't working but I don't know what.\"],\n                  ['3', 'Solution Aware', 'I need better positioning / systems / clarity.'],\n                  ['4', 'Product Aware', \"I've seen this offer. Not sure yet.\"],\n                  ['5', 'Most Aware', \"I'm ready. Who do I hire?\"],\n                ].map",
+          "lineNumber": 654
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/templates/session-guide-template.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 311,
+      "nonEmptyLines": 289,
+      "functions": [
+        {
+          "name": "Session_FILL_IN_Guide",
+          "startLine": 39,
+          "endLine": 311,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Session_FILL_IN_Guide",
+          "line": 39,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Session_FILL_IN_Guide",
+          "callee": "[\n              { href: '#part-a', label: 'Part A — [TITLE]' },\n              { href: '#part-b', label: 'Part B — [TITLE]' },\n              { href: '#part-c', label: 'Part C — [TITLE]' },\n              { href: '#bonus', label: 'Bonus — [TITLE]' },\n            ].map",
+          "lineNumber": 89
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

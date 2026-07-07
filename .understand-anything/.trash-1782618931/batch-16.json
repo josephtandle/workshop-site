@@ -1,0 +1,183 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/app/lead-magnets/ultimate-claudemd/page.tsx",
+      "type": "file",
+      "name": "ultimate-claudemd/page.tsx",
+      "filePath": "src/app/lead-magnets/ultimate-claudemd/page.tsx",
+      "summary": "Client lead-magnet landing page for Joe Che's Ultimate CLAUDE.md file. Renders a hero, benefits list, and an email-capture form that POSTs first name and email to /api/lead-magnets/claudemd, showing success or error state.",
+      "tags": ["lead-magnet", "landing-page", "email-capture", "nextjs", "client-component"],
+      "complexity": "medium"
+    },
+    {
+      "id": "function:src/app/lead-magnets/ultimate-claudemd/page.tsx:UltimateClaudeMDPage",
+      "type": "function",
+      "name": "UltimateClaudeMDPage",
+      "lineRange": "14-189",
+      "summary": "Default-exported React page component managing form state (firstName, email, submitted, loading, error) and a handleSubmit that posts the lead to the claudemd lead-magnet API, then renders hero, benefits, and CTA sections.",
+      "tags": ["react", "form-handler", "useState", "fetch", "lead-magnet"],
+      "complexity": "medium"
+    },
+    {
+      "id": "file:src/app/robots.ts",
+      "type": "file",
+      "name": "robots.ts",
+      "filePath": "src/app/robots.ts",
+      "summary": "Next.js metadata route exporting a robots() handler that allows all user agents and points crawlers to the workshop site's sitemap.xml.",
+      "tags": ["seo", "robots", "nextjs", "metadata-route"],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/app/robots.ts:robots",
+      "type": "function",
+      "name": "robots",
+      "lineRange": "3-13",
+      "summary": "Default-exported MetadataRoute.Robots generator returning an allow-all rule for every user agent plus the absolute sitemap URL.",
+      "tags": ["seo", "robots", "nextjs", "crawler"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/app/sitemap.ts",
+      "type": "file",
+      "name": "sitemap.ts",
+      "filePath": "src/app/sitemap.ts",
+      "summary": "Next.js metadata route exporting a sitemap() handler that lists the home page, decks domain, all giveaway pages, and the ultimate-claudemd lead magnet with change frequencies and priorities.",
+      "tags": ["seo", "sitemap", "nextjs", "metadata-route", "giveaways"],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/app/sitemap.ts:sitemap",
+      "type": "function",
+      "name": "sitemap",
+      "lineRange": "6-27",
+      "summary": "Default-exported MetadataRoute.Sitemap generator returning the workshop site's URL entries (home, decks, giveaways, lead magnets) with lastModified, changeFrequency, and priority.",
+      "tags": ["seo", "sitemap", "nextjs", "url-list"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/components/PrepChecklistItem.tsx",
+      "type": "file",
+      "name": "PrepChecklistItem.tsx",
+      "filePath": "src/components/PrepChecklistItem.tsx",
+      "summary": "Presentational component rendering a numbered prep-checklist row with a title, a Required/Optional badge, and arbitrary children content styled in the workshop's purple/pink theme.",
+      "tags": ["react", "component", "checklist", "presentational", "ui"],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/components/PrepChecklistItem.tsx:PrepChecklistItem",
+      "type": "function",
+      "name": "PrepChecklistItem",
+      "lineRange": "10-65",
+      "summary": "Default-exported component taking number, title, required flag, and children; renders the numbered badge, title, conditional Required/Optional pill, and child content.",
+      "tags": ["react", "component", "props", "conditional-render", "ui"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/components/VantaHero.tsx",
+      "type": "file",
+      "name": "VantaHero.tsx",
+      "filePath": "src/components/VantaHero.tsx",
+      "summary": "Client hero component that lazily loads Three.js and the Vanta NET effect into a background ref, with cleanup, and overlays breadcrumb navigation plus session title and description.",
+      "tags": ["react", "vanta", "threejs", "hero", "animation"],
+      "complexity": "medium"
+    },
+    {
+      "id": "function:src/components/VantaHero.tsx:VantaHero",
+      "type": "function",
+      "name": "VantaHero",
+      "lineRange": "14-94",
+      "summary": "Default-exported component that, via useEffect, dynamically imports three and vanta.net, initializes the NET effect on a ref, destroys it on unmount, and renders breadcrumb plus session hero text.",
+      "tags": ["react", "useEffect", "dynamic-import", "vanta", "cleanup"],
+      "complexity": "medium"
+    },
+    {
+      "id": "file:src/templates/tool-page-template.tsx",
+      "type": "file",
+      "name": "tool-page-template.tsx",
+      "filePath": "src/templates/tool-page-template.tsx",
+      "summary": "Boilerplate starter template for interactive tool pages with [FILL IN] markers, breadcrumb, page header, empty tool body, and back link, documenting the project's styling rules.",
+      "tags": ["template", "boilerplate", "tool-page", "scaffold", "nextjs"],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/templates/tool-page-template.tsx:ToolPageTemplate",
+      "type": "function",
+      "name": "ToolPageTemplate",
+      "lineRange": "19-82",
+      "summary": "Default-exported placeholder component rendering the standard tool-page layout (breadcrumb, header, body slot, back link) with markers to replace before publishing.",
+      "tags": ["template", "component", "layout", "scaffold", "react"],
+      "complexity": "low"
+    },
+    {
+      "id": "config:tailwind.config.ts",
+      "type": "config",
+      "name": "tailwind.config.ts",
+      "filePath": "tailwind.config.ts",
+      "summary": "Tailwind CSS configuration defining the workshop theme: brand colors (dark, cream, purple, pink), Plus Jakarta font, and custom keyframes and animations (float, gradient-shift, fade-in-up, glow-pulse, shimmer).",
+      "tags": ["tailwind", "config", "theme", "design-system", "animation"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:tests/giveaway-email-collection.test.ts",
+      "type": "file",
+      "name": "giveaway-email-collection.test.ts",
+      "filePath": "tests/giveaway-email-collection.test.ts",
+      "summary": "Node test suite asserting the giveaway email-capture contract: the modal POSTs email/source/journeyId to /api/lead-magnet, client and server share the same EMAIL_RE regex, the API validates, rate-limits, persists to Supabase leads, and sends via Resend, and per-page slugs match directory names.",
+      "tags": ["test", "email-capture", "giveaways", "contract-test", "regex"],
+      "complexity": "medium"
+    },
+    {
+      "id": "function:tests/giveaway-email-collection.test.ts:listGiveawayPages",
+      "type": "function",
+      "name": "listGiveawayPages",
+      "lineRange": "142-157",
+      "summary": "Test helper that reads the giveaways directory and returns each subdirectory's slug and page.tsx source for slug-consistency assertions.",
+      "tags": ["test-helper", "filesystem", "giveaways", "fixture-loader"],
+      "complexity": "low"
+    },
+    {
+      "id": "function:tests/giveaway-email-collection.test.ts:extractModalSlugs",
+      "type": "function",
+      "name": "extractModalSlugs",
+      "lineRange": "159-170",
+      "summary": "Test helper that regex-extracts slug props passed to GiveawayEmailModal and GiveawayAutoModal from a page's source.",
+      "tags": ["test-helper", "regex", "giveaways", "parsing"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:tests/giveaway-template-structure.test.ts",
+      "type": "file",
+      "name": "giveaway-template-structure.test.ts",
+      "filePath": "tests/giveaway-template-structure.test.ts",
+      "summary": "Node test suite enforcing giveaway page structure: every page imports GiveawayEmailModal (or is exempt), wires either the copy-prompt or auto-popup trigger, and inline auto-popups set showCopiedBadge to false.",
+      "tags": ["test", "giveaways", "structure-test", "modal", "lint-rule"],
+      "complexity": "medium"
+    },
+    {
+      "id": "function:tests/giveaway-template-structure.test.ts:listGiveawayPages",
+      "type": "function",
+      "name": "listGiveawayPages",
+      "lineRange": "41-56",
+      "summary": "Test helper that enumerates giveaway subdirectories and returns each slug and its page.tsx source for structural assertions.",
+      "tags": ["test-helper", "filesystem", "giveaways", "fixture-loader"],
+      "complexity": "low"
+    }
+  ],
+  "edges": [
+    { "source": "file:src/app/lead-magnets/ultimate-claudemd/page.tsx", "target": "function:src/app/lead-magnets/ultimate-claudemd/page.tsx:UltimateClaudeMDPage", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/app/lead-magnets/ultimate-claudemd/page.tsx", "target": "function:src/app/lead-magnets/ultimate-claudemd/page.tsx:UltimateClaudeMDPage", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:src/app/robots.ts", "target": "function:src/app/robots.ts:robots", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/app/robots.ts", "target": "function:src/app/robots.ts:robots", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:src/app/sitemap.ts", "target": "function:src/app/sitemap.ts:sitemap", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/app/sitemap.ts", "target": "function:src/app/sitemap.ts:sitemap", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:src/components/PrepChecklistItem.tsx", "target": "function:src/components/PrepChecklistItem.tsx:PrepChecklistItem", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/components/PrepChecklistItem.tsx", "target": "function:src/components/PrepChecklistItem.tsx:PrepChecklistItem", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:src/components/VantaHero.tsx", "target": "function:src/components/VantaHero.tsx:VantaHero", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/components/VantaHero.tsx", "target": "function:src/components/VantaHero.tsx:VantaHero", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:src/templates/tool-page-template.tsx", "target": "function:src/templates/tool-page-template.tsx:ToolPageTemplate", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:src/templates/tool-page-template.tsx", "target": "function:src/templates/tool-page-template.tsx:ToolPageTemplate", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:tests/giveaway-email-collection.test.ts", "target": "function:tests/giveaway-email-collection.test.ts:listGiveawayPages", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:tests/giveaway-email-collection.test.ts", "target": "function:tests/giveaway-email-collection.test.ts:extractModalSlugs", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:tests/giveaway-template-structure.test.ts", "target": "function:tests/giveaway-template-structure.test.ts:listGiveawayPages", "type": "contains", "direction": "forward", "weight": 1.0 }
+  ]
+}

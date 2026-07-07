@@ -1,0 +1,105 @@
+{
+  "nodes": [
+    {"id":"file:src/app/api/events/waitlist/join/route.ts","type":"file","name":"waitlist/join/route.ts","summary":"POST route adding a user to an event waitlist with validation and a confirmation email.","tags":["api-route","waitlist","registration","email"],"complexity":"moderate","filePath":"src/app/api/events/waitlist/join/route.ts"},
+    {"id":"function:src/app/api/events/waitlist/join/route.ts:POST","type":"function","name":"POST","summary":"Rate-limits, validates input, and adds the user to the event waitlist with confirmation.","tags":["api-handler","waitlist-join","validation"],"complexity":"complex","lineRange":[11,72]},
+
+    {"id":"file:src/app/api/events/waitlist/notify/route.ts","type":"file","name":"waitlist/notify/route.ts","summary":"Cron GET route notifying waitlisted users when event spots open, using window locks and idempotency.","tags":["api-route","cron","waitlist","notify"],"complexity":"complex","filePath":"src/app/api/events/waitlist/notify/route.ts"},
+    {"id":"function:src/app/api/events/waitlist/notify/route.ts:GET","type":"function","name":"GET","summary":"Authorizes cron, resolves the notify window, and emails waitlisted users about open spots.","tags":["api-handler","cron","waitlist-notify","idempotency"],"complexity":"complex","lineRange":[26,119]},
+
+    {"id":"file:src/app/api/events/waitlist/remove/route.ts","type":"file","name":"waitlist/remove/route.ts","summary":"GET route removing a user from a waitlist via a tokenized link.","tags":["api-route","waitlist","unsubscribe","token"],"complexity":"simple","filePath":"src/app/api/events/waitlist/remove/route.ts"},
+    {"id":"function:src/app/api/events/waitlist/remove/route.ts:htmlPage","type":"function","name":"htmlPage","summary":"Renders a simple branded HTML status page response.","tags":["html-render","response-page","ui"],"complexity":"simple","lineRange":[6,31]},
+    {"id":"function:src/app/api/events/waitlist/remove/route.ts:GET","type":"function","name":"GET","summary":"Removes a waitlist entry identified by its remove token.","tags":["api-handler","waitlist-remove","token"],"complexity":"simple","lineRange":[33,50]},
+
+    {"id":"file:src/app/api/lead-magnet/route.ts","type":"file","name":"lead-magnet/route.ts","summary":"POST route capturing lead emails, sending a lead-magnet email via Resend, and ingesting into the CRM.","tags":["api-route","lead-magnet","email","crm"],"complexity":"complex","filePath":"src/app/api/lead-magnet/route.ts"},
+    {"id":"function:src/app/api/lead-magnet/route.ts:sendViaResend","type":"function","name":"sendViaResend","summary":"Builds and sends the lead-magnet email through the Resend API.","tags":["email-send","resend","lead-magnet","html"],"complexity":"complex","lineRange":[8,378]},
+    {"id":"function:src/app/api/lead-magnet/route.ts:ingestIntoCrm","type":"function","name":"ingestIntoCrm","summary":"Forwards a captured lead to the CRM ingest endpoint.","tags":["crm-ingest","fetch","async"],"complexity":"simple","lineRange":[395,410]},
+    {"id":"function:src/app/api/lead-magnet/route.ts:POST","type":"function","name":"POST","summary":"Validates the email, stores the lead, and triggers email send plus CRM ingest.","tags":["api-handler","lead-capture","rate-limit"],"complexity":"moderate","lineRange":[414,479]},
+
+    {"id":"file:src/app/api/lead-magnets/claudemd/route.ts","type":"file","name":"lead-magnets/claudemd/route.ts","summary":"POST route delivering the CLAUDE.md giveaway file via a Resend email with CRM ingest.","tags":["api-route","lead-magnet","email","claude-md"],"complexity":"moderate","filePath":"src/app/api/lead-magnets/claudemd/route.ts"},
+    {"id":"function:src/app/api/lead-magnets/claudemd/route.ts:sendViaResend","type":"function","name":"sendViaResend","summary":"Sends the CLAUDE.md giveaway email with the file attached via Resend.","tags":["email-send","resend","attachment"],"complexity":"moderate","lineRange":[127,187]},
+    {"id":"function:src/app/api/lead-magnets/claudemd/route.ts:POST","type":"function","name":"POST","summary":"Validates input, stores the lead, and sends the CLAUDE.md giveaway.","tags":["api-handler","lead-capture","giveaway"],"complexity":"moderate","lineRange":[191,244]},
+
+    {"id":"file:src/app/api/lead-magnets/passive-income-100/route.ts","type":"file","name":"lead-magnets/passive-income-100/route.ts","summary":"POST route for the 100 AI Agent Incomes prelaunch lead magnet via Resend and CRM.","tags":["api-route","lead-magnet","email","prelaunch"],"complexity":"moderate","filePath":"src/app/api/lead-magnets/passive-income-100/route.ts"},
+    {"id":"function:src/app/api/lead-magnets/passive-income-100/route.ts:sendViaResend","type":"function","name":"sendViaResend","summary":"Sends the prelaunch confirmation email via Resend.","tags":["email-send","resend","prelaunch"],"complexity":"moderate","lineRange":[24,81]},
+    {"id":"function:src/app/api/lead-magnets/passive-income-100/route.ts:POST","type":"function","name":"POST","summary":"Validates input, stores the lead, and sends the prelaunch email.","tags":["api-handler","lead-capture","prelaunch"],"complexity":"moderate","lineRange":[85,143]},
+
+    {"id":"file:src/app/api/stripe/webhook/route.ts","type":"file","name":"stripe/webhook/route.ts","summary":"POST route verifying Stripe webhook signatures and finalizing legacy checkout registrations.","tags":["api-route","stripe","webhook","registration"],"complexity":"moderate","filePath":"src/app/api/stripe/webhook/route.ts"},
+    {"id":"function:src/app/api/stripe/webhook/route.ts:POST","type":"function","name":"POST","summary":"Verifies the Stripe signature and processes checkout.session.completed events.","tags":["api-handler","stripe-webhook","signature-verify"],"complexity":"moderate","lineRange":[25,85]},
+
+    {"id":"file:src/app/events/[slug]/page.tsx","type":"file","name":"events/[slug]/page.tsx","summary":"Event detail page server component with dynamic SEO metadata and Stripe checkout context.","tags":["next-page","event-detail","ssr","metadata"],"complexity":"moderate","filePath":"src/app/events/[slug]/page.tsx"},
+    {"id":"function:src/app/events/[slug]/page.tsx:generateMetadata","type":"function","name":"generateMetadata","summary":"Builds SEO metadata for an event detail page from its slug.","tags":["metadata","seo","ssr"],"complexity":"simple","lineRange":[27,46]},
+    {"id":"function:src/app/events/[slug]/page.tsx:EventDetailPage","type":"function","name":"EventDetailPage","summary":"Renders the event detail view, resolving promo and Stripe publishable key.","tags":["page-component","event-detail","ssr"],"complexity":"moderate","lineRange":[48,75]},
+
+    {"id":"file:src/app/events/[slug]/setup/page.tsx","type":"file","name":"events/[slug]/setup/page.tsx","summary":"Post-purchase setup page server component rendering event setup instructions.","tags":["next-page","post-purchase","setup","ssr"],"complexity":"moderate","filePath":"src/app/events/[slug]/setup/page.tsx"},
+    {"id":"function:src/app/events/[slug]/setup/page.tsx:generateMetadata","type":"function","name":"generateMetadata","summary":"Builds metadata for the post-purchase setup page.","tags":["metadata","seo","ssr"],"complexity":"simple","lineRange":[10,24]},
+    {"id":"function:src/app/events/[slug]/setup/page.tsx:EventSetupPage","type":"function","name":"EventSetupPage","summary":"Renders the post-purchase setup steps and body for an event.","tags":["page-component","post-purchase","setup"],"complexity":"moderate","lineRange":[26,139]}
+  ],
+  "edges": [
+    {"source":"file:src/app/api/events/waitlist/join/route.ts","target":"function:src/app/api/events/waitlist/join/route.ts:POST","type":"contains","direction":"forward","weight":1.0},
+    {"source":"file:src/app/api/events/waitlist/join/route.ts","target":"function:src/app/api/events/waitlist/join/route.ts:POST","type":"exports","direction":"forward","weight":0.8},
+    {"source":"file:src/app/api/events/waitlist/join/route.ts","target":"file:src/lib/email-validation.ts","type":"imports","direction":"forward","weight":0.7},
+    {"source":"file:src/app/api/events/waitlist/join/route.ts","target":"file:src/lib/event-confirmation-email.ts","type":"imports","direction":"forward","weight":0.7},
+    {"source":"file:src/app/api/events/waitlist/join/route.ts","target":"file:src/lib/event-registration-db.ts","type":"imports","direction":"forward","weight":0.7},
+    {"source":"file:src/app/api/events/waitlist/join/route.ts","target":"file:src/lib/event-status.ts","type":"imports","direction":"forward","weight":0.7},
+    {"source":"file:src/app/api/events/waitlist/join/route.ts","target":"file:src/lib/events.tsx","type":"imports","direction":"forward","weight":0.7},
+    {"source":"file:src/app/api/events/waitlist/join/route.ts","target":"file:src/lib/rate-limit.ts","type":"imports","direction":"forward","weight":0.7},
+    {"source":"function:src/app/api/events/waitlist/join/route.ts:POST","target":"function:src/lib/event-confirmation-email.ts:sendWaitlistConfirmationEmail","type":"calls","direction":"forward","weight":0.8},
+
+    {"source":"file:src/app/api/events/waitlist/notify/route.ts","target":"function:src/app/api/events/waitlist/notify/route.ts:GET","type":"contains","direction":"forward","weight":1.0},
+    {"source":"file:src/app/api/events/waitlist/notify/route.ts","target":"function:src/app/api/events/waitlist/notify/route.ts:GET","type":"exports","direction":"forward","weight":0.8},
+    {"source":"file:src/app/api/events/waitlist/notify/route.ts","target":"file:src/lib/event-confirmation-email.ts","type":"imports","direction":"forward","weight":0.7},
+    {"source":"file:src/app/api/events/waitlist/notify/route.ts","target":"file:src/lib/event-registration-db.ts","type":"imports","direction":"forward","weight":0.7},
+    {"source":"file:src/app/api/events/waitlist/notify/route.ts","target":"file:src/lib/events.tsx","type":"imports","direction":"forward","weight":0.7},
+    {"source":"file:src/app/api/events/waitlist/notify/route.ts","target":"file:src/lib/supabase.ts","type":"imports","direction":"forward","weight":0.7},
+    {"source":"file:src/app/api/events/waitlist/notify/route.ts","target":"file:src/lib/waitlist-notify-windows.ts","type":"imports","direction":"forward","weight":0.7},
+    {"source":"function:src/app/api/events/waitlist/notify/route.ts:GET","target":"function:src/lib/event-confirmation-email.ts:sendWaitlistSpotNotificationEmail","type":"calls","direction":"forward","weight":0.8},
+
+    {"source":"file:src/app/api/events/waitlist/remove/route.ts","target":"function:src/app/api/events/waitlist/remove/route.ts:htmlPage","type":"contains","direction":"forward","weight":1.0},
+    {"source":"file:src/app/api/events/waitlist/remove/route.ts","target":"function:src/app/api/events/waitlist/remove/route.ts:GET","type":"contains","direction":"forward","weight":1.0},
+    {"source":"file:src/app/api/events/waitlist/remove/route.ts","target":"function:src/app/api/events/waitlist/remove/route.ts:GET","type":"exports","direction":"forward","weight":0.8},
+    {"source":"file:src/app/api/events/waitlist/remove/route.ts","target":"file:src/lib/event-registration-db.ts","type":"imports","direction":"forward","weight":0.7},
+    {"source":"function:src/app/api/events/waitlist/remove/route.ts:GET","target":"function:src/app/api/events/waitlist/remove/route.ts:htmlPage","type":"calls","direction":"forward","weight":0.8},
+
+    {"source":"file:src/app/api/lead-magnet/route.ts","target":"function:src/app/api/lead-magnet/route.ts:sendViaResend","type":"contains","direction":"forward","weight":1.0},
+    {"source":"file:src/app/api/lead-magnet/route.ts","target":"function:src/app/api/lead-magnet/route.ts:ingestIntoCrm","type":"contains","direction":"forward","weight":1.0},
+    {"source":"file:src/app/api/lead-magnet/route.ts","target":"function:src/app/api/lead-magnet/route.ts:POST","type":"contains","direction":"forward","weight":1.0},
+    {"source":"file:src/app/api/lead-magnet/route.ts","target":"function:src/app/api/lead-magnet/route.ts:POST","type":"exports","direction":"forward","weight":0.8},
+    {"source":"file:src/app/api/lead-magnet/route.ts","target":"file:src/lib/insight-to-fix.ts","type":"imports","direction":"forward","weight":0.7},
+    {"source":"file:src/app/api/lead-magnet/route.ts","target":"file:src/lib/rate-limit.ts","type":"imports","direction":"forward","weight":0.7},
+    {"source":"function:src/app/api/lead-magnet/route.ts:POST","target":"function:src/app/api/lead-magnet/route.ts:sendViaResend","type":"calls","direction":"forward","weight":0.8},
+    {"source":"function:src/app/api/lead-magnet/route.ts:POST","target":"function:src/app/api/lead-magnet/route.ts:ingestIntoCrm","type":"calls","direction":"forward","weight":0.8},
+
+    {"source":"file:src/app/api/lead-magnets/claudemd/route.ts","target":"function:src/app/api/lead-magnets/claudemd/route.ts:sendViaResend","type":"contains","direction":"forward","weight":1.0},
+    {"source":"file:src/app/api/lead-magnets/claudemd/route.ts","target":"function:src/app/api/lead-magnets/claudemd/route.ts:POST","type":"contains","direction":"forward","weight":1.0},
+    {"source":"file:src/app/api/lead-magnets/claudemd/route.ts","target":"function:src/app/api/lead-magnets/claudemd/route.ts:POST","type":"exports","direction":"forward","weight":0.8},
+    {"source":"file:src/app/api/lead-magnets/claudemd/route.ts","target":"file:src/lib/rate-limit.ts","type":"imports","direction":"forward","weight":0.7},
+    {"source":"function:src/app/api/lead-magnets/claudemd/route.ts:POST","target":"function:src/app/api/lead-magnets/claudemd/route.ts:sendViaResend","type":"calls","direction":"forward","weight":0.8},
+
+    {"source":"file:src/app/api/lead-magnets/passive-income-100/route.ts","target":"function:src/app/api/lead-magnets/passive-income-100/route.ts:sendViaResend","type":"contains","direction":"forward","weight":1.0},
+    {"source":"file:src/app/api/lead-magnets/passive-income-100/route.ts","target":"function:src/app/api/lead-magnets/passive-income-100/route.ts:POST","type":"contains","direction":"forward","weight":1.0},
+    {"source":"file:src/app/api/lead-magnets/passive-income-100/route.ts","target":"function:src/app/api/lead-magnets/passive-income-100/route.ts:POST","type":"exports","direction":"forward","weight":0.8},
+    {"source":"file:src/app/api/lead-magnets/passive-income-100/route.ts","target":"file:src/lib/rate-limit.ts","type":"imports","direction":"forward","weight":0.7},
+    {"source":"function:src/app/api/lead-magnets/passive-income-100/route.ts:POST","target":"function:src/app/api/lead-magnets/passive-income-100/route.ts:sendViaResend","type":"calls","direction":"forward","weight":0.8},
+
+    {"source":"file:src/app/api/stripe/webhook/route.ts","target":"function:src/app/api/stripe/webhook/route.ts:POST","type":"contains","direction":"forward","weight":1.0},
+    {"source":"file:src/app/api/stripe/webhook/route.ts","target":"function:src/app/api/stripe/webhook/route.ts:POST","type":"exports","direction":"forward","weight":0.8},
+    {"source":"file:src/app/api/stripe/webhook/route.ts","target":"file:src/lib/events.tsx","type":"imports","direction":"forward","weight":0.7},
+    {"source":"file:src/app/api/stripe/webhook/route.ts","target":"file:src/lib/insight-to-fix.ts","type":"imports","direction":"forward","weight":0.7},
+    {"source":"file:src/app/api/stripe/webhook/route.ts","target":"file:src/lib/legacy-event-schedule.ts","type":"imports","direction":"forward","weight":0.7},
+    {"source":"file:src/app/api/stripe/webhook/route.ts","target":"file:src/lib/stripe.ts","type":"imports","direction":"forward","weight":0.7},
+
+    {"source":"file:src/app/events/[slug]/page.tsx","target":"function:src/app/events/[slug]/page.tsx:generateMetadata","type":"contains","direction":"forward","weight":1.0},
+    {"source":"file:src/app/events/[slug]/page.tsx","target":"function:src/app/events/[slug]/page.tsx:EventDetailPage","type":"contains","direction":"forward","weight":1.0},
+    {"source":"file:src/app/events/[slug]/page.tsx","target":"function:src/app/events/[slug]/page.tsx:generateMetadata","type":"exports","direction":"forward","weight":0.8},
+    {"source":"file:src/app/events/[slug]/page.tsx","target":"function:src/app/events/[slug]/page.tsx:EventDetailPage","type":"exports","direction":"forward","weight":0.8},
+    {"source":"file:src/app/events/[slug]/page.tsx","target":"file:src/components/events/EventPageView.tsx","type":"imports","direction":"forward","weight":0.7},
+    {"source":"file:src/app/events/[slug]/page.tsx","target":"file:src/lib/events.tsx","type":"imports","direction":"forward","weight":0.7},
+    {"source":"file:src/app/events/[slug]/page.tsx","target":"file:src/lib/stripe.ts","type":"imports","direction":"forward","weight":0.7},
+
+    {"source":"file:src/app/events/[slug]/setup/page.tsx","target":"function:src/app/events/[slug]/setup/page.tsx:generateMetadata","type":"contains","direction":"forward","weight":1.0},
+    {"source":"file:src/app/events/[slug]/setup/page.tsx","target":"function:src/app/events/[slug]/setup/page.tsx:EventSetupPage","type":"contains","direction":"forward","weight":1.0},
+    {"source":"file:src/app/events/[slug]/setup/page.tsx","target":"function:src/app/events/[slug]/setup/page.tsx:generateMetadata","type":"exports","direction":"forward","weight":0.8},
+    {"source":"file:src/app/events/[slug]/setup/page.tsx","target":"function:src/app/events/[slug]/setup/page.tsx:EventSetupPage","type":"exports","direction":"forward","weight":0.8},
+    {"source":"file:src/app/events/[slug]/setup/page.tsx","target":"file:src/lib/events.tsx","type":"imports","direction":"forward","weight":0.7}
+  ]
+}

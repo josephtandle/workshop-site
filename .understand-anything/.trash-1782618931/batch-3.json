@@ -1,0 +1,1446 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/app/bonus/auto-lead-magnet/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "summary": "Bonus workshop page presenting a step-by-step guide for building an automated lead magnet, rendering inline code snippets via the CodeBlock component.",
+      "tags": [
+        "nextjs",
+        "page",
+        "resource-guide",
+        "lead-magnet",
+        "automation"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/app/bonus/auto-lead-magnet/page.tsx"
+    },
+    {
+      "id": "function:src/app/bonus/auto-lead-magnet/page.tsx:AutoLeadMagnetPage",
+      "type": "function",
+      "name": "AutoLeadMagnetPage",
+      "summary": "Default-exported React component rendering the auto-lead-magnet/page.tsx workshop page.",
+      "tags": [
+        "react",
+        "component",
+        "page-export",
+        "nextjs"
+      ],
+      "complexity": "moderate",
+      "lineRange": {
+        "start": 222,
+        "end": 449
+      }
+    },
+    {
+      "id": "file:src/app/resource-vault/automated-ghost-computer-use/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "summary": "Resource vault guide page walking through automated 'ghost' computer-use browser automation, with step cards, pro tips, and code blocks.",
+      "tags": [
+        "nextjs",
+        "page",
+        "resource-vault",
+        "computer-use",
+        "automation"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/app/resource-vault/automated-ghost-computer-use/page.tsx"
+    },
+    {
+      "id": "function:src/app/resource-vault/automated-ghost-computer-use/page.tsx:AutomatedGhostComputerUsePage",
+      "type": "function",
+      "name": "AutomatedGhostComputerUsePage",
+      "summary": "Default-exported React component rendering the automated-ghost-computer-use/page.tsx workshop page.",
+      "tags": [
+        "react",
+        "component",
+        "page-export",
+        "nextjs"
+      ],
+      "complexity": "moderate",
+      "lineRange": {
+        "start": 11,
+        "end": 202
+      }
+    },
+    {
+      "id": "file:src/app/resource-vault/connecting-to-google-sheets/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "summary": "Long resource vault tutorial for connecting an agent or app to Google Sheets, built from step cards, pro tips, and code examples.",
+      "tags": [
+        "nextjs",
+        "page",
+        "resource-vault",
+        "google-sheets",
+        "integration"
+      ],
+      "complexity": "complex",
+      "filePath": "src/app/resource-vault/connecting-to-google-sheets/page.tsx"
+    },
+    {
+      "id": "function:src/app/resource-vault/connecting-to-google-sheets/page.tsx:ConnectingToGoogleSheetsPage",
+      "type": "function",
+      "name": "ConnectingToGoogleSheetsPage",
+      "summary": "Default-exported React component rendering the connecting-to-google-sheets/page.tsx workshop page.",
+      "tags": [
+        "react",
+        "component",
+        "page-export",
+        "nextjs"
+      ],
+      "complexity": "complex",
+      "lineRange": {
+        "start": 12,
+        "end": 630
+      }
+    },
+    {
+      "id": "file:src/app/resource-vault/connecting-to-xero/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "summary": "Resource vault tutorial for connecting to the Xero accounting API, using step cards, screenshots, pro tips, and code blocks.",
+      "tags": [
+        "nextjs",
+        "page",
+        "resource-vault",
+        "xero",
+        "integration"
+      ],
+      "complexity": "complex",
+      "filePath": "src/app/resource-vault/connecting-to-xero/page.tsx"
+    },
+    {
+      "id": "function:src/app/resource-vault/connecting-to-xero/page.tsx:ConnectingToXeroPage",
+      "type": "function",
+      "name": "ConnectingToXeroPage",
+      "summary": "Default-exported React component rendering the connecting-to-xero/page.tsx workshop page.",
+      "tags": [
+        "react",
+        "component",
+        "page-export",
+        "nextjs"
+      ],
+      "complexity": "complex",
+      "lineRange": {
+        "start": 13,
+        "end": 591
+      }
+    },
+    {
+      "id": "file:src/app/resource-vault/eric-investor-pipeline/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "summary": "Resource vault case-study page documenting Eric's automated investor pipeline build, with step cards, pro tips, and code snippets.",
+      "tags": [
+        "nextjs",
+        "page",
+        "resource-vault",
+        "investor-pipeline",
+        "case-study"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/app/resource-vault/eric-investor-pipeline/page.tsx"
+    },
+    {
+      "id": "function:src/app/resource-vault/eric-investor-pipeline/page.tsx:EricInvestorPipelinePage",
+      "type": "function",
+      "name": "EricInvestorPipelinePage",
+      "summary": "Default-exported React component rendering the eric-investor-pipeline/page.tsx workshop page.",
+      "tags": [
+        "react",
+        "component",
+        "page-export",
+        "nextjs"
+      ],
+      "complexity": "moderate",
+      "lineRange": {
+        "start": 12,
+        "end": 390
+      }
+    },
+    {
+      "id": "file:src/app/resource-vault/how-to-stand-out-in-the-age-of-ai/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "summary": "Thin resource vault page that renders the Tiana AI positioning workshop content plus a session footer.",
+      "tags": [
+        "nextjs",
+        "page",
+        "resource-vault",
+        "positioning",
+        "content-wrapper"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/resource-vault/how-to-stand-out-in-the-age-of-ai/page.tsx"
+    },
+    {
+      "id": "function:src/app/resource-vault/how-to-stand-out-in-the-age-of-ai/page.tsx:HowToStandOutDraftPage",
+      "type": "function",
+      "name": "HowToStandOutDraftPage",
+      "summary": "Default-exported React component rendering the how-to-stand-out-in-the-age-of-ai/page.tsx workshop page.",
+      "tags": [
+        "react",
+        "component",
+        "page-export",
+        "nextjs"
+      ],
+      "complexity": "moderate",
+      "lineRange": {
+        "start": 24,
+        "end": 59
+      }
+    },
+    {
+      "id": "file:src/app/resource-vault/reza-website-control/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "summary": "Resource vault guide showing Reza's workflow for controlling a website with an agent, using step cards, pro tips, and code blocks.",
+      "tags": [
+        "nextjs",
+        "page",
+        "resource-vault",
+        "website-control",
+        "automation"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/app/resource-vault/reza-website-control/page.tsx"
+    },
+    {
+      "id": "function:src/app/resource-vault/reza-website-control/page.tsx:RezaWebsiteControlPage",
+      "type": "function",
+      "name": "RezaWebsiteControlPage",
+      "summary": "Default-exported React component rendering the reza-website-control/page.tsx workshop page.",
+      "tags": [
+        "react",
+        "component",
+        "page-export",
+        "nextjs"
+      ],
+      "complexity": "moderate",
+      "lineRange": {
+        "start": 12,
+        "end": 311
+      }
+    },
+    {
+      "id": "file:src/app/resource-vault/wordpress-api/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "summary": "Resource vault tutorial for using the WordPress API, combining a sticky video player with step cards, pro tips, and code examples.",
+      "tags": [
+        "nextjs",
+        "page",
+        "resource-vault",
+        "wordpress",
+        "api-integration"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/app/resource-vault/wordpress-api/page.tsx"
+    },
+    {
+      "id": "function:src/app/resource-vault/wordpress-api/page.tsx:WordPressAPIPage",
+      "type": "function",
+      "name": "WordPressAPIPage",
+      "summary": "Default-exported React component rendering the wordpress-api/page.tsx workshop page.",
+      "tags": [
+        "react",
+        "component",
+        "page-export",
+        "nextjs"
+      ],
+      "complexity": "moderate",
+      "lineRange": {
+        "start": 12,
+        "end": 252
+      }
+    },
+    {
+      "id": "file:src/app/session/10/instagram/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "summary": "Session 10 page that renders the Instagram agent content module for the workshop.",
+      "tags": [
+        "nextjs",
+        "page",
+        "session",
+        "instagram",
+        "content-wrapper"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/session/10/instagram/page.tsx"
+    },
+    {
+      "id": "function:src/app/session/10/instagram/page.tsx:Session10InstagramPage",
+      "type": "function",
+      "name": "Session10InstagramPage",
+      "summary": "Default-exported React component rendering the instagram/page.tsx workshop page.",
+      "tags": [
+        "react",
+        "component",
+        "page-export",
+        "nextjs"
+      ],
+      "complexity": "moderate",
+      "lineRange": {
+        "start": 9,
+        "end": 52
+      }
+    },
+    {
+      "id": "file:src/app/session/2/auto-lead-magnet/page 2.tsx",
+      "type": "file",
+      "name": "page 2.tsx",
+      "summary": "Duplicate Session 2 auto lead magnet guide page (backup copy) rendering the lead-magnet build walkthrough with code snippets.",
+      "tags": [
+        "nextjs",
+        "page",
+        "session",
+        "lead-magnet",
+        "duplicate"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/app/session/2/auto-lead-magnet/page 2.tsx"
+    },
+    {
+      "id": "function:src/app/session/2/auto-lead-magnet/page 2.tsx:AutoLeadMagnetPage",
+      "type": "function",
+      "name": "AutoLeadMagnetPage",
+      "summary": "Default-exported React component rendering the auto-lead-magnet/page 2.tsx workshop page.",
+      "tags": [
+        "react",
+        "component",
+        "page-export",
+        "nextjs"
+      ],
+      "complexity": "moderate",
+      "lineRange": {
+        "start": 222,
+        "end": 449
+      }
+    },
+    {
+      "id": "file:src/app/session/2/auto-lead-magnet/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "summary": "Session 2 page presenting the step-by-step automated lead magnet build guide with inline CodeBlock snippets.",
+      "tags": [
+        "nextjs",
+        "page",
+        "session",
+        "lead-magnet",
+        "automation"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/app/session/2/auto-lead-magnet/page.tsx"
+    },
+    {
+      "id": "function:src/app/session/2/auto-lead-magnet/page.tsx:AutoLeadMagnetPage",
+      "type": "function",
+      "name": "AutoLeadMagnetPage",
+      "summary": "Default-exported React component rendering the auto-lead-magnet/page.tsx workshop page.",
+      "tags": [
+        "react",
+        "component",
+        "page-export",
+        "nextjs"
+      ],
+      "complexity": "moderate",
+      "lineRange": {
+        "start": 222,
+        "end": 449
+      }
+    },
+    {
+      "id": "file:src/app/session/2/guide-codex/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "summary": "Session 2 page that renders the Codex guide content module for the workshop.",
+      "tags": [
+        "nextjs",
+        "page",
+        "session",
+        "codex",
+        "content-wrapper"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/session/2/guide-codex/page.tsx"
+    },
+    {
+      "id": "function:src/app/session/2/guide-codex/page.tsx:Session2GuideCodexPage",
+      "type": "function",
+      "name": "Session2GuideCodexPage",
+      "summary": "Default-exported React component rendering the guide-codex/page.tsx workshop page.",
+      "tags": [
+        "react",
+        "component",
+        "page-export",
+        "nextjs"
+      ],
+      "complexity": "moderate",
+      "lineRange": {
+        "start": 9,
+        "end": 56
+      }
+    },
+    {
+      "id": "file:src/app/session/3/custom-domain/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "summary": "Session 3 guide for connecting a custom domain, defining a DnsRecord helper type and rendering DNS setup steps with code and pro tips.",
+      "tags": [
+        "nextjs",
+        "page",
+        "session",
+        "custom-domain",
+        "dns"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/app/session/3/custom-domain/page.tsx"
+    },
+    {
+      "id": "function:src/app/session/3/custom-domain/page.tsx:CustomDomainPage",
+      "type": "function",
+      "name": "CustomDomainPage",
+      "summary": "Default-exported React component rendering the custom-domain/page.tsx workshop page.",
+      "tags": [
+        "react",
+        "component",
+        "page-export",
+        "nextjs"
+      ],
+      "complexity": "moderate",
+      "lineRange": {
+        "start": 51,
+        "end": 208
+      }
+    },
+    {
+      "id": "file:src/app/session/3/homework/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "summary": "Session 3 homework page with a sticky video player, DNS record helper, step cards, pro tips, and code examples for the assignment.",
+      "tags": [
+        "nextjs",
+        "page",
+        "session",
+        "homework",
+        "tutorial"
+      ],
+      "complexity": "complex",
+      "filePath": "src/app/session/3/homework/page.tsx"
+    },
+    {
+      "id": "function:src/app/session/3/homework/page.tsx:Session3Homework",
+      "type": "function",
+      "name": "Session3Homework",
+      "summary": "Default-exported React component rendering the homework/page.tsx workshop page.",
+      "tags": [
+        "react",
+        "component",
+        "page-export",
+        "nextjs"
+      ],
+      "complexity": "complex",
+      "lineRange": {
+        "start": 65,
+        "end": 465
+      }
+    },
+    {
+      "id": "file:src/app/session/4/custom-domain/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "summary": "Session 4 custom domain guide (mirrors Session 3) with a DnsRecord helper and DNS configuration steps, code, and pro tips.",
+      "tags": [
+        "nextjs",
+        "page",
+        "session",
+        "custom-domain",
+        "dns"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/app/session/4/custom-domain/page.tsx"
+    },
+    {
+      "id": "function:src/app/session/4/custom-domain/page.tsx:CustomDomainPage",
+      "type": "function",
+      "name": "CustomDomainPage",
+      "summary": "Default-exported React component rendering the custom-domain/page.tsx workshop page.",
+      "tags": [
+        "react",
+        "component",
+        "page-export",
+        "nextjs"
+      ],
+      "complexity": "moderate",
+      "lineRange": {
+        "start": 51,
+        "end": 208
+      }
+    },
+    {
+      "id": "file:src/app/session/4/homework/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "summary": "Session 4 homework page (reuses the Session3Homework component) with sticky video, DNS helper, step cards, and code examples.",
+      "tags": [
+        "nextjs",
+        "page",
+        "session",
+        "homework",
+        "tutorial"
+      ],
+      "complexity": "complex",
+      "filePath": "src/app/session/4/homework/page.tsx"
+    },
+    {
+      "id": "function:src/app/session/4/homework/page.tsx:Session3Homework",
+      "type": "function",
+      "name": "Session3Homework",
+      "summary": "Default-exported React component rendering the homework/page.tsx workshop page.",
+      "tags": [
+        "react",
+        "component",
+        "page-export",
+        "nextjs"
+      ],
+      "complexity": "complex",
+      "lineRange": {
+        "start": 65,
+        "end": 465
+      }
+    },
+    {
+      "id": "file:src/app/session/5/hook-writer/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "summary": "Interactive Session 5 Hook Writer tool: client component with participant data, a form state model, name-card selector, editable fields, and copy-text generation for Instagram hook prompts.",
+      "tags": [
+        "nextjs",
+        "client-component",
+        "hook-writer",
+        "interactive-tool",
+        "instagram"
+      ],
+      "complexity": "complex",
+      "filePath": "src/app/session/5/hook-writer/page.tsx"
+    },
+    {
+      "id": "function:src/app/session/5/hook-writer/page.tsx:HookWriterPage",
+      "type": "function",
+      "name": "HookWriterPage",
+      "summary": "Default-exported React component rendering the hook-writer/page.tsx workshop page.",
+      "tags": [
+        "react",
+        "component",
+        "page-export",
+        "nextjs"
+      ],
+      "complexity": "complex",
+      "lineRange": {
+        "start": 701,
+        "end": 1210
+      }
+    },
+    {
+      "id": "file:src/app/session/7/descript/page 2.tsx",
+      "type": "file",
+      "name": "page 2.tsx",
+      "summary": "Duplicate Session 7 Descript guide page (backup copy) rendering the Descript content module.",
+      "tags": [
+        "nextjs",
+        "page",
+        "session",
+        "descript",
+        "duplicate"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/session/7/descript/page 2.tsx"
+    },
+    {
+      "id": "function:src/app/session/7/descript/page 2.tsx:Session7DescriptPage",
+      "type": "function",
+      "name": "Session7DescriptPage",
+      "summary": "Default-exported React component rendering the descript/page 2.tsx workshop page.",
+      "tags": [
+        "react",
+        "component",
+        "page-export",
+        "nextjs"
+      ],
+      "complexity": "moderate",
+      "lineRange": {
+        "start": 10,
+        "end": 56
+      }
+    },
+    {
+      "id": "file:src/app/session/7/descript/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "summary": "Session 7 page that renders the Descript editing guide content module.",
+      "tags": [
+        "nextjs",
+        "page",
+        "session",
+        "descript",
+        "content-wrapper"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/session/7/descript/page.tsx"
+    },
+    {
+      "id": "function:src/app/session/7/descript/page.tsx:Session7DescriptPage",
+      "type": "function",
+      "name": "Session7DescriptPage",
+      "summary": "Default-exported React component rendering the descript/page.tsx workshop page.",
+      "tags": [
+        "react",
+        "component",
+        "page-export",
+        "nextjs"
+      ],
+      "complexity": "moderate",
+      "lineRange": {
+        "start": 10,
+        "end": 56
+      }
+    },
+    {
+      "id": "file:src/app/session/7/guide/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "summary": "Session 7 page that renders the main Session 7 guide content module.",
+      "tags": [
+        "nextjs",
+        "page",
+        "session",
+        "guide",
+        "content-wrapper"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/session/7/guide/page.tsx"
+    },
+    {
+      "id": "function:src/app/session/7/guide/page.tsx:Session7GuidePage",
+      "type": "function",
+      "name": "Session7GuidePage",
+      "summary": "Default-exported React component rendering the guide/page.tsx workshop page.",
+      "tags": [
+        "react",
+        "component",
+        "page-export",
+        "nextjs"
+      ],
+      "complexity": "moderate",
+      "lineRange": {
+        "start": 9,
+        "end": 55
+      }
+    },
+    {
+      "id": "file:src/app/session/8/guide/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "summary": "Session 8 page that renders the main Session 8 guide content module.",
+      "tags": [
+        "nextjs",
+        "page",
+        "session",
+        "guide",
+        "content-wrapper"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/session/8/guide/page.tsx"
+    },
+    {
+      "id": "function:src/app/session/8/guide/page.tsx:Session8GuidePage",
+      "type": "function",
+      "name": "Session8GuidePage",
+      "summary": "Default-exported React component rendering the guide/page.tsx workshop page.",
+      "tags": [
+        "react",
+        "component",
+        "page-export",
+        "nextjs"
+      ],
+      "complexity": "moderate",
+      "lineRange": {
+        "start": 9,
+        "end": 52
+      }
+    },
+    {
+      "id": "function:src/app/session/5/hook-writer/page.tsx:blankForm",
+      "type": "function",
+      "name": "blankForm",
+      "summary": "Returns an empty FormState object with all hook-writer brand-voice fields initialized to empty strings.",
+      "tags": [
+        "helper",
+        "form-state",
+        "factory"
+      ],
+      "complexity": "simple",
+      "lineRange": {
+        "start": 527,
+        "end": 534
+      }
+    },
+    {
+      "id": "function:src/app/session/5/hook-writer/page.tsx:participantToForm",
+      "type": "function",
+      "name": "participantToForm",
+      "summary": "Maps a Participant record onto a FormState, defaulting optional brand-voice fields to empty strings.",
+      "tags": [
+        "helper",
+        "mapping",
+        "form-state"
+      ],
+      "complexity": "simple",
+      "lineRange": {
+        "start": 535,
+        "end": 552
+      }
+    },
+    {
+      "id": "function:src/app/session/5/hook-writer/page.tsx:buildCopyText",
+      "type": "function",
+      "name": "buildCopyText",
+      "summary": "Builds the full copyable prompt text by combining the hook lab prompt with the user's brand-voice profile from the form.",
+      "tags": [
+        "helper",
+        "prompt-builder",
+        "text"
+      ],
+      "complexity": "moderate",
+      "lineRange": {
+        "start": 553,
+        "end": 608
+      }
+    },
+    {
+      "id": "function:src/app/session/5/hook-writer/page.tsx:NameCard",
+      "type": "function",
+      "name": "NameCard",
+      "summary": "Selectable participant name card component showing photo, display name, and selected state for the hook writer.",
+      "tags": [
+        "react",
+        "component",
+        "selector",
+        "ui"
+      ],
+      "complexity": "moderate",
+      "lineRange": {
+        "start": 609,
+        "end": 667
+      }
+    },
+    {
+      "id": "function:src/app/session/5/hook-writer/page.tsx:Field",
+      "type": "function",
+      "name": "Field",
+      "summary": "Reusable labeled input field component with placeholder, hint, and highlight support for the hook writer form.",
+      "tags": [
+        "react",
+        "component",
+        "form-field",
+        "ui"
+      ],
+      "complexity": "moderate",
+      "lineRange": {
+        "start": 668,
+        "end": 700
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/app/bonus/auto-lead-magnet/page.tsx",
+      "target": "function:src/app/bonus/auto-lead-magnet/page.tsx:AutoLeadMagnetPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/bonus/auto-lead-magnet/page.tsx",
+      "target": "function:src/app/bonus/auto-lead-magnet/page.tsx:AutoLeadMagnetPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/bonus/auto-lead-magnet/page.tsx",
+      "target": "file:src/components/CodeBlock.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/resource-vault/automated-ghost-computer-use/page.tsx",
+      "target": "function:src/app/resource-vault/automated-ghost-computer-use/page.tsx:AutomatedGhostComputerUsePage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/resource-vault/automated-ghost-computer-use/page.tsx",
+      "target": "function:src/app/resource-vault/automated-ghost-computer-use/page.tsx:AutomatedGhostComputerUsePage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/resource-vault/automated-ghost-computer-use/page.tsx",
+      "target": "file:src/components/CodeBlock.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/resource-vault/automated-ghost-computer-use/page.tsx",
+      "target": "file:src/components/ProTip.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/resource-vault/automated-ghost-computer-use/page.tsx",
+      "target": "file:src/components/StepCard.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/resource-vault/connecting-to-google-sheets/page.tsx",
+      "target": "function:src/app/resource-vault/connecting-to-google-sheets/page.tsx:ConnectingToGoogleSheetsPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/resource-vault/connecting-to-google-sheets/page.tsx",
+      "target": "function:src/app/resource-vault/connecting-to-google-sheets/page.tsx:ConnectingToGoogleSheetsPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/resource-vault/connecting-to-google-sheets/page.tsx",
+      "target": "file:src/components/CodeBlock.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/resource-vault/connecting-to-google-sheets/page.tsx",
+      "target": "file:src/components/ProTip.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/resource-vault/connecting-to-google-sheets/page.tsx",
+      "target": "file:src/components/StepCard.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/resource-vault/connecting-to-xero/page.tsx",
+      "target": "function:src/app/resource-vault/connecting-to-xero/page.tsx:ConnectingToXeroPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/resource-vault/connecting-to-xero/page.tsx",
+      "target": "function:src/app/resource-vault/connecting-to-xero/page.tsx:ConnectingToXeroPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/resource-vault/connecting-to-xero/page.tsx",
+      "target": "file:src/components/CodeBlock.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/resource-vault/connecting-to-xero/page.tsx",
+      "target": "file:src/components/ProTip.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/resource-vault/connecting-to-xero/page.tsx",
+      "target": "file:src/components/ScreenshotCard.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/resource-vault/connecting-to-xero/page.tsx",
+      "target": "file:src/components/StepCard.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/resource-vault/eric-investor-pipeline/page.tsx",
+      "target": "function:src/app/resource-vault/eric-investor-pipeline/page.tsx:EricInvestorPipelinePage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/resource-vault/eric-investor-pipeline/page.tsx",
+      "target": "function:src/app/resource-vault/eric-investor-pipeline/page.tsx:EricInvestorPipelinePage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/resource-vault/eric-investor-pipeline/page.tsx",
+      "target": "file:src/components/CodeBlock.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/resource-vault/eric-investor-pipeline/page.tsx",
+      "target": "file:src/components/ProTip.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/resource-vault/eric-investor-pipeline/page.tsx",
+      "target": "file:src/components/StepCard.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/resource-vault/how-to-stand-out-in-the-age-of-ai/page.tsx",
+      "target": "function:src/app/resource-vault/how-to-stand-out-in-the-age-of-ai/page.tsx:HowToStandOutDraftPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/resource-vault/how-to-stand-out-in-the-age-of-ai/page.tsx",
+      "target": "function:src/app/resource-vault/how-to-stand-out-in-the-age-of-ai/page.tsx:HowToStandOutDraftPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/resource-vault/how-to-stand-out-in-the-age-of-ai/page.tsx",
+      "target": "file:src/components/TianaSessionFooter.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/resource-vault/how-to-stand-out-in-the-age-of-ai/page.tsx",
+      "target": "file:src/content/tiana-ai-positioning-workshop.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/resource-vault/reza-website-control/page.tsx",
+      "target": "function:src/app/resource-vault/reza-website-control/page.tsx:RezaWebsiteControlPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/resource-vault/reza-website-control/page.tsx",
+      "target": "function:src/app/resource-vault/reza-website-control/page.tsx:RezaWebsiteControlPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/resource-vault/reza-website-control/page.tsx",
+      "target": "file:src/components/CodeBlock.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/resource-vault/reza-website-control/page.tsx",
+      "target": "file:src/components/ProTip.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/resource-vault/reza-website-control/page.tsx",
+      "target": "file:src/components/StepCard.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/resource-vault/wordpress-api/page.tsx",
+      "target": "function:src/app/resource-vault/wordpress-api/page.tsx:WordPressAPIPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/resource-vault/wordpress-api/page.tsx",
+      "target": "function:src/app/resource-vault/wordpress-api/page.tsx:WordPressAPIPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/resource-vault/wordpress-api/page.tsx",
+      "target": "file:src/components/CodeBlock.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/resource-vault/wordpress-api/page.tsx",
+      "target": "file:src/components/ProTip.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/resource-vault/wordpress-api/page.tsx",
+      "target": "file:src/components/StepCard.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/resource-vault/wordpress-api/page.tsx",
+      "target": "file:src/components/StickyVideoPlayer.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/session/10/instagram/page.tsx",
+      "target": "function:src/app/session/10/instagram/page.tsx:Session10InstagramPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/10/instagram/page.tsx",
+      "target": "function:src/app/session/10/instagram/page.tsx:Session10InstagramPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/session/10/instagram/page.tsx",
+      "target": "file:src/content/session-10-instagram-agent.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/session/2/auto-lead-magnet/page 2.tsx",
+      "target": "function:src/app/session/2/auto-lead-magnet/page 2.tsx:AutoLeadMagnetPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/2/auto-lead-magnet/page 2.tsx",
+      "target": "function:src/app/session/2/auto-lead-magnet/page 2.tsx:AutoLeadMagnetPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/session/2/auto-lead-magnet/page 2.tsx",
+      "target": "file:src/components/CodeBlock.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/session/2/auto-lead-magnet/page.tsx",
+      "target": "function:src/app/session/2/auto-lead-magnet/page.tsx:AutoLeadMagnetPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/2/auto-lead-magnet/page.tsx",
+      "target": "function:src/app/session/2/auto-lead-magnet/page.tsx:AutoLeadMagnetPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/session/2/auto-lead-magnet/page.tsx",
+      "target": "file:src/components/CodeBlock.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/session/2/guide-codex/page.tsx",
+      "target": "function:src/app/session/2/guide-codex/page.tsx:Session2GuideCodexPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/2/guide-codex/page.tsx",
+      "target": "function:src/app/session/2/guide-codex/page.tsx:Session2GuideCodexPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/session/2/guide-codex/page.tsx",
+      "target": "file:src/content/session-2-guide-codex.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/session/3/custom-domain/page.tsx",
+      "target": "function:src/app/session/3/custom-domain/page.tsx:CustomDomainPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/3/custom-domain/page.tsx",
+      "target": "function:src/app/session/3/custom-domain/page.tsx:CustomDomainPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/session/3/custom-domain/page.tsx",
+      "target": "file:src/components/CodeBlock.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/session/3/custom-domain/page.tsx",
+      "target": "file:src/components/ProTip.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/session/3/custom-domain/page.tsx",
+      "target": "file:src/components/StepCard.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/session/3/homework/page.tsx",
+      "target": "function:src/app/session/3/homework/page.tsx:Session3Homework",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/3/homework/page.tsx",
+      "target": "function:src/app/session/3/homework/page.tsx:Session3Homework",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/session/3/homework/page.tsx",
+      "target": "file:src/components/CodeBlock.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/session/3/homework/page.tsx",
+      "target": "file:src/components/ProTip.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/session/3/homework/page.tsx",
+      "target": "file:src/components/StepCard.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/session/3/homework/page.tsx",
+      "target": "file:src/components/StickyVideoPlayer.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/session/4/custom-domain/page.tsx",
+      "target": "function:src/app/session/4/custom-domain/page.tsx:CustomDomainPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/4/custom-domain/page.tsx",
+      "target": "function:src/app/session/4/custom-domain/page.tsx:CustomDomainPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/session/4/custom-domain/page.tsx",
+      "target": "file:src/components/CodeBlock.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/session/4/custom-domain/page.tsx",
+      "target": "file:src/components/ProTip.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/session/4/custom-domain/page.tsx",
+      "target": "file:src/components/StepCard.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/session/4/homework/page.tsx",
+      "target": "function:src/app/session/4/homework/page.tsx:Session3Homework",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/4/homework/page.tsx",
+      "target": "function:src/app/session/4/homework/page.tsx:Session3Homework",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/session/4/homework/page.tsx",
+      "target": "file:src/components/CodeBlock.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/session/4/homework/page.tsx",
+      "target": "file:src/components/ProTip.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/session/4/homework/page.tsx",
+      "target": "file:src/components/StepCard.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/session/4/homework/page.tsx",
+      "target": "file:src/components/StickyVideoPlayer.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/session/5/hook-writer/page.tsx",
+      "target": "function:src/app/session/5/hook-writer/page.tsx:HookWriterPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/5/hook-writer/page.tsx",
+      "target": "function:src/app/session/5/hook-writer/page.tsx:HookWriterPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/session/5/hook-writer/page.tsx",
+      "target": "file:src/components/CodeBlock.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/session/7/descript/page 2.tsx",
+      "target": "function:src/app/session/7/descript/page 2.tsx:Session7DescriptPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/7/descript/page 2.tsx",
+      "target": "function:src/app/session/7/descript/page 2.tsx:Session7DescriptPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/session/7/descript/page 2.tsx",
+      "target": "file:src/content/session-7-descript-guide.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/session/7/descript/page.tsx",
+      "target": "function:src/app/session/7/descript/page.tsx:Session7DescriptPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/7/descript/page.tsx",
+      "target": "function:src/app/session/7/descript/page.tsx:Session7DescriptPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/session/7/descript/page.tsx",
+      "target": "file:src/content/session-7-descript-guide.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/session/7/guide/page.tsx",
+      "target": "function:src/app/session/7/guide/page.tsx:Session7GuidePage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/7/guide/page.tsx",
+      "target": "function:src/app/session/7/guide/page.tsx:Session7GuidePage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/session/7/guide/page.tsx",
+      "target": "file:src/content/session-7-guide.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/session/8/guide/page.tsx",
+      "target": "function:src/app/session/8/guide/page.tsx:Session8GuidePage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/8/guide/page.tsx",
+      "target": "function:src/app/session/8/guide/page.tsx:Session8GuidePage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/session/8/guide/page.tsx",
+      "target": "file:src/content/session-8-guide.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/session/5/hook-writer/page.tsx",
+      "target": "function:src/app/session/5/hook-writer/page.tsx:blankForm",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "function:src/app/session/5/hook-writer/page.tsx:HookWriterPage",
+      "target": "function:src/app/session/5/hook-writer/page.tsx:blankForm",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/session/5/hook-writer/page.tsx",
+      "target": "function:src/app/session/5/hook-writer/page.tsx:participantToForm",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "function:src/app/session/5/hook-writer/page.tsx:HookWriterPage",
+      "target": "function:src/app/session/5/hook-writer/page.tsx:participantToForm",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/session/5/hook-writer/page.tsx",
+      "target": "function:src/app/session/5/hook-writer/page.tsx:buildCopyText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "function:src/app/session/5/hook-writer/page.tsx:HookWriterPage",
+      "target": "function:src/app/session/5/hook-writer/page.tsx:buildCopyText",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/session/5/hook-writer/page.tsx",
+      "target": "function:src/app/session/5/hook-writer/page.tsx:NameCard",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "function:src/app/session/5/hook-writer/page.tsx:HookWriterPage",
+      "target": "function:src/app/session/5/hook-writer/page.tsx:NameCard",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/session/5/hook-writer/page.tsx",
+      "target": "function:src/app/session/5/hook-writer/page.tsx:Field",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "function:src/app/session/5/hook-writer/page.tsx:HookWriterPage",
+      "target": "function:src/app/session/5/hook-writer/page.tsx:Field",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

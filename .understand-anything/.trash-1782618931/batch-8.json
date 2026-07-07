@@ -1,0 +1,372 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/app/api/events/[slug]/calendar/route.ts",
+      "type": "file",
+      "name": "route.ts",
+      "filePath": "src/app/api/events/[slug]/calendar/route.ts",
+      "summary": "Next.js API route that serves an .ics calendar file for an event; looks up the event by slug and streams a generated iCal string as a downloadable attachment.",
+      "tags": ["nextjs", "api-route", "calendar", "ics", "events"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app/api/events/[slug]/calendar/route.ts:GET",
+      "type": "function",
+      "name": "GET",
+      "summary": "Route handler that resolves the event by slug, returns 404 when missing, otherwise builds an iCal string and responds with text/calendar download headers.",
+      "tags": ["handler", "calendar", "ics", "response"],
+      "complexity": "simple",
+      "lineRange": "7-38"
+    },
+    {
+      "id": "file:src/components/events/EventMediaVideo.tsx",
+      "type": "file",
+      "name": "EventMediaVideo.tsx",
+      "filePath": "src/components/events/EventMediaVideo.tsx",
+      "summary": "Client video component for event media that coordinates single-active-video playback by dispatching and listening to a window event when this video plays or its volume changes.",
+      "tags": ["react", "client-component", "video", "media", "events"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/events/EventPageView.tsx",
+      "type": "file",
+      "name": "EventPageView.tsx",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Main event landing page renderer composed of many section sub-components (story, checklist, cards, split, image, html, quote, hosts, cta) that switch on section type and wire in pricing, calendar, and registration.",
+      "tags": ["react", "events", "landing-page", "sections", "rendering"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/components/events/EventPageView.tsx:SectionShell",
+      "type": "function",
+      "name": "SectionShell",
+      "summary": "Layout wrapper that renders a section's eyebrow, title, and intro with per-section styling classes around arbitrary children.",
+      "tags": ["react", "layout", "section", "presentation"],
+      "complexity": "simple",
+      "lineRange": "28-61"
+    },
+    {
+      "id": "function:src/components/events/EventPageView.tsx:StorySection",
+      "type": "function",
+      "name": "StorySection",
+      "summary": "Renders a narrative story section using rich paragraph formatting inside the shared section shell.",
+      "tags": ["react", "section", "story", "content"],
+      "complexity": "simple",
+      "lineRange": "73-83"
+    },
+    {
+      "id": "function:src/components/events/EventPageView.tsx:ChecklistSection",
+      "type": "function",
+      "name": "ChecklistSection",
+      "summary": "Renders a numbered checklist section, mapping each item to a padded index badge and text row.",
+      "tags": ["react", "section", "checklist", "list"],
+      "complexity": "simple",
+      "lineRange": "85-105"
+    },
+    {
+      "id": "function:src/components/events/EventPageView.tsx:CardsSection",
+      "type": "function",
+      "name": "CardsSection",
+      "summary": "Renders a grid of cards from section items, each with title, body, and optional bullet list.",
+      "tags": ["react", "section", "cards", "grid"],
+      "complexity": "moderate",
+      "lineRange": "107-145"
+    },
+    {
+      "id": "function:src/components/events/EventPageView.tsx:SplitSection",
+      "type": "function",
+      "name": "SplitSection",
+      "summary": "Renders a two-column split layout pairing textual content with supporting media or detail.",
+      "tags": ["react", "section", "split", "layout"],
+      "complexity": "simple",
+      "lineRange": "147-167"
+    },
+    {
+      "id": "function:src/components/events/EventPageView.tsx:ImageSection",
+      "type": "function",
+      "name": "ImageSection",
+      "summary": "Renders an image-focused section with captions and responsive image presentation.",
+      "tags": ["react", "section", "image", "media"],
+      "complexity": "moderate",
+      "lineRange": "169-196"
+    },
+    {
+      "id": "function:src/components/events/EventPageView.tsx:HtmlSection",
+      "type": "function",
+      "name": "HtmlSection",
+      "summary": "Renders a section from raw HTML content, conditionally adjusting behavior when the event has ended.",
+      "tags": ["react", "section", "html", "dangerouslysethtml"],
+      "complexity": "moderate",
+      "lineRange": "198-223"
+    },
+    {
+      "id": "function:src/components/events/EventPageView.tsx:QuoteCardSection",
+      "type": "function",
+      "name": "QuoteCardSection",
+      "summary": "Renders quote/testimonial cards with embedded media via a renderMedia helper, handling layout for multiple quote presentations.",
+      "tags": ["react", "section", "quote", "testimonial", "media"],
+      "complexity": "complex",
+      "lineRange": "225-314"
+    },
+    {
+      "id": "function:src/components/events/EventPageView.tsx:HostsSection",
+      "type": "function",
+      "name": "HostsSection",
+      "summary": "Renders the event hosts section, mapping each host to a profile card with name, image, and multi-paragraph bio.",
+      "tags": ["react", "section", "hosts", "profiles"],
+      "complexity": "moderate",
+      "lineRange": "316-346"
+    },
+    {
+      "id": "function:src/components/events/EventPageView.tsx:CtaSection",
+      "type": "function",
+      "name": "CtaSection",
+      "summary": "Renders the call-to-action section with formatted event pricing and promo awareness, switching presentation when the event has ended.",
+      "tags": ["react", "section", "cta", "pricing", "promo"],
+      "complexity": "complex",
+      "lineRange": "356-422"
+    },
+    {
+      "id": "function:src/components/events/EventPageView.tsx:renderSection",
+      "type": "function",
+      "name": "renderSection",
+      "summary": "Dispatcher that selects and renders the appropriate section component based on the section's type, passing event, promo, and ended context.",
+      "tags": ["react", "dispatch", "sections", "rendering"],
+      "complexity": "moderate",
+      "lineRange": "424-449"
+    },
+    {
+      "id": "function:src/components/events/EventPageView.tsx:EventPageView",
+      "type": "function",
+      "name": "EventPageView",
+      "summary": "Top-level event page component that computes ended/closed status, discounted pricing, and calendar URLs, then maps the event's sections through renderSection alongside the registration UI.",
+      "tags": ["react", "events", "page", "pricing", "registration"],
+      "complexity": "complex",
+      "lineRange": "451-598"
+    },
+    {
+      "id": "file:src/components/events/EventRegistrationSection.tsx",
+      "type": "file",
+      "name": "EventRegistrationSection.tsx",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "summary": "Client registration and checkout section that drives Stripe embedded/hosted checkout, promo code application, donation amounts, waitlist fallback, success finalization, and celebratory confetti on completion.",
+      "tags": ["react", "stripe", "checkout", "registration", "promo"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/components/events/EventRegistrationSection.tsx:useAnimatedNumber",
+      "type": "function",
+      "name": "useAnimatedNumber",
+      "summary": "Custom hook that animates a numeric value toward a target over a duration using requestAnimationFrame with an easing curve.",
+      "tags": ["react-hook", "animation", "requestanimationframe", "easing"],
+      "complexity": "moderate",
+      "lineRange": "5-39"
+    },
+    {
+      "id": "function:src/components/events/EventRegistrationSection.tsx:EventRegistrationSection",
+      "type": "function",
+      "name": "EventRegistrationSection",
+      "summary": "Registration component managing attendee details, promo state, Stripe checkout open/finalize flow, embedded fallback timing, and success handling with celebration.",
+      "tags": ["react", "stripe", "checkout", "registration", "state"],
+      "complexity": "complex",
+      "lineRange": "83-664"
+    },
+    {
+      "id": "file:src/components/events/HeroVideo.tsx",
+      "type": "file",
+      "name": "HeroVideo.tsx",
+      "filePath": "src/components/events/HeroVideo.tsx",
+      "summary": "Client hero video component with a poster and play overlay that starts playback on click and tracks whether the video has started.",
+      "tags": ["react", "client-component", "video", "hero", "media"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/events/HeroVideo.tsx:HeroVideo",
+      "type": "function",
+      "name": "HeroVideo",
+      "summary": "Renders a poster-backed hero video, playing the source and hiding the overlay once the user starts playback.",
+      "tags": ["react", "video", "hero", "playback"],
+      "complexity": "simple",
+      "lineRange": "13-54"
+    },
+    {
+      "id": "file:src/components/events/ScrollToRegisterButton.tsx",
+      "type": "file",
+      "name": "ScrollToRegisterButton.tsx",
+      "filePath": "src/components/events/ScrollToRegisterButton.tsx",
+      "summary": "Client button that smooth-scrolls the page to the registration section and updates the URL hash without a navigation.",
+      "tags": ["react", "client-component", "scroll", "navigation", "cta"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/events/ScrollToRegisterButton.tsx:ScrollToRegisterButton",
+      "type": "function",
+      "name": "ScrollToRegisterButton",
+      "summary": "Renders a button that, on click, locates the register target and smooth-scrolls to it while replacing the history hash.",
+      "tags": ["react", "scroll", "button", "anchor"],
+      "complexity": "simple",
+      "lineRange": "10-27"
+    },
+    {
+      "id": "file:src/components/events/WaitlistJoinForm.tsx",
+      "type": "file",
+      "name": "WaitlistJoinForm.tsx",
+      "filePath": "src/components/events/WaitlistJoinForm.tsx",
+      "summary": "Client waitlist signup form that validates name and email, posts to the waitlist join API, and shows success or error states.",
+      "tags": ["react", "client-component", "waitlist", "form", "validation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/events/WaitlistJoinForm.tsx:WaitlistJoinForm",
+      "type": "function",
+      "name": "WaitlistJoinForm",
+      "summary": "Form component that normalizes and validates the attendee email, submits the waitlist join request, and manages submitting/success/error UI state.",
+      "tags": ["react", "waitlist", "form", "fetch", "validation"],
+      "complexity": "moderate",
+      "lineRange": "12-141"
+    },
+    {
+      "id": "file:src/lib/calendar.ts",
+      "type": "file",
+      "name": "calendar.ts",
+      "filePath": "src/lib/calendar.ts",
+      "summary": "Calendar utility library providing iCal date formatting, text escaping, Google Calendar URL construction, and full .ics string generation for events.",
+      "tags": ["calendar", "ics", "google-calendar", "utils", "events"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/calendar.ts:buildGoogleCalendarUrl",
+      "type": "function",
+      "name": "buildGoogleCalendarUrl",
+      "summary": "Builds an Add-to-Google-Calendar URL from event params, formatting start/end dates and setting title, details, and location query parameters.",
+      "tags": ["google-calendar", "url", "calendar", "events"],
+      "complexity": "simple",
+      "lineRange": "9-25"
+    },
+    {
+      "id": "function:src/lib/calendar.ts:buildIcalString",
+      "type": "function",
+      "name": "buildIcalString",
+      "summary": "Generates a complete VCALENDAR/VEVENT iCal string from event params with escaped fields, timestamps, and assembled line array.",
+      "tags": ["ics", "ical", "calendar", "generation"],
+      "complexity": "moderate",
+      "lineRange": "27-75"
+    },
+    {
+      "id": "file:src/lib/email-validation.ts",
+      "type": "file",
+      "name": "email-validation.ts",
+      "filePath": "src/lib/email-validation.ts",
+      "summary": "Small shared email validation module exposing an email regex, a normalisation helper, and an isValidEmail check.",
+      "tags": ["validation", "email", "utils", "regex"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/email-validation.ts:normaliseEmail",
+      "type": "function",
+      "name": "normaliseEmail",
+      "summary": "Trims and lowercases an email string to a canonical form.",
+      "tags": ["validation", "email", "normalize", "utils"],
+      "complexity": "simple",
+      "lineRange": "3-5"
+    },
+    {
+      "id": "function:src/lib/email-validation.ts:isValidEmail",
+      "type": "function",
+      "name": "isValidEmail",
+      "summary": "Returns whether a normalised email matches the shared email regex.",
+      "tags": ["validation", "email", "regex", "utils"],
+      "complexity": "simple",
+      "lineRange": "7-9"
+    },
+    {
+      "id": "file:tests/calendar.test.ts",
+      "type": "file",
+      "name": "calendar.test.ts",
+      "filePath": "tests/calendar.test.ts",
+      "summary": "Unit tests for the calendar library covering Google Calendar URL building and iCal string generation.",
+      "tags": ["test", "calendar", "ics", "unit-test"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:tests/waitlist-join-validation.test.ts",
+      "type": "file",
+      "name": "waitlist-join-validation.test.ts",
+      "filePath": "tests/waitlist-join-validation.test.ts",
+      "summary": "Unit tests for email validation used by the waitlist join flow, exercising normalisation and validity checks.",
+      "tags": ["test", "validation", "email", "waitlist"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {"source": "file:src/app/api/events/[slug]/calendar/route.ts", "target": "function:src/app/api/events/[slug]/calendar/route.ts:GET", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/components/events/EventPageView.tsx", "target": "function:src/components/events/EventPageView.tsx:SectionShell", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/components/events/EventPageView.tsx", "target": "function:src/components/events/EventPageView.tsx:StorySection", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/components/events/EventPageView.tsx", "target": "function:src/components/events/EventPageView.tsx:ChecklistSection", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/components/events/EventPageView.tsx", "target": "function:src/components/events/EventPageView.tsx:CardsSection", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/components/events/EventPageView.tsx", "target": "function:src/components/events/EventPageView.tsx:SplitSection", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/components/events/EventPageView.tsx", "target": "function:src/components/events/EventPageView.tsx:ImageSection", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/components/events/EventPageView.tsx", "target": "function:src/components/events/EventPageView.tsx:HtmlSection", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/components/events/EventPageView.tsx", "target": "function:src/components/events/EventPageView.tsx:QuoteCardSection", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/components/events/EventPageView.tsx", "target": "function:src/components/events/EventPageView.tsx:HostsSection", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/components/events/EventPageView.tsx", "target": "function:src/components/events/EventPageView.tsx:CtaSection", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/components/events/EventPageView.tsx", "target": "function:src/components/events/EventPageView.tsx:renderSection", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/components/events/EventPageView.tsx", "target": "function:src/components/events/EventPageView.tsx:EventPageView", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/components/events/EventRegistrationSection.tsx", "target": "function:src/components/events/EventRegistrationSection.tsx:useAnimatedNumber", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/components/events/EventRegistrationSection.tsx", "target": "function:src/components/events/EventRegistrationSection.tsx:EventRegistrationSection", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/components/events/HeroVideo.tsx", "target": "function:src/components/events/HeroVideo.tsx:HeroVideo", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/components/events/ScrollToRegisterButton.tsx", "target": "function:src/components/events/ScrollToRegisterButton.tsx:ScrollToRegisterButton", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/components/events/WaitlistJoinForm.tsx", "target": "function:src/components/events/WaitlistJoinForm.tsx:WaitlistJoinForm", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/lib/calendar.ts", "target": "function:src/lib/calendar.ts:buildGoogleCalendarUrl", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/lib/calendar.ts", "target": "function:src/lib/calendar.ts:buildIcalString", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/lib/email-validation.ts", "target": "function:src/lib/email-validation.ts:normaliseEmail", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/lib/email-validation.ts", "target": "function:src/lib/email-validation.ts:isValidEmail", "type": "contains", "direction": "forward", "weight": 1.0},
+
+    {"source": "file:src/app/api/events/[slug]/calendar/route.ts", "target": "function:src/app/api/events/[slug]/calendar/route.ts:GET", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/components/events/EventPageView.tsx", "target": "function:src/components/events/EventPageView.tsx:EventPageView", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/components/events/EventRegistrationSection.tsx", "target": "function:src/components/events/EventRegistrationSection.tsx:EventRegistrationSection", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/components/events/HeroVideo.tsx", "target": "function:src/components/events/HeroVideo.tsx:HeroVideo", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/components/events/ScrollToRegisterButton.tsx", "target": "function:src/components/events/ScrollToRegisterButton.tsx:ScrollToRegisterButton", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/components/events/WaitlistJoinForm.tsx", "target": "function:src/components/events/WaitlistJoinForm.tsx:WaitlistJoinForm", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/lib/calendar.ts", "target": "function:src/lib/calendar.ts:buildGoogleCalendarUrl", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/lib/calendar.ts", "target": "function:src/lib/calendar.ts:buildIcalString", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/lib/email-validation.ts", "target": "function:src/lib/email-validation.ts:normaliseEmail", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/lib/email-validation.ts", "target": "function:src/lib/email-validation.ts:isValidEmail", "type": "exports", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:src/app/api/events/[slug]/calendar/route.ts", "target": "file:src/lib/calendar.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/app/api/events/[slug]/calendar/route.ts", "target": "file:src/lib/events.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/components/events/EventPageView.tsx", "target": "file:src/components/events/EventMediaVideo.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/components/events/EventPageView.tsx", "target": "file:src/components/events/EventRegistrationSection.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/components/events/EventPageView.tsx", "target": "file:src/components/events/HeroVideo.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/components/events/EventPageView.tsx", "target": "file:src/components/events/ScrollToRegisterButton.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/components/events/EventPageView.tsx", "target": "file:src/components/Reveal.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/components/events/EventPageView.tsx", "target": "file:src/lib/calendar.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/components/events/EventPageView.tsx", "target": "file:src/lib/event-status.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/components/events/EventPageView.tsx", "target": "file:src/lib/events.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/components/events/EventRegistrationSection.tsx", "target": "file:src/components/events/WaitlistJoinForm.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/components/events/EventRegistrationSection.tsx", "target": "file:src/lib/celebrate.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/components/events/EventRegistrationSection.tsx", "target": "file:src/lib/email-validation.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/components/events/HeroVideo.tsx", "target": "file:src/components/events/EventMediaVideo.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/components/events/WaitlistJoinForm.tsx", "target": "file:src/lib/email-validation.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:tests/calendar.test.ts", "target": "file:src/lib/calendar.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:tests/waitlist-join-validation.test.ts", "target": "file:src/lib/email-validation.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "function:src/app/api/events/[slug]/calendar/route.ts:GET", "target": "function:src/lib/calendar.ts:buildIcalString", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:src/app/api/events/[slug]/calendar/route.ts:GET", "target": "function:src/lib/events.tsx:getEventBySlug", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:src/components/events/EventPageView.tsx:EventPageView", "target": "function:src/lib/calendar.ts:buildGoogleCalendarUrl", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:src/components/events/EventPageView.tsx:EventPageView", "target": "function:src/components/events/EventPageView.tsx:renderSection", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:src/components/events/EventPageView.tsx:EventPageView", "target": "function:src/lib/event-status.ts:isEventEnded", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:src/components/events/EventPageView.tsx:EventPageView", "target": "function:src/lib/event-status.ts:isEventRegistrationClosed", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:src/components/events/EventPageView.tsx:EventPageView", "target": "function:src/lib/events.tsx:getEventDiscountedPrice", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:src/components/events/EventPageView.tsx:CtaSection", "target": "function:src/lib/events.tsx:formatEventPrice", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:src/components/events/EventRegistrationSection.tsx:EventRegistrationSection", "target": "function:src/components/events/EventRegistrationSection.tsx:useAnimatedNumber", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:src/components/events/EventRegistrationSection.tsx:EventRegistrationSection", "target": "function:src/lib/celebrate.ts:celebrate", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:src/components/events/EventRegistrationSection.tsx:EventRegistrationSection", "target": "function:src/lib/email-validation.ts:isValidEmail", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:src/components/events/WaitlistJoinForm.tsx:WaitlistJoinForm", "target": "function:src/lib/email-validation.ts:normaliseEmail", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:src/components/events/WaitlistJoinForm.tsx:WaitlistJoinForm", "target": "function:src/lib/email-validation.ts:isValidEmail", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:src/lib/email-validation.ts:isValidEmail", "target": "function:src/lib/email-validation.ts:normaliseEmail", "type": "calls", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:src/lib/calendar.ts", "target": "file:tests/calendar.test.ts", "type": "tested_by", "direction": "forward", "weight": 0.5},
+    {"source": "file:src/lib/email-validation.ts", "target": "file:tests/waitlist-join-validation.test.ts", "type": "tested_by", "direction": "forward", "weight": 0.5}
+  ]
+}

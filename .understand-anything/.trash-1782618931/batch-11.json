@@ -1,0 +1,164 @@
+{
+  "nodes": [
+    {
+      "id": "schema:supabase/migrations/001_event_registrations.sql",
+      "type": "schema",
+      "name": "001_event_registrations.sql",
+      "summary": "Initial Supabase migration defining the core event commerce schema: registrations, waitlist, and per-event email automation rules.",
+      "tags": ["supabase", "migration", "schema", "events", "sql"],
+      "complexity": "low",
+      "filePath": "supabase/migrations/001_event_registrations.sql"
+    },
+    {
+      "id": "file:supabase/migrations/002_unique_email_constraints.sql",
+      "type": "file",
+      "name": "002_unique_email_constraints.sql",
+      "summary": "Migration adding partial unique indexes to enforce one confirmed registration and one active waitlist entry per email per event.",
+      "tags": ["supabase", "migration", "index", "constraints", "sql"],
+      "complexity": "low",
+      "filePath": "supabase/migrations/002_unique_email_constraints.sql"
+    },
+    {
+      "id": "schema:supabase/migrations/003_rate_limit_and_cron_locks.sql",
+      "type": "schema",
+      "name": "003_rate_limit_and_cron_locks.sql",
+      "summary": "Migration adding infrastructure tables for request rate limiting and cron window locking to prevent overlapping scheduled jobs.",
+      "tags": ["supabase", "migration", "rate-limit", "cron", "sql"],
+      "complexity": "low",
+      "filePath": "supabase/migrations/003_rate_limit_and_cron_locks.sql"
+    },
+    {
+      "id": "schema:supabase/migrations/004_abandoned_checkout_followups.sql",
+      "type": "schema",
+      "name": "004_abandoned_checkout_followups.sql",
+      "summary": "Migration defining the abandoned-checkout follow-up subsystem: automation controls, per-recipient follow-up state, and suppression list tables.",
+      "tags": ["supabase", "migration", "abandoned-checkout", "followups", "sql"],
+      "complexity": "medium",
+      "filePath": "supabase/migrations/004_abandoned_checkout_followups.sql"
+    },
+    {
+      "id": "file:supabase/migrations/005_abandoned_checkout_live_claims.sql",
+      "type": "file",
+      "name": "005_abandoned_checkout_live_claims.sql",
+      "summary": "Migration adding live-send claim columns plus an atomic claim function so only one worker can send each abandoned-checkout follow-up.",
+      "tags": ["supabase", "migration", "abandoned-checkout", "concurrency", "plpgsql"],
+      "complexity": "medium",
+      "filePath": "supabase/migrations/005_abandoned_checkout_live_claims.sql"
+    },
+    {
+      "id": "file:supabase/migrations/006_abandoned_checkout_t12h_seed.sql",
+      "type": "file",
+      "name": "006_abandoned_checkout_t12h_seed.sql",
+      "summary": "Seed migration inserting the default (off-mode) automation control row for the 12-hour abandoned-checkout follow-up.",
+      "tags": ["supabase", "migration", "seed", "abandoned-checkout", "sql"],
+      "complexity": "low",
+      "filePath": "supabase/migrations/006_abandoned_checkout_t12h_seed.sql"
+    },
+    {
+      "id": "table:supabase/migrations/001_event_registrations.sql:event_registrations",
+      "type": "table",
+      "name": "event_registrations",
+      "summary": "Stores paid event registrations including attendee details, Stripe session id, amount paid, cancel token, and status.",
+      "tags": ["table", "registrations", "stripe", "events", "supabase"],
+      "complexity": "low",
+      "filePath": "supabase/migrations/001_event_registrations.sql",
+      "lineRange": "1-12"
+    },
+    {
+      "id": "table:supabase/migrations/001_event_registrations.sql:event_waitlist",
+      "type": "table",
+      "name": "event_waitlist",
+      "summary": "Tracks waitlist signups per event with name, email, removal token, and status.",
+      "tags": ["table", "waitlist", "events", "supabase", "sql"],
+      "complexity": "low",
+      "filePath": "supabase/migrations/001_event_registrations.sql",
+      "lineRange": "14-22"
+    },
+    {
+      "id": "table:supabase/migrations/001_event_registrations.sql:event_email_rules",
+      "type": "table",
+      "name": "event_email_rules",
+      "summary": "Defines per-event email automation rules with trigger type, target audience, body preview, and active flag.",
+      "tags": ["table", "email", "automation", "events", "supabase"],
+      "complexity": "low",
+      "filePath": "supabase/migrations/001_event_registrations.sql",
+      "lineRange": "24-35"
+    },
+    {
+      "id": "table:supabase/migrations/003_rate_limit_and_cron_locks.sql:rate_limit_log",
+      "type": "table",
+      "name": "rate_limit_log",
+      "summary": "Append-only log of rate-limited request keys with timestamps used to enforce throttling windows.",
+      "tags": ["table", "rate-limit", "throttling", "supabase", "sql"],
+      "complexity": "low",
+      "filePath": "supabase/migrations/003_rate_limit_and_cron_locks.sql",
+      "lineRange": "3-7"
+    },
+    {
+      "id": "table:supabase/migrations/003_rate_limit_and_cron_locks.sql:cron_window_locks",
+      "type": "table",
+      "name": "cron_window_locks",
+      "summary": "Holds cron window lock keys to ensure scheduled jobs do not run concurrently within the same window.",
+      "tags": ["table", "cron", "lock", "concurrency", "supabase"],
+      "complexity": "low",
+      "filePath": "supabase/migrations/003_rate_limit_and_cron_locks.sql",
+      "lineRange": "16-20"
+    },
+    {
+      "id": "table:supabase/migrations/004_abandoned_checkout_followups.sql:event_automation_controls",
+      "type": "table",
+      "name": "event_automation_controls",
+      "summary": "Master control table keyed by automation_key storing mode (off/test/live) and test recipient list for each automation.",
+      "tags": ["table", "automation", "controls", "abandoned-checkout", "supabase"],
+      "complexity": "low",
+      "filePath": "supabase/migrations/004_abandoned_checkout_followups.sql",
+      "lineRange": "1-7"
+    },
+    {
+      "id": "table:supabase/migrations/004_abandoned_checkout_followups.sql:event_checkout_followup_state",
+      "type": "table",
+      "name": "event_checkout_followup_state",
+      "summary": "Per-recipient follow-up state tracking sent/test timestamps, source checkout session, suppression, and error fields for abandoned-checkout emails.",
+      "tags": ["table", "followups", "state", "abandoned-checkout", "supabase"],
+      "complexity": "medium",
+      "filePath": "supabase/migrations/004_abandoned_checkout_followups.sql",
+      "lineRange": "17-34"
+    },
+    {
+      "id": "table:supabase/migrations/004_abandoned_checkout_followups.sql:event_checkout_followup_suppressions",
+      "type": "table",
+      "name": "event_checkout_followup_suppressions",
+      "summary": "Suppression list of emails per event that should be excluded from abandoned-checkout follow-up sends.",
+      "tags": ["table", "suppression", "followups", "abandoned-checkout", "supabase"],
+      "complexity": "low",
+      "filePath": "supabase/migrations/004_abandoned_checkout_followups.sql",
+      "lineRange": "42-50"
+    },
+    {
+      "id": "function:supabase/migrations/005_abandoned_checkout_live_claims.sql:claim_event_checkout_followup_live_send",
+      "type": "function",
+      "name": "claim_event_checkout_followup_live_send",
+      "summary": "PL/pgSQL function that atomically upserts and claims a follow-up row via a stale-aware claim token, returning whether this caller won the right to send.",
+      "tags": ["plpgsql", "function", "concurrency", "claim", "abandoned-checkout"],
+      "complexity": "high",
+      "filePath": "supabase/migrations/005_abandoned_checkout_live_claims.sql",
+      "lineRange": "8-68"
+    }
+  ],
+  "edges": [
+    {"source": "schema:supabase/migrations/001_event_registrations.sql", "target": "table:supabase/migrations/001_event_registrations.sql:event_registrations", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "schema:supabase/migrations/001_event_registrations.sql", "target": "table:supabase/migrations/001_event_registrations.sql:event_waitlist", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "schema:supabase/migrations/001_event_registrations.sql", "target": "table:supabase/migrations/001_event_registrations.sql:event_email_rules", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "schema:supabase/migrations/003_rate_limit_and_cron_locks.sql", "target": "table:supabase/migrations/003_rate_limit_and_cron_locks.sql:rate_limit_log", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "schema:supabase/migrations/003_rate_limit_and_cron_locks.sql", "target": "table:supabase/migrations/003_rate_limit_and_cron_locks.sql:cron_window_locks", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "schema:supabase/migrations/004_abandoned_checkout_followups.sql", "target": "table:supabase/migrations/004_abandoned_checkout_followups.sql:event_automation_controls", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "schema:supabase/migrations/004_abandoned_checkout_followups.sql", "target": "table:supabase/migrations/004_abandoned_checkout_followups.sql:event_checkout_followup_state", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "schema:supabase/migrations/004_abandoned_checkout_followups.sql", "target": "table:supabase/migrations/004_abandoned_checkout_followups.sql:event_checkout_followup_suppressions", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:supabase/migrations/005_abandoned_checkout_live_claims.sql", "target": "function:supabase/migrations/005_abandoned_checkout_live_claims.sql:claim_event_checkout_followup_live_send", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:supabase/migrations/002_unique_email_constraints.sql", "target": "table:supabase/migrations/001_event_registrations.sql:event_registrations", "type": "migrates", "direction": "forward", "weight": 0.7},
+    {"source": "file:supabase/migrations/002_unique_email_constraints.sql", "target": "table:supabase/migrations/001_event_registrations.sql:event_waitlist", "type": "migrates", "direction": "forward", "weight": 0.7},
+    {"source": "file:supabase/migrations/005_abandoned_checkout_live_claims.sql", "target": "table:supabase/migrations/004_abandoned_checkout_followups.sql:event_checkout_followup_state", "type": "migrates", "direction": "forward", "weight": 0.7},
+    {"source": "file:supabase/migrations/006_abandoned_checkout_t12h_seed.sql", "target": "table:supabase/migrations/004_abandoned_checkout_followups.sql:event_automation_controls", "type": "migrates", "direction": "forward", "weight": 0.7},
+    {"source": "function:supabase/migrations/005_abandoned_checkout_live_claims.sql:claim_event_checkout_followup_live_send", "target": "table:supabase/migrations/004_abandoned_checkout_followups.sql:event_checkout_followup_state", "type": "depends_on", "direction": "forward", "weight": 0.6}
+  ]
+}
