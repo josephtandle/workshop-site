@@ -14,6 +14,14 @@ export interface Giveaway {
 // ---------------------------------------------------------------------------
 export const giveaways: Giveaway[] = [
   {
+    slug: 'ai-levels-quiz',
+    title: 'The AI Capability Levels Quiz',
+    description: 'Find out exactly where you stand with AI on the 0 to 40 capability ladder. Take the quiz and get a personalized level report with your next three moves.',
+    icon: '◉',
+    badge: 'Quiz',
+    badgeVariant: 'purple',
+  },
+  {
     slug: 'all-sorted-overview',
     title: 'All Sorted Overview',
     description: '30 specific things All Sorted does for your business. The pre-installed business operating system: 126 agents, 57 skills, 45+ integrations, already configured.',
@@ -192,7 +200,7 @@ export const giveaways: Giveaway[] = [
   {
     slug: 'intuition-quiz',
     title: 'Rate Your Intuition',
-    description: 'An 8-question quiz that rates your intuition across 5 evidence-based levels — from blocked to fully integrated. Backed by Klein, Kahneman, Gladwell, and Gigerenzen.',
+    description: 'An 8-question quiz that rates your intuition across 5 evidence-based levels, from blocked to fully integrated. Backed by Klein, Kahneman, Gladwell, and Gigerenzen.',
     icon: '✦',
     badge: 'Quiz',
     badgeVariant: 'purple',
