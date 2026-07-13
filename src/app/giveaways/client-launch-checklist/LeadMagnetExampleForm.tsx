@@ -4,8 +4,14 @@ import { useState } from 'react'
 
 type Status = 'idle' | 'loading' | 'done' | 'error'
 
+// Must be the slug, not the display name. The API looks this up in the lead
+// magnet table and rejects anything it does not recognise rather than sending
+// the wrong file.
+const LEAD_MAGNET_SLUG = 'client-launch-checklist'
+
 export default function LeadMagnetExampleForm() {
   const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<Status>('idle')
 
@@ -25,9 +31,10 @@ export default function LeadMagnetExampleForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           firstName: firstName.trim(),
+          lastName: lastName.trim(),
           email: email.trim(),
-          source: 'client-launch-checklist',
-          leadMagnet: 'Client Launch Checklist',
+          source: LEAD_MAGNET_SLUG,
+          leadMagnet: LEAD_MAGNET_SLUG,
         }),
       })
 
@@ -75,18 +82,31 @@ export default function LeadMagnetExampleForm() {
         </label>
         <label className="block">
           <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-[#FCF4EB]/40">
-            Email
+            Last name
           </span>
           <input
-            type="email"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-            placeholder="avery@example.com"
-            required
+            type="text"
+            value={lastName}
+            onChange={(event) => setLastName(event.target.value)}
+            placeholder="Nguyen"
             className="w-full rounded-xl border border-white/[0.12] bg-white/[0.06] px-4 py-3.5 text-sm text-[#FCF4EB] outline-none transition-all placeholder:text-[#FCF4EB]/30 focus:border-[#7C69C7]/70 focus:bg-white/[0.08]"
           />
         </label>
       </div>
+
+      <label className="block">
+        <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-[#FCF4EB]/40">
+          Email
+        </span>
+        <input
+          type="email"
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
+          placeholder="avery@example.com"
+          required
+          className="w-full rounded-xl border border-white/[0.12] bg-white/[0.06] px-4 py-3.5 text-sm text-[#FCF4EB] outline-none transition-all placeholder:text-[#FCF4EB]/30 focus:border-[#7C69C7]/70 focus:bg-white/[0.08]"
+        />
+      </label>
 
       <button
         type="submit"

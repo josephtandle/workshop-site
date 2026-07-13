@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Client Launch Checklist</title>
+<style>
+  @page { size: A4; margin: 18mm 16mm; }
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.6;
+    color: #23202a;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Cover */
+  .cover {
+    height: 247mm;
+    margin: -18mm -16mm 0;
+    padding: 18mm 16mm 0;
+    background: linear-gradient(150deg, #1B1724 0%, #151515 62%, #100f14 100%);
+    color: #FCF4EB;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    page-break-after: always;
+  }
+  .cover .eyebrow {
+    font-size: 8.5pt;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: rgba(252,244,235,0.4);
+    margin-bottom: 14mm;
+  }
+  .cover .badge {
+    align-self: flex-start;
+    font-size: 7.5pt;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #9D8FE0;
+    border: 1px solid rgba(124,105,199,0.45);
+    background: rgba(124,105,199,0.14);
+    border-radius: 999px;
+    padding: 5px 14px;
+    margin-bottom: 9mm;
+  }
+  .cover h1 {
+    font-size: 36pt;
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.015em;
+    margin: 0 0 7mm;
+    color: #FCF4EB;
+  }
+  .cover h1 .grad {
+    background: linear-gradient(90deg, #9D8FE0, #F5C3C6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .cover .sub {
+    font-size: 12pt;
+    line-height: 1.55;
+    color: rgba(252,244,235,0.6);
+    max-width: 120mm;
+    margin: 0 0 16mm;
+  }
+  .cover .foot {
+    font-size: 8pt;
+    color: rgba(252,244,235,0.32);
+    border-top: 1px solid rgba(252,244,235,0.1);
+    padding-top: 5mm;
+    line-height: 1.7;
+  }
+
+  h2 {
+    font-size: 15pt;
+    font-weight: 800;
+    color: #151515;
+    margin: 10mm 0 2mm;
+    padding-bottom: 2.5mm;
+    border-bottom: 2px solid #7C69C7;
+    page-break-after: avoid;
+  }
+  h2 .step {
+    display: inline-block;
+    font-size: 8pt;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #7C69C7;
+    margin-right: 3mm;
+  }
+  .lede {
+    color: #5c5470;
+    margin: 0 0 5mm;
+    font-size: 10pt;
+  }
+
+  ul.check { list-style: none; margin: 0 0 5mm; padding: 0; }
+  ul.check li {
+    position: relative;
+    padding: 0 0 0 8mm;
+    margin-bottom: 3mm;
+    page-break-inside: avoid;
+  }
+  ul.check li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1.1mm;
+    width: 4.2mm;
+    height: 4.2mm;
+    border: 1.5px solid #b9afd6;
+    border-radius: 1.2mm;
+    background: #faf8fc;
+  }
+  ul.check li b { color: #151515; }
+
+  .note {
+    border-left: 3px solid #F5C3C6;
+    background: #fdf7f7;
+    padding: 3.5mm 5mm;
+    margin: 0 0 6mm;
+    color: #5b5266;
+    font-size: 9.5pt;
+    page-break-inside: avoid;
+  }
+  .note .tag {
+    display: block;
+    font-size: 7.5pt;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #c58f95;
+    margin-bottom: 1.5mm;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 0 6mm;
+    font-size: 9.5pt;
+    page-break-inside: avoid;
+  }
+  th {
+    background: #7C69C7;
+    color: #fff;
+    text-align: left;
+    padding: 2.6mm 3mm;
+    font-weight: 700;
+  }
+  td {
+    padding: 2.6mm 3mm;
+    border-bottom: 1px solid #e8e4ee;
+    vertical-align: top;
+  }
+  tr:nth-child(even) td { background: #faf8fc; }
+
+  .final {
+    margin-top: 8mm;
+    padding: 6mm;
+    border-radius: 3mm;
+    background: linear-gradient(135deg, rgba(245,195,198,0.14), rgba(124,105,199,0.10));
+    border: 1px solid rgba(245,195,198,0.3);
+    page-break-inside: avoid;
+  }
+  .final h3 { margin: 0 0 2mm; font-size: 12pt; color: #151515; }
+  .final p { margin: 0; color: #5c5470; font-size: 9.5pt; }
+
+  .sig {
+    margin-top: 7mm;
+    padding-top: 4mm;
+    border-top: 1px solid #e4e0ea;
+    font-size: 8.5pt;
+    color: #8b8397;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="eyebrow">Masterminds HQ</div>
+  <span class="badge">Free Download</span>
+  <h1>The Client<br><span class="grad">Launch</span> Checklist</h1>
+  <p class="sub">
+    Turn a custom service into a packaged offer people can say yes to quickly.
+    Launch a small paid program without waiting for a perfect funnel, and make
+    the path from curious visitor to booked call clear and measurable.
+  </p>
+  <div class="foot">
+    Five steps. One page each.<br>
+    Work through it in order and do not skip step one.
+  </div>
+</div>
+
+<h2><span class="step">Step 1</span>Name the one problem you solve</h2>
+<p class="lede">
+  Most offers fail here, before any funnel is ever built. If a stranger cannot
+  tell in one sentence what you fix, nothing downstream can rescue that.
+</p>
+<ul class="check">
+  <li><b>Write the problem in the client's words, not yours.</b> They do not want "strategic alignment". They want to stop losing a day a week to quoting.</li>
+  <li><b>Name who it is not for.</b> An offer that serves everyone converts nobody. Excluding people is what makes the right person lean in.</li>
+  <li><b>State the before and after.</b> Where they are on Monday, where they are after working with you. If you cannot describe the after concretely, the offer is not ready.</li>
+  <li><b>Say it out loud to one real person.</b> If they ask a clarifying question, the sentence is not finished.</li>
+</ul>
+<div class="note">
+  <span class="tag">The trap</span>
+  You will be tempted to list everything you can do. Resist it. A packaged offer
+  wins because it is narrow enough to be understood in five seconds, not because
+  it is comprehensive.
+</div>
+
+<h2><span class="step">Step 2</span>Package it so a yes is easy</h2>
+<p class="lede">
+  Custom work forces the buyer to design the deal themselves. That is work, and
+  work is where deals die. Take the decision off their plate.
+</p>
+<ul class="check">
+  <li><b>Fix the scope.</b> Decide what is in and what is out, and write it down. Anything you leave vague you will end up doing for free.</li>
+  <li><b>Fix the price.</b> One number, published. Custom quotes add a delay and a negotiation, and both cost you conversions.</li>
+  <li><b>Fix the timeline.</b> "About six weeks" is not a timeline. "Three sessions across three weeks" is.</li>
+  <li><b>Give it a name.</b> A named thing is a product. An unnamed thing is a conversation that has to start from zero every time.</li>
+  <li><b>Offer exactly one tier to begin with.</b> Choice slows people down. Add tiers later, once you know what people actually buy.</li>
+</ul>
+
+<table>
+  <tr><th>Instead of</th><th>Package it as</th></tr>
+  <tr><td>Consulting, hourly, scope to be discussed</td><td>A named two week audit, one fixed price, one deliverable</td></tr>
+  <tr><td>Ongoing retainer, flexible hours</td><td>Four sessions a month, a fixed list of what is included</td></tr>
+  <tr><td>Custom build, quoted per project</td><td>A starter build at a set price, with extras priced separately</td></tr>
+</table>
+
+<h2><span class="step">Step 3</span>Build the shortest possible path to a yes</h2>
+<p class="lede">
+  You do not need a funnel. You need a path. The difference is that a path can be
+  finished this week.
+</p>
+<ul class="check">
+  <li><b>One page, one action.</b> The page explains the offer and asks for one thing. Every extra link is a way out.</li>
+  <li><b>Put the price on the page.</b> Hiding it filters out serious buyers and attracts tyre kickers who wanted a free consult anyway.</li>
+  <li><b>Make the call button the only button.</b> If a visitor has to hunt for how to buy, they will not hunt.</li>
+  <li><b>Answer the three objections in writing.</b> Too expensive, no time, tried something like this before. Answer them on the page so you do not have to answer them on the call.</li>
+  <li><b>Ship it before it is finished.</b> A live page you improve weekly beats a perfect page that launches next quarter.</li>
+</ul>
+<div class="note">
+  <span class="tag">Rule of thumb</span>
+  If the path from landing on your page to booking a call takes more than two
+  clicks, it is too long. Count the clicks. Most people are surprised.
+</div>
+
+<h2><span class="step">Step 4</span>Make it measurable</h2>
+<p class="lede">
+  If you cannot see where people stop, you will improve the wrong thing. Two
+  numbers are enough to start. Do not build a dashboard.
+</p>
+<ul class="check">
+  <li><b>Count visitors and count booked calls.</b> That ratio is your whole business, expressed in one number.</li>
+  <li><b>Watch the drop, not the total.</b> A hundred visitors and no calls is a page problem. Ten calls and no sales is an offer problem. They need opposite fixes.</li>
+  <li><b>Write down the number every Friday.</b> A number you check once a quarter is decoration. A number you check weekly changes behaviour.</li>
+  <li><b>Change one thing at a time.</b> If you rewrite the headline and the price in the same week, you learn nothing from either.</li>
+</ul>
+
+<table>
+  <tr><th>What you see</th><th>What it usually means</th><th>What to fix first</th></tr>
+  <tr><td>Traffic, no calls</td><td>The offer is unclear or the price is hidden</td><td>The headline and the price</td></tr>
+  <tr><td>Calls, no sales</td><td>The offer is clear but not compelling</td><td>Scope, price, or who it is for</td></tr>
+  <tr><td>Sales, but painful delivery</td><td>Scope was never fixed</td><td>Step two, go back and close the gaps</td></tr>
+</table>
+
+<h2><span class="step">Step 5</span>Launch small, on purpose</h2>
+<p class="lede">
+  Waiting for the perfect launch is how offers die quietly. A small paid launch
+  teaches you more in a week than planning does in a month.
+</p>
+<ul class="check">
+  <li><b>Sell it to five people before you build the whole thing.</b> Five paying clients will tell you what to build. An empty roadmap will not.</li>
+  <li><b>Charge from the first one.</b> Free pilots teach you what people will accept, not what they will pay for. Those are different lessons.</li>
+  <li><b>Tell people it is the first cohort.</b> Being early is a feature. It buys you room to be imperfect, and honest buyers respect it.</li>
+  <li><b>Deliver it manually the first time.</b> Automate only what hurts after you have felt it hurt.</li>
+  <li><b>Book the next launch date before this one ends.</b> Momentum is easier to keep than to restart.</li>
+</ul>
+
+<div class="final">
+  <h3>If you only do one thing</h3>
+  <p>
+    Do step one, properly, this week. Write the single sentence that names the
+    problem you solve and who it is for, and say it out loud to a real person.
+    Everything else in this checklist gets easier once that sentence is true, and
+    nothing else works until it is.
+  </p>
+</div>
+
+<div class="sig">
+  Joe Che, Masterminds HQ<br>
+  mastermindshq.business
+</div>
+
+</body>
+</html>
