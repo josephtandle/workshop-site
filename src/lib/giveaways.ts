@@ -22,6 +22,14 @@ export const giveaways: Giveaway[] = [
     badgeVariant: 'purple',
   },
   {
+    slug: 'ai-behavior-quiz',
+    title: 'The AI Behavioral Use Quiz',
+    description: 'Find out how intensely you are actually using AI, and what it might be costing you. Ten honest questions, from B0 Avoidant to B10. This one is not about skill.',
+    icon: '○',
+    badge: 'Quiz',
+    badgeVariant: 'pink',
+  },
+  {
     slug: 'all-sorted-overview',
     title: 'All Sorted Overview',
     description: '30 specific things All Sorted does for your business. The pre-installed business operating system: 126 agents, 57 skills, 45+ integrations, already configured.',
