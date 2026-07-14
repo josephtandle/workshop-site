@@ -1,0 +1,76 @@
+{
+  "projectName": "masterminds-workshop",
+  "projectVersion": "0.1.0",
+  "description": "Next.js workshop and event management platform for Mastermind's cohort-based courses, featuring Stripe integration, event registration, giveaway landing pages, and real-time checkout/payment automation.",
+  "frameworks": [
+    "Next.js 16.2.3",
+    "React 19.0.0",
+    "TypeScript",
+    "Tailwind CSS",
+    "Framer Motion",
+    "GSAP",
+    "Three.js",
+    "Supabase",
+    "Stripe"
+  ],
+  "languages": {
+    "typescript": 220,
+    "javascript": 6,
+    "json": 4,
+    "css": 1,
+    "html": 6,
+    "sql": 7,
+    "markdown": 13,
+    "shell": 1,
+    "txt": 1,
+    "sha256": 1
+  },
+  "fileStatistics": {
+    "totalFiles": 260,
+    "filteredByIgnore": 114,
+    "byCategory": {
+      "code": 227,
+      "config": 4,
+      "data": 7,
+      "docs": 14,
+      "markup": 7,
+      "script": 1
+    },
+    "totalLines": 61221,
+    "averageLinesPerFile": 235.5
+  },
+  "complexity": "large",
+  "codeMetrics": {
+    "filesScanned": 260,
+    "filesWithImports": 141,
+    "totalImportEdges": 363
+  },
+  "keyDirectories": {
+    "src/app": "Next.js app directory with pages and API routes",
+    "src/components": "Reusable React components",
+    "src/lib": "Shared utilities and helper functions",
+    "scripts": "One-off and recurring automation scripts",
+    "supabase": "Database migrations and schema",
+    "public": "Static assets and downloadables",
+    "docs": "Documentation and process guides",
+    "tests": "Test files"
+  },
+  "primaryUseCase": "E-commerce and event management platform for cohort-based course launches, with real-time payment processing, participant onboarding automation, and marketing landing pages.",
+  "detectedCapabilities": [
+    "Event registration and waitlist management",
+    "Stripe checkout and subscription handling",
+    "Webhook processing for payment automation",
+    "Lead magnet and email capture workflows",
+    "Giveaway landing pages",
+    "Real-time checkout abandonment recovery",
+    "3D animations and interactive UI (Three.js, GSAP, Framer Motion)",
+    "Multi-tenant database (Supabase)",
+    "Participant onboarding automation",
+    "Promotional code validation"
+  ],
+  "scanMetadata": {
+    "scanDate": "2026-07-11",
+    "scanTool": "understand-anything",
+    "pluginVersion": "1.0.0"
+  }
+}

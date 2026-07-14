@@ -1,23 +1,4 @@
 {
-  "version": "1.0.0",
-  "project": {
-    "name": "masterminds-workshop",
-    "languages": [
-      "TypeScript",
-      "JavaScript",
-      "CSS",
-      "JSON",
-      "Markdown"
-    ],
-    "frameworks": [
-      "Next.js",
-      "React",
-      "Stripe"
-    ],
-    "description": "Next.js web application for Mastermind workshop management and giveaway distribution",
-    "analyzedAt": "2026-07-10T20:16:56Z",
-    "gitCommitHash": "d69cffa0e77414ce277b38f3fc6c67204c92c9c8"
-  },
   "nodes": [
     {
       "id": "file:src/app/giveaways/agent-infrastructure/page.tsx",
@@ -18547,61 +18528,6 @@
       "type": "belongs_to",
       "label": "provisions for feature",
       "direction": "forward"
-    }
-  ],
-  "layers": [
-    {
-      "id": "layer:frontend",
-      "name": "Frontend",
-      "description": "User-facing pages and React components for UI rendering",
-      "nodeIds": [
-        "file:src/app/page.tsx",
-        "file:src/app/events/[slug]/page.tsx",
-        "file:src/components/events/EventRegistrationSection.tsx"
-      ]
-    },
-    {
-      "id": "layer:integrations",
-      "name": "Third-Party Integrations",
-      "description": "External service clients and SDK initialization (Stripe, Supabase)",
-      "nodeIds": [
-        "file:src/lib/stripe.ts",
-        "file:src/lib/supabase.ts"
-      ]
-    },
-    {
-      "id": "layer:data-model",
-      "name": "Data Model",
-      "description": "Database schemas, migrations, and data access functions",
-      "nodeIds": [
-        "file:src/lib/event-registration-db.ts"
-      ]
-    }
-  ],
-  "tour": [
-    {
-      "order": 1,
-      "title": "Welcome to the Workshop Site",
-      "description": "Start with the home page to understand the application's purpose, navigation structure, and how users access different parts of the platform.",
-      "nodeIds": [
-        "file:src/app/page.tsx"
-      ]
-    },
-    {
-      "order": 4,
-      "title": "Process Payments on the Backend",
-      "description": "Learn how the checkout API endpoint receives form data, creates Stripe sessions, and integrates with the Stripe client configuration to handle payment initialization.",
-      "nodeIds": [
-        "file:src/lib/stripe.ts"
-      ]
-    },
-    {
-      "order": 5,
-      "title": "Manage Data and Handle Webhooks",
-      "description": "Complete the flow by understanding how Stripe webhooks confirm payments, how the Supabase client stores subscription data, and what the database schema looks like for persisting customer and subscription information.",
-      "nodeIds": [
-        "file:src/lib/supabase.ts"
-      ]
     }
   ]
 }

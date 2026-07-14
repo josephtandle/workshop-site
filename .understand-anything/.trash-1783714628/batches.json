@@ -1,0 +1,24 @@
+{
+  "totalFiles": 2,
+  "batches": [
+    {
+      "index": 0,
+      "batchFiles": [
+        {
+          "path": "AGENTS.md",
+          "language": "markdown",
+          "sizeLines": 50,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "CLAUDE.md",
+          "language": "markdown",
+          "sizeLines": 100,
+          "fileCategory": "docs"
+        }
+      ],
+      "batchImportData": {},
+      "neighborMap": {}
+    }
+  ]
+}
