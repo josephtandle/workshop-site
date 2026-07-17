@@ -50,7 +50,7 @@ export default async function IllyPage({
 
   if (isAuthenticated) {
     return (
-      <main className="w-full bg-[#FCF4EB] text-[#2B1F38]">
+      <main className="w-full min-h-screen bg-[#151515] text-[#FCF4EB]">
         <div className="w-full" dangerouslySetInnerHTML={{ __html: GUIDE_HTML }} />
       </main>
     )
