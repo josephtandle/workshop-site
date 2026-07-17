@@ -20,10 +20,16 @@ function matchesGuideCookie(value: string | undefined, password: string) {
   return timingSafeEqual(Buffer.from(value, 'hex'), Buffer.from(sha256(password), 'hex'))
 }
 
+function matchesQueryPassword(value: string | undefined, password: string) {
+  if (typeof value !== 'string' || value.length !== password.length) return false
+
+  return timingSafeEqual(Buffer.from(sha256(value), 'hex'), Buffer.from(sha256(password), 'hex'))
+}
+
 export default async function IllyPage({
   searchParams,
 }: {
-  searchParams: Promise<{ e?: string }>
+  searchParams: Promise<{ e?: string; p?: string }>
 }) {
   const password = process.env.ILLY_GUIDE_PASSWORD
 
@@ -35,8 +41,12 @@ export default async function IllyPage({
     )
   }
 
+  const { e, p } = await searchParams
+
   const cookieStore = await cookies()
-  const isAuthenticated = matchesGuideCookie(cookieStore.get('illy_guide_auth')?.value, password)
+  const isAuthenticated =
+    matchesGuideCookie(cookieStore.get('illy_guide_auth')?.value, password) ||
+    matchesQueryPassword(p, password)
 
   if (isAuthenticated) {
     return (
@@ -45,8 +55,6 @@ export default async function IllyPage({
       </main>
     )
   }
-
-  const { e } = await searchParams
 
   return (
     <main className="flex min-h-screen items-center justify-center bg-[#2B1F38] px-6 py-12 text-[#FCF4EB]">
