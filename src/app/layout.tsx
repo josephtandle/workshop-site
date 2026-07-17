@@ -2,9 +2,7 @@ import type { Metadata } from 'next'
 import { Plus_Jakarta_Sans } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
-import SiteHeader from '@/components/SiteHeader'
-import SiteFooter from '@/components/SiteFooter'
-import PageParticles from '@/components/PageParticles'
+import SiteChrome from '@/components/SiteChrome'
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -67,27 +65,7 @@ export default function RootLayout({
         fbq('track','PageView');
       `}</Script>
       <body className="bg-[#151515] text-[#FCF4EB] min-h-screen font-sans antialiased">
-        {/* Site-wide background: particles + gradient orbs */}
-        <PageParticles />
-        <div className="fixed inset-0 pointer-events-none overflow-hidden">
-          <div
-            className="animate-float-slow absolute top-[-20%] left-[8%] w-[520px] h-[520px] rounded-full opacity-20"
-            style={{ background: 'radial-gradient(circle, #7C69C7 0%, transparent 70%)' }}
-          />
-          <div
-            className="animate-float-slower absolute bottom-[-15%] right-[3%] w-[420px] h-[420px] rounded-full opacity-15"
-            style={{ background: 'radial-gradient(circle, #F5C3C6 0%, transparent 70%)' }}
-          />
-          <div
-            className="animate-float-slow absolute top-[40%] right-[25%] w-[260px] h-[260px] rounded-full opacity-10"
-            style={{ background: 'radial-gradient(circle, #9D8FE0 0%, transparent 70%)', animationDelay: '3s' }}
-          />
-        </div>
-        <div className="relative z-10">
-          <SiteHeader />
-          <div className="pt-16">{children}</div>
-          <SiteFooter />
-        </div>
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   )

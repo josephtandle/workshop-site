@@ -5,6 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
+      disallow: '/illy',
     },
     sitemap: [
       'https://workshop.mastermindshq.business/sitemap.xml',
