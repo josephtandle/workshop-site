@@ -11,13 +11,13 @@ import {
 import { sendSessionReminderEmail } from '../src/lib/event-confirmation-email'
 
 test('session reminder due window opens 24h before and 2h before the workshop', () => {
-  const eventStartIso = '2026-07-28T19:00:00+08:00'
+  const eventStartIso = '2026-07-29T19:00:00+08:00'
 
   assert.equal(
     isSessionReminderDue({
       eventStartIso,
       leadHours: 24,
-      now: new Date('2026-07-27T19:20:00+08:00'),
+      now: new Date('2026-07-28T19:20:00+08:00'),
     }),
     true,
   )
@@ -25,7 +25,7 @@ test('session reminder due window opens 24h before and 2h before the workshop', 
     isSessionReminderDue({
       eventStartIso,
       leadHours: 24,
-      now: new Date('2026-07-27T18:00:00+08:00'),
+      now: new Date('2026-07-28T18:00:00+08:00'),
     }),
     false,
   )
@@ -34,7 +34,7 @@ test('session reminder due window opens 24h before and 2h before the workshop', 
     isSessionReminderDue({
       eventStartIso,
       leadHours: 2,
-      now: new Date('2026-07-28T17:20:00+08:00'),
+      now: new Date('2026-07-29T17:20:00+08:00'),
     }),
     true,
   )
@@ -42,7 +42,7 @@ test('session reminder due window opens 24h before and 2h before the workshop', 
     isSessionReminderDue({
       eventStartIso,
       leadHours: 2,
-      now: new Date('2026-07-28T15:50:00+08:00'),
+      now: new Date('2026-07-29T15:50:00+08:00'),
     }),
     false,
   )
@@ -61,7 +61,7 @@ test('session reminder idempotency key and lock key are stable', () => {
   const lockKey = buildSessionReminderLockKey({
     slug: event.slug,
     windowLabel: 't24h',
-    now: new Date('2026-07-27T19:20:00+08:00'),
+    now: new Date('2026-07-28T19:20:00+08:00'),
   })
 
   assert.equal(
@@ -73,7 +73,7 @@ test('session reminder idempotency key and lock key are stable', () => {
       windowLabel: 't24h',
     }),
   )
-  assert.equal(lockKey, 'session-reminders/t24h/ask-an-ai-expert/2026-07-27')
+  assert.equal(lockKey, 'session-reminders/t24h/ask-an-ai-expert/2026-07-28')
 })
 
 test('session reminders dedupe duplicate registrations and skip a locked second run', async () => {
@@ -86,7 +86,7 @@ test('session reminders dedupe duplicate registrations and skip a locked second 
   const run = async () =>
     runSessionReminders(
       {
-        now: new Date('2026-07-27T19:20:00+08:00'),
+        now: new Date('2026-07-28T19:20:00+08:00'),
         events: [event],
         force: false,
         dryRun: false,
@@ -151,6 +151,6 @@ test('session reminder emails include the Zoom link and the workshop time', asyn
   assert.equal(requests.length, 1)
   assert.match(requests[0].subject, /24 hour reminder/i)
   assert.ok(requests[0].html.includes('https://us02web.zoom.us/j/81275409884'))
-  assert.ok(requests[0].html.includes('Tuesday, July 28, 2026'))
+  assert.ok(requests[0].html.includes('Wednesday, July 29, 2026'))
   assert.ok(requests[0].html.includes('7:00 PM to 9:00 PM Asia/Makassar (Bali)'))
 })

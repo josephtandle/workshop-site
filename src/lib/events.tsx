@@ -747,7 +747,7 @@ export const events: EventDefinition[] = [
       'A free two-hour live session with Joe Che. Bring your business and your questions, get answers on the spot, and watch real businesses get AI working on their sales and their busywork right in front of you.',
     description:
       'A live online workshop where Joe answers real questions, looks at real businesses, and shows practical ways to get AI working on sales and busywork.',
-    dateLabel: 'Tuesday, July 28, 2026',
+    dateLabel: 'Wednesday, July 29, 2026',
     timeLabel: '7:00 PM to 9:00 PM Asia/Makassar (Bali)',
     locationLabel: 'Free online workshop',
     durationLabel: '90-minute AI business Q&A plus 30-minute bonus round',
@@ -794,8 +794,8 @@ export const events: EventDefinition[] = [
       checkoutNote: 'Free registration. The Zoom link will be emailed right after you sign up.',
     },
     calendarEvent: {
-      startIso: '2026-07-28T19:00:00+08:00',
-      endIso: '2026-07-28T21:00:00+08:00',
+      startIso: '2026-07-29T19:00:00+08:00',
+      endIso: '2026-07-29T21:00:00+08:00',
     },
     sections: [
       {
@@ -811,7 +811,7 @@ export const events: EventDefinition[] = [
               This is a live online workshop where Joe answers real questions, looks at real businesses, and shows practical ways to get AI working on sales and busywork.
             </p>
             <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
-              Joe teaches business owners to do this every day in his <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 transition hover:text-[#FCF4EB]">AI Business Mastermind</a>. The people in his cohorts are not techies. They are coaches, artists, therapists, and consultants who now have websites they built themselves, honed their messages through branding and marketing agents, billing automations, business dashboards, tracking everything about the business, and the pattern across all of them is the same: more sales coming in, less time spent on the work that used to eat their week. <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 transition hover:text-[#FCF4EB]">Cohort 4 starts August 10</a>.
+              Joe teaches business owners to do this every day in his <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 transition hover:text-[#FCF4EB]">AI Business Mastermind</a>. Three cohorts have run so far and all three filled. The people in them are not techies. They are coaches, artists, therapists, and consultants who now have websites they built themselves, honed their messages through branding and marketing agents, billing automations, business dashboards, tracking everything about the business, and the pattern across all of them is the same: more sales coming in, less time spent on the work that used to eat their week. <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 transition hover:text-[#FCF4EB]">Cohort 4 starts August 10</a> and is the one currently open.
             </p>
             <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
               For 90 minutes, Joe takes that question in every form, live. He pulls people into hot seats so everyone can look at a real business together and find the fastest ways AI can bring in sales and hand back time. When one person gets unstuck, everyone learns from it.
