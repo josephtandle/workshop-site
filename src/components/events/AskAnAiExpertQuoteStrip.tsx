@@ -10,11 +10,20 @@ export default function AskAnAiExpertQuoteStrip() {
   const trackRef = useRef<HTMLDivElement>(null)
   const [isPaused, setIsPaused] = useState(false)
   const autoScrollRef = useRef<number | null>(null)
+  const resumeTimerRef = useRef<number | null>(null)
 
+  // Manual nav pauses the drift so the two never fight over scrollLeft,
+  // then resumes once the smooth scroll has settled.
   function scroll(direction: 'prev' | 'next') {
     const track = trackRef.current
     if (!track) return
+    setIsPaused(true)
+    if (resumeTimerRef.current !== null) window.clearTimeout(resumeTimerRef.current)
+    const half = track.scrollWidth / 2
+    if (direction === 'next' && track.scrollLeft >= half) track.scrollLeft -= half
+    if (direction === 'prev' && track.scrollLeft < STEP_WIDTH) track.scrollLeft += half
     track.scrollBy({ left: direction === 'next' ? STEP_WIDTH : -STEP_WIDTH, behavior: 'smooth' })
+    resumeTimerRef.current = window.setTimeout(() => setIsPaused(false), 1400)
   }
 
   useEffect(() => {
@@ -22,19 +31,26 @@ export default function AskAnAiExpertQuoteStrip() {
     if (!track) return
 
     if (!isPaused) {
+      // The list is rendered twice, so resetting at the halfway point is invisible:
+      // the second copy is pixel-identical to the first. No jump, no snap-back.
       autoScrollRef.current = window.setInterval(() => {
-        if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 5) {
-          track.scrollLeft = 0
+        const half = track.scrollWidth / 2
+        if (track.scrollLeft >= half) {
+          track.scrollLeft -= half
         } else {
-          track.scrollLeft += 1
+          track.scrollLeft += 0.5
         }
-      }, 25)
+      }, 16)
     }
 
     return () => {
       if (autoScrollRef.current !== null) {
         window.clearInterval(autoScrollRef.current)
         autoScrollRef.current = null
+      }
+      if (resumeTimerRef.current !== null) {
+        window.clearTimeout(resumeTimerRef.current)
+        resumeTimerRef.current = null
       }
     }
   }, [isPaused])
@@ -67,9 +83,9 @@ export default function AskAnAiExpertQuoteStrip() {
             className="flex gap-4 overflow-x-auto pb-4 pr-1"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
-            {askAnAiExpertQuotes.map((item) => (
+            {[...askAnAiExpertQuotes, ...askAnAiExpertQuotes].map((item, index) => (
               <article
-                key={`${item.name}-${item.quote.slice(0, 16)}`}
+                key={`${index}-${item.name}`}
                 className="flex-shrink-0 rounded-[1.6rem] border border-white/10 bg-[linear-gradient(160deg,rgba(20,14,35,0.95),rgba(11,8,18,0.98))] p-[1px] shadow-[0_20px_50px_rgba(0,0,0,0.22)]"
                 style={{ width: CARD_WIDTH }}
               >
