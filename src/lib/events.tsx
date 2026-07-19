@@ -7,6 +7,7 @@ export type EventHost = {
   role: string
   photoSrc: string
   bio: string[]
+  bioHtml?: string[]
 }
 
 export type EventPromoCode = {
@@ -741,11 +742,11 @@ export const events: EventDefinition[] = [
     summary:
       'A free two-hour live session with Joe Che. Bring your business and your questions, get answers on the spot, and watch real businesses get AI working on their sales and their busywork right in front of you.',
     description:
-      'A live Zoom workshop where Joe answers real questions, looks at real businesses, and shows practical ways to get AI working on sales and busywork.',
+      'A live online workshop where Joe answers real questions, looks at real businesses, and shows practical ways to get AI working on sales and busywork.',
     dateLabel: 'Tuesday, July 28, 2026',
     timeLabel: '7:00 PM to 9:00 PM Asia/Makassar (Bali)',
-    locationLabel: 'Free virtual Zoom workshop',
-    durationLabel: '90 min core + 30 min bonus hot-seat round',
+    locationLabel: 'Free online workshop',
+    durationLabel: '90-minute AI business Q&A plus 30-minute bonus round',
     heroImage: '/images/events/ask-an-ai-expert-hero.jpg',
     heroAlt: 'Ask an AI Expert workshop hero image',
     zoomLink: 'https://us02web.zoom.us/j/81275409884',
@@ -773,6 +774,11 @@ export const events: EventDefinition[] = [
           'He previously built the largest software and business training company in New York City, where he trained more than 90,000 people, including Fortune 5 executives, the CIA, Microsoft, and Tyra Banks.',
           'Today, Joe mentors entrepreneurs inside his Business Automation Mastermind and helps founders use AI to create cleaner operations, stronger offers, faster execution, and more freedom.',
         ],
+        bioHtml: [
+          'Joe Che is a number one bestselling author in three categories across business and AI, the founder of 24 companies, and the builder of two AI companies, including All Sorted AI, a practical AI operating system for service-based small business owners.',
+          'He previously built the largest software and business training company in New York City, where he trained more than 90,000 people, including Fortune 5 executives, the CIA, Microsoft, and Tyra Banks.',
+          'Today, Joe mentors entrepreneurs inside his <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 hover:text-[#FCF4EB]">Business Automation Mastermind</a> and helps founders use AI to create cleaner operations, stronger offers, faster execution, and more freedom. He also wrote <a href="https://a.mastermindshq.business/ai-os-kindle" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 hover:text-[#FCF4EB]">his number one bestselling book on AI operating systems</a>.',
+        ],
       },
     ],
     pricing: {
@@ -792,13 +798,15 @@ export const events: EventDefinition[] = [
         eyebrow: 'What This Is',
         html: `
           <div class="not-prose space-y-5">
+            <h2 class="event-gradient-title pt-2 text-[2rem] font-extrabold leading-[1.02] tracking-tight text-[#FCF4EB] md:text-[2.6rem]">
+              How do I get AI to make me more money?
+            </h2>
             <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
-              This is a live Zoom workshop where Joe answers real questions, looks at real businesses, and shows practical ways to get AI working on sales and busywork.
+              This is a live online workshop where Joe answers real questions, looks at real businesses, and shows practical ways to get AI working on sales and busywork.
             </p>
             <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
               Joe teaches business owners to do this every day in his <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 transition hover:text-[#FCF4EB]">AI Business Mastermind</a>. The people in his cohorts are not techies. They are coaches, artists, therapists, and consultants who now have websites they rebuilt themselves, AI note-takers, billing automations, and dashboards tracking their income, and the pattern across all of them is the same: more sales coming in, less time spent on the work that used to eat their week. <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 transition hover:text-[#FCF4EB]">Cohort 4 starts August 10</a>.
             </p>
-            <h2 class="pt-2 text-[2rem] font-bold leading-[1.02] tracking-tight text-[#FCF4EB] md:text-[2.6rem]">How do I get AI to make me more money?</h2>
             <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
               For 90 minutes, Joe takes that question in every form, live. He pulls people into hot seats so everyone can look at a real business together and find the fastest ways AI can bring in sales and hand back time. When one person gets unstuck, everyone learns from it.
             </p>

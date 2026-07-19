@@ -16,9 +16,6 @@ function sectionTitleClass(sectionId?: string) {
   if (sectionId === 'creative-lab' || sectionId === 'outcomes') {
     return 'text-[1.95rem] font-extrabold leading-[1.05] tracking-tight md:text-[3.15rem]'
   }
-  if (sectionId === 'about') {
-    return 'text-[1.95rem] font-extrabold leading-[1.0] tracking-tight md:text-[3rem]'
-  }
   return 'text-[1.7rem] font-extrabold leading-[1.05] tracking-tight md:text-[2.65rem]'
 }
 
@@ -49,7 +46,7 @@ function SectionShell({
             </p>
           ) : null}
           {title ? (
-            <h2 className={`${sectionId === 'about' ? 'gradient-text' : 'event-gradient-title'} ${sectionTitleClass(sectionId)}`}>
+            <h2 className={`event-gradient-title ${sectionTitleClass(sectionId)}`}>
               {title}
             </h2>
           ) : null}
@@ -331,12 +328,21 @@ function HostsSection({ section }: { section: Extract<EventSection, { type: 'hos
             <div className="grid gap-4 p-6 md:p-7">
               <div>
                 <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#BDB3E8]">{host.role}</p>
-                <h3 className="mt-2 text-[2rem] font-bold leading-tight tracking-tight text-[#FCF4EB]">{host.name}</h3>
+                <h3 className="event-gradient-title mt-2 text-[2rem] font-extrabold leading-tight tracking-tight text-[#FCF4EB]">
+                  {host.name}
+                </h3>
+                <p className="mt-3 inline-flex rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[11px] font-semibold tracking-[0.12em] text-[#BDB3E8]">
+                  Number one Amazon bestseller in multiple categories
+                </p>
               </div>
               <div className="space-y-4 text-sm leading-7 text-[#FCF4EB]/70">
-                {host.bio.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
+                {(host.bioHtml ?? host.bio).map((paragraph) =>
+                  host.bioHtml ? (
+                    <p key={paragraph} dangerouslySetInnerHTML={{ __html: paragraph }} />
+                  ) : (
+                    <p key={paragraph}>{paragraph}</p>
+                  ),
+                )}
               </div>
             </div>
           </article>
@@ -624,8 +630,8 @@ export default function EventPageView({
         </div>
       </section>
 
-      {event.slug === 'ask-an-ai-expert' ? <AskAnAiExpertQuoteStrip /> : null}
       {event.sections.map((section) => renderSection(section, event, promo, eventEnded))}
+      {event.slug === 'ask-an-ai-expert' ? <AskAnAiExpertQuoteStrip /> : null}
       {event.video ? <EventVideoSection video={event.video} /> : null}
       <EventRegistrationSection
         event={registrationEvent}

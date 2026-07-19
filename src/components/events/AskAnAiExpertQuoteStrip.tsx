@@ -46,16 +46,6 @@ export default function AskAnAiExpertQuoteStrip() {
       <div className="pointer-events-none absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-[#F5C3C6]/10 blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-6xl">
-        <div className="mb-6 max-w-3xl">
-          <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#BDB3E8]">Social Proof</p>
-          <h2 className="text-[2rem] font-extrabold leading-[1.02] tracking-tight text-[#FCF4EB] md:text-[2.8rem]">
-            What people said after getting AI working in the background
-          </h2>
-          <p className="mt-3 max-w-2xl text-base leading-8 text-[#FCF4EB]/62 md:text-lg">
-            Real results from business owners who wanted more sales and less busy work.
-          </p>
-        </div>
-
         <div
           className="relative group"
           onMouseEnter={() => setIsPaused(true)}
@@ -90,7 +80,6 @@ export default function AskAnAiExpertQuoteStrip() {
                     </div>
                     <div className="min-w-0">
                       <p className="text-sm font-semibold text-[#FCF4EB]">{item.name}</p>
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#BDB3E8]">Quote</p>
                     </div>
                   </div>
                   <blockquote className="flex-1 text-sm leading-7 text-[#FCF4EB]/82 md:text-[15px]">

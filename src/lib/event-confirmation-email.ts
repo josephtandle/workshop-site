@@ -120,7 +120,7 @@ export function buildAskAnAiExpertWelcomeEmailHtml(event: EventDefinition, atten
           <div style="margin: 0 0 24px; padding: 20px; border-radius: 16px; background: #fbf9ff; border: 1px solid rgba(124, 105, 199, 0.14);">
             <h2 style="margin: 0 0 10px; font-size: 20px; color: #16121f;">Event Details</h2>
             ${calendarLine}
-            <p style="margin: 0; font-size: 15px; line-height: 1.75; color: #4b4263;"><strong>Format:</strong> Free virtual Zoom workshop</p>
+            <p style="margin: 0; font-size: 15px; line-height: 1.75; color: #4b4263;"><strong>Format:</strong> Free online workshop</p>
           </div>
 
           <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.75; color: #4b4263;">Join live on Zoom using the link below. Bring your business and your questions, and I will answer them live.</p>
