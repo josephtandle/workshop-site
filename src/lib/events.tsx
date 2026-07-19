@@ -258,7 +258,7 @@ export const events: EventDefinition[] = [
         role: 'Founder • AI Entrepreneur • Community Builder',
         photoSrc: '/images/events/joe-che-bio-bw.jpg',
         bio: [
-          'Joe Che is a number one bestselling author in three categories across business and AI, the founder of 24 companies, and the builder of two AI companies, including All Sorted AI, a practical AI operating system for service-based small business owners.',
+          'Joe Che is a number one bestselling author in three categories across business and AI, the founder of 26 companies, and the builder of two AI companies, including All Sorted AI, a practical AI operating system for service-based small business owners.',
           'He previously built the largest software and business training company in New York City, where he trained more than 90,000 people, including Fortune 5 executives, the CIA, Microsoft, and Tyra Banks.',
           'Today, Joe mentors entrepreneurs inside his Business Automation Mastermind and helps founders use AI to create cleaner operations, stronger offers, faster execution, and more freedom.',
         ],
@@ -476,7 +476,7 @@ export const events: EventDefinition[] = [
         role: 'Founder • AI Entrepreneur • Community Builder',
         photoSrc: '/mastermind-participants/joe-che.jpeg',
         bio: [
-          'Joe Che is a number one bestselling author in three categories across business and AI, the founder of 24 companies, and the builder of two AI companies, including All Sorted AI, a practical AI operating system for service-based small business owners.',
+          'Joe Che is a number one bestselling author in three categories across business and AI, the founder of 26 companies, and the builder of two AI companies, including All Sorted AI, a practical AI operating system for service-based small business owners.',
           'He previously built the largest software and business training company in New York City, where he trained more than 90,000 people, including Fortune 5 executives, the CIA, Microsoft, and Tyra Banks.',
           'Today, Joe mentors entrepreneurs inside his Business Automation Mastermind and helps founders use AI to create cleaner operations, stronger offers, faster execution, and more freedom.',
         ],
@@ -770,12 +770,12 @@ export const events: EventDefinition[] = [
         role: 'Founder • AI Entrepreneur • Community Builder',
         photoSrc: '/images/events/joe-che-bio-bw.jpg',
         bio: [
-          'Joe Che is a number one bestselling author in three categories across business and AI, the founder of 24 companies, and the builder of two AI companies, including All Sorted AI, a practical AI operating system for service-based small business owners.',
+          'Joe Che is a number one bestselling author in three categories across business and AI, the founder of 26 companies, and the builder of two AI companies, including All Sorted AI, a practical AI operating system for service-based small business owners.',
           'He previously built the largest software and business training company in New York City, where he trained more than 90,000 people, including Fortune 5 executives, the CIA, Microsoft, and Tyra Banks.',
           'Today, Joe mentors entrepreneurs inside his Business Automation Mastermind and helps founders use AI to create cleaner operations, stronger offers, faster execution, and more freedom.',
         ],
         bioHtml: [
-          'Joe Che is a number one bestselling author in three categories across business and AI, the founder of 24 companies, and the builder of two AI companies, including All Sorted AI, a practical AI operating system for service-based small business owners.',
+          'Joe Che is a number one bestselling author in three categories across business and AI, the founder of 26 companies, and the builder of two AI companies, including All Sorted AI, a practical AI operating system for service-based small business owners.',
           'He previously built the largest software and business training company in New York City, where he trained more than 90,000 people, including Fortune 5 executives, the CIA, Microsoft, and Tyra Banks.',
           'Today, Joe mentors entrepreneurs inside his <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 hover:text-[#FCF4EB]">Business Automation Mastermind</a> and helps founders use AI to create cleaner operations, stronger offers, faster execution, and more freedom. He also wrote <a href="https://a.mastermindshq.business/ai-os-kindle" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 hover:text-[#FCF4EB]">his number one bestselling book on AI operating systems</a>.',
         ],
