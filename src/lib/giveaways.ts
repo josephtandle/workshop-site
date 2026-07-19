@@ -32,7 +32,7 @@ export const giveaways: Giveaway[] = [
   {
     slug: 'all-sorted-overview',
     title: 'All Sorted Overview',
-    description: '30 specific things All Sorted does for your business. The pre-installed business operating system: 126 agents, 57 skills, 45+ integrations, already configured.',
+    description: '30 specific things All Sorted does for your business. The pre-installed business operating system: 157 agents, 57 skills, 45+ integrations, already configured.',
     icon: '◐',
     badge: 'Overview',
     badgeVariant: 'purple',

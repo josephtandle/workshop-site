@@ -86,7 +86,7 @@ async function sendViaResend(email: string, source: string, idempotencyKey: stri
         </p>
 
         <p style="font-size: 15px; color: #444; line-height: 1.7; margin-bottom: 16px;">
-          Short version: 126 agents, 57 skills, 45+ integrations, already configured. CRM, bookkeeping, voice transcription, content generation, social posting, strategic advisors. One installed system instead of 20 tabs.
+          Short version: 157 agents, 57 skills, 45+ integrations, already configured. CRM, bookkeeping, voice transcription, content generation, social posting, strategic advisors. One installed system instead of 20 tabs.
         </p>
 
         <p style="font-size: 15px; color: #444; line-height: 1.7; margin-bottom: 16px;">

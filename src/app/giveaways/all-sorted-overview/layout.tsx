@@ -6,7 +6,7 @@ const URL = `${BASE}/giveaways/all-sorted-overview`
 
 export const metadata: Metadata = {
   title: 'All Sorted Overview — 30 things All Sorted can do for your business',
-  description: 'A pre-installed business operating system: 30 specific things All Sorted handles, from CRM and bookkeeping to image generation, voice notes, and 126 AI agents that already know your business.',
+  description: 'A pre-installed business operating system: 30 specific things All Sorted handles, from CRM and bookkeeping to image generation, voice notes, and 157 AI agents that already know your business.',
   keywords: [
     'All Sorted', 'business operating system', 'AI agents', 'CRM',
     'business automation', 'bookkeeping', 'voice transcription',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     title: 'All Sorted Overview — 30 things All Sorted can do',
-    description: 'The pre-installed business operating system. 126 agents. 57 skills. 45+ integrations. Here is exactly what it does for your business.',
+    description: 'The pre-installed business operating system. 157 agents. 57 skills. 45+ integrations. Here is exactly what it does for your business.',
     url: URL,
     siteName: 'Business Automation Mastermind Workshop',
     type: 'website',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'All Sorted Overview — 30 things All Sorted can do',
-    description: 'A pre-installed business operating system. 126 agents already configured. Here is exactly what it does.',
+    description: 'A pre-installed business operating system. 157 agents already configured. Here is exactly what it does.',
     creator: '@joecheuk',
   },
 }

@@ -66,7 +66,7 @@ const CAPABILITY_GROUPS: { name: string; items: { title: string; body: string }[
       { title: 'Santa', body: 'A proactive agent that surfaces passive income opportunities and useful capabilities you do not know to ask for yet.' },
       { title: 'Council', body: 'Multi-perspective strategic advisor. Five scouts argue, one synthesizer weighs the call. Better than asking one model.' },
       { title: 'Competitive research and market analysis', body: 'Pulls the data on competitors, pricing, and positioning. Updates on schedule so you are never out of date.' },
-      { title: 'Task routing across 126 agents', body: 'You ask once, the dispatcher figures out which agent handles it. You stop micromanaging the system.' },
+      { title: 'Task routing across 157 agents', body: 'You ask once, the dispatcher figures out which agent handles it. You stop micromanaging the system.' },
     ],
   },
   {
@@ -281,7 +281,7 @@ export default function AllSortedOverviewPage() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="text-[#FCF4EB]/55 text-sm sm:text-base mt-5 leading-relaxed max-w-2xl mx-auto"
             >
-              All Sorted is the pre-installed business operating system. 126 agents, 57 skills,
+              All Sorted is the pre-installed business operating system. 157 agents, 57 skills,
               45+ integrations, already configured. Here is the short list of what it actually does.
             </motion.p>
 
