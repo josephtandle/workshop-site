@@ -42,6 +42,7 @@ import { loadStripe } from '@stripe/stripe-js'
 import { celebrate } from '@/lib/celebrate'
 import { isValidEmail } from '@/lib/email-validation'
 import WaitlistJoinForm from '@/components/events/WaitlistJoinForm'
+import { buildEventCheckoutRequestBody } from '@/lib/event-registration-flow'
 
 export type EventRegistrationData = {
   slug: string
@@ -276,24 +277,24 @@ export default function EventRegistrationSection({
     const journeyKey = 'insight_journey_id'
     const journeyId = window.localStorage.getItem(journeyKey) || window.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2)}`
     window.localStorage.setItem(journeyKey, journeyId)
-    const acquisitionRef = new URLSearchParams(window.location.search).get('ref')?.trim().toLowerCase() || 'joe-che'
     setEmbeddedFallbackVisible(false)
+    const body = buildEventCheckoutRequestBody({
+      slug: event.slug,
+      attendeeName: name,
+      attendeeEmail: email,
+      promoCode: promo,
+      journeyId,
+      acquisitionRoute: window.location.pathname,
+      acquisitionQuery: window.location.search,
+      search: window.location.search,
+      referrer: document.referrer || undefined,
+      checkoutMode,
+      ...(event.pricing.donationMode ? { donationAmount } : {}),
+    })
     const response = await fetch('/api/events/checkout-session', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        slug: event.slug,
-        attendeeName: name,
-        attendeeEmail: email,
-        promoCode: promo,
-        journeyId,
-        acquisitionRoute: window.location.pathname,
-        acquisitionQuery: window.location.search,
-        acquisitionRef,
-        referrer: document.referrer || undefined,
-        checkoutMode,
-        ...(event.pricing.donationMode ? { donationAmount } : {}),
-      }),
+      body: JSON.stringify(body),
     })
     const payload = await response.json()
     if (!response.ok) {

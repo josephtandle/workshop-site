@@ -157,6 +157,26 @@ export async function getConfirmedCount(eventSlug: string): Promise<number> {
   return count ?? 0
 }
 
+export async function getConfirmedRegistrationsForEvent(
+  eventSlug: string,
+): Promise<Array<{ attendeeName: string; attendeeEmail: string }>> {
+  const { data, error } = await supabase
+    .from('event_registrations')
+    .select('attendee_name, attendee_email')
+    .eq('event_slug', eventSlug)
+    .eq('status', 'confirmed')
+
+  if (error) {
+    console.error('getConfirmedRegistrationsForEvent error', error)
+    return []
+  }
+
+  return (data ?? []).map((row) => ({
+    attendeeName: row.attendee_name,
+    attendeeEmail: row.attendee_email,
+  }))
+}
+
 export async function addToWaitlist(input: {
   eventSlug: string
   name: string
