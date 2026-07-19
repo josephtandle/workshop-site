@@ -740,8 +740,8 @@ export const events: EventDefinition[] = [
   {
     slug: 'ask-an-ai-expert',
     status: 'live',
-    title: 'Leverage AI for More Sales and Less Busy Work',
-    shortTitle: 'Leverage AI Workshop',
+    title: 'How to Get AI Making You More Sales and Less Busy Work',
+    shortTitle: 'More Sales, Less Busy Work',
     eyebrow: 'Free Live Workshop',
     summary:
       'A free two-hour live session with Joe Che. Bring your business and your questions, get answers on the spot, and watch real businesses get AI working on their sales and their busywork right in front of you.',
@@ -752,7 +752,7 @@ export const events: EventDefinition[] = [
     locationLabel: 'Free online workshop',
     durationLabel: '90-minute AI business Q&A plus 30-minute bonus round',
     heroImage: '/images/events/ask-an-ai-expert-hero.jpg',
-    heroAlt: 'Ask an AI Expert workshop hero image',
+    heroAlt: 'Feet up on a beach lounger with a laptop showing sales climbing',
     zoomLink: 'https://us02web.zoom.us/j/81275409884',
     ctaLabel: 'Register Free',
     audience: [
@@ -838,7 +838,7 @@ export const events: EventDefinition[] = [
       },
     ],
     metadata: {
-      title: 'Leverage AI for More Sales and Less Busy Work',
+      title: 'How to Get AI Making You More Sales and Less Busy Work',
       description:
         'A free two-hour live session with Joe Che. Bring your business and your questions, get answers on the spot, and watch real businesses get AI working on their sales and their busywork right in front of you.',
     },
