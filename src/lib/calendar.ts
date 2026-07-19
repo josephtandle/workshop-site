@@ -73,3 +73,22 @@ export function buildIcalString(params: {
 
   return lines.join('\r\n')
 }
+
+/**
+ * The canonical calendar description for an event, so the Google Calendar copy
+ * stays in step with the page instead of drifting into a stale hand-written blurb.
+ */
+export function buildEventCalendarDescription(event: {
+  title: string
+  summary: string
+  slug: string
+  zoomLink?: string
+  durationLabel?: string
+}) {
+  const lines: string[] = []
+  if (event.zoomLink) lines.push(`Join on Zoom: ${event.zoomLink}`, '')
+  lines.push(event.title, '', event.summary)
+  if (event.durationLabel) lines.push('', event.durationLabel)
+  lines.push('', `Event page: https://workshop.mastermindshq.business/events/${event.slug}`)
+  return lines.join('\n')
+}

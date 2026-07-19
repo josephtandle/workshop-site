@@ -1,3 +1,4 @@
+import { inviteAttendeeToEvent } from '@/lib/google-calendar-invite'
 import { NextResponse } from 'next/server'
 import { getEventBySlug } from '@/lib/events'
 import {
@@ -240,6 +241,20 @@ export async function POST(request: Request) {
         })
       }
 
+      // Send a real Google Calendar invite so the event lands in their own
+      // calendar. Best effort: never let this fail a completed registration.
+      let calendarInviteStatus = 'not-attempted'
+      try {
+        const invite = await inviteAttendeeToEvent(event, attendeeEmail, attendeeName)
+        calendarInviteStatus = invite.status
+        if (invite.status === 'failed' || invite.status === 'skipped') {
+          console.warn('calendar invite not sent', invite)
+        }
+      } catch (error) {
+        calendarInviteStatus = 'failed'
+        console.error('calendar invite error', error)
+      }
+
       await trackInsightEvent('checkout_completed', {
         route: '/events/checkout',
         email: attendeeEmail,
@@ -247,6 +262,7 @@ export async function POST(request: Request) {
         properties: {
           event_slug: event.slug,
           free_checkout: true,
+          calendar_invite: calendarInviteStatus,
           amount,
           sync_status: syncResult.status,
           confirmation_email_warning: message !== 'Free ticket reserved. No payment needed.',
