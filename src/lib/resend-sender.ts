@@ -5,10 +5,16 @@ import type { SentEmail } from './subscribe'
  * uses via `tsx --test`) sets NODE_ENV=test.
  */
 export function isTestRun(): boolean {
+  const isRunningTestFile = process.argv.some(
+    (arg) => /\.test\.[cm]?[jt]s$/.test(arg) || arg.includes('/tests/'),
+  )
+
   return (
     process.env.NODE_ENV === 'test' ||
     process.env.VITEST === 'true' ||
-    process.env.JEST_WORKER_ID !== undefined
+    process.env.JEST_WORKER_ID !== undefined ||
+    process.env.TSX_TEST === 'true' ||
+    isRunningTestFile
   )
 }
 

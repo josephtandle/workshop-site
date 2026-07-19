@@ -36,6 +36,10 @@
       "schedule": "30 23 29 5 *"
     },
     {
+      "path": "/api/events/session-reminders",
+      "schedule": "*/30 * * * *"
+    },
+    {
       "path": "/api/events/reconcile-registrations",
       "schedule": "0 20 * * *"
     }

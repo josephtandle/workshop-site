@@ -1,5 +1,9 @@
 import type { EventDefinition } from '@/lib/events'
 import { buildLocationReminderIdempotencyKey } from './location-reminder'
+import {
+  buildSessionReminderIdempotencyKey,
+  type SessionReminderWindowLabel,
+} from './session-reminder'
 import { buildGoogleCalendarUrl, buildIcalString } from './calendar'
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
@@ -89,6 +93,100 @@ function buildAiContentCreationSetupEmailHtml(attendeeName: string) {
       </div>
     </div>
   `
+}
+
+export function buildAskAnAiExpertWelcomeEmailHtml(event: EventDefinition, attendeeName: string) {
+  const firstName = getFirstName(attendeeName)
+  const zoomLink = event.zoomLink ?? 'ZOOM_LINK_TBD'
+  const siteUrl = getSiteUrl()
+  const eventUrl = `${siteUrl}/events/${event.slug}`
+  const cfg = event.emailConfig
+  const signatureName = cfg?.signatureName ?? 'Joe Che\nMasterminds HQ'
+  const signatureHtml = signatureName.split('\n').join('<br>')
+  const calendarLine = event.calendarEvent
+    ? `<p style="margin: 0 0 10px; font-size: 15px; line-height: 1.75; color: #4b4263;"><strong>Date:</strong> ${event.dateLabel}<br><strong>Time:</strong> ${event.timeLabel}</p>`
+    : ''
+
+  return `
+    <div style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f6f2ff; margin: 0; padding: 32px 16px; color: #1a1a1a;">
+      <div style="max-width: 640px; margin: 0 auto; background: #ffffff; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 80px rgba(26, 14, 56, 0.12); border: 1px solid rgba(124, 105, 199, 0.12);">
+        <div style="background: linear-gradient(135deg, #110f17 0%, #1a1526 55%, #7C69C7 100%); padding: 36px 32px 32px;">
+          <p style="margin: 0 0 12px; font-size: 12px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: #cfc7ee;">Free Live Workshop</p>
+          <h1 style="margin: 0; font-size: 34px; line-height: 1.02; font-weight: 800; color: #ffffff;">${firstName ? `${firstName}, ` : ''}you are in</h1>
+          <p style="margin: 18px 0 0; font-size: 17px; line-height: 1.7; color: rgba(252,244,235,0.84);">Hey ${firstName || 'there'}, your free spot for <strong style="color:#ffffff;">${event.title}</strong> is confirmed.</p>
+        </div>
+
+        <div style="padding: 30px 32px 24px;">
+          <div style="margin: 0 0 24px; padding: 20px; border-radius: 16px; background: #fbf9ff; border: 1px solid rgba(124, 105, 199, 0.14);">
+            <h2 style="margin: 0 0 10px; font-size: 20px; color: #16121f;">Event Details</h2>
+            ${calendarLine}
+            <p style="margin: 0; font-size: 15px; line-height: 1.75; color: #4b4263;"><strong>Format:</strong> Free virtual Zoom workshop</p>
+          </div>
+
+          <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.75; color: #4b4263;">Join live on Zoom using the link below. Bring your business and your questions, and I will answer them live.</p>
+
+          <div style="margin: 28px 0 18px;">
+            <a href="${zoomLink}" style="display:inline-block; background:#7C69C7; color:#ffffff; text-decoration:none; padding:14px 24px; border-radius:12px; font-size:16px; font-weight:700; box-shadow:0 14px 32px rgba(124,105,199,0.24);">Open Zoom link</a>
+          </div>
+
+          <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.75; color: #4b4263;">If the button does not open cleanly, use this link instead:</p>
+          <p style="margin: 0 0 22px; font-size: 15px; line-height: 1.75; color: #4b4263;"><a href="${zoomLink}" style="color:#7C69C7; font-weight:700; text-decoration:none;">${zoomLink}</a></p>
+
+          <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.75; color: #4b4263;">The session runs for 90 minutes of core teaching plus a 30 minute bonus hot-seat round for anyone who wants to stay on.</p>
+
+          <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.75; color: #4b4263;">You can revisit the event page here: <a href="${eventUrl}" style="color:#7C69C7; font-weight:700; text-decoration:none;">${event.title}</a></p>
+        </div>
+
+        <div style="padding: 0 32px 30px;">
+          <p style="margin: 0; font-size: 14px; line-height: 1.75; color: #7a7291;">${signatureHtml}</p>
+        </div>
+      </div>
+    </div>
+  `
+}
+
+function buildSessionReminderEmailHtml(
+  event: EventDefinition,
+  attendeeName: string,
+  windowLabel: SessionReminderWindowLabel,
+) {
+  const firstName = getFirstName(attendeeName)
+  const zoomLink = event.zoomLink ?? 'ZOOM_LINK_TBD'
+  const sessionStart = `${event.dateLabel} at ${event.timeLabel}`
+  const leadCopy = windowLabel === 't24h' ? 'in 24 hours' : 'in 2 hours'
+  const subjectLine = windowLabel === 't24h' ? '24 hour reminder' : '2 hour reminder'
+
+  return {
+    subject: `${subjectLine}: ${event.title}`,
+    html: `
+      <div style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f6f2ff; margin: 0; padding: 32px 16px; color: #1a1a1a;">
+        <div style="max-width: 640px; margin: 0 auto; background: #ffffff; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 80px rgba(26, 14, 56, 0.12); border: 1px solid rgba(124, 105, 199, 0.12);">
+          <div style="background: linear-gradient(135deg, #110f17 0%, #1a1526 55%, #7C69C7 100%); padding: 36px 32px 32px;">
+            <p style="margin: 0 0 12px; font-size: 12px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: #cfc7ee;">Free Live Workshop</p>
+            <h1 style="margin: 0; font-size: 34px; line-height: 1.02; font-weight: 800; color: #ffffff;">${subjectLine}</h1>
+            <p style="margin: 18px 0 0; font-size: 17px; line-height: 1.7; color: rgba(252,244,235,0.84);">Hi ${firstName || 'there'}, your session starts ${leadCopy}.</p>
+          </div>
+
+          <div style="padding: 30px 32px 24px;">
+            <div style="margin: 0 0 24px; padding: 20px; border-radius: 16px; background: #fbf9ff; border: 1px solid rgba(124, 105, 199, 0.14);">
+              <h2 style="margin: 0 0 10px; font-size: 20px; color: #16121f;">Event Details</h2>
+              <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.75; color: #4b4263;"><strong>Date:</strong> ${event.dateLabel}</p>
+              <p style="margin: 0; font-size: 15px; line-height: 1.75; color: #4b4263;"><strong>Time:</strong> ${event.timeLabel}</p>
+            </div>
+
+            <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.75; color: #4b4263;">Join live on Zoom when it is time.</p>
+
+            <div style="margin: 28px 0 18px;">
+              <a href="${zoomLink}" style="display:inline-block; background:#7C69C7; color:#ffffff; text-decoration:none; padding:14px 24px; border-radius:12px; font-size:16px; font-weight:700; box-shadow:0 14px 32px rgba(124,105,199,0.24);">Open Zoom link</a>
+            </div>
+
+            <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.75; color: #4b4263;">If the button does not open cleanly, use this link instead:</p>
+            <p style="margin: 0 0 0; font-size: 15px; line-height: 1.75; color: #4b4263;"><a href="${zoomLink}" style="color:#7C69C7; font-weight:700; text-decoration:none;">${zoomLink}</a></p>
+          </div>
+        </div>
+      </div>
+    `,
+  }
 }
 
 function buildConfirmationEmailHtml(event: EventDefinition, attendeeName: string, cancelToken?: string) {
@@ -379,6 +477,10 @@ export function buildAiContentCreationSetupIdempotencyKey(email: string): string
   return `ai-content-creation-setup/ai-avatar-content-creation/${email.trim().toLowerCase()}`
 }
 
+export function buildAskAnAiExpertWelcomeIdempotencyKey(email: string): string {
+  return `ask-an-ai-expert-welcome/${email.trim().toLowerCase()}`
+}
+
 export async function sendEventConfirmationEmail(input: {
   event: EventDefinition
   attendeeName: string
@@ -433,6 +535,42 @@ export async function sendAiContentCreationSetupEmail(input: {
   })
 }
 
+export async function sendAskAnAiExpertWelcomeEmail(input: {
+  event: EventDefinition
+  attendeeName: string
+  attendeeEmail: string
+}) {
+  const attachments = input.event.calendarEvent
+    ? [
+        {
+          filename: `${input.event.slug}.ics`,
+          content: Buffer.from(
+            buildIcalString({
+              uid: `${input.event.slug}@mastermindshq.business`,
+              title: input.event.title,
+              startIso: input.event.calendarEvent.startIso,
+              endIso: input.event.calendarEvent.endIso,
+              location: input.event.locationLabel,
+              description: `Join on Zoom: ${input.event.zoomLink ?? 'ZOOM_LINK_TBD'}`,
+              organizer: { name: 'Joe Che', email: 'joe@mastermindshq.business' },
+              attendee: { name: input.attendeeName, email: input.attendeeEmail },
+              sequence: 0,
+            }),
+          ).toString('base64'),
+          content_type: 'text/calendar; method=REQUEST',
+        },
+      ]
+    : []
+
+  return sendResendEmail({
+    attendeeEmail: input.attendeeEmail,
+    subject: `You're in: ${input.event.title}`,
+    html: buildAskAnAiExpertWelcomeEmailHtml(input.event, input.attendeeName),
+    idempotencyKey: buildAskAnAiExpertWelcomeIdempotencyKey(input.attendeeEmail),
+    attachments,
+  })
+}
+
 export async function sendEventLocationReminderEmail(input: {
   event: EventDefinition
   attendeeName: string
@@ -478,6 +616,32 @@ export async function sendEventLocationReminderEmail(input: {
       eventStartIso: location.eventStartIso,
     }),
     attachments,
+  })
+}
+
+export async function sendSessionReminderEmail(input: {
+  event: EventDefinition
+  attendeeName: string
+  attendeeEmail: string
+  windowLabel: SessionReminderWindowLabel
+}) {
+  const startIso = input.event.calendarEvent?.startIso
+  if (!startIso) {
+    throw new Error(`Event ${input.event.slug} is missing calendar event details.`)
+  }
+
+  const body = buildSessionReminderEmailHtml(input.event, input.attendeeName, input.windowLabel)
+
+  return sendResendEmail({
+    attendeeEmail: input.attendeeEmail,
+    subject: body.subject,
+    html: body.html,
+    idempotencyKey: buildSessionReminderIdempotencyKey({
+      slug: input.event.slug,
+      attendeeEmail: input.attendeeEmail,
+      eventStartIso: startIso,
+      windowLabel: input.windowLabel,
+    }),
   })
 }
 

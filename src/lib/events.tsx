@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
+import AskAnAiExpertQuoteStrip from '@/components/events/AskAnAiExpertQuoteStrip'
 
 export type EventHost = {
   name: string
@@ -127,6 +128,7 @@ export type EventDefinition = {
   heroAlt: string
   heroVideoSrc?: string
   heroVideoPoster?: string
+  zoomLink?: string
   badge?: string
   audience: string[]
   outcomes: string[]
@@ -723,6 +725,94 @@ export const events: EventDefinition[] = [
       title: 'AI Content Creation Lab',
       description:
         'A cinematic AI content workshop in Bali with Joe Che and Helix Wolfson. Learn avatars, AI video, hooks, and repeatable content systems.',
+    },
+  },
+  {
+    slug: 'ask-an-ai-expert',
+    status: 'live',
+    title: 'Ask an AI Expert: More Sales, Less Busy Work',
+    shortTitle: 'Ask an AI Expert',
+    eyebrow: 'Free Live Workshop',
+    summary:
+      'A free two-hour live session with Joe Che. Bring your business and your questions, get answers on the spot, and watch real businesses get AI working on their sales and their busywork right in front of you.',
+    description:
+      'A live Zoom workshop where Joe answers real questions, looks at real businesses, and shows practical ways to get AI working on sales and busywork.',
+    dateLabel: 'Tuesday, July 28, 2026',
+    timeLabel: '7:00 PM to 9:00 PM Asia/Makassar (Bali)',
+    locationLabel: 'Free virtual Zoom workshop',
+    durationLabel: '90 min core + 30 min bonus hot-seat round',
+    heroImage: '/images/events/ask-an-ai-expert-hero.jpg',
+    heroAlt: 'Ask an AI Expert workshop hero image',
+    zoomLink: 'https://us02web.zoom.us/j/81275409884',
+    ctaLabel: 'Register Free',
+    audience: [
+      'Owners who want more sales',
+      'Operators who want less busywork',
+      'Founders who want practical AI answers',
+      'People who want live hot-seat feedback',
+    ],
+    outcomes: [
+      'Clear next steps for using AI in your actual business',
+      'Ideas for turning AI into more sales and less manual work',
+      'A chance to get your business looked at live',
+      'A simple way to think about your own AI operating system',
+    ],
+    hosts: [
+      {
+        name: 'Joe Che',
+        firstName: 'Joe',
+        role: 'Founder • AI Entrepreneur • Community Builder',
+        photoSrc: '/mastermind-participants/joe-che.jpeg',
+        bio: [
+          'Joe Che is the founder of 24 companies and the builder of two AI companies, including All Sorted AI, a practical AI operating system for service-based small business owners.',
+          'He previously built the largest software and business training company in New York City, where he trained more than 90,000 people, including Fortune 5 executives, the CIA, Microsoft, and Tyra Banks.',
+          'Today, Joe mentors entrepreneurs inside his Business Automation Mastermind and helps founders use AI to create cleaner operations, stronger offers, faster execution, and more freedom.',
+        ],
+      },
+    ],
+    pricing: {
+      currencySymbol: '$',
+      fullPrice: 0,
+      checkoutHref: '',
+      checkoutNote: 'Free registration. The Zoom link will be emailed right after you sign up.',
+    },
+    calendarEvent: {
+      startIso: '2026-07-28T19:00:00+08:00',
+      endIso: '2026-07-28T21:00:00+08:00',
+    },
+    sections: [
+      {
+        type: 'custom',
+        id: 'quote-strip',
+        render: <AskAnAiExpertQuoteStrip />,
+      },
+      {
+        type: 'html',
+        id: 'about',
+        eyebrow: 'What This Is',
+        html: `
+          <div class="not-prose space-y-5">
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              Joe Che is a number one bestselling author in three categories across business and AI. He runs his whole business on an AI operating system he built himself: dozens of AI employees handling his marketing, sales, billing, and support. Before that, he spent 18 years running the largest software training company in New York City, where more than 90,000 people were trained, including the CIA and Wall Street firms.
+            </p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              These days he teaches business owners to do the same thing in his AI Business Mastermind (<a href="https://mastermindshq.business" target="_blank" rel="noreferrer">https://mastermindshq.business</a>). The people in his cohorts are not techies. They are coaches, artists, therapists, and consultants who now have websites they rebuilt themselves, AI note-takers, billing automations, and dashboards tracking their income, and the pattern across all of them is the same: more sales coming in, less time spent on the work that used to eat their week. Cohort 4 starts August 10 (<a href="https://mastermindshq.business" target="_blank" rel="noreferrer">https://mastermindshq.business</a>).
+            </p>
+            <h2 class="pt-2 text-[2rem] font-bold leading-[1.02] tracking-tight text-[#FCF4EB] md:text-[2.6rem]">How do I get AI to make me more money?</h2>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              This workshop is the open-floor version of that room. For 90 minutes, Joe takes that question in every form, live. He pulls people into hot seats so everyone can look at a real business together and find the fastest ways AI can bring in sales and hand back time. When one person gets unstuck, everyone learns from it. Then a 30 minute bonus round for personal questions, if you want to stay on.
+            </p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              It is free. Save your seat below.
+            </p>
+          </div>
+        `,
+      },
+    ],
+    metadata: {
+      title: 'Ask an AI Expert: More Sales, Less Busy Work',
+      description:
+        'A free two-hour live session with Joe Che. Bring your business and your questions, get answers on the spot, and watch real businesses get AI working on their sales and their busywork right in front of you.',
     },
   },
 ]

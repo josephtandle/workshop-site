@@ -5,6 +5,7 @@ import {
   sendEventConfirmationEmail,
   sendWaitlistSpotNotificationEmail,
   sendWaitlistConfirmationEmail,
+  buildAskAnAiExpertWelcomeEmailHtml,
 } from '../src/lib/event-confirmation-email'
 import { getEventBySlug } from '../src/lib/events'
 
@@ -158,6 +159,17 @@ test('AI avatar event confirmation email includes setup instructions', async () 
       'setup section must appear for the AI avatar event',
     )
   })
+})
+
+test('ask-an-ai-expert welcome email builder includes the Zoom link and event time', () => {
+  const event = getEventBySlug('ask-an-ai-expert')
+  assert.ok(event)
+
+  const html = buildAskAnAiExpertWelcomeEmailHtml(event, 'Joe Che')
+
+  assert.ok(html.includes('https://us02web.zoom.us/j/81275409884'))
+  assert.ok(html.includes('Tuesday, July 28, 2026'))
+  assert.ok(html.includes('7:00 PM to 9:00 PM Asia/Makassar (Bali)'))
 })
 
 test('confirmation email subject contains the event title', async () => {

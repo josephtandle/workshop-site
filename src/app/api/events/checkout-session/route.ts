@@ -1,6 +1,10 @@
 import { NextResponse } from 'next/server'
 import { getEventBySlug } from '@/lib/events'
-import { sendAiContentCreationSetupEmail, sendEventConfirmationEmail } from '@/lib/event-confirmation-email'
+import {
+  sendAiContentCreationSetupEmail,
+  sendAskAnAiExpertWelcomeEmail,
+  sendEventConfirmationEmail,
+} from '@/lib/event-confirmation-email'
 import { syncLegacyRegistration } from '@/lib/legacy-event-schedule'
 import { createStripeClient, getStripePublishableKey } from '@/lib/stripe'
 import { saveRegistration } from '@/lib/event-registration-db'
@@ -48,6 +52,10 @@ export async function POST(request: Request) {
     const acquisitionRoute = typeof body.acquisitionRoute === 'string' ? body.acquisitionRoute.trim() : '/events'
     const acquisitionQuery = typeof body.acquisitionQuery === 'string' ? body.acquisitionQuery.trim() : ''
     const referrer = typeof body.referrer === 'string' ? body.referrer.trim() : ''
+    const acquisitionRef =
+      typeof body.acquisitionRef === 'string' && body.acquisitionRef.trim()
+        ? body.acquisitionRef.trim().toLowerCase()
+        : 'joe-che'
     const rawDonationAmount = typeof body.donationAmount === 'number' ? body.donationAmount : null
     const requestedCheckoutMode = typeof body.checkoutMode === 'string' ? body.checkoutMode.trim() : null
 
@@ -131,16 +139,17 @@ export async function POST(request: Request) {
     }
 
     await trackInsightEvent('lead_acquired', {
-      route: acquisitionRoute,
-      email: attendeeEmail,
-      sessionId: journeyId,
-      properties: {
-        acquisition_query: acquisitionQuery,
-        referrer,
-        event_slug: event.slug,
-        source: 'event_registration',
-      },
-    })
+        route: acquisitionRoute,
+        email: attendeeEmail,
+        sessionId: journeyId,
+        properties: {
+          acquisition_query: acquisitionQuery,
+          acquisition_ref: acquisitionRef,
+          referrer,
+          event_slug: event.slug,
+          source: 'event_registration',
+        },
+      })
 
     const unitAmount = toStripeUnitAmount(amount)
     if (unitAmount === null) {
@@ -173,6 +182,7 @@ export async function POST(request: Request) {
           eventSlug: slug,
           attendeeName,
           attendeeEmail,
+          acquisitionRef,
           amountPaid: amount,
         })
         cancelToken = saved.cancelToken
@@ -181,12 +191,20 @@ export async function POST(request: Request) {
       }
 
       try {
-        await sendEventConfirmationEmail({
-          event,
-          attendeeName,
-          attendeeEmail,
-          cancelToken,
-        })
+        if (event.slug === 'ask-an-ai-expert') {
+          await sendAskAnAiExpertWelcomeEmail({
+            event,
+            attendeeName,
+            attendeeEmail,
+          })
+        } else {
+          await sendEventConfirmationEmail({
+            event,
+            attendeeName,
+            attendeeEmail,
+            cancelToken,
+          })
+        }
         if (event.slug === 'ai-avatar-content-creation') {
           await sendAiContentCreationSetupEmail({
             attendeeName,
