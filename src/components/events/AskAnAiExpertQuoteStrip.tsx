@@ -84,16 +84,19 @@ export default function AskAnAiExpertQuoteStrip() {
                 style={{ width: CARD_WIDTH }}
               >
                 <div className="flex h-full flex-col rounded-[1.55rem] border border-white/[0.04] bg-[radial-gradient(circle_at_top,rgba(124,105,199,0.16),transparent_52%),rgba(15,11,25,0.98)] p-6">
-                  <div className="mb-5 flex items-center justify-between gap-3">
-                    <div className="h-11 w-11 rounded-full border border-white/10 bg-[linear-gradient(135deg,rgba(124,105,199,0.35),rgba(245,195,198,0.22))]" />
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#BDB3E8]">Quote</p>
+                  <div className="mb-5 flex items-center gap-4">
+                    <div className="w-[72px] h-[72px] sm:w-20 sm:h-20 rounded-full overflow-hidden">
+                      <img src={item.photoSrc} alt={item.name} className="h-full w-full object-cover" loading="lazy" />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-sm font-semibold text-[#FCF4EB]">{item.name}</p>
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#BDB3E8]">Quote</p>
+                    </div>
                   </div>
                   <blockquote className="flex-1 text-sm leading-7 text-[#FCF4EB]/82 md:text-[15px]">
                     {item.quote}
                   </blockquote>
-                  <div className="mt-6 border-t border-white/10 pt-4">
-                    <p className="text-sm font-semibold text-[#FCF4EB]">{item.name}</p>
-                  </div>
+                  <div className="mt-6 border-t border-white/10 pt-4" />
                 </div>
               </article>
             ))}

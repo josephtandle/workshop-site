@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
-import AskAnAiExpertQuoteStrip from '@/components/events/AskAnAiExpertQuoteStrip'
 
 export type EventHost = {
   name: string
@@ -155,6 +154,12 @@ export type EventDefinition = {
     googleMapsUrl: string
     parkingInstructions?: string[]
   }
+  video?: {
+    youtubeEmbedId: string
+    eyebrow?: string
+    title?: string
+    caption?: string
+  }
   postPurchase?: {
     setupPageTitle: string
     setupPageIntro: string
@@ -250,7 +255,7 @@ export const events: EventDefinition[] = [
         name: 'Joe Che',
         firstName: 'Joe',
         role: 'Founder • AI Entrepreneur • Community Builder',
-        photoSrc: '/mastermind-participants/joe-che.jpeg',
+        photoSrc: '/images/events/joe-che-bio-bw.jpg',
         bio: [
           'Joe Che is the founder of 24 companies and the builder of two AI companies, including All Sorted AI, a practical AI operating system for service-based small business owners.',
           'He previously built the largest software and business training company in New York City, where he trained more than 90,000 people, including Fortune 5 executives, the CIA, Microsoft, and Tyra Banks.',
@@ -762,7 +767,7 @@ export const events: EventDefinition[] = [
         name: 'Joe Che',
         firstName: 'Joe',
         role: 'Founder • AI Entrepreneur • Community Builder',
-        photoSrc: '/mastermind-participants/joe-che.jpeg',
+        photoSrc: '/images/events/joe-che-bio-bw.jpg',
         bio: [
           'Joe Che is the founder of 24 companies and the builder of two AI companies, including All Sorted AI, a practical AI operating system for service-based small business owners.',
           'He previously built the largest software and business training company in New York City, where he trained more than 90,000 people, including Fortune 5 executives, the CIA, Microsoft, and Tyra Banks.',
@@ -782,31 +787,31 @@ export const events: EventDefinition[] = [
     },
     sections: [
       {
-        type: 'custom',
-        id: 'quote-strip',
-        render: <AskAnAiExpertQuoteStrip />,
-      },
-      {
         type: 'html',
         id: 'about',
         eyebrow: 'What This Is',
         html: `
           <div class="not-prose space-y-5">
             <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
-              Joe Che is a number one bestselling author in three categories across business and AI. He runs his whole business on an AI operating system he built himself: dozens of AI employees handling his marketing, sales, billing, and support. Before that, he spent 18 years running the largest software training company in New York City, where more than 90,000 people were trained, including the CIA and Wall Street firms.
-            </p>
-            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
-              These days he teaches business owners to do the same thing in his AI Business Mastermind (<a href="https://mastermindshq.business" target="_blank" rel="noreferrer">https://mastermindshq.business</a>). The people in his cohorts are not techies. They are coaches, artists, therapists, and consultants who now have websites they rebuilt themselves, AI note-takers, billing automations, and dashboards tracking their income, and the pattern across all of them is the same: more sales coming in, less time spent on the work that used to eat their week. Cohort 4 starts August 10 (<a href="https://mastermindshq.business" target="_blank" rel="noreferrer">https://mastermindshq.business</a>).
+              This is a live Zoom workshop where Joe answers real questions, looks at real businesses, and shows practical ways to get AI working on sales and busywork.
             </p>
             <h2 class="pt-2 text-[2rem] font-bold leading-[1.02] tracking-tight text-[#FCF4EB] md:text-[2.6rem]">How do I get AI to make me more money?</h2>
             <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
-              This workshop is the open-floor version of that room. For 90 minutes, Joe takes that question in every form, live. He pulls people into hot seats so everyone can look at a real business together and find the fastest ways AI can bring in sales and hand back time. When one person gets unstuck, everyone learns from it. Then a 30 minute bonus round for personal questions, if you want to stay on.
+              For 90 minutes, Joe takes that question in every form, live. He pulls people into hot seats so everyone can look at a real business together and find the fastest ways AI can bring in sales and hand back time. When one person gets unstuck, everyone learns from it.
             </p>
             <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
               It is free. Save your seat below.
             </p>
           </div>
         `,
+      },
+      {
+        type: 'hosts',
+        id: 'bio',
+        eyebrow: 'Bio',
+        title: 'Joe Che',
+        intro: 'Founder • AI Entrepreneur • Community Builder',
+        hosts: [],
       },
     ],
     metadata: {

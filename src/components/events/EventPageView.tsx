@@ -10,6 +10,7 @@ import type { EventRegistrationData } from '@/components/events/EventRegistratio
 import HeroVideo from '@/components/events/HeroVideo'
 import ScrollToRegisterButton from '@/components/events/ScrollToRegisterButton'
 import EventMediaVideo from '@/components/events/EventMediaVideo'
+import AskAnAiExpertQuoteStrip from '@/components/events/AskAnAiExpertQuoteStrip'
 
 function sectionTitleClass(sectionId?: string) {
   if (sectionId === 'creative-lab' || sectionId === 'outcomes') {
@@ -345,6 +346,32 @@ function HostsSection({ section }: { section: Extract<EventSection, { type: 'hos
   )
 }
 
+function EventVideoSection({ video }: { video: NonNullable<EventDefinition['video']> }) {
+  const embedSrc = `https://www.youtube.com/embed/${video.youtubeEmbedId}?rel=0&modestbranding=1`
+
+  return (
+    <SectionShell eyebrow={video.eyebrow} title={video.title} sectionId="video">
+      <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.035] shadow-[0_24px_70px_rgba(0,0,0,0.28)]">
+        <div className="relative aspect-video w-full">
+          <iframe
+            src={embedSrc}
+            title={video.title ?? 'YouTube video'}
+            className="absolute inset-0 h-full w-full"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            loading="lazy"
+          />
+        </div>
+        {video.caption ? (
+          <div className="border-t border-white/10 px-6 py-4 text-sm leading-6 text-[#FCF4EB]/58 md:px-8">
+            {video.caption}
+          </div>
+        ) : null}
+      </div>
+    </SectionShell>
+  )
+}
+
 function EndedButton({ className }: { className: string }) {
   return (
     <button type="button" disabled className={`${className} cursor-not-allowed opacity-65`}>
@@ -597,7 +624,9 @@ export default function EventPageView({
         </div>
       </section>
 
+      {event.slug === 'ask-an-ai-expert' ? <AskAnAiExpertQuoteStrip /> : null}
       {event.sections.map((section) => renderSection(section, event, promo, eventEnded))}
+      {event.video ? <EventVideoSection video={event.video} /> : null}
       <EventRegistrationSection
         event={registrationEvent}
         publishableKey={publishableKey}
