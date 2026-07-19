@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
+import AskAnAiExpertQuoteStrip from '@/components/events/AskAnAiExpertQuoteStrip'
 
 export type EventHost = {
   name: string
@@ -728,24 +729,21 @@ export const events: EventDefinition[] = [
   },
   {
     slug: 'ask-an-ai-expert',
-    status: 'draft',
-    // TBC: working title is not final yet.
-    title: 'Ask an AI Expert',
+    status: 'live',
+    title: 'Ask an AI Expert: More Sales, Less Busy Work',
     shortTitle: 'Ask an AI Expert',
     eyebrow: 'Free Live Workshop',
     summary:
-      'A free live workshop on getting AI to bring in more sales and take work off your plate.',
+      'A free two-hour live session with Joe Che. Bring your business and your questions, get answers on the spot, and watch real businesses get AI working on their sales and their busywork right in front of you.',
     description:
-      'I run my whole business on an AI operating system I built myself: dozens of AI employees handling my marketing, sales, billing, and support. Before that I spent 18 years running the largest software training company in New York City, where we trained more than 90,000 people, including the CIA and Wall Street firms. For two hours, I am opening the floor. Bring your business and your questions. I will answer them live, and I will pull a few people into hot seats so we can look at their actual businesses together and find the fastest ways AI can bring in more sales and hand you back your time. When one person gets unstuck, everyone learns from it. It is free. 90 minutes of core session, then a 30 minute bonus round for personal questions if you want to stay on.',
-    dateLabel: 'Thursday, July 30, 2026',
-    // TBC: confirm the final time and timezone before launch.
-    timeLabel: '7:00 PM to 9:00 PM Asia/Makassar',
+      'A live Zoom workshop where Joe answers real questions, looks at real businesses, and shows practical ways to get AI working on sales and busywork.',
+    dateLabel: 'Tuesday, July 28, 2026',
+    timeLabel: '7:00 PM to 9:00 PM Asia/Makassar (Bali)',
     locationLabel: 'Free virtual Zoom workshop',
     durationLabel: '90 min core + 30 min bonus hot-seat round',
-    // TBC: replace this with the final background image.
-    heroImage: '/events/ask-an-ai-expert/hero-image-tbd.jpg',
-    heroAlt: 'Ask an AI Expert workshop background image TBC',
-    zoomLink: 'ZOOM_LINK_TBD',
+    heroImage: '/images/events/ask-an-ai-expert-hero.jpg',
+    heroAlt: 'Ask an AI Expert workshop hero image',
+    zoomLink: 'https://us02web.zoom.us/j/81275409884',
     ctaLabel: 'Register Free',
     audience: [
       'Owners who want more sales',
@@ -779,45 +777,42 @@ export const events: EventDefinition[] = [
       checkoutNote: 'Free registration. The Zoom link will be emailed right after you sign up.',
     },
     calendarEvent: {
-      startIso: '2026-07-30T19:00:00+08:00',
-      endIso: '2026-07-30T21:00:00+08:00',
+      startIso: '2026-07-28T19:00:00+08:00',
+      endIso: '2026-07-28T21:00:00+08:00',
     },
     sections: [
       {
-        type: 'story',
-        id: 'why-this-call',
-        eyebrow: 'What This Is',
-        title: 'Bring the business, bring the questions, and we will work it live.',
-        body: [
-          'This workshop is built for people who want direct answers instead of generic AI theory. I will answer questions live, show how I think about using AI in a real business, and pull a few people into hot seats so we can look at what is actually happening inside their companies.',
-          'If one person gets unstuck, everyone benefits. That is the point of the session.',
-        ],
+        type: 'custom',
+        id: 'quote-strip',
+        render: <AskAnAiExpertQuoteStrip />,
       },
       {
-        type: 'cards',
-        id: 'outcomes',
-        eyebrow: 'What You Will Leave With',
-        title: 'Practical ways to use AI for sales and leverage',
-        columns: 3,
-        items: [
-          {
-            title: 'More sales',
-            body: 'See where AI can help you generate better leads, better follow-up, and better conversion without adding more manual work.',
-          },
-          {
-            title: 'Less busywork',
-            body: 'Spot the repetitive tasks that AI can take off your plate so you can spend more time on the work that matters.',
-          },
-          {
-            title: 'Live feedback',
-            body: 'Bring your business and get direct input in the room while everyone else learns from the process too.',
-          },
-        ],
+        type: 'html',
+        id: 'about',
+        eyebrow: 'What This Is',
+        html: `
+          <div class="not-prose space-y-5">
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              Joe Che is a number one bestselling author in three categories across business and AI. He runs his whole business on an AI operating system he built himself: dozens of AI employees handling his marketing, sales, billing, and support. Before that, he spent 18 years running the largest software training company in New York City, where more than 90,000 people were trained, including the CIA and Wall Street firms.
+            </p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              These days he teaches business owners to do the same thing in his AI Business Mastermind (<a href="https://mastermindshq.business" target="_blank" rel="noreferrer">https://mastermindshq.business</a>). The people in his cohorts are not techies. They are coaches, artists, therapists, and consultants who now have websites they rebuilt themselves, AI note-takers, billing automations, and dashboards tracking their income, and the pattern across all of them is the same: more sales coming in, less time spent on the work that used to eat their week. Cohort 4 starts August 10 (<a href="https://mastermindshq.business" target="_blank" rel="noreferrer">https://mastermindshq.business</a>).
+            </p>
+            <h2 class="pt-2 text-[2rem] font-bold leading-[1.02] tracking-tight text-[#FCF4EB] md:text-[2.6rem]">How do I get AI to make me more money?</h2>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              This workshop is the open-floor version of that room. For 90 minutes, Joe takes that question in every form, live. He pulls people into hot seats so everyone can look at a real business together and find the fastest ways AI can bring in sales and hand back time. When one person gets unstuck, everyone learns from it. Then a 30 minute bonus round for personal questions, if you want to stay on.
+            </p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              It is free. Save your seat below.
+            </p>
+          </div>
+        `,
       },
     ],
     metadata: {
+      title: 'Ask an AI Expert: More Sales, Less Busy Work',
       description:
-        'I run my whole business on an AI operating system I built myself: dozens of AI employees handling my marketing, sales, billing, and support. Before that I spent 18 years running the largest software training company in New York City, where we trained more than 90,000 people, including the CIA and Wall Street firms. For two hours, I am opening the floor. Bring your business and your questions. I will answer them live, and I will pull a few people into hot seats so we can look at their actual businesses together and find the fastest ways AI can bring in more sales and hand you back your time. When one person gets unstuck, everyone learns from it. It is free. 90 minutes of core session, then a 30 minute bonus round for personal questions if you want to stay on.',
+        'A free two-hour live session with Joe Che. Bring your business and your questions, get answers on the spot, and watch real businesses get AI working on their sales and their busywork right in front of you.',
     },
   },
 ]

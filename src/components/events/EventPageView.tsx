@@ -471,7 +471,10 @@ export default function EventPageView({
       alt={event.heroAlt}
     />
   ) : (
-    <Image src={event.heroImage} alt={event.heroAlt} fill className="object-cover" />
+    <div className="relative h-full w-full">
+      <Image src={event.heroImage} alt={event.heroAlt} fill className="object-cover" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,7,20,0.16)_0%,rgba(10,7,20,0.5)_56%,rgba(10,7,20,0.82)_100%)]" />
+    </div>
   )
 
   const calendarEvent = event.calendarEvent
