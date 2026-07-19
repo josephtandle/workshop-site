@@ -74,16 +74,17 @@ export default function AskAnAiExpertQuoteStrip() {
                 style={{ width: CARD_WIDTH }}
               >
                 <div className="flex h-full flex-col rounded-[1.55rem] border border-white/[0.04] bg-[radial-gradient(circle_at_top,rgba(124,105,199,0.16),transparent_52%),rgba(15,11,25,0.98)] p-6">
-                  <div className="mb-5 flex items-center gap-4">
-                    <div className="w-[72px] h-[72px] sm:w-20 sm:h-20 rounded-full overflow-hidden">
+                  <div className="mb-4 flex items-center gap-4">
+                    <div className="w-[72px] h-[72px] sm:w-20 sm:h-20 rounded-full overflow-hidden ring-2 ring-[#7C69C7]/30 flex-shrink-0">
                       <img src={item.photoSrc} alt={item.name} className="h-full w-full object-cover" loading="lazy" />
                     </div>
                     <div className="min-w-0">
-                      <p className="text-sm font-semibold text-[#FCF4EB]">{item.name}</p>
+                      <p className="text-[#FCF4EB] font-semibold text-lg leading-tight break-words">{item.name}</p>
+                      <p className="text-[#7C69C7]/60 text-sm leading-snug mt-1">Cohort {item.cohort}</p>
                     </div>
                   </div>
-                  <blockquote className="flex-1 text-sm leading-7 text-[#FCF4EB]/82 md:text-[15px]">
-                    {item.quote}
+                  <blockquote className="flex-1 text-sm italic leading-relaxed text-[#FCF4EB]/65 md:text-[15px]">
+                    &ldquo;{item.quote}&rdquo;
                   </blockquote>
                   <div className="mt-6 border-t border-white/10 pt-4" />
                 </div>
