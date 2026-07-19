@@ -261,6 +261,7 @@ export const events: EventDefinition[] = [
           'Joe Che is a number one bestselling author in three categories across business and AI, the founder of 26 companies, and the builder of two AI companies, including All Sorted AI, a practical AI operating system for service-based small business owners.',
           'He previously built the largest software and business training company in New York City, where he trained more than 90,000 people, including Fortune 5 executives, the CIA, Microsoft, and Tyra Banks.',
           'Today, Joe mentors entrepreneurs inside his Business Automation Mastermind and helps founders use AI to create cleaner operations, stronger offers, faster execution, and more freedom.',
+          'He demos his own AI operating system live and shows people how to use the 165 AI agents from his bestselling book in their own businesses.',
         ],
       },
     ],
@@ -479,6 +480,7 @@ export const events: EventDefinition[] = [
           'Joe Che is a number one bestselling author in three categories across business and AI, the founder of 26 companies, and the builder of two AI companies, including All Sorted AI, a practical AI operating system for service-based small business owners.',
           'He previously built the largest software and business training company in New York City, where he trained more than 90,000 people, including Fortune 5 executives, the CIA, Microsoft, and Tyra Banks.',
           'Today, Joe mentors entrepreneurs inside his Business Automation Mastermind and helps founders use AI to create cleaner operations, stronger offers, faster execution, and more freedom.',
+          'He demos his own AI operating system live and shows people how to use the 165 AI agents from his bestselling book in their own businesses.',
         ],
       },
     ],
@@ -773,6 +775,7 @@ export const events: EventDefinition[] = [
           'Joe Che is a number one bestselling author in three categories across business and AI, the founder of 26 companies, and the builder of two AI companies, including All Sorted AI, a practical AI operating system for service-based small business owners.',
           'He previously built the largest software and business training company in New York City, where he trained more than 90,000 people, including Fortune 5 executives, the CIA, Microsoft, and Tyra Banks.',
           'Today, Joe mentors entrepreneurs inside his Business Automation Mastermind and helps founders use AI to create cleaner operations, stronger offers, faster execution, and more freedom.',
+          'He demos his own AI operating system live and shows people how to use the 165 AI agents from his bestselling book in their own businesses.',
         ],
         bioHtml: [
           'Joe Che is a number one bestselling author in three categories across business and AI, the founder of 26 companies, and the builder of two AI companies, including All Sorted AI, a practical AI operating system for service-based small business owners.',
@@ -809,6 +812,9 @@ export const events: EventDefinition[] = [
             </p>
             <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
               For 90 minutes, Joe takes that question in every form, live. He pulls people into hot seats so everyone can look at a real business together and find the fastest ways AI can bring in sales and hand back time. When one person gets unstuck, everyone learns from it.
+            </p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              Joe will also be available to demo his AI operating system and give examples of how to use some of the 165 AI agents from his bestselling book.
             </p>
             <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
               It is free. Save your seat below.
