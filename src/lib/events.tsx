@@ -736,8 +736,8 @@ export const events: EventDefinition[] = [
   {
     slug: 'ask-an-ai-expert',
     status: 'live',
-    title: 'Ask an AI Expert: More Sales, Less Busy Work',
-    shortTitle: 'Ask an AI Expert',
+    title: 'Leverage AI for More Sales and Less Busy Work',
+    shortTitle: 'Leverage AI Workshop',
     eyebrow: 'Free Live Workshop',
     summary:
       'A free two-hour live session with Joe Che. Bring your business and your questions, get answers on the spot, and watch real businesses get AI working on their sales and their busywork right in front of you.',
@@ -805,7 +805,7 @@ export const events: EventDefinition[] = [
               This is a live online workshop where Joe answers real questions, looks at real businesses, and shows practical ways to get AI working on sales and busywork.
             </p>
             <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
-              Joe teaches business owners to do this every day in his <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 transition hover:text-[#FCF4EB]">AI Business Mastermind</a>. The people in his cohorts are not techies. They are coaches, artists, therapists, and consultants who now have websites they rebuilt themselves, AI note-takers, billing automations, and dashboards tracking their income, and the pattern across all of them is the same: more sales coming in, less time spent on the work that used to eat their week. <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 transition hover:text-[#FCF4EB]">Cohort 4 starts August 10</a>.
+              Joe teaches business owners to do this every day in his <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 transition hover:text-[#FCF4EB]">AI Business Mastermind</a>. The people in his cohorts are not techies. They are coaches, artists, therapists, and consultants who now have websites they built themselves, honed their messages through branding and marketing agents, billing automations, business dashboards, tracking everything about the business, and the pattern across all of them is the same: more sales coming in, less time spent on the work that used to eat their week. <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 transition hover:text-[#FCF4EB]">Cohort 4 starts August 10</a>.
             </p>
             <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
               For 90 minutes, Joe takes that question in every form, live. He pulls people into hot seats so everyone can look at a real business together and find the fastest ways AI can bring in sales and hand back time. When one person gets unstuck, everyone learns from it.
@@ -826,7 +826,7 @@ export const events: EventDefinition[] = [
       },
     ],
     metadata: {
-      title: 'Ask an AI Expert: More Sales, Less Busy Work',
+      title: 'Leverage AI for More Sales and Less Busy Work',
       description:
         'A free two-hour live session with Joe Che. Bring your business and your questions, get answers on the spot, and watch real businesses get AI working on their sales and their busywork right in front of you.',
     },

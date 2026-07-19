@@ -331,9 +331,6 @@ function HostsSection({ section }: { section: Extract<EventSection, { type: 'hos
                 <h3 className="event-gradient-title mt-2 text-[2rem] font-extrabold leading-tight tracking-tight text-[#FCF4EB]">
                   {host.name}
                 </h3>
-                <p className="mt-3 inline-flex rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[11px] font-semibold tracking-[0.12em] text-[#BDB3E8]">
-                  Number one Amazon bestseller in multiple categories
-                </p>
               </div>
               <div className="space-y-4 text-sm leading-7 text-[#FCF4EB]/70">
                 {(host.bioHtml ?? host.bio).map((paragraph) =>
@@ -343,6 +340,11 @@ function HostsSection({ section }: { section: Extract<EventSection, { type: 'hos
                     <p key={paragraph}>{paragraph}</p>
                   ),
                 )}
+                <p className="pt-2">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-[#C45500] px-4 py-2 text-xs font-semibold text-white shadow-lg shadow-black/30 sm:text-sm">
+                    <span aria-hidden>★</span>#1 Amazon Bestseller in Multiple Categories
+                  </span>
+                </p>
               </div>
             </div>
           </article>

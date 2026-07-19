@@ -80,10 +80,9 @@ export default function AskAnAiExpertQuoteStrip() {
                     </div>
                     <div className="min-w-0">
                       <p className="text-[#FCF4EB] font-semibold text-lg leading-tight break-words">{item.name}</p>
-                      <p className="text-[#7C69C7]/60 text-sm leading-snug mt-1">Cohort {item.cohort}</p>
                     </div>
                   </div>
-                  <blockquote className="flex-1 text-sm italic leading-relaxed text-[#FCF4EB]/65 md:text-[15px]">
+                  <blockquote className="flex-1 text-sm italic leading-relaxed text-[#FCF4EB]/65 md:text-[15px] line-clamp-6">
                     &ldquo;{item.quote}&rdquo;
                   </blockquote>
                   <div className="mt-6 border-t border-white/10 pt-4" />
