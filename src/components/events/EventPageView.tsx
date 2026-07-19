@@ -460,6 +460,7 @@ export default function EventPageView({
   initialPromoCode?: string | null
 }) {
   const hasSetupItems = (event.postPurchase?.setupItems?.length ?? 0) > 0
+  const isVirtualEvent = Boolean(event.zoomLink)
   const eventEnded = isEventEnded(event)
   const registrationClosed = isEventRegistrationClosed(event)
   const heroMedia = event.heroVideoSrc ? (
@@ -482,7 +483,9 @@ export default function EventPageView({
           location: event.locationLabel,
           description: event.privateLocationReminder
             ? 'Exact address will be emailed to you before the event.'
-            : undefined,
+            : isVirtualEvent
+              ? `Join live on Zoom. Link: ${event.zoomLink}`
+              : undefined,
         }),
         icalUrl: `/api/events/${event.slug}/calendar`,
       }
@@ -507,7 +510,9 @@ export default function EventPageView({
       ? event.pricing.donationMode
         ? 'Thank you. A confirmation email is on its way from joe@mastermindshq.business.'
         : undefined
-      : undefined,
+      : isVirtualEvent
+        ? 'A confirmation email with the Zoom link is on its way.'
+        : undefined,
     successRedirect: hasSetupItems ? undefined : `/events/${event.slug}`,
   }
   const initialPromoAmount = promo ? getEventDiscountedPrice(event, promo) : null
@@ -543,8 +548,12 @@ export default function EventPageView({
               </div>
               <div className="min-w-[240px] flex-1 rounded-[1.4rem] border border-white/10 bg-white/[0.04] p-5">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#BDB3E8]">Where</p>
-                <p className="mt-3 text-2xl font-bold text-[#FCF4EB]">{event.locationLabel}</p>
-                <p className="mt-1 text-sm text-[#FCF4EB]/58">{event.durationLabel}</p>
+                <p className="mt-3 text-2xl font-bold text-[#FCF4EB]">
+                  {isVirtualEvent ? 'Live on Zoom' : event.locationLabel}
+                </p>
+                <p className="mt-1 text-sm text-[#FCF4EB]/58">
+                  {isVirtualEvent ? 'Join link sent after registration' : event.durationLabel}
+                </p>
               </div>
             </div>
           </Reveal>

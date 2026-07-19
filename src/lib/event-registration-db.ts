@@ -8,6 +8,7 @@ export type Registration = {
   event_slug: string
   attendee_name: string
   attendee_email: string
+  acquisition_ref: string
   stripe_session_id: string | null
   amount_paid: number
   cancel_token: string
@@ -30,12 +31,14 @@ export async function saveRegistration(input: {
   eventSlug: string
   attendeeName: string
   attendeeEmail: string
+  acquisitionRef?: string
   stripeSessionId?: string
   amountPaid?: number
 }): Promise<{ id: string; cancelToken: string }> {
   // Pre-generate UUID so the cancel token can be derived in a single insert — no two-step update.
   const id = randomUUID()
   const cancelToken = generateToken(`cancel:${id}`)
+  const acquisitionRef = input.acquisitionRef?.trim().toLowerCase() || 'joe-che'
 
   const { error } = await supabase
     .from('event_registrations')
@@ -44,6 +47,7 @@ export async function saveRegistration(input: {
       event_slug: input.eventSlug,
       attendee_name: input.attendeeName,
       attendee_email: input.attendeeEmail.trim().toLowerCase(),
+      acquisition_ref: acquisitionRef,
       stripe_session_id: input.stripeSessionId ?? null,
       amount_paid: input.amountPaid ?? 0,
       cancel_token: cancelToken,

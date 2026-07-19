@@ -127,6 +127,7 @@ export type EventDefinition = {
   heroAlt: string
   heroVideoSrc?: string
   heroVideoPoster?: string
+  zoomLink?: string
   badge?: string
   audience: string[]
   outcomes: string[]
@@ -723,6 +724,100 @@ export const events: EventDefinition[] = [
       title: 'AI Content Creation Lab',
       description:
         'A cinematic AI content workshop in Bali with Joe Che and Helix Wolfson. Learn avatars, AI video, hooks, and repeatable content systems.',
+    },
+  },
+  {
+    slug: 'ask-an-ai-expert',
+    status: 'draft',
+    // TBC: working title is not final yet.
+    title: 'Ask an AI Expert',
+    shortTitle: 'Ask an AI Expert',
+    eyebrow: 'Free Live Workshop',
+    summary:
+      'A free live workshop on getting AI to bring in more sales and take work off your plate.',
+    description:
+      'I run my whole business on an AI operating system I built myself: dozens of AI employees handling my marketing, sales, billing, and support. Before that I spent 18 years running the largest software training company in New York City, where we trained more than 90,000 people, including the CIA and Wall Street firms. For two hours, I am opening the floor. Bring your business and your questions. I will answer them live, and I will pull a few people into hot seats so we can look at their actual businesses together and find the fastest ways AI can bring in more sales and hand you back your time. When one person gets unstuck, everyone learns from it. It is free. 90 minutes of core session, then a 30 minute bonus round for personal questions if you want to stay on.',
+    dateLabel: 'Thursday, July 30, 2026',
+    // TBC: confirm the final time and timezone before launch.
+    timeLabel: '7:00 PM to 9:00 PM Asia/Makassar',
+    locationLabel: 'Free virtual Zoom workshop',
+    durationLabel: '90 min core + 30 min bonus hot-seat round',
+    // TBC: replace this with the final background image.
+    heroImage: '/events/ask-an-ai-expert/hero-image-tbd.jpg',
+    heroAlt: 'Ask an AI Expert workshop background image TBC',
+    zoomLink: 'ZOOM_LINK_TBD',
+    ctaLabel: 'Register Free',
+    audience: [
+      'Owners who want more sales',
+      'Operators who want less busywork',
+      'Founders who want practical AI answers',
+      'People who want live hot-seat feedback',
+    ],
+    outcomes: [
+      'Clear next steps for using AI in your actual business',
+      'Ideas for turning AI into more sales and less manual work',
+      'A chance to get your business looked at live',
+      'A simple way to think about your own AI operating system',
+    ],
+    hosts: [
+      {
+        name: 'Joe Che',
+        firstName: 'Joe',
+        role: 'Founder • AI Entrepreneur • Community Builder',
+        photoSrc: '/mastermind-participants/joe-che.jpeg',
+        bio: [
+          'Joe Che is the founder of 24 companies and the builder of two AI companies, including All Sorted AI, a practical AI operating system for service-based small business owners.',
+          'He previously built the largest software and business training company in New York City, where he trained more than 90,000 people, including Fortune 5 executives, the CIA, Microsoft, and Tyra Banks.',
+          'Today, Joe mentors entrepreneurs inside his Business Automation Mastermind and helps founders use AI to create cleaner operations, stronger offers, faster execution, and more freedom.',
+        ],
+      },
+    ],
+    pricing: {
+      currencySymbol: '$',
+      fullPrice: 0,
+      checkoutHref: '',
+      checkoutNote: 'Free registration. The Zoom link will be emailed right after you sign up.',
+    },
+    calendarEvent: {
+      startIso: '2026-07-30T19:00:00+08:00',
+      endIso: '2026-07-30T21:00:00+08:00',
+    },
+    sections: [
+      {
+        type: 'story',
+        id: 'why-this-call',
+        eyebrow: 'What This Is',
+        title: 'Bring the business, bring the questions, and we will work it live.',
+        body: [
+          'This workshop is built for people who want direct answers instead of generic AI theory. I will answer questions live, show how I think about using AI in a real business, and pull a few people into hot seats so we can look at what is actually happening inside their companies.',
+          'If one person gets unstuck, everyone benefits. That is the point of the session.',
+        ],
+      },
+      {
+        type: 'cards',
+        id: 'outcomes',
+        eyebrow: 'What You Will Leave With',
+        title: 'Practical ways to use AI for sales and leverage',
+        columns: 3,
+        items: [
+          {
+            title: 'More sales',
+            body: 'See where AI can help you generate better leads, better follow-up, and better conversion without adding more manual work.',
+          },
+          {
+            title: 'Less busywork',
+            body: 'Spot the repetitive tasks that AI can take off your plate so you can spend more time on the work that matters.',
+          },
+          {
+            title: 'Live feedback',
+            body: 'Bring your business and get direct input in the room while everyone else learns from the process too.',
+          },
+        ],
+      },
+    ],
+    metadata: {
+      description:
+        'I run my whole business on an AI operating system I built myself: dozens of AI employees handling my marketing, sales, billing, and support. Before that I spent 18 years running the largest software training company in New York City, where we trained more than 90,000 people, including the CIA and Wall Street firms. For two hours, I am opening the floor. Bring your business and your questions. I will answer them live, and I will pull a few people into hot seats so we can look at their actual businesses together and find the fastest ways AI can bring in more sales and hand you back your time. When one person gets unstuck, everyone learns from it. It is free. 90 minutes of core session, then a 30 minute bonus round for personal questions if you want to stay on.',
     },
   },
 ]

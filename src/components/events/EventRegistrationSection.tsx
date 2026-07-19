@@ -122,6 +122,7 @@ export default function EventRegistrationSection({
       />
     )
   }
+  const isFreeRegistration = event.pricing.fullPrice === 0 && !event.pricing.donationMode
   const [attendeeName, setAttendeeName] = useState('')
   const [attendeeEmail, setAttendeeEmail] = useState('')
   const [donationAmount, setDonationAmount] = useState(event.pricing.fullPrice)
@@ -147,6 +148,10 @@ export default function EventRegistrationSection({
     () => (publishableKey ? loadStripe(publishableKey) : null),
     [publishableKey],
   )
+  const successTitle = isFreeRegistration ? 'Your free spot is reserved.' : 'Your seat has been reserved.'
+  const defaultSuccessDetail = isFreeRegistration
+    ? 'Check your inbox for the Zoom link and keep it handy for the workshop.'
+    : 'Great, your seat is reserved. Watch your inbox for a confirmation email from joe@mastermindshq.business. Then I will take you to the setup page for the two free accounts you need before the workshop.'
 
   useEffect(() => {
     checkoutSessionIdRef.current = checkoutSessionId
@@ -166,13 +171,10 @@ export default function EventRegistrationSection({
   function markSuccess(detail?: string) {
     setClientSecret(null)
     setCheckoutSessionId(null)
-    setCompletionMessage('Your seat has been reserved.')
+    setCompletionMessage(successTitle)
     setSuccessState({
-      title: 'Your seat has been reserved.',
-      detail:
-        detail ||
-        event.successDetail ||
-        'Great, your seat is reserved. Watch your inbox for a confirmation email from joe@mastermindshq.business. Then I will take you to the setup page for the two free accounts you need before the workshop.',
+      title: successTitle,
+      detail: detail || event.successDetail || defaultSuccessDetail,
     })
   }
 
@@ -274,6 +276,7 @@ export default function EventRegistrationSection({
     const journeyKey = 'insight_journey_id'
     const journeyId = window.localStorage.getItem(journeyKey) || window.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2)}`
     window.localStorage.setItem(journeyKey, journeyId)
+    const acquisitionRef = new URLSearchParams(window.location.search).get('ref')?.trim().toLowerCase() || 'joe-che'
     setEmbeddedFallbackVisible(false)
     const response = await fetch('/api/events/checkout-session', {
       method: 'POST',
@@ -286,6 +289,7 @@ export default function EventRegistrationSection({
         journeyId,
         acquisitionRoute: window.location.pathname,
         acquisitionQuery: window.location.search,
+        acquisitionRef,
         referrer: document.referrer || undefined,
         checkoutMode,
         ...(event.pricing.donationMode ? { donationAmount } : {}),
@@ -302,7 +306,7 @@ export default function EventRegistrationSection({
     setAppliedPromoCode(payload.appliedPromoCode)
     setAppliedAmount(typeof payload.amount === 'number' ? payload.amount : null)
     if (payload.completed) {
-      markSuccess(payload.message || 'Free ticket reserved. No payment needed.')
+      markSuccess(payload.message || (isFreeRegistration ? 'Your free spot is reserved.' : 'Free ticket reserved. No payment needed.'))
       return
     }
     if (typeof payload.checkoutUrl === 'string' && payload.checkoutUrl) {
@@ -477,10 +481,12 @@ export default function EventRegistrationSection({
       <div className="mb-5">
         <p className="mb-3 text-[12px] font-semibold uppercase tracking-[0.24em] text-[#BDB3E8] md:text-[13px]">Reserve Your Spot</p>
         <h2 className="event-gradient-title text-[2.2rem] font-extrabold leading-[0.92] tracking-tight md:text-[4.1rem]">
-          Reserve your seat and check out below.
+          {isFreeRegistration ? 'Register free below.' : 'Reserve your seat and check out below.'}
         </h2>
         <p className="mt-4 text-base leading-8 text-[#FCF4EB]/68 md:text-lg">
-          Enter your information here. Once you continue, Stripe opens securely to complete your checkout.
+          {isFreeRegistration
+            ? 'Enter your name and email. I will send the confirmation email and Zoom link right away.'
+            : 'Enter your information here. Once you continue, Stripe opens securely to complete your checkout.'}
         </p>
       </div>
 
@@ -553,7 +559,7 @@ export default function EventRegistrationSection({
             ) : null}
 
             <div className="flex flex-col items-start gap-2">
-              {!promoOpen && !event.pricing.donationMode ? (
+              {!promoOpen && !event.pricing.donationMode && !isFreeRegistration ? (
                 <button
                   type="button"
                   onClick={() => setPromoOpen(true)}
@@ -602,7 +608,7 @@ export default function EventRegistrationSection({
                 disabled={isPending}
                 className="copy-button-glass copy-button-primary inline-flex min-w-[220px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold shadow-[0_16px_38px_rgba(124,105,199,0.22)] disabled:cursor-wait disabled:opacity-70"
               >
-                {isPending ? 'Preparing Checkout...' : 'Continue To Checkout'}
+                {isPending ? 'Preparing...' : isFreeRegistration ? 'Register Free' : 'Continue To Checkout'}
               </button>
               {completionMessage ? <p className="text-sm text-[#BDE7C0]">{completionMessage}</p> : null}
               {error ? <p className="text-sm text-[#F5C3C6]">{error}</p> : null}
@@ -611,23 +617,33 @@ export default function EventRegistrationSection({
 
           <aside className="relative overflow-hidden rounded-[1.6rem] border border-[#8B79D4]/55 bg-[#0C0715] px-6 py-7 text-center shadow-[0_0_0_1px_rgba(139,121,212,0.10),0_24px_70px_rgba(0,0,0,0.32)]">
             <div className="pointer-events-none absolute inset-x-10 top-0 h-px bg-[#BDB3E8]/70" />
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#BDB3E8]">Your Ticket</p>
-            <h3 className="mt-2 font-serif text-2xl font-bold tracking-tight text-[#FCF4EB]">Event Seat</h3>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#BDB3E8]">
+              {isFreeRegistration ? 'Free Access' : 'Your Ticket'}
+            </p>
+            <h3 className="mt-2 font-serif text-2xl font-bold tracking-tight text-[#FCF4EB]">
+              {isFreeRegistration ? 'Zoom Workshop' : 'Event Seat'}
+            </h3>
             {event.durationLabel ? (
               <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#FCF4EB]/42">{event.durationLabel}</p>
             ) : null}
             <div className="my-7 border-t border-white/10" />
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#FCF4EB]/42">
-              {event.pricing.donationMode ? 'Your Donation' : appliedPromoCode ? 'Promo Price' : 'Event Price'}
+              {isFreeRegistration
+                ? 'Free Registration'
+                : event.pricing.donationMode
+                  ? 'Your Donation'
+                  : appliedPromoCode
+                    ? 'Promo Price'
+                    : 'Event Price'}
             </p>
-            {!event.pricing.donationMode && appliedPromoCode ? (
+            {!isFreeRegistration && !event.pricing.donationMode && appliedPromoCode ? (
               <p className="mt-3 text-base text-[#FCF4EB]/35 line-through">
                 {event.pricing.currencySymbol}
                 {event.pricing.fullPrice}
               </p>
             ) : null}
             <p className="mt-2 font-serif text-[4.6rem] leading-none tracking-tight text-[#FCF4EB]">{displayedPrice}</p>
-            {!event.pricing.donationMode && appliedPromoCode ? (
+            {!isFreeRegistration && !event.pricing.donationMode && appliedPromoCode ? (
               <p className="mt-4 text-sm font-semibold leading-6 text-[#BDB3E8]">
                 {appliedPromoCode} applied to this order.
               </p>
