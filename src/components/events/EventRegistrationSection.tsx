@@ -622,7 +622,7 @@ export default function EventRegistrationSection({
               {isFreeRegistration ? 'Free Access' : 'Your Ticket'}
             </p>
             <h3 className="mt-2 font-serif text-2xl font-bold tracking-tight text-[#FCF4EB]">
-              {isFreeRegistration ? 'Zoom Workshop' : 'Event Seat'}
+              {isFreeRegistration ? 'Online Workshop' : 'Event Seat'}
             </h3>
             {event.durationLabel ? (
               <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#FCF4EB]/42">{event.durationLabel}</p>
