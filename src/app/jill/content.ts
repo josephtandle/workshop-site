@@ -114,7 +114,7 @@ export const GUIDE_HTML = `<style>
   <div class="card">
     <h3>LinkedIn Cleanup SOP</h3>
     <p>The full safe process for cleaning up Joe's profile: what to keep, what to flag, and the list-first-then-delete workflow so nothing is ever removed by accident. Illy approves each batch.</p>
-    <a class="btn" href="./linkedin-cleanup-sop.md" target="_blank" rel="noopener">Open the SOP</a>
+    <a class="btn" href="/docs/jill-linkedin-cleanup-sop.md" target="_blank" rel="noopener">Open the SOP</a>
   </div>
   <div class="card">
     <h3>Community Management Brief</h3>
