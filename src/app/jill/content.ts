@@ -104,7 +104,7 @@ export const GUIDE_HTML = `<style>
       <a class="btn" href="https://canva.com" target="_blank" rel="noopener">Open Canva</a>
     </div>
     <div class="card">
-      <h3>Tuba <span class="pill soon">This week</span></h3>
+      <h3>Tooba <span class="pill soon">This week</span></h3>
       <p>Your content creation tool. Joe will get you set up and introduced so you can start creating.</p>
       <a class="btn ghost" href="#" onclick="return false">Access via Joe</a>
     </div>
