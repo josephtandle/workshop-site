@@ -42,7 +42,7 @@ export const GUIDE_HTML = `<style>
   .swatch .label span{color:#c9bfe0aa;font-family:ui-monospace,monospace;font-size:11px}
   .logo-card{background:#0e0a17;border-radius:14px;padding:24px;text-align:center;border:1px solid #ffffff18}
   .logo-card.light{background:var(--cream)}
-  .logo-card img{max-width:100%;max-height:64px}
+  .logo-card img{width:220px;max-width:100%;height:auto;display:block;margin:0 auto}
   .dl-row{display:flex;gap:8px;justify-content:center;margin-top:12px;flex-wrap:wrap}
   a.btn.small{padding:6px 13px;font-size:12.5px;margin-top:0}
   .pill{display:inline-block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
@@ -137,7 +137,7 @@ export const GUIDE_HTML = `<style>
   <p class="lead">The Masterminds HQ logo and colors. Use these exactly, download whichever you need.</p>
   <div class="grid">
     <div class="logo-card">
-      <img src="/brand/masterminds-logo-current-white.svg" alt="Masterminds HQ logo, white">
+      <img src="/brand/masterminds-logo-current-white.png" alt="Masterminds HQ logo, white">
       <p style="color:#c9bfe0cc;font-size:13px;margin-top:14px">White version, for dark backgrounds</p>
       <div class="dl-row">
         <a class="btn small" href="/brand/masterminds-logo-current-white.svg" download>SVG</a>
@@ -146,7 +146,7 @@ export const GUIDE_HTML = `<style>
       </div>
     </div>
     <div class="logo-card light">
-      <img src="/brand/masterminds-logo-current-black.svg" alt="Masterminds HQ logo, black">
+      <img src="/brand/masterminds-logo-current-black.png" alt="Masterminds HQ logo, black">
       <p style="color:#573D6Fcc;font-size:13px;margin-top:14px">Black version, for light backgrounds</p>
       <div class="dl-row">
         <a class="btn small" href="/brand/masterminds-logo-current-black.svg" download>SVG</a>
