@@ -170,7 +170,37 @@ export const GUIDE_HTML = `<style>
     <p><b>Never use gold, yellow, or orange.</b> Joe rejected both when tested. Purple, lavender, pink, cream, and dark only.</p>
   </div>
 
-  <h2><span class="n">5</span>Wishwell branding</h2>
+  <h2><span class="n">5</span>Joe's personal brand</h2>
+  <p class="lead">Separate from Masterminds HQ and Wishwell: this is Joe Che the person, his voice, his positioning. Read this before you write anything for LinkedIn or in his voice.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>joe-che.com</h3>
+      <p>Joe's personal site. Good to know what's on it before you touch his LinkedIn.</p>
+      <a class="btn" href="https://joe-che.com" target="_blank" rel="noopener">Open joe-che.com</a>
+    </div>
+    <div class="card">
+      <h3>Brand Hub <span class="pill now">Start here</span></h3>
+      <p>The index for everything below. One link, everything else hangs off it.</p>
+      <a class="btn" href="https://joe-che.com/brand" target="_blank" rel="noopener">Open the Brand Hub</a>
+    </div>
+    <div class="card">
+      <h3>Personal Branding Guide</h3>
+      <p>Joe's voice and tone in detail. The most important one for you: this is what "sounds like Joe" actually means, spelled out.</p>
+      <a class="btn" href="https://joe-che.com/brand/personal-brand" target="_blank" rel="noopener">Open the guide</a>
+    </div>
+    <div class="card">
+      <h3>Offer Ladder</h3>
+      <p>How Joe's programs and offers stack together. Useful context for community management and any messaging that touches sales.</p>
+      <a class="btn" href="https://joe-che.com/brand/offer-ladder" target="_blank" rel="noopener">Open the offer ladder</a>
+    </div>
+    <div class="card">
+      <h3>AI Prompt Pack</h3>
+      <p>Reference prompts built on the brand material, useful once you're writing with AI tools.</p>
+      <a class="btn" href="https://joe-che.com/brand/prompt" target="_blank" rel="noopener">Open the prompt pack</a>
+    </div>
+  </div>
+
+  <h2><span class="n">6</span>Wishwell branding</h2>
   <p class="lead">Wishwell (wishwell.gifts) is Joe's keepsake-book product, a separate brand from Masterminds HQ. Its own logo and colors, do not mix the two.</p>
   <div class="grid">
     <div class="logo-card light">
@@ -225,7 +255,7 @@ export const GUIDE_HTML = `<style>
     <p><b>No em dashes, ever</b>, in anything written for Wishwell (same rule as Masterminds HQ).</p>
   </div>
 
-  <h2><span class="n">6</span>Joe's headshot</h2>
+  <h2><span class="n">7</span>Joe's headshot</h2>
   <p class="lead">Use this whenever a bio photo of Joe is needed (LinkedIn, workshop pages, speaker profiles).</p>
   <div class="card" style="text-align:center">
     <img src="/brand/joe/joe-shape-pete-longsworth.jpg" alt="Joe Che headshot, Joe Shape, photo by Pete Longsworth" style="width:260px;max-width:100%;height:auto;border-radius:12px;display:block;margin:0 auto">
@@ -233,7 +263,7 @@ export const GUIDE_HTML = `<style>
     <a class="btn" href="/brand/joe/joe-shape-pete-longsworth.jpg" download="Joe Shape - by Pete Longsworth.jpg">Download</a>
   </div>
 
-  <h2><span class="n">7</span>Good to know</h2>
+  <h2><span class="n">8</span>Good to know</h2>
   <div class="grid">
     <div class="card">
       <h3>The free workshop</h3>
