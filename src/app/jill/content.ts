@@ -133,7 +133,7 @@ export const GUIDE_HTML = `<style>
     <a class="btn ghost" href="#" onclick="return false">Brief in progress</a>
   </div>
 
-  <h2><span class="n">4</span>Brand kit</h2>
+  <h2><span class="n">4</span>Masterminds HQ branding</h2>
   <p class="lead">The Masterminds HQ logo and colors. Use these exactly, download whichever you need.</p>
   <div class="grid">
     <div class="logo-card">
@@ -170,7 +170,62 @@ export const GUIDE_HTML = `<style>
     <p><b>Never use gold, yellow, or orange.</b> Joe rejected both when tested. Purple, lavender, pink, cream, and dark only.</p>
   </div>
 
-  <h2><span class="n">5</span>Good to know</h2>
+  <h2><span class="n">5</span>Wishwell branding</h2>
+  <p class="lead">Wishwell (wishwell.gifts) is Joe's keepsake-book product, a separate brand from Masterminds HQ. Its own logo and colors, do not mix the two.</p>
+  <div class="grid">
+    <div class="logo-card light">
+      <img src="/brand/wishwell/logo-black.png" alt="Wishwell logo, black">
+      <p style="color:#37323dcc;font-size:13px;margin-top:14px">Black, for light backgrounds</p>
+      <div class="dl-row">
+        <a class="btn small ghost" href="/brand/wishwell/logo-black.png" download>PNG</a>
+      </div>
+    </div>
+    <div class="logo-card">
+      <img src="/brand/wishwell/logo-white.png" alt="Wishwell logo, white">
+      <p style="color:#c9bfe0cc;font-size:13px;margin-top:14px">White, for dark backgrounds</p>
+      <div class="dl-row">
+        <a class="btn small" href="/brand/wishwell/logo-white.png" download>PNG</a>
+      </div>
+    </div>
+    <div class="logo-card" style="background:#f4eee8">
+      <img src="/brand/wishwell/logo-original-champagne.png" alt="Wishwell logo, original champagne">
+      <p style="color:#37323dcc;font-size:13px;margin-top:14px">Original champagne, the signature version</p>
+      <div class="dl-row">
+        <a class="btn small ghost" href="/brand/wishwell/logo-original-champagne.png" download>PNG</a>
+      </div>
+    </div>
+    <div class="logo-card" style="background:#37323d">
+      <img src="/brand/wishwell/logo-white-on-black.png" alt="Wishwell logo lockup, white on black">
+      <p style="color:#c9bfe0cc;font-size:13px;margin-top:14px">Lockup, white on black (self-contained badge)</p>
+      <div class="dl-row">
+        <a class="btn small" href="/brand/wishwell/logo-white-on-black.png" download>PNG</a>
+      </div>
+    </div>
+    <div class="logo-card light">
+      <img src="/brand/wishwell/logo-black-on-white.png" alt="Wishwell logo lockup, black on white">
+      <p style="color:#37323dcc;font-size:13px;margin-top:14px">Lockup, black on white (self-contained badge)</p>
+      <div class="dl-row">
+        <a class="btn small ghost" href="/brand/wishwell/logo-black-on-white.png" download>PNG</a>
+      </div>
+    </div>
+  </div>
+  <p class="lead" style="margin-top:22px">Colors</p>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#fbf8f4"></div><div class="label"><b>Ivory</b><span>#fbf8f4</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#f4eee8"></div><div class="label"><b>Linen</b><span>#f4eee8</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#f0deda"></div><div class="label"><b>Blush</b><span>#f0deda</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#a3b49b"></div><div class="label"><b>Sage</b><span>#a3b49b</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#5f7256"></div><div class="label"><b>Sage deep</b><span>#5f7256</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#96525c"></div><div class="label"><b>Rose</b><span>#96525c</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#c2a878"></div><div class="label"><b>Champagne</b><span>#c2a878</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#37323d"></div><div class="label"><b>Ink</b><span>#37323d</span></div></div>
+  </div>
+  <div class="card">
+    <p><b>Tone:</b> warm, wedding-grade, emotional. "They will hold proof of how loved they are." Not corporate, not a generic photo-book pitch.</p>
+    <p><b>No em dashes, ever</b>, in anything written for Wishwell (same rule as Masterminds HQ).</p>
+  </div>
+
+  <h2><span class="n">6</span>Good to know</h2>
   <div class="grid">
     <div class="card">
       <h3>The free workshop</h3>
