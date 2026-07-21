@@ -225,7 +225,15 @@ export const GUIDE_HTML = `<style>
     <p><b>No em dashes, ever</b>, in anything written for Wishwell (same rule as Masterminds HQ).</p>
   </div>
 
-  <h2><span class="n">6</span>Good to know</h2>
+  <h2><span class="n">6</span>Joe's headshot</h2>
+  <p class="lead">Use this whenever a bio photo of Joe is needed (LinkedIn, workshop pages, speaker profiles).</p>
+  <div class="card" style="text-align:center">
+    <img src="/brand/joe/joe-shape-pete-longsworth.jpg" alt="Joe Che headshot, Joe Shape, photo by Pete Longsworth" style="width:260px;max-width:100%;height:auto;border-radius:12px;display:block;margin:0 auto">
+    <p style="margin-top:14px"><b>"Joe Shape"</b> — photo by Pete Longsworth</p>
+    <a class="btn" href="/brand/joe/joe-shape-pete-longsworth.jpg" download="Joe Shape - by Pete Longsworth.jpg">Download</a>
+  </div>
+
+  <h2><span class="n">7</span>Good to know</h2>
   <div class="grid">
     <div class="card">
       <h3>The free workshop</h3>
