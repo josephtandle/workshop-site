@@ -34,6 +34,17 @@ export const GUIDE_HTML = `<style>
         text-decoration:none;color:#150f1f;background:linear-gradient(90deg,var(--pink),var(--lavender));transition:.15s}
   a.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
   a.btn.ghost{background:transparent;color:var(--lavender);border:1px solid var(--purple)}
+  .swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px;margin:14px 0}
+  .swatch{border-radius:12px;overflow:hidden;border:1px solid #ffffff18}
+  .swatch .chip{height:64px}
+  .swatch .label{padding:8px 10px;background:#00000040;font-size:12px}
+  .swatch .label b{display:block;font-size:12.5px;color:var(--cream)}
+  .swatch .label span{color:#c9bfe0aa;font-family:ui-monospace,monospace;font-size:11px}
+  .logo-card{background:#0e0a17;border-radius:14px;padding:24px;text-align:center;border:1px solid #ffffff18}
+  .logo-card.light{background:var(--cream)}
+  .logo-card img{max-width:100%;max-height:64px}
+  .dl-row{display:flex;gap:8px;justify-content:center;margin-top:12px;flex-wrap:wrap}
+  a.btn.small{padding:6px 13px;font-size:12.5px;margin-top:0}
   .pill{display:inline-block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
         padding:3px 10px;border-radius:999px;margin-left:8px;vertical-align:middle}
   .pill.now{background:#2ec26b22;color:#7ff0a8;border:1px solid #2ec26b55}
@@ -122,7 +133,44 @@ export const GUIDE_HTML = `<style>
     <a class="btn ghost" href="#" onclick="return false">Brief in progress</a>
   </div>
 
-  <h2><span class="n">4</span>Good to know</h2>
+  <h2><span class="n">4</span>Brand kit</h2>
+  <p class="lead">The Masterminds HQ logo and colors. Use these exactly, download whichever you need.</p>
+  <div class="grid">
+    <div class="logo-card">
+      <img src="/brand/masterminds-logo-current-white.svg" alt="Masterminds HQ logo, white">
+      <p style="color:#c9bfe0cc;font-size:13px;margin-top:14px">White version, for dark backgrounds</p>
+      <div class="dl-row">
+        <a class="btn small" href="/brand/masterminds-logo-current-white.svg" download>SVG</a>
+        <a class="btn small" href="/brand/masterminds-logo-current-white.png" download>PNG</a>
+        <a class="btn small ghost" href="/brand/masterminds-logo-current-white-512.png" download>PNG 512</a>
+      </div>
+    </div>
+    <div class="logo-card light">
+      <img src="/brand/masterminds-logo-current-black.svg" alt="Masterminds HQ logo, black">
+      <p style="color:#573D6Fcc;font-size:13px;margin-top:14px">Black version, for light backgrounds</p>
+      <div class="dl-row">
+        <a class="btn small" href="/brand/masterminds-logo-current-black.svg" download>SVG</a>
+        <a class="btn small" href="/brand/masterminds-logo-current-black.png" download>PNG</a>
+        <a class="btn small ghost" href="/brand/masterminds-logo-current-black-512.png" download>PNG 512</a>
+      </div>
+    </div>
+  </div>
+  <p class="lead" style="margin-top:22px">Colors</p>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#7C69C7"></div><div class="label"><b>Purple</b><span>#7C69C7</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#9D8FE0"></div><div class="label"><b>Lavender</b><span>#9D8FE0</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#F5C3C6"></div><div class="label"><b>Pink</b><span>#F5C3C6</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#FCF4EB"></div><div class="label"><b>Cream</b><span>#FCF4EB</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#151515"></div><div class="label"><b>Dark</b><span>#151515</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#573D6F"></div><div class="label"><b>Deep purple</b><span>#573D6F</span></div></div>
+  </div>
+  <div class="card">
+    <p><b>Fonts:</b> Cormorant Garamond for headlines, Plus Jakarta Sans for body text.</p>
+    <p><b>Text on dark backgrounds is warm cream (#FCF4EB), never pure white</b> — that warmth is part of the brand.</p>
+    <p><b>Never use gold, yellow, or orange.</b> Joe rejected both when tested. Purple, lavender, pink, cream, and dark only.</p>
+  </div>
+
+  <h2><span class="n">5</span>Good to know</h2>
   <div class="grid">
     <div class="card">
       <h3>The free workshop</h3>
