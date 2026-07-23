@@ -1,0 +1,989 @@
+{
+  "nodes": [
+    {
+      "id": "file:.claude/settings.json",
+      "type": "file",
+      "name": "settings.json",
+      "filePath": ".claude/settings.json",
+      "summary": "Claude Code configuration with PostToolUse hooks for Chrome refresh automation on Vercel deployments to workshop.mastermindshq.business",
+      "tags": ["config", "hooks", "automation", "chrome-refresh"],
+      "complexity": "simple"
+    },
+    {
+      "id": "hook:PostToolUse-Bash-Chrome-Refresh",
+      "type": "hook",
+      "name": "PostToolUse Chrome Refresh",
+      "filePath": ".claude/settings.json",
+      "summary": "Automatically reloads Chrome tabs for workshop.mastermindshq.business when vercel --prod command is executed",
+      "tags": ["post-tool-use", "chrome", "automation", "deployment"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:next-env.d.ts",
+      "type": "file",
+      "name": "next-env.d.ts",
+      "filePath": "next-env.d.ts",
+      "summary": "TypeScript type definitions file that references Next.js types, Next.js image types, and auto-generated route types from .next/types",
+      "tags": ["typescript", "types", "next.js", "auto-generated"],
+      "complexity": "simple"
+    },
+    {
+      "id": "type:next",
+      "type": "type",
+      "name": "next",
+      "filePath": "next-env.d.ts",
+      "summary": "Next.js core type definitions",
+      "tags": ["next.js", "types"],
+      "complexity": "simple"
+    },
+    {
+      "id": "type:next/image-types/global",
+      "type": "type",
+      "name": "next/image-types/global",
+      "filePath": "next-env.d.ts",
+      "summary": "Next.js global image type definitions",
+      "tags": ["next.js", "types", "images"],
+      "complexity": "simple"
+    },
+    {
+      "id": "type:.next/types/routes.d.ts",
+      "type": "type",
+      "name": ".next/types/routes.d.ts",
+      "filePath": "next-env.d.ts",
+      "summary": "Auto-generated Next.js route type definitions",
+      "tags": ["next.js", "types", "routes", "auto-generated"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:next.config.ts",
+      "type": "file",
+      "name": "next.config.ts",
+      "filePath": "next.config.ts",
+      "summary": "Next.js configuration with turbopack setup, URL redirects to portal.mastermindshq.business, and host-based rewrites for subdomain routing (decks, passiveincome)",
+      "tags": ["config", "next.js", "redirects", "rewrites", "routing"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:nextConfig",
+      "type": "config",
+      "name": "nextConfig",
+      "filePath": "next.config.ts",
+      "summary": "Main Next.js configuration object with turbopack and routing rules",
+      "tags": ["next.js", "turbopack", "config"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:turbopack",
+      "type": "config",
+      "name": "turbopack",
+      "filePath": "next.config.ts",
+      "summary": "Turbopack configuration with root path resolution",
+      "tags": ["turbopack", "bundler", "config"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:redirects",
+      "type": "config",
+      "name": "redirects",
+      "filePath": "next.config.ts",
+      "summary": "URL redirect rules: /session -> portal.mastermindshq.business, /resource-vault -> portal.mastermindshq.business",
+      "tags": ["redirects", "routing", "portal"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:rewrites",
+      "type": "config",
+      "name": "rewrites",
+      "filePath": "next.config.ts",
+      "summary": "Host-based rewrite rules: decks.mastermindshq.business -> /2x-with-ai-playbook.html, passiveincome.mastermindshq.business -> /ai-agent-income",
+      "tags": ["rewrites", "routing", "subdomain-routing"],
+      "complexity": "simple"
+    },
+    {
+      "id": "dependency:path",
+      "type": "dependency",
+      "name": "path",
+      "filePath": "next.config.ts",
+      "summary": "Node.js path module for path resolution in turbopack configuration",
+      "tags": ["node.js", "stdlib"],
+      "complexity": "simple"
+    },
+    {
+      "id": "type:NextConfig",
+      "type": "type",
+      "name": "NextConfig",
+      "filePath": "next.config.ts",
+      "summary": "Next.js NextConfig type definition",
+      "tags": ["next.js", "types"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tsconfig.json",
+      "type": "file",
+      "name": "tsconfig.json",
+      "filePath": "tsconfig.json",
+      "summary": "TypeScript compiler configuration for Next.js project with ES2017 target, strict mode, JSX support, and path alias for @/* -> ./src/*",
+      "tags": ["config", "typescript", "compiler"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:compilerOptions",
+      "type": "config",
+      "name": "compilerOptions",
+      "filePath": "tsconfig.json",
+      "summary": "TypeScript compiler options: target ES2017, strict mode, JSX react-jsx, bundler module resolution",
+      "tags": ["typescript", "compiler", "options"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:paths",
+      "type": "config",
+      "name": "paths",
+      "filePath": "tsconfig.json",
+      "summary": "TypeScript path alias configuration mapping @/* to ./src/*",
+      "tags": ["typescript", "paths", "aliases"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:include",
+      "type": "config",
+      "name": "include",
+      "filePath": "tsconfig.json",
+      "summary": "Include patterns: next-env.d.ts, all .ts/.tsx files, and .next/types",
+      "tags": ["typescript", "includes"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:exclude",
+      "type": "config",
+      "name": "exclude",
+      "filePath": "tsconfig.json",
+      "summary": "Exclude patterns: node_modules",
+      "tags": ["typescript", "excludes"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:package.json",
+      "type": "file",
+      "name": "package.json",
+      "filePath": "package.json",
+      "summary": "Project metadata for masterminds-workshop Next.js app v0.1.0 with scripts for development, build, testing, and linting, plus dependencies for Stripe, Supabase, animations, and 3D graphics",
+      "tags": ["config", "package", "metadata", "dependencies"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "script:dev",
+      "type": "script",
+      "name": "dev",
+      "filePath": "package.json",
+      "summary": "Development server: next dev",
+      "tags": ["script", "dev", "next.js"],
+      "complexity": "simple"
+    },
+    {
+      "id": "script:build",
+      "type": "script",
+      "name": "build",
+      "filePath": "package.json",
+      "summary": "Production build: next build",
+      "tags": ["script", "build", "next.js"],
+      "complexity": "simple"
+    },
+    {
+      "id": "script:start",
+      "type": "script",
+      "name": "start",
+      "filePath": "package.json",
+      "summary": "Start production server: next start",
+      "tags": ["script", "start", "next.js"],
+      "complexity": "simple"
+    },
+    {
+      "id": "script:lint",
+      "type": "script",
+      "name": "lint",
+      "filePath": "package.json",
+      "summary": "Lint code: next lint",
+      "tags": ["script", "lint", "next.js"],
+      "complexity": "simple"
+    },
+    {
+      "id": "script:test",
+      "type": "script",
+      "name": "test",
+      "filePath": "package.json",
+      "summary": "Run tests with tsx and Node.js test runner on tests/**/*.test.ts",
+      "tags": ["script", "test", "tsx"],
+      "complexity": "simple"
+    },
+    {
+      "id": "script:abandoned-checkout-control",
+      "type": "script",
+      "name": "abandoned-checkout-control",
+      "filePath": "package.json",
+      "summary": "Node.js script for abandoned checkout control automation",
+      "tags": ["script", "checkout", "automation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "script:abandoned-checkout-run",
+      "type": "script",
+      "name": "abandoned-checkout-run",
+      "filePath": "package.json",
+      "summary": "TypeScript script runner for abandoned checkout automation using tsx",
+      "tags": ["script", "checkout", "automation", "tsx"],
+      "complexity": "simple"
+    },
+    {
+      "id": "dep:@stripe/react-stripe-js",
+      "type": "dependency",
+      "name": "@stripe/react-stripe-js",
+      "filePath": "package.json",
+      "summary": "Stripe React integration library v6.3.0 for payment UI components",
+      "tags": ["stripe", "react", "payments"],
+      "complexity": "simple"
+    },
+    {
+      "id": "dep:@stripe/stripe-js",
+      "type": "dependency",
+      "name": "@stripe/stripe-js",
+      "filePath": "package.json",
+      "summary": "Stripe JavaScript SDK v9.5.0 for payment processing",
+      "tags": ["stripe", "payments"],
+      "complexity": "simple"
+    },
+    {
+      "id": "dep:@supabase/supabase-js",
+      "type": "dependency",
+      "name": "@supabase/supabase-js",
+      "filePath": "package.json",
+      "summary": "Supabase JavaScript client v2.47.0 for database and auth operations",
+      "tags": ["supabase", "database", "auth"],
+      "complexity": "simple"
+    },
+    {
+      "id": "dep:@types/canvas-confetti",
+      "type": "dependency",
+      "name": "@types/canvas-confetti",
+      "filePath": "package.json",
+      "summary": "TypeScript types for canvas-confetti animations v1.9.0",
+      "tags": ["types", "animations"],
+      "complexity": "simple"
+    },
+    {
+      "id": "dep:canvas-confetti",
+      "type": "dependency",
+      "name": "canvas-confetti",
+      "filePath": "package.json",
+      "summary": "Confetti animation library v1.9.4",
+      "tags": ["animations", "ui"],
+      "complexity": "simple"
+    },
+    {
+      "id": "dep:countup.js",
+      "type": "dependency",
+      "name": "countup.js",
+      "filePath": "package.json",
+      "summary": "Number counter animation library v2.10.0",
+      "tags": ["animations", "ui"],
+      "complexity": "simple"
+    },
+    {
+      "id": "dep:framer-motion",
+      "type": "dependency",
+      "name": "framer-motion",
+      "filePath": "package.json",
+      "summary": "React animation library v12.38.0",
+      "tags": ["react", "animations"],
+      "complexity": "simple"
+    },
+    {
+      "id": "dep:googleapis",
+      "type": "dependency",
+      "name": "googleapis",
+      "filePath": "package.json",
+      "summary": "Google API client library v173.0.0",
+      "tags": ["google", "api"],
+      "complexity": "simple"
+    },
+    {
+      "id": "dep:gsap",
+      "type": "dependency",
+      "name": "gsap",
+      "filePath": "package.json",
+      "summary": "GreenSock animation platform v3.14.2 for advanced animations",
+      "tags": ["animations", "gsap"],
+      "complexity": "simple"
+    },
+    {
+      "id": "dep:lenis",
+      "type": "dependency",
+      "name": "lenis",
+      "filePath": "package.json",
+      "summary": "Smooth scroll library v1.3.21",
+      "tags": ["scroll", "ui"],
+      "complexity": "simple"
+    },
+    {
+      "id": "dep:next",
+      "type": "dependency",
+      "name": "next",
+      "filePath": "package.json",
+      "summary": "Next.js framework v16.2.3",
+      "tags": ["next.js", "framework"],
+      "complexity": "simple"
+    },
+    {
+      "id": "dep:react",
+      "type": "dependency",
+      "name": "react",
+      "filePath": "package.json",
+      "summary": "React library v19.0.0",
+      "tags": ["react", "ui"],
+      "complexity": "simple"
+    },
+    {
+      "id": "dep:react-dom",
+      "type": "dependency",
+      "name": "react-dom",
+      "filePath": "package.json",
+      "summary": "React DOM library v19.0.0",
+      "tags": ["react", "dom"],
+      "complexity": "simple"
+    },
+    {
+      "id": "dep:resend",
+      "type": "dependency",
+      "name": "resend",
+      "filePath": "package.json",
+      "summary": "Email service client v4.0.0 for transactional emails",
+      "tags": ["email", "communications"],
+      "complexity": "simple"
+    },
+    {
+      "id": "dep:split-type",
+      "type": "dependency",
+      "name": "split-type",
+      "filePath": "package.json",
+      "summary": "Text splitting utility v0.3.4 for character/word animations",
+      "tags": ["text", "animations"],
+      "complexity": "simple"
+    },
+    {
+      "id": "dep:stripe",
+      "type": "dependency",
+      "name": "stripe",
+      "filePath": "package.json",
+      "summary": "Stripe server-side API client v22.1.1",
+      "tags": ["stripe", "payments"],
+      "complexity": "simple"
+    },
+    {
+      "id": "dep:three",
+      "type": "dependency",
+      "name": "three",
+      "filePath": "package.json",
+      "summary": "3D graphics library v0.183.2 for WebGL rendering",
+      "tags": ["3d", "graphics", "webgl"],
+      "complexity": "simple"
+    },
+    {
+      "id": "dep:vanta",
+      "type": "dependency",
+      "name": "vanta",
+      "filePath": "package.json",
+      "summary": "3D animated backgrounds v0.5.24",
+      "tags": ["3d", "animations", "backgrounds"],
+      "complexity": "simple"
+    },
+    {
+      "id": "devDep:@types/node",
+      "type": "devDependency",
+      "name": "@types/node",
+      "filePath": "package.json",
+      "summary": "TypeScript types for Node.js v20",
+      "tags": ["types", "node.js"],
+      "complexity": "simple"
+    },
+    {
+      "id": "devDep:@types/react",
+      "type": "devDependency",
+      "name": "@types/react",
+      "filePath": "package.json",
+      "summary": "TypeScript types for React v19",
+      "tags": ["types", "react"],
+      "complexity": "simple"
+    },
+    {
+      "id": "devDep:@types/react-dom",
+      "type": "devDependency",
+      "name": "@types/react-dom",
+      "filePath": "package.json",
+      "summary": "TypeScript types for React DOM v19",
+      "tags": ["types", "react", "dom"],
+      "complexity": "simple"
+    },
+    {
+      "id": "devDep:@types/three",
+      "type": "devDependency",
+      "name": "@types/three",
+      "filePath": "package.json",
+      "summary": "TypeScript types for Three.js v0.183.1",
+      "tags": ["types", "3d", "three.js"],
+      "complexity": "simple"
+    },
+    {
+      "id": "devDep:autoprefixer",
+      "type": "devDependency",
+      "name": "autoprefixer",
+      "filePath": "package.json",
+      "summary": "PostCSS plugin for vendor prefixes v10.0.1",
+      "tags": ["css", "postcss"],
+      "complexity": "simple"
+    },
+    {
+      "id": "devDep:eslint",
+      "type": "devDependency",
+      "name": "eslint",
+      "filePath": "package.json",
+      "summary": "JavaScript linter v8",
+      "tags": ["linter", "code-quality"],
+      "complexity": "simple"
+    },
+    {
+      "id": "devDep:eslint-config-next",
+      "type": "devDependency",
+      "name": "eslint-config-next",
+      "filePath": "package.json",
+      "summary": "ESLint configuration for Next.js v15.1.0",
+      "tags": ["linter", "next.js", "config"],
+      "complexity": "simple"
+    },
+    {
+      "id": "devDep:postcss",
+      "type": "devDependency",
+      "name": "postcss",
+      "filePath": "package.json",
+      "summary": "CSS transformation tool v8",
+      "tags": ["css", "postcss"],
+      "complexity": "simple"
+    },
+    {
+      "id": "devDep:tailwindcss",
+      "type": "devDependency",
+      "name": "tailwindcss",
+      "filePath": "package.json",
+      "summary": "Utility-first CSS framework v3.4.1",
+      "tags": ["css", "tailwind"],
+      "complexity": "simple"
+    },
+    {
+      "id": "devDep:typescript",
+      "type": "devDependency",
+      "name": "typescript",
+      "filePath": "package.json",
+      "summary": "TypeScript compiler v5",
+      "tags": ["typescript", "language"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:.claude/settings.json",
+      "target": "hook:PostToolUse-Bash-Chrome-Refresh",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "defines hook"
+    },
+    {
+      "source": "hook:PostToolUse-Bash-Chrome-Refresh",
+      "target": "file:next.config.ts",
+      "type": "triggers-on",
+      "weight": 0.8,
+      "label": "watches for vercel --prod command"
+    },
+    {
+      "source": "file:next-env.d.ts",
+      "target": "type:next",
+      "type": "references",
+      "weight": 1.0,
+      "label": "references type"
+    },
+    {
+      "source": "file:next-env.d.ts",
+      "target": "type:next/image-types/global",
+      "type": "references",
+      "weight": 1.0,
+      "label": "references type"
+    },
+    {
+      "source": "file:next-env.d.ts",
+      "target": "type:.next/types/routes.d.ts",
+      "type": "imports",
+      "weight": 1.0,
+      "label": "imports route types"
+    },
+    {
+      "source": "file:next.config.ts",
+      "target": "dependency:path",
+      "type": "imports",
+      "weight": 1.0,
+      "label": "uses path module"
+    },
+    {
+      "source": "file:next.config.ts",
+      "target": "type:NextConfig",
+      "type": "imports",
+      "weight": 1.0,
+      "label": "uses NextConfig type"
+    },
+    {
+      "source": "file:next.config.ts",
+      "target": "config:nextConfig",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "exports configuration"
+    },
+    {
+      "source": "config:nextConfig",
+      "target": "config:turbopack",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "includes turbopack config"
+    },
+    {
+      "source": "config:nextConfig",
+      "target": "config:redirects",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "includes redirects"
+    },
+    {
+      "source": "config:nextConfig",
+      "target": "config:rewrites",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "includes rewrites"
+    },
+    {
+      "source": "config:turbopack",
+      "target": "dependency:path",
+      "type": "uses",
+      "weight": 0.9,
+      "label": "calls path.resolve"
+    },
+    {
+      "source": "file:tsconfig.json",
+      "target": "config:compilerOptions",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "defines compiler options"
+    },
+    {
+      "source": "file:tsconfig.json",
+      "target": "config:paths",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "defines path aliases"
+    },
+    {
+      "source": "file:tsconfig.json",
+      "target": "config:include",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "defines includes"
+    },
+    {
+      "source": "file:tsconfig.json",
+      "target": "config:exclude",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "defines excludes"
+    },
+    {
+      "source": "config:include",
+      "target": "file:next-env.d.ts",
+      "type": "references",
+      "weight": 1.0,
+      "label": "includes file"
+    },
+    {
+      "source": "file:package.json",
+      "target": "script:dev",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "defines script"
+    },
+    {
+      "source": "file:package.json",
+      "target": "script:build",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "defines script"
+    },
+    {
+      "source": "file:package.json",
+      "target": "script:start",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "defines script"
+    },
+    {
+      "source": "file:package.json",
+      "target": "script:lint",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "defines script"
+    },
+    {
+      "source": "file:package.json",
+      "target": "script:test",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "defines script"
+    },
+    {
+      "source": "file:package.json",
+      "target": "script:abandoned-checkout-control",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "defines script"
+    },
+    {
+      "source": "file:package.json",
+      "target": "script:abandoned-checkout-run",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "defines script"
+    },
+    {
+      "source": "file:package.json",
+      "target": "dep:@stripe/react-stripe-js",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency"
+    },
+    {
+      "source": "file:package.json",
+      "target": "dep:@stripe/stripe-js",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency"
+    },
+    {
+      "source": "file:package.json",
+      "target": "dep:@supabase/supabase-js",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency"
+    },
+    {
+      "source": "file:package.json",
+      "target": "dep:@types/canvas-confetti",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency"
+    },
+    {
+      "source": "file:package.json",
+      "target": "dep:canvas-confetti",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency"
+    },
+    {
+      "source": "file:package.json",
+      "target": "dep:countup.js",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency"
+    },
+    {
+      "source": "file:package.json",
+      "target": "dep:framer-motion",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency"
+    },
+    {
+      "source": "file:package.json",
+      "target": "dep:googleapis",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency"
+    },
+    {
+      "source": "file:package.json",
+      "target": "dep:gsap",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency"
+    },
+    {
+      "source": "file:package.json",
+      "target": "dep:lenis",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency"
+    },
+    {
+      "source": "file:package.json",
+      "target": "dep:next",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency"
+    },
+    {
+      "source": "file:package.json",
+      "target": "dep:react",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency"
+    },
+    {
+      "source": "file:package.json",
+      "target": "dep:react-dom",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency"
+    },
+    {
+      "source": "file:package.json",
+      "target": "dep:resend",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency"
+    },
+    {
+      "source": "file:package.json",
+      "target": "dep:split-type",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency"
+    },
+    {
+      "source": "file:package.json",
+      "target": "dep:stripe",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency"
+    },
+    {
+      "source": "file:package.json",
+      "target": "dep:three",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency"
+    },
+    {
+      "source": "file:package.json",
+      "target": "dep:vanta",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency"
+    },
+    {
+      "source": "file:package.json",
+      "target": "devDep:@types/node",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "devDependency"
+    },
+    {
+      "source": "file:package.json",
+      "target": "devDep:@types/react",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "devDependency"
+    },
+    {
+      "source": "file:package.json",
+      "target": "devDep:@types/react-dom",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "devDependency"
+    },
+    {
+      "source": "file:package.json",
+      "target": "devDep:@types/three",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "devDependency"
+    },
+    {
+      "source": "file:package.json",
+      "target": "devDep:autoprefixer",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "devDependency"
+    },
+    {
+      "source": "file:package.json",
+      "target": "devDep:eslint",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "devDependency"
+    },
+    {
+      "source": "file:package.json",
+      "target": "devDep:eslint-config-next",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "devDependency"
+    },
+    {
+      "source": "file:package.json",
+      "target": "devDep:postcss",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "devDependency"
+    },
+    {
+      "source": "file:package.json",
+      "target": "devDep:tailwindcss",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "devDependency"
+    },
+    {
+      "source": "file:package.json",
+      "target": "devDep:typescript",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "devDependency"
+    },
+    {
+      "source": "script:dev",
+      "target": "dep:next",
+      "type": "uses",
+      "weight": 1.0,
+      "label": "next dev"
+    },
+    {
+      "source": "script:build",
+      "target": "dep:next",
+      "type": "uses",
+      "weight": 1.0,
+      "label": "next build"
+    },
+    {
+      "source": "script:start",
+      "target": "dep:next",
+      "type": "uses",
+      "weight": 1.0,
+      "label": "next start"
+    },
+    {
+      "source": "script:lint",
+      "target": "dep:next",
+      "type": "uses",
+      "weight": 1.0,
+      "label": "next lint"
+    },
+    {
+      "source": "script:lint",
+      "target": "devDep:eslint",
+      "type": "uses",
+      "weight": 0.8,
+      "label": "linting"
+    },
+    {
+      "source": "script:test",
+      "target": "devDep:typescript",
+      "type": "uses",
+      "weight": 1.0,
+      "label": "tsx --tsconfig"
+    },
+    {
+      "source": "dep:@stripe/react-stripe-js",
+      "target": "dep:react",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "peer dependency"
+    },
+    {
+      "source": "dep:@stripe/react-stripe-js",
+      "target": "dep:@stripe/stripe-js",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "requires"
+    },
+    {
+      "source": "dep:react-dom",
+      "target": "dep:react",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "peer dependency"
+    },
+    {
+      "source": "dep:framer-motion",
+      "target": "dep:react",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "peer dependency"
+    },
+    {
+      "source": "devDep:@types/react",
+      "target": "dep:react",
+      "type": "augments",
+      "weight": 1.0,
+      "label": "types for"
+    },
+    {
+      "source": "devDep:@types/react-dom",
+      "target": "dep:react-dom",
+      "type": "augments",
+      "weight": 1.0,
+      "label": "types for"
+    },
+    {
+      "source": "devDep:@types/three",
+      "target": "dep:three",
+      "type": "augments",
+      "weight": 1.0,
+      "label": "types for"
+    },
+    {
+      "source": "devDep:@types/canvas-confetti",
+      "target": "dep:canvas-confetti",
+      "type": "augments",
+      "weight": 1.0,
+      "label": "types for"
+    },
+    {
+      "source": "devDep:eslint-config-next",
+      "target": "dep:next",
+      "type": "configures",
+      "weight": 1.0,
+      "label": "linting rules for"
+    },
+    {
+      "source": "devDep:tailwindcss",
+      "target": "devDep:autoprefixer",
+      "type": "works-with",
+      "weight": 0.9,
+      "label": "often used together"
+    },
+    {
+      "source": "devDep:tailwindcss",
+      "target": "devDep:postcss",
+      "type": "works-with",
+      "weight": 0.9,
+      "label": "often used together"
+    },
+    {
+      "source": "file:next.config.ts",
+      "target": "file:tsconfig.json",
+      "type": "references",
+      "weight": 0.8,
+      "label": "must satisfy typescript config"
+    },
+    {
+      "source": "file:next.config.ts",
+      "target": "file:package.json",
+      "type": "references",
+      "weight": 0.8,
+      "label": "uses dependencies from"
+    }
+  ]
+}

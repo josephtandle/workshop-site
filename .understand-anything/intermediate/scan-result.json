@@ -1,76 +1,264 @@
 {
   "projectName": "masterminds-workshop",
   "projectVersion": "0.1.0",
-  "description": "Next.js workshop and event management platform for Mastermind's cohort-based courses, featuring Stripe integration, event registration, giveaway landing pages, and real-time checkout/payment automation.",
+  "description": "Next.js workshop and event management platform for Mastermind cohort-based courses, featuring Stripe integration, event registration, giveaway landing pages, and real-time checkout/payment automation.",
   "frameworks": [
-    "Next.js 16.2.3",
-    "React 19.0.0",
+    "Next.js 16",
+    "React 19",
     "TypeScript",
     "Tailwind CSS",
+    "Supabase",
+    "Stripe",
     "Framer Motion",
     "GSAP",
     "Three.js",
-    "Supabase",
-    "Stripe"
+    "Vanta"
   ],
   "languages": {
-    "typescript": 220,
-    "javascript": 6,
-    "json": 4,
-    "css": 1,
-    "html": 6,
-    "sql": 7,
-    "markdown": 13,
-    "shell": 1,
-    "txt": 1,
-    "sha256": 1
+    "json": 5,
+    "markdown": 12,
+    "other": 2,
+    "typescript": 46,
+    "tsx": 44,
+    "sql": 7
   },
   "fileStatistics": {
-    "totalFiles": 260,
-    "filteredByIgnore": 114,
+    "totalFiles": 116,
+    "filteredByIgnore": 0,
     "byCategory": {
-      "code": 227,
-      "config": 4,
-      "data": 7,
-      "docs": 14,
-      "markup": 7,
-      "script": 1
+      "config": 7,
+      "docs": 12,
+      "code": 90,
+      "data": 7
     },
-    "totalLines": 61221,
-    "averageLinesPerFile": 235.5
+    "totalLines": 33408,
+    "averageLinesPerFile": 288
   },
   "complexity": "large",
   "codeMetrics": {
-    "filesScanned": 260,
-    "filesWithImports": 141,
-    "totalImportEdges": 363
+    "codeFiles": 90,
+    "configFiles": 7,
+    "testFiles": 10,
+    "apiRoutes": 19,
+    "components": 8,
+    "pages": 34
   },
-  "keyDirectories": {
-    "src/app": "Next.js app directory with pages and API routes",
-    "src/components": "Reusable React components",
-    "src/lib": "Shared utilities and helper functions",
-    "scripts": "One-off and recurring automation scripts",
-    "supabase": "Database migrations and schema",
-    "public": "Static assets and downloadables",
-    "docs": "Documentation and process guides",
-    "tests": "Test files"
-  },
-  "primaryUseCase": "E-commerce and event management platform for cohort-based course launches, with real-time payment processing, participant onboarding automation, and marketing landing pages.",
-  "detectedCapabilities": [
-    "Event registration and waitlist management",
-    "Stripe checkout and subscription handling",
-    "Webhook processing for payment automation",
-    "Lead magnet and email capture workflows",
-    "Giveaway landing pages",
-    "Real-time checkout abandonment recovery",
-    "3D animations and interactive UI (Three.js, GSAP, Framer Motion)",
-    "Multi-tenant database (Supabase)",
-    "Participant onboarding automation",
-    "Promotional code validation"
+  "files": [
+    {
+      "path": ".claude/settings.json",
+      "language": "json",
+      "sizeLines": 16,
+      "fileCategory": "config",
+      "summary": "Claude Code project configuration"
+    },
+    {
+      "path": "next-env.d.ts",
+      "language": "typescript",
+      "sizeLines": 6,
+      "fileCategory": "code",
+      "summary": "Next.js type definitions"
+    },
+    {
+      "path": "next.config.ts",
+      "language": "typescript",
+      "sizeLines": 60,
+      "fileCategory": "code",
+      "summary": "Next.js configuration"
+    },
+    {
+      "path": "package.json",
+      "language": "json",
+      "sizeLines": 46,
+      "fileCategory": "config",
+      "summary": "NPM package configuration"
+    },
+    {
+      "path": "tailwind.config.ts",
+      "language": "typescript",
+      "sizeLines": 55,
+      "fileCategory": "code",
+      "summary": "Tailwind CSS configuration"
+    },
+    {
+      "path": "tsconfig.json",
+      "language": "json",
+      "sizeLines": 41,
+      "fileCategory": "config",
+      "summary": "TypeScript configuration"
+    },
+    {
+      "path": "vercel.json",
+      "language": "json",
+      "sizeLines": 47,
+      "fileCategory": "config",
+      "summary": "Vercel deployment configuration"
+    },
+    {
+      "path": "src/app/100-ai/page.tsx",
+      "language": "tsx",
+      "sizeLines": 316,
+      "fileCategory": "code",
+      "summary": "100-day AI challenge page"
+    },
+    {
+      "path": "src/app/page.tsx",
+      "language": "tsx",
+      "sizeLines": 57,
+      "fileCategory": "code",
+      "summary": "Home page"
+    },
+    {
+      "path": "src/app/layout.tsx",
+      "language": "tsx",
+      "sizeLines": 72,
+      "fileCategory": "code",
+      "summary": "Root layout component"
+    },
+    {
+      "path": "src/app/api/lead-magnet/route.ts",
+      "language": "typescript",
+      "sizeLines": 479,
+      "fileCategory": "code",
+      "summary": "Lead magnet API route handler"
+    },
+    {
+      "path": "src/app/api/stripe/webhook/route.ts",
+      "language": "typescript",
+      "sizeLines": 85,
+      "fileCategory": "code",
+      "summary": "Stripe webhook handler"
+    },
+    {
+      "path": "src/app/api/events/checkout-session/route.ts",
+      "language": "typescript",
+      "sizeLines": 329,
+      "fileCategory": "code",
+      "summary": "Event checkout session creation API"
+    },
+    {
+      "path": "src/lib/abandoned-checkout-followups.ts",
+      "language": "typescript",
+      "sizeLines": 1057,
+      "fileCategory": "code",
+      "summary": "Abandoned checkout followup business logic"
+    },
+    {
+      "path": "src/lib/event-confirmation-email.ts",
+      "language": "typescript",
+      "sizeLines": 787,
+      "fileCategory": "code",
+      "summary": "Event confirmation email template and logic"
+    },
+    {
+      "path": "src/lib/events.tsx",
+      "language": "tsx",
+      "sizeLines": 865,
+      "fileCategory": "code",
+      "summary": "Event data and utility functions"
+    },
+    {
+      "path": "src/lib/event-checkout.ts",
+      "language": "typescript",
+      "sizeLines": 101,
+      "fileCategory": "code",
+      "summary": "Event checkout logic"
+    },
+    {
+      "path": "src/lib/calendar.ts",
+      "language": "typescript",
+      "sizeLines": 94,
+      "fileCategory": "code",
+      "summary": "Google Calendar integration utilities"
+    },
+    {
+      "path": "src/lib/stripe.ts",
+      "language": "typescript",
+      "sizeLines": 18,
+      "fileCategory": "code",
+      "summary": "Stripe client initialization"
+    },
+    {
+      "path": "src/lib/supabase.ts",
+      "language": "typescript",
+      "sizeLines": 8,
+      "fileCategory": "code",
+      "summary": "Supabase client initialization"
+    },
+    {
+      "path": "src/components/events/EventPageView.tsx",
+      "language": "tsx",
+      "sizeLines": 647,
+      "fileCategory": "code",
+      "summary": "Event page view component"
+    },
+    {
+      "path": "src/components/events/EventRegistrationSection.tsx",
+      "language": "tsx",
+      "sizeLines": 681,
+      "fileCategory": "code",
+      "summary": "Event registration section component"
+    },
+    {
+      "path": "tests/email-content.test.ts",
+      "language": "typescript",
+      "sizeLines": 319,
+      "fileCategory": "code",
+      "summary": "Email content test suite"
+    },
+    {
+      "path": "tests/hardening.test.ts",
+      "language": "typescript",
+      "sizeLines": 258,
+      "fileCategory": "code",
+      "summary": "Security hardening test suite"
+    },
+    {
+      "path": "supabase/migrations/001_event_registrations.sql",
+      "language": "sql",
+      "sizeLines": 35,
+      "fileCategory": "data",
+      "summary": "Event registrations table migration"
+    },
+    {
+      "path": "docs/giveaways/PROCESS.md",
+      "language": "markdown",
+      "sizeLines": 472,
+      "fileCategory": "docs",
+      "summary": "Giveaway process documentation"
+    },
+    {
+      "path": "CLAUDE.md",
+      "language": "markdown",
+      "sizeLines": 43,
+      "fileCategory": "docs",
+      "summary": "Project specific Claude instructions"
+    }
   ],
-  "scanMetadata": {
-    "scanDate": "2026-07-11",
-    "scanTool": "understand-anything",
-    "pluginVersion": "1.0.0"
+  "importMap": {
+    "src/app/api/events/checkout-session/route.ts": [
+      "src/lib/stripe.ts",
+      "src/lib/events.tsx",
+      "src/lib/event-checkout.ts"
+    ],
+    "src/app/api/stripe/webhook/route.ts": [
+      "src/lib/stripe.ts",
+      "src/lib/event-confirmation-email.ts"
+    ],
+    "src/app/api/lead-magnet/route.ts": [
+      "src/lib/supabase.ts"
+    ],
+    "src/lib/events.tsx": [
+      "src/lib/event-checkout.ts"
+    ],
+    "src/lib/event-confirmation-email.ts": [
+      "src/lib/calendar.ts"
+    ],
+    "src/components/events/EventPageView.tsx": [
+      "src/lib/events.tsx",
+      "src/components/events/EventRegistrationSection.tsx"
+    ],
+    "src/components/events/EventRegistrationSection.tsx": [
+      "src/lib/event-checkout.ts"
+    ]
   }
 }
