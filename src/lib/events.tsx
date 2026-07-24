@@ -438,8 +438,8 @@ export const events: EventDefinition[] = [
     timeLabel: '2:00 PM to 4:00 PM',
     locationLabel: 'G-Dos Eden, Ubud',
     durationLabel: 'Your Spot at the Table',
-    heroImage: '/events/connection-dinner-canggu/guests-1.jpg',
-    heroAlt: 'Joe Che and guests at a Connection gathering in Bali',
+    heroImage: '/events/ubud-connection-brunch/hero.jpg',
+    heroAlt: 'Joe Che, Alla and the Bali community gathered at G-Dos Eden, Ubud',
     badge: 'This Sunday',
     audience: [
       'Entrepreneurs',
