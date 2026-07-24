@@ -469,6 +469,17 @@ export const events: EventDefinition[] = [
           'Today, Joe mentors entrepreneurs inside his Business Automation Mastermind and helps founders use AI to create cleaner operations, stronger offers, faster execution, and more freedom.',
         ],
       },
+      {
+        name: 'Alla Demutska',
+        firstName: 'Alla',
+        role: 'Co-host • Clinical Psychologist • Dancer',
+        photoSrc: '/images/events/alla-demutska.jpg',
+        bio: [
+          'Alla is a clinical psychologist with a doctorate from Monash University and more than 15 years guiding people through trauma recovery, emotional healing, and deeper connection across Singapore, Hong Kong, and Australia.',
+          'When she is not holding space for growth, she is usually dancing. Contact improv, zouk, and ecstatic dance are her happy places.',
+          'Alla co-hosts the Ubud gatherings with Joe and brings the warmth that makes the table feel like home.',
+        ],
+      },
     ],
     calendarEvent: {
       startIso: '2026-07-26T14:00:00+08:00',
