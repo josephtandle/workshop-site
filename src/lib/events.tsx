@@ -551,7 +551,7 @@ export const events: EventDefinition[] = [
         type: 'hosts',
         id: 'hosts',
         eyebrow: 'Hosted By',
-        title: 'Joe Che',
+        title: 'Joe Che and Alla',
         intro: '',
         hosts: [],
       },
