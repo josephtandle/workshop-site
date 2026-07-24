@@ -8,6 +8,7 @@ export type EventHost = {
   photoSrc: string
   bio: string[]
   bioHtml?: string[]
+  hideBestsellerBadge?: boolean
 }
 
 export type EventPromoCode = {
@@ -468,12 +469,18 @@ export const events: EventDefinition[] = [
           'He previously built the largest software and business training company in New York City, where he trained more than 90,000 people, including Fortune 5 executives, the CIA, Microsoft, and Tyra Banks.',
           'Today, Joe mentors entrepreneurs inside his Business Automation Mastermind and helps founders use AI to create cleaner operations, stronger offers, faster execution, and more freedom.',
         ],
+        bioHtml: [
+          'Joe Che is a number one bestselling author in three categories across business and AI, the founder of 26 companies, and the builder of two AI companies, including All Sorted AI, a practical AI operating system for service-based small business owners.',
+          'He previously built the largest software and business training company in New York City, where he trained more than 90,000 people, including Fortune 5 executives, the CIA, Microsoft, and Tyra Banks.',
+          'Today, Joe mentors entrepreneurs inside his <a href="https://www.mastermindshq.business/?ref=brunch-bio" target="_blank" rel="noopener" style="text-decoration:underline;color:#CFC6F0;">Business Automation Mastermind</a> and helps founders use AI to create cleaner operations, stronger offers, faster execution, and more freedom.',
+        ],
       },
       {
         name: 'Alla Demutska',
         firstName: 'Alla',
         role: 'Co-host • Clinical Psychologist • Dancer',
         photoSrc: '/images/events/alla-demutska.jpg',
+        hideBestsellerBadge: true,
         bio: [
           'Alla is a clinical psychologist with a doctorate from Monash University and more than 15 years guiding people through trauma recovery, emotional healing, and deeper connection across Singapore, Hong Kong, and Australia.',
           'When she is not holding space for growth, she is usually dancing. Contact improv, zouk, and ecstatic dance are her happy places.',
@@ -485,7 +492,7 @@ export const events: EventDefinition[] = [
       startIso: '2026-07-26T14:00:00+08:00',
       endIso: '2026-07-26T16:00:00+08:00',
     },
-    capacity: 40,
+    capacity: 24,
     emailConfig: {
       headerLabel: null,
       detailsLabel: 'Event Details',

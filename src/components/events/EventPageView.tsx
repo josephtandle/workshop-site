@@ -340,11 +340,13 @@ function HostsSection({ section }: { section: Extract<EventSection, { type: 'hos
                     <p key={paragraph}>{paragraph}</p>
                   ),
                 )}
-                <p className="pt-2">
-                  <span className="inline-flex items-center gap-2 rounded-full bg-[#C45500] px-4 py-2 text-xs font-semibold text-white shadow-lg shadow-black/30 sm:text-sm">
-                    <span aria-hidden>★</span>#1 Amazon Bestseller in Multiple Categories
-                  </span>
-                </p>
+                {!host.hideBestsellerBadge && (
+                  <p className="pt-2">
+                    <span className="inline-flex items-center gap-2 rounded-full bg-[#C45500] px-4 py-2 text-xs font-semibold text-white shadow-lg shadow-black/30 sm:text-sm">
+                      <span aria-hidden>★</span>#1 Amazon Bestseller in Multiple Categories
+                    </span>
+                  </p>
+                )}
               </div>
             </div>
           </article>
