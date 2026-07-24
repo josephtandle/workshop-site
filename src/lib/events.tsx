@@ -430,7 +430,7 @@ export const events: EventDefinition[] = [
     title: 'Ubud Connection Brunch',
     shortTitle: 'Ubud Connection Brunch',
     eyebrow: 'First Sunday Gathering',
-    summary: 'A casual Sunday brunch for interesting people in Ubud. Come as you are, meet new friends and old.',
+    summary: 'A casual Connection Sunday brunch hosted by Joe Che & Alla. Come as you are, meet new friends and old.',
     description:
       'A relaxed brunch at G-Dos Eden in Ubud, right after Ecstatic Dance. We have a big table. Show up as you are and connect over good food and real conversation.',
     ctaLabel: 'Save Your Spot',
