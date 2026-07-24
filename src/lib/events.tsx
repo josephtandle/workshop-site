@@ -911,6 +911,7 @@ export const events: EventDefinition[] = [
     durationLabel: '90-minute AI business Q&A plus 30-minute bonus round',
     heroImage: '/images/events/ask-an-ai-expert-hero.jpg',
     heroAlt: 'Feet up on a beach lounger with a laptop showing sales climbing',
+    heroNoOverlay: true,
     zoomLink: 'https://us02web.zoom.us/j/81275409884?pwd=lWpaRasSci7h7YHesIhRM2HlTbzVFA.1',
     ctaLabel: 'Register Free',
     audience: [
