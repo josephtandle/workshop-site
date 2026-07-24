@@ -126,6 +126,7 @@ export type EventDefinition = {
   durationLabel: string
   heroImage: string
   heroAlt: string
+  heroNoOverlay?: boolean
   heroVideoSrc?: string
   heroVideoPoster?: string
   zoomLink?: string
@@ -440,6 +441,7 @@ export const events: EventDefinition[] = [
     durationLabel: 'Your Spot at the Table',
     heroImage: '/events/ubud-connection-brunch/hero.jpg',
     heroAlt: 'Joe Che, Alla and the Bali community gathered at G-Dos Eden, Ubud',
+    heroNoOverlay: true,
     badge: 'This Sunday',
     audience: [
       'Entrepreneurs',
