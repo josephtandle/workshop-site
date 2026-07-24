@@ -425,6 +425,144 @@ export const events: EventDefinition[] = [
     },
   },
   {
+    slug: 'ubud-connection-brunch',
+    status: 'live',
+    title: 'Ubud Connection Brunch',
+    shortTitle: 'Ubud Connection Brunch',
+    eyebrow: 'First Sunday Gathering',
+    summary: 'A casual Sunday brunch for interesting people in Ubud. Come as you are, meet new friends and old.',
+    description:
+      'A relaxed brunch at G-Dos Eden in Ubud, right after Ecstatic Dance. We have a big table. Show up as you are and connect over good food and real conversation.',
+    ctaLabel: 'Save Your Spot',
+    dateLabel: 'Sunday, July 26, 2026',
+    timeLabel: '2:00 PM to 4:00 PM',
+    locationLabel: 'G-Dos Eden, Ubud',
+    durationLabel: 'Your Spot at the Table',
+    heroImage: '/events/connection-dinner-canggu/guests-1.jpg',
+    heroAlt: 'Joe Che and guests at a Connection gathering in Bali',
+    badge: 'This Sunday',
+    audience: [
+      'Entrepreneurs',
+      'Founders',
+      'Creators',
+      'Remote workers',
+      'Coaches',
+      'Change-makers',
+    ],
+    outcomes: [
+      'Real conversations with people doing interesting things',
+      'A big table, not a random networking event',
+      'New friends and old',
+      'A relaxed Sunday afternoon in Ubud',
+    ],
+    hosts: [
+      {
+        name: 'Joe Che',
+        firstName: 'Joe',
+        role: 'Founder • AI Entrepreneur • Community Builder',
+        photoSrc: '/images/events/joe-che-bio-bw.jpg',
+        bio: [
+          'Joe Che is a number one bestselling author in three categories across business and AI, the founder of 26 companies, and the builder of two AI companies, including All Sorted AI, a practical AI operating system for service-based small business owners.',
+          'He previously built the largest software and business training company in New York City, where he trained more than 90,000 people, including Fortune 5 executives, the CIA, Microsoft, and Tyra Banks.',
+          'Today, Joe mentors entrepreneurs inside his Business Automation Mastermind and helps founders use AI to create cleaner operations, stronger offers, faster execution, and more freedom.',
+        ],
+      },
+    ],
+    calendarEvent: {
+      startIso: '2026-07-26T14:00:00+08:00',
+      endIso: '2026-07-26T16:00:00+08:00',
+    },
+    capacity: 40,
+    emailConfig: {
+      headerLabel: null,
+      detailsLabel: 'Event Details',
+      contactName: 'Joe Che',
+      contactWhatsAppLink: 'https://wa.me/16462304209',
+      contactWhatsAppDisplay: '(646) 230-4209',
+      mapsUrl: 'https://maps.google.com/?cid=13346073993895221884',
+      skipSetupInstructions: true,
+      signatureName: 'Joe Che',
+    },
+    pricing: {
+      currencySymbol: '$',
+      fullPrice: 0,
+      checkoutHref: '',
+      checkoutNote: 'Your donation goes directly to PKP Community Centre.',
+      donationMode: true,
+      minDonation: 0,
+    },
+    privateLocationReminder: {
+      eventStartIso: '2026-07-26T14:00:00+08:00',
+      leadHours: 4,
+      exactAddress: 'G-Dos Eden (The Bali Eden), Jl. Cempaka, Banjar Kumbuh, Mas, Kecamatan Ubud, Gianyar, Bali 80571',
+      googleMapsUrl: 'https://maps.google.com/?cid=13346073993895221884',
+      parkingInstructions: [
+        'We start at 2:00 PM, right after Ecstatic Dance.',
+        'G-Dos Eden is in Mas, just south of central Ubud.',
+      ],
+    },
+    postPurchase: {
+      setupPageTitle: 'You\'re confirmed for the brunch.',
+      setupPageIntro: 'We\'ll send you the exact address closer to the date.',
+      setupPageBody: [
+        'The brunch is at G-Dos Eden, Ubud, from 2:00 PM to 4:00 PM. Come as you are.',
+        'You will receive a reminder email with the address before the brunch. See you at the table.',
+      ],
+      setupItems: [],
+    },
+    sections: [
+      {
+        type: 'html',
+        id: 'invite',
+        eyebrow: "You're Invited",
+        html: `
+          <div class="not-prose">
+            <h2 class="text-[2.8rem] font-extrabold leading-[1.0] tracking-tight text-[#FCF4EB] md:text-[3.5rem] mb-5">A Sunday brunch.</h2>
+            <p class="text-[1.25rem] font-semibold text-[#FCF4EB]/85 mb-7 leading-relaxed">Come as you are. Meet new friends and old.</p>
+            <p class="text-base leading-8 text-[#FCF4EB]/68 mb-4">We gather at G-Dos Eden in Ubud, right after Ecstatic Dance, for a relaxed brunch and real conversation. Entrepreneurs, founders, builders, and interesting people doing interesting things.</p>
+            <p class="text-base leading-8 text-[#FCF4EB]/68">We have a big table. No dress code, no agenda. Just good food and good people. 2:00 PM to 4:00 PM.</p>
+          </div>
+        `,
+      },
+      {
+        type: 'html',
+        id: 'mid-cta',
+        html: `
+          <div class="not-prose text-center py-2">
+            <a href="#register" class="copy-button-glass copy-button-primary inline-flex min-w-[220px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold no-underline">
+              Save Your Spot
+            </a>
+          </div>
+        `,
+      },
+      {
+        type: 'split',
+        id: 'pkp',
+        eyebrow: '100% of Donations Go To PKP',
+        title: 'Supporting PKP Community Centre',
+        body: [
+          'The brunch is free to attend. If you would like to give, every dollar goes directly to PKP Community Centre. You decide what feels right, even if that is nothing at all.',
+        ],
+        imageSrc: '/events/connection-dinner-canggu/pkp-catering.jpg',
+        imageAlt: 'PKP Community Centre women, Bali',
+        caption: 'PKP Community Centre, Bali — pkpcommunitycentre.org',
+      },
+      {
+        type: 'hosts',
+        id: 'hosts',
+        eyebrow: 'Hosted By',
+        title: 'Joe Che',
+        intro: '',
+        hosts: [],
+      },
+    ],
+    metadata: {
+      title: 'Ubud Connection Brunch, July 26, 2026',
+      description:
+        'A casual Sunday brunch for entrepreneurs, founders, and interesting people in Ubud. Free to attend. Donations go to PKP Community Centre.',
+    },
+  },
+  {
     slug: 'ai-avatar-content-creation',
     status: 'live',
     title: 'AI Content Creation Lab',
