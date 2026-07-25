@@ -79,7 +79,7 @@ export const sessions: Session[] = [
   {
     slug: '6',
     number: 6,
-    title: 'Prepare for Hook Writer and Hook Writer Part 1',
+    title: 'Connect Google and Other External Apps and Your Branding Agent',
     description:
       'Build a personal voice profile that actually sounds like you, explore model switching and background agents, install Hook Writer, and wire up a daily hook research agent that sends you fresh ideas every morning.',
     date: '',

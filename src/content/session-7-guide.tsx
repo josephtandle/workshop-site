@@ -167,7 +167,7 @@ Deploy when you're done.`}
               Once the install finishes, go to this address in your browser:
             </p>
             <a
-              href="http://localhost:3001"
+              href="http://localhost:3000"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 bg-white/[0.05] border border-white/[0.10] hover:border-[#7C69C7]/50 rounded-xl px-5 py-4 transition-all duration-150 group mb-4"
@@ -184,7 +184,7 @@ Deploy when you're done.`}
                   Open Mission Control
                 </p>
                 <p className="text-[#FCF4EB]/40 text-xs mt-0.5">
-                  localhost:3001
+                  localhost:3000
                 </p>
               </div>
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="flex-shrink-0 text-[#FCF4EB]/30 group-hover:text-[#7C69C7] transition-colors">
@@ -217,15 +217,15 @@ Run this and note the output:
 
 STEP 2 — VERIFY INITIAL LOAD
 Run:
-  curl -s -o /dev/null -w "%{http_code} | %{size_download} bytes | %{time_total}s" "http://localhost:3001/api/repo/tree?depth=2"
+  curl -s -o /dev/null -w "%{http_code} | %{size_download} bytes | %{time_total}s" "http://localhost:3000/api/repo/tree?depth=2"
 
 Expected: 200 | under 200000 bytes | under 2 seconds
 If the server is not running, start it first: cd mission-control && npm run dev
 
 STEP 3 — VERIFY LAZY EXPAND WORKS
 Pick any subdirectory from the home directory and test the expand endpoint:
-  Mac/Linux: DIR=$(python3 -c "import os; print(os.path.expanduser('~/Desktop'))"); curl -s -o /dev/null -w "%{http_code} | %{size_download} bytes" "http://localhost:3001/api/repo/tree?path=$(python3 -c 'import urllib.parse, os; print(urllib.parse.quote(os.path.expanduser("~/Desktop")))')&depth=1"
-  Windows: Use Postman or browser: http://localhost:3001/api/repo/tree?path=C%3A%5CUsers%5CYOURNAME%5CDesktop&depth=1
+  Mac/Linux: DIR=$(python3 -c "import os; print(os.path.expanduser('~/Desktop'))"); curl -s -o /dev/null -w "%{http_code} | %{size_download} bytes" "http://localhost:3000/api/repo/tree?path=$(python3 -c 'import urllib.parse, os; print(urllib.parse.quote(os.path.expanduser("~/Desktop")))')&depth=1"
+  Windows: Use Postman or browser: http://localhost:3000/api/repo/tree?path=C%3A%5CUsers%5CYOURNAME%5CDesktop&depth=1
 
 Expected: 200 | under 50000 bytes
 
@@ -530,11 +530,11 @@ How the two-level loading works:
 
 ## Mission Control Task Board
 
-My personal task board runs at http://localhost:3001.
+My personal task board runs at http://localhost:3000.
 
 When I say "add this to the MC task board" or "add a card to Mission Control":
-- Create a new card via POST http://localhost:3001/api/cards
-- Body: { "title": "[card title]", "description": "[description]", "status": "backlog" }
+- Create a new card via POST http://localhost:3000/api/db
+- Body: { "action": "create", "card": { "title": "[card title]", "description": "[description]", "column": "backlog" } }
 - Put it in Backlog unless I specify a different column
 - Confirm when done and tell me the card title`}
             />
