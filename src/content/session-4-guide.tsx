@@ -34,7 +34,7 @@ const REVIEW_ITEMS = [
   { id: 'edit-cleanup', label: 'Edit or delete anything that does not feel right' },
 ]
 
-export default function Session5Guide() {
+export default function Session4Guide() {
   const [reviewChecked, setReviewChecked] = useState<Set<string>>(new Set())
 
   const toggleReview = (id: string) => {

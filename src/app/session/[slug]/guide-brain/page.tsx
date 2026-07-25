@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getSession } from '@/lib/sessions'
-import Session5Guide from '@/content/session-5-guide'
+import Session4Guide from '@/content/session-4-guide'
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -45,7 +45,7 @@ export default async function SessionGuideBrainPage({ params }: Props) {
       </div>
 
       {/* Content */}
-      <Session5Guide />
+      <Session4Guide />
 
       {/* Footer nav */}
       <div className="max-w-5xl mx-auto px-6 pb-16">
