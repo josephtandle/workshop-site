@@ -80,7 +80,7 @@ footer{position:relative;z-index:1;text-align:center;color:rgba(157,143,224,.6);
 <header class="hero">
   <p class="eyebrow">Masterminds HQ, GTM, Sales and Marketing</p>
   <h1>Welcome, Illy</h1>
-  <p class="sub">Start with Get Set Up, then The People, Cohort 4, and Meta Ads. Updated 2026-07-22.</p>
+  <p class="sub">Start with Get Set Up, then The People, Cohort 4, and Meta Ads. Updated 2026-07-25.</p>
 </header>
 <div class="topbar">
   <span class="brand">Illy Onboarding</span>
@@ -145,7 +145,7 @@ footer{position:relative;z-index:1;text-align:center;color:rgba(157,143,224,.6);
 <ol>
 <li><strong>LastPass</strong> (accept the invite, set up your vault)</li>
 <li><strong>Tailscale</strong> (install on your phone and laptop, sign in)</li>
-<li><strong>Your \$20 Claude subscription</strong> (log in and buy the plan)</li>
+<li><strong>Your $20 Claude subscription</strong> (log in and buy the plan)</li>
 </ol>
 <p>Everything else below can follow once those three are done. The full steps are in order.</p>
 <h2>Step 1: Accept the two invites (do this first)</h2>
@@ -161,7 +161,7 @@ footer{position:relative;z-index:1;text-align:center;color:rgba(157,143,224,.6);
 <p>You work inside Claude every day. Joe has already created your Claude account on the free tier under your work email, so you do not sign up from scratch. You just log in and upgrade it to the work plan.</p>
 <ol>
 <li>Go to claude.ai and choose "Continue with Google," then sign in with your work email, illy@mastermindshq.business. There is no separate Claude password; it uses your Google account.</li>
-<li>Buy the \$20 per month plan (Claude Pro, which includes Claude Code), on your own card.</li>
+<li>Buy the $20 per month plan (Claude Pro, which includes Claude Code), on your own card.</li>
 <li>Send Joe the receipt and he reimburses you for it. Keep it on your own card and account, never a shared login, because shared-payment workarounds get accounts banned.</li>
 <li>If we need more once you are up and running, we upgrade later.</li>
 <li>Install Claude Code in your terminal and on your phone so you can work MyOS from anywhere.</li>
@@ -188,7 +188,7 @@ footer{position:relative;z-index:1;text-align:center;color:rgba(157,143,224,.6);
      User myos
      IdentityFile ~/.ssh/illy_myos
      RequestTTY yes
-     RemoteCommand \$SSH_ORIGINAL_COMMAND</code></p>
+     RemoteCommand $SSH_ORIGINAL_COMMAND</code></p>
 <ol start="3">
 <li>Connect:</li>
 </ol>
@@ -310,8 +310,8 @@ footer{position:relative;z-index:1;text-align:center;color:rgba(157,143,224,.6);
 </blockquote>
 <h2>Objective and operating rule</h2>
 <p>Fill Cohort 4 of Joe Che's Business Automation Mastermind, Level 1, before it starts on Monday, August 10 at 07:30 Bali time. Level 1 is a 12-week implementation program with three bonus weeks.</p>
-<p>The immediate priority is conversion, not new traffic. Your warm pool is the CRM strong_interest segment (18 people) plus negotiating_scholarship (4 people); work that segment as your warm list. Joe's "about eight warm people at about \$1,800 each, or about \$10,000 of potential revenue" is his shorthand for the highest-intent slice of that segment, not a separate roster.</p>
-<p><strong>Your Phase A test.</strong> Per the employee record Joe set on July 17, your first measurable assignment is owning the Cohort 4 Scholarship Track sales cycle: working that warm segment plus new signups before the August 10 start. This is the thing Joe decides Phase B on. The "\$1,800" framing and the "Scholarship Track (\$150/month)" assignment are the same pool at two price points, not two groups. Lead with the Scholarship Track (\$150/mo, cohort4-scholarship) as your Phase A assignment, then step up to Momentum for anyone who can pay more: momentum-upfront (\$1,800 once) for full payers, momentum-monthly (\$799/mo x3) for monthly payers. One named lead is already on record: <strong>Danielle Martinak</strong> (CRM, qualified, strong interest, confirmed hot lead from Joe on 2026-07-17). Start there.</p>
+<p>The immediate priority is conversion, not new traffic. Your warm pool is the CRM strong_interest segment (18 people) plus negotiating_scholarship (4 people); work that segment as your warm list. Joe's "about eight warm people at about $1,800 each, or about $10,000 of potential revenue" is his shorthand for the highest-intent slice of that segment, not a separate roster.</p>
+<p><strong>Your Phase A test.</strong> Per the employee record Joe set on July 17, your first measurable assignment is owning the Cohort 4 Scholarship Track sales cycle: working that warm segment plus new signups before the August 10 start. This is the thing Joe decides Phase B on. The "$1,800" framing and the "Scholarship Track ($150/month)" assignment are the same pool at two price points, not two groups. Lead with the Scholarship Track ($150/mo, cohort4-scholarship) as your Phase A assignment, then step up to Momentum for anyone who can pay more: momentum-upfront ($1,800 once) for full payers, momentum-monthly ($799/mo x3) for monthly payers. One named lead is already on record: <strong>Danielle Martinak</strong> (CRM, qualified, strong interest, confirmed hot lead from Joe on 2026-07-17). Start there.</p>
 <p>Work in this order:</p>
 <ol>
 <li>Close the existing warm interest.</li>
@@ -336,25 +336,25 @@ footer{position:relative;z-index:1;text-align:center;color:rgba(157,143,224,.6);
 <tbody>
 <tr>
 <td><code>momentum-monthly</code></td>
-<td>\$799/month for 3 months, anchored against \$1,499/month</td>
+<td>$799/month for 3 months, anchored against $1,499/month</td>
 <td>A warm prospect wants to pay monthly. Approved and open to any warm prospect.</td>
 <td><a href="https://mastermindshq.business/api/mhq-checkout?deal=momentum-monthly">Open monthly checkout</a></td>
 </tr>
 <tr>
 <td><code>momentum-upfront</code></td>
-<td>\$1,800 one time, described as Best Value and \$599/month equivalent</td>
-<td>A warm prospect is ready to pay upfront. This matches the approximately \$1,800 price Joe described for the highest-intent warm people. Approved and open to any warm prospect.</td>
+<td>$1,800 one time, described as Best Value and $599/month equivalent</td>
+<td>A warm prospect is ready to pay upfront. This matches the approximately $1,800 price Joe described for the highest-intent warm people. Approved and open to any warm prospect.</td>
 <td><a href="https://mastermindshq.business/api/mhq-checkout?deal=momentum-upfront">Open upfront checkout</a></td>
 </tr>
 <tr>
 <td><code>friend</code></td>
-<td>\$999, then \$299/month forever, coupon <code>iCB6zFJL</code></td>
+<td>$999, then $299/month forever, coupon <code>iCB6zFJL</code></td>
 <td>A direct friend guest or a person Joe specifically names. Named-person exception only, one at a time.</td>
 <td><a href="https://mastermindshq.business/api/mhq-checkout?deal=friend">Open friend checkout</a></td>
 </tr>
 <tr>
 <td><code>cohort4-scholarship</code></td>
-<td>\$150/month with a 12-month commitment</td>
+<td>$150/month with a 12-month commitment</td>
 <td>A scholarship recipient Joe selects. Do not promote this publicly to backfill paying seats.</td>
 <td><a href="https://mastermindshq.business/api/mhq-checkout?deal=cohort4-scholarship">Open scholarship checkout</a></td>
 </tr>
@@ -625,20 +625,20 @@ footer{position:relative;z-index:1;text-align:center;color:rgba(157,143,224,.6);
 <p>If you ever need to point someone at the program itself rather than straight to payment, send them the homepage: <strong>https://mastermindshq.business</strong>. That is the sales page. It carries the story, the proof, the testimonials, and the pricing. Warm people who are close to ready get the checkout link. People who still need convincing get the homepage first, then the checkout link once they say yes.</p>
 <h3>The deals, one by one</h3>
 <p>These are the live Cohort 4 offers. Each slug drops straight into the link pattern above.</p>
-<p><strong>Momentum Monthly, slug <code>momentum-monthly</code>.</strong> The 12-week program plus 3 bonus weeks, paid as three monthly payments of \$799. This is the standard way most people join. Send this when someone wants to spread the cost.
+<p><strong>Momentum Monthly, slug <code>momentum-monthly</code>.</strong> The 12-week program plus 3 bonus weeks, paid as three monthly payments of $799. This is the standard way most people join. Send this when someone wants to spread the cost.
 <code>https://mastermindshq.business/api/mhq-checkout?deal=momentum-monthly</code></p>
-<p><strong>Momentum Upfront, slug <code>momentum-upfront</code>.</strong> The exact same program, paid once at \$1,800. Cheaper in total than three monthly payments, so this is your close for anyone who can pay in full. Lead with this when the person has the cash and wants the best price.
+<p><strong>Momentum Upfront, slug <code>momentum-upfront</code>.</strong> The exact same program, paid once at $1,800. Cheaper in total than three monthly payments, so this is your close for anyone who can pay in full. Lead with this when the person has the cash and wants the best price.
 <code>https://mastermindshq.business/api/mhq-checkout?deal=momentum-upfront</code></p>
-<p><strong>Friend rate, slug <code>friend</code>.</strong> The \$999 per month Starter price with a permanent discount applied, so checkout shows \$999 crossed out down to \$299 per month, and they keep that rate for as long as they stay. This is a relationship deal, not a public one. Use it only for people Joe has named as friend-rate, never as a general discount.
+<p><strong>Friend rate, slug <code>friend</code>.</strong> The $999 per month Starter price with a permanent discount applied, so checkout shows $999 crossed out down to $299 per month, and they keep that rate for as long as they stay. This is a relationship deal, not a public one. Use it only for people Joe has named as friend-rate, never as a general discount.
 <code>https://mastermindshq.business/api/mhq-checkout?deal=friend</code></p>
-<p><strong>Scholarship track, slug <code>cohort4-scholarship</code>.</strong> \$150 per month on a 12-month commitment. This is the access-first tier for people who genuinely cannot meet the standard price but are a strong fit. Reserve it for scholarship cases, not as a discount you offer to close a hesitant buyer.
+<p><strong>Scholarship track, slug <code>cohort4-scholarship</code>.</strong> $150 per month on a 12-month commitment. This is the access-first tier for people who genuinely cannot meet the standard price but are a strong fit. Reserve it for scholarship cases, not as a discount you offer to close a hesitant buyer.
 <code>https://mastermindshq.business/api/mhq-checkout?deal=cohort4-scholarship</code></p>
 <h3>How you get paid on these</h3>
 <p>Your commission is a percentage of what the member actually pays, collected as they pay it. A member from Joe's warm list or from paid ads pays you 10 percent of every payment they make. A member you found and closed entirely through your own outreach pays you 15 percent. On a monthly payer, that is your cut every month they stay enrolled, and it stops if they leave, so the two of you rise and fall together. On an upfront payer, it is a single larger cut the month they pay. The warm list is written down before you start, so whose lead is whose is never in question, and a genuinely unclear case ties in your favor.</p>
 <h3>How and when the money reaches you</h3>
 <p>You are a contractor, not on payroll, and your commission is paid to you in Wise. Keep your own simple running tally as you close: which member, whether it was a warm or self-sourced close, and what percentage applies. That tally is what gets paid out, so keeping it yourself means a payout is never a guess, and if a payment ever looks short or missed you can raise it with Joe straight away with the receipts in hand.</p>
 <h3>The second product you can sell</h3>
-<p>There is also a standalone course, <strong>Meta Ads with Claude Code</strong>, slug <code>meta-ads-claude-code</code>. It is a \$599 one-time payment for a 4-week course that teaches founders to run their own Meta ad campaigns through the same agent you use. Its own sales page lives at <code>https://mastermindshq.business/meta-ads-with-claude-code</code>, and the checkout is the usual pattern:
+<p>There is also a standalone course, <strong>Meta Ads with Claude Code</strong>, slug <code>meta-ads-claude-code</code>. It is a $599 one-time payment for a 4-week course that teaches founders to run their own Meta ad campaigns through the same agent you use. Its own sales page lives at <code>https://mastermindshq.business/meta-ads-with-claude-code</code>, and the checkout is the usual pattern:
 <code>https://mastermindshq.business/api/mhq-checkout?deal=meta-ads-claude-code</code></p>
 <p>This one is a natural bridge: people who come in through the ads you run often want to learn the machine themselves, and this course is where you send them.</p>
 <h2>Part B: Meta Ads</h2>
@@ -699,23 +699,23 @@ footer{position:relative;z-index:1;text-align:center;color:rgba(157,143,224,.6);
 <td>mastermindshq.business/api/mhq-checkout?deal=SLUG</td>
 </tr>
 <tr>
-<td>Momentum Monthly, \$799/mo x3</td>
+<td>Momentum Monthly, $799/mo x3</td>
 <td>mastermindshq.business/api/mhq-checkout?deal=momentum-monthly</td>
 </tr>
 <tr>
-<td>Momentum Upfront, \$1,800 once</td>
+<td>Momentum Upfront, $1,800 once</td>
 <td>mastermindshq.business/api/mhq-checkout?deal=momentum-upfront</td>
 </tr>
 <tr>
-<td>Friend rate, \$999 to \$299/mo</td>
+<td>Friend rate, $999 to $299/mo</td>
 <td>mastermindshq.business/api/mhq-checkout?deal=friend</td>
 </tr>
 <tr>
-<td>Scholarship track, \$150/mo</td>
+<td>Scholarship track, $150/mo</td>
 <td>mastermindshq.business/api/mhq-checkout?deal=cohort4-scholarship</td>
 </tr>
 <tr>
-<td>Meta Ads with Claude Code course, \$599</td>
+<td>Meta Ads with Claude Code course, $599</td>
 <td>mastermindshq.business/api/mhq-checkout?deal=meta-ads-claude-code</td>
 </tr>
 <tr>
@@ -724,8 +724,10 @@ footer{position:relative;z-index:1;text-align:center;color:rgba(157,143,224,.6);
 </tr>
 </tbody>
 </table></section><section id="linkedin" class="chapter accent-purple" data-sec="linkedin"><div class="accent-bar"></div><h2>LinkedIn: Update Guide</h2>
-<p>Joe's last LinkedIn export is from March 2026. This chapter has two things: a prioritized list of what's actually wrong or stale on the live profile, and the full history underneath it for context so you're not guessing when you write anything for LinkedIn.</p>
-<p>This feeds directly into the LinkedIn Cleanup SOP you already have. Use this chapter as the factual backbone: what to fix, what to keep, what to ask Joe about before touching.</p>
+<p>MyOS has already ingested Joe's full LinkedIn export (March 2026) and turned it into this chapter, so you don't need to go find or read the raw export yourself. This chapter has two things: a prioritized list of what's actually wrong or stale on the live profile, and the full history underneath it for context so you're not guessing when you write anything for LinkedIn.</p>
+<p>This feeds directly into the LinkedIn Cleanup SOP (<code>linkedin-cleanup-sop.md</code>, ask Joe if you don't have it yet). Use this chapter as the factual backbone: what to fix, what to keep, what to ask Joe about before touching.</p>
+<p><strong>A general note on how to work with this system:</strong> anything you need to do this job, MyOS already knows. Ask it directly instead of hunting through docs. If it is not giving you good, accurate answers, that means something in the system needs fixing, not that you did something wrong, so flag it to Joe when that happens.</p>
+<p><strong>On execution:</strong> if anything in this chapter is low-level, hands-on work rather than a judgment call, you can hand it to Jill. She has a task for this on her board.</p>
 <h3>Fix These First (high confidence)</h3>
 <ol>
 <li><strong>"24+ Biz Entrepreneur" in the headline is stale.</strong> Internal records say the real count is 35 companies, not 24. Get the current number from Joe before changing this, since even 35 may be out of date by now.</li>
@@ -836,7 +838,7 @@ footer{position:relative;z-index:1;text-align:center;color:rgba(157,143,224,.6);
 <p>You were not hired to "do marketing." You were hired to increase sales. Everything in this chapter ladders up to that one number. Before you touch a single post, a giveaway, or a cold email, you need to understand how Joe thinks about growth, because his instincts here are specific, opinionated, and hard-won. Follow them and you will move fast in the right direction. Ignore them and you will produce a lot of motion that does not turn into revenue.</p>
 <h2>The business you are selling</h2>
 <p>Masterminds HQ sells one core thing: the <strong>Business Automation Mastermind</strong>. It is a done-with-you program. Founders join live weekly Zoom sessions and leave each session with something actually built and running in their business, and the systems they build still sound like them. That last part matters. The strongest promise in the whole business is not "learn AI." It is "you leave each session with something built, and it still sounds like you." That line converts. Lead with it.</p>
-<p>The mastermind runs in cohorts. Cohort 3 has been live since June 2026. Your immediate money-maker is <strong>Cohort 4</strong>: it is already built, there is a warm pipeline of roughly 8 people at around \$1,800 each, which is roughly \$10,000 sitting there waiting to be closed. That warm money is your first job, not a cold-traffic campaign.</p>
+<p>The mastermind runs in cohorts. Cohort 3 has been live since June 2026. Your immediate money-maker is <strong>Cohort 4</strong>: it is already built, there is a warm pipeline of roughly 8 people at around $1,800 each, which is roughly $10,000 sitting there waiting to be closed. That warm money is your first job, not a cold-traffic campaign.</p>
 <h2>The offer ladder, with real prices</h2>
 <p>Joe has one offer ladder that everything flows through. Know it cold, because your job is to move people up it.</p>
 <p><strong>Free entry (top of funnel):</strong>
@@ -844,19 +846,19 @@ footer{position:relative;z-index:1;text-align:center;color:rgba(157,143,224,.6);
 - Free workshops, live and pre-recorded, plus speaking gigs and in-person events
 - Free soul-purpose mini-courses like Unblock and Unlock (~20 min)</p>
 <p><strong>Low-ticket nurture (self-serve, warms the lead toward the core):</strong>
-- The AI Agent Income Playbook book: <strong>\$9.99</strong>, with a <strong>\$20/mo</strong> drip subscription behind it
-- AI Content Creation Lab: <strong>\$97</strong>
-- Build Kit (book + course + templates): <strong>\$197</strong>
-- A 1:1 hour with Joe (Implementation Hour / Mentorship Call): <strong>\$450 to \$499</strong></p>
+- The AI Agent Income Playbook book: <strong>$9.99</strong>, with a <strong>$20/mo</strong> drip subscription behind it
+- AI Content Creation Lab: <strong>$97</strong>
+- Build Kit (book + course + templates): <strong>$197</strong>
+- A 1:1 hour with Joe (Implementation Hour / Mentorship Call): <strong>$450 to $499</strong></p>
 <p><strong>The core offer (this is where the money is):</strong>
 - <strong>Business Automation Mastermind.</strong> This is the one thing you sell first. Everything above this rung exists only to feed leads into it. This is the offer you quote a qualified business owner by default, using the branded checkout links in the Two Engines chapter.</p>
 <p><strong>Ascension (upsell existing members):</strong>
-- Mastermind Growth: <strong>\$699/mo</strong> on a 6-month plan, or <strong>\$3,600 upfront</strong>
-- Mastermind Leader: <strong>\$499/mo</strong> on a 12-month plan, or <strong>\$5,400 upfront</strong> (longest commitment, lowest effective monthly)
-- 6-hour One-on-One Consulting Package: <strong>\$2,500</strong>
-- Uncovering Your Soul Purpose: <strong>\$999</strong> one-time or <strong>\$333/mo x 3</strong>, a parallel life-design offer you cross-sell both directions</p>
+- Mastermind Growth: <strong>$699/mo</strong> on a 6-month plan, or <strong>$3,600 upfront</strong>
+- Mastermind Leader: <strong>$499/mo</strong> on a 12-month plan, or <strong>$5,400 upfront</strong> (longest commitment, lowest effective monthly)
+- 6-hour One-on-One Consulting Package: <strong>$2,500</strong>
+- Uncovering Your Soul Purpose: <strong>$999</strong> one-time or <strong>$333/mo x 3</strong>, a parallel life-design offer you cross-sell both directions</p>
 <p><strong>Retention (post-graduation continuity):</strong>
-- Alumni Circle: <strong>\$97/mo</strong> founding rate, moving to <strong>\$197/mo</strong>. It keeps the relationship and the revenue alive after the cohort ends.</p>
+- Alumni Circle: <strong>$97/mo</strong> founding rate, moving to <strong>$197/mo</strong>. It keeps the relationship and the revenue alive after the cohort ends.</p>
 <p>There is also a side branch built on Joe's book, How to Build Your Own AI Operating System, which leads into Build With Joe and the All Sorted done-for-you install. That branch serves a different person, the technical DIY builder, not the business owner you are selling the mastermind to. Do not confuse the two ICPs. Book and builder go to Build With Joe. Business owner goes to the Mastermind.</p>
 <h2>Who you are selling to</h2>
 <p>Forget revenue brackets. The person you are selling to is defined by who they are, not what they earn. The mastermind's real audience is <strong>conscious founders, coaches, artists, and creatives</strong>: purpose-driven people running a business that is an expression of who they are, not a machine that eats them. Think transformational coaches, healers and wellness practitioners, embodiment and breathwork teachers, conscious-brand and creative founders, artists and makers with a real practice, values-led consultants. Most are solo or one to five people, non-technical by their own description, and very often neurodivergent or "neuro-spicy." The founder is the bottleneck, and everything depends on them.</p>
@@ -884,7 +886,7 @@ footer{position:relative;z-index:1;text-align:center;color:rgba(157,143,224,.6);
 <p>The reporting rhythm reflects this. Your right-hand agent tracks what you do and auto-reports to Joe's Telegram at day's end, Joe reorders your task board each morning with the highest priority on top, and during a warm-up period he wants second eyes on content before it ships, with you taking over approvals fully as trust builds. That is the same graduated-trust path he ran with his email manager.</p>
 <h2>The single most important thing you can do in your first 30 days</h2>
 <p><strong>Close Cohort 4 from the warm bank before Joe goes offline.</strong></p>
-<p>There is roughly \$10,000 already sitting in the warm pipeline, about 8 people at around \$1,800 each, in a program that is already built. Joe is about to be completely offline for around two weeks for Burning Man, so the setup and the outreach need to be working asynchronously before he leaves. This is grassroots-before-funnels, serve-don't-squeeze, and four-needle-movers-a-day all pointing at the same target.</p>
+<p>There is roughly $10,000 already sitting in the warm pipeline, about 8 people at around $1,800 each, in a program that is already built. Joe is about to be completely offline for around two weeks for Burning Man, so the setup and the outreach need to be working asynchronously before he leaves. This is grassroots-before-funnels, serve-don't-squeeze, and four-needle-movers-a-day all pointing at the same target.</p>
 <p>Concretely, in your first 30 days:</p>
 <ol>
 <li>Work the Cohort 4 warm list personally. Voice notes and direct messages, not a blast email. Reference each person's specific situation. Classify every pending person and assign one next action to each.</li>
@@ -942,26 +944,26 @@ footer{position:relative;z-index:1;text-align:center;color:rgba(157,143,224,.6);
 <tr>
 <td>Monthly</td>
 <td><code>momentum-monthly</code></td>
-<td>\$799/mo x 3 (anchored against \$1,499/mo)</td>
+<td>$799/mo x 3 (anchored against $1,499/mo)</td>
 </tr>
 <tr>
 <td>Pay upfront (Best Value)</td>
 <td><code>momentum-upfront</code></td>
-<td>\$1,800 one-time (works out to ~\$599/mo)</td>
+<td>$1,800 one-time (works out to ~$599/mo)</td>
 </tr>
 <tr>
 <td>Friend rate</td>
 <td><code>friend</code></td>
-<td>\$999 crossed out to \$299/mo forever</td>
+<td>$999 crossed out to $299/mo forever</td>
 </tr>
 <tr>
 <td>Scholarship track</td>
 <td><code>cohort4-scholarship</code></td>
-<td>\$150/mo, 12-month commitment</td>
+<td>$150/mo, 12-month commitment</td>
 </tr>
 </tbody>
 </table>
-<p>The friend rate is the standard \$999/mo price with a forever coupon that takes it to \$299, so the buyer sees the original crossed out. That "crossed-out original, real price below" treatment is how every promo at MHQ is built.</p>
+<p>The friend rate is the standard $999/mo price with a forever coupon that takes it to $299, so the buyer sees the original crossed out. That "crossed-out original, real price below" treatment is how every promo at MHQ is built.</p>
 <h2>The Branded Checkout Rule (Non-Negotiable)</h2>
 <p><strong>Every payment link you ever share for a cohort or program goes through the branded checkout route:</strong></p>
 <pre><code>https://mastermindshq.business/api/mhq-checkout?deal=&lt;slug&gt;
@@ -974,7 +976,7 @@ footer{position:relative;z-index:1;text-align:center;color:rgba(157,143,224,.6);
 <p>One of the biggest open opportunities sitting in front of you: none of Joe's existing high-value giveaways have been posted to LinkedIn yet. That inventory is untapped, and LinkedIn is the primary channel for filling the room.</p>
 <h2>What "Filling Cohort 4" Looks Like Operationally</h2>
 <p>Filling Cohort 4 means getting the maximum number of qualified founders through the branded checkout before August 10, and it starts with warm demand that already exists.</p>
-<p><strong>Start with the warm pipeline.</strong> There are roughly <strong>8 people already lined up for Cohort 4 at around \$1,800 each, about \$10,000 in signups waiting to be closed.</strong> This is your first and warmest list. Work it directly and convert it before chasing colder traffic. These people have already raised their hand, so the job is to get each of them onto <code>mastermindshq.business/api/mhq-checkout?deal=momentum-upfront</code> (or the monthly slug if they need to spread payments) and enrolled.</p>
+<p><strong>Start with the warm pipeline.</strong> There are roughly <strong>8 people already lined up for Cohort 4 at around $1,800 each, about $10,000 in signups waiting to be closed.</strong> This is your first and warmest list. Work it directly and convert it before chasing colder traffic. These people have already raised their hand, so the job is to get each of them onto <code>mastermindshq.business/api/mhq-checkout?deal=momentum-upfront</code> (or the monthly slug if they need to spread payments) and enrolled.</p>
 <p><strong>Then widen the funnel:</strong></p>
 <ol>
 <li><strong>Push the giveaways and quizzes onto LinkedIn</strong> to pull fresh leads into the ManyChat and Supabase pipeline. LinkedIn is the priority channel (roughly 60 to 80 percent of effort), Instagram secondary, TikTok low. The AI-level self-assessment funnel is the strongest play: let people check their AI level, then reach the ones in the target band with the "you're a level 3, be a level 15 in 90 days at 2 hours a week" message.</li>
@@ -982,7 +984,7 @@ footer{position:relative;z-index:1;text-align:center;color:rgba(157,143,224,.6);
 <li><strong>Every payment auto-onboards.</strong> Once someone pays through the branded route, the metadata routes them into the cohort and triggers onboarding. Your job is to keep the top of the funnel full and the warm list moving, all the way to the sale.</li>
 </ol>
 <p>The scoreboard is simple: signups into Cohort 4 before it starts on August 10. The warm 8 come first, LinkedIn giveaways feed the rest, and every link you send is a branded <code>?deal=&lt;slug&gt;</code> checkout.</p></section><section id="playbook" class="chapter accent-rose" data-sec="playbook"><div class="accent-bar"></div><h1>How to Market the Joe Way</h1>
-<p>Your job is to increase sales. The immediate commercial priority is filling Cohort 4 of Level 1. Work the warm pool in the CRM: the 18 people in <code>strong_interest</code> plus the four in <code>negotiating_scholarship</code>. Start with Danielle Martinak, a confirmed hot lead. Joe's reference to about eight people at about \$1,800, roughly \$10,000 in potential revenue, is shorthand for the highest-intent slice, not a separate roster. Cohort 4 is accepting, not a formal waitlist. Inbound is growing. Start with the work most likely to turn that existing demand into sign-ups.</p>
+<p>Your job is to increase sales. The immediate commercial priority is filling Cohort 4 of Level 1. Work the warm pool in the CRM: the 18 people in <code>strong_interest</code> plus the four in <code>negotiating_scholarship</code>. Start with Danielle Martinak, a confirmed hot lead. Joe's reference to about eight people at about $1,800, roughly $10,000 in potential revenue, is shorthand for the highest-intent slice, not a separate roster. Cohort 4 is accepting, not a formal waitlist. Inbound is growing. Start with the work most likely to turn that existing demand into sign-ups.</p>
 <h2>The operating standard</h2>
 <p>Move fast and produce volume. Joe values a much higher pace, even when it includes occasional first-time mistakes. A mistake is acceptable once. When it happens, build a process that prevents it happening again. If that process fails, upgrade the process.</p>
 <p>Before you build or launch anything, answer two questions:</p>
@@ -1010,7 +1012,7 @@ footer{position:relative;z-index:1;text-align:center;color:rgba(157,143,224,.6);
 <p>Set the ICP, outcome, and guarantee in the campaign brief before launch, using the approved positioning statement and the audience segment you are working. Then run the offer free with friendly people first, learn from the response, and tighten the offer before scaling it. Start grassroots before building funnels.</p>
 <p>The Level 1 ICP is conscious founders, coaches, artists, and creatives (purpose-driven, often non-technical, do not gate on revenue). Do not screen people out by revenue.</p>
 <h2>Cohort 4 tracks and sensitive pricing</h2>
-<p>The Scholarship Track is \$150 per month, reserved for people with genuine financial need. Every scholarship goes through Joe's approval and personal vetting, so it is never something you promise or grant on your own. Send candidates to the dedicated scholarship page at https://mastermindshq.business/scholarships (the magic link that auto-unlocks it is https://mastermindshq.business/scholarships?key=ripple-impact ).</p>
+<p>The Scholarship Track is $150 per month, reserved for people with genuine financial need. Every scholarship goes through Joe's approval and personal vetting, so it is never something you promise or grant on your own. Send candidates to the dedicated scholarship page at https://mastermindshq.business/scholarships (the magic link that auto-unlocks it is https://mastermindshq.business/scholarships?key=ripple-impact ).</p>
 <p>The Friend rate is strictly confidential and authorized only by Joe directly. Never quote it, publish it, or extend it yourself.</p>
 <h2>Choose one bullseye channel</h2>
 <p>Use the bullseye, or traction-channels, method: choose the one channel most likely to move the needle, work it hard, and exhaust it before moving significant effort to the next channel. Cross-posting content that already exists is worthwhile because it costs little, but concentrated effort wins.</p>
