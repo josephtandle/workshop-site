@@ -394,6 +394,20 @@
       text-wrap: pretty;
     }
 
+    /* Descender guard: background-clip:text only paints inside the element's padding
+       box. At tight display line-heights, Cormorant's italic descenders (g, p, y, j, q)
+       hang below that box and read as clipped. Extending padding down (and slightly up,
+       for the italic's leaning ascenders) while cancelling it with a negative margin keeps
+       layout identical but gives the gradient somewhere to paint. Root cause + fix from
+       web-designer/LEARNING.md 2026-07-22. */
+    .title,
+    .headline {
+      padding-top: 0.12em;
+      margin-top: -0.12em;
+      padding-bottom: 0.32em;
+      margin-bottom: -0.32em;
+    }
+
     .subhead {
       color: var(--muted);
       font-size: clamp(18px, 2vw, 27px);
@@ -1148,6 +1162,338 @@
       transform: translateY(-50%);
     }
 
+    .as-seen-in {
+      margin-top: 26px;
+      padding: 20px 24px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(252,244,235,0.97), rgba(240,237,249,0.92));
+      border: 1px solid rgba(255,255,255,0.5);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      display: grid;
+      gap: 12px;
+      max-width: 560px;
+      width: fit-content;
+    }
+
+    .as-seen-in-label {
+      font-size: 11px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: #6a5a9c;
+    }
+
+    .as-seen-in img {
+      display: block;
+      width: 100%;
+      max-width: 440px;
+      height: auto;
+    }
+
+    .social-chip {
+      margin-top: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      width: fit-content;
+    }
+
+    .social-chip span {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(252,244,235,0.6);
+      font-weight: 700;
+    }
+
+    .social-chip img {
+      height: 24px;
+      width: auto;
+      display: block;
+    }
+
+    .credentials-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 24px;
+      max-width: 46ch;
+      padding: 0;
+    }
+
+    .credentials-list li {
+      list-style: none;
+      padding-left: 22px;
+      position: relative;
+      color: rgba(252,244,235,0.86);
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .credentials-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.6em;
+      width: 10px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--pink), var(--purple-soft));
+    }
+
+    .hotseat-list {
+      display: grid;
+      gap: 16px;
+      margin-top: 28px;
+      max-width: 660px;
+      padding: 0;
+    }
+
+    .hotseat-list li {
+      list-style: none;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 18px;
+      align-items: start;
+      padding: 22px 24px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: linear-gradient(135deg, rgba(124,105,199,0.16), rgba(255,255,255,0.03));
+    }
+
+    .hotseat-list strong {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-style: italic;
+      font-size: 40px;
+      color: var(--purple-soft);
+      line-height: 1;
+      padding-bottom: 0.25em;
+      margin-bottom: -0.25em;
+    }
+
+    .hotseat-list span {
+      font-size: 21px;
+      line-height: 1.4;
+      color: var(--text);
+      padding-top: 4px;
+    }
+
+    .channel-tier {
+      margin-top: 22px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .channel-tier-label {
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: var(--purple-soft);
+    }
+
+    .channel-tier-label.featured { color: var(--pink); }
+
+    .channel-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .channel-chip {
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      line-height: 1.3;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.04);
+      color: rgba(252,244,235,0.78);
+    }
+
+    .channel-chip.featured {
+      background: linear-gradient(135deg, rgba(245,195,198,0.3), rgba(124,105,199,0.3));
+      border-color: rgba(245,195,198,0.42);
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .mhq-logo-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+
+    .mhq-logo-row img {
+      height: 32px;
+      width: auto;
+    }
+
+    .testimonial-grid {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      max-width: 940px;
+    }
+
+    .testimonial-card {
+      padding: 20px 22px 22px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.02));
+      display: grid;
+      gap: 12px;
+    }
+
+    .testimonial-card p {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-style: italic;
+      font-size: 19px;
+      line-height: 1.4;
+      color: rgba(252,244,235,0.94);
+      padding-bottom: 0.2em;
+      margin-bottom: -0.2em;
+    }
+
+    .testimonial-card cite {
+      font-style: normal;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--purple-soft);
+      font-weight: 700;
+    }
+
+    .curriculum-grid {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      max-width: 980px;
+    }
+
+    .curriculum-item {
+      padding: 18px 20px 20px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .curriculum-item strong {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 26px;
+      color: var(--purple-soft);
+      line-height: 1.1;
+    }
+
+    .curriculum-item .curriculum-title {
+      display: block;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .curriculum-item .curriculum-sub {
+      display: block;
+      font-size: 13px;
+      line-height: 1.45;
+      color: rgba(252,244,235,0.62);
+    }
+
+    .level-ladder {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 22px;
+      align-items: center;
+      max-width: 940px;
+    }
+
+    .level-stop {
+      padding: 22px 24px 24px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .level-stop.start {
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    }
+
+    .level-stop.end {
+      background: linear-gradient(135deg, rgba(245,195,198,0.26), rgba(124,105,199,0.3));
+      border-color: rgba(245,195,198,0.4);
+    }
+
+    .level-stop-label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: var(--purple-soft);
+      margin-bottom: 10px;
+    }
+
+    .level-stop-title {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-style: italic;
+      font-size: 30px;
+      line-height: 1.1;
+      color: var(--text);
+      margin-bottom: 8px;
+      padding-bottom: 0.22em;
+      margin-bottom: -0.1em;
+    }
+
+    .level-stop-copy {
+      font-size: 14px;
+      line-height: 1.5;
+      color: rgba(252,244,235,0.7);
+    }
+
+    .level-arrow {
+      width: 64px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--purple), var(--pink));
+      position: relative;
+    }
+
+    .level-arrow::after {
+      content: "";
+      position: absolute;
+      right: -2px;
+      top: 50%;
+      width: 20px;
+      height: 20px;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-left: 14px solid var(--pink);
+      transform: translateY(-50%);
+    }
+
+    .program-meta {
+      margin-top: 26px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .program-chip {
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      font-size: 13px;
+      color: rgba(252,244,235,0.82);
+    }
+
     .mobile-nav {
       display: none;
       position: fixed;
@@ -1177,7 +1523,7 @@
     }
 
     #slide-1::before,
-    #slide-11::before {
+    #slide-13::before {
       background:
         linear-gradient(90deg, rgba(8,7,12,0.88) 0%, rgba(8,7,12,0.74) 46%, rgba(8,7,12,0.24) 100%),
         linear-gradient(180deg, rgba(8,7,12,0.16), rgba(8,7,12,0.78)),
@@ -1186,42 +1532,42 @@
       background-position: var(--art-position, center);
     }
 
-    #slide-2 .support-grid,
-    #slide-11 .grid-five {
+    #slide-3 .support-grid,
+    #slide-13 .grid-five {
       max-width: 100%;
     }
 
-    #slide-4 .statement,
-    #slide-12 .closing-card span {
+    #slide-5 .statement,
+    #slide-14 .closing-card span {
       max-width: 18ch;
     }
 
-    #slide-4 .headline {
+    #slide-5 .headline {
       max-width: 20ch;
       font-size: clamp(42px, 5vw, 74px);
     }
 
-    #slide-12 .headline {
+    #slide-14 .headline {
       max-width: 20ch;
       font-size: clamp(42px, 5vw, 74px);
     }
 
-    #slide-6 .callout,
     #slide-8 .callout,
-    #slide-9 .callout,
-    #slide-10 .focus-card {
+    #slide-10 .callout,
+    #slide-11 .callout,
+    #slide-12 .focus-card {
       max-width: 30ch;
     }
 
-    #slide-11 .slide-inner {
+    #slide-13 .slide-inner {
       width: min(100%, 1320px);
     }
 
-    #slide-11 .headline {
+    #slide-13 .headline {
       max-width: 16ch;
     }
 
-    #slide-11 .grid-five .cell {
+    #slide-13 .grid-five .cell {
       backdrop-filter: blur(14px);
       background: linear-gradient(180deg, rgba(12,9,17,0.74), rgba(12,9,17,0.52));
     }
@@ -1249,8 +1595,21 @@
       }
 
       .agenda-strip,
-      .support-grid {
+      .support-grid,
+      .testimonial-grid,
+      .curriculum-grid {
         grid-template-columns: 1fr;
+      }
+
+      .level-ladder {
+        grid-template-columns: 1fr;
+      }
+
+      .level-arrow {
+        width: 3px;
+        height: 44px;
+        margin: 0 auto;
+        transform: rotate(90deg);
       }
 
       .slide-counter {
@@ -1284,6 +1643,10 @@
         font-size: clamp(24px, 7.8vw, 38px);
       }
 
+      .as-seen-in {
+        max-width: 100%;
+      }
+
       .mobile-nav {
         display: flex;
       }
@@ -1310,17 +1673,23 @@
 
         <nav class="slide-nav" aria-label="Slide navigation">
           <a href="#slide-1"><strong>01</strong> Title</a>
-          <a href="#slide-2"><strong>02</strong> The Arc</a>
-          <a href="#slide-3"><strong>03</strong> Find Your Relevance</a>
-          <a href="#slide-4"><strong>04</strong> Messaging</a>
-          <a href="#slide-5"><strong>05</strong> Build the Systems</a>
-          <a href="#slide-6"><strong>06</strong> Warm Leads</a>
-          <a href="#slide-7"><strong>07</strong> Traction Channels</a>
-          <a href="#slide-8"><strong>08</strong> Giveaways</a>
-          <a href="#slide-9"><strong>09</strong> CRM</a>
-          <a href="#slide-10"><strong>10</strong> Amplify with AI</a>
-          <a href="#slide-11"><strong>11</strong> AI Across the Stack</a>
-          <a href="#slide-12"><strong>12</strong> Takeaway</a>
+          <a href="#slide-2"><strong>02</strong> Meet Your Host</a>
+          <a href="#slide-3"><strong>03</strong> The Arc</a>
+          <a href="#slide-4"><strong>04</strong> Find Your Relevance</a>
+          <a href="#slide-5"><strong>05</strong> Messaging</a>
+          <a href="#slide-6"><strong>06</strong> Hot Seat</a>
+          <a href="#slide-7"><strong>07</strong> Build the Systems</a>
+          <a href="#slide-8"><strong>08</strong> Warm Leads</a>
+          <a href="#slide-9"><strong>09</strong> Traction Channels</a>
+          <a href="#slide-10"><strong>10</strong> Giveaways</a>
+          <a href="#slide-11"><strong>11</strong> CRM</a>
+          <a href="#slide-12"><strong>12</strong> Amplify with AI</a>
+          <a href="#slide-13"><strong>13</strong> AI Across the Stack</a>
+          <a href="#slide-14"><strong>14</strong> Takeaway</a>
+          <a href="#slide-15"><strong>15</strong> Masterminds HQ</a>
+          <a href="#slide-16"><strong>16</strong> What You'll Learn, Part 1</a>
+          <a href="#slide-17"><strong>17</strong> What You'll Learn, Part 2</a>
+          <a href="#slide-18"><strong>18</strong> The 15-Week Program</a>
         </nav>
       </div>
 
@@ -1362,10 +1731,35 @@
         </div>
       </section>
 
-      <section class="slide layout-left" id="slide-2" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-02-the-arc-stepping-stones-gpt-image-2.png'); --art-position:center;">
+      <section class="slide layout-left" id="slide-2">
         <div class="slide-inner">
           <div class="content-stack">
             <div class="slide-counter">Slide 02</div>
+            <div class="kicker">Meet Your Host</div>
+            <h2 class="headline">I'm Joe Che.</h2>
+            <p class="subhead">18+ years building and running training companies. The last few years building an AI-run business that runs itself, and still sounds like me.</p>
+            <ul class="credentials-list" aria-label="Credentials">
+              <li>Trained 90,000+ people, including CIA analysts, Fortune 5 executives, Microsoft, and Tyra Banks</li>
+              <li>18+ years building and running training companies in New York City</li>
+              <li>26 ventures built, several still running today</li>
+              <li>Founder, Masterminds HQ</li>
+            </ul>
+            <div class="as-seen-in">
+              <span class="as-seen-in-label">As Seen In</span>
+              <img src="/deck-assets/2x-with-ai-playbook/as-seen-in-press-logos.gif" alt="As seen in The New York Times, Univision, Business Insider, CBS, and NPR" loading="lazy">
+            </div>
+            <div class="social-chip">
+              <span>Follow the build</span>
+              <img src="/deck-assets/2x-with-ai-playbook/joe-instagram-handle.gif" alt="@joe.che.official on Instagram" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide layout-left" id="slide-3" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-02-the-arc-stepping-stones-gpt-image-2.png'); --art-position:center;">
+        <div class="slide-inner">
+          <div class="content-stack">
+            <div class="slide-counter">Slide 03</div>
             <div class="kicker">The Arc</div>
             <h2 class="headline">Find your relevance. Build the systems. Amplify with AI.</h2>
             <p class="subhead">If the order is wrong, AI only makes confusion faster.</p>
@@ -1387,10 +1781,10 @@
         </div>
       </section>
 
-      <section class="slide section-break layout-left" id="slide-3" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-03-find-your-relevance-spotlight-gpt-image-2.png'); --art-position:center right;">
+      <section class="slide section-break layout-left" id="slide-4" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-03-find-your-relevance-spotlight-gpt-image-2.png'); --art-position:center right;">
         <div class="slide-inner">
           <div class="content-stack">
-            <div class="slide-counter">Slide 03</div>
+            <div class="slide-counter">Slide 04</div>
             <div class="kicker">Part 1</div>
             <h2 class="headline">Find Your Relevance</h2>
             <p class="subhead">Before tactics, get clear on who you serve and what only you can say.</p>
@@ -1403,10 +1797,10 @@
         </div>
       </section>
 
-      <section class="slide layout-left" id="slide-4" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-04-messaging-key-lock-recognition-gpt-image-2.png'); --art-position:center;">
+      <section class="slide layout-left" id="slide-5" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-04-messaging-key-lock-recognition-gpt-image-2.png'); --art-position:center;">
         <div class="slide-inner">
           <div class="content-stack">
-            <div class="slide-counter">Slide 04</div>
+            <div class="slide-counter">Slide 05</div>
             <div class="kicker">Messaging</div>
             <h2 class="headline">Who you are. What you say. Why it lands.</h2>
             <div class="statement">
@@ -1421,10 +1815,32 @@
         </div>
       </section>
 
-      <section class="slide section-break layout-left" id="slide-5" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-05-build-the-systems-gpt-image-2.png'); --art-position:center;">
+      <section class="slide layout-left" id="slide-6">
         <div class="slide-inner">
           <div class="content-stack">
-            <div class="slide-counter">Slide 05</div>
+            <div class="slide-counter">Slide 06</div>
+            <div class="kicker">Live Exercise</div>
+            <h2 class="headline">Mastermind Hot Seat</h2>
+            <p class="subhead">Before we go further, let's put it into words, out loud, in the room.</p>
+            <ul class="hotseat-list" aria-label="Hot seat prompts">
+              <li>
+                <strong>01</strong>
+                <span>What one unique problem are you solving?</span>
+              </li>
+              <li>
+                <strong>02</strong>
+                <span>Who are you solving that for?</span>
+              </li>
+            </ul>
+            <div class="callout">No generic answers. If it sounds like it could apply to anyone, it isn't specific enough yet.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide section-break layout-left" id="slide-7" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-05-build-the-systems-gpt-image-2.png'); --art-position:center;">
+        <div class="slide-inner">
+          <div class="content-stack">
+            <div class="slide-counter">Slide 07</div>
             <div class="kicker">Part 2</div>
             <h2 class="headline">Build the Systems</h2>
             <p class="subhead">The four systems that compound: leads, channels, giveaways, CRM.</p>
@@ -1438,10 +1854,10 @@
         </div>
       </section>
 
-      <section class="slide layout-left" id="slide-6" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-06-warm-leads-gpt-image-2.png'); --art-position:center;">
+      <section class="slide layout-left" id="slide-8" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-06-warm-leads-gpt-image-2.png'); --art-position:center;">
         <div class="slide-inner">
           <div class="content-stack">
-            <div class="slide-counter">Slide 06</div>
+            <div class="slide-counter">Slide 08</div>
             <div class="kicker">Warm Leads</div>
             <h2 class="headline">The cheapest growth lever. Almost always under-worked.</h2>
             <div class="callout">Start with the people already paying attention.</div>
@@ -1450,25 +1866,55 @@
         </div>
       </section>
 
-      <section class="slide layout-left" id="slide-7" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-07-traction-channels-gpt-image-2.png'); --art-position:center;">
+      <section class="slide layout-left" id="slide-9" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-07-traction-channels-gpt-image-2.png'); --art-position:center;">
         <div class="slide-inner">
           <div class="content-stack">
-            <div class="slide-counter">Slide 07</div>
+            <div class="slide-counter">Slide 09</div>
             <div class="kicker">Traction Channels</div>
-            <h2 class="headline">Find more of the right people.</h2>
-            <p class="subhead">Pick two channels, work them until they work.</p>
-            <div class="focus-card">
-              <strong>Rule</strong>
-              <span>Depth beats dabbling. Channel discipline is usually the missing advantage.</span>
+            <h2 class="headline">Nineteen ways to find more of the right people.</h2>
+            <p class="subhead">Pick two, work them until they work. Here is the whole menu, most underrated first.</p>
+            <div class="channel-tier">
+              <div class="channel-tier-label featured">Start here, most underrated</div>
+              <div class="channel-chips">
+                <span class="channel-chip featured">Offline Events</span>
+                <span class="channel-chip featured">Speaking Engagements</span>
+                <span class="channel-chip featured">Viral Marketing (Referrals)</span>
+              </div>
+            </div>
+            <div class="channel-tier">
+              <div class="channel-tier-label">Worth testing next</div>
+              <div class="channel-chips">
+                <span class="channel-chip">Engineering as Marketing</span>
+                <span class="channel-chip">Business Development</span>
+                <span class="channel-chip">Email Marketing</span>
+                <span class="channel-chip">Targeting Blogs</span>
+                <span class="channel-chip">Affiliate Programs</span>
+                <span class="channel-chip">Community Building</span>
+                <span class="channel-chip">Public Relations</span>
+                <span class="channel-chip">Social &amp; Display Ads</span>
+              </div>
+            </div>
+            <div class="channel-tier">
+              <div class="channel-tier-label">The rest</div>
+              <div class="channel-chips">
+                <span class="channel-chip">Content Marketing</span>
+                <span class="channel-chip">Sales</span>
+                <span class="channel-chip">Search Engine Marketing</span>
+                <span class="channel-chip">SEO</span>
+                <span class="channel-chip">Offline Ads</span>
+                <span class="channel-chip">Unconventional PR</span>
+                <span class="channel-chip">Existing Platforms</span>
+                <span class="channel-chip">Trade Shows</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="slide layout-left" id="slide-8" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-08-giveaways-gpt-image-2.png'); --art-position:center;">
+      <section class="slide layout-left" id="slide-10" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-08-giveaways-gpt-image-2.png'); --art-position:center;">
         <div class="slide-inner">
           <div class="content-stack">
-            <div class="slide-counter">Slide 08</div>
+            <div class="slide-counter">Slide 10</div>
             <div class="kicker">Giveaways</div>
             <h2 class="headline">Top-of-funnel and trust builder in one.</h2>
             <div class="callout">Give something real before you ask for anything.</div>
@@ -1477,13 +1923,13 @@
         </div>
       </section>
 
-      <section class="slide layout-left" id="slide-9" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-09-crm-control-room-gpt-image-2.png'); --art-position:center;">
+      <section class="slide layout-left" id="slide-11" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-09-crm-control-room-gpt-image-2.png'); --art-position:center;">
         <div class="slide-inner">
           <div class="content-stack">
-            <div class="slide-counter">Slide 09</div>
+            <div class="slide-counter">Slide 11</div>
             <div class="kicker">CRM</div>
             <h2 class="headline">The system that holds it all together.</h2>
-            <div class="callout">If it’s not in the CRM, it didn’t happen.</div>
+            <div class="callout">If it's not in the CRM, it didn't happen.</div>
             <div class="focus-card">
               <strong>Why it matters</strong>
               <span>Without memory, every follow-up depends on mood, luck, and whoever happens to remember.</span>
@@ -1492,10 +1938,10 @@
         </div>
       </section>
 
-      <section class="slide section-break layout-left" id="slide-10" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-10-amplify-with-ai-signal-wave-gpt-image-2.png'); --art-position:center;">
+      <section class="slide section-break layout-left" id="slide-12" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-10-amplify-with-ai-signal-wave-gpt-image-2.png'); --art-position:center;">
         <div class="slide-inner">
           <div class="content-stack">
-            <div class="slide-counter">Slide 10</div>
+            <div class="slide-counter">Slide 12</div>
             <div class="kicker">Part 3</div>
             <h2 class="headline">Amplify with AI</h2>
             <p class="subhead">Once the systems exist, AI multiplies them.</p>
@@ -1507,9 +1953,9 @@
         </div>
       </section>
 
-      <section class="slide slide-wide-art layout-center" id="slide-11" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-11-ai-across-the-stack-modular-system-gpt-image-2.png'); --art-position:center;">
+      <section class="slide slide-wide-art layout-center" id="slide-13" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-11-ai-across-the-stack-modular-system-gpt-image-2.png'); --art-position:center;">
         <div class="slide-inner">
-          <div class="slide-counter">Slide 11</div>
+          <div class="slide-counter">Slide 13</div>
           <div class="kicker">AI Across the Stack</div>
           <h2 class="headline">Once the machine exists, AI starts compounding across every layer.</h2>
           <p class="stack-intro">This is where the room should see leverage clearly: the same core system gets faster, sharper, and easier to sustain.</p>
@@ -1532,24 +1978,198 @@
             </div>
             <div class="cell">
               <div class="cell-title">CRM</div>
-              <div class="cell-copy">Auto-enrich, summarize, surface what’s hot.</div>
+              <div class="cell-copy">Auto-enrich, summarize, surface what's hot.</div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="slide layout-left" id="slide-12" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-12-bullseye-focus-arrow-gpt-image-2.png'); --art-position:center;">
+      <section class="slide layout-left" id="slide-14" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-12-bullseye-focus-arrow-gpt-image-2.png'); --art-position:center;">
         <div class="slide-inner">
           <div class="content-stack">
-            <div class="slide-counter">Slide 12</div>
+            <div class="slide-counter">Slide 14</div>
             <div class="kicker">Takeaway</div>
-            <h2 class="headline">You don’t 2X by adding more.</h2>
+            <h2 class="headline">You don't 2X by adding more.</h2>
             <p class="subhead">You 2X by getting relevant, building the systems, and letting AI do the heavy lifting.</p>
             <div class="closing-card">
               <strong>Leave them with this</strong>
               <span>Better message. Better machine. Better leverage.</span>
             </div>
             <p class="note">Masterminds HQ</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide layout-left" id="slide-15">
+        <div class="slide-inner">
+          <div class="content-stack">
+            <div class="slide-counter">Slide 15</div>
+            <div class="mhq-logo-row">
+              <img src="/brand/masterminds-logo-current-white.svg" alt="Masterminds HQ" height="32">
+            </div>
+            <div class="kicker">Masterminds HQ</div>
+            <h2 class="headline">This is the room where it gets built.</h2>
+            <p class="subhead">Weekly live builds, not another course you save for later and never open.</p>
+            <div class="testimonial-grid" aria-label="Member testimonials">
+              <div class="testimonial-card">
+                <p>"The Mastermind gave me a whole company of AI support, and it freed up my brain to create."</p>
+                <cite>Alla Demutska</cite>
+              </div>
+              <div class="testimonial-card">
+                <p>"I can build a business with five employees through agents and Claude, saving me so much money and making me feel so sovereign."</p>
+                <cite>Jenny Jessen</cite>
+              </div>
+              <div class="testimonial-card">
+                <p>"After just the first two sessions of the mastermind, I was building my own website from scratch."</p>
+                <cite>Ronnie Ansara</cite>
+              </div>
+              <div class="testimonial-card">
+                <p>"I said change it and it changed my whole website in just one second. Everything worked. It was so easy."</p>
+                <cite>Pina Maria Muckle</cite>
+              </div>
+            </div>
+            <div class="closing-card">
+              <strong>The felt outcome</strong>
+              <span>I run a business that runs itself, and it still sounds like me.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide layout-left" id="slide-16">
+        <div class="slide-inner">
+          <div class="content-stack">
+            <div class="slide-counter">Slide 16</div>
+            <div class="kicker">What You'll Learn</div>
+            <h2 class="headline">The first six sessions.</h2>
+            <div class="curriculum-grid" aria-label="Sessions one through six">
+              <div class="curriculum-item">
+                <strong>01</strong>
+                <div>
+                  <span class="curriculum-title">Claude Code Setup + Your First Website</span>
+                  <span class="curriculum-sub">Build a real website together and go live on the internet. No technical background needed.</span>
+                </div>
+              </div>
+              <div class="curriculum-item">
+                <strong>02</strong>
+                <div>
+                  <span class="curriculum-title">Lead Magnets + Your Custom Domain</span>
+                  <span class="curriculum-sub">Your site goes live on a custom domain with automated lead capture and welcome emails.</span>
+                </div>
+              </div>
+              <div class="curriculum-item">
+                <strong>03</strong>
+                <div>
+                  <span class="curriculum-title">Train Your AI, Hook Your Audience</span>
+                  <span class="curriculum-sub">Feed your AI your real business context, then install HookLab and the Daily Hook Feed.</span>
+                </div>
+              </div>
+              <div class="curriculum-item">
+                <strong>04</strong>
+                <div>
+                  <span class="curriculum-title">Alignment Mastermind</span>
+                  <span class="curriculum-sub">The group masterminds together on real problems, live, with accountability to the room.</span>
+                </div>
+              </div>
+              <div class="curriculum-item">
+                <strong>05</strong>
+                <div>
+                  <span class="curriculum-title">Your AI Brain in Your Pocket</span>
+                  <span class="curriculum-sub">Build a voice profile from your own work with SpeakHuman, wired into your phone.</span>
+                </div>
+              </div>
+              <div class="curriculum-item">
+                <strong>06</strong>
+                <div>
+                  <span class="curriculum-title">Your First Mission Control</span>
+                  <span class="curriculum-sub">Turn one recording into thirty pieces of content, and build a task board that executes itself.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide layout-left" id="slide-17">
+        <div class="slide-inner">
+          <div class="content-stack">
+            <div class="slide-counter">Slide 17</div>
+            <div class="kicker">What You'll Learn</div>
+            <h2 class="headline">Sessions seven through twelve.</h2>
+            <div class="curriculum-grid" aria-label="Sessions seven through twelve">
+              <div class="curriculum-item">
+                <strong>07</strong>
+                <div>
+                  <span class="curriculum-title">Safety + Ultimate Web Data Collector</span>
+                  <span class="curriculum-sub">Give your AI a practical internet toolkit, and learn to use it safely.</span>
+                </div>
+              </div>
+              <div class="curriculum-item">
+                <strong>08</strong>
+                <div>
+                  <span class="curriculum-title">Joe's Magic CRM</span>
+                  <span class="curriculum-sub">Build your own version of GoHighLevel: pipeline, follow-ups, and lead capture, all automatic.</span>
+                </div>
+              </div>
+              <div class="curriculum-item">
+                <strong>09</strong>
+                <div>
+                  <span class="curriculum-title">AI Branding Agent + Offer Clarity</span>
+                  <span class="curriculum-sub">Install the Branding Agent, tighten what you sell, and build a reusable brand brain.</span>
+                </div>
+              </div>
+              <div class="curriculum-item">
+                <strong>10</strong>
+                <div>
+                  <span class="curriculum-title">Traction Channels for Automated Sales</span>
+                  <span class="curriculum-sub">Use the traction-channel framework to stop guessing and choose the channels that move the needle.</span>
+                </div>
+              </div>
+              <div class="curriculum-item">
+                <strong>11</strong>
+                <div>
+                  <span class="curriculum-title">Your Instagram Agent + Lead Capture</span>
+                  <span class="curriculum-sub">Build an agent that works your DMs and comments into a real cold-to-warm pipeline.</span>
+                </div>
+              </div>
+              <div class="curriculum-item">
+                <strong>12</strong>
+                <div>
+                  <span class="curriculum-title">Graduation + Growth Integration</span>
+                  <span class="curriculum-sub">Review what you built, map your next move, and graduate into the Alumni Circle.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide layout-left" id="slide-18">
+        <div class="slide-inner">
+          <div class="content-stack">
+            <div class="slide-counter">Slide 18</div>
+            <div class="kicker">If You Want to Learn This</div>
+            <h2 class="headline">The 15-Week Program.</h2>
+            <p class="subhead">Twelve weeks live, plus three bonus weeks. Two live sessions a week, so your timezone is never the blocker.</p>
+            <div class="level-ladder" aria-label="AI capability progression">
+              <div class="level-stop start">
+                <div class="level-stop-label">Where you start</div>
+                <div class="level-stop-title">Level 1</div>
+                <p class="level-stop-copy">AI Question Asker. One question, one answer, move on. This is where almost everyone begins.</p>
+              </div>
+              <div class="level-arrow" aria-hidden="true"></div>
+              <div class="level-stop end">
+                <div class="level-stop-label">Where you finish</div>
+                <div class="level-stop-title">Levels 10&ndash;17</div>
+                <p class="level-stop-copy">From owning a personalized AI assistant to fully operating multiple agentic AIs, an integrated AI operating system running your business.</p>
+              </div>
+            </div>
+            <div class="program-meta">
+              <span class="program-chip">12 weeks live + 3 bonus weeks</span>
+              <span class="program-chip">Two live sessions every week</span>
+              <span class="program-chip">Business Automation Mastermind</span>
+              <span class="program-chip">Masterminds HQ</span>
+            </div>
           </div>
         </div>
       </section>
