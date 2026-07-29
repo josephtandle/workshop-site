@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2X with AI Playbook</title>
-  <meta name="description" content="A Masterminds HQ workshop deck on relevance, systems, and AI leverage. Learn how to 2X your business by sharpening your message, building the right systems, and using AI where it compounds." />
+  <title>How to Increase Sales and Reduce Your Busy Time</title>
+  <meta name="description" content="A Masterminds HQ workshop deck: solidify your message, cut the tasks that eat your time, and find the traction channels that actually work." />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <meta name="theme-color" content="#151515" />
   <link rel="canonical" href="https://decks.mastermindshq.business/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Masterminds HQ" />
-  <meta property="og:title" content="2X with AI Playbook" />
-  <meta property="og:description" content="A Masterminds HQ workshop deck on relevance, systems, and AI leverage." />
+  <meta property="og:title" content="How to Increase Sales and Reduce Your Busy Time" />
+  <meta property="og:description" content="A Masterminds HQ workshop deck: solidify your message, cut the tasks that eat your time, and find the traction channels that actually work." />
   <meta property="og:url" content="https://decks.mastermindshq.business/" />
   <meta property="og:image" content="https://workshop.mastermindshq.business/hero-joe-creation-banner.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="2X with AI Playbook" />
-  <meta name="twitter:description" content="A Masterminds HQ workshop deck on relevance, systems, and AI leverage." />
+  <meta name="twitter:title" content="How to Increase Sales and Reduce Your Busy Time" />
+  <meta name="twitter:description" content="A Masterminds HQ workshop deck: solidify your message, cut the tasks that eat your time, and find the traction channels that actually work." />
   <meta name="twitter:image" content="https://workshop.mastermindshq.business/hero-joe-creation-banner.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,16 +27,16 @@
     {
       "@context": "https://schema.org",
       "@type": "PresentationDigitalDocument",
-      "name": "2X with AI Playbook",
-      "description": "A Masterminds HQ workshop deck on relevance, systems, and AI leverage.",
+      "name": "How to Increase Sales and Reduce Your Busy Time",
+      "description": "A Masterminds HQ workshop deck: solidify your message, cut the tasks that eat your time, and find the traction channels that actually work.",
       "url": "https://decks.mastermindshq.business/",
       "inLanguage": "en",
       "keywords": [
         "AI workshop",
         "business systems",
         "marketing messaging",
-        "lead generation",
-        "CRM",
+        "automation",
+        "traction channels",
         "Masterminds HQ"
       ],
       "author": {
@@ -55,8 +55,6 @@
     :root {
       --bg: #151515;
       --bg-soft: #130f18;
-      --panel: rgba(16, 12, 22, 0.56);
-      --panel-strong: rgba(23, 16, 31, 0.82);
       --text: #fcf4eb;
       --muted: rgba(252,244,235,0.7);
       --line: rgba(252,244,235,0.14);
@@ -64,10 +62,6 @@
       --purple: #7c69c7;
       --purple-soft: #b8acf0;
       --pink: #f5c3c6;
-      --shadow: 0 36px 120px rgba(0,0,0,0.42);
-      --max: 1460px;
-      --content-max: 1040px;
-      --pad: clamp(26px, 3vw, 44px);
       --radius-lg: 34px;
       --radius-md: 22px;
     }
@@ -84,6 +78,7 @@
       font-family: "Plus Jakarta Sans", system-ui, sans-serif;
       overflow-y: auto;
       overflow-x: hidden;
+      scroll-snap-type: y mandatory;
       text-rendering: optimizeLegibility;
     }
 
@@ -100,16 +95,14 @@
       opacity: 0.3;
     }
 
-    .deck-shell {
-      min-height: 100vh;
-    }
+    .deck-shell { min-height: 100vh; }
 
     .rail {
       position: fixed;
       top: 18px;
       left: 18px;
       bottom: 18px;
-      width: 260px;
+      width: 208px;
       padding: 22px 20px 20px;
       border: 1px solid var(--line-soft);
       border-radius: 30px;
@@ -124,11 +117,7 @@
       z-index: 30;
     }
 
-    .rail-header {
-      display: grid;
-      gap: 18px;
-      margin-bottom: 20px;
-    }
+    .rail-header { display: grid; gap: 16px; margin-bottom: 18px; }
 
     .brand-chip {
       width: fit-content;
@@ -140,8 +129,8 @@
       border: 1px solid rgba(245,195,198,0.16);
       background: linear-gradient(135deg, rgba(124,105,199,0.16), rgba(245,195,198,0.08));
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
-      font-size: 10px;
-      letter-spacing: 0.26em;
+      font-size: 9px;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: rgba(252,244,235,0.86);
       font-weight: 700;
@@ -149,80 +138,61 @@
 
     .brand-chip::before {
       content: "";
-      width: 9px;
-      height: 9px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: linear-gradient(180deg, var(--pink), var(--purple-soft));
       box-shadow: 0 0 18px rgba(245,195,198,0.4);
     }
 
     .rail-label {
-      font-size: 11px;
-      letter-spacing: 0.28em;
+      font-size: 10px;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
       color: var(--purple-soft);
       font-weight: 700;
-      margin-bottom: 14px;
+      margin-bottom: 10px;
     }
 
     .rail-title {
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: clamp(34px, 2.8vw, 46px);
-      line-height: 0.9;
-      letter-spacing: -0.03em;
-      margin: 0 0 14px;
+      font-size: clamp(24px, 2vw, 30px);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin: 0 0 10px;
     }
 
     .rail-copy {
       color: var(--muted);
-      font-size: 13px;
-      line-height: 1.7;
-      margin: 0 0 28px;
-      max-width: 22ch;
-    }
-
-    .deck-meta {
-      display: grid;
-      gap: 10px;
-      margin-bottom: 18px;
-    }
-
-    .meta-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      padding-top: 12px;
-      border-top: 1px solid rgba(252,244,235,0.08);
       font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: rgba(252,244,235,0.52);
+      line-height: 1.6;
+      margin: 0 0 6px;
+      max-width: 20ch;
     }
 
-    .meta-row strong {
-      color: var(--text);
-      font-size: 11px;
-      letter-spacing: 0.18em;
-    }
+    .deck-meta { display: none; }
 
     .slide-nav {
       display: grid;
-      gap: 10px;
-      overflow: auto;
+      gap: 8px;
+      flex: 1 1 auto;
+      min-height: 0;
+      max-height: calc(100vh - 300px);
+      overflow-y: auto;
+      overflow-x: hidden;
       padding-right: 4px;
     }
 
     .slide-nav a {
       color: rgba(252,244,235,0.55);
       text-decoration: none;
-      padding: 13px 14px 14px;
-      border-radius: 18px;
+      padding: 10px 12px 11px;
+      border-radius: 16px;
       background: linear-gradient(180deg, rgba(255,255,255,0.032), rgba(255,255,255,0.012));
       border: 1px solid rgba(255,255,255,0.05);
       transition: 180ms ease;
-      font-size: 13px;
-      line-height: 1.35;
+      font-size: 12px;
+      line-height: 1.3;
       position: relative;
       overflow: hidden;
     }
@@ -236,107 +206,73 @@
       outline: none;
     }
 
-    .slide-nav a::after {
-      content: "";
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 3px;
-      background: linear-gradient(180deg, var(--pink), var(--purple-soft));
-      opacity: 0;
-      transition: opacity 180ms ease;
-    }
-
-    .slide-nav a:hover::after,
-    .slide-nav a:focus-visible::after {
-      opacity: 1;
-    }
-
     .slide-nav strong {
       display: inline-block;
-      width: 28px;
+      width: 24px;
       color: rgba(184,172,240,0.82);
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 16px;
+      font-size: 14px;
     }
 
     .rail-foot {
       border-top: 1px solid var(--line);
-      padding-top: 18px;
+      padding-top: 14px;
       display: grid;
       gap: 8px;
       color: rgba(252,244,235,0.46);
-      font-size: 12px;
+      font-size: 11px;
     }
 
-    .rail-foot .keys {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
+    .rail-foot .keys { display: flex; gap: 8px; flex-wrap: wrap; }
 
     .rail-foot kbd {
       font: inherit;
-      padding: 5px 8px;
+      padding: 4px 7px;
       border-radius: 999px;
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.08);
       color: var(--text);
     }
 
-    main {
-      min-width: 0;
-      padding-left: 296px;
-    }
+    main { min-width: 0; padding-left: 0; }
 
+    /* Every slide is exactly one viewport, full stop. Content is sized to fit
+       inside it (not the other way around) — this is the fix for slides that
+       used to grow taller than the screen and run off the page. */
     .slide {
-      min-height: 100vh;
+      height: 100vh;
+      scroll-snap-align: center;
       display: grid;
-      align-items: center;
-      padding: var(--pad);
+      place-items: stretch;
+      padding: 8px 40px 8px 232px;
       position: relative;
       overflow: hidden;
     }
 
-    .slide::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(90deg, rgba(10, 8, 14, 0.9) 0%, rgba(10, 8, 14, 0.8) 38%, rgba(10, 8, 14, 0.44) 100%),
-        linear-gradient(180deg, rgba(9, 7, 12, 0.24), rgba(9, 7, 12, 0.76)),
-        var(--slide-art, linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)));
-      background-size: cover;
-      background-position: var(--art-position, center);
-      opacity: var(--art-opacity, 1);
-      z-index: 0;
+    .slide-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      padding: clamp(18px, 2vw, 38px) clamp(30px, 3vw, 58px) clamp(22px, 2.2vw, 42px);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      overflow: visible;
+      isolation: isolate;
     }
 
-    .slide::after {
+    .slide-inner::after {
       content: "";
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 78% 20%, rgba(124,105,199,0.18), transparent 22%),
-        radial-gradient(circle at 84% 74%, rgba(245,195,198,0.12), transparent 18%);
+        radial-gradient(circle at 84% 16%, rgba(124,105,199,0.16), transparent 30%),
+        radial-gradient(circle at 88% 86%, rgba(245,195,198,0.1), transparent 26%);
       pointer-events: none;
       z-index: 0;
     }
 
-    .slide-inner {
-      width: min(100%, var(--max));
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-      padding: clamp(28px, 4vw, 56px);
-      display: grid;
-      gap: 26px;
-      background: transparent;
-      border: 0;
-      border-radius: 0;
-      box-shadow: none;
-      backdrop-filter: none;
-      isolation: isolate;
-    }
+    .slide-inner > * { position: relative; z-index: 1; }
 
     .kicker {
       display: inline-flex;
@@ -344,34 +280,44 @@
       gap: 10px;
       color: var(--purple-soft);
       text-transform: uppercase;
-      letter-spacing: 0.28em;
+      letter-spacing: 0.24em;
       font-weight: 700;
-      font-size: 11px;
-      margin-bottom: 16px;
-      padding: 9px 14px;
+      font-size: 10px;
+      margin-bottom: 12px;
+      padding: 8px 13px;
       border-radius: 999px;
       background: rgba(13, 10, 18, 0.44);
       border: 1px solid rgba(255,255,255,0.09);
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+      width: fit-content;
     }
 
     .kicker::before {
       content: "";
-      width: 36px;
+      width: 30px;
       height: 1px;
       background: linear-gradient(90deg, var(--purple), transparent);
     }
 
     h1, h2, h3, p, ul { margin: 0; }
 
-    .title {
+    /* Descender guard: background-clip:text only paints inside the element's
+       padding box, so tight display line-heights clip Cormorant's italic
+       descenders (g, p, y, j, q). A looser line-height plus bottom padding
+       gives the gradient somewhere to paint. Root cause + fix documented in
+       web-designer/LEARNING.md 2026-07-22; sizing/line-height brought in line
+       with the Level One deck, the working reference for full-page slides. */
+    .title,
+    .headline {
       font-family: "Cormorant Garamond", Georgia, serif;
       font-style: italic;
-      font-size: clamp(58px, 8vw, 112px);
-      line-height: 0.9;
-      letter-spacing: -0.03em;
       font-weight: 700;
-      max-width: 18ch;
+      font-size: clamp(26px, 2.4vw, 40px);
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      width: 100%;
+      padding-bottom: 0.18em;
+      display: block;
       color: transparent;
       background: linear-gradient(90deg, #fcf4eb 0%, #d8cbfb 48%, #f5c3c6 100%);
       -webkit-background-clip: text;
@@ -379,125 +325,106 @@
       text-wrap: balance;
     }
 
-    .headline {
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-style: italic;
-      font-size: clamp(44px, 5.5vw, 82px);
-      line-height: 0.92;
-      letter-spacing: -0.024em;
-      font-weight: 700;
-      max-width: 18ch;
-      color: transparent;
-      background: linear-gradient(90deg, #fcf4eb 0%, #d8cbfb 46%, #f5c3c6 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      text-wrap: pretty;
-    }
-
-    /* Descender guard: background-clip:text only paints inside the element's padding
-       box. At tight display line-heights, Cormorant's italic descenders (g, p, y, j, q)
-       hang below that box and read as clipped. Extending padding down (and slightly up,
-       for the italic's leaning ascenders) while cancelling it with a negative margin keeps
-       layout identical but gives the gradient somewhere to paint. Root cause + fix from
-       web-designer/LEARNING.md 2026-07-22. */
-    .title,
-    .headline {
-      padding-top: 0.12em;
-      margin-top: -0.12em;
-      padding-bottom: 0.32em;
-      margin-bottom: -0.32em;
-    }
+    .headline { text-wrap: pretty; }
 
     .subhead {
-      color: var(--muted);
-      font-size: clamp(18px, 2vw, 27px);
-      line-height: 1.55;
-      max-width: 34ch;
-      margin-top: 18px;
+      color: rgba(252,244,235,0.64);
+      font-size: clamp(15px, 1.35vw, 20px);
+      line-height: 1.5;
+      width: 100%;
+      margin-top: 4px;
       text-wrap: pretty;
     }
 
     .statement {
       display: grid;
-      gap: 16px;
-      margin-top: 26px;
-      max-width: 24ch;
+      gap: 12px;
+      margin-top: 18px;
+      max-width: 26ch;
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: clamp(28px, 3.2vw, 46px);
-      line-height: 1;
+      font-size: clamp(22px, 2.4vw, 34px);
+      line-height: 1.15;
       font-weight: 600;
     }
 
     .statement .accent { color: var(--purple-soft); }
 
-    .title-stack {
-      display: grid;
-      gap: 22px;
-      width: min(100%, 1180px);
-      padding: clamp(28px, 3.4vw, 42px);
-      background:
-        linear-gradient(135deg, rgba(12, 9, 17, 0.78), rgba(12, 9, 17, 0.34)),
-        radial-gradient(circle at top right, rgba(124,105,199,0.18), transparent 30%);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
-    }
-
+    .title-stack,
     .content-stack {
-      display: grid;
-      gap: 22px;
-      align-content: start;
-      width: min(100%, var(--content-max));
-      padding: clamp(26px, 3vw, 38px);
-      background:
-        linear-gradient(135deg, rgba(12, 9, 17, 0.82), rgba(12, 9, 17, 0.48)),
-        radial-gradient(circle at top right, rgba(124,105,199,0.14), transparent 26%);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(16px);
-    }
-
-    .content-stack::after,
-    .title-stack::after {
-      content: "";
-      position: absolute;
-      inset: 16px;
-      border: 1px solid rgba(252,244,235,0.05);
-      border-radius: calc(var(--radius-lg) - 12px);
-      pointer-events: none;
-    }
-
-    .content-stack,
-    .title-stack {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-content: flex-start;
+      justify-content: flex-start;
+      padding: 0;
+      background: none;
+      border: 0;
+      box-shadow: none;
       position: relative;
     }
 
     .layout-right .content-stack,
-    .layout-right .title-stack {
-      margin-left: auto;
-    }
+    .layout-right .title-stack { margin-left: auto; }
 
     .layout-center .content-stack,
-    .layout-center .title-stack {
-      margin-left: auto;
-      margin-right: auto;
+    .layout-center .title-stack { margin-left: auto; margin-right: auto; }
+
+    .title-slide .slide-inner,
+    .section-break .slide-inner { justify-content: center; }
+
+    .title-slide .title-stack,
+    .section-break .content-stack { justify-content: center; }
+
+    .title-slide .title,
+    .title-slide .headline,
+    .section-break .title,
+    .section-break .headline {
+      font-size: clamp(32px, 3.2vw, 56px);
+    }
+
+    .title-slide .kicker,
+    .section-break .kicker {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 0;
+      background: none;
+      border: 0;
+      box-shadow: none;
+      color: var(--pink);
+      font-size: 11px;
+      letter-spacing: 0.3em;
+    }
+
+    .title-slide .kicker::before,
+    .section-break .kicker::before { content: none; }
+
+    .title-slide .kicker::after,
+    .section-break .kicker::after {
+      content: "";
+      width: 52px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--pink), rgba(245,195,198,0.12));
+      box-shadow: 0 0 16px rgba(245,195,198,0.22);
     }
 
     .agenda-strip {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
+      gap: 12px;
       margin-top: 6px;
-      max-width: 880px;
+      max-width: 820px;
     }
 
     .agenda-item,
     .support-card,
     .focus-card,
     .closing-card {
-      padding: 18px 18px 20px;
+      padding: 15px 16px 17px;
       border-radius: var(--radius-md);
       border: 1px solid rgba(255,255,255,0.08);
       background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025));
@@ -509,9 +436,9 @@
     .focus-card strong,
     .closing-card strong {
       display: block;
-      margin-bottom: 8px;
-      font-size: 12px;
-      letter-spacing: 0.16em;
+      margin-bottom: 6px;
+      font-size: 11px;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--purple-soft);
     }
@@ -521,56 +448,40 @@
     .focus-card span,
     .closing-card span {
       display: block;
-      font-size: 18px;
+      font-size: 15px;
       line-height: 1.4;
       color: rgba(252,244,235,0.9);
     }
 
     .callout {
-      margin-top: 30px;
+      margin-top: 16px;
       display: inline-block;
-      padding: 18px 22px;
-      border-radius: 20px;
+      padding: 14px 18px;
+      border-radius: 18px;
       background: linear-gradient(135deg, rgba(124,105,199,0.24), rgba(245,195,198,0.12));
       border: 1px solid rgba(157,143,224,0.26);
       color: var(--text);
-      font-size: clamp(18px, 2vw, 26px);
+      font-size: clamp(15px, 1.6vw, 20px);
       line-height: 1.35;
-      max-width: 28ch;
+      max-width: 32ch;
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
     }
 
-    .motif {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      pointer-events: none;
-    }
-
-    .motif svg {
-      width: 78%;
-      height: 78%;
-      opacity: 0.92;
-    }
-
     .grid-five {
-      margin-top: 32px;
+      margin-top: 14px;
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
+      gap: 14px;
     }
 
-    .grid-five .cell:last-child {
-      grid-column: 1 / -1;
-    }
+    .grid-five .cell:last-child { grid-column: 1 / -1; }
 
     .cell {
-      padding: 22px 22px 24px;
-      border-radius: 22px;
+      padding: 16px 18px 18px;
+      border-radius: 20px;
       border: 1px solid rgba(255,255,255,0.08);
       background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.03));
-      min-height: 124px;
+      min-height: 92px;
       position: relative;
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
     }
@@ -586,41 +497,37 @@
     }
 
     .cell-title {
-      font-size: 14px;
+      font-size: 12px;
       text-transform: uppercase;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.14em;
       color: var(--purple-soft);
       font-weight: 800;
-      margin-bottom: 14px;
+      margin-bottom: 8px;
     }
 
     .cell-copy {
-      font-size: clamp(18px, 1.9vw, 24px);
+      font-size: clamp(14px, 1.5vw, 18px);
       line-height: 1.35;
-      max-width: 22ch;
-    }
-
-    .section-break .slide-inner {
-      gap: 22px;
     }
 
     .note {
-      margin-top: 18px;
+      margin-top: 10px;
       color: rgba(252,244,235,0.46);
-      font-size: 13px;
+      font-size: 12px;
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
 
     .slide-counter {
       position: absolute;
-      right: 0;
+      right: -20px;
       top: 0;
-      color: rgba(252,244,235,0.34);
-      font-weight: 700;
-      font-size: 11px;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
+      color: rgba(252,244,235,0.4);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-style: italic;
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 0.1em;
       writing-mode: vertical-rl;
       transform: rotate(180deg);
     }
@@ -629,64 +536,53 @@
     .prompt-list,
     .system-list {
       display: grid;
-      gap: 14px;
-      max-width: 720px;
+      gap: 10px;
+      max-width: 680px;
     }
 
-    .support-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      margin-top: 8px;
-    }
+    .support-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 4px; }
 
     .prompt-list,
-    .system-list {
-      list-style: none;
-      padding: 0;
-      margin-top: 6px;
-    }
+    .system-list { list-style: none; padding: 0; margin-top: 4px; }
 
     .prompt-list li,
     .system-list li {
       display: grid;
       grid-template-columns: auto 1fr;
-      gap: 12px;
+      gap: 10px;
       align-items: start;
-      padding: 14px 16px;
-      border-radius: 18px;
+      padding: 12px 14px;
+      border-radius: 16px;
       border: 1px solid rgba(255,255,255,0.08);
       background: rgba(255,255,255,0.035);
       color: rgba(252,244,235,0.9);
-      line-height: 1.45;
+      font-size: 15px;
+      line-height: 1.4;
     }
 
     .prompt-list li::before,
     .system-list li::before {
       content: "";
-      width: 10px;
-      height: 10px;
-      margin-top: 0.45em;
+      width: 9px;
+      height: 9px;
+      margin-top: 0.4em;
       border-radius: 50%;
       background: linear-gradient(180deg, var(--pink), var(--purple-soft));
-      box-shadow: 0 0 20px rgba(245,195,198,0.26);
+      box-shadow: 0 0 18px rgba(245,195,198,0.26);
     }
 
     .stack-intro {
-      margin-top: 22px;
-      max-width: 54ch;
+      margin-top: 12px;
+      max-width: 58ch;
       color: rgba(252,244,235,0.72);
-      font-size: 17px;
-      line-height: 1.6;
-    }
-
-    .title-slide .title {
-      max-width: 20ch;
-      font-size: clamp(54px, 6.9vw, 100px);
+      font-size: 15px;
+      line-height: 1.55;
     }
 
     .arrow-hero {
-      margin-top: 10px;
-      width: min(720px, 100%);
-      height: 12px;
+      margin-top: 8px;
+      width: min(640px, 100%);
+      height: 10px;
       background: linear-gradient(90deg, rgba(124,105,199,0.04), rgba(124,105,199,0.68));
       border-radius: 999px;
       position: relative;
@@ -698,504 +594,82 @@
       position: absolute;
       right: -2px;
       top: 50%;
-      width: 52px;
-      height: 52px;
-      border-top: 14px solid transparent;
-      border-bottom: 14px solid transparent;
-      border-left: 30px solid var(--pink);
-      transform: translateY(-50%);
-      filter: drop-shadow(0 0 26px rgba(245,195,198,0.26));
-    }
-
-    .stepping-stones {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      align-items: end;
-      grid-template-columns: repeat(3, 1fr);
-      padding: 54px;
-      gap: 18px;
-    }
-
-    .stone {
-      border-radius: 24px 24px 12px 12px;
-      background: linear-gradient(180deg, rgba(124,105,199,0.8), rgba(124,105,199,0.18));
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.15);
-    }
-
-    .stone:nth-child(1) { height: 26%; }
-    .stone:nth-child(2) { height: 48%; }
-    .stone:nth-child(3) {
-      height: 72%;
-      background: linear-gradient(180deg, rgba(245,195,198,0.84), rgba(124,105,199,0.25));
-    }
-
-    .crowd {
-      position: absolute;
-      inset: auto 0 0 0;
-      height: 62%;
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 14px;
-      padding: 38px;
-      align-items: end;
-    }
-
-    .crowd div {
-      border-radius: 999px 999px 20px 20px;
-      background: rgba(255,255,255,0.08);
-      height: 55%;
-    }
-
-    .crowd div:nth-child(4) {
-      height: 74%;
-      background: linear-gradient(180deg, rgba(245,195,198,0.9), rgba(124,105,199,0.28));
-      box-shadow: 0 0 70px rgba(245,195,198,0.18);
-    }
-
-    .spotlight {
-      position: absolute;
-      top: -10%;
-      left: 50%;
-      width: 42%;
-      height: 92%;
-      transform: translateX(-50%);
-      background: linear-gradient(180deg, rgba(245,195,198,0.16), transparent 72%);
-      clip-path: polygon(46% 0%, 54% 0%, 100% 100%, 0% 100%);
-      filter: blur(2px);
-    }
-
-    .key-lock {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-    }
-
-    .lock-ring {
-      width: 230px;
-      height: 230px;
-      border-radius: 50%;
-      border: 16px solid rgba(252,244,235,0.16);
-      position: relative;
-      box-shadow: 0 0 60px rgba(124,105,199,0.16);
-    }
-
-    .lock-ring::before {
-      content: "";
-      position: absolute;
-      inset: 50% auto auto 50%;
-      width: 34px;
-      height: 130px;
-      background: linear-gradient(180deg, var(--pink), rgba(245,195,198,0.2));
-      transform: translate(-50%, -50%);
-      border-radius: 18px;
-    }
-
-    .key {
-      position: absolute;
-      width: 300px;
-      height: 18px;
-      background: linear-gradient(90deg, rgba(124,105,199,0.25), var(--purple));
-      border-radius: 999px;
-      left: 14%;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    .key::before {
-      content: "";
-      position: absolute;
-      left: -36px;
-      top: 50%;
-      width: 62px;
-      height: 62px;
-      border-radius: 50%;
-      border: 12px solid var(--text);
-      transform: translateY(-50%);
-    }
-
-    .key::after {
-      content: "";
-      position: absolute;
-      right: 16px;
-      top: 18px;
-      width: 74px;
+      width: 42px;
       height: 42px;
-      border-left: 12px solid var(--pink);
-      border-right: 12px solid transparent;
-      border-bottom: 12px solid transparent;
+      border-top: 11px solid transparent;
+      border-bottom: 11px solid transparent;
+      border-left: 24px solid var(--pink);
+      transform: translateY(-50%);
+      filter: drop-shadow(0 0 22px rgba(245,195,198,0.26));
     }
 
-    .gears {
+    .title-slide .arrow-hero {
       position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
+      left: clamp(30px, 3vw, 58px);
+      right: clamp(30px, 3vw, 58px);
+      bottom: clamp(26px, 2.6vw, 46px);
+      margin-top: 0;
+      width: auto;
     }
 
-    .gear-wrap {
-      width: 78%;
-      display: flex;
+    /* Two-column media pattern: text left, contained figure right. Fixes the
+       "images outside the slide" bug — every figure is capped to a viewport
+       unit (not a percentage, which resolves to none in a flexible parent)
+       and object-fit:contain, so nothing can grow past the slide edge. */
+    .media-split {
+      display: grid;
+      grid-template-columns: minmax(0, 34%) minmax(0, 66%);
+      gap: 26px;
       align-items: center;
-      justify-content: center;
-      gap: 14px;
+      margin-top: 10px;
+      flex: 1 1 auto;
+      min-height: 0;
     }
 
-    .gear {
-      aspect-ratio: 1;
-      border-radius: 50%;
-      border: 18px solid rgba(124,105,199,0.28);
-      position: relative;
-      background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 55%);
-    }
+    .media-copy { display: flex; flex-direction: column; gap: 12px; justify-content: center; min-height: 0; }
+    .media-visual { display: flex; align-items: center; justify-content: center; min-width: 0; height: 100%; }
 
-    .gear.lg { width: 220px; }
-    .gear.md { width: 156px; }
-    .gear.sm { width: 118px; }
-
-    .gear::before {
-      content: "";
-      position: absolute;
-      inset: -18px;
-      background:
-        conic-gradient(from 0deg, transparent 0 10%, rgba(245,195,198,0.85) 10% 14%, transparent 14% 22%, rgba(124,105,199,0.82) 22% 26%, transparent 26% 34%, rgba(245,195,198,0.85) 34% 38%, transparent 38% 46%, rgba(124,105,199,0.82) 46% 50%, transparent 50% 58%, rgba(245,195,198,0.85) 58% 62%, transparent 62% 70%, rgba(124,105,199,0.82) 70% 74%, transparent 74% 82%, rgba(245,195,198,0.85) 82% 86%, transparent 86% 100%);
-      mask: radial-gradient(circle at center, transparent 0 56%, black 57% 100%);
-      border-radius: 50%;
-    }
-
-    .fruit-branch {
-      position: absolute;
-      inset: 0;
-    }
-
-    .branch {
-      position: absolute;
-      width: 72%;
-      height: 12px;
-      left: 12%;
-      top: 30%;
-      background: linear-gradient(90deg, rgba(252,244,235,0.18), rgba(252,244,235,0.05));
-      transform: rotate(-16deg);
-      border-radius: 999px;
-    }
-
-    .fruit {
-      position: absolute;
-      width: 78px;
-      height: 78px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 35% 30%, var(--pink), var(--purple));
-      box-shadow: 0 0 46px rgba(245,195,198,0.18);
-      right: 22%;
-      top: 21%;
-    }
-
-    .hand {
-      position: absolute;
-      width: 38%;
-      height: 32%;
-      right: 12%;
-      bottom: 12%;
-      border-radius: 60px 24px 24px 60px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: linear-gradient(135deg, rgba(245,195,198,0.42), rgba(124,105,199,0.12));
-      transform: rotate(-18deg);
-    }
-
-    .paths {
-      position: absolute;
-      inset: 0;
-    }
-
-    .path-line {
-      position: absolute;
-      left: 10%;
-      width: 48%;
-      height: 2px;
-      background: linear-gradient(90deg, rgba(124,105,199,0.10), rgba(124,105,199,0.88));
-      transform-origin: left center;
-      border-radius: 999px;
-    }
-
-    .path-line:nth-child(1) { top: 28%; transform: rotate(14deg); }
-    .path-line:nth-child(2) { top: 47%; transform: rotate(3deg); }
-    .path-line:nth-child(3) { top: 64%; transform: rotate(-11deg); }
-    .path-target {
-      position: absolute;
-      right: 18%;
-      top: 40%;
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 1px solid rgba(245,195,198,0.24);
-      box-shadow: inset 0 0 36px rgba(255,255,255,0.06), 0 0 54px rgba(124,105,199,0.12);
-    }
-
-    .path-target::before,
-    .path-target::after {
-      content: "";
-      position: absolute;
-      border-radius: 50%;
-      inset: 22px;
-      border: 1px solid rgba(124,105,199,0.36);
-    }
-
-    .path-target::after {
-      inset: 44px;
-      background: radial-gradient(circle, var(--pink), transparent 70%);
-      border-color: transparent;
-    }
-
-    .gift {
-      position: absolute;
-      left: 50%;
-      bottom: 18%;
-      width: 220px;
-      height: 180px;
-      transform: translateX(-50%);
-      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(124,105,199,0.2));
+    .slide-figure {
+      max-height: 58vh;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 16px;
       border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 22px;
-    }
-
-    .gift::before,
-    .gift::after {
-      content: "";
-      position: absolute;
-      background: linear-gradient(180deg, var(--pink), rgba(245,195,198,0.45));
-    }
-
-    .gift::before {
-      width: 20px;
-      inset: 0 auto 0 50%;
-      transform: translateX(-50%);
-    }
-
-    .gift::after {
-      height: 20px;
-      inset: 50% 0 auto 0;
-      transform: translateY(-50%);
-    }
-
-    .gift-light {
-      position: absolute;
-      left: 50%;
-      top: 18%;
-      width: 44%;
-      height: 46%;
-      transform: translateX(-50%);
-      background: radial-gradient(circle, rgba(245,195,198,0.46), transparent 60%);
-      filter: blur(12px);
-    }
-
-    .gift-lid {
-      position: absolute;
-      left: 50%;
-      top: 30%;
-      width: 240px;
-      height: 34px;
-      transform: translateX(-50%) rotate(-10deg);
-      border-radius: 18px;
-      background: linear-gradient(180deg, rgba(245,195,198,0.85), rgba(124,105,199,0.45));
-    }
-
-    .crm-grid {
-      position: absolute;
-      inset: 34px;
-      display: grid;
-      grid-template-rows: 72px repeat(4, 1fr);
-      gap: 12px;
-    }
-
-    .crm-grid .row {
-      border-radius: 18px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.07);
-      position: relative;
-    }
-
-    .crm-grid .row::before {
-      content: "";
-      position: absolute;
-      left: 18px;
-      top: 50%;
-      width: 48px;
-      height: 12px;
-      border-radius: 999px;
-      background: rgba(245,195,198,0.42);
-      transform: translateY(-50%);
-    }
-
-    .crm-grid .row::after {
-      content: "";
-      position: absolute;
-      right: 18px;
-      top: 50%;
-      width: 84px;
-      height: 12px;
-      border-radius: 999px;
-      background: rgba(124,105,199,0.52);
-      transform: translateY(-50%);
-    }
-
-    .signal {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-    }
-
-    .signal-bar {
-      width: 110px;
-      height: 16px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, rgba(252,244,235,0.22), var(--pink));
-      position: relative;
-      transform: rotate(-12deg);
-    }
-
-    .signal-bar::before,
-    .signal-bar::after {
-      content: "";
-      position: absolute;
-      left: 72%;
-      width: 260px;
-      height: 2px;
-      background: linear-gradient(90deg, rgba(124,105,199,0.84), transparent);
-      transform-origin: left center;
-    }
-
-    .signal-bar::before { top: -66px; transform: rotate(-14deg); }
-    .signal-bar::after { top: 74px; transform: rotate(16deg); }
-
-    .signal-extra {
-      position: absolute;
-      left: 58%;
-      top: 50%;
-      width: 260px;
-      height: 2px;
-      background: linear-gradient(90deg, rgba(245,195,198,0.82), transparent);
-      transform: rotate(2deg);
-    }
-
-    .panels {
-      position: absolute;
-      inset: 42px;
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 14px;
-      align-items: stretch;
-    }
-
-    .panels div {
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.08));
-      box-shadow: inset 0 -120px 120px rgba(124,105,199,0.08);
-      position: relative;
-    }
-
-    .panels div::after {
-      content: "";
-      position: absolute;
-      inset: auto 18px 18px 18px;
-      height: 8px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--purple), var(--pink));
-    }
-
-    .bullseye {
-      position: absolute;
-      right: 11%;
-      top: 16%;
-      width: 240px;
-      height: 240px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: inset 0 0 46px rgba(255,255,255,0.02);
-    }
-
-    .bullseye::before,
-    .bullseye::after {
-      content: "";
-      position: absolute;
-      border-radius: 50%;
-      inset: 26px;
-      border: 1px solid rgba(124,105,199,0.26);
-    }
-
-    .bullseye::after {
-      inset: 58px;
-      border: 18px solid rgba(245,195,198,0.22);
-      box-shadow: inset 0 0 24px rgba(245,195,198,0.2);
-    }
-
-    .bullseye-core {
-      position: absolute;
-      inset: 92px;
-      border-radius: 50%;
-      background: radial-gradient(circle, var(--pink), var(--purple));
-      box-shadow: 0 0 48px rgba(245,195,198,0.18);
-    }
-
-    .bull-arrow {
-      position: absolute;
-      left: 10%;
-      top: 54%;
-      width: 54%;
-      height: 16px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, rgba(124,105,199,0.2), var(--purple));
-      transform: translateY(-50%);
-    }
-
-    .bull-arrow::after {
-      content: "";
-      position: absolute;
-      right: -2px;
-      top: 50%;
-      border-top: 16px solid transparent;
-      border-bottom: 16px solid transparent;
-      border-left: 34px solid var(--pink);
-      transform: translateY(-50%);
+      display: block;
+      margin: auto;
+      background: #151515;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.28);
     }
 
     .as-seen-in {
-      margin-top: 26px;
-      padding: 20px 24px;
-      border-radius: 20px;
+      padding: 12px 16px;
+      border-radius: 16px;
       background: linear-gradient(180deg, rgba(252,244,235,0.97), rgba(240,237,249,0.92));
       border: 1px solid rgba(255,255,255,0.5);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      box-shadow: 0 14px 40px rgba(0,0,0,0.28);
       display: grid;
-      gap: 12px;
-      max-width: 560px;
+      gap: 8px;
       width: fit-content;
+      max-width: 100%;
     }
 
     .as-seen-in-label {
-      font-size: 11px;
-      letter-spacing: 0.24em;
+      font-size: 10px;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       font-weight: 800;
       color: #6a5a9c;
     }
 
-    .as-seen-in img {
-      display: block;
-      width: 100%;
-      max-width: 440px;
-      height: auto;
-    }
+    .as-seen-in img { display: block; width: 100%; max-width: 340px; max-height: 6vh; height: auto; }
 
     .social-chip {
-      margin-top: 20px;
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      padding: 10px 16px;
+      gap: 10px;
+      padding: 8px 14px;
       border-radius: 999px;
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.1);
@@ -1203,34 +677,24 @@
     }
 
     .social-chip span {
-      font-size: 12px;
-      letter-spacing: 0.12em;
+      font-size: 11px;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: rgba(252,244,235,0.6);
       font-weight: 700;
     }
 
-    .social-chip img {
-      height: 24px;
-      width: auto;
-      display: block;
-    }
+    .social-chip img { height: 20px; width: auto; display: block; }
 
-    .credentials-list {
-      display: grid;
-      gap: 10px;
-      margin-top: 24px;
-      max-width: 46ch;
-      padding: 0;
-    }
+    .credentials-list { display: grid; gap: 6px; padding: 0; max-width: 42ch; }
 
     .credentials-list li {
       list-style: none;
-      padding-left: 22px;
+      padding-left: 18px;
       position: relative;
       color: rgba(252,244,235,0.86);
-      font-size: 16px;
-      line-height: 1.5;
+      font-size: 14px;
+      line-height: 1.45;
     }
 
     .credentials-list li::before {
@@ -1238,27 +702,21 @@
       position: absolute;
       left: 0;
       top: 0.6em;
-      width: 10px;
+      width: 9px;
       height: 2px;
       background: linear-gradient(90deg, var(--pink), var(--purple-soft));
     }
 
-    .hotseat-list {
-      display: grid;
-      gap: 16px;
-      margin-top: 28px;
-      max-width: 660px;
-      padding: 0;
-    }
+    .hotseat-list { display: grid; gap: 12px; margin-top: 14px; max-width: 620px; padding: 0; }
 
     .hotseat-list li {
       list-style: none;
       display: grid;
       grid-template-columns: auto 1fr;
-      gap: 18px;
+      gap: 14px;
       align-items: start;
-      padding: 22px 24px;
-      border-radius: 22px;
+      padding: 16px 18px;
+      border-radius: 18px;
       border: 1px solid rgba(255,255,255,0.1);
       background: linear-gradient(135deg, rgba(124,105,199,0.16), rgba(255,255,255,0.03));
     }
@@ -1266,29 +724,19 @@
     .hotseat-list strong {
       font-family: "Cormorant Garamond", Georgia, serif;
       font-style: italic;
-      font-size: 40px;
+      font-size: 28px;
       color: var(--purple-soft);
       line-height: 1;
-      padding-bottom: 0.25em;
-      margin-bottom: -0.25em;
+      padding-bottom: 0.2em;
     }
 
-    .hotseat-list span {
-      font-size: 21px;
-      line-height: 1.4;
-      color: var(--text);
-      padding-top: 4px;
-    }
+    .hotseat-list span { font-size: 16px; line-height: 1.35; color: var(--text); padding-top: 2px; }
 
-    .channel-tier {
-      margin-top: 22px;
-      display: grid;
-      gap: 10px;
-    }
+    .channel-tier { margin-top: 10px; display: grid; gap: 6px; }
 
     .channel-tier-label {
-      font-size: 12px;
-      letter-spacing: 0.18em;
+      font-size: 11px;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       font-weight: 800;
       color: var(--purple-soft);
@@ -1296,17 +744,12 @@
 
     .channel-tier-label.featured { color: var(--pink); }
 
-    .channel-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 6px;
-    }
+    .channel-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 4px; }
 
     .channel-chip {
-      padding: 8px 14px;
+      padding: 6px 12px;
       border-radius: 999px;
-      font-size: 13px;
+      font-size: 12px;
       line-height: 1.3;
       border: 1px solid rgba(255,255,255,0.1);
       background: rgba(255,255,255,0.04);
@@ -1320,179 +763,112 @@
       font-weight: 700;
     }
 
-    .mhq-logo-row {
-      display: flex;
-      align-items: center;
-      margin-bottom: 4px;
-    }
-
-    .mhq-logo-row img {
-      height: 32px;
-      width: auto;
-    }
+    .mhq-logo-row { display: flex; align-items: center; }
+    .mhq-logo-row img { height: 24px; width: auto; }
 
     .testimonial-grid {
-      margin-top: 22px;
+      margin-top: 10px;
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-      max-width: 940px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
     }
 
     .testimonial-card {
-      padding: 20px 22px 22px;
-      border-radius: 22px;
+      padding: 14px 16px 16px;
+      border-radius: 18px;
       border: 1px solid rgba(255,255,255,0.08);
       background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.02));
       display: grid;
-      gap: 12px;
+      gap: 8px;
     }
 
     .testimonial-card p {
       font-family: "Cormorant Garamond", Georgia, serif;
       font-style: italic;
-      font-size: 19px;
-      line-height: 1.4;
+      font-size: 15px;
+      line-height: 1.35;
       color: rgba(252,244,235,0.94);
-      padding-bottom: 0.2em;
-      margin-bottom: -0.2em;
+      padding-bottom: 0.14em;
     }
 
     .testimonial-card cite {
       font-style: normal;
-      font-size: 12px;
-      letter-spacing: 0.1em;
+      font-size: 11px;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--purple-soft);
       font-weight: 700;
     }
 
     .curriculum-grid {
-      margin-top: 22px;
+      margin-top: 10px;
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      max-width: 980px;
+      gap: 10px;
     }
 
     .curriculum-item {
-      padding: 18px 20px 20px;
-      border-radius: 20px;
+      padding: 12px 14px 13px;
+      border-radius: 16px;
       border: 1px solid rgba(255,255,255,0.08);
       background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
       display: grid;
       grid-template-columns: auto 1fr;
-      gap: 14px;
+      gap: 10px;
       align-items: start;
     }
 
     .curriculum-item strong {
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 26px;
+      font-size: 20px;
       color: var(--purple-soft);
-      line-height: 1.1;
+      line-height: 1;
     }
 
-    .curriculum-item .curriculum-title {
-      display: block;
-      font-weight: 700;
-      font-size: 15px;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
-
-    .curriculum-item .curriculum-sub {
-      display: block;
-      font-size: 13px;
-      line-height: 1.45;
-      color: rgba(252,244,235,0.62);
-    }
+    .curriculum-item .curriculum-title { display: block; font-weight: 700; font-size: 13px; color: var(--text); margin-bottom: 2px; }
+    .curriculum-item .curriculum-sub { display: block; font-size: 12px; line-height: 1.35; color: rgba(252,244,235,0.6); }
 
     .level-ladder {
-      margin-top: 30px;
+      margin-top: 14px;
       display: grid;
       grid-template-columns: 1fr auto 1fr;
-      gap: 22px;
+      gap: 18px;
       align-items: center;
-      max-width: 940px;
+      max-width: 840px;
     }
 
-    .level-stop {
-      padding: 22px 24px 24px;
-      border-radius: 22px;
-      border: 1px solid rgba(255,255,255,0.1);
-    }
+    .level-stop { padding: 16px 18px 18px; border-radius: 18px; border: 1px solid rgba(255,255,255,0.1); }
+    .level-stop.start { background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); }
+    .level-stop.end { background: linear-gradient(135deg, rgba(245,195,198,0.26), rgba(124,105,199,0.3)); border-color: rgba(245,195,198,0.4); }
 
-    .level-stop.start {
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-    }
-
-    .level-stop.end {
-      background: linear-gradient(135deg, rgba(245,195,198,0.26), rgba(124,105,199,0.3));
-      border-color: rgba(245,195,198,0.4);
-    }
-
-    .level-stop-label {
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      font-weight: 800;
-      color: var(--purple-soft);
-      margin-bottom: 10px;
-    }
-
+    .level-stop-label { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 800; color: var(--purple-soft); margin-bottom: 8px; }
     .level-stop-title {
       font-family: "Cormorant Garamond", Georgia, serif;
       font-style: italic;
-      font-size: 30px;
+      font-size: 24px;
       line-height: 1.1;
       color: var(--text);
-      margin-bottom: 8px;
-      padding-bottom: 0.22em;
-      margin-bottom: -0.1em;
+      margin-bottom: 6px;
+      padding-bottom: 0.16em;
     }
+    .level-stop-copy { font-size: 13px; line-height: 1.45; color: rgba(252,244,235,0.7); }
 
-    .level-stop-copy {
-      font-size: 14px;
-      line-height: 1.5;
-      color: rgba(252,244,235,0.7);
-    }
-
-    .level-arrow {
-      width: 64px;
-      height: 3px;
-      background: linear-gradient(90deg, var(--purple), var(--pink));
-      position: relative;
-    }
-
+    .level-arrow { width: 50px; height: 3px; background: linear-gradient(90deg, var(--purple), var(--pink)); position: relative; }
     .level-arrow::after {
       content: "";
       position: absolute;
       right: -2px;
       top: 50%;
-      width: 20px;
-      height: 20px;
-      border-top: 8px solid transparent;
-      border-bottom: 8px solid transparent;
-      border-left: 14px solid var(--pink);
+      width: 16px;
+      height: 16px;
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      border-left: 12px solid var(--pink);
       transform: translateY(-50%);
     }
 
-    .program-meta {
-      margin-top: 26px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .program-chip {
-      padding: 10px 16px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      font-size: 13px;
-      color: rgba(252,244,235,0.82);
-    }
+    .program-meta { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .program-chip { padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); font-size: 12px; color: rgba(252,244,235,0.82); }
 
     .mobile-nav {
       display: none;
@@ -1522,134 +898,50 @@
       flex: 1;
     }
 
-    #slide-1::before,
-    #slide-13::before {
-      background:
-        linear-gradient(90deg, rgba(8,7,12,0.88) 0%, rgba(8,7,12,0.74) 46%, rgba(8,7,12,0.24) 100%),
-        linear-gradient(180deg, rgba(8,7,12,0.16), rgba(8,7,12,0.78)),
-        var(--slide-art);
-      background-size: cover;
-      background-position: var(--art-position, center);
-    }
-
-    #slide-3 .support-grid,
-    #slide-13 .grid-five {
-      max-width: 100%;
-    }
-
-    #slide-5 .statement,
-    #slide-14 .closing-card span {
-      max-width: 18ch;
-    }
-
-    #slide-5 .headline {
-      max-width: 20ch;
-      font-size: clamp(42px, 5vw, 74px);
-    }
-
-    #slide-14 .headline {
-      max-width: 20ch;
-      font-size: clamp(42px, 5vw, 74px);
-    }
-
-    #slide-8 .callout,
-    #slide-10 .callout,
-    #slide-11 .callout,
-    #slide-12 .focus-card {
-      max-width: 30ch;
-    }
-
-    #slide-13 .slide-inner {
-      width: min(100%, 1320px);
-    }
-
-    #slide-13 .headline {
-      max-width: 16ch;
-    }
-
-    #slide-13 .grid-five .cell {
-      backdrop-filter: blur(14px);
-      background: linear-gradient(180deg, rgba(12,9,17,0.74), rgba(12,9,17,0.52));
-    }
-
     @media (max-width: 980px) {
-      .rail {
-        display: none;
-      }
-
-      main {
-        padding-left: 0;
-      }
+      body { scroll-snap-type: none; }
+      .rail { display: none; }
+      main { padding-left: 0; }
 
       .slide {
-        min-height: auto;
+        height: auto;
+        min-height: 100vh;
+        scroll-snap-align: none;
         padding: 20px 16px 100px;
       }
 
-      .slide-inner {
-        padding: 6px 0 0;
-      }
+      .slide-inner { padding: 6px 0 0; }
 
-      .grid-five {
-        grid-template-columns: 1fr;
-      }
-
+      .grid-five,
       .agenda-strip,
       .support-grid,
       .testimonial-grid,
-      .curriculum-grid {
+      .curriculum-grid,
+      .media-split {
         grid-template-columns: 1fr;
       }
 
-      .level-ladder {
-        grid-template-columns: 1fr;
+      .media-visual { order: -1; }
+      .slide-figure { max-height: 34vh; }
+
+      .level-ladder { grid-template-columns: 1fr; }
+      .level-arrow { width: 3px; height: 34px; margin: 0 auto; }
+
+      .slide-counter { position: static; margin-bottom: 16px; writing-mode: initial; transform: none; }
+      .grid-five .cell:last-child { grid-column: auto; }
+
+      .title,
+      .headline,
+      .title-slide .title,
+      .title-slide .headline,
+      .section-break .title,
+      .section-break .headline {
+        font-size: clamp(32px, 10vw, 50px);
       }
 
-      .level-arrow {
-        width: 3px;
-        height: 44px;
-        margin: 0 auto;
-        transform: rotate(90deg);
-      }
-
-      .slide-counter {
-        position: static;
-        margin-bottom: 20px;
-        writing-mode: initial;
-        transform: none;
-      }
-
-      .grid-five .cell:last-child {
-        grid-column: auto;
-      }
-
-      .content-stack,
-      .title-stack {
-        padding: 22px;
-      }
-
-      .title {
-        font-size: clamp(46px, 14vw, 74px);
-        max-width: 11ch;
-      }
-
-      .headline {
-        font-size: clamp(34px, 10vw, 54px);
-        line-height: 0.94;
-        max-width: 12ch;
-      }
-
-      .statement {
-        font-size: clamp(24px, 7.8vw, 38px);
-      }
-
-      .as-seen-in {
-        max-width: 100%;
-      }
-
-      .mobile-nav {
-        display: flex;
-      }
+      .statement { font-size: clamp(20px, 6.6vw, 30px); }
+      .as-seen-in { max-width: 100%; }
+      .mobile-nav { display: flex; }
     }
   </style>
 </head>
@@ -1661,35 +953,28 @@
           <div class="brand-chip">Masterminds HQ</div>
           <div>
             <div class="rail-label">Workshop Deck</div>
-            <h1 class="rail-title">2X with AI<br>Playbook</h1>
-            <p class="rail-copy">A presentation-first workshop deck on relevance, systems, and AI amplification.</p>
+            <h1 class="rail-title">Increase Sales,<br>Reduce Busy Time</h1>
+            <p class="rail-copy">A solid message, less busywork, and the channels that actually work.</p>
           </div>
-        </div>
-
-        <div class="deck-meta">
-          <div class="meta-row"><span>Audience</span><strong>Founders + Operators</strong></div>
-          <div class="meta-row"><span>Goal</span><strong>Clarity before scale</strong></div>
         </div>
 
         <nav class="slide-nav" aria-label="Slide navigation">
           <a href="#slide-1"><strong>01</strong> Title</a>
           <a href="#slide-2"><strong>02</strong> Meet Your Host</a>
           <a href="#slide-3"><strong>03</strong> The Arc</a>
-          <a href="#slide-4"><strong>04</strong> Find Your Relevance</a>
-          <a href="#slide-5"><strong>05</strong> Messaging</a>
-          <a href="#slide-6"><strong>06</strong> Hot Seat</a>
-          <a href="#slide-7"><strong>07</strong> Build the Systems</a>
-          <a href="#slide-8"><strong>08</strong> Warm Leads</a>
-          <a href="#slide-9"><strong>09</strong> Traction Channels</a>
-          <a href="#slide-10"><strong>10</strong> Giveaways</a>
-          <a href="#slide-11"><strong>11</strong> CRM</a>
-          <a href="#slide-12"><strong>12</strong> Amplify with AI</a>
-          <a href="#slide-13"><strong>13</strong> AI Across the Stack</a>
-          <a href="#slide-14"><strong>14</strong> Takeaway</a>
-          <a href="#slide-15"><strong>15</strong> Masterminds HQ</a>
-          <a href="#slide-16"><strong>16</strong> What You'll Learn, Part 1</a>
-          <a href="#slide-17"><strong>17</strong> What You'll Learn, Part 2</a>
-          <a href="#slide-18"><strong>18</strong> The 15-Week Program</a>
+          <a href="#slide-4"><strong>04</strong> Part 1: AI &amp; Messaging</a>
+          <a href="#slide-5"><strong>05</strong> Solidify Your Message</a>
+          <a href="#slide-6"><strong>06</strong> Part 2: Reduce Busy Time</a>
+          <a href="#slide-7"><strong>07</strong> Live Exercise</a>
+          <a href="#slide-8"><strong>08</strong> Automation Demo</a>
+          <a href="#slide-9"><strong>09</strong> Part 3: Traction Channels</a>
+          <a href="#slide-10"><strong>10</strong> The Mistake</a>
+          <a href="#slide-11"><strong>11</strong> What Actually Works</a>
+          <a href="#slide-12"><strong>12</strong> Hot Seat &amp; Q&amp;A</a>
+          <a href="#slide-13"><strong>13</strong> Masterminds HQ</a>
+          <a href="#slide-14"><strong>14</strong> What You'll Learn, Part 1</a>
+          <a href="#slide-15"><strong>15</strong> What You'll Learn, Part 2</a>
+          <a href="#slide-16"><strong>16</strong> The 15-Week Program</a>
         </nav>
       </div>
 
@@ -1705,25 +990,25 @@
     </aside>
 
     <main id="deck">
-      <section class="slide title-slide slide-wide-art layout-left" id="slide-1" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-01-title-upward-trajectory-gpt-image-2.png'); --art-position:center;">
+      <section class="slide title-slide layout-left" id="slide-1">
         <div class="slide-inner">
           <div class="slide-counter">Slide 01</div>
           <div class="title-stack">
-            <div class="kicker">2X with AI Playbook</div>
-            <h2 class="title">How to 2X Your Business</h2>
-            <p class="subhead">Not by adding more noise. By getting relevant, building the systems, and letting AI multiply what already works.</p>
+            <div class="kicker">Masterminds HQ Workshop</div>
+            <h2 class="title">Increase Your Sales. Reduce Your Busy Time.</h2>
+            <p class="subhead">Not two different goals. One system: a solid message, less busywork, and channels that actually work.</p>
             <div class="agenda-strip" aria-label="Core presentation arc">
               <div class="agenda-item">
-                <strong>Step 1</strong>
-                <span>Get unmistakably relevant.</span>
+                <strong>Part 1</strong>
+                <span>Sharpen your message.</span>
               </div>
               <div class="agenda-item">
-                <strong>Step 2</strong>
-                <span>Build the operating system.</span>
+                <strong>Part 2</strong>
+                <span>Cut the busywork.</span>
               </div>
               <div class="agenda-item">
-                <strong>Step 3</strong>
-                <span>Let AI accelerate the right parts.</span>
+                <strong>Part 3</strong>
+                <span>Find the real channels.</span>
               </div>
             </div>
           </div>
@@ -1737,91 +1022,187 @@
             <div class="slide-counter">Slide 02</div>
             <div class="kicker">Meet Your Host</div>
             <h2 class="headline">I'm Joe Che.</h2>
-            <p class="subhead">18+ years building and running training companies. The last few years building an AI-run business that runs itself, and still sounds like me.</p>
-            <ul class="credentials-list" aria-label="Credentials">
-              <li>Trained 90,000+ people, including CIA analysts, Fortune 5 executives, Microsoft, and Tyra Banks</li>
-              <li>18+ years building and running training companies in New York City</li>
-              <li>26 ventures built, several still running today</li>
-              <li>Founder, Masterminds HQ</li>
-            </ul>
-            <div class="as-seen-in">
-              <span class="as-seen-in-label">As Seen In</span>
-              <img src="/deck-assets/2x-with-ai-playbook/as-seen-in-press-logos.gif" alt="As seen in The New York Times, Univision, Business Insider, CBS, and NPR" loading="lazy">
-            </div>
-            <div class="social-chip">
-              <span>Follow the build</span>
-              <img src="/deck-assets/2x-with-ai-playbook/joe-instagram-handle.gif" alt="@joe.che.official on Instagram" loading="lazy">
+            <p class="subhead">A little about me, so you know where this is coming from, not to impress you.</p>
+            <div class="media-split">
+              <div class="media-copy">
+                <ul class="credentials-list" aria-label="Credentials">
+                  <li>Trained 90,000+ people, including CIA analysts, Fortune 5 executives, Microsoft, and Tyra Banks</li>
+                  <li>18+ years building and running training companies in New York City</li>
+                  <li>26 ventures built, several still running today</li>
+                  <li>Founder, Masterminds HQ</li>
+                </ul>
+                <div class="as-seen-in">
+                  <span class="as-seen-in-label">As Seen In</span>
+                  <img src="/deck-assets/2x-with-ai-playbook/as-seen-in-press-logos.gif" alt="As seen in The New York Times, Univision, Business Insider, CBS, and NPR" loading="lazy">
+                </div>
+                <div class="social-chip">
+                  <span>Follow the build</span>
+                  <img src="/deck-assets/2x-with-ai-playbook/joe-instagram-handle.gif" alt="@joe.che.official on Instagram" loading="lazy">
+                </div>
+              </div>
+              <div class="media-visual">
+                <img class="slide-figure" src="/images/events/joe-che-bio-bw.jpg" alt="Joe Che portrait" loading="lazy">
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="slide layout-left" id="slide-3" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-02-the-arc-stepping-stones-gpt-image-2.png'); --art-position:center;">
+      <section class="slide layout-left" id="slide-3">
         <div class="slide-inner">
           <div class="content-stack">
             <div class="slide-counter">Slide 03</div>
             <div class="kicker">The Arc</div>
-            <h2 class="headline">Find your relevance. Build the systems. Amplify with AI.</h2>
-            <p class="subhead">If the order is wrong, AI only makes confusion faster.</p>
+            <h2 class="headline">One session, three shifts.</h2>
+            <p class="subhead">Increasing sales and reducing your busy time are the same project, worked from two ends.</p>
             <div class="support-grid">
               <div class="support-card">
-                <strong>Relevance</strong>
-                <span>Get the message and audience right first.</span>
+                <strong>Message</strong>
+                <span>AI only amplifies what's already there.</span>
               </div>
               <div class="support-card">
-                <strong>Systems</strong>
-                <span>Turn instincts into repeatable machinery.</span>
+                <strong>Time</strong>
+                <span>Automate what you hate doing.</span>
               </div>
               <div class="support-card">
-                <strong>AI</strong>
-                <span>Use leverage only after the machine exists.</span>
+                <strong>Channels</strong>
+                <span>Stop guessing where growth comes from.</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="slide section-break layout-left" id="slide-4" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-03-find-your-relevance-spotlight-gpt-image-2.png'); --art-position:center right;">
+      <section class="slide section-break layout-left" id="slide-4">
         <div class="slide-inner">
           <div class="content-stack">
             <div class="slide-counter">Slide 04</div>
             <div class="kicker">Part 1</div>
-            <h2 class="headline">Find Your Relevance</h2>
-            <p class="subhead">Before tactics, get clear on who you serve and what only you can say.</p>
-            <ul class="prompt-list" aria-label="Relevance prompts">
-              <li>Who already trusts you, and why do they come back?</li>
-              <li>What painful problem do you solve better than generic advice ever will?</li>
-              <li>What can you say with proof, taste, and lived specificity?</li>
+            <h2 class="headline">AI &amp; Messaging</h2>
+            <p class="subhead">AI only amplifies your existing messaging. It does not fix it.</p>
+            <ul class="prompt-list" aria-label="The core truth of AI growth">
+              <li>If your message isn't solid, AI just creates more chaos, faster.</li>
+              <li>Fix the message first. Then let AI carry it further and faster than you ever could alone.</li>
             </ul>
           </div>
         </div>
       </section>
 
-      <section class="slide layout-left" id="slide-5" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-04-messaging-key-lock-recognition-gpt-image-2.png'); --art-position:center;">
+      <section class="slide layout-left" id="slide-5">
         <div class="slide-inner">
           <div class="content-stack">
             <div class="slide-counter">Slide 05</div>
-            <div class="kicker">Messaging</div>
-            <h2 class="headline">Who you are. What you say. Why it lands.</h2>
+            <div class="kicker">Solidify Your Message</div>
+            <h2 class="headline">Get this right before you touch a single AI tool.</h2>
             <div class="statement">
-              <div>Specificity beats performance.</div>
-              <div class="accent">Relevance beats cleverness every time.</div>
+              <div>AI does not fix a weak message.</div>
+              <div class="accent">It amplifies whatever is already there.</div>
             </div>
             <div class="focus-card">
               <strong>Presenter cue</strong>
-              <span>Make the audience feel the difference between sounding impressive and sounding useful.</span>
+              <span>Make sure the room feels the difference between AI making noise and AI making the right message travel further.</span>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="slide layout-left" id="slide-6">
+      <section class="slide section-break layout-left" id="slide-6">
         <div class="slide-inner">
           <div class="content-stack">
             <div class="slide-counter">Slide 06</div>
+            <div class="kicker">Part 2</div>
+            <h2 class="headline">Reduce Your Busy Time</h2>
+            <p class="subhead">Every hour spent on something you hate is an hour not spent on what actually grows the business.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide layout-left" id="slide-7">
+        <div class="slide-inner">
+          <div class="content-stack">
+            <div class="slide-counter">Slide 07</div>
             <div class="kicker">Live Exercise</div>
-            <h2 class="headline">Mastermind Hot Seat</h2>
-            <p class="subhead">Before we go further, let's put it into words, out loud, in the room.</p>
+            <h2 class="headline">What are you doing that you hate?</h2>
+            <ul class="hotseat-list" aria-label="Time-draining task exercise">
+              <li>
+                <strong>01</strong>
+                <span>List every task this week that ate your time and that you hated doing.</span>
+              </li>
+              <li>
+                <strong>02</strong>
+                <span>Circle your top three. We're coming back to them.</span>
+              </li>
+            </ul>
+            <div class="callout">In a minute, a few of you will share out loud. No task is too small to name.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide layout-left" id="slide-8">
+        <div class="slide-inner">
+          <div class="content-stack">
+            <div class="slide-counter">Slide 08</div>
+            <div class="kicker">Live Demo</div>
+            <h2 class="headline">Watch it disappear from your task list.</h2>
+            <div class="focus-card">
+              <strong>Presenter cue</strong>
+              <span>Take one task called out by the room and automate it live, so people see exactly how the system finds and removes the busywork.</span>
+            </div>
+            <p class="stack-intro">This is not a trick. Same steps you can run again this week on your own list.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide section-break layout-left" id="slide-9">
+        <div class="slide-inner">
+          <div class="content-stack">
+            <div class="slide-counter">Slide 09</div>
+            <div class="kicker">Part 3</div>
+            <h2 class="headline">Traction Channels</h2>
+            <p class="subhead">Where you spend your time chasing customers matters as much as how you spend it.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide layout-left" id="slide-10">
+        <div class="slide-inner">
+          <div class="content-stack">
+            <div class="slide-counter">Slide 10</div>
+            <div class="kicker">The Mistake</div>
+            <h2 class="headline">Wasting time on the wrong channel is the quiet killer.</h2>
+            <div class="callout">Instagram is an amazing channel, for some people. For a lot of founders, it eats hours and returns very little.</div>
+            <p class="stack-intro">Learning every tip, trick, and backdoor to Instagram and Meta did not make it my biggest channel. It still isn't.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide layout-left" id="slide-11">
+        <div class="slide-inner">
+          <div class="content-stack">
+            <div class="slide-counter">Slide 11</div>
+            <div class="kicker">What Actually Works</div>
+            <h2 class="headline">The two channels that move the needle.</h2>
+            <div class="grid-five">
+              <div class="cell">
+                <div class="cell-title">Direct Experience</div>
+                <div class="cell-copy">People who see the work firsthand, in the room, on a call, in a build. Nothing sells better than watching it happen.</div>
+              </div>
+              <div class="cell">
+                <div class="cell-title">Referrals</div>
+                <div class="cell-copy">Clients saving money and cutting tasks with AI tell their friends. By far my biggest channel, no contest.</div>
+              </div>
+            </div>
+            <div class="callout">Two channels. Worked properly, until they stop working.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide layout-left" id="slide-12">
+        <div class="slide-inner">
+          <div class="content-stack">
+            <div class="slide-counter">Slide 12</div>
+            <div class="kicker">Hot Seat &amp; Q&amp;A</div>
+            <h2 class="headline">Bring me your specific challenge.</h2>
             <ul class="hotseat-list" aria-label="Hot seat prompts">
               <li>
                 <strong>01</strong>
@@ -1832,180 +1213,17 @@
                 <span>Who are you solving that for?</span>
               </li>
             </ul>
-            <div class="callout">No generic answers. If it sounds like it could apply to anyone, it isn't specific enough yet.</div>
+            <div class="callout">Then the floor is open. Bring what's actually stuck, not the generic version.</div>
           </div>
         </div>
       </section>
 
-      <section class="slide section-break layout-left" id="slide-7" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-05-build-the-systems-gpt-image-2.png'); --art-position:center;">
+      <section class="slide layout-left" id="slide-13">
         <div class="slide-inner">
           <div class="content-stack">
-            <div class="slide-counter">Slide 07</div>
-            <div class="kicker">Part 2</div>
-            <h2 class="headline">Build the Systems</h2>
-            <p class="subhead">The four systems that compound: leads, channels, giveaways, CRM.</p>
-            <ul class="system-list" aria-label="Core systems">
-              <li>Warm leads: the easiest place to recover momentum.</li>
-              <li>Traction channels: where discoverability becomes a habit.</li>
-              <li>Giveaways: value-first trust builders that earn attention.</li>
-              <li>CRM: the memory layer that keeps growth from leaking.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="slide layout-left" id="slide-8" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-06-warm-leads-gpt-image-2.png'); --art-position:center;">
-        <div class="slide-inner">
-          <div class="content-stack">
-            <div class="slide-counter">Slide 08</div>
-            <div class="kicker">Warm Leads</div>
-            <h2 class="headline">The cheapest growth lever. Almost always under-worked.</h2>
-            <div class="callout">Start with the people already paying attention.</div>
-            <p class="stack-intro">This slide should feel like relief: you do not need a bigger audience before you work the warm one properly.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="slide layout-left" id="slide-9" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-07-traction-channels-gpt-image-2.png'); --art-position:center;">
-        <div class="slide-inner">
-          <div class="content-stack">
-            <div class="slide-counter">Slide 09</div>
-            <div class="kicker">Traction Channels</div>
-            <h2 class="headline">Nineteen ways to find more of the right people.</h2>
-            <p class="subhead">Pick two, work them until they work. Here is the whole menu, most underrated first.</p>
-            <div class="channel-tier">
-              <div class="channel-tier-label featured">Start here, most underrated</div>
-              <div class="channel-chips">
-                <span class="channel-chip featured">Offline Events</span>
-                <span class="channel-chip featured">Speaking Engagements</span>
-                <span class="channel-chip featured">Viral Marketing (Referrals)</span>
-              </div>
-            </div>
-            <div class="channel-tier">
-              <div class="channel-tier-label">Worth testing next</div>
-              <div class="channel-chips">
-                <span class="channel-chip">Engineering as Marketing</span>
-                <span class="channel-chip">Business Development</span>
-                <span class="channel-chip">Email Marketing</span>
-                <span class="channel-chip">Targeting Blogs</span>
-                <span class="channel-chip">Affiliate Programs</span>
-                <span class="channel-chip">Community Building</span>
-                <span class="channel-chip">Public Relations</span>
-                <span class="channel-chip">Social &amp; Display Ads</span>
-              </div>
-            </div>
-            <div class="channel-tier">
-              <div class="channel-tier-label">The rest</div>
-              <div class="channel-chips">
-                <span class="channel-chip">Content Marketing</span>
-                <span class="channel-chip">Sales</span>
-                <span class="channel-chip">Search Engine Marketing</span>
-                <span class="channel-chip">SEO</span>
-                <span class="channel-chip">Offline Ads</span>
-                <span class="channel-chip">Unconventional PR</span>
-                <span class="channel-chip">Existing Platforms</span>
-                <span class="channel-chip">Trade Shows</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="slide layout-left" id="slide-10" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-08-giveaways-gpt-image-2.png'); --art-position:center;">
-        <div class="slide-inner">
-          <div class="content-stack">
-            <div class="slide-counter">Slide 10</div>
-            <div class="kicker">Giveaways</div>
-            <h2 class="headline">Top-of-funnel and trust builder in one.</h2>
-            <div class="callout">Give something real before you ask for anything.</div>
-            <p class="stack-intro">The best giveaway is a sample of how you think, how you solve, and how it feels to work with you.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="slide layout-left" id="slide-11" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-09-crm-control-room-gpt-image-2.png'); --art-position:center;">
-        <div class="slide-inner">
-          <div class="content-stack">
-            <div class="slide-counter">Slide 11</div>
-            <div class="kicker">CRM</div>
-            <h2 class="headline">The system that holds it all together.</h2>
-            <div class="callout">If it's not in the CRM, it didn't happen.</div>
-            <div class="focus-card">
-              <strong>Why it matters</strong>
-              <span>Without memory, every follow-up depends on mood, luck, and whoever happens to remember.</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="slide section-break layout-left" id="slide-12" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-10-amplify-with-ai-signal-wave-gpt-image-2.png'); --art-position:center;">
-        <div class="slide-inner">
-          <div class="content-stack">
-            <div class="slide-counter">Slide 12</div>
-            <div class="kicker">Part 3</div>
-            <h2 class="headline">Amplify with AI</h2>
-            <p class="subhead">Once the systems exist, AI multiplies them.</p>
-            <div class="focus-card">
-              <strong>Core point</strong>
-              <span>AI is a force multiplier, not a substitute for relevance, judgment, or process.</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="slide slide-wide-art layout-center" id="slide-13" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-11-ai-across-the-stack-modular-system-gpt-image-2.png'); --art-position:center;">
-        <div class="slide-inner">
-          <div class="slide-counter">Slide 13</div>
-          <div class="kicker">AI Across the Stack</div>
-          <h2 class="headline">Once the machine exists, AI starts compounding across every layer.</h2>
-          <p class="stack-intro">This is where the room should see leverage clearly: the same core system gets faster, sharper, and easier to sustain.</p>
-          <div class="grid-five">
-            <div class="cell">
-              <div class="cell-title">Messaging</div>
-              <div class="cell-copy">Sharpen and test variations.</div>
-            </div>
-            <div class="cell">
-              <div class="cell-title">Leads</div>
-              <div class="cell-copy">Research, personalize, follow up.</div>
-            </div>
-            <div class="cell">
-              <div class="cell-title">Channels</div>
-              <div class="cell-copy">Produce content at pace.</div>
-            </div>
-            <div class="cell">
-              <div class="cell-title">Giveaways</div>
-              <div class="cell-copy">Generate, package, deliver.</div>
-            </div>
-            <div class="cell">
-              <div class="cell-title">CRM</div>
-              <div class="cell-copy">Auto-enrich, summarize, surface what's hot.</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="slide layout-left" id="slide-14" style="--slide-art:url('/deck-assets/2x-with-ai-playbook/slide-12-bullseye-focus-arrow-gpt-image-2.png'); --art-position:center;">
-        <div class="slide-inner">
-          <div class="content-stack">
-            <div class="slide-counter">Slide 14</div>
-            <div class="kicker">Takeaway</div>
-            <h2 class="headline">You don't 2X by adding more.</h2>
-            <p class="subhead">You 2X by getting relevant, building the systems, and letting AI do the heavy lifting.</p>
-            <div class="closing-card">
-              <strong>Leave them with this</strong>
-              <span>Better message. Better machine. Better leverage.</span>
-            </div>
-            <p class="note">Masterminds HQ</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="slide layout-left" id="slide-15">
-        <div class="slide-inner">
-          <div class="content-stack">
-            <div class="slide-counter">Slide 15</div>
+            <div class="slide-counter">Slide 13</div>
             <div class="mhq-logo-row">
-              <img src="/brand/masterminds-logo-current-white.svg" alt="Masterminds HQ" height="32">
+              <img src="/brand/masterminds-logo-current-white.svg" alt="Masterminds HQ" height="24">
             </div>
             <div class="kicker">Masterminds HQ</div>
             <h2 class="headline">This is the room where it gets built.</h2>
@@ -2016,16 +1234,12 @@
                 <cite>Alla Demutska</cite>
               </div>
               <div class="testimonial-card">
-                <p>"I can build a business with five employees through agents and Claude, saving me so much money and making me feel so sovereign."</p>
+                <p>"I can build a business with five employees through agents and Claude, saving me so much money."</p>
                 <cite>Jenny Jessen</cite>
               </div>
               <div class="testimonial-card">
-                <p>"After just the first two sessions of the mastermind, I was building my own website from scratch."</p>
+                <p>"After just the first two sessions, I was building my own website from scratch."</p>
                 <cite>Ronnie Ansara</cite>
-              </div>
-              <div class="testimonial-card">
-                <p>"I said change it and it changed my whole website in just one second. Everything worked. It was so easy."</p>
-                <cite>Pina Maria Muckle</cite>
               </div>
             </div>
             <div class="closing-card">
@@ -2036,10 +1250,10 @@
         </div>
       </section>
 
-      <section class="slide layout-left" id="slide-16">
+      <section class="slide layout-left" id="slide-14">
         <div class="slide-inner">
           <div class="content-stack">
-            <div class="slide-counter">Slide 16</div>
+            <div class="slide-counter">Slide 14</div>
             <div class="kicker">What You'll Learn</div>
             <h2 class="headline">The first six sessions.</h2>
             <div class="curriculum-grid" aria-label="Sessions one through six">
@@ -2047,42 +1261,42 @@
                 <strong>01</strong>
                 <div>
                   <span class="curriculum-title">Claude Code Setup + Your First Website</span>
-                  <span class="curriculum-sub">Build a real website together and go live on the internet. No technical background needed.</span>
+                  <span class="curriculum-sub">Build a real website together and go live. No technical background needed.</span>
                 </div>
               </div>
               <div class="curriculum-item">
                 <strong>02</strong>
                 <div>
                   <span class="curriculum-title">Lead Magnets + Your Custom Domain</span>
-                  <span class="curriculum-sub">Your site goes live on a custom domain with automated lead capture and welcome emails.</span>
+                  <span class="curriculum-sub">Your site goes live with automated lead capture and welcome emails.</span>
                 </div>
               </div>
               <div class="curriculum-item">
                 <strong>03</strong>
                 <div>
                   <span class="curriculum-title">Train Your AI, Hook Your Audience</span>
-                  <span class="curriculum-sub">Feed your AI your real business context, then install HookLab and the Daily Hook Feed.</span>
+                  <span class="curriculum-sub">Feed your AI your real business context, then install HookLab.</span>
                 </div>
               </div>
               <div class="curriculum-item">
                 <strong>04</strong>
                 <div>
                   <span class="curriculum-title">Alignment Mastermind</span>
-                  <span class="curriculum-sub">The group masterminds together on real problems, live, with accountability to the room.</span>
+                  <span class="curriculum-sub">The group masterminds together on real problems, live.</span>
                 </div>
               </div>
               <div class="curriculum-item">
                 <strong>05</strong>
                 <div>
                   <span class="curriculum-title">Your AI Brain in Your Pocket</span>
-                  <span class="curriculum-sub">Build a voice profile from your own work with SpeakHuman, wired into your phone.</span>
+                  <span class="curriculum-sub">A voice profile from your own work, wired into your phone.</span>
                 </div>
               </div>
               <div class="curriculum-item">
                 <strong>06</strong>
                 <div>
                   <span class="curriculum-title">Your First Mission Control</span>
-                  <span class="curriculum-sub">Turn one recording into thirty pieces of content, and build a task board that executes itself.</span>
+                  <span class="curriculum-sub">One recording becomes thirty pieces of content, automatically.</span>
                 </div>
               </div>
             </div>
@@ -2090,10 +1304,10 @@
         </div>
       </section>
 
-      <section class="slide layout-left" id="slide-17">
+      <section class="slide layout-left" id="slide-15">
         <div class="slide-inner">
           <div class="content-stack">
-            <div class="slide-counter">Slide 17</div>
+            <div class="slide-counter">Slide 15</div>
             <div class="kicker">What You'll Learn</div>
             <h2 class="headline">Sessions seven through twelve.</h2>
             <div class="curriculum-grid" aria-label="Sessions seven through twelve">
@@ -2101,42 +1315,42 @@
                 <strong>07</strong>
                 <div>
                   <span class="curriculum-title">Safety + Ultimate Web Data Collector</span>
-                  <span class="curriculum-sub">Give your AI a practical internet toolkit, and learn to use it safely.</span>
+                  <span class="curriculum-sub">Give your AI a practical internet toolkit, and use it safely.</span>
                 </div>
               </div>
               <div class="curriculum-item">
                 <strong>08</strong>
                 <div>
                   <span class="curriculum-title">Joe's Magic CRM</span>
-                  <span class="curriculum-sub">Build your own version of GoHighLevel: pipeline, follow-ups, and lead capture, all automatic.</span>
+                  <span class="curriculum-sub">Your own version of GoHighLevel: pipeline, follow-ups, capture.</span>
                 </div>
               </div>
               <div class="curriculum-item">
                 <strong>09</strong>
                 <div>
                   <span class="curriculum-title">AI Branding Agent + Offer Clarity</span>
-                  <span class="curriculum-sub">Install the Branding Agent, tighten what you sell, and build a reusable brand brain.</span>
+                  <span class="curriculum-sub">Install the Branding Agent and tighten what you sell.</span>
                 </div>
               </div>
               <div class="curriculum-item">
                 <strong>10</strong>
                 <div>
                   <span class="curriculum-title">Traction Channels for Automated Sales</span>
-                  <span class="curriculum-sub">Use the traction-channel framework to stop guessing and choose the channels that move the needle.</span>
+                  <span class="curriculum-sub">Stop guessing, choose the channels that move the needle.</span>
                 </div>
               </div>
               <div class="curriculum-item">
                 <strong>11</strong>
                 <div>
                   <span class="curriculum-title">Your Instagram Agent + Lead Capture</span>
-                  <span class="curriculum-sub">Build an agent that works your DMs and comments into a real cold-to-warm pipeline.</span>
+                  <span class="curriculum-sub">An agent for your DMs and comments: cold to warm.</span>
                 </div>
               </div>
               <div class="curriculum-item">
                 <strong>12</strong>
                 <div>
                   <span class="curriculum-title">Graduation + Growth Integration</span>
-                  <span class="curriculum-sub">Review what you built, map your next move, and graduate into the Alumni Circle.</span>
+                  <span class="curriculum-sub">Review what you built, then graduate into the Alumni Circle.</span>
                 </div>
               </div>
             </div>
@@ -2144,10 +1358,10 @@
         </div>
       </section>
 
-      <section class="slide layout-left" id="slide-18">
+      <section class="slide layout-left" id="slide-16">
         <div class="slide-inner">
           <div class="content-stack">
-            <div class="slide-counter">Slide 18</div>
+            <div class="slide-counter">Slide 16</div>
             <div class="kicker">If You Want to Learn This</div>
             <h2 class="headline">The 15-Week Program.</h2>
             <p class="subhead">Twelve weeks live, plus three bonus weeks. Two live sessions a week, so your timezone is never the blocker.</p>
@@ -2161,7 +1375,7 @@
               <div class="level-stop end">
                 <div class="level-stop-label">Where you finish</div>
                 <div class="level-stop-title">Levels 10&ndash;17</div>
-                <p class="level-stop-copy">From owning a personalized AI assistant to fully operating multiple agentic AIs, an integrated AI operating system running your business.</p>
+                <p class="level-stop-copy">From owning a personalized AI assistant to fully operating multiple agentic AIs running your business.</p>
               </div>
             </div>
             <div class="program-meta">
