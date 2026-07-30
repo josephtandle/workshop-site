@@ -1015,7 +1015,7 @@ export const events: EventDefinition[] = [
     ctaLabel: 'Register Free',
     dateLabel: 'Friday, August 7, 2026',
     timeLabel: '3:00 PM to 6:00 PM',
-    locationLabel: 'Canggu, Bali',
+    locationLabel: 'Padang Linjong, Canggu, Bali',
     durationLabel: 'A 3-hour live session',
     heroImage: '/events/business-blocks-ai-solved/hero-placeholder.jpg',
     heroAlt: 'The Biggest Business Blocks That AI Solved For Me, featuring Joe Che',
@@ -1039,7 +1039,7 @@ export const events: EventDefinition[] = [
       {
         name: 'Joe Che',
         firstName: 'Joe',
-        role: 'Presenter • Founder • AI Entrepreneur • Community Builder',
+        role: 'Founder • AI Entrepreneur and Educator • Community Builder',
         photoSrc: '/images/events/joe-che-bio-bw.jpg',
         bio: [
           'Joe Che is a number one bestselling author in three categories across business and AI, the founder of 26 companies, and the builder of two AI companies, including All Sorted AI, a practical AI operating system for service-based small business owners.',
@@ -1069,7 +1069,7 @@ export const events: EventDefinition[] = [
       currencySymbol: '$',
       fullPrice: 0,
       checkoutHref: '',
-      checkoutNote: 'Free registration. Spots are capped at 40 — the exact venue address is emailed to registered guests.',
+      checkoutNote: 'Free registration. The exact venue address is emailed to registered guests the day before the event.',
     },
     calendarEvent: {
       startIso: '2026-08-07T15:00:00+08:00',
@@ -1139,7 +1139,7 @@ export const events: EventDefinition[] = [
               This isn't a theory talk. It's the real systems, the agents, the workflows, the decisions behind them, shown so you can take the same approach into your own business.
             </p>
             <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
-              It's free, hosted by Marina at Samm's Farm in Canggu. Spots are capped at 40, and the exact address goes out to confirmed ticket holders the day before the event. Save your seat below.
+              It's free, hosted by Marina at Samm's Farm in Canggu. The exact address goes out to confirmed ticket holders the day before the event. Save your seat below.
             </p>
           </div>
         `,
