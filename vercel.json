@@ -33,7 +33,7 @@
     },
     {
       "path": "/api/events/location-reminders",
-      "schedule": "30 23 29 5 *"
+      "schedule": "*/30 * * * *"
     },
     {
       "path": "/api/events/session-reminders",

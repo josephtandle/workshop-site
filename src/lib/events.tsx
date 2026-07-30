@@ -1021,6 +1021,7 @@ export const events: EventDefinition[] = [
     heroImage: '/events/business-blocks-ai-solved/poster.png',
     heroAlt: 'The Biggest Business Blocks That AI Solved For Me, featuring Joe Che, Friday August 7, 3 to 6 PM',
     heroObjectFit: 'contain',
+    heroNoOverlay: true,
     badge: 'Limited Spots',
     audience: [
       'Entrepreneurs',

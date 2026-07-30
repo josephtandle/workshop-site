@@ -3,7 +3,8 @@ import { timingSafeEqual } from 'crypto'
 import { getEventBySlug, getLiveEvents } from '@/lib/events'
 import { sendEventLocationReminderEmail } from '@/lib/event-confirmation-email'
 import { listLegacyPaidAttendeesForEvent } from '@/lib/legacy-event-schedule'
-import { isLocationReminderDue } from '@/lib/location-reminder'
+import { getConfirmedRegistrationsForEvent } from '@/lib/event-registration-db'
+import { isLocationReminderDue, dedupeAttendeesByEmail } from '@/lib/location-reminder'
 
 export const runtime = 'nodejs'
 
@@ -58,7 +59,11 @@ export async function GET(request: NextRequest) {
   for (const event of dueEvents) {
     if (!event) continue
 
-    const attendees = await listLegacyPaidAttendeesForEvent(event)
+    const [siteAttendees, legacyAttendees] = await Promise.all([
+      getConfirmedRegistrationsForEvent(event.slug),
+      event.legacyRegistration ? listLegacyPaidAttendeesForEvent(event) : Promise.resolve([]),
+    ])
+    const attendees = dedupeAttendeesByEmail([...siteAttendees, ...legacyAttendees])
     const errors: string[] = []
     let sentCount = 0
 
