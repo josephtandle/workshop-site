@@ -16,6 +16,11 @@ function getFirstName(name: string) {
   return name.trim().split(/\s+/)[0] || ''
 }
 
+function formatLeadHours(leadHours: number) {
+  if (leadHours === 24) return 'the day'
+  return `${leadHours} hour${leadHours === 1 ? '' : 's'}`
+}
+
 function buildAiContentCreationSetupEmailHtml(attendeeName: string) {
   const firstName = getFirstName(attendeeName)
   const workshopAddress =
@@ -273,9 +278,13 @@ function buildConfirmationEmailHtml(event: EventDefinition, attendeeName: string
 
           ${calendarButtonsHtml}
 
-          <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.75; color: #4b4263;">
-            The event is in <strong style="color:#16121f;">Pererenan, Canggu</strong>. You will receive an email with the exact location four hours before the event.
-          </p>
+          ${
+            event.privateLocationReminder
+              ? `<p style="margin: 0 0 18px; font-size: 15px; line-height: 1.75; color: #4b4263;">
+            The event is in <strong style="color:#16121f;">${event.locationLabel}</strong>. You will receive an email with the exact location ${formatLeadHours(event.privateLocationReminder.leadHours)} before the event.
+          </p>`
+              : ''
+          }
 
           ${
             skipSetup

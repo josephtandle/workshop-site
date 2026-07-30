@@ -64,6 +64,7 @@ export type EventRegistrationData = {
   successRedirect?: string
   manuallyClosed?: boolean
   eventEnded?: boolean
+  isVirtual?: boolean
 }
 
 type Props = {
@@ -151,7 +152,9 @@ export default function EventRegistrationSection({
   )
   const successTitle = isFreeRegistration ? 'Your free spot is reserved.' : 'Your seat has been reserved.'
   const defaultSuccessDetail = isFreeRegistration
-    ? 'Check your inbox for the Zoom link and keep it handy for the workshop.'
+    ? event.isVirtual
+      ? 'Check your inbox for the Zoom link and keep it handy for the workshop.'
+      : 'Check your inbox for your confirmation email. The exact location will be sent before the event.'
     : 'Great, your seat is reserved. Watch your inbox for a confirmation email from joe@mastermindshq.business. Then I will take you to the setup page for the two free accounts you need before the workshop.'
 
   useEffect(() => {
@@ -486,7 +489,9 @@ export default function EventRegistrationSection({
         </h2>
         <p className="mt-4 text-base leading-8 text-[#FCF4EB]/68 md:text-lg">
           {isFreeRegistration
-            ? 'Enter your name and email. I will send the confirmation email and Zoom link right away.'
+            ? event.isVirtual
+              ? 'Enter your name and email. I will send the confirmation email and Zoom link right away.'
+              : 'Enter your name and email. I will send the confirmation email right away.'
             : 'Enter your information here. Once you continue, Stripe opens securely to complete your checkout.'}
         </p>
       </div>
@@ -622,7 +627,7 @@ export default function EventRegistrationSection({
               {isFreeRegistration ? 'Free Access' : 'Your Ticket'}
             </p>
             <h3 className="mt-2 font-serif text-2xl font-bold tracking-tight text-[#FCF4EB]">
-              {isFreeRegistration ? 'Online Workshop' : 'Event Seat'}
+              {isFreeRegistration ? (event.isVirtual ? 'Online Workshop' : 'Event Seat') : 'Event Seat'}
             </h3>
             {event.durationLabel ? (
               <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#FCF4EB]/42">{event.durationLabel}</p>
