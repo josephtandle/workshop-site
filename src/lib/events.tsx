@@ -1015,7 +1015,7 @@ export const events: EventDefinition[] = [
     ctaLabel: 'Register Free',
     dateLabel: 'Friday, August 7, 2026',
     timeLabel: '3:00 PM to 6:00 PM',
-    locationLabel: 'Padang Linjong, Canggu, Bali',
+    locationLabel: 'Near La Brisa, Canggu, Bali',
     durationLabel: 'A 3-hour live session',
     heroImage: '/events/business-blocks-ai-solved/hero-placeholder.jpg',
     heroAlt: 'The Biggest Business Blocks That AI Solved For Me, featuring Joe Che',
