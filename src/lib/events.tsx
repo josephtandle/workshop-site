@@ -128,6 +128,7 @@ export type EventDefinition = {
   heroImage: string
   heroAlt: string
   heroNoOverlay?: boolean
+  heroObjectFit?: 'cover' | 'contain'
   heroVideoSrc?: string
   heroVideoPoster?: string
   zoomLink?: string
@@ -1017,8 +1018,9 @@ export const events: EventDefinition[] = [
     timeLabel: '3:00 PM to 6:00 PM',
     locationLabel: 'Near La Brisa, Canggu, Bali',
     durationLabel: 'A 3-hour live session',
-    heroImage: '/events/business-blocks-ai-solved/hero-placeholder.jpg',
-    heroAlt: 'The Biggest Business Blocks That AI Solved For Me, featuring Joe Che',
+    heroImage: '/events/business-blocks-ai-solved/poster.png',
+    heroAlt: 'The Biggest Business Blocks That AI Solved For Me, featuring Joe Che, Friday August 7, 3 to 6 PM',
+    heroObjectFit: 'contain',
     badge: 'Limited Spots',
     audience: [
       'Entrepreneurs',
