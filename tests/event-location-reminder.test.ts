@@ -1,11 +1,12 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 
-import { sendEventLocationReminderEmail } from '../src/lib/event-confirmation-email'
+import { sendEventConfirmationEmail, sendEventLocationReminderEmail } from '../src/lib/event-confirmation-email'
 import { getEventBySlug } from '../src/lib/events'
 import {
   buildLocationReminderIdempotencyKey,
   dedupeAttendeesByEmail,
+  hasLocationRevealWindowClosed,
   isLocationReminderDue,
 } from '../src/lib/location-reminder'
 
@@ -50,6 +51,84 @@ test('location reminder due window opens four hours before the event', () => {
     }),
     false,
   )
+})
+
+test('hasLocationRevealWindowClosed is false before the reminder window and true after it closes', () => {
+  const event = getEventBySlug('ai-avatar-content-creation')
+  assert.ok(event?.privateLocationReminder)
+
+  // Two days before the event: reminder window has not opened yet.
+  assert.equal(
+    hasLocationRevealWindowClosed({
+      eventStartIso: event.privateLocationReminder.eventStartIso,
+      leadHours: event.privateLocationReminder.leadHours,
+      now: new Date('2026-05-28T10:00:00.000Z'),
+    }),
+    false,
+  )
+
+  // Inside the active reminder window: still not "closed" yet.
+  assert.equal(
+    hasLocationRevealWindowClosed({
+      eventStartIso: event.privateLocationReminder.eventStartIso,
+      leadHours: event.privateLocationReminder.leadHours,
+      now: new Date('2026-05-29T23:35:00.000Z'),
+    }),
+    false,
+  )
+
+  // Well after the 90-minute window has elapsed: closed.
+  assert.equal(
+    hasLocationRevealWindowClosed({
+      eventStartIso: event.privateLocationReminder.eventStartIso,
+      leadHours: event.privateLocationReminder.leadHours,
+      now: new Date('2026-05-30T08:00:00.000Z'),
+    }),
+    true,
+  )
+})
+
+test('late signups get the exact address immediately in their confirmation email', async () => {
+  const event = getEventBySlug('ai-avatar-content-creation')
+  assert.ok(event?.privateLocationReminder)
+
+  const originalFetch = global.fetch
+  const originalApiKey = process.env.RESEND_API_KEY
+  const requests: Array<{ body: string }> = []
+
+  process.env.RESEND_API_KEY = 'test_key'
+  global.fetch = async (_input, init) => {
+    requests.push({ body: (init?.body as string) ?? '' })
+    return new Response(JSON.stringify({ id: 'email_123' }), {
+      status: 200,
+      headers: { 'content-type': 'application/json' },
+    })
+  }
+
+  try {
+    // Registers well before the reminder window ever opens: no address yet.
+    await sendEventConfirmationEmail({
+      event,
+      attendeeName: 'Early Bird',
+      attendeeEmail: 'early@example.com',
+      now: new Date('2026-05-20T10:00:00.000Z'),
+    })
+
+    // Registers after the reminder window has already closed: gets it now.
+    await sendEventConfirmationEmail({
+      event,
+      attendeeName: 'Late Signup',
+      attendeeEmail: 'late@example.com',
+      now: new Date('2026-05-30T08:00:00.000Z'),
+    })
+  } finally {
+    global.fetch = originalFetch
+    process.env.RESEND_API_KEY = originalApiKey
+  }
+
+  assert.equal(requests.length, 2)
+  assert.ok(!requests[0].body.includes(event.privateLocationReminder.exactAddress))
+  assert.ok(requests[1].body.includes(event.privateLocationReminder.exactAddress))
 })
 
 test('attendee dedupe keeps one row per email', () => {

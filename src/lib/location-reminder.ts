@@ -25,6 +25,26 @@ export function isLocationReminderDue(input: {
   return now >= reminderAt && now < windowEnd
 }
 
+// True once the scheduled location-reminder cron will never reach this
+// registrant (its due window has fully closed). Anyone registering at or
+// after this point gets the exact address immediately in their confirmation
+// email instead of waiting on a reminder that has already passed them by.
+export function hasLocationRevealWindowClosed(input: {
+  eventStartIso: string
+  leadHours: number
+  now?: Date
+  windowMinutes?: number
+}) {
+  const now = input.now ?? new Date()
+  const reminderAt = new Date(
+    new Date(input.eventStartIso).getTime() - input.leadHours * 60 * 60 * 1000,
+  )
+  const windowMinutes = input.windowMinutes ?? DEFAULT_REMINDER_WINDOW_MINUTES
+  const windowEnd = new Date(reminderAt.getTime() + windowMinutes * 60 * 1000)
+
+  return now >= windowEnd
+}
+
 export function dedupeAttendeesByEmail<T extends { attendeeEmail: string }>(attendees: T[]) {
   const seen = new Set<string>()
   const unique: T[] = []

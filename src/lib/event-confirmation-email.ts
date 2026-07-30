@@ -1,5 +1,5 @@
 import type { EventDefinition } from '@/lib/events'
-import { buildLocationReminderIdempotencyKey } from './location-reminder'
+import { buildLocationReminderIdempotencyKey, hasLocationRevealWindowClosed } from './location-reminder'
 import {
   buildSessionReminderIdempotencyKey,
   type SessionReminderWindowLabel,
@@ -194,8 +194,16 @@ function buildSessionReminderEmailHtml(
   }
 }
 
-function buildConfirmationEmailHtml(event: EventDefinition, attendeeName: string, cancelToken?: string) {
+function buildConfirmationEmailHtml(event: EventDefinition, attendeeName: string, cancelToken?: string, now: Date = new Date()) {
   const siteUrl = getSiteUrl()
+  const location = event.privateLocationReminder
+  const revealLocationNow =
+    Boolean(location) &&
+    hasLocationRevealWindowClosed({
+      eventStartIso: location!.eventStartIso,
+      leadHours: location!.leadHours,
+      now,
+    })
   const setupUrl = `${siteUrl}/events/${event.slug}/setup`
   const eventUrl = `${siteUrl}/events/${event.slug}`
 
@@ -279,11 +287,28 @@ function buildConfirmationEmailHtml(event: EventDefinition, attendeeName: string
           ${calendarButtonsHtml}
 
           ${
-            event.privateLocationReminder
-              ? `<p style="margin: 0 0 18px; font-size: 15px; line-height: 1.75; color: #4b4263;">
-            The event is in <strong style="color:#16121f;">${event.locationLabel}</strong>. You will receive an email with the exact location ${formatLeadHours(event.privateLocationReminder.leadHours)} before the event.
+            location && revealLocationNow
+              ? `<div style="border: 1px solid rgba(124, 105, 199, 0.16); border-radius: 18px; background: #faf8ff; padding: 22px 24px; margin-bottom: 24px;">
+            <p style="margin: 0 0 10px; font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #7C69C7;">Exact Address</p>
+            <p style="margin: 0 0 14px; font-size: 15px; line-height: 1.7; color: #2d2442;">${location.exactAddress}</p>
+            <a href="${location.googleMapsUrl}" style="display:inline-block; background:#7C69C7; color:#ffffff; text-decoration:none; padding:12px 20px; border-radius:10px; font-size:14px; font-weight:700; box-shadow:0 8px 20px rgba(124,105,199,0.22);">
+              Open Google Maps pin
+            </a>
+            ${
+              location.parkingInstructions?.length
+                ? `<ul style="margin: 16px 0 0; padding-left: 20px; color: #4b4263;">
+                    ${location.parkingInstructions
+                      .map((instruction) => `<li style="margin: 0 0 8px; font-size: 14px; line-height: 1.65;">${instruction}</li>`)
+                      .join('')}
+                  </ul>`
+                : ''
+            }
+          </div>`
+              : location
+                ? `<p style="margin: 0 0 18px; font-size: 15px; line-height: 1.75; color: #4b4263;">
+            The event is in <strong style="color:#16121f;">${event.locationLabel}</strong>. You will receive an email with the exact location ${formatLeadHours(location.leadHours)} before the event.
           </p>`
-              : ''
+                : ''
           }
 
           ${
@@ -495,9 +520,20 @@ export async function sendEventConfirmationEmail(input: {
   attendeeName: string
   attendeeEmail: string
   cancelToken?: string
+  now?: Date
 }) {
+  const now = input.now ?? new Date()
+  const location = input.event.privateLocationReminder
+  const revealLocationNow =
+    Boolean(location) &&
+    hasLocationRevealWindowClosed({
+      eventStartIso: location!.eventStartIso,
+      leadHours: location!.leadHours,
+      now,
+    })
+
   const subject = `Your seat is reserved for ${input.event.title}`
-  const html = buildConfirmationEmailHtml(input.event, input.attendeeName, input.cancelToken)
+  const html = buildConfirmationEmailHtml(input.event, input.attendeeName, input.cancelToken, now)
 
   const attachments = input.event.calendarEvent
     ? [
@@ -509,8 +545,8 @@ export async function sendEventConfirmationEmail(input: {
               title: input.event.title,
               startIso: input.event.calendarEvent.startIso,
               endIso: input.event.calendarEvent.endIso,
-              location: input.event.locationLabel,
-              description: input.event.privateLocationReminder
+              location: revealLocationNow && location ? location.exactAddress : input.event.locationLabel,
+              description: location && !revealLocationNow
                 ? 'Exact address will be emailed to you before the event.'
                 : undefined,
               organizer: { name: 'Joe Che', email: 'joe@mastermindshq.business' },
