@@ -1009,9 +1009,9 @@ export const events: EventDefinition[] = [
     shortTitle: 'Business Blocks AI Solved',
     eyebrow: 'Free Live Workshop',
     summary:
-      'A raw, practical Bali session hosted by Marina Joubert, featuring Joe Che on the four business blocks AI removed for him, and how to remove yours.',
+      'A raw, practical Bali session hosted by Marina Joubert, featuring Joe Che on what AI actually removed from his business this year.',
     description:
-      'A free live workshop in Canggu where Joe Che breaks down the real business blocks AI solved for him, perfectionism, focus, speed, and messaging, and shows the exact AI systems he used to move past each one.',
+      'A free live workshop in Canggu where Joe Che shows what actually changed in his business this year, and the real AI systems behind it.',
     ctaLabel: 'Register Free',
     dateLabel: 'Friday, August 7, 2026',
     timeLabel: '3:00 PM to 6:00 PM',
@@ -1037,18 +1037,6 @@ export const events: EventDefinition[] = [
     ],
     hosts: [
       {
-        name: 'Marina Joubert',
-        firstName: 'Marina',
-        role: 'Host • Super-Connector • Event Producer',
-        photoSrc: '/events/business-blocks-ai-solved/marina-joubert.jpg',
-        hideBestsellerBadge: true,
-        bio: [
-          'Marina Joubert is known across Bali and Dubai as a true super-connector: the person who brings the right people into the same room.',
-          'She has built her career designing and running immersive events, from intimate masterminds to large-scale gatherings, alongside real estate advisory and luxury travel work across Indonesia and the Middle East.',
-          'Marina is hosting this session because she has watched AI change how fast Joe can move, and wants her network to see it firsthand.',
-        ],
-      },
-      {
         name: 'Joe Che',
         firstName: 'Joe',
         role: 'Presenter • Founder • AI Entrepreneur • Community Builder',
@@ -1056,12 +1044,24 @@ export const events: EventDefinition[] = [
         bio: [
           'Joe Che is a number one bestselling author in three categories across business and AI, the founder of 26 companies, and the builder of two AI companies, including All Sorted AI, a practical AI operating system for service-based small business owners.',
           'He previously built the largest software and business training company in New York City, where he trained more than 90,000 people, including Fortune 5 executives, the CIA, Microsoft, and Tyra Banks.',
-          'Today, Joe mentors entrepreneurs inside his Business Automation Mastermind and helps founders use AI to create cleaner operations, stronger offers, faster execution, and more freedom.',
+          'Today, Joe mentors entrepreneurs inside his AI Business Mastermind and helps founders use AI to create cleaner operations, stronger offers, faster execution, and more freedom.',
         ],
         bioHtml: [
           'Joe Che is a number one bestselling author in three categories across business and AI, the founder of 26 companies, and the builder of two AI companies, including All Sorted AI, a practical AI operating system for service-based small business owners.',
           'He previously built the largest software and business training company in New York City, where he trained more than 90,000 people, including Fortune 5 executives, the CIA, Microsoft, and Tyra Banks.',
-          'Today, Joe mentors entrepreneurs inside his <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 hover:text-[#FCF4EB]">Business Automation Mastermind</a> and helps founders use AI to create cleaner operations, stronger offers, faster execution, and more freedom.',
+          'Today, Joe mentors entrepreneurs inside his <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 hover:text-[#FCF4EB]">AI Business Mastermind</a> and helps founders use AI to create cleaner operations, stronger offers, faster execution, and more freedom.',
+        ],
+      },
+      {
+        name: 'Marina Joubert',
+        firstName: 'Marina',
+        role: 'Host • Super-Connector • Event Producer',
+        photoSrc: '/mastermind-participants/marina--jaubert.jpg',
+        hideBestsellerBadge: true,
+        bio: [
+          'Marina Joubert is known across Bali and Dubai as a true super-connector, the person who brings the right people into the same room.',
+          'She went through Joe\'s AI Business Mastermind herself and came out with Magenta, an always-on AI co-founder that takes her voice notes, a personalized content studio, and her own brand book.',
+          'Marina is hosting this session because she has lived the shift firsthand and wants her network to see it too.',
         ],
       },
     ],
@@ -1110,100 +1110,6 @@ export const events: EventDefinition[] = [
     },
     sections: [
       {
-        type: 'html',
-        id: 'about',
-        eyebrow: 'What This Is',
-        html: `
-          <div class="not-prose space-y-5">
-            <h2 class="event-gradient-title pt-2 text-[2rem] font-extrabold leading-[1.02] tracking-tight text-[#FCF4EB] md:text-[2.6rem]">
-              The blocks that used to run my business are gone. AI removed them.
-            </h2>
-            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
-              For three hours in Canggu, Joe is going to get specific about the four things that used to slow him down most, perfectionism, focus, speed, and messaging, and exactly what he built with AI to move past each one.
-            </p>
-            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
-              This isn't a theory talk. It's the real systems: the agents, the workflows, and the decisions behind them, shown live so you can take the same approach into your own business.
-            </p>
-            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
-              It's free, hosted by Marina Joubert at Samm's Farm in Canggu. Spots are capped at 40. Save yours below.
-            </p>
-          </div>
-        `,
-      },
-      {
-        type: 'cards',
-        id: 'four-blocks',
-        eyebrow: 'The Four Blocks',
-        title: 'What was actually in the way, and what removed it',
-        intro: 'Four blocks. Four AI solutions Joe uses every day.',
-        columns: 2,
-        items: [
-          {
-            kicker: 'Block 1 — Perfectionism',
-            title: 'Moving fast and messy',
-            body:
-              'Overcoming the need for everything to be perfect before it ships, and learning to move quickly even when it feels messy.',
-            bullets: [
-              'An AI operating system with multiple agents running at once',
-              'Output that isn’t always flawless, but moves the needle',
-              'Speed over polish, because momentum compounds',
-            ],
-          },
-          {
-            kicker: 'Block 2 — Focus',
-            title: 'Overcoming neurodivergence and ADHD',
-            body: 'Managing high neurodivergence and severe ADHD, which make holding focus incredibly difficult.',
-            bullets: [
-              'The Shaman Agent aligns focus with the core mission',
-              'The Strategist Agent reviews every board and narrows the day to three or four moves that matter',
-              'Everything else gets left alone on purpose',
-            ],
-          },
-          {
-            kicker: 'Block 3 — Speed',
-            title: 'Rapid go-to-market',
-            body: 'Launching initiatives and starting businesses at a speed that used to be impossible.',
-            bullets: [
-              'Project setup, Stripe integration, and go-to-market execution, streamlined end to end',
-              'Ideas go from concept to live offer in days, not months',
-            ],
-          },
-          {
-            kicker: 'Block 4 — High-Signal Messaging',
-            title: 'Fixing inconsistent, scattered messaging',
-            body: 'Cleaning up messaging that used to sound different on every platform.',
-            bullets: [
-              'A custom branding agent built on proven frameworks',
-              'One consistent voice, everywhere, instead of rewriting it from scratch each time',
-            ],
-          },
-        ],
-      },
-      {
-        type: 'split',
-        id: 'lobster-story',
-        eyebrow: 'On Focus',
-        title: 'The lobster story',
-        body: [
-          "Eating a lobster tail gets you 90% of the meat quickly, in one clean cut. You can spend another hour picking at the tiny leftover pieces, but it's rarely worth it.",
-          "That's how Joe treats focus with AI now. The Strategist Agent finds the moves that matter and leaves the rest alone on purpose, instead of chasing every small task down to the last scrap.",
-        ],
-        imageSrc: '/images/events/joe-che-bio-bw.jpg',
-        imageAlt: 'Joe Che',
-        caption: 'Joe will tell this one live, in full, at the workshop.',
-      },
-      {
-        type: 'html',
-        id: 'mid-cta',
-        html: `
-          <div class="not-prose text-center py-2">
-            <a href="#register" class="copy-button-glass copy-button-primary inline-flex min-w-[220px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold no-underline">
-              Register Free
-            </a>
-          </div>
-        `,
-      },
-      {
         type: 'checklist',
         id: 'outcomes',
         eyebrow: 'What You Will Leave With',
@@ -1218,10 +1124,42 @@ export const events: EventDefinition[] = [
         ],
       },
       {
+        type: 'html',
+        id: 'about',
+        eyebrow: 'What This Is',
+        html: `
+          <div class="not-prose space-y-5">
+            <h2 class="event-gradient-title pt-2 text-[2rem] font-extrabold leading-[1.02] tracking-tight text-[#FCF4EB] md:text-[2.6rem]">
+              The blocks that used to run my business are gone. Here's what removed them.
+            </h2>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              For three hours in Canggu, I'm going to get specific about what actually changed this year. Perfectionism, focus, speed, messaging, the stuff that used to run my week is the stuff I removed with AI, and I'll show you exactly how, live.
+            </p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              This isn't a theory talk. It's the real systems, the agents, the workflows, the decisions behind them, shown so you can take the same approach into your own business.
+            </p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              It's free, hosted by Marina at Samm's Farm in Canggu. Spots are capped at 40, and the exact address goes out to confirmed ticket holders the day before the event. Save your seat below.
+            </p>
+          </div>
+        `,
+      },
+      {
+        type: 'html',
+        id: 'mid-cta',
+        html: `
+          <div class="not-prose text-center py-2">
+            <a href="#register" class="copy-button-glass copy-button-primary inline-flex min-w-[220px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold no-underline">
+              Register Free
+            </a>
+          </div>
+        `,
+      },
+      {
         type: 'hosts',
         id: 'hosts',
         eyebrow: 'Hosted By',
-        title: 'Marina Joubert and Joe Che',
+        title: 'Joe Che and Marina Joubert',
         intro: '',
         hosts: [],
       },
@@ -1229,7 +1167,7 @@ export const events: EventDefinition[] = [
     metadata: {
       title: 'The Biggest Business Blocks That AI Solved For Me',
       description:
-        'A free live workshop in Canggu, Bali hosted by Marina Joubert, featuring Joe Che on the four business blocks AI removed for him: perfectionism, focus, speed, and messaging.',
+        'A free live workshop in Canggu, Bali hosted by Marina Joubert, featuring Joe Che on what AI actually removed from his business this year.',
     },
   },
 ]
