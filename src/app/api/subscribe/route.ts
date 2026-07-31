@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
 import { handleSubscribe, SubscribeError, type SubscribeDeps } from '@/lib/subscribe'
 import { sendViaResend } from '@/lib/resend-sender'
+import { isSuppressed } from '@/lib/email-suppressions'
 
 function supabase() {
   return createClient(
@@ -46,6 +47,7 @@ const deps: SubscribeDeps = {
   },
 
   sendEmail: sendViaResend,
+  isSuppressed,
 }
 
 export async function POST(request: Request) {

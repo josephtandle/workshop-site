@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
 import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
+import { buildUnsubscribeHeaders, buildUnsubscribeUrl } from '@/lib/list-unsubscribe'
+import { isSuppressed } from '@/lib/email-suppressions'
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
 
@@ -127,6 +129,12 @@ The more context Claude has, the less you have to explain each session.)
 async function sendViaResend(firstName: string, email: string, idempotencyKey: string) {
   const fileBase64 = Buffer.from(FILE_CONTENT).toString('base64')
   const escapedContent = FILE_CONTENT.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+  const unsubscribeUrl = buildUnsubscribeUrl(email)
+  // Omit the link entirely (rather than a dead/unverifiable href) when the
+  // signing secret is missing, buildUnsubscribeUrl returns null in that case.
+  const unsubscribeFooter = unsubscribeUrl
+    ? `<p style="font-size: 12px; color: #999; margin-top: 8px;">Sent by Masterminds HQ. <a href="${unsubscribeUrl}" style="color: #999;">Unsubscribe</a> any time.</p>`
+    : `<p style="font-size: 12px; color: #999; margin-top: 8px;">Sent by Masterminds HQ.</p>`
 
   const html = `
     <div style="font-family: system-ui, sans-serif; max-width: 560px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a;">
@@ -157,7 +165,8 @@ async function sendViaResend(firstName: string, email: string, idempotencyKey: s
           Learn more at mastermindshq.business
         </a>
       </p>
-      <p style="font-size: 14px; color: #999; margin-top: 32px;">— Joe Che</p>
+      <p style="font-size: 14px; color: #999; margin-top: 32px;">Joe Che</p>
+      ${unsubscribeFooter}
     </div>
   `
 
@@ -179,6 +188,7 @@ async function sendViaResend(firstName: string, email: string, idempotencyKey: s
           content: fileBase64,
         },
       ],
+      headers: buildUnsubscribeHeaders(email),
     }),
   })
 
@@ -231,6 +241,12 @@ export async function POST(request: Request) {
         campaign: 'claude-md',
       }),
     }).catch((err) => console.error('CRM ingest error (non-blocking):', err))
+
+    // Marketing send: skip if suppressed (fails closed on any read error).
+    if (await isSuppressed(email)) {
+      console.log(`claudemd lead magnet: skipping suppressed address ${email}`)
+      return NextResponse.json({ success: true, suppressed: true })
+    }
 
     // Send via Resend
     const idempotencyKey = `lead-magnet/claude-md/${email.trim().toLowerCase()}`
