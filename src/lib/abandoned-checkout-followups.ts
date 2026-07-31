@@ -6,6 +6,7 @@ import { createStripeClient } from '@/lib/stripe'
 import { toOrigin } from '@/lib/url-utils'
 import { buildUnsubscribeHeaders, buildUnsubscribeUrl } from '@/lib/list-unsubscribe'
 import { isSuppressed } from '@/lib/email-suppressions'
+import { withUtm } from '@/lib/utm'
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
 
@@ -263,12 +264,12 @@ export function buildAbandonedCheckoutEmailHtml(candidate: AbandonedCheckoutCand
           </p>
           ${financeHtml}
           <div style="margin: 28px 0 18px;">
-            <a href="${candidate.eventUrl}" style="display:inline-block; background:#7C69C7; color:#ffffff; text-decoration:none; padding:14px 24px; border-radius:12px; font-size:16px; font-weight:700; box-shadow:0 14px 32px rgba(124,105,199,0.24);">
+            <a href="${withUtm(candidate.eventUrl, { campaign: 'abandoned-checkout-day1', content: candidate.event.slug })}" style="display:inline-block; background:#7C69C7; color:#ffffff; text-decoration:none; padding:14px 24px; border-radius:12px; font-size:16px; font-weight:700; box-shadow:0 14px 32px rgba(124,105,199,0.24);">
               Open the event page
             </a>
           </div>
           <p style="margin: 0 0 24px; font-size: 14px; line-height: 1.75; color: #4b4263;">
-            You can try again here: <a href="${candidate.eventUrl}" style="color:#7C69C7; font-weight:700; text-decoration:none;">${candidate.eventUrl}</a>
+            You can try again here: <a href="${withUtm(candidate.eventUrl, { campaign: 'abandoned-checkout-day1', content: candidate.event.slug })}" style="color:#7C69C7; font-weight:700; text-decoration:none;">${candidate.eventUrl}</a>
           </p>
           <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.75; color: #4b4263;">
             Joe
@@ -294,12 +295,12 @@ export function buildAbandonedCheckoutT12hEmailHtml(candidate: AbandonedCheckout
             We have a spot left for <strong style="color:#16121f;">${candidate.event.title}</strong>.
           </p>
           <div style="margin: 0 0 18px;">
-            <a href="${candidate.eventUrl}" style="display:inline-block; background:#7C69C7; color:#ffffff; text-decoration:none; padding:14px 24px; border-radius:12px; font-size:16px; font-weight:700; box-shadow:0 14px 32px rgba(124,105,199,0.24);">
+            <a href="${withUtm(candidate.eventUrl, { campaign: 'abandoned-checkout-t12h', content: candidate.event.slug })}" style="display:inline-block; background:#7C69C7; color:#ffffff; text-decoration:none; padding:14px 24px; border-radius:12px; font-size:16px; font-weight:700; box-shadow:0 14px 32px rgba(124,105,199,0.24);">
               Open the event page
             </a>
           </div>
           <p style="margin: 0 0 18px; font-size: 14px; line-height: 1.75; color: #4b4263;">
-            <a href="${candidate.eventUrl}" style="color:#7C69C7; font-weight:700; text-decoration:none;">${candidate.eventUrl}</a>
+            <a href="${withUtm(candidate.eventUrl, { campaign: 'abandoned-checkout-t12h', content: candidate.event.slug })}" style="color:#7C69C7; font-weight:700; text-decoration:none;">${candidate.eventUrl}</a>
           </p>
         </div>
         <div style="padding: 0 32px 24px; border-top: 1px solid rgba(124, 105, 199, 0.10); margin-top: 8px;">

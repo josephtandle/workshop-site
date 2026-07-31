@@ -7,6 +7,7 @@ import {
 import { buildGoogleCalendarUrl, buildIcalString } from './calendar'
 import { buildUnsubscribeHeaders, buildUnsubscribeUrl } from './list-unsubscribe'
 import { isSuppressed } from './email-suppressions'
+import { withUtm } from './utm'
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
 
@@ -106,7 +107,10 @@ export function buildAskAnAiExpertWelcomeEmailHtml(event: EventDefinition, atten
   const firstName = getFirstName(attendeeName)
   const zoomLink = event.zoomLink ?? 'ZOOM_LINK_TBD'
   const siteUrl = getSiteUrl()
-  const eventUrl = `${siteUrl}/events/${event.slug}`
+  const eventUrl = withUtm(`${siteUrl}/events/${event.slug}`, {
+    campaign: 'ask-an-ai-expert-welcome',
+    content: event.slug,
+  })
   const cfg = event.emailConfig
   const signatureName = cfg?.signatureName ?? 'Joe Che\nMasterminds HQ'
   const signatureHtml = signatureName.split('\n').join('<br>')

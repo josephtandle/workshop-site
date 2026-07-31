@@ -3,6 +3,7 @@ import { createClient } from '@supabase/supabase-js'
 import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
 import { buildUnsubscribeHeaders, buildUnsubscribeUrl } from '@/lib/list-unsubscribe'
 import { isSuppressed } from '@/lib/email-suppressions'
+import { withUtm } from '@/lib/utm'
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
 
@@ -161,7 +162,7 @@ async function sendViaResend(firstName: string, email: string, idempotencyKey: s
         information and conversations, and organize it all so their AI gets smart.
       </p>
       <p style="font-size: 15px; margin-bottom: 8px;">
-        <a href="https://mastermindshq.business" style="color: #7C69C7; font-weight: 600;">
+        <a href="${withUtm('https://mastermindshq.business', { campaign: 'lead-magnet', content: 'claude-md' })}" style="color: #7C69C7; font-weight: 600;">
           Learn more at mastermindshq.business
         </a>
       </p>
