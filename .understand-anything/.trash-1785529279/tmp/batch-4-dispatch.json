@@ -1,0 +1,41 @@
+{
+  "batchIndex": 4,
+  "files": [
+    {
+      "path": "CLAUDE.md",
+      "language": "markdown",
+      "sizeLines": 43,
+      "fileCategory": "docs",
+      "summary": "Project specific Claude instructions"
+    },
+    {
+      "path": "package.json",
+      "language": "json",
+      "sizeLines": 46,
+      "fileCategory": "config",
+      "summary": "NPM package configuration"
+    },
+    {
+      "path": "tsconfig.json",
+      "language": "json",
+      "sizeLines": 41,
+      "fileCategory": "config",
+      "summary": "TypeScript configuration"
+    },
+    {
+      "path": "vercel.json",
+      "language": "json",
+      "sizeLines": 47,
+      "fileCategory": "config",
+      "summary": "Vercel deployment configuration"
+    }
+  ],
+  "batchImportData": {
+    "CLAUDE.md": [],
+    "package.json": [],
+    "tsconfig.json": [],
+    "vercel.json": []
+  },
+  "neighborMap": {},
+  "fileSummary": "CLAUDE.md (43 lines, markdown, docs)\npackage.json (46 lines, json, config)\ntsconfig.json (41 lines, json, config)\n... and 1 more"
+}

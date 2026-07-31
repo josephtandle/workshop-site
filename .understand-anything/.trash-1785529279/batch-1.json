@@ -1,0 +1,1096 @@
+{
+  "nodes": [
+    {
+      "id": "route-ts:POST",
+      "name": "POST",
+      "type": "function",
+      "file": "src/app/api/events/checkout-session/route.ts",
+      "isExported": true,
+      "isAsync": true,
+      "scope": "module",
+      "description": "API route handler for creating Stripe checkout sessions for event registration",
+      "tags": [
+        "api",
+        "handler",
+        "stripe",
+        "checkout"
+      ],
+      "lineRange": [
+        36,
+        329
+      ]
+    },
+    {
+      "id": "route-ts:runtime",
+      "name": "runtime",
+      "type": "constant",
+      "file": "src/app/api/events/checkout-session/route.ts",
+      "isExported": true,
+      "value": "'nodejs'",
+      "scope": "module",
+      "description": "Next.js runtime configuration for Node.js",
+      "lineRange": [
+        24,
+        24
+      ]
+    },
+    {
+      "id": "route-ts:getBaseUrl",
+      "name": "getBaseUrl",
+      "type": "function",
+      "file": "src/app/api/events/checkout-session/route.ts",
+      "isExported": false,
+      "isAsync": false,
+      "scope": "module",
+      "description": "Helper function to resolve the base URL from environment or request",
+      "tags": [
+        "utility",
+        "url"
+      ],
+      "lineRange": [
+        26,
+        34
+      ]
+    },
+    {
+      "id": "EventPageView-tsx:EventPageView",
+      "name": "EventPageView",
+      "type": "component",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": true,
+      "isAsync": false,
+      "isClient": false,
+      "scope": "module",
+      "description": "Main event page component that renders event details, sections, and registration area",
+      "tags": [
+        "page",
+        "event",
+        "component",
+        "react"
+      ],
+      "lineRange": [
+        488,
+        657
+      ]
+    },
+    {
+      "id": "EventPageView-tsx:sectionTitleClass",
+      "name": "sectionTitleClass",
+      "type": "function",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "scope": "module",
+      "description": "Helper function to return Tailwind classes for section titles",
+      "tags": [
+        "utility",
+        "styles"
+      ],
+      "lineRange": [
+        15,
+        20
+      ]
+    },
+    {
+      "id": "EventPageView-tsx:sectionEyebrowClass",
+      "name": "sectionEyebrowClass",
+      "type": "function",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "scope": "module",
+      "description": "Helper function to return Tailwind classes for section eyebrows",
+      "tags": [
+        "utility",
+        "styles"
+      ],
+      "lineRange": [
+        22,
+        24
+      ]
+    },
+    {
+      "id": "EventPageView-tsx:SectionShell",
+      "name": "SectionShell",
+      "type": "component",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "isClient": false,
+      "scope": "module",
+      "description": "Reusable container component for event page sections with eyebrow, title, and intro",
+      "tags": [
+        "component",
+        "layout",
+        "react"
+      ],
+      "lineRange": [
+        26,
+        59
+      ]
+    },
+    {
+      "id": "EventPageView-tsx:RichParagraphs",
+      "name": "RichParagraphs",
+      "type": "component",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "isClient": false,
+      "scope": "module",
+      "description": "Component that renders an array of paragraphs with consistent styling",
+      "tags": [
+        "component",
+        "text",
+        "react"
+      ],
+      "lineRange": [
+        61,
+        69
+      ]
+    },
+    {
+      "id": "EventPageView-tsx:StorySection",
+      "name": "StorySection",
+      "type": "component",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "isClient": false,
+      "scope": "module",
+      "description": "Section component for rendering story-type event sections",
+      "tags": [
+        "component",
+        "section",
+        "react"
+      ],
+      "lineRange": [
+        71,
+        81
+      ]
+    },
+    {
+      "id": "EventPageView-tsx:ChecklistSection",
+      "name": "ChecklistSection",
+      "type": "component",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "isClient": false,
+      "scope": "module",
+      "description": "Section component for rendering numbered checklist items",
+      "tags": [
+        "component",
+        "section",
+        "react"
+      ],
+      "lineRange": [
+        83,
+        103
+      ]
+    },
+    {
+      "id": "EventPageView-tsx:CardsSection",
+      "name": "CardsSection",
+      "type": "component",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "isClient": false,
+      "scope": "module",
+      "description": "Section component for rendering card-based content with optional curriculum styling",
+      "tags": [
+        "component",
+        "section",
+        "react"
+      ],
+      "lineRange": [
+        105,
+        143
+      ]
+    },
+    {
+      "id": "EventPageView-tsx:SplitSection",
+      "name": "SplitSection",
+      "type": "component",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "isClient": false,
+      "scope": "module",
+      "description": "Section component with side-by-side text and image layout",
+      "tags": [
+        "component",
+        "section",
+        "react"
+      ],
+      "lineRange": [
+        145,
+        165
+      ]
+    },
+    {
+      "id": "EventPageView-tsx:ImageSection",
+      "name": "ImageSection",
+      "type": "component",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "isClient": false,
+      "scope": "module",
+      "description": "Section component for rendering images or videos with optional caption",
+      "tags": [
+        "component",
+        "section",
+        "react"
+      ],
+      "lineRange": [
+        167,
+        194
+      ]
+    },
+    {
+      "id": "EventPageView-tsx:HtmlSection",
+      "name": "HtmlSection",
+      "type": "component",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "isClient": false,
+      "scope": "module",
+      "description": "Section component for rendering raw HTML with conditional ended event button",
+      "tags": [
+        "component",
+        "section",
+        "react"
+      ],
+      "lineRange": [
+        196,
+        221
+      ]
+    },
+    {
+      "id": "EventPageView-tsx:QuoteCardSection",
+      "name": "QuoteCardSection",
+      "type": "component",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "isClient": false,
+      "scope": "module",
+      "description": "Section component for rendering testimonial quote cards with image/video and attribution",
+      "tags": [
+        "component",
+        "section",
+        "react"
+      ],
+      "lineRange": [
+        223,
+        312
+      ]
+    },
+    {
+      "id": "EventPageView-tsx:HostsSection",
+      "name": "HostsSection",
+      "type": "component",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "isClient": false,
+      "scope": "module",
+      "description": "Section component for rendering event host profiles with photos and bios",
+      "tags": [
+        "component",
+        "section",
+        "react"
+      ],
+      "lineRange": [
+        314,
+        357
+      ]
+    },
+    {
+      "id": "EventPageView-tsx:EventVideoSection",
+      "name": "EventVideoSection",
+      "type": "component",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "isClient": false,
+      "scope": "module",
+      "description": "Section component for embedding YouTube video with caption",
+      "tags": [
+        "component",
+        "section",
+        "react"
+      ],
+      "lineRange": [
+        359,
+        383
+      ]
+    },
+    {
+      "id": "EventPageView-tsx:EndedButton",
+      "name": "EndedButton",
+      "type": "component",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "isClient": false,
+      "scope": "module",
+      "description": "Component rendering disabled button for ended events",
+      "tags": [
+        "component",
+        "button",
+        "react"
+      ],
+      "lineRange": [
+        385,
+        391
+      ]
+    },
+    {
+      "id": "EventPageView-tsx:CtaSection",
+      "name": "CtaSection",
+      "type": "component",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "isClient": false,
+      "scope": "module",
+      "description": "Section component for call-to-action with pricing display and promo info",
+      "tags": [
+        "component",
+        "section",
+        "react"
+      ],
+      "lineRange": [
+        393,
+        459
+      ]
+    },
+    {
+      "id": "EventPageView-tsx:renderSection",
+      "name": "renderSection",
+      "type": "function",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "scope": "module",
+      "description": "Router function that renders appropriate section component based on type",
+      "tags": [
+        "utility",
+        "router"
+      ],
+      "lineRange": [
+        461,
+        486
+      ]
+    },
+    {
+      "id": "EventRegistrationSection-tsx:EventRegistrationData",
+      "name": "EventRegistrationData",
+      "type": "type",
+      "file": "src/components/events/EventRegistrationSection.tsx",
+      "isExported": true,
+      "scope": "module",
+      "description": "Type definition for event registration section data props",
+      "tags": [
+        "type",
+        "interface"
+      ],
+      "lineRange": [
+        47,
+        68
+      ]
+    },
+    {
+      "id": "EventRegistrationSection-tsx:EventRegistrationSection",
+      "name": "EventRegistrationSection",
+      "type": "component",
+      "file": "src/components/events/EventRegistrationSection.tsx",
+      "isExported": true,
+      "isAsync": false,
+      "isClient": true,
+      "scope": "module",
+      "description": "Client component for event registration form with Stripe checkout integration",
+      "tags": [
+        "component",
+        "form",
+        "checkout",
+        "stripe",
+        "react"
+      ],
+      "lineRange": [
+        85,
+        686
+      ]
+    },
+    {
+      "id": "EventRegistrationSection-tsx:useAnimatedNumber",
+      "name": "useAnimatedNumber",
+      "type": "hook",
+      "file": "src/components/events/EventRegistrationSection.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "scope": "module",
+      "description": "Custom React hook for animating numeric values with easing",
+      "tags": [
+        "hook",
+        "animation",
+        "react"
+      ],
+      "lineRange": [
+        5,
+        39
+      ]
+    },
+    {
+      "id": "event-checkout-ts:EventCheckoutMode",
+      "name": "EventCheckoutMode",
+      "type": "type",
+      "file": "src/lib/event-checkout.ts",
+      "isExported": true,
+      "scope": "module",
+      "description": "Type definition for event checkout mode (embedded or hosted)",
+      "tags": [
+        "type",
+        "checkout"
+      ],
+      "lineRange": [
+        6,
+        6
+      ]
+    },
+    {
+      "id": "event-checkout-ts:resolveCheckoutMode",
+      "name": "resolveCheckoutMode",
+      "type": "function",
+      "file": "src/lib/event-checkout.ts",
+      "isExported": true,
+      "isAsync": false,
+      "scope": "module",
+      "description": "Function to determine checkout mode (embedded or hosted) based on capabilities",
+      "tags": [
+        "utility",
+        "checkout"
+      ],
+      "lineRange": [
+        8,
+        11
+      ]
+    },
+    {
+      "id": "event-checkout-ts:resolveEventCheckoutAmount",
+      "name": "resolveEventCheckoutAmount",
+      "type": "function",
+      "file": "src/lib/event-checkout.ts",
+      "isExported": true,
+      "isAsync": false,
+      "scope": "module",
+      "description": "Function to calculate checkout amount with promo code or donation support",
+      "tags": [
+        "utility",
+        "pricing",
+        "promo"
+      ],
+      "lineRange": [
+        13,
+        34
+      ]
+    },
+    {
+      "id": "event-checkout-ts:buildEventCheckoutSessionParams",
+      "name": "buildEventCheckoutSessionParams",
+      "type": "function",
+      "file": "src/lib/event-checkout.ts",
+      "isExported": true,
+      "isAsync": false,
+      "scope": "module",
+      "description": "Function to build Stripe checkout session parameters for event registration",
+      "tags": [
+        "utility",
+        "stripe",
+        "checkout"
+      ],
+      "lineRange": [
+        36,
+        101
+      ]
+    },
+    {
+      "id": "events-tsx:EventHost",
+      "name": "EventHost",
+      "type": "type",
+      "file": "src/lib/events.tsx",
+      "isExported": true,
+      "scope": "module",
+      "description": "Type definition for event host profile information",
+      "tags": [
+        "type",
+        "interface"
+      ],
+      "lineRange": [
+        4,
+        12
+      ]
+    },
+    {
+      "id": "events-tsx:EventPromoCode",
+      "name": "EventPromoCode",
+      "type": "type",
+      "file": "src/lib/events.tsx",
+      "isExported": true,
+      "scope": "module",
+      "description": "Type definition for event promotional codes with discount amounts/percentages",
+      "tags": [
+        "type",
+        "interface"
+      ],
+      "lineRange": [
+        14,
+        20
+      ]
+    },
+    {
+      "id": "events-tsx:EventSection",
+      "name": "EventSection",
+      "type": "type",
+      "file": "src/lib/events.tsx",
+      "isExported": true,
+      "scope": "module",
+      "description": "Discriminated union type for different event page section types",
+      "tags": [
+        "type",
+        "union"
+      ],
+      "lineRange": [
+        22,
+        114
+      ]
+    },
+    {
+      "id": "events-tsx:EventDefinition",
+      "name": "EventDefinition",
+      "type": "type",
+      "file": "src/lib/events.tsx",
+      "isExported": true,
+      "scope": "module",
+      "description": "Type definition for complete event information including pricing, sections, and metadata",
+      "tags": [
+        "type",
+        "interface"
+      ],
+      "lineRange": [
+        116,
+        199
+      ]
+    },
+    {
+      "id": "events-tsx:getDiscountedPrice",
+      "name": "getDiscountedPrice",
+      "type": "function",
+      "file": "src/lib/events.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "scope": "module",
+      "description": "Helper function to calculate discounted price with promo code",
+      "tags": [
+        "utility",
+        "pricing"
+      ],
+      "lineRange": [
+        201,
+        206
+      ]
+    },
+    {
+      "id": "events-tsx:getEventDiscountedPrice",
+      "name": "getEventDiscountedPrice",
+      "type": "function",
+      "file": "src/lib/events.tsx",
+      "isExported": true,
+      "isAsync": false,
+      "scope": "module",
+      "description": "Function to get event price with optional promo code discount",
+      "tags": [
+        "utility",
+        "pricing"
+      ],
+      "lineRange": [
+        208,
+        210
+      ]
+    },
+    {
+      "id": "events-tsx:resolvePromoCode",
+      "name": "resolvePromoCode",
+      "type": "function",
+      "file": "src/lib/events.tsx",
+      "isExported": true,
+      "isAsync": false,
+      "scope": "module",
+      "description": "Function to find and return a promo code from an event by case-insensitive code",
+      "tags": [
+        "utility",
+        "promo"
+      ],
+      "lineRange": [
+        212,
+        216
+      ]
+    },
+    {
+      "id": "events-tsx:formatEventPrice",
+      "name": "formatEventPrice",
+      "type": "function",
+      "file": "src/lib/events.tsx",
+      "isExported": true,
+      "isAsync": false,
+      "scope": "module",
+      "description": "Function to format event price as currency string with optional promo",
+      "tags": [
+        "utility",
+        "formatting"
+      ],
+      "lineRange": [
+        218,
+        222
+      ]
+    },
+    {
+      "id": "events-tsx:events",
+      "name": "events",
+      "type": "constant",
+      "file": "src/lib/events.tsx",
+      "isExported": true,
+      "value": "EventDefinition[]",
+      "scope": "module",
+      "description": "Array of all event definitions for the workshop platform",
+      "tags": [
+        "data",
+        "events"
+      ],
+      "lineRange": [
+        224,
+        1176
+      ]
+    },
+    {
+      "id": "events-tsx:getEventBySlug",
+      "name": "getEventBySlug",
+      "type": "function",
+      "file": "src/lib/events.tsx",
+      "isExported": true,
+      "isAsync": false,
+      "scope": "module",
+      "description": "Function to retrieve a single event by its slug identifier",
+      "tags": [
+        "utility",
+        "lookup"
+      ],
+      "lineRange": [
+        1189,
+        1191
+      ]
+    },
+    {
+      "id": "events-tsx:getLiveEvents",
+      "name": "getLiveEvents",
+      "type": "function",
+      "file": "src/lib/events.tsx",
+      "isExported": true,
+      "isAsync": false,
+      "scope": "module",
+      "description": "Function to retrieve all events with 'live' status",
+      "tags": [
+        "utility",
+        "filter"
+      ],
+      "lineRange": [
+        1193,
+        1195
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "route-ts:POST",
+      "target": "route-ts:getBaseUrl",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "route-ts:POST",
+      "target": "events-tsx:getEventBySlug",
+      "type": "imports",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "route-ts:POST",
+      "target": "event-checkout-ts:resolveEventCheckoutAmount",
+      "type": "imports",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "route-ts:POST",
+      "target": "event-checkout-ts:resolveCheckoutMode",
+      "type": "imports",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "route-ts:POST",
+      "target": "event-checkout-ts:buildEventCheckoutSessionParams",
+      "type": "imports",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventPageView-tsx:EventPageView",
+      "target": "EventPageView-tsx:sectionTitleClass",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventPageView-tsx:EventPageView",
+      "target": "EventPageView-tsx:sectionEyebrowClass",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventPageView-tsx:EventPageView",
+      "target": "EventPageView-tsx:renderSection",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventPageView-tsx:EventPageView",
+      "target": "events-tsx:EventDefinition",
+      "type": "uses_type",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventPageView-tsx:EventPageView",
+      "target": "events-tsx:EventPromoCode",
+      "type": "uses_type",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventPageView-tsx:EventPageView",
+      "target": "EventPageView-tsx:SectionShell",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventPageView-tsx:EventPageView",
+      "target": "EventRegistrationSection-tsx:EventRegistrationSection",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventPageView-tsx:EventPageView",
+      "target": "events-tsx:formatEventPrice",
+      "type": "imports",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventPageView-tsx:EventPageView",
+      "target": "events-tsx:getEventDiscountedPrice",
+      "type": "imports",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventPageView-tsx:StorySection",
+      "target": "EventPageView-tsx:SectionShell",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventPageView-tsx:StorySection",
+      "target": "EventPageView-tsx:RichParagraphs",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventPageView-tsx:ChecklistSection",
+      "target": "EventPageView-tsx:SectionShell",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventPageView-tsx:CardsSection",
+      "target": "EventPageView-tsx:SectionShell",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventPageView-tsx:SplitSection",
+      "target": "EventPageView-tsx:SectionShell",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventPageView-tsx:SplitSection",
+      "target": "EventPageView-tsx:RichParagraphs",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventPageView-tsx:ImageSection",
+      "target": "EventPageView-tsx:SectionShell",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventPageView-tsx:HtmlSection",
+      "target": "EventPageView-tsx:SectionShell",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventPageView-tsx:HtmlSection",
+      "target": "EventPageView-tsx:EndedButton",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventPageView-tsx:QuoteCardSection",
+      "target": "EventPageView-tsx:SectionShell",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventPageView-tsx:HostsSection",
+      "target": "EventPageView-tsx:SectionShell",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventPageView-tsx:EventVideoSection",
+      "target": "EventPageView-tsx:SectionShell",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventPageView-tsx:CtaSection",
+      "target": "EventPageView-tsx:SectionShell",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventPageView-tsx:CtaSection",
+      "target": "EventPageView-tsx:EndedButton",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventPageView-tsx:renderSection",
+      "target": "EventPageView-tsx:StorySection",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventPageView-tsx:renderSection",
+      "target": "EventPageView-tsx:ChecklistSection",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventPageView-tsx:renderSection",
+      "target": "EventPageView-tsx:CardsSection",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventPageView-tsx:renderSection",
+      "target": "EventPageView-tsx:SplitSection",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventPageView-tsx:renderSection",
+      "target": "EventPageView-tsx:ImageSection",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventPageView-tsx:renderSection",
+      "target": "EventPageView-tsx:HtmlSection",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventPageView-tsx:renderSection",
+      "target": "EventPageView-tsx:QuoteCardSection",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventPageView-tsx:renderSection",
+      "target": "EventPageView-tsx:HostsSection",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventPageView-tsx:renderSection",
+      "target": "EventPageView-tsx:CtaSection",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventRegistrationSection-tsx:EventRegistrationSection",
+      "target": "EventRegistrationSection-tsx:useAnimatedNumber",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventRegistrationSection-tsx:EventRegistrationSection",
+      "target": "EventRegistrationSection-tsx:EventRegistrationData",
+      "type": "uses_type",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "EventRegistrationSection-tsx:EventRegistrationSection",
+      "target": "EventPageView-tsx:EventPageView",
+      "type": "imported_by",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "event-checkout-ts:resolveEventCheckoutAmount",
+      "target": "events-tsx:resolvePromoCode",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "event-checkout-ts:buildEventCheckoutSessionParams",
+      "target": "event-checkout-ts:EventCheckoutMode",
+      "type": "uses_type",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "event-checkout-ts:buildEventCheckoutSessionParams",
+      "target": "events-tsx:EventDefinition",
+      "type": "uses_type",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "event-checkout-ts:buildEventCheckoutSessionParams",
+      "target": "events-tsx:EventPromoCode",
+      "type": "uses_type",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "events-tsx:getDiscountedPrice",
+      "target": "events-tsx:EventPromoCode",
+      "type": "uses_type",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "events-tsx:getEventDiscountedPrice",
+      "target": "events-tsx:getDiscountedPrice",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "events-tsx:getEventDiscountedPrice",
+      "target": "events-tsx:EventDefinition",
+      "type": "uses_type",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "events-tsx:resolvePromoCode",
+      "target": "events-tsx:EventDefinition",
+      "type": "uses_type",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "events-tsx:formatEventPrice",
+      "target": "events-tsx:getEventDiscountedPrice",
+      "type": "calls",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "events-tsx:formatEventPrice",
+      "target": "events-tsx:EventDefinition",
+      "type": "uses_type",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "events-tsx:getEventBySlug",
+      "target": "events-tsx:events",
+      "type": "uses",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "events-tsx:getEventBySlug",
+      "target": "events-tsx:EventDefinition",
+      "type": "uses_type",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "events-tsx:getLiveEvents",
+      "target": "events-tsx:events",
+      "type": "uses",
+      "weight": 0.5,
+      "description": ""
+    },
+    {
+      "source": "events-tsx:getLiveEvents",
+      "target": "events-tsx:EventDefinition",
+      "type": "uses_type",
+      "weight": 0.5,
+      "description": ""
+    }
+  ]
+}
