@@ -4,17 +4,22 @@ import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
 import { trackInsightEvent } from '@/lib/insight-to-fix'
 import { buildUnsubscribeHeaders, buildUnsubscribeUrl } from '@/lib/list-unsubscribe'
 import { isSuppressed } from '@/lib/email-suppressions'
+import { withUtm } from '@/lib/utm'
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
 
 async function sendViaResend(email: string, source: string, idempotencyKey: string) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://workshop.mastermindshq.business'
   const unsubscribeUrl = buildUnsubscribeUrl(email)
-  const unsubscribeFooter = `<p style="font-size: 12px; color: #bbb; margin-top: 8px;">Sent by Masterminds HQ. <a href="${unsubscribeUrl}" style="color: #999;">Unsubscribe</a> any time.</p>`
-  const macCleanerPageUrl = `${siteUrl}/giveaways/maccleaner`
-  const macCleanerInstallerUrl = `${siteUrl}/downloads/maccleaner-installer.sh`
-  const guardogPageUrl = `${siteUrl}/giveaways/guardog`
-  const speakHumanPageUrl = `${siteUrl}/giveaways/speak-human`
+  // Omit the link entirely (rather than a dead/unverifiable href) when the
+  // signing secret is missing, buildUnsubscribeUrl returns null in that case.
+  const unsubscribeFooter = unsubscribeUrl
+    ? `<p style="font-size: 12px; color: #bbb; margin-top: 8px;">Sent by Masterminds HQ. <a href="${unsubscribeUrl}" style="color: #999;">Unsubscribe</a> any time.</p>`
+    : `<p style="font-size: 12px; color: #bbb; margin-top: 8px;">Sent by Masterminds HQ.</p>`
+  const macCleanerPageUrl = withUtm(`${siteUrl}/giveaways/maccleaner`, { campaign: 'lead-magnet', content: 'maccleaner-page' })
+  const macCleanerInstallerUrl = withUtm(`${siteUrl}/downloads/maccleaner-installer.sh`, { campaign: 'lead-magnet', content: 'maccleaner-installer' })
+  const guardogPageUrl = withUtm(`${siteUrl}/giveaways/guardog`, { campaign: 'lead-magnet', content: 'guardog-page' })
+  const speakHumanPageUrl = withUtm(`${siteUrl}/giveaways/speak-human`, { campaign: 'lead-magnet', content: 'speak-human-page' })
   const speakHumanInstallCommand = 'git clone https://github.com/josephtandle/speak-human && cp -r speak-human/speak-human ~/.claude/skills/speak-human && rm -rf speak-human'
 
   let subject: string
@@ -83,7 +88,7 @@ async function sendViaResend(email: string, source: string, idempotencyKey: stri
         </p>
 
         <p style="margin-bottom: 24px;">
-          <a href="${siteUrl}/giveaways/all-sorted-overview"
+          <a href="${withUtm(`${siteUrl}/giveaways/all-sorted-overview`, { campaign: 'lead-magnet', content: 'all-sorted-overview' })}"
              style="display: inline-block; background: #7C69C7; color: white; padding: 13px 26px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 15px;">
             Open the overview
           </a>
@@ -316,7 +321,7 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
 
         <p style="font-size: 14px; color: #555; line-height: 1.7; margin-bottom: 8px;">
           If this resonates, come see what we are building at
-          <a href="https://mastermindshq.business" style="color: #7C69C7; font-weight: 600;">Masterminds HQ</a>.
+          <a href="${withUtm('https://mastermindshq.business', { campaign: 'lead-magnet', content: 'cult-brand-playbook' })}" style="color: #7C69C7; font-weight: 600;">Masterminds HQ</a>.
           It is a live community of founders building real businesses with AI.
         </p>
 
@@ -335,7 +340,7 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
         <p style="font-size: 15px; line-height: 1.7; margin-bottom: 24px; color: #444;">
           In the meantime, if you want to see what's possible when people use these tools in a live mastermind session,
           come check out what we're building at
-          <a href="https://mastermindshq.business" style="color: #7C69C7; font-weight: 600;">mastermindshq.business</a>.
+          <a href="${withUtm('https://mastermindshq.business', { campaign: 'lead-magnet', content: 'web-design-arsenal' })}" style="color: #7C69C7; font-weight: 600;">mastermindshq.business</a>.
         </p>
         <p style="font-size: 14px; color: #999; margin-top: 32px;">Joe Che</p>
         ${unsubscribeFooter}
@@ -352,12 +357,14 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
           17 real stories from a VIP dinner in Manhattan. Each person answered one question:
           "What did you have to un-learn about success?"
         </p>
-        <a href="${siteUrl}/unlearning-success.pdf"
+        <a href="${withUtm(`${siteUrl}/unlearning-success.pdf`, { campaign: 'lead-magnet', content: 'unlearning-success-pdf' })}"
            style="display: inline-block; background: #7C69C7; color: white; padding: 14px 28px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px;">
           Download the PDF
         </a>
         <p style="font-size: 13px; color: #999; margin-top: 32px; line-height: 1.5;">
-          Sent by Masterminds HQ. <a href="${unsubscribeUrl}" style="color: #999;">Unsubscribe</a> any time.
+          ${unsubscribeUrl
+            ? `Sent by Masterminds HQ. <a href="${unsubscribeUrl}" style="color: #999;">Unsubscribe</a> any time.`
+            : 'Sent by Masterminds HQ.'}
         </p>
       </div>
     `

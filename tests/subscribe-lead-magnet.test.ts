@@ -75,11 +75,16 @@ test('sends the right recipient, subject and download link', async () => {
   // Greets by first name.
   assert.match(email.html, /Hi Joe,/)
 
-  // Carries the real download link.
+  // Carries the real download link. The href is UTM-tagged for email click
+  // attribution (see src/lib/utm.ts), so the anchor's href carries
+  // ?utm_source=email&utm_medium=email&utm_campaign=lead-magnet-<slug> on top
+  // of the bare download URL; the visible fallback text still shows the plain
+  // untagged URL for readability.
   const url = downloadUrlFor(magnet)
   assert.match(url, /\/client-launch-checklist\.pdf$/)
   assert.ok(email.html.includes(url), 'email must contain the download URL')
-  assert.match(email.html, /<a[^>]+href="[^"]*client-launch-checklist\.pdf"/)
+  assert.match(email.html, /<a[^>]+href="[^"]*client-launch-checklist\.pdf(\?[^"]*)?"/)
+  assert.match(email.html, /href="[^"]*client-launch-checklist\.pdf\?utm_source=email&utm_medium=email&utm_campaign=lead-magnet-client-launch-checklist"/)
 })
 
 test('same lead magnet twice: succeeds, but does not email again', async () => {

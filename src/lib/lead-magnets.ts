@@ -8,6 +8,7 @@
 // error, not a default.
 
 import { buildUnsubscribeUrl } from './list-unsubscribe'
+import { withUtm } from './utm'
 
 export type LeadMagnet = {
   slug: string
@@ -40,6 +41,7 @@ export function downloadUrlFor(magnet: LeadMagnet): string {
 /** Greets by first name and carries a single download button. */
 export function buildWelcomeEmail(firstName: string, magnet: LeadMagnet, recipientEmail: string) {
   const url = downloadUrlFor(magnet)
+  const taggedUrl = withUtm(url, { campaign: `lead-magnet-${magnet.slug}` })
   const name = firstName.trim()
   const unsubscribeUrl = buildUnsubscribeUrl(recipientEmail)
 
@@ -48,17 +50,19 @@ export function buildWelcomeEmail(firstName: string, magnet: LeadMagnet, recipie
       <p>Hi ${escapeHtml(name)},</p>
       <p>Here is ${escapeHtml(magnet.name)}, as promised.</p>
       <p style="margin:28px 0">
-        <a href="${url}"
+        <a href="${taggedUrl}"
            style="display:inline-block;background:#7C69C7;color:#ffffff;text-decoration:none;font-weight:600;padding:14px 28px;border-radius:12px">
           Download ${escapeHtml(magnet.name)}
         </a>
       </p>
       <p>If the button does not work, use this link:<br>
-        <a href="${url}" style="color:#7C69C7">${url}</a>
+        <a href="${taggedUrl}" style="color:#7C69C7">${url}</a>
       </p>
       <p>Joe Che</p>
       <p style="font-size:12px;color:#999;margin-top:24px">
-        Sent by Masterminds HQ. <a href="${unsubscribeUrl}" style="color:#999">Unsubscribe</a> any time.
+        ${unsubscribeUrl
+          ? `Sent by Masterminds HQ. <a href="${unsubscribeUrl}" style="color:#999">Unsubscribe</a> any time.`
+          : 'Sent by Masterminds HQ.'}
       </p>
     </div>
   `.trim()

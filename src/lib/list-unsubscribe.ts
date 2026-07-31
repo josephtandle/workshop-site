@@ -4,6 +4,24 @@ function getSecret(): string {
   return process.env.UNSUBSCRIBE_TOKEN_SECRET ?? ''
 }
 
+function hasSecret(): boolean {
+  return getSecret().length > 0
+}
+
+// Dedupe the "secret missing" warning for the fail-OPEN paths (URL/header
+// generation) so a broken deploy doesn't spam one log line per send. The
+// fail-CLOSED path (verifyUnsubscribeToken) logs every call on purpose: each
+// one is a potential forged-token attempt and must not go quiet after the
+// first.
+let hasWarnedMissingSecretForGeneration = false
+function warnMissingSecretForGeneration(context: string) {
+  if (hasWarnedMissingSecretForGeneration) return
+  hasWarnedMissingSecretForGeneration = true
+  console.error(
+    `[list-unsubscribe] UNSUBSCRIBE_TOKEN_SECRET is not set. ${context} is disabled until it is configured (fails open: link/header omitted, send still goes out).`,
+  )
+}
+
 function getSiteUrl() {
   return (process.env.NEXT_PUBLIC_SITE_URL || 'https://workshop.mastermindshq.business').replace(/\/+$/g, '')
 }
@@ -37,8 +55,22 @@ export type UnsubscribeTokenResult = { valid: true; email: string } | { valid: f
  * Stateless verification of a token minted by buildUnsubscribeToken. No DB
  * read. Never trust an unsigned or tampered email param: this is the only
  * source of truth for "which address does this link unsubscribe."
+ *
+ * SECURITY: fails CLOSED when UNSUBSCRIBE_TOKEN_SECRET is missing. Signing
+ * and verifying with an empty-string key would let anyone who knows the
+ * scheme forge a valid token (createHmac('sha256', '') is a real, reusable
+ * key, not a no-op), so an unset/misconfigured secret must reject every
+ * token outright, before any HMAC work, rather than silently accept forged
+ * ones.
  */
 export function verifyUnsubscribeToken(token: string | null | undefined): UnsubscribeTokenResult {
+  if (!hasSecret()) {
+    console.error(
+      '[list-unsubscribe] SECURITY: UNSUBSCRIBE_TOKEN_SECRET is not set. Refusing to verify ANY unsubscribe token (fail closed): every token is being rejected until this is configured.',
+    )
+    return { valid: false, email: null }
+  }
+
   if (!token || typeof token !== 'string') return { valid: false, email: null }
 
   const dotIndex = token.indexOf('.')
@@ -63,7 +95,17 @@ export function verifyUnsubscribeToken(token: string | null | undefined): Unsubs
   }
 }
 
-export function buildUnsubscribeUrl(email: string): string {
+/**
+ * Returns null when UNSUBSCRIBE_TOKEN_SECRET is missing, rather than a URL
+ * carrying an unverifiable (empty-key-signed) token. Callers must omit the
+ * visible unsubscribe link entirely in that case, not render a dead or
+ * insecure href.
+ */
+export function buildUnsubscribeUrl(email: string): string | null {
+  if (!hasSecret()) {
+    warnMissingSecretForGeneration('Unsubscribe link generation')
+    return null
+  }
   const token = buildUnsubscribeToken(email)
   return `${getSiteUrl()}/api/unsubscribe?token=${encodeURIComponent(token)}`
 }
@@ -78,9 +120,17 @@ export function buildUnsubscribeUrl(email: string): string {
  * .business is a human reply inbox, not an automated processor, so a
  * mailto: entry would silently drop the request instead of honoring it.
  * A dead mailto is worse than no mailto.
+ *
+ * Fails OPEN when UNSUBSCRIBE_TOKEN_SECRET is missing: returns `{}` (a safe
+ * no-op to spread into a headers object) rather than throwing. A missing
+ * unsubscribe header is a deliverability nit; a send that throws because of
+ * it is a broken product. Verification (verifyUnsubscribeToken) is the
+ * security boundary and fails closed instead.
  */
 export function buildUnsubscribeHeaders(recipientEmail: string): Record<string, string> {
   const url = buildUnsubscribeUrl(recipientEmail)
+  if (!url) return {}
+
   return {
     'List-Unsubscribe': `<${url}>`,
     'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',

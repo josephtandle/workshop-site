@@ -31,6 +31,13 @@ async function sendViaResend(firstName: string, email: string, idempotencyKey: s
     return { skipped: true }
   }
 
+  const unsubscribeUrl = buildUnsubscribeUrl(email)
+  // Omit the link entirely (rather than a dead/unverifiable href) when the
+  // signing secret is missing, buildUnsubscribeUrl returns null in that case.
+  const unsubscribeFooter = unsubscribeUrl
+    ? `<p style="font-size: 12px; color: #999; margin-top: 16px;">Sent by Masterminds HQ. <a href="${unsubscribeUrl}" style="color: #999;">Unsubscribe</a> any time.</p>`
+    : `<p style="font-size: 12px; color: #999; margin-top: 16px;">Sent by Masterminds HQ.</p>`
+
   const html = `
     <div style="font-family: -apple-system, system-ui, sans-serif; max-width: 600px; margin: 0 auto; padding: 32px 24px; color: #1a1a1a;">
       <p style="font-size: 18px; line-height: 1.6; margin-bottom: 16px;">
@@ -58,9 +65,7 @@ async function sendViaResend(firstName: string, email: string, idempotencyKey: s
         Founder, Masterminds HQ<br />
         From the team behind the build-it-yourself AI OS playbook.
       </p>
-      <p style="font-size: 12px; color: #999; margin-top: 16px;">
-        Sent by Masterminds HQ. <a href="${buildUnsubscribeUrl(email)}" style="color: #999;">Unsubscribe</a> any time.
-      </p>
+      ${unsubscribeFooter}
     </div>
   `
 

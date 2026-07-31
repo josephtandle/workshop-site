@@ -7,6 +7,7 @@ import {
 import { buildGoogleCalendarUrl, buildIcalString } from './calendar'
 import { buildUnsubscribeHeaders, buildUnsubscribeUrl } from './list-unsubscribe'
 import { isSuppressed } from './email-suppressions'
+import { withUtm } from './utm'
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
 
@@ -106,13 +107,17 @@ export function buildAskAnAiExpertWelcomeEmailHtml(event: EventDefinition, atten
   const firstName = getFirstName(attendeeName)
   const zoomLink = event.zoomLink ?? 'ZOOM_LINK_TBD'
   const siteUrl = getSiteUrl()
-  const eventUrl = `${siteUrl}/events/${event.slug}`
+  const eventUrl = withUtm(`${siteUrl}/events/${event.slug}`, {
+    campaign: 'ask-an-ai-expert-welcome',
+    content: event.slug,
+  })
   const cfg = event.emailConfig
   const signatureName = cfg?.signatureName ?? 'Joe Che\nMasterminds HQ'
   const signatureHtml = signatureName.split('\n').join('<br>')
   const calendarLine = event.calendarEvent
     ? `<p style="margin: 0 0 10px; font-size: 15px; line-height: 1.75; color: #4b4263;"><strong>Date:</strong> ${event.dateLabel}<br><strong>Time:</strong> ${event.timeLabel}</p>`
     : ''
+  const unsubscribeUrl = buildUnsubscribeUrl(attendeeEmail)
 
   return `
     <div style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f6f2ff; margin: 0; padding: 32px 16px; color: #1a1a1a;">
@@ -144,11 +149,13 @@ export function buildAskAnAiExpertWelcomeEmailHtml(event: EventDefinition, atten
           <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.75; color: #4b4263;">You can revisit the event page here: <a href="${eventUrl}" style="color:#7C69C7; font-weight:700; text-decoration:none;">${event.title}</a></p>
         </div>
 
-        <div style="padding: 20px 32px 0; border-top: 1px solid rgba(124, 105, 199, 0.10); margin-top: 8px;">
+        ${unsubscribeUrl
+          ? `<div style="padding: 20px 32px 0; border-top: 1px solid rgba(124, 105, 199, 0.10); margin-top: 8px;">
           <p style="margin: 0; font-size: 13px; color: #9e93be;">
-            <a href="${buildUnsubscribeUrl(attendeeEmail)}" style="color:#9e93be; text-decoration:underline;">Unsubscribe from marketing emails</a>
+            <a href="${unsubscribeUrl}" style="color:#9e93be; text-decoration:underline;">Unsubscribe from marketing emails</a>
           </p>
-        </div>
+        </div>`
+          : ''}
 
         <div style="padding: 20px 32px 30px;">
           <p style="margin: 0; font-size: 14px; line-height: 1.75; color: #7a7291;">${signatureHtml}</p>
