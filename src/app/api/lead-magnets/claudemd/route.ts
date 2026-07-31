@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
 import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
+import { buildUnsubscribeHeaders, buildUnsubscribeUrl } from '@/lib/list-unsubscribe'
+import { isSuppressed } from '@/lib/email-suppressions'
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
 
@@ -157,7 +159,10 @@ async function sendViaResend(firstName: string, email: string, idempotencyKey: s
           Learn more at mastermindshq.business
         </a>
       </p>
-      <p style="font-size: 14px; color: #999; margin-top: 32px;">— Joe Che</p>
+      <p style="font-size: 14px; color: #999; margin-top: 32px;">Joe Che</p>
+      <p style="font-size: 12px; color: #999; margin-top: 8px;">
+        Sent by Masterminds HQ. <a href="${buildUnsubscribeUrl(email)}" style="color: #999;">Unsubscribe</a> any time.
+      </p>
     </div>
   `
 
@@ -179,6 +184,7 @@ async function sendViaResend(firstName: string, email: string, idempotencyKey: s
           content: fileBase64,
         },
       ],
+      headers: buildUnsubscribeHeaders(email),
     }),
   })
 
@@ -231,6 +237,12 @@ export async function POST(request: Request) {
         campaign: 'claude-md',
       }),
     }).catch((err) => console.error('CRM ingest error (non-blocking):', err))
+
+    // Marketing send: skip if suppressed (fails closed on any read error).
+    if (await isSuppressed(email)) {
+      console.log(`claudemd lead magnet: skipping suppressed address ${email}`)
+      return NextResponse.json({ success: true, suppressed: true })
+    }
 
     // Send via Resend
     const idempotencyKey = `lead-magnet/claude-md/${email.trim().toLowerCase()}`

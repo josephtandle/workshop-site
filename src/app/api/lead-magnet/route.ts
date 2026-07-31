@@ -2,11 +2,15 @@ import { NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
 import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
 import { trackInsightEvent } from '@/lib/insight-to-fix'
+import { buildUnsubscribeHeaders, buildUnsubscribeUrl } from '@/lib/list-unsubscribe'
+import { isSuppressed } from '@/lib/email-suppressions'
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
 
 async function sendViaResend(email: string, source: string, idempotencyKey: string) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://workshop.mastermindshq.business'
+  const unsubscribeUrl = buildUnsubscribeUrl(email)
+  const unsubscribeFooter = `<p style="font-size: 12px; color: #bbb; margin-top: 8px;">Sent by Masterminds HQ. <a href="${unsubscribeUrl}" style="color: #999;">Unsubscribe</a> any time.</p>`
   const macCleanerPageUrl = `${siteUrl}/giveaways/maccleaner`
   const macCleanerInstallerUrl = `${siteUrl}/downloads/maccleaner-installer.sh`
   const guardogPageUrl = `${siteUrl}/giveaways/guardog`
@@ -61,7 +65,7 @@ async function sendViaResend(email: string, source: string, idempotencyKey: stri
         </p>
 
         <p style="font-size: 14px; color: #999; margin-top: 24px;">Joe Che</p>
-        <p style="font-size: 12px; color: #bbb; margin-top: 8px;">Sent by Masterminds HQ. You can unsubscribe any time.</p>
+        ${unsubscribeFooter}
       </div>
     `
   } else if (source === 'all-sorted-overview') {
@@ -98,7 +102,7 @@ async function sendViaResend(email: string, source: string, idempotencyKey: stri
         </p>
 
         <p style="font-size: 14px; color: #999; margin-top: 24px;">Joe Che</p>
-        <p style="font-size: 12px; color: #bbb; margin-top: 8px;">Sent by Masterminds HQ. You can unsubscribe any time.</p>
+        ${unsubscribeFooter}
       </div>
     `
   } else if (source === 'guardog') {
@@ -164,7 +168,7 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
         </p>
 
         <p style="font-size: 14px; color: #999; margin-top: 24px;">Joe Che</p>
-        <p style="font-size: 12px; color: #bbb; margin-top: 8px;">Sent by Masterminds HQ. You can unsubscribe any time.</p>
+        ${unsubscribeFooter}
       </div>
     `
   } else if (source === 'maccleaner') {
@@ -209,7 +213,7 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
         </p>
 
         <p style="font-size: 14px; color: #999; margin-top: 32px;">Joe Che</p>
-        <p style="font-size: 12px; color: #bbb; margin-top: 8px;">Sent by Masterminds HQ. You can unsubscribe any time.</p>
+        ${unsubscribeFooter}
       </div>
     `
   } else if (source === 'cult-brand-playbook') {
@@ -317,7 +321,7 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
         </p>
 
         <p style="font-size: 14px; color: #999; margin-top: 32px;">Joe Che</p>
-        <p style="font-size: 12px; color: #bbb; margin-top: 8px;">Sent by Masterminds HQ. You can unsubscribe any time.</p>
+        ${unsubscribeFooter}
       </div>
     `
   } else if (source === 'web-design-arsenal') {
@@ -333,7 +337,8 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
           come check out what we're building at
           <a href="https://mastermindshq.business" style="color: #7C69C7; font-weight: 600;">mastermindshq.business</a>.
         </p>
-        <p style="font-size: 14px; color: #999; margin-top: 32px;">— Joe Che</p>
+        <p style="font-size: 14px; color: #999; margin-top: 32px;">Joe Che</p>
+        ${unsubscribeFooter}
       </div>
     `
   } else {
@@ -352,7 +357,7 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
           Download the PDF
         </a>
         <p style="font-size: 13px; color: #999; margin-top: 32px; line-height: 1.5;">
-          Sent by Masterminds HQ. You can unsubscribe any time.
+          Sent by Masterminds HQ. <a href="${unsubscribeUrl}" style="color: #999;">Unsubscribe</a> any time.
         </p>
       </div>
     `
@@ -370,6 +375,7 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
       to: [email],
       subject,
       html,
+      headers: buildUnsubscribeHeaders(email),
     }),
   })
 
@@ -448,6 +454,14 @@ export async function POST(request: Request) {
     ingestIntoCrm(email, source).catch((err) =>
       console.error('CRM ingest error (non-blocking):', err)
     )
+
+    // Marketing send: skip if this address is on the global suppression list
+    // (isSuppressed fails closed on any read error, so a Supabase hiccup
+    // suppresses rather than risks emailing an unsubscribed address).
+    if (await isSuppressed(email)) {
+      console.log(`lead-magnet: skipping suppressed address ${email} (source=${source})`)
+      return NextResponse.json({ success: true, suppressed: true })
+    }
 
     // Send confirmation via Resend
     const idempotencyKey = `lead-magnet/${source}/${email.trim().toLowerCase()}`

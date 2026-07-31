@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
 import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
+import { buildUnsubscribeHeaders, buildUnsubscribeUrl } from '@/lib/list-unsubscribe'
+import { isSuppressed } from '@/lib/email-suppressions'
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
 
@@ -56,6 +58,9 @@ async function sendViaResend(firstName: string, email: string, idempotencyKey: s
         Founder, Masterminds HQ<br />
         From the team behind the build-it-yourself AI OS playbook.
       </p>
+      <p style="font-size: 12px; color: #999; margin-top: 16px;">
+        Sent by Masterminds HQ. <a href="${buildUnsubscribeUrl(email)}" style="color: #999;">Unsubscribe</a> any time.
+      </p>
     </div>
   `
 
@@ -73,6 +78,7 @@ async function sendViaResend(firstName: string, email: string, idempotencyKey: s
       to,
       subject: 'You are on the 100 AI Agent Incomes launch list',
       html,
+      headers: buildUnsubscribeHeaders(email),
     }),
   })
 
@@ -131,6 +137,12 @@ export async function POST(request: Request) {
         campaign: '100-ai-agent-incomes',
       }),
     }).catch((err) => console.error('[passive-income-100] CRM ingest error:', err))
+
+    // Marketing send: skip if suppressed (fails closed on any read error).
+    if (await isSuppressed(email)) {
+      console.log(`[passive-income-100] skipping suppressed address ${email}`)
+      return NextResponse.json({ success: true, liveMode: LIVE_MODE, suppressed: true })
+    }
 
     const idempotencyKey = `lead-magnet/100-ai-agent-incomes/${email.trim().toLowerCase()}`
     await sendViaResend(firstName, email, idempotencyKey)

@@ -7,6 +7,8 @@
 // asset they never asked for. Do not repeat that here: an unknown slug is an
 // error, not a default.
 
+import { buildUnsubscribeUrl } from './list-unsubscribe'
+
 export type LeadMagnet = {
   slug: string
   name: string
@@ -36,9 +38,10 @@ export function downloadUrlFor(magnet: LeadMagnet): string {
 }
 
 /** Greets by first name and carries a single download button. */
-export function buildWelcomeEmail(firstName: string, magnet: LeadMagnet) {
+export function buildWelcomeEmail(firstName: string, magnet: LeadMagnet, recipientEmail: string) {
   const url = downloadUrlFor(magnet)
   const name = firstName.trim()
+  const unsubscribeUrl = buildUnsubscribeUrl(recipientEmail)
 
   const html = `
     <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;color:#23202a;max-width:520px">
@@ -54,6 +57,9 @@ export function buildWelcomeEmail(firstName: string, magnet: LeadMagnet) {
         <a href="${url}" style="color:#7C69C7">${url}</a>
       </p>
       <p>Joe Che</p>
+      <p style="font-size:12px;color:#999;margin-top:24px">
+        Sent by Masterminds HQ. <a href="${unsubscribeUrl}" style="color:#999">Unsubscribe</a> any time.
+      </p>
     </div>
   `.trim()
 

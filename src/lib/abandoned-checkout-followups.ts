@@ -4,6 +4,8 @@ import type { EventDefinition } from '@/lib/events'
 import { getLiveEvents, getEventBySlug } from '@/lib/events'
 import { createStripeClient } from '@/lib/stripe'
 import { toOrigin } from '@/lib/url-utils'
+import { buildUnsubscribeHeaders, buildUnsubscribeUrl } from '@/lib/list-unsubscribe'
+import { isSuppressed } from '@/lib/email-suppressions'
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
 
@@ -257,8 +259,13 @@ export function buildAbandonedCheckoutEmailHtml(candidate: AbandonedCheckoutCand
           <p style="margin: 0 0 24px; font-size: 14px; line-height: 1.75; color: #4b4263;">
             You can try again here: <a href="${candidate.eventUrl}" style="color:#7C69C7; font-weight:700; text-decoration:none;">${candidate.eventUrl}</a>
           </p>
-          <p style="margin: 0; font-size: 15px; line-height: 1.75; color: #4b4263;">
+          <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.75; color: #4b4263;">
             Joe
+          </p>
+        </div>
+        <div style="padding: 20px 32px 30px; border-top: 1px solid rgba(124, 105, 199, 0.10);">
+          <p style="margin: 0; font-size: 13px; color: #9e93be;">
+            <a href="${buildUnsubscribeUrl(candidate.attendeeEmail)}" style="color:#9e93be; text-decoration:underline;">Unsubscribe from marketing emails</a>
           </p>
         </div>
       </div>
@@ -282,8 +289,13 @@ export function buildAbandonedCheckoutT12hEmailHtml(candidate: AbandonedCheckout
               Open the event page
             </a>
           </div>
-          <p style="margin: 0; font-size: 14px; line-height: 1.75; color: #4b4263;">
+          <p style="margin: 0 0 18px; font-size: 14px; line-height: 1.75; color: #4b4263;">
             <a href="${candidate.eventUrl}" style="color:#7C69C7; font-weight:700; text-decoration:none;">${candidate.eventUrl}</a>
+          </p>
+        </div>
+        <div style="padding: 0 32px 24px; border-top: 1px solid rgba(124, 105, 199, 0.10); margin-top: 8px;">
+          <p style="margin: 20px 0 0; font-size: 13px; color: #9e93be;">
+            <a href="${buildUnsubscribeUrl(candidate.attendeeEmail)}" style="color:#9e93be; text-decoration:underline;">Unsubscribe from marketing emails</a>
           </p>
         </div>
       </div>
@@ -322,6 +334,7 @@ async function sendResendEmail(input: {
   subject: string
   html: string
   idempotencyKey: string
+  headers?: Record<string, string>
 }) {
   if (!RESEND_API_KEY) {
     throw new Error('Resend API key is not configured.')
@@ -339,6 +352,7 @@ async function sendResendEmail(input: {
       to: [input.attendeeEmail],
       subject: input.subject,
       html: input.html,
+      ...(input.headers ? { headers: input.headers } : {}),
     }),
   })
 
@@ -356,6 +370,7 @@ export async function sendAbandonedCheckoutFollowupEmail(candidate: AbandonedChe
     subject: buildAbandonedCheckoutSubject(candidate.event),
     html: buildAbandonedCheckoutEmailHtml(candidate),
     idempotencyKey: buildAbandonedCheckoutIdempotencyKey(candidate.event.slug, candidate.attendeeEmail),
+    headers: buildUnsubscribeHeaders(candidate.attendeeEmail),
   })
 }
 
@@ -365,6 +380,7 @@ export async function sendAbandonedCheckoutT12hEmail(candidate: AbandonedCheckou
     subject: buildAbandonedCheckoutT12hSubject(candidate.event),
     html: buildAbandonedCheckoutT12hEmailHtml(candidate),
     idempotencyKey: buildAbandonedCheckoutT12hIdempotencyKey(candidate.event.slug, candidate.attendeeEmail),
+    headers: buildUnsubscribeHeaders(candidate.attendeeEmail),
   })
 }
 
@@ -697,6 +713,12 @@ async function evaluateCandidate(
   const suppressionReason = resolveSuppressionReason(suppressions, event.slug, attendeeEmail)
   if (suppressionReason) {
     return { status: 'skipped_suppressed', suppressionReason }
+  }
+
+  // Global RFC 8058 unsubscribe list, separate from the event-scoped manual
+  // suppression map above. Fails closed (skip) on any read error.
+  if (await isSuppressed(attendeeEmail)) {
+    return { status: 'skipped_suppressed', suppressionReason: 'unsubscribed (global suppression list)' }
   }
 
   if (isObviousTestCheckoutAttempt(attendeeName, attendeeEmail)) {

@@ -1,4 +1,5 @@
 import { buildWelcomeEmail, getLeadMagnet } from './lead-magnets'
+import { buildUnsubscribeHeaders } from './list-unsubscribe'
 
 export const FROM_ADDRESS = 'Joe Che <joe@mastermindshq.business>'
 
@@ -14,6 +15,8 @@ export type SentEmail = {
   to: string
   subject: string
   html: string
+  /** RFC 8058 List-Unsubscribe / List-Unsubscribe-Post headers, marketing sends only. */
+  headers?: Record<string, string>
 }
 
 /** Injected so tests can substitute fakes and never touch the network. */
@@ -26,6 +29,13 @@ export type SubscribeDeps = {
    */
   claimSignup(email: string, leadMagnet: string): Promise<boolean>
   sendEmail(email: SentEmail): Promise<void>
+  /**
+   * Optional: check the global marketing suppression list before sending.
+   * Omitted in tests (and in any deps that don't wire it), in which case no
+   * suppression check happens. The real /api/subscribe route always supplies
+   * this, backed by src/lib/email-suppressions.ts (fail-closed on read error).
+   */
+  isSuppressed?(email: string): Promise<boolean>
 }
 
 export type SubscribeResult = {
@@ -81,15 +91,23 @@ export async function handleSubscribe(
     return { ok: true, emailed: false }
   }
 
+  // Marketing send: skip if this address is on the global suppression list.
+  // Reported the same as "already signed up for this magnet": the person
+  // still gets `{ ok: true }`, they just do not get emailed.
+  if (deps.isSuppressed && (await deps.isSuppressed(email))) {
+    return { ok: true, emailed: false }
+  }
+
   // A different magnet later still gets its own email, because the claim is
   // keyed on (email, magnet) rather than on email alone.
-  const { subject, html } = buildWelcomeEmail(firstName, magnet)
+  const { subject, html } = buildWelcomeEmail(firstName, magnet, email)
 
   await deps.sendEmail({
     from: FROM_ADDRESS,
     to: email,
     subject,
     html,
+    headers: buildUnsubscribeHeaders(email),
   })
 
   return { ok: true, emailed: true }
