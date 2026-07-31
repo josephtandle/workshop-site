@@ -5,6 +5,8 @@ import {
   type SessionReminderWindowLabel,
 } from './session-reminder'
 import { buildGoogleCalendarUrl, buildIcalString } from './calendar'
+import { buildUnsubscribeHeaders, buildUnsubscribeUrl } from './list-unsubscribe'
+import { isSuppressed } from './email-suppressions'
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
 
@@ -100,7 +102,7 @@ function buildAiContentCreationSetupEmailHtml(attendeeName: string) {
   `
 }
 
-export function buildAskAnAiExpertWelcomeEmailHtml(event: EventDefinition, attendeeName: string) {
+export function buildAskAnAiExpertWelcomeEmailHtml(event: EventDefinition, attendeeName: string, attendeeEmail: string) {
   const firstName = getFirstName(attendeeName)
   const zoomLink = event.zoomLink ?? 'ZOOM_LINK_TBD'
   const siteUrl = getSiteUrl()
@@ -111,6 +113,7 @@ export function buildAskAnAiExpertWelcomeEmailHtml(event: EventDefinition, atten
   const calendarLine = event.calendarEvent
     ? `<p style="margin: 0 0 10px; font-size: 15px; line-height: 1.75; color: #4b4263;"><strong>Date:</strong> ${event.dateLabel}<br><strong>Time:</strong> ${event.timeLabel}</p>`
     : ''
+  const unsubscribeUrl = buildUnsubscribeUrl(attendeeEmail)
 
   return `
     <div style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f6f2ff; margin: 0; padding: 32px 16px; color: #1a1a1a;">
@@ -142,7 +145,15 @@ export function buildAskAnAiExpertWelcomeEmailHtml(event: EventDefinition, atten
           <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.75; color: #4b4263;">You can revisit the event page here: <a href="${eventUrl}" style="color:#7C69C7; font-weight:700; text-decoration:none;">${event.title}</a></p>
         </div>
 
-        <div style="padding: 0 32px 30px;">
+        ${unsubscribeUrl
+          ? `<div style="padding: 20px 32px 0; border-top: 1px solid rgba(124, 105, 199, 0.10); margin-top: 8px;">
+          <p style="margin: 0; font-size: 13px; color: #9e93be;">
+            <a href="${unsubscribeUrl}" style="color:#9e93be; text-decoration:underline;">Unsubscribe from marketing emails</a>
+          </p>
+        </div>`
+          : ''}
+
+        <div style="padding: 20px 32px 30px;">
           <p style="margin: 0; font-size: 14px; line-height: 1.75; color: #7a7291;">${signatureHtml}</p>
         </div>
       </div>
@@ -470,6 +481,13 @@ async function sendResendEmail(input: {
   html: string
   idempotencyKey?: string
   attachments?: ResendAttachment[]
+  /**
+   * Email-level headers (e.g. RFC 8058 List-Unsubscribe / List-Unsubscribe-Post).
+   * These become part of the outgoing message the recipient's mail client
+   * sees: distinct from the HTTP request headers used to call Resend.
+   * Marketing sends only; transactional mail must not set these.
+   */
+  headers?: Record<string, string>
 }) {
   if (!RESEND_API_KEY) {
     throw new Error('Resend API key is not configured.')
@@ -488,6 +506,7 @@ async function sendResendEmail(input: {
       subject: input.subject,
       html: input.html,
       ...(input.attachments?.length ? { attachments: input.attachments } : {}),
+      ...(input.headers ? { headers: input.headers } : {}),
     }),
   })
 
@@ -607,12 +626,21 @@ export async function sendAskAnAiExpertWelcomeEmail(input: {
       ]
     : []
 
+  // Marketing send: this is the promotional "you're in" welcome for a free
+  // workshop signup, not a paid-seat transactional confirmation. Gate it on
+  // the global suppression list before sending.
+  if (await isSuppressed(input.attendeeEmail)) {
+    console.log(`sendAskAnAiExpertWelcomeEmail: skipping suppressed address ${input.attendeeEmail}`)
+    return
+  }
+
   return sendResendEmail({
     attendeeEmail: input.attendeeEmail,
     subject: `You're in: ${input.event.title}`,
-    html: buildAskAnAiExpertWelcomeEmailHtml(input.event, input.attendeeName),
+    html: buildAskAnAiExpertWelcomeEmailHtml(input.event, input.attendeeName, input.attendeeEmail),
     idempotencyKey: buildAskAnAiExpertWelcomeIdempotencyKey(input.attendeeEmail),
     attachments,
+    headers: buildUnsubscribeHeaders(input.attendeeEmail),
   })
 }
 

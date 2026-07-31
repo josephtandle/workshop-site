@@ -165,7 +165,7 @@ test('ask-an-ai-expert welcome email builder includes the Zoom link and event ti
   const event = getEventBySlug('ask-an-ai-expert')
   assert.ok(event)
 
-  const html = buildAskAnAiExpertWelcomeEmailHtml(event, 'Joe Che')
+  const html = buildAskAnAiExpertWelcomeEmailHtml(event, 'Joe Che', 'joe.che@example.com')
 
   assert.ok(html.includes('https://us02web.zoom.us/j/81275409884'))
   assert.ok(html.includes('Wednesday, July 29, 2026'))

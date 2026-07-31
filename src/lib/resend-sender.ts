@@ -48,6 +48,7 @@ export async function sendViaResend(email: SentEmail): Promise<void> {
       to: [email.to],
       subject: email.subject,
       html: email.html,
+      ...(email.headers ? { headers: email.headers } : {}),
     }),
   })
 
