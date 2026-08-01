@@ -43,6 +43,12 @@ import { celebrate } from '@/lib/celebrate'
 import { isValidEmail } from '@/lib/email-validation'
 import WaitlistJoinForm from '@/components/events/WaitlistJoinForm'
 import { buildEventCheckoutRequestBody } from '@/lib/event-registration-flow'
+import {
+  BUSINESS_CONTEXT_MIN_LENGTH,
+  hasIntakeErrors,
+  validateIntakeFields,
+  type IntakeFieldErrors,
+} from '@/lib/event-intake'
 
 export type EventRegistrationData = {
   slug: string
@@ -65,6 +71,10 @@ export type EventRegistrationData = {
   manuallyClosed?: boolean
   eventEnded?: boolean
   isVirtual?: boolean
+  intakeFields?: {
+    whatsappNumber?: boolean
+    businessContext?: boolean
+  }
 }
 
 type Props = {
@@ -125,8 +135,14 @@ export default function EventRegistrationSection({
     )
   }
   const isFreeRegistration = event.pricing.fullPrice === 0 && !event.pricing.donationMode
+  const collectsWhatsapp = Boolean(event.intakeFields?.whatsappNumber)
+  const collectsBusinessContext = Boolean(event.intakeFields?.businessContext)
+  const collectsIntake = collectsWhatsapp || collectsBusinessContext
   const [attendeeName, setAttendeeName] = useState('')
   const [attendeeEmail, setAttendeeEmail] = useState('')
+  const [whatsappNumber, setWhatsappNumber] = useState('')
+  const [businessContext, setBusinessContext] = useState('')
+  const [fieldErrors, setFieldErrors] = useState<IntakeFieldErrors>({})
   const [donationAmount, setDonationAmount] = useState(event.pricing.fullPrice)
   const [promoOpen, setPromoOpen] = useState(Boolean(initialPromoCode))
   const [promoCode, setPromoCode] = useState(initialPromoCode ?? '')
@@ -293,6 +309,8 @@ export default function EventRegistrationSection({
       referrer: document.referrer || undefined,
       checkoutMode,
       ...(event.pricing.donationMode ? { donationAmount } : {}),
+      ...(collectsWhatsapp ? { whatsappNumber: whatsappNumber.trim() } : {}),
+      ...(collectsBusinessContext ? { businessContext: businessContext.trim() } : {}),
     })
     const response = await fetch('/api/events/checkout-session', {
       method: 'POST',
@@ -342,6 +360,20 @@ export default function EventRegistrationSection({
     if (!isValidEmail(nextEmail)) {
       setError('Please enter a valid email address, like name@example.com.')
       return
+    }
+
+    // The hosted fallback is a second way into checkout, so it has to clear the
+    // same intake gate as the main submit.
+    if (collectsIntake) {
+      const nextFieldErrors = validateIntakeFields({ whatsappNumber, businessContext })
+      if (!collectsWhatsapp) delete nextFieldErrors.whatsappNumber
+      if (!collectsBusinessContext) delete nextFieldErrors.businessContext
+
+      setFieldErrors(nextFieldErrors)
+      if (hasIntakeErrors(nextFieldErrors)) {
+        setError('Please finish the highlighted fields before you continue.')
+        return
+      }
     }
 
     setError(null)
@@ -413,6 +445,20 @@ export default function EventRegistrationSection({
       setError('Please enter a valid email address, like name@example.com.')
       return
     }
+
+    if (collectsIntake) {
+      const nextFieldErrors = validateIntakeFields({ whatsappNumber, businessContext })
+      if (!collectsWhatsapp) delete nextFieldErrors.whatsappNumber
+      if (!collectsBusinessContext) delete nextFieldErrors.businessContext
+
+      setFieldErrors(nextFieldErrors)
+      if (hasIntakeErrors(nextFieldErrors)) {
+        setError('Please finish the highlighted fields before you continue.')
+        return
+      }
+    }
+
+    setFieldErrors({})
 
     startTransition(async () => {
       setError(null)
@@ -501,7 +547,9 @@ export default function EventRegistrationSection({
           <form action={handleSubmit} autoComplete="off" className="grid gap-5">
             <div className="grid gap-5 md:grid-cols-2">
               <label className="grid gap-2">
-                <span className="min-h-[14px] text-sm font-semibold leading-none text-[#FCF4EB]">Full name</span>
+                <span className="min-h-[14px] text-sm font-semibold leading-none text-[#FCF4EB]">
+                  Full name {collectsIntake ? <span className="text-[#F5C3C6]">*</span> : null}
+                </span>
                 <div className="relative h-16">
                   <textarea
                     aria-label="Full name"
@@ -520,7 +568,9 @@ export default function EventRegistrationSection({
                 </div>
               </label>
               <label className="grid gap-2">
-                <span className="min-h-[14px] text-sm font-semibold leading-none text-[#FCF4EB]">Email</span>
+                <span className="min-h-[14px] text-sm font-semibold leading-none text-[#FCF4EB]">
+                  Email {collectsIntake ? <span className="text-[#F5C3C6]">*</span> : null}
+                </span>
                 <div className="relative h-16">
                   <textarea
                     aria-label="Email"
@@ -540,6 +590,96 @@ export default function EventRegistrationSection({
                 </div>
               </label>
             </div>
+
+            {collectsWhatsapp ? (
+              <label className="grid gap-2">
+                <span className="min-h-[14px] text-sm font-semibold leading-none text-[#FCF4EB]">
+                  WhatsApp number <span className="text-[#F5C3C6]">*</span>
+                </span>
+                <input
+                  aria-label="WhatsApp number"
+                  aria-invalid={Boolean(fieldErrors.whatsappNumber)}
+                  aria-describedby={fieldErrors.whatsappNumber ? 'whatsapp-error' : undefined}
+                  autoComplete="off"
+                  dir="ltr"
+                  inputMode="tel"
+                  name="registrationFieldC"
+                  onChange={(inputEvent) => {
+                    setWhatsappNumber(inputEvent.target.value)
+                    if (fieldErrors.whatsappNumber) {
+                      setFieldErrors((prev) => ({ ...prev, whatsappNumber: undefined }))
+                    }
+                  }}
+                  placeholder="+62 812 3456 7890"
+                  value={whatsappNumber}
+                  className={`w-full rounded-xl bg-white px-4 py-4 text-black placeholder:text-black/35 outline-none transition ${
+                    fieldErrors.whatsappNumber
+                      ? 'border-2 border-[#D9636F] ring-2 ring-[#D9636F]/25 focus:border-[#D9636F]'
+                      : 'border border-black/10 focus:border-[#7C69C7]/55'
+                  }`}
+                />
+                {fieldErrors.whatsappNumber ? (
+                  <p id="whatsapp-error" role="alert" className="text-sm text-[#F5C3C6]">
+                    {fieldErrors.whatsappNumber}
+                  </p>
+                ) : (
+                  <p className="text-sm text-[#FCF4EB]/55">
+                    Include your country code. This is how I send you the venue details.
+                  </p>
+                )}
+              </label>
+            ) : null}
+
+            {collectsBusinessContext ? (
+              <label className="grid gap-2">
+                <span className="text-sm font-semibold leading-snug text-[#FCF4EB]">
+                  Tell me a little about your business and what you're doing with AI right now.{' '}
+                  <span className="text-[#F5C3C6]">*</span>
+                </span>
+                <textarea
+                  aria-label="Tell me a little about your business and what you're doing with AI right now"
+                  aria-invalid={Boolean(fieldErrors.businessContext)}
+                  aria-describedby={fieldErrors.businessContext ? 'business-error' : 'business-hint'}
+                  autoComplete="off"
+                  name="registrationFieldD"
+                  onChange={(inputEvent) => {
+                    setBusinessContext(inputEvent.target.value)
+                    if (fieldErrors.businessContext) {
+                      setFieldErrors((prev) => ({ ...prev, businessContext: undefined }))
+                    }
+                  }}
+                  placeholder="What you do, what you're building, and where you're at with AI so far."
+                  rows={4}
+                  value={businessContext}
+                  className={`w-full rounded-xl bg-white px-4 py-3 text-black placeholder:text-black/35 outline-none transition ${
+                    fieldErrors.businessContext
+                      ? 'border-2 border-[#D9636F] ring-2 ring-[#D9636F]/25 focus:border-[#D9636F]'
+                      : 'border border-black/10 focus:border-[#7C69C7]/55'
+                  }`}
+                />
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  {fieldErrors.businessContext ? (
+                    <p id="business-error" role="alert" className="text-sm text-[#F5C3C6]">
+                      {fieldErrors.businessContext}
+                    </p>
+                  ) : (
+                    <p id="business-hint" className="text-sm text-[#FCF4EB]/55">
+                      Links are welcome. I read these before the workshop so I can bring examples that actually fit the room.
+                    </p>
+                  )}
+                  <p
+                    className={`text-xs tabular-nums ${
+                      businessContext.trim().length >= BUSINESS_CONTEXT_MIN_LENGTH
+                        ? 'text-[#BDE7C0]'
+                        : 'text-[#FCF4EB]/42'
+                    }`}
+                  >
+                    {Math.min(businessContext.trim().length, BUSINESS_CONTEXT_MIN_LENGTH)}/
+                    {BUSINESS_CONTEXT_MIN_LENGTH}
+                  </p>
+                </div>
+              </label>
+            ) : null}
 
             {event.pricing.donationMode ? (
               <label className="grid gap-2">

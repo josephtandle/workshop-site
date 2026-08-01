@@ -8,7 +8,8 @@ import {
 } from '@/lib/event-confirmation-email'
 import { syncLegacyRegistration } from '@/lib/legacy-event-schedule'
 import { createStripeClient, getStripePublishableKey } from '@/lib/stripe'
-import { saveRegistration } from '@/lib/event-registration-db'
+import { saveRegistration, saveRegistrationIntake } from '@/lib/event-registration-db'
+import { normalizeWhatsappNumber, validateIntakeFields } from '@/lib/event-intake'
 import { toOrigin } from '@/lib/url-utils'
 import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
 import { trackInsightEvent } from '@/lib/insight-to-fix'
@@ -59,6 +60,8 @@ export async function POST(request: Request) {
         : 'joe-che'
     const rawDonationAmount = typeof body.donationAmount === 'number' ? body.donationAmount : null
     const requestedCheckoutMode = typeof body.checkoutMode === 'string' ? body.checkoutMode.trim() : null
+    const whatsappNumber = typeof body.whatsappNumber === 'string' ? body.whatsappNumber.trim() : ''
+    const businessContext = typeof body.businessContext === 'string' ? body.businessContext.trim() : ''
 
     if (!slug || !attendeeName || !attendeeEmail) {
       await trackInsightEvent('checkout_failed', {
@@ -124,6 +127,35 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Registration is now closed for this event.' }, { status: 410 })
     }
 
+    // Server-side mirror of the form validation. The client checks these too,
+    // but the client can be bypassed.
+    const requiresIntake = Boolean(
+      event.intakeFields?.whatsappNumber || event.intakeFields?.businessContext,
+    )
+    if (requiresIntake) {
+      const intakeErrors = validateIntakeFields({ whatsappNumber, businessContext })
+      const firstError = intakeErrors.whatsappNumber || intakeErrors.businessContext
+      if (firstError) {
+        await trackInsightEvent('checkout_failed', {
+          route: '/events/checkout',
+          email: attendeeEmail,
+          properties: { reason: 'invalid_intake_fields', slug },
+        })
+        return NextResponse.json({ error: firstError }, { status: 400 })
+      }
+
+      // Stored before checkout so a long answer never has to survive Stripe
+      // metadata, and so abandoned checkouts still leave us the answers.
+      await saveRegistrationIntake({
+        eventSlug: slug,
+        attendeeName,
+        attendeeEmail,
+        whatsappNumber: normalizeWhatsappNumber(whatsappNumber),
+        businessContext,
+        acquisitionRef,
+      })
+    }
+
     const { amount, promo } = resolveEventCheckoutAmount({
       event,
       promoCode,
@@ -185,6 +217,8 @@ export async function POST(request: Request) {
           attendeeEmail,
           acquisitionRef,
           amountPaid: amount,
+          whatsappNumber: normalizeWhatsappNumber(whatsappNumber) || null,
+          businessContext: businessContext || null,
         })
         cancelToken = saved.cancelToken
       } catch (regErr) {

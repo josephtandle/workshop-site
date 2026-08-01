@@ -1,7 +1,7 @@
 import { randomUUID } from 'crypto'
 import { supabase } from '@/lib/supabase'
 import { generateToken } from '@/lib/event-tokens'
-import type { EventDefinition } from '@/lib/events'
+import { getEventBySlug, type EventDefinition } from '@/lib/events'
 
 export type Registration = {
   id: string
@@ -15,6 +15,13 @@ export type Registration = {
   status: 'confirmed' | 'cancelled'
   registered_at: string
   cancelled_at: string | null
+  whatsapp_number: string | null
+  business_context: string | null
+}
+
+export type RegistrationIntake = {
+  whatsappNumber: string | null
+  businessContext: string | null
 }
 
 export type WaitlistEntry = {
@@ -27,6 +34,65 @@ export type WaitlistEntry = {
   added_at: string
 }
 
+/**
+ * Persist the intake answers before checkout starts.
+ *
+ * Deliberately written ahead of the Stripe redirect: Stripe metadata values cap
+ * at 500 characters, so a business description with links cannot safely ride
+ * along with the session. Doing it here also keeps the answers from people who
+ * open checkout and never pay.
+ */
+export async function saveRegistrationIntake(input: {
+  eventSlug: string
+  attendeeName: string
+  attendeeEmail: string
+  whatsappNumber?: string | null
+  businessContext?: string | null
+  acquisitionRef?: string
+}): Promise<void> {
+  const { error } = await supabase.from('event_registration_intake').upsert(
+    {
+      event_slug: input.eventSlug,
+      attendee_name: input.attendeeName,
+      attendee_email: input.attendeeEmail.trim().toLowerCase(),
+      whatsapp_number: input.whatsappNumber?.trim() || null,
+      business_context: input.businessContext?.trim() || null,
+      acquisition_ref: input.acquisitionRef?.trim().toLowerCase() || 'joe-che',
+      updated_at: new Date().toISOString(),
+    },
+    { onConflict: 'event_slug,attendee_email' },
+  )
+
+  if (error) {
+    // Never block a registration on intake capture.
+    console.error('saveRegistrationIntake upsert error', error)
+  }
+}
+
+export async function getRegistrationIntake(
+  eventSlug: string,
+  email: string,
+): Promise<RegistrationIntake | null> {
+  const { data, error } = await supabase
+    .from('event_registration_intake')
+    .select('whatsapp_number, business_context')
+    .eq('event_slug', eventSlug)
+    .eq('attendee_email', email.trim().toLowerCase())
+    .maybeSingle()
+
+  if (error) {
+    console.error('getRegistrationIntake error', error)
+    return null
+  }
+
+  if (!data) return null
+
+  return {
+    whatsappNumber: data.whatsapp_number ?? null,
+    businessContext: data.business_context ?? null,
+  }
+}
+
 export async function saveRegistration(input: {
   eventSlug: string
   attendeeName: string
@@ -34,11 +100,25 @@ export async function saveRegistration(input: {
   acquisitionRef?: string
   stripeSessionId?: string
   amountPaid?: number
+  whatsappNumber?: string | null
+  businessContext?: string | null
 }): Promise<{ id: string; cancelToken: string }> {
   // Pre-generate UUID so the cancel token can be derived in a single insert — no two-step update.
   const id = randomUUID()
   const cancelToken = generateToken(`cancel:${id}`)
   const acquisitionRef = input.acquisitionRef?.trim().toLowerCase() || 'joe-che'
+
+  // On the paid path the caller only has what Stripe gave back, so recover the
+  // intake answers that were stored before the redirect. Skipped entirely for
+  // events that do not collect intake, which is most of them.
+  let whatsappNumber = input.whatsappNumber?.trim() || null
+  let businessContext = input.businessContext?.trim() || null
+  const collectsIntake = Boolean(getEventBySlug(input.eventSlug)?.intakeFields)
+  if (collectsIntake && !whatsappNumber && !businessContext) {
+    const intake = await getRegistrationIntake(input.eventSlug, input.attendeeEmail)
+    whatsappNumber = intake?.whatsappNumber ?? null
+    businessContext = intake?.businessContext ?? null
+  }
 
   const { error } = await supabase
     .from('event_registrations')
@@ -52,6 +132,8 @@ export async function saveRegistration(input: {
       amount_paid: input.amountPaid ?? 0,
       cancel_token: cancelToken,
       status: 'confirmed',
+      whatsapp_number: whatsappNumber,
+      business_context: businessContext,
     })
 
   if (error) {
