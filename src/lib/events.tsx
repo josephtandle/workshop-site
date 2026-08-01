@@ -184,6 +184,10 @@ export type EventDefinition = {
   registrationClosesIso?: string
   capacity?: number
   manuallyClosed?: boolean
+  // Post-checkout copy for the success modal. Without this an event falls back
+  // to the generic paid-event line about setting up two free accounts, which is
+  // wrong for any event that has no setup items.
+  successDetail?: string
   // Opt-in per event. Events without this collect name and email only, so
   // adding a field here never changes the form on any other event.
   intakeFields?: {
@@ -1091,6 +1095,15 @@ export const events: EventDefinition[] = [
           description: 'Internal checkout test.',
           percentOff: 95,
         },
+        {
+          // Comped seats (Marina's guests, speakers, anyone Joe waves through).
+          // 100% is correct here because the goal is a free seat, not a test:
+          // this deliberately takes the no-Stripe path.
+          code: 'GUESTOFMARINA',
+          label: 'Guest of Marina',
+          description: 'Complimentary seat.',
+          percentOff: 100,
+        },
       ],
     },
     calendarEvent: {
@@ -1098,6 +1111,8 @@ export const events: EventDefinition[] = [
       endIso: '2026-08-07T18:00:00+08:00',
     },
     capacity: 40,
+    successDetail:
+      'Your seat is confirmed. Check your inbox for the confirmation email, and I will send the exact address the day before the workshop.',
     intakeFields: {
       whatsappNumber: true,
       businessContext: true,

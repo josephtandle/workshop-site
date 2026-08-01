@@ -209,7 +209,7 @@ function buildSessionReminderEmailHtml(
   }
 }
 
-function buildConfirmationEmailHtml(event: EventDefinition, attendeeName: string, cancelToken?: string, now: Date = new Date()) {
+export function buildConfirmationEmailHtml(event: EventDefinition, attendeeName: string, cancelToken?: string, now: Date = new Date()) {
   const siteUrl = getSiteUrl()
   const location = event.privateLocationReminder
   const revealLocationNow =
@@ -250,24 +250,44 @@ function buildConfirmationEmailHtml(event: EventDefinition, attendeeName: string
             : undefined,
         })
         const icalUrl = `${siteUrl}/api/events/${event.slug}/calendar`
-        return `<div style="margin: 20px 0 24px; display: flex; gap: 10px; flex-wrap: wrap;">
-          <a href="${googleUrl}" style="display:inline-block; background: transparent; color: #7C69C7; border: 1.5px solid #7C69C7; text-decoration:none; padding:10px 18px; border-radius:10px; font-size:13px; font-weight:700; white-space:nowrap;">
+        // No flexbox here. Gmail and Outlook strip `display:flex`, so the old
+        // `gap:10px` never applied and the two buttons rendered touching.
+        // Spacing has to live on the elements themselves via margin.
+        const calendarButtonStyle =
+          'display:inline-block; background: transparent; color: #7C69C7; border: 1.5px solid #7C69C7; text-decoration:none; padding:10px 18px; border-radius:10px; font-size:13px; font-weight:700; white-space:nowrap;'
+        return `<div style="margin: 20px 0 24px;">
+          <a href="${googleUrl}" style="${calendarButtonStyle} margin: 0 16px 10px 0;">
             Add to Google Calendar
           </a>
-          <a href="${icalUrl}" style="display:inline-block; background: transparent; color: #7C69C7; border: 1.5px solid #7C69C7; text-decoration:none; padding:10px 18px; border-radius:10px; font-size:13px; font-weight:700; white-space:nowrap;">
+          <a href="${icalUrl}" style="${calendarButtonStyle} margin: 0 0 10px 0;">
             Download iCal
           </a>
         </div>`
       })()
     : ''
 
-  const mapsButtonHtml = cfg?.mapsUrl
-    ? `<div style="margin-top: 16px;">
+  // An event with a privateLocationReminder is deliberately withholding its
+  // venue until the reveal window. A maps button pointing at that venue hands
+  // it over anyway, one click from the confirmation email, which defeats the
+  // whole point of holding it back.
+  const locationIsStillPrivate = Boolean(location) && !revealLocationNow
+
+  const mapsButtonHtml =
+    cfg?.mapsUrl && !locationIsStillPrivate
+      ? `<div style="margin-top: 16px;">
         <a href="${cfg.mapsUrl}" style="display:inline-block; background:#7C69C7; color:#ffffff; text-decoration:none; padding:12px 20px; border-radius:10px; font-size:14px; font-weight:700; box-shadow:0 8px 20px rgba(124,105,199,0.22);">
           Open Google Maps
         </a>
       </div>`
-    : ''
+      : ''
+
+  // While the venue is private the details box drops its Location row entirely.
+  // Nothing is lost: the paragraph below already names the area and says when
+  // the exact address arrives.
+  const locationRowHtml = locationIsStillPrivate
+    ? ''
+    : `<p style="margin: 0${mapsButtonHtml ? ' 0 10px' : ''}; font-size: 15px; line-height: 1.7; color: #2d2442;"><strong>Location:</strong> ${event.locationLabel}</p>
+            ${mapsButtonHtml}`
 
   const cancelHtml = cancelToken
     ? `<div style="padding: 20px 32px 0; border-top: 1px solid rgba(124, 105, 199, 0.10); margin-top: 8px;">
@@ -295,8 +315,7 @@ function buildConfirmationEmailHtml(event: EventDefinition, attendeeName: string
             <p style="margin: 0 0 14px; font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #7C69C7;">${detailsLabel}</p>
             <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.7; color: #2d2442;"><strong>Date:</strong> ${event.dateLabel}</p>
             <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.7; color: #2d2442;"><strong>Time:</strong> ${event.timeLabel}</p>
-            <p style="margin: 0${mapsButtonHtml ? ' 0 10px' : ''}; font-size: 15px; line-height: 1.7; color: #2d2442;"><strong>Location:</strong> ${event.locationLabel}</p>
-            ${mapsButtonHtml}
+            ${locationRowHtml}
           </div>
 
           ${calendarButtonsHtml}

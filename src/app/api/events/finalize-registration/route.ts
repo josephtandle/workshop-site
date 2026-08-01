@@ -56,10 +56,24 @@ export async function POST(request: Request) {
       },
     })
 
+    // result.message is an INTERNAL Event Schedule sync status ("Legacy
+    // registration disabled for this event.", "Legacy attendee created and
+    // marked paid.") and must never reach the attendee. It shipped to a real
+    // customer once already. Keep it for diagnostics under syncMessage and let
+    // the client fall back to the event's own success copy.
+    //
+    // The one part an attendee genuinely needs to know is a failed confirmation
+    // email, since that changes what they should expect in their inbox.
+    const confirmationEmailFailed = /confirmation email failed/i.test(result.message)
+
     return NextResponse.json({
       ok: true,
       status: result.status,
-      message: result.message,
+      message: confirmationEmailFailed
+        ? 'Your seat is reserved. The confirmation email did not send automatically, so keep this page for your records.'
+        : null,
+      syncStatus: result.status,
+      syncMessage: result.message,
     })
   } catch (error) {
     console.error('event finalize registration error', error)
