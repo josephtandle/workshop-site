@@ -19,6 +19,8 @@ export function buildEventCheckoutRequestBody(input: {
   referrer?: string
   checkoutMode?: string
   donationAmount?: number
+  whatsappNumber?: string
+  businessContext?: string
 }) {
   const acquisitionRef =
     resolveAcquisitionRef(input.search) || 'joe-che'
@@ -35,5 +37,7 @@ export function buildEventCheckoutRequestBody(input: {
     referrer: input.referrer,
     checkoutMode: input.checkoutMode,
     ...(input.donationAmount !== undefined ? { donationAmount: input.donationAmount } : {}),
+    ...(input.whatsappNumber !== undefined ? { whatsappNumber: input.whatsappNumber } : {}),
+    ...(input.businessContext !== undefined ? { businessContext: input.businessContext } : {}),
   }
 }

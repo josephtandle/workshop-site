@@ -544,6 +544,7 @@ export default function EventPageView({
     manuallyClosed: registrationClosed,
     eventEnded,
     isVirtual: isVirtualEvent,
+    intakeFields: event.intakeFields,
     durationLabel: event.pricing.donationMode ? undefined : event.durationLabel,
     pricing: {
       currencySymbol: event.pricing.currencySymbol,

@@ -184,6 +184,12 @@ export type EventDefinition = {
   registrationClosesIso?: string
   capacity?: number
   manuallyClosed?: boolean
+  // Opt-in per event. Events without this collect name and email only, so
+  // adding a field here never changes the form on any other event.
+  intakeFields?: {
+    whatsappNumber?: boolean
+    businessContext?: boolean
+  }
   emailConfig?: {
     headerLabel?: string | null
     detailsLabel?: string
@@ -1008,12 +1014,12 @@ export const events: EventDefinition[] = [
     status: 'live',
     title: 'The Biggest Business Blocks That AI Solved For Me',
     shortTitle: 'Business Blocks AI Solved',
-    eyebrow: 'Free Live Workshop',
+    eyebrow: 'Live Workshop',
     summary:
       'A raw, practical Bali session hosted by Marina Joubert, featuring Joe Che on what AI actually removed from his business this year.',
     description:
-      'A free live workshop in Canggu where Joe Che shows what actually changed in his business this year, and the real AI systems behind it.',
-    ctaLabel: 'Register Free',
+      'A live workshop in Canggu where Joe Che shows what actually changed in his business this year, and the real AI systems behind it.',
+    ctaLabel: 'Reserve Your Seat',
     dateLabel: 'Friday, August 7, 2026',
     timeLabel: '3:00 PM to 6:00 PM',
     locationLabel: 'Near La Brisa, Canggu, Bali',
@@ -1070,15 +1076,19 @@ export const events: EventDefinition[] = [
     ],
     pricing: {
       currencySymbol: '$',
-      fullPrice: 0,
+      fullPrice: 22,
       checkoutHref: '',
-      checkoutNote: 'Free registration. The exact venue address is emailed to registered guests the day before the event.',
+      checkoutNote: 'The exact venue address is emailed to registered guests the day before the event.',
     },
     calendarEvent: {
       startIso: '2026-08-07T15:00:00+08:00',
       endIso: '2026-08-07T18:00:00+08:00',
     },
     capacity: 40,
+    intakeFields: {
+      whatsappNumber: true,
+      businessContext: true,
+    },
     emailConfig: {
       headerLabel: null,
       detailsLabel: 'Event Details',
@@ -1142,7 +1152,7 @@ export const events: EventDefinition[] = [
               This isn't a theory talk. It's the real systems, the agents, the workflows, the decisions behind them, shown so you can take the same approach into your own business.
             </p>
             <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
-              It's free, hosted by Marina at Samm's Farm in Canggu. The exact address goes out to confirmed ticket holders the day before the event. Save your seat below.
+              It's $22, hosted by Marina at Samm's Farm in Canggu. The exact address goes out to confirmed ticket holders the day before the event. Save your seat below.
             </p>
           </div>
         `,
@@ -1153,7 +1163,7 @@ export const events: EventDefinition[] = [
         html: `
           <div class="not-prose text-center py-2">
             <a href="#register" class="copy-button-glass copy-button-primary inline-flex min-w-[220px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold no-underline">
-              Register Free
+              Reserve Your Seat
             </a>
           </div>
         `,
@@ -1170,7 +1180,7 @@ export const events: EventDefinition[] = [
     metadata: {
       title: 'The Biggest Business Blocks That AI Solved For Me',
       description:
-        'A free live workshop in Canggu, Bali hosted by Marina Joubert, featuring Joe Che on what AI actually removed from his business this year.',
+        'A live workshop in Canggu, Bali hosted by Marina Joubert, featuring Joe Che on what AI actually removed from his business this year.',
     },
   },
 ]
