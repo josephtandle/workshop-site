@@ -64,8 +64,12 @@ export async function saveRegistrationIntake(input: {
   )
 
   if (error) {
-    // Never block a registration on intake capture.
+    // Deliberately throws. This runs BEFORE the Stripe redirect, so failing
+    // here costs nothing but a retry, whereas swallowing it loses the answers
+    // and nobody finds out until someone reads an empty table. That is exactly
+    // how the 42P10 conflict-target bug survived its first live checkout.
     console.error('saveRegistrationIntake upsert error', error)
+    throw new Error('Failed to save registration intake.')
   }
 }
 
@@ -118,6 +122,16 @@ export async function saveRegistration(input: {
     const intake = await getRegistrationIntake(input.eventSlug, input.attendeeEmail)
     whatsappNumber = intake?.whatsappNumber ?? null
     businessContext = intake?.businessContext ?? null
+
+    // The intake row is written before checkout, so by now it must exist. If it
+    // does not, the registration is about to be saved with the answers missing
+    // and we want that in the logs rather than discovered weeks later.
+    if (!whatsappNumber && !businessContext) {
+      console.error(
+        `saveRegistration: no intake row for ${input.eventSlug} / ${input.attendeeEmail}; ` +
+          'registration will be saved without WhatsApp or business context.',
+      )
+    }
   }
 
   const { error } = await supabase

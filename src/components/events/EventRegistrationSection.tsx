@@ -220,7 +220,10 @@ export default function EventRegistrationSection({
         throw new Error(payload.error || 'Unable to finalize registration.')
       }
 
-      markSuccess(payload.message || 'Payment received and registration confirmed.')
+      // Undefined on purpose when the API has nothing attendee-facing to add:
+      // markSuccess then falls back to this event's own success copy rather
+      // than an internal sync status.
+      markSuccess(payload.message || undefined)
     } catch (finalizeError) {
       const message = finalizeError instanceof Error ? finalizeError.message : 'Unable to finalize registration.'
       setError(message)

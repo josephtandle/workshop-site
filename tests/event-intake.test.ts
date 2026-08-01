@@ -50,6 +50,34 @@ test('a 99% code would be rejected on a $22 ticket (why JOETEST is 95%)', () => 
   assert.equal(toStripeUnitAmount(event.pricing.fullPrice * 0.01), null)
 })
 
+test('GUESTOFMARINA comps a seat to exactly zero', () => {
+  const event = getEventBySlug('business-blocks-ai-solved')!
+  const { amount } = resolveEventCheckoutAmount({ event, promoCode: 'GUESTOFMARINA' })
+  assert.equal(toStripeUnitAmount(amount), 0, 'a comp must be free, which skips Stripe by design')
+})
+
+test('the event carries its own success copy, not the generic setup-accounts line', () => {
+  const event = getEventBySlug('business-blocks-ai-solved')!
+  assert.ok(event.successDetail, 'without this the modal claims there are two accounts to set up')
+  assert.doesNotMatch(event.successDetail!, /setup page|two free accounts/i)
+  assert.doesNotMatch(event.successDetail!, /—/, 'no em dashes in attendee-facing copy')
+})
+
+test('no attendee-facing copy on this event leaks internal sync wording', () => {
+  const event = getEventBySlug('business-blocks-ai-solved')!
+  const attendeeFacing = [
+    event.successDetail,
+    event.pricing.checkoutNote,
+    event.postPurchase?.setupPageTitle,
+    event.postPurchase?.setupPageIntro,
+    ...(event.postPurchase?.setupPageBody ?? []),
+  ].filter(Boolean) as string[]
+
+  for (const copy of attendeeFacing) {
+    assert.doesNotMatch(copy, /legacy/i, `internal wording leaked to attendees: ${copy}`)
+  }
+})
+
 test('events without intakeFields are unaffected', () => {
   for (const slug of ['connection-dinner-canggu', 'ask-an-ai-expert']) {
     assert.equal(getEventBySlug(slug)?.intakeFields, undefined, `${slug} should not collect intake`)

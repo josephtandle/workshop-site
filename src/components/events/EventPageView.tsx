@@ -555,13 +555,15 @@ export default function EventPageView({
     },
     calendarEvent,
     successLabel: hasSetupItems ? 'Start Account Setup' : 'View Event Details',
-    successDetail: event.postPurchase
-      ? event.pricing.donationMode
-        ? 'Thank you. A confirmation email is on its way from joe@mastermindshq.business.'
-        : undefined
-      : isVirtualEvent
-        ? 'A confirmation email with the Zoom link is on its way.'
-        : undefined,
+    successDetail:
+      event.successDetail ??
+      (event.postPurchase
+        ? event.pricing.donationMode
+          ? 'Thank you. A confirmation email is on its way from joe@mastermindshq.business.'
+          : undefined
+        : isVirtualEvent
+          ? 'A confirmation email with the Zoom link is on its way.'
+          : undefined),
     successRedirect: hasSetupItems ? undefined : `/events/${event.slug}`,
   }
   const initialPromoAmount = promo ? getEventDiscountedPrice(event, promo) : null
