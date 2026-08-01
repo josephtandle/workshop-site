@@ -9,7 +9,9 @@ import {
   validateIntakeFields,
   validateWhatsappNumber,
 } from '../src/lib/event-intake'
-import { getEventBySlug } from '../src/lib/events'
+import { formatEventPrice, getEventBySlug } from '../src/lib/events'
+import { resolveEventCheckoutAmount } from '../src/lib/event-checkout'
+import { toStripeUnitAmount, MIN_STRIPE_USD_CHARGE_CENTS } from '../src/lib/stripe-amount'
 
 const VALID_BUSINESS_ANSWER =
   'I run a small design studio in Canggu doing brand work for hospitality clients, and so far I only use AI for first-draft copy.'
@@ -20,6 +22,32 @@ test('business-blocks-ai-solved collects both intake fields and is priced at $22
   assert.equal(event.intakeFields?.whatsappNumber, true)
   assert.equal(event.intakeFields?.businessContext, true)
   assert.equal(event.pricing.fullPrice, 22)
+})
+
+test('JOETEST still runs the real Stripe path, not the free bypass', () => {
+  const event = getEventBySlug('business-blocks-ai-solved')!
+  const { amount, promo } = resolveEventCheckoutAmount({ event, promoCode: 'JOETEST' })
+
+  assert.equal(promo?.code, 'JOETEST')
+  const cents = toStripeUnitAmount(amount)
+
+  // The whole point of the test code: a real charge, so checkout-session does
+  // NOT take the `unitAmount === 0` branch that skips Stripe.
+  assert.notEqual(cents, null, 'must not fall below the Stripe minimum')
+  assert.notEqual(cents, 0, 'a $0 total would bypass Stripe and prove nothing')
+  assert.ok(cents! >= MIN_STRIPE_USD_CHARGE_CENTS)
+
+  // Assert on cents and on the rendered string, not the raw float: percentOff
+  // math yields 1.100000000000001, which Math.round and toFixed(2) both settle.
+  assert.equal(cents, 110)
+  assert.equal(formatEventPrice(event, promo!), '$1.10')
+})
+
+test('a 99% code would be rejected on a $22 ticket (why JOETEST is 95%)', () => {
+  const event = getEventBySlug('business-blocks-ai-solved')!
+  // 99% of $22 is $0.22, under Stripe's floor. Documents the trap so nobody
+  // "tidies" JOETEST up to the usual Guest99.
+  assert.equal(toStripeUnitAmount(event.pricing.fullPrice * 0.01), null)
 })
 
 test('events without intakeFields are unaffected', () => {

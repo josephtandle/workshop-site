@@ -1079,6 +1079,19 @@ export const events: EventDefinition[] = [
       fullPrice: 22,
       checkoutHref: '',
       checkoutNote: 'The exact venue address is emailed to registered guests the day before the event.',
+      promoCodes: [
+        {
+          // Internal end-to-end test code. 95% lands at $1.10, deliberately
+          // above Stripe's $0.50 floor. The usual Guest99 does NOT work on a
+          // $22 ticket: 99% off is $0.22, which toStripeUnitAmount rejects.
+          // A 100% code would be worse for testing, since a $0 total skips
+          // Stripe entirely and never exercises the paid path.
+          code: 'JOETEST',
+          label: 'Internal test',
+          description: 'Internal checkout test.',
+          percentOff: 95,
+        },
+      ],
     },
     calendarEvent: {
       startIso: '2026-08-07T15:00:00+08:00',
