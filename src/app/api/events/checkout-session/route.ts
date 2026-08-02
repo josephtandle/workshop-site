@@ -1,4 +1,3 @@
-import { inviteAttendeeToEvent } from '@/lib/google-calendar-invite'
 import { NextResponse } from 'next/server'
 import { getEventBySlug } from '@/lib/events'
 import {
@@ -6,7 +5,7 @@ import {
   sendAskAnAiExpertWelcomeEmail,
   sendEventConfirmationEmail,
 } from '@/lib/event-confirmation-email'
-import { syncLegacyRegistration } from '@/lib/legacy-event-schedule'
+import { inviteAttendeeBestEffort, syncLegacyRegistration } from '@/lib/legacy-event-schedule'
 import { createStripeClient, getStripePublishableKey } from '@/lib/stripe'
 import { saveRegistration, saveRegistrationIntake } from '@/lib/event-registration-db'
 import { normalizeWhatsappNumber, validateIntakeFields } from '@/lib/event-intake'
@@ -277,17 +276,9 @@ export async function POST(request: Request) {
 
       // Send a real Google Calendar invite so the event lands in their own
       // calendar. Best effort: never let this fail a completed registration.
-      let calendarInviteStatus = 'not-attempted'
-      try {
-        const invite = await inviteAttendeeToEvent(event, attendeeEmail, attendeeName)
-        calendarInviteStatus = invite.status
-        if (invite.status === 'failed' || invite.status === 'skipped') {
-          console.warn('calendar invite not sent', invite)
-        }
-      } catch (error) {
-        calendarInviteStatus = 'failed'
-        console.error('calendar invite error', error)
-      }
+      // Shared with the paid path via inviteAttendeeBestEffort, so free and
+      // paid registrants always get the same invite.
+      const calendarInviteStatus = await inviteAttendeeBestEffort(event, attendeeEmail, attendeeName)
 
       await trackInsightEvent('checkout_completed', {
         route: '/events/checkout',

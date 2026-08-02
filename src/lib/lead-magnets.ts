@@ -34,6 +34,55 @@ export function getLeadMagnet(slug: string): LeadMagnet | undefined {
   return LEAD_MAGNETS[slug]
 }
 
+/**
+ * The slugs /api/lead-magnet can actually deliver today.
+ *
+ * Each one is still served by a hardcoded template inside
+ * src/app/api/lead-magnet/route.ts, NOT by LEAD_MAGNETS above. This set exists
+ * so that route can fail closed instead of falling through to a default asset:
+ * a source that is not listed here gets nothing, and the caller is told.
+ *
+ * TODO(lead-magnets): migrate these templates into LEAD_MAGNETS so there is one
+ * typed registry rather than a registry plus an if/else chain. Separate job.
+ * Until it happens, adding a giveaway page means adding its template to the
+ * route AND its slug here, in the same change.
+ *
+ * Known gap the fail-closed behaviour exposes: several live giveaway pages
+ * (agent-infrastructure, ai-behavior-quiz, ai-levels-quiz, anthropic-safety-checklist,
+ * benchmark, claude-md, client-launch-checklist, compare,
+ * cross-cli-compatibility-routing, fable-worth-it-audit, ig-settings,
+ * intuition-quiz, logo-maker-guide, ray-dalio-council, squarespace-escape,
+ * viral-hooks, ...) post sources with no template. They used to receive the
+ * Un-Learning Success PDF by accident. They now receive nothing, which is the
+ * correct failure until each one gets a real asset.
+ */
+export const DELIVERABLE_LEAD_MAGNET_SOURCES: ReadonlySet<string> = new Set([
+  'all-sorted-overview',
+  'cult-brand-playbook',
+  'guardog',
+  'human',
+  'lead-magnet',
+  'maccleaner',
+  'speak-human',
+  'web-design-arsenal',
+])
+
+/** True when /api/lead-magnet has a real asset for this source. */
+export function isDeliverableLeadMagnetSource(source: string): boolean {
+  return DELIVERABLE_LEAD_MAGNET_SOURCES.has(source)
+}
+
+/** Thrown rather than defaulting to some other magnet's asset. */
+export class UnknownLeadMagnetSourceError extends Error {
+  readonly source: string
+
+  constructor(source: string) {
+    super(`No lead magnet asset is registered for source "${source}".`)
+    this.name = 'UnknownLeadMagnetSourceError'
+    this.source = source
+  }
+}
+
 export function downloadUrlFor(magnet: LeadMagnet): string {
   return `${SITE_URL}${magnet.downloadPath}`
 }

@@ -935,9 +935,9 @@ export const events: EventDefinition[] = [
       whatsappNumber: true,
       businessContext: true,
       businessContextLabel:
-        'What are the biggest blocks in your business right now, and where do you think AI could solve them?',
+        "Tell us a little about your business and what you're working on.",
       businessContextPlaceholder:
-        'The work that keeps eating your week, what you have already tried, and where you are stuck.',
+        "What you do, what you're building, and anything you are curious about with AI.",
     },
     zoomLink: 'https://us02web.zoom.us/j/81275409884?pwd=lWpaRasSci7h7YHesIhRM2HlTbzVFA.1',
     ctaLabel: 'Register Free',

@@ -4,6 +4,7 @@ import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
 import { trackInsightEvent } from '@/lib/insight-to-fix'
 import { buildUnsubscribeHeaders, buildUnsubscribeUrl } from '@/lib/list-unsubscribe'
 import { isSuppressed } from '@/lib/email-suppressions'
+import { isDeliverableLeadMagnetSource, UnknownLeadMagnetSourceError } from '@/lib/lead-magnets'
 import { withUtm } from '@/lib/utm'
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
@@ -346,7 +347,7 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
         ${unsubscribeFooter}
       </div>
     `
-  } else {
+  } else if (source === 'lead-magnet') {
     subject = 'Your free PDF: Un-Learning Success'
     html = `
       <div style="font-family: system-ui, sans-serif; max-width: 520px; margin: 0 auto; padding: 40px 20px;">
@@ -368,6 +369,13 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
         </p>
       </div>
     `
+  } else {
+    // Fail closed. This branch used to send the Un-Learning Success PDF to any
+    // unrecognised source, which meant roughly eighteen giveaway pages emailed
+    // people an asset they never asked for. Sending nothing is the correct
+    // failure; sending the wrong thing is not. See
+    // DELIVERABLE_LEAD_MAGNET_SOURCES in src/lib/lead-magnets.ts.
+    throw new UnknownLeadMagnetSourceError(source)
   }
 
   const res = await fetch('https://api.resend.com/emails', {
@@ -431,7 +439,8 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Too many requests. Please try again shortly.' }, { status: 429 })
     }
 
-    const { email, source = 'lead-magnet', journeyId = null } = await request.json()
+    const { email, source: rawSource, journeyId = null } = await request.json()
+    const source = typeof rawSource === 'string' && rawSource.trim() ? rawSource.trim() : 'lead-magnet'
 
     if (!email || typeof email !== 'string' || email.length > 256 || !EMAIL_RE.test(email.trim())) {
       return NextResponse.json({ error: 'Valid email is required' }, { status: 400 })
@@ -470,6 +479,38 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: true, suppressed: true })
     }
 
+    // Fail closed on a source we have no asset for. The lead is already
+    // captured above, which is the part worth keeping. What we must not do is
+    // fall through to some other magnet's PDF, and what we must not do either
+    // is quietly return success as though something was delivered.
+    if (!isDeliverableLeadMagnetSource(source)) {
+      console.error(
+        `lead-magnet: no asset registered for source "${source}" (email captured, nothing sent). ` +
+          'Add the template to /api/lead-magnet and the slug to DELIVERABLE_LEAD_MAGNET_SOURCES.',
+      )
+      await trackInsightEvent('lead_magnet_unknown_source', {
+        route: '/api/lead-magnet',
+        email,
+        sessionId: typeof journeyId === 'string' ? journeyId : null,
+        properties: { source, reason: 'no_asset_registered', delivered: false },
+      })
+      await trackInsightEvent('delivery_failed', {
+        route: '/api/lead-magnet',
+        email,
+        sessionId: typeof journeyId === 'string' ? journeyId : null,
+        properties: { source, delivery_type: 'lead_magnet', reason: 'unknown_source' },
+      })
+      return NextResponse.json(
+        {
+          error:
+            'We could not find the download for this page. Your email is saved and Joe has been alerted.',
+          delivered: false,
+          source,
+        },
+        { status: 422 },
+      )
+    }
+
     // Send confirmation via Resend
     const idempotencyKey = `lead-magnet/${source}/${email.trim().toLowerCase()}`
     await sendViaResend(email, source, idempotencyKey)
@@ -494,6 +535,25 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ success: true })
   } catch (error) {
+    // Backstop for the same failure, in case DELIVERABLE_LEAD_MAGNET_SOURCES
+    // and the template chain ever drift apart. Still surfaced, never a silent
+    // fallback send.
+    if (error instanceof UnknownLeadMagnetSourceError) {
+      console.error('Lead magnet error: unknown source', error.source, error)
+      await trackInsightEvent('lead_magnet_unknown_source', {
+        route: '/api/lead-magnet',
+        properties: { source: error.source, reason: 'no_template_registered', delivered: false },
+      })
+      return NextResponse.json(
+        {
+          error:
+            'We could not find the download for this page. Your email is saved and Joe has been alerted.',
+          delivered: false,
+          source: error.source,
+        },
+        { status: 422 },
+      )
+    }
     console.error('Lead magnet error:', error)
     return NextResponse.json({ error: 'Something went wrong' }, { status: 500 })
   }
