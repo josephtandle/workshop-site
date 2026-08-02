@@ -1120,9 +1120,13 @@ export const events: EventDefinition[] = [
     emailConfig: {
       headerLabel: null,
       detailsLabel: 'Event Details',
-      contactName: 'Joe Che',
-      contactWhatsAppLink: 'https://wa.me/16462304209',
-      contactWhatsAppDisplay: '(646) 230-4209',
+      // Marina is hosting, so attendee questions go to her rather than Joe. The
+      // signature below stays Joe Che: he is still the one presenting.
+      contactName: 'Marina',
+      contactWhatsAppLink: 'https://wa.me/6282146079766',
+      contactWhatsAppDisplay: '+62 821 4607 9766',
+      // Only rendered once the location reveal window opens. See
+      // event-confirmation-email.ts, which suppresses it while the venue is private.
       mapsUrl:
         "https://www.google.com/maps/search/?api=1&query=Samm%27s+Farm+Jl.+Canggu+Padang+Linjong+No.58+Canggu+Bali",
       skipSetupInstructions: true,
