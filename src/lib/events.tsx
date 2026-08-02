@@ -193,6 +193,8 @@ export type EventDefinition = {
   intakeFields?: {
     whatsappNumber?: boolean
     businessContext?: boolean
+    businessContextLabel?: string
+    businessContextPlaceholder?: string
   }
   emailConfig?: {
     headerLabel?: string | null
@@ -921,11 +923,22 @@ export const events: EventDefinition[] = [
     locationLabel: 'Free online workshop',
     durationLabel: '90 minutes, and the room stays open after',
     heroImage: '/images/events/stop-sounding-like-everyone-else-hero.jpg',
-    heroAlt: 'One handwritten page glowing among rows of identical printed pages',
+    heroAlt: 'Joe Che beside the workshop title, Stop Sounding Like Everyone Else While Using AI',
     // Never put a gradient scrim over event artwork. Joe's rule, 2026-08-02.
     heroNoOverlay: true,
     successDetail:
       'You are in. Your confirmation email has the Zoom link, and a calendar invite is on its way. It comes from joe@mastermindshq.business. If you do not see it within a couple of minutes, check your spam folder and add that address to your contacts so the reminders reach you too.',
+    // Free registration still collects a WhatsApp number and a business
+    // description. Free does not mean anonymous: we need a way to reach people
+    // and enough context to pre-qualify them.
+    intakeFields: {
+      whatsappNumber: true,
+      businessContext: true,
+      businessContextLabel:
+        'What are the biggest blocks in your business right now, and where do you think AI could solve them?',
+      businessContextPlaceholder:
+        'The work that keeps eating your week, what you have already tried, and where you are stuck.',
+    },
     zoomLink: 'https://us02web.zoom.us/j/81275409884?pwd=lWpaRasSci7h7YHesIhRM2HlTbzVFA.1',
     ctaLabel: 'Register Free',
     audience: [
@@ -967,6 +980,14 @@ export const events: EventDefinition[] = [
     calendarEvent: {
       startIso: '2026-08-04T17:00:00+08:00',
       endIso: '2026-08-04T18:30:00+08:00',
+    },
+    // Who hosts this event. Without it the confirmation email has no contact
+    // block at all, which is the safe default. Never leave it to inherit.
+    emailConfig: {
+      contactName: 'Joe Che',
+      contactWhatsAppLink: 'https://wa.me/16462092333',
+      contactWhatsAppDisplay: '+1 (646) 209-2333',
+      signatureName: 'Joe Che\nMasterminds HQ',
     },
     sections: [
       {

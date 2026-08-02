@@ -74,6 +74,8 @@ export type EventRegistrationData = {
   intakeFields?: {
     whatsappNumber?: boolean
     businessContext?: boolean
+    businessContextLabel?: string
+    businessContextPlaceholder?: string
   }
 }
 
@@ -138,6 +140,14 @@ export default function EventRegistrationSection({
   const collectsWhatsapp = Boolean(event.intakeFields?.whatsappNumber)
   const collectsBusinessContext = Boolean(event.intakeFields?.businessContext)
   const collectsIntake = collectsWhatsapp || collectsBusinessContext
+  // Per-event wording for the business question. Defaults preserve the original
+  // copy so existing events are untouched.
+  const businessContextLabel =
+    event.intakeFields?.businessContextLabel ??
+    "Tell me a little about your business and what you're doing with AI right now."
+  const businessContextPlaceholder =
+    event.intakeFields?.businessContextPlaceholder ??
+    "What you do, what you're building, and where you're at with AI so far."
   const [attendeeName, setAttendeeName] = useState('')
   const [attendeeEmail, setAttendeeEmail] = useState('')
   const [whatsappNumber, setWhatsappNumber] = useState('')
@@ -645,11 +655,11 @@ export default function EventRegistrationSection({
             {collectsBusinessContext ? (
               <label className="grid gap-2">
                 <span className="text-sm font-semibold leading-snug text-[#FCF4EB]">
-                  Tell me a little about your business and what you're doing with AI right now.{' '}
+                  {businessContextLabel}{' '}
                   <span className="text-[#F5C3C6]">*</span>
                 </span>
                 <textarea
-                  aria-label="Tell me a little about your business and what you're doing with AI right now"
+                  aria-label={businessContextLabel}
                   aria-invalid={Boolean(fieldErrors.businessContext)}
                   aria-describedby={fieldErrors.businessContext ? 'business-error' : 'business-hint'}
                   autoComplete="off"
@@ -660,7 +670,7 @@ export default function EventRegistrationSection({
                       setFieldErrors((prev) => ({ ...prev, businessContext: undefined }))
                     }
                   }}
-                  placeholder="What you do, what you're building, and where you're at with AI so far."
+                  placeholder={businessContextPlaceholder}
                   rows={4}
                   value={businessContext}
                   className={`w-full rounded-xl bg-white px-4 py-3 text-black placeholder:text-black/35 outline-none transition ${

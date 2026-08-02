@@ -209,6 +209,34 @@ function buildSessionReminderEmailHtml(
   }
 }
 
+/**
+ * Who to contact about the event. Derived from the event's first host so a new
+ * workshop cannot inherit a previous host's name and phone number.
+ *
+ * There is deliberately NO fallback phone number. A wrong number is worse than
+ * no number, so when none is configured the contact block is omitted entirely.
+ * A hardcoded default here once shipped Helix's personal number on a Joe Che
+ * workshop confirmation.
+ */
+function resolveHostContact(event: EventDefinition) {
+  const cfg = event.emailConfig
+  const host = event.hosts?.[0]
+  const contactName = cfg?.contactName ?? host?.firstName ?? host?.name ?? null
+  const contactWhatsAppLink = cfg?.contactWhatsAppLink ?? null
+  const contactWhatsAppDisplay = cfg?.contactWhatsAppDisplay ?? null
+  const canContact = Boolean(contactName && contactWhatsAppLink && contactWhatsAppDisplay)
+  const contactBlockHtml = canContact
+    ? `<div style="border: 1px solid rgba(124, 105, 199, 0.16); border-radius: 18px; padding: 20px 22px; margin-bottom: 24px; background: #faf8ff;">
+            <p style="margin: 0 0 8px; font-size: 20px; font-weight: 800; color: #16121f;">Questions before the event?</p>
+            <p style="margin: 0; font-size: 15px; line-height: 1.75; color: #4b4263;">
+              Message ${contactName} at
+              <a href="${contactWhatsAppLink}" style="color:#7C69C7; font-weight:700; text-decoration:none;">${contactWhatsAppDisplay}</a>.
+            </p>
+          </div>`
+    : ''
+  return { contactName, contactWhatsAppLink, contactWhatsAppDisplay, contactBlockHtml }
+}
+
 export function buildConfirmationEmailHtml(event: EventDefinition, attendeeName: string, cancelToken?: string, now: Date = new Date()) {
   const siteUrl = getSiteUrl()
   const location = event.privateLocationReminder
@@ -223,15 +251,27 @@ export function buildConfirmationEmailHtml(event: EventDefinition, attendeeName:
   const eventUrl = `${siteUrl}/events/${event.slug}`
 
   const cfg = event.emailConfig
-  const contactName = cfg?.contactName ?? 'Helix'
-  const contactWhatsAppLink = cfg?.contactWhatsAppLink ?? 'https://wa.me/13233773154'
-  const contactWhatsAppDisplay = cfg?.contactWhatsAppDisplay ?? '+1 (323) 377-3154'
+  const { contactBlockHtml } = resolveHostContact(event)
   const detailsLabel = cfg?.detailsLabel ?? 'Workshop Details'
   const signatureName = cfg?.signatureName ?? 'Joe Che\nMasterminds HQ'
   const signatureHtml = signatureName.split('\n').join('<br>')
+  // The generic confirmation never carried the Zoom link, only the bespoke
+  // ask-an-ai-expert template did. Every online event's checkout note promises
+  // "the Zoom link will be emailed right after you sign up", so an online event
+  // on this template was shipping a broken promise.
+  const zoomBlockHtml = event.zoomLink
+    ? `<div style="border: 1px solid rgba(124, 105, 199, 0.16); border-radius: 18px; background: #faf8ff; padding: 22px 24px; margin-bottom: 24px;">
+            <p style="margin: 0 0 14px; font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #7C69C7;">Join Link</p>
+            <a href="${event.zoomLink}" style="display:inline-block; background:#7C69C7; color:#ffffff; text-decoration:none; padding:14px 24px; border-radius:12px; font-size:16px; font-weight:700; box-shadow:0 14px 32px rgba(124,105,199,0.24);">Open Zoom link</a>
+            <p style="margin: 14px 0 0; font-size: 14px; line-height: 1.7; color: #4b4263;">Or paste this in: <a href="${event.zoomLink}" style="color:#7C69C7; font-weight:700; text-decoration:none;">${event.zoomLink}</a></p>
+          </div>`
+    : ''
   const primarySetup = event.postPurchase?.setupItems?.[0]
   const secondarySetup = event.postPurchase?.setupItems?.[1]
-  const skipSetup = cfg?.skipSetupInstructions === true
+  // Only offer setup instructions when the event actually has any. The old
+  // opt-out flag meant every event without postPurchase still shipped an
+  // "Open setup instructions" button pointing at an empty page.
+  const skipSetup = cfg?.skipSetupInstructions === true || !event.postPurchase?.setupItems?.length
 
   const headerLabelHtml =
     cfg && 'headerLabel' in cfg && (cfg.headerLabel === null || cfg.headerLabel === '')
@@ -318,6 +358,8 @@ export function buildConfirmationEmailHtml(event: EventDefinition, attendeeName:
             ${locationRowHtml}
           </div>
 
+          ${zoomBlockHtml}
+
           ${calendarButtonsHtml}
 
           ${
@@ -382,13 +424,7 @@ export function buildConfirmationEmailHtml(event: EventDefinition, attendeeName:
           </div>`
           }
 
-          <div style="border: 1px solid rgba(124, 105, 199, 0.16); border-radius: 18px; padding: 20px 22px; margin-bottom: 24px; background: #faf8ff;">
-            <p style="margin: 0 0 8px; font-size: 20px; font-weight: 800; color: #16121f;">Questions before the event?</p>
-            <p style="margin: 0; font-size: 15px; line-height: 1.75; color: #4b4263;">
-              Message ${contactName} at
-              <a href="${contactWhatsAppLink}" style="color:#7C69C7; font-weight:700; text-decoration:none;">${contactWhatsAppDisplay}</a>.
-            </p>
-          </div>
+          ${contactBlockHtml}
 
           <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.75; color: #4b4263;">
             If you need to revisit the event page, you can always return here:
@@ -416,9 +452,7 @@ function buildLocationReminderEmailHtml(event: EventDefinition, attendeeName: st
 
   const cfg = event.emailConfig
   const detailsLabel = cfg?.detailsLabel ?? 'Workshop Details'
-  const contactName = cfg?.contactName ?? 'Helix'
-  const contactWhatsAppLink = cfg?.contactWhatsAppLink ?? 'https://wa.me/13233773154'
-  const contactWhatsAppDisplay = cfg?.contactWhatsAppDisplay ?? '+1 (323) 377-3154'
+  const { contactBlockHtml } = resolveHostContact(event)
   const signatureName = cfg?.signatureName ?? 'Joe Che\nMasterminds HQ'
   const signatureHtml = signatureName.split('\n').join('<br>')
   const firstName = attendeeName.trim().split(/\s+/)[0]
@@ -473,13 +507,7 @@ function buildLocationReminderEmailHtml(event: EventDefinition, attendeeName: st
               : ''
           }
 
-          <div style="border: 1px solid rgba(124, 105, 199, 0.16); border-radius: 18px; padding: 20px 22px; margin-bottom: 24px; background: #faf8ff;">
-            <p style="margin: 0 0 8px; font-size: 20px; font-weight: 800; color: #16121f;">Questions before the event?</p>
-            <p style="margin: 0; font-size: 15px; line-height: 1.75; color: #4b4263;">
-              Message ${contactName} at
-              <a href="${contactWhatsAppLink}" style="color:#7C69C7; font-weight:700; text-decoration:none;">${contactWhatsAppDisplay}</a>.
-            </p>
-          </div>
+          ${contactBlockHtml}
         </div>
 
         <div style="padding: 0 32px 30px;">
