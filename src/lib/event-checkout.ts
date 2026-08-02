@@ -2,6 +2,7 @@ import type Stripe from 'stripe'
 import type { EventDefinition, EventPromoCode } from '@/lib/events'
 import { resolvePromoCode } from '@/lib/events'
 import { toStripeUnitAmount } from '@/lib/stripe-amount'
+import { CHECKOUT_BRANDING } from '@/lib/masterminds-checkout-branding'
 
 export type EventCheckoutMode = 'embedded' | 'hosted'
 
@@ -63,7 +64,10 @@ export function buildEventCheckoutSessionParams({
     promo_code: promo?.code ?? '',
   }
 
-  return {
+  // Declared as a loose record so `branding_settings` can be set: it is newer
+  // than the Stripe SDK's typings, but Stripe forwards it. Same escape hatch
+  // mhq-homepage uses. The cast back to SessionCreateParams happens on return.
+  const params: Record<string, unknown> = {
     ...(mode === 'embedded'
       ? {
           ui_mode: 'embedded_page' as const,
@@ -75,6 +79,9 @@ export function buildEventCheckoutSessionParams({
           success_url: `${eventUrl}?checkout=success&session_id={CHECKOUT_SESSION_ID}`,
           cancel_url: `${eventUrl}?checkout=cancelled`,
         }),
+    // Without this the checkout page renders with the Stripe account's global
+    // branding, which is "The Connection Map", not Masterminds HQ.
+    branding_settings: CHECKOUT_BRANDING,
     mode: 'payment',
     customer_email: attendeeEmail,
     billing_address_collection: 'auto',
@@ -98,4 +105,6 @@ export function buildEventCheckoutSessionParams({
       metadata,
     },
   }
+
+  return params as unknown as Stripe.Checkout.SessionCreateParams
 }
