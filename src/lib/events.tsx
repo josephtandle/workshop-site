@@ -907,6 +907,129 @@ export const events: EventDefinition[] = [
     },
   },
   {
+    slug: 'stop-sounding-like-everyone-else',
+    status: 'live',
+    title: 'Stop Sounding Like Everyone Else While Using AI',
+    shortTitle: 'Sound Like You, Not AI',
+    eyebrow: 'Free Live Workshop',
+    summary:
+      'A free 90 minute live session with Joe Che. Build your own voice profile from writing you have already done, install the free tool that strips AI patterns out of your drafts, then 45 minutes of open Q&A on anything AI. The room stays open after for anyone who wants to keep going.',
+    description:
+      'A live online workshop where Joe walks you through building a voice profile and installing Speak Human, then answers your AI questions live.',
+    dateLabel: 'Tuesday, August 4, 2026',
+    timeLabel: '5:00 PM to 6:30 PM Singapore time',
+    locationLabel: 'Free online workshop',
+    durationLabel: '90 minutes, and the room stays open after',
+    heroImage: '/images/events/stop-sounding-like-everyone-else-hero.jpg',
+    heroAlt: 'One handwritten page glowing among rows of identical printed pages',
+    // Never put a gradient scrim over event artwork. Joe's rule, 2026-08-02.
+    heroNoOverlay: true,
+    successDetail:
+      'You are in. Your confirmation email has the Zoom link, and a calendar invite is on its way. It comes from joe@mastermindshq.business. If you do not see it within a couple of minutes, check your spam folder and add that address to your contacts so the reminders reach you too.',
+    zoomLink: 'https://us02web.zoom.us/j/81275409884?pwd=lWpaRasSci7h7YHesIhRM2HlTbzVFA.1',
+    ctaLabel: 'Register Free',
+    audience: [
+      'Coaches and consultants building a personal brand',
+      'Founders whose content sounds nothing like them',
+      'Anyone drowning in manual content work',
+      'People who want their AI questions answered live',
+    ],
+    outcomes: [
+      'Your own voice profile, built from writing you already have',
+      'Speak Human installed and running on your real content',
+      'A repeatable way to turn one recording into a week of content',
+      'Straight answers to the AI questions you have been sitting on',
+    ],
+    hosts: [
+      {
+        name: 'Joe Che',
+        firstName: 'Joe',
+        role: 'Author • Founder • AI Business Mentor',
+        photoSrc: '/images/events/joe-che-bio-bw.jpg',
+        bio: [
+          'Joe Che is the author of How to Build Your Own AI Agent Operating System, which hit number one in three categories across business and AI. Over 30 years he has founded 26 companies, and he now builds two AI companies, including All Sorted AI, a practical AI operating system for service based small business owners.',
+          'He previously built the largest software and business training company in New York City, where he trained more than 90,000 people, including Fortune 5 executives, the CIA, Microsoft, and Tyra Banks.',
+          'Today Joe mentors entrepreneurs inside his AI Business Mastermind and helps founders use AI to create cleaner operations, stronger offers, faster execution, and more freedom. He demos his own AI operating system live and shows people how to use the 165 AI agents from the book in their own businesses.',
+        ],
+        bioHtml: [
+          'Joe Che is the author of <a href="https://a.mastermindshq.business/ai-os-kindle" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 hover:text-[#FCF4EB]">How to Build Your Own AI Agent Operating System</a>, which hit number one in three categories across business and AI. Over 30 years he has founded 26 companies, and he now builds two AI companies, including All Sorted AI, a practical AI operating system for service based small business owners.',
+          'He previously built the largest software and business training company in New York City, where he trained more than 90,000 people, including Fortune 5 executives, the CIA, Microsoft, and Tyra Banks.',
+          'Today Joe mentors entrepreneurs inside his <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 hover:text-[#FCF4EB]">AI Business Mastermind</a> and helps founders use AI to create cleaner operations, stronger offers, faster execution, and more freedom.',
+        ],
+      },
+    ],
+    pricing: {
+      currencySymbol: '$',
+      fullPrice: 0,
+      checkoutHref: '',
+      checkoutNote: 'Free registration. The Zoom link will be emailed right after you sign up.',
+    },
+    calendarEvent: {
+      startIso: '2026-08-04T17:00:00+08:00',
+      endIso: '2026-08-04T18:30:00+08:00',
+    },
+    sections: [
+      {
+        type: 'html',
+        id: 'about',
+        eyebrow: 'What This Is',
+        html: `
+          <div class="not-prose space-y-5">
+            <h2 class="event-gradient-title pt-2 text-[2rem] font-extrabold leading-[1.02] tracking-tight text-[#FCF4EB] md:text-[2.6rem]">
+              Why does everything AI writes for me sound like everyone else?
+            </h2>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              You are excellent at what you do. Your content does not sound like it, because AI wrote it and AI has no idea who you are. That is why it reads as forced and generic. It was never yours.
+            </p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              Joe will walk you through Speak Human, the free tool he built to strip AI patterns out of writing and put your own voice back in. You will build your voice profile from writing you have already done, install the tool, and watch it run on real content, live.
+            </p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              Then the floor is open for 45 minutes. Bring every question you have been sitting on about content, repurposing, outreach, websites, any of it. Joe teaches this to founders every week inside his <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 transition hover:text-[#FCF4EB]">AI Business Mastermind</a>, and this is the part he is best at.
+            </p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              The session runs 90 minutes. The room stays open after that, so if you want to keep going, stay on.
+            </p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              You will leave with your voice profile built and the tool installed, not a list of apps to go look at later.
+            </p>
+          </div>
+        `,
+      },
+      {
+        type: 'html',
+        id: 'bring',
+        eyebrow: 'What To Bring',
+        html: `
+          <div class="not-prose space-y-5">
+            <h2 class="event-gradient-title pt-2 text-[2rem] font-extrabold leading-[1.02] tracking-tight text-[#FCF4EB] md:text-[2.6rem]">
+              Two things, so you leave with it finished
+            </h2>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              <strong class="text-[#FCF4EB]">A Claude Code or OpenAI Pro subscription</strong>, if you want to install and use the tool during the session. Everything is shown on screen either way, but you will need one of these to follow along hands on.
+            </p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              <strong class="text-[#FCF4EB]">Some of your own writing, ready to go.</strong> Podcast transcripts, chapters from a book, emails you have sent, posts you have written, anything with your real voice in it. Your voice profile gets built from your own material during the session, so bringing it means you leave with a finished one instead of homework.
+            </p>
+          </div>
+        `,
+      },
+      {
+        type: 'hosts',
+        id: 'bio',
+        eyebrow: 'Bio',
+        title: 'Joe Che',
+        intro: 'Author • Founder • AI Business Mentor',
+        hosts: [],
+      },
+    ],
+    metadata: {
+      title: 'Stop Sounding Like Everyone Else While Using AI',
+      description:
+        'A free 90 minute live session with Joe Che. Build your voice profile, install Speak Human, then 45 minutes of open Q&A on anything AI.',
+    },
+  },
+  {
     slug: 'ask-an-ai-expert',
     status: 'live',
     title: 'How to Get AI Making You More Sales and Less Busy Work',

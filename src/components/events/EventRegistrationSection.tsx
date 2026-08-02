@@ -331,7 +331,16 @@ export default function EventRegistrationSection({
     setAppliedPromoCode(payload.appliedPromoCode)
     setAppliedAmount(typeof payload.amount === 'number' ? payload.amount : null)
     if (payload.completed) {
-      markSuccess(payload.message || (isFreeRegistration ? 'Your free spot is reserved.' : 'Free ticket reserved. No payment needed.'))
+      // The free path always returns the same generic message, which would mask
+      // an event's own successDetail. Prefer successDetail on plain success, but
+      // still surface payload.message when it carries a real warning (e.g. the
+      // confirmation email failed to send).
+      const genericFreeMessage = 'Free ticket reserved. No payment needed.'
+      markSuccess(
+        event.successDetail && payload.message === genericFreeMessage
+          ? event.successDetail
+          : payload.message || (isFreeRegistration ? 'Your free spot is reserved.' : genericFreeMessage),
+      )
       return
     }
     if (typeof payload.checkoutUrl === 'string' && payload.checkoutUrl) {
