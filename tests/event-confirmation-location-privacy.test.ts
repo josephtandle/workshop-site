@@ -27,6 +27,12 @@ test('attendees are still told the area and when the address arrives', () => {
   assert.match(html, /exact location/i, 'and that the address is coming')
 })
 
+test('attendee questions route to Marina, not Joe', () => {
+  assert.match(html, /Message Marina at/i)
+  assert.match(html, /wa\.me\/6282146079766/, "Marina's WhatsApp link")
+  assert.doesNotMatch(html, /6462304209|646\)\s*230-4209/, "Joe's number must not be the contact")
+})
+
 test('calendar buttons do not rely on flexbox, which email clients strip', () => {
   assert.match(html, /Add to Google Calendar/)
   assert.match(html, /Download iCal/)
