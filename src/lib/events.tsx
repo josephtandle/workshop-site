@@ -1381,9 +1381,18 @@ export function getLiveEvents() {
 }
 
 export function getUpcomingLiveEvents(now: Date = new Date()) {
-  return getLiveEvents().filter((event) => {
-    const endIso = event.calendarEvent?.endIso ?? event.calendarEvent?.startIso
-    if (!endIso) return true
-    return new Date(endIso).getTime() >= now.getTime()
-  })
+  return getLiveEvents()
+    .filter((event) => {
+      const endIso = event.calendarEvent?.endIso ?? event.calendarEvent?.startIso
+      if (!endIso) return true
+      return new Date(endIso).getTime() >= now.getTime()
+    })
+    .sort((a, b) => {
+      const aStart = a.calendarEvent?.startIso
+      const bStart = b.calendarEvent?.startIso
+      if (!aStart && !bStart) return 0
+      if (!aStart) return 1
+      if (!bStart) return -1
+      return new Date(aStart).getTime() - new Date(bStart).getTime()
+    })
 }

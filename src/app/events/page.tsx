@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import Reveal from '@/components/Reveal'
 import { getUpcomingLiveEvents } from '@/lib/events'
@@ -33,24 +34,37 @@ export default function EventsIndexPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6">
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="flex flex-col gap-6">
           {events.map((event) => (
             <Link
               key={event.slug}
               href={`/events/${event.slug}`}
-              className="card-hover group rounded-[1.8rem] border border-white/10 bg-white/[0.04] p-6 shadow-[0_22px_70px_rgba(0,0,0,0.26)]"
+              className="card-hover group flex flex-col overflow-hidden rounded-[1.8rem] border border-white/10 bg-white/[0.04] shadow-[0_22px_70px_rgba(0,0,0,0.26)] sm:flex-row"
             >
-              <div className="mb-5 flex items-center justify-between gap-3">
-                <span className="rounded-full border border-[#7C69C7]/30 bg-[#7C69C7]/14 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#BDB3E8]">
-                  {event.badge ?? 'Live'}
-                </span>
-                <span className="text-xs uppercase tracking-[0.18em] text-[#FCF4EB]/45">{event.dateLabel}</span>
+              <div className="relative h-56 w-full flex-shrink-0 sm:h-auto sm:w-80">
+                <Image
+                  src={event.heroImage}
+                  alt={event.heroAlt}
+                  fill
+                  className={event.heroObjectFit === 'contain' ? 'object-contain' : 'object-cover'}
+                />
+                {!event.heroNoOverlay && (
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,7,20,0.16)_0%,rgba(10,7,20,0.5)_56%,rgba(10,7,20,0.82)_100%)]" />
+                )}
               </div>
-              <h2 className="font-serif text-4xl leading-[0.98] text-[#FCF4EB]">{event.title}</h2>
-              <p className="mt-4 text-base leading-8 text-[#FCF4EB]/64">{event.summary}</p>
-              <div className="mt-6 flex items-center gap-3 text-sm font-semibold text-[#F5C3C6]">
-                <span>Open event page</span>
-                <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+              <div className="flex flex-1 flex-col p-6">
+                <div className="mb-5 flex items-center justify-between gap-3">
+                  <span className="rounded-full border border-[#7C69C7]/30 bg-[#7C69C7]/14 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#BDB3E8]">
+                    {event.badge ?? 'Live'}
+                  </span>
+                  <span className="text-xs uppercase tracking-[0.18em] text-[#FCF4EB]/45">{event.dateLabel}</span>
+                </div>
+                <h2 className="font-serif text-4xl leading-[0.98] text-[#FCF4EB]">{event.title}</h2>
+                <p className="mt-4 text-base leading-8 text-[#FCF4EB]/64">{event.summary}</p>
+                <div className="mt-6 flex items-center gap-3 text-sm font-semibold text-[#F5C3C6]">
+                  <span>Open event page</span>
+                  <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+                </div>
               </div>
             </Link>
           ))}
