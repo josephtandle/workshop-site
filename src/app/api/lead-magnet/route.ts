@@ -609,6 +609,17 @@ export async function POST(request: Request) {
       )
     }
     console.error('Lead magnet error:', error)
+    // Diagnostic: every deliverable source has been 500ing in production while
+    // the identical code and env succeed locally, and Vercel runtime logs are
+    // not reachable from the CLI. Echo the real error only to a caller holding
+    // CRON_SECRET, never to the public.
+    const diagToken = request.headers.get('x-diag-token')
+    if (diagToken && process.env.CRON_SECRET && diagToken === process.env.CRON_SECRET) {
+      return NextResponse.json(
+        { error: 'Something went wrong', diag: String(error instanceof Error ? error.stack || error.message : error) },
+        { status: 500 },
+      )
+    }
     return NextResponse.json({ error: 'Something went wrong' }, { status: 500 })
   }
 }
