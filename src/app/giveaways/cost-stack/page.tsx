@@ -317,12 +317,12 @@ Be direct about which ones are not worth replacing. I am not trying to cancel ev
     name: 'The Cost Stack Audit',
     applicationCategory: 'BusinessApplication',
     description:
-      'A free calculator that totals what you pay for business software, freelancers and subscriptions every year, then shows which parts members of the Business Automation Mastermind replaced themselves.',
+      'A free calculator that totals what you pay for business software, freelancers and subscriptions every year, then shows which parts members of the AI Business Mastermind replaced themselves.',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
     author: { '@type': 'Person', name: 'Joe Che', url: MASTERMIND_URL },
     publisher: {
       '@type': 'Organization',
-      name: 'Business Automation Mastermind',
+      name: 'AI Business Mastermind',
       url: MASTERMIND_URL,
     },
   }
@@ -394,7 +394,7 @@ Be direct about which ones are not worth replacing. I am not trying to cancel ev
                   className="text-[#FCF4EB]/60 text-[11px] sm:text-xs font-medium hover:text-[#FCF4EB]/90 transition-colors"
                 >
                   <span className="sm:hidden">Mastermind</span>
-                  <span className="hidden sm:inline">Business Automation Mastermind</span>
+                  <span className="hidden sm:inline">AI Business Mastermind</span>
                 </a>
                 <span className="text-[#FCF4EB]/20 text-[11px] sm:text-xs">·</span>
                 <span className="text-[#FCF4EB]/40 text-[11px] sm:text-xs">by Joe Che</span>
@@ -892,7 +892,7 @@ Be direct about which ones are not worth replacing. I am not trying to cancel ev
             rel="noopener noreferrer"
             className="text-[#FCF4EB]/14 text-xs uppercase tracking-widest hover:text-[#FCF4EB]/35 transition-colors"
           >
-            Business Automation Mastermind
+            AI Business Mastermind
           </a>
           <span className="text-[#FCF4EB]/10 text-xs">Created by Joe Che</span>
         </div>
@@ -934,7 +934,7 @@ function MastermindCTA() {
 
           <p className="text-xl sm:text-3xl font-bold mb-5">
             <a href={MASTERMIND_URL} target="_blank" rel="noopener noreferrer" className="text-transparent bg-clip-text bg-gradient-to-r from-[#9D8FE0] to-[#F5C3C6] hover:opacity-80 transition-opacity">
-              Join the Business Automation Mastermind
+              Join the AI Business Mastermind
             </a>
           </p>
 
