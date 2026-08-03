@@ -166,3 +166,34 @@ test('CROSS-REPO COMPAT: the signature segment is base64url, 43 chars, no "=" pa
   assert.match(signature, /^[A-Za-z0-9_-]+$/, 'must use the base64url alphabet (+/ replaced with -_), not hex')
   assert.ok(!/^[0-9a-f]{64}$/.test(signature), 'must not be a 64-char lowercase hex digest (the old homepage bug)')
 })
+
+// ---------------------------------------------------------------------------
+// 2026-08-03 PRODUCTION OUTAGE. NEXT_PUBLIC_SITE_URL was stored in Vercel with
+// a trailing newline. It landed inside the `List-Unsubscribe: <...>` header,
+// Resend rejected every send with a 422, and every giveaway delivery email
+// failed in production while the identical code passed locally. A header value
+// can never contain CR or LF, so the builder must sanitise rather than trust
+// the environment.
+// ---------------------------------------------------------------------------
+
+test('OUTAGE GUARD: a trailing newline in NEXT_PUBLIC_SITE_URL never reaches the header', () => {
+  process.env.UNSUBSCRIBE_TOKEN_SECRET = 'test-secret'
+  process.env.NEXT_PUBLIC_SITE_URL = 'https://workshop-site-sigma.vercel.app\n'
+
+  const headers = buildUnsubscribeHeaders('someone@example.com')
+  const value = headers['List-Unsubscribe']
+
+  assert.ok(value, 'header should still be built')
+  assert.ok(!/[\r\n]/.test(value), 'a header value must not contain CR or LF')
+  assert.ok(value.startsWith('<https://workshop-site-sigma.vercel.app/api/unsubscribe?token='))
+})
+
+test('OUTAGE GUARD: surrounding whitespace and trailing slashes are both stripped', () => {
+  process.env.UNSUBSCRIBE_TOKEN_SECRET = 'test-secret'
+  process.env.NEXT_PUBLIC_SITE_URL = '  https://workshop.mastermindshq.business///  '
+
+  const url = buildUnsubscribeUrl('someone@example.com')
+  assert.ok(url)
+  assert.ok(url.startsWith('https://workshop.mastermindshq.business/api/unsubscribe?token='))
+  assert.ok(!/\s/.test(url), 'no whitespace anywhere in the minted URL')
+})
