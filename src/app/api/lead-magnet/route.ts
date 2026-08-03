@@ -21,6 +21,7 @@ async function sendViaResend(email: string, source: string, idempotencyKey: stri
   const macCleanerInstallerUrl = withUtm(`${siteUrl}/downloads/maccleaner-installer.sh`, { campaign: 'lead-magnet', content: 'maccleaner-installer' })
   const guardogPageUrl = withUtm(`${siteUrl}/giveaways/guardog`, { campaign: 'lead-magnet', content: 'guardog-page' })
   const speakHumanPageUrl = withUtm(`${siteUrl}/giveaways/speak-human`, { campaign: 'lead-magnet', content: 'speak-human-page' })
+  const costStackPageUrl = withUtm(`${siteUrl}/giveaways/cost-stack`, { campaign: 'lead-magnet', content: 'cost-stack-page' })
   const speakHumanInstallCommand = 'git clone https://github.com/josephtandle/speak-human && cp -r speak-human/speak-human ~/.claude/skills/speak-human && rm -rf speak-human'
 
   let subject: string
@@ -369,6 +370,58 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
         </p>
       </div>
     `
+  } else if (source === 'cost-stack') {
+    subject = 'Your Cost Stack Audit'
+    html = `
+      <div style="font-family: system-ui, sans-serif; max-width: 560px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a;">
+        <h1 style="font-size: 22px; margin-bottom: 16px;">Here is your Cost Stack Audit</h1>
+
+        <p style="font-size: 16px; line-height: 1.7; margin-bottom: 20px;">
+          The audit stays open at the link below. Nothing you typed was saved, so if you want to
+          run it again with the real numbers off your card statement, it is all still there.
+        </p>
+
+        <p style="margin: 0 0 28px;">
+          <a href="${costStackPageUrl}"
+             style="display: inline-block; background: #7C69C7; color: #ffffff; padding: 14px 28px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px;">
+            Open the Cost Stack Audit
+          </a>
+        </p>
+
+        <p style="font-size: 15px; line-height: 1.7; color: #444; margin-bottom: 10px;">
+          Three numbers from people in the room, in their own words:
+        </p>
+
+        <div style="border-left: 3px solid #7C69C7; padding-left: 16px; margin-bottom: 24px;">
+          <p style="font-size: 14px; color: #555; line-height: 1.7; margin: 0 0 12px;">
+            <strong>Beata</strong> was quoted $200,000 over two years to build her app. She built the
+            bones of it in one night. Her API spend at the time was $13.45.
+          </p>
+          <p style="font-size: 14px; color: #555; line-height: 1.7; margin: 0 0 12px;">
+            <strong>Vonetta</strong> paid a contractor $4,000 for a website she did not like, then
+            rebuilt it herself in five minutes. She used to charge her own clients $40,000 for that work.
+          </p>
+          <p style="font-size: 14px; color: #555; line-height: 1.7; margin: 0;">
+            <strong>Quincee</strong> dropped her video hosting, moved her mail subscription and brought
+            her website in house. Her verdict was that the program had already paid for itself.
+          </p>
+        </div>
+
+        <p style="font-size: 14px; color: #555; line-height: 1.7; margin-bottom: 8px;">
+          One thing worth saying plainly: this is money you stop spending, not money you make. It is
+          not revenue and it is not a return. It is just the part of the bill that does not have to
+          be there any more.
+        </p>
+
+        <p style="font-size: 14px; color: #555; line-height: 1.7; margin-bottom: 8px;">
+          If you want to see how people actually replace these things, that is what we do every week at
+          <a href="${withUtm('https://mastermindshq.business', { campaign: 'lead-magnet', content: 'cost-stack' })}" style="color: #7C69C7; font-weight: 600;">Masterminds HQ</a>.
+        </p>
+
+        <p style="font-size: 14px; color: #999; margin-top: 32px;">Joe Che</p>
+        ${unsubscribeFooter}
+      </div>
+    `
   } else {
     // Fail closed. This branch used to send the Un-Learning Success PDF to any
     // unrecognised source, which meant roughly eighteen giveaway pages emailed
@@ -409,6 +462,7 @@ const GIVEAWAY_SOURCE_MAP: Record<string, string> = {
   'anthropic-safety-checklist': 'giveaway-anthropic-checklist',
   'guardog': 'giveaway-guardog',
   'all-sorted-overview': 'giveaway-all-sorted-overview',
+  'cost-stack': 'giveaway-cost-stack',
   'human': 'giveaway-speak-human',
   'speak-human': 'giveaway-speak-human',
 }

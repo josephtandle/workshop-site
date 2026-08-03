@@ -58,6 +58,7 @@ export function getLeadMagnet(slug: string): LeadMagnet | undefined {
  */
 export const DELIVERABLE_LEAD_MAGNET_SOURCES: ReadonlySet<string> = new Set([
   'all-sorted-overview',
+  'cost-stack',
   'cult-brand-playbook',
   'guardog',
   'human',

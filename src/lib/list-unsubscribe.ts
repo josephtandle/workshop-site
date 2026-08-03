@@ -22,8 +22,20 @@ function warnMissingSecretForGeneration(context: string) {
   )
 }
 
+/**
+ * TRIM FIRST, always. On 2026-08-03 the production NEXT_PUBLIC_SITE_URL was
+ * stored with a trailing newline. That newline landed inside the
+ * `List-Unsubscribe: <...>` header value, Resend rejected every send with a
+ * 422, and EVERY giveaway delivery email failed in production for as long as
+ * the bad value was set. The old `.replace(/\/+$/g, '')` stripped trailing
+ * slashes but not whitespace, so nothing caught it.
+ *
+ * A header value can never contain CR or LF, so strip those unconditionally
+ * rather than trusting the environment to be clean.
+ */
 function getSiteUrl() {
-  return (process.env.NEXT_PUBLIC_SITE_URL || 'https://workshop.mastermindshq.business').replace(/\/+$/g, '')
+  const raw = (process.env.NEXT_PUBLIC_SITE_URL || 'https://workshop.mastermindshq.business').trim()
+  return raw.replace(/[\r\n]/g, '').replace(/\/+$/g, '')
 }
 
 function base64UrlEncode(value: string): string {
