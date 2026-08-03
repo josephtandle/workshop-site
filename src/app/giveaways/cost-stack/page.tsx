@@ -23,6 +23,25 @@ const MASTERMIND_URL = 'https://www.mastermindshq.business'
 
 type Status = 'documented' | 'unproven' | 'not-documented'
 
+/**
+ * A face for every named graduate. `pos` and `zoom` frame each photo on the
+ * face: the source shots range from a tight portrait to a very wide landscape,
+ * so a plain centred square crop cuts heads off or leaves the face tiny. Values
+ * were set by eye against each image, not guessed.
+ */
+type Person = { name: string; photo: string; pos: string; zoom: number }
+
+const PEOPLE: Record<string, Person> = {
+  beata: { name: 'Beata Fuller', photo: '/images/participants/beata-fuller.webp', pos: '36% 28%', zoom: 2.1 },
+  vonetta: { name: 'Vonetta Taylor', photo: '/images/participants/vonetta-taylor.webp', pos: '51% 24%', zoom: 2.2 },
+  quincee: { name: 'Quincee Lark', photo: '/images/participants/quincee-lark.jpg', pos: '47% 25%', zoom: 1.6 },
+  naomi: { name: 'Naomi Galinski', photo: '/images/participants/naomi-galinski.webp', pos: '48% 22%', zoom: 1.45 },
+  jonathan: { name: 'Jonathan Marshall', photo: '/images/participants/jonathan-marshall.webp', pos: '62% 26%', zoom: 1.6 },
+  alicia: { name: 'Alicia Hoffendahl', photo: '/images/participants/alice-hoffendahl.jpg', pos: '51% 26%', zoom: 3.1 },
+  pete: { name: 'Pete Longworth', photo: '/images/participants/pete-longworth.jpeg', pos: '49% 30%', zoom: 1.25 },
+  wes: { name: 'Wes Jones', photo: '/images/participants/wesley-jones.webp', pos: '50% 22%', zoom: 1.4 },
+}
+
 type Tool = {
   id: string
   name: string
@@ -30,6 +49,8 @@ type Tool = {
   defaultMonthly: number
   rangeLabel: string
   status: Status
+  /** Key into PEOPLE. Absent when no member is on record for this line. */
+  person?: keyof typeof PEOPLE
   proof: string
 }
 
@@ -41,6 +62,7 @@ const TOOLS: Tool[] = [
     defaultMonthly: 97,
     rangeLabel: '$97 to $497 a month',
     status: 'documented',
+    person: 'naomi',
     proof:
       'Naomi Galinski migrated her site off GoHighLevel onto Vercel with every booking link preserved.',
   },
@@ -61,6 +83,7 @@ const TOOLS: Tool[] = [
     defaultMonthly: 13,
     rangeLabel: '$13 to $350 a month, depending on list size',
     status: 'documented',
+    person: 'jonathan',
     proof:
       'Jonathan Marshall moved his email onto his own domain through Resend. His words: "The whole point is get rid of MailChimp and have more flexibility."',
   },
@@ -71,6 +94,7 @@ const TOOLS: Tool[] = [
     defaultMonthly: 39,
     rangeLabel: '$39 to $105 a month',
     status: 'documented',
+    person: 'alicia',
     proof:
       'Alicia Hoffendahl cancelled Shopify. Her words: "I was paying for tons of things that I didn’t need and just made things more complicated."',
   },
@@ -81,6 +105,7 @@ const TOOLS: Tool[] = [
     defaultMonthly: 15,
     rangeLabel: '$15 to $65 a month',
     status: 'documented',
+    person: 'alicia',
     proof: 'Alicia Hoffendahl cancelled ManyChat in the same clear out.',
   },
   {
@@ -90,6 +115,7 @@ const TOOLS: Tool[] = [
     defaultMonthly: 20,
     rangeLabel: '$20 to $99 a month',
     status: 'documented',
+    person: 'quincee',
     proof:
       'Quincee Lark dropped her VSL hosting subscription, moved her mail subscription and brought her website in house.',
   },
@@ -100,6 +126,7 @@ const TOOLS: Tool[] = [
     defaultMonthly: 16,
     rangeLabel: '$16 to $49 a month',
     status: 'documented',
+    person: 'pete',
     proof:
       'Pete Longworth spent 15 years on Squarespace only, then built an entire brand and site from code and wrote every word of it himself.',
   },
@@ -110,6 +137,7 @@ const TOOLS: Tool[] = [
     defaultMonthly: 10,
     rangeLabel: '$10 to $50 a month',
     status: 'documented',
+    person: 'wes',
     proof:
       'Wes Jones runs three live sites on custom domains that he built and deploys himself.',
   },
@@ -149,6 +177,41 @@ function useMagnet(strength = 0.3) {
 
 function money(n: number): string {
   return '$' + Math.round(n).toLocaleString('en-US')
+}
+
+// ---------------------------------------------------------------------------
+// Face — a round, framed photo of a named graduate.
+//
+// The zoom is a transform scaled about the same origin as the object-position,
+// so the crop and the zoom pull toward the same point: the face. Without it,
+// the wider shots render as a person standing in a garden at 36 pixels.
+// ---------------------------------------------------------------------------
+function Face({ person, size }: { person: Person; size: number }) {
+  return (
+    <span
+      className="inline-block rounded-full overflow-hidden flex-shrink-0"
+      style={{
+        width: size,
+        height: size,
+        border: '1px solid rgba(252,244,235,0.14)',
+        background: 'rgba(255,255,255,0.05)',
+      }}
+    >
+      <img
+        src={person.photo}
+        alt={person.name}
+        loading="lazy"
+        width={size}
+        height={size}
+        className="w-full h-full object-cover"
+        style={{
+          objectPosition: person.pos,
+          transform: `scale(${person.zoom})`,
+          transformOrigin: person.pos,
+        }}
+      />
+    </span>
+  )
 }
 
 // ---------------------------------------------------------------------------
@@ -678,18 +741,26 @@ Be direct about which ones are not worth replacing. I am not trying to cancel ev
                     <div className="space-y-3">
                       {result.documented.map((t) => (
                         <div key={t.id} className="flex items-start gap-3">
-                          <div className="w-1.5 h-1.5 rounded-full bg-[#34d399] mt-[7px] flex-shrink-0" />
+                          {t.person ? (
+                            <Face person={PEOPLE[t.person]} size={40} />
+                          ) : (
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#34d399] mt-[7px] flex-shrink-0" />
+                          )}
                           <div>
                             <span className="text-[#FCF4EB]/85 text-sm font-medium">{t.name}</span>
+                            {t.person && (
+                              <span className="text-[#34d399]/70 text-xs block sm:inline sm:ml-2">{PEOPLE[t.person].name}</span>
+                            )}
                             <p className="text-[#FCF4EB]/40 text-xs leading-relaxed mt-0.5">{t.proof}</p>
                           </div>
                         </div>
                       ))}
                       {devAnnual > 0 && (
                         <div className="flex items-start gap-3">
-                          <div className="w-1.5 h-1.5 rounded-full bg-[#34d399] mt-[7px] flex-shrink-0" />
+                          <Face person={PEOPLE.vonetta} size={40} />
                           <div>
                             <span className="text-[#FCF4EB]/85 text-sm font-medium">Web developer or designer</span>
+                            <span className="text-[#34d399]/70 text-xs block sm:inline sm:ml-2">{PEOPLE.vonetta.name}</span>
                             <p className="text-[#FCF4EB]/40 text-xs leading-relaxed mt-0.5">{DEV_PROOF}</p>
                           </div>
                         </div>
@@ -734,7 +805,10 @@ Be direct about which ones are not worth replacing. I am not trying to cancel ev
                       <span className="text-[#F5C3C6] font-bold text-sm uppercase tracking-widest">The one you never built</span>
                       <span className="text-[#F5C3C6] font-extrabold tabular-nums text-lg">{money(quotedBuild)}</span>
                     </div>
-                    <p className="text-[#FCF4EB]/40 text-xs leading-relaxed">{QUOTE_PROOF}</p>
+                    <div className="flex items-start gap-3">
+                      <Face person={PEOPLE.beata} size={40} />
+                      <p className="text-[#FCF4EB]/40 text-xs leading-relaxed">{QUOTE_PROOF}</p>
+                    </div>
                   </div>
                 )}
 
@@ -807,22 +881,25 @@ Be direct about which ones are not worth replacing. I am not trying to cancel ev
 
           <div className="grid gap-4 sm:grid-cols-3">
             {[
-              { value: '$200,000', who: 'Beata Fuller', body: 'Quoted $200,000 over two years to build her app. She built the bones of it in one night. API spend at the time: $13.45.' },
-              { value: '$4,000', who: 'Vonetta Taylor', body: 'Paid a contractor $4,000 for a website she did not like. Rebuilt it herself in five minutes. She used to charge clients $40,000 for that work.' },
-              { value: '6 months', who: 'Quincee Lark', body: 'A website that took her six months. She can now rebuild it in about 40 minutes.' },
+              { value: '$200,000', person: PEOPLE.beata, body: 'Quoted $200,000 over two years to build her app. She built the bones of it in one night. API spend at the time: $13.45.' },
+              { value: '$4,000', person: PEOPLE.vonetta, body: 'Paid a contractor $4,000 for a website she did not like. Rebuilt it herself in five minutes. She used to charge clients $40,000 for that work.' },
+              { value: '6 months', person: PEOPLE.quincee, body: 'A website that took her six months. She can now rebuild it in about 40 minutes.' },
             ].map((a, i) => (
               <motion.div
-                key={a.who}
+                key={a.person.name}
                 initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
                 className="glow-card bg-white/[0.04] border border-white/[0.08] rounded-2xl p-7 text-center"
               >
+                <div className="flex justify-center mb-4">
+                  <Face person={a.person} size={92} />
+                </div>
                 <div className="text-3xl sm:text-4xl font-extrabold mb-2 tabular-nums" style={{ color: '#9D8FE0' }}>
                   {a.value}
                 </div>
-                <div className="text-[#F5C3C6]/70 text-xs uppercase tracking-widest mb-3">{a.who}</div>
+                <div className="text-[#F5C3C6]/70 text-xs uppercase tracking-widest mb-3">{a.person.name}</div>
                 <p className="text-[#FCF4EB]/45 text-sm leading-relaxed">{a.body}</p>
               </motion.div>
             ))}
