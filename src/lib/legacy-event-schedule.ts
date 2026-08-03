@@ -1,5 +1,6 @@
 import { getEventBySlug, type EventDefinition } from '@/lib/events'
 import { sendAiContentCreationSetupEmail, sendEventConfirmationEmail } from '@/lib/event-confirmation-email'
+import { inviteAttendeeToEvent } from '@/lib/google-calendar-invite'
 import { saveRegistration } from '@/lib/event-registration-db'
 import { dedupeAttendeesByEmail } from './location-reminder'
 import { createStripeClient } from '@/lib/stripe'
@@ -20,6 +21,21 @@ type FinalizeLegacyCheckoutInput = {
   sessionId: string
 }
 
+/** Mirrors CalendarInviteResult['status'], plus the never-ran case. */
+export type CalendarInviteStatus =
+  | 'invited'
+  | 'already-invited'
+  | 'skipped'
+  | 'failed'
+  | 'not-attempted'
+
+export type LegacySyncResult = {
+  status: SyncStatus
+  message: string
+  /** Reported as the `calendar_invite` insight property by every caller. */
+  calendarInvite: CalendarInviteStatus
+}
+
 type LegacySaleRow = {
   name: string
   email: string
@@ -34,6 +50,33 @@ type LegacySaleRow = {
 export type LegacyEventAttendee = {
   attendeeName: string
   attendeeEmail: string
+}
+
+/**
+ * The single calendar-invite entry point for event registration. Both the free
+ * path (/api/events/checkout-session) and the paid path
+ * (finalizeLegacyCheckoutSession, reached from /api/events/finalize-registration
+ * and the Stripe webhook) call this, so a paid registrant gets the same real
+ * Google invite a free one does instead of only the .ics attachment.
+ *
+ * Best effort by contract: this never throws and never fails a registration.
+ * Every path resolves to a status string, and problems are logged, not raised.
+ */
+export async function inviteAttendeeBestEffort(
+  event: EventDefinition,
+  attendeeEmail: string,
+  attendeeName?: string,
+): Promise<CalendarInviteStatus> {
+  try {
+    const invite = await inviteAttendeeToEvent(event, attendeeEmail, attendeeName)
+    if (invite.status === 'failed' || invite.status === 'skipped') {
+      console.warn('calendar invite not sent', invite)
+    }
+    return invite.status
+  } catch (error) {
+    console.error('calendar invite error', error)
+    return 'failed'
+  }
 }
 
 async function sendAiContentCreationPortalAccess(input: {
@@ -469,7 +512,7 @@ export async function syncLegacyRegistration(
 
 export async function finalizeLegacyCheckoutSession(
   input: FinalizeLegacyCheckoutInput,
-): Promise<{ status: SyncStatus; message: string }> {
+): Promise<LegacySyncResult> {
   const stripe = createStripeClient()
   const session = await stripe.checkout.sessions.retrieve(input.sessionId, {
     expand: ['payment_intent'],
@@ -534,11 +577,18 @@ export async function finalizeLegacyCheckoutSession(
       })
     }
 
+    // Still invite. inviteAttendeeToEvent is idempotent (it returns
+    // 'already-invited' when the address is already an attendee), so a repeat
+    // finalize is safe, and a registration that paid before invites existed on
+    // this path still lands in the attendee's calendar.
+    const calendarInvite = await inviteAttendeeBestEffort(input.event, attendeeEmail, attendeeName)
+
     return {
       status: 'already_paid',
       message: confirmationEmailAlreadySent
         ? 'Legacy attendee already synced.'
         : 'Legacy attendee already synced. Confirmation email pending retry.',
+      calendarInvite,
     }
   }
 
@@ -629,6 +679,10 @@ export async function finalizeLegacyCheckoutSession(
     }
   }
 
+  // Send the real Google Calendar invite, same as the free path does. Best
+  // effort: never let this fail a completed, paid registration.
+  const calendarInvite = await inviteAttendeeBestEffort(input.event, attendeeEmail, attendeeName)
+
   if (paymentIntent?.id) {
     await stripe.paymentIntents.update(paymentIntent.id, {
       metadata: {
@@ -649,8 +703,9 @@ export async function finalizeLegacyCheckoutSession(
     ? {
         status: status.status,
         message: `${status.message} ${legacySyncError ? 'Legacy Event Schedule sync failed automatically.' : ''}${emailSendError ? ' Confirmation email failed to send automatically.' : ''}${setupEmailError ? ' Setup email failed to send automatically.' : ''}${portalAccessEmailError ? ' Portal access email failed to send automatically.' : ''}`.trim(),
+        calendarInvite,
       }
-    : status
+    : { ...status, calendarInvite }
 }
 
 export function getLegacyEventBySlug(slug: string) {

@@ -44,6 +44,7 @@ export async function POST(request: Request) {
       properties: {
         event_slug: event.slug,
         status: result.status,
+        calendar_invite: result.calendarInvite,
       },
     })
     await trackInsightEvent('delivery_completed', {
@@ -53,6 +54,7 @@ export async function POST(request: Request) {
         event_slug: event.slug,
         delivery_type: 'paid_event_registration',
         status: result.status,
+        calendar_invite: result.calendarInvite,
       },
     })
 
@@ -74,6 +76,7 @@ export async function POST(request: Request) {
         : null,
       syncStatus: result.status,
       syncMessage: result.message,
+      calendarInvite: result.calendarInvite,
     })
   } catch (error) {
     console.error('event finalize registration error', error)

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Reveal from '@/components/Reveal'
-import { getLiveEvents } from '@/lib/events'
+import { getUpcomingLiveEvents } from '@/lib/events'
 
 export const metadata = {
   title: 'Events',
@@ -8,7 +8,7 @@ export const metadata = {
 }
 
 export default function EventsIndexPage() {
-  const events = getLiveEvents()
+  const events = getUpcomingLiveEvents()
 
   return (
     <main className="pb-24">
