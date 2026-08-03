@@ -14,6 +14,14 @@ export interface Giveaway {
 // ---------------------------------------------------------------------------
 export const giveaways: Giveaway[] = [
   {
+    slug: 'cost-stack',
+    title: 'The Cost Stack Audit',
+    description: 'Add up what you pay every year for software, hosting and freelancers, then see which lines someone in the mastermind already replaced themselves. Takes about 60 seconds.',
+    icon: '◈',
+    badge: 'Calculator',
+    badgeVariant: 'purple',
+  },
+  {
     slug: 'ai-levels-quiz',
     title: 'The AI Capability Levels Quiz',
     description: 'Find out exactly where you stand with AI on the 0 to 40 capability ladder. Take the quiz and get a personalized level report with your next three moves.',
