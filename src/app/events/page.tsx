@@ -1,14 +1,17 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import Reveal from '@/components/Reveal'
-import { getLiveEvents } from '@/lib/events'
+import { formatEventPrice, getUpcomingLiveEvents } from '@/lib/events'
+
+const COHORT_4_HREF = 'https://a.mastermindshq.business/mastermind-events'
 
 export const metadata = {
   title: 'Events',
-  description: 'Live Masterminds HQ workshops and event pages.',
+  description: 'Upcoming live workshops with Joe Che.',
 }
 
 export default function EventsIndexPage() {
-  const events = getLiveEvents()
+  const events = getUpcomingLiveEvents()
 
   return (
     <main className="pb-24">
@@ -21,39 +24,80 @@ export default function EventsIndexPage() {
           </Reveal>
           <Reveal delay={1}>
             <h1 className="gradient-text pb-1 font-serif text-5xl leading-[0.94] md:text-7xl">
-              Workshop Landing Pages
+              Upcoming Workshops with Joe
             </h1>
           </Reveal>
           <Reveal delay={2}>
             <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[#FCF4EB]/64">
-              High-signal event pages with detailed hosts, inline media, dynamic sections, and promo-aware pricing.
+              I host these live, some in Bali and some online for anyone in the world. Come sit in and watch exactly what I use AI for in my own business.
             </p>
           </Reveal>
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-6">
-        <div className="grid gap-6 lg:grid-cols-2">
-          {events.map((event) => (
-            <Link
-              key={event.slug}
-              href={`/events/${event.slug}`}
-              className="card-hover group rounded-[1.8rem] border border-white/10 bg-white/[0.04] p-6 shadow-[0_22px_70px_rgba(0,0,0,0.26)]"
-            >
-              <div className="mb-5 flex items-center justify-between gap-3">
-                <span className="rounded-full border border-[#7C69C7]/30 bg-[#7C69C7]/14 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#BDB3E8]">
-                  {event.badge ?? 'Live'}
-                </span>
-                <span className="text-xs uppercase tracking-[0.18em] text-[#FCF4EB]/45">{event.dateLabel}</span>
-              </div>
-              <h2 className="font-serif text-4xl leading-[0.98] text-[#FCF4EB]">{event.title}</h2>
-              <p className="mt-4 text-base leading-8 text-[#FCF4EB]/64">{event.summary}</p>
-              <div className="mt-6 flex items-center gap-3 text-sm font-semibold text-[#F5C3C6]">
-                <span>Open event page</span>
-                <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
-              </div>
-            </Link>
-          ))}
+        <div className="flex flex-col gap-6">
+          {events.map((event) => {
+            const priceLabel = event.pricing.fullPrice === 0 ? 'Free' : formatEventPrice(event)
+            return (
+              <Link
+                key={event.slug}
+                href={`/events/${event.slug}`}
+                className="card-hover group flex flex-col overflow-hidden rounded-[1.8rem] border border-white/10 bg-white/[0.04] shadow-[0_22px_70px_rgba(0,0,0,0.26)] sm:flex-row"
+              >
+                <div className="relative h-56 w-full flex-shrink-0 sm:h-auto sm:w-80">
+                  <Image
+                    src={event.heroImage}
+                    alt={event.heroAlt}
+                    fill
+                    className={event.heroObjectFit === 'contain' ? 'object-contain' : 'object-cover'}
+                  />
+                  {!event.heroNoOverlay && (
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,7,20,0.16)_0%,rgba(10,7,20,0.5)_56%,rgba(10,7,20,0.82)_100%)]" />
+                  )}
+                </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="rounded-full border border-[#7C69C7]/30 bg-[#7C69C7]/14 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#BDB3E8]">
+                        {event.badge ?? 'Live'}
+                      </span>
+                      <span className="rounded-full border border-[#F5C3C6]/30 bg-[#F5C3C6]/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#F5C3C6]">
+                        {priceLabel}
+                      </span>
+                    </div>
+                    <span className="text-xs uppercase tracking-[0.18em] text-[#FCF4EB]/45">{event.dateLabel}</span>
+                  </div>
+                  <h2 className="gradient-text font-serif text-4xl leading-[0.98]">{event.title}</h2>
+                  <p className="mt-4 text-base leading-8 text-[#FCF4EB]/64">{event.summary}</p>
+                  <div className="mt-6 flex items-center gap-3 text-sm font-semibold text-[#F5C3C6]">
+                    <span>Open event page</span>
+                    <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+                  </div>
+                </div>
+              </Link>
+            )
+          })}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 pt-6">
+        <div className="grid gap-6 rounded-[1.8rem] border border-white/10 bg-[linear-gradient(145deg,rgba(252,244,235,0.08),rgba(124,105,199,0.08))] p-6 shadow-[0_22px_70px_rgba(0,0,0,0.26)] md:grid-cols-[1.4fr_auto] md:items-center md:p-8">
+          <div>
+            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#BDB3E8]">Not a one-off workshop</p>
+            <h2 className="gradient-text font-serif text-3xl leading-[1.04] md:text-4xl">Join the AI Business Mastermind</h2>
+            <p className="mt-4 max-w-2xl text-base leading-8 text-[#FCF4EB]/64">
+              These are a taste of what I teach every week inside the AI Business Mastermind. Cohort 4 is open now.
+            </p>
+          </div>
+          <a
+            href={COHORT_4_HREF}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="copy-button-glass copy-button-primary inline-flex items-center justify-center whitespace-nowrap rounded-xl px-6 py-4 text-sm font-semibold no-underline"
+          >
+            See Cohort 4 Details
+          </a>
         </div>
       </section>
     </main>
