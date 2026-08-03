@@ -59,3 +59,4 @@ Each idea targets one of three axes the brand brain says move this buyer: money 
 - Delivery email: template in `/api/lead-magnet`, slug in `DELIVERABLE_LEAD_MAGNET_SOURCES`, CRM source `giveaway-cost-stack`
 - HookLab brief written to `hook-writer/personal/this-week.md`. Reel not yet recorded.
 - First giveaway page to carry the new program name, **AI Business Mastermind**. The other 31 pages and `MastermindReactionsSection` still say Business Automation Mastermind. That sweep is outstanding.
+- Verifying this one end to end uncovered a production outage: every giveaway delivery email had been failing with a Resend 422 because `NEXT_PUBLIC_SITE_URL` carried a trailing newline. Fixed, guarded by tests, written up in `LESSONS.md`.
