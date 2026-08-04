@@ -24,7 +24,10 @@ export default function EventsIndexPage() {
           </Reveal>
           <Reveal delay={1}>
             <h1 className="gradient-text pb-1 font-serif text-5xl leading-[0.94] md:text-7xl">
-              Upcoming Workshops with Joe
+              Upcoming Workshops
+              <span className="mt-3 block font-sans text-2xl italic tracking-tight md:text-4xl">
+                with Joe Che
+              </span>
             </h1>
           </Reveal>
           <Reveal delay={2}>
