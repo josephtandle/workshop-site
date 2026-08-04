@@ -13,7 +13,7 @@ export default function RezaWebsiteControlPage() {
   return (
     <main className="max-w-3xl mx-auto px-6 py-16">
       <div className="mb-14">
-        <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
+        <p className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest mb-3">
           Resource Vault
         </p>
         <h1 className="gradient-text text-4xl font-extrabold leading-tight mb-5 pb-1">
@@ -31,7 +31,7 @@ export default function RezaWebsiteControlPage() {
 
       <section className="mb-16">
         <div className="flex items-center gap-3 mb-8">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Part A</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Part A</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Get the keys first</h2>
         </div>
 
@@ -78,7 +78,7 @@ I do not need you to change anything yet. I just need access and context so I ca
               href="https://github.com/signup"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#7C69C7] hover:text-[#9D8FE0] underline underline-offset-2"
+              className="text-[#8B79D4] hover:text-[#9D8FE0] underline underline-offset-2"
             >
               github.com/signup
             </Link>
@@ -92,7 +92,7 @@ I do not need you to change anything yet. I just need access and context so I ca
 
       <section className="mb-16">
         <div className="flex items-center gap-3 mb-8">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Part B</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Part B</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Set up Git in Claude Code</h2>
         </div>
 
@@ -181,7 +181,7 @@ Do not change files yet. Just inspect and summarize.`}
 
       <section className="mb-16">
         <div className="flex items-center gap-3 mb-8">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Part C</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Part C</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Practice safely before changing the live site</h2>
         </div>
 
@@ -212,7 +212,7 @@ Do not change files yet. Just inspect and summarize.`}
             Open:{' '}
             <Link
               href="/giveaways/web-design-arsenal"
-              className="text-[#7C69C7] hover:text-[#9D8FE0] underline underline-offset-2"
+              className="text-[#8B79D4] hover:text-[#9D8FE0] underline underline-offset-2"
             >
               Web Design Arsenal
             </Link>
@@ -289,11 +289,11 @@ I want to make sure I do not accidentally publish practice changes to the live s
         <div
           className="rounded-2xl p-8"
           style={{
-            background: 'linear-gradient(135deg, rgba(124, 105, 199, 0.14) 0%, rgba(245, 195, 198, 0.10) 100%)',
-            border: '1px solid rgba(124, 105, 199, 0.22)',
+            background: 'linear-gradient(135deg, rgba(139, 121, 212, 0.14) 0%, rgba(245, 195, 198, 0.10) 100%)',
+            border: '1px solid rgba(139, 121, 212, 0.22)',
           }}
         >
-          <p className="text-[#7C69C7] text-xs font-semibold uppercase tracking-widest mb-4">
+          <p className="text-[#8B79D4] text-xs font-semibold uppercase tracking-widest mb-4">
             Done means
           </p>
           <ul className="space-y-3 text-[#FCF4EB]/75 text-sm leading-relaxed">

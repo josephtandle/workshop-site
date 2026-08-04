@@ -257,7 +257,7 @@ export default function Session10InstagramAgent() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-12 sm:px-6 sm:py-16">
       <div className="mb-14">
-        <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
+        <p className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest mb-3">
           Session 10
         </p>
         <h1 className="gradient-text mb-5 pb-1 text-4xl font-extrabold leading-[1.05] sm:text-5xl sm:leading-tight">
@@ -285,13 +285,13 @@ export default function Session10InstagramAgent() {
           </span>
         </div>
 
-        <details className="rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(124,105,199,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]">
+        <details className="rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(139,121,212,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]">
           <summary className="flex cursor-pointer items-center justify-between gap-3 px-4 py-4 select-none sm:px-6 sm:py-5">
             <div className="min-w-0 flex items-center gap-3">
               <span className="h-2 w-2 rounded-full bg-[#9D8FE0] shadow-[0_0_12px_rgba(157,143,224,0.70)]" />
               <span className="text-[11px] uppercase tracking-[0.18em] text-[#FCF4EB]/65 font-semibold sm:text-xs sm:tracking-[0.20em]">Table of Contents</span>
             </div>
-            <div className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border border-[rgba(124,105,199,0.28)] bg-[rgba(124,105,199,0.15)] text-[#9D8FE0]">
+            <div className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border border-[rgba(139,121,212,0.28)] bg-[rgba(139,121,212,0.15)] text-[#9D8FE0]">
               <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -312,7 +312,7 @@ export default function Session10InstagramAgent() {
               <li key={href} className="flex items-center gap-3 group/item">
                 <span
                   className="number-glow flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full text-[10px] font-bold tabular-nums"
-                  style={{ background: 'rgba(124,105,199,0.18)', color: '#9D8FE0', border: '1.5px solid rgba(124,105,199,0.30)' }}
+                  style={{ background: 'rgba(139,121,212,0.18)', color: '#9D8FE0', border: '1.5px solid rgba(139,121,212,0.30)' }}
                 >
                   {i + 1}
                 </span>
@@ -327,7 +327,7 @@ export default function Session10InstagramAgent() {
 
       <section id="permissions" className="mb-16">
         <div className="mb-8">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Start Here</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Start Here</span>
           <h2 className="mt-3 text-2xl font-bold text-[#FCF4EB] sm:text-3xl">Claude Dangerously Skip Permissions</h2>
         </div>
 
@@ -344,7 +344,7 @@ export default function Session10InstagramAgent() {
 
       <section id="install" className="mb-16">
         <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Install</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Install</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Install and Log Into the Instagram Agent</h2>
         </div>
 
@@ -372,7 +372,7 @@ export default function Session10InstagramAgent() {
                     background:
                       index === 1
                         ? 'radial-gradient(circle, rgba(245,195,198,0.32) 0%, transparent 70%)'
-                        : 'radial-gradient(circle, rgba(124,105,199,0.30) 0%, transparent 70%)',
+                        : 'radial-gradient(circle, rgba(139,121,212,0.30) 0%, transparent 70%)',
                   }}
                 />
                 <div className="relative min-w-0">
@@ -394,7 +394,7 @@ export default function Session10InstagramAgent() {
             </p>
             <a
               href="https://www.instagram.com/"
-              className="group inline-flex w-full items-center justify-between gap-4 rounded-2xl border border-[#7C69C7]/35 bg-[#7C69C7]/20 px-5 py-5 text-left shadow-[0_18px_50px_rgba(124,105,199,0.18)] transition hover:border-[#9D8FE0]/55 hover:bg-[#7C69C7]/28 sm:px-6"
+              className="group inline-flex w-full items-center justify-between gap-4 rounded-2xl border border-[#8B79D4]/35 bg-[#8B79D4]/20 px-5 py-5 text-left shadow-[0_18px_50px_rgba(139,121,212,0.18)] transition hover:border-[#9D8FE0]/55 hover:bg-[#8B79D4]/28 sm:px-6"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -438,7 +438,7 @@ export default function Session10InstagramAgent() {
 
       <section id="capabilities" className="mb-16">
         <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Capabilities</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Capabilities</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">What It Can Do and How to Use It</h2>
         </div>
 
@@ -499,7 +499,7 @@ export default function Session10InstagramAgent() {
 
       <section id="reality" className="mb-16">
         <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Reality</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Reality</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Risks and the Right Long-Term Path</h2>
         </div>
 
@@ -555,7 +555,7 @@ export default function Session10InstagramAgent() {
 
       <section id="journey" className="mb-16">
         <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Journey</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Journey</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">From Lead Source to All Sorted CRM</h2>
         </div>
 
@@ -593,7 +593,7 @@ export default function Session10InstagramAgent() {
 
       <section id="tests" className="mb-16">
         <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Tests</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Tests</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Try the Agent Safely</h2>
         </div>
 

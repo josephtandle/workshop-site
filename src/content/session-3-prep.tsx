@@ -19,8 +19,8 @@ function Checkbox({ checked, onChange }: { checked: boolean; onChange: () => voi
       role="checkbox"
       className={`flex-shrink-0 w-5 h-5 rounded border transition-all duration-150 flex items-center justify-center
         ${checked
-          ? 'bg-[#7C69C7] border-[#7C69C7]'
-          : 'bg-white/[0.04] border-white/20 hover:border-[#7C69C7]/60'
+          ? 'bg-[#8B79D4] border-[#8B79D4]'
+          : 'bg-white/[0.04] border-white/20 hover:border-[#8B79D4]/60'
         }`}
     >
       {checked && (
@@ -47,12 +47,12 @@ function SectionCard({
     <div
       id={id}
       className={`bg-white/[0.05] border rounded-2xl p-6 sm:p-8 transition-all duration-200 ${
-        checked ? 'border-[#7C69C7]/40 bg-white/[0.07]' : 'border-white/[0.10]'
+        checked ? 'border-[#8B79D4]/40 bg-white/[0.07]' : 'border-white/[0.10]'
       }`}
     >
       {/* Header */}
       <div className="flex items-start gap-4 mb-6">
-        <div className="w-9 h-9 rounded-full bg-[#7C69C7]/20 border border-[#7C69C7]/40 flex items-center justify-center text-[#7C69C7] font-bold text-sm flex-shrink-0 mt-0.5">
+        <div className="w-9 h-9 rounded-full bg-[#8B79D4]/20 border border-[#8B79D4]/40 flex items-center justify-center text-[#8B79D4] font-bold text-sm flex-shrink-0 mt-0.5">
           {number}
         </div>
         <div className="flex-1 min-w-0">
@@ -60,7 +60,7 @@ function SectionCard({
             <h2 className="text-[#FCF4EB] font-bold text-xl leading-snug">{title}</h2>
             <span className={`text-xs px-2 py-0.5 rounded-full font-medium whitespace-nowrap ${
               badge.required
-                ? 'bg-[#7C69C7]/20 text-[#9D8FE0]'
+                ? 'bg-[#8B79D4]/20 text-[#9D8FE0]'
                 : 'bg-white/[0.06] text-[#FCF4EB]/40'
             }`}>
               {badge.label}
@@ -79,8 +79,8 @@ function SectionCard({
         onClick={onToggle}
         className={`mt-6 w-full py-2.5 rounded-xl text-sm font-medium transition-all duration-150 border ${
           checked
-            ? 'bg-[#7C69C7]/20 border-[#7C69C7]/40 text-[#9D8FE0]'
-            : 'bg-white/[0.04] border-white/[0.10] text-[#FCF4EB]/50 hover:border-[#7C69C7]/40 hover:text-[#FCF4EB]/80'
+            ? 'bg-[#8B79D4]/20 border-[#8B79D4]/40 text-[#9D8FE0]'
+            : 'bg-white/[0.04] border-white/[0.10] text-[#FCF4EB]/50 hover:border-[#8B79D4]/40 hover:text-[#FCF4EB]/80'
         }`}
       >
         {checked ? '✓ Done' : 'Mark as done'}
@@ -110,7 +110,7 @@ export default function Session3Prep() {
 
       {/* Page Header */}
       <div className="mb-10">
-        <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
+        <p className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest mb-3">
           Before Session Three
         </p>
         <h1 className="text-3xl sm:text-4xl font-bold text-[#FCF4EB] leading-tight mb-5">
@@ -143,14 +143,14 @@ export default function Session3Prep() {
                 className={`text-sm flex-1 transition-colors ${
                   checked.has(item.id)
                     ? 'text-[#FCF4EB]/40 line-through'
-                    : 'text-[#FCF4EB]/70 hover:text-[#7C69C7]'
+                    : 'text-[#FCF4EB]/70 hover:text-[#8B79D4]'
                 }`}
               >
                 {item.label}
               </a>
               <span className={`text-xs px-2 py-0.5 rounded-full font-medium whitespace-nowrap ${
                 item.required
-                  ? 'bg-[#7C69C7]/20 text-[#9D8FE0]'
+                  ? 'bg-[#8B79D4]/20 text-[#9D8FE0]'
                   : 'bg-white/[0.06] text-[#FCF4EB]/40'
               }`}>
                 {item.required ? 'Required' : 'Optional'}
@@ -167,7 +167,7 @@ export default function Session3Prep() {
           </div>
           <div className="h-1 bg-white/[0.08] rounded-full overflow-hidden">
             <div
-              className="h-full bg-[#7C69C7] rounded-full transition-all duration-300"
+              className="h-full bg-[#8B79D4] rounded-full transition-all duration-300"
               style={{ width: `${(checked.size / ITEMS.length) * 100}%` }}
             />
           </div>
@@ -195,7 +195,7 @@ export default function Session3Prep() {
           <ol className="space-y-3 list-decimal list-inside">
             <li>
               Go to{' '}
-              <a href="https://supabase.com" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline font-medium">
+              <a href="https://supabase.com" target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:underline font-medium">
                 supabase.com
               </a>
             </li>
@@ -206,14 +206,14 @@ export default function Session3Prep() {
                 <li>
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="text-[#FCF4EB] font-medium">Email and password</span>
-                    <span className="text-xs bg-[#7C69C7]/20 text-[#9D8FE0] px-2 py-0.5 rounded-full font-medium">Recommended</span>
+                    <span className="text-xs bg-[#8B79D4]/20 text-[#9D8FE0] px-2 py-0.5 rounded-full font-medium">Recommended</span>
                   </div>
                   <p className="text-[#FCF4EB]/50 text-xs mt-1">Enter your email and create a password</p>
                 </li>
                 <li>
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="text-[#FCF4EB] font-medium">Sign in with Google</span>
-                    <span className="text-xs bg-[#7C69C7]/20 text-[#9D8FE0] px-2 py-0.5 rounded-full font-medium">Recommended</span>
+                    <span className="text-xs bg-[#8B79D4]/20 text-[#9D8FE0] px-2 py-0.5 rounded-full font-medium">Recommended</span>
                   </div>
                   <p className="text-[#FCF4EB]/50 text-xs mt-1">One click if you are already logged into Google — fastest option</p>
                 </li>
@@ -251,7 +251,7 @@ export default function Session3Prep() {
           <ol className="space-y-3 list-decimal list-inside">
             <li>
               Go to{' '}
-              <a href="https://resend.com" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline font-medium">
+              <a href="https://resend.com" target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:underline font-medium">
                 resend.com
               </a>
             </li>
@@ -354,7 +354,7 @@ export default function Session3Prep() {
                       href={r.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#7C69C7] text-xs hover:underline whitespace-nowrap"
+                      className="text-[#8B79D4] text-xs hover:underline whitespace-nowrap"
                     >
                       DNS walkthrough →
                     </a>
@@ -413,13 +413,13 @@ export default function Session3Prep() {
 
             <p className="font-medium text-[#FCF4EB]/90 mb-2">
               Steps for{' '}
-              <a href="https://porkbun.com" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">
+              <a href="https://porkbun.com" target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:underline">
                 porkbun.com
               </a>{' '}
               — usually the cheapest:
             </p>
             <ol className="space-y-2 list-decimal list-inside">
-              <li>Go to <a href="https://porkbun.com" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">porkbun.com</a></li>
+              <li>Go to <a href="https://porkbun.com" target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:underline">porkbun.com</a></li>
               <li>Search for any name you like — does not have to be your business name</li>
               <li>Look for a <code className="bg-white/[0.08] px-1.5 py-0.5 rounded">.site</code> or <code className="bg-white/[0.08] px-1.5 py-0.5 rounded">.online</code> version — usually under $2</li>
               <li>Add to cart → Create a free Porkbun account → Checkout</li>

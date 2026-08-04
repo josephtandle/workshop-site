@@ -499,17 +499,17 @@ export default function GeometryDashPage() {
         .aurora-b { animation: aurora-drift-2 20s ease-in-out infinite; }
         .glow-card { transition: box-shadow 0.3s ease, border-color 0.3s ease; }
         .glow-card:hover {
-          box-shadow: 0 0 28px rgba(124, 105, 199, 0.12), 0 0 0 1px rgba(124, 105, 199, 0.18);
-          border-color: rgba(124, 105, 199, 0.22) !important;
+          box-shadow: 0 0 28px rgba(139, 121, 212, 0.12), 0 0 0 1px rgba(139, 121, 212, 0.18);
+          border-color: rgba(139, 121, 212, 0.22) !important;
         }
         .glow-btn { transition: box-shadow 0.2s ease, background-color 0.15s ease, transform 0.1s ease-out; }
-        .glow-btn:hover { box-shadow: 0 0 32px rgba(124, 105, 199, 0.45), 0 0 60px rgba(124, 105, 199, 0.2); }
+        .glow-btn:hover { box-shadow: 0 0 32px rgba(139, 121, 212, 0.45), 0 0 60px rgba(139, 121, 212, 0.2); }
         .glow-btn-pink:hover { box-shadow: 0 0 32px rgba(245, 195, 198, 0.5), 0 0 60px rgba(245, 195, 198, 0.2); }
         .glow-btn-gold:hover { box-shadow: 0 0 32px rgba(255, 215, 0, 0.45), 0 0 60px rgba(255, 215, 0, 0.2); }
-        .code-scroll { max-height: 420px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: rgba(124,105,199,0.3) transparent; }
+        .code-scroll { max-height: 420px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: rgba(139,121,212,0.3) transparent; }
         .code-scroll::-webkit-scrollbar { width: 4px; }
         .code-scroll::-webkit-scrollbar-track { background: transparent; }
-        .code-scroll::-webkit-scrollbar-thumb { background: rgba(124,105,199,0.3); border-radius: 2px; }
+        .code-scroll::-webkit-scrollbar-thumb { background: rgba(139,121,212,0.3); border-radius: 2px; }
       `}</style>
 
       <div className="min-h-screen bg-[#151515] text-[#FCF4EB] overflow-x-hidden">
@@ -528,9 +528,9 @@ export default function GeometryDashPage() {
             transition={{ duration: 0.5 }}
             className="relative z-10 mb-6 flex justify-center sm:absolute sm:top-10 sm:left-0 sm:right-0 sm:mb-0"
           >
-            <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
+            <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full bg-[#8B79D4]/15 text-[#9D8FE0] border border-[#8B79D4]/25">
               Free vibe code build from the{' '}
-              <a href={MASTERMIND_URL} target="_blank" rel="noopener noreferrer" className="hover:text-[#BDB3E8] transition-colors underline underline-offset-2 decoration-[#7C69C7]/40">
+              <a href={MASTERMIND_URL} target="_blank" rel="noopener noreferrer" className="hover:text-[#BDB3E8] transition-colors underline underline-offset-2 decoration-[#8B79D4]/40">
                 Business Automation Mastermind
               </a>
             </span>
@@ -589,7 +589,7 @@ export default function GeometryDashPage() {
               className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5 mb-6"
             >
               <span className="text-[#FCF4EB]/28 text-xs uppercase tracking-widest">Runs in</span>
-              <div className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/[0.05] border border-[#7C69C7]/35">
+              <div className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/[0.05] border border-[#8B79D4]/35">
                 <span className="text-[#FFD700] text-sm">◆</span>
                 <span className="text-[#FCF4EB]/75 text-sm font-medium">editor.p5js.org</span>
                 <span className="text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-full"
@@ -643,7 +643,7 @@ export default function GeometryDashPage() {
             ].map((item, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
                 className="glow-card bg-white/[0.04] border border-white/[0.08] rounded-2xl p-7">
-                <div className="text-4xl font-extrabold text-[#7C69C7]/20 mb-5 font-mono">{item.step}</div>
+                <div className="text-4xl font-extrabold text-[#8B79D4]/20 mb-5 font-mono">{item.step}</div>
                 <h3 className="text-[#FCF4EB] font-bold text-base mb-2">{item.title}</h3>
                 <p className="text-[#FCF4EB]/44 text-sm leading-relaxed">{item.body}</p>
               </motion.div>
@@ -735,7 +735,7 @@ export default function GeometryDashPage() {
         {/* ================================================================ */}
         <section className="max-w-5xl mx-auto px-6 py-14">
           <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
+            <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 bg-[#8B79D4]/15 text-[#9D8FE0] border border-[#8B79D4]/25">
               Vibe Code Guide
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold text-[#FCF4EB] mb-3">
@@ -859,7 +859,7 @@ export default function GeometryDashPage() {
                   <p className="text-[#FCF4EB]/55 text-sm leading-relaxed mb-4">
                     Once you have the basics working, paste this prompt into Claude Code or Codex to add new features. Describe what you want and AI will add the code.
                   </p>
-                  <div className="rounded-xl overflow-hidden border border-white/[0.08] border-l-2 border-l-[#7C69C7]">
+                  <div className="rounded-xl overflow-hidden border border-white/[0.08] border-l-2 border-l-[#8B79D4]">
                     <div className="flex items-center justify-between px-4 py-2 bg-white/[0.04] border-b border-white/[0.06]">
                       <span className="text-xs text-[#FCF4EB]/40 font-mono">Paste into Claude Code</span>
                       <InlineCopyButton text={`I built a Geometry Dash clone in p5.js. Here is the full code:\n\n[paste your code here]\n\nPlease add these features:\n1. Stars in the background that scroll at half speed (parallax effect)\n2. The cube changes color gradually as the level progresses\n3. A screen shake effect when the player dies\n4. A coin floating in the air at x=1800, y=300 — collect it for +1 score shown in the top right\nKeep all the existing physics and level design exactly the same.`} />
@@ -969,7 +969,7 @@ function MastermindCTA() {
     <section className="max-w-5xl mx-auto px-6 py-14">
       <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
         className="rounded-2xl overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, rgba(245,195,198,0.10) 0%, rgba(124,105,199,0.08) 100%)', border: '1px solid rgba(245,195,198,0.15)' }}>
+        style={{ background: 'linear-gradient(135deg, rgba(245,195,198,0.10) 0%, rgba(139,121,212,0.08) 100%)', border: '1px solid rgba(245,195,198,0.15)' }}>
         <div className="px-6 sm:px-14 pb-12 pt-8 text-center">
           <h2 className="text-2xl sm:text-5xl font-bold text-[#FCF4EB] mb-4">Want to learn how to do this?</h2>
           <p className="text-xl sm:text-3xl font-bold mb-5">

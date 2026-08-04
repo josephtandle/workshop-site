@@ -16,7 +16,7 @@ export default function Session7DescriptGuide() {
           <div
             className="rounded-2xl p-8 mb-10"
             style={{
-              background: 'linear-gradient(135deg, rgba(245, 195, 198, 0.14) 0%, rgba(124, 105, 199, 0.10) 100%)',
+              background: 'linear-gradient(135deg, rgba(245, 195, 198, 0.14) 0%, rgba(139, 121, 212, 0.10) 100%)',
               border: '1px solid rgba(245, 195, 198, 0.22)',
             }}
           >
@@ -26,7 +26,7 @@ export default function Session7DescriptGuide() {
             >
               Bonus Segment
             </span>
-            <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
+            <p className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest mb-3">
               Session Seven
             </p>
             <h1 className="gradient-text text-5xl font-extrabold leading-tight mb-5 pb-1">
@@ -65,25 +65,25 @@ export default function Session7DescriptGuide() {
             </p>
             <ul className="space-y-2.5">
               <li className="flex gap-2 text-sm text-[#FCF4EB]/70 leading-relaxed">
-                <span className="text-[#7C69C7] mt-0.5 flex-shrink-0">&#8226;</span>
+                <span className="text-[#8B79D4] mt-0.5 flex-shrink-0">&#8226;</span>
                 <span>One long-form video or audio file you want to repurpose: a past recording, podcast episode, webinar, or anything over 10 minutes.</span>
               </li>
               <li className="flex gap-2 text-sm text-[#FCF4EB]/70 leading-relaxed">
-                <span className="text-[#7C69C7] mt-0.5 flex-shrink-0">&#8226;</span>
+                <span className="text-[#8B79D4] mt-0.5 flex-shrink-0">&#8226;</span>
                 <span>
                   A free Descript account, downloaded and installed.{' '}
                   <a
                     href="https://get.descript.com/ib44r8t9noyj"
                     target="_blank"
                     rel="noopener"
-                    className="text-[#7C69C7] hover:underline"
+                    className="text-[#8B79D4] hover:underline"
                   >
                     Get the free version of Descript here.
                   </a>
                 </span>
               </li>
               <li className="flex gap-2 text-sm text-[#FCF4EB]/70 leading-relaxed">
-                <span className="text-[#7C69C7] mt-0.5 flex-shrink-0">&#8226;</span>
+                <span className="text-[#8B79D4] mt-0.5 flex-shrink-0">&#8226;</span>
                 <span>
                   Note: the free plan is enough for today. The paid plan is $12/month and unlocks Overdub (AI voice cloning), covered in Part D.
                 </span>
@@ -108,7 +108,7 @@ export default function Session7DescriptGuide() {
                 { href: '#part-h', label: 'Part H: Export' },
               ].map((item) => (
                 <li key={item.href}>
-                  <a href={item.href} className="text-sm text-[#FCF4EB]/70 hover:text-[#7C69C7] transition-colors">
+                  <a href={item.href} className="text-sm text-[#FCF4EB]/70 hover:text-[#8B79D4] transition-colors">
                     {item.label}
                   </a>
                 </li>
@@ -329,7 +329,7 @@ export default function Session7DescriptGuide() {
             <div className="space-y-3 mb-4">
               <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
                 <div className="flex items-center gap-3 mb-1">
-                  <span className="inline-block px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider bg-[#7C69C7]/20 text-[#7C69C7] border border-[#7C69C7]/30">
+                  <span className="inline-block px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider bg-[#8B79D4]/20 text-[#8B79D4] border border-[#8B79D4]/30">
                     9:16
                   </span>
                   <span className="text-[#FCF4EB]/70 text-sm">Instagram Reels, TikTok, YouTube Shorts</span>
@@ -337,7 +337,7 @@ export default function Session7DescriptGuide() {
               </div>
               <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
                 <div className="flex items-center gap-3 mb-1">
-                  <span className="inline-block px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider bg-[#7C69C7]/20 text-[#7C69C7] border border-[#7C69C7]/30">
+                  <span className="inline-block px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider bg-[#8B79D4]/20 text-[#8B79D4] border border-[#8B79D4]/30">
                     1:1
                   </span>
                   <span className="text-[#FCF4EB]/70 text-sm">Instagram and LinkedIn feed posts</span>
@@ -416,15 +416,15 @@ export default function Session7DescriptGuide() {
             </p>
 
             <div className="bg-white/[0.04] border border-white/[0.08] rounded-2xl p-8 mb-8">
-              <p className="text-[#7C69C7] text-xs font-semibold uppercase tracking-widest mb-3">Support Each Other</p>
+              <p className="text-[#8B79D4] text-xs font-semibold uppercase tracking-widest mb-3">Support Each Other</p>
               <h3 className="text-xl font-bold text-[#FCF4EB] mb-3">Post your first clip in the Masterminds group</h3>
               <p className="text-[#FCF4EB]/70 leading-relaxed mb-6">
                 Run the full workflow on one recording this week and post a clip in the group. Even a rough first export counts. The group will give you feedback on what lands.
               </p>
               <div className="space-y-4">
                 <div className="flex gap-4 items-start">
-                  <div className="w-8 h-8 rounded-full bg-[#7C69C7]/20 border border-[#7C69C7]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-[#7C69C7] text-sm font-bold">1</span>
+                  <div className="w-8 h-8 rounded-full bg-[#8B79D4]/20 border border-[#8B79D4]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-[#8B79D4] text-sm font-bold">1</span>
                   </div>
                   <div>
                     <p className="text-[#FCF4EB] font-semibold text-sm mb-1">Share your clip</p>
@@ -434,8 +434,8 @@ export default function Session7DescriptGuide() {
                   </div>
                 </div>
                 <div className="flex gap-4 items-start">
-                  <div className="w-8 h-8 rounded-full bg-[#7C69C7]/20 border border-[#7C69C7]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-[#7C69C7] text-sm font-bold">2</span>
+                  <div className="w-8 h-8 rounded-full bg-[#8B79D4]/20 border border-[#8B79D4]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-[#8B79D4] text-sm font-bold">2</span>
                   </div>
                   <div>
                     <p className="text-[#FCF4EB] font-semibold text-sm mb-1">Tell the group which feature surprised you</p>
@@ -445,8 +445,8 @@ export default function Session7DescriptGuide() {
                   </div>
                 </div>
                 <div className="flex gap-4 items-start">
-                  <div className="w-8 h-8 rounded-full bg-[#7C69C7]/20 border border-[#7C69C7]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-[#7C69C7] text-sm font-bold">3</span>
+                  <div className="w-8 h-8 rounded-full bg-[#8B79D4]/20 border border-[#8B79D4]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-[#8B79D4] text-sm font-bold">3</span>
                   </div>
                   <div>
                     <p className="text-[#FCF4EB] font-semibold text-sm mb-1">Watch each other&rsquo;s clips</p>
@@ -458,8 +458,8 @@ export default function Session7DescriptGuide() {
               </div>
             </div>
 
-            <div className="border border-[#7C69C7]/50 bg-[#7C69C7]/[0.08] rounded-xl p-6">
-              <p className="text-[#7C69C7] text-xs font-semibold uppercase tracking-widest mb-3">Challenge</p>
+            <div className="border border-[#8B79D4]/50 bg-[#8B79D4]/[0.08] rounded-xl p-6">
+              <p className="text-[#8B79D4] text-xs font-semibold uppercase tracking-widest mb-3">Challenge</p>
               <p className="text-[#FCF4EB]/80 leading-relaxed">
                 Go back to any long-form recording you made in the last 90 days. Run it through Descript this week. Apply Studio Sound, remove filler words, cut three clips, add captions, and export. That is one week of content from a recording that was already done.
               </p>

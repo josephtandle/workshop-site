@@ -11,7 +11,7 @@ export default function ResourceVaultPage() {
       {/* Hero */}
       <section className="relative overflow-hidden pt-20 pb-10 px-6">
         <div className="relative max-w-3xl mx-auto text-center">
-          <p className="text-xs uppercase tracking-[0.2em] text-[#7C69C7] font-semibold mb-4">
+          <p className="text-xs uppercase tracking-[0.2em] text-[#8B79D4] font-semibold mb-4">
             Masterminds Workshop
           </p>
           <h1 className="gradient-text text-5xl md:text-6xl font-extrabold mb-5 leading-tight pb-1">
@@ -49,17 +49,17 @@ export default function ResourceVaultPage() {
                 href="/resource-vault/how-to-stand-out-in-the-age-of-ai"
                 className="block rounded-2xl p-6 transition-all hover:scale-[1.01] mb-4"
                 style={{
-                  background: 'rgba(124, 105, 199, 0.07)',
-                  border: '1px solid rgba(124, 105, 199, 0.22)',
+                  background: 'rgba(139, 121, 212, 0.07)',
+                  border: '1px solid rgba(139, 121, 212, 0.22)',
                 }}
               >
                 <div className="flex items-start gap-5">
                   <div
                     className="w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold flex-shrink-0"
                     style={{
-                      background: 'rgba(124, 105, 199, 0.18)',
+                      background: 'rgba(139, 121, 212, 0.18)',
                       color: '#9D8FE0',
-                      border: '1.5px solid rgba(124, 105, 199, 0.30)',
+                      border: '1.5px solid rgba(139, 121, 212, 0.30)',
                     }}
                   >
                     ✺
@@ -74,9 +74,9 @@ export default function ResourceVaultPage() {
                   <div
                     className="flex-shrink-0 text-xs font-semibold px-3 py-1.5 rounded-full"
                     style={{
-                      background: 'rgba(124, 105, 199, 0.15)',
+                      background: 'rgba(139, 121, 212, 0.15)',
                       color: '#9D8FE0',
-                      border: '1px solid rgba(124, 105, 199, 0.25)',
+                      border: '1px solid rgba(139, 121, 212, 0.25)',
                     }}
                   >
                     Review draft
@@ -87,17 +87,17 @@ export default function ResourceVaultPage() {
                 href="/resource-vault/automated-ghost-computer-use"
                 className="block rounded-2xl p-6 transition-all hover:scale-[1.01] mb-4"
                 style={{
-                  background: 'rgba(124, 105, 199, 0.07)',
-                  border: '1px solid rgba(124, 105, 199, 0.22)',
+                  background: 'rgba(139, 121, 212, 0.07)',
+                  border: '1px solid rgba(139, 121, 212, 0.22)',
                 }}
               >
                 <div className="flex items-start gap-5">
                   <div
                     className="w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold flex-shrink-0"
                     style={{
-                      background: 'rgba(124, 105, 199, 0.18)',
+                      background: 'rgba(139, 121, 212, 0.18)',
                       color: '#9D8FE0',
-                      border: '1.5px solid rgba(124, 105, 199, 0.30)',
+                      border: '1.5px solid rgba(139, 121, 212, 0.30)',
                     }}
                   >
                     ✺
@@ -112,9 +112,9 @@ export default function ResourceVaultPage() {
                   <div
                     className="flex-shrink-0 text-xs font-semibold px-3 py-1.5 rounded-full"
                     style={{
-                      background: 'rgba(124, 105, 199, 0.15)',
+                      background: 'rgba(139, 121, 212, 0.15)',
                       color: '#9D8FE0',
-                      border: '1px solid rgba(124, 105, 199, 0.25)',
+                      border: '1px solid rgba(139, 121, 212, 0.25)',
                     }}
                   >
                     View guide
@@ -125,17 +125,17 @@ export default function ResourceVaultPage() {
                 href="/resource-vault/connecting-to-xero"
                 className="block rounded-2xl p-6 transition-all hover:scale-[1.01] mb-4"
                 style={{
-                  background: 'rgba(124, 105, 199, 0.07)',
-                  border: '1px solid rgba(124, 105, 199, 0.22)',
+                  background: 'rgba(139, 121, 212, 0.07)',
+                  border: '1px solid rgba(139, 121, 212, 0.22)',
                 }}
               >
                 <div className="flex items-start gap-5">
                   <div
                     className="w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold flex-shrink-0"
                     style={{
-                      background: 'rgba(124, 105, 199, 0.18)',
+                      background: 'rgba(139, 121, 212, 0.18)',
                       color: '#9D8FE0',
-                      border: '1.5px solid rgba(124, 105, 199, 0.30)',
+                      border: '1.5px solid rgba(139, 121, 212, 0.30)',
                     }}
                   >
                     ◎
@@ -152,9 +152,9 @@ export default function ResourceVaultPage() {
                   <div
                     className="flex-shrink-0 text-xs font-semibold px-3 py-1.5 rounded-full"
                     style={{
-                      background: 'rgba(124, 105, 199, 0.15)',
+                      background: 'rgba(139, 121, 212, 0.15)',
                       color: '#9D8FE0',
-                      border: '1px solid rgba(124, 105, 199, 0.25)',
+                      border: '1px solid rgba(139, 121, 212, 0.25)',
                     }}
                   >
                     View guide
@@ -165,17 +165,17 @@ export default function ResourceVaultPage() {
                 href="/resource-vault/connecting-to-google-sheets"
                 className="block rounded-2xl p-6 transition-all hover:scale-[1.01] mb-4"
                 style={{
-                  background: 'rgba(124, 105, 199, 0.07)',
-                  border: '1px solid rgba(124, 105, 199, 0.22)',
+                  background: 'rgba(139, 121, 212, 0.07)',
+                  border: '1px solid rgba(139, 121, 212, 0.22)',
                 }}
               >
                 <div className="flex items-start gap-5">
                   <div
                     className="w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold flex-shrink-0"
                     style={{
-                      background: 'rgba(124, 105, 199, 0.18)',
+                      background: 'rgba(139, 121, 212, 0.18)',
                       color: '#9D8FE0',
-                      border: '1.5px solid rgba(124, 105, 199, 0.30)',
+                      border: '1.5px solid rgba(139, 121, 212, 0.30)',
                     }}
                   >
                     ✦
@@ -190,9 +190,9 @@ export default function ResourceVaultPage() {
                   <div
                     className="flex-shrink-0 text-xs font-semibold px-3 py-1.5 rounded-full"
                     style={{
-                      background: 'rgba(124, 105, 199, 0.15)',
+                      background: 'rgba(139, 121, 212, 0.15)',
                       color: '#9D8FE0',
-                      border: '1px solid rgba(124, 105, 199, 0.25)',
+                      border: '1px solid rgba(139, 121, 212, 0.25)',
                     }}
                   >
                     View guide
@@ -203,17 +203,17 @@ export default function ResourceVaultPage() {
                 href="/resource-vault/reza-website-control"
                 className="block rounded-2xl p-6 transition-all hover:scale-[1.01] mb-4"
                 style={{
-                  background: 'rgba(124, 105, 199, 0.07)',
-                  border: '1px solid rgba(124, 105, 199, 0.22)',
+                  background: 'rgba(139, 121, 212, 0.07)',
+                  border: '1px solid rgba(139, 121, 212, 0.22)',
                 }}
               >
                 <div className="flex items-start gap-5">
                   <div
                     className="w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold flex-shrink-0"
                     style={{
-                      background: 'rgba(124, 105, 199, 0.18)',
+                      background: 'rgba(139, 121, 212, 0.18)',
                       color: '#9D8FE0',
-                      border: '1.5px solid rgba(124, 105, 199, 0.30)',
+                      border: '1.5px solid rgba(139, 121, 212, 0.30)',
                     }}
                   >
                     ◆
@@ -228,9 +228,9 @@ export default function ResourceVaultPage() {
                   <div
                     className="flex-shrink-0 text-xs font-semibold px-3 py-1.5 rounded-full"
                     style={{
-                      background: 'rgba(124, 105, 199, 0.15)',
+                      background: 'rgba(139, 121, 212, 0.15)',
                       color: '#9D8FE0',
-                      border: '1px solid rgba(124, 105, 199, 0.25)',
+                      border: '1px solid rgba(139, 121, 212, 0.25)',
                     }}
                   >
                     View guide
@@ -241,17 +241,17 @@ export default function ResourceVaultPage() {
                 href="/resource-vault/wordpress-api"
                 className="block rounded-2xl p-6 transition-all hover:scale-[1.01] mb-4"
                 style={{
-                  background: 'rgba(124, 105, 199, 0.07)',
-                  border: '1px solid rgba(124, 105, 199, 0.22)',
+                  background: 'rgba(139, 121, 212, 0.07)',
+                  border: '1px solid rgba(139, 121, 212, 0.22)',
                 }}
               >
                 <div className="flex items-start gap-5">
                   <div
                     className="w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold flex-shrink-0"
                     style={{
-                      background: 'rgba(124, 105, 199, 0.18)',
+                      background: 'rgba(139, 121, 212, 0.18)',
                       color: '#9D8FE0',
-                      border: '1.5px solid rgba(124, 105, 199, 0.30)',
+                      border: '1.5px solid rgba(139, 121, 212, 0.30)',
                     }}
                   >
                     ⬡
@@ -266,9 +266,9 @@ export default function ResourceVaultPage() {
                   <div
                     className="flex-shrink-0 text-xs font-semibold px-3 py-1.5 rounded-full"
                     style={{
-                      background: 'rgba(124, 105, 199, 0.15)',
+                      background: 'rgba(139, 121, 212, 0.15)',
                       color: '#9D8FE0',
-                      border: '1px solid rgba(124, 105, 199, 0.25)',
+                      border: '1px solid rgba(139, 121, 212, 0.25)',
                     }}
                   >
                     View guide
@@ -281,17 +281,17 @@ export default function ResourceVaultPage() {
                 rel="noopener noreferrer"
                 className="block rounded-2xl p-6 transition-all hover:scale-[1.01]"
                 style={{
-                  background: 'rgba(124, 105, 199, 0.07)',
-                  border: '1px solid rgba(124, 105, 199, 0.22)',
+                  background: 'rgba(139, 121, 212, 0.07)',
+                  border: '1px solid rgba(139, 121, 212, 0.22)',
                 }}
               >
                 <div className="flex items-start gap-5">
                   <div
                     className="w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold flex-shrink-0"
                     style={{
-                      background: 'rgba(124, 105, 199, 0.18)',
+                      background: 'rgba(139, 121, 212, 0.18)',
                       color: '#9D8FE0',
-                      border: '1.5px solid rgba(124, 105, 199, 0.30)',
+                      border: '1.5px solid rgba(139, 121, 212, 0.30)',
                     }}
                   >
                     ◈
@@ -306,9 +306,9 @@ export default function ResourceVaultPage() {
                   <div
                     className="flex-shrink-0 text-xs font-semibold px-3 py-1.5 rounded-full"
                     style={{
-                      background: 'rgba(124, 105, 199, 0.15)',
+                      background: 'rgba(139, 121, 212, 0.15)',
                       color: '#9D8FE0',
-                      border: '1px solid rgba(124, 105, 199, 0.25)',
+                      border: '1px solid rgba(139, 121, 212, 0.25)',
                     }}
                   >
                     Open tool
@@ -348,10 +348,10 @@ export default function ResourceVaultPage() {
                     className="rounded-2xl p-5"
                     style={{
                       background: item.variant === 'purple'
-                        ? 'rgba(124, 105, 199, 0.07)'
+                        ? 'rgba(139, 121, 212, 0.07)'
                         : 'rgba(245, 195, 198, 0.07)',
                       border: item.variant === 'purple'
-                        ? '1px solid rgba(124, 105, 199, 0.15)'
+                        ? '1px solid rgba(139, 121, 212, 0.15)'
                         : '1px solid rgba(245, 195, 198, 0.15)',
                     }}
                   >
@@ -359,11 +359,11 @@ export default function ResourceVaultPage() {
                       className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold mb-4"
                       style={{
                         background: item.variant === 'purple'
-                          ? 'rgba(124, 105, 199, 0.18)'
+                          ? 'rgba(139, 121, 212, 0.18)'
                           : 'rgba(245, 195, 198, 0.12)',
                         color: item.variant === 'purple' ? '#9D8FE0' : '#F5C3C6',
                         border: item.variant === 'purple'
-                          ? '1.5px solid rgba(124, 105, 199, 0.30)'
+                          ? '1.5px solid rgba(139, 121, 212, 0.30)'
                           : '1.5px solid rgba(245, 195, 198, 0.25)',
                       }}
                     >

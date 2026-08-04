@@ -13,7 +13,7 @@ export default function EricInvestorPipelinePage() {
   return (
     <main className="max-w-3xl mx-auto px-6 py-16">
       <div className="mb-14">
-        <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
+        <p className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest mb-3">
           Resource Vault
         </p>
         <h1 className="gradient-text text-4xl font-extrabold leading-tight mb-5 pb-1">
@@ -45,7 +45,7 @@ export default function EricInvestorPipelinePage() {
             { href: '#part-e', label: 'Part E — What stays free and what to watch' },
           ].map((item) => (
             <li key={item.href}>
-              <a href={item.href} className="text-sm text-[#FCF4EB]/70 hover:text-[#7C69C7] transition-colors">
+              <a href={item.href} className="text-sm text-[#FCF4EB]/70 hover:text-[#8B79D4] transition-colors">
                 {item.label}
               </a>
             </li>
@@ -55,7 +55,7 @@ export default function EricInvestorPipelinePage() {
 
       <section id="part-a" className="mb-16">
         <div className="flex items-center gap-3 mb-8">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Part A</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Part A</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Set up Activepieces and connect Google</h2>
         </div>
 
@@ -66,7 +66,7 @@ export default function EricInvestorPipelinePage() {
               href="https://cloud.activepieces.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#7C69C7] hover:text-[#9D8FE0] underline underline-offset-2"
+              className="text-[#8B79D4] hover:text-[#9D8FE0] underline underline-offset-2"
             >
               cloud.activepieces.com
             </Link>{' '}
@@ -115,7 +115,7 @@ export default function EricInvestorPipelinePage() {
 
       <section id="part-b" className="mb-16">
         <div className="flex items-center gap-3 mb-8">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Part B</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Part B</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Connect Activepieces to Claude Code</h2>
         </div>
 
@@ -165,7 +165,7 @@ Do not create or edit anything yet. Just verify what tools are available and sum
 
       <section id="part-c" className="mb-16">
         <div className="flex items-center gap-3 mb-8">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Part C</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Part C</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Create Eric’s investor spreadsheet</h2>
         </div>
 
@@ -238,7 +238,7 @@ Do not guess missing data yet. Leave unknown cells blank and confirm when the st
 
       <section id="part-d" className="mb-16">
         <div className="flex items-center gap-3 mb-8">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Part D</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Part D</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Use WebFetch to enrich investors</h2>
         </div>
 
@@ -314,7 +314,7 @@ Then enrich only the first 5 of the new rows using the same research standards a
 
       <section id="part-e">
         <div className="flex items-center gap-3 mb-8">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Part E</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Part E</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">What stays free and what to watch</h2>
         </div>
 
@@ -348,7 +348,7 @@ Community Edition:
                 href="https://www.activepieces.com/pricing"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#7C69C7] hover:text-[#9D8FE0] underline underline-offset-2"
+                className="text-[#8B79D4] hover:text-[#9D8FE0] underline underline-offset-2"
               >
                 Activepieces pricing
               </Link>
@@ -358,7 +358,7 @@ Community Edition:
                 href="https://www.activepieces.com/docs/install/overview"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#7C69C7] hover:text-[#9D8FE0] underline underline-offset-2"
+                className="text-[#8B79D4] hover:text-[#9D8FE0] underline underline-offset-2"
               >
                 Activepieces self-hosted overview
               </Link>

@@ -65,7 +65,7 @@ function PromptButtons({ prompt, onAfterCopy }: { prompt: string; onAfterCopy?: 
     <div className="mt-5 flex flex-col sm:flex-row gap-3">
       <button
         onClick={handleCopy}
-        className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-[#7C69C7] hover:bg-[#6b59b7] text-white font-semibold text-base active:scale-[0.98] shadow-xl shadow-[#7C69C7]/20 transition-all"
+        className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-[#8B79D4] hover:bg-[#6b59b7] text-white font-semibold text-base active:scale-[0.98] shadow-xl shadow-[#8B79D4]/20 transition-all"
       >
         {copied ? 'Copied!' : 'Copy migration prompt'}
       </button>
@@ -135,7 +135,7 @@ export default function CrossCliCompatibilityRoutingPage() {
           <div className="absolute inset-0 pointer-events-none">
             <div
               className="routing-orb absolute top-[-10%] left-[4%] h-[420px] w-[420px] rounded-full blur-3xl"
-              style={{ background: 'radial-gradient(circle, rgba(124, 105, 199, 0.34) 0%, transparent 70%)' }}
+              style={{ background: 'radial-gradient(circle, rgba(139, 121, 212, 0.34) 0%, transparent 70%)' }}
             />
             <div
               className="routing-orb absolute top-[12%] right-[8%] h-[260px] w-[260px] rounded-full blur-3xl"
@@ -176,7 +176,7 @@ export default function CrossCliCompatibilityRoutingPage() {
               </div>
 
               <Reveal delay={2}>
-                <div className="rounded-[28px] border border-[#FCF4EB]/[0.12] bg-[linear-gradient(180deg,rgba(252,244,235,0.06),rgba(124,105,199,0.10))] p-6 sm:p-7 shadow-[0_20px_60px_rgba(0,0,0,0.22)]">
+                <div className="rounded-[28px] border border-[#FCF4EB]/[0.12] bg-[linear-gradient(180deg,rgba(252,244,235,0.06),rgba(139,121,212,0.10))] p-6 sm:p-7 shadow-[0_20px_60px_rgba(0,0,0,0.22)]">
                   <p className="text-xs uppercase tracking-[0.22em] text-[#FCF4EB]/45 font-semibold mb-5">
                     What this fixes
                   </p>
@@ -197,7 +197,7 @@ export default function CrossCliCompatibilityRoutingPage() {
                         Requests get routed by lane, execution stays authoritative, and the top of the stack stays tiny.
                       </p>
                     </div>
-                    <div className="rounded-xl border border-[#FCF4EB]/[0.10] bg-[rgba(124,105,199,0.10)] p-4">
+                    <div className="rounded-xl border border-[#FCF4EB]/[0.10] bg-[rgba(139,121,212,0.10)] p-4">
                       <p className="text-[#FCF4EB]/40 text-xs uppercase tracking-widest mb-2">
                         Deliverables
                       </p>
@@ -221,7 +221,7 @@ export default function CrossCliCompatibilityRoutingPage() {
 
         <section className="max-w-6xl mx-auto px-6 py-8">
           <Reveal>
-            <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-2">
+            <p className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest mb-2">
               The real problem
             </p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#FCF4EB] mb-3">
@@ -249,7 +249,7 @@ export default function CrossCliCompatibilityRoutingPage() {
 
         <section className="max-w-6xl mx-auto px-6 py-12">
           <Reveal>
-            <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-2">
+            <p className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest mb-2">
               The architecture
             </p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#FCF4EB] mb-3">
@@ -260,9 +260,9 @@ export default function CrossCliCompatibilityRoutingPage() {
           <div className="mt-8 space-y-4">
             {FLOW_STEPS.map((item, index) => (
               <Reveal key={item.id} delay={index + 1}>
-                <div className="grid gap-4 lg:grid-cols-[100px_1fr] rounded-[26px] border border-white/[0.08] bg-[linear-gradient(180deg,rgba(124,105,199,0.14),rgba(252,244,235,0.03))] p-5 sm:p-6">
+                <div className="grid gap-4 lg:grid-cols-[100px_1fr] rounded-[26px] border border-white/[0.08] bg-[linear-gradient(180deg,rgba(139,121,212,0.14),rgba(252,244,235,0.03))] p-5 sm:p-6">
                   <div className="flex lg:block items-center gap-3">
-                    <span className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#7C69C7]/16 border border-[#7C69C7]/28 text-[#9D8FE0] font-bold">
+                    <span className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#8B79D4]/16 border border-[#8B79D4]/28 text-[#9D8FE0] font-bold">
                       {item.step}
                     </span>
                     <p className="text-[#FCF4EB]/38 text-xs uppercase tracking-[0.18em]">
@@ -284,7 +284,7 @@ export default function CrossCliCompatibilityRoutingPage() {
 
         <section className="max-w-6xl mx-auto px-6 py-12">
           <Reveal>
-            <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-2">
+            <p className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest mb-2">
               The decision tree
             </p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#FCF4EB] mb-3">
@@ -297,23 +297,23 @@ export default function CrossCliCompatibilityRoutingPage() {
           </Reveal>
 
           <Reveal delay={1}>
-            <div className="mt-8 rounded-[30px] border border-white/[0.08] bg-[linear-gradient(180deg,rgba(252,244,235,0.06),rgba(124,105,199,0.06))] p-5 sm:p-8">
+            <div className="mt-8 rounded-[30px] border border-white/[0.08] bg-[linear-gradient(180deg,rgba(252,244,235,0.06),rgba(139,121,212,0.06))] p-5 sm:p-8">
               <div className="grid gap-4">
                 <div className="rounded-2xl border border-white/[0.10] bg-white/[0.04] p-5 text-center">
                   <p className="text-[#FCF4EB]/40 text-xs uppercase tracking-[0.2em] mb-2">Start</p>
                   <p className="text-[#FCF4EB] text-xl font-bold">Incoming request</p>
                 </div>
-                <div className="flex justify-center text-[#7C69C7] text-2xl">↓</div>
-                <div className="rounded-2xl border border-[#7C69C7]/25 bg-[#7C69C7]/10 p-5 text-center">
+                <div className="flex justify-center text-[#8B79D4] text-2xl">↓</div>
+                <div className="rounded-2xl border border-[#8B79D4]/25 bg-[#8B79D4]/10 p-5 text-center">
                   <p className="text-[#FCF4EB]/40 text-xs uppercase tracking-[0.2em] mb-2">Bootstrap</p>
                   <p className="text-[#FCF4EB] text-xl font-bold">Read ROUTING-SLIM.md</p>
                 </div>
-                <div className="flex justify-center text-[#7C69C7] text-2xl">↓</div>
+                <div className="flex justify-center text-[#8B79D4] text-2xl">↓</div>
                 <div className="rounded-2xl border border-[#F5C3C6]/25 bg-[#F5C3C6]/10 p-5 text-center">
                   <p className="text-[#FCF4EB]/40 text-xs uppercase tracking-[0.2em] mb-2">Discovery</p>
                   <p className="text-[#FCF4EB] text-xl font-bold">Load compact capability index</p>
                 </div>
-                <div className="flex justify-center text-[#7C69C7] text-2xl">↓</div>
+                <div className="flex justify-center text-[#8B79D4] text-2xl">↓</div>
                 <div className="rounded-2xl border border-white/[0.10] bg-white/[0.04] p-5">
                   <p className="text-[#FCF4EB]/40 text-xs uppercase tracking-[0.2em] mb-3 text-center">Lane selector</p>
                   <div className="grid gap-4 md:grid-cols-3">
@@ -335,9 +335,9 @@ export default function CrossCliCompatibilityRoutingPage() {
                   {LANE_CARDS.map((lane) => (
                     <div
                       key={lane.lane}
-                      className="rounded-2xl border border-white/[0.08] bg-[linear-gradient(180deg,rgba(252,244,235,0.05),rgba(124,105,199,0.04))] p-5"
+                      className="rounded-2xl border border-white/[0.08] bg-[linear-gradient(180deg,rgba(252,244,235,0.05),rgba(139,121,212,0.04))] p-5"
                     >
-                      <p className="text-[#7C69C7] text-xs font-semibold uppercase tracking-[0.18em] mb-2">
+                      <p className="text-[#8B79D4] text-xs font-semibold uppercase tracking-[0.18em] mb-2">
                         {lane.label}
                       </p>
                       <h3 className="text-[#FCF4EB] text-2xl font-bold mb-3">{lane.lane}</h3>
@@ -345,7 +345,7 @@ export default function CrossCliCompatibilityRoutingPage() {
                     </div>
                   ))}
                 </div>
-                <div className="flex justify-center text-[#7C69C7] text-2xl">↓</div>
+                <div className="flex justify-center text-[#8B79D4] text-2xl">↓</div>
                 <div className="rounded-2xl border border-white/[0.10] bg-white/[0.04] p-5 text-center">
                   <p className="text-[#FCF4EB]/40 text-xs uppercase tracking-[0.2em] mb-2">Finish</p>
                   <p className="text-[#FCF4EB] text-xl font-bold">Return one normalized result envelope</p>
@@ -357,7 +357,7 @@ export default function CrossCliCompatibilityRoutingPage() {
 
         <section className="max-w-6xl mx-auto px-6 py-12">
           <Reveal>
-            <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-2">
+            <p className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest mb-2">
               Why this scales
             </p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#FCF4EB] mb-3">
@@ -377,7 +377,7 @@ export default function CrossCliCompatibilityRoutingPage() {
 
         <section className="max-w-6xl mx-auto px-6 py-12">
           <Reveal>
-            <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-2">
+            <p className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest mb-2">
               Build rules
             </p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#FCF4EB] mb-3">
@@ -398,7 +398,7 @@ export default function CrossCliCompatibilityRoutingPage() {
 
         <section id="migration-prompt" className="max-w-6xl mx-auto px-6 py-14">
           <Reveal>
-            <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-2">
+            <p className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest mb-2">
               Copy-pasteable prompt
             </p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#FCF4EB] mb-3">
@@ -421,7 +421,7 @@ export default function CrossCliCompatibilityRoutingPage() {
 
         <section className="max-w-5xl mx-auto px-6 py-16">
           <Reveal>
-            <div className="rounded-[32px] border border-white/[0.08] bg-[linear-gradient(180deg,rgba(124,105,199,0.16),rgba(252,244,235,0.05))] px-6 py-10 sm:px-10 text-center shadow-[0_18px_60px_rgba(0,0,0,0.22)]">
+            <div className="rounded-[32px] border border-white/[0.08] bg-[linear-gradient(180deg,rgba(139,121,212,0.16),rgba(252,244,235,0.05))] px-6 py-10 sm:px-10 text-center shadow-[0_18px_60px_rgba(0,0,0,0.22)]">
               <p className="text-[#F5C3C6] text-xs font-semibold uppercase tracking-[0.22em] mb-3">
                 Bonus resource
               </p>
@@ -452,7 +452,7 @@ function MastermindCTA() {
         <div className="rounded-[34px] border border-white/[0.08] bg-[linear-gradient(135deg,rgba(21,21,21,0.96),rgba(43,31,56,0.96))] px-6 py-10 sm:px-10 md:px-12 md:py-12 overflow-hidden relative">
           <div
             className="absolute -top-24 -right-16 h-64 w-64 rounded-full blur-3xl"
-            style={{ background: 'radial-gradient(circle, rgba(124, 105, 199, 0.20) 0%, transparent 72%)' }}
+            style={{ background: 'radial-gradient(circle, rgba(139, 121, 212, 0.20) 0%, transparent 72%)' }}
           />
           <div className="relative flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
@@ -470,7 +470,7 @@ function MastermindCTA() {
             <div className="flex flex-col sm:flex-row gap-3">
               <a
                 href={MASTERMIND_URL}
-                className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-[#7C69C7] hover:bg-[#6b59b7] text-white font-semibold transition-all"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-[#8B79D4] hover:bg-[#6b59b7] text-white font-semibold transition-all"
               >
                 Explore Masterminds HQ
               </a>

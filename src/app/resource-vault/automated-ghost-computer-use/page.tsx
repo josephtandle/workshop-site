@@ -12,7 +12,7 @@ export default function AutomatedGhostComputerUsePage() {
   return (
     <main className="max-w-3xl mx-auto px-6 py-16">
       <div className="mb-14">
-        <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
+        <p className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest mb-3">
           Resource Vault
         </p>
         <h1 className="gradient-text text-4xl font-extrabold leading-tight mb-5 pb-1">
@@ -29,13 +29,13 @@ export default function AutomatedGhostComputerUsePage() {
         </div>
       </div>
 
-      <details className="mb-12 rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(124,105,199,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]">
+      <details className="mb-12 rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(139,121,212,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]">
         <summary className="flex items-center justify-between px-6 py-5 cursor-pointer select-none">
           <div className="flex items-center gap-3">
             <span className="h-2 w-2 rounded-full bg-[#9D8FE0] shadow-[0_0_12px_rgba(157,143,224,0.70)]" />
             <span className="text-xs uppercase tracking-[0.20em] text-[#FCF4EB]/65 font-semibold">Table of Contents</span>
           </div>
-          <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[rgba(124,105,199,0.15)] border border-[rgba(124,105,199,0.28)] text-[#9D8FE0]">
+          <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[rgba(139,121,212,0.15)] border border-[rgba(139,121,212,0.28)] text-[#9D8FE0]">
             <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
@@ -51,7 +51,7 @@ export default function AutomatedGhostComputerUsePage() {
             { href: '#practice', label: 'First Computer-Use Tasks' },
           ].map(({ href, label }, i) => (
             <li key={href} className="flex items-center gap-3 group/item">
-              <span className="number-glow flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold tabular-nums" style={{ background: 'rgba(124,105,199,0.18)', color: '#9D8FE0', border: '1.5px solid rgba(124,105,199,0.30)' }}>
+              <span className="number-glow flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold tabular-nums" style={{ background: 'rgba(139,121,212,0.18)', color: '#9D8FE0', border: '1.5px solid rgba(139,121,212,0.30)' }}>
                 {i + 1}
               </span>
               <a href={href} className="text-[#FCF4EB]/58 hover:text-[#9D8FE0] text-sm leading-snug transition-colors duration-150">{label}</a>
@@ -62,7 +62,7 @@ export default function AutomatedGhostComputerUsePage() {
 
       <section id="permissions" className="mb-16">
         <div className="mb-8">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Start Here</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Start Here</span>
           <h2 className="text-3xl font-bold text-[#FCF4EB] mt-3">Claude Dangerously Skip Permissions</h2>
         </div>
 
@@ -90,7 +90,7 @@ Before making changes:
 
       <section id="computer-use" className="mb-16">
         <div className="flex items-center gap-3 mb-8">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Setup</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Setup</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Computer-Use Setup</h2>
         </div>
 
@@ -141,7 +141,7 @@ Before making changes:
 
       <section id="practice" className="mb-16">
         <div className="flex items-center gap-3 mb-8">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Practice</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Practice</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">First Computer-Use Tasks</h2>
         </div>
 

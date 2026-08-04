@@ -25,9 +25,9 @@ export default function ToolPageTemplate() {
           Fill in: session number, page title
       ============================================================ */}
       <nav className="mb-10 text-sm flex items-center gap-2" style={{ color: 'rgba(252,244,235,0.4)' }}>
-        <Link href="/" className="hover:text-[#7C69C7] transition-colors">All Sessions</Link>
+        <Link href="/" className="hover:text-[#8B79D4] transition-colors">All Sessions</Link>
         <span>/</span>
-        <Link href="/session/[N]" className="hover:text-[#7C69C7] transition-colors">Session [N]</Link>
+        <Link href="/session/[N]" className="hover:text-[#8B79D4] transition-colors">Session [N]</Link>
         <span>/</span>
         <span style={{ color: 'rgba(252,244,235,0.6)' }}>[Page Title]</span>
       </nav>
@@ -37,7 +37,7 @@ export default function ToolPageTemplate() {
           Fill in: session number, h1, description
       ============================================================ */}
       <div className="mb-12">
-        <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#7C69C7' }}>
+        <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#8B79D4' }}>
           Session [N]
         </p>
         <h1 className="gradient-text text-4xl md:text-5xl font-extrabold leading-tight mb-4">

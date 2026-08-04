@@ -614,7 +614,7 @@ function NameCard({ displayName, photo, isSelected, onClick }: NameCardProps) {
       particleCount: 80,
       spread: 70,
       origin: { x: e.clientX / window.innerWidth, y: e.clientY / window.innerHeight },
-      colors: ['#7C69C7', '#9D8FE0', '#F5C3C6', '#FCF4EB'],
+      colors: ['#8B79D4', '#9D8FE0', '#F5C3C6', '#FCF4EB'],
     })
     onClick()
   }
@@ -627,7 +627,7 @@ function NameCard({ displayName, photo, isSelected, onClick }: NameCardProps) {
         className="w-16 h-16 rounded-full overflow-hidden transition-all"
         style={{
           border: isSelected ? '2px solid #9D8FE0' : '2px solid rgba(255,255,255,0.10)',
-          boxShadow: isSelected ? '0 0 0 3px rgba(124,105,199,0.25)' : 'none',
+          boxShadow: isSelected ? '0 0 0 3px rgba(139,121,212,0.25)' : 'none',
         }}
       >
         {photo ? (
@@ -639,7 +639,7 @@ function NameCard({ displayName, photo, isSelected, onClick }: NameCardProps) {
         ) : (
           <div
             className="w-full h-full flex items-center justify-center text-sm font-bold"
-            style={{ background: 'rgba(124,105,199,0.20)', color: '#9D8FE0' }}
+            style={{ background: 'rgba(139,121,212,0.20)', color: '#9D8FE0' }}
           >
             {initials}
           </div>
@@ -674,7 +674,7 @@ function Field({ label, value, onChange, placeholder, highlight, hint }: FieldPr
           {label}
         </label>
         {highlight && (
-          <span className="text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 rounded-full" style={{ background: 'rgba(124,105,199,0.18)', color: '#9D8FE0', border: '1px solid rgba(124,105,199,0.30)' }}>
+          <span className="text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 rounded-full" style={{ background: 'rgba(139,121,212,0.18)', color: '#9D8FE0', border: '1px solid rgba(139,121,212,0.30)' }}>
             Fill this in
           </span>
         )}
@@ -683,8 +683,8 @@ function Field({ label, value, onChange, placeholder, highlight, hint }: FieldPr
       <textarea
         className="w-full rounded-lg px-3 py-2.5 text-sm leading-relaxed resize-y"
         style={{
-          background: highlight ? 'rgba(124,105,199,0.08)' : 'rgba(255,255,255,0.04)',
-          border: highlight ? '1px solid rgba(124,105,199,0.35)' : '1px solid rgba(255,255,255,0.10)',
+          background: highlight ? 'rgba(139,121,212,0.08)' : 'rgba(255,255,255,0.04)',
+          border: highlight ? '1px solid rgba(139,121,212,0.35)' : '1px solid rgba(255,255,255,0.10)',
           color: 'rgba(252,244,235,0.85)',
           minHeight: '72px',
           outline: 'none',
@@ -759,16 +759,16 @@ export default function HookWriterPage() {
 
       {/* Breadcrumb */}
       <nav className="mb-10 text-sm flex items-center gap-2" style={{ color: 'rgba(252,244,235,0.4)' }}>
-        <Link href="/" className="hover:text-[#7C69C7] transition-colors">All Sessions</Link>
+        <Link href="/" className="hover:text-[#8B79D4] transition-colors">All Sessions</Link>
         <span>/</span>
-        <Link href="/session/6" className="hover:text-[#7C69C7] transition-colors">Session 6</Link>
+        <Link href="/session/6" className="hover:text-[#8B79D4] transition-colors">Session 6</Link>
         <span>/</span>
         <span style={{ color: 'rgba(252,244,235,0.6)' }}>Hook Writer: Part 1</span>
       </nav>
 
       {/* Header */}
       <div className="mb-12">
-        <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#7C69C7' }}>
+        <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#8B79D4' }}>
           Session 6
         </p>
         <h1 className="gradient-text text-4xl md:text-5xl font-extrabold leading-tight mb-4">
@@ -804,7 +804,7 @@ export default function HookWriterPage() {
           </p>
 
           {/* Stat callout */}
-          <div className="rounded-2xl p-6 flex gap-6 items-start" style={{ background: 'rgba(124,105,199,0.08)', border: '1px solid rgba(124,105,199,0.20)' }}>
+          <div className="rounded-2xl p-6 flex gap-6 items-start" style={{ background: 'rgba(139,121,212,0.08)', border: '1px solid rgba(139,121,212,0.20)' }}>
             <div className="shrink-0">
               <p className="text-5xl font-extrabold leading-none" style={{ color: '#9D8FE0' }}>3x</p>
             </div>
@@ -814,7 +814,7 @@ export default function HookWriterPage() {
           </div>
 
           {/* Quote */}
-          <blockquote className="pl-5 py-1" style={{ borderLeft: '3px solid rgba(124,105,199,0.5)' }}>
+          <blockquote className="pl-5 py-1" style={{ borderLeft: '3px solid rgba(139,121,212,0.5)' }}>
             <p className="text-base leading-relaxed mb-2" style={{ color: 'rgba(252,244,235,0.75)', fontStyle: 'italic' }}>
               "On average, five times as many people read the headline as read the body copy. When you have written your headline, you have spent eighty cents out of your dollar."
             </p>
@@ -836,7 +836,7 @@ export default function HookWriterPage() {
             <p className="text-sm leading-relaxed mb-5" style={{ color: 'rgba(252,244,235,0.45)', fontStyle: 'italic' }}>
               Psychology: The brain experiences an open information gap as mild discomfort and is driven to resolve it. Specific mystery works. Vague mystery does not.
             </p>
-            <div className="pl-4 space-y-1.5" style={{ borderLeft: '2px solid rgba(124,105,199,0.35)' }}>
+            <div className="pl-4 space-y-1.5" style={{ borderLeft: '2px solid rgba(139,121,212,0.35)' }}>
               <p className="text-base" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"The one question I stopped asking after 200 clients."</p>
               <p className="text-base" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"There are three words I never use in a sales call."</p>
               <p className="text-base" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"What my most successful client did differently in week one."</p>
@@ -852,7 +852,7 @@ export default function HookWriterPage() {
             <p className="text-sm leading-relaxed mb-5" style={{ color: 'rgba(252,244,235,0.45)', fontStyle: 'italic' }}>
               Psychology: The reticular activating system filters out predictable content automatically. A genuine contradiction forces the brain into alert mode before the viewer has consciously decided to watch.
             </p>
-            <div className="pl-4 space-y-1.5" style={{ borderLeft: '2px solid rgba(124,105,199,0.35)' }}>
+            <div className="pl-4 space-y-1.5" style={{ borderLeft: '2px solid rgba(139,121,212,0.35)' }}>
               <p className="text-base" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"Stop trying to find your niche. That is the wrong question."</p>
               <p className="text-base" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"The best session I ever ran, I cried the whole way through."</p>
               <p className="text-base" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"I charged less and signed more clients that same month."</p>
@@ -868,7 +868,7 @@ export default function HookWriterPage() {
             <p className="text-sm leading-relaxed mb-5" style={{ color: 'rgba(252,244,235,0.45)', fontStyle: 'italic' }}>
               Psychology: Kahneman's research shows humans weight potential losses more heavily than equivalent gains. A concrete, personally relevant loss activates attention faster than any promise of reward.
             </p>
-            <div className="pl-4 space-y-1.5" style={{ borderLeft: '2px solid rgba(124,105,199,0.35)' }}>
+            <div className="pl-4 space-y-1.5" style={{ borderLeft: '2px solid rgba(139,121,212,0.35)' }}>
               <p className="text-base" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"You are losing clients after session one and you do not know why."</p>
               <p className="text-base" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"Every week without a system is a week you are paying yourself last."</p>
               <p className="text-base" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"The content you posted last year is still working against you."</p>
@@ -884,7 +884,7 @@ export default function HookWriterPage() {
             <p className="text-sm leading-relaxed mb-5" style={{ color: 'rgba(252,244,235,0.45)', fontStyle: 'italic' }}>
               Psychology: Challenging an installed belief signals lived experience, not theory. It triggers the question in the viewer's mind: "Am I also wrong about this?" That question is almost impossible to scroll past.
             </p>
-            <div className="pl-4 space-y-1.5" style={{ borderLeft: '2px solid rgba(124,105,199,0.35)' }}>
+            <div className="pl-4 space-y-1.5" style={{ borderLeft: '2px solid rgba(139,121,212,0.35)' }}>
               <p className="text-base" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"I used to think consistency was the answer. I was wrong."</p>
               <p className="text-base" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"I spent three years helping people heal the wrong thing entirely."</p>
               <p className="text-base" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"I believed niching down would shrink my audience. The opposite happened."</p>
@@ -900,7 +900,7 @@ export default function HookWriterPage() {
             <p className="text-sm leading-relaxed mb-5" style={{ color: 'rgba(252,244,235,0.45)', fontStyle: 'italic' }}>
               Psychology: The brain elevates content that directly references the self above content that does not. Specificity amplifies this effect. "If you're a coach" is far weaker than naming the exact situation the person is already living.
             </p>
-            <div className="pl-4 space-y-1.5" style={{ borderLeft: '2px solid rgba(124,105,199,0.35)' }}>
+            <div className="pl-4 space-y-1.5" style={{ borderLeft: '2px solid rgba(139,121,212,0.35)' }}>
               <p className="text-base" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"If you are a healer doing everything manually, this is for you."</p>
               <p className="text-base" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"This is for the coach who is fully booked and still not making enough."</p>
               <p className="text-base" style={{ color: 'rgba(252,244,235,0.8)', fontStyle: 'italic' }}>"If you have been posting for a year and your audience is not growing, watch this."</p>
@@ -960,7 +960,7 @@ export default function HookWriterPage() {
           </div>
 
           {/* Section: Fill These In */}
-          <div className="rounded-2xl p-6 space-y-5" style={{ background: 'rgba(124,105,199,0.05)', border: '1px solid rgba(124,105,199,0.20)' }}>
+          <div className="rounded-2xl p-6 space-y-5" style={{ background: 'rgba(139,121,212,0.05)', border: '1px solid rgba(139,121,212,0.20)' }}>
             <div className="mb-2">
               <h2 className="text-base font-bold mb-1" style={{ color: '#9D8FE0' }}>Fill These In</h2>
               <p className="text-sm" style={{ color: 'rgba(252,244,235,0.4)' }}>These fields are what make the hooks sound like you. Take 5 minutes and fill them in before copying.</p>
@@ -1042,9 +1042,9 @@ export default function HookWriterPage() {
             className="w-full py-4 rounded-2xl text-base font-bold transition-all"
             style={{
               background: copied
-                ? 'rgba(124,105,199,0.25)'
-                : 'linear-gradient(135deg, rgba(124,105,199,0.85) 0%, rgba(157,143,224,0.85) 100%)',
-              border: copied ? '1px solid rgba(124,105,199,0.40)' : '1px solid rgba(157,143,224,0.50)',
+                ? 'rgba(139,121,212,0.25)'
+                : 'linear-gradient(135deg, rgba(139,121,212,0.85) 0%, rgba(157,143,224,0.85) 100%)',
+              border: copied ? '1px solid rgba(139,121,212,0.40)' : '1px solid rgba(157,143,224,0.50)',
               color: copied ? '#9D8FE0' : '#FCF4EB',
             }}
           >
@@ -1056,7 +1056,7 @@ export default function HookWriterPage() {
             <div className="space-y-4">
 
               {/* Assembled prompt */}
-              <div className="rounded-xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.08)', borderLeft: '2px solid #7C69C7' }}>
+              <div className="rounded-xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.08)', borderLeft: '2px solid #8B79D4' }}>
                 <div className="flex items-center justify-between px-4 py-2" style={{ background: 'rgba(255,255,255,0.04)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                   <span className="text-xs font-mono" style={{ color: 'rgba(252,244,235,0.4)' }}>Your Hook Lab Prompt</span>
                   <button
@@ -1073,12 +1073,12 @@ export default function HookWriterPage() {
               </div>
 
               {/* Terminal instructions — always visible once prompt is shown */}
-              <div className="rounded-xl p-5 space-y-4" style={{ background: 'rgba(124,105,199,0.08)', border: '1px solid rgba(124,105,199,0.20)' }}>
+              <div className="rounded-xl p-5 space-y-4" style={{ background: 'rgba(139,121,212,0.08)', border: '1px solid rgba(139,121,212,0.20)' }}>
                 <p className="text-sm font-semibold" style={{ color: '#9D8FE0' }}>Now paste it into Claude:</p>
                 <ol className="space-y-3 text-sm" style={{ color: 'rgba(252,244,235,0.75)' }}>
                   <li>
                     <span className="block mb-2">1. Open your terminal. On Mac, press <code className="px-1.5 py-0.5 rounded text-xs font-mono" style={{ background: 'rgba(255,255,255,0.08)', color: '#9D8FE0' }}>Cmd + Space</code>, type <code className="px-1.5 py-0.5 rounded text-xs font-mono" style={{ background: 'rgba(255,255,255,0.08)', color: '#9D8FE0' }}>Terminal</code>, hit Enter.</span>
-                    <div className="rounded-lg overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.08)', borderLeft: '2px solid #7C69C7' }}>
+                    <div className="rounded-lg overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.08)', borderLeft: '2px solid #8B79D4' }}>
                       <div className="flex items-center justify-between px-3 py-1.5" style={{ background: 'rgba(255,255,255,0.04)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                         <span className="text-xs font-mono" style={{ color: 'rgba(252,244,235,0.35)' }}>Terminal</span>
                       </div>
@@ -1166,7 +1166,7 @@ export default function HookWriterPage() {
             </li>
             <li>
               <span className="block mb-2">2. Run this command:</span>
-              <div className="rounded-lg overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.08)', borderLeft: '2px solid #7C69C7' }}>
+              <div className="rounded-lg overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.08)', borderLeft: '2px solid #8B79D4' }}>
                 <div className="flex items-center px-3 py-1.5" style={{ background: 'rgba(255,255,255,0.04)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                   <span className="text-xs font-mono" style={{ color: 'rgba(252,244,235,0.35)' }}>Terminal</span>
                 </div>
@@ -1190,7 +1190,7 @@ export default function HookWriterPage() {
           href="/session/6"
           className="inline-flex items-center gap-2 text-sm transition-colors"
           style={{ color: 'rgba(252,244,235,0.4)' }}
-          onMouseEnter={e => (e.currentTarget.style.color = '#7C69C7')}
+          onMouseEnter={e => (e.currentTarget.style.color = '#8B79D4')}
           onMouseLeave={e => (e.currentTarget.style.color = 'rgba(252,244,235,0.4)')}
         >
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">

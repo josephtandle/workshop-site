@@ -114,7 +114,7 @@ export default function EventRegistrationSection({
           </p>
         </div>
 
-        <div className="event-registration-shell rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(252,244,235,0.08),rgba(124,105,199,0.08))] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.26)] md:p-8">
+        <div className="event-registration-shell rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(252,244,235,0.08),rgba(139,121,212,0.08))] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.26)] md:p-8">
           <button
             type="button"
             disabled
@@ -543,7 +543,7 @@ export default function EventRegistrationSection({
                 setSuccessState(null)
                 window.location.href = event.successRedirect ?? `/events/${event.slug}/setup`
               }}
-              className="copy-button-glass copy-button-primary mt-5 inline-flex min-w-[220px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold shadow-[0_16px_38px_rgba(124,105,199,0.22)]"
+              className="copy-button-glass copy-button-primary mt-5 inline-flex min-w-[220px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold shadow-[0_16px_38px_rgba(139,121,212,0.22)]"
             >
               {event.successLabel ?? 'Start Account Setup'}
             </button>
@@ -564,7 +564,7 @@ export default function EventRegistrationSection({
         </p>
       </div>
 
-      <div className="event-registration-shell rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(252,244,235,0.08),rgba(124,105,199,0.08))] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.26)] md:p-8">
+      <div className="event-registration-shell rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(252,244,235,0.08),rgba(139,121,212,0.08))] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.26)] md:p-8">
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
           <form action={handleSubmit} autoComplete="off" className="grid gap-5">
             <div className="grid gap-5 md:grid-cols-2">
@@ -577,7 +577,7 @@ export default function EventRegistrationSection({
                     aria-label="Full name"
                     autoCapitalize="words"
                     autoComplete="off"
-                    className="event-registration-textarea h-16 w-full rounded-xl border border-black/10 bg-white px-4 pr-12 text-black placeholder:text-black/35 outline-none transition focus:border-[#7C69C7]/55"
+                    className="event-registration-textarea h-16 w-full rounded-xl border border-black/10 bg-white px-4 pr-12 text-black placeholder:text-black/35 outline-none transition focus:border-[#8B79D4]/55"
                     data-1p-ignore="true"
                     data-lpignore="true"
                     name="registrationFieldA"
@@ -598,7 +598,7 @@ export default function EventRegistrationSection({
                     aria-label="Email"
                     autoCapitalize="none"
                     autoComplete="off"
-                    className="event-registration-textarea h-16 w-full rounded-xl border border-black/10 bg-white px-4 pr-12 text-black placeholder:text-black/35 outline-none transition focus:border-[#7C69C7]/55"
+                    className="event-registration-textarea h-16 w-full rounded-xl border border-black/10 bg-white px-4 pr-12 text-black placeholder:text-black/35 outline-none transition focus:border-[#8B79D4]/55"
                     data-1p-ignore="true"
                     data-lpignore="true"
                     dir="ltr"
@@ -637,7 +637,7 @@ export default function EventRegistrationSection({
                   className={`w-full rounded-xl bg-white px-4 py-4 text-black placeholder:text-black/35 outline-none transition ${
                     fieldErrors.whatsappNumber
                       ? 'border-2 border-[#D9636F] ring-2 ring-[#D9636F]/25 focus:border-[#D9636F]'
-                      : 'border border-black/10 focus:border-[#7C69C7]/55'
+                      : 'border border-black/10 focus:border-[#8B79D4]/55'
                   }`}
                 />
                 {fieldErrors.whatsappNumber ? (
@@ -676,7 +676,7 @@ export default function EventRegistrationSection({
                   className={`w-full rounded-xl bg-white px-4 py-3 text-black placeholder:text-black/35 outline-none transition ${
                     fieldErrors.businessContext
                       ? 'border-2 border-[#D9636F] ring-2 ring-[#D9636F]/25 focus:border-[#D9636F]'
-                      : 'border border-black/10 focus:border-[#7C69C7]/55'
+                      : 'border border-black/10 focus:border-[#8B79D4]/55'
                   }`}
                 />
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
@@ -708,7 +708,7 @@ export default function EventRegistrationSection({
                 <span className="text-sm font-semibold text-[#FCF4EB]">
                   Donation amount <span className="font-normal text-[#FCF4EB]/55">(suggested: $10 — minimum: $0)</span>
                 </span>
-                <div className="flex items-center gap-0 rounded-xl border border-black/10 bg-white overflow-hidden focus-within:border-[#7C69C7]/55 transition w-48">
+                <div className="flex items-center gap-0 rounded-xl border border-black/10 bg-white overflow-hidden focus-within:border-[#8B79D4]/55 transition w-48">
                   <span className="pl-4 pr-1 text-black/55 font-semibold select-none">$</span>
                   <input
                     type="number"
@@ -749,7 +749,7 @@ export default function EventRegistrationSection({
                       setAppliedPromoCode(null)
                       setAppliedAmount(null)
                     }}
-                    className="rounded-xl border border-black/10 bg-white px-4 py-3 text-black placeholder:text-black/35 outline-none transition focus:border-[#7C69C7]/55"
+                    className="rounded-xl border border-black/10 bg-white px-4 py-3 text-black placeholder:text-black/35 outline-none transition focus:border-[#8B79D4]/55"
                     placeholder="Promo code"
                   />
                 </label>
@@ -774,7 +774,7 @@ export default function EventRegistrationSection({
               <button
                 type="submit"
                 disabled={isPending}
-                className="copy-button-glass copy-button-primary inline-flex min-w-[220px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold shadow-[0_16px_38px_rgba(124,105,199,0.22)] disabled:cursor-wait disabled:opacity-70"
+                className="copy-button-glass copy-button-primary inline-flex min-w-[220px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold shadow-[0_16px_38px_rgba(139,121,212,0.22)] disabled:cursor-wait disabled:opacity-70"
               >
                 {isPending ? 'Preparing...' : isFreeRegistration ? 'Register Free' : 'Continue To Checkout'}
               </button>

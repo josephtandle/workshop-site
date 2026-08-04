@@ -61,7 +61,7 @@ export default function LeadMagnetPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-8 bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
+            <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-8 bg-[#8B79D4]/15 text-[#9D8FE0] border border-[#8B79D4]/25">
               Free Download
             </span>
 
@@ -94,12 +94,12 @@ export default function LeadMagnetPage() {
                     onChange={e => setEmail(e.target.value)}
                     placeholder="Enter your email"
                     required
-                    className="flex-1 px-5 py-3.5 rounded-xl bg-white/[0.06] border border-white/[0.12] text-[#FCF4EB] placeholder:text-[#FCF4EB]/30 focus:outline-none focus:border-[#7C69C7]/60 focus:ring-1 focus:ring-[#7C69C7]/30 transition-all text-base"
+                    className="flex-1 px-5 py-3.5 rounded-xl bg-white/[0.06] border border-white/[0.12] text-[#FCF4EB] placeholder:text-[#FCF4EB]/30 focus:outline-none focus:border-[#8B79D4]/60 focus:ring-1 focus:ring-[#8B79D4]/30 transition-all text-base"
                   />
                   <button
                     type="submit"
                     disabled={loading}
-                    className="px-7 py-3.5 rounded-xl bg-[#7C69C7] hover:bg-[#6B5AB8] text-white font-semibold text-base transition-all duration-150 disabled:opacity-60 whitespace-nowrap"
+                    className="px-7 py-3.5 rounded-xl bg-[#8B79D4] hover:bg-[#6B5AB8] text-white font-semibold text-base transition-all duration-150 disabled:opacity-60 whitespace-nowrap"
                   >
                     {loading ? 'Sending...' : 'Get the PDF'}
                   </button>
@@ -110,8 +110,8 @@ export default function LeadMagnetPage() {
                 </p>
               </form>
             ) : (
-              <div className="max-w-md mx-auto bg-[#7C69C7]/10 border border-[#7C69C7]/30 rounded-2xl p-8">
-                <div className="w-12 h-12 rounded-full bg-[#7C69C7]/20 flex items-center justify-center mx-auto mb-4">
+              <div className="max-w-md mx-auto bg-[#8B79D4]/10 border border-[#8B79D4]/30 rounded-2xl p-8">
+                <div className="w-12 h-12 rounded-full bg-[#8B79D4]/20 flex items-center justify-center mx-auto mb-4">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9D8FE0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M20 6L9 17l-5-5" />
                   </svg>
@@ -144,7 +144,7 @@ export default function LeadMagnetPage() {
             { icon: '1', label: 'Question that cuts through the noise and gets to what matters' },
           ].map((item, i) => (
             <div key={i} className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-6">
-              <div className="w-10 h-10 rounded-full bg-[#7C69C7]/15 border border-[#7C69C7]/25 flex items-center justify-center mb-4">
+              <div className="w-10 h-10 rounded-full bg-[#8B79D4]/15 border border-[#8B79D4]/25 flex items-center justify-center mb-4">
                 <span className="text-[#9D8FE0] text-sm font-bold">{item.icon}</span>
               </div>
               <p className="text-[#FCF4EB]/70 text-sm leading-relaxed">{item.label}</p>
@@ -180,7 +180,7 @@ export default function LeadMagnetPage() {
         <div
           className="rounded-2xl p-8 sm:p-10 text-center"
           style={{
-            background: 'linear-gradient(135deg, rgba(245, 195, 198, 0.10) 0%, rgba(124, 105, 199, 0.08) 100%)',
+            background: 'linear-gradient(135deg, rgba(245, 195, 198, 0.10) 0%, rgba(139, 121, 212, 0.08) 100%)',
             border: '1px solid rgba(245, 195, 198, 0.15)',
           }}
         >
@@ -199,12 +199,12 @@ export default function LeadMagnetPage() {
                   onChange={e => setEmail(e.target.value)}
                   placeholder="Enter your email"
                   required
-                  className="flex-1 px-5 py-3.5 rounded-xl bg-white/[0.06] border border-white/[0.12] text-[#FCF4EB] placeholder:text-[#FCF4EB]/30 focus:outline-none focus:border-[#7C69C7]/60 focus:ring-1 focus:ring-[#7C69C7]/30 transition-all text-base"
+                  className="flex-1 px-5 py-3.5 rounded-xl bg-white/[0.06] border border-white/[0.12] text-[#FCF4EB] placeholder:text-[#FCF4EB]/30 focus:outline-none focus:border-[#8B79D4]/60 focus:ring-1 focus:ring-[#8B79D4]/30 transition-all text-base"
                 />
                 <button
                   type="submit"
                   disabled={loading}
-                  className="px-7 py-3.5 rounded-xl bg-[#7C69C7] hover:bg-[#6B5AB8] text-white font-semibold text-base transition-all duration-150 disabled:opacity-60 whitespace-nowrap"
+                  className="px-7 py-3.5 rounded-xl bg-[#8B79D4] hover:bg-[#6B5AB8] text-white font-semibold text-base transition-all duration-150 disabled:opacity-60 whitespace-nowrap"
                 >
                   {loading ? 'Sending...' : 'Get the PDF'}
                 </button>

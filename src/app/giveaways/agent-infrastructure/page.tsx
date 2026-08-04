@@ -259,11 +259,11 @@ export default function AgentInfrastructurePage() {
         .aurora-b { animation: aurora-drift-2 22s ease-in-out infinite; }
         .glow-card { transition: box-shadow 0.3s ease, border-color 0.3s ease; }
         .glow-card:hover {
-          box-shadow: 0 0 28px rgba(124,105,199,0.12), 0 0 0 1px rgba(124,105,199,0.18);
-          border-color: rgba(124,105,199,0.22) !important;
+          box-shadow: 0 0 28px rgba(139,121,212,0.12), 0 0 0 1px rgba(139,121,212,0.18);
+          border-color: rgba(139,121,212,0.22) !important;
         }
         .glow-btn { transition: box-shadow 0.2s ease, transform 0.1s ease-out; }
-        .glow-btn:hover { box-shadow: 0 0 32px rgba(124,105,199,0.45), 0 0 60px rgba(124,105,199,0.2); }
+        .glow-btn:hover { box-shadow: 0 0 32px rgba(139,121,212,0.45), 0 0 60px rgba(139,121,212,0.2); }
       `}</style>
 
       <div className="bg-[#151515] text-[#FCF4EB] overflow-x-hidden" style={{ minHeight: '100vh' }}>
@@ -308,7 +308,7 @@ export default function AgentInfrastructurePage() {
 
           <div className="relative z-10 max-w-4xl mx-auto">
             <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#7C69C7] mb-5">
+              className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#8B79D4] mb-5">
               Joe Che&apos;s APRIL Resource
             </motion.p>
 
@@ -357,7 +357,7 @@ export default function AgentInfrastructurePage() {
         <section className="relative max-w-3xl mx-auto px-6 pb-16" style={{ zIndex: 1 }}>
           <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="rounded-2xl p-8 sm:p-10"
-            style={{ background: 'linear-gradient(135deg, rgba(124,105,199,0.07) 0%, rgba(157,143,224,0.04) 100%)', border: '1px solid rgba(124,105,199,0.14)' }}>
+            style={{ background: 'linear-gradient(135deg, rgba(139,121,212,0.07) 0%, rgba(157,143,224,0.04) 100%)', border: '1px solid rgba(139,121,212,0.14)' }}>
             <p className="text-[#FCF4EB]/65 text-base leading-relaxed mb-4">
               Most people stop at the agent layer. They build ten agents, maybe twenty, and then wonder why the system feels like it is getting harder to manage instead of easier.
             </p>
@@ -391,12 +391,12 @@ export default function AgentInfrastructurePage() {
                   className="w-full flex items-start gap-5 px-7 py-6 text-left hover:bg-white/[0.025] transition-colors"
                 >
                   <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center mt-0.5"
-                    style={{ background: 'rgba(124,105,199,0.15)', border: '1.5px solid rgba(124,105,199,0.3)' }}>
+                    style={{ background: 'rgba(139,121,212,0.15)', border: '1.5px solid rgba(139,121,212,0.3)' }}>
                     <span className="text-[#9D8FE0] text-sm font-bold">{section.icon}</span>
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-3 mb-1 flex-wrap">
-                      <span className="text-[10px] font-bold text-[#7C69C7]/60 font-mono tracking-widest">{section.number}</span>
+                      <span className="text-[10px] font-bold text-[#8B79D4]/60 font-mono tracking-widest">{section.number}</span>
                       <span className="text-[#FCF4EB] font-semibold text-base leading-snug">{section.title}</span>
                     </div>
                     <p className="text-[#FCF4EB]/40 text-sm leading-relaxed">{section.tagline}</p>
@@ -448,10 +448,10 @@ export default function AgentInfrastructurePage() {
         <section className="relative max-w-4xl mx-auto px-6 pb-20" style={{ zIndex: 1 }}>
           <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="rounded-2xl overflow-hidden"
-            style={{ background: 'linear-gradient(135deg, rgba(245,195,198,0.07) 0%, rgba(124,105,199,0.06) 100%)', border: '1px solid rgba(245,195,198,0.12)' }}>
+            style={{ background: 'linear-gradient(135deg, rgba(245,195,198,0.07) 0%, rgba(139,121,212,0.06) 100%)', border: '1px solid rgba(245,195,198,0.12)' }}>
             <div className="px-8 sm:px-12 py-10">
               <div className="text-center mb-8">
-                <span className="inline-block text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 bg-[#7C69C7]/12 text-[#9D8FE0] border border-[#7C69C7]/22">
+                <span className="inline-block text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 bg-[#8B79D4]/12 text-[#9D8FE0] border border-[#8B79D4]/22">
                   The Full Stack
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-bold text-[#FCF4EB]">
@@ -469,7 +469,7 @@ export default function AgentInfrastructurePage() {
                 ].map((item) => (
                   <div key={item.label} className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center mt-0.5"
-                      style={{ background: 'rgba(124,105,199,0.15)', border: '1px solid rgba(124,105,199,0.25)' }}>
+                      style={{ background: 'rgba(139,121,212,0.15)', border: '1px solid rgba(139,121,212,0.25)' }}>
                       <div className="w-1.5 h-1.5 rounded-full bg-[#9D8FE0]" />
                     </div>
                     <div>
@@ -489,9 +489,9 @@ export default function AgentInfrastructurePage() {
         <section className="relative max-w-4xl mx-auto px-6 pb-20" style={{ zIndex: 1 }}>
           <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="rounded-2xl overflow-hidden text-center"
-            style={{ background: 'linear-gradient(135deg, rgba(124,105,199,0.10) 0%, rgba(245,195,198,0.08) 100%)', border: '1px solid rgba(124,105,199,0.18)' }}>
+            style={{ background: 'linear-gradient(135deg, rgba(139,121,212,0.10) 0%, rgba(245,195,198,0.08) 100%)', border: '1px solid rgba(139,121,212,0.18)' }}>
             <div className="px-6 sm:px-14 py-12">
-              <p className="text-[11px] font-bold uppercase tracking-widest text-[#7C69C7] mb-4">Go deeper</p>
+              <p className="text-[11px] font-bold uppercase tracking-widest text-[#8B79D4] mb-4">Go deeper</p>
               <h2 className="text-2xl sm:text-4xl font-bold text-[#FCF4EB] mb-4">
                 This is what we build in the Mastermind.
               </h2>
@@ -513,7 +513,7 @@ export default function AgentInfrastructurePage() {
                 rel="noopener noreferrer"
                 onMouseMove={magnet.onMouseMove}
                 onMouseLeave={magnet.onMouseLeave}
-                className="inline-block px-10 py-4 rounded-xl bg-[#7C69C7] hover:bg-[#6e5db8] text-[#FCF4EB] font-bold text-base glow-btn"
+                className="inline-block px-10 py-4 rounded-xl bg-[#8B79D4] hover:bg-[#6e5db8] text-[#FCF4EB] font-bold text-base glow-btn"
               >
                 Learn More
               </a>

@@ -121,7 +121,7 @@ export function buildEventFollowupEmailHtml(
 
   return `
     <div style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f6f2ff; margin: 0; padding: 32px 16px; color: #1a1a1a;">
-      <div style="max-width: 640px; margin: 0 auto; background: #ffffff; border-radius: 22px; overflow: hidden; border: 1px solid rgba(124, 105, 199, 0.12);">
+      <div style="max-width: 640px; margin: 0 auto; background: #ffffff; border-radius: 22px; overflow: hidden; border: 1px solid rgba(139, 121, 212, 0.12);">
         <div style="padding: 34px 32px 8px;">
           <h1 style="margin: 0; font-size: 26px; line-height: 1.15; font-weight: 800; color: #1a1a1a;">
             ${copy.headline}
@@ -138,7 +138,7 @@ export function buildEventFollowupEmailHtml(
         </div>
 
         <div style="padding: 24px 32px 8px;">
-          <a href="${copy.invitationUrl}" style="display: inline-block; background: #7C69C7; color: #ffffff; text-decoration: none; font-weight: 700; font-size: 15px; padding: 13px 24px; border-radius: 999px;">
+          <a href="${copy.invitationUrl}" style="display: inline-block; background: #8B79D4; color: #ffffff; text-decoration: none; font-weight: 700; font-size: 15px; padding: 13px 24px; border-radius: 999px;">
             ${copy.invitationLabel}
           </a>
         </div>

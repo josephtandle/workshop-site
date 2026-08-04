@@ -7,7 +7,7 @@ import StickyVideoPlayer from '@/components/StickyVideoPlayer'
 import { celebrate } from '@/lib/celebrate'
 
 const TOC_PANEL_CLASS =
-  'rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(124,105,199,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]'
+  'rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(139,121,212,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]'
 
 const FEATURE_CARD_CLASS =
   'relative overflow-hidden rounded-[24px] border border-white/[0.10] bg-[linear-gradient(145deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] p-5 shadow-[0_16px_42px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.04)]'
@@ -19,7 +19,7 @@ export default function Session7Guide() {
 
         {/* Page Header */}
         <div className="mb-10">
-          <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
+          <p className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest mb-3">
             Session Seven
           </p>
           <h1 className="gradient-text text-5xl font-extrabold leading-tight mb-5 pb-1">
@@ -55,7 +55,7 @@ export default function Session7Guide() {
                 <span className="h-2 w-2 rounded-full bg-[#9D8FE0] shadow-[0_0_12px_rgba(157,143,224,0.70)]" />
                 <span className="text-xs uppercase tracking-[0.20em] text-[#FCF4EB]/65 font-semibold">Table of Contents</span>
               </div>
-              <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[rgba(124,105,199,0.15)] border border-[rgba(124,105,199,0.28)] text-[#9D8FE0]">
+              <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[rgba(139,121,212,0.15)] border border-[rgba(139,121,212,0.28)] text-[#9D8FE0]">
                 <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                   <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -94,7 +94,7 @@ export default function Session7Guide() {
 
         {/* Always start with dangerously-skip-permissions */}
         <div className={FEATURE_CARD_CLASS + ' mb-10'}>
-          <div className="pointer-events-none absolute -right-10 top-[-28px] h-24 w-24 rounded-full bg-[#7C69C7]/10 blur-2xl" />
+          <div className="pointer-events-none absolute -right-10 top-[-28px] h-24 w-24 rounded-full bg-[#8B79D4]/10 blur-2xl" />
           <p className="text-[#FCF4EB] font-semibold text-sm mb-2">Always start Claude Code this way</p>
           <p className="text-[#FCF4EB]/60 text-sm leading-relaxed mb-3">
             Every time you open Claude Code, use this command instead of just typing{' '}
@@ -134,7 +134,7 @@ export default function Session7Guide() {
             <ProTip type="tip">
               If you run into any issues during install, make sure Node.js is installed on your
               machine first. You would have done this in Session 2. If not, go to{' '}
-              <a href="https://nodejs.org" target="_blank" rel="noopener" className="text-[#7C69C7] hover:underline">nodejs.org</a>{' '}
+              <a href="https://nodejs.org" target="_blank" rel="noopener" className="text-[#8B79D4] hover:underline">nodejs.org</a>{' '}
               and install the LTS version before running the command above.
             </ProTip>
           </StepCard>
@@ -170,9 +170,9 @@ Deploy when you're done.`}
               href="http://localhost:3000"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 bg-white/[0.05] border border-white/[0.10] hover:border-[#7C69C7]/50 rounded-xl px-5 py-4 transition-all duration-150 group mb-4"
+              className="flex items-center gap-3 bg-white/[0.05] border border-white/[0.10] hover:border-[#8B79D4]/50 rounded-xl px-5 py-4 transition-all duration-150 group mb-4"
             >
-              <div className="w-9 h-9 rounded-full bg-[#7C69C7]/20 border border-[#7C69C7]/40 flex items-center justify-center flex-shrink-0">
+              <div className="w-9 h-9 rounded-full bg-[#8B79D4]/20 border border-[#8B79D4]/40 flex items-center justify-center flex-shrink-0">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <rect x="2" y="3" width="12" height="9" rx="1.5" stroke="#9D8FE0" strokeWidth="1.5"/>
                   <path d="M5 13h6" stroke="#9D8FE0" strokeWidth="1.5" strokeLinecap="round"/>
@@ -187,7 +187,7 @@ Deploy when you're done.`}
                   localhost:3000
                 </p>
               </div>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="flex-shrink-0 text-[#FCF4EB]/30 group-hover:text-[#7C69C7] transition-colors">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="flex-shrink-0 text-[#FCF4EB]/30 group-hover:text-[#8B79D4] transition-colors">
                 <path d="M2.5 11.5l9-9M5 2.5h6.5v6.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </a>
@@ -299,9 +299,9 @@ How the two-level loading works:
               },
             ].map((col) => (
               <div key={col.name} className={FEATURE_CARD_CLASS}>
-                <div className="pointer-events-none absolute -right-10 top-[-28px] h-24 w-24 rounded-full bg-[#7C69C7]/10 blur-2xl" />
+                <div className="pointer-events-none absolute -right-10 top-[-28px] h-24 w-24 rounded-full bg-[#8B79D4]/10 blur-2xl" />
                 <div className="flex items-center gap-3 mb-2">
-                  <span className="inline-block px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider bg-[#7C69C7]/20 text-[#7C69C7] border border-[#7C69C7]/30">
+                  <span className="inline-block px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider bg-[#8B79D4]/20 text-[#8B79D4] border border-[#8B79D4]/30">
                     {col.name}
                   </span>
                 </div>
@@ -474,7 +474,7 @@ How the two-level loading works:
           </p>
 
           <div className={FEATURE_CARD_CLASS + ' mb-6'}>
-            <div className="pointer-events-none absolute -right-10 top-[-28px] h-24 w-24 rounded-full bg-[#7C69C7]/10 blur-2xl" />
+            <div className="pointer-events-none absolute -right-10 top-[-28px] h-24 w-24 rounded-full bg-[#8B79D4]/10 blur-2xl" />
             <p className="text-[#FCF4EB] font-semibold text-sm mb-3">How the AI column works</p>
             <p className="text-[#FCF4EB]/70 text-sm leading-relaxed mb-4">
               In Session 8, you will wire Claude into Mission Control so it watches the AI
@@ -609,7 +609,7 @@ Save the results as competitor-research.md on my Desktop. Use one section per co
             </p>
 
             <div className="bg-white/[0.04] border border-white/[0.08] rounded-2xl p-8 mb-8">
-              <p className="text-[#7C69C7] text-xs font-semibold uppercase tracking-widest mb-3">Support Each Other</p>
+              <p className="text-[#8B79D4] text-xs font-semibold uppercase tracking-widest mb-3">Support Each Other</p>
               <h3 className="text-xl font-bold text-[#FCF4EB] mb-3">Post in the Masterminds group</h3>
               <p className="text-[#FCF4EB]/70 leading-relaxed mb-6">
                 Share a screenshot of your Mission Control board in the group. Everyone gets
@@ -617,8 +617,8 @@ Save the results as competitor-research.md on my Desktop. Use one section per co
               </p>
               <div className="space-y-4">
                 <div className="flex gap-4 items-start">
-                  <div className="w-8 h-8 rounded-full bg-[#7C69C7]/20 border border-[#7C69C7]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-[#7C69C7] text-sm font-bold">1</span>
+                  <div className="w-8 h-8 rounded-full bg-[#8B79D4]/20 border border-[#8B79D4]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-[#8B79D4] text-sm font-bold">1</span>
                   </div>
                   <div>
                     <p className="text-[#FCF4EB] font-semibold text-sm mb-1">Share your board screenshot</p>
@@ -629,8 +629,8 @@ Save the results as competitor-research.md on my Desktop. Use one section per co
                   </div>
                 </div>
                 <div className="flex gap-4 items-start">
-                  <div className="w-8 h-8 rounded-full bg-[#7C69C7]/20 border border-[#7C69C7]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-[#7C69C7] text-sm font-bold">2</span>
+                  <div className="w-8 h-8 rounded-full bg-[#8B79D4]/20 border border-[#8B79D4]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-[#8B79D4] text-sm font-bold">2</span>
                   </div>
                   <div>
                     <p className="text-[#FCF4EB] font-semibold text-sm mb-1">Share your AI column task idea</p>
@@ -642,8 +642,8 @@ Save the results as competitor-research.md on my Desktop. Use one section per co
                   </div>
                 </div>
                 <div className="flex gap-4 items-start">
-                  <div className="w-8 h-8 rounded-full bg-[#7C69C7]/20 border border-[#7C69C7]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-[#7C69C7] text-sm font-bold">3</span>
+                  <div className="w-8 h-8 rounded-full bg-[#8B79D4]/20 border border-[#8B79D4]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-[#8B79D4] text-sm font-bold">3</span>
                   </div>
                   <div>
                     <p className="text-[#FCF4EB] font-semibold text-sm mb-1">Review someone else&rsquo;s card</p>
@@ -656,8 +656,8 @@ Save the results as competitor-research.md on my Desktop. Use one section per co
               </div>
             </div>
 
-            <div className="border border-[#7C69C7]/50 bg-[#7C69C7]/[0.08] rounded-xl p-6">
-              <p className="text-[#7C69C7] text-xs font-semibold uppercase tracking-widest mb-3">Challenge</p>
+            <div className="border border-[#8B79D4]/50 bg-[#8B79D4]/[0.08] rounded-xl p-6">
+              <p className="text-[#8B79D4] text-xs font-semibold uppercase tracking-widest mb-3">Challenge</p>
               <p className="text-[#FCF4EB]/80 leading-relaxed">
                 Before the next session, move your existing to-do list into Mission Control. Every
                 task that is in your head, in a notes app, or in a spreadsheet right now belongs on

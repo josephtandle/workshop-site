@@ -15,7 +15,7 @@ export default function WordPressAPIPage() {
 
       {/* Page header */}
       <div className="mb-14">
-        <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
+        <p className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest mb-3">
           Resource Vault
         </p>
         <h1 className="gradient-text text-4xl font-extrabold leading-tight mb-5 pb-1">
@@ -44,7 +44,7 @@ export default function WordPressAPIPage() {
       {/* Part A */}
       <section className="mb-16">
         <div className="flex items-center gap-3 mb-8">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Part A</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Part A</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Get Your API Key</h2>
         </div>
 
@@ -63,7 +63,7 @@ export default function WordPressAPIPage() {
               href="https://make.wordpress.org/core/2020/11/05/application-passwords-integration-guide/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors underline underline-offset-2"
+              className="text-[#8B79D4] hover:text-[#9D8FE0] transition-colors underline underline-offset-2"
             >
               Read the official WordPress Application Passwords guide
             </Link>{' '}
@@ -101,9 +101,9 @@ export default function WordPressAPIPage() {
                 <span
                   className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold"
                   style={{
-                    background: 'rgba(124, 105, 199, 0.15)',
+                    background: 'rgba(139, 121, 212, 0.15)',
                     color: '#9D8FE0',
-                    border: '1px solid rgba(124, 105, 199, 0.30)',
+                    border: '1px solid rgba(139, 121, 212, 0.30)',
                   }}
                 >
                   {i + 1}
@@ -140,7 +140,7 @@ Application Password: [PASTE-THE-PASSWORD-HERE]`}
       {/* Part B */}
       <section className="mb-16">
         <div className="flex items-center gap-3 mb-8">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Part B</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Part B</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Connect Claude Code</h2>
         </div>
 
@@ -193,7 +193,7 @@ Organize everything inside a ~/wordpress-backup/ folder. Show me what you downlo
           <div
             className="rounded-2xl p-8 mb-10"
             style={{
-              background: 'linear-gradient(135deg, rgba(245, 195, 198, 0.14) 0%, rgba(124, 105, 199, 0.10) 100%)',
+              background: 'linear-gradient(135deg, rgba(245, 195, 198, 0.14) 0%, rgba(139, 121, 212, 0.10) 100%)',
               border: '1px solid rgba(245, 195, 198, 0.22)',
             }}
           >
@@ -234,7 +234,7 @@ Organize everything inside a ~/wordpress-backup/ folder. Show me what you downlo
                 key={item.label}
                 className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-5"
               >
-                <p className="text-[#7C69C7] text-xs font-semibold uppercase tracking-widest mb-2">
+                <p className="text-[#8B79D4] text-xs font-semibold uppercase tracking-widest mb-2">
                   {item.label}
                 </p>
                 <p className="text-[#FCF4EB]/70 text-sm leading-relaxed font-mono bg-white/[0.04] rounded-lg p-3 mt-2">

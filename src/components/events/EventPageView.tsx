@@ -90,7 +90,7 @@ function ChecklistSection({ section }: { section: Extract<EventSection, { type: 
             className="card-hover card-shimmer group rounded-[1.6rem] border border-white/10 bg-white/[0.04] p-5 shadow-[0_20px_56px_rgba(0,0,0,0.22)] md:flex md:items-center md:gap-6 md:p-6"
           >
             <div className="mb-4 flex items-center gap-3 md:mb-0">
-              <div className="number-glow flex h-14 w-14 items-center justify-center rounded-full border border-[#7C69C7]/38 bg-[rgba(18,10,44,0.88)] text-lg font-bold tracking-tight text-[#FCF4EB] shadow-[0_0_0_6px_rgba(124,105,199,0.12),0_0_30px_rgba(124,105,199,0.28)] md:h-16 md:w-16 md:text-xl">
+              <div className="number-glow flex h-14 w-14 items-center justify-center rounded-full border border-[#8B79D4]/38 bg-[rgba(18,10,44,0.88)] text-lg font-bold tracking-tight text-[#FCF4EB] shadow-[0_0_0_6px_rgba(139,121,212,0.12),0_0_30px_rgba(139,121,212,0.28)] md:h-16 md:w-16 md:text-xl">
                 {String(index + 1).padStart(2, '0')}
               </div>
             </div>
@@ -403,7 +403,7 @@ function CtaSection({
 }) {
   return (
     <SectionShell eyebrow={section.eyebrow} title={section.title} sectionId={section.id}>
-      <div className="grid gap-6 rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(252,244,235,0.08),rgba(124,105,199,0.08))] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.26)] md:p-8">
+      <div className="grid gap-6 rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(252,244,235,0.08),rgba(139,121,212,0.08))] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.26)] md:p-8">
         <div>
           <p className="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">{section.body}</p>
           {event.pricing.promoFieldHint ? (
@@ -613,10 +613,10 @@ export default function EventPageView({
             <div className="mt-4 flex flex-wrap gap-3">
               <div className="flex flex-col gap-2">
                 {eventEnded ? (
-                  <EndedButton className="copy-button-glass copy-button-primary inline-flex min-w-[220px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold shadow-[0_16px_38px_rgba(124,105,199,0.22)]" />
+                  <EndedButton className="copy-button-glass copy-button-primary inline-flex min-w-[220px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold shadow-[0_16px_38px_rgba(139,121,212,0.22)]" />
                 ) : (
                   <ScrollToRegisterButton
-                    className="copy-button-glass copy-button-primary inline-flex min-w-[220px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold shadow-[0_16px_38px_rgba(124,105,199,0.22)]"
+                    className="copy-button-glass copy-button-primary inline-flex min-w-[220px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold shadow-[0_16px_38px_rgba(139,121,212,0.22)]"
                   >
                     {event.ctaLabel ?? 'Buy Ticket'}
                   </ScrollToRegisterButton>
@@ -631,7 +631,7 @@ export default function EventPageView({
           </Reveal>
 
           <Reveal delay={5}>
-            <aside className={`mt-6 overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(160deg,rgba(252,244,235,0.08),rgba(124,105,199,0.12))] shadow-[0_28px_80px_rgba(0,0,0,0.28)] ${event.heroVideoSrc ? 'mx-auto w-full sm:max-w-[75%] lg:max-w-[30%]' : ''}`}>
+            <aside className={`mt-6 overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(160deg,rgba(252,244,235,0.08),rgba(139,121,212,0.12))] shadow-[0_28px_80px_rgba(0,0,0,0.28)] ${event.heroVideoSrc ? 'mx-auto w-full sm:max-w-[75%] lg:max-w-[30%]' : ''}`}>
               <div className={`relative overflow-hidden border-b border-white/10 ${event.heroVideoSrc ? 'aspect-[9/16]' : 'aspect-[16/9]'}`}>
                 {heroMedia}
               </div>

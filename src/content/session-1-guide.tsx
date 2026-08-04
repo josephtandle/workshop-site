@@ -9,7 +9,7 @@ export default function Session1Guide() {
 
       {/* Page Header */}
       <div className="mb-10">
-        <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
+        <p className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest mb-3">
           Session One
         </p>
         <h1 className="gradient-text text-5xl font-extrabold leading-tight mb-5 pb-1">
@@ -29,19 +29,19 @@ export default function Session1Guide() {
           <p className="text-[#FCF4EB]/50 text-xs uppercase tracking-widest mb-4 font-semibold">What We Covered</p>
           <ul className="space-y-2">
             <li className="flex gap-2 text-sm text-[#FCF4EB]/70">
-              <span className="text-[#7C69C7] flex-shrink-0">1.</span>
+              <span className="text-[#8B79D4] flex-shrink-0">1.</span>
               <span>Introductions and what each member is building</span>
             </li>
             <li className="flex gap-2 text-sm text-[#FCF4EB]/70">
-              <span className="text-[#7C69C7] flex-shrink-0">2.</span>
+              <span className="text-[#8B79D4] flex-shrink-0">2.</span>
               <span>Group agreements and how the Mastermind works</span>
             </li>
             <li className="flex gap-2 text-sm text-[#FCF4EB]/70">
-              <span className="text-[#7C69C7] flex-shrink-0">3.</span>
+              <span className="text-[#8B79D4] flex-shrink-0">3.</span>
               <span>The mindset shift: building with AI as your co-founder</span>
             </li>
             <li className="flex gap-2 text-sm text-[#FCF4EB]/70">
-              <span className="text-[#7C69C7] flex-shrink-0">4.</span>
+              <span className="text-[#8B79D4] flex-shrink-0">4.</span>
               <span>What to expect over the next six sessions</span>
             </li>
           </ul>
@@ -69,23 +69,23 @@ export default function Session1Guide() {
           </p>
 
           <div className="bg-white/[0.04] border border-white/[0.08] rounded-2xl p-8 mb-8">
-            <p className="text-[#7C69C7] text-xs font-semibold uppercase tracking-widest mb-3">Action Items</p>
+            <p className="text-[#8B79D4] text-xs font-semibold uppercase tracking-widest mb-3">Action Items</p>
             <div className="space-y-4">
               <div className="flex gap-4 items-start">
-                <div className="w-8 h-8 rounded-full bg-[#7C69C7]/20 border border-[#7C69C7]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span className="text-[#7C69C7] text-sm font-bold">1</span>
+                <div className="w-8 h-8 rounded-full bg-[#8B79D4]/20 border border-[#8B79D4]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span className="text-[#8B79D4] text-sm font-bold">1</span>
                 </div>
                 <div>
                   <p className="text-[#FCF4EB] font-semibold text-sm mb-1">Complete the prep requirements</p>
                   <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
                     Set up your Claude Pro account and Vercel account. Takes about 5 minutes.
-                    Go to the <a href="/session/1/prep" className="text-[#7C69C7] hover:underline">Prep Requirements</a> page if you have not done this yet.
+                    Go to the <a href="/session/1/prep" className="text-[#8B79D4] hover:underline">Prep Requirements</a> page if you have not done this yet.
                   </p>
                 </div>
               </div>
               <div className="flex gap-4 items-start">
-                <div className="w-8 h-8 rounded-full bg-[#7C69C7]/20 border border-[#7C69C7]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span className="text-[#7C69C7] text-sm font-bold">2</span>
+                <div className="w-8 h-8 rounded-full bg-[#8B79D4]/20 border border-[#8B79D4]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span className="text-[#8B79D4] text-sm font-bold">2</span>
                 </div>
                 <div>
                   <p className="text-[#FCF4EB] font-semibold text-sm mb-1">Introduce yourself in the group</p>
@@ -97,10 +97,10 @@ export default function Session1Guide() {
             </div>
           </div>
 
-          <div className="border border-[#7C69C7]/50 bg-[#7C69C7]/[0.08] rounded-xl p-6">
-            <p className="text-[#7C69C7] text-xs font-semibold uppercase tracking-widest mb-3">Up Next</p>
+          <div className="border border-[#8B79D4]/50 bg-[#8B79D4]/[0.08] rounded-xl p-6">
+            <p className="text-[#8B79D4] text-xs font-semibold uppercase tracking-widest mb-3">Up Next</p>
             <p className="text-[#FCF4EB]/80 leading-relaxed">
-              <a href="/session/2" className="text-[#7C69C7] hover:underline font-semibold">Session 2: Building Your First Web Page with AI</a>
+              <a href="/session/2" className="text-[#8B79D4] hover:underline font-semibold">Session 2: Building Your First Web Page with AI</a>
               {' '}. You will go from zero to a live personal brand website in under two hours.
             </p>
           </div>

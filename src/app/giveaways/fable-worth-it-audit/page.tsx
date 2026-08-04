@@ -266,11 +266,11 @@ export default function FableWorthItAuditPage() {
         .aurora-b { animation: aurora-drift-2 20s ease-in-out infinite; }
         .glow-card { transition: box-shadow 0.3s ease, border-color 0.3s ease; }
         .glow-card:hover {
-          box-shadow: 0 0 28px rgba(124, 105, 199, 0.12), 0 0 0 1px rgba(124, 105, 199, 0.18);
-          border-color: rgba(124, 105, 199, 0.22) !important;
+          box-shadow: 0 0 28px rgba(139, 121, 212, 0.12), 0 0 0 1px rgba(139, 121, 212, 0.18);
+          border-color: rgba(139, 121, 212, 0.22) !important;
         }
         .glow-btn { transition: box-shadow 0.2s ease, background-color 0.15s ease, transform 0.1s ease-out; }
-        .glow-btn:hover { box-shadow: 0 0 32px rgba(124, 105, 199, 0.45), 0 0 60px rgba(124, 105, 199, 0.2); }
+        .glow-btn:hover { box-shadow: 0 0 32px rgba(139, 121, 212, 0.45), 0 0 60px rgba(139, 121, 212, 0.2); }
         .fable-meter { width: ${score}%; }
       `}</style>
 
@@ -341,7 +341,7 @@ export default function FableWorthItAuditPage() {
                 <span className="text-[#FCF4EB]/50 text-sm">◇</span>
                 <span className="text-[#FCF4EB]/75 text-sm font-medium">Sonnet for minutes</span>
               </div>
-              <div className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/[0.05] border border-[#7C69C7]/35">
+              <div className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/[0.05] border border-[#8B79D4]/35">
                 <span className="text-[#9D8FE0] text-sm">◆</span>
                 <span className="text-[#FCF4EB]/75 text-sm font-medium">Fable for days saved</span>
               </div>
@@ -353,7 +353,7 @@ export default function FableWorthItAuditPage() {
 
         <section className="max-w-5xl mx-auto px-6 py-14">
           <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
-            <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
+            <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 bg-[#8B79D4]/15 text-[#9D8FE0] border border-[#8B79D4]/25">
               Start here
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#FCF4EB] mb-4">The Fable Worth-It Audit</h2>
@@ -382,11 +382,11 @@ export default function FableWorthItAuditPage() {
               </div>
             </div>
 
-            <div className="glow-card bg-white/[0.04] border border-[#7C69C7]/25 rounded-2xl p-6 sm:p-8">
+            <div className="glow-card bg-white/[0.04] border border-[#8B79D4]/25 rounded-2xl p-6 sm:p-8">
               <div className="text-[#FCF4EB]/32 text-xs uppercase tracking-widest mb-3">Worth-it score</div>
               <div className="text-7xl font-extrabold text-[#9D8FE0] mb-4 tabular-nums">{score}</div>
               <div className="h-3 rounded-full bg-white/[0.08] overflow-hidden mb-6">
-                <div className="fable-meter h-full rounded-full bg-gradient-to-r from-[#7C69C7] to-[#F5C3C6]" />
+                <div className="fable-meter h-full rounded-full bg-gradient-to-r from-[#8B79D4] to-[#F5C3C6]" />
               </div>
               <h3 className="text-2xl font-bold text-[#FCF4EB] mb-3">{verdict.title}</h3>
               <p className="text-[#FCF4EB]/48 text-sm leading-relaxed mb-6">{verdict.body}</p>
@@ -409,8 +409,8 @@ export default function FableWorthItAuditPage() {
             viewport={{ once: true }}
             className="rounded-2xl overflow-hidden"
             style={{
-              background: 'linear-gradient(135deg, rgba(124,105,199,0.07) 0%, rgba(245,195,198,0.05) 100%)',
-              border: '1px solid rgba(124,105,199,0.15)',
+              background: 'linear-gradient(135deg, rgba(139,121,212,0.07) 0%, rgba(245,195,198,0.05) 100%)',
+              border: '1px solid rgba(139,121,212,0.15)',
             }}
           >
             <div className="px-5 py-8 sm:px-8 sm:py-10">
@@ -425,7 +425,7 @@ export default function FableWorthItAuditPage() {
         <section className="max-w-5xl mx-auto px-6 py-16">
           <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="text-center mb-10">
-              <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
+              <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 bg-[#8B79D4]/15 text-[#9D8FE0] border border-[#8B79D4]/25">
                 Giveaway prompt
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold text-[#FCF4EB] mb-4">Copy it into Claude Code.</h2>
@@ -434,7 +434,7 @@ export default function FableWorthItAuditPage() {
               </p>
             </div>
 
-            <div className="my-6 rounded-xl overflow-hidden border border-white/[0.08]" style={{ borderLeftWidth: 2, borderLeftColor: '#7C69C7' }}>
+            <div className="my-6 rounded-xl overflow-hidden border border-white/[0.08]" style={{ borderLeftWidth: 2, borderLeftColor: '#8B79D4' }}>
               <div className="flex items-center justify-between px-4 py-2 bg-white/[0.04] border-b border-white/[0.06] gap-3">
                 <span className="text-xs text-[#FCF4EB]/40 font-mono">Claude Code prompt</span>
                 <InlineCopyButton text={AUDIT_PROMPT} onAfterCopy={() => setEmailModalOpen(true)} label="Copy" compact />
@@ -477,8 +477,8 @@ function ExampleColumn({ title, intro, items, highlight = false }: { title: stri
       viewport={{ once: true }}
       className="glow-card rounded-2xl p-7"
       style={{
-        background: highlight ? 'rgba(124,105,199,0.10)' : 'rgba(255,255,255,0.04)',
-        border: highlight ? '1px solid rgba(124,105,199,0.24)' : '1px solid rgba(255,255,255,0.08)',
+        background: highlight ? 'rgba(139,121,212,0.10)' : 'rgba(255,255,255,0.04)',
+        border: highlight ? '1px solid rgba(139,121,212,0.24)' : '1px solid rgba(255,255,255,0.08)',
       }}
     >
       <h3 className="text-2xl font-bold text-[#FCF4EB] mb-2">{title}</h3>
@@ -506,7 +506,7 @@ function HeroCopyButton({ prompt, onAfterCopy }: { prompt: string; onAfterCopy: 
         await copyWithConfetti(prompt, e)
         onAfterCopy()
       }}
-      className="glow-btn inline-flex items-center justify-center rounded-full px-7 py-4 bg-[#7C69C7] text-white font-bold text-sm sm:text-base hover:bg-[#8B79D4]"
+      className="glow-btn inline-flex items-center justify-center rounded-full px-7 py-4 bg-[#8B79D4] text-white font-bold text-sm sm:text-base hover:bg-[#8B79D4]"
     >
       Copy the Fable audit prompt
     </button>
@@ -524,7 +524,7 @@ function InlineCopyButton({ text, onAfterCopy, label = 'Copy prompt', compact = 
         await copyWithConfetti(text, e)
         onAfterCopy()
       }}
-      className={`glow-btn rounded-full bg-[#7C69C7] text-white font-bold hover:bg-[#8B79D4] ${compact ? 'px-3 py-1.5 text-xs' : 'w-full px-5 py-3 text-sm'}`}
+      className={`glow-btn rounded-full bg-[#8B79D4] text-white font-bold hover:bg-[#8B79D4] ${compact ? 'px-3 py-1.5 text-xs' : 'w-full px-5 py-3 text-sm'}`}
     >
       {label}
     </button>
@@ -541,7 +541,7 @@ function MastermindCTA() {
         viewport={{ once: true }}
         className="rounded-2xl p-8 sm:p-10 text-center"
         style={{
-          background: 'linear-gradient(135deg, rgba(124,105,199,0.16) 0%, rgba(245,195,198,0.10) 100%)',
+          background: 'linear-gradient(135deg, rgba(139,121,212,0.16) 0%, rgba(245,195,198,0.10) 100%)',
           border: '1px solid rgba(245,195,198,0.18)',
         }}
       >

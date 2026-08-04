@@ -6,7 +6,7 @@ import ProTip from '@/components/ProTip'
 import StickyVideoPlayer from '@/components/StickyVideoPlayer'
 
 const TOC_PANEL_CLASS =
-  'rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(124,105,199,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]'
+  'rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(139,121,212,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]'
 
 const FEATURE_CARD_CLASS =
   'relative overflow-hidden rounded-[24px] border border-white/[0.10] bg-[linear-gradient(145deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] p-5 shadow-[0_16px_42px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.04)]'
@@ -18,7 +18,7 @@ export default function Session6Guide() {
 
         {/* Page Header */}
         <div className="mb-10">
-          <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
+          <p className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest mb-3">
             Session Six
           </p>
           <h1 className="gradient-text text-5xl font-extrabold leading-tight mb-5 pb-1">
@@ -53,7 +53,7 @@ export default function Session6Guide() {
                 <span className="h-2 w-2 rounded-full bg-[#9D8FE0] shadow-[0_0_12px_rgba(157,143,224,0.70)]" />
                 <span className="text-xs uppercase tracking-[0.20em] text-[#FCF4EB]/65 font-semibold">Table of Contents</span>
               </div>
-              <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[rgba(124,105,199,0.15)] border border-[rgba(124,105,199,0.28)] text-[#9D8FE0]">
+              <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[rgba(139,121,212,0.15)] border border-[rgba(139,121,212,0.28)] text-[#9D8FE0]">
                 <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                   <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -91,7 +91,7 @@ export default function Session6Guide() {
 
         {/* Always start with dangerously-skip-permissions */}
         <div className={FEATURE_CARD_CLASS + ' mb-10'}>
-          <div className="pointer-events-none absolute -right-10 top-[-28px] h-24 w-24 rounded-full bg-[#7C69C7]/10 blur-2xl" />
+          <div className="pointer-events-none absolute -right-10 top-[-28px] h-24 w-24 rounded-full bg-[#8B79D4]/10 blur-2xl" />
           <p className="text-[#FCF4EB] font-semibold text-sm mb-2">Always start Claude Code this way</p>
           <p className="text-[#FCF4EB]/60 text-sm leading-relaxed mb-3">
             Every time you open Claude Code, use this command instead of just typing <span className="font-mono bg-white/[0.08] px-1 rounded text-xs">claude</span>.
@@ -217,9 +217,9 @@ Read those files. These are samples of my actual writing — emails, posts, note
 
             <div className="space-y-3 mb-4">
               <div className={FEATURE_CARD_CLASS}>
-                <div className="pointer-events-none absolute -right-10 top-[-28px] h-24 w-24 rounded-full bg-[#7C69C7]/10 blur-2xl" />
+                <div className="pointer-events-none absolute -right-10 top-[-28px] h-24 w-24 rounded-full bg-[#8B79D4]/10 blur-2xl" />
                 <div className="flex items-center gap-3 mb-2">
-                  <span className="inline-block px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider bg-[#7C69C7]/20 text-[#7C69C7] border border-[#7C69C7]/30">
+                  <span className="inline-block px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider bg-[#8B79D4]/20 text-[#8B79D4] border border-[#8B79D4]/30">
                     Haiku
                   </span>
                   <span className="text-[#FCF4EB]/50 text-xs">Fast and cheap</span>
@@ -231,9 +231,9 @@ Read those files. These are samples of my actual writing — emails, posts, note
               </div>
 
               <div className={FEATURE_CARD_CLASS}>
-                <div className="pointer-events-none absolute -right-10 top-[-28px] h-24 w-24 rounded-full bg-[#7C69C7]/10 blur-2xl" />
+                <div className="pointer-events-none absolute -right-10 top-[-28px] h-24 w-24 rounded-full bg-[#8B79D4]/10 blur-2xl" />
                 <div className="flex items-center gap-3 mb-2">
-                  <span className="inline-block px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider bg-[#7C69C7]/20 text-[#7C69C7] border border-[#7C69C7]/30">
+                  <span className="inline-block px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider bg-[#8B79D4]/20 text-[#8B79D4] border border-[#8B79D4]/30">
                     Sonnet
                   </span>
                   <span className="text-[#FCF4EB]/50 text-xs">Fast and capable</span>
@@ -245,9 +245,9 @@ Read those files. These are samples of my actual writing — emails, posts, note
               </div>
 
               <div className={FEATURE_CARD_CLASS}>
-                <div className="pointer-events-none absolute -right-10 top-[-28px] h-24 w-24 rounded-full bg-[#7C69C7]/10 blur-2xl" />
+                <div className="pointer-events-none absolute -right-10 top-[-28px] h-24 w-24 rounded-full bg-[#8B79D4]/10 blur-2xl" />
                 <div className="flex items-center gap-3 mb-2">
-                  <span className="inline-block px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider bg-[#7C69C7]/20 text-[#7C69C7] border border-[#7C69C7]/30">
+                  <span className="inline-block px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider bg-[#8B79D4]/20 text-[#8B79D4] border border-[#8B79D4]/30">
                     Opus
                   </span>
                   <span className="text-[#FCF4EB]/50 text-xs">Smartest, most capable</span>
@@ -452,7 +452,7 @@ Use Claude's scheduled remote agents to run this automatically every day. Set it
             </p>
 
             <div className="bg-white/[0.04] border border-white/[0.08] rounded-2xl p-8 mb-8">
-              <p className="text-[#7C69C7] text-xs font-semibold uppercase tracking-widest mb-3">Support Each Other</p>
+              <p className="text-[#8B79D4] text-xs font-semibold uppercase tracking-widest mb-3">Support Each Other</p>
               <h3 className="text-xl font-bold text-[#FCF4EB] mb-3">Post in the Masterminds group</h3>
               <p className="text-[#FCF4EB]/70 leading-relaxed mb-6">
                 Share a screenshot of your first daily hook email in the Masterminds group when
@@ -461,8 +461,8 @@ Use Claude's scheduled remote agents to run this automatically every day. Set it
               </p>
               <div className="space-y-4">
                 <div className="flex gap-4 items-start">
-                  <div className="w-8 h-8 rounded-full bg-[#7C69C7]/20 border border-[#7C69C7]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-[#7C69C7] text-sm font-bold">1</span>
+                  <div className="w-8 h-8 rounded-full bg-[#8B79D4]/20 border border-[#8B79D4]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-[#8B79D4] text-sm font-bold">1</span>
                   </div>
                   <div>
                     <p className="text-[#FCF4EB] font-semibold text-sm mb-1">Share your first hooks</p>
@@ -473,8 +473,8 @@ Use Claude's scheduled remote agents to run this automatically every day. Set it
                   </div>
                 </div>
                 <div className="flex gap-4 items-start">
-                  <div className="w-8 h-8 rounded-full bg-[#7C69C7]/20 border border-[#7C69C7]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-[#7C69C7] text-sm font-bold">2</span>
+                  <div className="w-8 h-8 rounded-full bg-[#8B79D4]/20 border border-[#8B79D4]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-[#8B79D4] text-sm font-bold">2</span>
                   </div>
                   <div>
                     <p className="text-[#FCF4EB] font-semibold text-sm mb-1">Share your voice profile summary</p>
@@ -485,8 +485,8 @@ Use Claude's scheduled remote agents to run this automatically every day. Set it
                   </div>
                 </div>
                 <div className="flex gap-4 items-start">
-                  <div className="w-8 h-8 rounded-full bg-[#7C69C7]/20 border border-[#7C69C7]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-[#7C69C7] text-sm font-bold">3</span>
+                  <div className="w-8 h-8 rounded-full bg-[#8B79D4]/20 border border-[#8B79D4]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-[#8B79D4] text-sm font-bold">3</span>
                   </div>
                   <div>
                     <p className="text-[#FCF4EB] font-semibold text-sm mb-1">Test someone else&rsquo;s hooks</p>
@@ -499,8 +499,8 @@ Use Claude's scheduled remote agents to run this automatically every day. Set it
               </div>
             </div>
 
-            <div className="border border-[#7C69C7]/50 bg-[#7C69C7]/[0.08] rounded-xl p-6">
-              <p className="text-[#7C69C7] text-xs font-semibold uppercase tracking-widest mb-3">Challenge</p>
+            <div className="border border-[#8B79D4]/50 bg-[#8B79D4]/[0.08] rounded-xl p-6">
+              <p className="text-[#8B79D4] text-xs font-semibold uppercase tracking-widest mb-3">Challenge</p>
               <p className="text-[#FCF4EB]/80 leading-relaxed">
                 Use{' '}
                 <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">/hooklab --my-voice</code>{' '}

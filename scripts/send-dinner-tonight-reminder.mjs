@@ -38,7 +38,7 @@ function htmlBody({ name, cancelUrl }) {
   <p><strong>Please arrive at 6:00 PM sharp. Doors close at 6:30 PM.</strong></p>
   <p>Venue: Mostly Restaurant, Jl. Pantai Pererenan No.114, Pererenan, Canggu.</p>
   <p>If something has come up and you can't make it, please use the link below to cancel. It will automatically alert someone on our long waitlist so your seat goes to good use.</p>
-  <p><a href="${cancelUrl}" style="display:inline-block;background:#7C69C7;color:#fff;text-decoration:none;padding:12px 22px;border-radius:10px;font-weight:600;">Cancel my seat</a></p>
+  <p><a href="${cancelUrl}" style="display:inline-block;background:#8B79D4;color:#fff;text-decoration:none;padding:12px 22px;border-radius:10px;font-weight:600;">Cancel my seat</a></p>
   <p>See you soon.</p>
   <p>Joe Che</p>
 </div>

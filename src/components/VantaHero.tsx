@@ -62,13 +62,13 @@ export default function VantaHero({ sessionNumber, title, description, slug, sub
       <div className="relative z-10 max-w-4xl mx-auto px-6 pt-16 pb-14">
         {/* Breadcrumb */}
         <nav className="mb-10 text-sm text-[#FCF4EB]/40 flex items-center gap-2 flex-wrap">
-          <Link href="/" className="hover:text-[#7C69C7] transition-colors">
+          <Link href="/" className="hover:text-[#8B79D4] transition-colors">
             All Sessions
           </Link>
           <span>/</span>
           {subpage ? (
             <>
-              <Link href={`/session/${slug}`} className="hover:text-[#7C69C7] transition-colors">
+              <Link href={`/session/${slug}`} className="hover:text-[#8B79D4] transition-colors">
                 Session {sessionNumber}
               </Link>
               <span>/</span>
@@ -79,7 +79,7 @@ export default function VantaHero({ sessionNumber, title, description, slug, sub
           )}
         </nav>
 
-        <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
+        <p className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest mb-3">
           Session {sessionNumber}
         </p>
         <h1 className="gradient-text text-4xl md:text-5xl font-extrabold leading-tight mb-4">

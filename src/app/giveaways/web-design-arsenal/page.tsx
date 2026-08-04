@@ -415,14 +415,14 @@ export default function WebDesignArsenalPage() {
           transition: box-shadow 0.3s ease, border-color 0.3s ease;
         }
         .glow-card:hover {
-          box-shadow: 0 0 28px rgba(124, 105, 199, 0.12), 0 0 0 1px rgba(124, 105, 199, 0.18);
-          border-color: rgba(124, 105, 199, 0.22) !important;
+          box-shadow: 0 0 28px rgba(139, 121, 212, 0.12), 0 0 0 1px rgba(139, 121, 212, 0.18);
+          border-color: rgba(139, 121, 212, 0.22) !important;
         }
         .glow-btn {
           transition: box-shadow 0.2s ease, background-color 0.15s ease, transform 0.1s ease-out;
         }
         .glow-btn:hover {
-          box-shadow: 0 0 32px rgba(124, 105, 199, 0.45), 0 0 60px rgba(124, 105, 199, 0.2);
+          box-shadow: 0 0 32px rgba(139, 121, 212, 0.45), 0 0 60px rgba(139, 121, 212, 0.2);
         }
         .glow-btn-pink:hover {
           box-shadow: 0 0 32px rgba(245, 195, 198, 0.5), 0 0 60px rgba(245, 195, 198, 0.2);
@@ -462,9 +462,9 @@ export default function WebDesignArsenalPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-10 bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
+              <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-10 bg-[#8B79D4]/15 text-[#9D8FE0] border border-[#8B79D4]/25">
                 Free from the{' '}
-                <a href={MASTERMIND_URL} target="_blank" rel="noopener noreferrer" className="hover:text-[#BDB3E8] transition-colors underline underline-offset-2 decoration-[#7C69C7]/40">
+                <a href={MASTERMIND_URL} target="_blank" rel="noopener noreferrer" className="hover:text-[#BDB3E8] transition-colors underline underline-offset-2 decoration-[#8B79D4]/40">
                   Business Automation Mastermind
                 </a>
               </span>
@@ -522,7 +522,7 @@ export default function WebDesignArsenalPage() {
               {COMPATIBLE_TOOLS.map((tool) => (
                 <div
                   key={tool.name}
-                  className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/[0.05] border border-white/[0.09] hover:border-[#7C69C7]/35 transition-all duration-200"
+                  className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/[0.05] border border-white/[0.09] hover:border-[#8B79D4]/35 transition-all duration-200"
                   title={tool.detail}
                 >
                   <span className="text-[#9D8FE0] text-sm">{tool.logo}</span>
@@ -530,9 +530,9 @@ export default function WebDesignArsenalPage() {
                   <span
                     className="text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-full"
                     style={{
-                      background: tool.badge === 'Agent install' ? 'rgba(124,105,199,0.18)' : 'rgba(255,255,255,0.06)',
+                      background: tool.badge === 'Agent install' ? 'rgba(139,121,212,0.18)' : 'rgba(255,255,255,0.06)',
                       color: tool.badge === 'Agent install' ? '#9D8FE0' : '#FCF4EB44',
-                      border: tool.badge === 'Agent install' ? '1px solid rgba(124,105,199,0.3)' : '1px solid rgba(255,255,255,0.08)',
+                      border: tool.badge === 'Agent install' ? '1px solid rgba(139,121,212,0.3)' : '1px solid rgba(255,255,255,0.08)',
                     }}
                   >
                     {tool.badge}
@@ -583,7 +583,7 @@ export default function WebDesignArsenalPage() {
                 transition={{ delay: i * 0.1 }}
                 className="glow-card bg-white/[0.04] border border-white/[0.08] rounded-2xl p-7"
               >
-                <div className="text-4xl font-extrabold text-[#7C69C7]/20 mb-5 font-mono">{item.step}</div>
+                <div className="text-4xl font-extrabold text-[#8B79D4]/20 mb-5 font-mono">{item.step}</div>
                 <h3 className="text-[#FCF4EB] font-bold text-base mb-2">{item.title}</h3>
                 <p className="text-[#FCF4EB]/44 text-sm leading-relaxed">{item.body}</p>
               </motion.div>
@@ -676,7 +676,7 @@ export default function WebDesignArsenalPage() {
                   &ldquo;{t.quote}&rdquo;
                 </p>
                 <div className="flex items-center gap-3">
-                  <div className="w-16 h-16 rounded-full overflow-hidden border border-[#7C69C7]/25 flex-shrink-0">
+                  <div className="w-16 h-16 rounded-full overflow-hidden border border-[#8B79D4]/25 flex-shrink-0">
                     <Image
                       src={t.photo}
                       alt={t.name}
@@ -705,7 +705,7 @@ export default function WebDesignArsenalPage() {
             viewport={{ once: true }}
           >
             <div className="text-center mb-10">
-              <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
+              <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 bg-[#8B79D4]/15 text-[#9D8FE0] border border-[#8B79D4]/25">
                 The Prompt
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold text-[#FCF4EB] mb-4">
@@ -721,7 +721,7 @@ export default function WebDesignArsenalPage() {
             </div>
 
             {/* Inline code block with text wrapping */}
-            <div className="my-6 rounded-xl overflow-hidden border border-white/[0.08] border-l-2 border-l-[#7C69C7]">
+            <div className="my-6 rounded-xl overflow-hidden border border-white/[0.08] border-l-2 border-l-[#8B79D4]">
               <div className="flex items-center justify-between px-4 py-2 bg-white/[0.04] border-b border-white/[0.06]">
                 <span className="text-xs text-[#FCF4EB]/40 font-mono">web-designer-agent-kit-install</span>
                 <InlineCopyButton text={THE_PROMPT} onAfterCopy={() => setEmailModalOpen(true)} />
@@ -806,7 +806,7 @@ export default function WebDesignArsenalPage() {
                   >
                     <div className="flex items-center gap-3">
                       <span className="text-[#FCF4EB] font-semibold text-sm sm:text-base">{cat.name}</span>
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#9D8FE0] bg-[#7C69C7]/12 border border-[#7C69C7]/20 px-2 py-0.5 rounded-full">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#9D8FE0] bg-[#8B79D4]/12 border border-[#8B79D4]/20 px-2 py-0.5 rounded-full">
                         {cat.count}
                       </span>
                     </div>
@@ -830,7 +830,7 @@ export default function WebDesignArsenalPage() {
                             rel="noopener noreferrer"
                             className="flex items-start gap-3 p-3 rounded-lg hover:bg-white/[0.05] transition-colors group"
                           >
-                            <div className="w-1.5 h-1.5 rounded-full bg-[#7C69C7] mt-[7px] flex-shrink-0" />
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#8B79D4] mt-[7px] flex-shrink-0" />
                             <div>
                               <span className="text-[#9D8FE0] text-sm font-medium group-hover:text-[#BDB3E8] transition-colors">
                                 {skill.name}
@@ -898,7 +898,7 @@ function MastermindCTA() {
         viewport={{ once: true }}
         className="rounded-2xl overflow-hidden"
         style={{
-          background: 'linear-gradient(135deg, rgba(245,195,198,0.10) 0%, rgba(124,105,199,0.08) 100%)',
+          background: 'linear-gradient(135deg, rgba(245,195,198,0.10) 0%, rgba(139,121,212,0.08) 100%)',
           border: '1px solid rgba(245,195,198,0.15)',
         }}
       >
@@ -990,7 +990,7 @@ function PromptCopyButton({ prompt, onAfterCopy }: { prompt: string; onAfterCopy
         onClick={handleCopy}
         onMouseMove={magnet.onMouseMove}
         onMouseLeave={magnet.onMouseLeave}
-        className="inline-flex items-center gap-2.5 px-10 py-4 rounded-xl bg-[#7C69C7] hover:bg-[#6B5AB8] text-white font-semibold text-base active:scale-[0.97] glow-btn shadow-xl shadow-[#7C69C7]/25"
+        className="inline-flex items-center gap-2.5 px-10 py-4 rounded-xl bg-[#8B79D4] hover:bg-[#6B5AB8] text-white font-semibold text-base active:scale-[0.97] glow-btn shadow-xl shadow-[#8B79D4]/25"
       >
         {copied ? (
           <>

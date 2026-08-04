@@ -42,7 +42,7 @@ export default async function SessionBonusPage({ params }: Props) {
         <div className="border-t border-white/[0.06] pt-8 flex items-center justify-between flex-wrap gap-4">
           <Link
             href={`/session/${slug}`}
-            className="inline-flex items-center gap-2 text-sm text-[#FCF4EB]/40 hover:text-[#7C69C7] transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-[#FCF4EB]/40 hover:text-[#8B79D4] transition-colors"
           >
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M13 8H3M7 12l-4-4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -51,7 +51,7 @@ export default async function SessionBonusPage({ params }: Props) {
           </Link>
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-sm text-[#FCF4EB]/40 hover:text-[#7C69C7] transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-[#FCF4EB]/40 hover:text-[#8B79D4] transition-colors"
           >
             All Sessions
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">

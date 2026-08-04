@@ -217,14 +217,14 @@ export default function SquarespaceEscapePage() {
           transition: box-shadow 0.3s ease, border-color 0.3s ease;
         }
         .glow-card:hover {
-          box-shadow: 0 0 28px rgba(124, 105, 199, 0.12), 0 0 0 1px rgba(124, 105, 199, 0.18);
-          border-color: rgba(124, 105, 199, 0.22) !important;
+          box-shadow: 0 0 28px rgba(139, 121, 212, 0.12), 0 0 0 1px rgba(139, 121, 212, 0.18);
+          border-color: rgba(139, 121, 212, 0.22) !important;
         }
         .glow-btn {
           transition: box-shadow 0.2s ease, background-color 0.15s ease, transform 0.1s ease-out;
         }
         .glow-btn:hover {
-          box-shadow: 0 0 32px rgba(124, 105, 199, 0.45), 0 0 60px rgba(124, 105, 199, 0.2);
+          box-shadow: 0 0 32px rgba(139, 121, 212, 0.45), 0 0 60px rgba(139, 121, 212, 0.2);
         }
         .glow-btn-pink:hover {
           box-shadow: 0 0 32px rgba(245, 195, 198, 0.5), 0 0 60px rgba(245, 195, 198, 0.2);
@@ -256,9 +256,9 @@ export default function SquarespaceEscapePage() {
           {/* Content */}
           <div className="relative z-10 max-w-4xl mx-auto">
             <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-              <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-10 bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
+              <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-10 bg-[#8B79D4]/15 text-[#9D8FE0] border border-[#8B79D4]/25">
                 Free from the{' '}
-                <a href={MASTERMIND_URL} target="_blank" rel="noopener noreferrer" className="hover:text-[#BDB3E8] transition-colors underline underline-offset-2 decoration-[#7C69C7]/40">
+                <a href={MASTERMIND_URL} target="_blank" rel="noopener noreferrer" className="hover:text-[#BDB3E8] transition-colors underline underline-offset-2 decoration-[#8B79D4]/40">
                   Business Automation Mastermind
                 </a>
               </span>
@@ -425,7 +425,7 @@ export default function SquarespaceEscapePage() {
                 transition={{ delay: i * 0.1 }}
                 className="glow-card bg-white/[0.04] border border-white/[0.08] rounded-2xl p-7"
               >
-                <div className="text-4xl font-extrabold text-[#7C69C7]/20 mb-5 font-mono">{item.step}</div>
+                <div className="text-4xl font-extrabold text-[#8B79D4]/20 mb-5 font-mono">{item.step}</div>
                 <h3 className="text-[#FCF4EB] font-bold text-base mb-2">{item.title}</h3>
                 <p className="text-[#FCF4EB]/44 text-sm leading-relaxed">{item.body}</p>
               </motion.div>
@@ -443,7 +443,7 @@ export default function SquarespaceEscapePage() {
             viewport={{ once: true }}
           >
             <div className="text-center mb-10">
-              <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
+              <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 bg-[#8B79D4]/15 text-[#9D8FE0] border border-[#8B79D4]/25">
                 The Prompt
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold text-[#FCF4EB] mb-4">
@@ -484,7 +484,7 @@ export default function SquarespaceEscapePage() {
             viewport={{ once: true }}
             className="rounded-2xl overflow-hidden"
             style={{
-              background: 'linear-gradient(135deg, rgba(245,195,198,0.10) 0%, rgba(124,105,199,0.08) 100%)',
+              background: 'linear-gradient(135deg, rgba(245,195,198,0.10) 0%, rgba(139,121,212,0.08) 100%)',
               border: '1px solid rgba(245,195,198,0.15)',
             }}
           >
@@ -493,7 +493,7 @@ export default function SquarespaceEscapePage() {
                 <span
                   className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full"
                   style={{
-                    background: 'linear-gradient(135deg, rgba(245,195,198,0.18) 0%, rgba(124,105,199,0.12) 100%)',
+                    background: 'linear-gradient(135deg, rgba(245,195,198,0.18) 0%, rgba(139,121,212,0.12) 100%)',
                     color: '#F5C3C6',
                     border: '1px solid rgba(245,195,198,0.22)',
                   }}
@@ -529,8 +529,8 @@ export default function SquarespaceEscapePage() {
             viewport={{ once: true }}
             className="rounded-2xl overflow-hidden"
             style={{
-              background: 'linear-gradient(135deg, rgba(124,105,199,0.08) 0%, rgba(124,105,199,0.04) 100%)',
-              border: '1px solid rgba(124,105,199,0.18)',
+              background: 'linear-gradient(135deg, rgba(139,121,212,0.08) 0%, rgba(139,121,212,0.04) 100%)',
+              border: '1px solid rgba(139,121,212,0.18)',
             }}
           >
             <div className="px-6 sm:px-10 py-10">
@@ -538,9 +538,9 @@ export default function SquarespaceEscapePage() {
                 <span
                   className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full"
                   style={{
-                    background: 'rgba(124,105,199,0.15)',
+                    background: 'rgba(139,121,212,0.15)',
                     color: '#9D8FE0',
-                    border: '1px solid rgba(124,105,199,0.25)',
+                    border: '1px solid rgba(139,121,212,0.25)',
                   }}
                 >
                   ◈ Security
@@ -563,7 +563,7 @@ export default function SquarespaceEscapePage() {
                   <div
                     key={i}
                     className="rounded-xl p-6"
-                    style={{ background: 'rgba(124,105,199,0.06)', border: '1px solid rgba(124,105,199,0.12)' }}
+                    style={{ background: 'rgba(139,121,212,0.06)', border: '1px solid rgba(139,121,212,0.12)' }}
                   >
                     <h4 className="text-[#9D8FE0] font-semibold text-sm mb-2">{item.title}</h4>
                     <p className="text-[#FCF4EB]/55 text-sm leading-relaxed">{item.body}</p>
@@ -615,7 +615,7 @@ function MastermindCTA() {
         viewport={{ once: true }}
         className="rounded-2xl overflow-hidden"
         style={{
-          background: 'linear-gradient(135deg, rgba(245,195,198,0.10) 0%, rgba(124,105,199,0.08) 100%)',
+          background: 'linear-gradient(135deg, rgba(245,195,198,0.10) 0%, rgba(139,121,212,0.08) 100%)',
           border: '1px solid rgba(245,195,198,0.15)',
         }}
       >
@@ -685,7 +685,7 @@ function BigCopyButton({ prompt, onAfterCopy }: { prompt: string; onAfterCopy?: 
         onClick={handleCopy}
         onMouseMove={magnet.onMouseMove}
         onMouseLeave={magnet.onMouseLeave}
-        className="inline-flex items-center gap-2.5 px-10 py-4 rounded-xl bg-[#7C69C7] hover:bg-[#6B5AB8] text-white font-semibold text-base active:scale-[0.97] glow-btn shadow-xl shadow-[#7C69C7]/25"
+        className="inline-flex items-center gap-2.5 px-10 py-4 rounded-xl bg-[#8B79D4] hover:bg-[#6B5AB8] text-white font-semibold text-base active:scale-[0.97] glow-btn shadow-xl shadow-[#8B79D4]/25"
       >
         {copied ? (
           <>

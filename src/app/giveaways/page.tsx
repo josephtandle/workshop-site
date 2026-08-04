@@ -11,9 +11,9 @@ export const metadata = {
 
 const BADGE_STYLES = {
   purple: {
-    background: 'rgba(124, 105, 199, 0.15)',
-    color: '#7C69C7',
-    border: '1px solid rgba(124, 105, 199, 0.25)',
+    background: 'rgba(139, 121, 212, 0.15)',
+    color: '#8B79D4',
+    border: '1px solid rgba(139, 121, 212, 0.25)',
   },
   pink: {
     background: 'rgba(245, 195, 198, 0.10)',
@@ -29,7 +29,7 @@ export default function GiveawaysIndexPage() {
         <section className="overflow-hidden pt-20 pb-10 px-6">
           <div className="max-w-3xl mx-auto text-center">
             <Reveal>
-              <p className="text-xs uppercase tracking-[0.2em] text-[#7C69C7] font-semibold mb-4">
+              <p className="text-xs uppercase tracking-[0.2em] text-[#8B79D4] font-semibold mb-4">
                 Masterminds Workshop
               </p>
             </Reveal>
@@ -64,9 +64,9 @@ export default function GiveawaysIndexPage() {
                         <div
                           className="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold"
                           style={{
-                            background: 'rgba(124, 105, 199, 0.18)',
-                            color: '#7C69C7',
-                            border: '1.5px solid rgba(124, 105, 199, 0.35)',
+                            background: 'rgba(139, 121, 212, 0.18)',
+                            color: '#8B79D4',
+                            border: '1.5px solid rgba(139, 121, 212, 0.35)',
                           }}
                         >
                           {item.icon}
@@ -91,7 +91,7 @@ export default function GiveawaysIndexPage() {
                         </div>
 
                         {/* Arrow */}
-                        <div className="flex-shrink-0 text-[#FCF4EB]/20 group-hover:text-[#7C69C7] group-hover:translate-x-1 transition-all duration-200">
+                        <div className="flex-shrink-0 text-[#FCF4EB]/20 group-hover:text-[#8B79D4] group-hover:translate-x-1 transition-all duration-200">
                           <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>

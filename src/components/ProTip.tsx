@@ -11,9 +11,9 @@ interface ProTipProps {
 
 const typeStyles: Record<TipType, { border: string; bg: string; titleColor: string; defaultTitle: string }> = {
   tip: {
-    border: 'border-l-[#7C69C7]',
-    bg: 'bg-[rgba(124,105,199,0.08)]',
-    titleColor: 'text-[#7C69C7]',
+    border: 'border-l-[#8B79D4]',
+    bg: 'bg-[rgba(139,121,212,0.08)]',
+    titleColor: 'text-[#8B79D4]',
     defaultTitle: 'Pro Tip',
   },
   warning: {

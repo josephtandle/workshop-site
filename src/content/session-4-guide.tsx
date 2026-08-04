@@ -15,8 +15,8 @@ function Checkbox({ checked, onChange }: { checked: boolean; onChange: () => voi
       role="checkbox"
       className={`flex-shrink-0 w-5 h-5 rounded border transition-all duration-150 flex items-center justify-center
         ${checked
-          ? 'bg-[#7C69C7] border-[#7C69C7]'
-          : 'bg-white/[0.04] border-white/20 hover:border-[#7C69C7]/60'
+          ? 'bg-[#8B79D4] border-[#8B79D4]'
+          : 'bg-white/[0.04] border-white/20 hover:border-[#8B79D4]/60'
         }`}
     >
       {checked && (
@@ -58,7 +58,7 @@ export default function Session4Guide() {
 
         {/* Page Header */}
         <div className="mb-10">
-          <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
+          <p className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest mb-3">
             Session Four
           </p>
           <h1 className="text-4xl font-bold text-[#FCF4EB] leading-tight mb-5">
@@ -87,13 +87,13 @@ export default function Session4Guide() {
           </div>
 
           {/* Table of Contents */}
-          <details className="rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(124,105,199,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]">
+          <details className="rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(139,121,212,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]">
             <summary className="flex items-center justify-between px-6 py-5 cursor-pointer select-none">
               <div className="flex items-center gap-3">
                 <span className="h-2 w-2 rounded-full bg-[#9D8FE0] shadow-[0_0_12px_rgba(157,143,224,0.70)]" />
                 <span className="text-xs uppercase tracking-[0.20em] text-[#FCF4EB]/65 font-semibold">Table of Contents</span>
               </div>
-              <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[rgba(124,105,199,0.15)] border border-[rgba(124,105,199,0.28)] text-[#9D8FE0]">
+              <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[rgba(139,121,212,0.15)] border border-[rgba(139,121,212,0.28)] text-[#9D8FE0]">
                 <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                   <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -111,7 +111,7 @@ export default function Session4Guide() {
                 <li key={href} className="flex items-center gap-3 group/item">
                   <span
                     className="number-glow flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold tabular-nums"
-                    style={{ background: 'rgba(124,105,199,0.18)', color: '#9D8FE0', border: '1.5px solid rgba(124,105,199,0.30)' }}
+                    style={{ background: 'rgba(139,121,212,0.18)', color: '#9D8FE0', border: '1.5px solid rgba(139,121,212,0.30)' }}
                   >
                     {i + 1}
                   </span>
@@ -198,7 +198,7 @@ export default function Session4Guide() {
               Joe&apos;s full template lives here:{' '}
               <a
                 href="/giveaways/claude-md"
-                className="text-[#7C69C7] hover:underline font-medium"
+                className="text-[#8B79D4] hover:underline font-medium"
               >
                 Ultimate CLAUDE.md
               </a>
@@ -255,7 +255,7 @@ If I am unsure, recommend the simplest useful version first.`}
 
           <StepCard number={5} title="Drag your export file into the window">
             <p className="mb-3">
-              <a href="/session/4/prep" className="text-[#7C69C7] hover:underline font-medium">Before the session</a>, you were asked to export your conversation history from
+              <a href="/session/4/prep" className="text-[#8B79D4] hover:underline font-medium">Before the session</a>, you were asked to export your conversation history from
               ChatGPT or Claude as a{' '}
               <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">.zip</code> file.
             </p>
@@ -352,7 +352,7 @@ Here is what I need you to do:
                 </div>
                 <div className="h-1 bg-white/[0.08] rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-[#7C69C7] rounded-full transition-all duration-300"
+                    className="h-full bg-[#8B79D4] rounded-full transition-all duration-300"
                     style={{ width: `${(reviewChecked.size / REVIEW_ITEMS.length) * 100}%` }}
                   />
                 </div>
@@ -362,7 +362,7 @@ Here is what I need you to do:
             {allReviewDone && (
               <div
                 className="rounded-xl px-5 py-4 text-center"
-                style={{ background: 'linear-gradient(135deg, rgba(124,105,199,0.20) 0%, rgba(245,195,198,0.15) 100%)', border: '1px solid rgba(124,105,199,0.30)' }}
+                style={{ background: 'linear-gradient(135deg, rgba(139,121,212,0.20) 0%, rgba(245,195,198,0.15) 100%)', border: '1px solid rgba(139,121,212,0.30)' }}
               >
                 <p className="text-base font-bold text-[#FCF4EB]">brain_dump_map looks good. On to the next step.</p>
               </div>
@@ -495,7 +495,7 @@ If something important is still missing, list the missing pieces at the end and 
             <ProTip type="tip">
               Named sessions sync automatically across all your devices. Name it once and it shows
               up everywhere you are logged in to{' '}
-              <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">
+              <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:underline">
                 Claude.ai
               </a>.
             </ProTip>
@@ -508,7 +508,7 @@ If something important is still missing, list the missing pieces at the end and 
                 href="https://claude.ai/download"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#7C69C7] hover:underline"
+                className="text-[#8B79D4] hover:underline"
               >
                 Claude app
               </a>

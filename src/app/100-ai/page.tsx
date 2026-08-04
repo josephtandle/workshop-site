@@ -86,7 +86,7 @@ export default function PassiveIncome100Page() {
           onChange={e => setFirstName(e.target.value)}
           placeholder="First name"
           required
-          className="w-full px-5 py-3.5 rounded-xl bg-white/[0.06] border border-white/[0.12] text-[#FCF4EB] placeholder:text-[#FCF4EB]/30 focus:outline-none focus:border-[#7C69C7]/60 focus:ring-1 focus:ring-[#7C69C7]/30 transition-all text-base"
+          className="w-full px-5 py-3.5 rounded-xl bg-white/[0.06] border border-white/[0.12] text-[#FCF4EB] placeholder:text-[#FCF4EB]/30 focus:outline-none focus:border-[#8B79D4]/60 focus:ring-1 focus:ring-[#8B79D4]/30 transition-all text-base"
         />
         <div className="flex flex-col sm:flex-row gap-3">
           <input
@@ -95,12 +95,12 @@ export default function PassiveIncome100Page() {
             onChange={e => setEmail(e.target.value)}
             placeholder="Email address"
             required
-            className="flex-1 px-5 py-3.5 rounded-xl bg-white/[0.06] border border-white/[0.12] text-[#FCF4EB] placeholder:text-[#FCF4EB]/30 focus:outline-none focus:border-[#7C69C7]/60 focus:ring-1 focus:ring-[#7C69C7]/30 transition-all text-base"
+            className="flex-1 px-5 py-3.5 rounded-xl bg-white/[0.06] border border-white/[0.12] text-[#FCF4EB] placeholder:text-[#FCF4EB]/30 focus:outline-none focus:border-[#8B79D4]/60 focus:ring-1 focus:ring-[#8B79D4]/30 transition-all text-base"
           />
           <button
             type="submit"
             disabled={loading}
-            className="px-7 py-3.5 rounded-xl bg-[#7C69C7] hover:bg-[#6B5AB8] text-white font-semibold text-base transition-all duration-150 disabled:opacity-60 whitespace-nowrap"
+            className="px-7 py-3.5 rounded-xl bg-[#8B79D4] hover:bg-[#6B5AB8] text-white font-semibold text-base transition-all duration-150 disabled:opacity-60 whitespace-nowrap"
           >
             {loading ? 'Sending...' : 'Notify me at launch'}
           </button>
@@ -111,8 +111,8 @@ export default function PassiveIncome100Page() {
         </p>
       </form>
     ) : (
-      <div className="max-w-md mx-auto bg-[#7C69C7]/10 border border-[#7C69C7]/30 rounded-2xl p-8 text-center">
-        <div className="w-12 h-12 rounded-full bg-[#7C69C7]/20 flex items-center justify-center mx-auto mb-4">
+      <div className="max-w-md mx-auto bg-[#8B79D4]/10 border border-[#8B79D4]/30 rounded-2xl p-8 text-center">
+        <div className="w-12 h-12 rounded-full bg-[#8B79D4]/20 flex items-center justify-center mx-auto mb-4">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9D8FE0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M20 6L9 17l-5-5" />
           </svg>
@@ -131,7 +131,7 @@ export default function PassiveIncome100Page() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#1a1520] via-[#151515] to-[#151515]" />
         <div className="relative max-w-3xl mx-auto px-6 pt-20 pb-12 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-8 bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
+            <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-8 bg-[#8B79D4]/15 text-[#9D8FE0] border border-[#8B79D4]/25">
               Pre-launch. $27 for the first 12 days.
             </span>
 
@@ -172,7 +172,7 @@ export default function PassiveIncome100Page() {
           )}
 
           {countdown && countdown.expired && (
-            <div className="bg-[#7C69C7]/10 border border-[#7C69C7]/25 rounded-xl py-3 px-5 max-w-md mx-auto mb-10">
+            <div className="bg-[#8B79D4]/10 border border-[#8B79D4]/25 rounded-xl py-3 px-5 max-w-md mx-auto mb-10">
               <p className="text-[#9D8FE0] text-sm font-semibold">The launch window is open. Grab it now.</p>
             </div>
           )}
@@ -212,7 +212,7 @@ export default function PassiveIncome100Page() {
               transition={{ delay: i * 0.05 }}
               className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-5 flex items-start gap-4"
             >
-              <div className="w-9 h-9 rounded-full bg-[#7C69C7]/15 border border-[#7C69C7]/25 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <div className="w-9 h-9 rounded-full bg-[#8B79D4]/15 border border-[#8B79D4]/25 flex items-center justify-center flex-shrink-0 mt-0.5">
                 <span className="text-[#9D8FE0] text-xs font-bold">{item.icon}</span>
               </div>
               <p className="text-[#FCF4EB]/70 text-sm leading-relaxed">{item.label}</p>
@@ -274,7 +274,7 @@ export default function PassiveIncome100Page() {
             </p>
           </div>
 
-          <div className="rounded-2xl p-6 bg-gradient-to-br from-[#7C69C7]/10 to-[#F5C3C6]/5 border border-[#7C69C7]/25">
+          <div className="rounded-2xl p-6 bg-gradient-to-br from-[#8B79D4]/10 to-[#F5C3C6]/5 border border-[#8B79D4]/25">
             <div className="flex items-baseline justify-between mb-2">
               <h3 className="text-xl font-bold text-[#FCF4EB]">The biweekly operator tier</h3>
               <div>
@@ -296,7 +296,7 @@ export default function PassiveIncome100Page() {
         <div
           className="rounded-2xl p-8 sm:p-10 text-center"
           style={{
-            background: 'linear-gradient(135deg, rgba(245, 195, 198, 0.10) 0%, rgba(124, 105, 199, 0.08) 100%)',
+            background: 'linear-gradient(135deg, rgba(245, 195, 198, 0.10) 0%, rgba(139, 121, 212, 0.08) 100%)',
             border: '1px solid rgba(245, 195, 198, 0.15)',
           }}
         >

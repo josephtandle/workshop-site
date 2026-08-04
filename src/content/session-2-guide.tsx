@@ -10,7 +10,7 @@ export default function Session2Guide() {
 
       {/* Page Header */}
       <div className="mb-10">
-        <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
+        <p className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest mb-3">
           Session Two
         </p>
         <h1 className="gradient-text text-5xl font-extrabold leading-tight mb-5 pb-1">
@@ -26,13 +26,13 @@ export default function Session2Guide() {
           <span><span className="text-[#FCF4EB]/30 mr-2">Difficulty</span>Beginner</span>
         </div>
 
-        <details className="rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(124,105,199,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]">
+        <details className="rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(139,121,212,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]">
           <summary className="flex items-center justify-between px-6 py-5 cursor-pointer select-none">
             <div className="flex items-center gap-3">
               <span className="h-2 w-2 rounded-full bg-[#9D8FE0] shadow-[0_0_12px_rgba(157,143,224,0.70)]" />
               <span className="text-xs uppercase tracking-[0.20em] text-[#FCF4EB]/65 font-semibold">Table of Contents</span>
             </div>
-            <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[rgba(124,105,199,0.15)] border border-[rgba(124,105,199,0.28)] text-[#9D8FE0]">
+            <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[rgba(139,121,212,0.15)] border border-[rgba(139,121,212,0.28)] text-[#9D8FE0]">
               <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -46,7 +46,7 @@ export default function Session2Guide() {
               { href: '#part-c', label: 'Part C — Deploy and Make It Yours' },
             ].map(({ href, label }, i) => (
               <li key={href} className="flex items-center gap-3 group/item">
-                <span className="number-glow flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold tabular-nums" style={{ background: 'rgba(124,105,199,0.18)', color: '#9D8FE0', border: '1.5px solid rgba(124,105,199,0.30)' }}>
+                <span className="number-glow flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold tabular-nums" style={{ background: 'rgba(139,121,212,0.18)', color: '#9D8FE0', border: '1.5px solid rgba(139,121,212,0.30)' }}>
                   {i + 1}
                 </span>
                 <a href={href} className="text-[#FCF4EB]/58 hover:text-[#9D8FE0] text-sm leading-snug transition-colors duration-150">{label}</a>
@@ -76,7 +76,7 @@ export default function Session2Guide() {
       {/* Part A */}
       <section id="part-a" className="mb-16">
         <div className="flex items-center gap-3 mb-8">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Part A</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Part A</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Set Up and Build Your Page</h2>
         </div>
 
@@ -99,11 +99,11 @@ export default function Session2Guide() {
               <p className="text-[#FCF4EB] font-semibold text-sm mb-2">Mac — two ways</p>
               <ul className="space-y-2 text-[#FCF4EB]/60 text-sm">
                 <li className="flex gap-2">
-                  <span className="text-[#7C69C7] flex-shrink-0">Option 1:</span>
+                  <span className="text-[#8B79D4] flex-shrink-0">Option 1:</span>
                   <span>Press <span className="font-mono bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">Cmd + Space</span> to open Spotlight, type <span className="font-mono bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">Terminal</span>, then press Enter</span>
                 </li>
                 <li className="flex gap-2">
-                  <span className="text-[#7C69C7] flex-shrink-0">Option 2:</span>
+                  <span className="text-[#8B79D4] flex-shrink-0">Option 2:</span>
                   <span>Open Finder, go to Applications, then open the Utilities folder, then open Terminal</span>
                 </li>
               </ul>
@@ -112,11 +112,11 @@ export default function Session2Guide() {
               <p className="text-[#FCF4EB] font-semibold text-sm mb-2">Windows — two ways</p>
               <ul className="space-y-2 text-[#FCF4EB]/60 text-sm">
                 <li className="flex gap-2">
-                  <span className="text-[#7C69C7] flex-shrink-0">Option 1:</span>
+                  <span className="text-[#8B79D4] flex-shrink-0">Option 1:</span>
                   <span>Press the <span className="font-mono bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">Windows key</span>, type <span className="font-mono bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">Command Prompt</span>, then press Enter</span>
                 </li>
                 <li className="flex gap-2">
-                  <span className="text-[#7C69C7] flex-shrink-0">Option 2:</span>
+                  <span className="text-[#8B79D4] flex-shrink-0">Option 2:</span>
                   <span>Press <span className="font-mono bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">Windows key + R</span>, type <span className="font-mono bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">cmd</span>, then press Enter</span>
                 </li>
               </ul>
@@ -148,19 +148,19 @@ export default function Session2Guide() {
           </p>
           <ol className="space-y-3 mb-4">
             <li className="flex gap-3 text-sm text-[#FCF4EB]/70">
-              <span className="text-[#7C69C7] font-bold flex-shrink-0">1.</span>
+              <span className="text-[#8B79D4] font-bold flex-shrink-0">1.</span>
               <span>It will ask you to accept the Terms of Service. Type <span className="font-mono bg-white/[0.08] px-1 rounded text-xs">y</span> and press Enter</span>
             </li>
             <li className="flex gap-3 text-sm text-[#FCF4EB]/70">
-              <span className="text-[#7C69C7] font-bold flex-shrink-0">2.</span>
+              <span className="text-[#8B79D4] font-bold flex-shrink-0">2.</span>
               <span>Your browser will open automatically. If it does not, look for a link in the terminal and click it</span>
             </li>
             <li className="flex gap-3 text-sm text-[#FCF4EB]/70">
-              <span className="text-[#7C69C7] font-bold flex-shrink-0">3.</span>
+              <span className="text-[#8B79D4] font-bold flex-shrink-0">3.</span>
               <span>Log in with the same email and password you use at claude.ai. Click <strong className="text-[#FCF4EB]/90">Authorize</strong> when prompted</span>
             </li>
             <li className="flex gap-3 text-sm text-[#FCF4EB]/70">
-              <span className="text-[#7C69C7] font-bold flex-shrink-0">4.</span>
+              <span className="text-[#8B79D4] font-bold flex-shrink-0">4.</span>
               <span>Return to your terminal. You should see a welcome message and a blinking cursor ready for instructions</span>
             </li>
           </ol>
@@ -184,7 +184,7 @@ export default function Session2Guide() {
             <summary className="flex items-center justify-between px-5 py-4 cursor-pointer text-sm font-semibold text-[#FCF4EB]/70 hover:text-[#FCF4EB] transition-colors list-none">
               <span>If you are getting an error</span>
               <svg
-                className="w-4 h-4 text-[#7C69C7] transition-transform group-open:rotate-180"
+                className="w-4 h-4 text-[#8B79D4] transition-transform group-open:rotate-180"
                 viewBox="0 0 16 16" fill="none" aria-hidden="true"
               >
                 <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -221,11 +221,11 @@ export default function Session2Guide() {
                   </p>
                   <ul className="space-y-2 text-[#FCF4EB]/60 text-sm mb-3">
                     <li className="flex gap-2">
-                      <span className="text-[#7C69C7] flex-shrink-0">&#8250;</span>
+                      <span className="text-[#8B79D4] flex-shrink-0">&#8250;</span>
                       <span><span className="font-mono bg-white/[0.08] px-1 rounded text-xs">Try running: ...</span> followed by a command. It is giving you the exact fix. Copy that command and run it.</span>
                     </li>
                     <li className="flex gap-2">
-                      <span className="text-[#7C69C7] flex-shrink-0">&#8250;</span>
+                      <span className="text-[#8B79D4] flex-shrink-0">&#8250;</span>
                       <span><span className="font-mono bg-white/[0.08] px-1 rounded text-xs">Permission denied</span> or similar. Close and reopen terminal, then try the command again.</span>
                     </li>
                   </ul>
@@ -527,7 +527,7 @@ Make it genuinely gorgeous: rich animations, visual depth, tasteful motion, stro
       {/* Part B */}
       <section id="part-b" className="mb-16">
         <div className="flex items-center gap-3 mb-4">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Part B</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Part B</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Add Visual Effects</h2>
         </div>
         <p className="text-[#FCF4EB]/70 leading-relaxed mb-8">
@@ -580,7 +580,7 @@ Do not change any content or layout.`}
       {/* Part C */}
       <section id="part-c" className="mb-16">
         <div className="flex items-center gap-3 mb-4">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Part C</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Part C</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Deploy and Make It Yours</h2>
         </div>
         <p className="text-[#FCF4EB]/70 leading-relaxed mb-8">
@@ -590,7 +590,7 @@ Do not change any content or layout.`}
         <StepCard number={8} title="Deploy to Vercel">
           <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
             Tell Claude Code to deploy. It will handle everything including logging into{' '}
-            <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">Vercel</a>{' '}
+            <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:underline">Vercel</a>{' '}
             and pushing your files live.
           </p>
           <CodeBlock
@@ -599,7 +599,7 @@ Do not change any content or layout.`}
           />
           <p className="text-[#FCF4EB]/70 leading-relaxed mt-4">
             A browser window may open asking you to log in to your{' '}
-            <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">Vercel</a>{' '}
+            <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:underline">Vercel</a>{' '}
             account. Sign in and come back to the terminal. In about 30 seconds you will get a live URL
             that looks like:{' '}
             <span className="font-mono bg-white/[0.08] px-1.5 py-0.5 rounded text-sm">https://my-website-abc123.vercel.app</span>
@@ -635,19 +635,19 @@ Place it in the about section next to my bio. Style it with a rounded border and
           </p>
           <ul className="space-y-2 text-[#FCF4EB]/70">
             <li className="flex gap-2">
-              <span className="text-[#7C69C7] flex-shrink-0">&#8250;</span>
+              <span className="text-[#8B79D4] flex-shrink-0">&#8250;</span>
               <span>&ldquo;Change the colors to match my brand&rdquo;</span>
             </li>
             <li className="flex gap-2">
-              <span className="text-[#7C69C7] flex-shrink-0">&#8250;</span>
+              <span className="text-[#8B79D4] flex-shrink-0">&#8250;</span>
               <span>&ldquo;Add a testimonials section&rdquo;</span>
             </li>
             <li className="flex gap-2">
-              <span className="text-[#7C69C7] flex-shrink-0">&#8250;</span>
+              <span className="text-[#8B79D4] flex-shrink-0">&#8250;</span>
               <span>&ldquo;Make the hero headline bigger and bolder&rdquo;</span>
             </li>
             <li className="flex gap-2">
-              <span className="text-[#7C69C7] flex-shrink-0">&#8250;</span>
+              <span className="text-[#8B79D4] flex-shrink-0">&#8250;</span>
               <span>&ldquo;Add a floating WhatsApp button in the bottom right&rdquo;</span>
             </li>
           </ul>
@@ -668,15 +668,15 @@ Place it in the about section next to my bio. Style it with a rounded border and
           </p>
 
           <div className="bg-white/[0.04] border border-white/[0.08] rounded-2xl p-8 mb-8">
-            <p className="text-[#7C69C7] text-xs font-semibold uppercase tracking-widest mb-3">Support Each Other</p>
+            <p className="text-[#8B79D4] text-xs font-semibold uppercase tracking-widest mb-3">Support Each Other</p>
             <h3 className="text-xl font-bold text-[#FCF4EB] mb-3">Show the world what you built</h3>
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-6">
               You just built a real website with AI. That is worth sharing. Do all three of these before the next session.
             </p>
             <div className="space-y-4">
               <div className="flex gap-4 items-start">
-                <div className="w-8 h-8 rounded-full bg-[#7C69C7]/20 border border-[#7C69C7]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span className="text-[#7C69C7] text-sm font-bold">1</span>
+                <div className="w-8 h-8 rounded-full bg-[#8B79D4]/20 border border-[#8B79D4]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span className="text-[#8B79D4] text-sm font-bold">1</span>
                 </div>
                 <div>
                   <p className="text-[#FCF4EB] font-semibold text-sm mb-1">Post your website in the Masterminds group</p>
@@ -687,8 +687,8 @@ Place it in the about section next to my bio. Style it with a rounded border and
                 </div>
               </div>
               <div className="flex gap-4 items-start">
-                <div className="w-8 h-8 rounded-full bg-[#7C69C7]/20 border border-[#7C69C7]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span className="text-[#7C69C7] text-sm font-bold">2</span>
+                <div className="w-8 h-8 rounded-full bg-[#8B79D4]/20 border border-[#8B79D4]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span className="text-[#8B79D4] text-sm font-bold">2</span>
                 </div>
                 <div>
                   <p className="text-[#FCF4EB] font-semibold text-sm mb-1">Share it on your story</p>
@@ -699,14 +699,14 @@ Place it in the about section next to my bio. Style it with a rounded border and
                 </div>
               </div>
               <div className="flex gap-4 items-start">
-                <div className="w-8 h-8 rounded-full bg-[#7C69C7]/20 border border-[#7C69C7]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span className="text-[#7C69C7] text-sm font-bold">3</span>
+                <div className="w-8 h-8 rounded-full bg-[#8B79D4]/20 border border-[#8B79D4]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span className="text-[#8B79D4] text-sm font-bold">3</span>
                 </div>
                 <div>
                   <p className="text-[#FCF4EB] font-semibold text-sm mb-1">Tag Joe so he can share it</p>
                   <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
                     Tag{' '}
-                    <a href="https://www.instagram.com/joe.che.official/" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline font-medium">@joe.che.official</a>
+                    <a href="https://www.instagram.com/joe.che.official/" target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:underline font-medium">@joe.che.official</a>
                     {' '}in your post or story. He wants to see what you built, celebrate it with you,
                     and share it with his audience so more people see your work.
                   </p>
@@ -715,8 +715,8 @@ Place it in the about section next to my bio. Style it with a rounded border and
             </div>
           </div>
 
-          <div className="border border-[#7C69C7]/50 bg-[#7C69C7]/[0.08] rounded-xl p-6">
-            <p className="text-[#7C69C7] text-xs font-semibold uppercase tracking-widest mb-3">Challenge</p>
+          <div className="border border-[#8B79D4]/50 bg-[#8B79D4]/[0.08] rounded-xl p-6">
+            <p className="text-[#8B79D4] text-xs font-semibold uppercase tracking-widest mb-3">Challenge</p>
             <p className="text-[#FCF4EB]/80 leading-relaxed">
               Share your live website URL in the Masterminds group before the next session.
             </p>

@@ -24,7 +24,7 @@ export default function SiteHeader() {
           />
           <span className="text-base font-bold tracking-tight">
             <span className="text-[#FCF4EB]">Masterminds HQ</span>
-            <span className="text-[#7C69C7]"> Workshop</span>
+            <span className="text-[#8B79D4]"> Workshop</span>
           </span>
         </Link>
       </div>

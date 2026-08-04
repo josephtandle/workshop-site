@@ -41,7 +41,7 @@ async function sendViaResend(email: string, source: string, idempotencyKey: stri
           It is a free Claude Code skill from Joe&rsquo;s public GitHub repo. It strips AI writing patterns, protects the lines that already sound real, and rewrites the synthetic parts in a human voice.
         </p>
 
-        <div style="background: #f5f0ff; border-left: 3px solid #7C69C7; padding: 16px 20px; border-radius: 0 8px 8px 0; margin-bottom: 24px;">
+        <div style="background: #f5f0ff; border-left: 3px solid #8B79D4; padding: 16px 20px; border-radius: 0 8px 8px 0; margin-bottom: 24px;">
           <p style="font-size: 14px; color: #333; margin: 0; line-height: 1.7;">
             <strong>How it works:</strong><br>
             1. Detects AI tells: generic conclusions, fake significance, over-polished vocabulary, em dashes, list syndrome, and chatbot artifacts.<br>
@@ -58,7 +58,7 @@ async function sendViaResend(email: string, source: string, idempotencyKey: stri
 
         <p style="margin-bottom: 24px;">
           <a href="${speakHumanPageUrl}"
-             style="display: inline-block; background: #7C69C7; color: white; padding: 13px 26px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 15px;">
+             style="display: inline-block; background: #8B79D4; color: white; padding: 13px 26px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 15px;">
             Open the Speak Human page
           </a>
         </p>
@@ -91,7 +91,7 @@ async function sendViaResend(email: string, source: string, idempotencyKey: stri
 
         <p style="margin-bottom: 24px;">
           <a href="${withUtm(`${siteUrl}/giveaways/all-sorted-overview`, { campaign: 'lead-magnet', content: 'all-sorted-overview' })}"
-             style="display: inline-block; background: #7C69C7; color: white; padding: 13px 26px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 15px;">
+             style="display: inline-block; background: #8B79D4; color: white; padding: 13px 26px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 15px;">
             Open the overview
           </a>
         </p>
@@ -161,7 +161,7 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
 
         <p style="margin-bottom: 24px;">
           <a href="${guardogPageUrl}"
-             style="display: inline-block; background: #7C69C7; color: white; padding: 13px 26px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 15px;">
+             style="display: inline-block; background: #8B79D4; color: white; padding: 13px 26px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 15px;">
             Open the GuardDog page
           </a>
         </p>
@@ -192,7 +192,7 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
           This is the safe version. The first run shows a preview only. Nothing destructive happens until you explicitly confirm the cleanup.
         </p>
 
-        <div style="background: #f5f0ff; border-left: 3px solid #7C69C7; padding: 16px 20px; border-radius: 0 8px 8px 0; margin-bottom: 24px;">
+        <div style="background: #f5f0ff; border-left: 3px solid #8B79D4; padding: 16px 20px; border-radius: 0 8px 8px 0; margin-bottom: 24px;">
           <p style="font-size: 14px; color: #333; margin: 0; line-height: 1.7;">
             <strong>What it does:</strong><br>
             - previews cleanup first<br>
@@ -204,7 +204,7 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
 
         <p style="margin-bottom: 20px;">
           <a href="${macCleanerInstallerUrl}"
-             style="display: inline-block; background: #7C69C7; color: white; padding: 14px 28px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 16px;">
+             style="display: inline-block; background: #8B79D4; color: white; padding: 14px 28px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 16px;">
             Download the installer script
           </a>
         </p>
@@ -214,7 +214,7 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
         </p>
 
         <p style="margin-bottom: 28px;">
-          <a href="${macCleanerPageUrl}" style="color: #7C69C7; font-weight: 600; text-decoration: none;">
+          <a href="${macCleanerPageUrl}" style="color: #8B79D4; font-weight: 600; text-decoration: none;">
             Open the MacCleaner guide
           </a>
         </p>
@@ -240,7 +240,7 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
           This playbook gives you the full system.
         </p>
 
-        <div style="background: #f5f0ff; border-left: 3px solid #7C69C7; padding: 16px 20px; border-radius: 0 8px 8px 0; margin-bottom: 32px;">
+        <div style="background: #f5f0ff; border-left: 3px solid #8B79D4; padding: 16px 20px; border-radius: 0 8px 8px 0; margin-bottom: 32px;">
           <p style="font-size: 14px; color: #333; margin: 0; line-height: 1.6;">
             <strong>Starbucks</strong> sells sophistication, not coffee.<br>
             <strong>Nike</strong> sells belief in personal greatness, not shoes.<br>
@@ -253,59 +253,59 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
 
         <table style="width: 100%; border-collapse: collapse; margin-bottom: 32px;">
           <tr style="border-bottom: 1px solid #eee;">
-            <td style="padding: 12px 8px; width: 32px; color: #7C69C7; font-weight: 700; font-size: 13px; vertical-align: top;">01</td>
+            <td style="padding: 12px 8px; width: 32px; color: #8B79D4; font-weight: 700; font-size: 13px; vertical-align: top;">01</td>
             <td style="padding: 12px 8px; vertical-align: top;">
               <p style="margin: 0 0 4px; font-weight: 700; font-size: 15px; color: #111;">Shared Beliefs</p>
               <p style="margin: 0; font-size: 14px; color: #555; line-height: 1.6;">The manifesto that makes some people nod hard and others disagree. Disagreement is the signal. A belief that everyone agrees with is a platitude, not a position.</p>
-              <p style="margin: 8px 0 0; font-size: 13px; color: #7C69C7; font-style: italic;">Your job: Complete the sentence "We believe that..." so that some people would push back.</p>
+              <p style="margin: 8px 0 0; font-size: 13px; color: #8B79D4; font-style: italic;">Your job: Complete the sentence "We believe that..." so that some people would push back.</p>
             </td>
           </tr>
           <tr style="border-bottom: 1px solid #eee;">
-            <td style="padding: 12px 8px; color: #7C69C7; font-weight: 700; font-size: 13px; vertical-align: top;">02</td>
+            <td style="padding: 12px 8px; color: #8B79D4; font-weight: 700; font-size: 13px; vertical-align: top;">02</td>
             <td style="padding: 12px 8px; vertical-align: top;">
               <p style="margin: 0 0 4px; font-weight: 700; font-size: 15px; color: #111;">The Common Enemy</p>
               <p style="margin: 0; font-size: 14px; color: #555; line-height: 1.6;">Cult brands define themselves as much by what they oppose as what they stand for. The enemy creates unity. The enemy does not have to be a competitor. It can be a behavior, an institution, or a mindset.</p>
-              <p style="margin: 8px 0 0; font-size: 13px; color: #7C69C7; font-style: italic;">Apple's enemy: IBM, corporate conformity. Liquid Death's enemy: plastic, boring wellness. CrossFit's enemy: complacency, globo gyms.</p>
+              <p style="margin: 8px 0 0; font-size: 13px; color: #8B79D4; font-style: italic;">Apple's enemy: IBM, corporate conformity. Liquid Death's enemy: plastic, boring wellness. CrossFit's enemy: complacency, globo gyms.</p>
             </td>
           </tr>
           <tr style="border-bottom: 1px solid #eee;">
-            <td style="padding: 12px 8px; color: #7C69C7; font-weight: 700; font-size: 13px; vertical-align: top;">03</td>
+            <td style="padding: 12px 8px; color: #8B79D4; font-weight: 700; font-size: 13px; vertical-align: top;">03</td>
             <td style="padding: 12px 8px; vertical-align: top;">
               <p style="margin: 0 0 4px; font-weight: 700; font-size: 15px; color: #111;">Identity</p>
               <p style="margin: 0; font-size: 14px; color: #555; line-height: 1.6;">The most powerful thing you can sell is an answer to "who am I?" Watch how people describe themselves with cult brands. They say "I am a CrossFit person," not "I use CrossFit." The brand becomes part of their self-concept.</p>
-              <p style="margin: 8px 0 0; font-size: 13px; color: #7C69C7; font-style: italic;">Your job: Write the identity sentence your customer feels. "When I use [brand], I am [identity]."</p>
+              <p style="margin: 8px 0 0; font-size: 13px; color: #8B79D4; font-style: italic;">Your job: Write the identity sentence your customer feels. "When I use [brand], I am [identity]."</p>
             </td>
           </tr>
           <tr style="border-bottom: 1px solid #eee;">
-            <td style="padding: 12px 8px; color: #7C69C7; font-weight: 700; font-size: 13px; vertical-align: top;">04</td>
+            <td style="padding: 12px 8px; color: #8B79D4; font-weight: 700; font-size: 13px; vertical-align: top;">04</td>
             <td style="padding: 12px 8px; vertical-align: top;">
               <p style="margin: 0 0 4px; font-weight: 700; font-size: 15px; color: #111;">Rituals</p>
               <p style="margin: 0; font-size: 14px; color: #555; line-height: 1.6;">Repeated behaviors that reinforce belonging. They can be product rituals (how you use it), community rituals (events, challenges), or language rituals (words only members use). They separate insiders from outsiders without a word.</p>
-              <p style="margin: 8px 0 0; font-size: 13px; color: #7C69C7; font-style: italic;">CrossFit: posting your WOD time on the whiteboard. SoulCycle: the candle, the darkness. Harley: the group ride.</p>
+              <p style="margin: 8px 0 0; font-size: 13px; color: #8B79D4; font-style: italic;">CrossFit: posting your WOD time on the whiteboard. SoulCycle: the candle, the darkness. Harley: the group ride.</p>
             </td>
           </tr>
           <tr style="border-bottom: 1px solid #eee;">
-            <td style="padding: 12px 8px; color: #7C69C7; font-weight: 700; font-size: 13px; vertical-align: top;">05</td>
+            <td style="padding: 12px 8px; color: #8B79D4; font-weight: 700; font-size: 13px; vertical-align: top;">05</td>
             <td style="padding: 12px 8px; vertical-align: top;">
               <p style="margin: 0 0 4px; font-weight: 700; font-size: 15px; color: #111;">Sacred Language</p>
               <p style="margin: 0; font-size: 14px; color: #555; line-height: 1.6;">Every tribe develops its own vocabulary. Shared language is a signal of belonging. Know the words, you are in. CrossFit calls it a "box," not a gym. Apple calls its stores "stores" but its support staff "Geniuses." The naming matters.</p>
-              <p style="margin: 8px 0 0; font-size: 13px; color: #7C69C7; font-style: italic;">Your job: Replace 3 generic words in your brand vocabulary with brand-specific ones.</p>
+              <p style="margin: 8px 0 0; font-size: 13px; color: #8B79D4; font-style: italic;">Your job: Replace 3 generic words in your brand vocabulary with brand-specific ones.</p>
             </td>
           </tr>
           <tr style="border-bottom: 1px solid #eee;">
-            <td style="padding: 12px 8px; color: #7C69C7; font-weight: 700; font-size: 13px; vertical-align: top;">06</td>
+            <td style="padding: 12px 8px; color: #8B79D4; font-weight: 700; font-size: 13px; vertical-align: top;">06</td>
             <td style="padding: 12px 8px; vertical-align: top;">
               <p style="margin: 0 0 4px; font-weight: 700; font-size: 15px; color: #111;">Symbols</p>
               <p style="margin: 0; font-size: 14px; color: #555; line-height: 1.6;">Visual and verbal badges that let members recognize each other. The Nike swoosh on your shoes. The Patagonia fleece in certain professional circles. Symbols are shorthand for belonging and signal "I am one of you" without a word spoken.</p>
-              <p style="margin: 8px 0 0; font-size: 13px; color: #7C69C7; font-style: italic;">Your job: What is the one symbol your most devoted customers already use to signal membership?</p>
+              <p style="margin: 8px 0 0; font-size: 13px; color: #8B79D4; font-style: italic;">Your job: What is the one symbol your most devoted customers already use to signal membership?</p>
             </td>
           </tr>
           <tr>
-            <td style="padding: 12px 8px; color: #7C69C7; font-weight: 700; font-size: 13px; vertical-align: top;">07</td>
+            <td style="padding: 12px 8px; color: #8B79D4; font-weight: 700; font-size: 13px; vertical-align: top;">07</td>
             <td style="padding: 12px 8px; vertical-align: top;">
               <p style="margin: 0 0 4px; font-weight: 700; font-size: 15px; color: #111;">Community</p>
               <p style="margin: 0; font-size: 14px; color: #555; line-height: 1.6;">Competitors can copy your product. They cannot copy your people. The brand is the origin. The community becomes the destination. The key distinction: are you building connections between customers, or only between customers and you? The latter is fragile. The former compounds.</p>
-              <p style="margin: 8px 0 0; font-size: 13px; color: #7C69C7; font-style: italic;">Audience to fans to community to tribe. Each stage is harder to copy and more defensible.</p>
+              <p style="margin: 8px 0 0; font-size: 13px; color: #8B79D4; font-style: italic;">Audience to fans to community to tribe. Each stage is harder to copy and more defensible.</p>
             </td>
           </tr>
         </table>
@@ -323,7 +323,7 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
 
         <p style="font-size: 14px; color: #555; line-height: 1.7; margin-bottom: 8px;">
           If this resonates, come see what we are building at
-          <a href="${withUtm('https://mastermindshq.business', { campaign: 'lead-magnet', content: 'cult-brand-playbook' })}" style="color: #7C69C7; font-weight: 600;">Masterminds HQ</a>.
+          <a href="${withUtm('https://mastermindshq.business', { campaign: 'lead-magnet', content: 'cult-brand-playbook' })}" style="color: #8B79D4; font-weight: 600;">Masterminds HQ</a>.
           It is a live community of founders building real businesses with AI.
         </p>
 
@@ -342,7 +342,7 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
         <p style="font-size: 15px; line-height: 1.7; margin-bottom: 24px; color: #444;">
           In the meantime, if you want to see what's possible when people use these tools in a live mastermind session,
           come check out what we're building at
-          <a href="${withUtm('https://mastermindshq.business', { campaign: 'lead-magnet', content: 'web-design-arsenal' })}" style="color: #7C69C7; font-weight: 600;">mastermindshq.business</a>.
+          <a href="${withUtm('https://mastermindshq.business', { campaign: 'lead-magnet', content: 'web-design-arsenal' })}" style="color: #8B79D4; font-weight: 600;">mastermindshq.business</a>.
         </p>
         <p style="font-size: 14px; color: #999; margin-top: 32px;">Joe Che</p>
         ${unsubscribeFooter}
@@ -360,7 +360,7 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
           "What did you have to un-learn about success?"
         </p>
         <a href="${withUtm(`${siteUrl}/unlearning-success.pdf`, { campaign: 'lead-magnet', content: 'unlearning-success-pdf' })}"
-           style="display: inline-block; background: #7C69C7; color: white; padding: 14px 28px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px;">
+           style="display: inline-block; background: #8B79D4; color: white; padding: 14px 28px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px;">
           Download the PDF
         </a>
         <p style="font-size: 13px; color: #999; margin-top: 32px; line-height: 1.5;">
@@ -383,7 +383,7 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
 
         <p style="margin: 0 0 28px;">
           <a href="${costStackPageUrl}"
-             style="display: inline-block; background: #7C69C7; color: #ffffff; padding: 14px 28px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px;">
+             style="display: inline-block; background: #8B79D4; color: #ffffff; padding: 14px 28px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px;">
             Open the Cost Stack Audit
           </a>
         </p>
@@ -392,7 +392,7 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
           Three numbers from people in the room, in their own words:
         </p>
 
-        <div style="border-left: 3px solid #7C69C7; padding-left: 16px; margin-bottom: 24px;">
+        <div style="border-left: 3px solid #8B79D4; padding-left: 16px; margin-bottom: 24px;">
           <p style="font-size: 14px; color: #555; line-height: 1.7; margin: 0 0 12px;">
             <strong>Beata</strong> was quoted $200,000 over two years to build her app. She built the
             bones of it in one night. Her API spend at the time was $13.45.
@@ -415,7 +415,7 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
 
         <p style="font-size: 14px; color: #555; line-height: 1.7; margin-bottom: 8px;">
           If you want to see how people actually replace these things, that is what we do every week at
-          <a href="${withUtm('https://mastermindshq.business', { campaign: 'lead-magnet', content: 'cost-stack' })}" style="color: #7C69C7; font-weight: 600;">Masterminds HQ</a>.
+          <a href="${withUtm('https://mastermindshq.business', { campaign: 'lead-magnet', content: 'cost-stack' })}" style="color: #8B79D4; font-weight: 600;">Masterminds HQ</a>.
         </p>
 
         <p style="font-size: 14px; color: #999; margin-top: 32px;">Joe Che</p>

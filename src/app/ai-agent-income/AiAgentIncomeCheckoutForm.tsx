@@ -55,12 +55,12 @@ export default function AiAgentIncomeCheckoutForm({ compact = false }: CheckoutF
           autoComplete="email"
           aria-invalid={error ? 'true' : 'false'}
           aria-describedby={error ? errorId : undefined}
-          className="min-h-[3.5rem] flex-1 rounded-xl border border-white/[0.12] bg-white/[0.06] px-5 text-base text-[#FCF4EB] outline-none transition placeholder:text-[#FCF4EB]/35 focus:border-[#9D8FE0]/70 focus:ring-2 focus:ring-[#7C69C7]/25"
+          className="min-h-[3.5rem] flex-1 rounded-xl border border-white/[0.12] bg-white/[0.06] px-5 text-base text-[#FCF4EB] outline-none transition placeholder:text-[#FCF4EB]/35 focus:border-[#9D8FE0]/70 focus:ring-2 focus:ring-[#8B79D4]/25"
         />
         <button
           type="submit"
           disabled={loading}
-          className="min-h-[3.5rem] rounded-xl bg-[#7C69C7] px-7 text-base font-bold text-white transition hover:bg-[#6B5AB8] focus:outline-none focus:ring-2 focus:ring-[#F5C3C6]/50 disabled:cursor-not-allowed disabled:opacity-60"
+          className="min-h-[3.5rem] rounded-xl bg-[#8B79D4] px-7 text-base font-bold text-white transition hover:bg-[#6B5AB8] focus:outline-none focus:ring-2 focus:ring-[#F5C3C6]/50 disabled:cursor-not-allowed disabled:opacity-60"
         >
           {loading ? 'Opening checkout...' : 'Start your $1 trial'}
         </button>

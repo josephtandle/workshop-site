@@ -73,7 +73,7 @@ export default function Session8Guide() {
 
         {/* Page Header */}
         <div className="mb-10">
-          <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
+          <p className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest mb-3">
             Section 8
           </p>
           <h1 className="gradient-text text-5xl font-extrabold leading-tight mb-5 pb-1">
@@ -101,13 +101,13 @@ export default function Session8Guide() {
           </div>
 
           {/* Table of Contents */}
-          <details className="rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(124,105,199,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]">
+          <details className="rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(139,121,212,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]">
             <summary className="flex items-center justify-between px-6 py-5 cursor-pointer select-none">
               <div className="flex items-center gap-3">
                 <span className="h-2 w-2 rounded-full bg-[#9D8FE0] shadow-[0_0_12px_rgba(157,143,224,0.70)]" />
                 <span className="text-xs uppercase tracking-[0.20em] text-[#FCF4EB]/65 font-semibold">Table of Contents</span>
               </div>
-              <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[rgba(124,105,199,0.15)] border border-[rgba(124,105,199,0.28)] text-[#9D8FE0]">
+              <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[rgba(139,121,212,0.15)] border border-[rgba(139,121,212,0.28)] text-[#9D8FE0]">
                 <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                   <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -133,7 +133,7 @@ export default function Session8Guide() {
                 <li key={href} className="flex items-center gap-3 group/item">
                   <span
                     className="number-glow flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold tabular-nums"
-                    style={{ background: 'rgba(124,105,199,0.18)', color: '#9D8FE0', border: '1.5px solid rgba(124,105,199,0.30)' }}
+                    style={{ background: 'rgba(139,121,212,0.18)', color: '#9D8FE0', border: '1.5px solid rgba(139,121,212,0.30)' }}
                   >
                     {i + 1}
                   </span>
@@ -162,7 +162,7 @@ export default function Session8Guide() {
       <div className="max-w-3xl mx-auto px-6 py-10">
         <section id="setup" className="mb-16">
           <div className="mb-8">
-            <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Start Here</span>
+            <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Start Here</span>
             <h2 className="text-3xl font-bold text-[#FCF4EB] mt-3">Claude Dangerously Skip Permissions</h2>
           </div>
 
@@ -182,7 +182,7 @@ export default function Session8Guide() {
         ==================================================== */}
         <section id="install" className="mb-16">
           <div className="flex items-center gap-3 mb-8">
-            <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Install</span>
+            <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Install</span>
             <h2 className="text-2xl font-bold text-[#FCF4EB]">Install and Register WebFetch</h2>
           </div>
           <StepCard number={2} title="Install and register skills">
@@ -263,7 +263,7 @@ Make sure to install all of the required dependencies necessary to install every
         ==================================================== */}
         <section id="part-a" className="mb-16">
           <div className="mb-8">
-            <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">WebFetch</span>
+            <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">WebFetch</span>
             <h2 className="text-3xl font-bold text-[#FCF4EB] mt-3">Take the Internet Apart</h2>
           </div>
 
@@ -299,7 +299,7 @@ Make sure to install all of the required dependencies necessary to install every
             ].map(({ icon, title, desc }) => (
               <div key={title} className="webfetch-feature-card group rounded-xl p-5">
                 <div className="relative z-10 flex items-start gap-4">
-                  <div className="aspect-square w-14 rounded-xl flex items-center justify-center text-[#CFC5FF] bg-[#7C69C7]/18 group-hover:bg-[#7C69C7]/28 shadow-[inset_0_1px_0_rgba(255,255,255,0.10),0_12px_30px_rgba(0,0,0,0.18)] transition-colors [&_svg]:h-7 [&_svg]:w-7">
+                  <div className="aspect-square w-14 rounded-xl flex items-center justify-center text-[#CFC5FF] bg-[#8B79D4]/18 group-hover:bg-[#8B79D4]/28 shadow-[inset_0_1px_0_rgba(255,255,255,0.10),0_12px_30px_rgba(0,0,0,0.18)] transition-colors [&_svg]:h-7 [&_svg]:w-7">
                     <WebFetchUseCaseIcon type={icon} />
                   </div>
                   <div className="min-w-0">
@@ -317,7 +317,7 @@ Make sure to install all of the required dependencies necessary to install every
         ==================================================== */}
         <section id="examples" className="mb-16">
           <div className="flex items-center gap-3 mb-8">
-            <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Examples</span>
+            <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Examples</span>
             <h2 className="text-2xl font-bold text-[#FCF4EB]">Using WebFetch Examples</h2>
           </div>
 
@@ -376,7 +376,7 @@ Using WebFetch, research their public website and give me:
         ==================================================== */}
         <section id="tools" className="mb-16">
           <div className="mt-8 mb-4">
-            <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Tool Stack</span>
+            <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Tool Stack</span>
             <h2 className="text-2xl font-bold text-[#FCF4EB] mt-3 mb-3">Tools Inside WebFetch</h2>
             <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
               These are the practical commands Claude can use after the tool is installed and registered in your
@@ -435,7 +435,7 @@ Using WebFetch, research their public website and give me:
           </div>
 
           <div className="space-y-4 mt-4">
-            <div className="bg-[linear-gradient(135deg,rgba(245,195,198,0.12),rgba(124,105,199,0.08))] border border-white/[0.10] rounded-xl p-5">
+            <div className="bg-[linear-gradient(135deg,rgba(245,195,198,0.12),rgba(139,121,212,0.08))] border border-white/[0.10] rounded-xl p-5">
               <p className="text-[#FCF4EB] font-semibold text-sm mb-2">yt-dlp: The Media Retriever</p>
               <p className="text-[#FCF4EB]/60 text-sm leading-relaxed mb-3">
                 yt-dlp is the media engine behind <strong className="text-[#FCF4EB]">webfetch media</strong>.
@@ -519,7 +519,7 @@ Using WebFetch, research their public website and give me:
         ==================================================== */}
         <section id="use-cases" className="mb-16">
           <div className="mb-8">
-            <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Example Real-World Cases</span>
+            <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Example Real-World Cases</span>
             <h2 className="text-3xl font-bold text-[#FCF4EB] mt-3">WebFetch Real-World Use Cases</h2>
           </div>
 
@@ -558,7 +558,7 @@ Using WebFetch, research their public website and give me:
             ].map(({ icon, title, desc }, index) => (
               <div key={title} className="group bg-[linear-gradient(145deg,rgba(255,255,255,0.065),rgba(255,255,255,0.025))] border border-white/[0.10] rounded-xl p-5 shadow-[0_18px_50px_rgba(0,0,0,0.16)]">
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="aspect-square w-14 rounded-xl flex items-center justify-center text-[#CFC5FF] bg-[#7C69C7]/18 group-hover:bg-[#7C69C7]/28 shadow-[inset_0_1px_0_rgba(255,255,255,0.10),0_12px_30px_rgba(0,0,0,0.18)] transition-colors [&_svg]:h-7 [&_svg]:w-7">
+                  <div className="aspect-square w-14 rounded-xl flex items-center justify-center text-[#CFC5FF] bg-[#8B79D4]/18 group-hover:bg-[#8B79D4]/28 shadow-[inset_0_1px_0_rgba(255,255,255,0.10),0_12px_30px_rgba(0,0,0,0.18)] transition-colors [&_svg]:h-7 [&_svg]:w-7">
                     <WebFetchUseCaseIcon type={icon} />
                   </div>
                   <div>
@@ -580,7 +580,7 @@ Using WebFetch, research their public website and give me:
         ==================================================== */}
         <section id="mlx-whisper" className="mb-16">
           <div className="flex items-center gap-3 mb-8">
-            <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Local Audio</span>
+            <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Local Audio</span>
             <h2 className="text-2xl font-bold text-[#FCF4EB]">Install Local Whisper and Diarization</h2>
           </div>
 
@@ -596,11 +596,11 @@ Using WebFetch, research their public website and give me:
             </p>
             <ul className="space-y-2 mb-4 pl-1">
               <li className="flex items-start gap-2 text-sm text-[#FCF4EB]/60 leading-relaxed">
-                <span className="text-[#7C69C7] mt-0.5">→</span>
+                <span className="text-[#8B79D4] mt-0.5">→</span>
                 <span><strong className="text-[#FCF4EB]">simple-diarizer</strong> — fully local, no account needed, installs in one command. Best for short or medium recordings with a small number of speakers.</span>
               </li>
               <li className="flex items-start gap-2 text-sm text-[#FCF4EB]/60 leading-relaxed">
-                <span className="text-[#7C69C7] mt-0.5">→</span>
+                <span className="text-[#8B79D4] mt-0.5">→</span>
                 <span><strong className="text-[#FCF4EB]">pyannote.audio</strong> — more powerful for long recordings with many speakers. Requires a free Hugging Face account and accepting the model terms once. Sign up at huggingface.co — it is free.</span>
               </li>
             </ul>
@@ -697,7 +697,7 @@ Handle the common paths for me:
         ==================================================== */}
         <section id="guarddog" className="mb-16">
           <div className="mb-8">
-            <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Safety Layer</span>
+            <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Safety Layer</span>
             <h2 className="text-3xl font-bold text-[#FCF4EB] mt-3">Installing GuardDog</h2>
           </div>
 
@@ -756,7 +756,7 @@ After setup:
         ==================================================== */}
         <section id="virustotal" className="mb-16">
           <div className="mb-8">
-            <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Safety Layer</span>
+            <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Safety Layer</span>
             <h2 className="text-3xl font-bold text-[#FCF4EB] mt-3">Get Your VirusTotal API Key</h2>
           </div>
 
@@ -820,7 +820,7 @@ After setup:
         <section id="wrap-up" className="mb-4">
           <div className="webfetch-hero-glass rounded-2xl p-8">
             <div className="relative z-10">
-              <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Wrap-Up</span>
+              <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Wrap-Up</span>
               <h2 className="gradient-text text-3xl font-extrabold mt-3 mb-4 pb-1">
                 You have now unlocked the system.
               </h2>
@@ -835,7 +835,7 @@ After setup:
 
         <section id="git-memory" className="mt-16 mb-4">
           <div className="mb-8">
-            <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Project Memory</span>
+            <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Project Memory</span>
             <h2 className="text-3xl font-bold text-[#FCF4EB] mt-3">Git: Turn Your Projects Into Safe Systems</h2>
           </div>
 

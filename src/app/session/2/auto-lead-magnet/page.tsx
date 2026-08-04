@@ -225,16 +225,16 @@ export default function AutoLeadMagnetPage() {
 
       {/* Back link */}
       <nav className="mb-10 text-sm flex items-center gap-2" style={{ color: 'rgba(252,244,235,0.4)' }}>
-        <Link href="/" className="hover:text-[#7C69C7] transition-colors">All Sessions</Link>
+        <Link href="/" className="hover:text-[#8B79D4] transition-colors">All Sessions</Link>
         <span>/</span>
-        <Link href="/session/2" className="hover:text-[#7C69C7] transition-colors">Session 2</Link>
+        <Link href="/session/2" className="hover:text-[#8B79D4] transition-colors">Session 2</Link>
         <span>/</span>
         <span style={{ color: 'rgba(252,244,235,0.6)' }}>Auto Lead Magnet PDF</span>
       </nav>
 
       {/* Header */}
       <div className="mb-14">
-        <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#7C69C7' }}>
+        <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#8B79D4' }}>
           Pre-Session Bonus
         </p>
         <h1 className="gradient-text text-4xl md:text-5xl font-extrabold leading-tight mb-4">
@@ -311,12 +311,12 @@ export default function AutoLeadMagnetPage() {
           style={{
             background: 'rgba(255,255,255,0.04)',
             border: '1px solid rgba(255,255,255,0.08)',
-            borderLeft: '3px solid #7C69C7',
+            borderLeft: '3px solid #8B79D4',
           }}
         >
           <div
             className="shrink-0 w-12 h-12 rounded-xl flex items-center justify-center text-xl"
-            style={{ background: 'rgba(124,105,199,0.15)', border: '1px solid rgba(124,105,199,0.25)' }}
+            style={{ background: 'rgba(139,121,212,0.15)', border: '1px solid rgba(139,121,212,0.25)' }}
           >
             📄
           </div>
@@ -328,7 +328,7 @@ export default function AutoLeadMagnetPage() {
               See what the output looks like for a real business. Opens in a new tab.
             </p>
           </div>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="shrink-0 text-[#7C69C7]">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="shrink-0 text-[#8B79D4]">
             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </a>
@@ -349,7 +349,7 @@ export default function AutoLeadMagnetPage() {
             <div className="flex items-center gap-3 mb-4">
               <div
                 className="w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold"
-                style={{ background: 'rgba(124,105,199,0.20)', color: '#9D8FE0', border: '1px solid rgba(124,105,199,0.30)' }}
+                style={{ background: 'rgba(139,121,212,0.20)', color: '#9D8FE0', border: '1px solid rgba(139,121,212,0.30)' }}
               >
                 1
               </div>
@@ -362,7 +362,7 @@ export default function AutoLeadMagnetPage() {
               <code className="px-1.5 py-0.5 rounded text-xs font-mono" style={{ background: 'rgba(255,255,255,0.08)', color: '#9D8FE0' }}>Terminal</code>,
               hit Enter.
             </p>
-            <div className="rounded-lg overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.08)', borderLeft: '2px solid #7C69C7' }}>
+            <div className="rounded-lg overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.08)', borderLeft: '2px solid #8B79D4' }}>
               <div className="flex items-center justify-between px-3 py-1.5" style={{ background: 'rgba(255,255,255,0.04)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                 <span className="text-xs font-mono" style={{ color: 'rgba(252,244,235,0.35)' }}>Terminal</span>
               </div>
@@ -375,7 +375,7 @@ export default function AutoLeadMagnetPage() {
             <div className="flex items-center gap-3 mb-4">
               <div
                 className="w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold"
-                style={{ background: 'rgba(124,105,199,0.20)', color: '#9D8FE0', border: '1px solid rgba(124,105,199,0.30)' }}
+                style={{ background: 'rgba(139,121,212,0.20)', color: '#9D8FE0', border: '1px solid rgba(139,121,212,0.30)' }}
               >
                 2
               </div>
@@ -392,7 +392,7 @@ export default function AutoLeadMagnetPage() {
             <div className="flex items-center gap-3 mb-4">
               <div
                 className="w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold"
-                style={{ background: 'rgba(124,105,199,0.20)', color: '#9D8FE0', border: '1px solid rgba(124,105,199,0.30)' }}
+                style={{ background: 'rgba(139,121,212,0.20)', color: '#9D8FE0', border: '1px solid rgba(139,121,212,0.30)' }}
               >
                 3
               </div>
@@ -411,9 +411,9 @@ export default function AutoLeadMagnetPage() {
         <div
           className="rounded-2xl p-6"
           style={{
-            background: 'rgba(124,105,199,0.08)',
-            border: '1px solid rgba(124,105,199,0.25)',
-            borderLeft: '3px solid #7C69C7',
+            background: 'rgba(139,121,212,0.08)',
+            border: '1px solid rgba(139,121,212,0.25)',
+            borderLeft: '3px solid #8B79D4',
           }}
         >
           <div className="flex items-start gap-3">
@@ -434,7 +434,7 @@ export default function AutoLeadMagnetPage() {
           href="/session/2"
           className="inline-flex items-center gap-2 text-sm transition-colors"
           style={{ color: 'rgba(252,244,235,0.4)' }}
-          onMouseEnter={e => (e.currentTarget.style.color = '#7C69C7')}
+          onMouseEnter={e => (e.currentTarget.style.color = '#8B79D4')}
           onMouseLeave={e => (e.currentTarget.style.color = 'rgba(252,244,235,0.4)')}
         >
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">

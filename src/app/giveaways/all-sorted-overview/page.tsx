@@ -382,7 +382,7 @@ export default function AllSortedOverviewPage() {
               </p>
               <button
                 onClick={() => setEmailModalOpen(true)}
-                className="mt-7 inline-flex items-center justify-center rounded-xl bg-[#7C69C7] hover:bg-[#6e5db8] text-[#FCF4EB] font-bold px-8 py-3.5 text-[15px] active:scale-[0.98] transition"
+                className="mt-7 inline-flex items-center justify-center rounded-xl bg-[#8B79D4] hover:bg-[#6e5db8] text-[#FCF4EB] font-bold px-8 py-3.5 text-[15px] active:scale-[0.98] transition"
               >
                 Send me the overview
               </button>

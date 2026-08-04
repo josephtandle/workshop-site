@@ -13,7 +13,7 @@ export default function ConnectingToGoogleSheetsPage() {
   return (
     <main className="max-w-3xl mx-auto px-6 py-16">
       <div className="mb-14">
-        <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
+        <p className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest mb-3">
           Resource Vault
         </p>
         <h1 className="gradient-text text-4xl font-extrabold leading-tight mb-5 pb-1">
@@ -30,13 +30,13 @@ export default function ConnectingToGoogleSheetsPage() {
         </div>
       </div>
 
-      <details className="mb-12 rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(124,105,199,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]">
+      <details className="mb-12 rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(139,121,212,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]">
         <summary className="flex items-center justify-between px-6 py-5 cursor-pointer select-none">
           <div className="flex items-center gap-3">
             <span className="h-2 w-2 rounded-full bg-[#9D8FE0] shadow-[0_0_12px_rgba(157,143,224,0.70)]" />
             <span className="text-xs uppercase tracking-[0.20em] text-[#FCF4EB]/65 font-semibold">Table of Contents</span>
           </div>
-          <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[rgba(124,105,199,0.15)] border border-[rgba(124,105,199,0.28)] text-[#9D8FE0]">
+          <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[rgba(139,121,212,0.15)] border border-[rgba(139,121,212,0.28)] text-[#9D8FE0]">
             <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
@@ -54,7 +54,7 @@ export default function ConnectingToGoogleSheetsPage() {
           ].map((item, index) => (
             <li key={item.href}>
               <a href={item.href} className="group flex items-start gap-3 text-sm text-[#FCF4EB]/72 hover:text-[#FCF4EB] transition-colors">
-                <span className="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full border border-[rgba(124,105,199,0.32)] bg-[rgba(124,105,199,0.12)] text-[11px] font-semibold text-[#9D8FE0] group-hover:bg-[rgba(124,105,199,0.18)]">
+                <span className="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full border border-[rgba(139,121,212,0.32)] bg-[rgba(139,121,212,0.12)] text-[11px] font-semibold text-[#9D8FE0] group-hover:bg-[rgba(139,121,212,0.18)]">
                   {index + 1}
                 </span>
                 <span className="leading-relaxed">{item.label}</span>
@@ -66,7 +66,7 @@ export default function ConnectingToGoogleSheetsPage() {
 
       <section id="setup" className="mb-16">
         <div className="mb-8">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Start Here</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Start Here</span>
           <h2 className="text-3xl font-bold text-[#FCF4EB] mt-3">Claude Dangerously Skip Permissions</h2>
         </div>
 
@@ -84,7 +84,7 @@ export default function ConnectingToGoogleSheetsPage() {
 
       <section id="part-a" className="mb-16">
         <div className="flex items-center gap-3 mb-8">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Part A</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Part A</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Connect Claude Code to Google Sheets with Composio</h2>
         </div>
 
@@ -95,7 +95,7 @@ export default function ConnectingToGoogleSheetsPage() {
               href="https://app.composio.dev"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#7C69C7] hover:text-[#9D8FE0] underline underline-offset-2"
+              className="text-[#8B79D4] hover:text-[#9D8FE0] underline underline-offset-2"
             >
               app.composio.dev
             </Link>{' '}
@@ -111,7 +111,7 @@ export default function ConnectingToGoogleSheetsPage() {
                 href="https://docs.composio.dev/docs/composio-connect"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#7C69C7] hover:text-[#9D8FE0] underline underline-offset-2"
+                className="text-[#8B79D4] hover:text-[#9D8FE0] underline underline-offset-2"
               >
                 Composio Connect docs
               </Link>
@@ -121,7 +121,7 @@ export default function ConnectingToGoogleSheetsPage() {
                 href="https://docs.composio.dev/toolkits/googlesheets"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#7C69C7] hover:text-[#9D8FE0] underline underline-offset-2"
+                className="text-[#8B79D4] hover:text-[#9D8FE0] underline underline-offset-2"
               >
                 Google Sheets toolkit docs
               </Link>
@@ -230,15 +230,15 @@ Do not create anything yet. Just verify the setup and summarize what you found.`
 
       <section id="part-b" className="mb-16">
         <div className="flex items-center gap-3 mb-8">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest whitespace-nowrap">Part B</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest whitespace-nowrap">Part B</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Build Eric Horn&apos;s CultureRoot investor outreach database</h2>
         </div>
 
         <div
           className="rounded-2xl p-6 mb-8"
           style={{
-            background: 'linear-gradient(135deg, rgba(124, 105, 199, 0.12) 0%, rgba(245, 195, 198, 0.08) 100%)',
-            border: '1px solid rgba(124, 105, 199, 0.22)',
+            background: 'linear-gradient(135deg, rgba(139, 121, 212, 0.12) 0%, rgba(245, 195, 198, 0.08) 100%)',
+            border: '1px solid rgba(139, 121, 212, 0.22)',
           }}
         >
           <p className="text-[#FCF4EB] font-semibold mb-2">What Eric is actually building</p>
@@ -389,7 +389,7 @@ Do the following carefully:
         </div>
 
         <div className="space-y-4 mt-4 mb-10">
-          <div className="bg-[linear-gradient(135deg,rgba(245,195,198,0.12),rgba(124,105,199,0.08))] border border-white/[0.10] rounded-xl p-5">
+          <div className="bg-[linear-gradient(135deg,rgba(245,195,198,0.12),rgba(139,121,212,0.08))] border border-white/[0.10] rounded-xl p-5">
             <p className="text-[#FCF4EB] font-semibold text-sm mb-2">yt-dlp: The Media Retriever</p>
             <p className="text-[#FCF4EB]/60 text-sm leading-relaxed mb-3">
               yt-dlp is the media engine behind <strong className="text-[#FCF4EB]">webfetch media</strong>.
@@ -561,7 +561,7 @@ Keep the messaging grounded in CultureRoot's strengths:
 
       <section id="part-c">
         <div className="flex items-center gap-3 mb-8">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Part C</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Part C</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">What to watch on the free plan</h2>
         </div>
 
@@ -583,7 +583,7 @@ Keep the messaging grounded in CultureRoot's strengths:
                 href="https://composio.dev/pricing"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#7C69C7] hover:text-[#9D8FE0] underline underline-offset-2"
+                className="text-[#8B79D4] hover:text-[#9D8FE0] underline underline-offset-2"
               >
                 Composio pricing
               </Link>
@@ -593,7 +593,7 @@ Keep the messaging grounded in CultureRoot's strengths:
                 href="https://docs.composio.dev/docs/composio-connect"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#7C69C7] hover:text-[#9D8FE0] underline underline-offset-2"
+                className="text-[#8B79D4] hover:text-[#9D8FE0] underline underline-offset-2"
               >
                 Composio Connect docs
               </Link>
@@ -603,7 +603,7 @@ Keep the messaging grounded in CultureRoot's strengths:
                 href="https://docs.composio.dev/toolkits/googlesheets"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#7C69C7] hover:text-[#9D8FE0] underline underline-offset-2"
+                className="text-[#8B79D4] hover:text-[#9D8FE0] underline underline-offset-2"
               >
                 Google Sheets toolkit
               </Link>
@@ -613,7 +613,7 @@ Keep the messaging grounded in CultureRoot's strengths:
                 href="https://docs.composio.dev/toolkits/premium-tools"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#7C69C7] hover:text-[#9D8FE0] underline underline-offset-2"
+                className="text-[#8B79D4] hover:text-[#9D8FE0] underline underline-offset-2"
               >
                 Premium tools
               </Link>

@@ -19,9 +19,9 @@ export default function PrepChecklistItem({
         <div
           className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold"
           style={{
-            background: 'rgba(124, 105, 199, 0.15)',
-            color: '#7C69C7',
-            border: '1.5px solid rgba(124, 105, 199, 0.30)',
+            background: 'rgba(139, 121, 212, 0.15)',
+            color: '#8B79D4',
+            border: '1.5px solid rgba(139, 121, 212, 0.30)',
           }}
         >
           {number}

@@ -130,11 +130,11 @@ export default function BenchmarkPage() {
         <div className="absolute inset-0 pointer-events-none">
           <div
             className="aurora-orb absolute top-[-14%] left-[5%] h-[420px] w-[420px] rounded-full opacity-24"
-            style={{ background: 'radial-gradient(circle, rgba(124, 105, 199, 0.55) 0%, transparent 70%)' }}
+            style={{ background: 'radial-gradient(circle, rgba(139, 121, 212, 0.55) 0%, transparent 70%)' }}
           />
           <div
             className="aurora-orb absolute top-[10%] right-[10%] h-[220px] w-[220px] rounded-full opacity-14"
-            style={{ background: 'radial-gradient(circle, rgba(124, 105, 199, 0.34) 0%, transparent 72%)' }}
+            style={{ background: 'radial-gradient(circle, rgba(139, 121, 212, 0.34) 0%, transparent 72%)' }}
           />
         </div>
 
@@ -189,7 +189,7 @@ export default function BenchmarkPage() {
       <section className="max-w-6xl mx-auto px-6 pb-10">
         <Reveal>
           <div className="mb-6">
-            <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-2">
+            <p className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest mb-2">
               Benchmark dimensions
             </p>
             <h2 className="text-2xl sm:text-3xl font-bold text-[#FCF4EB]">
@@ -216,7 +216,7 @@ export default function BenchmarkPage() {
       <section className="max-w-6xl mx-auto px-6 pb-20">
         <Reveal>
           <div className="mb-6">
-            <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-2">
+            <p className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest mb-2">
               Side-by-side rows
             </p>
             <h2 className="text-2xl sm:text-3xl font-bold text-[#FCF4EB]">
@@ -228,10 +228,10 @@ export default function BenchmarkPage() {
         <div className="space-y-6">
           {comparisons.map((row, index) => (
             <Reveal key={row.lane} delay={index + 1}>
-              <div className="card-hover rounded-[28px] border border-[#FCF4EB]/[0.10] bg-[linear-gradient(180deg,rgba(124,105,199,0.16),rgba(252,244,235,0.04))] p-5 sm:p-6">
+              <div className="card-hover rounded-[28px] border border-[#FCF4EB]/[0.10] bg-[linear-gradient(180deg,rgba(139,121,212,0.16),rgba(252,244,235,0.04))] p-5 sm:p-6">
                 <div className="mb-5 flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
                   <div>
-                    <p className="text-[#7C69C7] text-xs font-semibold uppercase tracking-[0.2em] mb-2">
+                    <p className="text-[#8B79D4] text-xs font-semibold uppercase tracking-[0.2em] mb-2">
                       {row.lane}
                     </p>
                     <h3 className="text-2xl font-bold text-[#FCF4EB]">{row.benchmarkFocus}</h3>
@@ -239,7 +239,7 @@ export default function BenchmarkPage() {
                 </div>
 
                 <div className="grid gap-4 xl:grid-cols-[1fr_1fr_1.1fr]">
-                  <div className="rounded-2xl border border-[#9D8FE0]/25 bg-[linear-gradient(180deg,rgba(124,105,199,0.18),rgba(124,105,199,0.10))] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
+                  <div className="rounded-2xl border border-[#9D8FE0]/25 bg-[linear-gradient(180deg,rgba(139,121,212,0.18),rgba(139,121,212,0.10))] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
                     <p className="text-xs uppercase tracking-widest text-[#9D8FE0] mb-2">Anthropic</p>
                     <h4 className="text-xl font-bold text-[#FCF4EB] mb-2">{row.anthropic.name}</h4>
                     <p className="text-sm text-[#FCF4EB]/60 mb-4">{row.anthropic.tier}</p>
@@ -273,7 +273,7 @@ export default function BenchmarkPage() {
                     <p className="text-sm text-[#FCF4EB]/72 leading-relaxed">{row.openai.notes}</p>
                   </div>
 
-                  <div className="rounded-2xl border border-[#FCF4EB]/[0.12] bg-[linear-gradient(180deg,rgba(252,244,235,0.08),rgba(245,195,198,0.10))] p-5 shadow-[0_16px_48px_rgba(124,105,199,0.10),inset_0_1px_0_rgba(255,255,255,0.08)]">
+                  <div className="rounded-2xl border border-[#FCF4EB]/[0.12] bg-[linear-gradient(180deg,rgba(252,244,235,0.08),rgba(245,195,198,0.10))] p-5 shadow-[0_16px_48px_rgba(139,121,212,0.10),inset_0_1px_0_rgba(255,255,255,0.08)]">
                     <p className="text-xs uppercase tracking-widest text-[#FCF4EB]/45 mb-2">Comparison</p>
                     <p className="text-[#FCF4EB] leading-relaxed mb-5">{row.comparison}</p>
 
@@ -299,13 +299,13 @@ export default function BenchmarkPage() {
             className="card-hover rounded-[32px] p-8 sm:p-10 lg:p-12"
             style={{
               background:
-                'linear-gradient(135deg, rgba(245, 195, 198, 0.14) 0%, rgba(124, 105, 199, 0.12) 42%, rgba(252, 244, 235, 0.08) 100%)',
+                'linear-gradient(135deg, rgba(245, 195, 198, 0.14) 0%, rgba(139, 121, 212, 0.12) 42%, rgba(252, 244, 235, 0.08) 100%)',
               border: '1px solid rgba(252,244,235,0.10)',
             }}
           >
             <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
               <div>
-                <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
+                <p className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest mb-3">
                   Masterminds HQ
                 </p>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-[#FCF4EB] leading-tight mb-4">
