@@ -29,7 +29,7 @@ export default function EventsIndexPage() {
           </Reveal>
           <Reveal delay={2}>
             <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[#FCF4EB]/64">
-              I host these live, some in Bali and some online for anyone in the world. Come sit in and watch exactly what I use AI for in my own business.
+              Both online and in person, come sit in and watch exactly what I use AI for in my own business.
             </p>
           </Reveal>
         </div>
@@ -39,6 +39,7 @@ export default function EventsIndexPage() {
         <div className="flex flex-col gap-6">
           {events.map((event) => {
             const priceLabel = event.pricing.fullPrice === 0 ? 'Free' : formatEventPrice(event)
+            const modalityLabel = event.badge ?? (event.zoomLink ? 'Online' : null)
             return (
               <Link
                 key={event.slug}
@@ -52,8 +53,13 @@ export default function EventsIndexPage() {
                   <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
                     <div className="flex flex-wrap items-center gap-2">
                       <span className="rounded-full border border-[#7C69C7]/30 bg-[#7C69C7]/14 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#BDB3E8]">
-                        {event.badge ?? 'Live'}
+                        Live
                       </span>
+                      {modalityLabel && (
+                        <span className="rounded-full border border-[#7C69C7]/30 bg-[#7C69C7]/14 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#BDB3E8]">
+                          {modalityLabel}
+                        </span>
+                      )}
                       <span className="rounded-full border border-[#F5C3C6]/30 bg-[#F5C3C6]/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#F5C3C6]">
                         {priceLabel}
                       </span>
