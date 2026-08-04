@@ -45,16 +45,8 @@ export default function EventsIndexPage() {
                 href={`/events/${event.slug}`}
                 className="card-hover group flex flex-col overflow-hidden rounded-[1.8rem] border border-white/10 bg-white/[0.04] shadow-[0_22px_70px_rgba(0,0,0,0.26)] sm:flex-row"
               >
-                <div className="relative h-56 w-full flex-shrink-0 sm:h-auto sm:w-80">
-                  <Image
-                    src={event.heroImage}
-                    alt={event.heroAlt}
-                    fill
-                    className={event.heroObjectFit === 'contain' ? 'object-contain' : 'object-cover'}
-                  />
-                  {!event.heroNoOverlay && (
-                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,7,20,0.16)_0%,rgba(10,7,20,0.5)_56%,rgba(10,7,20,0.82)_100%)]" />
-                  )}
+                <div className="relative aspect-[16/9] w-full flex-shrink-0 self-center bg-black/20 sm:w-96">
+                  <Image src={event.heroImage} alt={event.heroAlt} fill className="object-contain" />
                 </div>
                 <div className="flex flex-1 flex-col p-6">
                   <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
