@@ -90,16 +90,16 @@ export default function Session4WrapUp() {
       {/* ── Hero ─────────────────────────────────────────── */}
       <div className="max-w-5xl mx-auto px-6 pt-10 pb-0">
         <nav className="text-sm text-[#FCF4EB]/40 flex items-center gap-2 flex-wrap mb-12">
-          <Link href="/" className="hover:text-[#7C69C7] transition-colors">All Sessions</Link>
+          <Link href="/" className="hover:text-[#8B79D4] transition-colors">All Sessions</Link>
           <span>/</span>
-          <Link href="/session/4" className="hover:text-[#7C69C7] transition-colors">Session 4</Link>
+          <Link href="/session/4" className="hover:text-[#8B79D4] transition-colors">Session 4</Link>
           <span>/</span>
           <span className="text-[#FCF4EB]/60">Wrap-Up</span>
         </nav>
 
         <div className="relative mb-14">
-          <div className="absolute -inset-x-6 -inset-y-4 bg-gradient-to-r from-[#7C69C7]/12 via-[#9D8FE0]/16 to-[#F5C3C6]/10 blur-3xl rounded-full pointer-events-none" />
-          <p className="relative text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
+          <div className="absolute -inset-x-6 -inset-y-4 bg-gradient-to-r from-[#8B79D4]/12 via-[#9D8FE0]/16 to-[#F5C3C6]/10 blur-3xl rounded-full pointer-events-none" />
+          <p className="relative text-[#8B79D4] text-sm font-semibold uppercase tracking-widest mb-3">
             Session Four
           </p>
           <h1 className="relative gradient-text text-4xl md:text-5xl font-extrabold leading-tight mb-5">
@@ -124,8 +124,8 @@ export default function Session4WrapUp() {
         <section className="mb-16">
           <Reveal>
             <div className="relative mb-8">
-              <div className="absolute -inset-x-6 -inset-y-3 bg-gradient-to-r from-[#7C69C7]/10 via-[#9D8FE0]/14 to-[#F5C3C6]/8 blur-2xl rounded-full pointer-events-none" />
-              <p className="relative text-[#7C69C7] text-xs font-semibold uppercase tracking-widest mb-3">
+              <div className="absolute -inset-x-6 -inset-y-3 bg-gradient-to-r from-[#8B79D4]/10 via-[#9D8FE0]/14 to-[#F5C3C6]/8 blur-2xl rounded-full pointer-events-none" />
+              <p className="relative text-[#8B79D4] text-xs font-semibold uppercase tracking-widest mb-3">
                 From This Session
               </p>
               <h2 className="relative gradient-text text-2xl md:text-3xl font-bold">
@@ -139,7 +139,7 @@ export default function Session4WrapUp() {
               {takeaways.map((item, i) => (
                 <StaggerItem key={i}>
                   <div className="flex items-start gap-4 group">
-                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#7C69C7]/20 border border-[#7C69C7]/30 flex items-center justify-center text-[#7C69C7] text-xs font-bold mt-0.5 number-glow">
+                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#8B79D4]/20 border border-[#8B79D4]/30 flex items-center justify-center text-[#8B79D4] text-xs font-bold mt-0.5 number-glow">
                       {i + 1}
                     </span>
                     <span className="text-[#FCF4EB]/70 text-sm leading-relaxed">{item}</span>
@@ -156,8 +156,8 @@ export default function Session4WrapUp() {
         <section className="mb-16">
           <Reveal>
             <div className="relative mb-8">
-              <div className="absolute -inset-x-6 -inset-y-3 bg-gradient-to-r from-[#F5C3C6]/8 via-[#9D8FE0]/14 to-[#7C69C7]/10 blur-2xl rounded-full pointer-events-none" />
-              <p className="relative text-[#7C69C7] text-xs font-semibold uppercase tracking-widest mb-3">
+              <div className="absolute -inset-x-6 -inset-y-3 bg-gradient-to-r from-[#F5C3C6]/8 via-[#9D8FE0]/14 to-[#8B79D4]/10 blur-2xl rounded-full pointer-events-none" />
+              <p className="relative text-[#8B79D4] text-xs font-semibold uppercase tracking-widest mb-3">
                 The Group
               </p>
               <h2 className="relative gradient-text text-2xl md:text-3xl font-bold mb-2">
@@ -180,8 +180,8 @@ export default function Session4WrapUp() {
         <section className="mb-16">
           <Reveal>
             <div className="relative mb-8">
-              <div className="absolute -inset-x-6 -inset-y-3 bg-gradient-to-r from-[#7C69C7]/10 via-[#F5C3C6]/12 to-[#9D8FE0]/8 blur-2xl rounded-full pointer-events-none" />
-              <p className="relative text-[#7C69C7] text-xs font-semibold uppercase tracking-widest mb-3">
+              <div className="absolute -inset-x-6 -inset-y-3 bg-gradient-to-r from-[#8B79D4]/10 via-[#F5C3C6]/12 to-[#9D8FE0]/8 blur-2xl rounded-full pointer-events-none" />
+              <p className="relative text-[#8B79D4] text-xs font-semibold uppercase tracking-widest mb-3">
                 What's Changing
               </p>
               <h2 className="relative gradient-text text-2xl md:text-3xl font-bold mb-2">
@@ -197,8 +197,8 @@ export default function Session4WrapUp() {
             {improvements.map((item, i) => (
               <StaggerItem key={item.title}>
                 <div className="flex gap-5 items-start bg-white/[0.04] backdrop-blur-sm border border-white/[0.08] rounded-xl p-5 card-hover card-shimmer group">
-                  <div className="w-9 h-9 rounded-full bg-[#7C69C7]/20 border border-[#7C69C7]/30 flex items-center justify-center flex-shrink-0 mt-0.5 number-glow">
-                    <span className="text-[#7C69C7] text-sm font-bold">{i + 1}</span>
+                  <div className="w-9 h-9 rounded-full bg-[#8B79D4]/20 border border-[#8B79D4]/30 flex items-center justify-center flex-shrink-0 mt-0.5 number-glow">
+                    <span className="text-[#8B79D4] text-sm font-bold">{i + 1}</span>
                   </div>
                   <div>
                     <p className="text-[#FCF4EB] font-semibold text-sm mb-1">{item.title}</p>
@@ -216,7 +216,7 @@ export default function Session4WrapUp() {
           <div className="flex items-center justify-between flex-wrap gap-4">
             <Link
               href="/session/4"
-              className="inline-flex items-center gap-2 text-sm text-[#FCF4EB]/40 hover:text-[#7C69C7] transition-colors"
+              className="inline-flex items-center gap-2 text-sm text-[#FCF4EB]/40 hover:text-[#8B79D4] transition-colors"
             >
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M13 8H3M7 12l-4-4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -225,7 +225,7 @@ export default function Session4WrapUp() {
             </Link>
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-sm text-[#FCF4EB]/40 hover:text-[#7C69C7] transition-colors"
+              className="inline-flex items-center gap-2 text-sm text-[#FCF4EB]/40 hover:text-[#8B79D4] transition-colors"
             >
               All Sessions
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">

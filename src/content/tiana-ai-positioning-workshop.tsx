@@ -23,13 +23,13 @@ function Section({
         {number ? (
           <div
             className="number-glow flex-shrink-0 w-11 h-11 rounded-full flex items-center justify-center text-base font-bold"
-            style={{ background: 'rgba(124, 105, 199, 0.20)', color: '#7C69C7', border: '1.5px solid rgba(124, 105, 199, 0.35)' }}
+            style={{ background: 'rgba(139, 121, 212, 0.20)', color: '#8B79D4', border: '1.5px solid rgba(139, 121, 212, 0.35)' }}
           >
             {number}
           </div>
         ) : null}
         <div className="min-w-0">
-          <p className="text-[#7C69C7] text-xs font-semibold uppercase tracking-[0.22em] mb-3">{label}</p>
+          <p className="text-[#8B79D4] text-xs font-semibold uppercase tracking-[0.22em] mb-3">{label}</p>
           <h2 className="text-3xl md:text-4xl font-bold text-[#FCF4EB]">{title}</h2>
         </div>
       </div>
@@ -59,7 +59,7 @@ function PromptCard({
         {number ? (
           <div
             className="number-glow flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold"
-            style={{ background: 'rgba(124, 105, 199, 0.20)', color: '#7C69C7', border: '1.5px solid rgba(124, 105, 199, 0.35)' }}
+            style={{ background: 'rgba(139, 121, 212, 0.20)', color: '#8B79D4', border: '1.5px solid rgba(139, 121, 212, 0.35)' }}
           >
             {number}
           </div>
@@ -92,7 +92,7 @@ function TeachingCard({
       <div className="flex items-start gap-5">
         <div
           className="number-glow flex-shrink-0 w-11 h-11 rounded-full flex items-center justify-center font-bold"
-          style={{ background: 'rgba(124, 105, 199, 0.20)', color: '#7C69C7', border: '1.5px solid rgba(124, 105, 199, 0.35)', fontSize: step.length > 1 ? '0.82rem' : '1rem' }}
+          style={{ background: 'rgba(139, 121, 212, 0.20)', color: '#8B79D4', border: '1.5px solid rgba(139, 121, 212, 0.35)', fontSize: step.length > 1 ? '0.82rem' : '1rem' }}
         >
           {step}
         </div>
@@ -136,7 +136,7 @@ function StructureCard({
       <div className="flex items-start gap-4">
         <div
           className="number-glow flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold"
-          style={{ background: 'rgba(124, 105, 199, 0.20)', color: '#7C69C7', border: '1.5px solid rgba(124, 105, 199, 0.35)' }}
+          style={{ background: 'rgba(139, 121, 212, 0.20)', color: '#8B79D4', border: '1.5px solid rgba(139, 121, 212, 0.35)' }}
         >
           {number}
         </div>
@@ -148,7 +148,7 @@ function StructureCard({
           <ul className="flex flex-wrap gap-x-3 gap-y-3 text-sm text-[#FCF4EB]/68 leading-relaxed">
             {items.map((item) => (
               <li key={item} className="flex gap-2 items-start rounded-full border border-white/[0.07] bg-white/[0.03] px-3 py-2">
-                <span className="text-[#7C69C7] mt-0.5">•</span>
+                <span className="text-[#8B79D4] mt-0.5">•</span>
                 <span>{item}</span>
               </li>
             ))}
@@ -164,7 +164,7 @@ function BulletList({ items }: { items: string[] }) {
     <ul className="space-y-3 text-[#FCF4EB]/68 leading-relaxed">
       {items.map((item) => (
         <li key={item} className="flex gap-3">
-          <span className="text-[#7C69C7]">•</span>
+          <span className="text-[#8B79D4]">•</span>
           <span>{item}</span>
         </li>
       ))}
@@ -200,7 +200,7 @@ export default function TianaAiPositioningWorkshop() {
             href="https://www.tiyara.co"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-[#7C69C7]/28 bg-[#7C69C7]/10 px-4 py-2 text-sm font-medium text-[#FCF4EB]/78 transition-colors hover:text-white"
+            className="inline-flex items-center gap-2 rounded-full border border-[#8B79D4]/28 bg-[#8B79D4]/10 px-4 py-2 text-sm font-medium text-[#FCF4EB]/78 transition-colors hover:text-white"
           >
             Visit Tiyara.co
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -209,13 +209,13 @@ export default function TianaAiPositioningWorkshop() {
           </a>
         </div>
 
-        <details open className="rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(124,105,199,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]">
+        <details open className="rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(139,121,212,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]">
           <summary className="flex items-center justify-between px-6 py-5 cursor-pointer select-none">
             <div className="flex items-center gap-3">
               <span className="h-2 w-2 rounded-full bg-[#9D8FE0] shadow-[0_0_12px_rgba(157,143,224,0.70)]" />
               <span className="text-xs uppercase tracking-[0.20em] text-[#FCF4EB]/65 font-semibold">Table of Contents</span>
             </div>
-            <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[rgba(124,105,199,0.15)] border border-[rgba(124,105,199,0.28)] text-[#9D8FE0]">
+            <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[rgba(139,121,212,0.15)] border border-[rgba(139,121,212,0.28)] text-[#9D8FE0]">
               <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -241,7 +241,7 @@ export default function TianaAiPositioningWorkshop() {
                   {group.items.map(({ href, label, number }) => (
                     <li key={href} className="flex items-start gap-3 group/item min-w-0">
                       <span
-                        className="flex-shrink-0 min-w-[3.25rem] rounded-full border border-[#7C69C7]/30 bg-[#7C69C7]/12 px-2.5 py-1 text-center text-[10px] font-bold tabular-nums text-[#9D8FE0] mt-0.5"
+                        className="flex-shrink-0 min-w-[3.25rem] rounded-full border border-[#8B79D4]/30 bg-[#8B79D4]/12 px-2.5 py-1 text-center text-[10px] font-bold tabular-nums text-[#9D8FE0] mt-0.5"
                       >
                         {number}
                       </span>
@@ -292,8 +292,8 @@ export default function TianaAiPositioningWorkshop() {
                 style={
                   card.featured
                     ? {
-                        background: 'linear-gradient(135deg, rgba(124, 105, 199, 0.18) 0%, rgba(245, 195, 198, 0.10) 100%)',
-                        borderColor: 'rgba(124, 105, 199, 0.30)',
+                        background: 'linear-gradient(135deg, rgba(139, 121, 212, 0.18) 0%, rgba(245, 195, 198, 0.10) 100%)',
+                        borderColor: 'rgba(139, 121, 212, 0.30)',
                       }
                     : { background: 'rgba(255,255,255,0.03)', borderColor: 'rgba(255,255,255,0.10)' }
                 }
@@ -398,8 +398,8 @@ Part 3 - System           AI Brand Brain: Claude works from your clarity`}
               </div>
             </div>
 
-            <div className="rounded-2xl border border-[#7C69C7]/30 bg-[#7C69C7]/[0.08] px-5 py-4">
-              <p className="text-[#7C69C7] text-xs uppercase tracking-widest font-semibold mb-2">One Output</p>
+            <div className="rounded-2xl border border-[#8B79D4]/30 bg-[#8B79D4]/[0.08] px-5 py-4">
+              <p className="text-[#8B79D4] text-xs uppercase tracking-widest font-semibold mb-2">One Output</p>
               <p className="text-[#FCF4EB]/78 leading-relaxed">
                 A written positioning statement that passes the specificity test.
               </p>
@@ -519,7 +519,7 @@ Rules:
 
           <TeachingCard id="step-opening-question" step="6" eyebrow="Opening: The AI Era" title="The Opening Question and AI Description Test">
             <p>The facilitator opens with:</p>
-            <blockquote className="border-l-2 border-[#7C69C7]/50 pl-4 italic text-[#FCF4EB]/75">
+            <blockquote className="border-l-2 border-[#8B79D4]/50 pl-4 italic text-[#FCF4EB]/75">
               Raise your hand if you have ever asked AI to write marketing copy and the result sounded technically correct but somehow completely generic.
             </blockquote>
             <p>Then immediately: open Claude and paste in the messaging you gathered during prep.</p>
@@ -557,7 +557,7 @@ Base your answer only on the text I just gave you.`}
               <p><span className="text-[#FCF4EB] font-semibold">The Visible Market:</span> features, price, specs. Someone always charges less.</p>
               <p><span className="text-[#FCF4EB] font-semibold">The Mental Market:</span> beliefs, identity, meaning. Where devoted clients live.</p>
             </div>
-            <blockquote className="border-l-2 border-[#7C69C7]/50 pl-4 italic text-[#FCF4EB]/75">
+            <blockquote className="border-l-2 border-[#8B79D4]/50 pl-4 italic text-[#FCF4EB]/75">
               Starbucks sells sophistication, not coffee. Nike sells belief in personal greatness, not shoes. None of them lead with specs. They lead with who you become when you buy.
             </blockquote>
             <p><span className="text-[#FCF4EB] font-semibold">Write down:</span> Which market is your current messaging operating in?</p>
@@ -639,7 +639,7 @@ Then help me summarize the real bottleneck in one sentence.`}
 
           <TeachingCard id="step-awareness" step="9" eyebrow="Part A: The Client&apos;s Journey" title="The Five Levels of Awareness">
             <p>Your dream client is somewhere on this map right now.</p>
-                <div className="rounded-[28px] border border-white/[0.08] bg-[linear-gradient(145deg,rgba(124,105,199,0.10),rgba(245,195,198,0.06),rgba(255,255,255,0.02))] p-6 md:p-7 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
+                <div className="rounded-[28px] border border-white/[0.08] bg-[linear-gradient(145deg,rgba(139,121,212,0.10),rgba(245,195,198,0.06),rgba(255,255,255,0.02))] p-6 md:p-7 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
                 <div className="flex flex-col gap-3 mb-6 md:flex-row md:items-end md:justify-between">
                   <div>
                     <p className="text-[#F5C3C6] text-xs uppercase tracking-[0.22em] font-semibold mb-2">Awareness Map</p>
@@ -663,7 +663,7 @@ Then help me summarize the real bottleneck in one sentence.`}
                       className="rounded-[24px] p-5 border shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]"
                       style={{
                         background: level === '5'
-                          ? 'linear-gradient(135deg, rgba(245, 195, 198, 0.12) 0%, rgba(124, 105, 199, 0.10) 100%)'
+                          ? 'linear-gradient(135deg, rgba(245, 195, 198, 0.12) 0%, rgba(139, 121, 212, 0.10) 100%)'
                           : 'linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02))',
                         borderColor: level === '5' ? 'rgba(245, 195, 198, 0.22)' : 'rgba(255,255,255,0.08)',
                       }}
@@ -672,9 +672,9 @@ Then help me summarize the real bottleneck in one sentence.`}
                         <span
                           className="number-glow w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0"
                           style={{
-                            background: 'rgba(124, 105, 199, 0.18)',
+                            background: 'rgba(139, 121, 212, 0.18)',
                             color: '#9D8FE0',
-                            border: '1.5px solid rgba(124, 105, 199, 0.30)',
+                            border: '1.5px solid rgba(139, 121, 212, 0.30)',
                           }}
                         >
                           {level}
@@ -729,7 +729,7 @@ Then help me explain what that means for the kind of content I should be making.
               ]} />
             </div>
             <p className="text-[#FCF4EB] font-semibold">Predictable behaviour = repeatable lead generation.</p>
-            <blockquote className="border-l-2 border-[#7C69C7]/50 pl-4 italic text-[#FCF4EB]/75">
+            <blockquote className="border-l-2 border-[#8B79D4]/50 pl-4 italic text-[#FCF4EB]/75">
               This is not a theoretical payoff. A founder who maps this accurately for their specific client can build a content plan that consistently moves the right people from first encounter to buying decision without reinventing it each month.
             </blockquote>
             <p><span className="text-[#FCF4EB] font-semibold">Write down:</span> What does your ideal client typically do or search for just before they find you? What level is that?</p>
@@ -823,7 +823,7 @@ Do not default to "they would have hired a competitor" unless that is truly the 
             <p><span className="text-[#FCF4EB] font-semibold">Toyota:</span> reliable, practical, accessible. Buyers compare features, mileage, resale value.</p>
             <p><span className="text-[#FCF4EB] font-semibold">Ferrari:</span> aspiration, identity, exclusivity. Buyers do not compare. They desire.</p>
             <p><span className="text-[#FCF4EB] font-semibold">The most important detail:</span> Ferrari deliberately limits production. They could triple revenue. They choose not to because scarcity is part of the positioning.</p>
-            <blockquote className="border-l-2 border-[#7C69C7]/50 pl-4 italic text-[#FCF4EB]/75">
+            <blockquote className="border-l-2 border-[#8B79D4]/50 pl-4 italic text-[#FCF4EB]/75">
               You do not need two hundred clients. You need twenty right ones. The pricing, the access, the qualification process, all of it can signal Ferrari-level positioning if the clarity is there underneath it.
             </blockquote>
             <div>
@@ -1011,7 +1011,7 @@ Then help me improve it without making it harsher than it needs to be.`}
             </ol>
             <p className="text-[#FCF4EB] font-semibold">Vague positioning produces scattered content. Specific positioning produces a lead generation system.</p>
             <p>The same principle applies to paid. When you know exactly who you serve and what they are thinking before they find you, you can find them before they find you.</p>
-            <blockquote className="border-l-2 border-[#7C69C7]/50 pl-4 italic text-[#FCF4EB]/75">
+            <blockquote className="border-l-2 border-[#8B79D4]/50 pl-4 italic text-[#FCF4EB]/75">
               For high-ticket founders: you do not need high volume. You need high relevance. Ten pieces of content that speak with surgical precision to the right person at Level 2 will outperform a hundred generic posts every time.
             </blockquote>
           </TeachingCard>
@@ -1067,7 +1067,7 @@ At the end, summarize:
             <p className="text-[#FCF4EB]/68 leading-relaxed">
               Use this during the session to write and refine your first-draft positioning statement. Save it, refine it before Part 2, and bring the updated version back. It becomes Section 4 of your Brand Brain.
             </p>
-            <div className="rounded-2xl border border-[#F5C3C6]/25 bg-[linear-gradient(135deg,rgba(245,195,198,0.12),rgba(124,105,199,0.08))] p-6">
+            <div className="rounded-2xl border border-[#F5C3C6]/25 bg-[linear-gradient(135deg,rgba(245,195,198,0.12),rgba(139,121,212,0.08))] p-6">
               <p className="text-[#F5C3C6] text-xs uppercase tracking-widest font-semibold mb-3">Disclaimer</p>
               <p className="text-[#FCF4EB]/78 leading-relaxed">
                 Your first draft will be too broad. That is completely normal and expected. The goal today is not a perfect statement. It is a statement that is noticeably more specific than what you had when you walked in. You will refine it between sessions.

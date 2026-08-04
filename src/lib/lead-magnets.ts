@@ -101,12 +101,12 @@ export function buildWelcomeEmail(firstName: string, magnet: LeadMagnet, recipie
       <p>Here is ${escapeHtml(magnet.name)}, as promised.</p>
       <p style="margin:28px 0">
         <a href="${taggedUrl}"
-           style="display:inline-block;background:#7C69C7;color:#ffffff;text-decoration:none;font-weight:600;padding:14px 28px;border-radius:12px">
+           style="display:inline-block;background:#8B79D4;color:#ffffff;text-decoration:none;font-weight:600;padding:14px 28px;border-radius:12px">
           Download ${escapeHtml(magnet.name)}
         </a>
       </p>
       <p>If the button does not work, use this link:<br>
-        <a href="${taggedUrl}" style="color:#7C69C7">${url}</a>
+        <a href="${taggedUrl}" style="color:#8B79D4">${url}</a>
       </p>
       <p>Joe Che</p>
       <p style="font-size:12px;color:#999;margin-top:24px">

@@ -32,7 +32,7 @@ function SummaryCard({
   accent: 'purple' | 'pink' | 'cream'
 }) {
   const styles = {
-    purple: 'border-[#7C69C7]/30 bg-[rgba(124,105,199,0.08)]',
+    purple: 'border-[#8B79D4]/30 bg-[rgba(139,121,212,0.08)]',
     pink: 'border-[#F5C3C6]/30 bg-[rgba(245,195,198,0.08)]',
     cream: 'border-white/[0.12] bg-white/[0.04]',
   }
@@ -50,11 +50,11 @@ export default function Session1Bonus() {
     <>
       <div className="max-w-4xl mx-auto px-6 py-16 pb-0">
         <nav className="mb-10 text-sm text-[#FCF4EB]/40 flex items-center gap-2 flex-wrap">
-          <Link href="/" className="hover:text-[#7C69C7] transition-colors">
+          <Link href="/" className="hover:text-[#8B79D4] transition-colors">
             All Sessions
           </Link>
           <span>/</span>
-          <Link href="/session/1" className="hover:text-[#7C69C7] transition-colors">
+          <Link href="/session/1" className="hover:text-[#8B79D4] transition-colors">
             Session 1
           </Link>
           <span>/</span>
@@ -65,7 +65,7 @@ export default function Session1Bonus() {
           <div className="absolute inset-0 pointer-events-none">
             <div
               className="absolute -top-24 left-[-3rem] h-56 w-56 rounded-full opacity-20 blur-3xl"
-              style={{ background: 'radial-gradient(circle, #7C69C7 0%, transparent 72%)' }}
+              style={{ background: 'radial-gradient(circle, #8B79D4 0%, transparent 72%)' }}
             />
             <div
               className="absolute right-[-2rem] top-8 h-44 w-44 rounded-full opacity-20 blur-3xl"
@@ -75,7 +75,7 @@ export default function Session1Bonus() {
 
           <div className="relative">
             <div className="flex flex-wrap items-center gap-3 mb-4">
-              <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">
+              <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">
                 Session 1 Bonus
               </span>
               <span className="text-xs px-2.5 py-1 rounded-full font-medium bg-[#F5C3C6]/10 text-[#F5C3C6] border border-[#F5C3C6]/20">
@@ -115,7 +115,7 @@ export default function Session1Bonus() {
       <div className="max-w-4xl mx-auto px-6 pb-16">
         <section className="mb-16">
           <div className="flex items-center gap-3 mb-5">
-            <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">
+            <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">
               Section 1
             </span>
             <h2 className="text-2xl font-bold text-[#FCF4EB]">MacWhisper: Start Here on Mac</h2>
@@ -142,7 +142,7 @@ export default function Session1Bonus() {
               href="https://goodsnooze.gumroad.com/l/macwhisper"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-medium text-[#7C69C7] hover:text-[#9D8FE0] transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-medium text-[#8B79D4] hover:text-[#9D8FE0] transition-colors"
             >
               Download MacWhisper
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -158,7 +158,7 @@ export default function Session1Bonus() {
                 href="https://goodsnooze.gumroad.com/l/macwhisper"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#7C69C7] hover:underline"
+                className="text-[#8B79D4] hover:underline"
               >
                 goodsnooze.gumroad.com/l/macwhisper
               </a>{' '}
@@ -200,7 +200,7 @@ export default function Session1Bonus() {
 
         <section className="mb-16">
           <div className="flex items-center gap-3 mb-5">
-            <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">
+            <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">
               Section 2
             </span>
             <h2 className="text-2xl font-bold text-[#FCF4EB]">Free Built-In Dictation</h2>
@@ -248,7 +248,7 @@ export default function Session1Bonus() {
 
         <section className="mb-16">
           <div className="flex items-center gap-3 mb-5">
-            <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">
+            <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">
               Section 3
             </span>
             <h2 className="text-2xl font-bold text-[#FCF4EB]">Cross-Platform Options</h2>
@@ -259,10 +259,10 @@ export default function Session1Bonus() {
           </p>
 
           <div className="grid gap-6 md:grid-cols-2">
-            <div className="rounded-2xl border border-[#7C69C7]/20 bg-[rgba(124,105,199,0.08)] p-6">
+            <div className="rounded-2xl border border-[#8B79D4]/20 bg-[rgba(139,121,212,0.08)] p-6">
               <div className="flex items-center justify-between gap-3 mb-3">
                 <h3 className="text-xl font-bold text-[#FCF4EB]">Typeless</h3>
-                <span className="text-xs px-2.5 py-1 rounded-full font-medium bg-[#7C69C7]/20 text-[#9D8FE0]">
+                <span className="text-xs px-2.5 py-1 rounded-full font-medium bg-[#8B79D4]/20 text-[#9D8FE0]">
                   Mac + Windows
                 </span>
               </div>
@@ -279,7 +279,7 @@ export default function Session1Bonus() {
                 href="https://www.typeless.com/?via=joe"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-medium text-[#7C69C7] hover:text-[#9D8FE0] transition-colors"
+                className="inline-flex items-center gap-2 text-sm font-medium text-[#8B79D4] hover:text-[#9D8FE0] transition-colors"
               >
                 Open Typeless
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -307,7 +307,7 @@ export default function Session1Bonus() {
                 href="https://whispersoft.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-medium text-[#7C69C7] hover:text-[#9D8FE0] transition-colors"
+                className="inline-flex items-center gap-2 text-sm font-medium text-[#8B79D4] hover:text-[#9D8FE0] transition-colors"
               >
                 Open Whispersoft
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">

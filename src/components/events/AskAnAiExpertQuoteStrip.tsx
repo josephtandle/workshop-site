@@ -57,8 +57,8 @@ export default function AskAnAiExpertQuoteStrip() {
 
   return (
     <section className="relative overflow-hidden px-6 py-6 md:py-8">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(124,105,199,0.12),transparent_58%),linear-gradient(180deg,rgba(12,8,20,0.92),rgba(12,8,20,0.98))]" />
-      <div className="pointer-events-none absolute -left-20 top-10 h-64 w-64 rounded-full bg-[#7C69C7]/12 blur-3xl" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(139,121,212,0.12),transparent_58%),linear-gradient(180deg,rgba(12,8,20,0.92),rgba(12,8,20,0.98))]" />
+      <div className="pointer-events-none absolute -left-20 top-10 h-64 w-64 rounded-full bg-[#8B79D4]/12 blur-3xl" />
       <div className="pointer-events-none absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-[#F5C3C6]/10 blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-6xl">
@@ -70,7 +70,7 @@ export default function AskAnAiExpertQuoteStrip() {
           <button
             type="button"
             onClick={() => scroll('prev')}
-            className="absolute left-0 top-1/2 z-20 -ml-2 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-[#120c1e]/90 text-[#FCF4EB]/65 shadow-[0_16px_30px_rgba(0,0,0,0.28)] transition hover:border-[#7C69C7]/40 hover:text-[#FCF4EB] group-hover:flex"
+            className="absolute left-0 top-1/2 z-20 -ml-2 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-[#120c1e]/90 text-[#FCF4EB]/65 shadow-[0_16px_30px_rgba(0,0,0,0.28)] transition hover:border-[#8B79D4]/40 hover:text-[#FCF4EB] group-hover:flex"
             aria-label="Previous quote"
           >
             <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -89,9 +89,9 @@ export default function AskAnAiExpertQuoteStrip() {
                 className="flex-shrink-0 rounded-[1.6rem] border border-white/10 bg-[linear-gradient(160deg,rgba(20,14,35,0.95),rgba(11,8,18,0.98))] p-[1px] shadow-[0_20px_50px_rgba(0,0,0,0.22)]"
                 style={{ width: CARD_WIDTH }}
               >
-                <div className="flex h-full flex-col rounded-[1.55rem] border border-white/[0.04] bg-[radial-gradient(circle_at_top,rgba(124,105,199,0.16),transparent_52%),rgba(15,11,25,0.98)] p-6">
+                <div className="flex h-full flex-col rounded-[1.55rem] border border-white/[0.04] bg-[radial-gradient(circle_at_top,rgba(139,121,212,0.16),transparent_52%),rgba(15,11,25,0.98)] p-6">
                   <div className="mb-4 flex items-center gap-4">
-                    <div className="w-[72px] h-[72px] sm:w-20 sm:h-20 rounded-full overflow-hidden ring-2 ring-[#7C69C7]/30 flex-shrink-0">
+                    <div className="w-[72px] h-[72px] sm:w-20 sm:h-20 rounded-full overflow-hidden ring-2 ring-[#8B79D4]/30 flex-shrink-0">
                       <img src={item.photoSrc} alt={item.name} className="h-full w-full object-cover" loading="lazy" />
                     </div>
                     <div className="min-w-0">
@@ -110,7 +110,7 @@ export default function AskAnAiExpertQuoteStrip() {
           <button
             type="button"
             onClick={() => scroll('next')}
-            className="absolute right-0 top-1/2 z-20 -mr-2 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-[#120c1e]/90 text-[#FCF4EB]/65 shadow-[0_16px_30px_rgba(0,0,0,0.28)] transition hover:border-[#7C69C7]/40 hover:text-[#FCF4EB] group-hover:flex"
+            className="absolute right-0 top-1/2 z-20 -mr-2 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-[#120c1e]/90 text-[#FCF4EB]/65 shadow-[0_16px_30px_rgba(0,0,0,0.28)] transition hover:border-[#8B79D4]/40 hover:text-[#FCF4EB] group-hover:flex"
             aria-label="Next quote"
           >
             <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

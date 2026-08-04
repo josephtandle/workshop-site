@@ -45,7 +45,7 @@ export default function Session_FILL_IN_Guide() {
           Fill in: session number, title, description
       ============================================================ */}
       <div className="mb-14">
-        <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
+        <p className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest mb-3">
           Session [NUMBER]
         </p>
         <h1 className="gradient-text text-5xl font-extrabold leading-tight mb-5 pb-1">
@@ -72,13 +72,13 @@ export default function Session_FILL_IN_Guide() {
         </div>
 
         {/* Table of contents — update anchors and labels to match your sections */}
-        <details className="rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(124,105,199,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]">
+        <details className="rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(139,121,212,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]">
           <summary className="flex items-center justify-between px-6 py-5 cursor-pointer select-none">
             <div className="flex items-center gap-3">
               <span className="h-2 w-2 rounded-full bg-[#9D8FE0] shadow-[0_0_12px_rgba(157,143,224,0.70)]" />
               <span className="text-xs uppercase tracking-[0.20em] text-[#FCF4EB]/65 font-semibold">Table of Contents</span>
             </div>
-            <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[rgba(124,105,199,0.15)] border border-[rgba(124,105,199,0.28)] text-[#9D8FE0]">
+            <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[rgba(139,121,212,0.15)] border border-[rgba(139,121,212,0.28)] text-[#9D8FE0]">
               <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -93,7 +93,7 @@ export default function Session_FILL_IN_Guide() {
               { href: '#bonus', label: 'Bonus — [TITLE]' },
             ].map(({ href, label }, i) => (
               <li key={href} className="flex items-center gap-3 group/item">
-                <span className="number-glow flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold tabular-nums" style={{ background: 'rgba(124,105,199,0.18)', color: '#9D8FE0', border: '1.5px solid rgba(124,105,199,0.30)' }}>
+                <span className="number-glow flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold tabular-nums" style={{ background: 'rgba(139,121,212,0.18)', color: '#9D8FE0', border: '1.5px solid rgba(139,121,212,0.30)' }}>
                   {i + 1}
                 </span>
                 <a href={href} className="text-[#FCF4EB]/58 hover:text-[#9D8FE0] text-sm leading-snug transition-colors duration-150">{label}</a>
@@ -110,7 +110,7 @@ export default function Session_FILL_IN_Guide() {
       ============================================================ */}
       <section id="part-a" className="mb-16">
         <div className="flex items-center gap-3 mb-8">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Part A</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Part A</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">[PART TITLE]</h2>
         </div>
 
@@ -167,7 +167,7 @@ export default function Session_FILL_IN_Guide() {
       ============================================================ */}
       <section id="part-b" className="mb-16">
         <div className="flex items-center gap-3 mb-4">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Part B</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Part B</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">[PART TITLE]</h2>
         </div>
         <p className="text-[#FCF4EB]/70 leading-relaxed mb-8">
@@ -193,7 +193,7 @@ export default function Session_FILL_IN_Guide() {
       ============================================================ */}
       <section id="part-c" className="mb-16">
         <div className="flex items-center gap-3 mb-4">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Part C</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Part C</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">[PART TITLE]</h2>
         </div>
 
@@ -215,7 +215,7 @@ export default function Session_FILL_IN_Guide() {
 
           {/* Support each other — keep this block in every guide */}
           <div className="bg-white/[0.04] border border-white/[0.08] rounded-2xl p-8 mb-8">
-            <p className="text-[#7C69C7] text-xs font-semibold uppercase tracking-widest mb-3">Support Each Other</p>
+            <p className="text-[#8B79D4] text-xs font-semibold uppercase tracking-widest mb-3">Support Each Other</p>
             <h3 className="text-xl font-bold text-[#FCF4EB] mb-3">Post in the Masterminds group</h3>
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-6">
               [WHAT TO SHARE AND WHY — e.g., share your live link, ask people to test it, etc.]
@@ -233,8 +233,8 @@ export default function Session_FILL_IN_Guide() {
           </div>
 
           {/* Challenge box — keep this in every guide */}
-          <div className="border border-[#7C69C7]/50 bg-[#7C69C7]/[0.08] rounded-xl p-6">
-            <p className="text-[#7C69C7] text-xs font-semibold uppercase tracking-widest mb-3">Challenge</p>
+          <div className="border border-[#8B79D4]/50 bg-[#8B79D4]/[0.08] rounded-xl p-6">
+            <p className="text-[#8B79D4] text-xs font-semibold uppercase tracking-widest mb-3">Challenge</p>
             <p className="text-[#FCF4EB]/80 leading-relaxed">
               [ONE SPECIFIC THING THEY SHOULD DO BEFORE THE NEXT SESSION]
             </p>
@@ -255,7 +255,7 @@ export default function Session_FILL_IN_Guide() {
           <div
             className="rounded-2xl p-8 mb-10"
             style={{
-              background: 'linear-gradient(135deg, rgba(245, 195, 198, 0.14) 0%, rgba(124, 105, 199, 0.10) 100%)',
+              background: 'linear-gradient(135deg, rgba(245, 195, 198, 0.14) 0%, rgba(139, 121, 212, 0.10) 100%)',
               border: '1px solid rgba(245, 195, 198, 0.22)',
             }}
           >

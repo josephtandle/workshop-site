@@ -40,7 +40,7 @@ export default function AiAgentIncomePage() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#1a1520] via-[#151515] to-[#151515]" />
         <div className="relative mx-auto grid max-w-6xl gap-12 px-6 pb-16 pt-16 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:pb-24 lg:pt-24">
           <div>
-            <span className="mb-7 inline-flex rounded-full border border-[#7C69C7]/25 bg-[#7C69C7]/15 px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-[#BDB3E8]">
+            <span className="mb-7 inline-flex rounded-full border border-[#8B79D4]/25 bg-[#8B79D4]/15 px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-[#BDB3E8]">
               Book plus operator feed
             </span>
             <h1 className="max-w-4xl text-4xl font-extrabold leading-[1.08] text-[#FCF4EB] sm:text-5xl lg:text-6xl">
@@ -85,7 +85,7 @@ export default function AiAgentIncomePage() {
                 ['04', 'The tripwire offer'],
               ].map(([number, label]) => (
                 <div key={number} className="flex items-center gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#7C69C7]/25 bg-[#7C69C7]/15 text-xs font-extrabold text-[#BDB3E8]">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#8B79D4]/25 bg-[#8B79D4]/15 text-xs font-extrabold text-[#BDB3E8]">
                     {number}
                   </div>
                   <p className="text-base font-semibold text-[#FCF4EB]/78">{label}</p>
@@ -97,7 +97,7 @@ export default function AiAgentIncomePage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-14">
-        <div className="rounded-2xl border border-[#7C69C7]/25 bg-gradient-to-br from-[#7C69C7]/12 to-[#F5C3C6]/6 p-6 sm:p-8 lg:flex lg:items-center lg:justify-between lg:gap-10">
+        <div className="rounded-2xl border border-[#8B79D4]/25 bg-gradient-to-br from-[#8B79D4]/12 to-[#F5C3C6]/6 p-6 sm:p-8 lg:flex lg:items-center lg:justify-between lg:gap-10">
           <div>
             <p className="text-xs font-bold uppercase tracking-widest text-[#BDB3E8]">Operator feed pricing</p>
             <div className="mt-4 flex flex-wrap items-end gap-3">
@@ -125,7 +125,7 @@ export default function AiAgentIncomePage() {
         <div className="grid gap-4 md:grid-cols-2">
           {lanes.map((item, index) => (
             <div key={item} className="rounded-xl border border-white/[0.08] bg-white/[0.04] p-5">
-              <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-full bg-[#7C69C7]/15 text-xs font-extrabold text-[#BDB3E8]">
+              <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-full bg-[#8B79D4]/15 text-xs font-extrabold text-[#BDB3E8]">
                 {String(index + 1).padStart(2, '0')}
               </div>
               <p className="text-base leading-7 text-[#FCF4EB]/72">{item}</p>

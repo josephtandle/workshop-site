@@ -55,11 +55,11 @@ export default async function SessionGuidePage({ params }: Props) {
       {/* Breadcrumb */}
       <div className="max-w-5xl mx-auto px-6 pt-10 pb-0">
         <nav className="text-sm text-[#FCF4EB]/40 flex items-center gap-2 flex-wrap">
-          <Link href="/" className="hover:text-[#7C69C7] transition-colors">
+          <Link href="/" className="hover:text-[#8B79D4] transition-colors">
             All Sessions
           </Link>
           <span>/</span>
-          <Link href={`/session/${slug}`} className="hover:text-[#7C69C7] transition-colors">
+          <Link href={`/session/${slug}`} className="hover:text-[#8B79D4] transition-colors">
             Session {session.number}
           </Link>
           <span>/</span>
@@ -75,7 +75,7 @@ export default async function SessionGuidePage({ params }: Props) {
         <div className="border-t border-white/[0.06] pt-8 flex items-center justify-between flex-wrap gap-4">
           <Link
             href={`/session/${slug}/prep`}
-            className="inline-flex items-center gap-2 text-sm text-[#FCF4EB]/40 hover:text-[#7C69C7] transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-[#FCF4EB]/40 hover:text-[#8B79D4] transition-colors"
           >
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M13 8H3M7 12l-4-4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -84,7 +84,7 @@ export default async function SessionGuidePage({ params }: Props) {
           </Link>
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-sm text-[#FCF4EB]/40 hover:text-[#7C69C7] transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-[#FCF4EB]/40 hover:text-[#8B79D4] transition-colors"
           >
             All Sessions
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">

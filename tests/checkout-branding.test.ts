@@ -33,7 +33,7 @@ test('branding values still match the canonical mhq-homepage block', () => {
   assert.deepEqual(CHECKOUT_BRANDING, {
     display_name: 'MastermindsHQ',
     background_color: '#FCF4EB',
-    button_color: '#7C69C7',
+    button_color: '#8B79D4',
     font_family: 'inter',
     border_style: 'rounded',
     logo: { type: 'url', url: MASTERMINDS_LOGO_ABSOLUTE_PNG },

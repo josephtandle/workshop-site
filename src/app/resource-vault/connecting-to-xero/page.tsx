@@ -14,7 +14,7 @@ export default function ConnectingToXeroPage() {
   return (
     <main className="max-w-3xl mx-auto px-6 py-16">
       <div className="mb-14">
-        <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
+        <p className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest mb-3">
           Resource Vault
         </p>
         <h1 className="gradient-text text-4xl font-extrabold leading-tight mb-5 pb-1">
@@ -31,13 +31,13 @@ export default function ConnectingToXeroPage() {
         </div>
       </div>
 
-      <details className="mb-12 rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(124,105,199,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]">
+      <details className="mb-12 rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(139,121,212,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]">
         <summary className="flex items-center justify-between px-6 py-5 cursor-pointer select-none">
           <div className="flex items-center gap-3">
             <span className="h-2 w-2 rounded-full bg-[#9D8FE0] shadow-[0_0_12px_rgba(157,143,224,0.70)]" />
             <span className="text-xs uppercase tracking-[0.20em] text-[#FCF4EB]/65 font-semibold">Table of Contents</span>
           </div>
-          <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[rgba(124,105,199,0.15)] border border-[rgba(124,105,199,0.28)] text-[#9D8FE0]">
+          <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[rgba(139,121,212,0.15)] border border-[rgba(139,121,212,0.28)] text-[#9D8FE0]">
             <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
@@ -57,7 +57,7 @@ export default function ConnectingToXeroPage() {
           ].map((item, index) => (
             <li key={item.href}>
               <a href={item.href} className="group flex items-start gap-3 text-sm text-[#FCF4EB]/72 hover:text-[#FCF4EB] transition-colors">
-                <span className="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full border border-[rgba(124,105,199,0.32)] bg-[rgba(124,105,199,0.12)] text-[11px] font-semibold text-[#9D8FE0] group-hover:bg-[rgba(124,105,199,0.18)]">
+                <span className="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full border border-[rgba(139,121,212,0.32)] bg-[rgba(139,121,212,0.12)] text-[11px] font-semibold text-[#9D8FE0] group-hover:bg-[rgba(139,121,212,0.18)]">
                   {index + 1}
                 </span>
                 <span className="leading-relaxed">{item.label}</span>
@@ -69,7 +69,7 @@ export default function ConnectingToXeroPage() {
 
       <section id="setup" className="mb-16">
         <div className="mb-8">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Start Here</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Start Here</span>
           <h2 className="text-3xl font-bold text-[#FCF4EB] mt-3">Claude Dangerously Skip Permissions</h2>
         </div>
 
@@ -88,15 +88,15 @@ export default function ConnectingToXeroPage() {
 
       <section id="part-a" className="mb-16">
         <div className="flex items-center gap-3 mb-8">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Part A</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Part A</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Use a Xero Custom Connection</h2>
         </div>
 
         <div
           className="rounded-2xl p-6 mb-8"
           style={{
-            background: 'linear-gradient(135deg, rgba(124, 105, 199, 0.12) 0%, rgba(245, 195, 198, 0.08) 100%)',
-            border: '1px solid rgba(124, 105, 199, 0.22)',
+            background: 'linear-gradient(135deg, rgba(139, 121, 212, 0.12) 0%, rgba(245, 195, 198, 0.08) 100%)',
+            border: '1px solid rgba(139, 121, 212, 0.22)',
           }}
         >
           <p className="text-[#FCF4EB] font-semibold mb-2">Recommended connection type</p>
@@ -110,7 +110,7 @@ export default function ConnectingToXeroPage() {
           <p>Use a Xero Custom Connection.</p>
           <p>Do not use standard OAuth for this guide.</p>
           <p>Do not spend time trying to find an API key. Xero does not support API keys.</p>
-          <p><strong className="text-[#FCF4EB]">Purchase URL:</strong> <Link href="https://connect.xero.com/custom" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:text-[#9D8FE0] underline underline-offset-2">https://connect.xero.com/custom</Link></p>
+          <p><strong className="text-[#FCF4EB]">Purchase URL:</strong> <Link href="https://connect.xero.com/custom" target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:text-[#9D8FE0] underline underline-offset-2">https://connect.xero.com/custom</Link></p>
           <p><strong className="text-[#FCF4EB]">Price:</strong> $5/month for the Custom Connection.</p>
         </StepCard>
 
@@ -147,16 +147,16 @@ Explain:
 
       <section id="part-b" className="mb-16">
         <div className="flex items-center gap-3 mb-8">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Part B</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Part B</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Create the Xero app with maximum scopes</h2>
         </div>
 
         <StepCard number={4} title="Create the app in Xero Developer">
-          <p>Go to <Link href="https://developer.xero.com/" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:text-[#9D8FE0] underline underline-offset-2">developer.xero.com</Link> and sign in.</p>
+          <p>Go to <Link href="https://developer.xero.com/" target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:text-[#9D8FE0] underline underline-offset-2">developer.xero.com</Link> and sign in.</p>
           <p>Create a new app.</p>
           <p>Choose Custom Connection.</p>
           <p>Use the email address of the actual authorising user for that Xero organisation.</p>
-          <p>If the organisation has not purchased the Custom Connection yet, buy it here first: <Link href="https://connect.xero.com/custom" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:text-[#9D8FE0] underline underline-offset-2">https://connect.xero.com/custom</Link></p>
+          <p>If the organisation has not purchased the Custom Connection yet, buy it here first: <Link href="https://connect.xero.com/custom" target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:text-[#9D8FE0] underline underline-offset-2">https://connect.xero.com/custom</Link></p>
         </StepCard>
 
         <ScreenshotCard
@@ -323,7 +323,7 @@ Do not optimize for least privilege here. Optimize for maximum useful coverage.`
             If the authorization email never arrives, first confirm the organisation purchased the Custom
             Connection subscription here:
             {' '}
-            <Link href="https://connect.xero.com/custom" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:text-[#9D8FE0] underline underline-offset-2">
+            <Link href="https://connect.xero.com/custom" target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:text-[#9D8FE0] underline underline-offset-2">
               https://connect.xero.com/custom
             </Link>
             .
@@ -373,7 +373,7 @@ Do the following:
 
       <section id="part-c" className="mb-16">
         <div className="flex items-center gap-3 mb-8">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Part C</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Part C</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Verify the API with a read test</h2>
         </div>
 
@@ -420,7 +420,7 @@ If an error happens, diagnose it precisely instead of giving generic OAuth advic
 
       <section id="part-d" className="mb-16">
         <div className="flex items-center gap-3 mb-8">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Part D</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Part D</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Data format and sample write payloads</h2>
         </div>
 
@@ -508,7 +508,7 @@ Do not perform any write yet.`}
 
       <section id="part-e">
         <div className="flex items-center gap-3 mb-8">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Part E</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Part E</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Prompt kits to prove the connection works</h2>
         </div>
 

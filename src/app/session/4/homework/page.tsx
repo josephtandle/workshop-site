@@ -69,9 +69,9 @@ export default function Session3Homework() {
 
       {/* Breadcrumb */}
       <nav className="mb-10 text-sm text-[#FCF4EB]/40 flex items-center gap-2">
-        <Link href="/" className="hover:text-[#7C69C7] transition-colors">All Sessions</Link>
+        <Link href="/" className="hover:text-[#8B79D4] transition-colors">All Sessions</Link>
         <span>/</span>
-        <Link href="/session/4" className="hover:text-[#7C69C7] transition-colors">Session 4</Link>
+        <Link href="/session/4" className="hover:text-[#8B79D4] transition-colors">Session 4</Link>
         <span>/</span>
         <span className="text-[#FCF4EB]/60">Homework</span>
       </nav>
@@ -79,7 +79,7 @@ export default function Session3Homework() {
       {/* Page Header */}
       <div className="mb-14">
         <div className="flex items-center gap-3 mb-3">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Session 4</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Session 4</span>
           <span className="text-xs px-2 py-0.5 rounded-full font-medium bg-white/[0.06] text-[#FCF4EB]/40">
             Bonus
           </span>
@@ -113,7 +113,7 @@ export default function Session3Homework() {
               </li>
             </ul>
           </div>
-          <div className="bg-[#7C69C7]/[0.06] border border-[#7C69C7]/20 rounded-xl p-6">
+          <div className="bg-[#8B79D4]/[0.06] border border-[#8B79D4]/20 rounded-xl p-6">
             <p className="text-[#9D8FE0] text-xs font-semibold uppercase tracking-widest mb-3">After (15 minutes from now)</p>
             <ul className="space-y-3 text-[#FCF4EB]/70 text-sm leading-relaxed">
               <li className="flex gap-2 items-start">
@@ -141,7 +141,7 @@ export default function Session3Homework() {
             </li>
             <li className="flex gap-2 items-start">
               <span className="text-[#FCF4EB]/30">2.</span>
-              <span>The ability to log in to your domain registrar (<a href="https://porkbun.com" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">Porkbun</a>, <a href="https://www.godaddy.com" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">GoDaddy</a>, <a href="https://www.namecheap.com" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">Namecheap</a>, <a href="https://www.cloudflare.com" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">Cloudflare</a>, <a href="https://www.wix.com" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">Wix</a>, etc.)</span>
+              <span>The ability to log in to your domain registrar (<a href="https://porkbun.com" target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:underline">Porkbun</a>, <a href="https://www.godaddy.com" target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:underline">GoDaddy</a>, <a href="https://www.namecheap.com" target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:underline">Namecheap</a>, <a href="https://www.cloudflare.com" target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:underline">Cloudflare</a>, <a href="https://www.wix.com" target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:underline">Wix</a>, etc.)</span>
             </li>
             <li className="flex gap-2 items-start">
               <span className="text-[#FCF4EB]/30">3.</span>
@@ -203,11 +203,11 @@ After you get the DNS records back, do the following:
         {/* Record 1 */}
         <div className="mb-6">
           <div className="flex items-center gap-3 mb-3">
-            <div className="w-7 h-7 rounded-full bg-[#7C69C7]/20 border border-[#7C69C7]/30 flex items-center justify-center flex-shrink-0">
-              <span className="text-[#7C69C7] text-xs font-bold">1</span>
+            <div className="w-7 h-7 rounded-full bg-[#8B79D4]/20 border border-[#8B79D4]/30 flex items-center justify-center flex-shrink-0">
+              <span className="text-[#8B79D4] text-xs font-bold">1</span>
             </div>
             <p className="text-[#FCF4EB] font-semibold">DKIM Record (TXT)</p>
-            <span className="text-xs px-2 py-0.5 rounded-full bg-[#7C69C7]/15 text-[#9D8FE0] font-medium">Unique to you</span>
+            <span className="text-xs px-2 py-0.5 rounded-full bg-[#8B79D4]/15 text-[#9D8FE0] font-medium">Unique to you</span>
           </div>
           <p className="text-[#FCF4EB]/60 text-sm leading-relaxed mb-3">
             This proves to email providers that you own the domain. The value is a long string
@@ -226,8 +226,8 @@ After you get the DNS records back, do the following:
         {/* Record 2 */}
         <div className="mb-6">
           <div className="flex items-center gap-3 mb-3">
-            <div className="w-7 h-7 rounded-full bg-[#7C69C7]/20 border border-[#7C69C7]/30 flex items-center justify-center flex-shrink-0">
-              <span className="text-[#7C69C7] text-xs font-bold">2</span>
+            <div className="w-7 h-7 rounded-full bg-[#8B79D4]/20 border border-[#8B79D4]/30 flex items-center justify-center flex-shrink-0">
+              <span className="text-[#8B79D4] text-xs font-bold">2</span>
             </div>
             <p className="text-[#FCF4EB] font-semibold">SPF Record (MX)</p>
             <span className="text-xs px-2 py-0.5 rounded-full bg-white/[0.06] text-[#FCF4EB]/40 font-medium">Same for everyone</span>
@@ -249,8 +249,8 @@ After you get the DNS records back, do the following:
         {/* Record 3 */}
         <div className="mb-6">
           <div className="flex items-center gap-3 mb-3">
-            <div className="w-7 h-7 rounded-full bg-[#7C69C7]/20 border border-[#7C69C7]/30 flex items-center justify-center flex-shrink-0">
-              <span className="text-[#7C69C7] text-xs font-bold">3</span>
+            <div className="w-7 h-7 rounded-full bg-[#8B79D4]/20 border border-[#8B79D4]/30 flex items-center justify-center flex-shrink-0">
+              <span className="text-[#8B79D4] text-xs font-bold">3</span>
             </div>
             <p className="text-[#FCF4EB] font-semibold">SPF Record (TXT)</p>
             <span className="text-xs px-2 py-0.5 rounded-full bg-white/[0.06] text-[#FCF4EB]/40 font-medium">Same for everyone</span>
@@ -321,7 +321,7 @@ After you get the DNS records back, do the following:
             <div key={r.name} className="bg-white/[0.04] border border-white/[0.07] rounded-xl p-4">
               <div className="flex flex-wrap items-start justify-between gap-2 mb-1">
                 <span className="text-[#FCF4EB] font-medium text-sm">{r.name}</span>
-                <a href={r.link} target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] text-xs hover:underline whitespace-nowrap">
+                <a href={r.link} target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] text-xs hover:underline whitespace-nowrap">
                   DNS walkthrough &rarr;
                 </a>
               </div>
@@ -363,7 +363,7 @@ After you get the DNS records back, do the following:
         />
         <p className="text-[#FCF4EB]/70 leading-relaxed mt-4 mb-4">
           You can also check yourself at{' '}
-          <a href="https://resend.com/domains" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">resend.com/domains</a>.
+          <a href="https://resend.com/domains" target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:underline">resend.com/domains</a>.
           Look for a green <span className="text-[#FCF4EB] font-semibold">Verified</span> badge next to your domain.
         </p>
 
@@ -407,14 +407,14 @@ After you get the DNS records back, do the following:
           <li>Check that inbox. The email should arrive from <span className="text-[#FCF4EB] font-semibold">your domain</span>, not from <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-xs">onboarding@resend.dev</code></li>
           <li>Make sure it lands in the <span className="text-[#FCF4EB] font-semibold">inbox</span>, not spam</li>
           <li>Check your{' '}
-            <a href="https://supabase.com/dashboard/project/_/editor" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">
+            <a href="https://supabase.com/dashboard/project/_/editor" target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:underline">
               Supabase Table Editor
             </a>{' '}
             to confirm the new subscriber row appeared
           </li>
         </ol>
 
-        <div className="mt-6 bg-[#7C69C7]/[0.06] border border-[#7C69C7]/20 rounded-xl p-5">
+        <div className="mt-6 bg-[#8B79D4]/[0.06] border border-[#8B79D4]/20 rounded-xl p-5">
           <p className="text-[#9D8FE0] text-xs font-semibold uppercase tracking-widest mb-2">You are done</p>
           <p className="text-[#FCF4EB]/70 text-sm leading-relaxed">
             Your lead magnet is fully functional. Anyone can sign up, and they will get an email
@@ -425,7 +425,7 @@ After you get the DNS records back, do the following:
 
       {/* Already use another email service */}
       <div className="mt-12 bg-white/[0.04] border border-white/[0.08] rounded-2xl p-8">
-        <p className="text-[#7C69C7] text-xs font-semibold uppercase tracking-widest mb-3">Already Use Another Email Service?</p>
+        <p className="text-[#8B79D4] text-xs font-semibold uppercase tracking-widest mb-3">Already Use Another Email Service?</p>
         <p className="text-[#FCF4EB]/70 text-sm leading-relaxed mb-4">
           If you already have an account with SendGrid, Brevo (formerly Sendinblue), Postmark, or another
           email provider, you can use that instead of Resend. The logic is the same. Just ask Claude Code:
@@ -445,7 +445,7 @@ After you get the DNS records back, do the following:
       <div className="mt-14 border-t border-white/[0.08] pt-8 flex flex-wrap gap-6">
         <Link
           href="/session/4/guide-brain"
-          className="inline-flex items-center gap-2 text-sm text-[#FCF4EB]/40 hover:text-[#7C69C7] transition-colors"
+          className="inline-flex items-center gap-2 text-sm text-[#FCF4EB]/40 hover:text-[#8B79D4] transition-colors"
         >
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path d="M13 8H3M7 12l-4-4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -454,7 +454,7 @@ After you get the DNS records back, do the following:
         </Link>
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-sm text-[#FCF4EB]/40 hover:text-[#7C69C7] transition-colors"
+          className="inline-flex items-center gap-2 text-sm text-[#FCF4EB]/40 hover:text-[#8B79D4] transition-colors"
         >
           All Sessions
         </Link>

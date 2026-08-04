@@ -52,7 +52,7 @@ export default function Session3Guide() {
 
       {/* Page Header */}
       <div className="mb-14">
-        <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
+        <p className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest mb-3">
           Session Three
         </p>
         <h1 className="gradient-text text-5xl font-extrabold leading-tight mb-5 pb-1">
@@ -69,13 +69,13 @@ export default function Session3Guide() {
           <span><span className="text-[#FCF4EB]/30 mr-2">Difficulty</span>Beginner</span>
         </div>
 
-        <details className="rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(124,105,199,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]">
+        <details className="rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(139,121,212,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]">
           <summary className="flex items-center justify-between px-6 py-5 cursor-pointer select-none">
             <div className="flex items-center gap-3">
               <span className="h-2 w-2 rounded-full bg-[#9D8FE0] shadow-[0_0_12px_rgba(157,143,224,0.70)]" />
               <span className="text-xs uppercase tracking-[0.20em] text-[#FCF4EB]/65 font-semibold">Table of Contents</span>
             </div>
-            <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[rgba(124,105,199,0.15)] border border-[rgba(124,105,199,0.28)] text-[#9D8FE0]">
+            <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[rgba(139,121,212,0.15)] border border-[rgba(139,121,212,0.28)] text-[#9D8FE0]">
               <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -91,7 +91,7 @@ export default function Session3Guide() {
               { href: '#bonus', label: 'Bonus — Send Emails from Your Own Domain' },
             ].map(({ href, label }, i) => (
               <li key={href} className="flex items-center gap-3 group/item">
-                <span className="number-glow flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold tabular-nums" style={{ background: 'rgba(124,105,199,0.18)', color: '#9D8FE0', border: '1.5px solid rgba(124,105,199,0.30)' }}>
+                <span className="number-glow flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold tabular-nums" style={{ background: 'rgba(139,121,212,0.18)', color: '#9D8FE0', border: '1.5px solid rgba(139,121,212,0.30)' }}>
                   {i + 1}
                 </span>
                 <a href={href} className="text-[#FCF4EB]/58 hover:text-[#9D8FE0] text-sm leading-snug transition-colors duration-150">{label}</a>
@@ -122,18 +122,18 @@ export default function Session3Guide() {
       {/* Part A — links out to its own page */}
       <section id="custom-domain" className="mb-16">
         <div className="flex items-center gap-3 mb-6">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Part A</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Part A</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Custom Domain Setup</h2>
         </div>
         <a
           href="/session/3/custom-domain"
-          className="group block bg-white/[0.04] border border-white/[0.10] hover:border-[#7C69C7]/40 rounded-2xl p-7 transition-colors"
+          className="group block bg-white/[0.04] border border-white/[0.10] hover:border-[#8B79D4]/40 rounded-2xl p-7 transition-colors"
         >
           <p className="text-[#FCF4EB]/70 text-sm leading-relaxed mb-4">
             Buy a domain, connect it to Vercel, and configure DNS so your site lives at your own
             address. Covers all major registrars with exact DNS values included.
           </p>
-          <span className="inline-flex items-center gap-2 text-[#7C69C7] text-sm font-medium group-hover:gap-3 transition-all">
+          <span className="inline-flex items-center gap-2 text-[#8B79D4] text-sm font-medium group-hover:gap-3 transition-all">
             Open Custom Domain guide
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -145,7 +145,7 @@ export default function Session3Guide() {
       {/* Part B */}
       <section id="lead-magnet" className="mb-16">
         <div className="flex items-center gap-3 mb-4">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Part B</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Part B</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Build Your Lead Magnet Page</h2>
         </div>
         <p className="text-[#FCF4EB]/70 leading-relaxed mb-8">
@@ -221,7 +221,7 @@ The page should have:
       {/* Part C */}
       <section id="supabase" className="mb-16">
         <div className="flex items-center gap-3 mb-4">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Part C</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Part C</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Set Up Supabase</h2>
         </div>
         <p className="text-[#FCF4EB]/70 leading-relaxed mb-8">
@@ -231,7 +231,7 @@ The page should have:
 
         <StepCard number={3} title="Create your Supabase project">
           <ol className="space-y-2 text-[#FCF4EB]/70 list-decimal list-inside">
-            <li>Go to <a href="https://supabase.com/dashboard" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">supabase.com/dashboard</a> and click <span className="text-[#FCF4EB]">New Project</span></li>
+            <li>Go to <a href="https://supabase.com/dashboard" target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:underline">supabase.com/dashboard</a> and click <span className="text-[#FCF4EB]">New Project</span></li>
             <li>Give it a name like your business name or &ldquo;my-leads&rdquo;</li>
             <li>Set a password and save it somewhere</li>
             <li>Pick the region closest to you</li>
@@ -244,7 +244,7 @@ The page should have:
             When Claude sets up your database tables and security rules, it often uses the Supabase CLI behind the scenes to run SQL. The CLI needs a Personal Access Token — a separate account-level key that lets Claude authenticate and execute commands against your project.
           </p>
           <ol className="space-y-2 text-[#FCF4EB]/70 list-decimal list-inside mb-4">
-            <li>Go to <a href="https://supabase.com/dashboard/account/tokens" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">supabase.com/dashboard/account/tokens</a> (or click your avatar at the top right &rarr; Account &rarr; Access Tokens)</li>
+            <li>Go to <a href="https://supabase.com/dashboard/account/tokens" target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:underline">supabase.com/dashboard/account/tokens</a> (or click your avatar at the top right &rarr; Account &rarr; Access Tokens)</li>
             <li>Click <span className="text-[#FCF4EB] font-semibold">Generate new token</span></li>
             <li>Name it something like &ldquo;claude-workshop&rdquo;</li>
             <li>Copy the token immediately &mdash; you cannot view it again after closing the modal</li>
@@ -263,7 +263,7 @@ Please remember this.`}
 
         <StepCard number={5} title="Create your API keys and give them to Claude">
           <ol className="space-y-2 text-[#FCF4EB]/70 list-decimal list-inside mb-4">
-            <li>In your Supabase project, click the gear icon and go to <a href="https://supabase.com/dashboard/project/_/settings/api" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">Settings &gt; API Keys</a></li>
+            <li>In your Supabase project, click the gear icon and go to <a href="https://supabase.com/dashboard/project/_/settings/api" target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:underline">Settings &gt; API Keys</a></li>
             <li>Click <span className="text-[#FCF4EB] font-semibold">Create new API Keys</span></li>
             <li>Copy your <span className="text-[#FCF4EB] font-semibold">Project URL</span> (looks like https://abcdef.supabase.co)</li>
             <li>Copy the <span className="text-[#FCF4EB] font-semibold">Publishable key</span> (starts with <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-sm text-[#FCF4EB]">sb_publishable_</code>)</li>
@@ -310,8 +310,8 @@ Show me confirmation that RLS is on and the policy is active.`}
 
         <StepCard number={7} title="Get your Resend key and give it to Claude">
           <ol className="space-y-2 text-[#FCF4EB]/70 list-decimal list-inside mb-4">
-            <li>Go to <a href="https://resend.com" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">resend.com</a> and sign in (create a free account if you have not yet)</li>
-            <li>Click <a href="https://resend.com/api-keys" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">API Keys</a> in the left sidebar</li>
+            <li>Go to <a href="https://resend.com" target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:underline">resend.com</a> and sign in (create a free account if you have not yet)</li>
+            <li>Click <a href="https://resend.com/api-keys" target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:underline">API Keys</a> in the left sidebar</li>
             <li>Click <span className="text-[#FCF4EB]">Create API Key</span>, give it a name like &ldquo;lead-magnet&rdquo;, and click Create</li>
             <li>Copy the key immediately, then go back to Claude Code and paste this:</li>
           </ol>
@@ -354,7 +354,7 @@ Please always remember this.`}
       {/* Part D */}
       <section id="wire-up" className="mb-16">
         <div className="flex items-center gap-3 mb-4">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Part D</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Part D</span>
           <h2 className="text-2xl font-bold text-[#FCF4EB]">Wire It All Together</h2>
         </div>
         <p className="text-[#FCF4EB]/70 leading-relaxed mb-8">
@@ -400,7 +400,7 @@ Please always remember this.`}
             <li>Submit the form with a real email address</li>
             <li>
               Confirm: a new row appears in the{' '}
-              <a href="https://supabase.com/dashboard/project/_/editor" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">
+              <a href="https://supabase.com/dashboard/project/_/editor" target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:underline">
                 Supabase Table Editor
               </a>{' '}
               and an email lands in your inbox
@@ -419,7 +419,7 @@ Please always remember this.`}
           </p>
 
           <div className="bg-white/[0.04] border border-white/[0.08] rounded-2xl p-8 mb-8">
-            <p className="text-[#7C69C7] text-xs font-semibold uppercase tracking-widest mb-3">Support Each Other</p>
+            <p className="text-[#8B79D4] text-xs font-semibold uppercase tracking-widest mb-3">Support Each Other</p>
             <h3 className="text-xl font-bold text-[#FCF4EB] mb-3">Post in the Masterminds group</h3>
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-6">
               Share your lead magnet link in the group and ask people to sign up and open your email.
@@ -428,8 +428,8 @@ Please always remember this.`}
             </p>
             <div className="space-y-4">
               <div className="flex gap-4 items-start">
-                <div className="w-8 h-8 rounded-full bg-[#7C69C7]/20 border border-[#7C69C7]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span className="text-[#7C69C7] text-sm font-bold">1</span>
+                <div className="w-8 h-8 rounded-full bg-[#8B79D4]/20 border border-[#8B79D4]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span className="text-[#8B79D4] text-sm font-bold">1</span>
                 </div>
                 <div>
                   <p className="text-[#FCF4EB] font-semibold text-sm mb-1">Join each other&apos;s email lists</p>
@@ -440,8 +440,8 @@ Please always remember this.`}
                 </div>
               </div>
               <div className="flex gap-4 items-start">
-                <div className="w-8 h-8 rounded-full bg-[#7C69C7]/20 border border-[#7C69C7]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span className="text-[#7C69C7] text-sm font-bold">2</span>
+                <div className="w-8 h-8 rounded-full bg-[#8B79D4]/20 border border-[#8B79D4]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span className="text-[#8B79D4] text-sm font-bold">2</span>
                 </div>
                 <div>
                   <p className="text-[#FCF4EB] font-semibold text-sm mb-1">Reply to the welcome emails you receive</p>
@@ -456,7 +456,7 @@ Please always remember this.`}
 
           {/* Resend free tier info */}
           <div className="bg-white/[0.04] border border-white/[0.08] rounded-2xl p-8 mb-8">
-            <p className="text-[#7C69C7] text-xs font-semibold uppercase tracking-widest mb-3">Important: Resend Free Tier</p>
+            <p className="text-[#8B79D4] text-xs font-semibold uppercase tracking-widest mb-3">Important: Resend Free Tier</p>
             <h3 className="text-xl font-bold text-[#FCF4EB] mb-3">Your lead magnet works, with two limits</h3>
             <p className="text-[#FCF4EB]/70 leading-relaxed mb-5">
               Until you verify your own domain in Resend, two things apply:
@@ -484,7 +484,7 @@ Please always remember this.`}
             </p>
             <a
               href="/session/3/homework"
-              className="inline-flex items-center gap-2 text-[#7C69C7] text-sm font-medium hover:text-[#9D8FE0] transition-colors"
+              className="inline-flex items-center gap-2 text-[#8B79D4] text-sm font-medium hover:text-[#9D8FE0] transition-colors"
             >
               <span>Optional Homework: Verify Your Domain in Resend</span>
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -493,8 +493,8 @@ Please always remember this.`}
             </a>
           </div>
 
-          <div className="border border-[#7C69C7]/50 bg-[#7C69C7]/[0.08] rounded-xl p-6">
-            <p className="text-[#7C69C7] text-xs font-semibold uppercase tracking-widest mb-3">Challenge</p>
+          <div className="border border-[#8B79D4]/50 bg-[#8B79D4]/[0.08] rounded-xl p-6">
+            <p className="text-[#8B79D4] text-xs font-semibold uppercase tracking-widest mb-3">Challenge</p>
             <p className="text-[#FCF4EB]/80 leading-relaxed">
               Customize your welcome email with your own branding and tone, then get at least 5
               signups from real people before the next session.
@@ -511,7 +511,7 @@ Please always remember this.`}
           <div
             className="rounded-2xl p-8 mb-10"
             style={{
-              background: 'linear-gradient(135deg, rgba(245, 195, 198, 0.14) 0%, rgba(124, 105, 199, 0.10) 100%)',
+              background: 'linear-gradient(135deg, rgba(245, 195, 198, 0.14) 0%, rgba(139, 121, 212, 0.10) 100%)',
               border: '1px solid rgba(245, 195, 198, 0.22)',
             }}
           >
@@ -540,7 +540,7 @@ Please always remember this.`}
             <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-5">
               <p className="text-[#FCF4EB] font-semibold mb-2">Step 1 — Add your domain to Resend</p>
               <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
-                Go to <a href="https://resend.com/domains" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">Resend &gt; Domains</a> and
+                Go to <a href="https://resend.com/domains" target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:underline">Resend &gt; Domains</a> and
                 click <span className="text-[#FCF4EB]">Add Domain</span>. Enter your domain name and click Add.
               </p>
             </div>

@@ -32,47 +32,47 @@ function buildAiContentCreationSetupEmailHtml(attendeeName: string) {
 
   return `
     <div style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f6f2ff; margin: 0; padding: 32px 16px; color: #1a1a1a;">
-      <div style="max-width: 640px; margin: 0 auto; background: #ffffff; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 80px rgba(26, 14, 56, 0.12); border: 1px solid rgba(124, 105, 199, 0.12);">
-        <div style="background: linear-gradient(135deg, #110f17 0%, #1a1526 55%, #7C69C7 100%); padding: 36px 32px 32px;">
+      <div style="max-width: 640px; margin: 0 auto; background: #ffffff; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 80px rgba(26, 14, 56, 0.12); border: 1px solid rgba(139, 121, 212, 0.12);">
+        <div style="background: linear-gradient(135deg, #110f17 0%, #1a1526 55%, #8B79D4 100%); padding: 36px 32px 32px;">
           <p style="margin: 0 0 12px; font-size: 12px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: #cfc7ee;">Workshop Setup</p>
           <h1 style="margin: 0; font-size: 34px; line-height: 1.02; font-weight: 800; color: #ffffff;">${firstName ? `${firstName}, ` : ''}get set up for Saturday</h1>
           <p style="margin: 18px 0 0; font-size: 17px; line-height: 1.7; color: rgba(252,244,235,0.84);">Hey ${firstName || 'there'},</p>
         </div>
 
         <div style="padding: 30px 32px 24px;">
-          <div style="margin: 0 0 24px; padding: 20px; border-radius: 16px; background: #fbf9ff; border: 1px solid rgba(124, 105, 199, 0.14);">
+          <div style="margin: 0 0 24px; padding: 20px; border-radius: 16px; background: #fbf9ff; border: 1px solid rgba(139, 121, 212, 0.14);">
             <h2 style="margin: 0 0 10px; font-size: 20px; color: #16121f;">Location</h2>
             <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.75; color: #4b4263;"><strong style="color:#16121f;">Happy Days Villa 1</strong><br>${workshopAddress}</p>
-            <p style="margin: 0; font-size: 15px; line-height: 1.75; color: #4b4263;"><a href="${workshopMapsUrl}" style="color:#7C69C7; font-weight:700; text-decoration:none;">Open Google Maps</a></p>
+            <p style="margin: 0; font-size: 15px; line-height: 1.75; color: #4b4263;"><a href="${workshopMapsUrl}" style="color:#8B79D4; font-weight:700; text-decoration:none;">Open Google Maps</a></p>
           </div>
 
           <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.75; color: #4b4263;">We are getting really excited for this Saturday's <strong style="color:#16121f;">AI Content Creation Lab</strong> in Pererenan, and we have a lot of fun stuff planned for the day.</p>
           <p style="margin: 0 0 22px; font-size: 15px; line-height: 1.75; color: #4b4263;">To make sure we can spend the day creating instead of troubleshooting accounts, please take 10-15 minutes beforehand to get set up on the platforms we will be using.</p>
           <p style="margin: 0 0 22px; font-size: 15px; line-height: 1.75; color: #4b4263;"><strong style="color:#16121f;">Please arrive on time.</strong> We are starting at 10:30 AM sharp and want everyone ready to create from the beginning.</p>
 
-          <div style="margin: 24px 0; padding: 20px; border-radius: 16px; background: #fbf9ff; border: 1px solid rgba(124, 105, 199, 0.14);">
+          <div style="margin: 24px 0; padding: 20px; border-radius: 16px; background: #fbf9ff; border: 1px solid rgba(139, 121, 212, 0.14);">
             <h2 style="margin: 0 0 8px; font-size: 20px; color: #16121f;">Higgsfield</h2>
             <p style="margin: 0 0 12px; font-size: 14px; line-height: 1.65; color: #4b4263;">AI images and video.</p>
             <p style="margin: 0 0 10px; font-size: 14px; line-height: 1.65; color: #4b4263;">We recommend starting with either Basic ($5) if you just want to experiment, or Plus ($49) if you think you will be generating a lot of video. You can always scale up later.</p>
-            <a href="https://higgsfield.ai/" style="color:#7C69C7; font-weight:700; text-decoration:none;">Open Higgsfield</a>
+            <a href="https://higgsfield.ai/" style="color:#8B79D4; font-weight:700; text-decoration:none;">Open Higgsfield</a>
           </div>
 
-          <div style="margin: 24px 0; padding: 20px; border-radius: 16px; background: #fbf9ff; border: 1px solid rgba(124, 105, 199, 0.14);">
+          <div style="margin: 24px 0; padding: 20px; border-radius: 16px; background: #fbf9ff; border: 1px solid rgba(139, 121, 212, 0.14);">
             <h2 style="margin: 0 0 8px; font-size: 20px; color: #16121f;">HeyGen</h2>
             <p style="margin: 0 0 12px; font-size: 14px; line-height: 1.65; color: #4b4263;">AI avatars, digital clones, and talking-head content.</p>
             <p style="margin: 0 0 10px; font-size: 14px; line-height: 1.65; color: #4b4263;">The free tier is fine to start. If you want access to voice cloning and more avatar features, the Creator plan ($29) is the best place to begin.</p>
-            <a href="https://www.heygen.com/" style="color:#7C69C7; font-weight:700; text-decoration:none;">Open HeyGen</a>
+            <a href="https://www.heygen.com/" style="color:#8B79D4; font-weight:700; text-decoration:none;">Open HeyGen</a>
           </div>
 
-          <div style="margin: 24px 0; padding: 20px; border-radius: 16px; background: #fbf9ff; border: 1px solid rgba(124, 105, 199, 0.14);">
+          <div style="margin: 24px 0; padding: 20px; border-radius: 16px; background: #fbf9ff; border: 1px solid rgba(139, 121, 212, 0.14);">
             <h2 style="margin: 0 0 8px; font-size: 20px; color: #16121f;">CapCut</h2>
             <p style="margin: 0 0 12px; font-size: 14px; line-height: 1.65; color: #4b4263;">Editing, captions, pacing, and assembly.</p>
             <p style="margin: 0 0 10px; font-size: 14px; line-height: 1.65; color: #4b4263;">No paid plan needed. Just make sure you have signed up and downloaded it before class.</p>
-            <a href="https://www.capcut.com/" style="color:#7C69C7; font-weight:700; text-decoration:none;">Open CapCut</a>
+            <a href="https://www.capcut.com/" style="color:#8B79D4; font-weight:700; text-decoration:none;">Open CapCut</a>
           </div>
 
           <div style="margin: 28px 0 18px;">
-            <a href="https://forms.gle/7YKYqJcznbf6U8U19" style="display:inline-block; background:#7C69C7; color:#ffffff; text-decoration:none; padding:14px 24px; border-radius:12px; font-size:16px; font-weight:700; box-shadow:0 14px 32px rgba(124,105,199,0.24);">Fill out the workshop form</a>
+            <a href="https://forms.gle/7YKYqJcznbf6U8U19" style="display:inline-block; background:#8B79D4; color:#ffffff; text-decoration:none; padding:14px 24px; border-radius:12px; font-size:16px; font-weight:700; box-shadow:0 14px 32px rgba(139,121,212,0.24);">Fill out the workshop form</a>
           </div>
 
           <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.75; color: #4b4263;">This part is important. We will review these beforehand so we can tailor the workshop around what you actually want to create, whether that is personal branding, AI influencers, ads, social content, avatars, products, storytelling, or creator workflows.</p>
@@ -121,15 +121,15 @@ export function buildAskAnAiExpertWelcomeEmailHtml(event: EventDefinition, atten
 
   return `
     <div style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f6f2ff; margin: 0; padding: 32px 16px; color: #1a1a1a;">
-      <div style="max-width: 640px; margin: 0 auto; background: #ffffff; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 80px rgba(26, 14, 56, 0.12); border: 1px solid rgba(124, 105, 199, 0.12);">
-        <div style="background: linear-gradient(135deg, #110f17 0%, #1a1526 55%, #7C69C7 100%); padding: 36px 32px 32px;">
+      <div style="max-width: 640px; margin: 0 auto; background: #ffffff; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 80px rgba(26, 14, 56, 0.12); border: 1px solid rgba(139, 121, 212, 0.12);">
+        <div style="background: linear-gradient(135deg, #110f17 0%, #1a1526 55%, #8B79D4 100%); padding: 36px 32px 32px;">
           <p style="margin: 0 0 12px; font-size: 12px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: #cfc7ee;">Free Live Workshop</p>
           <h1 style="margin: 0; font-size: 34px; line-height: 1.02; font-weight: 800; color: #ffffff;">${firstName ? `${firstName}, ` : ''}you are in</h1>
           <p style="margin: 18px 0 0; font-size: 17px; line-height: 1.7; color: rgba(252,244,235,0.84);">Hey ${firstName || 'there'}, your free spot for <strong style="color:#ffffff;">${event.title}</strong> is confirmed.</p>
         </div>
 
         <div style="padding: 30px 32px 24px;">
-          <div style="margin: 0 0 24px; padding: 20px; border-radius: 16px; background: #fbf9ff; border: 1px solid rgba(124, 105, 199, 0.14);">
+          <div style="margin: 0 0 24px; padding: 20px; border-radius: 16px; background: #fbf9ff; border: 1px solid rgba(139, 121, 212, 0.14);">
             <h2 style="margin: 0 0 10px; font-size: 20px; color: #16121f;">Event Details</h2>
             ${calendarLine}
             <p style="margin: 0; font-size: 15px; line-height: 1.75; color: #4b4263;"><strong>Format:</strong> Free online workshop</p>
@@ -138,19 +138,19 @@ export function buildAskAnAiExpertWelcomeEmailHtml(event: EventDefinition, atten
           <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.75; color: #4b4263;">Join live on Zoom using the link below. Bring your business and your questions, and I will answer them live.</p>
 
           <div style="margin: 28px 0 18px;">
-            <a href="${zoomLink}" style="display:inline-block; background:#7C69C7; color:#ffffff; text-decoration:none; padding:14px 24px; border-radius:12px; font-size:16px; font-weight:700; box-shadow:0 14px 32px rgba(124,105,199,0.24);">Open Zoom link</a>
+            <a href="${zoomLink}" style="display:inline-block; background:#8B79D4; color:#ffffff; text-decoration:none; padding:14px 24px; border-radius:12px; font-size:16px; font-weight:700; box-shadow:0 14px 32px rgba(139,121,212,0.24);">Open Zoom link</a>
           </div>
 
           <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.75; color: #4b4263;">If the button does not open cleanly, use this link instead:</p>
-          <p style="margin: 0 0 22px; font-size: 15px; line-height: 1.75; color: #4b4263;"><a href="${zoomLink}" style="color:#7C69C7; font-weight:700; text-decoration:none;">${zoomLink}</a></p>
+          <p style="margin: 0 0 22px; font-size: 15px; line-height: 1.75; color: #4b4263;"><a href="${zoomLink}" style="color:#8B79D4; font-weight:700; text-decoration:none;">${zoomLink}</a></p>
 
           <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.75; color: #4b4263;">The session runs for 90 minutes of core teaching plus a 30 minute bonus hot-seat round for anyone who wants to stay on.</p>
 
-          <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.75; color: #4b4263;">You can revisit the event page here: <a href="${eventUrl}" style="color:#7C69C7; font-weight:700; text-decoration:none;">${event.title}</a></p>
+          <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.75; color: #4b4263;">You can revisit the event page here: <a href="${eventUrl}" style="color:#8B79D4; font-weight:700; text-decoration:none;">${event.title}</a></p>
         </div>
 
         ${unsubscribeUrl
-          ? `<div style="padding: 20px 32px 0; border-top: 1px solid rgba(124, 105, 199, 0.10); margin-top: 8px;">
+          ? `<div style="padding: 20px 32px 0; border-top: 1px solid rgba(139, 121, 212, 0.10); margin-top: 8px;">
           <p style="margin: 0; font-size: 13px; color: #9e93be;">
             <a href="${unsubscribeUrl}" style="color:#9e93be; text-decoration:underline;">Unsubscribe from marketing emails</a>
           </p>
@@ -180,15 +180,15 @@ function buildSessionReminderEmailHtml(
     subject: `${subjectLine}: ${event.title}`,
     html: `
       <div style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f6f2ff; margin: 0; padding: 32px 16px; color: #1a1a1a;">
-        <div style="max-width: 640px; margin: 0 auto; background: #ffffff; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 80px rgba(26, 14, 56, 0.12); border: 1px solid rgba(124, 105, 199, 0.12);">
-          <div style="background: linear-gradient(135deg, #110f17 0%, #1a1526 55%, #7C69C7 100%); padding: 36px 32px 32px;">
+        <div style="max-width: 640px; margin: 0 auto; background: #ffffff; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 80px rgba(26, 14, 56, 0.12); border: 1px solid rgba(139, 121, 212, 0.12);">
+          <div style="background: linear-gradient(135deg, #110f17 0%, #1a1526 55%, #8B79D4 100%); padding: 36px 32px 32px;">
             <p style="margin: 0 0 12px; font-size: 12px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: #cfc7ee;">Free Live Workshop</p>
             <h1 style="margin: 0; font-size: 34px; line-height: 1.02; font-weight: 800; color: #ffffff;">${subjectLine}</h1>
             <p style="margin: 18px 0 0; font-size: 17px; line-height: 1.7; color: rgba(252,244,235,0.84);">Hi ${firstName || 'there'}, your session starts ${leadCopy}.</p>
           </div>
 
           <div style="padding: 30px 32px 24px;">
-            <div style="margin: 0 0 24px; padding: 20px; border-radius: 16px; background: #fbf9ff; border: 1px solid rgba(124, 105, 199, 0.14);">
+            <div style="margin: 0 0 24px; padding: 20px; border-radius: 16px; background: #fbf9ff; border: 1px solid rgba(139, 121, 212, 0.14);">
               <h2 style="margin: 0 0 10px; font-size: 20px; color: #16121f;">Event Details</h2>
               <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.75; color: #4b4263;"><strong>Date:</strong> ${event.dateLabel}</p>
               <p style="margin: 0; font-size: 15px; line-height: 1.75; color: #4b4263;"><strong>Time:</strong> ${event.timeLabel}</p>
@@ -197,11 +197,11 @@ function buildSessionReminderEmailHtml(
             <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.75; color: #4b4263;">Join live on Zoom when it is time.</p>
 
             <div style="margin: 28px 0 18px;">
-              <a href="${zoomLink}" style="display:inline-block; background:#7C69C7; color:#ffffff; text-decoration:none; padding:14px 24px; border-radius:12px; font-size:16px; font-weight:700; box-shadow:0 14px 32px rgba(124,105,199,0.24);">Open Zoom link</a>
+              <a href="${zoomLink}" style="display:inline-block; background:#8B79D4; color:#ffffff; text-decoration:none; padding:14px 24px; border-radius:12px; font-size:16px; font-weight:700; box-shadow:0 14px 32px rgba(139,121,212,0.24);">Open Zoom link</a>
             </div>
 
             <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.75; color: #4b4263;">If the button does not open cleanly, use this link instead:</p>
-            <p style="margin: 0 0 0; font-size: 15px; line-height: 1.75; color: #4b4263;"><a href="${zoomLink}" style="color:#7C69C7; font-weight:700; text-decoration:none;">${zoomLink}</a></p>
+            <p style="margin: 0 0 0; font-size: 15px; line-height: 1.75; color: #4b4263;"><a href="${zoomLink}" style="color:#8B79D4; font-weight:700; text-decoration:none;">${zoomLink}</a></p>
           </div>
         </div>
       </div>
@@ -226,11 +226,11 @@ function resolveHostContact(event: EventDefinition) {
   const contactWhatsAppDisplay = cfg?.contactWhatsAppDisplay ?? null
   const canContact = Boolean(contactName && contactWhatsAppLink && contactWhatsAppDisplay)
   const contactBlockHtml = canContact
-    ? `<div style="border: 1px solid rgba(124, 105, 199, 0.16); border-radius: 18px; padding: 20px 22px; margin-bottom: 24px; background: #faf8ff;">
+    ? `<div style="border: 1px solid rgba(139, 121, 212, 0.16); border-radius: 18px; padding: 20px 22px; margin-bottom: 24px; background: #faf8ff;">
             <p style="margin: 0 0 8px; font-size: 20px; font-weight: 800; color: #16121f;">Questions before the event?</p>
             <p style="margin: 0; font-size: 15px; line-height: 1.75; color: #4b4263;">
               Message ${contactName} at
-              <a href="${contactWhatsAppLink}" style="color:#7C69C7; font-weight:700; text-decoration:none;">${contactWhatsAppDisplay}</a>.
+              <a href="${contactWhatsAppLink}" style="color:#8B79D4; font-weight:700; text-decoration:none;">${contactWhatsAppDisplay}</a>.
             </p>
           </div>`
     : ''
@@ -260,10 +260,10 @@ export function buildConfirmationEmailHtml(event: EventDefinition, attendeeName:
   // "the Zoom link will be emailed right after you sign up", so an online event
   // on this template was shipping a broken promise.
   const zoomBlockHtml = event.zoomLink
-    ? `<div style="border: 1px solid rgba(124, 105, 199, 0.16); border-radius: 18px; background: #faf8ff; padding: 22px 24px; margin-bottom: 24px;">
-            <p style="margin: 0 0 14px; font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #7C69C7;">Join Link</p>
-            <a href="${event.zoomLink}" style="display:inline-block; background:#7C69C7; color:#ffffff; text-decoration:none; padding:14px 24px; border-radius:12px; font-size:16px; font-weight:700; box-shadow:0 14px 32px rgba(124,105,199,0.24);">Open Zoom link</a>
-            <p style="margin: 14px 0 0; font-size: 14px; line-height: 1.7; color: #4b4263;">Or paste this in: <a href="${event.zoomLink}" style="color:#7C69C7; font-weight:700; text-decoration:none;">${event.zoomLink}</a></p>
+    ? `<div style="border: 1px solid rgba(139, 121, 212, 0.16); border-radius: 18px; background: #faf8ff; padding: 22px 24px; margin-bottom: 24px;">
+            <p style="margin: 0 0 14px; font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #8B79D4;">Join Link</p>
+            <a href="${event.zoomLink}" style="display:inline-block; background:#8B79D4; color:#ffffff; text-decoration:none; padding:14px 24px; border-radius:12px; font-size:16px; font-weight:700; box-shadow:0 14px 32px rgba(139,121,212,0.24);">Open Zoom link</a>
+            <p style="margin: 14px 0 0; font-size: 14px; line-height: 1.7; color: #4b4263;">Or paste this in: <a href="${event.zoomLink}" style="color:#8B79D4; font-weight:700; text-decoration:none;">${event.zoomLink}</a></p>
           </div>`
     : ''
   const primarySetup = event.postPurchase?.setupItems?.[0]
@@ -294,7 +294,7 @@ export function buildConfirmationEmailHtml(event: EventDefinition, attendeeName:
         // `gap:10px` never applied and the two buttons rendered touching.
         // Spacing has to live on the elements themselves via margin.
         const calendarButtonStyle =
-          'display:inline-block; background: transparent; color: #7C69C7; border: 1.5px solid #7C69C7; text-decoration:none; padding:10px 18px; border-radius:10px; font-size:13px; font-weight:700; white-space:nowrap;'
+          'display:inline-block; background: transparent; color: #8B79D4; border: 1.5px solid #8B79D4; text-decoration:none; padding:10px 18px; border-radius:10px; font-size:13px; font-weight:700; white-space:nowrap;'
         return `<div style="margin: 20px 0 24px;">
           <a href="${googleUrl}" style="${calendarButtonStyle} margin: 0 16px 10px 0;">
             Add to Google Calendar
@@ -315,7 +315,7 @@ export function buildConfirmationEmailHtml(event: EventDefinition, attendeeName:
   const mapsButtonHtml =
     cfg?.mapsUrl && !locationIsStillPrivate
       ? `<div style="margin-top: 16px;">
-        <a href="${cfg.mapsUrl}" style="display:inline-block; background:#7C69C7; color:#ffffff; text-decoration:none; padding:12px 20px; border-radius:10px; font-size:14px; font-weight:700; box-shadow:0 8px 20px rgba(124,105,199,0.22);">
+        <a href="${cfg.mapsUrl}" style="display:inline-block; background:#8B79D4; color:#ffffff; text-decoration:none; padding:12px 20px; border-radius:10px; font-size:14px; font-weight:700; box-shadow:0 8px 20px rgba(139,121,212,0.22);">
           Open Google Maps
         </a>
       </div>`
@@ -330,7 +330,7 @@ export function buildConfirmationEmailHtml(event: EventDefinition, attendeeName:
             ${mapsButtonHtml}`
 
   const cancelHtml = cancelToken
-    ? `<div style="padding: 20px 32px 0; border-top: 1px solid rgba(124, 105, 199, 0.10); margin-top: 8px;">
+    ? `<div style="padding: 20px 32px 0; border-top: 1px solid rgba(139, 121, 212, 0.10); margin-top: 8px;">
         <p style="margin: 0; font-size: 13px; color: #9e93be;">
           <a href="${siteUrl}/api/events/cancel?token=${cancelToken}" style="color:#9e93be; text-decoration:underline;">Can't make it? Cancel your seat.</a>
         </p>
@@ -339,8 +339,8 @@ export function buildConfirmationEmailHtml(event: EventDefinition, attendeeName:
 
   return `
     <div style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f6f2ff; margin: 0; padding: 32px 16px; color: #1a1a1a;">
-      <div style="max-width: 640px; margin: 0 auto; background: #ffffff; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 80px rgba(26, 14, 56, 0.12); border: 1px solid rgba(124, 105, 199, 0.12);">
-        <div style="background: linear-gradient(135deg, #110f17 0%, #1a1526 55%, #7C69C7 100%); padding: 36px 32px 32px;">
+      <div style="max-width: 640px; margin: 0 auto; background: #ffffff; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 80px rgba(26, 14, 56, 0.12); border: 1px solid rgba(139, 121, 212, 0.12);">
+        <div style="background: linear-gradient(135deg, #110f17 0%, #1a1526 55%, #8B79D4 100%); padding: 36px 32px 32px;">
           ${headerLabelHtml}
           <h1 style="margin: 0; font-size: 34px; line-height: 1.02; font-weight: 800; color: #ffffff;">
             Your seat is reserved.
@@ -351,8 +351,8 @@ export function buildConfirmationEmailHtml(event: EventDefinition, attendeeName:
         </div>
 
         <div style="padding: 30px 32px 10px;">
-          <div style="border: 1px solid rgba(124, 105, 199, 0.16); border-radius: 18px; background: #faf8ff; padding: 22px 24px; margin-bottom: 24px;">
-            <p style="margin: 0 0 14px; font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #7C69C7;">${detailsLabel}</p>
+          <div style="border: 1px solid rgba(139, 121, 212, 0.16); border-radius: 18px; background: #faf8ff; padding: 22px 24px; margin-bottom: 24px;">
+            <p style="margin: 0 0 14px; font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #8B79D4;">${detailsLabel}</p>
             <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.7; color: #2d2442;"><strong>Date:</strong> ${event.dateLabel}</p>
             <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.7; color: #2d2442;"><strong>Time:</strong> ${event.timeLabel}</p>
             ${locationRowHtml}
@@ -364,10 +364,10 @@ export function buildConfirmationEmailHtml(event: EventDefinition, attendeeName:
 
           ${
             location && revealLocationNow
-              ? `<div style="border: 1px solid rgba(124, 105, 199, 0.16); border-radius: 18px; background: #faf8ff; padding: 22px 24px; margin-bottom: 24px;">
-            <p style="margin: 0 0 10px; font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #7C69C7;">Exact Address</p>
+              ? `<div style="border: 1px solid rgba(139, 121, 212, 0.16); border-radius: 18px; background: #faf8ff; padding: 22px 24px; margin-bottom: 24px;">
+            <p style="margin: 0 0 10px; font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #8B79D4;">Exact Address</p>
             <p style="margin: 0 0 14px; font-size: 15px; line-height: 1.7; color: #2d2442;">${location.exactAddress}</p>
-            <a href="${location.googleMapsUrl}" style="display:inline-block; background:#7C69C7; color:#ffffff; text-decoration:none; padding:12px 20px; border-radius:10px; font-size:14px; font-weight:700; box-shadow:0 8px 20px rgba(124,105,199,0.22);">
+            <a href="${location.googleMapsUrl}" style="display:inline-block; background:#8B79D4; color:#ffffff; text-decoration:none; padding:12px 20px; border-radius:10px; font-size:14px; font-weight:700; box-shadow:0 8px 20px rgba(139,121,212,0.22);">
               Open Google Maps pin
             </a>
             ${
@@ -399,9 +399,9 @@ export function buildConfirmationEmailHtml(event: EventDefinition, attendeeName:
 
           ${
             primarySetup
-              ? `<div style="border: 1px solid rgba(124, 105, 199, 0.16); border-radius: 18px; padding: 20px 22px; margin-bottom: 14px;">
-                  <p style="margin: 0 0 8px; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #7C69C7;">${primarySetup.stepLabel}</p>
-                  <p style="margin: 0 0 8px; font-size: 20px; font-weight: 800; color: #16121f;">Go to <a href="${primarySetup.href}" style="color:#7C69C7; text-decoration:none;">${primarySetup.name}</a> and sign up for an account.</p>
+              ? `<div style="border: 1px solid rgba(139, 121, 212, 0.16); border-radius: 18px; padding: 20px 22px; margin-bottom: 14px;">
+                  <p style="margin: 0 0 8px; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #8B79D4;">${primarySetup.stepLabel}</p>
+                  <p style="margin: 0 0 8px; font-size: 20px; font-weight: 800; color: #16121f;">Go to <a href="${primarySetup.href}" style="color:#8B79D4; text-decoration:none;">${primarySetup.name}</a> and sign up for an account.</p>
                   <p style="margin: 0; font-size: 15px; line-height: 1.75; color: #4b4263;">${primarySetup.description}</p>
                 </div>`
               : ''
@@ -409,16 +409,16 @@ export function buildConfirmationEmailHtml(event: EventDefinition, attendeeName:
 
           ${
             secondarySetup
-              ? `<div style="border: 1px solid rgba(124, 105, 199, 0.16); border-radius: 18px; padding: 20px 22px; margin-bottom: 24px;">
-                  <p style="margin: 0 0 8px; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #7C69C7;">${secondarySetup.stepLabel}</p>
-                  <p style="margin: 0 0 8px; font-size: 20px; font-weight: 800; color: #16121f;">Go to <a href="${secondarySetup.href}" style="color:#7C69C7; text-decoration:none;">${secondarySetup.name}</a> and sign up for a free account.</p>
+              ? `<div style="border: 1px solid rgba(139, 121, 212, 0.16); border-radius: 18px; padding: 20px 22px; margin-bottom: 24px;">
+                  <p style="margin: 0 0 8px; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #8B79D4;">${secondarySetup.stepLabel}</p>
+                  <p style="margin: 0 0 8px; font-size: 20px; font-weight: 800; color: #16121f;">Go to <a href="${secondarySetup.href}" style="color:#8B79D4; text-decoration:none;">${secondarySetup.name}</a> and sign up for a free account.</p>
                   <p style="margin: 0; font-size: 15px; line-height: 1.75; color: #4b4263;">${secondarySetup.description}</p>
                 </div>`
               : ''
           }
 
           <div style="margin: 28px 0 24px;">
-            <a href="${setupUrl}" style="display:inline-block; background:#7C69C7; color:#ffffff; text-decoration:none; padding:14px 24px; border-radius:12px; font-size:16px; font-weight:700; box-shadow:0 14px 32px rgba(124,105,199,0.24);">
+            <a href="${setupUrl}" style="display:inline-block; background:#8B79D4; color:#ffffff; text-decoration:none; padding:14px 24px; border-radius:12px; font-size:16px; font-weight:700; box-shadow:0 14px 32px rgba(139,121,212,0.24);">
               Open setup instructions
             </a>
           </div>`
@@ -428,7 +428,7 @@ export function buildConfirmationEmailHtml(event: EventDefinition, attendeeName:
 
           <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.75; color: #4b4263;">
             If you need to revisit the event page, you can always return here:
-            <a href="${eventUrl}" style="color:#7C69C7; font-weight:700; text-decoration:none;">${event.title}</a>
+            <a href="${eventUrl}" style="color:#8B79D4; font-weight:700; text-decoration:none;">${event.title}</a>
           </p>
         </div>
 
@@ -459,8 +459,8 @@ function buildLocationReminderEmailHtml(event: EventDefinition, attendeeName: st
 
   return `
     <div style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f6f2ff; margin: 0; padding: 32px 16px; color: #1a1a1a;">
-      <div style="max-width: 640px; margin: 0 auto; background: #ffffff; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 80px rgba(26, 14, 56, 0.12); border: 1px solid rgba(124, 105, 199, 0.12);">
-        <div style="background: linear-gradient(135deg, #110f17 0%, #1a1526 55%, #7C69C7 100%); padding: 36px 32px 32px;">
+      <div style="max-width: 640px; margin: 0 auto; background: #ffffff; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 80px rgba(26, 14, 56, 0.12); border: 1px solid rgba(139, 121, 212, 0.12);">
+        <div style="background: linear-gradient(135deg, #110f17 0%, #1a1526 55%, #8B79D4 100%); padding: 36px 32px 32px;">
           <p style="margin: 0 0 12px; font-size: 12px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: #cfc7ee;">Exact Location</p>
           <h1 style="margin: 0; font-size: 34px; line-height: 1.02; font-weight: 800; color: #ffffff;">
             Your event location is ready.
@@ -471,8 +471,8 @@ function buildLocationReminderEmailHtml(event: EventDefinition, attendeeName: st
         </div>
 
         <div style="padding: 30px 32px 10px;">
-          <div style="border: 1px solid rgba(124, 105, 199, 0.16); border-radius: 18px; background: #faf8ff; padding: 22px 24px; margin-bottom: 24px;">
-            <p style="margin: 0 0 14px; font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #7C69C7;">${detailsLabel}</p>
+          <div style="border: 1px solid rgba(139, 121, 212, 0.16); border-radius: 18px; background: #faf8ff; padding: 22px 24px; margin-bottom: 24px;">
+            <p style="margin: 0 0 14px; font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #8B79D4;">${detailsLabel}</p>
             <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.7; color: #2d2442;"><strong>Date:</strong> ${event.dateLabel}</p>
             <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.7; color: #2d2442;"><strong>Time:</strong> ${event.timeLabel}</p>
             <p style="margin: 0; font-size: 15px; line-height: 1.7; color: #2d2442;"><strong>Area:</strong> ${event.locationLabel}</p>
@@ -486,14 +486,14 @@ function buildLocationReminderEmailHtml(event: EventDefinition, attendeeName: st
           </p>
 
           <div style="margin: 0 0 24px;">
-            <a href="${location.googleMapsUrl}" style="display:inline-block; background:#7C69C7; color:#ffffff; text-decoration:none; padding:14px 24px; border-radius:12px; font-size:16px; font-weight:700; box-shadow:0 14px 32px rgba(124,105,199,0.24);">
+            <a href="${location.googleMapsUrl}" style="display:inline-block; background:#8B79D4; color:#ffffff; text-decoration:none; padding:14px 24px; border-radius:12px; font-size:16px; font-weight:700; box-shadow:0 14px 32px rgba(139,121,212,0.24);">
               Open Google Maps pin
             </a>
           </div>
 
           ${
             location.parkingInstructions?.length
-              ? `<div style="border: 1px solid rgba(124, 105, 199, 0.16); border-radius: 18px; padding: 20px 22px; margin-bottom: 24px;">
+              ? `<div style="border: 1px solid rgba(139, 121, 212, 0.16); border-radius: 18px; padding: 20px 22px; margin-bottom: 24px;">
                   <p style="margin: 0 0 10px; font-size: 20px; font-weight: 800; color: #16121f;">Parking instructions</p>
                   <ul style="margin: 0; padding-left: 20px; color: #4b4263;">
                     ${location.parkingInstructions
@@ -779,8 +779,8 @@ function buildWaitlistConfirmationHtml(event: EventDefinition, name: string, rem
 
   return `
     <div style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f6f2ff; margin: 0; padding: 32px 16px; color: #1a1a1a;">
-      <div style="max-width: 640px; margin: 0 auto; background: #ffffff; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 80px rgba(26, 14, 56, 0.12); border: 1px solid rgba(124, 105, 199, 0.12);">
-        <div style="background: linear-gradient(135deg, #110f17 0%, #1a1526 55%, #7C69C7 100%); padding: 36px 32px 32px;">
+      <div style="max-width: 640px; margin: 0 auto; background: #ffffff; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 80px rgba(26, 14, 56, 0.12); border: 1px solid rgba(139, 121, 212, 0.12);">
+        <div style="background: linear-gradient(135deg, #110f17 0%, #1a1526 55%, #8B79D4 100%); padding: 36px 32px 32px;">
           <h1 style="margin: 0; font-size: 34px; line-height: 1.02; font-weight: 800; color: #ffffff;">
             You are on the waitlist.
           </h1>
@@ -795,7 +795,7 @@ function buildWaitlistConfirmationHtml(event: EventDefinition, name: string, rem
           </p>
         </div>
 
-        <div style="padding: 0 32px 30px; border-top: 1px solid rgba(124, 105, 199, 0.10);">
+        <div style="padding: 0 32px 30px; border-top: 1px solid rgba(139, 121, 212, 0.10);">
           <p style="margin: 20px 0 0; font-size: 13px; color: #9e93be;">
             <a href="${removeUrl}" style="color:#9e93be; text-decoration:underline;">Remove yourself from the waitlist</a>
           </p>
@@ -834,8 +834,8 @@ function buildWaitlistSpotNotificationHtml(
 
   return `
     <div style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f6f2ff; margin: 0; padding: 32px 16px; color: #1a1a1a;">
-      <div style="max-width: 640px; margin: 0 auto; background: #ffffff; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 80px rgba(26, 14, 56, 0.12); border: 1px solid rgba(124, 105, 199, 0.12);">
-        <div style="background: linear-gradient(135deg, #110f17 0%, #1a1526 55%, #7C69C7 100%); padding: 36px 32px 32px;">
+      <div style="max-width: 640px; margin: 0 auto; background: #ffffff; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 80px rgba(26, 14, 56, 0.12); border: 1px solid rgba(139, 121, 212, 0.12);">
+        <div style="background: linear-gradient(135deg, #110f17 0%, #1a1526 55%, #8B79D4 100%); padding: 36px 32px 32px;">
           <h1 style="margin: 0; font-size: 34px; line-height: 1.02; font-weight: 800; color: #ffffff;">
             ${headline}
           </h1>
@@ -846,13 +846,13 @@ function buildWaitlistSpotNotificationHtml(
 
         <div style="padding: 30px 32px 10px;">
           <div style="margin-bottom: 24px;">
-            <a href="${registerUrl}" style="display:inline-block; background:#7C69C7; color:#ffffff; text-decoration:none; padding:14px 24px; border-radius:12px; font-size:16px; font-weight:700; box-shadow:0 14px 32px rgba(124,105,199,0.24);">
+            <a href="${registerUrl}" style="display:inline-block; background:#8B79D4; color:#ffffff; text-decoration:none; padding:14px 24px; border-radius:12px; font-size:16px; font-weight:700; box-shadow:0 14px 32px rgba(139,121,212,0.24);">
               Register now
             </a>
           </div>
         </div>
 
-        <div style="padding: 0 32px 30px; border-top: 1px solid rgba(124, 105, 199, 0.10);">
+        <div style="padding: 0 32px 30px; border-top: 1px solid rgba(139, 121, 212, 0.10);">
           <p style="margin: 20px 0 0; font-size: 13px; color: #9e93be;">
             <a href="${removeUrl}" style="color:#9e93be; text-decoration:underline;">Remove me from the waitlist</a>
           </p>

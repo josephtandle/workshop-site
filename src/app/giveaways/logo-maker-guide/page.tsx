@@ -381,14 +381,14 @@ export default function LogoMakerGuidePage() {
           transition: box-shadow 0.3s ease, border-color 0.3s ease;
         }
         .glow-card:hover {
-          box-shadow: 0 0 28px rgba(124, 105, 199, 0.12), 0 0 0 1px rgba(124, 105, 199, 0.18);
-          border-color: rgba(124, 105, 199, 0.22) !important;
+          box-shadow: 0 0 28px rgba(139, 121, 212, 0.12), 0 0 0 1px rgba(139, 121, 212, 0.18);
+          border-color: rgba(139, 121, 212, 0.22) !important;
         }
         .glow-btn {
           transition: box-shadow 0.2s ease, background-color 0.15s ease, transform 0.1s ease-out;
         }
         .glow-btn:hover {
-          box-shadow: 0 0 32px rgba(124, 105, 199, 0.45), 0 0 60px rgba(124, 105, 199, 0.2);
+          box-shadow: 0 0 32px rgba(139, 121, 212, 0.45), 0 0 60px rgba(139, 121, 212, 0.2);
         }
         .glow-btn-pink:hover {
           box-shadow: 0 0 32px rgba(245, 195, 198, 0.5), 0 0 60px rgba(245, 195, 198, 0.2);
@@ -416,9 +416,9 @@ export default function LogoMakerGuidePage() {
             transition={{ duration: 0.5 }}
             className="relative z-10 mb-6 flex justify-center sm:absolute sm:top-10 sm:left-0 sm:right-0 sm:mb-0"
           >
-            <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
+            <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full bg-[#8B79D4]/15 text-[#9D8FE0] border border-[#8B79D4]/25">
               Free from the{' '}
-              <a href={MASTERMIND_URL} target="_blank" rel="noopener noreferrer" className="hover:text-[#BDB3E8] transition-colors underline underline-offset-2 decoration-[#7C69C7]/40">
+              <a href={MASTERMIND_URL} target="_blank" rel="noopener noreferrer" className="hover:text-[#BDB3E8] transition-colors underline underline-offset-2 decoration-[#8B79D4]/40">
                 Business Automation Mastermind
               </a>
             </span>
@@ -518,7 +518,7 @@ export default function LogoMakerGuidePage() {
                 transition={{ delay: i * 0.08 }}
                 className="glow-card bg-white/[0.04] border border-white/[0.08] rounded-2xl p-6"
               >
-                <div className="text-4xl font-extrabold text-[#7C69C7]/20 mb-4 font-mono">{path.num}</div>
+                <div className="text-4xl font-extrabold text-[#8B79D4]/20 mb-4 font-mono">{path.num}</div>
                 <h3 className="text-[#FCF4EB] font-bold text-base mb-2">{path.title}</h3>
                 <p className="text-[#FCF4EB]/44 text-sm leading-relaxed">{path.body}</p>
               </motion.div>
@@ -573,7 +573,7 @@ export default function LogoMakerGuidePage() {
                   >
                     <div className="flex items-center gap-3">
                       <span className="text-[#FCF4EB] font-semibold text-sm sm:text-base">{section.label}</span>
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#9D8FE0] bg-[#7C69C7]/12 border border-[#7C69C7]/20 px-2 py-0.5 rounded-full">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#9D8FE0] bg-[#8B79D4]/12 border border-[#8B79D4]/20 px-2 py-0.5 rounded-full">
                         {section.badge}
                       </span>
                       <span className="text-[10px] font-bold uppercase tracking-widest text-[#FCF4EB]/25 bg-white/[0.04] border border-white/[0.08] px-2 py-0.5 rounded-full">
@@ -596,7 +596,7 @@ export default function LogoMakerGuidePage() {
                           <div key={item.name} className="flex items-start gap-3 p-3 rounded-lg">
                             <div
                               className="w-1.5 h-1.5 rounded-full mt-[7px] flex-shrink-0"
-                              style={{ background: (item as { recommended?: boolean }).recommended ? '#9D8FE0' : '#7C69C7' }}
+                              style={{ background: (item as { recommended?: boolean }).recommended ? '#9D8FE0' : '#8B79D4' }}
                             />
                             <div>
                               <a
@@ -630,8 +630,8 @@ export default function LogoMakerGuidePage() {
             viewport={{ once: true }}
             className="rounded-2xl overflow-hidden"
             style={{
-              background: 'linear-gradient(135deg, rgba(124,105,199,0.10) 0%, rgba(245,195,198,0.07) 100%)',
-              border: '1px solid rgba(124,105,199,0.18)',
+              background: 'linear-gradient(135deg, rgba(139,121,212,0.10) 0%, rgba(245,195,198,0.07) 100%)',
+              border: '1px solid rgba(139,121,212,0.18)',
             }}
           >
             <div className="px-6 sm:px-12 py-10">
@@ -656,8 +656,8 @@ export default function LogoMakerGuidePage() {
                   },
                   {
                     label: 'What actually worked',
-                    color: 'rgba(124,105,199,0.10)',
-                    border: 'rgba(124,105,199,0.25)',
+                    color: 'rgba(139,121,212,0.10)',
+                    border: 'rgba(139,121,212,0.25)',
                     labelColor: '#9D8FE0',
                     body: 'The best results came from HuggingFace with FLUX.1-schnell. It has a free tier, it is fast, and output quality is noticeably better than other APIs for creative brand concepts. If you are going to try any generation API, start here.',
                   },
@@ -803,7 +803,7 @@ export default function LogoMakerGuidePage() {
             <div className="overflow-x-auto rounded-2xl border border-white/[0.08]">
               <table className="w-full text-sm">
                 <thead>
-                  <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', background: 'rgba(124,105,199,0.08)' }}>
+                  <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', background: 'rgba(139,121,212,0.08)' }}>
                     <th className="text-left py-3 px-5 font-semibold text-[#FCF4EB]/50 uppercase tracking-wider text-[10px]">Goal</th>
                     <th className="text-left py-3 px-5 font-semibold text-[#FCF4EB]/50 uppercase tracking-wider text-[10px]">Best pick</th>
                     <th className="text-left py-3 px-5 font-semibold text-[#FCF4EB]/50 uppercase tracking-wider text-[10px]">Cost</th>
@@ -894,7 +894,7 @@ function MastermindCTA() {
         viewport={{ once: true }}
         className="rounded-2xl overflow-hidden"
         style={{
-          background: 'linear-gradient(135deg, rgba(245,195,198,0.10) 0%, rgba(124,105,199,0.08) 100%)',
+          background: 'linear-gradient(135deg, rgba(245,195,198,0.10) 0%, rgba(139,121,212,0.08) 100%)',
           border: '1px solid rgba(245,195,198,0.15)',
         }}
       >

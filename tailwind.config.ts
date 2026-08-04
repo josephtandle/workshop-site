@@ -7,7 +7,7 @@ const config: Config = {
       colors: {
         dark: '#151515',
         cream: '#FCF4EB',
-        purple: '#7C69C7',
+        purple: '#8B79D4',
         pink: '#F5C3C6',
       },
       fontFamily: {
@@ -31,8 +31,8 @@ const config: Config = {
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         'glow-pulse': {
-          '0%, 100%': { boxShadow: '0 0 0px rgba(124,105,199,0)' },
-          '50%': { boxShadow: '0 0 24px rgba(124,105,199,0.25)' },
+          '0%, 100%': { boxShadow: '0 0 0px rgba(139,121,212,0)' },
+          '50%': { boxShadow: '0 0 24px rgba(139,121,212,0.25)' },
         },
         shimmer: {
           '0%': { backgroundPosition: '-200% center' },

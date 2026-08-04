@@ -93,7 +93,7 @@ export default function CodeBlock({ code, language, filename, editable, codexPro
   const rowCount = Math.max(6, value.split('\n').length + 2)
 
   return (
-    <div className="my-6 rounded-xl overflow-hidden border border-white/[0.08] border-l-2 border-l-[#7C69C7]">
+    <div className="my-6 rounded-xl overflow-hidden border border-white/[0.08] border-l-2 border-l-[#8B79D4]">
       {/* Header bar — copy button always lives here */}
       <div className="flex flex-col gap-3 bg-white/[0.04] px-4 py-3 border-b border-white/[0.06] sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:py-2">
         <span className="min-w-0 text-xs text-[#FCF4EB]/40 font-mono break-words">
@@ -104,9 +104,9 @@ export default function CodeBlock({ code, language, filename, editable, codexPro
             <span
               className="w-fit text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 rounded-full"
               style={{
-                background: 'rgba(124, 105, 199, 0.15)',
+                background: 'rgba(139, 121, 212, 0.15)',
                 color: '#9D8FE0',
-                border: '1px solid rgba(124, 105, 199, 0.25)',
+                border: '1px solid rgba(139, 121, 212, 0.25)',
               }}
             >
               Edit before copying

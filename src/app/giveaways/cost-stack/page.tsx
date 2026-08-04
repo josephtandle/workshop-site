@@ -411,11 +411,11 @@ Be direct about which ones are not worth replacing. I am not trying to cancel ev
         .aurora-b { animation: aurora-drift-2 20s ease-in-out infinite; }
         .glow-card { transition: box-shadow 0.3s ease, border-color 0.3s ease; }
         .glow-card:hover {
-          box-shadow: 0 0 28px rgba(124, 105, 199, 0.12), 0 0 0 1px rgba(124, 105, 199, 0.18);
-          border-color: rgba(124, 105, 199, 0.22) !important;
+          box-shadow: 0 0 28px rgba(139, 121, 212, 0.12), 0 0 0 1px rgba(139, 121, 212, 0.18);
+          border-color: rgba(139, 121, 212, 0.22) !important;
         }
         .glow-btn { transition: box-shadow 0.2s ease, background-color 0.15s ease, transform 0.1s ease-out; }
-        .glow-btn:hover { box-shadow: 0 0 32px rgba(124, 105, 199, 0.45), 0 0 60px rgba(124, 105, 199, 0.2); }
+        .glow-btn:hover { box-shadow: 0 0 32px rgba(139, 121, 212, 0.45), 0 0 60px rgba(139, 121, 212, 0.2); }
         .glow-btn-pink:hover { box-shadow: 0 0 32px rgba(245, 195, 198, 0.5), 0 0 60px rgba(245, 195, 198, 0.2); }
         .stack-input::-webkit-outer-spin-button,
         .stack-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
@@ -526,7 +526,7 @@ Be direct about which ones are not worth replacing. I am not trying to cancel ev
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 1.8 }}
               href="#audit"
-              className="inline-block px-10 py-4 rounded-xl bg-[#7C69C7] hover:bg-[#6e5db8] text-[#FCF4EB] font-bold text-base active:scale-[0.98] glow-btn text-center"
+              className="inline-block px-10 py-4 rounded-xl bg-[#8B79D4] hover:bg-[#6e5db8] text-[#FCF4EB] font-bold text-base active:scale-[0.98] glow-btn text-center"
             >
               Start the audit
             </motion.a>
@@ -555,7 +555,7 @@ Be direct about which ones are not worth replacing. I am not trying to cancel ev
             viewport={{ once: true }}
             className="text-center mb-10"
           >
-            <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
+            <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 bg-[#8B79D4]/15 text-[#9D8FE0] border border-[#8B79D4]/25">
               Step 1
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold text-[#FCF4EB] mb-3">
@@ -578,8 +578,8 @@ Be direct about which ones are not worth replacing. I am not trying to cancel ev
                   transition={{ delay: i * 0.04 }}
                   className="glow-card rounded-xl border overflow-hidden"
                   style={{
-                    background: on ? 'rgba(124,105,199,0.08)' : 'rgba(255,255,255,0.04)',
-                    borderColor: on ? 'rgba(124,105,199,0.30)' : 'rgba(255,255,255,0.08)',
+                    background: on ? 'rgba(139,121,212,0.08)' : 'rgba(255,255,255,0.04)',
+                    borderColor: on ? 'rgba(139,121,212,0.30)' : 'rgba(255,255,255,0.08)',
                   }}
                 >
                   <div className="flex items-center gap-3 px-4 py-4 sm:px-5">
@@ -589,8 +589,8 @@ Be direct about which ones are not worth replacing. I am not trying to cancel ev
                       aria-label={`Toggle ${tool.name}`}
                       className="w-6 h-6 rounded-md flex items-center justify-center flex-shrink-0 transition-all duration-150"
                       style={{
-                        background: on ? '#7C69C7' : 'rgba(255,255,255,0.05)',
-                        border: on ? '1px solid #7C69C7' : '1px solid rgba(255,255,255,0.15)',
+                        background: on ? '#8B79D4' : 'rgba(255,255,255,0.05)',
+                        border: on ? '1px solid #8B79D4' : '1px solid rgba(255,255,255,0.15)',
                       }}
                     >
                       {on && (
@@ -617,7 +617,7 @@ Be direct about which ones are not worth replacing. I am not trying to cancel ev
                           setMonthly((prev) => ({ ...prev, [tool.id]: v }))
                           if (!selected[tool.id] && v > 0) setSelected((prev) => ({ ...prev, [tool.id]: true }))
                         }}
-                        className="stack-input w-16 sm:w-20 bg-white/[0.06] border border-white/[0.10] rounded-lg px-2 py-1.5 text-right text-sm text-[#FCF4EB] focus:outline-none focus:border-[#7C69C7]/60"
+                        className="stack-input w-16 sm:w-20 bg-white/[0.06] border border-white/[0.10] rounded-lg px-2 py-1.5 text-right text-sm text-[#FCF4EB] focus:outline-none focus:border-[#8B79D4]/60"
                       />
                       <span className="text-[#FCF4EB]/25 text-xs">/mo</span>
                     </div>
@@ -649,7 +649,7 @@ Be direct about which ones are not worth replacing. I am not trying to cancel ev
                     min={0}
                     value={devAnnual}
                     onChange={(e) => setDevAnnual(Math.max(0, Number(e.target.value) || 0))}
-                    className="stack-input w-20 sm:w-24 bg-white/[0.06] border border-white/[0.10] rounded-lg px-2 py-1.5 text-right text-sm text-[#FCF4EB] focus:outline-none focus:border-[#7C69C7]/60"
+                    className="stack-input w-20 sm:w-24 bg-white/[0.06] border border-white/[0.10] rounded-lg px-2 py-1.5 text-right text-sm text-[#FCF4EB] focus:outline-none focus:border-[#8B79D4]/60"
                   />
                   <span className="text-[#FCF4EB]/25 text-xs">/yr</span>
                 </div>
@@ -671,7 +671,7 @@ Be direct about which ones are not worth replacing. I am not trying to cancel ev
                     min={0}
                     value={vaMonthly}
                     onChange={(e) => setVaMonthly(Math.max(0, Number(e.target.value) || 0))}
-                    className="stack-input w-20 sm:w-24 bg-white/[0.06] border border-white/[0.10] rounded-lg px-2 py-1.5 text-right text-sm text-[#FCF4EB] focus:outline-none focus:border-[#7C69C7]/60"
+                    className="stack-input w-20 sm:w-24 bg-white/[0.06] border border-white/[0.10] rounded-lg px-2 py-1.5 text-right text-sm text-[#FCF4EB] focus:outline-none focus:border-[#8B79D4]/60"
                   />
                   <span className="text-[#FCF4EB]/25 text-xs">/mo</span>
                 </div>
@@ -693,7 +693,7 @@ Be direct about which ones are not worth replacing. I am not trying to cancel ev
                     min={0}
                     value={quotedBuild}
                     onChange={(e) => setQuotedBuild(Math.max(0, Number(e.target.value) || 0))}
-                    className="stack-input w-20 sm:w-24 bg-white/[0.06] border border-white/[0.10] rounded-lg px-2 py-1.5 text-right text-sm text-[#FCF4EB] focus:outline-none focus:border-[#7C69C7]/60"
+                    className="stack-input w-20 sm:w-24 bg-white/[0.06] border border-white/[0.10] rounded-lg px-2 py-1.5 text-right text-sm text-[#FCF4EB] focus:outline-none focus:border-[#8B79D4]/60"
                   />
                 </div>
               </div>
@@ -712,8 +712,8 @@ Be direct about which ones are not worth replacing. I am not trying to cancel ev
               viewport={{ once: true }}
               className="rounded-2xl overflow-hidden"
               style={{
-                background: 'linear-gradient(135deg, rgba(124,105,199,0.10) 0%, rgba(157,143,224,0.05) 100%)',
-                border: '1px solid rgba(124,105,199,0.20)',
+                background: 'linear-gradient(135deg, rgba(139,121,212,0.10) 0%, rgba(157,143,224,0.05) 100%)',
+                border: '1px solid rgba(139,121,212,0.20)',
               }}
             >
               <div className="px-5 py-8 sm:px-8 sm:py-10">
@@ -830,7 +830,7 @@ Be direct about which ones are not worth replacing. I am not trying to cancel ev
             viewport={{ once: true }}
           >
             <div className="text-center mb-8">
-              <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
+              <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 bg-[#8B79D4]/15 text-[#9D8FE0] border border-[#8B79D4]/25">
                 Step 2
               </span>
               <h2 className="text-2xl sm:text-3xl font-bold text-[#FCF4EB] mb-3">
@@ -844,7 +844,7 @@ Be direct about which ones are not worth replacing. I am not trying to cancel ev
               </p>
             </div>
 
-            <div className="my-6 rounded-xl overflow-hidden border border-white/[0.08]" style={{ borderLeftWidth: 2, borderLeftColor: '#7C69C7' }}>
+            <div className="my-6 rounded-xl overflow-hidden border border-white/[0.08]" style={{ borderLeftWidth: 2, borderLeftColor: '#8B79D4' }}>
               <div className="flex items-center justify-between px-4 py-2 bg-white/[0.04] border-b border-white/[0.06]">
                 <span className="text-xs text-[#FCF4EB]/40 font-mono">Your audit prompt</span>
                 <InlineCopyButton text={auditPrompt} onAfterCopy={() => setEmailModalOpen(true)} />
@@ -926,7 +926,7 @@ Be direct about which ones are not worth replacing. I am not trying to cancel ev
             viewport={{ once: true }}
             className="rounded-2xl overflow-hidden"
             style={{
-              background: 'linear-gradient(135deg, rgba(245,195,198,0.06) 0%, rgba(124,105,199,0.05) 100%)',
+              background: 'linear-gradient(135deg, rgba(245,195,198,0.06) 0%, rgba(139,121,212,0.05) 100%)',
               border: '1px solid rgba(245,195,198,0.12)',
             }}
           >
@@ -1000,7 +1000,7 @@ function MastermindCTA() {
         viewport={{ once: true }}
         className="rounded-2xl overflow-hidden"
         style={{
-          background: 'linear-gradient(135deg, rgba(245,195,198,0.10) 0%, rgba(124,105,199,0.08) 100%)',
+          background: 'linear-gradient(135deg, rgba(245,195,198,0.10) 0%, rgba(139,121,212,0.08) 100%)',
           border: '1px solid rgba(245,195,198,0.15)',
         }}
       >
@@ -1091,7 +1091,7 @@ function BigCopyButton({ prompt, onAfterCopy }: { prompt: string; onAfterCopy?: 
         onClick={handleCopy}
         onMouseMove={magnet.onMouseMove}
         onMouseLeave={magnet.onMouseLeave}
-        className="block w-full sm:inline-block sm:w-auto px-10 py-4 rounded-xl bg-[#7C69C7] hover:bg-[#6e5db8] text-[#FCF4EB] font-bold text-base active:scale-[0.98] glow-btn text-center"
+        className="block w-full sm:inline-block sm:w-auto px-10 py-4 rounded-xl bg-[#8B79D4] hover:bg-[#6e5db8] text-[#FCF4EB] font-bold text-base active:scale-[0.98] glow-btn text-center"
       >
         {copied ? 'Copied! Paste it into Claude or ChatGPT.' : 'Copy my audit prompt'}
       </button>

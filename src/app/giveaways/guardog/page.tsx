@@ -312,14 +312,14 @@ export default function GuardogPage() {
           transition: box-shadow 0.3s ease, border-color 0.3s ease;
         }
         .glow-card:hover {
-          box-shadow: 0 0 28px rgba(124, 105, 199, 0.12), 0 0 0 1px rgba(124, 105, 199, 0.18);
-          border-color: rgba(124, 105, 199, 0.22) !important;
+          box-shadow: 0 0 28px rgba(139, 121, 212, 0.12), 0 0 0 1px rgba(139, 121, 212, 0.18);
+          border-color: rgba(139, 121, 212, 0.22) !important;
         }
         .glow-btn {
           transition: box-shadow 0.2s ease, background-color 0.15s ease, transform 0.1s ease-out;
         }
         .glow-btn:hover {
-          box-shadow: 0 0 32px rgba(124, 105, 199, 0.45), 0 0 60px rgba(124, 105, 199, 0.2);
+          box-shadow: 0 0 32px rgba(139, 121, 212, 0.45), 0 0 60px rgba(139, 121, 212, 0.2);
         }
         .glow-btn-pink:hover {
           box-shadow: 0 0 32px rgba(245, 195, 198, 0.5), 0 0 60px rgba(245, 195, 198, 0.2);
@@ -441,7 +441,7 @@ export default function GuardogPage() {
               className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5 mb-6"
             >
               <span className="text-[#FCF4EB]/28 text-xs uppercase tracking-widest">Works in</span>
-              <div className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/[0.05] border border-[#7C69C7]/35 transition-all duration-200">
+              <div className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/[0.05] border border-[#8B79D4]/35 transition-all duration-200">
                 <span className="text-[#9D8FE0] text-sm">◆</span>
                 <span className="text-[#FCF4EB]/75 text-sm font-medium">Claude Code</span>
               </div>
@@ -494,7 +494,7 @@ export default function GuardogPage() {
                 transition={{ delay: i * 0.1 }}
                 className="glow-card bg-white/[0.04] border border-white/[0.08] rounded-2xl p-7"
               >
-                <div className="text-4xl font-extrabold text-[#7C69C7]/20 mb-5 font-mono">{item.step}</div>
+                <div className="text-4xl font-extrabold text-[#8B79D4]/20 mb-5 font-mono">{item.step}</div>
                 <h3 className="text-[#FCF4EB] font-bold text-base mb-2">{item.title}</h3>
                 <p className="text-[#FCF4EB]/44 text-sm leading-relaxed">{item.body}</p>
               </motion.div>
@@ -512,13 +512,13 @@ export default function GuardogPage() {
             viewport={{ once: true }}
             className="rounded-2xl overflow-hidden"
             style={{
-              background: 'linear-gradient(135deg, rgba(124,105,199,0.07) 0%, rgba(157,143,224,0.04) 100%)',
-              border: '1px solid rgba(124,105,199,0.15)',
+              background: 'linear-gradient(135deg, rgba(139,121,212,0.07) 0%, rgba(157,143,224,0.04) 100%)',
+              border: '1px solid rgba(139,121,212,0.15)',
             }}
           >
             <div className="px-5 py-8 sm:px-8 sm:py-10">
               <div className="text-center mb-8">
-                <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
+                <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 bg-[#8B79D4]/15 text-[#9D8FE0] border border-[#8B79D4]/25">
                   Think of it as
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-bold text-[#FCF4EB]">
@@ -529,7 +529,7 @@ export default function GuardogPage() {
                 <div className="flex items-start gap-5">
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
-                    style={{ background: 'rgba(124,105,199,0.15)', border: '1px solid rgba(124,105,199,0.25)' }}
+                    style={{ background: 'rgba(139,121,212,0.15)', border: '1px solid rgba(139,121,212,0.25)' }}
                   >
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9D8FE0" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
@@ -549,7 +549,7 @@ export default function GuardogPage() {
                 <div className="flex items-start gap-5">
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
-                    style={{ background: 'rgba(124,105,199,0.15)', border: '1px solid rgba(124,105,199,0.25)' }}
+                    style={{ background: 'rgba(139,121,212,0.15)', border: '1px solid rgba(139,121,212,0.25)' }}
                   >
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9D8FE0" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
                       <circle cx="12" cy="12" r="10"/>
@@ -722,7 +722,7 @@ export default function GuardogPage() {
             viewport={{ once: true }}
           >
             <div className="text-center mb-10">
-              <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
+              <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 bg-[#8B79D4]/15 text-[#9D8FE0] border border-[#8B79D4]/25">
                 Setup Prompt
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold text-[#FCF4EB] mb-4">
@@ -736,7 +736,7 @@ export default function GuardogPage() {
             </div>
 
             {/* Single combined prompt block */}
-            <div className="my-6 rounded-xl overflow-hidden border border-white/[0.08]" style={{ borderLeftWidth: 2, borderLeftColor: '#7C69C7' }}>
+            <div className="my-6 rounded-xl overflow-hidden border border-white/[0.08]" style={{ borderLeftWidth: 2, borderLeftColor: '#8B79D4' }}>
               <div className="flex items-center justify-between px-4 py-2 bg-white/[0.04] border-b border-white/[0.06]">
                 <span className="text-xs text-[#FCF4EB]/40 font-mono">Claude Code / Codex prompt</span>
                 <InlineCopyButton text={SETUP_PROMPT} onAfterCopy={() => setEmailModalOpen(true)} />
@@ -772,7 +772,7 @@ export default function GuardogPage() {
             viewport={{ once: true }}
             className="rounded-2xl overflow-hidden"
             style={{
-              background: 'linear-gradient(135deg, rgba(245,195,198,0.06) 0%, rgba(124,105,199,0.05) 100%)',
+              background: 'linear-gradient(135deg, rgba(245,195,198,0.06) 0%, rgba(139,121,212,0.05) 100%)',
               border: '1px solid rgba(245,195,198,0.12)',
             }}
           >
@@ -891,7 +891,7 @@ export default function GuardogPage() {
                   >
                     <div className="flex items-center gap-3">
                       <span className="text-[#FCF4EB] font-semibold text-sm sm:text-base">{section.name}</span>
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#9D8FE0] bg-[#7C69C7]/12 border border-[#7C69C7]/20 px-2 py-0.5 rounded-full">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#9D8FE0] bg-[#8B79D4]/12 border border-[#8B79D4]/20 px-2 py-0.5 rounded-full">
                         {section.count}{section.count >= 30 ? '+' : ''}
                       </span>
                     </div>
@@ -912,7 +912,7 @@ export default function GuardogPage() {
                             key={item.name}
                             className="flex items-start gap-3 p-3 rounded-lg"
                           >
-                            <div className="w-1.5 h-1.5 rounded-full bg-[#7C69C7] mt-[7px] flex-shrink-0" />
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#8B79D4] mt-[7px] flex-shrink-0" />
                             <div>
                               <span className="text-[#9D8FE0] text-sm font-medium">
                                 {item.name}
@@ -984,7 +984,7 @@ function MastermindCTA() {
         viewport={{ once: true }}
         className="rounded-2xl overflow-hidden"
         style={{
-          background: 'linear-gradient(135deg, rgba(245,195,198,0.10) 0%, rgba(124,105,199,0.08) 100%)',
+          background: 'linear-gradient(135deg, rgba(245,195,198,0.10) 0%, rgba(139,121,212,0.08) 100%)',
           border: '1px solid rgba(245,195,198,0.15)',
         }}
       >
@@ -1075,7 +1075,7 @@ function SetupCopyButton({ prompt, onAfterCopy }: { prompt: string; onAfterCopy?
         onClick={handleCopy}
         onMouseMove={magnet.onMouseMove}
         onMouseLeave={magnet.onMouseLeave}
-        className="block w-full sm:inline-block sm:w-auto px-10 py-4 rounded-xl bg-[#7C69C7] hover:bg-[#6e5db8] text-[#FCF4EB] font-bold text-base active:scale-[0.98] glow-btn text-center"
+        className="block w-full sm:inline-block sm:w-auto px-10 py-4 rounded-xl bg-[#8B79D4] hover:bg-[#6e5db8] text-[#FCF4EB] font-bold text-base active:scale-[0.98] glow-btn text-center"
       >
         {copied ? 'Copied! Paste it into Claude Code or Codex.' : 'Copy Setup Prompt'}
       </button>

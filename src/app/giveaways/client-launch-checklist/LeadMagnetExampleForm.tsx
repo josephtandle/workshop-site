@@ -50,8 +50,8 @@ export default function LeadMagnetExampleForm() {
 
   if (status === 'done') {
     return (
-      <div className="rounded-2xl border border-[#7C69C7]/35 bg-[#7C69C7]/10 p-6 text-center">
-        <div className="mx-auto mb-4 flex h-11 w-11 items-center justify-center rounded-full border border-[#7C69C7]/40 bg-[#7C69C7]/20">
+      <div className="rounded-2xl border border-[#8B79D4]/35 bg-[#8B79D4]/10 p-6 text-center">
+        <div className="mx-auto mb-4 flex h-11 w-11 items-center justify-center rounded-full border border-[#8B79D4]/40 bg-[#8B79D4]/20">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M20 6L9 17l-5-5" stroke="#FCF4EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
@@ -77,7 +77,7 @@ export default function LeadMagnetExampleForm() {
             onChange={(event) => setFirstName(event.target.value)}
             placeholder="Avery"
             required
-            className="w-full rounded-xl border border-white/[0.12] bg-white/[0.06] px-4 py-3.5 text-sm text-[#FCF4EB] outline-none transition-all placeholder:text-[#FCF4EB]/30 focus:border-[#7C69C7]/70 focus:bg-white/[0.08]"
+            className="w-full rounded-xl border border-white/[0.12] bg-white/[0.06] px-4 py-3.5 text-sm text-[#FCF4EB] outline-none transition-all placeholder:text-[#FCF4EB]/30 focus:border-[#8B79D4]/70 focus:bg-white/[0.08]"
           />
         </label>
         <label className="block">
@@ -89,7 +89,7 @@ export default function LeadMagnetExampleForm() {
             value={lastName}
             onChange={(event) => setLastName(event.target.value)}
             placeholder="Nguyen"
-            className="w-full rounded-xl border border-white/[0.12] bg-white/[0.06] px-4 py-3.5 text-sm text-[#FCF4EB] outline-none transition-all placeholder:text-[#FCF4EB]/30 focus:border-[#7C69C7]/70 focus:bg-white/[0.08]"
+            className="w-full rounded-xl border border-white/[0.12] bg-white/[0.06] px-4 py-3.5 text-sm text-[#FCF4EB] outline-none transition-all placeholder:text-[#FCF4EB]/30 focus:border-[#8B79D4]/70 focus:bg-white/[0.08]"
           />
         </label>
       </div>
@@ -104,14 +104,14 @@ export default function LeadMagnetExampleForm() {
           onChange={(event) => setEmail(event.target.value)}
           placeholder="avery@example.com"
           required
-          className="w-full rounded-xl border border-white/[0.12] bg-white/[0.06] px-4 py-3.5 text-sm text-[#FCF4EB] outline-none transition-all placeholder:text-[#FCF4EB]/30 focus:border-[#7C69C7]/70 focus:bg-white/[0.08]"
+          className="w-full rounded-xl border border-white/[0.12] bg-white/[0.06] px-4 py-3.5 text-sm text-[#FCF4EB] outline-none transition-all placeholder:text-[#FCF4EB]/30 focus:border-[#8B79D4]/70 focus:bg-white/[0.08]"
         />
       </label>
 
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#7C69C7] px-5 py-3.5 text-sm font-bold text-[#FCF4EB] transition-colors hover:bg-[#6B5AB8] disabled:cursor-not-allowed disabled:opacity-60"
+        className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#8B79D4] px-5 py-3.5 text-sm font-bold text-[#FCF4EB] transition-colors hover:bg-[#6B5AB8] disabled:cursor-not-allowed disabled:opacity-60"
       >
         {status === 'loading' && (
           <span className="h-4 w-4 animate-spin rounded-full border-2 border-[#FCF4EB]/30 border-t-[#FCF4EB]" />

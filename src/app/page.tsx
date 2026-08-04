@@ -18,7 +18,7 @@ export default function HomePage() {
       <section className="relative overflow-hidden pt-20 pb-10 px-6">
         <div className="relative max-w-3xl mx-auto text-center">
           <Reveal>
-            <p className="text-xs uppercase tracking-[0.2em] text-[#7C69C7] font-semibold mb-4">
+            <p className="text-xs uppercase tracking-[0.2em] text-[#8B79D4] font-semibold mb-4">
               Masterminds Workshop
             </p>
           </Reveal>

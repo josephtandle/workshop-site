@@ -1,20 +1,20 @@
 // Auto-generated from projects/illy-onboarding/guide-v2/illy-guide.html (MHQ design)
 export const GUIDE_HTML = `<style>
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&display=swap');
-:root{--dark:#151515;--panel:#1D1B22;--deep:#573D6F;--cream:#FCF4EB;--purple:#7C69C7;--lavender:#9D8FE0;--rose:#C4BAE0;--pink:#F5C3C6;
+:root{--dark:#151515;--panel:#1D1B22;--deep:#573D6F;--cream:#FCF4EB;--purple:#8B79D4;--lavender:#9D8FE0;--rose:#C4BAE0;--pink:#F5C3C6;
 --sans:'Plus Jakarta Sans',system-ui,sans-serif;--disp:'Cormorant Garamond',Georgia,serif;}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--dark);color:var(--cream);font-family:var(--sans);-webkit-font-smoothing:antialiased;line-height:1.7;overflow-x:hidden}
 ::selection{background:var(--deep);color:var(--cream)}
 .bg-fx{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:#151515}
-.bg-fx .grid{position:absolute;inset:-40px;background-image:radial-gradient(rgba(124,105,199,.08) 1px,transparent 1px);background-size:28px 28px;animation:drift 14s linear infinite}
+.bg-fx .grid{position:absolute;inset:-40px;background-image:radial-gradient(rgba(139,121,212,.08) 1px,transparent 1px);background-size:28px 28px;animation:drift 14s linear infinite}
 @keyframes drift{to{background-position:28px 28px}}
 .orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.16}
 .orb.a{width:520px;height:520px;top:-12%;left:6%;background:radial-gradient(circle,var(--purple),transparent 70%);animation:float 20s ease-in-out infinite}
 .orb.b{width:440px;height:440px;bottom:-10%;right:3%;background:radial-gradient(circle,var(--pink),transparent 70%);animation:float 26s ease-in-out infinite reverse}
 @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(24px,-30px)}}
-header.hero{position:relative;z-index:1;text-align:center;padding:80px 24px 30px;background:radial-gradient(ellipse at 50% 0%,rgba(124,105,199,.14),transparent 62%)}
+header.hero{position:relative;z-index:1;text-align:center;padding:80px 24px 30px;background:radial-gradient(ellipse at 50% 0%,rgba(139,121,212,.14),transparent 62%)}
 .eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--purple);margin:0 0 16px}
 header.hero h1{font-family:var(--disp);font-weight:600;font-size:clamp(2.4rem,6vw,4.2rem);line-height:1;margin:0 0 14px;background:linear-gradient(135deg,#FCF4EB 0%,#9D8FE0 35%,#F5C3C6 70%,#FCF4EB 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;padding-bottom:.12em}
 header.hero .sub{font-family:var(--disp);font-style:italic;font-size:clamp(1.1rem,2.4vw,1.6rem);color:rgba(252,244,235,.6);margin:0}
@@ -39,7 +39,7 @@ header.hero .sub{font-family:var(--disp);font-style:italic;font-size:clamp(1.1re
 main{position:relative;z-index:1;max-width:840px;margin:0 auto;padding:8px 22px 100px}
 .chapter{position:relative;margin-top:30px;padding:34px 30px 30px;border-radius:20px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);backdrop-filter:blur(10px);scroll-margin-top:70px}
 .chapter .accent-bar{position:absolute;left:0;top:22px;bottom:22px;width:3px;border-radius:3px}
-.accent-purple .accent-bar{background:linear-gradient(to bottom,rgba(124,105,199,.7),transparent)}
+.accent-purple .accent-bar{background:linear-gradient(to bottom,rgba(139,121,212,.7),transparent)}
 .accent-lavender .accent-bar{background:linear-gradient(to bottom,rgba(157,143,224,.7),transparent)}
 .accent-rose .accent-bar{background:linear-gradient(to bottom,rgba(196,186,224,.7),transparent)}
 .chapter h1{font-family:var(--disp);font-weight:600;font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.05;margin:.1em 0 .5em;background:linear-gradient(to right,#FCF4EB 0%,#BDB3E8 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;padding-bottom:.08em}
@@ -52,13 +52,13 @@ a{color:var(--lavender);text-decoration:underline;text-underline-offset:2px}
 a:hover{color:var(--purple)}
 ul,ol{padding-left:1.3em;margin:0 0 1em}
 li{margin:.3em 0;color:rgba(252,244,235,.82)}
-code{background:rgba(124,105,199,.16);padding:1px 6px;border-radius:5px;font-size:.86em;font-family:ui-monospace,monospace;color:var(--lavender)}
+code{background:rgba(139,121,212,.16);padding:1px 6px;border-radius:5px;font-size:.86em;font-family:ui-monospace,monospace;color:var(--lavender)}
 pre{background:#0e0a17;border:1px solid rgba(255,255,255,.07);padding:14px 16px;border-radius:12px;overflow-x:auto}
 pre code{background:none;color:rgba(252,244,235,.85)}
-blockquote{border-left:3px solid var(--purple);margin:1.1em 0;padding:2px 16px;background:rgba(124,105,199,.1);border-radius:0 10px 10px 0;color:rgba(252,244,235,.75);font-style:italic}
+blockquote{border-left:3px solid var(--purple);margin:1.1em 0;padding:2px 16px;background:rgba(139,121,212,.1);border-radius:0 10px 10px 0;color:rgba(252,244,235,.75);font-style:italic}
 hr{border:none;border-top:1px solid rgba(255,255,255,.1);margin:1.8em 0}
 table{width:100%;border-collapse:collapse;margin:1.1em 0;font-size:.9rem;display:block;overflow-x:auto;border:1px solid rgba(255,255,255,.08);border-radius:14px}
-thead tr{background:rgba(124,105,199,.16)}
+thead tr{background:rgba(139,121,212,.16)}
 th{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(189,179,232,.85);text-align:left;padding:10px 14px}
 td{padding:10px 14px;color:rgba(252,244,235,.82);border-top:1px solid rgba(255,255,255,.06);vertical-align:top}
 tbody tr:hover{background:rgba(255,255,255,.03)}
@@ -68,12 +68,12 @@ tbody tr:hover{background:rgba(255,255,255,.03)}
 .person-head{display:flex;align-items:center;gap:14px;margin-bottom:8px}
 .avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(157,143,224,.35)}
 .avatar-fallback{width:52px;height:52px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;
-  background:rgba(124,105,199,.2);border:2px solid rgba(157,143,224,.35);color:var(--lavender);font-weight:700;font-size:1.05rem}
+  background:rgba(139,121,212,.2);border:2px solid rgba(157,143,224,.35);color:var(--lavender);font-weight:700;font-size:1.05rem}
 .person h3{margin:0 0 2px;color:var(--cream);font-size:1.05rem}
 .person .role{color:var(--purple);font-size:.8rem;font-weight:600;margin:0}
 .person p{font-size:.86rem;margin:.3em 0;color:rgba(252,244,235,.78)}
 .person .ask{color:var(--lavender);font-size:.82rem;font-style:italic;margin-top:8px}
-footer{position:relative;z-index:1;text-align:center;color:rgba(157,143,224,.6);font-size:.78rem;padding:26px;border-top:1px solid rgba(124,105,199,.2)}
+footer{position:relative;z-index:1;text-align:center;color:rgba(157,143,224,.6);font-size:.78rem;padding:26px;border-top:1px solid rgba(139,121,212,.2)}
 @media(max-width:640px){.chapter{padding:26px 20px}.topbar .brand{display:none}}
 </style>
 <div class="bg-fx"><div class="grid"></div><div class="orb a"></div><div class="orb b"></div></div>
@@ -1478,7 +1478,7 @@ footer{position:relative;z-index:1;text-align:center;color:rgba(157,143,224,.6);
 <tbody>
 <tr>
 <td>Purple</td>
-<td><code>#7C69C7</code></td>
+<td><code>#8B79D4</code></td>
 </tr>
 <tr>
 <td>Deep purple</td>

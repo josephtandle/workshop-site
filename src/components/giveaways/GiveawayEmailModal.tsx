@@ -106,7 +106,7 @@ export default function GiveawayEmailModal({ slug, isOpen, onClose, headingOverr
 
         {status === 'success' ? (
           <>
-            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#7C69C7]/15 text-[#BDB3E8]">
+            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#8B79D4]/15 text-[#BDB3E8]">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
             <h3 className="text-[1.4rem] font-extrabold leading-tight text-[#FCF4EB]">
@@ -149,7 +149,7 @@ export default function GiveawayEmailModal({ slug, isOpen, onClose, headingOverr
               <button
                 type="submit"
                 disabled={status === 'submitting'}
-                className="inline-flex items-center justify-center rounded-xl bg-[#7C69C7] px-6 py-3 sm:py-3.5 text-[14px] sm:text-[15px] font-bold text-[#FCF4EB] transition hover:bg-[#6e5db8] active:scale-[0.98] disabled:opacity-60"
+                className="inline-flex items-center justify-center rounded-xl bg-[#8B79D4] px-6 py-3 sm:py-3.5 text-[14px] sm:text-[15px] font-bold text-[#FCF4EB] transition hover:bg-[#6e5db8] active:scale-[0.98] disabled:opacity-60"
               >
                 {status === 'submitting' ? 'Sending...' : 'Send me future skills'}
               </button>

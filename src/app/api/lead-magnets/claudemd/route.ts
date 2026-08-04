@@ -162,7 +162,7 @@ async function sendViaResend(firstName: string, email: string, idempotencyKey: s
         information and conversations, and organize it all so their AI gets smart.
       </p>
       <p style="font-size: 15px; margin-bottom: 8px;">
-        <a href="${withUtm('https://mastermindshq.business', { campaign: 'lead-magnet', content: 'claude-md' })}" style="color: #7C69C7; font-weight: 600;">
+        <a href="${withUtm('https://mastermindshq.business', { campaign: 'lead-magnet', content: 'claude-md' })}" style="color: #8B79D4; font-weight: 600;">
           Learn more at mastermindshq.business
         </a>
       </p>

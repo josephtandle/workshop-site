@@ -60,7 +60,7 @@ export default function WaitlistJoinForm({ durationLabel, eventSlug, eventTitle 
         </p>
       </div>
 
-      <div className="event-registration-shell rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(252,244,235,0.08),rgba(124,105,199,0.08))] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.26)] md:p-8">
+      <div className="event-registration-shell rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(252,244,235,0.08),rgba(139,121,212,0.08))] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.26)] md:p-8">
         {success ? (
           <div className="text-center py-8">
             <p className="text-[12px] font-semibold uppercase tracking-[0.24em] text-[#BDB3E8]">You are on the list</p>
@@ -83,7 +83,7 @@ export default function WaitlistJoinForm({ durationLabel, eventSlug, eventTitle 
                       autoCapitalize="words"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="h-16 w-full rounded-xl border border-black/10 bg-white px-4 text-black placeholder:text-black/35 outline-none transition focus:border-[#7C69C7]/55"
+                      className="h-16 w-full rounded-xl border border-black/10 bg-white px-4 text-black placeholder:text-black/35 outline-none transition focus:border-[#8B79D4]/55"
                       placeholder="Your name"
                       aria-invalid={Boolean(error && !name.trim())}
                     />
@@ -99,7 +99,7 @@ export default function WaitlistJoinForm({ durationLabel, eventSlug, eventTitle 
                       inputMode="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value.replace(/\s+/g, ''))}
-                      className="h-16 w-full rounded-xl border border-black/10 bg-white px-4 text-black placeholder:text-black/35 outline-none transition focus:border-[#7C69C7]/55"
+                      className="h-16 w-full rounded-xl border border-black/10 bg-white px-4 text-black placeholder:text-black/35 outline-none transition focus:border-[#8B79D4]/55"
                       placeholder="you@example.com"
                       aria-invalid={Boolean(error && !isValidEmail(email))}
                     />
@@ -112,7 +112,7 @@ export default function WaitlistJoinForm({ durationLabel, eventSlug, eventTitle 
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="copy-button-glass copy-button-primary inline-flex min-w-[220px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold shadow-[0_16px_38px_rgba(124,105,199,0.22)] disabled:cursor-wait disabled:opacity-70"
+                  className="copy-button-glass copy-button-primary inline-flex min-w-[220px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold shadow-[0_16px_38px_rgba(139,121,212,0.22)] disabled:cursor-wait disabled:opacity-70"
                 >
                   {submitting ? 'Joining Waitlist...' : 'Join The Waitlist'}
                 </button>

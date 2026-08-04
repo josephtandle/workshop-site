@@ -18,7 +18,7 @@ export default function EventsIndexPage() {
       <section className="overflow-hidden px-6 pb-10 pt-20">
         <div className="mx-auto max-w-4xl text-center">
           <Reveal>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-[#7C69C7]">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-[#8B79D4]">
               Masterminds HQ Events
             </p>
           </Reveal>
@@ -55,11 +55,11 @@ export default function EventsIndexPage() {
                 <div className="flex flex-1 flex-col p-6">
                   <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
                     <div className="flex flex-wrap items-center gap-2">
-                      <span className="rounded-full border border-[#7C69C7]/30 bg-[#7C69C7]/14 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#BDB3E8]">
+                      <span className="rounded-full border border-[#8B79D4]/30 bg-[#8B79D4]/14 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#BDB3E8]">
                         Live
                       </span>
                       {modalityLabel && (
-                        <span className="rounded-full border border-[#7C69C7]/30 bg-[#7C69C7]/14 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#BDB3E8]">
+                        <span className="rounded-full border border-[#8B79D4]/30 bg-[#8B79D4]/14 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#BDB3E8]">
                           {modalityLabel}
                         </span>
                       )}
@@ -83,7 +83,7 @@ export default function EventsIndexPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 pt-6">
-        <div className="grid gap-6 rounded-[1.8rem] border border-white/10 bg-[linear-gradient(145deg,rgba(252,244,235,0.08),rgba(124,105,199,0.08))] p-6 shadow-[0_22px_70px_rgba(0,0,0,0.26)] md:grid-cols-[1.4fr_auto] md:items-center md:p-8">
+        <div className="grid gap-6 rounded-[1.8rem] border border-white/10 bg-[linear-gradient(145deg,rgba(252,244,235,0.08),rgba(139,121,212,0.08))] p-6 shadow-[0_22px_70px_rgba(0,0,0,0.26)] md:grid-cols-[1.4fr_auto] md:items-center md:p-8">
           <div>
             <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#BDB3E8]">Not a one-off workshop</p>
             <h2 className="gradient-text font-serif text-3xl leading-[1.04] md:text-4xl">Join the AI Business Mastermind</h2>

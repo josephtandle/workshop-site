@@ -11,7 +11,7 @@ export default function BonusWorkshopsPage() {
       {/* Hero */}
       <section className="relative overflow-hidden py-28 px-6">
         <div className="relative max-w-3xl mx-auto text-center">
-          <p className="text-xs uppercase tracking-[0.2em] text-[#7C69C7] font-semibold mb-4">
+          <p className="text-xs uppercase tracking-[0.2em] text-[#8B79D4] font-semibold mb-4">
             Masterminds Workshop
           </p>
           <h1 className="gradient-text text-5xl md:text-6xl font-extrabold mb-5 leading-tight pb-1">
@@ -33,8 +33,8 @@ export default function BonusWorkshopsPage() {
             <div
               className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-2xl"
               style={{
-                background: 'rgba(124, 105, 199, 0.12)',
-                border: '1px solid rgba(124, 105, 199, 0.20)',
+                background: 'rgba(139, 121, 212, 0.12)',
+                border: '1px solid rgba(139, 121, 212, 0.20)',
               }}
             >
               ✦

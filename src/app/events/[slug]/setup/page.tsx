@@ -49,7 +49,7 @@ export default async function EventSetupPage({ params }: PageProps) {
 
         {hasSetupItems && primarySetup ? (
           <div className="mt-12 grid gap-6 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
-            <section className="rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(252,244,235,0.08),rgba(124,105,199,0.08))] p-7 shadow-[0_24px_70px_rgba(0,0,0,0.26)] md:p-9">
+            <section className="rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(252,244,235,0.08),rgba(139,121,212,0.08))] p-7 shadow-[0_24px_70px_rgba(0,0,0,0.26)] md:p-9">
               <p className="text-[12px] font-semibold uppercase tracking-[0.24em] text-[#BDB3E8]">Do This First</p>
               <h2 className="mt-3 text-[2rem] font-extrabold leading-[0.96] tracking-tight text-[#FCF4EB] md:text-[3rem]">
                 Start with {primarySetup.name}
@@ -62,7 +62,7 @@ export default async function EventSetupPage({ params }: PageProps) {
                   href={primarySetup.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="copy-button-glass copy-button-primary inline-flex min-w-[240px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold shadow-[0_16px_38px_rgba(124,105,199,0.22)]"
+                  className="copy-button-glass copy-button-primary inline-flex min-w-[240px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold shadow-[0_16px_38px_rgba(139,121,212,0.22)]"
                 >
                   Open {primarySetup.name}
                 </a>

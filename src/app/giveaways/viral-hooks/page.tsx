@@ -219,7 +219,7 @@ function MastermindCTA() {
         viewport={{ once: true }}
         className="rounded-2xl overflow-hidden"
         style={{
-          background: 'linear-gradient(135deg, rgba(245,195,198,0.10) 0%, rgba(124,105,199,0.08) 100%)',
+          background: 'linear-gradient(135deg, rgba(245,195,198,0.10) 0%, rgba(139,121,212,0.08) 100%)',
           border: '1px solid rgba(245,195,198,0.15)',
         }}
       >
@@ -355,14 +355,14 @@ export default function VisualHooksPage() {
         .aurora-b { animation: aurora-drift-2 20s ease-in-out infinite; }
         .glow-card { transition: box-shadow 0.3s ease, border-color 0.3s ease; }
         .glow-card:hover {
-          box-shadow: 0 0 28px rgba(124,105,199,0.12), 0 0 0 1px rgba(124,105,199,0.18);
-          border-color: rgba(124,105,199,0.22) !important;
+          box-shadow: 0 0 28px rgba(139,121,212,0.12), 0 0 0 1px rgba(139,121,212,0.18);
+          border-color: rgba(139,121,212,0.22) !important;
         }
         .glow-btn { transition: box-shadow 0.2s ease, background-color 0.15s ease, transform 0.1s ease-out; }
-        .glow-btn:hover { box-shadow: 0 0 32px rgba(124,105,199,0.45), 0 0 60px rgba(124,105,199,0.2); }
+        .glow-btn:hover { box-shadow: 0 0 32px rgba(139,121,212,0.45), 0 0 60px rgba(139,121,212,0.2); }
         .glow-btn-pink:hover { box-shadow: 0 0 32px rgba(245,195,198,0.5), 0 0 60px rgba(245,195,198,0.2); }
         .tech-row { transition: border-color 0.2s ease; }
-        .tech-row:hover { border-color: rgba(124,105,199,0.22) !important; }
+        .tech-row:hover { border-color: rgba(139,121,212,0.22) !important; }
       `}</style>
 
       <div className="min-h-screen bg-[#151515] text-[#FCF4EB] overflow-x-hidden">
@@ -595,8 +595,8 @@ export default function VisualHooksPage() {
             viewport={{ once: true }}
             className="mt-6 max-w-2xl mx-auto rounded-2xl px-8 py-6 text-center"
             style={{
-              background: 'rgba(124,105,199,0.06)',
-              border: '1px solid rgba(124,105,199,0.15)',
+              background: 'rgba(139,121,212,0.06)',
+              border: '1px solid rgba(139,121,212,0.15)',
             }}
           >
             <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
@@ -636,7 +636,7 @@ export default function VisualHooksPage() {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
                   className="tech-row rounded-2xl border border-white/[0.08] bg-white/[0.03] overflow-hidden"
-                  style={{ borderColor: isOpen ? 'rgba(124,105,199,0.25)' : undefined }}
+                  style={{ borderColor: isOpen ? 'rgba(139,121,212,0.25)' : undefined }}
                 >
                   <button
                     onClick={() => setExpandedTech(isOpen ? null : tech.n)}
@@ -644,7 +644,7 @@ export default function VisualHooksPage() {
                   >
                     {/* Animated counter number */}
                     <div className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center"
-                      style={{ background: 'rgba(124,105,199,0.12)', border: '1px solid rgba(124,105,199,0.2)' }}>
+                      style={{ background: 'rgba(139,121,212,0.12)', border: '1px solid rgba(139,121,212,0.2)' }}>
                       <CountUpNum
                         value={tech.n}
                         className="text-sm font-extrabold font-mono text-[#9D8FE0]"
@@ -676,7 +676,7 @@ export default function VisualHooksPage() {
                         className="overflow-hidden"
                       >
                         <p className="px-6 pb-6 pt-1 text-[#FCF4EB]/58 text-sm leading-relaxed"
-                          style={{ borderTop: '1px solid rgba(124,105,199,0.1)' }}>
+                          style={{ borderTop: '1px solid rgba(139,121,212,0.1)' }}>
                           {tech.desc}
                         </p>
                       </motion.div>
@@ -698,13 +698,13 @@ export default function VisualHooksPage() {
             viewport={{ once: true }}
             className="rounded-2xl overflow-hidden"
             style={{
-              background: 'linear-gradient(135deg, rgba(124,105,199,0.07) 0%, rgba(157,143,224,0.04) 100%)',
-              border: '1px solid rgba(124,105,199,0.15)',
+              background: 'linear-gradient(135deg, rgba(139,121,212,0.07) 0%, rgba(157,143,224,0.04) 100%)',
+              border: '1px solid rgba(139,121,212,0.15)',
             }}
           >
             <div className="px-8 py-10">
               <div className="text-center mb-8">
-                <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
+                <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 bg-[#8B79D4]/15 text-[#9D8FE0] border border-[#8B79D4]/25">
                   How to use this
                 </span>
                 <div className="mb-3">
@@ -745,7 +745,7 @@ export default function VisualHooksPage() {
                     className="flex items-start gap-4"
                   >
                     <div className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold font-mono text-[#9D8FE0]"
-                      style={{ background: 'rgba(124,105,199,0.15)', border: '1px solid rgba(124,105,199,0.25)' }}>
+                      style={{ background: 'rgba(139,121,212,0.15)', border: '1px solid rgba(139,121,212,0.25)' }}>
                       {item.q}
                     </div>
                     <div>
@@ -781,7 +781,7 @@ export default function VisualHooksPage() {
           >
             <p className="text-[#FCF4EB]/28 text-sm">
               This guide is free.{' '}
-              <a href={MASTERMIND_URL} target="_blank" rel="noopener noreferrer" className="text-[#9D8FE0] hover:text-[#BDB3E8] transition-colors underline underline-offset-2 decoration-[#7C69C7]/35">
+              <a href={MASTERMIND_URL} target="_blank" rel="noopener noreferrer" className="text-[#9D8FE0] hover:text-[#BDB3E8] transition-colors underline underline-offset-2 decoration-[#8B79D4]/35">
                 The Mastermind
               </a>
               {' '}is where the real work happens.

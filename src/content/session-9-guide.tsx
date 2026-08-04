@@ -183,7 +183,7 @@ export default function Session9Guide() {
     <>
       <div className="max-w-3xl mx-auto px-6 py-16 pb-0">
         <div className="mb-10">
-          <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
+          <p className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest mb-3">
             Session Nine
           </p>
           <h1 className="gradient-text text-5xl font-extrabold leading-tight mb-5 pb-1">
@@ -218,7 +218,7 @@ export default function Session9Guide() {
           </div>
           <p className="text-[#FCF4EB]/55 text-sm leading-relaxed mb-6">
             Need the computer-use setup and ghost-browser practice steps first? Use{' '}
-            <a href="/resource-vault/automated-ghost-computer-use" className="text-[#7C69C7] hover:text-[#9D8FE0] transition-colors">
+            <a href="/resource-vault/automated-ghost-computer-use" className="text-[#8B79D4] hover:text-[#9D8FE0] transition-colors">
               Automated Ghost Computer Use
             </a>{' '}
             in the Resource Vault.
@@ -240,13 +240,13 @@ export default function Session9Guide() {
             </span>
           </div>
 
-          <details className="rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(124,105,199,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]">
+          <details className="rounded-2xl overflow-hidden border border-white/[0.10] bg-[linear-gradient(145deg,rgba(139,121,212,0.07),rgba(255,255,255,0.03))] shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.07)]">
             <summary className="flex items-center justify-between px-6 py-5 cursor-pointer select-none">
               <div className="flex items-center gap-3">
                 <span className="h-2 w-2 rounded-full bg-[#9D8FE0] shadow-[0_0_12px_rgba(157,143,224,0.70)]" />
                 <span className="text-xs uppercase tracking-[0.20em] text-[#FCF4EB]/65 font-semibold">Table of Contents</span>
               </div>
-              <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[rgba(124,105,199,0.15)] border border-[rgba(124,105,199,0.28)] text-[#9D8FE0]">
+              <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[rgba(139,121,212,0.15)] border border-[rgba(139,121,212,0.28)] text-[#9D8FE0]">
                 <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                   <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -261,7 +261,7 @@ export default function Session9Guide() {
                 { href: '#lead-capture-tests', label: 'Lead Capture Tests And Prompts' },
               ].map(({ href, label }, i) => (
                 <li key={href} className="flex items-center gap-3 group/item">
-                  <span className="number-glow flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold tabular-nums" style={{ background: 'rgba(124,105,199,0.18)', color: '#9D8FE0', border: '1.5px solid rgba(124,105,199,0.30)' }}>
+                  <span className="number-glow flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold tabular-nums" style={{ background: 'rgba(139,121,212,0.18)', color: '#9D8FE0', border: '1.5px solid rgba(139,121,212,0.30)' }}>
                     {i + 1}
                   </span>
                   <a href={href} className="text-[#FCF4EB]/58 hover:text-[#9D8FE0] text-sm leading-snug transition-colors duration-150">{label}</a>
@@ -275,7 +275,7 @@ export default function Session9Guide() {
       <div className="max-w-3xl mx-auto px-6 py-10">
         <section id="permissions" className="mb-16">
           <div className="mb-8">
-            <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Start Here</span>
+            <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Start Here</span>
           <h2 className="text-3xl font-bold text-[#FCF4EB] mt-3">Claude Dangerously Skip Permissions</h2>
           </div>
 
@@ -295,7 +295,7 @@ export default function Session9Guide() {
 
         <section id="crm-install" className="mb-16">
           <div className="flex items-center gap-3 mb-8">
-            <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Install</span>
+            <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Install</span>
             <h2 className="text-2xl font-bold text-[#FCF4EB]">Install The CRM Module Into Mission Control</h2>
           </div>
 
@@ -363,7 +363,7 @@ export default function Session9Guide() {
                 },
               ].map(({ label, title, body }) => (
                 <div key={title} className={POLISHED_PANEL_CLASS}>
-                  <div className="pointer-events-none absolute -right-10 top-[-28px] h-24 w-24 rounded-full bg-[#7C69C7]/10 blur-2xl" />
+                  <div className="pointer-events-none absolute -right-10 top-[-28px] h-24 w-24 rounded-full bg-[#8B79D4]/10 blur-2xl" />
                   <p className="relative z-10 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#9D8FE0]/90 mb-2">
                     {label}
                   </p>
@@ -377,7 +377,7 @@ export default function Session9Guide() {
 
         <section id="crm-use" className="mb-16">
           <div className="flex items-center gap-3 mb-8">
-            <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Use It</span>
+            <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Use It</span>
             <h2 className="text-2xl font-bold text-[#FCF4EB]">Use The CRM Right Away</h2>
           </div>
 
@@ -387,7 +387,7 @@ export default function Session9Guide() {
               real cards to move, sample templates to inspect, and sample automations to turn on when you are ready.
             </p>
             <div className={POLISHED_LIST_PANEL_CLASS}>
-              <div className="pointer-events-none absolute -right-10 top-[-26px] h-24 w-24 rounded-full bg-[#7C69C7]/10 blur-2xl" />
+              <div className="pointer-events-none absolute -right-10 top-[-26px] h-24 w-24 rounded-full bg-[#8B79D4]/10 blur-2xl" />
               <p className="text-[#FCF4EB] font-semibold text-sm mb-2">What is included</p>
               <ul className="space-y-1 text-[#FCF4EB]/60 text-sm">
                 <li>50+ believable sample leads across different stages</li>
@@ -404,7 +404,7 @@ export default function Session9Guide() {
               right away:
             </p>
             <div className={POLISHED_LIST_PANEL_CLASS}>
-              <div className="pointer-events-none absolute -right-10 top-[-26px] h-24 w-24 rounded-full bg-[#7C69C7]/10 blur-2xl" />
+              <div className="pointer-events-none absolute -right-10 top-[-26px] h-24 w-24 rounded-full bg-[#8B79D4]/10 blur-2xl" />
               <ol className="space-y-2 text-[#FCF4EB]/60 text-sm">
                 <li>1. Change <strong className="text-[#FCF4EB]">Default delay</strong></li>
                 <li>2. Change <strong className="text-[#FCF4EB]">Email send from</strong></li>
@@ -423,7 +423,7 @@ export default function Session9Guide() {
               sales process. Drop each card exactly where you want it to sit in that column.
             </p>
             <div className={POLISHED_LIST_PANEL_CLASS}>
-              <div className="pointer-events-none absolute -right-10 top-[-26px] h-24 w-24 rounded-full bg-[#7C69C7]/10 blur-2xl" />
+              <div className="pointer-events-none absolute -right-10 top-[-26px] h-24 w-24 rounded-full bg-[#8B79D4]/10 blur-2xl" />
               <p className="text-[#FCF4EB] font-semibold text-sm mb-2">What to practice</p>
               <ul className="space-y-1 text-[#FCF4EB]/60 text-sm">
                 <li>Move a lead from `Possible Candidate` to `Interested`</li>
@@ -443,7 +443,7 @@ export default function Session9Guide() {
               the lead is real and actionable instead of just being a blank card.
             </p>
             <div className={POLISHED_LIST_PANEL_CLASS}>
-              <div className="pointer-events-none absolute -right-10 top-[-26px] h-24 w-24 rounded-full bg-[#7C69C7]/10 blur-2xl" />
+              <div className="pointer-events-none absolute -right-10 top-[-26px] h-24 w-24 rounded-full bg-[#8B79D4]/10 blur-2xl" />
               <p className="text-[#FCF4EB] font-semibold text-sm mb-2">Good fields to fill out</p>
               <ul className="space-y-1 text-[#FCF4EB]/60 text-sm">
                 <li>Name</li>
@@ -508,7 +508,7 @@ export default function Session9Guide() {
 
         <section id="lead-capture-tests" className="mb-16">
           <div className="flex items-center gap-3 mb-8">
-            <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Tests</span>
+            <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Tests</span>
             <h2 className="text-2xl font-bold text-[#FCF4EB]">Lead Capture Tests And Prompts</h2>
           </div>
 
@@ -533,7 +533,7 @@ RESEND_FROM_EMAIL=hello@yourdomain.com`}
               for a fast demo run using your own email.
             </p>
             <div className={POLISHED_LIST_PANEL_CLASS}>
-              <div className="pointer-events-none absolute -right-10 top-[-26px] h-24 w-24 rounded-full bg-[#7C69C7]/10 blur-2xl" />
+              <div className="pointer-events-none absolute -right-10 top-[-26px] h-24 w-24 rounded-full bg-[#8B79D4]/10 blur-2xl" />
               <p className="text-[#FCF4EB] font-semibold text-sm mb-2">Change these settings now</p>
               <ol className="space-y-2 text-[#FCF4EB]/60 text-sm">
                 <li>1. Set <strong className="text-[#FCF4EB]">Default delay</strong> to <strong className="text-[#FCF4EB]">0</strong> or <strong className="text-[#FCF4EB]">1</strong> minute for now.</li>
@@ -565,7 +565,7 @@ RESEND_FROM_EMAIL=hello@yourdomain.com`}
               new lead to receive. The template is the content the automation sends when a lead reaches the matching stage.
             </p>
             <div className={POLISHED_LIST_PANEL_CLASS}>
-              <div className="pointer-events-none absolute -right-10 top-[-26px] h-24 w-24 rounded-full bg-[#7C69C7]/10 blur-2xl" />
+              <div className="pointer-events-none absolute -right-10 top-[-26px] h-24 w-24 rounded-full bg-[#8B79D4]/10 blur-2xl" />
               <p className="text-[#FCF4EB] font-semibold text-sm mb-2">How to create it</p>
               <ol className="space-y-2 text-[#FCF4EB]/60 text-sm">
                 <li>1. Click the button to add a new template.</li>
@@ -587,7 +587,7 @@ RESEND_FROM_EMAIL=hello@yourdomain.com`}
               just made. The automation connects a pipeline stage change to a specific outgoing message.
             </p>
             <div className={POLISHED_LIST_PANEL_CLASS}>
-              <div className="pointer-events-none absolute -right-10 top-[-26px] h-24 w-24 rounded-full bg-[#7C69C7]/10 blur-2xl" />
+              <div className="pointer-events-none absolute -right-10 top-[-26px] h-24 w-24 rounded-full bg-[#8B79D4]/10 blur-2xl" />
               <p className="text-[#FCF4EB] font-semibold text-sm mb-2">Setup process</p>
               <ol className="space-y-2 text-[#FCF4EB]/60 text-sm">
                 <li>1. Click to add a new automation.</li>
@@ -611,7 +611,7 @@ RESEND_FROM_EMAIL=hello@yourdomain.com`}
               the automation attached to it.
             </p>
             <div className={POLISHED_LIST_PANEL_CLASS}>
-              <div className="pointer-events-none absolute -right-10 top-[-26px] h-24 w-24 rounded-full bg-[#7C69C7]/10 blur-2xl" />
+              <div className="pointer-events-none absolute -right-10 top-[-26px] h-24 w-24 rounded-full bg-[#8B79D4]/10 blur-2xl" />
               <p className="text-[#FCF4EB] font-semibold text-sm mb-2">Exact test flow</p>
               <ol className="space-y-2 text-[#FCF4EB]/60 text-sm">
                 <li>1. Make sure the test lead record contains your real email address.</li>

@@ -238,8 +238,8 @@ export function buildAbandonedCheckoutEmailHtml(candidate: AbandonedCheckoutCand
 
   return `
     <div style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f6f2ff; margin: 0; padding: 32px 16px; color: #1a1a1a;">
-      <div style="max-width: 640px; margin: 0 auto; background: #ffffff; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 80px rgba(26, 14, 56, 0.12); border: 1px solid rgba(124, 105, 199, 0.12);">
-        <div style="background: linear-gradient(135deg, #110f17 0%, #1a1526 55%, #7C69C7 100%); padding: 36px 32px 32px;">
+      <div style="max-width: 640px; margin: 0 auto; background: #ffffff; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 80px rgba(26, 14, 56, 0.12); border: 1px solid rgba(139, 121, 212, 0.12);">
+        <div style="background: linear-gradient(135deg, #110f17 0%, #1a1526 55%, #8B79D4 100%); padding: 36px 32px 32px;">
           <p style="margin: 0 0 12px; font-size: 12px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: #cfc7ee;">Event Follow-up</p>
           <h1 style="margin: 0; font-size: 34px; line-height: 1.02; font-weight: 800; color: #ffffff;">
             Follow-up for ${candidate.event.title}
@@ -264,18 +264,18 @@ export function buildAbandonedCheckoutEmailHtml(candidate: AbandonedCheckoutCand
           </p>
           ${financeHtml}
           <div style="margin: 28px 0 18px;">
-            <a href="${withUtm(candidate.eventUrl, { campaign: 'abandoned-checkout-day1', content: candidate.event.slug })}" style="display:inline-block; background:#7C69C7; color:#ffffff; text-decoration:none; padding:14px 24px; border-radius:12px; font-size:16px; font-weight:700; box-shadow:0 14px 32px rgba(124,105,199,0.24);">
+            <a href="${withUtm(candidate.eventUrl, { campaign: 'abandoned-checkout-day1', content: candidate.event.slug })}" style="display:inline-block; background:#8B79D4; color:#ffffff; text-decoration:none; padding:14px 24px; border-radius:12px; font-size:16px; font-weight:700; box-shadow:0 14px 32px rgba(139,121,212,0.24);">
               Open the event page
             </a>
           </div>
           <p style="margin: 0 0 24px; font-size: 14px; line-height: 1.75; color: #4b4263;">
-            You can try again here: <a href="${withUtm(candidate.eventUrl, { campaign: 'abandoned-checkout-day1', content: candidate.event.slug })}" style="color:#7C69C7; font-weight:700; text-decoration:none;">${candidate.eventUrl}</a>
+            You can try again here: <a href="${withUtm(candidate.eventUrl, { campaign: 'abandoned-checkout-day1', content: candidate.event.slug })}" style="color:#8B79D4; font-weight:700; text-decoration:none;">${candidate.eventUrl}</a>
           </p>
           <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.75; color: #4b4263;">
             Joe
           </p>
         </div>
-        <div style="padding: 20px 32px 30px; border-top: 1px solid rgba(124, 105, 199, 0.10);">
+        <div style="padding: 20px 32px 30px; border-top: 1px solid rgba(139, 121, 212, 0.10);">
           ${unsubscribeFooterHtml(candidate.attendeeEmail)}
         </div>
       </div>
@@ -286,7 +286,7 @@ export function buildAbandonedCheckoutEmailHtml(candidate: AbandonedCheckoutCand
 export function buildAbandonedCheckoutT12hEmailHtml(candidate: AbandonedCheckoutCandidate) {
   return `
     <div style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f6f2ff; margin: 0; padding: 32px 16px; color: #1a1a1a;">
-      <div style="max-width: 640px; margin: 0 auto; background: #ffffff; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 80px rgba(26, 14, 56, 0.12); border: 1px solid rgba(124, 105, 199, 0.12);">
+      <div style="max-width: 640px; margin: 0 auto; background: #ffffff; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 80px rgba(26, 14, 56, 0.12); border: 1px solid rgba(139, 121, 212, 0.12);">
         <div style="padding: 32px;">
           <p style="margin: 0 0 18px; font-size: 16px; line-height: 1.7; color: #4b4263;">
             ${candidate.firstName}, are you still interested in coming to this event?
@@ -295,15 +295,15 @@ export function buildAbandonedCheckoutT12hEmailHtml(candidate: AbandonedCheckout
             We have a spot left for <strong style="color:#16121f;">${candidate.event.title}</strong>.
           </p>
           <div style="margin: 0 0 18px;">
-            <a href="${withUtm(candidate.eventUrl, { campaign: 'abandoned-checkout-t12h', content: candidate.event.slug })}" style="display:inline-block; background:#7C69C7; color:#ffffff; text-decoration:none; padding:14px 24px; border-radius:12px; font-size:16px; font-weight:700; box-shadow:0 14px 32px rgba(124,105,199,0.24);">
+            <a href="${withUtm(candidate.eventUrl, { campaign: 'abandoned-checkout-t12h', content: candidate.event.slug })}" style="display:inline-block; background:#8B79D4; color:#ffffff; text-decoration:none; padding:14px 24px; border-radius:12px; font-size:16px; font-weight:700; box-shadow:0 14px 32px rgba(139,121,212,0.24);">
               Open the event page
             </a>
           </div>
           <p style="margin: 0 0 18px; font-size: 14px; line-height: 1.75; color: #4b4263;">
-            <a href="${withUtm(candidate.eventUrl, { campaign: 'abandoned-checkout-t12h', content: candidate.event.slug })}" style="color:#7C69C7; font-weight:700; text-decoration:none;">${candidate.eventUrl}</a>
+            <a href="${withUtm(candidate.eventUrl, { campaign: 'abandoned-checkout-t12h', content: candidate.event.slug })}" style="color:#8B79D4; font-weight:700; text-decoration:none;">${candidate.eventUrl}</a>
           </p>
         </div>
-        <div style="padding: 0 32px 24px; border-top: 1px solid rgba(124, 105, 199, 0.10); margin-top: 8px;">
+        <div style="padding: 0 32px 24px; border-top: 1px solid rgba(139, 121, 212, 0.10); margin-top: 8px;">
           ${unsubscribeFooterHtml(candidate.attendeeEmail)}
         </div>
       </div>
@@ -318,7 +318,7 @@ export function buildAbandonedCheckoutTestEmailHtml(
 ) {
   return `
     <div style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f6f2ff; margin: 0; padding: 32px 16px; color: #1a1a1a;">
-      <div style="max-width: 720px; margin: 0 auto; background: #ffffff; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 80px rgba(26, 14, 56, 0.12); border: 1px solid rgba(124, 105, 199, 0.12);">
+      <div style="max-width: 720px; margin: 0 auto; background: #ffffff; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 80px rgba(26, 14, 56, 0.12); border: 1px solid rgba(139, 121, 212, 0.12);">
         <div style="background: #16121f; padding: 24px 28px;">
           <p style="margin: 0; font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #cfc7ee;">Test send only</p>
         </div>
@@ -328,7 +328,7 @@ export function buildAbandonedCheckoutTestEmailHtml(
           <p style="margin: 0 0 12px; font-size: 15px; color: #4b4263;"><strong>Intended attendee:</strong> ${candidate.attendeeName} &lt;${candidate.attendeeEmail}&gt;</p>
           <p style="margin: 0 0 12px; font-size: 15px; color: #4b4263;"><strong>Source checkout session:</strong> ${candidate.sourceCheckoutSessionId}</p>
           <p style="margin: 0 0 24px; font-size: 15px; color: #4b4263;"><strong>Finance line included:</strong> ${candidate.financeLineIncluded ? 'yes' : 'no'}</p>
-          <div style="border-top: 1px solid rgba(124, 105, 199, 0.12); padding-top: 24px;">
+          <div style="border-top: 1px solid rgba(139, 121, 212, 0.12); padding-top: 24px;">
             ${innerHtml}
           </div>
         </div>

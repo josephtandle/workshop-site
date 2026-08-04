@@ -19,7 +19,7 @@ export default function SiteChrome({ children }: { children: ReactNode }) {
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
         <div
           className="animate-float-slow absolute top-[-20%] left-[8%] w-[520px] h-[520px] rounded-full opacity-20"
-          style={{ background: 'radial-gradient(circle, #7C69C7 0%, transparent 70%)' }}
+          style={{ background: 'radial-gradient(circle, #8B79D4 0%, transparent 70%)' }}
         />
         <div
           className="animate-float-slower absolute bottom-[-15%] right-[3%] w-[420px] h-[420px] rounded-full opacity-15"

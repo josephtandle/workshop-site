@@ -1,7 +1,7 @@
 // Jill onboarding page (MHQ design, self-contained fragment)
 export const GUIDE_HTML = `<style>
   :root{
-    --cream:#FCF4EB; --dark:#151515; --deep:#573D6F; --purple:#7C69C7;
+    --cream:#FCF4EB; --dark:#151515; --deep:#573D6F; --purple:#8B79D4;
     --lavender:#9D8FE0; --rose:#C4BAE0; --pink:#F5C3C6; --panel:#1D1B22; --panel2:#2B1F38;
     --disp:'Cormorant Garamond',Georgia,serif; --sans:'Plus Jakarta Sans',system-ui,sans-serif;
   }
@@ -13,9 +13,9 @@ export const GUIDE_HTML = `<style>
   .topbar{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:28px 0 8px}
   .topbtn{display:flex;align-items:center;gap:10px;padding:16px 26px;border-radius:14px;font-weight:700;font-size:17px;
     text-decoration:none;color:#150f1f;background:linear-gradient(90deg,var(--pink),var(--lavender));
-    box-shadow:0 8px 24px #7c69c755;transition:.15s}
+    box-shadow:0 8px 24px #8b79d455;transition:.15s}
   .topbtn:hover{transform:translateY(-2px);filter:brightness(1.06)}
-  .topbtn.alt{background:linear-gradient(90deg,#7C69C7,#9D8FE0);color:#fff}
+  .topbtn.alt{background:linear-gradient(90deg,#8B79D4,#9D8FE0);color:#fff}
   .topbtn .emoji{font-size:20px}
   .kicker{letter-spacing:.28em;text-transform:uppercase;font-size:12px;color:var(--lavender);font-weight:600}
   h1{font-family:var(--disp);font-weight:600;font-size:clamp(40px,7vw,68px);margin:.15em 0 .1em;line-height:1.02;
@@ -157,7 +157,7 @@ export const GUIDE_HTML = `<style>
   </div>
   <p class="lead" style="margin-top:22px">Colors</p>
   <div class="swatches">
-    <div class="swatch"><div class="chip" style="background:#7C69C7"></div><div class="label"><b>Purple</b><span>#7C69C7</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#8B79D4"></div><div class="label"><b>Purple</b><span>#8B79D4</span></div></div>
     <div class="swatch"><div class="chip" style="background:#9D8FE0"></div><div class="label"><b>Lavender</b><span>#9D8FE0</span></div></div>
     <div class="swatch"><div class="chip" style="background:#F5C3C6"></div><div class="label"><b>Pink</b><span>#F5C3C6</span></div></div>
     <div class="swatch"><div class="chip" style="background:#FCF4EB"></div><div class="label"><b>Cream</b><span>#FCF4EB</span></div></div>

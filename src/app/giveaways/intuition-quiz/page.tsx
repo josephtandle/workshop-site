@@ -366,16 +366,16 @@ export default function IntuitionQuizPage() {
         .aurora-b { animation: aurora-drift-2 20s ease-in-out infinite; }
         .glow-card { transition: box-shadow 0.3s ease, border-color 0.3s ease; }
         .glow-card:hover {
-          box-shadow: 0 0 28px rgba(124,105,199,0.12), 0 0 0 1px rgba(124,105,199,0.18);
-          border-color: rgba(124,105,199,0.22) !important;
+          box-shadow: 0 0 28px rgba(139,121,212,0.12), 0 0 0 1px rgba(139,121,212,0.18);
+          border-color: rgba(139,121,212,0.22) !important;
         }
         .glow-btn { transition: box-shadow 0.2s ease, background-color 0.15s ease, transform 0.1s ease-out; }
-        .glow-btn:hover { box-shadow: 0 0 32px rgba(124,105,199,0.45), 0 0 60px rgba(124,105,199,0.2); }
+        .glow-btn:hover { box-shadow: 0 0 32px rgba(139,121,212,0.45), 0 0 60px rgba(139,121,212,0.2); }
         .glow-btn-pink:hover { box-shadow: 0 0 32px rgba(245,195,198,0.5), 0 0 60px rgba(245,195,198,0.2); }
         .option-btn { transition: border-color 0.15s ease, background 0.15s ease; }
         .option-btn:hover:not(.option-selected) {
-          border-color: rgba(124,105,199,0.35) !important;
-          background: rgba(124,105,199,0.07) !important;
+          border-color: rgba(139,121,212,0.35) !important;
+          background: rgba(139,121,212,0.07) !important;
         }
       `}</style>
 
@@ -618,8 +618,8 @@ export default function IntuitionQuizPage() {
                 <div
                   className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-5"
                   style={{
-                    background: 'rgba(124,105,199,0.15)',
-                    border: '1px solid rgba(124,105,199,0.25)',
+                    background: 'rgba(139,121,212,0.15)',
+                    border: '1px solid rgba(139,121,212,0.25)',
                   }}
                 >
                   <span className="text-[10px] font-bold uppercase tracking-widest text-[#9D8FE0]">
@@ -642,8 +642,8 @@ export default function IntuitionQuizPage() {
               <div
                 className="rounded-2xl overflow-hidden mb-8"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(124,105,199,0.08) 0%, rgba(245,195,198,0.05) 100%)',
-                  border: '1px solid rgba(124,105,199,0.2)',
+                  background: 'linear-gradient(135deg, rgba(139,121,212,0.08) 0%, rgba(245,195,198,0.05) 100%)',
+                  border: '1px solid rgba(139,121,212,0.2)',
                 }}
               >
                 <div className="px-5 py-8 sm:px-8 sm:py-10">
@@ -724,8 +724,8 @@ export default function IntuitionQuizPage() {
           <blockquote
             className="rounded-2xl px-5 py-8 sm:px-8 sm:py-10 text-center"
             style={{
-              background: 'rgba(124,105,199,0.06)',
-              border: '1px solid rgba(124,105,199,0.14)',
+              background: 'rgba(139,121,212,0.06)',
+              border: '1px solid rgba(139,121,212,0.14)',
             }}
           >
             <p className="text-[#FCF4EB]/72 text-base sm:text-lg leading-relaxed italic mb-4">
@@ -784,7 +784,7 @@ function StartButton({ onClick }: { onClick: () => void }) {
       onClick={onClick}
       onMouseMove={magnet.onMouseMove}
       onMouseLeave={magnet.onMouseLeave}
-      className="px-10 py-4 rounded-xl bg-[#7C69C7] hover:bg-[#6e5db8] text-[#FCF4EB] font-bold text-base active:scale-[0.98] glow-btn"
+      className="px-10 py-4 rounded-xl bg-[#8B79D4] hover:bg-[#6e5db8] text-[#FCF4EB] font-bold text-base active:scale-[0.98] glow-btn"
     >
       Take the Quiz
     </button>
@@ -815,7 +815,7 @@ function NextButton({
         className={`px-8 py-3.5 rounded-xl font-bold text-base glow-btn ${
           disabled
             ? 'bg-white/[0.05] text-[#FCF4EB]/18 cursor-not-allowed'
-            : 'bg-[#7C69C7] hover:bg-[#6e5db8] text-[#FCF4EB] active:scale-[0.98]'
+            : 'bg-[#8B79D4] hover:bg-[#6e5db8] text-[#FCF4EB] active:scale-[0.98]'
         }`}
       >
         {isLast ? 'See My Results' : 'Next →'}
@@ -838,7 +838,7 @@ function MastermindCTA() {
         className="rounded-2xl overflow-hidden"
         style={{
           background:
-            'linear-gradient(135deg, rgba(245,195,198,0.10) 0%, rgba(124,105,199,0.08) 100%)',
+            'linear-gradient(135deg, rgba(245,195,198,0.10) 0%, rgba(139,121,212,0.08) 100%)',
           border: '1px solid rgba(245,195,198,0.15)',
         }}
       >

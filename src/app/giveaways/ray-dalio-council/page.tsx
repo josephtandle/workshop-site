@@ -270,14 +270,14 @@ export default function RayDalioCouncilPage() {
           transition: box-shadow 0.3s ease, border-color 0.3s ease;
         }
         .glow-card:hover {
-          box-shadow: 0 0 28px rgba(124, 105, 199, 0.12), 0 0 0 1px rgba(124, 105, 199, 0.18);
-          border-color: rgba(124, 105, 199, 0.22) !important;
+          box-shadow: 0 0 28px rgba(139, 121, 212, 0.12), 0 0 0 1px rgba(139, 121, 212, 0.18);
+          border-color: rgba(139, 121, 212, 0.22) !important;
         }
         .glow-btn {
           transition: box-shadow 0.2s ease, background-color 0.15s ease, transform 0.1s ease-out;
         }
         .glow-btn:hover {
-          box-shadow: 0 0 32px rgba(124, 105, 199, 0.45), 0 0 60px rgba(124, 105, 199, 0.2);
+          box-shadow: 0 0 32px rgba(139, 121, 212, 0.45), 0 0 60px rgba(139, 121, 212, 0.2);
         }
         .glow-btn-pink:hover {
           box-shadow: 0 0 32px rgba(245, 195, 198, 0.5), 0 0 60px rgba(245, 195, 198, 0.2);
@@ -305,9 +305,9 @@ export default function RayDalioCouncilPage() {
             transition={{ duration: 0.5 }}
             className="relative z-10 mb-6 flex justify-center sm:absolute sm:top-10 sm:left-0 sm:right-0 sm:mb-0"
           >
-            <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
+            <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full bg-[#8B79D4]/15 text-[#9D8FE0] border border-[#8B79D4]/25">
               Free from the{' '}
-              <a href={MASTERMIND_URL} target="_blank" rel="noopener noreferrer" className="hover:text-[#BDB3E8] transition-colors underline underline-offset-2 decoration-[#7C69C7]/40">
+              <a href={MASTERMIND_URL} target="_blank" rel="noopener noreferrer" className="hover:text-[#BDB3E8] transition-colors underline underline-offset-2 decoration-[#8B79D4]/40">
                 Business Automation Mastermind
               </a>
             </span>
@@ -380,15 +380,15 @@ export default function RayDalioCouncilPage() {
               className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5 mb-6"
             >
               <span className="text-[#FCF4EB]/28 text-xs uppercase tracking-widest">Works in</span>
-              <div className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/[0.05] border border-[#7C69C7]/35 transition-all duration-200">
+              <div className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/[0.05] border border-[#8B79D4]/35 transition-all duration-200">
                 <span className="text-[#9D8FE0] text-sm">◆</span>
                 <span className="text-[#FCF4EB]/75 text-sm font-medium">Claude Code</span>
                 <span
                   className="text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-full"
                   style={{
-                    background: 'rgba(124,105,199,0.18)',
+                    background: 'rgba(139,121,212,0.18)',
                     color: '#9D8FE0',
-                    border: '1px solid rgba(124,105,199,0.3)',
+                    border: '1px solid rgba(139,121,212,0.3)',
                   }}
                 >
                   Skill
@@ -420,8 +420,8 @@ export default function RayDalioCouncilPage() {
             viewport={{ once: true }}
             className="rounded-2xl px-8 sm:px-12 py-10"
             style={{
-              background: 'linear-gradient(135deg, rgba(124,105,199,0.07) 0%, rgba(245,195,198,0.05) 100%)',
-              border: '1px solid rgba(124,105,199,0.14)',
+              background: 'linear-gradient(135deg, rgba(139,121,212,0.07) 0%, rgba(245,195,198,0.05) 100%)',
+              border: '1px solid rgba(139,121,212,0.14)',
             }}
           >
             <p className="text-[11px] font-bold uppercase tracking-widest text-[#9D8FE0] mb-5">
@@ -475,7 +475,7 @@ export default function RayDalioCouncilPage() {
                 transition={{ delay: i * 0.1 }}
                 className="glow-card bg-white/[0.04] border border-white/[0.08] rounded-2xl p-7"
               >
-                <div className="text-4xl font-extrabold text-[#7C69C7]/20 mb-5 font-mono">{item.step}</div>
+                <div className="text-4xl font-extrabold text-[#8B79D4]/20 mb-5 font-mono">{item.step}</div>
                 <h3 className="text-[#FCF4EB] font-bold text-base mb-2">{item.title}</h3>
                 <p className="text-[#FCF4EB]/44 text-sm leading-relaxed">{item.body}</p>
               </motion.div>
@@ -503,7 +503,7 @@ export default function RayDalioCouncilPage() {
             viewport={{ once: true }}
           >
             <div className="text-center mb-10">
-              <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
+              <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 bg-[#8B79D4]/15 text-[#9D8FE0] border border-[#8B79D4]/25">
                 The Skill
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold text-[#FCF4EB] mb-4">
@@ -519,7 +519,7 @@ export default function RayDalioCouncilPage() {
             </div>
 
             {/* Install command block */}
-            <div className="my-6 rounded-xl overflow-hidden border border-white/[0.08] border-l-2 border-l-[#7C69C7]">
+            <div className="my-6 rounded-xl overflow-hidden border border-white/[0.08] border-l-2 border-l-[#8B79D4]">
               <div className="flex items-center justify-between px-4 py-2 bg-white/[0.04] border-b border-white/[0.06]">
                 <span className="text-xs text-[#FCF4EB]/40 font-mono">Terminal</span>
                 <InlineCopyButton text={INSTALL_COMMAND} onAfterCopy={() => setEmailModalOpen(true)} />
@@ -608,7 +608,7 @@ export default function RayDalioCouncilPage() {
                   >
                     <div className="flex items-center gap-3">
                       <span className="text-[#FCF4EB] font-semibold text-sm sm:text-base">{section.name}</span>
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#9D8FE0] bg-[#7C69C7]/12 border border-[#7C69C7]/20 px-2 py-0.5 rounded-full">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#9D8FE0] bg-[#8B79D4]/12 border border-[#8B79D4]/20 px-2 py-0.5 rounded-full">
                         {section.count}
                       </span>
                     </div>
@@ -629,7 +629,7 @@ export default function RayDalioCouncilPage() {
                             key={item.name}
                             className="flex items-start gap-3 p-3 rounded-lg"
                           >
-                            <div className="w-1.5 h-1.5 rounded-full bg-[#7C69C7] mt-[7px] flex-shrink-0" />
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#8B79D4] mt-[7px] flex-shrink-0" />
                             <div>
                               <span className="text-[#9D8FE0] text-sm font-medium">
                                 {item.name}
@@ -695,7 +695,7 @@ function MastermindCTA() {
         viewport={{ once: true }}
         className="rounded-2xl overflow-hidden"
         style={{
-          background: 'linear-gradient(135deg, rgba(245,195,198,0.10) 0%, rgba(124,105,199,0.08) 100%)',
+          background: 'linear-gradient(135deg, rgba(245,195,198,0.10) 0%, rgba(139,121,212,0.08) 100%)',
           border: '1px solid rgba(245,195,198,0.15)',
         }}
       >
@@ -786,7 +786,7 @@ function InstallCopyButton({ command, onAfterCopy }: { command: string; onAfterC
         onClick={handleCopy}
         onMouseMove={magnet.onMouseMove}
         onMouseLeave={magnet.onMouseLeave}
-        className="block w-full sm:inline-block sm:w-auto px-10 py-4 rounded-xl bg-[#7C69C7] hover:bg-[#6e5db8] text-[#FCF4EB] font-bold text-base active:scale-[0.98] glow-btn text-center"
+        className="block w-full sm:inline-block sm:w-auto px-10 py-4 rounded-xl bg-[#8B79D4] hover:bg-[#6e5db8] text-[#FCF4EB] font-bold text-base active:scale-[0.98] glow-btn text-center"
       >
         {copied ? 'Copied! Run it in your terminal.' : 'Copy Install Command'}
       </button>

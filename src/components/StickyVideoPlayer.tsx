@@ -181,7 +181,7 @@ export default function StickyVideoPlayer({ videoId, videos, src, title = 'Works
 
         <button
           onClick={handleRestore}
-          className="fixed bottom-6 right-6 z-40 flex items-center gap-3 bg-[#7C69C7] hover:bg-[#9D8FE0] text-white pl-4 pr-5 py-3 rounded-full shadow-lg shadow-purple-900/40 transition-all duration-200 hover:scale-105"
+          className="fixed bottom-6 right-6 z-40 flex items-center gap-3 bg-[#8B79D4] hover:bg-[#9D8FE0] text-white pl-4 pr-5 py-3 rounded-full shadow-lg shadow-purple-900/40 transition-all duration-200 hover:scale-105"
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M8 5v14l11-7z" />
@@ -223,8 +223,8 @@ export default function StickyVideoPlayer({ videoId, videos, src, title = 'Works
                       aria-hidden="true"
                       className="absolute inset-0 rounded-full"
                       style={{
-                        background: 'linear-gradient(135deg, #9D8FE0 0%, #7C69C7 50%, #5B4FAF 100%)',
-                        boxShadow: '0 0 20px rgba(124,105,199,0.55), 0 4px 16px rgba(124,105,199,0.35), inset 0 1px 0 rgba(255,255,255,0.18)',
+                        background: 'linear-gradient(135deg, #9D8FE0 0%, #8B79D4 50%, #5B4FAF 100%)',
+                        boxShadow: '0 0 20px rgba(139,121,212,0.55), 0 4px 16px rgba(139,121,212,0.35), inset 0 1px 0 rgba(255,255,255,0.18)',
                         borderRadius: 'inherit',
                       }}
                     />
@@ -292,7 +292,7 @@ export default function StickyVideoPlayer({ videoId, videos, src, title = 'Works
                     onClick={() => handleSwitchVideo(v.id)}
                     className={`px-2.5 py-1 rounded-full text-[10px] font-semibold transition-all backdrop-blur-sm ${
                       activeVideoId === v.id
-                        ? 'bg-[#7C69C7] text-white'
+                        ? 'bg-[#8B79D4] text-white'
                         : 'bg-black/60 text-white/60 hover:text-white'
                     }`}
                   >

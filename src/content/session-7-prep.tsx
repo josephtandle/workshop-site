@@ -17,8 +17,8 @@ function Checkbox({ checked, onChange }: { checked: boolean; onChange: () => voi
       role="checkbox"
       className={`flex-shrink-0 w-5 h-5 rounded border transition-all duration-150 flex items-center justify-center
         ${checked
-          ? 'bg-[#7C69C7] border-[#7C69C7]'
-          : 'bg-white/[0.04] border-white/20 hover:border-[#7C69C7]/60'
+          ? 'bg-[#8B79D4] border-[#8B79D4]'
+          : 'bg-white/[0.04] border-white/20 hover:border-[#8B79D4]/60'
         }`}
     >
       {checked && (
@@ -45,11 +45,11 @@ function SectionCard({
     <div
       id={id}
       className={`bg-white/[0.05] border rounded-2xl p-6 sm:p-8 transition-all duration-200 ${
-        checked ? 'border-[#7C69C7]/40 bg-white/[0.07]' : 'border-white/[0.10]'
+        checked ? 'border-[#8B79D4]/40 bg-white/[0.07]' : 'border-white/[0.10]'
       }`}
     >
       <div className="flex items-start gap-4 mb-6">
-        <div className="w-9 h-9 rounded-full bg-[#7C69C7]/20 border border-[#7C69C7]/40 flex items-center justify-center text-[#7C69C7] font-bold text-sm flex-shrink-0 mt-0.5">
+        <div className="w-9 h-9 rounded-full bg-[#8B79D4]/20 border border-[#8B79D4]/40 flex items-center justify-center text-[#8B79D4] font-bold text-sm flex-shrink-0 mt-0.5">
           {number}
         </div>
         <div className="flex-1 min-w-0">
@@ -57,7 +57,7 @@ function SectionCard({
             <h2 className="text-[#FCF4EB] font-bold text-xl leading-snug">{title}</h2>
             <span className={`text-xs px-2 py-0.5 rounded-full font-medium whitespace-nowrap ${
               badge.required
-                ? 'bg-[#7C69C7]/20 text-[#9D8FE0]'
+                ? 'bg-[#8B79D4]/20 text-[#9D8FE0]'
                 : 'bg-white/[0.06] text-[#FCF4EB]/40'
             }`}>
               {badge.label}
@@ -75,8 +75,8 @@ function SectionCard({
         onClick={onToggle}
         className={`mt-6 w-full py-2.5 rounded-xl text-sm font-medium transition-all duration-150 border ${
           checked
-            ? 'bg-[#7C69C7]/20 border-[#7C69C7]/40 text-[#9D8FE0]'
-            : 'bg-white/[0.04] border-white/[0.10] text-[#FCF4EB]/50 hover:border-[#7C69C7]/40 hover:text-[#FCF4EB]/80'
+            ? 'bg-[#8B79D4]/20 border-[#8B79D4]/40 text-[#9D8FE0]'
+            : 'bg-white/[0.04] border-white/[0.10] text-[#FCF4EB]/50 hover:border-[#8B79D4]/40 hover:text-[#FCF4EB]/80'
         }`}
       >
         {checked ? '✓ Done' : 'Mark as done'}
@@ -106,7 +106,7 @@ export default function Session7Prep() {
 
       {/* Page Header */}
       <div className="mb-10">
-        <p className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest mb-3">
+        <p className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest mb-3">
           Before Session Seven
         </p>
         <h1 className="text-3xl sm:text-4xl font-bold text-[#FCF4EB] leading-tight mb-5">
@@ -139,14 +139,14 @@ export default function Session7Prep() {
                 className={`text-sm flex-1 transition-colors ${
                   checked.has(item.id)
                     ? 'text-[#FCF4EB]/40 line-through'
-                    : 'text-[#FCF4EB]/70 hover:text-[#7C69C7]'
+                    : 'text-[#FCF4EB]/70 hover:text-[#8B79D4]'
                 }`}
               >
                 {item.label}
               </a>
               <span className={`text-xs px-2 py-0.5 rounded-full font-medium whitespace-nowrap ${
                 item.required
-                  ? 'bg-[#7C69C7]/20 text-[#9D8FE0]'
+                  ? 'bg-[#8B79D4]/20 text-[#9D8FE0]'
                   : 'bg-white/[0.06] text-[#FCF4EB]/40'
               }`}>
                 {item.required ? 'Required' : 'Optional'}
@@ -163,7 +163,7 @@ export default function Session7Prep() {
           </div>
           <div className="h-1 bg-white/[0.08] rounded-full overflow-hidden">
             <div
-              className="h-full bg-[#7C69C7] rounded-full transition-all duration-300"
+              className="h-full bg-[#8B79D4] rounded-full transition-all duration-300"
               style={{ width: `${(checked.size / ITEMS.length) * 100}%` }}
             />
           </div>
@@ -191,9 +191,9 @@ export default function Session7Prep() {
             href="https://get.descript.com/ib44r8t9noyj"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 bg-white/[0.05] border border-white/[0.10] hover:border-[#7C69C7]/50 rounded-xl px-5 py-4 transition-all duration-150 group"
+            className="flex items-center gap-3 bg-white/[0.05] border border-white/[0.10] hover:border-[#8B79D4]/50 rounded-xl px-5 py-4 transition-all duration-150 group"
           >
-            <div className="w-9 h-9 rounded-full bg-[#7C69C7]/20 border border-[#7C69C7]/40 flex items-center justify-center flex-shrink-0">
+            <div className="w-9 h-9 rounded-full bg-[#8B79D4]/20 border border-[#8B79D4]/40 flex items-center justify-center flex-shrink-0">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M2.5 11.5l9-9M5 2.5h6.5v6.5" stroke="#9D8FE0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -206,7 +206,7 @@ export default function Session7Prep() {
                 get.descript.com
               </p>
             </div>
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="flex-shrink-0 text-[#FCF4EB]/30 group-hover:text-[#7C69C7] transition-colors">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="flex-shrink-0 text-[#FCF4EB]/30 group-hover:text-[#8B79D4] transition-colors">
               <path d="M2.5 11.5l9-9M5 2.5h6.5v6.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </a>
@@ -262,9 +262,9 @@ export default function Session7Prep() {
             <a
               href="https://media.mastermindshq.business/podcast/adam-roa-podcast.mp4"
               download
-              className="flex items-center gap-3 bg-white/[0.04] border border-white/[0.08] hover:border-[#7C69C7]/40 rounded-xl px-4 py-3 transition-all duration-150 group"
+              className="flex items-center gap-3 bg-white/[0.04] border border-white/[0.08] hover:border-[#8B79D4]/40 rounded-xl px-4 py-3 transition-all duration-150 group"
             >
-              <div className="w-8 h-8 rounded-full bg-[#7C69C7]/15 border border-[#7C69C7]/30 flex items-center justify-center flex-shrink-0">
+              <div className="w-8 h-8 rounded-full bg-[#8B79D4]/15 border border-[#8B79D4]/30 flex items-center justify-center flex-shrink-0">
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
                   <path d="M8 2v8m0 0l-3-3m3 3l3-3M3 12h10" stroke="#9D8FE0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -274,7 +274,7 @@ export default function Session7Prep() {
                   Download: Adam Roa interview (MP4)
                 </p>
               </div>
-              <svg width="12" height="12" viewBox="0 0 14 14" fill="none" className="flex-shrink-0 text-[#FCF4EB]/20 group-hover:text-[#7C69C7] transition-colors">
+              <svg width="12" height="12" viewBox="0 0 14 14" fill="none" className="flex-shrink-0 text-[#FCF4EB]/20 group-hover:text-[#8B79D4] transition-colors">
                 <path d="M2.5 11.5l9-9M5 2.5h6.5v6.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </a>

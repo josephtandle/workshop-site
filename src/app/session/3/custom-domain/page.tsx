@@ -55,9 +55,9 @@ export default function CustomDomainPage() {
 
       {/* Breadcrumb */}
       <nav className="mb-10 text-sm text-[#FCF4EB]/40 flex items-center gap-2">
-        <Link href="/" className="hover:text-[#7C69C7] transition-colors">All Sessions</Link>
+        <Link href="/" className="hover:text-[#8B79D4] transition-colors">All Sessions</Link>
         <span>/</span>
-        <Link href="/session/3" className="hover:text-[#7C69C7] transition-colors">Session 3</Link>
+        <Link href="/session/3" className="hover:text-[#8B79D4] transition-colors">Session 3</Link>
         <span>/</span>
         <span className="text-[#FCF4EB]/60">Custom Domain</span>
       </nav>
@@ -65,7 +65,7 @@ export default function CustomDomainPage() {
       {/* Page Header */}
       <div className="mb-14">
         <div className="flex items-center gap-3 mb-3">
-          <span className="text-[#7C69C7] text-sm font-semibold uppercase tracking-widest">Session 3</span>
+          <span className="text-[#8B79D4] text-sm font-semibold uppercase tracking-widest">Session 3</span>
         </div>
         <h1 className="text-4xl font-bold text-[#FCF4EB] leading-tight mb-5">
           Add a Custom Domain to Vercel
@@ -82,7 +82,7 @@ export default function CustomDomainPage() {
 
       <StepCard number={1} title="Buy a domain">
         <p className="text-[#FCF4EB]/70 leading-relaxed mb-4">
-          Go to <a href="https://porkbun.com" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">porkbun.com</a> and search your business name.
+          Go to <a href="https://porkbun.com" target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:underline">porkbun.com</a> and search your business name.
         </p>
         <div className="space-y-3 mb-5">
           <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
@@ -99,8 +99,8 @@ export default function CustomDomainPage() {
               Same price range as .com.
             </p>
           </div>
-          <div className="bg-white/[0.04] border border-[#7C69C7]/30 rounded-xl p-4" style={{ background: 'rgba(124, 105, 199, 0.06)' }}>
-            <p className="text-[#7C69C7] font-semibold text-sm mb-1">.site or .xyz — just for testing today</p>
+          <div className="bg-white/[0.04] border border-[#8B79D4]/30 rounded-xl p-4" style={{ background: 'rgba(139, 121, 212, 0.06)' }}>
+            <p className="text-[#8B79D4] font-semibold text-sm mb-1">.site or .xyz — just for testing today</p>
             <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
               If you want to learn the process without committing to a domain yet, grab a .site
               or .xyz for $1 to $2 per year. Perfect for a practice run. You can always buy your
@@ -120,7 +120,7 @@ export default function CustomDomainPage() {
 
       <StepCard number={2} title="Add your domain to Vercel">
         <ol className="space-y-2 text-[#FCF4EB]/70 list-decimal list-inside">
-          <li>Go to <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">vercel.com</a> and open your project</li>
+          <li>Go to <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:underline">vercel.com</a> and open your project</li>
           <li>Click <span className="text-[#FCF4EB]">Settings</span> then <span className="text-[#FCF4EB]">Domains</span></li>
           <li>Click &ldquo;Add Domain&rdquo;</li>
           <li>Type your domain exactly (for example: <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-sm text-[#FCF4EB]">yourdomain.com</code>)</li>
@@ -137,7 +137,7 @@ export default function CustomDomainPage() {
         </p>
         <p className="text-[#FCF4EB]/70 font-medium mb-4">First, get to the DNS editor on Porkbun:</p>
         <ol className="space-y-2 text-[#FCF4EB]/70 list-decimal list-inside mb-6">
-          <li>Sign in to <a href="https://porkbun.com" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">porkbun.com</a></li>
+          <li>Sign in to <a href="https://porkbun.com" target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:underline">porkbun.com</a></li>
           <li>Click <span className="text-[#FCF4EB]">Account</span> in the top menu</li>
           <li>Click <span className="text-[#FCF4EB]">Domain Management</span></li>
           <li>Find your domain and click <span className="text-[#FCF4EB]">DNS</span> next to it</li>
@@ -174,7 +174,7 @@ export default function CustomDomainPage() {
 
       <StepCard number={4} title="Verify it is working">
         <ol className="space-y-2 text-[#FCF4EB]/70 list-decimal list-inside">
-          <li>Go back to <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">Vercel</a>. It will show a green checkmark once DNS is ready.</li>
+          <li>Go back to <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:underline">Vercel</a>. It will show a green checkmark once DNS is ready.</li>
           <li>This usually takes 1 to 5 minutes. In rare cases up to 48 hours.</li>
           <li>Visit your domain. You should see your site with a padlock in the address bar.</li>
         </ol>
@@ -187,7 +187,7 @@ export default function CustomDomainPage() {
       <div className="mt-14 border-t border-white/[0.08] pt-8 flex flex-wrap gap-6">
         <Link
           href="/session/3"
-          className="inline-flex items-center gap-2 text-sm text-[#FCF4EB]/40 hover:text-[#7C69C7] transition-colors"
+          className="inline-flex items-center gap-2 text-sm text-[#FCF4EB]/40 hover:text-[#8B79D4] transition-colors"
         >
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path d="M13 8H3M7 12l-4-4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -196,7 +196,7 @@ export default function CustomDomainPage() {
         </Link>
         <Link
           href="/session/3/guide"
-          className="inline-flex items-center gap-2 text-sm text-[#FCF4EB]/40 hover:text-[#7C69C7] transition-colors"
+          className="inline-flex items-center gap-2 text-sm text-[#FCF4EB]/40 hover:text-[#8B79D4] transition-colors"
         >
           Session 3 Workshop Guide
         </Link>

@@ -17,7 +17,7 @@ function Avatar({ photo, name }: { photo: string; name: string }) {
         className="absolute rounded-full"
         style={{
           inset: '-2px',
-          background: 'linear-gradient(135deg, #7C69C7, #F5C3C6)',
+          background: 'linear-gradient(135deg, #8B79D4, #F5C3C6)',
           opacity: 0.55,
         }}
       />
@@ -40,7 +40,7 @@ export default function ParticipantCarousel({ participants }: { participants: Pa
         style={{
           padding: '1px',
           background:
-            'linear-gradient(135deg, rgba(124,105,199,0.55) 0%, rgba(157,143,224,0.18) 40%, rgba(245,195,198,0.45) 100%)',
+            'linear-gradient(135deg, rgba(139,121,212,0.55) 0%, rgba(157,143,224,0.18) 40%, rgba(245,195,198,0.45) 100%)',
         }}
       >
         <div className="rounded-[15px] overflow-hidden" style={{ background: '#0f0f0f' }}>
@@ -50,15 +50,15 @@ export default function ParticipantCarousel({ participants }: { participants: Pa
             className="grid grid-cols-[200px_1fr_1fr_1fr]"
             style={{
               background:
-                'linear-gradient(90deg, rgba(124,105,199,0.10) 0%, rgba(124,105,199,0.07) 33%, rgba(245,195,198,0.06) 66%, rgba(245,195,198,0.11) 100%)',
+                'linear-gradient(90deg, rgba(139,121,212,0.10) 0%, rgba(139,121,212,0.07) 33%, rgba(245,195,198,0.06) 66%, rgba(245,195,198,0.11) 100%)',
             }}
           >
             <div style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }} className="px-5 py-4" />
 
-            <div className="px-5 py-4" style={{ background: 'rgba(124,105,199,0.09)', borderLeft: '1px solid rgba(124,105,199,0.14)', borderBottom: '1px solid rgba(124,105,199,0.18)' }}>
+            <div className="px-5 py-4" style={{ background: 'rgba(139,121,212,0.09)', borderLeft: '1px solid rgba(139,121,212,0.14)', borderBottom: '1px solid rgba(139,121,212,0.18)' }}>
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-[#7C69C7]" />
-                <p className="text-[#7C69C7] text-[10px] font-semibold uppercase tracking-widest">Biggest Needle-Mover</p>
+                <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-[#8B79D4]" />
+                <p className="text-[#8B79D4] text-[10px] font-semibold uppercase tracking-widest">Biggest Needle-Mover</p>
               </div>
             </div>
 
@@ -81,7 +81,7 @@ export default function ParticipantCarousel({ participants }: { participants: Pa
           {participants.map((p, i) => (
             <div
               key={p.name}
-              className="grid grid-cols-[200px_1fr_1fr_1fr] transition-colors duration-200 hover:bg-[#7C69C7]/[0.05] group"
+              className="grid grid-cols-[200px_1fr_1fr_1fr] transition-colors duration-200 hover:bg-[#8B79D4]/[0.05] group"
               style={{ borderBottom: i < participants.length - 1 ? '1px solid rgba(255,255,255,0.035)' : 'none' }}
             >
               <div className="px-5 py-5 flex items-center gap-3">
@@ -89,7 +89,7 @@ export default function ParticipantCarousel({ participants }: { participants: Pa
                 <span className="text-[#FCF4EB] font-semibold text-sm leading-snug">{p.name.split(' ')[0]}</span>
               </div>
 
-              <div className="px-5 py-5" style={{ background: 'rgba(124,105,199,0.05)', borderLeft: '1px solid rgba(124,105,199,0.09)' }}>
+              <div className="px-5 py-5" style={{ background: 'rgba(139,121,212,0.05)', borderLeft: '1px solid rgba(139,121,212,0.09)' }}>
                 <p className="text-[#B8AEDF]/90 text-sm leading-relaxed">{p.needle}</p>
               </div>
 
@@ -114,7 +114,7 @@ export default function ParticipantCarousel({ participants }: { participants: Pa
             style={{
               padding: '1px',
               background:
-                'linear-gradient(135deg, rgba(124,105,199,0.45) 0%, rgba(157,143,224,0.15) 50%, rgba(245,195,198,0.35) 100%)',
+                'linear-gradient(135deg, rgba(139,121,212,0.45) 0%, rgba(157,143,224,0.15) 50%, rgba(245,195,198,0.35) 100%)',
             }}
           >
             <div className="rounded-[15px] overflow-hidden" style={{ background: '#0f0f0f' }}>
@@ -123,7 +123,7 @@ export default function ParticipantCarousel({ participants }: { participants: Pa
               <div
                 className="flex items-center gap-3 px-5 py-4"
                 style={{
-                  background: 'linear-gradient(90deg, rgba(124,105,199,0.10) 0%, transparent 100%)',
+                  background: 'linear-gradient(90deg, rgba(139,121,212,0.10) 0%, transparent 100%)',
                   borderBottom: '1px solid rgba(255,255,255,0.05)',
                 }}
               >
@@ -149,10 +149,10 @@ export default function ParticipantCarousel({ participants }: { participants: Pa
                   <p className="text-[#FCF4EB]/65 text-sm leading-relaxed">{p.automate}</p>
                 </div>
 
-                <div style={{ borderTop: '1px solid rgba(124,105,199,0.12)' }} className="pt-4">
+                <div style={{ borderTop: '1px solid rgba(139,121,212,0.12)' }} className="pt-4">
                   <div className="flex items-center gap-1.5 mb-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#7C69C7]" />
-                    <p className="text-[#7C69C7] text-[10px] font-semibold uppercase tracking-widest">Wins</p>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#8B79D4]" />
+                    <p className="text-[#8B79D4] text-[10px] font-semibold uppercase tracking-widest">Wins</p>
                   </div>
                   <p className="text-[#B8AEDF]/90 text-sm leading-relaxed">{p.wins}</p>
                 </div>

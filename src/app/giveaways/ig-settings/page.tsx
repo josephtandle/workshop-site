@@ -85,7 +85,7 @@ function PhoneMockup() {
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#BDB3E8]">Instagram</p>
             <p className="mt-1 text-lg font-bold text-[#FCF4EB]">Settings</p>
           </div>
-          <div className="h-9 w-9 rounded-full bg-[#7C69C7]/28" />
+          <div className="h-9 w-9 rounded-full bg-[#8B79D4]/28" />
         </div>
         <div className="space-y-3">
           {SETTINGS_SCREEN.map(([label, value]) => (
@@ -122,7 +122,7 @@ function ScreenshotCard({
   return (
     <article className="rounded-[1.5rem] border border-white/10 bg-white/[0.045] p-5 shadow-[0_18px_50px_rgba(0,0,0,0.22)]">
       <div className="flex items-start gap-4">
-        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-[#7C69C7]/30 bg-[#7C69C7]/16 text-sm font-bold text-[#FCF4EB]">
+        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-[#8B79D4]/30 bg-[#8B79D4]/16 text-sm font-bold text-[#FCF4EB]">
           {number}
         </div>
         <div className="min-w-0">
@@ -145,7 +145,7 @@ export default function IgSettingsGiveawayPage() {
   return (
     <main className="overflow-hidden bg-[#0B0B12] text-[#FCF4EB]">
       <section className="relative px-6 pb-14 pt-20 md:pb-20">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(124,105,199,0.26),transparent_34%),radial-gradient(circle_at_80%_10%,rgba(245,195,198,0.18),transparent_30%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(139,121,212,0.26),transparent_34%),radial-gradient(circle_at_80%_10%,rgba(245,195,198,0.18),transparent_30%)]" />
         <div className="relative mx-auto grid max-w-6xl gap-10 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-center">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#BDB3E8]">Free Instagram Growth Checklist</p>
@@ -157,7 +157,7 @@ export default function IgSettingsGiveawayPage() {
               recommendable, remixable, measurable, and uploading clean video.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#checklist" className="inline-flex min-w-[180px] items-center justify-center rounded-xl bg-[#7C69C7] px-5 py-4 text-sm font-bold text-white no-underline shadow-[0_16px_45px_rgba(124,105,199,0.32)]">
+              <a href="#checklist" className="inline-flex min-w-[180px] items-center justify-center rounded-xl bg-[#8B79D4] px-5 py-4 text-sm font-bold text-white no-underline shadow-[0_16px_45px_rgba(139,121,212,0.32)]">
                 Open checklist
               </a>
               <Link href="/giveaways" className="inline-flex min-w-[180px] items-center justify-center rounded-xl border border-white/12 bg-white/[0.04] px-5 py-4 text-sm font-bold text-[#FCF4EB] no-underline">

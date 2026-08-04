@@ -6,7 +6,7 @@ export default function TianaSessionFooter() {
           href="https://www.instagram.com/tiyana.ti"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-[#7C69C7] transition-colors"
+          className="hover:text-[#8B79D4] transition-colors"
         >
           Instagram
         </a>
@@ -14,7 +14,7 @@ export default function TianaSessionFooter() {
           href="https://www.tiyara.co"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-[#7C69C7] transition-colors"
+          className="hover:text-[#8B79D4] transition-colors"
         >
           Tiyara.co
         </a>

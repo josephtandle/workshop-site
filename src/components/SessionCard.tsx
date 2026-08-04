@@ -30,9 +30,9 @@ export default function SessionCard({
       <div
         className="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold"
         style={{
-          background: hasContent ? 'rgba(124, 105, 199, 0.18)' : 'rgba(252, 244, 235, 0.06)',
-          color: hasContent ? '#7C69C7' : 'rgba(252, 244, 235, 0.30)',
-          border: `1.5px solid ${hasContent ? 'rgba(124, 105, 199, 0.35)' : 'rgba(252, 244, 235, 0.10)'}`,
+          background: hasContent ? 'rgba(139, 121, 212, 0.18)' : 'rgba(252, 244, 235, 0.06)',
+          color: hasContent ? '#8B79D4' : 'rgba(252, 244, 235, 0.30)',
+          border: `1.5px solid ${hasContent ? 'rgba(139, 121, 212, 0.35)' : 'rgba(252, 244, 235, 0.10)'}`,
         }}
       >
         {number}
@@ -61,9 +61,9 @@ export default function SessionCard({
             <span
               className="text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 rounded-full"
               style={{
-                background: 'rgba(124, 105, 199, 0.15)',
-                color: '#7C69C7',
-                border: '1px solid rgba(124, 105, 199, 0.25)',
+                background: 'rgba(139, 121, 212, 0.15)',
+                color: '#8B79D4',
+                border: '1px solid rgba(139, 121, 212, 0.25)',
               }}
             >
               Guide
@@ -89,7 +89,7 @@ export default function SessionCard({
 
       {/* Arrow — only when clickable */}
       {hasContent && (
-        <div className="flex-shrink-0 text-[#FCF4EB]/20 group-hover:text-[#7C69C7] group-hover:translate-x-1 transition-all duration-200">
+        <div className="flex-shrink-0 text-[#FCF4EB]/20 group-hover:text-[#8B79D4] group-hover:translate-x-1 transition-all duration-200">
           <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>

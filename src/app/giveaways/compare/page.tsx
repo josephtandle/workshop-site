@@ -310,7 +310,7 @@ export default function ComparePage() {
         .aurora-a { animation: aurora-drift 16s ease-in-out infinite; }
         .aurora-b { animation: aurora-drift-2 20s ease-in-out infinite; }
         .glow-btn { transition: box-shadow 0.2s ease, background-color 0.15s ease, transform 0.1s ease-out; }
-        .glow-btn:hover { box-shadow: 0 0 32px rgba(124, 105, 199, 0.45), 0 0 60px rgba(124, 105, 199, 0.2); }
+        .glow-btn:hover { box-shadow: 0 0 32px rgba(139, 121, 212, 0.45), 0 0 60px rgba(139, 121, 212, 0.2); }
         .glow-btn-pink:hover { box-shadow: 0 0 32px rgba(245, 195, 198, 0.5), 0 0 60px rgba(245, 195, 198, 0.2); }
       `}</style>
 
@@ -464,7 +464,7 @@ export default function ComparePage() {
             viewport={{ once: true }}
             className="text-center mb-10"
           >
-            <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
+            <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 bg-[#8B79D4]/15 text-[#9D8FE0] border border-[#8B79D4]/25">
               Side-by-side comparison
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold text-[#FCF4EB] mb-3">
@@ -479,7 +479,7 @@ export default function ComparePage() {
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="rounded-[28px] border border-[#FCF4EB]/[0.10] bg-[linear-gradient(180deg,rgba(124,105,199,0.10),rgba(252,244,235,0.03))] p-4 sm:p-6"
+            className="rounded-[28px] border border-[#FCF4EB]/[0.10] bg-[linear-gradient(180deg,rgba(139,121,212,0.10),rgba(252,244,235,0.03))] p-4 sm:p-6"
           >
             <div className="overflow-x-auto -mx-2 sm:mx-0">
               <table className="w-full min-w-[820px] border-separate border-spacing-0 text-left">
@@ -493,12 +493,12 @@ export default function ComparePage() {
                         <div
                           className={
                             p.isPowerLane
-                              ? 'rounded-xl border border-[#9D8FE0]/35 bg-[rgba(124,105,199,0.18)] px-3 py-2.5'
+                              ? 'rounded-xl border border-[#9D8FE0]/35 bg-[rgba(139,121,212,0.18)] px-3 py-2.5'
                               : 'rounded-xl border border-[#FCF4EB]/[0.10] bg-[rgba(252,244,235,0.04)] px-3 py-2.5'
                           }
                         >
                           <div className="flex items-center gap-2 mb-1">
-                            <span className={p.isPowerLane ? 'text-[#9D8FE0]' : 'text-[#7C69C7]'} aria-hidden>
+                            <span className={p.isPowerLane ? 'text-[#9D8FE0]' : 'text-[#8B79D4]'} aria-hidden>
                               {p.glyph}
                             </span>
                             <span className="text-[#FCF4EB] font-bold text-sm">{p.name}</span>
@@ -520,7 +520,7 @@ export default function ComparePage() {
                         key={p.key}
                         className={
                           p.isPowerLane
-                            ? 'px-3 sm:px-4 py-4 text-sm align-top border-b border-[#FCF4EB]/[0.08] border-l border-[#FCF4EB]/[0.05] bg-[rgba(124,105,199,0.05)] min-w-[180px] text-[#FCF4EB]/90 leading-relaxed'
+                            ? 'px-3 sm:px-4 py-4 text-sm align-top border-b border-[#FCF4EB]/[0.08] border-l border-[#FCF4EB]/[0.05] bg-[rgba(139,121,212,0.05)] min-w-[180px] text-[#FCF4EB]/90 leading-relaxed'
                             : 'px-3 sm:px-4 py-4 text-sm align-top border-b border-[#FCF4EB]/[0.08] border-l border-[#FCF4EB]/[0.05] min-w-[180px] text-[#FCF4EB]/85 leading-relaxed'
                         }
                       >
@@ -536,7 +536,7 @@ export default function ComparePage() {
                         <th
                           colSpan={5}
                           scope="colgroup"
-                          className="px-3 sm:px-4 pt-7 pb-2 text-[11px] uppercase tracking-[0.22em] text-[#7C69C7] font-semibold border-b border-[#FCF4EB]/[0.08]"
+                          className="px-3 sm:px-4 pt-7 pb-2 text-[11px] uppercase tracking-[0.22em] text-[#8B79D4] font-semibold border-b border-[#FCF4EB]/[0.08]"
                         >
                           {group.title}
                         </th>
@@ -554,7 +554,7 @@ export default function ComparePage() {
                               key={key}
                               className={
                                 key === 'terminal'
-                                  ? 'px-3 sm:px-4 py-4 text-sm align-top border-b border-[#FCF4EB]/[0.05] border-l border-[#FCF4EB]/[0.05] bg-[rgba(124,105,199,0.05)] min-w-[180px]'
+                                  ? 'px-3 sm:px-4 py-4 text-sm align-top border-b border-[#FCF4EB]/[0.05] border-l border-[#FCF4EB]/[0.05] bg-[rgba(139,121,212,0.05)] min-w-[180px]'
                                   : 'px-3 sm:px-4 py-4 text-sm align-top border-b border-[#FCF4EB]/[0.05] border-l border-[#FCF4EB]/[0.05] min-w-[180px]'
                               }
                             >
@@ -593,7 +593,7 @@ export default function ComparePage() {
             viewport={{ once: true }}
             className="text-center mb-10"
           >
-            <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 bg-[#7C69C7]/15 text-[#9D8FE0] border border-[#7C69C7]/25">
+            <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 bg-[#8B79D4]/15 text-[#9D8FE0] border border-[#8B79D4]/25">
               The fine print
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold text-[#FCF4EB]">
@@ -611,7 +611,7 @@ export default function ComparePage() {
                 transition={{ delay: index * 0.05 }}
               >
                 <h3 className="text-xl sm:text-2xl font-bold text-[#FCF4EB] mb-3 flex items-start gap-3">
-                  <span className="text-[#7C69C7] mt-1 flex-shrink-0">◆</span>
+                  <span className="text-[#8B79D4] mt-1 flex-shrink-0">◆</span>
                   <span>{note.title}</span>
                 </h3>
                 <p className="text-[#FCF4EB]/72 leading-relaxed text-lg ml-7">{note.body}</p>
@@ -628,9 +628,9 @@ export default function ComparePage() {
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="rounded-[28px] border border-[#FCF4EB]/[0.10] bg-[linear-gradient(180deg,rgba(124,105,199,0.10),rgba(252,244,235,0.03))] p-6 sm:p-8 lg:p-10"
+            className="rounded-[28px] border border-[#FCF4EB]/[0.10] bg-[linear-gradient(180deg,rgba(139,121,212,0.10),rgba(252,244,235,0.03))] p-6 sm:p-8 lg:p-10"
           >
-            <p className="text-[#7C69C7] text-xs font-semibold uppercase tracking-[0.22em] mb-3">
+            <p className="text-[#8B79D4] text-xs font-semibold uppercase tracking-[0.22em] mb-3">
               The 5th Claude
             </p>
             <h2
@@ -735,7 +735,7 @@ function MastermindCTA() {
         viewport={{ once: true }}
         className="rounded-2xl overflow-hidden"
         style={{
-          background: 'linear-gradient(135deg, rgba(245,195,198,0.10) 0%, rgba(124,105,199,0.08) 100%)',
+          background: 'linear-gradient(135deg, rgba(245,195,198,0.10) 0%, rgba(139,121,212,0.08) 100%)',
           border: '1px solid rgba(245,195,198,0.15)',
         }}
       >

@@ -52,7 +52,7 @@ export default function ClientLaunchChecklistPage() {
         <div className="relative mx-auto grid max-w-5xl gap-10 lg:grid-cols-[1fr_420px] lg:items-center">
           <div>
             <Reveal>
-              <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#7C69C7]/25 bg-[#7C69C7]/15 px-4 py-1.5">
+              <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#8B79D4]/25 bg-[#8B79D4]/15 px-4 py-1.5">
                 <span className="text-xs text-[#9D8FE0]">◇</span>
                 <span className="text-xs font-semibold uppercase tracking-widest text-[#9D8FE0]">
                   Free checklist
@@ -109,7 +109,7 @@ export default function ClientLaunchChecklistPage() {
       <section className="mx-auto max-w-5xl px-6 py-16">
         <Reveal>
           <div className="mb-10 max-w-2xl">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-[#7C69C7]">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-[#8B79D4]">
               What you get
             </p>
             <h2 className="mb-4 text-3xl font-bold text-[#FCF4EB]">
@@ -126,7 +126,7 @@ export default function ClientLaunchChecklistPage() {
           {CHECKLIST_ITEMS.map((item, index) => (
             <Reveal key={item} delay={index + 1}>
               <div className="flex h-full gap-4 rounded-xl border border-white/[0.08] bg-white/[0.04] p-5">
-                <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border border-[#7C69C7]/35 bg-[#7C69C7]/15 text-xs font-bold text-[#9D8FE0]">
+                <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border border-[#8B79D4]/35 bg-[#8B79D4]/15 text-xs font-bold text-[#9D8FE0]">
                   {index + 1}
                 </div>
                 <p className="text-sm leading-relaxed text-[#FCF4EB]/70">{item}</p>
@@ -151,7 +151,7 @@ export default function ClientLaunchChecklistPage() {
 
       <section className="mx-auto max-w-3xl px-6 pb-20">
         <Reveal>
-          <div className="rounded-2xl border border-[#7C69C7]/25 bg-[#7C69C7]/10 p-6 text-center sm:p-8">
+          <div className="rounded-2xl border border-[#8B79D4]/25 bg-[#8B79D4]/10 p-6 text-center sm:p-8">
             <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-[#9D8FE0]">
               Use it before you publish
             </p>
