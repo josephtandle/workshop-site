@@ -1,5 +1,6 @@
 'use client'
 
+import { CLAUDE_REFERRAL_URL } from '@/lib/claude-links'
 import { useState } from 'react'
 import ProTip from '@/components/ProTip'
 import { celebrate } from '@/lib/celebrate'
@@ -194,8 +195,8 @@ export default function Session1Prep() {
           <ol className="space-y-3 list-decimal list-inside">
             <li>
               Go to{' '}
-              <a href="https://claude.ai/upgrade" target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:underline font-medium">
-                claude.ai/upgrade
+              <a href={CLAUDE_REFERRAL_URL} target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:underline font-medium">
+                claude.ai
               </a>
             </li>
             <li>Sign in or create a free Claude account if you do not have one</li>
