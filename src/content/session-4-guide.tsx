@@ -1,5 +1,6 @@
 'use client'
 
+import { CLAUDE_REFERRAL_URL } from '@/lib/claude-links'
 import { useState } from 'react'
 import StepCard from '@/components/StepCard'
 import CodeBlock from '@/components/CodeBlock'
@@ -495,7 +496,7 @@ If something important is still missing, list the missing pieces at the end and 
             <ProTip type="tip">
               Named sessions sync automatically across all your devices. Name it once and it shows
               up everywhere you are logged in to{' '}
-              <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:underline">
+              <a href={CLAUDE_REFERRAL_URL} target="_blank" rel="noopener noreferrer" className="text-[#8B79D4] hover:underline">
                 Claude.ai
               </a>.
             </ProTip>

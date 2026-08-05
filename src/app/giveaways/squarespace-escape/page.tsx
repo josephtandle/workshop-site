@@ -1,5 +1,6 @@
 'use client'
 
+import { CLAUDE_REFERRAL_URL } from '@/lib/claude-links'
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import CodeBlock from '@/components/CodeBlock'
@@ -452,7 +453,7 @@ export default function SquarespaceEscapePage() {
               <p className="text-[#FCF4EB]/45 max-w-xl mx-auto leading-relaxed">
                 Click the "Edit before copying" badge to swap in your site URL, then hit Copy
                 and paste it into{' '}
-                <a href="https://claude.ai/claude-code" target="_blank" rel="noopener noreferrer" className="text-[#9D8FE0] hover:text-[#BDB3E8] transition-colors">
+                <a href={CLAUDE_REFERRAL_URL} target="_blank" rel="noopener noreferrer" className="text-[#9D8FE0] hover:text-[#BDB3E8] transition-colors">
                   Claude Code
                 </a>
                 . Claude builds the scraper, runs it, and delivers the zip.
