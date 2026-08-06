@@ -1164,7 +1164,7 @@ export const events: EventDefinition[] = [
     shortTitle: 'Business Blocks AI Solved',
     eyebrow: 'Live Workshop',
     summary:
-      'A raw, practical Bali session hosted by Marina Joubert, featuring Joe Che on what AI actually removed from his business this year.',
+      'A raw, practical Bali session hosted by Marina Choueri, featuring Joe Che on what AI actually removed from his business this year.',
     description:
       'A live workshop in Canggu where Joe Che shows what actually changed in his business this year, and the real AI systems behind it.',
     ctaLabel: 'Reserve Your Seat',
@@ -1210,13 +1210,13 @@ export const events: EventDefinition[] = [
         ],
       },
       {
-        name: 'Marina Joubert',
+        name: 'Marina Choueri',
         firstName: 'Marina',
         role: 'Host • Super-Connector • Event Producer',
         photoSrc: '/mastermind-participants/marina--jaubert.jpg',
         hideBestsellerBadge: true,
         bio: [
-          'Marina Joubert is known across Bali and Dubai as a true super-connector, the person who brings the right people into the same room.',
+          'Marina Choueri is known across Bali and Dubai as a true super-connector, the person who brings the right people into the same room.',
           'She went through Joe\'s AI Business Mastermind herself and came out with Magenta, an always-on AI co-founder that takes her voice notes, a personalized content studio, and her own brand book.',
           'Marina is hosting this session because she has lived the shift firsthand and wants her network to see it too.',
         ],
@@ -1348,7 +1348,7 @@ export const events: EventDefinition[] = [
         type: 'hosts',
         id: 'hosts',
         eyebrow: 'Hosted By',
-        title: 'Joe Che and Marina Joubert',
+        title: 'Joe Che and Marina Choueri',
         intro: '',
         hosts: [],
       },
@@ -1356,7 +1356,7 @@ export const events: EventDefinition[] = [
     metadata: {
       title: 'The Biggest Business Blocks That AI Solved For Me',
       description:
-        'A live workshop in Canggu, Bali hosted by Marina Joubert, featuring Joe Che on what AI actually removed from his business this year.',
+        'A live workshop in Canggu, Bali hosted by Marina Choueri, featuring Joe Che on what AI actually removed from his business this year.',
     },
   },
 ]
