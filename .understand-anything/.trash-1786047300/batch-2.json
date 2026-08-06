@@ -1,0 +1,765 @@
+{
+  "nodes": [
+    {
+      "id": "stripe_webhook_route_POST",
+      "kind": "function",
+      "name": "POST",
+      "path": "src/app/api/stripe/webhook/route.ts",
+      "signature": "async function POST(request: Request): Promise<NextResponse>",
+      "tags": [
+        "export",
+        "api",
+        "webhook",
+        "stripe",
+        "handler"
+      ]
+    },
+    {
+      "id": "stripe_webhook_route_runtime",
+      "kind": "variable",
+      "name": "runtime",
+      "path": "src/app/api/stripe/webhook/route.ts",
+      "signature": "export const runtime = 'nodejs'",
+      "tags": [
+        "export",
+        "constant",
+        "next-config"
+      ]
+    },
+    {
+      "id": "stripe_webhook_route_maxDuration",
+      "kind": "variable",
+      "name": "maxDuration",
+      "path": "src/app/api/stripe/webhook/route.ts",
+      "signature": "export const maxDuration = 30",
+      "tags": [
+        "export",
+        "constant",
+        "next-config"
+      ]
+    },
+    {
+      "id": "calendar_toIcalDate",
+      "kind": "function",
+      "name": "toIcalDate",
+      "path": "src/lib/calendar.ts",
+      "signature": "function toIcalDate(iso: string): string",
+      "tags": [
+        "utility",
+        "ical",
+        "date-formatting"
+      ]
+    },
+    {
+      "id": "calendar_escapeIcal",
+      "kind": "function",
+      "name": "escapeIcal",
+      "path": "src/lib/calendar.ts",
+      "signature": "function escapeIcal(s: string): string",
+      "tags": [
+        "utility",
+        "ical",
+        "escaping"
+      ]
+    },
+    {
+      "id": "calendar_buildGoogleCalendarUrl",
+      "kind": "function",
+      "name": "buildGoogleCalendarUrl",
+      "path": "src/lib/calendar.ts",
+      "signature": "export function buildGoogleCalendarUrl(params: {title: string; startIso: string; endIso: string; location?: string; description?: string}): string",
+      "tags": [
+        "export",
+        "calendar",
+        "url-builder"
+      ]
+    },
+    {
+      "id": "calendar_buildIcalString",
+      "kind": "function",
+      "name": "buildIcalString",
+      "path": "src/lib/calendar.ts",
+      "signature": "export function buildIcalString(params: {uid: string; title: string; startIso: string; endIso: string; location?: string; description?: string; organizer?: {name: string; email: string}; attendee?: {name: string; email: string}; sequence?: number}): string",
+      "tags": [
+        "export",
+        "calendar",
+        "ical-generator"
+      ]
+    },
+    {
+      "id": "calendar_buildEventCalendarDescription",
+      "kind": "function",
+      "name": "buildEventCalendarDescription",
+      "path": "src/lib/calendar.ts",
+      "signature": "export function buildEventCalendarDescription(event: {title: string; summary: string; slug: string; zoomLink?: string; durationLabel?: string}): string",
+      "tags": [
+        "export",
+        "calendar",
+        "description"
+      ]
+    },
+    {
+      "id": "email_RESEND_API_KEY",
+      "kind": "variable",
+      "name": "RESEND_API_KEY",
+      "path": "src/lib/event-confirmation-email.ts",
+      "signature": "const RESEND_API_KEY = process.env.RESEND_API_KEY",
+      "tags": [
+        "config",
+        "api-key",
+        "env"
+      ]
+    },
+    {
+      "id": "email_getSiteUrl",
+      "kind": "function",
+      "name": "getSiteUrl",
+      "path": "src/lib/event-confirmation-email.ts",
+      "signature": "function getSiteUrl(): string",
+      "tags": [
+        "utility",
+        "config"
+      ]
+    },
+    {
+      "id": "email_getFirstName",
+      "kind": "function",
+      "name": "getFirstName",
+      "path": "src/lib/event-confirmation-email.ts",
+      "signature": "function getFirstName(name: string): string",
+      "tags": [
+        "utility",
+        "text-parsing"
+      ]
+    },
+    {
+      "id": "email_formatLeadHours",
+      "kind": "function",
+      "name": "formatLeadHours",
+      "path": "src/lib/event-confirmation-email.ts",
+      "signature": "function formatLeadHours(leadHours: number): string",
+      "tags": [
+        "utility",
+        "text-formatting"
+      ]
+    },
+    {
+      "id": "email_buildAiContentCreationSetupEmailHtml",
+      "kind": "function",
+      "name": "buildAiContentCreationSetupEmailHtml",
+      "path": "src/lib/event-confirmation-email.ts",
+      "signature": "function buildAiContentCreationSetupEmailHtml(attendeeName: string): string",
+      "tags": [
+        "html-builder",
+        "email-template"
+      ]
+    },
+    {
+      "id": "email_buildAskAnAiExpertWelcomeEmailHtml",
+      "kind": "function",
+      "name": "buildAskAnAiExpertWelcomeEmailHtml",
+      "path": "src/lib/event-confirmation-email.ts",
+      "signature": "export function buildAskAnAiExpertWelcomeEmailHtml(event: EventDefinition, attendeeName: string, attendeeEmail: string): string",
+      "tags": [
+        "export",
+        "html-builder",
+        "email-template"
+      ]
+    },
+    {
+      "id": "email_buildSessionReminderEmailHtml",
+      "kind": "function",
+      "name": "buildSessionReminderEmailHtml",
+      "path": "src/lib/event-confirmation-email.ts",
+      "signature": "function buildSessionReminderEmailHtml(event: EventDefinition, attendeeName: string, windowLabel: SessionReminderWindowLabel): {subject: string; html: string}",
+      "tags": [
+        "html-builder",
+        "email-template",
+        "reminder"
+      ]
+    },
+    {
+      "id": "email_resolveHostContact",
+      "kind": "function",
+      "name": "resolveHostContact",
+      "path": "src/lib/event-confirmation-email.ts",
+      "signature": "function resolveHostContact(event: EventDefinition): {contactName: string | null; contactWhatsAppLink: string | null; contactWhatsAppDisplay: string | null; contactBlockHtml: string}",
+      "tags": [
+        "email-helper",
+        "contact-resolver"
+      ]
+    },
+    {
+      "id": "email_buildConfirmationEmailHtml",
+      "kind": "function",
+      "name": "buildConfirmationEmailHtml",
+      "path": "src/lib/event-confirmation-email.ts",
+      "signature": "export function buildConfirmationEmailHtml(event: EventDefinition, attendeeName: string, cancelToken?: string, now?: Date): string",
+      "tags": [
+        "export",
+        "html-builder",
+        "email-template"
+      ]
+    },
+    {
+      "id": "email_buildLocationReminderEmailHtml",
+      "kind": "function",
+      "name": "buildLocationReminderEmailHtml",
+      "path": "src/lib/event-confirmation-email.ts",
+      "signature": "function buildLocationReminderEmailHtml(event: EventDefinition, attendeeName: string): string",
+      "tags": [
+        "html-builder",
+        "email-template",
+        "location"
+      ]
+    },
+    {
+      "id": "email_sendResendEmail",
+      "kind": "function",
+      "name": "sendResendEmail",
+      "path": "src/lib/event-confirmation-email.ts",
+      "signature": "async function sendResendEmail(input: {attendeeEmail: string; subject: string; html: string; idempotencyKey?: string; attachments?: ResendAttachment[]; headers?: Record<string, string>}): Promise<any>",
+      "tags": [
+        "api-caller",
+        "resend",
+        "email-sender"
+      ]
+    },
+    {
+      "id": "email_buildConfirmationIdempotencyKey",
+      "kind": "function",
+      "name": "buildConfirmationIdempotencyKey",
+      "path": "src/lib/event-confirmation-email.ts",
+      "signature": "export function buildConfirmationIdempotencyKey(slug: string, email: string): string",
+      "tags": [
+        "export",
+        "idempotency-key"
+      ]
+    },
+    {
+      "id": "email_buildWaitlistJoinIdempotencyKey",
+      "kind": "function",
+      "name": "buildWaitlistJoinIdempotencyKey",
+      "path": "src/lib/event-confirmation-email.ts",
+      "signature": "export function buildWaitlistJoinIdempotencyKey(slug: string, email: string): string",
+      "tags": [
+        "export",
+        "idempotency-key"
+      ]
+    },
+    {
+      "id": "email_buildAiContentCreationSetupIdempotencyKey",
+      "kind": "function",
+      "name": "buildAiContentCreationSetupIdempotencyKey",
+      "path": "src/lib/event-confirmation-email.ts",
+      "signature": "export function buildAiContentCreationSetupIdempotencyKey(email: string): string",
+      "tags": [
+        "export",
+        "idempotency-key"
+      ]
+    },
+    {
+      "id": "email_buildAskAnAiExpertWelcomeIdempotencyKey",
+      "kind": "function",
+      "name": "buildAskAnAiExpertWelcomeIdempotencyKey",
+      "path": "src/lib/event-confirmation-email.ts",
+      "signature": "export function buildAskAnAiExpertWelcomeIdempotencyKey(email: string): string",
+      "tags": [
+        "export",
+        "idempotency-key"
+      ]
+    },
+    {
+      "id": "email_sendEventConfirmationEmail",
+      "kind": "function",
+      "name": "sendEventConfirmationEmail",
+      "path": "src/lib/event-confirmation-email.ts",
+      "signature": "export async function sendEventConfirmationEmail(input: {event: EventDefinition; attendeeName: string; attendeeEmail: string; cancelToken?: string; now?: Date}): Promise<any>",
+      "tags": [
+        "export",
+        "email-sender"
+      ]
+    },
+    {
+      "id": "email_sendAiContentCreationSetupEmail",
+      "kind": "function",
+      "name": "sendAiContentCreationSetupEmail",
+      "path": "src/lib/event-confirmation-email.ts",
+      "signature": "export async function sendAiContentCreationSetupEmail(input: {attendeeName: string; attendeeEmail: string}): Promise<any>",
+      "tags": [
+        "export",
+        "email-sender"
+      ]
+    },
+    {
+      "id": "email_sendAskAnAiExpertWelcomeEmail",
+      "kind": "function",
+      "name": "sendAskAnAiExpertWelcomeEmail",
+      "path": "src/lib/event-confirmation-email.ts",
+      "signature": "export async function sendAskAnAiExpertWelcomeEmail(input: {event: EventDefinition; attendeeName: string; attendeeEmail: string}): Promise<any>",
+      "tags": [
+        "export",
+        "email-sender",
+        "marketing"
+      ]
+    },
+    {
+      "id": "email_sendEventLocationReminderEmail",
+      "kind": "function",
+      "name": "sendEventLocationReminderEmail",
+      "path": "src/lib/event-confirmation-email.ts",
+      "signature": "export async function sendEventLocationReminderEmail(input: {event: EventDefinition; attendeeName: string; attendeeEmail: string}): Promise<any>",
+      "tags": [
+        "export",
+        "email-sender"
+      ]
+    },
+    {
+      "id": "email_sendSessionReminderEmail",
+      "kind": "function",
+      "name": "sendSessionReminderEmail",
+      "path": "src/lib/event-confirmation-email.ts",
+      "signature": "export async function sendSessionReminderEmail(input: {event: EventDefinition; attendeeName: string; attendeeEmail: string; windowLabel: SessionReminderWindowLabel}): Promise<any>",
+      "tags": [
+        "export",
+        "email-sender"
+      ]
+    },
+    {
+      "id": "email_buildWaitlistConfirmationHtml",
+      "kind": "function",
+      "name": "buildWaitlistConfirmationHtml",
+      "path": "src/lib/event-confirmation-email.ts",
+      "signature": "function buildWaitlistConfirmationHtml(event: EventDefinition, name: string, removeToken: string): string",
+      "tags": [
+        "html-builder",
+        "email-template",
+        "waitlist"
+      ]
+    },
+    {
+      "id": "email_buildWaitlistSpotNotificationHtml",
+      "kind": "function",
+      "name": "buildWaitlistSpotNotificationHtml",
+      "path": "src/lib/event-confirmation-email.ts",
+      "signature": "function buildWaitlistSpotNotificationHtml(event: EventDefinition, name: string, removeToken: string, variant: 'cancellation' | 't2h'): string",
+      "tags": [
+        "html-builder",
+        "email-template",
+        "waitlist"
+      ]
+    },
+    {
+      "id": "email_sendWaitlistConfirmationEmail",
+      "kind": "function",
+      "name": "sendWaitlistConfirmationEmail",
+      "path": "src/lib/event-confirmation-email.ts",
+      "signature": "export async function sendWaitlistConfirmationEmail(input: {event: EventDefinition; name: string; email: string; removeToken: string}): Promise<any>",
+      "tags": [
+        "export",
+        "email-sender",
+        "waitlist"
+      ]
+    },
+    {
+      "id": "email_sendWaitlistSpotNotificationEmail",
+      "kind": "function",
+      "name": "sendWaitlistSpotNotificationEmail",
+      "path": "src/lib/event-confirmation-email.ts",
+      "signature": "export async function sendWaitlistSpotNotificationEmail(input: {event: EventDefinition; name: string; email: string; removeToken: string; variant: 'cancellation' | 't2h'; idempotencyKey?: string}): Promise<any>",
+      "tags": [
+        "export",
+        "email-sender",
+        "waitlist"
+      ]
+    },
+    {
+      "id": "email_ResendAttachment",
+      "kind": "type",
+      "name": "ResendAttachment",
+      "path": "src/lib/event-confirmation-email.ts",
+      "signature": "type ResendAttachment = {filename: string; content: string; content_type: string}",
+      "tags": [
+        "type-definition"
+      ]
+    },
+    {
+      "id": "stripe_getStripeSecretKey",
+      "kind": "function",
+      "name": "getStripeSecretKey",
+      "path": "src/lib/stripe.ts",
+      "signature": "export function getStripeSecretKey(): string | null",
+      "tags": [
+        "export",
+        "config",
+        "stripe"
+      ]
+    },
+    {
+      "id": "stripe_getStripePublishableKey",
+      "kind": "function",
+      "name": "getStripePublishableKey",
+      "path": "src/lib/stripe.ts",
+      "signature": "export function getStripePublishableKey(): string | null",
+      "tags": [
+        "export",
+        "config",
+        "stripe"
+      ]
+    },
+    {
+      "id": "stripe_createStripeClient",
+      "kind": "function",
+      "name": "createStripeClient",
+      "path": "src/lib/stripe.ts",
+      "signature": "export function createStripeClient(): Stripe",
+      "tags": [
+        "export",
+        "factory",
+        "stripe"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "sourceId": "stripe_webhook_route_POST",
+      "targetId": "stripe_createStripeClient",
+      "kind": "calls",
+      "lineNumbers": [
+        37
+      ]
+    },
+    {
+      "sourceId": "stripe_webhook_route_POST",
+      "targetId": "stripe_webhook_route_external_getEventBySlug",
+      "kind": "calls",
+      "lineNumbers": [
+        57
+      ]
+    },
+    {
+      "sourceId": "stripe_webhook_route_POST",
+      "targetId": "stripe_webhook_route_external_finalizeLegacyCheckoutSession",
+      "kind": "calls",
+      "lineNumbers": [
+        68
+      ]
+    },
+    {
+      "sourceId": "stripe_webhook_route_POST",
+      "targetId": "stripe_webhook_route_external_trackInsightEvent",
+      "kind": "calls",
+      "lineNumbers": [
+        59,
+        69,
+        78
+      ]
+    },
+    {
+      "sourceId": "email_buildAiContentCreationSetupEmailHtml",
+      "targetId": "email_getFirstName",
+      "kind": "calls",
+      "lineNumbers": [
+        28
+      ]
+    },
+    {
+      "sourceId": "email_buildAskAnAiExpertWelcomeEmailHtml",
+      "targetId": "email_getFirstName",
+      "kind": "calls",
+      "lineNumbers": [
+        107
+      ]
+    },
+    {
+      "sourceId": "email_buildAskAnAiExpertWelcomeEmailHtml",
+      "targetId": "email_getSiteUrl",
+      "kind": "calls",
+      "lineNumbers": [
+        109
+      ]
+    },
+    {
+      "sourceId": "email_buildAskAnAiExpertWelcomeEmailHtml",
+      "targetId": "calendar_buildGoogleCalendarUrl",
+      "kind": "calls",
+      "lineNumbers": [
+        110
+      ]
+    },
+    {
+      "sourceId": "email_buildSessionReminderEmailHtml",
+      "targetId": "email_getFirstName",
+      "kind": "calls",
+      "lineNumbers": [
+        173
+      ]
+    },
+    {
+      "sourceId": "email_buildConfirmationEmailHtml",
+      "targetId": "email_getSiteUrl",
+      "kind": "calls",
+      "lineNumbers": [
+        241,
+        250,
+        251
+      ]
+    },
+    {
+      "sourceId": "email_buildConfirmationEmailHtml",
+      "targetId": "email_resolveHostContact",
+      "kind": "calls",
+      "lineNumbers": [
+        254
+      ]
+    },
+    {
+      "sourceId": "email_buildConfirmationEmailHtml",
+      "targetId": "calendar_buildGoogleCalendarUrl",
+      "kind": "calls",
+      "lineNumbers": [
+        283
+      ]
+    },
+    {
+      "sourceId": "email_buildConfirmationEmailHtml",
+      "targetId": "calendar_buildIcalString",
+      "kind": "calls",
+      "lineNumbers": [
+        292
+      ]
+    },
+    {
+      "sourceId": "email_buildConfirmationEmailHtml",
+      "targetId": "email_formatLeadHours",
+      "kind": "calls",
+      "lineNumbers": [
+        385
+      ]
+    },
+    {
+      "sourceId": "email_buildLocationReminderEmailHtml",
+      "targetId": "email_resolveHostContact",
+      "kind": "calls",
+      "lineNumbers": [
+        455
+      ]
+    },
+    {
+      "sourceId": "email_buildWaitlistConfirmationHtml",
+      "targetId": "email_getFirstName",
+      "kind": "calls",
+      "lineNumbers": [
+        775
+      ]
+    },
+    {
+      "sourceId": "email_buildWaitlistSpotNotificationHtml",
+      "targetId": "email_getFirstName",
+      "kind": "calls",
+      "lineNumbers": [
+        820
+      ]
+    },
+    {
+      "sourceId": "email_sendEventConfirmationEmail",
+      "targetId": "email_buildConfirmationEmailHtml",
+      "kind": "calls",
+      "lineNumbers": [
+        606
+      ]
+    },
+    {
+      "sourceId": "email_sendEventConfirmationEmail",
+      "targetId": "calendar_buildIcalString",
+      "kind": "calls",
+      "lineNumbers": [
+        613
+      ]
+    },
+    {
+      "sourceId": "email_sendEventConfirmationEmail",
+      "targetId": "email_buildConfirmationIdempotencyKey",
+      "kind": "calls",
+      "lineNumbers": [
+        636
+      ]
+    },
+    {
+      "sourceId": "email_sendEventConfirmationEmail",
+      "targetId": "email_sendResendEmail",
+      "kind": "calls",
+      "lineNumbers": [
+        632
+      ]
+    },
+    {
+      "sourceId": "email_sendAiContentCreationSetupEmail",
+      "targetId": "email_buildAiContentCreationSetupEmailHtml",
+      "kind": "calls",
+      "lineNumbers": [
+        648
+      ]
+    },
+    {
+      "sourceId": "email_sendAiContentCreationSetupEmail",
+      "targetId": "email_buildAiContentCreationSetupIdempotencyKey",
+      "kind": "calls",
+      "lineNumbers": [
+        649
+      ]
+    },
+    {
+      "sourceId": "email_sendAiContentCreationSetupEmail",
+      "targetId": "email_sendResendEmail",
+      "kind": "calls",
+      "lineNumbers": [
+        645
+      ]
+    },
+    {
+      "sourceId": "email_sendAskAnAiExpertWelcomeEmail",
+      "targetId": "calendar_buildIcalString",
+      "kind": "calls",
+      "lineNumbers": [
+        662
+      ]
+    },
+    {
+      "sourceId": "email_sendAskAnAiExpertWelcomeEmail",
+      "targetId": "email_buildAskAnAiExpertWelcomeEmailHtml",
+      "kind": "calls",
+      "lineNumbers": [
+        691
+      ]
+    },
+    {
+      "sourceId": "email_sendAskAnAiExpertWelcomeEmail",
+      "targetId": "email_buildAskAnAiExpertWelcomeIdempotencyKey",
+      "kind": "calls",
+      "lineNumbers": [
+        692
+      ]
+    },
+    {
+      "sourceId": "email_sendAskAnAiExpertWelcomeEmail",
+      "targetId": "email_sendResendEmail",
+      "kind": "calls",
+      "lineNumbers": [
+        688
+      ]
+    },
+    {
+      "sourceId": "email_sendAskAnAiExpertWelcomeEmail",
+      "targetId": "email_external_isSuppressed",
+      "kind": "calls",
+      "lineNumbers": [
+        683
+      ]
+    },
+    {
+      "sourceId": "email_sendEventLocationReminderEmail",
+      "targetId": "calendar_buildIcalString",
+      "kind": "calls",
+      "lineNumbers": [
+        716
+      ]
+    },
+    {
+      "sourceId": "email_sendEventLocationReminderEmail",
+      "targetId": "email_buildLocationReminderIdempotencyKey",
+      "kind": "calls",
+      "lineNumbers": [
+        737
+      ]
+    },
+    {
+      "sourceId": "email_sendEventLocationReminderEmail",
+      "targetId": "email_sendResendEmail",
+      "kind": "calls",
+      "lineNumbers": [
+        733
+      ]
+    },
+    {
+      "sourceId": "email_sendSessionReminderEmail",
+      "targetId": "email_buildSessionReminderEmailHtml",
+      "kind": "calls",
+      "lineNumbers": [
+        757
+      ]
+    },
+    {
+      "sourceId": "email_sendSessionReminderEmail",
+      "targetId": "email_buildSessionReminderIdempotencyKey",
+      "kind": "calls",
+      "lineNumbers": [
+        763
+      ]
+    },
+    {
+      "sourceId": "email_sendSessionReminderEmail",
+      "targetId": "email_sendResendEmail",
+      "kind": "calls",
+      "lineNumbers": [
+        759
+      ]
+    },
+    {
+      "sourceId": "email_sendWaitlistConfirmationEmail",
+      "targetId": "email_buildWaitlistConfirmationHtml",
+      "kind": "calls",
+      "lineNumbers": [
+        875
+      ]
+    },
+    {
+      "sourceId": "email_sendWaitlistConfirmationEmail",
+      "targetId": "email_buildWaitlistJoinIdempotencyKey",
+      "kind": "calls",
+      "lineNumbers": [
+        881
+      ]
+    },
+    {
+      "sourceId": "email_sendWaitlistConfirmationEmail",
+      "targetId": "email_sendResendEmail",
+      "kind": "calls",
+      "lineNumbers": [
+        877
+      ]
+    },
+    {
+      "sourceId": "email_sendWaitlistSpotNotificationEmail",
+      "targetId": "email_buildWaitlistSpotNotificationHtml",
+      "kind": "calls",
+      "lineNumbers": [
+        898
+      ]
+    },
+    {
+      "sourceId": "email_sendWaitlistSpotNotificationEmail",
+      "targetId": "email_sendResendEmail",
+      "kind": "calls",
+      "lineNumbers": [
+        905
+      ]
+    },
+    {
+      "sourceId": "email_buildLocationReminderEmailHtml",
+      "targetId": "email_getFirstName",
+      "kind": "calls",
+      "lineNumbers": [
+        458
+      ]
+    },
+    {
+      "sourceId": "email_resolveHostContact",
+      "targetId": "email_external_EventDefinition",
+      "kind": "uses-type",
+      "lineNumbers": [
+        221
+      ]
+    }
+  ]
+}
