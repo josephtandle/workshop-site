@@ -1170,7 +1170,7 @@ export const events: EventDefinition[] = [
     ctaLabel: 'Reserve Your Seat',
     dateLabel: 'Friday, August 7, 2026',
     timeLabel: '3:00 PM to 6:00 PM',
-    locationLabel: 'Near La Brisa, Canggu, Bali',
+    locationLabel: 'Pererenan, Canggu, Bali',
     durationLabel: 'A 3-hour live session',
     heroImage: '/events/business-blocks-ai-solved/poster.png',
     heroAlt: 'The Biggest Business Blocks That AI Solved For Me, featuring Joe Che, Friday August 7, 3 to 6 PM',
@@ -1255,6 +1255,10 @@ export const events: EventDefinition[] = [
       endIso: '2026-08-07T18:00:00+08:00',
     },
     capacity: 40,
+    // Same-day in-person event: close registration 30 minutes before doors so
+    // nobody registers, pays, and never makes it in time to receive the
+    // address or attend.
+    registrationClosesIso: '2026-08-07T14:30:00+08:00',
     successDetail:
       'Your seat is confirmed. Check your inbox for the confirmation email, and I will send the exact address the day before the workshop.',
     intakeFields: {
@@ -1272,7 +1276,7 @@ export const events: EventDefinition[] = [
       // Only rendered once the location reveal window opens. See
       // event-confirmation-email.ts, which suppresses it while the venue is private.
       mapsUrl:
-        "https://www.google.com/maps/search/?api=1&query=Samm%27s+Farm+Jl.+Canggu+Padang+Linjong+No.58+Canggu+Bali",
+        "https://www.google.com/maps/place/Happy+Days+Villa+1,+Jl.+Pura+Gede+Batur+No.10,+Pererenan,+Kec.+Mengwi,+Kabupaten+Badung,+Bali+80351,+Indonesia/data=!4m2!3m1!1s0x2dd23942c968096b:0x4f45255bd98e88cb",
       skipSetupInstructions: true,
       signatureName: 'Joe Che',
     },
@@ -1280,12 +1284,12 @@ export const events: EventDefinition[] = [
       eventStartIso: '2026-08-07T15:00:00+08:00',
       leadHours: 24,
       exactAddress:
-        "Samm's Farm, Jl. Canggu Padang Linjong No.58, Canggu, Kec. Kuta Utara, Kabupaten Badung, Bali 80351, Indonesia",
+        'Happy Days Villa 1, Jl. Pura Gede Batur No.10, Pererenan, Kec. Mengwi, Kabupaten Badung, Bali 80351, Indonesia',
       googleMapsUrl:
-        "https://www.google.com/maps/search/?api=1&query=Samm%27s+Farm+Jl.+Canggu+Padang+Linjong+No.58+Canggu+Bali",
+        "https://www.google.com/maps/place/Happy+Days+Villa+1,+Jl.+Pura+Gede+Batur+No.10,+Pererenan,+Kec.+Mengwi,+Kabupaten+Badung,+Bali+80351,+Indonesia/data=!4m2!3m1!1s0x2dd23942c968096b:0x4f45255bd98e88cb",
       parkingInstructions: [
         'Doors open at 3:00 PM, we start on time.',
-        "Samm's Farm is on Jalan Canggu Padang Linjong, just off the main Canggu strip.",
+        'Happy Days Villa 1 is on Jalan Pura Gede Batur in Pererenan, off the main Canggu strip.',
       ],
     },
     postPurchase: {
@@ -1328,7 +1332,7 @@ export const events: EventDefinition[] = [
               This isn't a theory talk. It's the real systems, the agents, the workflows, the decisions behind them, shown so you can take the same approach into your own business.
             </p>
             <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
-              It's $22, hosted by Marina at Samm's Farm in Canggu. The exact address goes out to confirmed ticket holders the day before the event. Save your seat below.
+              It's $22, hosted by Marina in Pererenan, Canggu. The exact address goes out to confirmed ticket holders the day before the event. Save your seat below.
             </p>
           </div>
         `,
