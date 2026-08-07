@@ -221,6 +221,14 @@ export const giveaways: Giveaway[] = [
     badge: 'Quiz',
     badgeVariant: 'purple',
   },
+  {
+    slug: 'business-builder-quiz',
+    title: 'Do You Have What It Takes?',
+    description: '6 sharp questions that score your founder readiness across 5 research-backed levels, from not yet to built for this. Get your Founder Readiness Score.',
+    icon: '◆',
+    badge: 'Quiz',
+    badgeVariant: 'pink',
+  },
 ]
 
 export function getGiveaway(slug: string): Giveaway | undefined {
