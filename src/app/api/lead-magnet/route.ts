@@ -22,6 +22,7 @@ async function sendViaResend(email: string, source: string, idempotencyKey: stri
   const guardogPageUrl = withUtm(`${siteUrl}/giveaways/guardog`, { campaign: 'lead-magnet', content: 'guardog-page' })
   const speakHumanPageUrl = withUtm(`${siteUrl}/giveaways/speak-human`, { campaign: 'lead-magnet', content: 'speak-human-page' })
   const costStackPageUrl = withUtm(`${siteUrl}/giveaways/cost-stack`, { campaign: 'lead-magnet', content: 'cost-stack-page' })
+  const businessBuilderQuizPageUrl = withUtm(`${siteUrl}/giveaways/business-builder-quiz`, { campaign: 'lead-magnet', content: 'business-builder-quiz-page' })
   const speakHumanInstallCommand = 'git clone https://github.com/josephtandle/speak-human && cp -r speak-human/speak-human ~/.claude/skills/speak-human && rm -rf speak-human'
 
   let subject: string
@@ -422,6 +423,58 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
         ${unsubscribeFooter}
       </div>
     `
+  } else if (source === 'business-builder-quiz') {
+    subject = 'Your Founder Readiness Score, spelled out'
+    html = `
+      <div style="font-family: system-ui, sans-serif; max-width: 560px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a;">
+        <h1 style="font-size: 22px; margin-bottom: 16px;">Here's your full founder-readiness breakdown</h1>
+
+        <p style="font-size: 16px; line-height: 1.7; margin-bottom: 20px;">
+          The quiz stays open at the link below if you want to retake it or send it to someone
+          else and compare scores.
+        </p>
+
+        <p style="margin: 0 0 28px;">
+          <a href="${businessBuilderQuizPageUrl}"
+             style="display: inline-block; background: #8B79D4; color: #ffffff; padding: 14px 28px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px;">
+            Open the quiz
+          </a>
+        </p>
+
+        <p style="font-size: 15px; line-height: 1.7; color: #444; margin-bottom: 10px;">
+          The honest version of what the five levels mean:
+        </p>
+
+        <div style="border-left: 3px solid #8B79D4; padding-left: 16px; margin-bottom: 24px;">
+          <p style="font-size: 14px; color: #555; line-height: 1.7; margin: 0 0 10px;">
+            <strong>Not Yet / Curious</strong> — you're waiting for certainty that never fully
+            arrives. Nobody starts with it. The first small move is what breaks the wait.
+          </p>
+          <p style="font-size: 14px; color: #555; line-height: 1.7; margin: 0 0 10px;">
+            <strong>Capable</strong> — you already make do with what's in front of you. The gap
+            left is reps, not ability.
+          </p>
+          <p style="font-size: 14px; color: #555; line-height: 1.7; margin: 0;">
+            <strong>Founder Mode / Built For This</strong> — you already think like someone
+            building something. What's usually missing is a room full of people already doing
+            it, so the next move isn't made alone.
+          </p>
+        </div>
+
+        <p style="font-size: 14px; color: #555; line-height: 1.7; margin-bottom: 8px;">
+          That room is what we run every week at
+          <a href="${withUtm('https://mastermindshq.business', { campaign: 'lead-magnet', content: 'business-builder-quiz' })}" style="color: #8B79D4; font-weight: 600;">Masterminds HQ</a>
+          — a small group of business owners who build real things together, fast.
+        </p>
+
+        <p style="font-size: 15px; color: #444; line-height: 1.7; margin-bottom: 28px;">
+          Hit reply and tell me what score you got and what you're thinking of building. I read every one.
+        </p>
+
+        <p style="font-size: 14px; color: #999; margin-top: 32px;">Joe Che</p>
+        ${unsubscribeFooter}
+      </div>
+    `
   } else {
     // Fail closed. This branch used to send the Un-Learning Success PDF to any
     // unrecognised source, which meant roughly eighteen giveaway pages emailed
@@ -465,6 +518,7 @@ const GIVEAWAY_SOURCE_MAP: Record<string, string> = {
   'cost-stack': 'giveaway-cost-stack',
   'human': 'giveaway-speak-human',
   'speak-human': 'giveaway-speak-human',
+  'business-builder-quiz': 'giveaway-business-builder-quiz',
 }
 
 async function ingestIntoCrm(email: string, source: string) {
