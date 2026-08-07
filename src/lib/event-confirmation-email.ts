@@ -444,7 +444,7 @@ export function buildConfirmationEmailHtml(event: EventDefinition, attendeeName:
   `
 }
 
-function buildLocationReminderEmailHtml(event: EventDefinition, attendeeName: string) {
+export function buildLocationReminderEmailHtml(event: EventDefinition, attendeeName: string) {
   const location = event.privateLocationReminder
   if (!location) {
     throw new Error(`Event ${event.slug} is missing private location reminder details.`)

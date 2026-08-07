@@ -1255,6 +1255,10 @@ export const events: EventDefinition[] = [
       endIso: '2026-08-07T18:00:00+08:00',
     },
     capacity: 40,
+    // Same-day in-person event: close registration 30 minutes before doors so
+    // nobody registers, pays, and never makes it in time to receive the
+    // address or attend.
+    registrationClosesIso: '2026-08-07T14:30:00+08:00',
     successDetail:
       'Your seat is confirmed. Check your inbox for the confirmation email, and I will send the exact address the day before the workshop.',
     intakeFields: {

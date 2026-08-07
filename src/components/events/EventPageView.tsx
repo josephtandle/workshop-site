@@ -3,7 +3,7 @@ import Link from 'next/link'
 import type { EventDefinition, EventPromoCode, EventSection } from '@/lib/events'
 import { formatEventPrice, getEventDiscountedPrice } from '@/lib/events'
 import { buildGoogleCalendarUrl } from '@/lib/calendar'
-import { isEventEnded, isEventRegistrationClosed } from '@/lib/event-status'
+import { isEventEnded, isRegistrationWindowPassed } from '@/lib/event-status'
 import Reveal from '@/components/Reveal'
 import EventRegistrationSection from '@/components/events/EventRegistrationSection'
 import type { EventRegistrationData } from '@/components/events/EventRegistrationSection'
@@ -499,7 +499,7 @@ export default function EventPageView({
   const hasSetupItems = (event.postPurchase?.setupItems?.length ?? 0) > 0
   const isVirtualEvent = Boolean(event.zoomLink)
   const eventEnded = isEventEnded(event)
-  const registrationClosed = isEventRegistrationClosed(event)
+  const registrationWindowPassed = isRegistrationWindowPassed(event)
   const heroMedia = event.heroVideoSrc ? (
     <HeroVideo
       className="h-full w-full object-cover"
@@ -541,7 +541,8 @@ export default function EventPageView({
   const registrationEvent: EventRegistrationData = {
     slug: event.slug,
     title: event.title,
-    manuallyClosed: registrationClosed,
+    manuallyClosed: Boolean(event.manuallyClosed),
+    registrationWindowPassed,
     eventEnded,
     isVirtual: isVirtualEvent,
     intakeFields: event.intakeFields,

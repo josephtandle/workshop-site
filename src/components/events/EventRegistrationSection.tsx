@@ -69,6 +69,7 @@ export type EventRegistrationData = {
   successDetail?: string
   successRedirect?: string
   manuallyClosed?: boolean
+  registrationWindowPassed?: boolean
   eventEnded?: boolean
   isVirtual?: boolean
   intakeFields?: {
@@ -121,6 +122,32 @@ export default function EventRegistrationSection({
             className="copy-button-glass inline-flex min-w-[220px] cursor-not-allowed items-center justify-center rounded-xl border border-white/12 bg-white/[0.05] px-6 py-4 text-base font-semibold text-[#FCF4EB]/55"
           >
             This event has ended
+          </button>
+        </div>
+      </section>
+    )
+  }
+
+  if (event.registrationWindowPassed) {
+    return (
+      <section id="register" className="mx-auto max-w-6xl px-6 py-8 md:py-10">
+        <div className="mb-5">
+          <p className="mb-3 text-[12px] font-semibold uppercase tracking-[0.24em] text-[#BDB3E8] md:text-[13px]">Registration Closed</p>
+          <h2 className="event-gradient-title text-[2.2rem] font-extrabold leading-[0.92] tracking-tight md:text-[4.1rem]">
+            Registration for this event is closed.
+          </h2>
+          <p className="mt-4 text-base leading-8 text-[#FCF4EB]/68 md:text-lg">
+            {event.durationLabel ? `This is a same-day, in-person session, so registration closes shortly before it starts.` : 'Registration has closed for this session.'} If you already registered, check your email for the exact address.
+          </p>
+        </div>
+
+        <div className="event-registration-shell rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(252,244,235,0.08),rgba(139,121,212,0.08))] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.26)] md:p-8">
+          <button
+            type="button"
+            disabled
+            className="copy-button-glass inline-flex min-w-[220px] cursor-not-allowed items-center justify-center rounded-xl border border-white/12 bg-white/[0.05] px-6 py-4 text-base font-semibold text-[#FCF4EB]/55"
+          >
+            Registration closed
           </button>
         </div>
       </section>
