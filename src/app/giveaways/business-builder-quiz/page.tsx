@@ -19,7 +19,7 @@ const QUIZ_QUESTIONS = [
     question: 'When you don’t know if an idea will actually work, you:',
     options: [
       { text: 'Wait until you’re sure before doing anything', score: 1 },
-      { text: 'Research extensively, then take one small step', score: 2 },
+      { text: 'Google it obsessively before deciding anything', score: 2 },
       { text: 'Test it fast and cheap to find out', score: 3 },
       { text: 'Are already building it before you’ve fully thought it through', score: 4 },
     ],
