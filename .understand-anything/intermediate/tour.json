@@ -1,0 +1,44 @@
+[
+  {
+    "order": 1,
+    "title": "Project Overview",
+    "description": "Start with the project structure to understand the codebase organization.",
+    "nodeIds": []
+  },
+  {
+    "order": 2,
+    "title": "Event Management System",
+    "description": "Explore the core event management features including registration, checkout, and confirmation.",
+    "nodeIds": [
+      "file:src/app/api/events/session-reminders/route.ts",
+      "function:src/app/api/events/session-reminders/route.ts:isAuthorized",
+      "function:src/app/api/events/session-reminders/route.ts:acquireEventWindowLock",
+      "function:src/app/api/events/session-reminders/route.ts:GET",
+      "file:app/api/events/checkout-session/route.ts"
+    ]
+  },
+  {
+    "order": 3,
+    "title": "API Integrations",
+    "description": "Understand how Stripe, Supabase, and email systems are integrated.",
+    "nodeIds": [
+      "file:src/app/api/events/session-reminders/route.ts",
+      "function:src/app/api/events/session-reminders/route.ts:isAuthorized",
+      "function:src/app/api/events/session-reminders/route.ts:acquireEventWindowLock",
+      "function:src/app/api/events/session-reminders/route.ts:GET",
+      "file:src/app/api/illy-auth/route.ts"
+    ]
+  },
+  {
+    "order": 4,
+    "title": "Business Logic",
+    "description": "Deep dive into automation, checkout flows, and customer lifecycle management.",
+    "nodeIds": [
+      "file:src/lib/google-calendar-invite.ts",
+      "file:type:CalendarInviteResult",
+      "function:src/lib/google-calendar-invite.ts:eventIdFor",
+      "function:src/lib/google-calendar-invite.ts:getAuth",
+      "function:src/lib/google-calendar-invite.ts:inviteAttendeeToEvent"
+    ]
+  }
+]

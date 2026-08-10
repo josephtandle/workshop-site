@@ -1,8 +1,116 @@
 {
-  "projectName": "masterminds-workshop",
-  "projectDescription": "Next.js workshop and event management platform for Mastermind cohort-based courses, featuring Stripe integration, event registration, giveaway landing pages, and real-time checkout/payment automation.",
-  "languages": "json, markdown, other, typescript, tsx, sql",
-  "frameworks": "Next.js 16, React 19, TypeScript, Tailwind CSS, Supabase",
+  "schemaVersion": 1,
+  "algorithm": "louvain",
+  "totalFiles": 27,
+  "totalBatches": 3,
+  "exportsByPath": {
+    "next-env.d.ts": [],
+    "next.config.ts": [],
+    "tailwind.config.ts": [],
+    "src/app/100-ai/page.tsx": [
+      "PassiveIncome100Page"
+    ],
+    "src/app/page.tsx": [
+      "metadata",
+      "HomePage"
+    ],
+    "src/app/layout.tsx": [
+      "metadata",
+      "RootLayout"
+    ],
+    "src/app/api/lead-magnet/route.ts": [
+      "POST"
+    ],
+    "src/app/api/stripe/webhook/route.ts": [
+      "runtime",
+      "maxDuration",
+      "POST"
+    ],
+    "src/app/api/events/checkout-session/route.ts": [
+      "runtime",
+      "POST"
+    ],
+    "src/lib/abandoned-checkout-followups.ts": [
+      "ABANDONED_CHECKOUT_DAY1_AUTOMATION_KEY",
+      "ABANDONED_CHECKOUT_T12H_AUTOMATION_KEY",
+      "DEFAULT_TEST_RECIPIENTS",
+      "getCheckoutFollowupDefinition",
+      "shouldIncludeFinanceLine",
+      "buildAbandonedCheckoutIdempotencyKey",
+      "buildAbandonedCheckoutT12hIdempotencyKey",
+      "buildAbandonedCheckoutTestIdempotencyKey",
+      "buildAbandonedCheckoutT12hTestIdempotencyKey",
+      "buildAbandonedCheckoutSubject",
+      "buildAbandonedCheckoutT12hSubject",
+      "buildAbandonedCheckoutTestSubject",
+      "buildAbandonedCheckoutT12hTestSubject",
+      "buildAbandonedCheckoutEmailHtml",
+      "buildAbandonedCheckoutT12hEmailHtml",
+      "buildAbandonedCheckoutTestEmailHtml",
+      "sendAbandonedCheckoutFollowupEmail",
+      "sendAbandonedCheckoutT12hEmail",
+      "sendAbandonedCheckoutFollowupTestEmail",
+      "getAbandonedCheckoutAutomationControl",
+      "isEventInLeadWindow",
+      "getAbandonedCheckoutEligibleEvents",
+      "isObviousTestCheckoutAttempt",
+      "sendLiveCandidateOnce",
+      "shouldSendTestPreview",
+      "runAbandonedCheckoutFollowups",
+      "resolveEventFromSlug"
+    ],
+    "src/lib/event-confirmation-email.ts": [
+      "buildAskAnAiExpertWelcomeEmailHtml",
+      "buildConfirmationEmailHtml",
+      "buildLocationReminderEmailHtml",
+      "buildConfirmationIdempotencyKey",
+      "buildWaitlistJoinIdempotencyKey",
+      "buildAiContentCreationSetupIdempotencyKey",
+      "buildAskAnAiExpertWelcomeIdempotencyKey",
+      "sendEventConfirmationEmail",
+      "sendAiContentCreationSetupEmail",
+      "sendAskAnAiExpertWelcomeEmail",
+      "sendEventLocationReminderEmail",
+      "sendSessionReminderEmail",
+      "sendWaitlistConfirmationEmail",
+      "sendWaitlistSpotNotificationEmail"
+    ],
+    "src/lib/events.tsx": [
+      "getEventDiscountedPrice",
+      "resolvePromoCode",
+      "formatEventPrice",
+      "events",
+      "getEventBySlug",
+      "getLiveEvents",
+      "getUpcomingLiveEvents"
+    ],
+    "src/lib/event-checkout.ts": [
+      "resolveCheckoutMode",
+      "resolveEventCheckoutAmount",
+      "buildEventCheckoutSessionParams"
+    ],
+    "src/lib/calendar.ts": [
+      "buildGoogleCalendarUrl",
+      "buildIcalString",
+      "buildEventCalendarDescription"
+    ],
+    "src/lib/stripe.ts": [
+      "getStripeSecretKey",
+      "getStripePublishableKey",
+      "createStripeClient"
+    ],
+    "src/lib/supabase.ts": [
+      "supabase"
+    ],
+    "src/components/events/EventPageView.tsx": [
+      "EventPageView"
+    ],
+    "src/components/events/EventRegistrationSection.tsx": [
+      "EventRegistrationSection"
+    ],
+    "tests/email-content.test.ts": [],
+    "tests/hardening.test.ts": []
+  },
   "batches": [
     {
       "batchIndex": 1,
@@ -130,46 +238,6 @@
           }
         ]
       }
-    },
-    {
-      "batchIndex": 4,
-      "files": [
-        {
-          "path": "CLAUDE.md",
-          "language": "markdown",
-          "sizeLines": 43,
-          "fileCategory": "docs",
-          "summary": "Project specific Claude instructions"
-        },
-        {
-          "path": "package.json",
-          "language": "json",
-          "sizeLines": 46,
-          "fileCategory": "config",
-          "summary": "NPM package configuration"
-        },
-        {
-          "path": "tsconfig.json",
-          "language": "json",
-          "sizeLines": 41,
-          "fileCategory": "config",
-          "summary": "TypeScript configuration"
-        },
-        {
-          "path": "vercel.json",
-          "language": "json",
-          "sizeLines": 47,
-          "fileCategory": "config",
-          "summary": "Vercel deployment configuration"
-        }
-      ],
-      "batchImportData": {
-        "CLAUDE.md": [],
-        "package.json": [],
-        "tsconfig.json": [],
-        "vercel.json": []
-      },
-      "neighborMap": {}
     },
     {
       "batchIndex": 5,

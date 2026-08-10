@@ -1,26 +1,16 @@
 {
   "version": "1.0.0",
-  "gitCommitHash": "55a469b25f30ab7b4d8e19e98ee8b8a731a5b450",
-  "generatedAt": "2026-07-31T20:21:13.640Z",
+  "gitCommitHash": "4fe702791dda0f744304d9a82f3fc8d22a7eccf4",
+  "generatedAt": "2026-08-10T20:04:40.579Z",
   "files": {
-    "CLAUDE.md": {
-      "filePath": "CLAUDE.md",
-      "contentHash": "41aad08d47c7caae950386571de78917c33d14b59b53e3bd1769bf2baf754295",
+    ".claude/settings.json": {
+      "filePath": ".claude/settings.json",
+      "contentHash": "9080f054caa171d47803957c0ac398cfc643584893497356635d44278c40260b",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [],
-      "totalLines": 44,
-      "hasStructuralAnalysis": true
-    },
-    "docs/giveaways/PROCESS.md": {
-      "filePath": "docs/giveaways/PROCESS.md",
-      "contentHash": "53fa92beb13c8133009112b78ed1f5dfa9af1971955158a59aee32944801a11f",
-      "functions": [],
-      "classes": [],
-      "imports": [],
-      "exports": [],
-      "totalLines": 473,
+      "totalLines": 17,
       "hasStructuralAnalysis": true
     },
     "next-env.d.ts": {
@@ -61,200 +51,255 @@
       "totalLines": 61,
       "hasStructuralAnalysis": true
     },
-    "package.json": {
-      "filePath": "package.json",
-      "contentHash": "17485422259f716435d8ebb870a42c7a781f4f3e06f4beb5f9ad132c0588f5f9",
+    "tsconfig.json": {
+      "filePath": "tsconfig.json",
+      "contentHash": "55134881a23efd2a1f9266d2d0752731ff9c40d0e867136cd8863ea679560a09",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [],
-      "totalLines": 47,
+      "totalLines": 42,
       "hasStructuralAnalysis": true
     },
-    "src/app/100-ai/page.tsx": {
-      "filePath": "src/app/100-ai/page.tsx",
-      "contentHash": "98b71a3095dd1b111023a1f29a4ecf6995c09d20dfe87fc1edde494b51e5ae17",
-      "functions": [
-        {
-          "name": "getCountdown",
-          "params": [],
-          "returnType": "Countdown",
-          "exported": false,
-          "lineCount": 12
-        },
-        {
-          "name": "PassiveIncome100Page",
-          "params": [],
-          "exported": true,
-          "lineCount": 271
-        }
-      ],
+    ".gitignore": {
+      "filePath": ".gitignore",
+      "contentHash": "d4c1ea8af3c554f936abdbf55f4e1624a952e958f73d0fae08ff5eb899a3c0ee",
+      "functions": [],
       "classes": [],
-      "imports": [
-        {
-          "source": "react",
-          "specifiers": [
-            "useEffect",
-            "useState"
-          ]
-        },
-        {
-          "source": "framer-motion",
-          "specifiers": [
-            "motion"
-          ]
-        }
-      ],
-      "exports": [
-        "PassiveIncome100Page"
-      ],
-      "totalLines": 317,
-      "hasStructuralAnalysis": true
+      "imports": [],
+      "exports": [],
+      "totalLines": 8,
+      "hasStructuralAnalysis": false
     },
-    "src/app/api/events/checkout-session/route.ts": {
-      "filePath": "src/app/api/events/checkout-session/route.ts",
-      "contentHash": "5f0f28494accf83367d24a9270b51222401ba770f4c68c2555a118db7cc901a8",
+    "src/lib/google-calendar-invite.ts": {
+      "filePath": "src/lib/google-calendar-invite.ts",
+      "contentHash": "76b651245774c42cbd868282d475eb26940531698cca63f99dfc68b1dc7e634b",
       "functions": [
         {
-          "name": "getBaseUrl",
+          "name": "eventIdFor",
           "params": [
-            "request"
+            "slug"
           ],
+          "exported": false,
+          "lineCount": 6
+        },
+        {
+          "name": "getAuth",
+          "params": [],
           "exported": false,
           "lineCount": 9
         },
         {
-          "name": "POST",
+          "name": "inviteAttendeeToEvent",
           "params": [
-            "request"
+            "event",
+            "attendeeEmail",
+            "attendeeName"
           ],
+          "returnType": "Promise<CalendarInviteResult>",
           "exported": true,
-          "lineCount": 294
+          "lineCount": 41
         }
       ],
       "classes": [],
       "imports": [
         {
-          "source": "@/lib/google-calendar-invite",
+          "source": "googleapis",
           "specifiers": [
-            "inviteAttendeeToEvent"
+            "google"
           ]
         },
         {
+          "source": "./events",
+          "specifiers": [
+            "EventDefinition"
+          ]
+        },
+        {
+          "source": "./calendar",
+          "specifiers": [
+            "buildEventCalendarDescription"
+          ]
+        }
+      ],
+      "exports": [
+        "inviteAttendeeToEvent"
+      ],
+      "totalLines": 81,
+      "hasStructuralAnalysis": true
+    },
+    "src/lib/calendar.ts": {
+      "filePath": "src/lib/calendar.ts",
+      "contentHash": "0e10b063a0e9a9bc88f2d43af733119fd894cbabff7ea00cb916cafdaa7f1e23",
+      "functions": [
+        {
+          "name": "toIcalDate",
+          "params": [
+            "iso"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "escapeIcal",
+          "params": [
+            "s"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "buildGoogleCalendarUrl",
+          "params": [
+            "params"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "buildIcalString",
+          "params": [
+            "params"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 49
+        },
+        {
+          "name": "buildEventCalendarDescription",
+          "params": [
+            "event"
+          ],
+          "exported": true,
+          "lineCount": 14
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "buildGoogleCalendarUrl",
+        "buildIcalString",
+        "buildEventCalendarDescription"
+      ],
+      "totalLines": 95,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/api/events/session-reminders/route.ts": {
+      "filePath": "src/app/api/events/session-reminders/route.ts",
+      "contentHash": "cb1e179345cdf0753ae588fd0b3e656d2e18c48a4c9e6afa026b523c645b5402",
+      "functions": [
+        {
+          "name": "isAuthorized",
+          "params": [
+            "request"
+          ],
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "acquireEventWindowLock",
+          "params": [
+            "lockKey"
+          ],
+          "exported": false,
+          "lineCount": 4
+        },
+        {
+          "name": "GET",
+          "params": [
+            "request"
+          ],
+          "exported": true,
+          "lineCount": 43
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
           "source": "next/server",
           "specifiers": [
-            "NextResponse"
+            "NextResponse",
+            "NextRequest"
+          ]
+        },
+        {
+          "source": "crypto",
+          "specifiers": [
+            "timingSafeEqual"
           ]
         },
         {
           "source": "@/lib/events",
           "specifiers": [
-            "getEventBySlug"
-          ]
-        },
-        {
-          "source": "@/lib/event-confirmation-email",
-          "specifiers": [
-            "sendAiContentCreationSetupEmail",
-            "sendAskAnAiExpertWelcomeEmail",
-            "sendEventConfirmationEmail"
-          ]
-        },
-        {
-          "source": "@/lib/legacy-event-schedule",
-          "specifiers": [
-            "syncLegacyRegistration"
-          ]
-        },
-        {
-          "source": "@/lib/stripe",
-          "specifiers": [
-            "createStripeClient",
-            "getStripePublishableKey"
+            "getEventBySlug",
+            "getLiveEvents"
           ]
         },
         {
           "source": "@/lib/event-registration-db",
           "specifiers": [
-            "saveRegistration"
+            "getConfirmedRegistrationsForEvent"
           ]
         },
         {
-          "source": "@/lib/url-utils",
+          "source": "@/lib/event-confirmation-email",
           "specifiers": [
-            "toOrigin"
+            "sendSessionReminderEmail"
           ]
         },
         {
-          "source": "@/lib/rate-limit",
+          "source": "@/lib/session-reminder",
           "specifiers": [
-            "checkRateLimit",
-            "getClientIp"
+            "buildSessionReminderLockKey",
+            "runSessionReminders"
           ]
         },
         {
-          "source": "@/lib/insight-to-fix",
+          "source": "@/lib/supabase",
           "specifiers": [
-            "trackInsightEvent"
-          ]
-        },
-        {
-          "source": "@/lib/event-checkout",
-          "specifiers": [
-            "buildEventCheckoutSessionParams",
-            "resolveCheckoutMode",
-            "resolveEventCheckoutAmount"
-          ]
-        },
-        {
-          "source": "@/lib/stripe-amount",
-          "specifiers": [
-            "toStripeUnitAmount"
-          ]
-        },
-        {
-          "source": "@/lib/email-validation",
-          "specifiers": [
-            "isValidEmail"
-          ]
-        },
-        {
-          "source": "@/lib/event-status",
-          "specifiers": [
-            "isEventEnded",
-            "isEventRegistrationClosed"
+            "supabase"
           ]
         }
       ],
       "exports": [
         "runtime",
-        "POST"
+        "GET"
       ],
-      "totalLines": 330,
+      "totalLines": 71,
       "hasStructuralAnalysis": true
     },
-    "src/app/api/lead-magnet/route.ts": {
-      "filePath": "src/app/api/lead-magnet/route.ts",
-      "contentHash": "9e57ecb1c349e82ec69478d04be19d205d3ac2bdf1fd63f2e3056f5ac601d8e7",
+    "src/app/api/illy-auth/route.ts": {
+      "filePath": "src/app/api/illy-auth/route.ts",
+      "contentHash": "8d67a6a28ac11f409129588d36ce02f89d2fd3549e739cd9cd4fa5fddf183b3d",
       "functions": [
         {
-          "name": "sendViaResend",
+          "name": "sha256",
           "params": [
-            "email",
-            "source",
-            "idempotencyKey"
+            "value"
           ],
           "exported": false,
-          "lineCount": 381
+          "lineCount": 3
         },
         {
-          "name": "ingestIntoCrm",
+          "name": "matchesPassword",
           "params": [
-            "email",
-            "source"
+            "password",
+            "expected"
           ],
           "exported": false,
-          "lineCount": 16
+          "lineCount": 6
+        },
+        {
+          "name": "grantAccess",
+          "params": [
+            "request",
+            "password"
+          ],
+          "exported": false,
+          "lineCount": 11
         },
         {
           "name": "POST",
@@ -262,120 +307,108 @@
             "request"
           ],
           "exported": true,
-          "lineCount": 74
+          "lineCount": 11
+        },
+        {
+          "name": "GET",
+          "params": [
+            "request"
+          ],
+          "exported": true,
+          "lineCount": 10
         }
       ],
       "classes": [],
       "imports": [
         {
+          "source": "node:crypto",
+          "specifiers": [
+            "createHash",
+            "timingSafeEqual"
+          ]
+        },
+        {
           "source": "next/server",
           "specifiers": [
             "NextResponse"
           ]
-        },
-        {
-          "source": "@supabase/supabase-js",
-          "specifiers": [
-            "createClient"
-          ]
-        },
-        {
-          "source": "@/lib/rate-limit",
-          "specifiers": [
-            "checkRateLimit",
-            "getClientIp"
-          ]
-        },
-        {
-          "source": "@/lib/insight-to-fix",
-          "specifiers": [
-            "trackInsightEvent"
-          ]
-        },
-        {
-          "source": "@/lib/list-unsubscribe",
-          "specifiers": [
-            "buildUnsubscribeHeaders",
-            "buildUnsubscribeUrl"
-          ]
-        },
-        {
-          "source": "@/lib/email-suppressions",
-          "specifiers": [
-            "isSuppressed"
-          ]
-        },
-        {
-          "source": "@/lib/utm",
-          "specifiers": [
-            "withUtm"
-          ]
         }
       ],
       "exports": [
-        "POST"
+        "POST",
+        "GET"
       ],
-      "totalLines": 501,
+      "totalLines": 51,
       "hasStructuralAnalysis": true
     },
-    "src/app/api/stripe/webhook/route.ts": {
-      "filePath": "src/app/api/stripe/webhook/route.ts",
-      "contentHash": "326346cc1330db8db1a61943516d300dd6419f8d4f8c4d384e136df0680c0af9",
+    "src/app/api/jill-auth/route.ts": {
+      "filePath": "src/app/api/jill-auth/route.ts",
+      "contentHash": "7833f6d7582e557c65ca668587f43bd53d6259dcddc2572421fcf423d7f6d94c",
       "functions": [
+        {
+          "name": "sha256",
+          "params": [
+            "value"
+          ],
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "matchesPassword",
+          "params": [
+            "password",
+            "expected"
+          ],
+          "exported": false,
+          "lineCount": 6
+        },
+        {
+          "name": "grantAccess",
+          "params": [
+            "request",
+            "password"
+          ],
+          "exported": false,
+          "lineCount": 11
+        },
         {
           "name": "POST",
           "params": [
             "request"
           ],
           "exported": true,
-          "lineCount": 61
+          "lineCount": 11
+        },
+        {
+          "name": "GET",
+          "params": [
+            "request"
+          ],
+          "exported": true,
+          "lineCount": 10
         }
       ],
       "classes": [],
       "imports": [
         {
+          "source": "node:crypto",
+          "specifiers": [
+            "createHash",
+            "timingSafeEqual"
+          ]
+        },
+        {
           "source": "next/server",
           "specifiers": [
             "NextResponse"
           ]
-        },
-        {
-          "source": "stripe",
-          "specifiers": [
-            "Stripe"
-          ]
-        },
-        {
-          "source": "@/lib/events",
-          "specifiers": [
-            "getEventBySlug"
-          ]
-        },
-        {
-          "source": "@/lib/legacy-event-schedule",
-          "specifiers": [
-            "finalizeLegacyCheckoutSession"
-          ]
-        },
-        {
-          "source": "@/lib/stripe",
-          "specifiers": [
-            "createStripeClient"
-          ]
-        },
-        {
-          "source": "@/lib/insight-to-fix",
-          "specifiers": [
-            "trackInsightEvent"
-          ]
         }
       ],
       "exports": [
-        "runtime",
-        "maxDuration",
-        "POST"
+        "POST",
+        "GET"
       ],
-      "totalLines": 86,
+      "totalLines": 51,
       "hasStructuralAnalysis": true
     },
     "src/app/layout.tsx": {
@@ -429,61 +462,198 @@
       "totalLines": 73,
       "hasStructuralAnalysis": true
     },
-    "src/app/page.tsx": {
-      "filePath": "src/app/page.tsx",
-      "contentHash": "f56e8f1d6a3ea908bbbc2ab1b439ee183c5d9df360e17ee19038b4263c021ad3",
+    "src/app/giveaways/ai-behavior-quiz/page.tsx": {
+      "filePath": "src/app/giveaways/ai-behavior-quiz/page.tsx",
+      "contentHash": "e8edc87fec50b8567c87ff03faaade0fb732a9d623fab2a96e6bb34f07bf3143",
       "functions": [
         {
-          "name": "HomePage",
+          "name": "AiBehaviorQuizPage",
           "params": [],
           "exported": true,
-          "lineCount": 46
+          "lineCount": 105
         }
       ],
       "classes": [],
       "imports": [
         {
-          "source": "@/lib/sessions",
+          "source": "framer-motion",
           "specifiers": [
-            "sessions"
+            "motion"
           ]
         },
         {
-          "source": "@/components/SessionCard",
+          "source": "@/components/giveaways/GiveawayAutoModal",
           "specifiers": [
-            "SessionCard"
-          ]
-        },
-        {
-          "source": "@/components/Reveal",
-          "specifiers": [
-            "Reveal"
-          ]
-        },
-        {
-          "source": "@/components/StaggerList",
-          "specifiers": [
-            "StaggerList",
-            "StaggerItem"
-          ]
-        },
-        {
-          "source": "@/components/TabNav",
-          "specifiers": [
-            "TabNav"
+            "GiveawayAutoModal"
           ]
         }
       ],
       "exports": [
-        "metadata",
-        "HomePage"
+        "AiBehaviorQuizPage"
       ],
-      "totalLines": 58,
+      "totalLines": 120,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/giveaways/ai-levels-quiz/page.tsx": {
+      "filePath": "src/app/giveaways/ai-levels-quiz/page.tsx",
+      "contentHash": "9ebea0abb3aaf6a639218b4abe046bb99daf0380f0123cf084bf8094d5391010",
+      "functions": [
+        {
+          "name": "AiLevelsQuizPage",
+          "params": [],
+          "exported": true,
+          "lineCount": 105
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "framer-motion",
+          "specifiers": [
+            "motion"
+          ]
+        },
+        {
+          "source": "@/components/giveaways/GiveawayAutoModal",
+          "specifiers": [
+            "GiveawayAutoModal"
+          ]
+        }
+      ],
+      "exports": [
+        "AiLevelsQuizPage"
+      ],
+      "totalLines": 120,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/api/events/checkout-session/route.ts": {
+      "filePath": "src/app/api/events/checkout-session/route.ts",
+      "contentHash": "b3d8800e720380318b64351a7e37cece8e04525c25be8cdf82af903a966901dc",
+      "functions": [
+        {
+          "name": "getBaseUrl",
+          "params": [
+            "request"
+          ],
+          "exported": false,
+          "lineCount": 9
+        },
+        {
+          "name": "POST",
+          "params": [
+            "request"
+          ],
+          "exported": true,
+          "lineCount": 319
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/server",
+          "specifiers": [
+            "NextResponse"
+          ]
+        },
+        {
+          "source": "@/lib/events",
+          "specifiers": [
+            "getEventBySlug"
+          ]
+        },
+        {
+          "source": "@/lib/event-confirmation-email",
+          "specifiers": [
+            "sendAiContentCreationSetupEmail",
+            "sendAskAnAiExpertWelcomeEmail",
+            "sendEventConfirmationEmail"
+          ]
+        },
+        {
+          "source": "@/lib/legacy-event-schedule",
+          "specifiers": [
+            "inviteAttendeeBestEffort",
+            "syncLegacyRegistration"
+          ]
+        },
+        {
+          "source": "@/lib/stripe",
+          "specifiers": [
+            "createStripeClient",
+            "getStripePublishableKey"
+          ]
+        },
+        {
+          "source": "@/lib/event-registration-db",
+          "specifiers": [
+            "saveRegistration",
+            "saveRegistrationIntake"
+          ]
+        },
+        {
+          "source": "@/lib/event-intake",
+          "specifiers": [
+            "normalizeWhatsappNumber",
+            "validateIntakeFields"
+          ]
+        },
+        {
+          "source": "@/lib/url-utils",
+          "specifiers": [
+            "toOrigin"
+          ]
+        },
+        {
+          "source": "@/lib/rate-limit",
+          "specifiers": [
+            "checkRateLimit",
+            "getClientIp"
+          ]
+        },
+        {
+          "source": "@/lib/insight-to-fix",
+          "specifiers": [
+            "trackInsightEvent"
+          ]
+        },
+        {
+          "source": "@/lib/event-checkout",
+          "specifiers": [
+            "buildEventCheckoutSessionParams",
+            "resolveCheckoutMode",
+            "resolveEventCheckoutAmount"
+          ]
+        },
+        {
+          "source": "@/lib/stripe-amount",
+          "specifiers": [
+            "toStripeUnitAmount"
+          ]
+        },
+        {
+          "source": "@/lib/email-validation",
+          "specifiers": [
+            "isValidEmail"
+          ]
+        },
+        {
+          "source": "@/lib/event-status",
+          "specifiers": [
+            "isEventEnded",
+            "isEventRegistrationClosed"
+          ]
+        }
+      ],
+      "exports": [
+        "runtime",
+        "POST"
+      ],
+      "totalLines": 355,
       "hasStructuralAnalysis": true
     },
     "src/components/events/EventPageView.tsx": {
       "filePath": "src/components/events/EventPageView.tsx",
-      "contentHash": "d9dc00a1ad38cad4eb3af4f321c4b96165ea2479a4dec9d535465f2da78dbdfc",
+      "contentHash": "1ed5cfb1a6c3cae688eeb5b5b516c36e2c1fa3a32e32e3f5f421646d459a340e",
       "functions": [
         {
           "name": "sectionTitleClass",
@@ -622,7 +792,7 @@
             "{\n  event,\n  promo,\n  publishableKey,\n  initialPromoCode,\n}"
           ],
           "exported": true,
-          "lineCount": 170
+          "lineCount": 174
         }
       ],
       "classes": [],
@@ -664,7 +834,7 @@
           "source": "@/lib/event-status",
           "specifiers": [
             "isEventEnded",
-            "isEventRegistrationClosed"
+            "isRegistrationWindowPassed"
           ]
         },
         {
@@ -713,12 +883,12 @@
       "exports": [
         "EventPageView"
       ],
-      "totalLines": 658,
+      "totalLines": 662,
       "hasStructuralAnalysis": true
     },
     "src/components/events/EventRegistrationSection.tsx": {
       "filePath": "src/components/events/EventRegistrationSection.tsx",
-      "contentHash": "d8ff7789f8c498e0b3b32213ae2129542e89d4e9df92d6e2bb12542db9494627",
+      "contentHash": "d2f77c404623697e97e1daa28739e54fa8a03238bc8733ee1299c34af1f8671e",
       "functions": [
         {
           "name": "useAnimatedNumber",
@@ -736,7 +906,7 @@
             "{\n  event,\n  publishableKey,\n  initialPromoCode,\n  initialPromoAmount,\n  initialPromoMessage,\n}"
           ],
           "exported": true,
-          "lineCount": 602
+          "lineCount": 778
         }
       ],
       "classes": [],
@@ -787,17 +957,394 @@
           "specifiers": [
             "buildEventCheckoutRequestBody"
           ]
+        },
+        {
+          "source": "@/lib/event-intake",
+          "specifiers": [
+            "BUSINESS_CONTEXT_MIN_LENGTH",
+            "hasIntakeErrors",
+            "validateIntakeFields",
+            "IntakeFieldErrors"
+          ]
         }
       ],
       "exports": [
         "EventRegistrationSection"
       ],
-      "totalLines": 687,
+      "totalLines": 876,
+      "hasStructuralAnalysis": true
+    },
+    "src/lib/event-checkout.ts": {
+      "filePath": "src/lib/event-checkout.ts",
+      "contentHash": "29160c220643eb57739cca79411ac9fc92757addd7cc4dcbc2a76e55cf1d4fd7",
+      "functions": [
+        {
+          "name": "resolveCheckoutMode",
+          "params": [
+            "requestedMode",
+            "canUseEmbeddedCheckout"
+          ],
+          "returnType": "EventCheckoutMode",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "resolveEventCheckoutAmount",
+          "params": [
+            "{\n  event,\n  promoCode,\n  rawDonationAmount,\n}"
+          ],
+          "returnType": "{ amount: number; promo: EventPromoCode | null }",
+          "exported": true,
+          "lineCount": 22
+        },
+        {
+          "name": "buildEventCheckoutSessionParams",
+          "params": [
+            "{\n  event,\n  attendeeName,\n  attendeeEmail,\n  amount,\n  promo,\n  baseUrl,\n  mode,\n}"
+          ],
+          "returnType": "Stripe.Checkout.SessionCreateParams",
+          "exported": true,
+          "lineCount": 74
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "stripe",
+          "specifiers": [
+            "Stripe"
+          ]
+        },
+        {
+          "source": "@/lib/events",
+          "specifiers": [
+            "EventDefinition",
+            "EventPromoCode"
+          ]
+        },
+        {
+          "source": "@/lib/events",
+          "specifiers": [
+            "resolvePromoCode"
+          ]
+        },
+        {
+          "source": "@/lib/stripe-amount",
+          "specifiers": [
+            "toStripeUnitAmount"
+          ]
+        },
+        {
+          "source": "@/lib/masterminds-checkout-branding",
+          "specifiers": [
+            "CHECKOUT_BRANDING"
+          ]
+        }
+      ],
+      "exports": [
+        "resolveCheckoutMode",
+        "resolveEventCheckoutAmount",
+        "buildEventCheckoutSessionParams"
+      ],
+      "totalLines": 111,
+      "hasStructuralAnalysis": true
+    },
+    "src/lib/events.tsx": {
+      "filePath": "src/lib/events.tsx",
+      "contentHash": "74268615409bed8999f848e9f058cadb4d04fb862736b02c9028931bad36e989",
+      "functions": [
+        {
+          "name": "getDiscountedPrice",
+          "params": [
+            "fullPrice",
+            "promo"
+          ],
+          "exported": false,
+          "lineCount": 6
+        },
+        {
+          "name": "getEventDiscountedPrice",
+          "params": [
+            "event",
+            "promo"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "resolvePromoCode",
+          "params": [
+            "event",
+            "promoCode"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "formatEventPrice",
+          "params": [
+            "event",
+            "promo"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "getEventBySlug",
+          "params": [
+            "slug"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "getLiveEvents",
+          "params": [],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "getUpcomingLiveEvents",
+          "params": [
+            "now"
+          ],
+          "exported": true,
+          "lineCount": 16
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next",
+          "specifiers": [
+            "Metadata"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "ReactNode"
+          ]
+        }
+      ],
+      "exports": [
+        "getEventDiscountedPrice",
+        "resolvePromoCode",
+        "formatEventPrice",
+        "events",
+        "getEventBySlug",
+        "getLiveEvents",
+        "getUpcomingLiveEvents"
+      ],
+      "totalLines": 1403,
+      "hasStructuralAnalysis": true
+    },
+    "src/lib/supabase.ts": {
+      "filePath": "src/lib/supabase.ts",
+      "contentHash": "43c6b8355ff590e8cf36e054ae780b4ac916074a39878a1a1f6b157fdde8b581",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@supabase/supabase-js",
+          "specifiers": [
+            "createClient"
+          ]
+        }
+      ],
+      "exports": [
+        "supabase"
+      ],
+      "totalLines": 9,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/100-ai/page.tsx": {
+      "filePath": "src/app/100-ai/page.tsx",
+      "contentHash": "d81dae40c8d9e44771d70e8c9831f4bac582e3b9982f87cf4e927ceef86d556f",
+      "functions": [
+        {
+          "name": "getCountdown",
+          "params": [],
+          "returnType": "Countdown",
+          "exported": false,
+          "lineCount": 12
+        },
+        {
+          "name": "PassiveIncome100Page",
+          "params": [],
+          "exported": true,
+          "lineCount": 271
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useEffect",
+            "useState"
+          ]
+        },
+        {
+          "source": "framer-motion",
+          "specifiers": [
+            "motion"
+          ]
+        }
+      ],
+      "exports": [
+        "PassiveIncome100Page"
+      ],
+      "totalLines": 317,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/api/lead-magnet/route.ts": {
+      "filePath": "src/app/api/lead-magnet/route.ts",
+      "contentHash": "fa3425ac056cb93d32bd3fa3621cc4e3f78f0579edda434c4b4e49f1f2e30f12",
+      "functions": [
+        {
+          "name": "sendViaResend",
+          "params": [
+            "email",
+            "source",
+            "idempotencyKey"
+          ],
+          "exported": false,
+          "lineCount": 494
+        },
+        {
+          "name": "ingestIntoCrm",
+          "params": [
+            "email",
+            "source"
+          ],
+          "exported": false,
+          "lineCount": 16
+        },
+        {
+          "name": "POST",
+          "params": [
+            "request"
+          ],
+          "exported": true,
+          "lineCount": 126
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/server",
+          "specifiers": [
+            "NextResponse"
+          ]
+        },
+        {
+          "source": "@supabase/supabase-js",
+          "specifiers": [
+            "createClient"
+          ]
+        },
+        {
+          "source": "@/lib/rate-limit",
+          "specifiers": [
+            "checkRateLimit",
+            "getClientIp"
+          ]
+        },
+        {
+          "source": "@/lib/insight-to-fix",
+          "specifiers": [
+            "trackInsightEvent"
+          ]
+        },
+        {
+          "source": "@/lib/list-unsubscribe",
+          "specifiers": [
+            "buildUnsubscribeHeaders",
+            "buildUnsubscribeUrl"
+          ]
+        },
+        {
+          "source": "@/lib/email-suppressions",
+          "specifiers": [
+            "isSuppressed"
+          ]
+        },
+        {
+          "source": "@/lib/lead-magnets",
+          "specifiers": [
+            "isDeliverableLeadMagnetSource",
+            "UnknownLeadMagnetSourceError"
+          ]
+        },
+        {
+          "source": "@/lib/utm",
+          "specifiers": [
+            "withUtm"
+          ]
+        }
+      ],
+      "exports": [
+        "POST"
+      ],
+      "totalLines": 669,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/page.tsx": {
+      "filePath": "src/app/page.tsx",
+      "contentHash": "3b5cd006a4004b30a3ab09c5b6551eaebfc2492d3802b45eedd2531d11caa581",
+      "functions": [
+        {
+          "name": "HomePage",
+          "params": [],
+          "exported": true,
+          "lineCount": 46
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/lib/sessions",
+          "specifiers": [
+            "sessions"
+          ]
+        },
+        {
+          "source": "@/components/SessionCard",
+          "specifiers": [
+            "SessionCard"
+          ]
+        },
+        {
+          "source": "@/components/Reveal",
+          "specifiers": [
+            "Reveal"
+          ]
+        },
+        {
+          "source": "@/components/StaggerList",
+          "specifiers": [
+            "StaggerList",
+            "StaggerItem"
+          ]
+        },
+        {
+          "source": "@/components/TabNav",
+          "specifiers": [
+            "TabNav"
+          ]
+        }
+      ],
+      "exports": [
+        "metadata",
+        "HomePage"
+      ],
+      "totalLines": 58,
       "hasStructuralAnalysis": true
     },
     "src/lib/abandoned-checkout-followups.ts": {
       "filePath": "src/lib/abandoned-checkout-followups.ts",
-      "contentHash": "acbc03576ab1ca95b8742b5c409296c8f963384c3ab836c179785580bb80b7f3",
+      "contentHash": "6dc597fe7d32f5c7b473a52765bb1a28d459fff1d82be000c33529eafce6d971",
       "functions": [
         {
           "name": "getSupabase",
@@ -1349,565 +1896,6 @@
       "totalLines": 1088,
       "hasStructuralAnalysis": true
     },
-    "src/lib/calendar.ts": {
-      "filePath": "src/lib/calendar.ts",
-      "contentHash": "0e10b063a0e9a9bc88f2d43af733119fd894cbabff7ea00cb916cafdaa7f1e23",
-      "functions": [
-        {
-          "name": "toIcalDate",
-          "params": [
-            "iso"
-          ],
-          "returnType": "string",
-          "exported": false,
-          "lineCount": 3
-        },
-        {
-          "name": "escapeIcal",
-          "params": [
-            "s"
-          ],
-          "returnType": "string",
-          "exported": false,
-          "lineCount": 3
-        },
-        {
-          "name": "buildGoogleCalendarUrl",
-          "params": [
-            "params"
-          ],
-          "returnType": "string",
-          "exported": true,
-          "lineCount": 17
-        },
-        {
-          "name": "buildIcalString",
-          "params": [
-            "params"
-          ],
-          "returnType": "string",
-          "exported": true,
-          "lineCount": 49
-        },
-        {
-          "name": "buildEventCalendarDescription",
-          "params": [
-            "event"
-          ],
-          "exported": true,
-          "lineCount": 14
-        }
-      ],
-      "classes": [],
-      "imports": [],
-      "exports": [
-        "buildGoogleCalendarUrl",
-        "buildIcalString",
-        "buildEventCalendarDescription"
-      ],
-      "totalLines": 95,
-      "hasStructuralAnalysis": true
-    },
-    "src/lib/event-checkout.ts": {
-      "filePath": "src/lib/event-checkout.ts",
-      "contentHash": "bf12eebdd779c3194e2d5cdf1dee4fc4b5c888d8e12d598176c3e8735fb513b0",
-      "functions": [
-        {
-          "name": "resolveCheckoutMode",
-          "params": [
-            "requestedMode",
-            "canUseEmbeddedCheckout"
-          ],
-          "returnType": "EventCheckoutMode",
-          "exported": true,
-          "lineCount": 4
-        },
-        {
-          "name": "resolveEventCheckoutAmount",
-          "params": [
-            "{\n  event,\n  promoCode,\n  rawDonationAmount,\n}"
-          ],
-          "returnType": "{ amount: number; promo: EventPromoCode | null }",
-          "exported": true,
-          "lineCount": 22
-        },
-        {
-          "name": "buildEventCheckoutSessionParams",
-          "params": [
-            "{\n  event,\n  attendeeName,\n  attendeeEmail,\n  amount,\n  promo,\n  baseUrl,\n  mode,\n}"
-          ],
-          "returnType": "Stripe.Checkout.SessionCreateParams",
-          "exported": true,
-          "lineCount": 66
-        }
-      ],
-      "classes": [],
-      "imports": [
-        {
-          "source": "stripe",
-          "specifiers": [
-            "Stripe"
-          ]
-        },
-        {
-          "source": "@/lib/events",
-          "specifiers": [
-            "EventDefinition",
-            "EventPromoCode"
-          ]
-        },
-        {
-          "source": "@/lib/events",
-          "specifiers": [
-            "resolvePromoCode"
-          ]
-        },
-        {
-          "source": "@/lib/stripe-amount",
-          "specifiers": [
-            "toStripeUnitAmount"
-          ]
-        }
-      ],
-      "exports": [
-        "resolveCheckoutMode",
-        "resolveEventCheckoutAmount",
-        "buildEventCheckoutSessionParams"
-      ],
-      "totalLines": 102,
-      "hasStructuralAnalysis": true
-    },
-    "src/lib/event-confirmation-email.ts": {
-      "filePath": "src/lib/event-confirmation-email.ts",
-      "contentHash": "216038ef5a7ca991cd560e2d59e63ddcdd7d1500f5161d608950d3642e79aaab",
-      "functions": [
-        {
-          "name": "getSiteUrl",
-          "params": [],
-          "exported": false,
-          "lineCount": 3
-        },
-        {
-          "name": "getFirstName",
-          "params": [
-            "name"
-          ],
-          "exported": false,
-          "lineCount": 3
-        },
-        {
-          "name": "formatLeadHours",
-          "params": [
-            "leadHours"
-          ],
-          "exported": false,
-          "lineCount": 4
-        },
-        {
-          "name": "buildAiContentCreationSetupEmailHtml",
-          "params": [
-            "attendeeName"
-          ],
-          "exported": false,
-          "lineCount": 78
-        },
-        {
-          "name": "buildAskAnAiExpertWelcomeEmailHtml",
-          "params": [
-            "event",
-            "attendeeName",
-            "attendeeEmail"
-          ],
-          "exported": true,
-          "lineCount": 61
-        },
-        {
-          "name": "buildSessionReminderEmailHtml",
-          "params": [
-            "event",
-            "attendeeName",
-            "windowLabel"
-          ],
-          "exported": false,
-          "lineCount": 43
-        },
-        {
-          "name": "buildConfirmationEmailHtml",
-          "params": [
-            "event",
-            "attendeeName",
-            "cancelToken",
-            "now"
-          ],
-          "exported": false,
-          "lineCount": 179
-        },
-        {
-          "name": "buildLocationReminderEmailHtml",
-          "params": [
-            "event",
-            "attendeeName"
-          ],
-          "exported": false,
-          "lineCount": 83
-        },
-        {
-          "name": "sendResendEmail",
-          "params": [
-            "input"
-          ],
-          "exported": false,
-          "lineCount": 42
-        },
-        {
-          "name": "buildConfirmationIdempotencyKey",
-          "params": [
-            "slug",
-            "email"
-          ],
-          "returnType": "string",
-          "exported": true,
-          "lineCount": 3
-        },
-        {
-          "name": "buildWaitlistJoinIdempotencyKey",
-          "params": [
-            "slug",
-            "email"
-          ],
-          "returnType": "string",
-          "exported": true,
-          "lineCount": 3
-        },
-        {
-          "name": "buildAiContentCreationSetupIdempotencyKey",
-          "params": [
-            "email"
-          ],
-          "returnType": "string",
-          "exported": true,
-          "lineCount": 3
-        },
-        {
-          "name": "buildAskAnAiExpertWelcomeIdempotencyKey",
-          "params": [
-            "email"
-          ],
-          "returnType": "string",
-          "exported": true,
-          "lineCount": 3
-        },
-        {
-          "name": "sendEventConfirmationEmail",
-          "params": [
-            "input"
-          ],
-          "exported": true,
-          "lineCount": 52
-        },
-        {
-          "name": "sendAiContentCreationSetupEmail",
-          "params": [
-            "input"
-          ],
-          "exported": true,
-          "lineCount": 11
-        },
-        {
-          "name": "sendAskAnAiExpertWelcomeEmail",
-          "params": [
-            "input"
-          ],
-          "exported": true,
-          "lineCount": 44
-        },
-        {
-          "name": "sendEventLocationReminderEmail",
-          "params": [
-            "input"
-          ],
-          "exported": true,
-          "lineCount": 47
-        },
-        {
-          "name": "sendSessionReminderEmail",
-          "params": [
-            "input"
-          ],
-          "exported": true,
-          "lineCount": 25
-        },
-        {
-          "name": "buildWaitlistConfirmationHtml",
-          "params": [
-            "event",
-            "name",
-            "removeToken"
-          ],
-          "exported": false,
-          "lineCount": 38
-        },
-        {
-          "name": "buildWaitlistSpotNotificationHtml",
-          "params": [
-            "event",
-            "name",
-            "removeToken",
-            "variant"
-          ],
-          "exported": false,
-          "lineCount": 56
-        },
-        {
-          "name": "sendWaitlistConfirmationEmail",
-          "params": [
-            "input"
-          ],
-          "exported": true,
-          "lineCount": 16
-        },
-        {
-          "name": "sendWaitlistSpotNotificationEmail",
-          "params": [
-            "input"
-          ],
-          "exported": true,
-          "lineCount": 27
-        }
-      ],
-      "classes": [],
-      "imports": [
-        {
-          "source": "@/lib/events",
-          "specifiers": [
-            "EventDefinition"
-          ]
-        },
-        {
-          "source": "./location-reminder",
-          "specifiers": [
-            "buildLocationReminderIdempotencyKey",
-            "hasLocationRevealWindowClosed"
-          ]
-        },
-        {
-          "source": "./session-reminder",
-          "specifiers": [
-            "buildSessionReminderIdempotencyKey",
-            "SessionReminderWindowLabel"
-          ]
-        },
-        {
-          "source": "./calendar",
-          "specifiers": [
-            "buildGoogleCalendarUrl",
-            "buildIcalString"
-          ]
-        },
-        {
-          "source": "./list-unsubscribe",
-          "specifiers": [
-            "buildUnsubscribeHeaders",
-            "buildUnsubscribeUrl"
-          ]
-        },
-        {
-          "source": "./email-suppressions",
-          "specifiers": [
-            "isSuppressed"
-          ]
-        },
-        {
-          "source": "./utm",
-          "specifiers": [
-            "withUtm"
-          ]
-        }
-      ],
-      "exports": [
-        "buildAskAnAiExpertWelcomeEmailHtml",
-        "buildConfirmationIdempotencyKey",
-        "buildWaitlistJoinIdempotencyKey",
-        "buildAiContentCreationSetupIdempotencyKey",
-        "buildAskAnAiExpertWelcomeIdempotencyKey",
-        "sendEventConfirmationEmail",
-        "sendAiContentCreationSetupEmail",
-        "sendAskAnAiExpertWelcomeEmail",
-        "sendEventLocationReminderEmail",
-        "sendSessionReminderEmail",
-        "sendWaitlistConfirmationEmail",
-        "sendWaitlistSpotNotificationEmail"
-      ],
-      "totalLines": 865,
-      "hasStructuralAnalysis": true
-    },
-    "src/lib/events.tsx": {
-      "filePath": "src/lib/events.tsx",
-      "contentHash": "240b1305040a293b0754bd6338fa68907ac3fdc50f8e50b887b1aeeb7a4af7b5",
-      "functions": [
-        {
-          "name": "getDiscountedPrice",
-          "params": [
-            "fullPrice",
-            "promo"
-          ],
-          "exported": false,
-          "lineCount": 6
-        },
-        {
-          "name": "getEventDiscountedPrice",
-          "params": [
-            "event",
-            "promo"
-          ],
-          "exported": true,
-          "lineCount": 3
-        },
-        {
-          "name": "resolvePromoCode",
-          "params": [
-            "event",
-            "promoCode"
-          ],
-          "exported": true,
-          "lineCount": 5
-        },
-        {
-          "name": "formatEventPrice",
-          "params": [
-            "event",
-            "promo"
-          ],
-          "exported": true,
-          "lineCount": 5
-        },
-        {
-          "name": "getEventBySlug",
-          "params": [
-            "slug"
-          ],
-          "exported": true,
-          "lineCount": 3
-        },
-        {
-          "name": "getLiveEvents",
-          "params": [],
-          "exported": true,
-          "lineCount": 3
-        }
-      ],
-      "classes": [],
-      "imports": [
-        {
-          "source": "next",
-          "specifiers": [
-            "Metadata"
-          ]
-        },
-        {
-          "source": "react",
-          "specifiers": [
-            "ReactNode"
-          ]
-        }
-      ],
-      "exports": [
-        "getEventDiscountedPrice",
-        "resolvePromoCode",
-        "formatEventPrice",
-        "events",
-        "getEventBySlug",
-        "getLiveEvents"
-      ],
-      "totalLines": 1196,
-      "hasStructuralAnalysis": true
-    },
-    "src/lib/stripe.ts": {
-      "filePath": "src/lib/stripe.ts",
-      "contentHash": "c8a9a0f6bb34e80ed852f80542357f2c976a5b734f594b485fcaaf765eb1a263",
-      "functions": [
-        {
-          "name": "getStripeSecretKey",
-          "params": [],
-          "exported": true,
-          "lineCount": 3
-        },
-        {
-          "name": "getStripePublishableKey",
-          "params": [],
-          "exported": true,
-          "lineCount": 3
-        },
-        {
-          "name": "createStripeClient",
-          "params": [],
-          "exported": true,
-          "lineCount": 8
-        }
-      ],
-      "classes": [],
-      "imports": [
-        {
-          "source": "stripe",
-          "specifiers": [
-            "Stripe"
-          ]
-        }
-      ],
-      "exports": [
-        "getStripeSecretKey",
-        "getStripePublishableKey",
-        "createStripeClient"
-      ],
-      "totalLines": 19,
-      "hasStructuralAnalysis": true
-    },
-    "src/lib/supabase.ts": {
-      "filePath": "src/lib/supabase.ts",
-      "contentHash": "43c6b8355ff590e8cf36e054ae780b4ac916074a39878a1a1f6b157fdde8b581",
-      "functions": [],
-      "classes": [],
-      "imports": [
-        {
-          "source": "@supabase/supabase-js",
-          "specifiers": [
-            "createClient"
-          ]
-        }
-      ],
-      "exports": [
-        "supabase"
-      ],
-      "totalLines": 9,
-      "hasStructuralAnalysis": true
-    },
-    "supabase/migrations/001_event_registrations.sql": {
-      "filePath": "supabase/migrations/001_event_registrations.sql",
-      "contentHash": "d16e1159bd0eb9ae7a34db635787ada080b97182731a3fd366021cea5059978d",
-      "functions": [],
-      "classes": [],
-      "imports": [],
-      "exports": [],
-      "totalLines": 36,
-      "hasStructuralAnalysis": true
-    },
-    "tailwind.config.ts": {
-      "filePath": "tailwind.config.ts",
-      "contentHash": "0598fa0fae9291b2b0b4183d9dd5344f055a88aa8c9f58e69ade471ad42fbda5",
-      "functions": [],
-      "classes": [],
-      "imports": [
-        {
-          "source": "tailwindcss",
-          "specifiers": [
-            "Config"
-          ]
-        }
-      ],
-      "exports": [],
-      "totalLines": 56,
-      "hasStructuralAnalysis": true
-    },
     "tests/email-content.test.ts": {
       "filePath": "tests/email-content.test.ts",
       "contentHash": "b8b4d7a9c80e13abf5ad5e273fefb5954e056a803a33c723287a165f49d4f9fe",
@@ -2007,26 +1995,6 @@
       ],
       "exports": [],
       "totalLines": 259,
-      "hasStructuralAnalysis": true
-    },
-    "tsconfig.json": {
-      "filePath": "tsconfig.json",
-      "contentHash": "55134881a23efd2a1f9266d2d0752731ff9c40d0e867136cd8863ea679560a09",
-      "functions": [],
-      "classes": [],
-      "imports": [],
-      "exports": [],
-      "totalLines": 42,
-      "hasStructuralAnalysis": true
-    },
-    "vercel.json": {
-      "filePath": "vercel.json",
-      "contentHash": "7eb65ef586f8be9d47fd557b4813d81105d024f0f744073eb3a81d6d6931cd52",
-      "functions": [],
-      "classes": [],
-      "imports": [],
-      "exports": [],
-      "totalLines": 48,
       "hasStructuralAnalysis": true
     }
   }
