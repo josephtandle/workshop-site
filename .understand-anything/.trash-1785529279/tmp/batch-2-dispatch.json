@@ -1,0 +1,57 @@
+{
+  "batchIndex": 2,
+  "files": [
+    {
+      "path": "src/app/api/stripe/webhook/route.ts",
+      "language": "typescript",
+      "sizeLines": 85,
+      "fileCategory": "code",
+      "summary": "Stripe webhook handler"
+    },
+    {
+      "path": "src/lib/calendar.ts",
+      "language": "typescript",
+      "sizeLines": 94,
+      "fileCategory": "code",
+      "summary": "Google Calendar integration utilities"
+    },
+    {
+      "path": "src/lib/event-confirmation-email.ts",
+      "language": "typescript",
+      "sizeLines": 787,
+      "fileCategory": "code",
+      "summary": "Event confirmation email template and logic"
+    },
+    {
+      "path": "src/lib/stripe.ts",
+      "language": "typescript",
+      "sizeLines": 18,
+      "fileCategory": "code",
+      "summary": "Stripe client initialization"
+    }
+  ],
+  "batchImportData": {
+    "src/app/api/stripe/webhook/route.ts": [
+      "src/lib/stripe.ts",
+      "src/lib/event-confirmation-email.ts"
+    ],
+    "src/lib/calendar.ts": [],
+    "src/lib/event-confirmation-email.ts": [
+      "src/lib/calendar.ts"
+    ],
+    "src/lib/stripe.ts": []
+  },
+  "neighborMap": {
+    "src/lib/stripe.ts": [
+      {
+        "path": "src/app/api/events/checkout-session/route.ts",
+        "batchIndex": 1,
+        "symbols": [
+          "runtime",
+          "POST"
+        ]
+      }
+    ]
+  },
+  "fileSummary": "src/app/api/stripe/webhook/route.ts (85 lines, typescript, code)\nsrc/lib/calendar.ts (94 lines, typescript, code)\nsrc/lib/event-confirmation-email.ts (787 lines, typescript, code)\n... and 1 more"
+}

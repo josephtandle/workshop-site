@@ -1,0 +1,3 @@
+Loaded 27 files (20 code).
+Info: compute-batches: merged 12 small batches (13 files) into 1 misc batches — singletons and orphans consolidated
+Wrote 4 batches (sizes: max=13, min=4) to /Users/myos/.myos/workspace/projects/mastermind/workshop-site/.understand-anything/intermediate/batches.json

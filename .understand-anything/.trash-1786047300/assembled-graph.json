@@ -1,26 +1,4 @@
 {
-  "version": "1.0.0",
-  "project": {
-    "name": "masterminds-workshop",
-    "languages": [
-      "json",
-      "markdown",
-      "other",
-      "typescript",
-      "tsx",
-      "sql"
-    ],
-    "frameworks": [
-      "Next.js 16",
-      "React 19",
-      "TypeScript",
-      "Tailwind CSS",
-      "Supabase"
-    ],
-    "description": "Next.js workshop and event management platform for Mastermind cohort-based courses, featuring Stripe integration, event registration, giveaway landing pages, and real-time checkout/payment automation.",
-    "analyzedAt": "2026-08-06T20:14:33.679Z",
-    "gitCommitHash": "dd90981e9fda6eb2be0703a78fe8075e484a1732"
-  },
   "nodes": [
     {
       "id": "function:__nofilepath__:POST",
@@ -31,11 +9,7 @@
       "kind": "function",
       "line": 36,
       "description": "POST handler for event checkout session creation",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:route-ts:runtime",
@@ -53,8 +27,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "function:__nofilepath__:getBaseUrl",
@@ -64,11 +37,7 @@
       "scope": "private",
       "kind": "function",
       "line": 26,
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:EventPageView-tsx:EventPageView",
@@ -90,8 +59,7 @@
         488,
         657
       ],
-      "complexity": "moderate",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:sectionTitleClass",
@@ -101,11 +69,7 @@
       "scope": "private",
       "kind": "function",
       "line": 15,
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:sectionEyebrowClass",
@@ -115,11 +79,7 @@
       "scope": "private",
       "kind": "function",
       "line": 22,
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:EventPageView-tsx:SectionShell",
@@ -140,8 +100,7 @@
         26,
         59
       ],
-      "complexity": "moderate",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:EventPageView-tsx:RichParagraphs",
@@ -162,8 +121,7 @@
         61,
         69
       ],
-      "complexity": "moderate",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:EventPageView-tsx:StorySection",
@@ -184,8 +142,7 @@
         71,
         81
       ],
-      "complexity": "moderate",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:EventPageView-tsx:ChecklistSection",
@@ -206,8 +163,7 @@
         83,
         103
       ],
-      "complexity": "moderate",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:EventPageView-tsx:CardsSection",
@@ -228,8 +184,7 @@
         105,
         143
       ],
-      "complexity": "moderate",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:EventPageView-tsx:SplitSection",
@@ -250,8 +205,7 @@
         145,
         165
       ],
-      "complexity": "moderate",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:EventPageView-tsx:ImageSection",
@@ -272,8 +226,7 @@
         167,
         194
       ],
-      "complexity": "moderate",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:EventPageView-tsx:HtmlSection",
@@ -294,8 +247,7 @@
         196,
         221
       ],
-      "complexity": "moderate",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:EventPageView-tsx:QuoteCardSection",
@@ -316,8 +268,7 @@
         223,
         312
       ],
-      "complexity": "moderate",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:EventPageView-tsx:HostsSection",
@@ -338,8 +289,7 @@
         314,
         357
       ],
-      "complexity": "moderate",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:EventPageView-tsx:EventVideoSection",
@@ -360,8 +310,7 @@
         359,
         383
       ],
-      "complexity": "moderate",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:EventPageView-tsx:EndedButton",
@@ -382,8 +331,7 @@
         385,
         391
       ],
-      "complexity": "moderate",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:EventPageView-tsx:CtaSection",
@@ -404,8 +352,7 @@
         393,
         459
       ],
-      "complexity": "moderate",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:renderSection",
@@ -415,11 +362,7 @@
       "scope": "private",
       "kind": "function",
       "line": 461,
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:EventRegistrationSection-tsx:EventRegistrationData",
@@ -437,8 +380,7 @@
         47,
         68
       ],
-      "complexity": "moderate",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:EventRegistrationSection-tsx:EventRegistrationSection",
@@ -461,8 +403,7 @@
         85,
         686
       ],
-      "complexity": "moderate",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:EventRegistrationSection-tsx:useAnimatedNumber",
@@ -482,8 +423,7 @@
         5,
         39
       ],
-      "complexity": "moderate",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:event-checkout-ts:EventCheckoutMode",
@@ -501,8 +441,7 @@
         6,
         6
       ],
-      "complexity": "moderate",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:resolveCheckoutMode",
@@ -513,11 +452,7 @@
       "kind": "function",
       "line": 9,
       "description": "Determines appropriate checkout mode based on capability",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:resolveEventCheckoutAmount",
@@ -528,11 +463,7 @@
       "kind": "function",
       "line": 14,
       "description": "Calculates final checkout amount based on event pricing, promo codes, and donation",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:buildEventCheckoutSessionParams",
@@ -543,11 +474,7 @@
       "kind": "function",
       "line": 37,
       "description": "Builds Stripe checkout session parameters with event metadata",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:events-tsx:EventHost",
@@ -565,8 +492,7 @@
         4,
         12
       ],
-      "complexity": "moderate",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:events-tsx:EventPromoCode",
@@ -584,8 +510,7 @@
         14,
         20
       ],
-      "complexity": "moderate",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:events-tsx:EventSection",
@@ -603,8 +528,7 @@
         22,
         114
       ],
-      "complexity": "moderate",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:events-tsx:EventDefinition",
@@ -622,8 +546,7 @@
         116,
         199
       ],
-      "complexity": "moderate",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:getDiscountedPrice",
@@ -633,11 +556,7 @@
       "scope": "private",
       "kind": "function",
       "line": 213,
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:getEventDiscountedPrice",
@@ -648,11 +567,7 @@
       "kind": "function",
       "line": 220,
       "description": "Gets final price for an event after applying optional promo code",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:resolvePromoCode",
@@ -663,11 +578,7 @@
       "kind": "function",
       "line": 224,
       "description": "Looks up promo code from event's promo list (case-insensitive)",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:formatEventPrice",
@@ -678,11 +589,7 @@
       "kind": "function",
       "line": 230,
       "description": "Formats event price with currency symbol",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:events-tsx:events",
@@ -701,8 +608,7 @@
         224,
         1176
       ],
-      "complexity": "moderate",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:getEventBySlug",
@@ -713,11 +619,7 @@
       "kind": "function",
       "line": 1375,
       "description": "Looks up event by URL slug",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:getLiveEvents",
@@ -728,11 +630,7 @@
       "kind": "function",
       "line": 1379,
       "description": "Returns all live (non-draft) events",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "module:src/app/api/stripe/webhook/route.ts",
@@ -748,8 +646,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "module:src/lib/calendar.ts",
@@ -767,8 +664,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "function:__nofilepath__:buildGoogleCalendarUrl",
@@ -788,8 +684,7 @@
       "complexity": "simple",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "function:__nofilepath__:buildIcalString",
@@ -809,8 +704,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "function:__nofilepath__:buildEventCalendarDescription",
@@ -830,8 +724,7 @@
       "complexity": "simple",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "function:__nofilepath__:toIcalDate",
@@ -851,8 +744,7 @@
       "complexity": "simple",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "function:__nofilepath__:escapeIcal",
@@ -872,8 +764,7 @@
       "complexity": "simple",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "module:src/lib/email-suppressions.ts",
@@ -891,8 +782,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "function:__nofilepath__:isSuppressed",
@@ -913,8 +803,7 @@
       "safety": "fail-closed",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "function:__nofilepath__:recordSuppression",
@@ -934,8 +823,7 @@
       "complexity": "simple",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "file:src/lib/email-suppressions.ts:SuppressionSource",
@@ -948,8 +836,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "module:tests/event-location-reminder.test.ts",
@@ -963,8 +850,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "file:tests/event-location-reminder.test.ts:test:idempotency-key",
@@ -976,8 +862,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "file:tests/event-location-reminder.test.ts:test:reminder-due-window",
@@ -989,8 +874,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "file:tests/event-location-reminder.test.ts:test:window-closed",
@@ -1002,8 +886,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "file:tests/event-location-reminder.test.ts:test:late-signup-address",
@@ -1015,8 +898,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "file:tests/event-location-reminder.test.ts:test:dedupe-attendees",
@@ -1028,8 +910,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "file:tests/event-location-reminder.test.ts:test:idempotency-key-resend",
@@ -1041,8 +922,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "file:CLAUDE.md",
@@ -1060,8 +940,7 @@
       "tags": [
         "untagged"
       ],
-      "name": "file:CLAUDE.md",
-      "summary": "No summary available"
+      "name": "file:CLAUDE.md"
     },
     {
       "id": "file:package.json",
@@ -1079,8 +958,7 @@
       "tags": [
         "untagged"
       ],
-      "name": "file:package.json",
-      "summary": "No summary available"
+      "name": "file:package.json"
     },
     {
       "id": "file:supabase/migrations/010_email_suppressions.sql",
@@ -1098,8 +976,7 @@
       "tags": [
         "untagged"
       ],
-      "name": "file:supabase/migrations/010_email_suppressions.sql",
-      "summary": "No summary available"
+      "name": "file:supabase/migrations/010_email_suppressions.sql"
     },
     {
       "id": "file:vercel.json",
@@ -1117,8 +994,7 @@
       "tags": [
         "untagged"
       ],
-      "name": "file:vercel.json",
-      "summary": "No summary available"
+      "name": "file:vercel.json"
     },
     {
       "id": "file:symbol:gitnexus",
@@ -1137,8 +1013,7 @@
       "tags": [
         "untagged"
       ],
-      "name": "file:symbol:gitnexus",
-      "summary": "No summary available"
+      "name": "file:symbol:gitnexus"
     },
     {
       "id": "file:symbol:npm-script:dev",
@@ -1153,8 +1028,7 @@
       "tags": [
         "untagged"
       ],
-      "name": "file:symbol:npm-script:dev",
-      "summary": "No summary available"
+      "name": "file:symbol:npm-script:dev"
     },
     {
       "id": "file:symbol:npm-script:build",
@@ -1169,8 +1043,7 @@
       "tags": [
         "untagged"
       ],
-      "name": "file:symbol:npm-script:build",
-      "summary": "No summary available"
+      "name": "file:symbol:npm-script:build"
     },
     {
       "id": "file:symbol:npm-script:abandoned-checkout-run",
@@ -1186,8 +1059,7 @@
       "tags": [
         "untagged"
       ],
-      "name": "file:symbol:npm-script:abandoned-checkout-run",
-      "summary": "No summary available"
+      "name": "file:symbol:npm-script:abandoned-checkout-run"
     },
     {
       "id": "file:symbol:npm-script:abandoned-checkout-control",
@@ -1203,8 +1075,7 @@
       "tags": [
         "untagged"
       ],
-      "name": "file:symbol:npm-script:abandoned-checkout-control",
-      "summary": "No summary available"
+      "name": "file:symbol:npm-script:abandoned-checkout-control"
     },
     {
       "id": "file:dependency:next",
@@ -1220,8 +1091,7 @@
       "tags": [
         "untagged"
       ],
-      "name": "file:dependency:next",
-      "summary": "No summary available"
+      "name": "file:dependency:next"
     },
     {
       "id": "file:dependency:react",
@@ -1237,8 +1107,7 @@
       "tags": [
         "untagged"
       ],
-      "name": "file:dependency:react",
-      "summary": "No summary available"
+      "name": "file:dependency:react"
     },
     {
       "id": "file:dependency:stripe",
@@ -1254,8 +1123,7 @@
       "tags": [
         "untagged"
       ],
-      "name": "file:dependency:stripe",
-      "summary": "No summary available"
+      "name": "file:dependency:stripe"
     },
     {
       "id": "file:dependency:stripe-react",
@@ -1271,8 +1139,7 @@
       "tags": [
         "untagged"
       ],
-      "name": "file:dependency:stripe-react",
-      "summary": "No summary available"
+      "name": "file:dependency:stripe-react"
     },
     {
       "id": "file:dependency:supabase-js",
@@ -1288,8 +1155,7 @@
       "tags": [
         "untagged"
       ],
-      "name": "file:dependency:supabase-js",
-      "summary": "No summary available"
+      "name": "file:dependency:supabase-js"
     },
     {
       "id": "file:dependency:resend",
@@ -1305,8 +1171,7 @@
       "tags": [
         "untagged"
       ],
-      "name": "file:dependency:resend",
-      "summary": "No summary available"
+      "name": "file:dependency:resend"
     },
     {
       "id": "file:dependency:framer-motion",
@@ -1322,8 +1187,7 @@
       "tags": [
         "untagged"
       ],
-      "name": "file:dependency:framer-motion",
-      "summary": "No summary available"
+      "name": "file:dependency:framer-motion"
     },
     {
       "id": "file:dependency:three",
@@ -1339,8 +1203,7 @@
       "tags": [
         "untagged"
       ],
-      "name": "file:dependency:three",
-      "summary": "No summary available"
+      "name": "file:dependency:three"
     },
     {
       "id": "file:dependency:vanta",
@@ -1356,8 +1219,7 @@
       "tags": [
         "untagged"
       ],
-      "name": "file:dependency:vanta",
-      "summary": "No summary available"
+      "name": "file:dependency:vanta"
     },
     {
       "id": "file:dependency:googleapis",
@@ -1373,8 +1235,7 @@
       "tags": [
         "untagged"
       ],
-      "name": "file:dependency:googleapis",
-      "summary": "No summary available"
+      "name": "file:dependency:googleapis"
     },
     {
       "id": "file:database-table:email_suppressions",
@@ -1417,8 +1278,7 @@
       "tags": [
         "untagged"
       ],
-      "name": "file:database-table:email_suppressions",
-      "summary": "No summary available"
+      "name": "file:database-table:email_suppressions"
     },
     {
       "id": "file:database-index:email_suppressions_created_at_idx",
@@ -1433,8 +1293,7 @@
       "tags": [
         "untagged"
       ],
-      "name": "file:database-index:email_suppressions_created_at_idx",
-      "summary": "No summary available"
+      "name": "file:database-index:email_suppressions_created_at_idx"
     },
     {
       "id": "file:api-route:unsubscribe",
@@ -1450,8 +1309,7 @@
       "tags": [
         "untagged"
       ],
-      "name": "file:api-route:unsubscribe",
-      "summary": "No summary available"
+      "name": "file:api-route:unsubscribe"
     },
     {
       "id": "function:isSuppressed",
@@ -1466,8 +1324,7 @@
       "tags": [
         "untagged"
       ],
-      "name": "function:isSuppressed",
-      "summary": "No summary available"
+      "name": "function:isSuppressed"
     },
     {
       "id": "file:vercel-rewrite:decks",
@@ -1483,8 +1340,7 @@
       "tags": [
         "untagged"
       ],
-      "name": "file:vercel-rewrite:decks",
-      "summary": "No summary available"
+      "name": "file:vercel-rewrite:decks"
     },
     {
       "id": "file:vercel-rewrite:passiveincome",
@@ -1500,8 +1356,7 @@
       "tags": [
         "untagged"
       ],
-      "name": "file:vercel-rewrite:passiveincome",
-      "summary": "No summary available"
+      "name": "file:vercel-rewrite:passiveincome"
     },
     {
       "id": "file:vercel-cron:abandoned-checkout-followups",
@@ -1517,8 +1372,7 @@
       "tags": [
         "untagged"
       ],
-      "name": "file:vercel-cron:abandoned-checkout-followups",
-      "summary": "No summary available"
+      "name": "file:vercel-cron:abandoned-checkout-followups"
     },
     {
       "id": "file:vercel-cron:abandoned-checkout-followups-t12h",
@@ -1534,8 +1388,7 @@
       "tags": [
         "untagged"
       ],
-      "name": "file:vercel-cron:abandoned-checkout-followups-t12h",
-      "summary": "No summary available"
+      "name": "file:vercel-cron:abandoned-checkout-followups-t12h"
     },
     {
       "id": "file:vercel-cron:location-reminders",
@@ -1551,8 +1404,7 @@
       "tags": [
         "untagged"
       ],
-      "name": "file:vercel-cron:location-reminders",
-      "summary": "No summary available"
+      "name": "file:vercel-cron:location-reminders"
     },
     {
       "id": "file:vercel-cron:session-reminders",
@@ -1568,8 +1420,7 @@
       "tags": [
         "untagged"
       ],
-      "name": "file:vercel-cron:session-reminders",
-      "summary": "No summary available"
+      "name": "file:vercel-cron:session-reminders"
     },
     {
       "id": "file:vercel-cron:reconcile-registrations",
@@ -1585,8 +1436,7 @@
       "tags": [
         "untagged"
       ],
-      "name": "file:vercel-cron:reconcile-registrations",
-      "summary": "No summary available"
+      "name": "file:vercel-cron:reconcile-registrations"
     },
     {
       "id": "config:claude-settings",
@@ -1597,8 +1447,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "file:doc:giveaway-process",
@@ -1609,8 +1458,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "file:route:lead-magnet",
@@ -1632,8 +1480,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "function:__nofilepath__:sendViaResend",
@@ -1643,11 +1490,7 @@
       "line": 12,
       "kind": "async function",
       "description": "Sends lead magnet delivery email via Resend API with templated HTML",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:const:GIVEAWAY_SOURCE_MAP",
@@ -1658,8 +1501,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "function:__nofilepath__:ingestIntoCrm",
@@ -1669,11 +1511,7 @@
       "line": 470,
       "kind": "async function",
       "description": "Ingests captured email leads into Mission Control CRM",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:route:lead-magnet-claudemd",
@@ -1694,8 +1532,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "file:const:FILE_CONTENT",
@@ -1706,8 +1543,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "file:route:lead-magnet-passive-income-100",
@@ -1727,8 +1563,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "file:const:LIVE_MODE",
@@ -1739,8 +1574,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "file:route:subscribe",
@@ -1760,8 +1594,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "file:type:SubscribeDeps",
@@ -1773,8 +1606,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "file:route:unsubscribe",
@@ -1793,8 +1625,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "function:__nofilepath__:htmlPage",
@@ -1806,8 +1637,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "function:__nofilepath__:recordUnsubscribeFromToken",
@@ -1819,8 +1649,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "file:const:GUIDE_HTML-illy",
@@ -1831,8 +1660,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "file:page:guide-brain",
@@ -1852,8 +1680,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "file:component:Session4Guide",
@@ -1874,8 +1701,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "file:component:Checkbox-session4",
@@ -1886,8 +1712,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "file:component:Session7Guide",
@@ -1907,8 +1732,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "file:lib:abandoned-checkout-followups",
@@ -1937,8 +1761,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "file:type:CheckoutFollowupAutomationKey",
@@ -1949,8 +1772,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "file:type:AbandonedCheckoutMode",
@@ -1961,8 +1783,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "file:type:AbandonedCheckoutCandidate",
@@ -1973,8 +1794,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "file:const:CHECKOUT_FOLLOWUP_DEFINITIONS",
@@ -1985,8 +1805,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "function:__nofilepath__:buildAbandonedCheckoutEmailHtml",
@@ -1996,11 +1815,7 @@
       "line": 232,
       "kind": "function",
       "description": "Builds HTML email template for day-1 abandoned checkout followup",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:buildAbandonedCheckoutT12hEmailHtml",
@@ -2010,11 +1825,7 @@
       "line": 286,
       "kind": "function",
       "description": "Builds HTML email template for 12h abandoned checkout followup",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:shouldIncludeFinanceLine",
@@ -2026,8 +1837,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "file:test:utm-tests",
@@ -2042,8 +1852,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "file:test:utm-owned-domains",
@@ -2054,8 +1863,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "file:test:utm-external-domains",
@@ -2066,8 +1874,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "file:test:utm-idempotency",
@@ -2078,8 +1885,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "file:test:utm-token-guard",
@@ -2090,8 +1896,7 @@
       "complexity": "moderate",
       "tags": [
         "untagged"
-      ],
-      "summary": "No summary available"
+      ]
     },
     {
       "id": "file:.claude/settings.json",
@@ -2961,11 +2766,7 @@
       "kind": "function",
       "line": 488,
       "description": "React component for displaying event page with registration",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:SectionShell",
@@ -2975,11 +2776,7 @@
       "scope": "private",
       "kind": "component",
       "line": 26,
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:RichParagraphs",
@@ -2989,11 +2786,7 @@
       "scope": "private",
       "kind": "component",
       "line": 61,
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:StorySection",
@@ -3003,11 +2796,7 @@
       "scope": "private",
       "kind": "component",
       "line": 71,
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:ChecklistSection",
@@ -3017,11 +2806,7 @@
       "scope": "private",
       "kind": "component",
       "line": 83,
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:CardsSection",
@@ -3031,11 +2816,7 @@
       "scope": "private",
       "kind": "component",
       "line": 105,
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:SplitSection",
@@ -3045,11 +2826,7 @@
       "scope": "private",
       "kind": "component",
       "line": 145,
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:ImageSection",
@@ -3059,11 +2836,7 @@
       "scope": "private",
       "kind": "component",
       "line": 167,
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:HtmlSection",
@@ -3073,11 +2846,7 @@
       "scope": "private",
       "kind": "component",
       "line": 196,
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:QuoteCardSection",
@@ -3087,11 +2856,7 @@
       "scope": "private",
       "kind": "component",
       "line": 223,
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:HostsSection",
@@ -3101,11 +2866,7 @@
       "scope": "private",
       "kind": "component",
       "line": 314,
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:EventVideoSection",
@@ -3115,11 +2876,7 @@
       "scope": "private",
       "kind": "component",
       "line": 359,
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:EndedButton",
@@ -3129,11 +2886,7 @@
       "scope": "private",
       "kind": "component",
       "line": 385,
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:CtaSection",
@@ -3143,11 +2896,7 @@
       "scope": "private",
       "kind": "component",
       "line": 393,
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:EventRegistrationSection",
@@ -3158,11 +2907,7 @@
       "kind": "component",
       "line": 97,
       "description": "React component for event registration form with checkout",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:useAnimatedNumber",
@@ -3173,11 +2918,7 @@
       "kind": "hook",
       "line": 5,
       "description": "Custom hook for animated number transitions",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:EventRegistrationData-type",
@@ -3187,11 +2928,7 @@
       "scope": "export",
       "kind": "type",
       "line": 53,
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:EventCheckoutMode-type",
@@ -3202,11 +2939,7 @@
       "kind": "type",
       "line": 7,
       "description": "Union type for checkout modes (embedded | hosted)",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:EventHost-type",
@@ -3216,11 +2949,7 @@
       "scope": "export",
       "kind": "type",
       "line": 4,
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:EventPromoCode-type",
@@ -3230,11 +2959,7 @@
       "scope": "export",
       "kind": "type",
       "line": 14,
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:EventSection-type",
@@ -3245,11 +2970,7 @@
       "kind": "type",
       "line": 22,
       "description": "Discriminated union of section types for event content",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:EventDefinition-type",
@@ -3260,11 +2981,7 @@
       "kind": "type",
       "line": 116,
       "description": "Complete event configuration including pricing, sections, hosts",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:events-constant",
@@ -3275,11 +2992,7 @@
       "kind": "data",
       "line": 236,
       "description": "Array of 6 live event definitions",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:getUpcomingLiveEvents",
@@ -3290,11 +3003,7 @@
       "kind": "function",
       "line": 1383,
       "description": "Returns upcoming live events sorted by start time",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:stripe_webhook_route_POST",
@@ -3309,9 +3018,7 @@
         "stripe",
         "handler"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:stripe_webhook_route_runtime",
@@ -3324,9 +3031,7 @@
         "constant",
         "next-config"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:stripe_webhook_route_maxDuration",
@@ -3339,9 +3044,7 @@
         "constant",
         "next-config"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:calendar_toIcalDate",
@@ -3354,9 +3057,7 @@
         "ical",
         "date-formatting"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:calendar_escapeIcal",
@@ -3369,9 +3070,7 @@
         "ical",
         "escaping"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:calendar_buildGoogleCalendarUrl",
@@ -3384,9 +3083,7 @@
         "calendar",
         "url-builder"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:calendar_buildIcalString",
@@ -3399,9 +3096,7 @@
         "calendar",
         "ical-generator"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:calendar_buildEventCalendarDescription",
@@ -3414,9 +3109,7 @@
         "calendar",
         "description"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:email_RESEND_API_KEY",
@@ -3429,9 +3122,7 @@
         "api-key",
         "env"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:email_getSiteUrl",
@@ -3443,9 +3134,7 @@
         "utility",
         "config"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:email_getFirstName",
@@ -3457,9 +3146,7 @@
         "utility",
         "text-parsing"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:email_formatLeadHours",
@@ -3471,9 +3158,7 @@
         "utility",
         "text-formatting"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:email_buildAiContentCreationSetupEmailHtml",
@@ -3485,9 +3170,7 @@
         "html-builder",
         "email-template"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:email_buildAskAnAiExpertWelcomeEmailHtml",
@@ -3500,9 +3183,7 @@
         "html-builder",
         "email-template"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:email_buildSessionReminderEmailHtml",
@@ -3515,9 +3196,7 @@
         "email-template",
         "reminder"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:email_resolveHostContact",
@@ -3529,9 +3208,7 @@
         "email-helper",
         "contact-resolver"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:email_buildConfirmationEmailHtml",
@@ -3544,9 +3221,7 @@
         "html-builder",
         "email-template"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:email_buildLocationReminderEmailHtml",
@@ -3559,9 +3234,7 @@
         "email-template",
         "location"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:email_sendResendEmail",
@@ -3574,9 +3247,7 @@
         "resend",
         "email-sender"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:email_buildConfirmationIdempotencyKey",
@@ -3588,9 +3259,7 @@
         "export",
         "idempotency-key"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:email_buildWaitlistJoinIdempotencyKey",
@@ -3602,9 +3271,7 @@
         "export",
         "idempotency-key"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:email_buildAiContentCreationSetupIdempotencyKey",
@@ -3616,9 +3283,7 @@
         "export",
         "idempotency-key"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:email_buildAskAnAiExpertWelcomeIdempotencyKey",
@@ -3630,9 +3295,7 @@
         "export",
         "idempotency-key"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:email_sendEventConfirmationEmail",
@@ -3644,9 +3307,7 @@
         "export",
         "email-sender"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:email_sendAiContentCreationSetupEmail",
@@ -3658,9 +3319,7 @@
         "export",
         "email-sender"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:email_sendAskAnAiExpertWelcomeEmail",
@@ -3673,9 +3332,7 @@
         "email-sender",
         "marketing"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:email_sendEventLocationReminderEmail",
@@ -3687,9 +3344,7 @@
         "export",
         "email-sender"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:email_sendSessionReminderEmail",
@@ -3701,9 +3356,7 @@
         "export",
         "email-sender"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:email_buildWaitlistConfirmationHtml",
@@ -3716,9 +3369,7 @@
         "email-template",
         "waitlist"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:email_buildWaitlistSpotNotificationHtml",
@@ -3731,9 +3382,7 @@
         "email-template",
         "waitlist"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:email_sendWaitlistConfirmationEmail",
@@ -3746,9 +3395,7 @@
         "email-sender",
         "waitlist"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:email_sendWaitlistSpotNotificationEmail",
@@ -3761,9 +3408,7 @@
         "email-sender",
         "waitlist"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:email_ResendAttachment",
@@ -3774,9 +3419,7 @@
       "tags": [
         "type-definition"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:stripe_getStripeSecretKey",
@@ -3789,9 +3432,7 @@
         "config",
         "stripe"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:stripe_getStripePublishableKey",
@@ -3804,9 +3445,7 @@
         "config",
         "stripe"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:stripe_createStripeClient",
@@ -3819,9 +3458,7 @@
         "factory",
         "stripe"
       ],
-      "complexity": "moderate",
-      "type": "concept",
-      "summary": "No summary available"
+      "complexity": "moderate"
     },
     {
       "id": "file:next.config.ts:nextConfig",
@@ -3831,11 +3468,7 @@
       "line": 4,
       "kind": "const",
       "description": "Next.js configuration object with redirects and rewrites",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:src/app/100-ai/page.tsx:LAUNCH_DATE",
@@ -3845,11 +3478,7 @@
       "line": 8,
       "kind": "const",
       "description": "Launch window date for the 100 AI agents product (2026-06-19)",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:src/app/100-ai/page.tsx:BENEFITS",
@@ -3859,11 +3488,7 @@
       "line": 10,
       "kind": "const",
       "description": "Array of 5 key benefits for the 100 AI agents catalog",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:src/app/100-ai/page.tsx:SECTIONS",
@@ -3873,11 +3498,7 @@
       "line": 18,
       "kind": "const",
       "description": "Array of 10 section categories for AI agent income lanes",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:src/app/100-ai/page.tsx:Countdown",
@@ -3887,11 +3508,7 @@
       "line": 31,
       "kind": "type",
       "description": "Type definition for countdown timer state",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:getCountdown",
@@ -3901,11 +3518,7 @@
       "line": 33,
       "kind": "function",
       "description": "Calculates remaining time until LAUNCH_DATE",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:src/app/100-ai/page.tsx:Form",
@@ -3915,11 +3528,7 @@
       "line": 80,
       "kind": "function",
       "description": "Nested form component for email signup with loading state",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:src/app/100-ai/page.tsx:PassiveIncome100Page",
@@ -3929,11 +3538,7 @@
       "line": 46,
       "kind": "function",
       "description": "Page component for 100 AI agents product launch landing page",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:src/app/api/lead-magnet/route.ts:EMAIL_RE",
@@ -3943,11 +3548,7 @@
       "line": 487,
       "kind": "const",
       "description": "Email validation regex pattern for lead magnet signup",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:src/app/api/lead-magnet/route.ts:GIVEAWAY_SOURCE_MAP",
@@ -3957,11 +3558,7 @@
       "line": 455,
       "kind": "const",
       "description": "Maps giveaway page slugs to CRM source keys for lead ingestion",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:src/app/api/lead-magnet/route.ts:POST",
@@ -3971,11 +3568,7 @@
       "line": 489,
       "kind": "async function",
       "description": "API route handler for lead magnet email capture and delivery",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:src/app/layout.tsx:RootLayout",
@@ -3985,11 +3578,7 @@
       "line": 49,
       "kind": "function",
       "description": "Root layout component for workshop site with metadata and global scripts",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:src/app/page.tsx:HomePage",
@@ -3999,11 +3588,7 @@
       "line": 12,
       "kind": "function",
       "description": "Home page component displaying sorted session guides",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:src/lib/abandoned-checkout-followups.ts:ABANDONED_CHECKOUT_DAY1_AUTOMATION_KEY",
@@ -4013,11 +3598,7 @@
       "line": 13,
       "kind": "const",
       "description": "Automation key for day-1 abandoned checkout followup",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:src/lib/abandoned-checkout-followups.ts:ABANDONED_CHECKOUT_T12H_AUTOMATION_KEY",
@@ -4027,11 +3608,7 @@
       "line": 14,
       "kind": "const",
       "description": "Automation key for 12-hours-before abandoned checkout followup",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:src/lib/abandoned-checkout-followups.ts:AbandonedCheckoutMode",
@@ -4041,11 +3618,7 @@
       "line": 21,
       "kind": "type",
       "description": "Automation control mode: 'off' | 'test' | 'live'",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:src/lib/abandoned-checkout-followups.ts:AbandonedCheckoutCandidate",
@@ -4055,11 +3628,7 @@
       "line": 28,
       "kind": "type",
       "description": "Data structure for an abandoned checkout followup candidate",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:src/lib/abandoned-checkout-followups.ts:AbandonedCheckoutAutomationControl",
@@ -4069,11 +3638,7 @@
       "line": 23,
       "kind": "type",
       "description": "Configuration for abandoned checkout automation behavior",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:getCheckoutFollowupDefinition",
@@ -4083,11 +3648,7 @@
       "line": 151,
       "kind": "function",
       "description": "Returns the configuration definition for a checkout followup automation",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:buildAbandonedCheckoutIdempotencyKey",
@@ -4097,11 +3658,7 @@
       "line": 175,
       "kind": "function",
       "description": "Builds idempotency key for day-1 abandoned checkout emails",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:buildAbandonedCheckoutT12hIdempotencyKey",
@@ -4111,11 +3668,7 @@
       "line": 179,
       "kind": "function",
       "description": "Builds idempotency key for 12h abandoned checkout emails",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:buildAbandonedCheckoutSubject",
@@ -4125,11 +3678,7 @@
       "line": 199,
       "kind": "function",
       "description": "Builds email subject for day-1 abandoned checkout followup",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:buildAbandonedCheckoutT12hSubject",
@@ -4139,11 +3688,7 @@
       "line": 203,
       "kind": "function",
       "description": "Builds email subject for 12h abandoned checkout followup",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:buildAbandonedCheckoutTestEmailHtml",
@@ -4153,11 +3698,7 @@
       "line": 314,
       "kind": "function",
       "description": "Builds test email wrapper with metadata for abandoned checkout preview",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:sendResendEmail",
@@ -4167,11 +3708,7 @@
       "line": 340,
       "kind": "async function",
       "description": "Sends email via Resend API with idempotency and headers",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:sendAbandonedCheckoutFollowupEmail",
@@ -4181,11 +3718,7 @@
       "line": 375,
       "kind": "async function",
       "description": "Sends day-1 abandoned checkout followup email to candidate",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:sendAbandonedCheckoutT12hEmail",
@@ -4195,11 +3728,7 @@
       "line": 385,
       "kind": "async function",
       "description": "Sends 12h abandoned checkout followup email to candidate",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:sendAbandonedCheckoutFollowupTestEmail",
@@ -4209,11 +3738,7 @@
       "line": 395,
       "kind": "async function",
       "description": "Sends test email to preview abandoned checkout automation",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:getAbandonedCheckoutAutomationControl",
@@ -4223,11 +3748,7 @@
       "line": 426,
       "kind": "async function",
       "description": "Retrieves automation control settings from Supabase",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:isEventInLeadWindow",
@@ -4237,11 +3758,7 @@
       "line": 466,
       "kind": "function",
       "description": "Determines if event is within lead time window for automation",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:getAbandonedCheckoutEligibleEvents",
@@ -4251,11 +3768,7 @@
       "line": 483,
       "kind": "async function",
       "description": "Gets list of events eligible for abandoned checkout followup",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:isObviousTestCheckoutAttempt",
@@ -4265,11 +3778,7 @@
       "line": 511,
       "kind": "function",
       "description": "Detects likely test checkout attempts by email/name patterns",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:src/lib/supabase.ts:supabase",
@@ -4279,11 +3788,7 @@
       "line": 5,
       "kind": "const",
       "description": "Supabase client instance for database access",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:tailwind.config.ts:config",
@@ -4293,11 +3798,7 @@
       "line": 3,
       "kind": "const",
       "description": "Tailwind CSS configuration with theme extensions and animations",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:withMockFetch",
@@ -4307,11 +3808,7 @@
       "line": 16,
       "kind": "function",
       "description": "Test helper that mocks fetch for email sending tests",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:tests/hardening.test.ts:EMAIL_RE",
@@ -4321,11 +3818,7 @@
       "line": 12,
       "kind": "const",
       "description": "Email validation regex used in tests",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "file:tests/hardening.test.ts:SESSION_ID_RE",
@@ -4335,11 +3828,7 @@
       "line": 39,
       "kind": "const",
       "description": "Stripe session ID validation regex (cs_*)",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     },
     {
       "id": "function:__nofilepath__:isDonationAmountValid",
@@ -4349,11 +3838,7 @@
       "line": 70,
       "kind": "function",
       "description": "Validates donation amounts are within acceptable bounds",
-      "complexity": "moderate",
-      "summary": "No summary available",
-      "tags": [
-        "untagged"
-      ]
+      "complexity": "moderate"
     }
   ],
   "edges": [
@@ -5946,351 +5431,6 @@
       "confidence": 1,
       "line": 9,
       "direction": "forward"
-    }
-  ],
-  "layers": [
-    {
-      "id": "layer:api-routes",
-      "name": "API Routes & Endpoints",
-      "description": "All Next.js API routes that handle HTTP requests. Includes event registration, checkout, webhooks, authentication, email subscriptions, and third-party integrations (Stripe, Supabase). These are the entry points for backend operations.",
-      "nodeIds": [
-        "file:src/app/api/events/[slug]/calendar/route.ts",
-        "file:src/app/api/events/abandoned-checkout-followups/route.ts",
-        "file:src/app/api/events/abandoned-checkout-followups-t12h/route.ts",
-        "file:src/app/api/events/cancel/route.ts",
-        "file:src/app/api/events/checkout-session/route.ts",
-        "file:src/app/api/events/finalize-registration/route.ts",
-        "file:src/app/api/events/followups/route.ts",
-        "file:src/app/api/events/location-reminders/route.ts",
-        "file:src/app/api/events/reconcile-registrations/route.ts",
-        "file:src/app/api/events/session-reminders/route.ts",
-        "file:src/app/api/events/validate-promo/route.ts",
-        "file:src/app/api/events/waitlist/join/route.ts",
-        "file:src/app/api/events/waitlist/notify/route.ts",
-        "file:src/app/api/events/waitlist/remove/route.ts",
-        "file:src/app/api/stripe/webhook/route.ts",
-        "file:src/app/api/subscribe/route.ts",
-        "file:src/app/api/unsubscribe/route.ts",
-        "file:src/app/api/lead-magnet/route.ts",
-        "file:src/app/api/lead-magnets/claudemd/route.ts",
-        "file:src/app/api/lead-magnets/passive-income-100/route.ts",
-        "file:src/app/api/illy-auth/route.ts",
-        "file:src/app/api/jill-auth/route.ts",
-        "file:src/app/api/ai-agent-income/checkout/route.ts",
-        "file:src/app/api/ai-agent-income/webhook/route.ts"
-      ]
-    },
-    {
-      "id": "layer:business-logic",
-      "name": "Business Logic & Services",
-      "description": "Server-side libraries and utilities that implement core business logic. Handles event management, email delivery, Stripe integration, database operations, registration workflows, calendar generation, and third-party service communication. No UI concerns.",
-      "nodeIds": [
-        "file:src/lib/events.tsx",
-        "file:src/lib/event-registration-db.ts",
-        "file:src/lib/event-registration-flow.ts",
-        "file:src/lib/event-checkout.ts",
-        "file:src/lib/event-confirmation-email.ts",
-        "file:src/lib/event-followup.ts",
-        "file:src/lib/event-intake.ts",
-        "file:src/lib/event-templates.ts",
-        "file:src/lib/event-tokens.ts",
-        "file:src/lib/event-status.ts",
-        "file:src/lib/abandoned-checkout-followups.ts",
-        "file:src/lib/session-reminder.ts",
-        "file:src/lib/location-reminder.ts",
-        "file:src/lib/lead-magnets.ts",
-        "file:src/lib/giveaways.ts",
-        "file:src/lib/stripe.ts",
-        "file:src/lib/stripe-amount.ts",
-        "file:src/lib/supabase.ts",
-        "file:src/lib/resend-sender.ts",
-        "file:src/lib/email-validation.ts",
-        "file:src/lib/email-suppressions.ts",
-        "file:src/lib/subscribe.ts",
-        "file:src/lib/list-unsubscribe.ts",
-        "file:src/lib/calendar.ts",
-        "file:src/lib/google-calendar-invite.ts",
-        "file:src/lib/legacy-event-schedule.ts",
-        "file:src/lib/sessions.ts",
-        "file:src/lib/masterminds-checkout-branding.ts",
-        "file:src/lib/rate-limit.ts",
-        "file:src/lib/locks.ts",
-        "file:src/lib/utm.ts",
-        "file:src/lib/claude-links.ts",
-        "file:src/lib/waitlist-notify-windows.ts",
-        "file:src/lib/url-utils.ts",
-        "file:src/lib/insight-to-fix.ts"
-      ]
-    },
-    {
-      "id": "layer:ui-components",
-      "name": "UI Components & Reusable Elements",
-      "description": "React components that render the user interface. Organized by domain (events, giveaways) and includes shared layout components, forms, modals, and interactive elements. These components consume business logic via props and event handlers.",
-      "nodeIds": [
-        "file:src/components/SiteChrome.tsx",
-        "file:src/components/SiteHeader.tsx",
-        "file:src/components/SiteFooter.tsx",
-        "file:src/components/TianaSessionFooter.tsx",
-        "file:src/components/VantaHero.tsx",
-        "file:src/components/PageParticles.tsx",
-        "file:src/components/StaggerList.tsx",
-        "file:src/components/Reveal.tsx",
-        "file:src/components/CodeBlock.tsx",
-        "file:src/components/ScreenshotCard.tsx",
-        "file:src/components/SessionCard.tsx",
-        "file:src/components/StepCard.tsx",
-        "file:src/components/TabNav.tsx",
-        "file:src/components/ParticipantCarousel.tsx",
-        "file:src/components/PrepChecklistItem.tsx",
-        "file:src/components/ProTip.tsx",
-        "file:src/components/StickyVideoPlayer.tsx",
-        "file:src/components/sections/MastermindReactionsSection.tsx",
-        "file:src/components/events/EventPageView.tsx",
-        "file:src/components/events/EventRegistrationSection.tsx",
-        "file:src/components/events/EventMediaVideo.tsx",
-        "file:src/components/events/HeroVideo.tsx",
-        "file:src/components/events/ScrollToRegisterButton.tsx",
-        "file:src/components/events/WaitlistJoinForm.tsx",
-        "file:src/components/events/AskAnAiExpertQuoteStrip.tsx",
-        "file:src/components/events/ask-an-ai-expert-quotes.ts",
-        "file:src/components/giveaways/GiveawayAutoModal.tsx",
-        "file:src/components/giveaways/GiveawayEmailModal.tsx",
-        "file:src/components/giveaways/GiveawayCopyEmailGate.tsx"
-      ]
-    },
-    {
-      "id": "layer:pages-views",
-      "name": "Pages & Views",
-      "description": "Next.js page components and layouts that compose UI components and fetch data. Organized by feature (events, giveaways, sessions, lead magnets, resource vault). Acts as the glue between routing, data fetching, and component rendering.",
-      "nodeIds": [
-        "file:src/app/page.tsx",
-        "file:src/app/layout.tsx",
-        "file:src/app/robots.ts",
-        "file:src/app/sitemap.ts",
-        "file:src/app/events/page.tsx",
-        "file:src/app/events/[slug]/page.tsx",
-        "file:src/app/events/[slug]/setup/page.tsx",
-        "file:src/app/bonus/auto-lead-magnet/page.tsx",
-        "file:src/app/bonus-workshops/page.tsx",
-        "file:src/app/ai-agent-income/page.tsx",
-        "file:src/app/ai-agent-income/AiAgentIncomeCheckoutForm.tsx",
-        "file:src/app/ai-os-architecture/page.tsx",
-        "file:src/app/100-ai/page.tsx",
-        "file:src/app/lead-magnets/layout.tsx",
-        "file:src/app/lead-magnets/ultimate-claudemd/layout.tsx",
-        "file:src/app/lead-magnets/ultimate-claudemd/page.tsx",
-        "file:src/app/resource-vault/page.tsx",
-        "file:src/app/resource-vault/automated-ghost-computer-use/page.tsx",
-        "file:src/app/resource-vault/connecting-to-google-sheets/page.tsx",
-        "file:src/app/resource-vault/connecting-to-xero/page.tsx",
-        "file:src/app/resource-vault/eric-investor-pipeline/page.tsx",
-        "file:src/app/resource-vault/how-to-stand-out-in-the-age-of-ai/page.tsx",
-        "file:src/app/resource-vault/reza-website-control/page.tsx",
-        "file:src/app/resource-vault/wordpress-api/page.tsx",
-        "file:src/app/giveaways/layout.tsx",
-        "file:src/app/giveaways/page.tsx",
-        "file:src/app/giveaways/lead-magnet/layout.tsx",
-        "file:src/app/giveaways/lead-magnet/page.tsx",
-        "file:src/app/giveaways/agent-infrastructure/layout.tsx",
-        "file:src/app/giveaways/agent-infrastructure/page.tsx",
-        "file:src/app/giveaways/ai-behavior-quiz/page.tsx",
-        "file:src/app/giveaways/ai-levels-quiz/page.tsx",
-        "file:src/app/giveaways/all-sorted-overview/layout.tsx",
-        "file:src/app/giveaways/all-sorted-overview/page.tsx",
-        "file:src/app/giveaways/anthropic-safety-checklist/layout.tsx",
-        "file:src/app/giveaways/anthropic-safety-checklist/page.tsx",
-        "file:src/app/giveaways/benchmark/layout.tsx",
-        "file:src/app/giveaways/benchmark/page.tsx",
-        "file:src/app/giveaways/claude-md/layout.tsx",
-        "file:src/app/giveaways/claude-md/page.tsx",
-        "file:src/app/giveaways/client-launch-checklist/layout.tsx",
-        "file:src/app/giveaways/client-launch-checklist/page.tsx",
-        "file:src/app/giveaways/client-launch-checklist/LeadMagnetExampleForm.tsx",
-        "file:src/app/giveaways/compare/layout.tsx",
-        "file:src/app/giveaways/compare/page.tsx",
-        "file:src/app/giveaways/cost-stack/layout.tsx",
-        "file:src/app/giveaways/cost-stack/page.tsx",
-        "file:src/app/giveaways/cross-cli-compatibility-routing/layout.tsx",
-        "file:src/app/giveaways/cross-cli-compatibility-routing/page.tsx",
-        "file:src/app/giveaways/cross-cli-compatibility-routing/content.ts",
-        "file:src/app/giveaways/cult-brand-playbook/page.tsx",
-        "file:src/app/giveaways/cult-brand-playbook/GiveawayForm.tsx",
-        "file:src/app/giveaways/fable-worth-it-audit/layout.tsx",
-        "file:src/app/giveaways/fable-worth-it-audit/page.tsx",
-        "file:src/app/giveaways/geometry-dash-fun-build/layout.tsx",
-        "file:src/app/giveaways/geometry-dash-fun-build/page.tsx",
-        "file:src/app/giveaways/guardog/layout.tsx",
-        "file:src/app/giveaways/guardog/page.tsx",
-        "file:src/app/giveaways/hooklab/layout.tsx",
-        "file:src/app/giveaways/hooklab/page.tsx",
-        "file:src/app/giveaways/hooklab/content.ts",
-        "file:src/app/giveaways/human/layout.tsx",
-        "file:src/app/giveaways/human/page.tsx",
-        "file:src/app/giveaways/ig-settings/layout.tsx",
-        "file:src/app/giveaways/ig-settings/page.tsx",
-        "file:src/app/giveaways/intuition-quiz/layout.tsx",
-        "file:src/app/giveaways/intuition-quiz/page.tsx",
-        "file:src/app/giveaways/logo-maker-guide/layout.tsx",
-        "file:src/app/giveaways/logo-maker-guide/page.tsx",
-        "file:src/app/giveaways/maccleaner/layout.tsx",
-        "file:src/app/giveaways/maccleaner/page.tsx",
-        "file:src/app/giveaways/maccleaner/GiveawayForm.tsx",
-        "file:src/app/giveaways/ray-dalio-council/layout.tsx",
-        "file:src/app/giveaways/ray-dalio-council/page.tsx",
-        "file:src/app/giveaways/speak-human/layout.tsx",
-        "file:src/app/giveaways/speak-human/page.tsx",
-        "file:src/app/giveaways/squarespace-escape/page.tsx",
-        "file:src/app/giveaways/viral-hooks/layout.tsx",
-        "file:src/app/giveaways/viral-hooks/page.tsx",
-        "file:src/app/giveaways/web-design-arsenal/layout.tsx",
-        "file:src/app/giveaways/web-design-arsenal/page.tsx",
-        "file:src/app/session/[slug]/page.tsx",
-        "file:src/app/session/[slug]/prep/page.tsx",
-        "file:src/app/session/[slug]/guide/page.tsx",
-        "file:src/app/session/[slug]/guide-brain/page.tsx",
-        "file:src/app/session/[slug]/bonus/page.tsx",
-        "file:src/app/session/1/prep-codex/page.tsx",
-        "file:src/app/session/2/auto-lead-magnet/page.tsx",
-        "file:src/app/session/2/guide-codex/page.tsx",
-        "file:src/app/session/3/custom-domain/page.tsx",
-        "file:src/app/session/3/homework/page.tsx",
-        "file:src/app/session/4/custom-domain/page.tsx",
-        "file:src/app/session/4/homework/page.tsx",
-        "file:src/app/session/4/wrapup/page.tsx",
-        "file:src/app/session/5/prep-hooks/page.tsx",
-        "file:src/app/session/5/hook-writer/page.tsx",
-        "file:src/app/session/5/wrapup/page.tsx",
-        "file:src/app/session/6/prep-hooks/page.tsx",
-        "file:src/app/session/6/hook-writer/page.tsx",
-        "file:src/app/session/7/prep/page.tsx",
-        "file:src/app/session/7/guide/page.tsx",
-        "file:src/app/session/7/descript/page.tsx",
-        "file:src/app/session/8/prep/page.tsx",
-        "file:src/app/session/8/guide/page.tsx",
-        "file:src/app/session/9/guide/page.tsx",
-        "file:src/app/session/10/instagram/page.tsx",
-        "file:src/app/illy/page.tsx",
-        "file:src/app/illy/content.ts",
-        "file:src/app/jill/page.tsx",
-        "file:src/app/jill/content.ts"
-      ]
-    },
-    {
-      "id": "layer:content-data",
-      "name": "Content & Data Files",
-      "description": "Static content and data files that hold session guides, tutorials, course material, and structured data used across pages. These files are imported by pages and components to populate content.",
-      "nodeIds": [
-        "file:src/content/session-1-prep.tsx",
-        "file:src/content/session-1-prep-codex.tsx",
-        "file:src/content/session-1-guide.tsx",
-        "file:src/content/session-1-bonus.tsx",
-        "file:src/content/session-2-prep.tsx",
-        "file:src/content/session-2-guide.tsx",
-        "file:src/content/session-2-guide-codex.tsx",
-        "file:src/content/session-3-prep.tsx",
-        "file:src/content/session-3-guide.tsx",
-        "file:src/content/session-4-prep.tsx",
-        "file:src/content/session-4-guide.tsx",
-        "file:src/content/session-5-prep.tsx",
-        "file:src/content/session-6-prep.tsx",
-        "file:src/content/session-6-guide.tsx",
-        "file:src/content/session-7-prep.tsx",
-        "file:src/content/session-7-guide.tsx",
-        "file:src/content/session-7-descript-guide.tsx",
-        "file:src/content/session-8-prep.tsx",
-        "file:src/content/session-8-guide.tsx",
-        "file:src/content/session-9-guide.tsx",
-        "file:src/content/session-10-instagram-agent.tsx",
-        "file:src/content/tiana-ai-positioning-workshop.tsx"
-      ]
-    },
-    {
-      "id": "layer:config-infrastructure",
-      "name": "Configuration & Build Infrastructure",
-      "description": "Configuration files for Next.js, TypeScript, Tailwind CSS, and deployment. Includes build setup, environment configuration, and infrastructure as code. Controls how the application is built, tested, and deployed.",
-      "nodeIds": [
-        "file:package.json",
-        "file:tsconfig.json",
-        "file:next.config.ts",
-        "file:tailwind.config.ts",
-        "file:vercel.json",
-        "file:.claude/settings.json",
-        "file:next-env.d.ts"
-      ]
-    },
-    {
-      "id": "layer:tests",
-      "name": "Tests & Quality Assurance",
-      "description": "Test files covering business logic, email content, event registration flows, checkout branding, and data integrity. Ensures correctness of core features like event registration, payments, and email delivery.",
-      "nodeIds": [
-        "file:tests/abandoned-checkout-followups.test.ts",
-        "file:tests/calendar.test.ts",
-        "file:tests/checkout-branding.test.ts",
-        "file:tests/claude-referral-link.test.ts",
-        "file:tests/email-content.test.ts",
-        "file:tests/email-idempotency.test.ts",
-        "file:tests/event-checkout.test.ts",
-        "file:tests/event-confirmation-location-privacy.test.ts",
-        "file:tests/event-followup.test.ts",
-        "file:tests/event-intake.test.ts",
-        "file:tests/event-location-reminder.test.ts",
-        "file:tests/event-pricing-and-data.test.ts",
-        "file:tests/event-registration-flow.test.ts",
-        "file:tests/event-tokens.test.ts",
-        "file:tests/giveaway-email-collection.test.ts",
-        "file:tests/giveaway-template-structure.test.ts",
-        "file:tests/hardening.test.ts",
-        "file:tests/list-unsubscribe.test.ts",
-        "file:tests/registration-invite-and-lead-magnet-fail-closed.test.ts",
-        "file:tests/session-reminder.test.ts",
-        "file:tests/utm.test.ts",
-        "file:tests/waitlist-join-validation.test.ts"
-      ]
-    },
-    {
-      "id": "layer:scripts-tooling",
-      "name": "Scripts & Automation Tooling",
-      "description": "Utility scripts for automation and operational tasks. Handles abandoned checkout reminders, batch operations, and administrative functions. Run as background jobs or CLI commands.",
-      "nodeIds": [
-        "file:scripts/send-dinner-tonight-reminder.mjs",
-        "file:scripts/abandoned-checkout-run.ts",
-        "file:scripts/abandoned-checkout-control.mjs",
-        "file:pdf/render-client-launch-checklist.js",
-        "file:pdf/render-cross-cli-compatibility-routing-guide.js"
-      ]
-    },
-    {
-      "id": "layer:documentation",
-      "name": "Documentation & Guides",
-      "description": "Process documentation, backlog, and lessons learned. Includes giveaway management process, backlog items, and recorded learnings from operational experience.",
-      "nodeIds": [
-        "file:docs/giveaways/PROCESS.md",
-        "file:docs/giveaways/BACKLOG.md",
-        "file:docs/giveaways/LESSONS.md",
-        "file:CLAUDE.md"
-      ]
-    }
-  ],
-  "tour": [
-    {
-      "order": 1,
-      "title": "Project Overview & Configuration",
-      "description": "Start by understanding the project structure, dependencies, and configuration. Learn what this Next.js workshop platform is built with and how it's configured.",
-      "nodeIds": [
-        "file:package.json",
-        "file:tsconfig.json",
-        "file:next.config.ts",
-        "file:CLAUDE.md",
-        "file:vercel.json"
-      ]
-    },
-    {
-      "order": 2,
-      "title": "Application Entry Point",
-      "description": "Explore the root layout and home page that serve as the entry points to the application. Understand how the site is structured and how navigation works.",
-      "nodeIds": [
-        "file:src/app/layout.tsx"
-      ]
     }
   ]
 }

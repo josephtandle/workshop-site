@@ -1,0 +1,5345 @@
+{
+  "nodes": [
+    {
+      "id": "function:__nofilepath__:POST",
+      "type": "function",
+      "name": "POST",
+      "parent": "src/app/api/stripe/webhook/route.ts",
+      "isAsync": true,
+      "isDefault": false,
+      "parameters": [
+        {
+          "name": "request",
+          "type": "Request"
+        }
+      ],
+      "returnType": "Promise<NextResponse>",
+      "description": "Next.js API route handler that validates Stripe webhooks, extracts event data, and finalizes checkout sessions",
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:route-ts:runtime",
+      "name": "runtime",
+      "type": "constant",
+      "file": "src/app/api/events/checkout-session/route.ts",
+      "isExported": true,
+      "value": "'nodejs'",
+      "scope": "module",
+      "description": "Next.js runtime configuration for Node.js",
+      "lineRange": [
+        24,
+        24
+      ],
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:__nofilepath__:getBaseUrl",
+      "name": "getBaseUrl",
+      "type": "function",
+      "file": "src/app/api/events/checkout-session/route.ts",
+      "isExported": false,
+      "isAsync": false,
+      "scope": "module",
+      "description": "Helper function to resolve the base URL from environment or request",
+      "tags": [
+        "utility",
+        "url"
+      ],
+      "lineRange": [
+        26,
+        34
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:EventPageView-tsx:EventPageView",
+      "name": "EventPageView",
+      "type": "component",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": true,
+      "isAsync": false,
+      "isClient": false,
+      "scope": "module",
+      "description": "Main event page component that renders event details, sections, and registration area",
+      "tags": [
+        "page",
+        "event",
+        "component",
+        "react"
+      ],
+      "lineRange": [
+        488,
+        657
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:__nofilepath__:sectionTitleClass",
+      "name": "sectionTitleClass",
+      "type": "function",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "scope": "module",
+      "description": "Helper function to return Tailwind classes for section titles",
+      "tags": [
+        "utility",
+        "styles"
+      ],
+      "lineRange": [
+        15,
+        20
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:__nofilepath__:sectionEyebrowClass",
+      "name": "sectionEyebrowClass",
+      "type": "function",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "scope": "module",
+      "description": "Helper function to return Tailwind classes for section eyebrows",
+      "tags": [
+        "utility",
+        "styles"
+      ],
+      "lineRange": [
+        22,
+        24
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:EventPageView-tsx:SectionShell",
+      "name": "SectionShell",
+      "type": "component",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "isClient": false,
+      "scope": "module",
+      "description": "Reusable container component for event page sections with eyebrow, title, and intro",
+      "tags": [
+        "component",
+        "layout",
+        "react"
+      ],
+      "lineRange": [
+        26,
+        59
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:EventPageView-tsx:RichParagraphs",
+      "name": "RichParagraphs",
+      "type": "component",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "isClient": false,
+      "scope": "module",
+      "description": "Component that renders an array of paragraphs with consistent styling",
+      "tags": [
+        "component",
+        "text",
+        "react"
+      ],
+      "lineRange": [
+        61,
+        69
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:EventPageView-tsx:StorySection",
+      "name": "StorySection",
+      "type": "component",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "isClient": false,
+      "scope": "module",
+      "description": "Section component for rendering story-type event sections",
+      "tags": [
+        "component",
+        "section",
+        "react"
+      ],
+      "lineRange": [
+        71,
+        81
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:EventPageView-tsx:ChecklistSection",
+      "name": "ChecklistSection",
+      "type": "component",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "isClient": false,
+      "scope": "module",
+      "description": "Section component for rendering numbered checklist items",
+      "tags": [
+        "component",
+        "section",
+        "react"
+      ],
+      "lineRange": [
+        83,
+        103
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:EventPageView-tsx:CardsSection",
+      "name": "CardsSection",
+      "type": "component",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "isClient": false,
+      "scope": "module",
+      "description": "Section component for rendering card-based content with optional curriculum styling",
+      "tags": [
+        "component",
+        "section",
+        "react"
+      ],
+      "lineRange": [
+        105,
+        143
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:EventPageView-tsx:SplitSection",
+      "name": "SplitSection",
+      "type": "component",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "isClient": false,
+      "scope": "module",
+      "description": "Section component with side-by-side text and image layout",
+      "tags": [
+        "component",
+        "section",
+        "react"
+      ],
+      "lineRange": [
+        145,
+        165
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:EventPageView-tsx:ImageSection",
+      "name": "ImageSection",
+      "type": "component",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "isClient": false,
+      "scope": "module",
+      "description": "Section component for rendering images or videos with optional caption",
+      "tags": [
+        "component",
+        "section",
+        "react"
+      ],
+      "lineRange": [
+        167,
+        194
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:EventPageView-tsx:HtmlSection",
+      "name": "HtmlSection",
+      "type": "component",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "isClient": false,
+      "scope": "module",
+      "description": "Section component for rendering raw HTML with conditional ended event button",
+      "tags": [
+        "component",
+        "section",
+        "react"
+      ],
+      "lineRange": [
+        196,
+        221
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:EventPageView-tsx:QuoteCardSection",
+      "name": "QuoteCardSection",
+      "type": "component",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "isClient": false,
+      "scope": "module",
+      "description": "Section component for rendering testimonial quote cards with image/video and attribution",
+      "tags": [
+        "component",
+        "section",
+        "react"
+      ],
+      "lineRange": [
+        223,
+        312
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:EventPageView-tsx:HostsSection",
+      "name": "HostsSection",
+      "type": "component",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "isClient": false,
+      "scope": "module",
+      "description": "Section component for rendering event host profiles with photos and bios",
+      "tags": [
+        "component",
+        "section",
+        "react"
+      ],
+      "lineRange": [
+        314,
+        357
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:EventPageView-tsx:EventVideoSection",
+      "name": "EventVideoSection",
+      "type": "component",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "isClient": false,
+      "scope": "module",
+      "description": "Section component for embedding YouTube video with caption",
+      "tags": [
+        "component",
+        "section",
+        "react"
+      ],
+      "lineRange": [
+        359,
+        383
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:EventPageView-tsx:EndedButton",
+      "name": "EndedButton",
+      "type": "component",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "isClient": false,
+      "scope": "module",
+      "description": "Component rendering disabled button for ended events",
+      "tags": [
+        "component",
+        "button",
+        "react"
+      ],
+      "lineRange": [
+        385,
+        391
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:EventPageView-tsx:CtaSection",
+      "name": "CtaSection",
+      "type": "component",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "isClient": false,
+      "scope": "module",
+      "description": "Section component for call-to-action with pricing display and promo info",
+      "tags": [
+        "component",
+        "section",
+        "react"
+      ],
+      "lineRange": [
+        393,
+        459
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:__nofilepath__:renderSection",
+      "name": "renderSection",
+      "type": "function",
+      "file": "src/components/events/EventPageView.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "scope": "module",
+      "description": "Router function that renders appropriate section component based on type",
+      "tags": [
+        "utility",
+        "router"
+      ],
+      "lineRange": [
+        461,
+        486
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:EventRegistrationSection-tsx:EventRegistrationData",
+      "name": "EventRegistrationData",
+      "type": "type",
+      "file": "src/components/events/EventRegistrationSection.tsx",
+      "isExported": true,
+      "scope": "module",
+      "description": "Type definition for event registration section data props",
+      "tags": [
+        "type",
+        "interface"
+      ],
+      "lineRange": [
+        47,
+        68
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:EventRegistrationSection-tsx:EventRegistrationSection",
+      "name": "EventRegistrationSection",
+      "type": "component",
+      "file": "src/components/events/EventRegistrationSection.tsx",
+      "isExported": true,
+      "isAsync": false,
+      "isClient": true,
+      "scope": "module",
+      "description": "Client component for event registration form with Stripe checkout integration",
+      "tags": [
+        "component",
+        "form",
+        "checkout",
+        "stripe",
+        "react"
+      ],
+      "lineRange": [
+        85,
+        686
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:EventRegistrationSection-tsx:useAnimatedNumber",
+      "name": "useAnimatedNumber",
+      "type": "hook",
+      "file": "src/components/events/EventRegistrationSection.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "scope": "module",
+      "description": "Custom React hook for animating numeric values with easing",
+      "tags": [
+        "hook",
+        "animation",
+        "react"
+      ],
+      "lineRange": [
+        5,
+        39
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:event-checkout-ts:EventCheckoutMode",
+      "name": "EventCheckoutMode",
+      "type": "type",
+      "file": "src/lib/event-checkout.ts",
+      "isExported": true,
+      "scope": "module",
+      "description": "Type definition for event checkout mode (embedded or hosted)",
+      "tags": [
+        "type",
+        "checkout"
+      ],
+      "lineRange": [
+        6,
+        6
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:__nofilepath__:resolveCheckoutMode",
+      "name": "resolveCheckoutMode",
+      "type": "function",
+      "file": "src/lib/event-checkout.ts",
+      "isExported": true,
+      "isAsync": false,
+      "scope": "module",
+      "description": "Function to determine checkout mode (embedded or hosted) based on capabilities",
+      "tags": [
+        "utility",
+        "checkout"
+      ],
+      "lineRange": [
+        8,
+        11
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:__nofilepath__:resolveEventCheckoutAmount",
+      "name": "resolveEventCheckoutAmount",
+      "type": "function",
+      "file": "src/lib/event-checkout.ts",
+      "isExported": true,
+      "isAsync": false,
+      "scope": "module",
+      "description": "Function to calculate checkout amount with promo code or donation support",
+      "tags": [
+        "utility",
+        "pricing",
+        "promo"
+      ],
+      "lineRange": [
+        13,
+        34
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:__nofilepath__:buildEventCheckoutSessionParams",
+      "name": "buildEventCheckoutSessionParams",
+      "type": "function",
+      "file": "src/lib/event-checkout.ts",
+      "isExported": true,
+      "isAsync": false,
+      "scope": "module",
+      "description": "Function to build Stripe checkout session parameters for event registration",
+      "tags": [
+        "utility",
+        "stripe",
+        "checkout"
+      ],
+      "lineRange": [
+        36,
+        101
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:events-tsx:EventHost",
+      "name": "EventHost",
+      "type": "type",
+      "file": "src/lib/events.tsx",
+      "isExported": true,
+      "scope": "module",
+      "description": "Type definition for event host profile information",
+      "tags": [
+        "type",
+        "interface"
+      ],
+      "lineRange": [
+        4,
+        12
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:events-tsx:EventPromoCode",
+      "name": "EventPromoCode",
+      "type": "type",
+      "file": "src/lib/events.tsx",
+      "isExported": true,
+      "scope": "module",
+      "description": "Type definition for event promotional codes with discount amounts/percentages",
+      "tags": [
+        "type",
+        "interface"
+      ],
+      "lineRange": [
+        14,
+        20
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:events-tsx:EventSection",
+      "name": "EventSection",
+      "type": "type",
+      "file": "src/lib/events.tsx",
+      "isExported": true,
+      "scope": "module",
+      "description": "Discriminated union type for different event page section types",
+      "tags": [
+        "type",
+        "union"
+      ],
+      "lineRange": [
+        22,
+        114
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:events-tsx:EventDefinition",
+      "name": "EventDefinition",
+      "type": "type",
+      "file": "src/lib/events.tsx",
+      "isExported": true,
+      "scope": "module",
+      "description": "Type definition for complete event information including pricing, sections, and metadata",
+      "tags": [
+        "type",
+        "interface"
+      ],
+      "lineRange": [
+        116,
+        199
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:__nofilepath__:getDiscountedPrice",
+      "name": "getDiscountedPrice",
+      "type": "function",
+      "file": "src/lib/events.tsx",
+      "isExported": false,
+      "isAsync": false,
+      "scope": "module",
+      "description": "Helper function to calculate discounted price with promo code",
+      "tags": [
+        "utility",
+        "pricing"
+      ],
+      "lineRange": [
+        201,
+        206
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:__nofilepath__:getEventDiscountedPrice",
+      "name": "getEventDiscountedPrice",
+      "type": "function",
+      "file": "src/lib/events.tsx",
+      "isExported": true,
+      "isAsync": false,
+      "scope": "module",
+      "description": "Function to get event price with optional promo code discount",
+      "tags": [
+        "utility",
+        "pricing"
+      ],
+      "lineRange": [
+        208,
+        210
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:__nofilepath__:resolvePromoCode",
+      "name": "resolvePromoCode",
+      "type": "function",
+      "file": "src/lib/events.tsx",
+      "isExported": true,
+      "isAsync": false,
+      "scope": "module",
+      "description": "Function to find and return a promo code from an event by case-insensitive code",
+      "tags": [
+        "utility",
+        "promo"
+      ],
+      "lineRange": [
+        212,
+        216
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:__nofilepath__:formatEventPrice",
+      "name": "formatEventPrice",
+      "type": "function",
+      "file": "src/lib/events.tsx",
+      "isExported": true,
+      "isAsync": false,
+      "scope": "module",
+      "description": "Function to format event price as currency string with optional promo",
+      "tags": [
+        "utility",
+        "formatting"
+      ],
+      "lineRange": [
+        218,
+        222
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:events-tsx:events",
+      "name": "events",
+      "type": "constant",
+      "file": "src/lib/events.tsx",
+      "isExported": true,
+      "value": "EventDefinition[]",
+      "scope": "module",
+      "description": "Array of all event definitions for the workshop platform",
+      "tags": [
+        "data",
+        "events"
+      ],
+      "lineRange": [
+        224,
+        1176
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:__nofilepath__:getEventBySlug",
+      "name": "getEventBySlug",
+      "type": "function",
+      "file": "src/lib/events.tsx",
+      "isExported": true,
+      "isAsync": false,
+      "scope": "module",
+      "description": "Function to retrieve a single event by its slug identifier",
+      "tags": [
+        "utility",
+        "lookup"
+      ],
+      "lineRange": [
+        1189,
+        1191
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:__nofilepath__:getLiveEvents",
+      "name": "getLiveEvents",
+      "type": "function",
+      "file": "src/lib/events.tsx",
+      "isExported": true,
+      "isAsync": false,
+      "scope": "module",
+      "description": "Function to retrieve all events with 'live' status",
+      "tags": [
+        "utility",
+        "filter"
+      ],
+      "lineRange": [
+        1193,
+        1195
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "module:src/app/api/stripe/webhook/route.ts",
+      "type": "module",
+      "name": "stripe-webhook-route",
+      "language": "typescript",
+      "category": "api-route",
+      "description": "Stripe webhook handler for checkout.session.completed events with server-side payment mirroring to Supabase",
+      "loc": 487,
+      "exports": [
+        "POST"
+      ],
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "module:src/lib/calendar.ts",
+      "type": "module",
+      "name": "calendar",
+      "language": "typescript",
+      "category": "utility",
+      "description": "Calendar event utilities for generating Google Calendar URLs and iCalendar files",
+      "loc": 68,
+      "exports": [
+        "buildGoogleCalendarUrl",
+        "buildIcalString",
+        "buildEventCalendarDescription"
+      ],
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:__nofilepath__:buildGoogleCalendarUrl",
+      "type": "function",
+      "name": "buildGoogleCalendarUrl",
+      "parent": "src/lib/calendar.ts",
+      "isAsync": false,
+      "isExported": true,
+      "parameters": [
+        {
+          "name": "params",
+          "type": "{ title: string; startIso: string; endIso: string; location?: string; description?: string }"
+        }
+      ],
+      "returnType": "string",
+      "description": "Generates a Google Calendar event creation URL with event details",
+      "complexity": "simple",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:__nofilepath__:buildIcalString",
+      "type": "function",
+      "name": "buildIcalString",
+      "parent": "src/lib/calendar.ts",
+      "isAsync": false,
+      "isExported": true,
+      "parameters": [
+        {
+          "name": "params",
+          "type": "{ uid: string; title: string; startIso: string; endIso: string; location?: string; description?: string; organizer?: { name: string; email: string }; attendee?: { name: string; email: string }; sequence?: number }"
+        }
+      ],
+      "returnType": "string",
+      "description": "Generates an iCalendar (.ics) file content with support for organizer/attendee invitations and sequence tracking for updates",
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:__nofilepath__:buildEventCalendarDescription",
+      "type": "function",
+      "name": "buildEventCalendarDescription",
+      "parent": "src/lib/calendar.ts",
+      "isAsync": false,
+      "isExported": true,
+      "parameters": [
+        {
+          "name": "event",
+          "type": "{ title: string; summary: string; slug: string; zoomLink?: string; durationLabel?: string }"
+        }
+      ],
+      "returnType": "string",
+      "description": "Builds canonical calendar event description including Zoom link, event details, and link to event page",
+      "complexity": "simple",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:__nofilepath__:toIcalDate",
+      "type": "function",
+      "name": "toIcalDate",
+      "parent": "src/lib/calendar.ts",
+      "isAsync": false,
+      "isExported": false,
+      "parameters": [
+        {
+          "name": "iso",
+          "type": "string"
+        }
+      ],
+      "returnType": "string",
+      "description": "Converts ISO 8601 timestamp to iCalendar date format (removes hyphens, colons, milliseconds)",
+      "complexity": "simple",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:__nofilepath__:escapeIcal",
+      "type": "function",
+      "name": "escapeIcal",
+      "parent": "src/lib/calendar.ts",
+      "isAsync": false,
+      "isExported": false,
+      "parameters": [
+        {
+          "name": "s",
+          "type": "string"
+        }
+      ],
+      "returnType": "string",
+      "description": "Escapes special characters for iCalendar format (backslashes, commas, semicolons, newlines)",
+      "complexity": "simple",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "module:src/lib/email-suppressions.ts",
+      "type": "module",
+      "name": "email-suppressions",
+      "language": "typescript",
+      "category": "utility",
+      "description": "Email suppression list management with fail-closed pattern for marketing compliance",
+      "loc": 24,
+      "exports": [
+        "isSuppressed",
+        "recordSuppression",
+        "SuppressionSource"
+      ],
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:__nofilepath__:isSuppressed",
+      "type": "function",
+      "name": "isSuppressed",
+      "parent": "src/lib/email-suppressions.ts",
+      "isAsync": true,
+      "isExported": true,
+      "parameters": [
+        {
+          "name": "email",
+          "type": "string"
+        }
+      ],
+      "returnType": "Promise<boolean>",
+      "description": "Checks if email is on suppression list; fail-closed (returns true on read errors) to prevent unwanted marketing sends",
+      "complexity": "simple",
+      "safety": "fail-closed",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:__nofilepath__:recordSuppression",
+      "type": "function",
+      "name": "recordSuppression",
+      "parent": "src/lib/email-suppressions.ts",
+      "isAsync": true,
+      "isExported": true,
+      "parameters": [
+        {
+          "name": "input",
+          "type": "{ email: string; reason: string; source: SuppressionSource | string }"
+        }
+      ],
+      "returnType": "Promise<void>",
+      "description": "Records email address on suppression list with reason and source tracking; uses upsert for idempotency",
+      "complexity": "simple",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:src/lib/email-suppressions.ts:SuppressionSource",
+      "type": "type",
+      "name": "SuppressionSource",
+      "parent": "src/lib/email-suppressions.ts",
+      "isExported": true,
+      "definition": "type SuppressionSource = 'list-unsubscribe' | 'lead-magnet' | 'ask-an-ai-expert-welcome' | 'abandoned-checkout-followup' | 'subscribe' | 'manual'",
+      "description": "Enumeration of suppression reasons for tracking which system initiated unsubscribe",
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "module:tests/event-location-reminder.test.ts",
+      "type": "module",
+      "name": "event-location-reminder-tests",
+      "language": "typescript",
+      "category": "test",
+      "description": "Test suite for event location reminder functionality including idempotency, timing windows, and email content",
+      "loc": 147,
+      "testCount": 6,
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:tests/event-location-reminder.test.ts:test:idempotency-key",
+      "type": "test",
+      "name": "location reminder idempotency key is stable and normalizes email case",
+      "parent": "tests/event-location-reminder.test.ts",
+      "description": "Verifies that idempotency keys are consistent regardless of email case variation",
+      "assertions": 1,
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:tests/event-location-reminder.test.ts:test:reminder-due-window",
+      "type": "test",
+      "name": "location reminder due window opens four hours before the event",
+      "parent": "tests/event-location-reminder.test.ts",
+      "description": "Tests that reminder window correctly opens 4 hours before event start and remains closed outside that window",
+      "assertions": 2,
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:tests/event-location-reminder.test.ts:test:window-closed",
+      "type": "test",
+      "name": "hasLocationRevealWindowClosed is false before the reminder window and true after it closes",
+      "parent": "tests/event-location-reminder.test.ts",
+      "description": "Validates the closed-window detection logic across pre-window, during-window, and post-window periods",
+      "assertions": 3,
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:tests/event-location-reminder.test.ts:test:late-signup-address",
+      "type": "test",
+      "name": "late signups get the exact address immediately in their confirmation email",
+      "parent": "tests/event-location-reminder.test.ts",
+      "description": "Mocks email sending to verify late-registered attendees receive full address in confirmation while early registrants receive deferred address",
+      "assertions": 2,
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:tests/event-location-reminder.test.ts:test:dedupe-attendees",
+      "type": "test",
+      "name": "attendee dedupe keeps one row per email",
+      "parent": "tests/event-location-reminder.test.ts",
+      "description": "Tests deduplication logic that consolidates multiple attendee records with same email (case-insensitive)",
+      "assertions": 1,
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:tests/event-location-reminder.test.ts:test:idempotency-key-resend",
+      "type": "test",
+      "name": "location reminder send uses a deterministic Resend idempotency key",
+      "parent": "tests/event-location-reminder.test.ts",
+      "description": "Mocks Resend API to verify identical requests generate identical Idempotency-Key headers for deduplication",
+      "assertions": 2,
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:CLAUDE.md",
+      "type": "file",
+      "fileCategory": "docs",
+      "language": "markdown",
+      "label": "CLAUDE.md",
+      "description": "Project documentation for GitNexus code intelligence integration in workshop-site",
+      "properties": {
+        "path": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site/CLAUDE.md",
+        "size": 1370,
+        "linesOfCode": 43
+      },
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ],
+      "name": "file:CLAUDE.md"
+    },
+    {
+      "id": "file:package.json",
+      "type": "file",
+      "fileCategory": "config",
+      "language": "json",
+      "label": "package.json",
+      "description": "NPM package manifest for masterminds-workshop Next.js application",
+      "properties": {
+        "path": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site/package.json",
+        "projectName": "masterminds-workshop",
+        "version": "0.1.0"
+      },
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ],
+      "name": "file:package.json"
+    },
+    {
+      "id": "file:supabase/migrations/010_email_suppressions.sql",
+      "type": "file",
+      "fileCategory": "infra",
+      "language": "sql",
+      "label": "010_email_suppressions.sql",
+      "description": "Supabase database migration defining email suppression table for RFC 8058 one-click unsubscribe",
+      "properties": {
+        "path": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site/supabase/migrations/010_email_suppressions.sql",
+        "size": 665,
+        "linesOfCode": 27
+      },
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ],
+      "name": "file:supabase/migrations/010_email_suppressions.sql"
+    },
+    {
+      "id": "file:vercel.json",
+      "type": "file",
+      "fileCategory": "config",
+      "language": "json",
+      "label": "vercel.json",
+      "description": "Vercel deployment configuration with domain rewrites and scheduled cron jobs",
+      "properties": {
+        "path": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site/vercel.json",
+        "size": 500,
+        "linesOfCode": 48
+      },
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ],
+      "name": "file:vercel.json"
+    },
+    {
+      "id": "file:symbol:gitnexus",
+      "type": "framework",
+      "label": "GitNexus",
+      "description": "Code intelligence tool for impact analysis and codebase navigation",
+      "properties": {
+        "status": "active",
+        "indexStats": {
+          "symbols": 3246,
+          "relationships": 5043,
+          "executionFlows": 140
+        }
+      },
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ],
+      "name": "file:symbol:gitnexus"
+    },
+    {
+      "id": "file:symbol:npm-script:dev",
+      "type": "npm-script",
+      "label": "dev",
+      "description": "Start Next.js development server",
+      "properties": {
+        "command": "next dev",
+        "file": "package.json"
+      },
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ],
+      "name": "file:symbol:npm-script:dev"
+    },
+    {
+      "id": "file:symbol:npm-script:build",
+      "type": "npm-script",
+      "label": "build",
+      "description": "Build Next.js production bundle",
+      "properties": {
+        "command": "next build",
+        "file": "package.json"
+      },
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ],
+      "name": "file:symbol:npm-script:build"
+    },
+    {
+      "id": "file:symbol:npm-script:abandoned-checkout-run",
+      "type": "npm-script",
+      "label": "abandoned-checkout-run",
+      "description": "Run abandoned checkout recovery script",
+      "properties": {
+        "command": "npx tsx scripts/abandoned-checkout-run.ts",
+        "file": "package.json",
+        "scriptType": "business-logic"
+      },
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ],
+      "name": "file:symbol:npm-script:abandoned-checkout-run"
+    },
+    {
+      "id": "file:symbol:npm-script:abandoned-checkout-control",
+      "type": "npm-script",
+      "label": "abandoned-checkout-control",
+      "description": "Control abandoned checkout recovery flow",
+      "properties": {
+        "command": "node scripts/abandoned-checkout-control.mjs",
+        "file": "package.json",
+        "scriptType": "business-logic"
+      },
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ],
+      "name": "file:symbol:npm-script:abandoned-checkout-control"
+    },
+    {
+      "id": "file:dependency:next",
+      "type": "dependency",
+      "label": "@next/16.2.3",
+      "description": "Next.js React framework",
+      "properties": {
+        "package": "next",
+        "version": "^16.2.3",
+        "type": "production"
+      },
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ],
+      "name": "file:dependency:next"
+    },
+    {
+      "id": "file:dependency:react",
+      "type": "dependency",
+      "label": "react@19.0.0",
+      "description": "React UI library",
+      "properties": {
+        "package": "react",
+        "version": "19.0.0",
+        "type": "production"
+      },
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ],
+      "name": "file:dependency:react"
+    },
+    {
+      "id": "file:dependency:stripe",
+      "type": "dependency",
+      "label": "stripe@22.1.1",
+      "description": "Stripe payment processing library",
+      "properties": {
+        "package": "stripe",
+        "version": "^22.1.1",
+        "type": "production"
+      },
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ],
+      "name": "file:dependency:stripe"
+    },
+    {
+      "id": "file:dependency:stripe-react",
+      "type": "dependency",
+      "label": "@stripe/react-stripe-js@6.3.0",
+      "description": "Stripe React components for payment UI",
+      "properties": {
+        "package": "@stripe/react-stripe-js",
+        "version": "^6.3.0",
+        "type": "production"
+      },
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ],
+      "name": "file:dependency:stripe-react"
+    },
+    {
+      "id": "file:dependency:supabase-js",
+      "type": "dependency",
+      "label": "@supabase/supabase-js@2.47.0",
+      "description": "Supabase JavaScript client library",
+      "properties": {
+        "package": "@supabase/supabase-js",
+        "version": "^2.47.0",
+        "type": "production"
+      },
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ],
+      "name": "file:dependency:supabase-js"
+    },
+    {
+      "id": "file:dependency:resend",
+      "type": "dependency",
+      "label": "resend@4.0.0",
+      "description": "Email sending library",
+      "properties": {
+        "package": "resend",
+        "version": "^4.0.0",
+        "type": "production"
+      },
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ],
+      "name": "file:dependency:resend"
+    },
+    {
+      "id": "file:dependency:framer-motion",
+      "type": "dependency",
+      "label": "framer-motion@12.38.0",
+      "description": "Animation library for React",
+      "properties": {
+        "package": "framer-motion",
+        "version": "^12.38.0",
+        "type": "production"
+      },
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ],
+      "name": "file:dependency:framer-motion"
+    },
+    {
+      "id": "file:dependency:three",
+      "type": "dependency",
+      "label": "three@0.183.2",
+      "description": "3D graphics library",
+      "properties": {
+        "package": "three",
+        "version": "^0.183.2",
+        "type": "production"
+      },
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ],
+      "name": "file:dependency:three"
+    },
+    {
+      "id": "file:dependency:vanta",
+      "type": "dependency",
+      "label": "vanta@0.5.24",
+      "description": "3D animated background library",
+      "properties": {
+        "package": "vanta",
+        "version": "^0.5.24",
+        "type": "production"
+      },
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ],
+      "name": "file:dependency:vanta"
+    },
+    {
+      "id": "file:dependency:googleapis",
+      "type": "dependency",
+      "label": "googleapis@173.0.0",
+      "description": "Google APIs client library",
+      "properties": {
+        "package": "googleapis",
+        "version": "^173.0.0",
+        "type": "production"
+      },
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ],
+      "name": "file:dependency:googleapis"
+    },
+    {
+      "id": "file:database-table:email_suppressions",
+      "type": "database-table",
+      "label": "email_suppressions",
+      "description": "Global marketing email suppression list for RFC 8058 one-click unsubscribe",
+      "properties": {
+        "schema": "public",
+        "columns": [
+          {
+            "name": "email",
+            "type": "text",
+            "constraints": "primary key"
+          },
+          {
+            "name": "reason",
+            "type": "text",
+            "constraints": "not null",
+            "default": "'unsubscribed'"
+          },
+          {
+            "name": "source",
+            "type": "text",
+            "constraints": "nullable"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamptz",
+            "constraints": "not null",
+            "default": "now()"
+          }
+        ],
+        "indexes": [
+          "email_suppressions_created_at_idx"
+        ],
+        "rls": "enabled",
+        "rls_policies": "no anon/authenticated policies"
+      },
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ],
+      "name": "file:database-table:email_suppressions"
+    },
+    {
+      "id": "file:database-index:email_suppressions_created_at_idx",
+      "type": "database-index",
+      "label": "email_suppressions_created_at_idx",
+      "description": "Index on email_suppressions.created_at for query performance",
+      "properties": {
+        "table": "email_suppressions",
+        "column": "created_at"
+      },
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ],
+      "name": "file:database-index:email_suppressions_created_at_idx"
+    },
+    {
+      "id": "file:api-route:unsubscribe",
+      "type": "api-route",
+      "label": "src/app/api/unsubscribe/route.ts",
+      "description": "RFC 8058 one-click unsubscribe endpoint",
+      "properties": {
+        "path": "/api/unsubscribe",
+        "type": "POST",
+        "purpose": "Handle email unsubscribe requests and update email_suppressions table"
+      },
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ],
+      "name": "file:api-route:unsubscribe"
+    },
+    {
+      "id": "function:isSuppressed",
+      "type": "function",
+      "label": "isSuppressed()",
+      "description": "Fail-closed gate checking if email is in suppression list",
+      "properties": {
+        "module": "src/lib/email-suppressions.ts",
+        "purpose": "Prevent sending marketing emails to suppressed addresses"
+      },
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ],
+      "name": "function:isSuppressed"
+    },
+    {
+      "id": "file:vercel-rewrite:decks",
+      "type": "vercel-config",
+      "label": "Vercel Rewrite: decks.mastermindshq.business",
+      "description": "Route subdomain to playbook landing page",
+      "properties": {
+        "host": "decks.mastermindshq.business",
+        "source": "/",
+        "destination": "/2x-with-ai-playbook.html"
+      },
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ],
+      "name": "file:vercel-rewrite:decks"
+    },
+    {
+      "id": "file:vercel-rewrite:passiveincome",
+      "type": "vercel-config",
+      "label": "Vercel Rewrite: passiveincome.mastermindshq.business",
+      "description": "Route subdomain to AI agent income landing page",
+      "properties": {
+        "host": "passiveincome.mastermindshq.business",
+        "source": "/",
+        "destination": "/ai-agent-income"
+      },
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ],
+      "name": "file:vercel-rewrite:passiveincome"
+    },
+    {
+      "id": "file:vercel-cron:abandoned-checkout-followups",
+      "type": "vercel-config",
+      "label": "Cron: abandoned-checkout-followups",
+      "description": "Scheduled abandoned checkout recovery email (1:15 AM UTC)",
+      "properties": {
+        "path": "/api/events/abandoned-checkout-followups",
+        "schedule": "15 1 * * *",
+        "frequency": "daily"
+      },
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ],
+      "name": "file:vercel-cron:abandoned-checkout-followups"
+    },
+    {
+      "id": "file:vercel-cron:abandoned-checkout-followups-t12h",
+      "type": "vercel-config",
+      "label": "Cron: abandoned-checkout-followups-t12h",
+      "description": "Scheduled 12-hour abandoned checkout follow-up (8:20 AM UTC)",
+      "properties": {
+        "path": "/api/events/abandoned-checkout-followups-t12h",
+        "schedule": "20 8 * * *",
+        "frequency": "daily"
+      },
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ],
+      "name": "file:vercel-cron:abandoned-checkout-followups-t12h"
+    },
+    {
+      "id": "file:vercel-cron:location-reminders",
+      "type": "vercel-config",
+      "label": "Cron: location-reminders",
+      "description": "Scheduled event location reminders",
+      "properties": {
+        "path": "/api/events/location-reminders",
+        "schedule": "*/30 * * * *",
+        "frequency": "every 30 minutes"
+      },
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ],
+      "name": "file:vercel-cron:location-reminders"
+    },
+    {
+      "id": "file:vercel-cron:session-reminders",
+      "type": "vercel-config",
+      "label": "Cron: session-reminders",
+      "description": "Scheduled event session reminders",
+      "properties": {
+        "path": "/api/events/session-reminders",
+        "schedule": "*/30 * * * *",
+        "frequency": "every 30 minutes"
+      },
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ],
+      "name": "file:vercel-cron:session-reminders"
+    },
+    {
+      "id": "file:vercel-cron:reconcile-registrations",
+      "type": "vercel-config",
+      "label": "Cron: reconcile-registrations",
+      "description": "Daily registration reconciliation job",
+      "properties": {
+        "path": "/api/events/reconcile-registrations",
+        "schedule": "0 20 * * *",
+        "frequency": "daily at 8:00 PM UTC"
+      },
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ],
+      "name": "file:vercel-cron:reconcile-registrations"
+    },
+    {
+      "id": "config:claude-settings",
+      "type": "config",
+      "file": ".claude/settings.json",
+      "name": "Claude Code Settings",
+      "description": "CLI hooks configuration with PostToolUse events for Chrome refresh automation",
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:doc:giveaway-process",
+      "type": "documentation",
+      "file": "docs/giveaways/PROCESS.md",
+      "name": "Giveaway Launch Protocol",
+      "description": "Complete end-to-end process for launching giveaways: technical setup, content creation, publishing, and verification",
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:route:lead-magnet",
+      "type": "api-route",
+      "file": "src/app/api/lead-magnet/route.ts",
+      "name": "POST /api/lead-magnet",
+      "description": "Generic lead magnet capture route. Validates email, rates limits, saves to Supabase, sends via Resend, tracks events to Insight.",
+      "exports": [
+        "POST"
+      ],
+      "dependencies": [
+        "@supabase/supabase-js",
+        "@/lib/rate-limit",
+        "@/lib/insight-to-fix",
+        "@/lib/list-unsubscribe",
+        "@/lib/email-suppressions",
+        "@/lib/utm"
+      ],
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:__nofilepath__:sendViaResend",
+      "type": "function",
+      "file": "src/app/api/lead-magnets/claudemd/route.ts",
+      "name": "sendViaResend",
+      "description": "Sends Claude.md file via Resend with personalized greeting and context about Masterminds HQ.",
+      "signature": "async (firstName: string, email: string, idempotencyKey: string) => Promise<any>",
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:const:GIVEAWAY_SOURCE_MAP",
+      "type": "constant",
+      "file": "src/app/api/lead-magnet/route.ts",
+      "name": "GIVEAWAY_SOURCE_MAP",
+      "description": "Maps giveaway page slugs to CRM source keys. Keys: maccleaner, guardog, cult-brand-playbook, web-design-arsenal, speak-human, claude-md, anthropic-safety-checklist, benchmark, all-sorted-overview.",
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:__nofilepath__:ingestIntoCrm",
+      "type": "function",
+      "file": "src/app/api/lead-magnet/route.ts",
+      "name": "ingestIntoCrm",
+      "description": "Posts lead capture to Mission Control CRM with source and campaign tags (non-blocking)",
+      "signature": "async (email: string, source: string) => Promise<void>",
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:route:lead-magnet-claudemd",
+      "type": "api-route",
+      "file": "src/app/api/lead-magnets/claudemd/route.ts",
+      "name": "POST /api/lead-magnets/claudemd",
+      "description": "Specialized lead magnet route for Claude.md file delivery. Collects firstName + email, attaches CLAUDE.md file to email.",
+      "exports": [
+        "POST"
+      ],
+      "dependencies": [
+        "@supabase/supabase-js",
+        "@/lib/rate-limit",
+        "@/lib/list-unsubscribe",
+        "@/lib/email-suppressions",
+        "@/lib/utm"
+      ],
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:const:FILE_CONTENT",
+      "type": "constant",
+      "file": "src/app/api/lead-magnets/claudemd/route.ts",
+      "name": "FILE_CONTENT",
+      "description": "Embedded CLAUDE.md template content (embedded at build time, 100+ lines of configuration template)",
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:route:lead-magnet-passive-income-100",
+      "type": "api-route",
+      "file": "src/app/api/lead-magnets/passive-income-100/route.ts",
+      "name": "POST /api/lead-magnets/passive-income-100",
+      "description": "Pre-launch list capture for '100 Ways to Make Passive Income with AI Agents'. Test mode by default, requires PASSIVE_INCOME_100_LIVE=1 for live sends.",
+      "exports": [
+        "POST"
+      ],
+      "dependencies": [
+        "@supabase/supabase-js",
+        "@/lib/rate-limit",
+        "@/lib/list-unsubscribe",
+        "@/lib/email-suppressions"
+      ],
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:const:LIVE_MODE",
+      "type": "constant",
+      "file": "src/app/api/lead-magnets/passive-income-100/route.ts",
+      "name": "LIVE_MODE",
+      "description": "Feature flag controlled by PASSIVE_INCOME_100_LIVE env var. Defaults to test mode (sends to newyork1@gmail.com).",
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:route:subscribe",
+      "type": "api-route",
+      "file": "src/app/api/subscribe/route.ts",
+      "name": "POST /api/subscribe",
+      "description": "Main subscription handler using dependency injection pattern. Validates input, saves leads, claims signups, sends emails, handles suppressions.",
+      "exports": [
+        "POST"
+      ],
+      "dependencies": [
+        "@supabase/supabase-js",
+        "@/lib/subscribe",
+        "@/lib/resend-sender",
+        "@/lib/email-suppressions"
+      ],
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:type:SubscribeDeps",
+      "type": "type",
+      "file": "src/app/api/subscribe/route.ts",
+      "name": "SubscribeDeps",
+      "description": "Dependency injection interface for subscribe route. Methods: saveLead, claimSignup, sendEmail, isSuppressed.",
+      "definition": "{ saveLead: (lead) => Promise<void>, claimSignup: (email, magnet) => Promise<boolean>, sendEmail: (...) => Promise<void>, isSuppressed: (email) => Promise<boolean> }",
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:route:unsubscribe",
+      "type": "api-route",
+      "file": "src/app/api/unsubscribe/route.ts",
+      "name": "POST,GET /api/unsubscribe",
+      "description": "RFC 8058 one-click unsubscribe handler. POST from mail clients (automatic), GET from human clicks (renders confirmation page).",
+      "exports": [
+        "POST",
+        "GET"
+      ],
+      "dependencies": [
+        "@/lib/list-unsubscribe",
+        "@/lib/email-suppressions"
+      ],
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:__nofilepath__:htmlPage",
+      "type": "function",
+      "file": "src/app/api/unsubscribe/route.ts",
+      "name": "htmlPage",
+      "description": "Renders dark-themed HTML response page for unsubscribe confirmation.",
+      "signature": "(title: string, message: string, status?: number) => Response",
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:__nofilepath__:recordUnsubscribeFromToken",
+      "type": "function",
+      "file": "src/app/api/unsubscribe/route.ts",
+      "name": "recordUnsubscribeFromToken",
+      "description": "Verifies token and records suppression to email-suppressions table.",
+      "signature": "async (token: string | null) => Promise<{ok: true, email: string} | {ok: false}>",
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:const:GUIDE_HTML-illy",
+      "type": "constant",
+      "file": "src/app/illy/content.ts",
+      "name": "GUIDE_HTML",
+      "description": "Embedded HTML content for Illy onboarding guide. Auto-generated from MHQ design. 1800+ lines of styled content with table of contents, sections, and interactive elements.",
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:page:guide-brain",
+      "type": "page",
+      "file": "src/app/session/[slug]/guide-brain/page.tsx",
+      "name": "SessionGuideBrainPage",
+      "description": "Server component for Session 4 workshop guide page. Renders guide content, breadcrumbs, footer navigation. Routes only slug='4'.",
+      "exports": [
+        "generateStaticParams",
+        "generateMetadata",
+        "default"
+      ],
+      "dependencies": [
+        "@/lib/sessions",
+        "@/content/session-4-guide"
+      ],
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:component:Session4Guide",
+      "type": "component",
+      "file": "src/content/session-4-guide.tsx",
+      "name": "Session4Guide",
+      "description": "Client component. Full Session 4 workshop guide: creating second brain, giving Claude personality, running brain dump, loading context. Includes video player, step cards, code blocks, checklists.",
+      "exports": [
+        "default"
+      ],
+      "dependencies": [
+        "@/components/StepCard",
+        "@/components/CodeBlock",
+        "@/components/ProTip",
+        "@/components/StickyVideoPlayer",
+        "@/lib/celebrate"
+      ],
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:component:Checkbox-session4",
+      "type": "component",
+      "file": "src/content/session-4-guide.tsx",
+      "name": "Checkbox",
+      "description": "Interactive checkbox for review checklist. Changes appearance on click, triggers celebrate() animation when checked.",
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:component:Session7Guide",
+      "type": "component",
+      "file": "src/content/session-7-guide.tsx",
+      "name": "Session7Guide",
+      "description": "Client component. Full Session 7 workshop guide: installing Mission Control task board, understanding workflow columns, creating first card, AI automation preview.",
+      "exports": [
+        "default"
+      ],
+      "dependencies": [
+        "@/components/StepCard",
+        "@/components/CodeBlock",
+        "@/components/ProTip",
+        "@/components/StickyVideoPlayer"
+      ],
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:lib:abandoned-checkout-followups",
+      "type": "library",
+      "file": "src/lib/abandoned-checkout-followups.ts",
+      "name": "abandoned-checkout-followups",
+      "description": "Email automation library for abandoned checkout recovery. Defines 2 automation paths (day-1 + t12h), builds emails, tracks state, evaluates candidates.",
+      "exports": [
+        "ABANDONED_CHECKOUT_DAY1_AUTOMATION_KEY",
+        "ABANDONED_CHECKOUT_T12H_AUTOMATION_KEY",
+        "DEFAULT_TEST_RECIPIENTS",
+        "getCheckoutFollowupDefinition",
+        "shouldIncludeFinanceLine",
+        "buildAbandonedCheckoutIdempotencyKey",
+        "buildAbandonedCheckoutT12hIdempotencyKey",
+        "buildAbandonedCheckoutTestIdempotencyKey",
+        "buildAbandonedCheckoutT12hTestIdempotencyKey",
+        "buildAbandonedCheckoutSubject",
+        "buildAbandonedCheckoutT12hSubject",
+        "buildAbandonedCheckoutTestSubject",
+        "buildAbandonedCheckoutT12hTestSubject",
+        "buildAbandonedCheckoutEmailHtml",
+        "buildAbandonedCheckoutT12hEmailHtml",
+        "buildAbandonedCheckoutTestEmailHtml"
+      ],
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:type:CheckoutFollowupAutomationKey",
+      "type": "type",
+      "file": "src/lib/abandoned-checkout-followups.ts",
+      "name": "CheckoutFollowupAutomationKey",
+      "description": "Union type: 'abandoned_checkout_day_1' | 'abandoned_checkout_t12h'",
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:type:AbandonedCheckoutMode",
+      "type": "type",
+      "file": "src/lib/abandoned-checkout-followups.ts",
+      "name": "AbandonedCheckoutMode",
+      "description": "Union type: 'off' | 'test' | 'live'. Controls whether automation runs and which recipients receive emails.",
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:type:AbandonedCheckoutCandidate",
+      "type": "type",
+      "file": "src/lib/abandoned-checkout-followups.ts",
+      "name": "AbandonedCheckoutCandidate",
+      "description": "Email candidate record: event, attendee email/name, checkout session ID, event URL, finance line inclusion flag.",
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:const:CHECKOUT_FOLLOWUP_DEFINITIONS",
+      "type": "constant",
+      "file": "src/lib/abandoned-checkout-followups.ts",
+      "name": "CHECKOUT_FOLLOWUP_DEFINITIONS",
+      "description": "Configuration map for two automated follow-up paths. Day 1: 24h after abandoned checkout. T12h: 12h before event with open spots requirement.",
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:__nofilepath__:buildAbandonedCheckoutEmailHtml",
+      "type": "function",
+      "file": "src/lib/abandoned-checkout-followups.ts",
+      "name": "buildAbandonedCheckoutEmailHtml",
+      "description": "Generates day-1 follow-up email HTML with personal greeting, checkout error acknowledgment, payment options, and CTA to event page.",
+      "signature": "(candidate: AbandonedCheckoutCandidate) => string",
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:__nofilepath__:buildAbandonedCheckoutT12hEmailHtml",
+      "type": "function",
+      "file": "src/lib/abandoned-checkout-followups.ts",
+      "name": "buildAbandonedCheckoutT12hEmailHtml",
+      "description": "Generates t12h follow-up email HTML (12h before event). Shorter, urgency-focused message with spot availability mention.",
+      "signature": "(candidate: AbandonedCheckoutCandidate) => string",
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:__nofilepath__:shouldIncludeFinanceLine",
+      "type": "function",
+      "file": "src/lib/abandoned-checkout-followups.ts",
+      "name": "shouldIncludeFinanceLine",
+      "description": "Determines if email should include financial support paragraph. False if donation mode or price <= $50.",
+      "signature": "(event: EventDefinition) => boolean",
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:test:utm-tests",
+      "type": "test-file",
+      "file": "tests/utm.test.ts",
+      "name": "UTM Parameter Tests",
+      "description": "13 tests for withUtm utility. Validates owned domain tagging, external domain pass-through, idempotency, token guard, fragment preservation.",
+      "testCount": 13,
+      "dependencies": [
+        "../src/lib/utm"
+      ],
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:test:utm-owned-domains",
+      "type": "test",
+      "file": "tests/utm.test.ts",
+      "name": "UTM owned domain tests",
+      "description": "Validates UTM tagging for workshop.mastermindshq.business, mastermindshq.business, joe-che.com",
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:test:utm-external-domains",
+      "type": "test",
+      "file": "tests/utm.test.ts",
+      "name": "UTM external domain pass-through",
+      "description": "Ensures external URLs (github, instagram, linkedin, youtube) return unchanged",
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:test:utm-idempotency",
+      "type": "test",
+      "file": "tests/utm.test.ts",
+      "name": "UTM idempotency",
+      "description": "Validates double-tagging is idempotent and second call overwrites params",
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:test:utm-token-guard",
+      "type": "test",
+      "file": "tests/utm.test.ts",
+      "name": "UTM token guard",
+      "description": "Ensures URLs with token= parameter (auth/unsubscribe/cancel) return unchanged",
+      "complexity": "moderate",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:.claude/settings.json",
+      "type": "file",
+      "name": "settings.json",
+      "filePath": ".claude/settings.json",
+      "summary": "Claude Code configuration with PostToolUse hooks for Chrome refresh automation on Vercel deployments to workshop.mastermindshq.business",
+      "tags": [
+        "config",
+        "hooks",
+        "automation",
+        "chrome-refresh"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:hook:PostToolUse-Bash-Chrome-Refresh",
+      "type": "hook",
+      "name": "PostToolUse Chrome Refresh",
+      "filePath": ".claude/settings.json",
+      "summary": "Automatically reloads Chrome tabs for workshop.mastermindshq.business when vercel --prod command is executed",
+      "tags": [
+        "post-tool-use",
+        "chrome",
+        "automation",
+        "deployment"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:next-env.d.ts",
+      "type": "file",
+      "name": "next-env.d.ts",
+      "filePath": "next-env.d.ts",
+      "summary": "TypeScript type definitions file that references Next.js types, Next.js image types, and auto-generated route types from .next/types",
+      "tags": [
+        "typescript",
+        "types",
+        "next.js",
+        "auto-generated"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:type:next",
+      "type": "type",
+      "name": "next",
+      "filePath": "next-env.d.ts",
+      "summary": "Next.js core type definitions",
+      "tags": [
+        "next.js",
+        "types"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:type:next/image-types/global",
+      "type": "type",
+      "name": "next/image-types/global",
+      "filePath": "next-env.d.ts",
+      "summary": "Next.js global image type definitions",
+      "tags": [
+        "next.js",
+        "types",
+        "images"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:type:.next/types/routes.d.ts",
+      "type": "type",
+      "name": ".next/types/routes.d.ts",
+      "filePath": "next-env.d.ts",
+      "summary": "Auto-generated Next.js route type definitions",
+      "tags": [
+        "next.js",
+        "types",
+        "routes",
+        "auto-generated"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:next.config.ts",
+      "type": "file",
+      "name": "next.config.ts",
+      "filePath": "next.config.ts",
+      "summary": "Next.js configuration with turbopack setup, URL redirects to portal.mastermindshq.business, and host-based rewrites for subdomain routing (decks, passiveincome)",
+      "tags": [
+        "config",
+        "next.js",
+        "redirects",
+        "rewrites",
+        "routing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:nextConfig",
+      "type": "config",
+      "name": "nextConfig",
+      "filePath": "next.config.ts",
+      "summary": "Main Next.js configuration object with turbopack and routing rules",
+      "tags": [
+        "next.js",
+        "turbopack",
+        "config"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:turbopack",
+      "type": "config",
+      "name": "turbopack",
+      "filePath": "next.config.ts",
+      "summary": "Turbopack configuration with root path resolution",
+      "tags": [
+        "turbopack",
+        "bundler",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:redirects",
+      "type": "config",
+      "name": "redirects",
+      "filePath": "next.config.ts",
+      "summary": "URL redirect rules: /session -> portal.mastermindshq.business, /resource-vault -> portal.mastermindshq.business",
+      "tags": [
+        "redirects",
+        "routing",
+        "portal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:rewrites",
+      "type": "config",
+      "name": "rewrites",
+      "filePath": "next.config.ts",
+      "summary": "Host-based rewrite rules: decks.mastermindshq.business -> /2x-with-ai-playbook.html, passiveincome.mastermindshq.business -> /ai-agent-income",
+      "tags": [
+        "rewrites",
+        "routing",
+        "subdomain-routing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dependency:path",
+      "type": "dependency",
+      "name": "path",
+      "filePath": "next.config.ts",
+      "summary": "Node.js path module for path resolution in turbopack configuration",
+      "tags": [
+        "node.js",
+        "stdlib"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:type:NextConfig",
+      "type": "type",
+      "name": "NextConfig",
+      "filePath": "next.config.ts",
+      "summary": "Next.js NextConfig type definition",
+      "tags": [
+        "next.js",
+        "types"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tsconfig.json",
+      "type": "file",
+      "name": "tsconfig.json",
+      "filePath": "tsconfig.json",
+      "summary": "TypeScript compiler configuration for Next.js project with ES2017 target, strict mode, JSX support, and path alias for @/* -> ./src/*",
+      "tags": [
+        "config",
+        "typescript",
+        "compiler"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:compilerOptions",
+      "type": "config",
+      "name": "compilerOptions",
+      "filePath": "tsconfig.json",
+      "summary": "TypeScript compiler options: target ES2017, strict mode, JSX react-jsx, bundler module resolution",
+      "tags": [
+        "typescript",
+        "compiler",
+        "options"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:paths",
+      "type": "config",
+      "name": "paths",
+      "filePath": "tsconfig.json",
+      "summary": "TypeScript path alias configuration mapping @/* to ./src/*",
+      "tags": [
+        "typescript",
+        "paths",
+        "aliases"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:include",
+      "type": "config",
+      "name": "include",
+      "filePath": "tsconfig.json",
+      "summary": "Include patterns: next-env.d.ts, all .ts/.tsx files, and .next/types",
+      "tags": [
+        "typescript",
+        "includes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:exclude",
+      "type": "config",
+      "name": "exclude",
+      "filePath": "tsconfig.json",
+      "summary": "Exclude patterns: node_modules",
+      "tags": [
+        "typescript",
+        "excludes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:script:dev",
+      "type": "script",
+      "name": "dev",
+      "filePath": "package.json",
+      "summary": "Development server: next dev",
+      "tags": [
+        "script",
+        "dev",
+        "next.js"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:script:build",
+      "type": "script",
+      "name": "build",
+      "filePath": "package.json",
+      "summary": "Production build: next build",
+      "tags": [
+        "script",
+        "build",
+        "next.js"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:script:start",
+      "type": "script",
+      "name": "start",
+      "filePath": "package.json",
+      "summary": "Start production server: next start",
+      "tags": [
+        "script",
+        "start",
+        "next.js"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:script:lint",
+      "type": "script",
+      "name": "lint",
+      "filePath": "package.json",
+      "summary": "Lint code: next lint",
+      "tags": [
+        "script",
+        "lint",
+        "next.js"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:script:test",
+      "type": "script",
+      "name": "test",
+      "filePath": "package.json",
+      "summary": "Run tests with tsx and Node.js test runner on tests/**/*.test.ts",
+      "tags": [
+        "script",
+        "test",
+        "tsx"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:script:abandoned-checkout-control",
+      "type": "script",
+      "name": "abandoned-checkout-control",
+      "filePath": "package.json",
+      "summary": "Node.js script for abandoned checkout control automation",
+      "tags": [
+        "script",
+        "checkout",
+        "automation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:script:abandoned-checkout-run",
+      "type": "script",
+      "name": "abandoned-checkout-run",
+      "filePath": "package.json",
+      "summary": "TypeScript script runner for abandoned checkout automation using tsx",
+      "tags": [
+        "script",
+        "checkout",
+        "automation",
+        "tsx"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:@stripe/react-stripe-js",
+      "type": "dependency",
+      "name": "@stripe/react-stripe-js",
+      "filePath": "package.json",
+      "summary": "Stripe React integration library v6.3.0 for payment UI components",
+      "tags": [
+        "stripe",
+        "react",
+        "payments"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:@stripe/stripe-js",
+      "type": "dependency",
+      "name": "@stripe/stripe-js",
+      "filePath": "package.json",
+      "summary": "Stripe JavaScript SDK v9.5.0 for payment processing",
+      "tags": [
+        "stripe",
+        "payments"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:@supabase/supabase-js",
+      "type": "dependency",
+      "name": "@supabase/supabase-js",
+      "filePath": "package.json",
+      "summary": "Supabase JavaScript client v2.47.0 for database and auth operations",
+      "tags": [
+        "supabase",
+        "database",
+        "auth"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:@types/canvas-confetti",
+      "type": "dependency",
+      "name": "@types/canvas-confetti",
+      "filePath": "package.json",
+      "summary": "TypeScript types for canvas-confetti animations v1.9.0",
+      "tags": [
+        "types",
+        "animations"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:canvas-confetti",
+      "type": "dependency",
+      "name": "canvas-confetti",
+      "filePath": "package.json",
+      "summary": "Confetti animation library v1.9.4",
+      "tags": [
+        "animations",
+        "ui"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:countup.js",
+      "type": "dependency",
+      "name": "countup.js",
+      "filePath": "package.json",
+      "summary": "Number counter animation library v2.10.0",
+      "tags": [
+        "animations",
+        "ui"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:framer-motion",
+      "type": "dependency",
+      "name": "framer-motion",
+      "filePath": "package.json",
+      "summary": "React animation library v12.38.0",
+      "tags": [
+        "react",
+        "animations"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:googleapis",
+      "type": "dependency",
+      "name": "googleapis",
+      "filePath": "package.json",
+      "summary": "Google API client library v173.0.0",
+      "tags": [
+        "google",
+        "api"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:gsap",
+      "type": "dependency",
+      "name": "gsap",
+      "filePath": "package.json",
+      "summary": "GreenSock animation platform v3.14.2 for advanced animations",
+      "tags": [
+        "animations",
+        "gsap"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:lenis",
+      "type": "dependency",
+      "name": "lenis",
+      "filePath": "package.json",
+      "summary": "Smooth scroll library v1.3.21",
+      "tags": [
+        "scroll",
+        "ui"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:next",
+      "type": "dependency",
+      "name": "next",
+      "filePath": "package.json",
+      "summary": "Next.js framework v16.2.3",
+      "tags": [
+        "next.js",
+        "framework"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:react",
+      "type": "dependency",
+      "name": "react",
+      "filePath": "package.json",
+      "summary": "React library v19.0.0",
+      "tags": [
+        "react",
+        "ui"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:react-dom",
+      "type": "dependency",
+      "name": "react-dom",
+      "filePath": "package.json",
+      "summary": "React DOM library v19.0.0",
+      "tags": [
+        "react",
+        "dom"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:resend",
+      "type": "dependency",
+      "name": "resend",
+      "filePath": "package.json",
+      "summary": "Email service client v4.0.0 for transactional emails",
+      "tags": [
+        "email",
+        "communications"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:split-type",
+      "type": "dependency",
+      "name": "split-type",
+      "filePath": "package.json",
+      "summary": "Text splitting utility v0.3.4 for character/word animations",
+      "tags": [
+        "text",
+        "animations"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:stripe",
+      "type": "dependency",
+      "name": "stripe",
+      "filePath": "package.json",
+      "summary": "Stripe server-side API client v22.1.1",
+      "tags": [
+        "stripe",
+        "payments"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:three",
+      "type": "dependency",
+      "name": "three",
+      "filePath": "package.json",
+      "summary": "3D graphics library v0.183.2 for WebGL rendering",
+      "tags": [
+        "3d",
+        "graphics",
+        "webgl"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:vanta",
+      "type": "dependency",
+      "name": "vanta",
+      "filePath": "package.json",
+      "summary": "3D animated backgrounds v0.5.24",
+      "tags": [
+        "3d",
+        "animations",
+        "backgrounds"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:devDep:@types/node",
+      "type": "devDependency",
+      "name": "@types/node",
+      "filePath": "package.json",
+      "summary": "TypeScript types for Node.js v20",
+      "tags": [
+        "types",
+        "node.js"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:devDep:@types/react",
+      "type": "devDependency",
+      "name": "@types/react",
+      "filePath": "package.json",
+      "summary": "TypeScript types for React v19",
+      "tags": [
+        "types",
+        "react"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:devDep:@types/react-dom",
+      "type": "devDependency",
+      "name": "@types/react-dom",
+      "filePath": "package.json",
+      "summary": "TypeScript types for React DOM v19",
+      "tags": [
+        "types",
+        "react",
+        "dom"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:devDep:@types/three",
+      "type": "devDependency",
+      "name": "@types/three",
+      "filePath": "package.json",
+      "summary": "TypeScript types for Three.js v0.183.1",
+      "tags": [
+        "types",
+        "3d",
+        "three.js"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:devDep:autoprefixer",
+      "type": "devDependency",
+      "name": "autoprefixer",
+      "filePath": "package.json",
+      "summary": "PostCSS plugin for vendor prefixes v10.0.1",
+      "tags": [
+        "css",
+        "postcss"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:devDep:eslint",
+      "type": "devDependency",
+      "name": "eslint",
+      "filePath": "package.json",
+      "summary": "JavaScript linter v8",
+      "tags": [
+        "linter",
+        "code-quality"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:devDep:eslint-config-next",
+      "type": "devDependency",
+      "name": "eslint-config-next",
+      "filePath": "package.json",
+      "summary": "ESLint configuration for Next.js v15.1.0",
+      "tags": [
+        "linter",
+        "next.js",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:devDep:postcss",
+      "type": "devDependency",
+      "name": "postcss",
+      "filePath": "package.json",
+      "summary": "CSS transformation tool v8",
+      "tags": [
+        "css",
+        "postcss"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:devDep:tailwindcss",
+      "type": "devDependency",
+      "name": "tailwindcss",
+      "filePath": "package.json",
+      "summary": "Utility-first CSS framework v3.4.1",
+      "tags": [
+        "css",
+        "tailwind"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:devDep:typescript",
+      "type": "devDependency",
+      "name": "typescript",
+      "filePath": "package.json",
+      "summary": "TypeScript compiler v5",
+      "tags": [
+        "typescript",
+        "language"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tailwind.config.ts",
+      "type": "file",
+      "name": "tailwind.config.ts",
+      "filePath": "tailwind.config.ts",
+      "summary": "Tailwind CSS configuration defining custom theme colors, animations, and typography for the workshop site. Exports a Tailwind Config object with extended colors (dark, cream, purple, pink), custom font family, keyframe animations (float-slow, float-slower, gradient-shift, fade-in-up, glow-pulse, shimmer), and animation shortcuts.",
+      "tags": [
+        "config",
+        "tailwind",
+        "styling",
+        "animation",
+        "theme",
+        "ui-config"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:symbol:tailwind.config.ts:Config",
+      "type": "import",
+      "name": "Config",
+      "filePath": "tailwind.config.ts",
+      "summary": "TypeScript type imported from 'tailwindcss' package for configuration typing",
+      "tags": [
+        "type",
+        "tailwindcss",
+        "import"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:symbol:tailwind.config.ts:config",
+      "type": "variable",
+      "name": "config",
+      "filePath": "tailwind.config.ts",
+      "summary": "Tailwind configuration object instance with type annotation Config. Contains content array for template files, extended theme with colors, typography, keyframes, and animations.",
+      "tags": [
+        "variable",
+        "export",
+        "configuration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:symbol:tailwind.config.ts:colors",
+      "type": "object",
+      "name": "colors",
+      "filePath": "tailwind.config.ts",
+      "summary": "Custom color theme extension defining four brand colors: dark (#151515), cream (#FCF4EB), purple (#7C69C7), and pink (#F5C3C6)",
+      "tags": [
+        "colors",
+        "theme",
+        "branding"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:symbol:tailwind.config.ts:fontFamily",
+      "type": "object",
+      "name": "fontFamily",
+      "filePath": "tailwind.config.ts",
+      "summary": "Font family configuration using CSS variable --font-plus-jakarta as primary sans-serif font with system-ui and generic sans-serif fallbacks",
+      "tags": [
+        "typography",
+        "fonts",
+        "theme"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:symbol:tailwind.config.ts:keyframes",
+      "type": "object",
+      "name": "keyframes",
+      "filePath": "tailwind.config.ts",
+      "summary": "Custom keyframe animations: float-slow (Y-axis 22px translation), float-slower (Y-axis 18px translation), gradient-shift (background position), fade-in-up (opacity and Y translation), glow-pulse (box shadow), and shimmer (background position)",
+      "tags": [
+        "animations",
+        "keyframes",
+        "motion"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:symbol:tailwind.config.ts:animation",
+      "type": "object",
+      "name": "animation",
+      "filePath": "tailwind.config.ts",
+      "summary": "Animation shortcuts binding keyframes to duration, easing, and iteration settings. Includes float-slow (7s), float-slower (9s), gradient-shift (6s), fade-in-up (0.5s), glow-pulse (3s), and shimmer (3s)",
+      "tags": [
+        "animations",
+        "motion",
+        "shortcuts"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.gitignore",
+      "type": "file",
+      "name": ".gitignore",
+      "filePath": ".gitignore",
+      "summary": "Git ignore configuration for workshop-site project. Excludes Vercel deployment, node_modules dependencies, Next.js build artifacts, local environment variables, TypeScript build info, Supabase temp files, and GitNexus index.",
+      "tags": [
+        "config",
+        "git",
+        "build-artifacts",
+        "dependencies"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:symbol:.gitignore:vercel",
+      "type": "pattern",
+      "name": ".vercel",
+      "filePath": ".gitignore",
+      "summary": "Ignores Vercel deployment configuration and build artifacts directory",
+      "tags": [
+        "build",
+        "deployment",
+        "vercel"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:symbol:.gitignore:node_modules",
+      "type": "pattern",
+      "name": "node_modules",
+      "filePath": ".gitignore",
+      "summary": "Ignores npm/yarn package dependencies directory",
+      "tags": [
+        "dependencies",
+        "package-manager"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:symbol:.gitignore:nextjs",
+      "type": "pattern",
+      "name": ".next",
+      "filePath": ".gitignore",
+      "summary": "Ignores Next.js build output and cache directory",
+      "tags": [
+        "build",
+        "nextjs",
+        "build-artifacts"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:symbol:.gitignore:env",
+      "type": "pattern",
+      "name": ".env*.local",
+      "filePath": ".gitignore",
+      "summary": "Ignores local environment variable files including .env.local, .env.development.local, etc.",
+      "tags": [
+        "secrets",
+        "environment",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:symbol:.gitignore:typescript",
+      "type": "pattern",
+      "name": "tsconfig.tsbuildinfo",
+      "filePath": ".gitignore",
+      "summary": "Ignores TypeScript build incremental build cache file",
+      "tags": [
+        "build",
+        "typescript",
+        "cache"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:symbol:.gitignore:supabase",
+      "type": "pattern",
+      "name": "supabase/.temp/",
+      "filePath": ".gitignore",
+      "summary": "Ignores Supabase temporary files directory",
+      "tags": [
+        "build",
+        "supabase",
+        "temporary"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:symbol:.gitignore:gitnexus",
+      "type": "pattern",
+      "name": ".gitnexus",
+      "filePath": ".gitignore",
+      "summary": "Ignores GitNexus code intelligence index directory",
+      "tags": [
+        "build",
+        "tools",
+        "index"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/lib/event-checkout.ts",
+      "type": "file",
+      "name": "event-checkout.ts",
+      "filePath": "src/lib/event-checkout.ts",
+      "summary": "Checkout logic: mode resolution, amount calculation with promos/donations, Stripe session params builder",
+      "tags": [
+        "library",
+        "checkout-logic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:type:EventCheckoutMode",
+      "type": "type",
+      "name": "EventCheckoutMode",
+      "filePath": "src/lib/event-checkout.ts",
+      "summary": "Union type for checkout modes: 'embedded' | 'hosted'",
+      "tags": [
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:resolveCheckoutMode",
+      "type": "function",
+      "name": "resolveCheckoutMode",
+      "filePath": "src/lib/event-checkout.ts",
+      "summary": "Selects checkout mode: embedded if available and requested, otherwise hosted",
+      "tags": [
+        "logic-function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:resolveEventCheckoutAmount",
+      "type": "function",
+      "name": "resolveEventCheckoutAmount",
+      "filePath": "src/lib/event-checkout.ts",
+      "summary": "Calculates checkout amount: applies promo (percent/amount off) or donation amount",
+      "tags": [
+        "calculation-function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:buildEventCheckoutSessionParams",
+      "type": "function",
+      "name": "buildEventCheckoutSessionParams",
+      "filePath": "src/lib/event-checkout.ts",
+      "summary": "Builds Stripe Checkout SessionCreateParams with mode-specific URLs, metadata, and promo handling",
+      "tags": [
+        "builder-function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "concept:event-rendering-system",
+      "type": "concept",
+      "name": "Event Rendering System",
+      "summary": "Architecture for rendering event pages: EventPageView dispatches to section renderers based on EventSection type",
+      "tags": [
+        "architecture",
+        "component-pattern"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "concept:checkout-flow",
+      "type": "concept",
+      "name": "Checkout Flow",
+      "summary": "Payment processing: validation -> checkout session creation -> Stripe embed/hosted -> finalize registration -> success modal",
+      "tags": [
+        "business-flow"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "concept:promo-system",
+      "type": "concept",
+      "name": "Promo Code System",
+      "summary": "Promo handling: lookup by code, calculate discount (percent/amount), display stripped price, apply in checkout",
+      "tags": [
+        "business-logic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "concept:donation-mode",
+      "type": "concept",
+      "name": "Donation Mode",
+      "summary": "Alternative to fixed pricing: attendee sets donation amount (with minimum), displays in registration form",
+      "tags": [
+        "feature",
+        "variant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/lib/giveaways.ts",
+      "type": "file",
+      "name": "giveaways.ts",
+      "filePath": "src/lib/giveaways.ts",
+      "summary": "Giveaway registry with types and query utilities for giveaway index page generation.",
+      "tags": [
+        "giveaway",
+        "data"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:interface:Giveaway",
+      "type": "type",
+      "name": "Giveaway",
+      "filePath": "src/lib/giveaways.ts",
+      "summary": "Giveaway interface with slug, title, description, icon, badge, and badgeVariant.",
+      "tags": [
+        "giveaway",
+        "type"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:variable:giveaways",
+      "type": "export",
+      "name": "giveaways",
+      "filePath": "src/lib/giveaways.ts",
+      "summary": "Array of 25 giveaways including quizzes, guides, tools, skills, and resources.",
+      "tags": [
+        "giveaway",
+        "data",
+        "export"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:getGiveaway",
+      "type": "export",
+      "name": "getGiveaway",
+      "filePath": "src/lib/giveaways.ts",
+      "summary": "Find giveaway by slug from giveaways array.",
+      "tags": [
+        "giveaway",
+        "query",
+        "export"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/lib/google-calendar-invite.ts",
+      "type": "file",
+      "name": "google-calendar-invite.ts",
+      "filePath": "src/lib/google-calendar-invite.ts",
+      "summary": "Google Calendar integration for adding attendees to event calendar entries",
+      "tags": [
+        "google-calendar",
+        "calendar-invites",
+        "oauth"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:type:CalendarInviteResult",
+      "type": "type",
+      "name": "CalendarInviteResult",
+      "filePath": "src/lib/google-calendar-invite.ts",
+      "summary": "Result union type for calendar invite attempts (invited, already-invited, skipped, failed)",
+      "tags": [
+        "types"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/google-calendar-invite.ts:eventIdFor",
+      "type": "function",
+      "name": "eventIdFor",
+      "filePath": "src/lib/google-calendar-invite.ts",
+      "summary": "Resolves Google Calendar event ID from environment variables (slug-specific or default)",
+      "tags": [
+        "environment",
+        "google-calendar"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/google-calendar-invite.ts:getAuth",
+      "type": "function",
+      "name": "getAuth",
+      "filePath": "src/lib/google-calendar-invite.ts",
+      "summary": "Creates Google OAuth2 auth object from environment credentials",
+      "tags": [
+        "oauth",
+        "google"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/google-calendar-invite.ts:inviteAttendeeToEvent",
+      "type": "function",
+      "name": "inviteAttendeeToEvent",
+      "filePath": "src/lib/google-calendar-invite.ts",
+      "summary": "Adds attendee to Google Calendar event with description sync",
+      "tags": [
+        "google-calendar",
+        "attendee-management"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/lib/calendar.ts",
+      "type": "file",
+      "name": "calendar.ts",
+      "filePath": "src/lib/calendar.ts",
+      "summary": "Calendar utilities for iCal format, Google Calendar URLs, and event descriptions",
+      "tags": [
+        "calendar",
+        "ical",
+        "google-calendar"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/calendar.ts:toIcalDate",
+      "type": "function",
+      "name": "toIcalDate",
+      "filePath": "src/lib/calendar.ts",
+      "summary": "Converts ISO datetime to iCal format (YYYYMMDDTHHmmssZ)",
+      "tags": [
+        "ical",
+        "date-formatting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/calendar.ts:escapeIcal",
+      "type": "function",
+      "name": "escapeIcal",
+      "filePath": "src/lib/calendar.ts",
+      "summary": "Escapes special characters for iCal format (backslash, comma, semicolon, newline)",
+      "tags": [
+        "ical",
+        "escaping"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/calendar.ts:buildGoogleCalendarUrl",
+      "type": "function",
+      "name": "buildGoogleCalendarUrl",
+      "filePath": "src/lib/calendar.ts",
+      "summary": "Builds Google Calendar creation URL with event details",
+      "tags": [
+        "google-calendar",
+        "url-building"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/calendar.ts:buildIcalString",
+      "type": "function",
+      "name": "buildIcalString",
+      "filePath": "src/lib/calendar.ts",
+      "summary": "Builds complete iCal file content (VCALENDAR/VEVENT) with METHOD (REQUEST or PUBLISH)",
+      "tags": [
+        "ical",
+        "calendar"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/calendar.ts:buildEventCalendarDescription",
+      "type": "function",
+      "name": "buildEventCalendarDescription",
+      "filePath": "src/lib/calendar.ts",
+      "summary": "Builds calendar event description with zoom link and event page URL",
+      "tags": [
+        "calendar",
+        "description"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/api/events/checkout-session/route.ts",
+      "type": "file",
+      "name": "checkout-session/route.ts",
+      "filePath": "src/app/api/events/checkout-session/route.ts",
+      "summary": "Event registration checkout: creates Stripe sessions or free tickets, sends confirmations, manages calendar invites",
+      "tags": [
+        "api-route",
+        "checkout",
+        "stripe",
+        "events"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/app/api/events/checkout-session/route.ts:getBaseUrl",
+      "type": "function",
+      "name": "getBaseUrl",
+      "filePath": "src/app/api/events/checkout-session/route.ts",
+      "summary": "Resolves base URL from env or request origin",
+      "tags": [
+        "url-utils"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app/api/events/checkout-session/route.ts:POST",
+      "type": "function",
+      "name": "POST",
+      "filePath": "src/app/api/events/checkout-session/route.ts",
+      "summary": "Rate-limited checkout handler: validates input, resolves amount, creates Stripe session or free registration, tracks events",
+      "tags": [
+        "api-route",
+        "post",
+        "checkout",
+        "stripe"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/app/api/events/session-reminders/route.ts",
+      "type": "file",
+      "name": "session-reminders/route.ts",
+      "filePath": "src/app/api/events/session-reminders/route.ts",
+      "summary": "Cron endpoint for session reminder emails (24h and 2h before events)",
+      "tags": [
+        "api-route",
+        "cron",
+        "email",
+        "reminders"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/app/api/events/session-reminders/route.ts:isAuthorized",
+      "type": "function",
+      "name": "isAuthorized",
+      "filePath": "src/app/api/events/session-reminders/route.ts",
+      "summary": "Validates timing-safe Bearer token authorization",
+      "tags": [
+        "security",
+        "authorization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app/api/events/session-reminders/route.ts:acquireEventWindowLock",
+      "type": "function",
+      "name": "acquireEventWindowLock",
+      "filePath": "src/app/api/events/session-reminders/route.ts",
+      "summary": "Inserts lock record to prevent duplicate reminder runs",
+      "tags": [
+        "concurrency",
+        "locks"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app/api/events/session-reminders/route.ts:GET",
+      "type": "function",
+      "name": "GET",
+      "filePath": "src/app/api/events/session-reminders/route.ts",
+      "summary": "Cron handler: authorizes request, acquires lock, runs session reminders for specified events",
+      "tags": [
+        "api-route",
+        "get",
+        "cron"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/api/illy-auth/route.ts",
+      "type": "file",
+      "name": "illy-auth/route.ts",
+      "filePath": "src/app/api/illy-auth/route.ts",
+      "summary": "Password-protected authentication for Illy onboarding guide (30-day remember-me cookie)",
+      "tags": [
+        "api-route",
+        "auth",
+        "guide"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app/api/illy-auth/route.ts:sha256",
+      "type": "function",
+      "name": "sha256",
+      "filePath": "src/app/api/illy-auth/route.ts",
+      "summary": "Creates SHA256 hash of password",
+      "tags": [
+        "crypto",
+        "security"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app/api/illy-auth/route.ts:matchesPassword",
+      "type": "function",
+      "name": "matchesPassword",
+      "filePath": "src/app/api/illy-auth/route.ts",
+      "summary": "Timing-safe password comparison using SHA256 hashes",
+      "tags": [
+        "crypto",
+        "security"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app/api/illy-auth/route.ts:grantAccess",
+      "type": "function",
+      "name": "grantAccess",
+      "filePath": "src/app/api/illy-auth/route.ts",
+      "summary": "Sets illy_guide_auth cookie and redirects to /illy",
+      "tags": [
+        "auth",
+        "cookies"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app/api/illy-auth/route.ts:POST",
+      "type": "function",
+      "name": "POST",
+      "filePath": "src/app/api/illy-auth/route.ts",
+      "summary": "POST handler: validates form password, grants access or redirects with error",
+      "tags": [
+        "api-route",
+        "post"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app/api/illy-auth/route.ts:GET",
+      "type": "function",
+      "name": "GET",
+      "filePath": "src/app/api/illy-auth/route.ts",
+      "summary": "GET handler: validates query password, grants access or redirects with error",
+      "tags": [
+        "api-route",
+        "get"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/api/jill-auth/route.ts",
+      "type": "file",
+      "name": "jill-auth/route.ts",
+      "filePath": "src/app/api/jill-auth/route.ts",
+      "summary": "Password-protected authentication for Jill onboarding guide (30-day remember-me cookie)",
+      "tags": [
+        "api-route",
+        "auth",
+        "guide"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app/api/jill-auth/route.ts:sha256",
+      "type": "function",
+      "name": "sha256",
+      "filePath": "src/app/api/jill-auth/route.ts",
+      "summary": "Creates SHA256 hash of password",
+      "tags": [
+        "crypto",
+        "security"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app/api/jill-auth/route.ts:matchesPassword",
+      "type": "function",
+      "name": "matchesPassword",
+      "filePath": "src/app/api/jill-auth/route.ts",
+      "summary": "Timing-safe password comparison using SHA256 hashes",
+      "tags": [
+        "crypto",
+        "security"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app/api/jill-auth/route.ts:grantAccess",
+      "type": "function",
+      "name": "grantAccess",
+      "filePath": "src/app/api/jill-auth/route.ts",
+      "summary": "Sets jill_guide_auth cookie and redirects to /jill",
+      "tags": [
+        "auth",
+        "cookies"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app/api/jill-auth/route.ts:POST",
+      "type": "function",
+      "name": "POST",
+      "filePath": "src/app/api/jill-auth/route.ts",
+      "summary": "POST handler: validates form password, grants access or redirects with error",
+      "tags": [
+        "api-route",
+        "post"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app/api/jill-auth/route.ts:GET",
+      "type": "function",
+      "name": "GET",
+      "filePath": "src/app/api/jill-auth/route.ts",
+      "summary": "GET handler: validates query password, grants access or redirects with error",
+      "tags": [
+        "api-route",
+        "get"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/layout.tsx",
+      "type": "file",
+      "name": "layout.tsx",
+      "filePath": "src/app/layout.tsx",
+      "summary": "Root layout with metadata, fonts, analytics pixel, and site chrome wrapper",
+      "tags": [
+        "layout",
+        "metadata",
+        "analytics",
+        "fonts"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:var:plusJakarta",
+      "type": "variable",
+      "name": "plusJakarta",
+      "filePath": "src/app/layout.tsx",
+      "summary": "Plus Jakarta Sans font from Google Fonts with weights 400-800",
+      "tags": [
+        "fonts",
+        "typography"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:var:metadata",
+      "type": "variable",
+      "name": "metadata",
+      "filePath": "src/app/layout.tsx",
+      "summary": "Next.js metadata export with title templates, OG, Twitter, and robots config",
+      "tags": [
+        "metadata",
+        "seo"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:comp:RootLayout",
+      "type": "component",
+      "name": "RootLayout",
+      "filePath": "src/app/layout.tsx",
+      "summary": "Root layout component with HTML setup, Facebook pixel, and SiteChrome wrapper",
+      "tags": [
+        "layout",
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/giveaways/ai-behavior-quiz/page.tsx",
+      "type": "file",
+      "name": "ai-behavior-quiz/page.tsx",
+      "filePath": "src/app/giveaways/ai-behavior-quiz/page.tsx",
+      "summary": "Quiz landing page showing AI behavioral use levels (B0-B9 Avoidant to Watchful) with CTA to external quiz",
+      "tags": [
+        "page",
+        "quiz",
+        "giveaway",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:const:QUIZ_URL:behavior",
+      "type": "constant",
+      "name": "QUIZ_URL",
+      "filePath": "src/app/giveaways/ai-behavior-quiz/page.tsx",
+      "summary": "External URL to behavioral AI quiz on mastermindshq.business",
+      "tags": [
+        "quiz"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:const:LEVELS:behavior",
+      "type": "constant",
+      "name": "LEVELS",
+      "filePath": "src/app/giveaways/ai-behavior-quiz/page.tsx",
+      "summary": "Array of AI behavior levels: B0 Avoidant, B3 Testing, B6 Embedded, B9 Watchful",
+      "tags": [
+        "quiz",
+        "levels"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:comp:AiBehaviorQuizPage",
+      "type": "component",
+      "name": "AiBehaviorQuizPage",
+      "filePath": "src/app/giveaways/ai-behavior-quiz/page.tsx",
+      "summary": "Quiz landing page with hero section, level cards, CTA button, and giveaway modal",
+      "tags": [
+        "page",
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/giveaways/ai-levels-quiz/page.tsx",
+      "type": "file",
+      "name": "ai-levels-quiz/page.tsx",
+      "filePath": "src/app/giveaways/ai-levels-quiz/page.tsx",
+      "summary": "Quiz landing page showing AI capability levels (0-40: Exploring to Compounding) with CTA to external quiz",
+      "tags": [
+        "page",
+        "quiz",
+        "giveaway",
+        "capability"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:const:QUIZ_URL:capability",
+      "type": "constant",
+      "name": "QUIZ_URL",
+      "filePath": "src/app/giveaways/ai-levels-quiz/page.tsx",
+      "summary": "External URL to capability AI quiz on mastermindshq.business",
+      "tags": [
+        "quiz"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:const:LEVELS:capability",
+      "type": "constant",
+      "name": "LEVELS",
+      "filePath": "src/app/giveaways/ai-levels-quiz/page.tsx",
+      "summary": "Array of AI capability levels: 0-10 Exploring, 11-20 Applying, 21-30 Integrating, 31-40 Compounding",
+      "tags": [
+        "quiz",
+        "levels"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:comp:AiLevelsQuizPage",
+      "type": "component",
+      "name": "AiLevelsQuizPage",
+      "filePath": "src/app/giveaways/ai-levels-quiz/page.tsx",
+      "summary": "Quiz landing page with hero section, level cards, CTA button, and giveaway modal",
+      "tags": [
+        "page",
+        "component"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "function:__nofilepath__:POST",
+      "target": "function:__nofilepath__:getBaseUrl",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "function:__nofilepath__:POST",
+      "target": "function:__nofilepath__:getEventBySlug",
+      "type": "imports",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "function:__nofilepath__:POST",
+      "target": "function:__nofilepath__:resolveEventCheckoutAmount",
+      "type": "imports",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "function:__nofilepath__:POST",
+      "target": "function:__nofilepath__:resolveCheckoutMode",
+      "type": "imports",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "function:__nofilepath__:POST",
+      "target": "function:__nofilepath__:buildEventCheckoutSessionParams",
+      "type": "imports",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:EventPageView-tsx:EventPageView",
+      "target": "function:__nofilepath__:sectionTitleClass",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:EventPageView-tsx:EventPageView",
+      "target": "function:__nofilepath__:sectionEyebrowClass",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:EventPageView-tsx:EventPageView",
+      "target": "function:__nofilepath__:renderSection",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:EventPageView-tsx:EventPageView",
+      "target": "file:events-tsx:EventDefinition",
+      "type": "uses_type",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:EventPageView-tsx:EventPageView",
+      "target": "file:events-tsx:EventPromoCode",
+      "type": "uses_type",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:EventPageView-tsx:EventPageView",
+      "target": "file:EventPageView-tsx:SectionShell",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:EventPageView-tsx:EventPageView",
+      "target": "file:EventRegistrationSection-tsx:EventRegistrationSection",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:EventPageView-tsx:EventPageView",
+      "target": "function:__nofilepath__:formatEventPrice",
+      "type": "imports",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:EventPageView-tsx:EventPageView",
+      "target": "function:__nofilepath__:getEventDiscountedPrice",
+      "type": "imports",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:EventPageView-tsx:StorySection",
+      "target": "file:EventPageView-tsx:SectionShell",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:EventPageView-tsx:StorySection",
+      "target": "file:EventPageView-tsx:RichParagraphs",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:EventPageView-tsx:ChecklistSection",
+      "target": "file:EventPageView-tsx:SectionShell",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:EventPageView-tsx:CardsSection",
+      "target": "file:EventPageView-tsx:SectionShell",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:EventPageView-tsx:SplitSection",
+      "target": "file:EventPageView-tsx:SectionShell",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:EventPageView-tsx:SplitSection",
+      "target": "file:EventPageView-tsx:RichParagraphs",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:EventPageView-tsx:ImageSection",
+      "target": "file:EventPageView-tsx:SectionShell",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:EventPageView-tsx:HtmlSection",
+      "target": "file:EventPageView-tsx:SectionShell",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:EventPageView-tsx:HtmlSection",
+      "target": "file:EventPageView-tsx:EndedButton",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:EventPageView-tsx:QuoteCardSection",
+      "target": "file:EventPageView-tsx:SectionShell",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:EventPageView-tsx:HostsSection",
+      "target": "file:EventPageView-tsx:SectionShell",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:EventPageView-tsx:EventVideoSection",
+      "target": "file:EventPageView-tsx:SectionShell",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:EventPageView-tsx:CtaSection",
+      "target": "file:EventPageView-tsx:SectionShell",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:EventPageView-tsx:CtaSection",
+      "target": "file:EventPageView-tsx:EndedButton",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "function:__nofilepath__:renderSection",
+      "target": "file:EventPageView-tsx:StorySection",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "function:__nofilepath__:renderSection",
+      "target": "file:EventPageView-tsx:ChecklistSection",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "function:__nofilepath__:renderSection",
+      "target": "file:EventPageView-tsx:CardsSection",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "function:__nofilepath__:renderSection",
+      "target": "file:EventPageView-tsx:SplitSection",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "function:__nofilepath__:renderSection",
+      "target": "file:EventPageView-tsx:ImageSection",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "function:__nofilepath__:renderSection",
+      "target": "file:EventPageView-tsx:HtmlSection",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "function:__nofilepath__:renderSection",
+      "target": "file:EventPageView-tsx:QuoteCardSection",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "function:__nofilepath__:renderSection",
+      "target": "file:EventPageView-tsx:HostsSection",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "function:__nofilepath__:renderSection",
+      "target": "file:EventPageView-tsx:CtaSection",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:EventRegistrationSection-tsx:EventRegistrationSection",
+      "target": "file:EventRegistrationSection-tsx:useAnimatedNumber",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:EventRegistrationSection-tsx:EventRegistrationSection",
+      "target": "file:EventRegistrationSection-tsx:EventRegistrationData",
+      "type": "uses_type",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:EventRegistrationSection-tsx:EventRegistrationSection",
+      "target": "file:EventPageView-tsx:EventPageView",
+      "type": "imported_by",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "function:__nofilepath__:resolveEventCheckoutAmount",
+      "target": "function:__nofilepath__:resolvePromoCode",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "function:__nofilepath__:buildEventCheckoutSessionParams",
+      "target": "file:event-checkout-ts:EventCheckoutMode",
+      "type": "uses_type",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "function:__nofilepath__:buildEventCheckoutSessionParams",
+      "target": "file:events-tsx:EventDefinition",
+      "type": "uses_type",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "function:__nofilepath__:buildEventCheckoutSessionParams",
+      "target": "file:events-tsx:EventPromoCode",
+      "type": "uses_type",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "function:__nofilepath__:getDiscountedPrice",
+      "target": "file:events-tsx:EventPromoCode",
+      "type": "uses_type",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "function:__nofilepath__:getEventDiscountedPrice",
+      "target": "function:__nofilepath__:getDiscountedPrice",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "function:__nofilepath__:getEventDiscountedPrice",
+      "target": "file:events-tsx:EventDefinition",
+      "type": "uses_type",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "function:__nofilepath__:resolvePromoCode",
+      "target": "file:events-tsx:EventDefinition",
+      "type": "uses_type",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "function:__nofilepath__:formatEventPrice",
+      "target": "function:__nofilepath__:getEventDiscountedPrice",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "function:__nofilepath__:formatEventPrice",
+      "target": "file:events-tsx:EventDefinition",
+      "type": "uses_type",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "function:__nofilepath__:getEventBySlug",
+      "target": "file:events-tsx:events",
+      "type": "uses",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "function:__nofilepath__:getEventBySlug",
+      "target": "file:events-tsx:EventDefinition",
+      "type": "uses_type",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "function:__nofilepath__:getLiveEvents",
+      "target": "file:events-tsx:events",
+      "type": "uses",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "function:__nofilepath__:getLiveEvents",
+      "target": "file:events-tsx:EventDefinition",
+      "type": "uses_type",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "function:__nofilepath__:buildGoogleCalendarUrl",
+      "target": "function:__nofilepath__:toIcalDate",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "Converts ISO dates to iCal format for Google Calendar URL",
+      "direction": "forward"
+    },
+    {
+      "source": "function:__nofilepath__:buildIcalString",
+      "target": "function:__nofilepath__:toIcalDate",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "Converts event start/end times to iCal format",
+      "direction": "forward"
+    },
+    {
+      "source": "function:__nofilepath__:buildIcalString",
+      "target": "function:__nofilepath__:escapeIcal",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "Escapes special characters in event properties for iCal compliance",
+      "direction": "forward"
+    },
+    {
+      "source": "file:CLAUDE.md",
+      "target": "file:symbol:gitnexus",
+      "type": "documents",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:symbol:npm-script:dev",
+      "type": "defines",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:symbol:npm-script:build",
+      "type": "defines",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:symbol:npm-script:abandoned-checkout-run",
+      "type": "defines",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:symbol:npm-script:abandoned-checkout-control",
+      "type": "defines",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dependency:next",
+      "type": "depends-on",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dependency:react",
+      "type": "depends-on",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dependency:stripe",
+      "type": "depends-on",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dependency:stripe-react",
+      "type": "depends-on",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dependency:supabase-js",
+      "type": "depends-on",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dependency:resend",
+      "type": "depends-on",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dependency:framer-motion",
+      "type": "depends-on",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dependency:three",
+      "type": "depends-on",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dependency:vanta",
+      "type": "depends-on",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dependency:googleapis",
+      "type": "depends-on",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:supabase/migrations/010_email_suppressions.sql",
+      "target": "file:database-table:email_suppressions",
+      "type": "defines",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:supabase/migrations/010_email_suppressions.sql",
+      "target": "file:database-index:email_suppressions_created_at_idx",
+      "type": "defines",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:api-route:unsubscribe",
+      "target": "file:database-table:email_suppressions",
+      "type": "writes-to",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "function:isSuppressed",
+      "target": "file:database-table:email_suppressions",
+      "type": "reads-from",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:vercel.json",
+      "target": "file:vercel-rewrite:decks",
+      "type": "defines",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:vercel.json",
+      "target": "file:vercel-rewrite:passiveincome",
+      "type": "defines",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:vercel.json",
+      "target": "file:vercel-cron:abandoned-checkout-followups",
+      "type": "defines",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:vercel.json",
+      "target": "file:vercel-cron:abandoned-checkout-followups-t12h",
+      "type": "defines",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:vercel.json",
+      "target": "file:vercel-cron:location-reminders",
+      "type": "defines",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:vercel.json",
+      "target": "file:vercel-cron:session-reminders",
+      "type": "defines",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:vercel.json",
+      "target": "file:vercel-cron:reconcile-registrations",
+      "type": "defines",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:dependency:stripe-react",
+      "target": "file:dependency:stripe",
+      "type": "depends-on",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:supabase/migrations/010_email_suppressions.sql",
+      "target": "function:isSuppressed",
+      "type": "supports",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:route:lead-magnet",
+      "target": "function:__nofilepath__:sendViaResend",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:route:lead-magnet",
+      "target": "function:__nofilepath__:ingestIntoCrm",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:route:lead-magnet",
+      "target": "file:const:GIVEAWAY_SOURCE_MAP",
+      "type": "uses",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:route:lead-magnet-claudemd",
+      "target": "file:const:FILE_CONTENT",
+      "type": "uses",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:route:lead-magnet-claudemd",
+      "target": "function:__nofilepath__:sendViaResend",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:route:lead-magnet-passive-income-100",
+      "target": "file:const:LIVE_MODE",
+      "type": "uses",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:route:subscribe",
+      "target": "file:type:SubscribeDeps",
+      "type": "uses",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:route:unsubscribe",
+      "target": "function:__nofilepath__:recordUnsubscribeFromToken",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:route:unsubscribe",
+      "target": "function:__nofilepath__:htmlPage",
+      "type": "calls",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:page:guide-brain",
+      "target": "file:component:Session4Guide",
+      "type": "renders",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:component:Session4Guide",
+      "target": "file:component:Checkbox-session4",
+      "type": "renders",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:lib:abandoned-checkout-followups",
+      "target": "file:type:CheckoutFollowupAutomationKey",
+      "type": "exports",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:lib:abandoned-checkout-followups",
+      "target": "file:type:AbandonedCheckoutMode",
+      "type": "exports",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:lib:abandoned-checkout-followups",
+      "target": "file:type:AbandonedCheckoutCandidate",
+      "type": "exports",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:lib:abandoned-checkout-followups",
+      "target": "file:const:CHECKOUT_FOLLOWUP_DEFINITIONS",
+      "type": "exports",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:test:utm-owned-domains",
+      "target": "file:test:utm-tests",
+      "type": "part-of",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:test:utm-external-domains",
+      "target": "file:test:utm-tests",
+      "type": "part-of",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:test:utm-idempotency",
+      "target": "file:test:utm-tests",
+      "type": "part-of",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:test:utm-token-guard",
+      "target": "file:test:utm-tests",
+      "type": "part-of",
+      "weight": 0.5,
+      "description": "",
+      "direction": "forward"
+    },
+    {
+      "source": "file:.claude/settings.json",
+      "target": "file:hook:PostToolUse-Bash-Chrome-Refresh",
+      "type": "contains",
+      "weight": 1,
+      "label": "defines hook",
+      "direction": "forward"
+    },
+    {
+      "source": "file:hook:PostToolUse-Bash-Chrome-Refresh",
+      "target": "file:next.config.ts",
+      "type": "triggers-on",
+      "weight": 0.8,
+      "label": "watches for vercel --prod command",
+      "direction": "forward"
+    },
+    {
+      "source": "file:next-env.d.ts",
+      "target": "file:type:next",
+      "type": "references",
+      "weight": 1,
+      "label": "references type",
+      "direction": "forward"
+    },
+    {
+      "source": "file:next-env.d.ts",
+      "target": "file:type:next/image-types/global",
+      "type": "references",
+      "weight": 1,
+      "label": "references type",
+      "direction": "forward"
+    },
+    {
+      "source": "file:next-env.d.ts",
+      "target": "file:type:.next/types/routes.d.ts",
+      "type": "imports",
+      "weight": 1,
+      "label": "imports route types",
+      "direction": "forward"
+    },
+    {
+      "source": "file:next.config.ts",
+      "target": "file:dependency:path",
+      "type": "imports",
+      "weight": 1,
+      "label": "uses path module",
+      "direction": "forward"
+    },
+    {
+      "source": "file:next.config.ts",
+      "target": "file:type:NextConfig",
+      "type": "imports",
+      "weight": 1,
+      "label": "uses NextConfig type",
+      "direction": "forward"
+    },
+    {
+      "source": "file:next.config.ts",
+      "target": "config:nextConfig",
+      "type": "contains",
+      "weight": 1,
+      "label": "exports configuration",
+      "direction": "forward"
+    },
+    {
+      "source": "config:nextConfig",
+      "target": "config:turbopack",
+      "type": "contains",
+      "weight": 1,
+      "label": "includes turbopack config",
+      "direction": "forward"
+    },
+    {
+      "source": "config:nextConfig",
+      "target": "config:redirects",
+      "type": "contains",
+      "weight": 1,
+      "label": "includes redirects",
+      "direction": "forward"
+    },
+    {
+      "source": "config:nextConfig",
+      "target": "config:rewrites",
+      "type": "contains",
+      "weight": 1,
+      "label": "includes rewrites",
+      "direction": "forward"
+    },
+    {
+      "source": "config:turbopack",
+      "target": "file:dependency:path",
+      "type": "uses",
+      "weight": 0.9,
+      "label": "calls path.resolve",
+      "direction": "forward"
+    },
+    {
+      "source": "file:tsconfig.json",
+      "target": "config:compilerOptions",
+      "type": "contains",
+      "weight": 1,
+      "label": "defines compiler options",
+      "direction": "forward"
+    },
+    {
+      "source": "file:tsconfig.json",
+      "target": "config:paths",
+      "type": "contains",
+      "weight": 1,
+      "label": "defines path aliases",
+      "direction": "forward"
+    },
+    {
+      "source": "file:tsconfig.json",
+      "target": "config:include",
+      "type": "contains",
+      "weight": 1,
+      "label": "defines includes",
+      "direction": "forward"
+    },
+    {
+      "source": "file:tsconfig.json",
+      "target": "config:exclude",
+      "type": "contains",
+      "weight": 1,
+      "label": "defines excludes",
+      "direction": "forward"
+    },
+    {
+      "source": "config:include",
+      "target": "file:next-env.d.ts",
+      "type": "references",
+      "weight": 1,
+      "label": "includes file",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:script:dev",
+      "type": "contains",
+      "weight": 1,
+      "label": "defines script",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:script:build",
+      "type": "contains",
+      "weight": 1,
+      "label": "defines script",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:script:start",
+      "type": "contains",
+      "weight": 1,
+      "label": "defines script",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:script:lint",
+      "type": "contains",
+      "weight": 1,
+      "label": "defines script",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:script:test",
+      "type": "contains",
+      "weight": 1,
+      "label": "defines script",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:script:abandoned-checkout-control",
+      "type": "contains",
+      "weight": 1,
+      "label": "defines script",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:script:abandoned-checkout-run",
+      "type": "contains",
+      "weight": 1,
+      "label": "defines script",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:@stripe/react-stripe-js",
+      "type": "depends-on",
+      "weight": 1,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:@stripe/stripe-js",
+      "type": "depends-on",
+      "weight": 1,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:@supabase/supabase-js",
+      "type": "depends-on",
+      "weight": 1,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:@types/canvas-confetti",
+      "type": "depends-on",
+      "weight": 1,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:canvas-confetti",
+      "type": "depends-on",
+      "weight": 1,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:countup.js",
+      "type": "depends-on",
+      "weight": 1,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:framer-motion",
+      "type": "depends-on",
+      "weight": 1,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:googleapis",
+      "type": "depends-on",
+      "weight": 1,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:gsap",
+      "type": "depends-on",
+      "weight": 1,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:lenis",
+      "type": "depends-on",
+      "weight": 1,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:next",
+      "type": "depends-on",
+      "weight": 1,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:react",
+      "type": "depends-on",
+      "weight": 1,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:react-dom",
+      "type": "depends-on",
+      "weight": 1,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:resend",
+      "type": "depends-on",
+      "weight": 1,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:split-type",
+      "type": "depends-on",
+      "weight": 1,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:stripe",
+      "type": "depends-on",
+      "weight": 1,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:three",
+      "type": "depends-on",
+      "weight": 1,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:vanta",
+      "type": "depends-on",
+      "weight": 1,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:devDep:@types/node",
+      "type": "depends-on",
+      "weight": 1,
+      "label": "devDependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:devDep:@types/react",
+      "type": "depends-on",
+      "weight": 1,
+      "label": "devDependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:devDep:@types/react-dom",
+      "type": "depends-on",
+      "weight": 1,
+      "label": "devDependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:devDep:@types/three",
+      "type": "depends-on",
+      "weight": 1,
+      "label": "devDependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:devDep:autoprefixer",
+      "type": "depends-on",
+      "weight": 1,
+      "label": "devDependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:devDep:eslint",
+      "type": "depends-on",
+      "weight": 1,
+      "label": "devDependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:devDep:eslint-config-next",
+      "type": "depends-on",
+      "weight": 1,
+      "label": "devDependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:devDep:postcss",
+      "type": "depends-on",
+      "weight": 1,
+      "label": "devDependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:devDep:tailwindcss",
+      "type": "depends-on",
+      "weight": 1,
+      "label": "devDependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:devDep:typescript",
+      "type": "depends-on",
+      "weight": 1,
+      "label": "devDependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:script:dev",
+      "target": "file:dep:next",
+      "type": "uses",
+      "weight": 1,
+      "label": "next dev",
+      "direction": "forward"
+    },
+    {
+      "source": "file:script:build",
+      "target": "file:dep:next",
+      "type": "uses",
+      "weight": 1,
+      "label": "next build",
+      "direction": "forward"
+    },
+    {
+      "source": "file:script:start",
+      "target": "file:dep:next",
+      "type": "uses",
+      "weight": 1,
+      "label": "next start",
+      "direction": "forward"
+    },
+    {
+      "source": "file:script:lint",
+      "target": "file:dep:next",
+      "type": "uses",
+      "weight": 1,
+      "label": "next lint",
+      "direction": "forward"
+    },
+    {
+      "source": "file:script:lint",
+      "target": "file:devDep:eslint",
+      "type": "uses",
+      "weight": 0.8,
+      "label": "linting",
+      "direction": "forward"
+    },
+    {
+      "source": "file:script:test",
+      "target": "file:devDep:typescript",
+      "type": "uses",
+      "weight": 1,
+      "label": "tsx --tsconfig",
+      "direction": "forward"
+    },
+    {
+      "source": "file:dep:@stripe/react-stripe-js",
+      "target": "file:dep:react",
+      "type": "depends-on",
+      "weight": 1,
+      "label": "peer dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:dep:@stripe/react-stripe-js",
+      "target": "file:dep:@stripe/stripe-js",
+      "type": "depends-on",
+      "weight": 1,
+      "label": "requires",
+      "direction": "forward"
+    },
+    {
+      "source": "file:dep:react-dom",
+      "target": "file:dep:react",
+      "type": "depends-on",
+      "weight": 1,
+      "label": "peer dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:dep:framer-motion",
+      "target": "file:dep:react",
+      "type": "depends-on",
+      "weight": 1,
+      "label": "peer dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:devDep:@types/react",
+      "target": "file:dep:react",
+      "type": "augments",
+      "weight": 1,
+      "label": "types for",
+      "direction": "forward"
+    },
+    {
+      "source": "file:devDep:@types/react-dom",
+      "target": "file:dep:react-dom",
+      "type": "augments",
+      "weight": 1,
+      "label": "types for",
+      "direction": "forward"
+    },
+    {
+      "source": "file:devDep:@types/three",
+      "target": "file:dep:three",
+      "type": "augments",
+      "weight": 1,
+      "label": "types for",
+      "direction": "forward"
+    },
+    {
+      "source": "file:devDep:eslint-config-next",
+      "target": "file:dep:next",
+      "type": "configures",
+      "weight": 1,
+      "label": "linting rules for",
+      "direction": "forward"
+    },
+    {
+      "source": "file:devDep:tailwindcss",
+      "target": "file:devDep:autoprefixer",
+      "type": "works-with",
+      "weight": 0.9,
+      "label": "often used together",
+      "direction": "forward"
+    },
+    {
+      "source": "file:devDep:tailwindcss",
+      "target": "file:devDep:postcss",
+      "type": "works-with",
+      "weight": 0.9,
+      "label": "often used together",
+      "direction": "forward"
+    },
+    {
+      "source": "file:next.config.ts",
+      "target": "file:tsconfig.json",
+      "type": "references",
+      "weight": 0.8,
+      "label": "must satisfy typescript config",
+      "direction": "forward"
+    },
+    {
+      "source": "file:next.config.ts",
+      "target": "file:package.json",
+      "type": "references",
+      "weight": 0.8,
+      "label": "uses dependencies from",
+      "direction": "forward"
+    },
+    {
+      "source": "file:tailwind.config.ts",
+      "target": "file:symbol:tailwind.config.ts:Config",
+      "type": "imports",
+      "weight": 0.9,
+      "label": "imports Config type from tailwindcss",
+      "direction": "forward"
+    },
+    {
+      "source": "file:symbol:tailwind.config.ts:config",
+      "target": "file:symbol:tailwind.config.ts:colors",
+      "type": "contains",
+      "weight": 0.8,
+      "label": "config contains colors object",
+      "direction": "forward"
+    },
+    {
+      "source": "file:symbol:tailwind.config.ts:config",
+      "target": "file:symbol:tailwind.config.ts:fontFamily",
+      "type": "contains",
+      "weight": 0.8,
+      "label": "config contains fontFamily object",
+      "direction": "forward"
+    },
+    {
+      "source": "file:symbol:tailwind.config.ts:config",
+      "target": "file:symbol:tailwind.config.ts:keyframes",
+      "type": "contains",
+      "weight": 0.8,
+      "label": "config contains keyframes object",
+      "direction": "forward"
+    },
+    {
+      "source": "file:symbol:tailwind.config.ts:config",
+      "target": "file:symbol:tailwind.config.ts:animation",
+      "type": "contains",
+      "weight": 0.8,
+      "label": "config contains animation shortcuts",
+      "direction": "forward"
+    },
+    {
+      "source": "file:symbol:tailwind.config.ts:animation",
+      "target": "file:symbol:tailwind.config.ts:keyframes",
+      "type": "references",
+      "weight": 0.7,
+      "label": "animation shortcuts reference keyframes",
+      "direction": "forward"
+    },
+    {
+      "source": "file:.gitignore",
+      "target": "file:symbol:.gitignore:vercel",
+      "type": "contains",
+      "weight": 0.5,
+      "label": "defines vercel ignore pattern",
+      "direction": "forward"
+    },
+    {
+      "source": "file:.gitignore",
+      "target": "file:symbol:.gitignore:node_modules",
+      "type": "contains",
+      "weight": 0.5,
+      "label": "defines node_modules ignore pattern",
+      "direction": "forward"
+    },
+    {
+      "source": "file:.gitignore",
+      "target": "file:symbol:.gitignore:nextjs",
+      "type": "contains",
+      "weight": 0.5,
+      "label": "defines nextjs ignore pattern",
+      "direction": "forward"
+    },
+    {
+      "source": "file:.gitignore",
+      "target": "file:symbol:.gitignore:env",
+      "type": "contains",
+      "weight": 0.5,
+      "label": "defines environment ignore pattern",
+      "direction": "forward"
+    },
+    {
+      "source": "file:.gitignore",
+      "target": "file:symbol:.gitignore:typescript",
+      "type": "contains",
+      "weight": 0.5,
+      "label": "defines typescript ignore pattern",
+      "direction": "forward"
+    },
+    {
+      "source": "file:.gitignore",
+      "target": "file:symbol:.gitignore:supabase",
+      "type": "contains",
+      "weight": 0.5,
+      "label": "defines supabase ignore pattern",
+      "direction": "forward"
+    },
+    {
+      "source": "file:.gitignore",
+      "target": "file:symbol:.gitignore:gitnexus",
+      "type": "contains",
+      "weight": 0.5,
+      "label": "defines gitnexus ignore pattern",
+      "direction": "forward"
+    },
+    {
+      "source": "function:getGiveaway",
+      "target": "file:variable:giveaways",
+      "type": "searches",
+      "weight": 1,
+      "label": "finds by slug",
+      "direction": "forward"
+    },
+    {
+      "source": "function:getGiveaway",
+      "target": "file:interface:Giveaway",
+      "type": "returns",
+      "weight": 0.9,
+      "label": "returns giveaway",
+      "direction": "forward"
+    },
+    {
+      "source": "file:variable:giveaways",
+      "target": "file:interface:Giveaway",
+      "type": "contains",
+      "weight": 1,
+      "label": "array of giveaways",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/api/events/checkout-session/route.ts",
+      "target": "file:src/lib/google-calendar-invite.ts",
+      "type": "imports",
+      "label": "inviteAttendeeToEvent",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/app/api/events/checkout-session/route.ts:POST",
+      "target": "function:src/lib/google-calendar-invite.ts:inviteAttendeeToEvent",
+      "type": "calls",
+      "label": "adds to calendar",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/lib/google-calendar-invite.ts",
+      "target": "file:src/lib/calendar.ts",
+      "type": "imports",
+      "label": "buildEventCalendarDescription",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/lib/google-calendar-invite.ts:inviteAttendeeToEvent",
+      "target": "function:src/lib/google-calendar-invite.ts:eventIdFor",
+      "type": "calls",
+      "label": "resolves event ID",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/lib/google-calendar-invite.ts:inviteAttendeeToEvent",
+      "target": "function:src/lib/google-calendar-invite.ts:getAuth",
+      "type": "calls",
+      "label": "gets OAuth auth",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/lib/google-calendar-invite.ts:inviteAttendeeToEvent",
+      "target": "function:src/lib/calendar.ts:buildEventCalendarDescription",
+      "type": "calls",
+      "label": "builds description",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/app/api/events/session-reminders/route.ts:GET",
+      "target": "function:src/app/api/events/session-reminders/route.ts:isAuthorized",
+      "type": "calls",
+      "label": "validates token",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/app/api/events/session-reminders/route.ts:GET",
+      "target": "function:src/app/api/events/session-reminders/route.ts:acquireEventWindowLock",
+      "type": "calls",
+      "label": "prevents duplicates",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/api/illy-auth/route.ts",
+      "target": "function:src/app/api/illy-auth/route.ts:sha256",
+      "type": "contains",
+      "label": "function",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/api/illy-auth/route.ts",
+      "target": "function:src/app/api/illy-auth/route.ts:matchesPassword",
+      "type": "contains",
+      "label": "function",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/api/illy-auth/route.ts",
+      "target": "function:src/app/api/illy-auth/route.ts:grantAccess",
+      "type": "contains",
+      "label": "function",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/app/api/illy-auth/route.ts:POST",
+      "target": "function:src/app/api/illy-auth/route.ts:matchesPassword",
+      "type": "calls",
+      "label": "validates password",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/app/api/illy-auth/route.ts:POST",
+      "target": "function:src/app/api/illy-auth/route.ts:grantAccess",
+      "type": "calls",
+      "label": "on success",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/app/api/illy-auth/route.ts:GET",
+      "target": "function:src/app/api/illy-auth/route.ts:matchesPassword",
+      "type": "calls",
+      "label": "validates password",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/app/api/illy-auth/route.ts:GET",
+      "target": "function:src/app/api/illy-auth/route.ts:grantAccess",
+      "type": "calls",
+      "label": "on success",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/api/jill-auth/route.ts",
+      "target": "function:src/app/api/jill-auth/route.ts:sha256",
+      "type": "contains",
+      "label": "function",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/api/jill-auth/route.ts",
+      "target": "function:src/app/api/jill-auth/route.ts:matchesPassword",
+      "type": "contains",
+      "label": "function",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/api/jill-auth/route.ts",
+      "target": "function:src/app/api/jill-auth/route.ts:grantAccess",
+      "type": "contains",
+      "label": "function",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/app/api/jill-auth/route.ts:POST",
+      "target": "function:src/app/api/jill-auth/route.ts:matchesPassword",
+      "type": "calls",
+      "label": "validates password",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/app/api/jill-auth/route.ts:POST",
+      "target": "function:src/app/api/jill-auth/route.ts:grantAccess",
+      "type": "calls",
+      "label": "on success",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/app/api/jill-auth/route.ts:GET",
+      "target": "function:src/app/api/jill-auth/route.ts:matchesPassword",
+      "type": "calls",
+      "label": "validates password",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/app/api/jill-auth/route.ts:GET",
+      "target": "function:src/app/api/jill-auth/route.ts:grantAccess",
+      "type": "calls",
+      "label": "on success",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/layout.tsx",
+      "target": "file:var:plusJakarta",
+      "type": "contains",
+      "label": "font config",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/layout.tsx",
+      "target": "file:var:metadata",
+      "type": "contains",
+      "label": "metadata config",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/layout.tsx",
+      "target": "file:comp:RootLayout",
+      "type": "contains",
+      "label": "component",
+      "direction": "forward"
+    },
+    {
+      "source": "file:comp:RootLayout",
+      "target": "file:var:plusJakarta",
+      "type": "uses",
+      "label": "applies font",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/giveaways/ai-behavior-quiz/page.tsx",
+      "target": "file:const:QUIZ_URL:behavior",
+      "type": "contains",
+      "label": "constant",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/giveaways/ai-behavior-quiz/page.tsx",
+      "target": "file:const:LEVELS:behavior",
+      "type": "contains",
+      "label": "constant",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/giveaways/ai-behavior-quiz/page.tsx",
+      "target": "file:comp:AiBehaviorQuizPage",
+      "type": "contains",
+      "label": "component",
+      "direction": "forward"
+    },
+    {
+      "source": "file:comp:AiBehaviorQuizPage",
+      "target": "file:const:QUIZ_URL:behavior",
+      "type": "uses",
+      "label": "quiz link",
+      "direction": "forward"
+    },
+    {
+      "source": "file:comp:AiBehaviorQuizPage",
+      "target": "file:const:LEVELS:behavior",
+      "type": "uses",
+      "label": "renders levels",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/giveaways/ai-levels-quiz/page.tsx",
+      "target": "file:const:QUIZ_URL:capability",
+      "type": "contains",
+      "label": "constant",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/giveaways/ai-levels-quiz/page.tsx",
+      "target": "file:const:LEVELS:capability",
+      "type": "contains",
+      "label": "constant",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/giveaways/ai-levels-quiz/page.tsx",
+      "target": "file:comp:AiLevelsQuizPage",
+      "type": "contains",
+      "label": "component",
+      "direction": "forward"
+    },
+    {
+      "source": "file:comp:AiLevelsQuizPage",
+      "target": "file:const:QUIZ_URL:capability",
+      "type": "uses",
+      "label": "quiz link",
+      "direction": "forward"
+    },
+    {
+      "source": "file:comp:AiLevelsQuizPage",
+      "target": "file:const:LEVELS:capability",
+      "type": "uses",
+      "label": "renders levels",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/api/events/checkout-session/route.ts",
+      "target": "file:src/lib/event-checkout.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    }
+  ]
+}

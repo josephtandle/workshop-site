@@ -1,0 +1,78 @@
+Warning: merge-batch-graphs: 1 batch file(s) with unrecognized filenames will be DROPPED — files: batch-existing.json — fix the file-analyzer agent to use only batch-<N>.json or batch-<N>-part-<K>.json patterns
+Found 5 batch files (4 logical batches, 0 multi-part):
+  batch-1.json: 38 nodes, 54 edges
+  batch-2.json: 19 nodes, 23 edges
+  batch-4.json: 30 nodes, 28 edges
+  batch-5.json: 34 nodes, 31 edges
+
+Input: 121 nodes, 136 edges
+
+Fixed (252 corrections):
+    81 × bare path → file: (missing prefix)
+    30 × bare path → function: (missing prefix)
+     4 × bare path → module: (missing prefix)
+     6 × complexity "low" → "simple"
+     2 × complexity "medium" → "moderate"
+   127 × edge references rewritten after ID normalization
+     2 × duplicate node IDs removed (kept last)
+
+Could not fix (226 issues — needs agent review):
+    18 × unknown node type "component" (not in schema, kept as-is)
+    11 × unknown node type "type" (not in schema, kept as-is)
+    10 × unknown node type "test" (not in schema, kept as-is)
+    10 × unknown node type "dependency" (not in schema, kept as-is)
+     7 × unknown node type "constant" (not in schema, kept as-is)
+     7 × unknown node type "vercel-config" (not in schema, kept as-is)
+     6 × unknown node type "api-route" (not in schema, kept as-is)
+     4 × unknown node type "npm-script" (not in schema, kept as-is)
+     1 × unknown node type "hook" (not in schema, kept as-is)
+     1 × unknown node type "framework" (not in schema, kept as-is)
+     1 × unknown node type "database-table" (not in schema, kept as-is)
+     1 × unknown node type "database-index" (not in schema, kept as-is)
+     1 × unknown node type "documentation" (not in schema, kept as-is)
+     1 × unknown node type "page" (not in schema, kept as-is)
+     1 × unknown node type "library" (not in schema, kept as-is)
+     1 × unknown node type "test-file" (not in schema, kept as-is)
+   113 × complexity None → defaulted to "moderate"
+  - Edge @/lib/events → getEventBySlug (imports): dropped, missing source '@/lib/events', target 'getEventBySlug'
+  - Edge @/lib/legacy-event-schedule → finalizeLegacyCheckoutSession (imports): dropped, missing source '@/lib/legacy-event-schedule', target 'finalizeLegacyCheckoutSession'
+  - Edge @/lib/stripe → createStripeClient (imports): dropped, missing source '@/lib/stripe', target 'createStripeClient'
+  - Edge @/lib/insight-to-fix → trackInsightEvent (imports): dropped, missing source '@/lib/insight-to-fix', target 'trackInsightEvent'
+  - Edge next/server → NextResponse (imports): dropped, missing source 'next/server', target 'NextResponse'
+  - Edge stripe → Stripe (imports): dropped, missing source 'stripe', target 'Stripe'
+  - Edge ./supabase → supabase (imports): dropped, missing source './supabase', target 'supabase'
+  - Edge ./supabase → supabase (imports): dropped, missing source './supabase', target 'supabase'
+  - Edge file:tests/event-location-reminder.test.ts:test:idempotency-key → getEventBySlug (calls): dropped, missing target 'getEventBySlug'
+  - Edge file:tests/event-location-reminder.test.ts:test:idempotency-key → buildLocationReminderIdempotencyKey (calls): dropped, missing target 'buildLocationReminderIdempotencyKey'
+  - Edge file:tests/event-location-reminder.test.ts:test:reminder-due-window → getEventBySlug (calls): dropped, missing target 'getEventBySlug'
+  - Edge file:tests/event-location-reminder.test.ts:test:reminder-due-window → isLocationReminderDue (calls): dropped, missing target 'isLocationReminderDue'
+  - Edge file:tests/event-location-reminder.test.ts:test:window-closed → getEventBySlug (calls): dropped, missing target 'getEventBySlug'
+  - Edge file:tests/event-location-reminder.test.ts:test:window-closed → hasLocationRevealWindowClosed (calls): dropped, missing target 'hasLocationRevealWindowClosed'
+  - Edge file:tests/event-location-reminder.test.ts:test:late-signup-address → getEventBySlug (calls): dropped, missing target 'getEventBySlug'
+  - Edge file:tests/event-location-reminder.test.ts:test:late-signup-address → sendEventConfirmationEmail (calls): dropped, missing target 'sendEventConfirmationEmail'
+  - Edge file:tests/event-location-reminder.test.ts:test:dedupe-attendees → dedupeAttendeesByEmail (calls): dropped, missing target 'dedupeAttendeesByEmail'
+  - Edge file:tests/event-location-reminder.test.ts:test:idempotency-key-resend → getEventBySlug (calls): dropped, missing target 'getEventBySlug'
+  - Edge file:tests/event-location-reminder.test.ts:test:idempotency-key-resend → sendEventLocationReminderEmail (calls): dropped, missing target 'sendEventLocationReminderEmail'
+  - Edge file:tests/event-location-reminder.test.ts:test:idempotency-key-resend → buildLocationReminderIdempotencyKey (calls): dropped, missing target 'buildLocationReminderIdempotencyKey'
+  - Edge function:__nofilepath__:sendViaResend → lib:utm (imports): dropped, missing target 'lib:utm'
+  - Edge function:__nofilepath__:sendViaResend → lib:list-unsubscribe (imports): dropped, missing target 'lib:list-unsubscribe'
+  - Edge function:__nofilepath__:recordUnsubscribeFromToken → lib:list-unsubscribe (imports): dropped, missing target 'lib:list-unsubscribe'
+  - Edge file:component:Session4Guide → lib:celebrate (imports): dropped, missing target 'lib:celebrate'
+  - Edge file:component:Session4Guide → component:StepCard (imports): dropped, missing target 'component:StepCard'
+  - Edge file:component:Session4Guide → component:StickyVideoPlayer (imports): dropped, missing target 'component:StickyVideoPlayer'
+  - Edge file:component:Session7Guide → component:StepCard (imports): dropped, missing target 'component:StepCard'
+  - Edge file:component:Session7Guide → component:StickyVideoPlayer (imports): dropped, missing target 'component:StickyVideoPlayer'
+  - Edge function:__nofilepath__:buildAbandonedCheckoutEmailHtml → lib:utm (imports): dropped, missing target 'lib:utm'
+  - Edge function:__nofilepath__:buildAbandonedCheckoutT12hEmailHtml → lib:utm (imports): dropped, missing target 'lib:utm'
+  - Edge function:__nofilepath__:shouldIncludeFinanceLine → type:EventDefinition (uses): dropped, missing target 'type:EventDefinition'
+  - Edge file:test:utm-tests → lib:utm (tests): dropped, missing target 'lib:utm'
+
+Output: 119 nodes, 104 edges
+
+Warning: dropped 1 batch file(s) with unrecognized filenames — files: batch-existing.json — fix the file-analyzer agent to use only batch-<N>.json or batch-<N>-part-<K>.json patterns (every node/edge in these files was excluded from the final graph)
+
+Imports edge recovery:
+  Recovered 0 `imports` edges from importMap (7 entries scanned)
+  Skipped 7 importMap source files with no `file:` node in graph
+
+Written to /Users/myos/.myos/workspace/projects/mastermind/workshop-site/.understand-anything/intermediate/assembled-graph.json (76 KB)

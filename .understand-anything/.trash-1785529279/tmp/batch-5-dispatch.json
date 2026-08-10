@@ -1,0 +1,115 @@
+{
+  "batchIndex": 5,
+  "files": [
+    {
+      "path": ".claude/settings.json",
+      "language": "json",
+      "sizeLines": 16,
+      "fileCategory": "config",
+      "summary": "Claude Code project configuration"
+    },
+    {
+      "path": "docs/giveaways/PROCESS.md",
+      "language": "markdown",
+      "sizeLines": 472,
+      "fileCategory": "docs",
+      "summary": "Giveaway process documentation"
+    },
+    {
+      "path": "next-env.d.ts",
+      "language": "typescript",
+      "sizeLines": 6,
+      "fileCategory": "code",
+      "summary": "Next.js type definitions"
+    },
+    {
+      "path": "next.config.ts",
+      "language": "typescript",
+      "sizeLines": 60,
+      "fileCategory": "code",
+      "summary": "Next.js configuration"
+    },
+    {
+      "path": "src/app/100-ai/page.tsx",
+      "language": "tsx",
+      "sizeLines": 316,
+      "fileCategory": "code",
+      "summary": "100-day AI challenge page"
+    },
+    {
+      "path": "src/app/api/lead-magnet/route.ts",
+      "language": "typescript",
+      "sizeLines": 479,
+      "fileCategory": "code",
+      "summary": "Lead magnet API route handler"
+    },
+    {
+      "path": "src/app/layout.tsx",
+      "language": "tsx",
+      "sizeLines": 72,
+      "fileCategory": "code",
+      "summary": "Root layout component"
+    },
+    {
+      "path": "src/app/page.tsx",
+      "language": "tsx",
+      "sizeLines": 57,
+      "fileCategory": "code",
+      "summary": "Home page"
+    },
+    {
+      "path": "src/lib/abandoned-checkout-followups.ts",
+      "language": "typescript",
+      "sizeLines": 1057,
+      "fileCategory": "code",
+      "summary": "Abandoned checkout followup business logic"
+    },
+    {
+      "path": "src/lib/supabase.ts",
+      "language": "typescript",
+      "sizeLines": 8,
+      "fileCategory": "code",
+      "summary": "Supabase client initialization"
+    },
+    {
+      "path": "tailwind.config.ts",
+      "language": "typescript",
+      "sizeLines": 55,
+      "fileCategory": "code",
+      "summary": "Tailwind CSS configuration"
+    },
+    {
+      "path": "tests/email-content.test.ts",
+      "language": "typescript",
+      "sizeLines": 319,
+      "fileCategory": "code",
+      "summary": "Email content test suite"
+    },
+    {
+      "path": "tests/hardening.test.ts",
+      "language": "typescript",
+      "sizeLines": 258,
+      "fileCategory": "code",
+      "summary": "Security hardening test suite"
+    }
+  ],
+  "batchImportData": {
+    ".claude/settings.json": [],
+    "docs/giveaways/PROCESS.md": [],
+    "next-env.d.ts": [],
+    "next.config.ts": [],
+    "src/app/100-ai/page.tsx": [],
+    "src/app/api/lead-magnet/route.ts": [
+      "src/lib/supabase.ts"
+    ],
+    "src/app/layout.tsx": [],
+    "src/app/page.tsx": [],
+    "src/lib/abandoned-checkout-followups.ts": [],
+    "src/lib/supabase.ts": [],
+    "tailwind.config.ts": [],
+    "tests/email-content.test.ts": [],
+    "tests/hardening.test.ts": []
+  },
+  "neighborMap": {},
+  "fileSummary": ".claude/settings.json (16 lines, json, config)\ndocs/giveaways/PROCESS.md (472 lines, markdown, docs)\nnext-env.d.ts (6 lines, typescript, code)\n... and 10 more"
+}
