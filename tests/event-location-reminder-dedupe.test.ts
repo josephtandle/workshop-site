@@ -354,7 +354,6 @@ test('two overlapping location-reminder cron processes send each attendee exactl
   assert.ok(event?.privateLocationReminder)
 
   const ledger = createInMemoryLedger()
-  const locks = new Set<string>()
   const sent: string[] = []
   const attendees = [
     { attendeeName: 'Joe', attendeeEmail: 'joe@example.com' },
@@ -364,11 +363,10 @@ test('two overlapping location-reminder cron processes send each attendee exactl
   const now = new Date('2026-05-30T07:00:00+08:00')
 
   const makeDeps = () => ({
-    acquireLock: async (lockKey: string) => {
-      if (locks.has(lockKey)) return false
-      locks.add(lockKey)
-      return true
-    },
+    // Deliberately wide open: the sequential test above covers the window lock.
+    // Leaving it armed made this pass without consulting the ledger; this proves
+    // the ledger's atomic claim is the only guard against a duplicate send.
+    acquireLock: async () => true,
     ledger,
     listAttendees: async () => attendees,
     sendReminder: async ({ attendeeEmail }: { attendeeEmail: string }) => {
