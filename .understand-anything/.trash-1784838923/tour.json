@@ -1,0 +1,156 @@
+[
+  {
+    "order": 1,
+    "title": "Project Overview & Configuration",
+    "description": "Start here to understand what this project is and how it's configured. Learn about the tech stack (Next.js, Stripe, Supabase, Resend), build settings, and project-level documentation.",
+    "nodeIds": [
+      "file:package.json",
+      "file:next.config.ts",
+      "file:tsconfig.json",
+      "file:tailwind.config.ts",
+      "file:CLAUDE.md",
+      "file:.claude/settings.json"
+    ]
+  },
+  {
+    "order": 2,
+    "title": "Core Data Models & Event System",
+    "description": "Learn the fundamental data structures that power the workshop platform. Events are the core entity. This file defines event metadata, sections, hosts, pricing, and promo codes that every other part of the system depends on.",
+    "nodeIds": [
+      "file:src/lib/events.tsx"
+    ]
+  },
+  {
+    "order": 3,
+    "title": "Lead Magnets & Giveaway Registry",
+    "description": "Understand how lead magnets (downloadable resources) and giveaways (quizzes and interactive content) are registered and managed. These are the free offerings that drive email list growth.",
+    "nodeIds": [
+      "file:src/lib/lead-magnets.ts",
+      "file:src/lib/giveaways.ts"
+    ]
+  },
+  {
+    "order": 4,
+    "title": "Database Schema & Event Registration System",
+    "description": "See how data is persisted in Supabase. Start with the core event registrations table, then explore tables for waitlists, lead magnets, email rules, and abandoned checkout tracking. This is the source of truth for all event and user data.",
+    "nodeIds": [
+      "file:supabase/migrations/001_event_registrations.sql",
+      "file:supabase/migrations/008_leads_and_lead_magnet_signups.sql",
+      "file:supabase/migrations/003_rate_limit_and_cron_locks.sql"
+    ]
+  },
+  {
+    "order": 5,
+    "title": "Payment Processing & Stripe Integration",
+    "description": "Understand how payments are handled. Learn about Stripe client setup, amount calculation, checkout session creation, and webhook handling. This handles the core revenue flow.",
+    "nodeIds": [
+      "file:src/lib/stripe.ts",
+      "file:src/lib/stripe-amount.ts",
+      "file:src/lib/event-checkout.ts"
+    ]
+  },
+  {
+    "order": 6,
+    "title": "Event Checkout API Endpoint",
+    "description": "This is the main API endpoint that creates Stripe checkout sessions for event registration. It handles validation, rate limiting, promo codes, and kicks off confirmation emails and calendar invites. The critical path for revenue.",
+    "nodeIds": [
+      "file:src/app/api/events/checkout-session/route.ts"
+    ]
+  },
+  {
+    "order": 7,
+    "title": "Email Services & Confirmations",
+    "description": "Learn how confirmation emails, session reminders, location reminders, and abandoned checkout followups are generated and sent via Resend. This handles all customer communication.",
+    "nodeIds": [
+      "file:src/lib/event-confirmation-email.ts",
+      "file:src/lib/resend-sender.ts",
+      "file:src/lib/abandoned-checkout-followups.ts",
+      "file:src/lib/session-reminder.ts",
+      "file:src/lib/location-reminder.ts"
+    ]
+  },
+  {
+    "order": 8,
+    "title": "Calendar & Collaboration Integration",
+    "description": "Understand how Google Calendar invites are sent to event attendees and how calendar event data is fetched and displayed. This integrates workshop events with attendees' calendars.",
+    "nodeIds": [
+      "file:src/lib/google-calendar-invite.ts",
+      "file:src/lib/calendar.ts"
+    ]
+  },
+  {
+    "order": 9,
+    "title": "Lead Magnet Delivery API",
+    "description": "This endpoint handles lead magnet subscriptions and email delivery. When someone signs up for a giveaway, this processes the request and sends them the lead magnet asset.",
+    "nodeIds": [
+      "file:src/app/api/lead-magnet/route.ts"
+    ]
+  },
+  {
+    "order": 10,
+    "title": "Waitlist Management APIs",
+    "description": "Explore the waitlist system that lets people join wait lists when events are full, get notified when spots open, and manage their waitlist status. Multiple endpoints handle join, remove, and notify operations.",
+    "nodeIds": [
+      "file:src/app/api/events/waitlist/join/route.ts",
+      "file:src/app/api/events/waitlist/notify/route.ts",
+      "file:src/app/api/events/waitlist/remove/route.ts"
+    ]
+  },
+  {
+    "order": 11,
+    "title": "Background Jobs & Cron Tasks",
+    "description": "Learn about scheduled tasks that run in the background: session reminders (email attendees before events), location reminders, and abandoned checkout followups. These keep the system automated.",
+    "nodeIds": [
+      "file:src/app/api/events/session-reminders/route.ts",
+      "file:src/app/api/events/location-reminders/route.ts",
+      "file:src/app/api/events/abandoned-checkout-followups/route.ts"
+    ]
+  },
+  {
+    "order": 12,
+    "title": "Site Layout & Global Structure",
+    "description": "This is the root layout that wraps all pages. It sets up global styles, metadata, fonts, and analytics (Facebook Pixel). It's the entry point for the entire site's HTML structure.",
+    "nodeIds": [
+      "file:src/app/layout.tsx"
+    ]
+  },
+  {
+    "order": 13,
+    "title": "Giveaway & Quiz Pages",
+    "description": "Explore the interactive giveaway pages (AI behavior quiz, AI levels quiz, checklists) that drive email collection and engagement. These are revenue-generating lead magnet pages.",
+    "nodeIds": [
+      "file:src/app/giveaways/page.tsx",
+      "file:src/app/giveaways/ai-behavior-quiz/page.tsx",
+      "file:src/app/giveaways/ai-levels-quiz/page.tsx"
+    ]
+  },
+  {
+    "order": 14,
+    "title": "Event Display & Registration Components",
+    "description": "See the React components that render event pages and handle registration. These are the customer-facing UI components that display event details and the registration form.",
+    "nodeIds": [
+      "file:src/components/events/EventPageView.tsx",
+      "file:src/components/events/EventRegistrationSection.tsx"
+    ]
+  },
+  {
+    "order": 15,
+    "title": "Email Utilities & Validation",
+    "description": "Learn supporting utilities: email validation (is an email valid?), rate limiting (prevent spam), and rate limit storage (using Supabase). These protect the system from abuse.",
+    "nodeIds": [
+      "file:src/lib/email-validation.ts",
+      "file:src/lib/rate-limit.ts"
+    ]
+  },
+  {
+    "order": 16,
+    "title": "Testing & Quality Assurance",
+    "description": "Explore the test suite that ensures critical flows work: event checkout, email delivery, waitlist operations, giveaways, and more. These tests protect the system from regressions.",
+    "nodeIds": [
+      "file:tests/event-checkout.test.ts",
+      "file:tests/event-registration-flow.test.ts",
+      "file:tests/email-content.test.ts",
+      "file:tests/giveaway-email-collection.test.ts"
+    ]
+  }
+]

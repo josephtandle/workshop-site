@@ -1,0 +1,487 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/lib/events.tsx",
+      "type": "file",
+      "name": "events.tsx",
+      "filePath": "src/lib/events.tsx",
+      "summary": "Event definitions, types, and utilities for workshop events. Exports event data, pricing logic, and filtering functions.",
+      "tags": ["events", "data", "types", "pricing"],
+      "complexity": "high"
+    },
+    {
+      "id": "type:EventHost",
+      "type": "type",
+      "name": "EventHost",
+      "filePath": "src/lib/events.tsx",
+      "summary": "Event host information including name, role, photo, and bio.",
+      "tags": ["event", "host", "person"],
+      "complexity": "low"
+    },
+    {
+      "id": "type:EventPromoCode",
+      "type": "type",
+      "name": "EventPromoCode",
+      "filePath": "src/lib/events.tsx",
+      "summary": "Promotional code details with discount options (percent or amount).",
+      "tags": ["pricing", "promo", "discount"],
+      "complexity": "low"
+    },
+    {
+      "id": "type:EventSection",
+      "type": "type",
+      "name": "EventSection",
+      "filePath": "src/lib/events.tsx",
+      "summary": "Union type for event page sections (story, checklist, cards, split, image, html, custom, quoteCard, hosts, cta).",
+      "tags": ["event", "section", "layout"],
+      "complexity": "high"
+    },
+    {
+      "id": "type:EventDefinition",
+      "type": "type",
+      "name": "EventDefinition",
+      "filePath": "src/lib/events.tsx",
+      "summary": "Complete event definition including pricing, hosts, sections, metadata, and calendar info.",
+      "tags": ["event", "data", "comprehensive"],
+      "complexity": "high"
+    },
+    {
+      "id": "function:getDiscountedPrice",
+      "type": "function",
+      "name": "getDiscountedPrice",
+      "filePath": "src/lib/events.tsx",
+      "summary": "Internal utility to calculate discounted price from promo code (amount or percent).",
+      "tags": ["pricing", "internal"],
+      "complexity": "low"
+    },
+    {
+      "id": "function:getEventDiscountedPrice",
+      "type": "export",
+      "name": "getEventDiscountedPrice",
+      "filePath": "src/lib/events.tsx",
+      "summary": "Calculate event discounted price using internal getDiscountedPrice utility.",
+      "tags": ["pricing", "export"],
+      "complexity": "low"
+    },
+    {
+      "id": "function:resolvePromoCode",
+      "type": "export",
+      "name": "resolvePromoCode",
+      "filePath": "src/lib/events.tsx",
+      "summary": "Find and return matching promo code from event by normalized code string.",
+      "tags": ["pricing", "promo", "export"],
+      "complexity": "low"
+    },
+    {
+      "id": "function:formatEventPrice",
+      "type": "export",
+      "name": "formatEventPrice",
+      "filePath": "src/lib/events.tsx",
+      "summary": "Format event price as currency string with currency symbol.",
+      "tags": ["pricing", "format", "export"],
+      "complexity": "low"
+    },
+    {
+      "id": "function:getEventBySlug",
+      "type": "export",
+      "name": "getEventBySlug",
+      "filePath": "src/lib/events.tsx",
+      "summary": "Find event by slug identifier from events array.",
+      "tags": ["event", "query", "export"],
+      "complexity": "low"
+    },
+    {
+      "id": "function:getLiveEvents",
+      "type": "export",
+      "name": "getLiveEvents",
+      "filePath": "src/lib/events.tsx",
+      "summary": "Filter and return only live events (status='live') from events array.",
+      "tags": ["event", "query", "export"],
+      "complexity": "low"
+    },
+    {
+      "id": "variable:events",
+      "type": "export",
+      "name": "events",
+      "filePath": "src/lib/events.tsx",
+      "summary": "Array of 3 event definitions (connection-dinner-canggu, ai-avatar-content-creation, ask-an-ai-expert).",
+      "tags": ["event", "data", "export"],
+      "complexity": "high"
+    },
+    {
+      "id": "file:src/lib/lead-magnets.ts",
+      "type": "file",
+      "name": "lead-magnets.ts",
+      "filePath": "src/lib/lead-magnets.ts",
+      "summary": "Lead magnet definitions and email builder for welcome emails with download links.",
+      "tags": ["lead-magnet", "email", "data"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "type:LeadMagnet",
+      "type": "type",
+      "name": "LeadMagnet",
+      "filePath": "src/lib/lead-magnets.ts",
+      "summary": "Lead magnet definition with slug, name, subject, and download path.",
+      "tags": ["lead-magnet", "type"],
+      "complexity": "low"
+    },
+    {
+      "id": "variable:SITE_URL",
+      "type": "export",
+      "name": "SITE_URL",
+      "filePath": "src/lib/lead-magnets.ts",
+      "summary": "Site URL constant from environment or default to workshop.mastermindshq.business.",
+      "tags": ["config", "export"],
+      "complexity": "low"
+    },
+    {
+      "id": "variable:LEAD_MAGNETS",
+      "type": "export",
+      "name": "LEAD_MAGNETS",
+      "filePath": "src/lib/lead-magnets.ts",
+      "summary": "Registry of lead magnets indexed by slug (currently one: client-launch-checklist).",
+      "tags": ["lead-magnet", "data", "export"],
+      "complexity": "low"
+    },
+    {
+      "id": "function:getLeadMagnet",
+      "type": "export",
+      "name": "getLeadMagnet",
+      "filePath": "src/lib/lead-magnets.ts",
+      "summary": "Retrieve lead magnet by slug from LEAD_MAGNETS registry.",
+      "tags": ["lead-magnet", "query", "export"],
+      "complexity": "low"
+    },
+    {
+      "id": "function:downloadUrlFor",
+      "type": "export",
+      "name": "downloadUrlFor",
+      "filePath": "src/lib/lead-magnets.ts",
+      "summary": "Build absolute download URL for lead magnet using SITE_URL and downloadPath.",
+      "tags": ["lead-magnet", "url", "export"],
+      "complexity": "low"
+    },
+    {
+      "id": "function:buildWelcomeEmail",
+      "type": "export",
+      "name": "buildWelcomeEmail",
+      "filePath": "src/lib/lead-magnets.ts",
+      "summary": "Build welcome email HTML with first name greeting and download button using downloadUrlFor.",
+      "tags": ["lead-magnet", "email", "export"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:escapeHtml",
+      "type": "function",
+      "name": "escapeHtml",
+      "filePath": "src/lib/lead-magnets.ts",
+      "summary": "Internal utility to escape HTML special characters in strings.",
+      "tags": ["security", "internal"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/lib/giveaways.ts",
+      "type": "file",
+      "name": "giveaways.ts",
+      "filePath": "src/lib/giveaways.ts",
+      "summary": "Giveaway registry with types and query utilities for giveaway index page generation.",
+      "tags": ["giveaway", "data"],
+      "complexity": "low"
+    },
+    {
+      "id": "interface:Giveaway",
+      "type": "type",
+      "name": "Giveaway",
+      "filePath": "src/lib/giveaways.ts",
+      "summary": "Giveaway interface with slug, title, description, icon, badge, and badgeVariant.",
+      "tags": ["giveaway", "type"],
+      "complexity": "low"
+    },
+    {
+      "id": "variable:giveaways",
+      "type": "export",
+      "name": "giveaways",
+      "filePath": "src/lib/giveaways.ts",
+      "summary": "Array of 25 giveaways including quizzes, guides, tools, skills, and resources.",
+      "tags": ["giveaway", "data", "export"],
+      "complexity": "low"
+    },
+    {
+      "id": "function:getGiveaway",
+      "type": "export",
+      "name": "getGiveaway",
+      "filePath": "src/lib/giveaways.ts",
+      "summary": "Find giveaway by slug from giveaways array.",
+      "tags": ["giveaway", "query", "export"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/lib/resend-sender.ts",
+      "type": "file",
+      "name": "resend-sender.ts",
+      "filePath": "src/lib/resend-sender.ts",
+      "summary": "Email sender guards and Resend API wrapper with test-run protection.",
+      "tags": ["email", "resend", "api", "guards"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:isTestRun",
+      "type": "export",
+      "name": "isTestRun",
+      "filePath": "src/lib/resend-sender.ts",
+      "summary": "Detect if code is running in test environment (NODE_ENV, VITEST, JEST_WORKER_ID, TSX_TEST).",
+      "tags": ["testing", "guards", "export"],
+      "complexity": "low"
+    },
+    {
+      "id": "function:sendViaResend",
+      "type": "export",
+      "name": "sendViaResend",
+      "filePath": "src/lib/resend-sender.ts",
+      "summary": "Send email via Resend API with test-run guard using isTestRun. Requires RESEND_API_KEY env var.",
+      "tags": ["email", "api", "guards", "export"],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "function:getEventDiscountedPrice",
+      "target": "function:getDiscountedPrice",
+      "type": "calls",
+      "weight": 1.0,
+      "label": "calls internal utility"
+    },
+    {
+      "source": "function:formatEventPrice",
+      "target": "function:getEventDiscountedPrice",
+      "type": "calls",
+      "weight": 1.0,
+      "label": "calculates price before formatting"
+    },
+    {
+      "source": "function:formatEventPrice",
+      "target": "type:EventDefinition",
+      "type": "uses",
+      "weight": 0.8,
+      "label": "accesses pricing properties"
+    },
+    {
+      "source": "function:resolvePromoCode",
+      "target": "type:EventDefinition",
+      "type": "uses",
+      "weight": 0.8,
+      "label": "searches promoCodes array"
+    },
+    {
+      "source": "function:resolvePromoCode",
+      "target": "type:EventPromoCode",
+      "type": "returns",
+      "weight": 0.9,
+      "label": "returns matching promo"
+    },
+    {
+      "source": "function:getEventBySlug",
+      "target": "variable:events",
+      "type": "queries",
+      "weight": 1.0,
+      "label": "searches events array"
+    },
+    {
+      "source": "function:getEventBySlug",
+      "target": "type:EventDefinition",
+      "type": "returns",
+      "weight": 0.9,
+      "label": "returns event definition"
+    },
+    {
+      "source": "function:getLiveEvents",
+      "target": "variable:events",
+      "type": "filters",
+      "weight": 1.0,
+      "label": "filters by status=live"
+    },
+    {
+      "source": "variable:events",
+      "target": "type:EventDefinition",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "array of event definitions"
+    },
+    {
+      "source": "variable:events",
+      "target": "type:EventHost",
+      "type": "contains",
+      "weight": 0.8,
+      "label": "hosts array"
+    },
+    {
+      "source": "variable:events",
+      "target": "type:EventSection",
+      "type": "contains",
+      "weight": 0.8,
+      "label": "sections array"
+    },
+    {
+      "source": "variable:events",
+      "target": "type:EventPromoCode",
+      "type": "contains",
+      "weight": 0.7,
+      "label": "promo codes in pricing"
+    },
+    {
+      "source": "type:EventDefinition",
+      "target": "type:EventHost",
+      "type": "references",
+      "weight": 0.8,
+      "label": "hosts property"
+    },
+    {
+      "source": "type:EventDefinition",
+      "target": "type:EventSection",
+      "type": "references",
+      "weight": 0.8,
+      "label": "sections array"
+    },
+    {
+      "source": "type:EventDefinition",
+      "target": "type:EventPromoCode",
+      "type": "references",
+      "weight": 0.7,
+      "label": "promoCodes in pricing"
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "file:src/lib/lead-magnets.ts",
+      "type": "no_direct_import",
+      "weight": 0.0,
+      "label": "independent file"
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "file:src/lib/giveaways.ts",
+      "type": "no_direct_import",
+      "weight": 0.0,
+      "label": "independent file"
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "file:src/lib/resend-sender.ts",
+      "type": "no_direct_import",
+      "weight": 0.0,
+      "label": "independent file"
+    },
+    {
+      "source": "function:buildWelcomeEmail",
+      "target": "function:downloadUrlFor",
+      "type": "calls",
+      "weight": 1.0,
+      "label": "builds download URL"
+    },
+    {
+      "source": "function:buildWelcomeEmail",
+      "target": "function:escapeHtml",
+      "type": "calls",
+      "weight": 1.0,
+      "label": "escapes HTML in name and title"
+    },
+    {
+      "source": "function:buildWelcomeEmail",
+      "target": "type:LeadMagnet",
+      "type": "uses",
+      "weight": 0.9,
+      "label": "accesses magnet properties"
+    },
+    {
+      "source": "function:downloadUrlFor",
+      "target": "variable:SITE_URL",
+      "type": "uses",
+      "weight": 1.0,
+      "label": "builds absolute URL"
+    },
+    {
+      "source": "function:downloadUrlFor",
+      "target": "type:LeadMagnet",
+      "type": "uses",
+      "weight": 0.9,
+      "label": "accesses downloadPath"
+    },
+    {
+      "source": "function:getLeadMagnet",
+      "target": "variable:LEAD_MAGNETS",
+      "type": "queries",
+      "weight": 1.0,
+      "label": "looks up by slug"
+    },
+    {
+      "source": "function:getLeadMagnet",
+      "target": "type:LeadMagnet",
+      "type": "returns",
+      "weight": 0.9,
+      "label": "returns lead magnet"
+    },
+    {
+      "source": "variable:LEAD_MAGNETS",
+      "target": "type:LeadMagnet",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "registry values"
+    },
+    {
+      "source": "file:src/lib/lead-magnets.ts",
+      "target": "file:src/lib/giveaways.ts",
+      "type": "no_direct_import",
+      "weight": 0.0,
+      "label": "independent file"
+    },
+    {
+      "source": "file:src/lib/lead-magnets.ts",
+      "target": "file:src/lib/resend-sender.ts",
+      "type": "no_direct_import",
+      "weight": 0.0,
+      "label": "independent file"
+    },
+    {
+      "source": "function:getGiveaway",
+      "target": "variable:giveaways",
+      "type": "searches",
+      "weight": 1.0,
+      "label": "finds by slug"
+    },
+    {
+      "source": "function:getGiveaway",
+      "target": "interface:Giveaway",
+      "type": "returns",
+      "weight": 0.9,
+      "label": "returns giveaway"
+    },
+    {
+      "source": "variable:giveaways",
+      "target": "interface:Giveaway",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "array of giveaways"
+    },
+    {
+      "source": "file:src/lib/giveaways.ts",
+      "target": "file:src/lib/resend-sender.ts",
+      "type": "no_direct_import",
+      "weight": 0.0,
+      "label": "independent file"
+    },
+    {
+      "source": "function:sendViaResend",
+      "target": "function:isTestRun",
+      "type": "calls",
+      "weight": 1.0,
+      "label": "guards against test runs"
+    },
+    {
+      "source": "file:src/lib/resend-sender.ts",
+      "target": "file:src/lib/subscribe.ts",
+      "type": "imports",
+      "weight": 0.8,
+      "label": "imports SentEmail type"
+    }
+  ]
+}

@@ -1,0 +1,1756 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/app/api/events/checkout-session/route.ts",
+      "type": "file",
+      "name": "route.ts",
+      "filePath": "src/app/api/events/checkout-session/route.ts",
+      "summary": "API endpoint that creates Stripe checkout sessions for event registrations, handling request validation, pricing calculations, and sending confirmation emails.",
+      "tags": [
+        "api-handler",
+        "checkout",
+        "events",
+        "stripe",
+        "validation"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Handles extensive form validation, Stripe integration, and email notifications for event registrations."
+    },
+    {
+      "id": "file:src/components/events/EventPageView.tsx",
+      "type": "file",
+      "name": "EventPageView.tsx",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Main event page component rendering dynamic event details including story sections, checklists, testimonials, hosts, and call-to-action with pricing.",
+      "tags": [
+        "component",
+        "entry-point",
+        "events",
+        "ui",
+        "react"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Large component with 17 internal functions handling multiple section types; uses dynamic section rendering pattern."
+    },
+    {
+      "id": "file:src/components/events/EventRegistrationSection.tsx",
+      "type": "file",
+      "name": "EventRegistrationSection.tsx",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "summary": "React component providing event registration form with Stripe Elements checkout integration, promo code handling, and success confirmation.",
+      "tags": [
+        "component",
+        "form",
+        "checkout",
+        "events",
+        "stripe"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Stateful component using 17 useState hooks; implements animated counter, Stripe embedded checkout fallback, and complex form validation flow."
+    },
+    {
+      "id": "file:src/lib/event-checkout.ts",
+      "type": "file",
+      "name": "event-checkout.ts",
+      "filePath": "src/lib/event-checkout.ts",
+      "summary": "Utility functions for event checkout processing including checkout mode selection, amount calculation with discounts, and Stripe session parameter building.",
+      "tags": [
+        "utility",
+        "checkout",
+        "stripe",
+        "pricing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/lib/events.tsx",
+      "type": "file",
+      "name": "events.tsx",
+      "filePath": "src/lib/events.tsx",
+      "summary": "Core event data definitions and utility functions for pricing calculations, promo code resolution, and event queries across the application.",
+      "tags": [
+        "data-model",
+        "events",
+        "utilities",
+        "configuration"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Large file (1402 lines) containing event data structure and helper functions; mix of hardcoded event data and reusable query utilities."
+    },
+    {
+      "id": "function:src/app/api/events/checkout-session/route.ts:POST",
+      "type": "function",
+      "name": "POST",
+      "filePath": "src/app/api/events/checkout-session/route.ts",
+      "lineRange": [
+        36,
+        354
+      ],
+      "summary": "Main API handler that processes event registration requests, validates inputs, calculates final pricing with promos, creates Stripe checkout sessions, and triggers confirmation emails.",
+      "tags": [
+        "api-handler",
+        "event-handler",
+        "checkout",
+        "validation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/components/events/EventPageView.tsx:EventPageView",
+      "type": "function",
+      "name": "EventPageView",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "lineRange": [
+        488,
+        661
+      ],
+      "summary": "Primary export component that renders the complete event page layout, coordinates all sections, and manages pricing display and registration UI.",
+      "tags": [
+        "component",
+        "entry-point",
+        "events",
+        "ui",
+        "react"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/components/events/EventPageView.tsx:StorySection",
+      "type": "function",
+      "name": "StorySection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "lineRange": [
+        71,
+        81
+      ],
+      "summary": "Section component rendering narrative story content with subtitle support.",
+      "tags": [
+        "component",
+        "events",
+        "content"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/events/EventPageView.tsx:ChecklistSection",
+      "type": "function",
+      "name": "ChecklistSection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "lineRange": [
+        83,
+        103
+      ],
+      "summary": "Section component displaying numbered checklist items with styled counter badges.",
+      "tags": [
+        "component",
+        "events",
+        "layout",
+        "list"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/events/EventPageView.tsx:CardsSection",
+      "type": "function",
+      "name": "CardsSection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "lineRange": [
+        105,
+        143
+      ],
+      "summary": "Section component displaying multiple cards with icons, titles, and bullet-point lists in flexible column layout.",
+      "tags": [
+        "component",
+        "events",
+        "layout",
+        "cards"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/events/EventPageView.tsx:SplitSection",
+      "type": "function",
+      "name": "SplitSection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "lineRange": [
+        145,
+        165
+      ],
+      "summary": "Section component rendering two-column layout with left-aligned text content and right-aligned image.",
+      "tags": [
+        "component",
+        "events",
+        "layout"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/events/EventPageView.tsx:ImageSection",
+      "type": "function",
+      "name": "ImageSection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "lineRange": [
+        167,
+        194
+      ],
+      "summary": "Section component for full-width responsive images with optional captions and alt text.",
+      "tags": [
+        "component",
+        "events",
+        "media"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/events/EventPageView.tsx:HtmlSection",
+      "type": "function",
+      "name": "HtmlSection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "lineRange": [
+        196,
+        221
+      ],
+      "summary": "Section component rendering custom HTML content with dynamic styling based on event status.",
+      "tags": [
+        "component",
+        "events",
+        "content",
+        "html"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/events/EventPageView.tsx:QuoteCardSection",
+      "type": "function",
+      "name": "QuoteCardSection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "lineRange": [
+        223,
+        312
+      ],
+      "summary": "Section component displaying testimonial cards with author photos, quotes, media elements, and structured testimonial data.",
+      "tags": [
+        "component",
+        "events",
+        "testimonial",
+        "cards"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/components/events/EventPageView.tsx:HostsSection",
+      "type": "function",
+      "name": "HostsSection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "lineRange": [
+        314,
+        357
+      ],
+      "summary": "Section component showcasing event hosts with photos, names, titles, and biographical information.",
+      "tags": [
+        "component",
+        "events",
+        "people"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/events/EventPageView.tsx:EventVideoSection",
+      "type": "function",
+      "name": "EventVideoSection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "lineRange": [
+        359,
+        383
+      ],
+      "summary": "Section component embedding and playing event video with responsive sizing.",
+      "tags": [
+        "component",
+        "events",
+        "media",
+        "video"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/events/EventPageView.tsx:CtaSection",
+      "type": "function",
+      "name": "CtaSection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "lineRange": [
+        393,
+        459
+      ],
+      "summary": "Call-to-action section displaying event details, pricing with promo discounts, date/time information, and registration button.",
+      "tags": [
+        "component",
+        "events",
+        "cta",
+        "checkout"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/events/EventPageView.tsx:renderSection",
+      "type": "function",
+      "name": "renderSection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "lineRange": [
+        461,
+        486
+      ],
+      "summary": "Helper function that routes section data to appropriate component renderer based on section type.",
+      "tags": [
+        "utility",
+        "rendering",
+        "router"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/events/EventRegistrationSection.tsx:useAnimatedNumber",
+      "type": "function",
+      "name": "useAnimatedNumber",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "lineRange": [
+        5,
+        39
+      ],
+      "summary": "Custom React hook animating numeric changes using requestAnimationFrame with ease-out easing function.",
+      "tags": [
+        "hook",
+        "utility",
+        "animation",
+        "react"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/events/EventRegistrationSection.tsx:EventRegistrationSection",
+      "type": "function",
+      "name": "EventRegistrationSection",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "lineRange": [
+        98,
+        875
+      ],
+      "summary": "Main registration component managing form state, Stripe Elements checkout integration, promo code application, and success/error handling.",
+      "tags": [
+        "component",
+        "form",
+        "checkout",
+        "events",
+        "stripe"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/lib/event-checkout.ts:resolveCheckoutMode",
+      "type": "function",
+      "name": "resolveCheckoutMode",
+      "filePath": "src/lib/event-checkout.ts",
+      "lineRange": [
+        9,
+        12
+      ],
+      "summary": "Determines appropriate Stripe checkout mode based on embedded checkout capability.",
+      "tags": [
+        "utility",
+        "checkout",
+        "stripe"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/event-checkout.ts:resolveEventCheckoutAmount",
+      "type": "function",
+      "name": "resolveEventCheckoutAmount",
+      "filePath": "src/lib/event-checkout.ts",
+      "lineRange": [
+        14,
+        35
+      ],
+      "summary": "Calculates final checkout amount after applying promo code discounts and optional donation additions.",
+      "tags": [
+        "utility",
+        "pricing",
+        "checkout",
+        "calculation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/event-checkout.ts:buildEventCheckoutSessionParams",
+      "type": "function",
+      "name": "buildEventCheckoutSessionParams",
+      "filePath": "src/lib/event-checkout.ts",
+      "lineRange": [
+        37,
+        110
+      ],
+      "summary": "Constructs complete Stripe checkout session parameters including line items, metadata, customer details, and success/cancel URLs.",
+      "tags": [
+        "utility",
+        "checkout",
+        "stripe",
+        "configuration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/events.tsx:getEventDiscountedPrice",
+      "type": "function",
+      "name": "getEventDiscountedPrice",
+      "filePath": "src/lib/events.tsx",
+      "lineRange": [
+        220,
+        222
+      ],
+      "summary": "Wrapper function calculating event price after applying promotional discount.",
+      "tags": [
+        "utility",
+        "pricing",
+        "events"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/events.tsx:resolvePromoCode",
+      "type": "function",
+      "name": "resolvePromoCode",
+      "filePath": "src/lib/events.tsx",
+      "lineRange": [
+        224,
+        228
+      ],
+      "summary": "Looks up promo code object from event pricing by case-insensitive code matching.",
+      "tags": [
+        "utility",
+        "pricing",
+        "promo"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/events.tsx:formatEventPrice",
+      "type": "function",
+      "name": "formatEventPrice",
+      "filePath": "src/lib/events.tsx",
+      "lineRange": [
+        230,
+        234
+      ],
+      "summary": "Formats event price as currency string with appropriate decimal precision.",
+      "tags": [
+        "utility",
+        "pricing",
+        "formatting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/events.tsx:getEventBySlug",
+      "type": "function",
+      "name": "getEventBySlug",
+      "filePath": "src/lib/events.tsx",
+      "lineRange": [
+        1379,
+        1381
+      ],
+      "summary": "Finds an event from the master events list by URL slug.",
+      "tags": [
+        "utility",
+        "query",
+        "events"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/events.tsx:getLiveEvents",
+      "type": "function",
+      "name": "getLiveEvents",
+      "filePath": "src/lib/events.tsx",
+      "lineRange": [
+        1383,
+        1385
+      ],
+      "summary": "Returns all events marked as live from the master events list.",
+      "tags": [
+        "utility",
+        "query",
+        "events"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/events.tsx:getUpcomingLiveEvents",
+      "type": "function",
+      "name": "getUpcomingLiveEvents",
+      "filePath": "src/lib/events.tsx",
+      "lineRange": [
+        1387,
+        1402
+      ],
+      "summary": "Filters live events that end at or after a given timestamp and sorts by start date.",
+      "tags": [
+        "utility",
+        "query",
+        "events",
+        "filtering"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/api/stripe/webhook/route.ts",
+      "type": "file",
+      "name": "route.ts",
+      "filePath": "src/app/api/stripe/webhook/route.ts",
+      "summary": "Handles Stripe webhook events for checkout completion, verifying signatures and triggering event confirmation notifications server-side to ensure checkout data mirrors to the database regardless of client browser state.",
+      "tags": [
+        "api-handler",
+        "webhook",
+        "payment-processing",
+        "event-confirmation"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Uses Stripe webhook signature verification to ensure authenticity of incoming events from Stripe servers."
+    },
+    {
+      "id": "file:src/lib/calendar.ts",
+      "type": "file",
+      "name": "calendar.ts",
+      "filePath": "src/lib/calendar.ts",
+      "summary": "Generates Google Calendar and iCalendar (iCal) format strings and URLs for embedding event details in email confirmations and enabling attendees to add events to their calendar applications.",
+      "tags": [
+        "utility",
+        "calendar-integration",
+        "date-formatting",
+        "email-attachment"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/lib/event-confirmation-email.ts",
+      "type": "file",
+      "name": "event-confirmation-email.ts",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "Builds and sends transactional emails for event lifecycle management including confirmations, reminders, location notifications, and waitlist operations using Resend API with dynamic HTML templates and calendar attachments.",
+      "tags": [
+        "email-service",
+        "email-builder",
+        "notification",
+        "confirmation",
+        "template"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Extensive HTML email generation with iCal attachments; coordinates multiple email variants for different event stages and attendee states."
+    },
+    {
+      "id": "file:src/lib/stripe.ts",
+      "type": "file",
+      "name": "stripe.ts",
+      "filePath": "src/lib/stripe.ts",
+      "summary": "Provides Stripe API client initialization and configuration, exposing environment variable accessors for the Stripe secret key and creating authenticated Stripe instances for server-side operations.",
+      "tags": [
+        "configuration",
+        "api-client",
+        "stripe",
+        "singleton"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app/api/stripe/webhook/route.ts:POST",
+      "type": "function",
+      "name": "POST",
+      "filePath": "src/app/api/stripe/webhook/route.ts",
+      "lineRange": [
+        25,
+        85
+      ],
+      "summary": "Route handler processing incoming Stripe webhook events, validating signatures, extracting checkout data, and coordinating event confirmation emails and payment finalization.",
+      "tags": [
+        "webhook-handler",
+        "async",
+        "payment-processing",
+        "event-coordination"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/calendar.ts:buildGoogleCalendarUrl",
+      "type": "function",
+      "name": "buildGoogleCalendarUrl",
+      "filePath": "src/lib/calendar.ts",
+      "lineRange": [
+        9,
+        25
+      ],
+      "summary": "Constructs a Google Calendar add-event URL from event parameters, enabling attendees to quickly import event details with one click.",
+      "tags": [
+        "calendar-builder",
+        "url-generation",
+        "google-calendar"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/calendar.ts:buildIcalString",
+      "type": "function",
+      "name": "buildIcalString",
+      "filePath": "src/lib/calendar.ts",
+      "lineRange": [
+        27,
+        75
+      ],
+      "summary": "Generates a complete iCalendar (RFC 5545) formatted string from event parameters including organizer, attendee, dates, and location for calendar system compatibility.",
+      "tags": [
+        "calendar-format",
+        "ical-generation",
+        "event-serialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/calendar.ts:buildEventCalendarDescription",
+      "type": "function",
+      "name": "buildEventCalendarDescription",
+      "filePath": "src/lib/calendar.ts",
+      "lineRange": [
+        81,
+        94
+      ],
+      "summary": "Formats event details into a readable description string for inclusion in calendar event entries, combining title, speaker, host contact, and participation details.",
+      "tags": [
+        "calendar-content",
+        "text-formatting",
+        "description-builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:buildAiContentCreationSetupEmailHtml",
+      "type": "function",
+      "name": "buildAiContentCreationSetupEmailHtml",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "lineRange": [
+        27,
+        104
+      ],
+      "summary": "Generates HTML email template for the AI Content Creation setup workflow, providing instructions and branded presentation for onboarding attendees.",
+      "tags": [
+        "email-template",
+        "html-builder",
+        "setup-email"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:buildAskAnAiExpertWelcomeEmailHtml",
+      "type": "function",
+      "name": "buildAskAnAiExpertWelcomeEmailHtml",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "lineRange": [
+        106,
+        166
+      ],
+      "summary": "Generates welcome email template for the Ask An AI Expert event, including session details, Zoom link, calendar buttons, and unsubscribe information.",
+      "tags": [
+        "email-template",
+        "html-builder",
+        "welcome-email",
+        "event-details"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:buildConfirmationEmailHtml",
+      "type": "function",
+      "name": "buildConfirmationEmailHtml",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "lineRange": [
+        240,
+        445
+      ],
+      "summary": "Builds comprehensive event confirmation email with calendar integration, location details (possibly hidden until reveal window), parking instructions, and host contact information.",
+      "tags": [
+        "email-template",
+        "confirmation-email",
+        "html-builder",
+        "location-handling"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:buildLocationReminderEmailHtml",
+      "type": "function",
+      "name": "buildLocationReminderEmailHtml",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "lineRange": [
+        447,
+        521
+      ],
+      "summary": "Generates location reminder email template revealing the exact event address and parking instructions when the reveal window closes.",
+      "tags": [
+        "email-template",
+        "location-email",
+        "reminder"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:buildConfirmationIdempotencyKey",
+      "type": "function",
+      "name": "buildConfirmationIdempotencyKey",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "lineRange": [
+        572,
+        574
+      ],
+      "summary": "Creates a deterministic idempotency key for event confirmation emails to prevent duplicate sends.",
+      "tags": [
+        "idempotency",
+        "key-builder",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:buildWaitlistJoinIdempotencyKey",
+      "type": "function",
+      "name": "buildWaitlistJoinIdempotencyKey",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "lineRange": [
+        576,
+        578
+      ],
+      "summary": "Creates a deterministic idempotency key for waitlist join confirmation emails.",
+      "tags": [
+        "idempotency",
+        "key-builder",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:buildAiContentCreationSetupIdempotencyKey",
+      "type": "function",
+      "name": "buildAiContentCreationSetupIdempotencyKey",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "lineRange": [
+        580,
+        582
+      ],
+      "summary": "Creates a deterministic idempotency key for AI Content Creation setup workflow emails.",
+      "tags": [
+        "idempotency",
+        "key-builder",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:buildAskAnAiExpertWelcomeIdempotencyKey",
+      "type": "function",
+      "name": "buildAskAnAiExpertWelcomeIdempotencyKey",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "lineRange": [
+        584,
+        586
+      ],
+      "summary": "Creates a deterministic idempotency key for Ask An AI Expert welcome emails.",
+      "tags": [
+        "idempotency",
+        "key-builder",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:sendEventConfirmationEmail",
+      "type": "function",
+      "name": "sendEventConfirmationEmail",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "lineRange": [
+        588,
+        639
+      ],
+      "summary": "Sends event confirmation email via Resend API, including HTML content, iCalendar attachment, and idempotency controls for transaction guarantees.",
+      "tags": [
+        "email-sender",
+        "async",
+        "email-service",
+        "resend-api"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:sendAiContentCreationSetupEmail",
+      "type": "function",
+      "name": "sendAiContentCreationSetupEmail",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "lineRange": [
+        641,
+        651
+      ],
+      "summary": "Sends AI Content Creation setup workflow email via Resend with HTML template and idempotency key for duplicate prevention.",
+      "tags": [
+        "email-sender",
+        "async",
+        "workflow-email"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:sendAskAnAiExpertWelcomeEmail",
+      "type": "function",
+      "name": "sendAskAnAiExpertWelcomeEmail",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "lineRange": [
+        653,
+        696
+      ],
+      "summary": "Sends Ask An AI Expert welcome email with event details, iCalendar attachment, and unsubscribe headers for CAN-SPAM compliance.",
+      "tags": [
+        "email-sender",
+        "async",
+        "event-email",
+        "compliance"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:sendEventLocationReminderEmail",
+      "type": "function",
+      "name": "sendEventLocationReminderEmail",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "lineRange": [
+        698,
+        744
+      ],
+      "summary": "Sends location reminder email revealing exact address and parking details when the reveal window closes, with updated iCalendar attachment.",
+      "tags": [
+        "email-sender",
+        "async",
+        "location-notification"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:sendSessionReminderEmail",
+      "type": "function",
+      "name": "sendSessionReminderEmail",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "lineRange": [
+        746,
+        770
+      ],
+      "summary": "Sends session reminder email to attendees with customizable time window labels (e.g., 24 hours before, same day) for various reminder triggers.",
+      "tags": [
+        "email-sender",
+        "async",
+        "reminder-email"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:sendWaitlistConfirmationEmail",
+      "type": "function",
+      "name": "sendWaitlistConfirmationEmail",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "lineRange": [
+        868,
+        883
+      ],
+      "summary": "Sends confirmation email to users when they join an event waitlist, including removal option and branded presentation.",
+      "tags": [
+        "email-sender",
+        "async",
+        "waitlist-email"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:sendWaitlistSpotNotificationEmail",
+      "type": "function",
+      "name": "sendWaitlistSpotNotificationEmail",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "lineRange": [
+        885,
+        911
+      ],
+      "summary": "Sends notification to waitlist members when a spot opens up, with variant-specific messaging and registration link.",
+      "tags": [
+        "email-sender",
+        "async",
+        "waitlist-notification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/stripe.ts:getStripeSecretKey",
+      "type": "function",
+      "name": "getStripeSecretKey",
+      "filePath": "src/lib/stripe.ts",
+      "lineRange": [
+        3,
+        5
+      ],
+      "summary": "Retrieves Stripe secret key from environment variables, supporting both production and test keys with fallback logic.",
+      "tags": [
+        "configuration",
+        "env-accessor",
+        "credential"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/stripe.ts:getStripePublishableKey",
+      "type": "function",
+      "name": "getStripePublishableKey",
+      "filePath": "src/lib/stripe.ts",
+      "lineRange": [
+        7,
+        9
+      ],
+      "summary": "Retrieves Stripe publishable key from environment variables, supporting both prefixed and non-prefixed variable names.",
+      "tags": [
+        "configuration",
+        "env-accessor",
+        "public-key"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/stripe.ts:createStripeClient",
+      "type": "function",
+      "name": "createStripeClient",
+      "filePath": "src/lib/stripe.ts",
+      "lineRange": [
+        11,
+        18
+      ],
+      "summary": "Instantiates and returns a Stripe client with the secret key, throwing an error if the key is not configured.",
+      "tags": [
+        "factory",
+        "api-client",
+        "initialization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:CLAUDE.md",
+      "type": "document",
+      "name": "CLAUDE.md",
+      "filePath": "CLAUDE.md",
+      "summary": "Project-specific Claude instructions for using GitNexus code intelligence tools, including requirements for impact analysis, change detection, and safe refactoring workflows.",
+      "tags": [
+        "documentation",
+        "code-intelligence",
+        "development",
+        "gitnexus",
+        "safety"
+      ],
+      "complexity": "simple",
+      "languageNotes": "Markdown document with structured sections and tables; emphasizes safety guardrails for code modifications."
+    },
+    {
+      "id": "config:package.json",
+      "type": "config",
+      "name": "package.json",
+      "filePath": "package.json",
+      "summary": "NPM package configuration for the masterminds-workshop project, specifying Next.js 16, React 19, Stripe, Supabase, and animation libraries for an event registration platform.",
+      "tags": [
+        "configuration",
+        "build-system",
+        "dependencies",
+        "node.js",
+        "next.js"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "JSON configuration with 20+ production dependencies including React, Stripe, Supabase, and animation libraries (Three.js, Vanta, GSAP, Framer Motion); targets Node 24.x."
+    },
+    {
+      "id": "config:tsconfig.json",
+      "type": "config",
+      "name": "tsconfig.json",
+      "filePath": "tsconfig.json",
+      "summary": "TypeScript compiler configuration with strict mode enabled, ESNext module output, path aliases (@/* pointing to src/), and Next.js plugin integration.",
+      "tags": [
+        "configuration",
+        "typescript",
+        "build-system",
+        "type-checking"
+      ],
+      "complexity": "simple",
+      "languageNotes": "Standard Next.js TypeScript config with strict mode, path aliases, and incremental compilation enabled for faster builds."
+    },
+    {
+      "id": "config:vercel.json",
+      "type": "config",
+      "name": "vercel.json",
+      "filePath": "vercel.json",
+      "summary": "Vercel deployment configuration with domain-based rewrites for subdomain routing (decks.mastermindshq.business, passiveincome.mastermindshq.business) and six scheduled cron jobs for email automation and event management.",
+      "tags": [
+        "configuration",
+        "deployment",
+        "infrastructure",
+        "automation",
+        "vercel"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Vercel JSON schema with rewrites using host-based routing and crons scheduling automated tasks every 30 minutes for event reminders and abandoned checkout followups."
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/app/api/events/checkout-session/route.ts",
+      "target": "file:src/lib/stripe.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/api/events/checkout-session/route.ts",
+      "target": "file:src/lib/events.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/api/events/checkout-session/route.ts",
+      "target": "file:src/lib/event-checkout.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/events/EventPageView.tsx",
+      "target": "file:src/lib/events.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/events/EventPageView.tsx",
+      "target": "file:src/components/events/EventRegistrationSection.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/events/EventRegistrationSection.tsx",
+      "target": "file:src/lib/event-checkout.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "file:src/lib/event-checkout.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/api/events/checkout-session/route.ts",
+      "target": "function:src/app/api/events/checkout-session/route.ts:POST",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/events/EventPageView.tsx",
+      "target": "function:src/components/events/EventPageView.tsx:EventPageView",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/events/EventPageView.tsx",
+      "target": "function:src/components/events/EventPageView.tsx:StorySection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/events/EventPageView.tsx",
+      "target": "function:src/components/events/EventPageView.tsx:ChecklistSection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/events/EventPageView.tsx",
+      "target": "function:src/components/events/EventPageView.tsx:CardsSection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/events/EventPageView.tsx",
+      "target": "function:src/components/events/EventPageView.tsx:SplitSection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/events/EventPageView.tsx",
+      "target": "function:src/components/events/EventPageView.tsx:ImageSection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/events/EventPageView.tsx",
+      "target": "function:src/components/events/EventPageView.tsx:HtmlSection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/events/EventPageView.tsx",
+      "target": "function:src/components/events/EventPageView.tsx:QuoteCardSection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/events/EventPageView.tsx",
+      "target": "function:src/components/events/EventPageView.tsx:HostsSection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/events/EventPageView.tsx",
+      "target": "function:src/components/events/EventPageView.tsx:EventVideoSection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/events/EventPageView.tsx",
+      "target": "function:src/components/events/EventPageView.tsx:CtaSection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/events/EventPageView.tsx",
+      "target": "function:src/components/events/EventPageView.tsx:renderSection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/events/EventRegistrationSection.tsx",
+      "target": "function:src/components/events/EventRegistrationSection.tsx:useAnimatedNumber",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/events/EventRegistrationSection.tsx",
+      "target": "function:src/components/events/EventRegistrationSection.tsx:EventRegistrationSection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib/event-checkout.ts",
+      "target": "function:src/lib/event-checkout.ts:resolveCheckoutMode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib/event-checkout.ts",
+      "target": "function:src/lib/event-checkout.ts:resolveEventCheckoutAmount",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib/event-checkout.ts",
+      "target": "function:src/lib/event-checkout.ts:buildEventCheckoutSessionParams",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "function:src/lib/events.tsx:getEventDiscountedPrice",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "function:src/lib/events.tsx:resolvePromoCode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "function:src/lib/events.tsx:formatEventPrice",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "function:src/lib/events.tsx:getEventBySlug",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "function:src/lib/events.tsx:getLiveEvents",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "function:src/lib/events.tsx:getUpcomingLiveEvents",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/app/api/events/checkout-session/route.ts",
+      "target": "function:src/app/api/events/checkout-session/route.ts:POST",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/events/EventPageView.tsx",
+      "target": "function:src/components/events/EventPageView.tsx:EventPageView",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/events/EventRegistrationSection.tsx",
+      "target": "function:src/components/events/EventRegistrationSection.tsx:EventRegistrationSection",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/event-checkout.ts",
+      "target": "function:src/lib/event-checkout.ts:resolveCheckoutMode",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/event-checkout.ts",
+      "target": "function:src/lib/event-checkout.ts:resolveEventCheckoutAmount",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/event-checkout.ts",
+      "target": "function:src/lib/event-checkout.ts:buildEventCheckoutSessionParams",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "function:src/lib/events.tsx:getEventDiscountedPrice",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "function:src/lib/events.tsx:resolvePromoCode",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "function:src/lib/events.tsx:formatEventPrice",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "function:src/lib/events.tsx:getEventBySlug",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "function:src/lib/events.tsx:getLiveEvents",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "function:src/lib/events.tsx:getUpcomingLiveEvents",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/app/api/events/checkout-session/route.ts:POST",
+      "target": "function:src/lib/event-checkout.ts:resolveCheckoutMode",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/app/api/events/checkout-session/route.ts:POST",
+      "target": "function:src/lib/event-checkout.ts:resolveEventCheckoutAmount",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/app/api/events/checkout-session/route.ts:POST",
+      "target": "function:src/lib/event-checkout.ts:buildEventCheckoutSessionParams",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/app/api/events/checkout-session/route.ts:POST",
+      "target": "function:src/lib/events.tsx:getEventBySlug",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/app/api/events/checkout-session/route.ts:POST",
+      "target": "function:src/lib/stripe.ts:createStripeClient",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/app/api/events/checkout-session/route.ts:POST",
+      "target": "function:src/lib/stripe.ts:getStripePublishableKey",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/events/EventPageView.tsx:CtaSection",
+      "target": "function:src/lib/events.tsx:formatEventPrice",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/events/EventPageView.tsx:EventPageView",
+      "target": "function:src/lib/events.tsx:getEventDiscountedPrice",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/lib/events.tsx:getUpcomingLiveEvents",
+      "target": "function:src/lib/events.tsx:getLiveEvents",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/api/stripe/webhook/route.ts",
+      "target": "file:src/lib/stripe.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/api/stripe/webhook/route.ts",
+      "target": "file:src/lib/event-confirmation-email.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "file:src/lib/calendar.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/api/stripe/webhook/route.ts",
+      "target": "function:src/app/api/stripe/webhook/route.ts:POST",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib/calendar.ts",
+      "target": "function:src/lib/calendar.ts:buildGoogleCalendarUrl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib/calendar.ts",
+      "target": "function:src/lib/calendar.ts:buildIcalString",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib/calendar.ts",
+      "target": "function:src/lib/calendar.ts:buildEventCalendarDescription",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:buildAiContentCreationSetupEmailHtml",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:buildAskAnAiExpertWelcomeEmailHtml",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:buildConfirmationEmailHtml",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:buildLocationReminderEmailHtml",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:buildConfirmationIdempotencyKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:buildWaitlistJoinIdempotencyKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:buildAiContentCreationSetupIdempotencyKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:buildAskAnAiExpertWelcomeIdempotencyKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:sendEventConfirmationEmail",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:sendAiContentCreationSetupEmail",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:sendAskAnAiExpertWelcomeEmail",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:sendEventLocationReminderEmail",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:sendSessionReminderEmail",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:sendWaitlistConfirmationEmail",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:sendWaitlistSpotNotificationEmail",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib/stripe.ts",
+      "target": "function:src/lib/stripe.ts:getStripeSecretKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib/stripe.ts",
+      "target": "function:src/lib/stripe.ts:getStripePublishableKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib/stripe.ts",
+      "target": "function:src/lib/stripe.ts:createStripeClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/app/api/stripe/webhook/route.ts",
+      "target": "function:src/app/api/stripe/webhook/route.ts:POST",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/calendar.ts",
+      "target": "function:src/lib/calendar.ts:buildGoogleCalendarUrl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/calendar.ts",
+      "target": "function:src/lib/calendar.ts:buildIcalString",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/calendar.ts",
+      "target": "function:src/lib/calendar.ts:buildEventCalendarDescription",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:buildAiContentCreationSetupEmailHtml",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:buildAskAnAiExpertWelcomeEmailHtml",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:buildConfirmationEmailHtml",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:buildLocationReminderEmailHtml",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:buildConfirmationIdempotencyKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:buildWaitlistJoinIdempotencyKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:buildAiContentCreationSetupIdempotencyKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:buildAskAnAiExpertWelcomeIdempotencyKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:sendEventConfirmationEmail",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:sendAiContentCreationSetupEmail",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:sendAskAnAiExpertWelcomeEmail",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:sendEventLocationReminderEmail",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:sendSessionReminderEmail",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:sendWaitlistConfirmationEmail",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:sendWaitlistSpotNotificationEmail",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/stripe.ts",
+      "target": "function:src/lib/stripe.ts:getStripeSecretKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/stripe.ts",
+      "target": "function:src/lib/stripe.ts:getStripePublishableKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/stripe.ts",
+      "target": "function:src/lib/stripe.ts:createStripeClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/app/api/stripe/webhook/route.ts:POST",
+      "target": "function:src/lib/stripe.ts:createStripeClient",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/lib/event-confirmation-email.ts:buildConfirmationEmailHtml",
+      "target": "function:src/lib/calendar.ts:buildGoogleCalendarUrl",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/lib/event-confirmation-email.ts:sendEventConfirmationEmail",
+      "target": "function:src/lib/calendar.ts:buildIcalString",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/lib/event-confirmation-email.ts:sendAskAnAiExpertWelcomeEmail",
+      "target": "function:src/lib/calendar.ts:buildIcalString",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/lib/event-confirmation-email.ts:sendEventLocationReminderEmail",
+      "target": "function:src/lib/calendar.ts:buildIcalString",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "config:package.json",
+      "target": "config:tsconfig.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:package.json",
+      "target": "config:vercel.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:CLAUDE.md",
+      "target": "config:package.json",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    }
+  ]
+}

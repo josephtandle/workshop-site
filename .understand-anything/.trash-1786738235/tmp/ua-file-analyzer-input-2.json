@@ -1,0 +1,40 @@
+{
+  "projectRoot": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site",
+  "batchFiles": [
+    {
+      "path": "src/app/api/stripe/webhook/route.ts",
+      "language": "typescript",
+      "sizeLines": 85,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/lib/calendar.ts",
+      "language": "typescript",
+      "sizeLines": 94,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/lib/event-confirmation-email.ts",
+      "language": "typescript",
+      "sizeLines": 787,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/lib/stripe.ts",
+      "language": "typescript",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "src/app/api/stripe/webhook/route.ts": [
+      "src/lib/stripe.ts",
+      "src/lib/event-confirmation-email.ts"
+    ],
+    "src/lib/calendar.ts": [],
+    "src/lib/event-confirmation-email.ts": [
+      "src/lib/calendar.ts"
+    ],
+    "src/lib/stripe.ts": []
+  }
+}

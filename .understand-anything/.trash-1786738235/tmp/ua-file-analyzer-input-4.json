@@ -1,0 +1,15 @@
+{
+  "projectRoot": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site",
+  "batchFiles": [
+    {"path": "CLAUDE.md", "language": "markdown", "sizeLines": 43, "fileCategory": "docs"},
+    {"path": "package.json", "language": "json", "sizeLines": 46, "fileCategory": "config"},
+    {"path": "tsconfig.json", "language": "json", "sizeLines": 41, "fileCategory": "config"},
+    {"path": "vercel.json", "language": "json", "sizeLines": 47, "fileCategory": "config"}
+  ],
+  "batchImportData": {
+    "CLAUDE.md": [],
+    "package.json": [],
+    "tsconfig.json": [],
+    "vercel.json": []
+  }
+}

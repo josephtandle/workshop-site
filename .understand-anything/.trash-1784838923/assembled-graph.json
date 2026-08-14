@@ -1,0 +1,4266 @@
+{
+  "nodes": [
+    {
+      "id": "file:.claude/settings.json",
+      "type": "file",
+      "name": "settings.json",
+      "filePath": ".claude/settings.json",
+      "summary": "Claude Code configuration with PostToolUse hooks for Chrome refresh automation on Vercel deployments to workshop.mastermindshq.business",
+      "tags": [
+        "config",
+        "hooks",
+        "automation",
+        "chrome-refresh"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:hook:PostToolUse-Bash-Chrome-Refresh",
+      "type": "hook",
+      "name": "PostToolUse Chrome Refresh",
+      "filePath": ".claude/settings.json",
+      "summary": "Automatically reloads Chrome tabs for workshop.mastermindshq.business when vercel --prod command is executed",
+      "tags": [
+        "post-tool-use",
+        "chrome",
+        "automation",
+        "deployment"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:next-env.d.ts",
+      "type": "file",
+      "name": "next-env.d.ts",
+      "filePath": "next-env.d.ts",
+      "summary": "TypeScript type definitions file that references Next.js types, Next.js image types, and auto-generated route types from .next/types",
+      "tags": [
+        "typescript",
+        "types",
+        "next.js",
+        "auto-generated"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:type:next",
+      "type": "type",
+      "name": "next",
+      "filePath": "next-env.d.ts",
+      "summary": "Next.js core type definitions",
+      "tags": [
+        "next.js",
+        "types"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:type:next/image-types/global",
+      "type": "type",
+      "name": "next/image-types/global",
+      "filePath": "next-env.d.ts",
+      "summary": "Next.js global image type definitions",
+      "tags": [
+        "next.js",
+        "types",
+        "images"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:type:.next/types/routes.d.ts",
+      "type": "type",
+      "name": ".next/types/routes.d.ts",
+      "filePath": "next-env.d.ts",
+      "summary": "Auto-generated Next.js route type definitions",
+      "tags": [
+        "next.js",
+        "types",
+        "routes",
+        "auto-generated"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:next.config.ts",
+      "type": "file",
+      "name": "next.config.ts",
+      "filePath": "next.config.ts",
+      "summary": "Next.js configuration with turbopack setup, URL redirects to portal.mastermindshq.business, and host-based rewrites for subdomain routing (decks, passiveincome)",
+      "tags": [
+        "config",
+        "next.js",
+        "redirects",
+        "rewrites",
+        "routing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:nextConfig",
+      "type": "config",
+      "name": "nextConfig",
+      "filePath": "next.config.ts",
+      "summary": "Main Next.js configuration object with turbopack and routing rules",
+      "tags": [
+        "next.js",
+        "turbopack",
+        "config"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:turbopack",
+      "type": "config",
+      "name": "turbopack",
+      "filePath": "next.config.ts",
+      "summary": "Turbopack configuration with root path resolution",
+      "tags": [
+        "turbopack",
+        "bundler",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:redirects",
+      "type": "config",
+      "name": "redirects",
+      "filePath": "next.config.ts",
+      "summary": "URL redirect rules: /session -> portal.mastermindshq.business, /resource-vault -> portal.mastermindshq.business",
+      "tags": [
+        "redirects",
+        "routing",
+        "portal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:rewrites",
+      "type": "config",
+      "name": "rewrites",
+      "filePath": "next.config.ts",
+      "summary": "Host-based rewrite rules: decks.mastermindshq.business -> /2x-with-ai-playbook.html, passiveincome.mastermindshq.business -> /ai-agent-income",
+      "tags": [
+        "rewrites",
+        "routing",
+        "subdomain-routing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dependency:path",
+      "type": "dependency",
+      "name": "path",
+      "filePath": "next.config.ts",
+      "summary": "Node.js path module for path resolution in turbopack configuration",
+      "tags": [
+        "node.js",
+        "stdlib"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:type:NextConfig",
+      "type": "type",
+      "name": "NextConfig",
+      "filePath": "next.config.ts",
+      "summary": "Next.js NextConfig type definition",
+      "tags": [
+        "next.js",
+        "types"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tsconfig.json",
+      "type": "file",
+      "name": "tsconfig.json",
+      "filePath": "tsconfig.json",
+      "summary": "TypeScript compiler configuration for Next.js project with ES2017 target, strict mode, JSX support, and path alias for @/* -> ./src/*",
+      "tags": [
+        "config",
+        "typescript",
+        "compiler"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:compilerOptions",
+      "type": "config",
+      "name": "compilerOptions",
+      "filePath": "tsconfig.json",
+      "summary": "TypeScript compiler options: target ES2017, strict mode, JSX react-jsx, bundler module resolution",
+      "tags": [
+        "typescript",
+        "compiler",
+        "options"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:paths",
+      "type": "config",
+      "name": "paths",
+      "filePath": "tsconfig.json",
+      "summary": "TypeScript path alias configuration mapping @/* to ./src/*",
+      "tags": [
+        "typescript",
+        "paths",
+        "aliases"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:include",
+      "type": "config",
+      "name": "include",
+      "filePath": "tsconfig.json",
+      "summary": "Include patterns: next-env.d.ts, all .ts/.tsx files, and .next/types",
+      "tags": [
+        "typescript",
+        "includes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:exclude",
+      "type": "config",
+      "name": "exclude",
+      "filePath": "tsconfig.json",
+      "summary": "Exclude patterns: node_modules",
+      "tags": [
+        "typescript",
+        "excludes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:package.json",
+      "type": "file",
+      "name": "package.json",
+      "filePath": "package.json",
+      "summary": "Project metadata for masterminds-workshop Next.js app v0.1.0 with scripts for development, build, testing, and linting, plus dependencies for Stripe, Supabase, animations, and 3D graphics",
+      "tags": [
+        "config",
+        "package",
+        "metadata",
+        "dependencies"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:script:dev",
+      "type": "script",
+      "name": "dev",
+      "filePath": "package.json",
+      "summary": "Development server: next dev",
+      "tags": [
+        "script",
+        "dev",
+        "next.js"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:script:build",
+      "type": "script",
+      "name": "build",
+      "filePath": "package.json",
+      "summary": "Production build: next build",
+      "tags": [
+        "script",
+        "build",
+        "next.js"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:script:start",
+      "type": "script",
+      "name": "start",
+      "filePath": "package.json",
+      "summary": "Start production server: next start",
+      "tags": [
+        "script",
+        "start",
+        "next.js"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:script:lint",
+      "type": "script",
+      "name": "lint",
+      "filePath": "package.json",
+      "summary": "Lint code: next lint",
+      "tags": [
+        "script",
+        "lint",
+        "next.js"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:script:test",
+      "type": "script",
+      "name": "test",
+      "filePath": "package.json",
+      "summary": "Run tests with tsx and Node.js test runner on tests/**/*.test.ts",
+      "tags": [
+        "script",
+        "test",
+        "tsx"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:script:abandoned-checkout-control",
+      "type": "script",
+      "name": "abandoned-checkout-control",
+      "filePath": "package.json",
+      "summary": "Node.js script for abandoned checkout control automation",
+      "tags": [
+        "script",
+        "checkout",
+        "automation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:script:abandoned-checkout-run",
+      "type": "script",
+      "name": "abandoned-checkout-run",
+      "filePath": "package.json",
+      "summary": "TypeScript script runner for abandoned checkout automation using tsx",
+      "tags": [
+        "script",
+        "checkout",
+        "automation",
+        "tsx"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:@stripe/react-stripe-js",
+      "type": "dependency",
+      "name": "@stripe/react-stripe-js",
+      "filePath": "package.json",
+      "summary": "Stripe React integration library v6.3.0 for payment UI components",
+      "tags": [
+        "stripe",
+        "react",
+        "payments"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:@stripe/stripe-js",
+      "type": "dependency",
+      "name": "@stripe/stripe-js",
+      "filePath": "package.json",
+      "summary": "Stripe JavaScript SDK v9.5.0 for payment processing",
+      "tags": [
+        "stripe",
+        "payments"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:@supabase/supabase-js",
+      "type": "dependency",
+      "name": "@supabase/supabase-js",
+      "filePath": "package.json",
+      "summary": "Supabase JavaScript client v2.47.0 for database and auth operations",
+      "tags": [
+        "supabase",
+        "database",
+        "auth"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:@types/canvas-confetti",
+      "type": "dependency",
+      "name": "@types/canvas-confetti",
+      "filePath": "package.json",
+      "summary": "TypeScript types for canvas-confetti animations v1.9.0",
+      "tags": [
+        "types",
+        "animations"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:canvas-confetti",
+      "type": "dependency",
+      "name": "canvas-confetti",
+      "filePath": "package.json",
+      "summary": "Confetti animation library v1.9.4",
+      "tags": [
+        "animations",
+        "ui"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:countup.js",
+      "type": "dependency",
+      "name": "countup.js",
+      "filePath": "package.json",
+      "summary": "Number counter animation library v2.10.0",
+      "tags": [
+        "animations",
+        "ui"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:framer-motion",
+      "type": "dependency",
+      "name": "framer-motion",
+      "filePath": "package.json",
+      "summary": "React animation library v12.38.0",
+      "tags": [
+        "react",
+        "animations"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:googleapis",
+      "type": "dependency",
+      "name": "googleapis",
+      "filePath": "package.json",
+      "summary": "Google API client library v173.0.0",
+      "tags": [
+        "google",
+        "api"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:gsap",
+      "type": "dependency",
+      "name": "gsap",
+      "filePath": "package.json",
+      "summary": "GreenSock animation platform v3.14.2 for advanced animations",
+      "tags": [
+        "animations",
+        "gsap"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:lenis",
+      "type": "dependency",
+      "name": "lenis",
+      "filePath": "package.json",
+      "summary": "Smooth scroll library v1.3.21",
+      "tags": [
+        "scroll",
+        "ui"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:next",
+      "type": "dependency",
+      "name": "next",
+      "filePath": "package.json",
+      "summary": "Next.js framework v16.2.3",
+      "tags": [
+        "next.js",
+        "framework"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:react",
+      "type": "dependency",
+      "name": "react",
+      "filePath": "package.json",
+      "summary": "React library v19.0.0",
+      "tags": [
+        "react",
+        "ui"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:react-dom",
+      "type": "dependency",
+      "name": "react-dom",
+      "filePath": "package.json",
+      "summary": "React DOM library v19.0.0",
+      "tags": [
+        "react",
+        "dom"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:resend",
+      "type": "dependency",
+      "name": "resend",
+      "filePath": "package.json",
+      "summary": "Email service client v4.0.0 for transactional emails",
+      "tags": [
+        "email",
+        "communications"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:split-type",
+      "type": "dependency",
+      "name": "split-type",
+      "filePath": "package.json",
+      "summary": "Text splitting utility v0.3.4 for character/word animations",
+      "tags": [
+        "text",
+        "animations"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:stripe",
+      "type": "dependency",
+      "name": "stripe",
+      "filePath": "package.json",
+      "summary": "Stripe server-side API client v22.1.1",
+      "tags": [
+        "stripe",
+        "payments"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:three",
+      "type": "dependency",
+      "name": "three",
+      "filePath": "package.json",
+      "summary": "3D graphics library v0.183.2 for WebGL rendering",
+      "tags": [
+        "3d",
+        "graphics",
+        "webgl"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dep:vanta",
+      "type": "dependency",
+      "name": "vanta",
+      "filePath": "package.json",
+      "summary": "3D animated backgrounds v0.5.24",
+      "tags": [
+        "3d",
+        "animations",
+        "backgrounds"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:devDep:@types/node",
+      "type": "devDependency",
+      "name": "@types/node",
+      "filePath": "package.json",
+      "summary": "TypeScript types for Node.js v20",
+      "tags": [
+        "types",
+        "node.js"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:devDep:@types/react",
+      "type": "devDependency",
+      "name": "@types/react",
+      "filePath": "package.json",
+      "summary": "TypeScript types for React v19",
+      "tags": [
+        "types",
+        "react"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:devDep:@types/react-dom",
+      "type": "devDependency",
+      "name": "@types/react-dom",
+      "filePath": "package.json",
+      "summary": "TypeScript types for React DOM v19",
+      "tags": [
+        "types",
+        "react",
+        "dom"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:devDep:@types/three",
+      "type": "devDependency",
+      "name": "@types/three",
+      "filePath": "package.json",
+      "summary": "TypeScript types for Three.js v0.183.1",
+      "tags": [
+        "types",
+        "3d",
+        "three.js"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:devDep:autoprefixer",
+      "type": "devDependency",
+      "name": "autoprefixer",
+      "filePath": "package.json",
+      "summary": "PostCSS plugin for vendor prefixes v10.0.1",
+      "tags": [
+        "css",
+        "postcss"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:devDep:eslint",
+      "type": "devDependency",
+      "name": "eslint",
+      "filePath": "package.json",
+      "summary": "JavaScript linter v8",
+      "tags": [
+        "linter",
+        "code-quality"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:devDep:eslint-config-next",
+      "type": "devDependency",
+      "name": "eslint-config-next",
+      "filePath": "package.json",
+      "summary": "ESLint configuration for Next.js v15.1.0",
+      "tags": [
+        "linter",
+        "next.js",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:devDep:postcss",
+      "type": "devDependency",
+      "name": "postcss",
+      "filePath": "package.json",
+      "summary": "CSS transformation tool v8",
+      "tags": [
+        "css",
+        "postcss"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:devDep:tailwindcss",
+      "type": "devDependency",
+      "name": "tailwindcss",
+      "filePath": "package.json",
+      "summary": "Utility-first CSS framework v3.4.1",
+      "tags": [
+        "css",
+        "tailwind"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:devDep:typescript",
+      "type": "devDependency",
+      "name": "typescript",
+      "filePath": "package.json",
+      "summary": "TypeScript compiler v5",
+      "tags": [
+        "typescript",
+        "language"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tailwind.config.ts",
+      "type": "file",
+      "name": "tailwind.config.ts",
+      "filePath": "tailwind.config.ts",
+      "summary": "Tailwind CSS configuration defining custom theme colors, animations, and typography for the workshop site. Exports a Tailwind Config object with extended colors (dark, cream, purple, pink), custom font family, keyframe animations (float-slow, float-slower, gradient-shift, fade-in-up, glow-pulse, shimmer), and animation shortcuts.",
+      "tags": [
+        "config",
+        "tailwind",
+        "styling",
+        "animation",
+        "theme",
+        "ui-config"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:symbol:tailwind.config.ts:Config",
+      "type": "import",
+      "name": "Config",
+      "filePath": "tailwind.config.ts",
+      "summary": "TypeScript type imported from 'tailwindcss' package for configuration typing",
+      "tags": [
+        "type",
+        "tailwindcss",
+        "import"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:symbol:tailwind.config.ts:config",
+      "type": "variable",
+      "name": "config",
+      "filePath": "tailwind.config.ts",
+      "summary": "Tailwind configuration object instance with type annotation Config. Contains content array for template files, extended theme with colors, typography, keyframes, and animations.",
+      "tags": [
+        "variable",
+        "export",
+        "configuration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:symbol:tailwind.config.ts:colors",
+      "type": "object",
+      "name": "colors",
+      "filePath": "tailwind.config.ts",
+      "summary": "Custom color theme extension defining four brand colors: dark (#151515), cream (#FCF4EB), purple (#7C69C7), and pink (#F5C3C6)",
+      "tags": [
+        "colors",
+        "theme",
+        "branding"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:symbol:tailwind.config.ts:fontFamily",
+      "type": "object",
+      "name": "fontFamily",
+      "filePath": "tailwind.config.ts",
+      "summary": "Font family configuration using CSS variable --font-plus-jakarta as primary sans-serif font with system-ui and generic sans-serif fallbacks",
+      "tags": [
+        "typography",
+        "fonts",
+        "theme"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:symbol:tailwind.config.ts:keyframes",
+      "type": "object",
+      "name": "keyframes",
+      "filePath": "tailwind.config.ts",
+      "summary": "Custom keyframe animations: float-slow (Y-axis 22px translation), float-slower (Y-axis 18px translation), gradient-shift (background position), fade-in-up (opacity and Y translation), glow-pulse (box shadow), and shimmer (background position)",
+      "tags": [
+        "animations",
+        "keyframes",
+        "motion"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:symbol:tailwind.config.ts:animation",
+      "type": "object",
+      "name": "animation",
+      "filePath": "tailwind.config.ts",
+      "summary": "Animation shortcuts binding keyframes to duration, easing, and iteration settings. Includes float-slow (7s), float-slower (9s), gradient-shift (6s), fade-in-up (0.5s), glow-pulse (3s), and shimmer (3s)",
+      "tags": [
+        "animations",
+        "motion",
+        "shortcuts"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.gitignore",
+      "type": "file",
+      "name": ".gitignore",
+      "filePath": ".gitignore",
+      "summary": "Git ignore configuration for workshop-site project. Excludes Vercel deployment, node_modules dependencies, Next.js build artifacts, local environment variables, TypeScript build info, Supabase temp files, and GitNexus index.",
+      "tags": [
+        "config",
+        "git",
+        "build-artifacts",
+        "dependencies"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:symbol:.gitignore:vercel",
+      "type": "pattern",
+      "name": ".vercel",
+      "filePath": ".gitignore",
+      "summary": "Ignores Vercel deployment configuration and build artifacts directory",
+      "tags": [
+        "build",
+        "deployment",
+        "vercel"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:symbol:.gitignore:node_modules",
+      "type": "pattern",
+      "name": "node_modules",
+      "filePath": ".gitignore",
+      "summary": "Ignores npm/yarn package dependencies directory",
+      "tags": [
+        "dependencies",
+        "package-manager"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:symbol:.gitignore:nextjs",
+      "type": "pattern",
+      "name": ".next",
+      "filePath": ".gitignore",
+      "summary": "Ignores Next.js build output and cache directory",
+      "tags": [
+        "build",
+        "nextjs",
+        "build-artifacts"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:symbol:.gitignore:env",
+      "type": "pattern",
+      "name": ".env*.local",
+      "filePath": ".gitignore",
+      "summary": "Ignores local environment variable files including .env.local, .env.development.local, etc.",
+      "tags": [
+        "secrets",
+        "environment",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:symbol:.gitignore:typescript",
+      "type": "pattern",
+      "name": "tsconfig.tsbuildinfo",
+      "filePath": ".gitignore",
+      "summary": "Ignores TypeScript build incremental build cache file",
+      "tags": [
+        "build",
+        "typescript",
+        "cache"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:symbol:.gitignore:supabase",
+      "type": "pattern",
+      "name": "supabase/.temp/",
+      "filePath": ".gitignore",
+      "summary": "Ignores Supabase temporary files directory",
+      "tags": [
+        "build",
+        "supabase",
+        "temporary"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:symbol:.gitignore:gitnexus",
+      "type": "pattern",
+      "name": ".gitnexus",
+      "filePath": ".gitignore",
+      "summary": "Ignores GitNexus code intelligence index directory",
+      "tags": [
+        "build",
+        "tools",
+        "index"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:CLAUDE.md",
+      "type": "file",
+      "name": "CLAUDE.md",
+      "filePath": "CLAUDE.md",
+      "summary": "Project documentation for Claude Code agents describing GitNexus code intelligence guidelines, usage rules, and workflows. Contains sections on impact analysis, change detection, code exploration, and refactoring with references to GitNexus skills and resources.",
+      "tags": [
+        "documentation",
+        "guidelines",
+        "process",
+        "gitnexus"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:section:CLAUDE.md:header",
+      "type": "section",
+      "name": "GitNexus Header",
+      "filePath": "CLAUDE.md",
+      "summary": "Introduction to GitNexus code intelligence indexing. Declares workshop-site project has 2960 symbols, 4551 relationships, 123 execution flows. References index freshness and analysis command.",
+      "tags": [
+        "introduction",
+        "overview",
+        "gitnexus"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:section:CLAUDE.md:always-do",
+      "type": "section",
+      "name": "Always Do",
+      "filePath": "CLAUDE.md",
+      "summary": "Mandatory practices for code editing: run impact analysis on symbols before editing, detect changes before committing, warn on HIGH/CRITICAL risk, use GitNexus query for exploration, use gitnexus_context for symbol details",
+      "tags": [
+        "guidelines",
+        "requirements",
+        "best-practices"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:section:CLAUDE.md:never-do",
+      "type": "section",
+      "name": "Never Do",
+      "filePath": "CLAUDE.md",
+      "summary": "Prohibited practices: never edit without impact analysis, never ignore risk warnings, never use find-and-replace for renaming, never commit without detecting changes",
+      "tags": [
+        "guidelines",
+        "prohibitions",
+        "safety"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:section:CLAUDE.md:resources",
+      "type": "section",
+      "name": "Resources",
+      "filePath": "CLAUDE.md",
+      "summary": "Reference table of GitNexus resources including repo context URL, clusters, processes, and process details.",
+      "tags": [
+        "reference",
+        "resources",
+        "urls"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:section:CLAUDE.md:cli",
+      "type": "section",
+      "name": "CLI",
+      "filePath": "CLAUDE.md",
+      "summary": "Reference table mapping tasks to GitNexus skill files: architecture exploration, impact analysis, debugging, refactoring, guides, and CLI commands",
+      "tags": [
+        "reference",
+        "skills",
+        "tools"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/events/EventPageView.tsx",
+      "type": "file",
+      "name": "EventPageView.tsx",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Main event page component with section renderers (hero, story, checklist, cards, split, image, html, quote, hosts, video, cta)",
+      "tags": [
+        "component",
+        "rendering",
+        "event-display"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:component:EventPageView",
+      "type": "component",
+      "name": "EventPageView",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Root component rendering full event page with hero, sections, registration, and video",
+      "tags": [
+        "main-component",
+        "page-level"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:component:SectionShell",
+      "type": "component",
+      "name": "SectionShell",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Wrapper component for consistent section styling (eyebrow, title, intro, children)",
+      "tags": [
+        "layout-component",
+        "reusable"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:component:RichParagraphs",
+      "type": "component",
+      "name": "RichParagraphs",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Text rendering component for paragraph arrays with consistent styling",
+      "tags": [
+        "text-component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:component:StorySection",
+      "type": "component",
+      "name": "StorySection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Renders story section with rich text in card layout",
+      "tags": [
+        "section-renderer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:component:ChecklistSection",
+      "type": "component",
+      "name": "ChecklistSection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Renders numbered checklist items with visual highlights",
+      "tags": [
+        "section-renderer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:component:CardsSection",
+      "type": "component",
+      "name": "CardsSection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Renders multiple cards with kicker, title, body, and bullets; special styling for curriculum",
+      "tags": [
+        "section-renderer"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:component:SplitSection",
+      "type": "component",
+      "name": "SplitSection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Two-column section with text and image/caption",
+      "tags": [
+        "section-renderer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:component:ImageSection",
+      "type": "component",
+      "name": "ImageSection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Section with image or video media, optional caption, compact variant support",
+      "tags": [
+        "section-renderer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:component:HtmlSection",
+      "type": "component",
+      "name": "HtmlSection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Renders raw HTML section, shows ended button if event ended and section has register link",
+      "tags": [
+        "section-renderer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:component:QuoteCardSection",
+      "type": "component",
+      "name": "QuoteCardSection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Renders testimonial/quote card with media (image or video), mobile/desktop layout variants",
+      "tags": [
+        "section-renderer"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:component:HostsSection",
+      "type": "component",
+      "name": "HostsSection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Renders event host profiles with photo, role, bio, and Amazon bestseller badge",
+      "tags": [
+        "section-renderer"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:component:EventVideoSection",
+      "type": "component",
+      "name": "EventVideoSection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Embeds YouTube video in responsive container with caption",
+      "tags": [
+        "section-renderer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:component:EndedButton",
+      "type": "component",
+      "name": "EndedButton",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Disabled button indicating event has ended",
+      "tags": [
+        "utility-component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:component:CtaSection",
+      "type": "component",
+      "name": "CtaSection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Call-to-action section with pricing box, promo badge, and action buttons",
+      "tags": [
+        "section-renderer"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sectionTitleClass",
+      "type": "function",
+      "name": "sectionTitleClass",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Returns Tailwind classes for section titles, different sizes for creative-lab/outcomes",
+      "tags": [
+        "style-helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sectionEyebrowClass",
+      "type": "function",
+      "name": "sectionEyebrowClass",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Returns Tailwind classes for section eyebrows (small uppercase labels)",
+      "tags": [
+        "style-helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:renderSection",
+      "type": "function",
+      "name": "renderSection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Switch dispatcher that renders appropriate section component based on EventSection type",
+      "tags": [
+        "dispatcher"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/events/EventRegistrationSection.tsx",
+      "type": "file",
+      "name": "EventRegistrationSection.tsx",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "summary": "Registration/checkout form component with embedded Stripe, promo handling, donation mode, and success modal",
+      "tags": [
+        "component",
+        "checkout",
+        "registration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:component:EventRegistrationSection",
+      "type": "component",
+      "name": "EventRegistrationSection",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "summary": "Main registration form with name/email input, promo code handling, price display, and Stripe embedded checkout",
+      "tags": "main-component",
+      "complexity": "complex"
+    },
+    {
+      "id": "file:type:EventRegistrationData",
+      "type": "type",
+      "name": "EventRegistrationData",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "summary": "Props interface for registration section: slug, title, pricing, calendar, success state",
+      "tags": [
+        "interface",
+        "data-structure"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:hook:useAnimatedNumber",
+      "type": "hook",
+      "name": "useAnimatedNumber",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "summary": "Custom hook that animates numeric value changes with easing (cubic ease-out, 750ms default)",
+      "tags": [
+        "animation",
+        "custom-hook"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:handleSubmit",
+      "type": "function",
+      "name": "handleSubmit",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "summary": "Form submission handler: validates name/email, initiates checkout",
+      "tags": [
+        "form-handler"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:handleApplyPromo",
+      "type": "function",
+      "name": "handleApplyPromo",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "summary": "Promo validation handler: calls API, updates applied promo, re-opens checkout if needed",
+      "tags": [
+        "form-handler"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:openCheckout",
+      "type": "function",
+      "name": "openCheckout",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "summary": "Initiates Stripe checkout: builds request with journey tracking, fallsback to hosted on embedded failure",
+      "tags": [
+        "checkout-flow"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:finalizeRegistration",
+      "type": "function",
+      "name": "finalizeRegistration",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "summary": "Idempotent finalization handler: calls finalize-registration API, marks success or clears session",
+      "tags": [
+        "checkout-flow"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:markSuccess",
+      "type": "function",
+      "name": "markSuccess",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "summary": "Sets success state with title and detail message, clears checkout session",
+      "tags": [
+        "state-helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:openHostedFallback",
+      "type": "function",
+      "name": "openHostedFallback",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "summary": "Fallback for embedded checkout failures: validates inputs, re-opens as hosted checkout",
+      "tags": [
+        "checkout-flow"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/lib/event-checkout.ts",
+      "type": "file",
+      "name": "event-checkout.ts",
+      "filePath": "src/lib/event-checkout.ts",
+      "summary": "Checkout logic: mode resolution, amount calculation with promos/donations, Stripe session params builder",
+      "tags": [
+        "library",
+        "checkout-logic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:type:EventCheckoutMode",
+      "type": "type",
+      "name": "EventCheckoutMode",
+      "filePath": "src/lib/event-checkout.ts",
+      "summary": "Union type for checkout modes: 'embedded' | 'hosted'",
+      "tags": [
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:resolveCheckoutMode",
+      "type": "function",
+      "name": "resolveCheckoutMode",
+      "filePath": "src/lib/event-checkout.ts",
+      "summary": "Selects checkout mode: embedded if available and requested, otherwise hosted",
+      "tags": [
+        "logic-function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:resolveEventCheckoutAmount",
+      "type": "function",
+      "name": "resolveEventCheckoutAmount",
+      "filePath": "src/lib/event-checkout.ts",
+      "summary": "Calculates checkout amount: applies promo (percent/amount off) or donation amount",
+      "tags": [
+        "calculation-function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:buildEventCheckoutSessionParams",
+      "type": "function",
+      "name": "buildEventCheckoutSessionParams",
+      "filePath": "src/lib/event-checkout.ts",
+      "summary": "Builds Stripe Checkout SessionCreateParams with mode-specific URLs, metadata, and promo handling",
+      "tags": [
+        "builder-function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/lib/events.tsx",
+      "type": "file",
+      "name": "events.tsx",
+      "filePath": "src/lib/events.tsx",
+      "summary": "Event definitions, types, and utilities for workshop events. Exports event data, pricing logic, and filtering functions.",
+      "tags": [
+        "events",
+        "data",
+        "types",
+        "pricing"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:type:EventHost",
+      "type": "type",
+      "name": "EventHost",
+      "filePath": "src/lib/events.tsx",
+      "summary": "Event host information including name, role, photo, and bio.",
+      "tags": [
+        "event",
+        "host",
+        "person"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:type:EventPromoCode",
+      "type": "type",
+      "name": "EventPromoCode",
+      "filePath": "src/lib/events.tsx",
+      "summary": "Promotional code details with discount options (percent or amount).",
+      "tags": [
+        "pricing",
+        "promo",
+        "discount"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:type:EventSection",
+      "type": "type",
+      "name": "EventSection",
+      "filePath": "src/lib/events.tsx",
+      "summary": "Union type for event page sections (story, checklist, cards, split, image, html, custom, quoteCard, hosts, cta).",
+      "tags": [
+        "event",
+        "section",
+        "layout"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:type:EventDefinition",
+      "type": "type",
+      "name": "EventDefinition",
+      "filePath": "src/lib/events.tsx",
+      "summary": "Complete event definition including pricing, hosts, sections, metadata, and calendar info.",
+      "tags": [
+        "event",
+        "data",
+        "comprehensive"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:const:events",
+      "type": "const",
+      "name": "events",
+      "filePath": "src/lib/events.tsx",
+      "summary": "Array of 3 event definitions: connection-dinner-canggu, ai-avatar-content-creation, ask-an-ai-expert",
+      "tags": [
+        "data",
+        "configuration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:getDiscountedPrice",
+      "type": "function",
+      "name": "getDiscountedPrice",
+      "filePath": "src/lib/events.tsx",
+      "summary": "Internal utility to calculate discounted price from promo code (amount or percent).",
+      "tags": [
+        "pricing",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:getEventDiscountedPrice",
+      "type": "export",
+      "name": "getEventDiscountedPrice",
+      "filePath": "src/lib/events.tsx",
+      "summary": "Calculate event discounted price using internal getDiscountedPrice utility.",
+      "tags": [
+        "pricing",
+        "export"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:resolvePromoCode",
+      "type": "export",
+      "name": "resolvePromoCode",
+      "filePath": "src/lib/events.tsx",
+      "summary": "Find and return matching promo code from event by normalized code string.",
+      "tags": [
+        "pricing",
+        "promo",
+        "export"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:formatEventPrice",
+      "type": "export",
+      "name": "formatEventPrice",
+      "filePath": "src/lib/events.tsx",
+      "summary": "Format event price as currency string with currency symbol.",
+      "tags": [
+        "pricing",
+        "format",
+        "export"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:getEventBySlug",
+      "type": "export",
+      "name": "getEventBySlug",
+      "filePath": "src/lib/events.tsx",
+      "summary": "Find event by slug identifier from events array.",
+      "tags": [
+        "event",
+        "query",
+        "export"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:getLiveEvents",
+      "type": "export",
+      "name": "getLiveEvents",
+      "filePath": "src/lib/events.tsx",
+      "summary": "Filter and return only live events (status='live') from events array.",
+      "tags": [
+        "event",
+        "query",
+        "export"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "concept:event-rendering-system",
+      "type": "concept",
+      "name": "Event Rendering System",
+      "summary": "Architecture for rendering event pages: EventPageView dispatches to section renderers based on EventSection type",
+      "tags": [
+        "architecture",
+        "component-pattern"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "concept:checkout-flow",
+      "type": "concept",
+      "name": "Checkout Flow",
+      "summary": "Payment processing: validation -> checkout session creation -> Stripe embed/hosted -> finalize registration -> success modal",
+      "tags": [
+        "business-flow"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "concept:promo-system",
+      "type": "concept",
+      "name": "Promo Code System",
+      "summary": "Promo handling: lookup by code, calculate discount (percent/amount), display stripped price, apply in checkout",
+      "tags": [
+        "business-logic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "concept:donation-mode",
+      "type": "concept",
+      "name": "Donation Mode",
+      "summary": "Alternative to fixed pricing: attendee sets donation amount (with minimum), displays in registration form",
+      "tags": [
+        "feature",
+        "variant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:variable:events",
+      "type": "export",
+      "name": "events",
+      "filePath": "src/lib/events.tsx",
+      "summary": "Array of 3 event definitions (connection-dinner-canggu, ai-avatar-content-creation, ask-an-ai-expert).",
+      "tags": [
+        "event",
+        "data",
+        "export"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/lib/lead-magnets.ts",
+      "type": "file",
+      "name": "lead-magnets.ts",
+      "filePath": "src/lib/lead-magnets.ts",
+      "summary": "Lead magnet definitions and email builder for welcome emails with download links.",
+      "tags": [
+        "lead-magnet",
+        "email",
+        "data"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:type:LeadMagnet",
+      "type": "type",
+      "name": "LeadMagnet",
+      "filePath": "src/lib/lead-magnets.ts",
+      "summary": "Lead magnet definition with slug, name, subject, and download path.",
+      "tags": [
+        "lead-magnet",
+        "type"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:variable:SITE_URL",
+      "type": "export",
+      "name": "SITE_URL",
+      "filePath": "src/lib/lead-magnets.ts",
+      "summary": "Site URL constant from environment or default to workshop.mastermindshq.business.",
+      "tags": [
+        "config",
+        "export"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:variable:LEAD_MAGNETS",
+      "type": "export",
+      "name": "LEAD_MAGNETS",
+      "filePath": "src/lib/lead-magnets.ts",
+      "summary": "Registry of lead magnets indexed by slug (currently one: client-launch-checklist).",
+      "tags": [
+        "lead-magnet",
+        "data",
+        "export"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:getLeadMagnet",
+      "type": "export",
+      "name": "getLeadMagnet",
+      "filePath": "src/lib/lead-magnets.ts",
+      "summary": "Retrieve lead magnet by slug from LEAD_MAGNETS registry.",
+      "tags": [
+        "lead-magnet",
+        "query",
+        "export"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:downloadUrlFor",
+      "type": "export",
+      "name": "downloadUrlFor",
+      "filePath": "src/lib/lead-magnets.ts",
+      "summary": "Build absolute download URL for lead magnet using SITE_URL and downloadPath.",
+      "tags": [
+        "lead-magnet",
+        "url",
+        "export"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:buildWelcomeEmail",
+      "type": "export",
+      "name": "buildWelcomeEmail",
+      "filePath": "src/lib/lead-magnets.ts",
+      "summary": "Build welcome email HTML with first name greeting and download button using downloadUrlFor.",
+      "tags": [
+        "lead-magnet",
+        "email",
+        "export"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:escapeHtml",
+      "type": "function",
+      "name": "escapeHtml",
+      "filePath": "src/lib/lead-magnets.ts",
+      "summary": "Internal utility to escape HTML special characters in strings.",
+      "tags": [
+        "security",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/lib/giveaways.ts",
+      "type": "file",
+      "name": "giveaways.ts",
+      "filePath": "src/lib/giveaways.ts",
+      "summary": "Giveaway registry with types and query utilities for giveaway index page generation.",
+      "tags": [
+        "giveaway",
+        "data"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:interface:Giveaway",
+      "type": "type",
+      "name": "Giveaway",
+      "filePath": "src/lib/giveaways.ts",
+      "summary": "Giveaway interface with slug, title, description, icon, badge, and badgeVariant.",
+      "tags": [
+        "giveaway",
+        "type"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:variable:giveaways",
+      "type": "export",
+      "name": "giveaways",
+      "filePath": "src/lib/giveaways.ts",
+      "summary": "Array of 25 giveaways including quizzes, guides, tools, skills, and resources.",
+      "tags": [
+        "giveaway",
+        "data",
+        "export"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:getGiveaway",
+      "type": "export",
+      "name": "getGiveaway",
+      "filePath": "src/lib/giveaways.ts",
+      "summary": "Find giveaway by slug from giveaways array.",
+      "tags": [
+        "giveaway",
+        "query",
+        "export"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/lib/resend-sender.ts",
+      "type": "file",
+      "name": "resend-sender.ts",
+      "filePath": "src/lib/resend-sender.ts",
+      "summary": "Email sender guards and Resend API wrapper with test-run protection.",
+      "tags": [
+        "email",
+        "resend",
+        "api",
+        "guards"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:isTestRun",
+      "type": "export",
+      "name": "isTestRun",
+      "filePath": "src/lib/resend-sender.ts",
+      "summary": "Detect if code is running in test environment (NODE_ENV, VITEST, JEST_WORKER_ID, TSX_TEST).",
+      "tags": [
+        "testing",
+        "guards",
+        "export"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sendViaResend",
+      "type": "export",
+      "name": "sendViaResend",
+      "filePath": "src/lib/resend-sender.ts",
+      "summary": "Send email via Resend API with test-run guard using isTestRun. Requires RESEND_API_KEY env var.",
+      "tags": [
+        "email",
+        "api",
+        "guards",
+        "export"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/lib/event-confirmation-email.ts",
+      "type": "file",
+      "name": "event-confirmation-email.ts",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "Email template builders and senders for event confirmations, reminders, location updates, and waitlist notifications. Handles HTML generation and Resend API integration.",
+      "tags": [
+        "email",
+        "event-confirmations",
+        "resend",
+        "html-templates"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:getSiteUrl",
+      "type": "function",
+      "name": "getSiteUrl",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "Gets the configured site URL from environment, strips trailing slashes",
+      "tags": [
+        "environment",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:getFirstName",
+      "type": "function",
+      "name": "getFirstName",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "Extracts first name from full name string",
+      "tags": [
+        "string-parsing",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:buildAiContentCreationSetupEmailHtml",
+      "type": "function",
+      "name": "buildAiContentCreationSetupEmailHtml",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "Builds HTML for AI Content Creation Lab setup email with tool setup instructions",
+      "tags": [
+        "email-template",
+        "ai-content-creation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:buildAskAnAiExpertWelcomeEmailHtml",
+      "type": "function",
+      "name": "buildAskAnAiExpertWelcomeEmailHtml",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "Builds HTML for Ask An AI Expert workshop welcome confirmation email with zoom link",
+      "tags": [
+        "email-template",
+        "welcome-email"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:buildSessionReminderEmailHtml",
+      "type": "function",
+      "name": "buildSessionReminderEmailHtml",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "Builds HTML for session reminder emails (24h or 2h before event)",
+      "tags": [
+        "email-template",
+        "reminder"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:buildConfirmationEmailHtml",
+      "type": "function",
+      "name": "buildConfirmationEmailHtml",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "Builds HTML for event confirmation email with setup instructions and location details",
+      "tags": [
+        "email-template",
+        "confirmation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:buildLocationReminderEmailHtml",
+      "type": "function",
+      "name": "buildLocationReminderEmailHtml",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "Builds HTML for location reminder email sent 4h before event with exact address",
+      "tags": [
+        "email-template",
+        "location"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:sendResendEmail",
+      "type": "function",
+      "name": "sendResendEmail",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "Sends email via Resend API with optional iCal attachments and idempotency key",
+      "tags": [
+        "resend",
+        "email-sending",
+        "api"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:buildConfirmationIdempotencyKey",
+      "type": "function",
+      "name": "buildConfirmationIdempotencyKey",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "Creates idempotency key for event confirmation emails",
+      "tags": [
+        "idempotency",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:buildWaitlistJoinIdempotencyKey",
+      "type": "function",
+      "name": "buildWaitlistJoinIdempotencyKey",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "Creates idempotency key for waitlist join confirmation emails",
+      "tags": [
+        "idempotency",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:buildAiContentCreationSetupIdempotencyKey",
+      "type": "function",
+      "name": "buildAiContentCreationSetupIdempotencyKey",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "Creates idempotency key for AI content creation setup emails",
+      "tags": [
+        "idempotency",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:buildAskAnAiExpertWelcomeIdempotencyKey",
+      "type": "function",
+      "name": "buildAskAnAiExpertWelcomeIdempotencyKey",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "Creates idempotency key for Ask An AI Expert welcome emails",
+      "tags": [
+        "idempotency",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:sendEventConfirmationEmail",
+      "type": "function",
+      "name": "sendEventConfirmationEmail",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "Sends event confirmation email with iCal attachment and cancel token",
+      "tags": [
+        "email-sending",
+        "confirmation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:sendAiContentCreationSetupEmail",
+      "type": "function",
+      "name": "sendAiContentCreationSetupEmail",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "Sends AI content creation setup email with tool instructions",
+      "tags": [
+        "email-sending",
+        "setup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:sendAskAnAiExpertWelcomeEmail",
+      "type": "function",
+      "name": "sendAskAnAiExpertWelcomeEmail",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "Sends Ask An AI Expert welcome email with zoom link and iCal attachment",
+      "tags": [
+        "email-sending",
+        "welcome"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:sendEventLocationReminderEmail",
+      "type": "function",
+      "name": "sendEventLocationReminderEmail",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "Sends exact location reminder email with updated iCal (sequence:1 for calendar update)",
+      "tags": [
+        "email-sending",
+        "reminder"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:sendSessionReminderEmail",
+      "type": "function",
+      "name": "sendSessionReminderEmail",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "Sends session reminder email (24h or 2h before event with zoom link)",
+      "tags": [
+        "email-sending",
+        "reminder"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:buildWaitlistConfirmationHtml",
+      "type": "function",
+      "name": "buildWaitlistConfirmationHtml",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "Builds HTML for waitlist confirmation email with removal option",
+      "tags": [
+        "email-template",
+        "waitlist"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:buildWaitlistSpotNotificationHtml",
+      "type": "function",
+      "name": "buildWaitlistSpotNotificationHtml",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "Builds HTML for spot availability notification (cancellation or 2h before)",
+      "tags": [
+        "email-template",
+        "waitlist"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:sendWaitlistConfirmationEmail",
+      "type": "function",
+      "name": "sendWaitlistConfirmationEmail",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "Sends waitlist confirmation email with remove token",
+      "tags": [
+        "email-sending",
+        "waitlist"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:sendWaitlistSpotNotificationEmail",
+      "type": "function",
+      "name": "sendWaitlistSpotNotificationEmail",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "Sends spot notification email when seat opens (cancellation or 2h before)",
+      "tags": [
+        "email-sending",
+        "waitlist"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:type:ResendAttachment",
+      "type": "type",
+      "name": "ResendAttachment",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "Email attachment with filename, base64 content, and content-type",
+      "tags": [
+        "resend",
+        "types"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/lib/google-calendar-invite.ts",
+      "type": "file",
+      "name": "google-calendar-invite.ts",
+      "filePath": "src/lib/google-calendar-invite.ts",
+      "summary": "Google Calendar integration for adding attendees to event calendar entries",
+      "tags": [
+        "google-calendar",
+        "calendar-invites",
+        "oauth"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:type:CalendarInviteResult",
+      "type": "type",
+      "name": "CalendarInviteResult",
+      "filePath": "src/lib/google-calendar-invite.ts",
+      "summary": "Result union type for calendar invite attempts (invited, already-invited, skipped, failed)",
+      "tags": [
+        "types"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/google-calendar-invite.ts:eventIdFor",
+      "type": "function",
+      "name": "eventIdFor",
+      "filePath": "src/lib/google-calendar-invite.ts",
+      "summary": "Resolves Google Calendar event ID from environment variables (slug-specific or default)",
+      "tags": [
+        "environment",
+        "google-calendar"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/google-calendar-invite.ts:getAuth",
+      "type": "function",
+      "name": "getAuth",
+      "filePath": "src/lib/google-calendar-invite.ts",
+      "summary": "Creates Google OAuth2 auth object from environment credentials",
+      "tags": [
+        "oauth",
+        "google"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/google-calendar-invite.ts:inviteAttendeeToEvent",
+      "type": "function",
+      "name": "inviteAttendeeToEvent",
+      "filePath": "src/lib/google-calendar-invite.ts",
+      "summary": "Adds attendee to Google Calendar event with description sync",
+      "tags": [
+        "google-calendar",
+        "attendee-management"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/lib/subscribe.ts",
+      "type": "file",
+      "name": "subscribe.ts",
+      "filePath": "src/lib/subscribe.ts",
+      "summary": "Lead magnet subscription handler with dependency injection for testing",
+      "tags": [
+        "subscriptions",
+        "lead-magnets",
+        "email"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:type:SubscribeInput",
+      "type": "type",
+      "name": "SubscribeInput",
+      "filePath": "src/lib/subscribe.ts",
+      "summary": "Input for subscription: firstName, lastName, email, leadMagnet slug",
+      "tags": [
+        "types"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:type:SentEmail",
+      "type": "type",
+      "name": "SentEmail",
+      "filePath": "src/lib/subscribe.ts",
+      "summary": "Email sent record with from, to, subject, html",
+      "tags": [
+        "types",
+        "email"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:type:SubscribeDeps",
+      "type": "type",
+      "name": "SubscribeDeps",
+      "filePath": "src/lib/subscribe.ts",
+      "summary": "Dependency interface for subscription: saveLead, claimSignup, sendEmail",
+      "tags": [
+        "types",
+        "dependency-injection"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:type:SubscribeResult",
+      "type": "type",
+      "name": "SubscribeResult",
+      "filePath": "src/lib/subscribe.ts",
+      "summary": "Result with ok flag and emailed boolean (tracks if duplicate)",
+      "tags": [
+        "types"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:SubscribeError",
+      "type": "class",
+      "name": "SubscribeError",
+      "filePath": "src/lib/subscribe.ts",
+      "summary": "Error class with HTTP status code for subscription validation failures",
+      "tags": [
+        "error-handling"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/subscribe.ts:handleSubscribe",
+      "type": "function",
+      "name": "handleSubscribe",
+      "filePath": "src/lib/subscribe.ts",
+      "summary": "Core subscription logic: validates input, claims signup, sends welcome email",
+      "tags": [
+        "subscriptions",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/lib/calendar.ts",
+      "type": "file",
+      "name": "calendar.ts",
+      "filePath": "src/lib/calendar.ts",
+      "summary": "Calendar utilities for iCal format, Google Calendar URLs, and event descriptions",
+      "tags": [
+        "calendar",
+        "ical",
+        "google-calendar"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/calendar.ts:toIcalDate",
+      "type": "function",
+      "name": "toIcalDate",
+      "filePath": "src/lib/calendar.ts",
+      "summary": "Converts ISO datetime to iCal format (YYYYMMDDTHHmmssZ)",
+      "tags": [
+        "ical",
+        "date-formatting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/calendar.ts:escapeIcal",
+      "type": "function",
+      "name": "escapeIcal",
+      "filePath": "src/lib/calendar.ts",
+      "summary": "Escapes special characters for iCal format (backslash, comma, semicolon, newline)",
+      "tags": [
+        "ical",
+        "escaping"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/calendar.ts:buildGoogleCalendarUrl",
+      "type": "function",
+      "name": "buildGoogleCalendarUrl",
+      "filePath": "src/lib/calendar.ts",
+      "summary": "Builds Google Calendar creation URL with event details",
+      "tags": [
+        "google-calendar",
+        "url-building"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/calendar.ts:buildIcalString",
+      "type": "function",
+      "name": "buildIcalString",
+      "filePath": "src/lib/calendar.ts",
+      "summary": "Builds complete iCal file content (VCALENDAR/VEVENT) with METHOD (REQUEST or PUBLISH)",
+      "tags": [
+        "ical",
+        "calendar"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/calendar.ts:buildEventCalendarDescription",
+      "type": "function",
+      "name": "buildEventCalendarDescription",
+      "filePath": "src/lib/calendar.ts",
+      "summary": "Builds calendar event description with zoom link and event page URL",
+      "tags": [
+        "calendar",
+        "description"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/api/subscribe/route.ts",
+      "type": "file",
+      "name": "subscribe/route.ts",
+      "filePath": "src/app/api/subscribe/route.ts",
+      "summary": "API endpoint for lead magnet subscriptions with Supabase storage",
+      "tags": [
+        "api-route",
+        "subscriptions",
+        "supabase"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/app/api/subscribe/route.ts:supabase",
+      "type": "function",
+      "name": "supabase",
+      "filePath": "src/app/api/subscribe/route.ts",
+      "summary": "Factory function creating Supabase client with server-side secret key",
+      "tags": [
+        "supabase",
+        "database"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:var:deps",
+      "type": "variable",
+      "name": "deps",
+      "filePath": "src/app/api/subscribe/route.ts",
+      "summary": "SubscribeDeps implementation: saveLead to upsert, claimSignup with duplicate detection, sendEmail via Resend",
+      "tags": [
+        "dependency-injection",
+        "supabase"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/app/api/subscribe/route.ts:POST",
+      "type": "function",
+      "name": "POST",
+      "filePath": "src/app/api/subscribe/route.ts",
+      "summary": "POST handler: validates input, calls handleSubscribe, returns result or error",
+      "tags": [
+        "api-route",
+        "post"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/api/lead-magnet/route.ts",
+      "type": "file",
+      "name": "lead-magnet/route.ts",
+      "filePath": "src/app/api/lead-magnet/route.ts",
+      "summary": "Giveaway lead magnet API: delivers specific lead magnet PDFs/resources, rate-limited, tracks via CRM",
+      "tags": [
+        "api-route",
+        "giveaways",
+        "lead-magnets",
+        "crm"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/app/api/lead-magnet/route.ts:sendViaResend",
+      "type": "function",
+      "name": "sendViaResend",
+      "filePath": "src/app/api/lead-magnet/route.ts",
+      "summary": "Sends giveaway-specific emails (speak-human, guardog, maccleaner, cult-brand-playbook, all-sorted, etc)",
+      "tags": [
+        "email-sending",
+        "resend",
+        "giveaways"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:const:GIVEAWAY_SOURCE_MAP",
+      "type": "constant",
+      "name": "GIVEAWAY_SOURCE_MAP",
+      "filePath": "src/app/api/lead-magnet/route.ts",
+      "summary": "Maps giveaway source slugs to CRM source keys (e.g., maccleaner -> giveaway-maccleaner)",
+      "tags": [
+        "giveaways",
+        "mapping"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app/api/lead-magnet/route.ts:ingestIntoCrm",
+      "type": "function",
+      "name": "ingestIntoCrm",
+      "filePath": "src/app/api/lead-magnet/route.ts",
+      "summary": "Posts lead to Mission Control CRM with giveaway tag (non-blocking)",
+      "tags": [
+        "crm",
+        "mission-control"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app/api/lead-magnet/route.ts:POST",
+      "type": "function",
+      "name": "POST",
+      "filePath": "src/app/api/lead-magnet/route.ts",
+      "summary": "Rate-limited POST handler: validates email, tracks to Insight, saves to Supabase, sends via Resend, posts to CRM",
+      "tags": [
+        "api-route",
+        "post",
+        "rate-limiting"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/app/api/events/checkout-session/route.ts",
+      "type": "file",
+      "name": "checkout-session/route.ts",
+      "filePath": "src/app/api/events/checkout-session/route.ts",
+      "summary": "Event registration checkout: creates Stripe sessions or free tickets, sends confirmations, manages calendar invites",
+      "tags": [
+        "api-route",
+        "checkout",
+        "stripe",
+        "events"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/app/api/events/checkout-session/route.ts:getBaseUrl",
+      "type": "function",
+      "name": "getBaseUrl",
+      "filePath": "src/app/api/events/checkout-session/route.ts",
+      "summary": "Resolves base URL from env or request origin",
+      "tags": [
+        "url-utils"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app/api/events/checkout-session/route.ts:POST",
+      "type": "function",
+      "name": "POST",
+      "filePath": "src/app/api/events/checkout-session/route.ts",
+      "summary": "Rate-limited checkout handler: validates input, resolves amount, creates Stripe session or free registration, tracks events",
+      "tags": [
+        "api-route",
+        "post",
+        "checkout",
+        "stripe"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/app/api/events/session-reminders/route.ts",
+      "type": "file",
+      "name": "session-reminders/route.ts",
+      "filePath": "src/app/api/events/session-reminders/route.ts",
+      "summary": "Cron endpoint for session reminder emails (24h and 2h before events)",
+      "tags": [
+        "api-route",
+        "cron",
+        "email",
+        "reminders"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/app/api/events/session-reminders/route.ts:isAuthorized",
+      "type": "function",
+      "name": "isAuthorized",
+      "filePath": "src/app/api/events/session-reminders/route.ts",
+      "summary": "Validates timing-safe Bearer token authorization",
+      "tags": [
+        "security",
+        "authorization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app/api/events/session-reminders/route.ts:acquireEventWindowLock",
+      "type": "function",
+      "name": "acquireEventWindowLock",
+      "filePath": "src/app/api/events/session-reminders/route.ts",
+      "summary": "Inserts lock record to prevent duplicate reminder runs",
+      "tags": [
+        "concurrency",
+        "locks"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app/api/events/session-reminders/route.ts:GET",
+      "type": "function",
+      "name": "GET",
+      "filePath": "src/app/api/events/session-reminders/route.ts",
+      "summary": "Cron handler: authorizes request, acquires lock, runs session reminders for specified events",
+      "tags": [
+        "api-route",
+        "get",
+        "cron"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/api/illy-auth/route.ts",
+      "type": "file",
+      "name": "illy-auth/route.ts",
+      "filePath": "src/app/api/illy-auth/route.ts",
+      "summary": "Password-protected authentication for Illy onboarding guide (30-day remember-me cookie)",
+      "tags": [
+        "api-route",
+        "auth",
+        "guide"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app/api/illy-auth/route.ts:sha256",
+      "type": "function",
+      "name": "sha256",
+      "filePath": "src/app/api/illy-auth/route.ts",
+      "summary": "Creates SHA256 hash of password",
+      "tags": [
+        "crypto",
+        "security"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app/api/illy-auth/route.ts:matchesPassword",
+      "type": "function",
+      "name": "matchesPassword",
+      "filePath": "src/app/api/illy-auth/route.ts",
+      "summary": "Timing-safe password comparison using SHA256 hashes",
+      "tags": [
+        "crypto",
+        "security"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app/api/illy-auth/route.ts:grantAccess",
+      "type": "function",
+      "name": "grantAccess",
+      "filePath": "src/app/api/illy-auth/route.ts",
+      "summary": "Sets illy_guide_auth cookie and redirects to /illy",
+      "tags": [
+        "auth",
+        "cookies"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app/api/illy-auth/route.ts:POST",
+      "type": "function",
+      "name": "POST",
+      "filePath": "src/app/api/illy-auth/route.ts",
+      "summary": "POST handler: validates form password, grants access or redirects with error",
+      "tags": [
+        "api-route",
+        "post"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app/api/illy-auth/route.ts:GET",
+      "type": "function",
+      "name": "GET",
+      "filePath": "src/app/api/illy-auth/route.ts",
+      "summary": "GET handler: validates query password, grants access or redirects with error",
+      "tags": [
+        "api-route",
+        "get"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/api/jill-auth/route.ts",
+      "type": "file",
+      "name": "jill-auth/route.ts",
+      "filePath": "src/app/api/jill-auth/route.ts",
+      "summary": "Password-protected authentication for Jill onboarding guide (30-day remember-me cookie)",
+      "tags": [
+        "api-route",
+        "auth",
+        "guide"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app/api/jill-auth/route.ts:sha256",
+      "type": "function",
+      "name": "sha256",
+      "filePath": "src/app/api/jill-auth/route.ts",
+      "summary": "Creates SHA256 hash of password",
+      "tags": [
+        "crypto",
+        "security"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app/api/jill-auth/route.ts:matchesPassword",
+      "type": "function",
+      "name": "matchesPassword",
+      "filePath": "src/app/api/jill-auth/route.ts",
+      "summary": "Timing-safe password comparison using SHA256 hashes",
+      "tags": [
+        "crypto",
+        "security"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app/api/jill-auth/route.ts:grantAccess",
+      "type": "function",
+      "name": "grantAccess",
+      "filePath": "src/app/api/jill-auth/route.ts",
+      "summary": "Sets jill_guide_auth cookie and redirects to /jill",
+      "tags": [
+        "auth",
+        "cookies"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app/api/jill-auth/route.ts:POST",
+      "type": "function",
+      "name": "POST",
+      "filePath": "src/app/api/jill-auth/route.ts",
+      "summary": "POST handler: validates form password, grants access or redirects with error",
+      "tags": [
+        "api-route",
+        "post"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app/api/jill-auth/route.ts:GET",
+      "type": "function",
+      "name": "GET",
+      "filePath": "src/app/api/jill-auth/route.ts",
+      "summary": "GET handler: validates query password, grants access or redirects with error",
+      "tags": [
+        "api-route",
+        "get"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/layout.tsx",
+      "type": "file",
+      "name": "layout.tsx",
+      "filePath": "src/app/layout.tsx",
+      "summary": "Root layout with metadata, fonts, analytics pixel, and site chrome wrapper",
+      "tags": [
+        "layout",
+        "metadata",
+        "analytics",
+        "fonts"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:var:plusJakarta",
+      "type": "variable",
+      "name": "plusJakarta",
+      "filePath": "src/app/layout.tsx",
+      "summary": "Plus Jakarta Sans font from Google Fonts with weights 400-800",
+      "tags": [
+        "fonts",
+        "typography"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:var:metadata",
+      "type": "variable",
+      "name": "metadata",
+      "filePath": "src/app/layout.tsx",
+      "summary": "Next.js metadata export with title templates, OG, Twitter, and robots config",
+      "tags": [
+        "metadata",
+        "seo"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:comp:RootLayout",
+      "type": "component",
+      "name": "RootLayout",
+      "filePath": "src/app/layout.tsx",
+      "summary": "Root layout component with HTML setup, Facebook pixel, and SiteChrome wrapper",
+      "tags": [
+        "layout",
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/giveaways/ai-behavior-quiz/page.tsx",
+      "type": "file",
+      "name": "ai-behavior-quiz/page.tsx",
+      "filePath": "src/app/giveaways/ai-behavior-quiz/page.tsx",
+      "summary": "Quiz landing page showing AI behavioral use levels (B0-B9 Avoidant to Watchful) with CTA to external quiz",
+      "tags": [
+        "page",
+        "quiz",
+        "giveaway",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:const:QUIZ_URL:behavior",
+      "type": "constant",
+      "name": "QUIZ_URL",
+      "filePath": "src/app/giveaways/ai-behavior-quiz/page.tsx",
+      "summary": "External URL to behavioral AI quiz on mastermindshq.business",
+      "tags": [
+        "quiz"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:const:LEVELS:behavior",
+      "type": "constant",
+      "name": "LEVELS",
+      "filePath": "src/app/giveaways/ai-behavior-quiz/page.tsx",
+      "summary": "Array of AI behavior levels: B0 Avoidant, B3 Testing, B6 Embedded, B9 Watchful",
+      "tags": [
+        "quiz",
+        "levels"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:comp:AiBehaviorQuizPage",
+      "type": "component",
+      "name": "AiBehaviorQuizPage",
+      "filePath": "src/app/giveaways/ai-behavior-quiz/page.tsx",
+      "summary": "Quiz landing page with hero section, level cards, CTA button, and giveaway modal",
+      "tags": [
+        "page",
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/giveaways/ai-levels-quiz/page.tsx",
+      "type": "file",
+      "name": "ai-levels-quiz/page.tsx",
+      "filePath": "src/app/giveaways/ai-levels-quiz/page.tsx",
+      "summary": "Quiz landing page showing AI capability levels (0-40: Exploring to Compounding) with CTA to external quiz",
+      "tags": [
+        "page",
+        "quiz",
+        "giveaway",
+        "capability"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:const:QUIZ_URL:capability",
+      "type": "constant",
+      "name": "QUIZ_URL",
+      "filePath": "src/app/giveaways/ai-levels-quiz/page.tsx",
+      "summary": "External URL to capability AI quiz on mastermindshq.business",
+      "tags": [
+        "quiz"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:const:LEVELS:capability",
+      "type": "constant",
+      "name": "LEVELS",
+      "filePath": "src/app/giveaways/ai-levels-quiz/page.tsx",
+      "summary": "Array of AI capability levels: 0-10 Exploring, 11-20 Applying, 21-30 Integrating, 31-40 Compounding",
+      "tags": [
+        "quiz",
+        "levels"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:comp:AiLevelsQuizPage",
+      "type": "component",
+      "name": "AiLevelsQuizPage",
+      "filePath": "src/app/giveaways/ai-levels-quiz/page.tsx",
+      "summary": "Quiz landing page with hero section, level cards, CTA button, and giveaway modal",
+      "tags": [
+        "page",
+        "component"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:.claude/settings.json",
+      "target": "file:hook:PostToolUse-Bash-Chrome-Refresh",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "defines hook",
+      "direction": "forward"
+    },
+    {
+      "source": "file:hook:PostToolUse-Bash-Chrome-Refresh",
+      "target": "file:next.config.ts",
+      "type": "triggers-on",
+      "weight": 0.8,
+      "label": "watches for vercel --prod command",
+      "direction": "forward"
+    },
+    {
+      "source": "file:next-env.d.ts",
+      "target": "file:type:next",
+      "type": "references",
+      "weight": 1.0,
+      "label": "references type",
+      "direction": "forward"
+    },
+    {
+      "source": "file:next-env.d.ts",
+      "target": "file:type:next/image-types/global",
+      "type": "references",
+      "weight": 1.0,
+      "label": "references type",
+      "direction": "forward"
+    },
+    {
+      "source": "file:next-env.d.ts",
+      "target": "file:type:.next/types/routes.d.ts",
+      "type": "imports",
+      "weight": 1.0,
+      "label": "imports route types",
+      "direction": "forward"
+    },
+    {
+      "source": "file:next.config.ts",
+      "target": "file:dependency:path",
+      "type": "imports",
+      "weight": 1.0,
+      "label": "uses path module",
+      "direction": "forward"
+    },
+    {
+      "source": "file:next.config.ts",
+      "target": "file:type:NextConfig",
+      "type": "imports",
+      "weight": 1.0,
+      "label": "uses NextConfig type",
+      "direction": "forward"
+    },
+    {
+      "source": "file:next.config.ts",
+      "target": "config:nextConfig",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "exports configuration",
+      "direction": "forward"
+    },
+    {
+      "source": "config:nextConfig",
+      "target": "config:turbopack",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "includes turbopack config",
+      "direction": "forward"
+    },
+    {
+      "source": "config:nextConfig",
+      "target": "config:redirects",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "includes redirects",
+      "direction": "forward"
+    },
+    {
+      "source": "config:nextConfig",
+      "target": "config:rewrites",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "includes rewrites",
+      "direction": "forward"
+    },
+    {
+      "source": "config:turbopack",
+      "target": "file:dependency:path",
+      "type": "uses",
+      "weight": 0.9,
+      "label": "calls path.resolve",
+      "direction": "forward"
+    },
+    {
+      "source": "file:tsconfig.json",
+      "target": "config:compilerOptions",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "defines compiler options",
+      "direction": "forward"
+    },
+    {
+      "source": "file:tsconfig.json",
+      "target": "config:paths",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "defines path aliases",
+      "direction": "forward"
+    },
+    {
+      "source": "file:tsconfig.json",
+      "target": "config:include",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "defines includes",
+      "direction": "forward"
+    },
+    {
+      "source": "file:tsconfig.json",
+      "target": "config:exclude",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "defines excludes",
+      "direction": "forward"
+    },
+    {
+      "source": "config:include",
+      "target": "file:next-env.d.ts",
+      "type": "references",
+      "weight": 1.0,
+      "label": "includes file",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:script:dev",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "defines script",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:script:build",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "defines script",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:script:start",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "defines script",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:script:lint",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "defines script",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:script:test",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "defines script",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:script:abandoned-checkout-control",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "defines script",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:script:abandoned-checkout-run",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "defines script",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:@stripe/react-stripe-js",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:@stripe/stripe-js",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:@supabase/supabase-js",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:@types/canvas-confetti",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:canvas-confetti",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:countup.js",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:framer-motion",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:googleapis",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:gsap",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:lenis",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:next",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:react",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:react-dom",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:resend",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:split-type",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:stripe",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:three",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:dep:vanta",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:devDep:@types/node",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "devDependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:devDep:@types/react",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "devDependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:devDep:@types/react-dom",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "devDependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:devDep:@types/three",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "devDependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:devDep:autoprefixer",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "devDependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:devDep:eslint",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "devDependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:devDep:eslint-config-next",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "devDependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:devDep:postcss",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "devDependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:devDep:tailwindcss",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "devDependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:package.json",
+      "target": "file:devDep:typescript",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "devDependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:script:dev",
+      "target": "file:dep:next",
+      "type": "uses",
+      "weight": 1.0,
+      "label": "next dev",
+      "direction": "forward"
+    },
+    {
+      "source": "file:script:build",
+      "target": "file:dep:next",
+      "type": "uses",
+      "weight": 1.0,
+      "label": "next build",
+      "direction": "forward"
+    },
+    {
+      "source": "file:script:start",
+      "target": "file:dep:next",
+      "type": "uses",
+      "weight": 1.0,
+      "label": "next start",
+      "direction": "forward"
+    },
+    {
+      "source": "file:script:lint",
+      "target": "file:dep:next",
+      "type": "uses",
+      "weight": 1.0,
+      "label": "next lint",
+      "direction": "forward"
+    },
+    {
+      "source": "file:script:lint",
+      "target": "file:devDep:eslint",
+      "type": "uses",
+      "weight": 0.8,
+      "label": "linting",
+      "direction": "forward"
+    },
+    {
+      "source": "file:script:test",
+      "target": "file:devDep:typescript",
+      "type": "uses",
+      "weight": 1.0,
+      "label": "tsx --tsconfig",
+      "direction": "forward"
+    },
+    {
+      "source": "file:dep:@stripe/react-stripe-js",
+      "target": "file:dep:react",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "peer dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:dep:@stripe/react-stripe-js",
+      "target": "file:dep:@stripe/stripe-js",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "requires",
+      "direction": "forward"
+    },
+    {
+      "source": "file:dep:react-dom",
+      "target": "file:dep:react",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "peer dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:dep:framer-motion",
+      "target": "file:dep:react",
+      "type": "depends-on",
+      "weight": 1.0,
+      "label": "peer dependency",
+      "direction": "forward"
+    },
+    {
+      "source": "file:devDep:@types/react",
+      "target": "file:dep:react",
+      "type": "augments",
+      "weight": 1.0,
+      "label": "types for",
+      "direction": "forward"
+    },
+    {
+      "source": "file:devDep:@types/react-dom",
+      "target": "file:dep:react-dom",
+      "type": "augments",
+      "weight": 1.0,
+      "label": "types for",
+      "direction": "forward"
+    },
+    {
+      "source": "file:devDep:@types/three",
+      "target": "file:dep:three",
+      "type": "augments",
+      "weight": 1.0,
+      "label": "types for",
+      "direction": "forward"
+    },
+    {
+      "source": "file:devDep:eslint-config-next",
+      "target": "file:dep:next",
+      "type": "configures",
+      "weight": 1.0,
+      "label": "linting rules for",
+      "direction": "forward"
+    },
+    {
+      "source": "file:devDep:tailwindcss",
+      "target": "file:devDep:autoprefixer",
+      "type": "works-with",
+      "weight": 0.9,
+      "label": "often used together",
+      "direction": "forward"
+    },
+    {
+      "source": "file:devDep:tailwindcss",
+      "target": "file:devDep:postcss",
+      "type": "works-with",
+      "weight": 0.9,
+      "label": "often used together",
+      "direction": "forward"
+    },
+    {
+      "source": "file:next.config.ts",
+      "target": "file:tsconfig.json",
+      "type": "references",
+      "weight": 0.8,
+      "label": "must satisfy typescript config",
+      "direction": "forward"
+    },
+    {
+      "source": "file:next.config.ts",
+      "target": "file:package.json",
+      "type": "references",
+      "weight": 0.8,
+      "label": "uses dependencies from",
+      "direction": "forward"
+    },
+    {
+      "source": "file:tailwind.config.ts",
+      "target": "file:symbol:tailwind.config.ts:Config",
+      "type": "imports",
+      "weight": 0.9,
+      "label": "imports Config type from tailwindcss",
+      "direction": "forward"
+    },
+    {
+      "source": "file:symbol:tailwind.config.ts:config",
+      "target": "file:symbol:tailwind.config.ts:colors",
+      "type": "contains",
+      "weight": 0.8,
+      "label": "config contains colors object",
+      "direction": "forward"
+    },
+    {
+      "source": "file:symbol:tailwind.config.ts:config",
+      "target": "file:symbol:tailwind.config.ts:fontFamily",
+      "type": "contains",
+      "weight": 0.8,
+      "label": "config contains fontFamily object",
+      "direction": "forward"
+    },
+    {
+      "source": "file:symbol:tailwind.config.ts:config",
+      "target": "file:symbol:tailwind.config.ts:keyframes",
+      "type": "contains",
+      "weight": 0.8,
+      "label": "config contains keyframes object",
+      "direction": "forward"
+    },
+    {
+      "source": "file:symbol:tailwind.config.ts:config",
+      "target": "file:symbol:tailwind.config.ts:animation",
+      "type": "contains",
+      "weight": 0.8,
+      "label": "config contains animation shortcuts",
+      "direction": "forward"
+    },
+    {
+      "source": "file:symbol:tailwind.config.ts:animation",
+      "target": "file:symbol:tailwind.config.ts:keyframes",
+      "type": "references",
+      "weight": 0.7,
+      "label": "animation shortcuts reference keyframes",
+      "direction": "forward"
+    },
+    {
+      "source": "file:.gitignore",
+      "target": "file:symbol:.gitignore:vercel",
+      "type": "contains",
+      "weight": 0.5,
+      "label": "defines vercel ignore pattern",
+      "direction": "forward"
+    },
+    {
+      "source": "file:.gitignore",
+      "target": "file:symbol:.gitignore:node_modules",
+      "type": "contains",
+      "weight": 0.5,
+      "label": "defines node_modules ignore pattern",
+      "direction": "forward"
+    },
+    {
+      "source": "file:.gitignore",
+      "target": "file:symbol:.gitignore:nextjs",
+      "type": "contains",
+      "weight": 0.5,
+      "label": "defines nextjs ignore pattern",
+      "direction": "forward"
+    },
+    {
+      "source": "file:.gitignore",
+      "target": "file:symbol:.gitignore:env",
+      "type": "contains",
+      "weight": 0.5,
+      "label": "defines environment ignore pattern",
+      "direction": "forward"
+    },
+    {
+      "source": "file:.gitignore",
+      "target": "file:symbol:.gitignore:typescript",
+      "type": "contains",
+      "weight": 0.5,
+      "label": "defines typescript ignore pattern",
+      "direction": "forward"
+    },
+    {
+      "source": "file:.gitignore",
+      "target": "file:symbol:.gitignore:supabase",
+      "type": "contains",
+      "weight": 0.5,
+      "label": "defines supabase ignore pattern",
+      "direction": "forward"
+    },
+    {
+      "source": "file:.gitignore",
+      "target": "file:symbol:.gitignore:gitnexus",
+      "type": "contains",
+      "weight": 0.5,
+      "label": "defines gitnexus ignore pattern",
+      "direction": "forward"
+    },
+    {
+      "source": "file:CLAUDE.md",
+      "target": "file:section:CLAUDE.md:header",
+      "type": "contains",
+      "weight": 0.8,
+      "label": "document contains header section",
+      "direction": "forward"
+    },
+    {
+      "source": "file:CLAUDE.md",
+      "target": "file:section:CLAUDE.md:always-do",
+      "type": "contains",
+      "weight": 0.8,
+      "label": "document contains Always Do guidelines",
+      "direction": "forward"
+    },
+    {
+      "source": "file:CLAUDE.md",
+      "target": "file:section:CLAUDE.md:never-do",
+      "type": "contains",
+      "weight": 0.8,
+      "label": "document contains Never Do guidelines",
+      "direction": "forward"
+    },
+    {
+      "source": "file:CLAUDE.md",
+      "target": "file:section:CLAUDE.md:resources",
+      "type": "contains",
+      "weight": 0.8,
+      "label": "document contains resources section",
+      "direction": "forward"
+    },
+    {
+      "source": "file:CLAUDE.md",
+      "target": "file:section:CLAUDE.md:cli",
+      "type": "contains",
+      "weight": 0.8,
+      "label": "document contains CLI section",
+      "direction": "forward"
+    },
+    {
+      "source": "file:section:CLAUDE.md:always-do",
+      "target": "file:section:CLAUDE.md:resources",
+      "type": "references",
+      "weight": 0.6,
+      "label": "guidelines reference resources section",
+      "direction": "forward"
+    },
+    {
+      "source": "file:section:CLAUDE.md:cli",
+      "target": "file:section:CLAUDE.md:resources",
+      "type": "references",
+      "weight": 0.6,
+      "label": "CLI section references skills in resources",
+      "direction": "forward"
+    },
+    {
+      "source": "function:getEventDiscountedPrice",
+      "target": "function:getDiscountedPrice",
+      "type": "calls",
+      "weight": 1.0,
+      "label": "calls internal utility",
+      "direction": "forward"
+    },
+    {
+      "source": "function:formatEventPrice",
+      "target": "function:getEventDiscountedPrice",
+      "type": "calls",
+      "weight": 1.0,
+      "label": "calculates price before formatting",
+      "direction": "forward"
+    },
+    {
+      "source": "function:formatEventPrice",
+      "target": "file:type:EventDefinition",
+      "type": "uses",
+      "weight": 0.8,
+      "label": "accesses pricing properties",
+      "direction": "forward"
+    },
+    {
+      "source": "function:resolvePromoCode",
+      "target": "file:type:EventDefinition",
+      "type": "uses",
+      "weight": 0.8,
+      "label": "searches promoCodes array",
+      "direction": "forward"
+    },
+    {
+      "source": "function:resolvePromoCode",
+      "target": "file:type:EventPromoCode",
+      "type": "returns",
+      "weight": 0.9,
+      "label": "returns matching promo",
+      "direction": "forward"
+    },
+    {
+      "source": "function:getEventBySlug",
+      "target": "file:variable:events",
+      "type": "queries",
+      "weight": 1.0,
+      "label": "searches events array",
+      "direction": "forward"
+    },
+    {
+      "source": "function:getEventBySlug",
+      "target": "file:type:EventDefinition",
+      "type": "returns",
+      "weight": 0.9,
+      "label": "returns event definition",
+      "direction": "forward"
+    },
+    {
+      "source": "function:getLiveEvents",
+      "target": "file:variable:events",
+      "type": "filters",
+      "weight": 1.0,
+      "label": "filters by status=live",
+      "direction": "forward"
+    },
+    {
+      "source": "file:variable:events",
+      "target": "file:type:EventDefinition",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "array of event definitions",
+      "direction": "forward"
+    },
+    {
+      "source": "file:variable:events",
+      "target": "file:type:EventHost",
+      "type": "contains",
+      "weight": 0.8,
+      "label": "hosts array",
+      "direction": "forward"
+    },
+    {
+      "source": "file:variable:events",
+      "target": "file:type:EventSection",
+      "type": "contains",
+      "weight": 0.8,
+      "label": "sections array",
+      "direction": "forward"
+    },
+    {
+      "source": "file:variable:events",
+      "target": "file:type:EventPromoCode",
+      "type": "contains",
+      "weight": 0.7,
+      "label": "promo codes in pricing",
+      "direction": "forward"
+    },
+    {
+      "source": "file:type:EventDefinition",
+      "target": "file:type:EventHost",
+      "type": "references",
+      "weight": 0.8,
+      "label": "hosts property",
+      "direction": "forward"
+    },
+    {
+      "source": "file:type:EventDefinition",
+      "target": "file:type:EventSection",
+      "type": "references",
+      "weight": 0.8,
+      "label": "sections array",
+      "direction": "forward"
+    },
+    {
+      "source": "file:type:EventDefinition",
+      "target": "file:type:EventPromoCode",
+      "type": "references",
+      "weight": 0.7,
+      "label": "promoCodes in pricing",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "file:src/lib/lead-magnets.ts",
+      "type": "no_direct_import",
+      "weight": 0.0,
+      "label": "independent file",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "file:src/lib/giveaways.ts",
+      "type": "no_direct_import",
+      "weight": 0.0,
+      "label": "independent file",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "file:src/lib/resend-sender.ts",
+      "type": "no_direct_import",
+      "weight": 0.0,
+      "label": "independent file",
+      "direction": "forward"
+    },
+    {
+      "source": "function:buildWelcomeEmail",
+      "target": "function:downloadUrlFor",
+      "type": "calls",
+      "weight": 1.0,
+      "label": "builds download URL",
+      "direction": "forward"
+    },
+    {
+      "source": "function:buildWelcomeEmail",
+      "target": "function:escapeHtml",
+      "type": "calls",
+      "weight": 1.0,
+      "label": "escapes HTML in name and title",
+      "direction": "forward"
+    },
+    {
+      "source": "function:buildWelcomeEmail",
+      "target": "file:type:LeadMagnet",
+      "type": "uses",
+      "weight": 0.9,
+      "label": "accesses magnet properties",
+      "direction": "forward"
+    },
+    {
+      "source": "function:downloadUrlFor",
+      "target": "file:variable:SITE_URL",
+      "type": "uses",
+      "weight": 1.0,
+      "label": "builds absolute URL",
+      "direction": "forward"
+    },
+    {
+      "source": "function:downloadUrlFor",
+      "target": "file:type:LeadMagnet",
+      "type": "uses",
+      "weight": 0.9,
+      "label": "accesses downloadPath",
+      "direction": "forward"
+    },
+    {
+      "source": "function:getLeadMagnet",
+      "target": "file:variable:LEAD_MAGNETS",
+      "type": "queries",
+      "weight": 1.0,
+      "label": "looks up by slug",
+      "direction": "forward"
+    },
+    {
+      "source": "function:getLeadMagnet",
+      "target": "file:type:LeadMagnet",
+      "type": "returns",
+      "weight": 0.9,
+      "label": "returns lead magnet",
+      "direction": "forward"
+    },
+    {
+      "source": "file:variable:LEAD_MAGNETS",
+      "target": "file:type:LeadMagnet",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "registry values",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/lib/lead-magnets.ts",
+      "target": "file:src/lib/giveaways.ts",
+      "type": "no_direct_import",
+      "weight": 0.0,
+      "label": "independent file",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/lib/lead-magnets.ts",
+      "target": "file:src/lib/resend-sender.ts",
+      "type": "no_direct_import",
+      "weight": 0.0,
+      "label": "independent file",
+      "direction": "forward"
+    },
+    {
+      "source": "function:getGiveaway",
+      "target": "file:variable:giveaways",
+      "type": "searches",
+      "weight": 1.0,
+      "label": "finds by slug",
+      "direction": "forward"
+    },
+    {
+      "source": "function:getGiveaway",
+      "target": "file:interface:Giveaway",
+      "type": "returns",
+      "weight": 0.9,
+      "label": "returns giveaway",
+      "direction": "forward"
+    },
+    {
+      "source": "file:variable:giveaways",
+      "target": "file:interface:Giveaway",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "array of giveaways",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/lib/giveaways.ts",
+      "target": "file:src/lib/resend-sender.ts",
+      "type": "no_direct_import",
+      "weight": 0.0,
+      "label": "independent file",
+      "direction": "forward"
+    },
+    {
+      "source": "function:sendViaResend",
+      "target": "function:isTestRun",
+      "type": "calls",
+      "weight": 1.0,
+      "label": "guards against test runs",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/lib/resend-sender.ts",
+      "target": "file:src/lib/subscribe.ts",
+      "type": "imports",
+      "weight": 0.8,
+      "label": "imports SentEmail type",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/api/subscribe/route.ts",
+      "target": "file:src/lib/subscribe.ts",
+      "type": "imports",
+      "label": "handleSubscribe, SubscribeError, SubscribeDeps",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/api/subscribe/route.ts",
+      "target": "function:src/app/api/subscribe/route.ts:POST",
+      "type": "contains",
+      "label": "POST handler",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/app/api/subscribe/route.ts:POST",
+      "target": "function:src/lib/subscribe.ts:handleSubscribe",
+      "type": "calls",
+      "label": "with deps",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/lib/subscribe.ts",
+      "target": "file:type:SubscribeInput",
+      "type": "contains",
+      "label": "type definition",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/lib/subscribe.ts",
+      "target": "file:type:SubscribeDeps",
+      "type": "contains",
+      "label": "type definition",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/lib/subscribe.ts",
+      "target": "function:src/lib/subscribe.ts:handleSubscribe",
+      "type": "contains",
+      "label": "function",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/lib/subscribe.ts:handleSubscribe",
+      "target": "class:SubscribeError",
+      "type": "throws",
+      "label": "validation errors",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/api/events/checkout-session/route.ts",
+      "target": "file:src/lib/event-confirmation-email.ts",
+      "type": "imports",
+      "label": "sendEventConfirmationEmail, sendAskAnAiExpertWelcomeEmail, sendAiContentCreationSetupEmail",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/api/events/checkout-session/route.ts",
+      "target": "file:src/lib/google-calendar-invite.ts",
+      "type": "imports",
+      "label": "inviteAttendeeToEvent",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/app/api/events/checkout-session/route.ts:POST",
+      "target": "function:src/lib/event-confirmation-email.ts:sendEventConfirmationEmail",
+      "type": "calls",
+      "label": "on free checkout",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/app/api/events/checkout-session/route.ts:POST",
+      "target": "function:src/lib/event-confirmation-email.ts:sendAskAnAiExpertWelcomeEmail",
+      "type": "calls",
+      "label": "for ask-an-ai-expert slug",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/app/api/events/checkout-session/route.ts:POST",
+      "target": "function:src/lib/event-confirmation-email.ts:sendAiContentCreationSetupEmail",
+      "type": "calls",
+      "label": "for ai-avatar-content-creation slug",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/app/api/events/checkout-session/route.ts:POST",
+      "target": "function:src/lib/google-calendar-invite.ts:inviteAttendeeToEvent",
+      "type": "calls",
+      "label": "adds to calendar",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "file:src/lib/calendar.ts",
+      "type": "imports",
+      "label": "buildGoogleCalendarUrl, buildIcalString",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/lib/event-confirmation-email.ts:sendEventConfirmationEmail",
+      "target": "function:src/lib/event-confirmation-email.ts:buildConfirmationEmailHtml",
+      "type": "calls",
+      "label": "builds HTML",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/lib/event-confirmation-email.ts:sendEventConfirmationEmail",
+      "target": "function:src/lib/calendar.ts:buildIcalString",
+      "type": "calls",
+      "label": "creates iCal attachment",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/lib/event-confirmation-email.ts:sendEventConfirmationEmail",
+      "target": "function:src/lib/event-confirmation-email.ts:sendResendEmail",
+      "type": "calls",
+      "label": "sends email",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/lib/event-confirmation-email.ts:sendAskAnAiExpertWelcomeEmail",
+      "target": "function:src/lib/event-confirmation-email.ts:buildAskAnAiExpertWelcomeEmailHtml",
+      "type": "calls",
+      "label": "builds HTML",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/lib/event-confirmation-email.ts:sendAskAnAiExpertWelcomeEmail",
+      "target": "function:src/lib/event-confirmation-email.ts:sendResendEmail",
+      "type": "calls",
+      "label": "sends email",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/lib/event-confirmation-email.ts:sendAiContentCreationSetupEmail",
+      "target": "function:src/lib/event-confirmation-email.ts:buildAiContentCreationSetupEmailHtml",
+      "type": "calls",
+      "label": "builds HTML",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/lib/event-confirmation-email.ts:sendAiContentCreationSetupEmail",
+      "target": "function:src/lib/event-confirmation-email.ts:sendResendEmail",
+      "type": "calls",
+      "label": "sends email",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/lib/event-confirmation-email.ts:sendEventLocationReminderEmail",
+      "target": "function:src/lib/event-confirmation-email.ts:buildLocationReminderEmailHtml",
+      "type": "calls",
+      "label": "builds HTML",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/lib/event-confirmation-email.ts:sendEventLocationReminderEmail",
+      "target": "function:src/lib/calendar.ts:buildIcalString",
+      "type": "calls",
+      "label": "creates iCal with sequence:1",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/lib/event-confirmation-email.ts:sendEventLocationReminderEmail",
+      "target": "function:src/lib/event-confirmation-email.ts:sendResendEmail",
+      "type": "calls",
+      "label": "sends email",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/lib/event-confirmation-email.ts:sendSessionReminderEmail",
+      "target": "function:src/lib/event-confirmation-email.ts:buildSessionReminderEmailHtml",
+      "type": "calls",
+      "label": "builds HTML",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/lib/event-confirmation-email.ts:sendSessionReminderEmail",
+      "target": "function:src/lib/event-confirmation-email.ts:sendResendEmail",
+      "type": "calls",
+      "label": "sends email",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/lib/event-confirmation-email.ts:buildConfirmationEmailHtml",
+      "target": "function:src/lib/calendar.ts:buildGoogleCalendarUrl",
+      "type": "calls",
+      "label": "builds calendar URL",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/lib/event-confirmation-email.ts:buildConfirmationEmailHtml",
+      "target": "function:src/lib/event-confirmation-email.ts:getFirstName",
+      "type": "calls",
+      "label": "extracts first name",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/lib/event-confirmation-email.ts:buildAskAnAiExpertWelcomeEmailHtml",
+      "target": "function:src/lib/event-confirmation-email.ts:getFirstName",
+      "type": "calls",
+      "label": "extracts first name",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/lib/event-confirmation-email.ts:buildLocationReminderEmailHtml",
+      "target": "function:src/lib/event-confirmation-email.ts:getFirstName",
+      "type": "calls",
+      "label": "extracts first name",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/lib/event-confirmation-email.ts:buildSessionReminderEmailHtml",
+      "target": "function:src/lib/event-confirmation-email.ts:getFirstName",
+      "type": "calls",
+      "label": "extracts first name",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/lib/google-calendar-invite.ts",
+      "target": "file:src/lib/calendar.ts",
+      "type": "imports",
+      "label": "buildEventCalendarDescription",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/lib/google-calendar-invite.ts:inviteAttendeeToEvent",
+      "target": "function:src/lib/google-calendar-invite.ts:eventIdFor",
+      "type": "calls",
+      "label": "resolves event ID",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/lib/google-calendar-invite.ts:inviteAttendeeToEvent",
+      "target": "function:src/lib/google-calendar-invite.ts:getAuth",
+      "type": "calls",
+      "label": "gets OAuth auth",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/lib/google-calendar-invite.ts:inviteAttendeeToEvent",
+      "target": "function:src/lib/calendar.ts:buildEventCalendarDescription",
+      "type": "calls",
+      "label": "builds description",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/api/events/session-reminders/route.ts",
+      "target": "file:src/lib/event-confirmation-email.ts",
+      "type": "imports",
+      "label": "sendSessionReminderEmail",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/app/api/events/session-reminders/route.ts:GET",
+      "target": "function:src/app/api/events/session-reminders/route.ts:isAuthorized",
+      "type": "calls",
+      "label": "validates token",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/app/api/events/session-reminders/route.ts:GET",
+      "target": "function:src/app/api/events/session-reminders/route.ts:acquireEventWindowLock",
+      "type": "calls",
+      "label": "prevents duplicates",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/api/lead-magnet/route.ts",
+      "target": "function:src/app/api/lead-magnet/route.ts:sendViaResend",
+      "type": "contains",
+      "label": "email builder",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/api/lead-magnet/route.ts",
+      "target": "file:const:GIVEAWAY_SOURCE_MAP",
+      "type": "contains",
+      "label": "constant",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/app/api/lead-magnet/route.ts:POST",
+      "target": "function:src/app/api/lead-magnet/route.ts:sendViaResend",
+      "type": "calls",
+      "label": "sends giveaway email",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/app/api/lead-magnet/route.ts:POST",
+      "target": "function:src/app/api/lead-magnet/route.ts:ingestIntoCrm",
+      "type": "calls",
+      "label": "non-blocking",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/app/api/lead-magnet/route.ts:ingestIntoCrm",
+      "target": "file:const:GIVEAWAY_SOURCE_MAP",
+      "type": "uses",
+      "label": "maps source to CRM key",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/api/illy-auth/route.ts",
+      "target": "function:src/app/api/illy-auth/route.ts:sha256",
+      "type": "contains",
+      "label": "function",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/api/illy-auth/route.ts",
+      "target": "function:src/app/api/illy-auth/route.ts:matchesPassword",
+      "type": "contains",
+      "label": "function",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/api/illy-auth/route.ts",
+      "target": "function:src/app/api/illy-auth/route.ts:grantAccess",
+      "type": "contains",
+      "label": "function",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/app/api/illy-auth/route.ts:POST",
+      "target": "function:src/app/api/illy-auth/route.ts:matchesPassword",
+      "type": "calls",
+      "label": "validates password",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/app/api/illy-auth/route.ts:POST",
+      "target": "function:src/app/api/illy-auth/route.ts:grantAccess",
+      "type": "calls",
+      "label": "on success",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/app/api/illy-auth/route.ts:GET",
+      "target": "function:src/app/api/illy-auth/route.ts:matchesPassword",
+      "type": "calls",
+      "label": "validates password",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/app/api/illy-auth/route.ts:GET",
+      "target": "function:src/app/api/illy-auth/route.ts:grantAccess",
+      "type": "calls",
+      "label": "on success",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/api/jill-auth/route.ts",
+      "target": "function:src/app/api/jill-auth/route.ts:sha256",
+      "type": "contains",
+      "label": "function",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/api/jill-auth/route.ts",
+      "target": "function:src/app/api/jill-auth/route.ts:matchesPassword",
+      "type": "contains",
+      "label": "function",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/api/jill-auth/route.ts",
+      "target": "function:src/app/api/jill-auth/route.ts:grantAccess",
+      "type": "contains",
+      "label": "function",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/app/api/jill-auth/route.ts:POST",
+      "target": "function:src/app/api/jill-auth/route.ts:matchesPassword",
+      "type": "calls",
+      "label": "validates password",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/app/api/jill-auth/route.ts:POST",
+      "target": "function:src/app/api/jill-auth/route.ts:grantAccess",
+      "type": "calls",
+      "label": "on success",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/app/api/jill-auth/route.ts:GET",
+      "target": "function:src/app/api/jill-auth/route.ts:matchesPassword",
+      "type": "calls",
+      "label": "validates password",
+      "direction": "forward"
+    },
+    {
+      "source": "function:src/app/api/jill-auth/route.ts:GET",
+      "target": "function:src/app/api/jill-auth/route.ts:grantAccess",
+      "type": "calls",
+      "label": "on success",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/layout.tsx",
+      "target": "file:var:plusJakarta",
+      "type": "contains",
+      "label": "font config",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/layout.tsx",
+      "target": "file:var:metadata",
+      "type": "contains",
+      "label": "metadata config",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/layout.tsx",
+      "target": "file:comp:RootLayout",
+      "type": "contains",
+      "label": "component",
+      "direction": "forward"
+    },
+    {
+      "source": "file:comp:RootLayout",
+      "target": "file:var:plusJakarta",
+      "type": "uses",
+      "label": "applies font",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/giveaways/ai-behavior-quiz/page.tsx",
+      "target": "file:const:QUIZ_URL:behavior",
+      "type": "contains",
+      "label": "constant",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/giveaways/ai-behavior-quiz/page.tsx",
+      "target": "file:const:LEVELS:behavior",
+      "type": "contains",
+      "label": "constant",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/giveaways/ai-behavior-quiz/page.tsx",
+      "target": "file:comp:AiBehaviorQuizPage",
+      "type": "contains",
+      "label": "component",
+      "direction": "forward"
+    },
+    {
+      "source": "file:comp:AiBehaviorQuizPage",
+      "target": "file:const:QUIZ_URL:behavior",
+      "type": "uses",
+      "label": "quiz link",
+      "direction": "forward"
+    },
+    {
+      "source": "file:comp:AiBehaviorQuizPage",
+      "target": "file:const:LEVELS:behavior",
+      "type": "uses",
+      "label": "renders levels",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/giveaways/ai-levels-quiz/page.tsx",
+      "target": "file:const:QUIZ_URL:capability",
+      "type": "contains",
+      "label": "constant",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/giveaways/ai-levels-quiz/page.tsx",
+      "target": "file:const:LEVELS:capability",
+      "type": "contains",
+      "label": "constant",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/giveaways/ai-levels-quiz/page.tsx",
+      "target": "file:comp:AiLevelsQuizPage",
+      "type": "contains",
+      "label": "component",
+      "direction": "forward"
+    },
+    {
+      "source": "file:comp:AiLevelsQuizPage",
+      "target": "file:const:QUIZ_URL:capability",
+      "type": "uses",
+      "label": "quiz link",
+      "direction": "forward"
+    },
+    {
+      "source": "file:comp:AiLevelsQuizPage",
+      "target": "file:const:LEVELS:capability",
+      "type": "uses",
+      "label": "renders levels",
+      "direction": "forward"
+    },
+    {
+      "source": "file:src/app/api/events/checkout-session/route.ts",
+      "target": "file:src/lib/events.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/app/api/events/checkout-session/route.ts",
+      "target": "file:src/lib/event-checkout.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "file:src/lib/event-checkout.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/components/events/EventPageView.tsx",
+      "target": "file:src/lib/events.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/components/events/EventPageView.tsx",
+      "target": "file:src/components/events/EventRegistrationSection.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/components/events/EventRegistrationSection.tsx",
+      "target": "file:src/lib/event-checkout.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    }
+  ]
+}

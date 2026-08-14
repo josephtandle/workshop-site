@@ -1,0 +1,29 @@
+[
+  {
+    "id": "layer:frontend",
+    "name": "Frontend",
+    "description": "User-facing pages and React components for UI rendering",
+    "nodeIds": [
+      "file:src/app/page.tsx",
+      "file:src/app/events/[slug]/page.tsx",
+      "file:src/components/events/EventRegistrationSection.tsx"
+    ]
+  },
+  {
+    "id": "layer:integrations",
+    "name": "Third-Party Integrations",
+    "description": "External service clients and SDK initialization (Stripe, Supabase)",
+    "nodeIds": [
+      "file:src/lib/stripe.ts",
+      "file:src/lib/supabase.ts"
+    ]
+  },
+  {
+    "id": "layer:data-model",
+    "name": "Data Model",
+    "description": "Database schemas, migrations, and data access functions",
+    "nodeIds": [
+      "file:src/lib/event-registration-db.ts"
+    ]
+  }
+]

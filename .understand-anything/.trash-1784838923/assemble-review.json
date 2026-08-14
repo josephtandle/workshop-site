@@ -1,0 +1,76 @@
+{
+  "status": "fail",
+  "summary": "Graph assembled but contains critical structural issues: 89 malformed node IDs with mixed prefixes, 53 orphaned nodes with no edges, and 71 edges missing weight properties. Edge integrity is sound (no dangling references), but ID normalization and edge completeness must be fixed before proceeding to later phases.",
+  "nodeCount": 221,
+  "edgeCount": 201,
+  "issues": [
+    {
+      "severity": "high",
+      "category": "format",
+      "count": 89,
+      "description": "Node IDs use mixed prefix format (e.g., file:type:, file:component:, file:symbol:). Should use single primary type prefix only (type:..., component:..., symbol:..., etc). Affected types: file:type (14), file:symbol (17), file:script (7), file:dep (26), file:devDep (15), file:variable (3), file:comp (3), file:const (3), file:var (2), file:interface (1). Prevents correct node lookup in downstream tools."
+    },
+    {
+      "severity": "high",
+      "category": "orphaned",
+      "count": 53,
+      "description": "53 nodes have no incoming or outgoing edges. Examples: file:component:EventPageView, file:component:SectionShell, file:component:RichParagraphs, file:component:StorySection, file:component:ChecklistSection. These isolated nodes indicate incomplete edge extraction or merging. Check if components and certain symbols were properly connected during assembly."
+    },
+    {
+      "severity": "medium",
+      "category": "missing-properties",
+      "count": 71,
+      "description": "71 edges missing 'weight' property (required for ranking and importance). Edges without weight will default to 0 in downstream analysis, affecting graph-based algorithms."
+    },
+    {
+      "severity": "medium",
+      "category": "format",
+      "count": 1,
+      "description": "Node at line 1185 (file:component:EventPageView) has tags as string 'main-component' instead of array ['main-component']. Breaks tag parsing in downstream consumers."
+    },
+    {
+      "severity": "low",
+      "category": "redundancy",
+      "count": 0,
+      "description": "Some files have duplicate node entries for different symbol types (e.g., both file:EventPageView.tsx as file and file:component:EventPageView as component symbol). This is acceptable but may indicate over-granular node creation."
+    }
+  ],
+  "recommendations": [
+    "CRITICAL: Rerun normalization to fix all mixed-prefix IDs. Transform file:TYPE:id → TYPE:id (preserve filePath in node metadata).",
+    "CRITICAL: Investigate why 53 nodes are orphaned. Likely causes: (1) edge extraction failed for components/symbols, (2) merge process dropped edges for certain node types, (3) batch containment edges not preserved. Audit batch 1-5 edge lists.",
+    "HIGH: Add missing weight values to 71 edges. Default to edge-type-specific weight (imports/contains=1.0, uses/references=0.8, etc).",
+    "MEDIUM: Fix tags format error at line 1185 (ensure all tags are arrays).",
+    "LOW: Verify file coverage is complete—all 28 source files have file: nodes, which is good. Spot-check 3-4 files to confirm no undocumented symbols.",
+    "VERIFY: Run a graph traversal check—start from root file nodes and verify reachability to all component/function/type nodes. Orphaned nodes should not exist if merge was complete."
+  ],
+  "passedChecks": [
+    "edge-validity (0 dangling edges)",
+    "file-coverage (28 source files, 28 file nodes)",
+    "complexity-values (all values valid: simple/moderate/complex)",
+    "type-distribution (reasonable spread: 64 functions, 28 files, 19 dependencies, etc)"
+  ],
+  "failedChecks": [
+    "node-id-format (89 malformed)",
+    "orphaned-nodes (53 isolated)",
+    "edge-completeness (71 missing weights)",
+    "tag-format (1 string instead of array)"
+  ],
+  "metadata": {
+    "reviewedAt": "2026-07-24T00:00:00Z",
+    "graphVersion": "assembled-from-5-batches",
+    "nodeTypes": {
+      "function": 64,
+      "file": 28,
+      "dependency": 19,
+      "type": 18,
+      "component": 18,
+      "export": 15,
+      "devDependency": 10,
+      "config": 8,
+      "script": 7,
+      "pattern": 7,
+      "other": 21
+    },
+    "criticalityRating": "FAIL—proceed to fix-and-retry phase"
+  }
+}

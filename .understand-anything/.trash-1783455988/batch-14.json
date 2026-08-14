@@ -1,0 +1,436 @@
+{
+  "nodes": [
+    {
+      "id": "config:settings.json",
+      "type": "config",
+      "name": ".claude/settings.json",
+      "filePath": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site/.claude/settings.json",
+      "summary": "Claude Code hook configuration that triggers Chrome refresh on Vercel production deployment to workshop.mastermindshq.business",
+      "tags": ["hooks", "PostToolUse", "deployment", "refresh"],
+      "complexity": "low"
+    },
+    {
+      "id": "doc:PROCESS.md",
+      "type": "document",
+      "name": "docs/giveaways/PROCESS.md",
+      "filePath": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site/docs/giveaways/PROCESS.md",
+      "summary": "Complete end-to-end giveaway launch protocol with 14 phases: technical setup, content generation, publishing, ManyChat automation, hook writing, video recording, and confirmation. Core workflow document for lead magnet lifecycle.",
+      "tags": ["giveaway", "workflow", "process", "lead-magnet", "ManyChat", "automation", "deployment"],
+      "language": "markdown"
+    },
+    {
+      "id": "doc:LESSONS.md",
+      "type": "document",
+      "name": "docs/giveaways/LESSONS.md",
+      "filePath": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site/docs/giveaways/LESSONS.md",
+      "summary": "Learning log documenting three major giveaway build failures and their preventive rules: (1) template cloning error → always clone guardog, (2) missing email modal → required on all pages with automatic trigger, (3) GiveawayAutoModal component extraction. Each lesson includes root cause analysis and enforcement rules for PROCESS.md.",
+      "tags": ["lessons", "giveaway", "template", "email-collection", "GiveawayAutoModal", "guardog"],
+      "language": "markdown"
+    },
+    {
+      "id": "config:next.config.ts",
+      "type": "config",
+      "name": "next.config.ts",
+      "filePath": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site/next.config.ts",
+      "summary": "Next.js configuration with Turbopack support, redirects for /session and /resource-vault to portal.mastermindshq.business, and rewrites for subdomain routing (decks → 2x-with-ai-playbook.html, passiveincome → ai-agent-income page)",
+      "tags": ["config", "Next.js", "redirects", "rewrites", "subdomains", "Turbopack"],
+      "complexity": "medium"
+    },
+    {
+      "id": "config:postcss.config.mjs",
+      "type": "config",
+      "name": "postcss.config.mjs",
+      "filePath": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site/postcss.config.mjs",
+      "summary": "PostCSS configuration with Tailwind CSS and Autoprefixer plugins for CSS compilation and browser compatibility",
+      "tags": ["PostCSS", "Tailwind", "Autoprefixer", "CSS"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:next-env.d.ts",
+      "type": "code",
+      "name": "next-env.d.ts",
+      "filePath": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site/next-env.d.ts",
+      "summary": "Auto-generated Next.js TypeScript type definitions for Next and Next Image globals, required for type safety",
+      "tags": ["TypeScript", "types", "Next.js"],
+      "complexity": "low",
+      "language": "typescript"
+    },
+    {
+      "id": "script:render-cross-cli-compatibility-routing-guide.js",
+      "type": "code",
+      "name": "pdf/render-cross-cli-compatibility-routing-guide.js",
+      "filePath": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site/pdf/render-cross-cli-compatibility-routing-guide.js",
+      "summary": "Headless Chrome PDF renderer for cross-cli-compatibility-routing-guide.html. Resolves Chrome binary, runs with print-to-pdf, saves output to public/. Handles both Chrome and Chromium variants on macOS.",
+      "tags": ["PDF", "Chrome", "rendering", "headless", "build-script"],
+      "complexity": "medium",
+      "language": "javascript"
+    },
+    {
+      "id": "doc:cross-cli-compatibility-routing-prompt.md",
+      "type": "document",
+      "name": "public/giveaways/cross-cli-compatibility-routing-prompt.md",
+      "filePath": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site/public/giveaways/cross-cli-compatibility-routing-prompt.md",
+      "summary": "Orchestrator prompt for cross-CLI routing architecture migration. Guides discovery of current capability system, lane classification (recipe/worker/workflow), preserves deterministic infrastructure, generates capability index, phase-based migration strategy, and validation/testing requirements.",
+      "tags": ["routing", "architecture", "capabilities", "lanes", "migration", "orchestration"],
+      "language": "markdown"
+    },
+    {
+      "id": "script:abandoned-checkout-control.mjs",
+      "type": "code",
+      "name": "scripts/abandoned-checkout-control.mjs",
+      "filePath": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site/scripts/abandoned-checkout-control.mjs",
+      "summary": "CLI control panel for abandoned checkout automation workflows (day1, t12h). Commands: status (read current config), set-mode (off/test/live), set-test-recipients. Stores state in Supabase event_automation_controls table.",
+      "tags": ["automation", "abandoned-checkout", "Supabase", "CLI", "workflow-control"],
+      "complexity": "medium",
+      "language": "javascript"
+    },
+    {
+      "id": "script:backfill-event-registrations.mjs",
+      "type": "code",
+      "name": "scripts/backfill-event-registrations.mjs",
+      "filePath": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site/scripts/backfill-event-registrations.mjs",
+      "summary": "Backfills Supabase event_registrations from Stripe paid checkout sessions by event_slug. Fetches sessions (180-day window), deduplicates by email + session ID, filters test entries, inserts with cancel_tokens. Usage: node scripts/backfill-event-registrations.mjs <event_slug>",
+      "tags": ["Stripe", "Supabase", "backfill", "event-registration", "reconciliation"],
+      "complexity": "medium",
+      "language": "javascript"
+    },
+    {
+      "id": "script:send-dinner-tonight-reminder.mjs",
+      "type": "code",
+      "name": "scripts/send-dinner-tonight-reminder.mjs",
+      "filePath": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site/scripts/send-dinner-tonight-reminder.mjs",
+      "summary": "Sends event-day reminder emails to confirmed attendees (connection-dinner-canggu) with self-serve cancel links that auto-trigger waitlist. Dry-run mode by default. Resend API integration with idempotency keys.",
+      "tags": ["email", "Resend", "event-automation", "attendee", "reminder"],
+      "complexity": "medium",
+      "language": "javascript"
+    },
+    {
+      "id": "script:sync-abandoned-checkout-suppressions.mjs",
+      "type": "code",
+      "name": "scripts/sync-abandoned-checkout-suppressions.mjs",
+      "filePath": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site/scripts/sync-abandoned-checkout-suppressions.mjs",
+      "summary": "Syncs email suppression list from ~/.myos/workspace/agents/events-manager/data/checkout-attempt-suppressions.json into Supabase event_checkout_followup_suppressions. Upserts by email, updates reason and active status.",
+      "tags": ["suppression", "email", "Supabase", "sync", "abandoned-checkout"],
+      "complexity": "low",
+      "language": "javascript"
+    },
+    {
+      "id": "page:100-ai",
+      "type": "code",
+      "name": "src/app/100-ai/page.tsx",
+      "filePath": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site/src/app/100-ai/page.tsx",
+      "summary": "Passive Income 100 lead magnet landing page. Launch date countdown (target 2026-06-19). Displays 5 benefits + 10 content sections. Form collects firstName + email, POSTs to /api/lead-magnets/passive-income-100. Controlled countdown timer, error handling, submission state.",
+      "tags": ["page", "lead-magnet", "form", "countdown", "passive-income", "React"],
+      "complexity": "medium",
+      "language": "typescript"
+    },
+    {
+      "id": "page:ai-os-architecture",
+      "type": "code",
+      "name": "src/app/ai-os-architecture/page.tsx",
+      "filePath": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site/src/app/ai-os-architecture/page.tsx",
+      "summary": "Iframe wrapper page for AI Operating System Architecture guide. Loads /ai-os-architecture.html at 100% width/height, no border. Metadata title/description for SEO.",
+      "tags": ["page", "architecture", "iframe", "content"],
+      "complexity": "low",
+      "language": "typescript"
+    },
+    {
+      "id": "api:claudemd-route",
+      "type": "code",
+      "name": "src/app/api/lead-magnets/claudemd/route.ts",
+      "filePath": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site/src/app/api/lead-magnets/claudemd/route 2.ts",
+      "summary": "Lead magnet delivery API for Joe's Ultimate CLAUDE.md file. Embeds CLAUDE.md content at build time. On POST: validates firstName + email, upserts to Supabase leads, ingests to Mission Control CRM (non-blocking), sends via Resend with file attachment. Resend payload includes HTML email with content preview + attachment.",
+      "tags": ["API", "lead-magnet", "Resend", "Supabase", "CRM", "email-delivery"],
+      "complexity": "medium",
+      "language": "typescript"
+    },
+    {
+      "id": "api:subscribe-route",
+      "type": "code",
+      "name": "src/app/api/subscribe/route.ts",
+      "filePath": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site/src/app/api/subscribe/route.ts",
+      "summary": "Demo subscribe API endpoint. Accepts firstName + email POST, logs to console. Reference implementation for workshop participants who wire their own Supabase + Resend integrations.",
+      "tags": ["API", "subscribe", "demo", "reference"],
+      "complexity": "low",
+      "language": "typescript"
+    },
+    {
+      "id": "skill:gitnexus-cli",
+      "type": "document",
+      "name": ".claude/skills/gitnexus/gitnexus-cli/SKILL.md",
+      "filePath": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site/.claude/skills/gitnexus/gitnexus-cli/SKILL.md",
+      "summary": "GitNexus CLI command reference: analyze (build/refresh index), status (check freshness), clean (delete index), wiki (generate docs from graph), list (show indexed repos). Covers flags, when to run each, and troubleshooting.",
+      "tags": ["GitNexus", "CLI", "indexing", "documentation"],
+      "language": "markdown"
+    },
+    {
+      "id": "skill:gitnexus-debugging",
+      "type": "document",
+      "name": ".claude/skills/gitnexus/gitnexus-debugging/SKILL.md",
+      "filePath": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site/.claude/skills/gitnexus/gitnexus-debugging/SKILL.md",
+      "summary": "GitNexus debugging workflow: query for error text/symptoms → identify suspect → get full context (callers/callees) → trace execution flow → use Cypher for custom traces. Patterns for error messages, wrong returns, intermittent failures, performance issues.",
+      "tags": ["GitNexus", "debugging", "workflow", "tracing"],
+      "language": "markdown"
+    },
+    {
+      "id": "skill:gitnexus-exploring",
+      "type": "document",
+      "name": ".claude/skills/gitnexus/gitnexus-exploring/SKILL.md",
+      "filePath": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site/.claude/skills/gitnexus/gitnexus-exploring/SKILL.md",
+      "summary": "GitNexus exploration workflow for understanding architecture: read context → query for concept → review processes → get symbol context → trace flows → read source. Resources (context, clusters, processes) and tools (query, context) for navigation.",
+      "tags": ["GitNexus", "exploration", "architecture", "understanding"],
+      "language": "markdown"
+    },
+    {
+      "id": "skill:gitnexus-guide",
+      "type": "document",
+      "name": ".claude/skills/gitnexus/gitnexus-guide/SKILL.md",
+      "filePath": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site/.claude/skills/gitnexus/gitnexus-guide/SKILL.md",
+      "summary": "Quick reference for GitNexus tools and resources. Maps tasks to skills (exploring, impact-analysis, debugging, refactoring, cli, guide). Lists tools (query, context, impact, detect_changes, rename, cypher, list_repos) and resources (.../context, .../clusters, .../processes, .../schema).",
+      "tags": ["GitNexus", "reference", "tools", "resources"],
+      "language": "markdown"
+    },
+    {
+      "id": "skill:gitnexus-impact-analysis",
+      "type": "document",
+      "name": ".claude/skills/gitnexus/gitnexus-impact-analysis/SKILL.md",
+      "filePath": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site/.claude/skills/gitnexus/gitnexus-impact-analysis/SKILL.md",
+      "summary": "GitNexus impact analysis workflow: measure blast radius of changes using gitnexus_impact (upstream direction for dependents), gitnexus_detect_changes (git-based impact), and risk assessment. Depth tiers (d=1/2/3) map to risk levels (WILL BREAK / LIKELY AFFECTED / MAY NEED TESTING).",
+      "tags": ["GitNexus", "impact", "safety", "risk-assessment"],
+      "language": "markdown"
+    },
+    {
+      "id": "skill:gitnexus-refactoring",
+      "type": "document",
+      "name": ".claude/skills/gitnexus/gitnexus-refactoring/SKILL.md",
+      "filePath": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site/.claude/skills/gitnexus/gitnexus-refactoring/SKILL.md",
+      "summary": "GitNexus refactoring workflows for rename, extract module, split function/service. Checklists for each pattern. Tools: gitnexus_rename (automated multi-file), gitnexus_impact (map dependents), gitnexus_detect_changes (verify scope). Risk rules for string refs, external APIs, many callers.",
+      "tags": ["GitNexus", "refactoring", "rename", "extract", "safety"],
+      "language": "markdown"
+    },
+    {
+      "id": "asset:allsorted-crm-module",
+      "type": "code",
+      "name": "public/downloads/allsorted-crm-module-v1.5.zip.sha256",
+      "filePath": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site/public/downloads/allsorted-crm-module-v1.5.zip.sha256",
+      "summary": "SHA256 checksum file for allsorted-crm-module-v1.5.zip. Hash: d4b5833e3847e2b4bc83a03f3b0e79e00a94f71ca4c5544e64cca16caf32b69a",
+      "tags": ["asset", "download", "checksum", "integrity"],
+      "complexity": "low",
+      "language": "sha256"
+    },
+    {
+      "id": "asset:maccleaner-installer",
+      "type": "code",
+      "name": "public/downloads/maccleaner-installer.sh",
+      "filePath": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site/public/downloads/maccleaner-installer.sh",
+      "summary": "Shell script installer for MacCleaner tool/resource. Public-facing downloadable asset for giveaway distribution.",
+      "tags": ["asset", "download", "installer", "script"],
+      "complexity": "low",
+      "language": "shell"
+    },
+    {
+      "id": "doc:cross-cli-compatibility-routing-guide.html",
+      "type": "markup",
+      "name": "pdf/cross-cli-compatibility-routing-guide.html",
+      "filePath": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site/pdf/cross-cli-compatibility-routing-guide.html",
+      "summary": "HTML source document for cross-CLI compatibility routing guide PDF. Input file for render-cross-cli-compatibility-routing-guide.js headless Chrome PDF renderer.",
+      "tags": ["PDF", "HTML", "guide", "routing"],
+      "complexity": "high",
+      "language": "html"
+    }
+  ],
+  "edges": [
+    {
+      "source": "doc:PROCESS.md",
+      "target": "doc:LESSONS.md",
+      "type": "references",
+      "weight": 0.9
+    },
+    {
+      "source": "doc:LESSONS.md",
+      "target": "doc:PROCESS.md",
+      "type": "feeds-into",
+      "weight": 0.85
+    },
+    {
+      "source": "config:settings.json",
+      "target": "page:100-ai",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "config:next.config.ts",
+      "target": "page:100-ai",
+      "type": "configures",
+      "weight": 0.7
+    },
+    {
+      "source": "config:next.config.ts",
+      "target": "page:ai-os-architecture",
+      "type": "configures",
+      "weight": 0.7
+    },
+    {
+      "source": "config:postcss.config.mjs",
+      "target": "page:100-ai",
+      "type": "configures",
+      "weight": 0.5
+    },
+    {
+      "source": "script:render-cross-cli-compatibility-routing-guide.js",
+      "target": "doc:cross-cli-compatibility-routing-guide.html",
+      "type": "consumes",
+      "weight": 1.0
+    },
+    {
+      "source": "script:abandoned-checkout-control.mjs",
+      "target": "script:send-dinner-tonight-reminder.mjs",
+      "type": "related-automation",
+      "weight": 0.7
+    },
+    {
+      "source": "script:sync-abandoned-checkout-suppressions.mjs",
+      "target": "script:abandoned-checkout-control.mjs",
+      "type": "feeds-data-to",
+      "weight": 0.8
+    },
+    {
+      "source": "page:100-ai",
+      "target": "api:claudemd-route",
+      "type": "submits-to",
+      "weight": 0.9
+    },
+    {
+      "source": "page:100-ai",
+      "target": "api:subscribe-route",
+      "type": "can-submit-to",
+      "weight": 0.5
+    },
+    {
+      "source": "api:claudemd-route",
+      "target": "page:100-ai",
+      "type": "serves",
+      "weight": 0.8
+    },
+    {
+      "source": "api:subscribe-route",
+      "target": "page:100-ai",
+      "type": "reference-implementation",
+      "weight": 0.6
+    },
+    {
+      "source": "skill:gitnexus-cli",
+      "target": "skill:gitnexus-guide",
+      "type": "referenced-by",
+      "weight": 0.8
+    },
+    {
+      "source": "skill:gitnexus-debugging",
+      "target": "skill:gitnexus-guide",
+      "type": "referenced-by",
+      "weight": 0.8
+    },
+    {
+      "source": "skill:gitnexus-exploring",
+      "target": "skill:gitnexus-guide",
+      "type": "referenced-by",
+      "weight": 0.8
+    },
+    {
+      "source": "skill:gitnexus-impact-analysis",
+      "target": "skill:gitnexus-guide",
+      "type": "referenced-by",
+      "weight": 0.8
+    },
+    {
+      "source": "skill:gitnexus-refactoring",
+      "target": "skill:gitnexus-guide",
+      "type": "referenced-by",
+      "weight": 0.8
+    },
+    {
+      "source": "skill:gitnexus-exploring",
+      "target": "skill:gitnexus-debugging",
+      "type": "precursor-to",
+      "weight": 0.7
+    },
+    {
+      "source": "skill:gitnexus-impact-analysis",
+      "target": "skill:gitnexus-refactoring",
+      "type": "informs",
+      "weight": 0.85
+    },
+    {
+      "source": "doc:PROCESS.md",
+      "target": "page:100-ai",
+      "type": "workflow-for",
+      "weight": 0.8
+    },
+    {
+      "source": "doc:LESSONS.md",
+      "target": "page:100-ai",
+      "type": "safety-rules-for",
+      "weight": 0.7
+    },
+    {
+      "source": "doc:cross-cli-compatibility-routing-prompt.md",
+      "target": "doc:PROCESS.md",
+      "type": "related-to",
+      "weight": 0.6
+    },
+    {
+      "source": "asset:allsorted-crm-module",
+      "target": "doc:PROCESS.md",
+      "type": "distributed-via",
+      "weight": 0.7
+    },
+    {
+      "source": "asset:maccleaner-installer",
+      "target": "doc:PROCESS.md",
+      "type": "distributed-via",
+      "weight": 0.7
+    },
+    {
+      "source": "script:backfill-event-registrations.mjs",
+      "target": "script:send-dinner-tonight-reminder.mjs",
+      "type": "upstream-of",
+      "weight": 0.8
+    },
+    {
+      "source": "script:send-dinner-tonight-reminder.mjs",
+      "target": "script:abandoned-checkout-control.mjs",
+      "type": "same-domain-as",
+      "weight": 0.6
+    },
+    {
+      "source": "config:next.config.ts",
+      "target": "api:claudemd-route",
+      "type": "enables",
+      "weight": 0.6
+    },
+    {
+      "source": "file:next-env.d.ts",
+      "target": "page:100-ai",
+      "type": "type-provider",
+      "weight": 0.5
+    },
+    {
+      "source": "file:next-env.d.ts",
+      "target": "page:ai-os-architecture",
+      "type": "type-provider",
+      "weight": 0.5
+    },
+    {
+      "source": "file:next-env.d.ts",
+      "target": "api:claudemd-route",
+      "type": "type-provider",
+      "weight": 0.5
+    },
+    {
+      "source": "file:next-env.d.ts",
+      "target": "api:subscribe-route",
+      "type": "type-provider",
+      "weight": 0.5
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+Found 5 batch files (5 logical batches, 0 multi-part):
+  batch-0.json: 54 nodes, 71 edges
+  batch-1.json: 21 nodes, 20 edges
+  batch-2.json: 49 nodes, 59 edges
+  batch-3.json: 27 nodes, 34 edges
+  batch-4.json: 81 nodes, 71 edges
+
+Input: 232 nodes, 255 edges
+
+Fixed (443 corrections):
+   109 × bare path → file: (missing prefix)
+    50 × bare path → function: (missing prefix)
+    70 × complexity "low" → "simple"
+    23 × complexity "high" → "complex"
+    13 × complexity "medium" → "moderate"
+   167 × edge references rewritten after ID normalization
+    11 × duplicate node IDs removed (kept last)
+
+Could not fix (180 issues — needs agent review):
+    22 × unknown node type "type" (not in schema, kept as-is)
+    19 × unknown node type "dependency" (not in schema, kept as-is)
+    18 × unknown node type "component" (not in schema, kept as-is)
+    15 × unknown node type "export" (not in schema, kept as-is)
+    10 × unknown node type "devDependency" (not in schema, kept as-is)
+     7 × unknown node type "script" (not in schema, kept as-is)
+     7 × unknown node type "pattern" (not in schema, kept as-is)
+     5 × unknown node type "section" (not in schema, kept as-is)
+     5 × unknown node type "constant" (not in schema, kept as-is)
+     4 × unknown node type "variable" (not in schema, kept as-is)
+     4 × unknown node type "object" (not in schema, kept as-is)
+     2 × unknown node type "hook" (not in schema, kept as-is)
+     1 × unknown node type "import" (not in schema, kept as-is)
+     1 × unknown node type "const" (not in schema, kept as-is)
+  - Edge devDep:@types/canvas-confetti → file:dep:canvas-confetti (augments): dropped, missing source 'devDep:@types/canvas-confetti'
+  - Edge  →  (uses): dropped, missing source '', target ''
+  - Edge  →  (uses): dropped, missing source '', target ''
+  - Edge  →  (consumes): dropped, missing source '', target ''
+  - Edge  →  (consumes): dropped, missing source '', target ''
+  - Edge  →  (calls): dropped, missing source '', target ''
+  - Edge  →  (calls): dropped, missing source '', target ''
+  - Edge  →  (indirect-data): dropped, missing source '', target ''
+  - Edge  →  (returns): dropped, missing source '', target ''
+  - Edge  →  (returns): dropped, missing source '', target ''
+  - Edge  →  (returns): dropped, missing source '', target ''
+  - Edge  →  (returns): dropped, missing source '', target ''
+  - Edge  →  (returns): dropped, missing source '', target ''
+  - Edge  →  (returns): dropped, missing source '', target ''
+  - Edge  →  (returns): dropped, missing source '', target ''
+  - Edge  →  (returns): dropped, missing source '', target ''
+  - Edge  →  (returns): dropped, missing source '', target ''
+  - Edge  →  (returns): dropped, missing source '', target ''
+  - Edge  →  (uses): dropped, missing source '', target ''
+  - Edge  →  (uses): dropped, missing source '', target ''
+  - Edge  →  (uses): dropped, missing source '', target ''
+  - Edge  →  (uses): dropped, missing source '', target ''
+  - Edge  →  (uses): dropped, missing source '', target ''
+  - Edge  →  (uses): dropped, missing source '', target ''
+  - Edge  →  (consumes): dropped, missing source '', target ''
+  - Edge  →  (uses): dropped, missing source '', target ''
+  - Edge  →  (consumes): dropped, missing source '', target ''
+  - Edge  →  (uses): dropped, missing source '', target ''
+  - Edge  →  (uses): dropped, missing source '', target ''
+  - Edge  →  (uses): dropped, missing source '', target ''
+  - Edge  →  (calls): dropped, missing source '', target ''
+  - Edge  →  (uses): dropped, missing source '', target ''
+  - Edge  →  (consumes): dropped, missing source '', target ''
+  - Edge  →  (calls): dropped, missing source '', target ''
+  - Edge  →  (calls): dropped, missing source '', target ''
+  - Edge  →  (calls): dropped, missing source '', target ''
+  - Edge  →  (calls): dropped, missing source '', target ''
+  - Edge  →  (calls): dropped, missing source '', target ''
+  - Edge  →  (calls): dropped, missing source '', target ''
+  - Edge  →  (calls): dropped, missing source '', target ''
+  - Edge  →  (consumes): dropped, missing source '', target ''
+  - Edge  →  (fetches): dropped, missing source '', target ''
+  - Edge  →  (fetches): dropped, missing source '', target ''
+  - Edge  →  (fetches): dropped, missing source '', target ''
+  - Edge  →  (realizes): dropped, missing source '', target ''
+  - Edge  →  (realizes): dropped, missing source '', target ''
+  - Edge  →  (implements): dropped, missing source '', target ''
+  - Edge  →  (implements): dropped, missing source '', target ''
+  - Edge  →  (implements): dropped, missing source '', target ''
+  - Edge  →  (implements): dropped, missing source '', target ''
+  - Edge  →  (core-dispatch): dropped, missing source '', target ''
+  - Edge  →  (depends-on): dropped, missing source '', target ''
+  - Edge  →  (implements): dropped, missing source '', target ''
+  - Edge  →  (consumes): dropped, missing source '', target ''
+  - Edge  →  (consumes): dropped, missing source '', target ''
+  - Edge  →  (consumes): dropped, missing source '', target ''
+  - Edge  →  (calls): dropped, missing source '', target ''
+  - Edge  →  (consumes): dropped, missing source '', target ''
+  - Edge  →  (feature-in): dropped, missing source '', target ''
+  - Edge  →  (configured-by): dropped, missing source '', target ''
+
+Output: 221 nodes, 195 edges
+
+Imports edge recovery:
+  Recovered 6 `imports` edges from importMap (7 entries scanned)
+  Skipped 1 importMap source files with no `file:` node in graph
+  Skipped 2 importMap target paths with no `file:` node in graph
+
+Written to /Users/myos/.myos/workspace/projects/mastermind/workshop-site/.understand-anything/intermediate/assembled-graph.json (122 KB)

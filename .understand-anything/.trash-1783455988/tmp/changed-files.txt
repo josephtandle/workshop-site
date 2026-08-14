@@ -1,0 +1,11 @@
+docs/STRIPE-TRIAL-MECHANICS.md
+next.config.ts
+public/mastermind-participants/joe-che-by-pete-longsworth-square.jpeg
+public/mastermind-participants/joe-che.jpeg
+src/app/ai-agent-income/AiAgentIncomeCheckoutForm.tsx
+src/app/ai-agent-income/page.tsx
+src/app/api/ai-agent-income/checkout/route.ts
+src/app/api/ai-agent-income/stripe.ts
+src/app/api/ai-agent-income/webhook/route.ts
+supabase/migrations/007_ai_agent_income_subscriptions.sql
+vercel.json
