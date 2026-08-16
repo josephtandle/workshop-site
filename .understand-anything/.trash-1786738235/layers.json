@@ -1,0 +1,50 @@
+[
+  {
+    "id": "layer:configuration",
+    "name": "Configuration & Build",
+    "description": "Project configuration, build tooling, and deployment settings. Includes TypeScript configuration, package dependencies, Vercel deployment config, and development documentation.",
+    "nodeIds": [
+      "config:package.json",
+      "config:tsconfig.json",
+      "config:vercel.json",
+      "document:CLAUDE.md"
+    ]
+  },
+  {
+    "id": "layer:api-handlers",
+    "name": "API Layer",
+    "description": "HTTP request handlers for external integrations. Handles event checkout session creation, Stripe webhook processing, and payment event coordination.",
+    "nodeIds": [
+      "file:src/app/api/events/checkout-session/route.ts",
+      "file:src/app/api/stripe/webhook/route.ts"
+    ]
+  },
+  {
+    "id": "layer:components",
+    "name": "UI Component Layer",
+    "description": "React components for rendering user interface. Includes event page rendering, registration forms, dynamic section rendering, and checkout UI integration.",
+    "nodeIds": [
+      "file:src/components/events/EventPageView.tsx",
+      "file:src/components/events/EventRegistrationSection.tsx"
+    ]
+  },
+  {
+    "id": "layer:business-logic",
+    "name": "Business Logic & Data Layer",
+    "description": "Core application logic for event data management, pricing calculations, and checkout processing. Contains event definitions, promo code resolution, pricing utilities, and checkout parameter building.",
+    "nodeIds": [
+      "file:src/lib/events.tsx",
+      "file:src/lib/event-checkout.ts"
+    ]
+  },
+  {
+    "id": "layer:integrations",
+    "name": "Integration Services Layer",
+    "description": "Third-party service integrations and external APIs. Handles Stripe API configuration, calendar event generation (Google Calendar and iCal formats), and transactional email delivery via Resend.",
+    "nodeIds": [
+      "file:src/lib/stripe.ts",
+      "file:src/lib/calendar.ts",
+      "file:src/lib/event-confirmation-email.ts"
+    ]
+  }
+]

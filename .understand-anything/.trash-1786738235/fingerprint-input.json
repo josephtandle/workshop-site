@@ -1,0 +1,15 @@
+{
+  "projectRoot": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site",
+  "sourceFilePaths": [
+  "src/app/api/events/checkout-session/route.ts",
+  "src/components/events/EventPageView.tsx",
+  "src/components/events/EventRegistrationSection.tsx",
+  "src/lib/event-checkout.ts",
+  "src/lib/events.tsx",
+  "src/app/api/stripe/webhook/route.ts",
+  "src/lib/calendar.ts",
+  "src/lib/event-confirmation-email.ts",
+  "src/lib/stripe.ts"
+],
+  "gitCommitHash": "d652449941ce7d745ff5c14bae3170fe80f827c7"
+}
