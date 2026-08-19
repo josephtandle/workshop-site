@@ -730,7 +730,7 @@ footer{position:relative;z-index:1;text-align:center;color:rgba(157,143,224,.6);
 <p><strong>On execution:</strong> if anything in this chapter is low-level, hands-on work rather than a judgment call, you can hand it to Jill. She has a task for this on her board.</p>
 <h3>Fix These First (high confidence)</h3>
 <ol>
-<li><strong>"24+ Biz Entrepreneur" in the headline is stale.</strong> Internal records say the real count is 35 companies, not 24. Get the current number from Joe before changing this, since even 35 may be out of date by now.</li>
+<li><strong>"24+ Biz Entrepreneur" in the headline is stale.</strong> Update public copy to 26 companies (replacing 24); internal records note a real count of 35 companies, but 26 is the confirmed figure to publish publicly.</li>
 <li><strong>Flagship venture is under the wrong name and has a broken date.</strong> LinkedIn lists "Business Automation Masterminds, Founder, March 2026, Present (1 month)." The current name is Masterminds HQ (the program itself is sometimes called the AI Business Mastermind). The "(1 month)" duration is wrong, this has been running much longer. Needs the real founding date and the current name.</li>
 <li><strong>Rio App should no longer show "Present."</strong> Rio (the WhatsApp B2B app) shut down as of 2026-07-20. LinkedIn still lists it as an active role. Add an end date or remove the entry.</li>
 <li><strong>Several active ventures show incorrect end dates.</strong> A cluster of roles all end around November 2025 or June 2023: Iron Amethyst, Glamp Nusa, Retreat Facilitator, Tierra Social, Lightning Society, Chaos Cooking, VEZA. Internal records say Tierra Social, VEZA, and Iron Amethyst Holdings are still active as of this writing. This looks like a bulk edit or reset that closed a batch of roles that shouldn't have closed. Worth checking each one with Joe rather than assuming they're all still live, since some genuinely may have ended.</li>
@@ -742,7 +742,7 @@ footer{position:relative;z-index:1;text-align:center;color:rgba(157,143,224,.6);
 <h3>Open Questions for Joe</h3>
 <ul>
 <li>What is the real founding date of Masterminds HQ / the AI Business Mastermind, and what should the venture be called on LinkedIn?</li>
-<li>What is the current, accurate company count?</li>
+<li>What is the current, accurate company count? <em>(Resolved: 26 public-facing, 35 real internal count)</em></li>
 <li>Of the ventures that show a November 2025 or June 2023 end date: which ones actually ended, and which are still active and were closed by mistake?</li>
 <li>Should the AI Operating System book get its own Featured entry, a Publications entry, or both?</li>
 <li>Is Iron Amethyst still the right name for the umbrella entity on LinkedIn, or should it read Iron Amethyst Holdings?</li>
@@ -825,7 +825,7 @@ footer{position:relative;z-index:1;text-align:center;color:rgba(157,143,224,.6);
 </ul>
 <p><strong>Foundational, pre-Bali</strong></p>
 <ul>
-<li><strong>NYIM Training</strong> (Jan 1999, May 2017, 18 years 5 months): New York's largest corporate business and software training company. Trained over 80,000 people, worked with Fortune 5 CEOs, the CIA, the FBI, and celebrities. Contracted to train all NY State and City University professors. This is Joe's deepest credibility anchor and should stay front and center.</li>
+<li><strong>NYIM Training</strong> (Jan 1999, May 2017, 18 years 5 months): New York's largest corporate business and software training company. Trained 90,000+ people, worked with Fortune 5 CEOs, the CIA, the FBI, and celebrities. Contracted to train all NY State and City University professors. This is Joe's deepest credibility anchor and should stay front and center.</li>
 <li><strong>Onechord</strong> (Jan 1995, 2000): founded the largest online music community of the early internet era, hosted live music events across Buffalo, Syracuse, and Ithaca. Joe's first business with employees, started at 18.</li>
 </ul>
 <h3>Retreat Facilitation Highlights (separate line item on LinkedIn)</h3>
