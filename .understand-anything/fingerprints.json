@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "gitCommitHash": "d652449941ce7d745ff5c14bae3170fe80f827c7",
-  "generatedAt": "2026-08-14T20:10:29.760Z",
+  "gitCommitHash": "394855cd5c86ff9ab40b4b4a69ca622e441feeae",
+  "generatedAt": "2026-08-22T20:03:24.307Z",
   "files": {
     "src/app/api/events/checkout-session/route.ts": {
       "filePath": "src/app/api/events/checkout-session/route.ts",
@@ -1047,6 +1047,207 @@
         "createStripeClient"
       ],
       "totalLines": 19,
+      "hasStructuralAnalysis": true
+    },
+    "CLAUDE.md": {
+      "filePath": "CLAUDE.md",
+      "contentHash": "41aad08d47c7caae950386571de78917c33d14b59b53e3bd1769bf2baf754295",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 44,
+      "hasStructuralAnalysis": true
+    },
+    "package.json": {
+      "filePath": "package.json",
+      "contentHash": "67867bf2428ef29490b731cf28d12c9cf6afeb409cfe3e30e579cae04c242342",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 50,
+      "hasStructuralAnalysis": true
+    },
+    "tsconfig.json": {
+      "filePath": "tsconfig.json",
+      "contentHash": "55134881a23efd2a1f9266d2d0752731ff9c40d0e867136cd8863ea679560a09",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 42,
+      "hasStructuralAnalysis": true
+    },
+    "vercel.json": {
+      "filePath": "vercel.json",
+      "contentHash": "63bbd1bdc92d9d66acabd09f45bd52e7ba77979e76df3ba31d661976a210eb34",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 52,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/illy/content.ts": {
+      "filePath": "src/app/illy/content.ts",
+      "contentHash": "310b13ebe1ba36c8a91f808cf17c4362fdf7570dc9f10c26341fd034a73f831b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "GUIDE_HTML"
+      ],
+      "totalLines": 1882,
+      "hasStructuralAnalysis": true
+    },
+    "src/lib/giveaways.ts": {
+      "filePath": "src/lib/giveaways.ts",
+      "contentHash": "75eb222cc4d6c454d281f9dc61c0e3680be6dda03460d9b2759c83dfc24e686c",
+      "functions": [
+        {
+          "name": "getGiveaway",
+          "params": [
+            "slug"
+          ],
+          "returnType": "Giveaway | undefined",
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "giveaways",
+        "getGiveaway"
+      ],
+      "totalLines": 229,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/illy/page.tsx": {
+      "filePath": "src/app/illy/page.tsx",
+      "contentHash": "5c660cb4a0bf1af8f9f48302d572677fdd13ebc4075f0911a933b9e6936ef4e7",
+      "functions": [
+        {
+          "name": "sha256",
+          "params": [
+            "value"
+          ],
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "matchesGuideCookie",
+          "params": [
+            "value",
+            "password"
+          ],
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "matchesQueryPassword",
+          "params": [
+            "value",
+            "password"
+          ],
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "IllyPage",
+          "params": [
+            "{\n  searchParams,\n}"
+          ],
+          "exported": true,
+          "lineCount": 55
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:crypto",
+          "specifiers": [
+            "createHash",
+            "timingSafeEqual"
+          ]
+        },
+        {
+          "source": "next",
+          "specifiers": [
+            "Metadata"
+          ]
+        },
+        {
+          "source": "next/headers",
+          "specifiers": [
+            "cookies"
+          ]
+        },
+        {
+          "source": "./content",
+          "specifiers": [
+            "GUIDE_HTML"
+          ]
+        }
+      ],
+      "exports": [
+        "metadata",
+        "IllyPage"
+      ],
+      "totalLines": 84,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/giveaways/page.tsx": {
+      "filePath": "src/app/giveaways/page.tsx",
+      "contentHash": "3a4e5519a9e340fe6e353c302bca291fdd11041ae2a64c27e428f75878899037",
+      "functions": [
+        {
+          "name": "GiveawaysIndexPage",
+          "params": [],
+          "exported": true,
+          "lineCount": 85
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/link",
+          "specifiers": [
+            "Link"
+          ]
+        },
+        {
+          "source": "@/components/Reveal",
+          "specifiers": [
+            "Reveal"
+          ]
+        },
+        {
+          "source": "@/components/StaggerList",
+          "specifiers": [
+            "StaggerList",
+            "StaggerItem"
+          ]
+        },
+        {
+          "source": "@/components/TabNav",
+          "specifiers": [
+            "TabNav"
+          ]
+        },
+        {
+          "source": "@/lib/giveaways",
+          "specifiers": [
+            "giveaways"
+          ]
+        }
+      ],
+      "exports": [
+        "metadata",
+        "GiveawaysIndexPage"
+      ],
+      "totalLines": 110,
       "hasStructuralAnalysis": true
     }
   }
