@@ -38,14 +38,6 @@ export const giveaways: Giveaway[] = [
     badgeVariant: 'pink',
   },
   {
-    slug: 'all-sorted-overview',
-    title: 'All Sorted Overview',
-    description: '30 specific things All Sorted does for your business. The pre-installed business operating system: 157 agents, 57 skills, 45+ integrations, already configured.',
-    icon: '◐',
-    badge: 'Overview',
-    badgeVariant: 'purple',
-  },
-  {
     slug: 'ig-settings',
     title: 'Instagram Settings Growth Checklist',
     description: 'The account settings checklist for making your Instagram profile public, recommendable, remixable, measurable, and ready for clean Reels uploads.',
