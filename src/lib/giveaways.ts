@@ -190,14 +190,6 @@ export const giveaways: Giveaway[] = [
     badgeVariant: 'purple',
   },
   {
-    slug: 'cross-cli-compatibility-routing',
-    title: 'Cross CLI Compatibility Routing',
-    description: 'A lane-based routing architecture for recipes, skills, and workflows, plus a universal migration prompt and direct-download PDF.',
-    icon: '◎',
-    badge: 'Guide',
-    badgeVariant: 'pink',
-  },
-  {
     slug: 'geometry-dash-fun-build',
     title: 'Geometry Dash Fun Build',
     description: 'A fully working Geometry Dash clone in p5.js. Copy the code, paste it into editor.p5js.org, and play in under 2 minutes. Change colors, physics, and level design.',
