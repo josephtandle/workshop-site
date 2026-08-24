@@ -51,13 +51,12 @@ export function getLeadMagnet(slug: string): LeadMagnet | undefined {
  * (agent-infrastructure, ai-behavior-quiz, ai-levels-quiz, anthropic-safety-checklist,
  * benchmark, claude-md, client-launch-checklist, compare,
  * cross-cli-compatibility-routing, fable-worth-it-audit, ig-settings,
- * intuition-quiz, logo-maker-guide, ray-dalio-council, squarespace-escape,
+ * logo-maker-guide, ray-dalio-council, squarespace-escape,
  * viral-hooks, ...) post sources with no template. They used to receive the
  * Un-Learning Success PDF by accident. They now receive nothing, which is the
  * correct failure until each one gets a real asset.
  */
 export const DELIVERABLE_LEAD_MAGNET_SOURCES: ReadonlySet<string> = new Set([
-  'all-sorted-overview',
   'business-builder-quiz',
   'cost-stack',
   'cult-brand-playbook',
