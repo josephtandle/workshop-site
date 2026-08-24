@@ -214,14 +214,6 @@ export const giveaways: Giveaway[] = [
     badgeVariant: 'purple',
   },
   {
-    slug: 'intuition-quiz',
-    title: 'Rate Your Intuition',
-    description: 'An 8-question quiz that rates your intuition across 5 evidence-based levels, from blocked to fully integrated. Backed by Klein, Kahneman, Gladwell, and Gigerenzen.',
-    icon: '✦',
-    badge: 'Quiz',
-    badgeVariant: 'purple',
-  },
-  {
     slug: 'business-builder-quiz',
     title: 'Do You Have What It Takes?',
     description: '6 sharp questions that score your founder readiness across 5 research-backed levels, from not yet to built for this. Get your Founder Readiness Score.',
