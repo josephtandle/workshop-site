@@ -1,0 +1,6 @@
+{
+  "projectName": "AI Business Mastermind Workshop Site",
+  "projectDescription": "Next.js application for workshop enrollment and content delivery",
+  "detectedLanguages": ["typescript", "javascript", "tsx", "json", "yaml", "markdown"],
+  "detectedFrameworks": ["next.js", "react", "tailwind-css", "stripe"]
+}
