@@ -1,0 +1,1273 @@
+{
+  "batchIndex": 18,
+  "nodes": [
+    {
+      "id": "file:src/app/session/[slug]/guide-brain/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/session/[slug]/guide-brain/page.tsx",
+      "language": "typescript",
+      "sizeLines": 76,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/session/[slug]/guide/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/session/[slug]/guide/page.tsx",
+      "language": "typescript",
+      "sizeLines": 99,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/session/[slug]/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/session/[slug]/page.tsx",
+      "language": "typescript",
+      "sizeLines": 562,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "file:src/app/session/[slug]/prep/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/session/[slug]/prep/page.tsx",
+      "language": "typescript",
+      "sizeLines": 84,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/session/1/prep-codex/page 2.tsx",
+      "type": "file",
+      "name": "page 2.tsx",
+      "filePath": "src/app/session/1/prep-codex/page 2.tsx",
+      "language": "typescript",
+      "sizeLines": 48,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/session/1/prep-codex/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/session/1/prep-codex/page.tsx",
+      "language": "typescript",
+      "sizeLines": 48,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/session/10/instagram/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/session/10/instagram/page.tsx",
+      "language": "typescript",
+      "sizeLines": 53,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/session/2/auto-lead-magnet/page 2.tsx",
+      "type": "file",
+      "name": "page 2.tsx",
+      "filePath": "src/app/session/2/auto-lead-magnet/page 2.tsx",
+      "language": "typescript",
+      "sizeLines": 450,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/app/session/2/auto-lead-magnet/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/session/2/auto-lead-magnet/page.tsx",
+      "language": "typescript",
+      "sizeLines": 450,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/app/session/2/guide-codex/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/session/2/guide-codex/page.tsx",
+      "language": "typescript",
+      "sizeLines": 57,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/session/3/custom-domain/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/session/3/custom-domain/page.tsx",
+      "language": "typescript",
+      "sizeLines": 209,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/app/session/3/homework/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/session/3/homework/page.tsx",
+      "language": "typescript",
+      "sizeLines": 466,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/app/session/4/custom-domain/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/session/4/custom-domain/page.tsx",
+      "language": "typescript",
+      "sizeLines": 209,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/app/session/4/homework/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/session/4/homework/page.tsx",
+      "language": "typescript",
+      "sizeLines": 466,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/app/session/4/wrapup/page 2.tsx",
+      "type": "file",
+      "name": "page 2.tsx",
+      "filePath": "src/app/session/4/wrapup/page 2.tsx",
+      "language": "typescript",
+      "sizeLines": 242,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/app/session/4/wrapup/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/session/4/wrapup/page.tsx",
+      "language": "typescript",
+      "sizeLines": 242,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/app/session/5/hook-writer/page 2.tsx",
+      "type": "file",
+      "name": "page 2.tsx",
+      "filePath": "src/app/session/5/hook-writer/page 2.tsx",
+      "language": "typescript",
+      "sizeLines": 1206,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "file:src/app/session/5/hook-writer/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/session/5/hook-writer/page.tsx",
+      "language": "typescript",
+      "sizeLines": 1211,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "file:src/app/session/5/prep-hooks/page 2.tsx",
+      "type": "file",
+      "name": "page 2.tsx",
+      "filePath": "src/app/session/5/prep-hooks/page 2.tsx",
+      "language": "typescript",
+      "sizeLines": 38,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/session/5/prep-hooks/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/session/5/prep-hooks/page.tsx",
+      "language": "typescript",
+      "sizeLines": 38,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/session/5/wrapup/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/session/5/wrapup/page.tsx",
+      "language": "typescript",
+      "sizeLines": 242,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/app/session/6/hook-writer/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/session/6/hook-writer/page.tsx",
+      "language": "typescript",
+      "sizeLines": 1206,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "file:src/app/session/6/prep-hooks/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/session/6/prep-hooks/page.tsx",
+      "language": "typescript",
+      "sizeLines": 38,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/session/7/descript/page 2.tsx",
+      "type": "file",
+      "name": "page 2.tsx",
+      "filePath": "src/app/session/7/descript/page 2.tsx",
+      "language": "typescript",
+      "sizeLines": 57,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/session/7/descript/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/session/7/descript/page.tsx",
+      "language": "typescript",
+      "sizeLines": 57,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "react-component:src/app/session/[slug]/guide-brain/page.tsx:generateStaticParams",
+      "type": "react-component",
+      "name": "generateStaticParams",
+      "filePath": "src/app/session/[slug]/guide-brain/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/[slug]/guide-brain/page.tsx:generateMetadata",
+      "type": "react-component",
+      "name": "generateMetadata",
+      "filePath": "src/app/session/[slug]/guide-brain/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/[slug]/guide-brain/page.tsx:SessionGuideBrainPage",
+      "type": "react-component",
+      "name": "SessionGuideBrainPage",
+      "filePath": "src/app/session/[slug]/guide-brain/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/[slug]/guide/page.tsx:generateStaticParams",
+      "type": "react-component",
+      "name": "generateStaticParams",
+      "filePath": "src/app/session/[slug]/guide/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/[slug]/guide/page.tsx:generateMetadata",
+      "type": "react-component",
+      "name": "generateMetadata",
+      "filePath": "src/app/session/[slug]/guide/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/[slug]/guide/page.tsx:SessionGuidePage",
+      "type": "react-component",
+      "name": "SessionGuidePage",
+      "filePath": "src/app/session/[slug]/guide/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/[slug]/page.tsx:generateStaticParams",
+      "type": "react-component",
+      "name": "generateStaticParams",
+      "filePath": "src/app/session/[slug]/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/[slug]/page.tsx:generateMetadata",
+      "type": "react-component",
+      "name": "generateMetadata",
+      "filePath": "src/app/session/[slug]/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/[slug]/page.tsx:SessionIndexPage",
+      "type": "react-component",
+      "name": "SessionIndexPage",
+      "filePath": "src/app/session/[slug]/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/[slug]/prep/page.tsx:generateStaticParams",
+      "type": "react-component",
+      "name": "generateStaticParams",
+      "filePath": "src/app/session/[slug]/prep/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/[slug]/prep/page.tsx:generateMetadata",
+      "type": "react-component",
+      "name": "generateMetadata",
+      "filePath": "src/app/session/[slug]/prep/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/[slug]/prep/page.tsx:SessionPrepPage",
+      "type": "react-component",
+      "name": "SessionPrepPage",
+      "filePath": "src/app/session/[slug]/prep/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/1/prep-codex/page 2.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/session/1/prep-codex/page 2.tsx",
+      "summary": "react-component exported from page 2.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/1/prep-codex/page 2.tsx:Session1PrepCodexPage",
+      "type": "react-component",
+      "name": "Session1PrepCodexPage",
+      "filePath": "src/app/session/1/prep-codex/page 2.tsx",
+      "summary": "react-component exported from page 2.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/1/prep-codex/page.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/session/1/prep-codex/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/1/prep-codex/page.tsx:Session1PrepCodexPage",
+      "type": "react-component",
+      "name": "Session1PrepCodexPage",
+      "filePath": "src/app/session/1/prep-codex/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/10/instagram/page.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/session/10/instagram/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/10/instagram/page.tsx:Session10InstagramPage",
+      "type": "react-component",
+      "name": "Session10InstagramPage",
+      "filePath": "src/app/session/10/instagram/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/2/auto-lead-magnet/page 2.tsx:AutoLeadMagnetPage",
+      "type": "react-component",
+      "name": "AutoLeadMagnetPage",
+      "filePath": "src/app/session/2/auto-lead-magnet/page 2.tsx",
+      "summary": "react-component exported from page 2.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/2/auto-lead-magnet/page.tsx:AutoLeadMagnetPage",
+      "type": "react-component",
+      "name": "AutoLeadMagnetPage",
+      "filePath": "src/app/session/2/auto-lead-magnet/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/2/guide-codex/page.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/session/2/guide-codex/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/2/guide-codex/page.tsx:Session2GuideCodexPage",
+      "type": "react-component",
+      "name": "Session2GuideCodexPage",
+      "filePath": "src/app/session/2/guide-codex/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/3/custom-domain/page.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/session/3/custom-domain/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/3/custom-domain/page.tsx:CustomDomainPage",
+      "type": "react-component",
+      "name": "CustomDomainPage",
+      "filePath": "src/app/session/3/custom-domain/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/3/homework/page.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/session/3/homework/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/3/homework/page.tsx:Session3Homework",
+      "type": "react-component",
+      "name": "Session3Homework",
+      "filePath": "src/app/session/3/homework/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/4/custom-domain/page.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/session/4/custom-domain/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/4/custom-domain/page.tsx:CustomDomainPage",
+      "type": "react-component",
+      "name": "CustomDomainPage",
+      "filePath": "src/app/session/4/custom-domain/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/4/homework/page.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/session/4/homework/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/4/homework/page.tsx:Session3Homework",
+      "type": "react-component",
+      "name": "Session3Homework",
+      "filePath": "src/app/session/4/homework/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/4/wrapup/page 2.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/session/4/wrapup/page 2.tsx",
+      "summary": "react-component exported from page 2.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/4/wrapup/page 2.tsx:Session4WrapUp",
+      "type": "react-component",
+      "name": "Session4WrapUp",
+      "filePath": "src/app/session/4/wrapup/page 2.tsx",
+      "summary": "react-component exported from page 2.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/4/wrapup/page.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/session/4/wrapup/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/4/wrapup/page.tsx:Session4WrapUp",
+      "type": "react-component",
+      "name": "Session4WrapUp",
+      "filePath": "src/app/session/4/wrapup/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/5/hook-writer/page 2.tsx:HookWriterPage",
+      "type": "react-component",
+      "name": "HookWriterPage",
+      "filePath": "src/app/session/5/hook-writer/page 2.tsx",
+      "summary": "react-component exported from page 2.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/5/hook-writer/page.tsx:HookWriterPage",
+      "type": "react-component",
+      "name": "HookWriterPage",
+      "filePath": "src/app/session/5/hook-writer/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/5/prep-hooks/page 2.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/session/5/prep-hooks/page 2.tsx",
+      "summary": "react-component exported from page 2.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/5/prep-hooks/page 2.tsx:Session5HookPrepPage",
+      "type": "react-component",
+      "name": "Session5HookPrepPage",
+      "filePath": "src/app/session/5/prep-hooks/page 2.tsx",
+      "summary": "react-component exported from page 2.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/5/prep-hooks/page.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/session/5/prep-hooks/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/5/prep-hooks/page.tsx:Session5HookPrepPage",
+      "type": "react-component",
+      "name": "Session5HookPrepPage",
+      "filePath": "src/app/session/5/prep-hooks/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/5/wrapup/page.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/session/5/wrapup/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/5/wrapup/page.tsx:Session5WrapUp",
+      "type": "react-component",
+      "name": "Session5WrapUp",
+      "filePath": "src/app/session/5/wrapup/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/6/hook-writer/page.tsx:HookWriterPage",
+      "type": "react-component",
+      "name": "HookWriterPage",
+      "filePath": "src/app/session/6/hook-writer/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/6/prep-hooks/page.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/session/6/prep-hooks/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/6/prep-hooks/page.tsx:Session6HookPrepPage",
+      "type": "react-component",
+      "name": "Session6HookPrepPage",
+      "filePath": "src/app/session/6/prep-hooks/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/7/descript/page 2.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/session/7/descript/page 2.tsx",
+      "summary": "react-component exported from page 2.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/7/descript/page 2.tsx:Session7DescriptPage",
+      "type": "react-component",
+      "name": "Session7DescriptPage",
+      "filePath": "src/app/session/7/descript/page 2.tsx",
+      "summary": "react-component exported from page 2.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/7/descript/page.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/session/7/descript/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/7/descript/page.tsx:Session7DescriptPage",
+      "type": "react-component",
+      "name": "Session7DescriptPage",
+      "filePath": "src/app/session/7/descript/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/app/session/[slug]/guide-brain/page.tsx",
+      "target": "react-component:src/app/session/[slug]/guide-brain/page.tsx:generateStaticParams",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/[slug]/guide-brain/page.tsx",
+      "target": "react-component:src/app/session/[slug]/guide-brain/page.tsx:generateMetadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/[slug]/guide-brain/page.tsx",
+      "target": "react-component:src/app/session/[slug]/guide-brain/page.tsx:SessionGuideBrainPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/[slug]/guide/page.tsx",
+      "target": "react-component:src/app/session/[slug]/guide/page.tsx:generateStaticParams",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/[slug]/guide/page.tsx",
+      "target": "react-component:src/app/session/[slug]/guide/page.tsx:generateMetadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/[slug]/guide/page.tsx",
+      "target": "react-component:src/app/session/[slug]/guide/page.tsx:SessionGuidePage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/[slug]/page.tsx",
+      "target": "react-component:src/app/session/[slug]/page.tsx:generateStaticParams",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/[slug]/page.tsx",
+      "target": "react-component:src/app/session/[slug]/page.tsx:generateMetadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/[slug]/page.tsx",
+      "target": "react-component:src/app/session/[slug]/page.tsx:SessionIndexPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/[slug]/prep/page.tsx",
+      "target": "react-component:src/app/session/[slug]/prep/page.tsx:generateStaticParams",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/[slug]/prep/page.tsx",
+      "target": "react-component:src/app/session/[slug]/prep/page.tsx:generateMetadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/[slug]/prep/page.tsx",
+      "target": "react-component:src/app/session/[slug]/prep/page.tsx:SessionPrepPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/1/prep-codex/page 2.tsx",
+      "target": "react-component:src/app/session/1/prep-codex/page 2.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/1/prep-codex/page 2.tsx",
+      "target": "react-component:src/app/session/1/prep-codex/page 2.tsx:Session1PrepCodexPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/1/prep-codex/page.tsx",
+      "target": "react-component:src/app/session/1/prep-codex/page.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/1/prep-codex/page.tsx",
+      "target": "react-component:src/app/session/1/prep-codex/page.tsx:Session1PrepCodexPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/10/instagram/page.tsx",
+      "target": "react-component:src/app/session/10/instagram/page.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/10/instagram/page.tsx",
+      "target": "react-component:src/app/session/10/instagram/page.tsx:Session10InstagramPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/2/auto-lead-magnet/page 2.tsx",
+      "target": "react-component:src/app/session/2/auto-lead-magnet/page 2.tsx:AutoLeadMagnetPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/2/auto-lead-magnet/page.tsx",
+      "target": "react-component:src/app/session/2/auto-lead-magnet/page.tsx:AutoLeadMagnetPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/2/guide-codex/page.tsx",
+      "target": "react-component:src/app/session/2/guide-codex/page.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/2/guide-codex/page.tsx",
+      "target": "react-component:src/app/session/2/guide-codex/page.tsx:Session2GuideCodexPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/3/custom-domain/page.tsx",
+      "target": "react-component:src/app/session/3/custom-domain/page.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/3/custom-domain/page.tsx",
+      "target": "react-component:src/app/session/3/custom-domain/page.tsx:CustomDomainPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/3/homework/page.tsx",
+      "target": "react-component:src/app/session/3/homework/page.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/3/homework/page.tsx",
+      "target": "react-component:src/app/session/3/homework/page.tsx:Session3Homework",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/4/custom-domain/page.tsx",
+      "target": "react-component:src/app/session/4/custom-domain/page.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/4/custom-domain/page.tsx",
+      "target": "react-component:src/app/session/4/custom-domain/page.tsx:CustomDomainPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/4/homework/page.tsx",
+      "target": "react-component:src/app/session/4/homework/page.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/4/homework/page.tsx",
+      "target": "react-component:src/app/session/4/homework/page.tsx:Session3Homework",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/4/wrapup/page 2.tsx",
+      "target": "react-component:src/app/session/4/wrapup/page 2.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/4/wrapup/page 2.tsx",
+      "target": "react-component:src/app/session/4/wrapup/page 2.tsx:Session4WrapUp",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/4/wrapup/page.tsx",
+      "target": "react-component:src/app/session/4/wrapup/page.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/4/wrapup/page.tsx",
+      "target": "react-component:src/app/session/4/wrapup/page.tsx:Session4WrapUp",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/5/hook-writer/page 2.tsx",
+      "target": "react-component:src/app/session/5/hook-writer/page 2.tsx:HookWriterPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/5/hook-writer/page.tsx",
+      "target": "react-component:src/app/session/5/hook-writer/page.tsx:HookWriterPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/5/prep-hooks/page 2.tsx",
+      "target": "react-component:src/app/session/5/prep-hooks/page 2.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/5/prep-hooks/page 2.tsx",
+      "target": "react-component:src/app/session/5/prep-hooks/page 2.tsx:Session5HookPrepPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/5/prep-hooks/page.tsx",
+      "target": "react-component:src/app/session/5/prep-hooks/page.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/5/prep-hooks/page.tsx",
+      "target": "react-component:src/app/session/5/prep-hooks/page.tsx:Session5HookPrepPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/5/wrapup/page.tsx",
+      "target": "react-component:src/app/session/5/wrapup/page.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/5/wrapup/page.tsx",
+      "target": "react-component:src/app/session/5/wrapup/page.tsx:Session5WrapUp",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/6/hook-writer/page.tsx",
+      "target": "react-component:src/app/session/6/hook-writer/page.tsx:HookWriterPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/6/prep-hooks/page.tsx",
+      "target": "react-component:src/app/session/6/prep-hooks/page.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/6/prep-hooks/page.tsx",
+      "target": "react-component:src/app/session/6/prep-hooks/page.tsx:Session6HookPrepPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/7/descript/page 2.tsx",
+      "target": "react-component:src/app/session/7/descript/page 2.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/7/descript/page 2.tsx",
+      "target": "react-component:src/app/session/7/descript/page 2.tsx:Session7DescriptPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/7/descript/page.tsx",
+      "target": "react-component:src/app/session/7/descript/page.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/7/descript/page.tsx",
+      "target": "react-component:src/app/session/7/descript/page.tsx:Session7DescriptPage",
+      "type": "exports",
+      "weight": 1
+    }
+  ],
+  "statistics": {
+    "nodeCount": 74,
+    "edgeCount": 49,
+    "fileCategories": {
+      "code": 25
+    },
+    "totalSizeLines": 7854,
+    "symbolCount": 49
+  }
+}

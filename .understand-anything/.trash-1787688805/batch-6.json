@@ -1,0 +1,558 @@
+{
+  "batchIndex": 6,
+  "nodes": [
+    {
+      "id": "file:scripts/abandoned-checkout-run.ts",
+      "type": "file",
+      "name": "abandoned-checkout-run.ts",
+      "filePath": "scripts/abandoned-checkout-run.ts",
+      "language": "typescript",
+      "sizeLines": 90,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/lib/abandoned-checkout-followups.ts",
+      "type": "file",
+      "name": "abandoned-checkout-followups.ts",
+      "filePath": "src/lib/abandoned-checkout-followups.ts",
+      "language": "typescript",
+      "sizeLines": 1088,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "file:tests/abandoned-checkout-followups.test.ts",
+      "type": "file",
+      "name": "abandoned-checkout-followups.test.ts",
+      "filePath": "tests/abandoned-checkout-followups.test.ts",
+      "language": "typescript",
+      "sizeLines": 224,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "test",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:src/lib/abandoned-checkout-followups.ts:ABANDONED_CHECKOUT_DAY1_AUTOMATION_KEY",
+      "type": "class",
+      "name": "ABANDONED_CHECKOUT_DAY1_AUTOMATION_KEY",
+      "filePath": "src/lib/abandoned-checkout-followups.ts",
+      "summary": "class exported from abandoned-checkout-followups.ts",
+      "tags": [
+        "class",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "class:src/lib/abandoned-checkout-followups.ts:ABANDONED_CHECKOUT_T12H_AUTOMATION_KEY",
+      "type": "class",
+      "name": "ABANDONED_CHECKOUT_T12H_AUTOMATION_KEY",
+      "filePath": "src/lib/abandoned-checkout-followups.ts",
+      "summary": "class exported from abandoned-checkout-followups.ts",
+      "tags": [
+        "class",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "class:src/lib/abandoned-checkout-followups.ts:DEFAULT_TEST_RECIPIENTS",
+      "type": "class",
+      "name": "DEFAULT_TEST_RECIPIENTS",
+      "filePath": "src/lib/abandoned-checkout-followups.ts",
+      "summary": "class exported from abandoned-checkout-followups.ts",
+      "tags": [
+        "class",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/abandoned-checkout-followups.ts:getCheckoutFollowupDefinition",
+      "type": "function",
+      "name": "getCheckoutFollowupDefinition",
+      "filePath": "src/lib/abandoned-checkout-followups.ts",
+      "summary": "function exported from abandoned-checkout-followups.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/abandoned-checkout-followups.ts:shouldIncludeFinanceLine",
+      "type": "function",
+      "name": "shouldIncludeFinanceLine",
+      "filePath": "src/lib/abandoned-checkout-followups.ts",
+      "summary": "function exported from abandoned-checkout-followups.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/abandoned-checkout-followups.ts:buildAbandonedCheckoutIdempotencyKey",
+      "type": "function",
+      "name": "buildAbandonedCheckoutIdempotencyKey",
+      "filePath": "src/lib/abandoned-checkout-followups.ts",
+      "summary": "function exported from abandoned-checkout-followups.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/abandoned-checkout-followups.ts:buildAbandonedCheckoutT12hIdempotencyKey",
+      "type": "function",
+      "name": "buildAbandonedCheckoutT12hIdempotencyKey",
+      "filePath": "src/lib/abandoned-checkout-followups.ts",
+      "summary": "function exported from abandoned-checkout-followups.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/abandoned-checkout-followups.ts:buildAbandonedCheckoutTestIdempotencyKey",
+      "type": "function",
+      "name": "buildAbandonedCheckoutTestIdempotencyKey",
+      "filePath": "src/lib/abandoned-checkout-followups.ts",
+      "summary": "function exported from abandoned-checkout-followups.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/abandoned-checkout-followups.ts:buildAbandonedCheckoutT12hTestIdempotencyKey",
+      "type": "function",
+      "name": "buildAbandonedCheckoutT12hTestIdempotencyKey",
+      "filePath": "src/lib/abandoned-checkout-followups.ts",
+      "summary": "function exported from abandoned-checkout-followups.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/abandoned-checkout-followups.ts:buildAbandonedCheckoutSubject",
+      "type": "function",
+      "name": "buildAbandonedCheckoutSubject",
+      "filePath": "src/lib/abandoned-checkout-followups.ts",
+      "summary": "function exported from abandoned-checkout-followups.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/abandoned-checkout-followups.ts:buildAbandonedCheckoutT12hSubject",
+      "type": "function",
+      "name": "buildAbandonedCheckoutT12hSubject",
+      "filePath": "src/lib/abandoned-checkout-followups.ts",
+      "summary": "function exported from abandoned-checkout-followups.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/abandoned-checkout-followups.ts:buildAbandonedCheckoutTestSubject",
+      "type": "function",
+      "name": "buildAbandonedCheckoutTestSubject",
+      "filePath": "src/lib/abandoned-checkout-followups.ts",
+      "summary": "function exported from abandoned-checkout-followups.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/abandoned-checkout-followups.ts:buildAbandonedCheckoutT12hTestSubject",
+      "type": "function",
+      "name": "buildAbandonedCheckoutT12hTestSubject",
+      "filePath": "src/lib/abandoned-checkout-followups.ts",
+      "summary": "function exported from abandoned-checkout-followups.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/abandoned-checkout-followups.ts:buildAbandonedCheckoutEmailHtml",
+      "type": "function",
+      "name": "buildAbandonedCheckoutEmailHtml",
+      "filePath": "src/lib/abandoned-checkout-followups.ts",
+      "summary": "function exported from abandoned-checkout-followups.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/abandoned-checkout-followups.ts:buildAbandonedCheckoutT12hEmailHtml",
+      "type": "function",
+      "name": "buildAbandonedCheckoutT12hEmailHtml",
+      "filePath": "src/lib/abandoned-checkout-followups.ts",
+      "summary": "function exported from abandoned-checkout-followups.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/abandoned-checkout-followups.ts:buildAbandonedCheckoutTestEmailHtml",
+      "type": "function",
+      "name": "buildAbandonedCheckoutTestEmailHtml",
+      "filePath": "src/lib/abandoned-checkout-followups.ts",
+      "summary": "function exported from abandoned-checkout-followups.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/abandoned-checkout-followups.ts:sendAbandonedCheckoutFollowupEmail",
+      "type": "function",
+      "name": "sendAbandonedCheckoutFollowupEmail",
+      "filePath": "src/lib/abandoned-checkout-followups.ts",
+      "summary": "function exported from abandoned-checkout-followups.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/abandoned-checkout-followups.ts:sendAbandonedCheckoutT12hEmail",
+      "type": "function",
+      "name": "sendAbandonedCheckoutT12hEmail",
+      "filePath": "src/lib/abandoned-checkout-followups.ts",
+      "summary": "function exported from abandoned-checkout-followups.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/abandoned-checkout-followups.ts:sendAbandonedCheckoutFollowupTestEmail",
+      "type": "function",
+      "name": "sendAbandonedCheckoutFollowupTestEmail",
+      "filePath": "src/lib/abandoned-checkout-followups.ts",
+      "summary": "function exported from abandoned-checkout-followups.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/abandoned-checkout-followups.ts:getAbandonedCheckoutAutomationControl",
+      "type": "function",
+      "name": "getAbandonedCheckoutAutomationControl",
+      "filePath": "src/lib/abandoned-checkout-followups.ts",
+      "summary": "function exported from abandoned-checkout-followups.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/abandoned-checkout-followups.ts:isEventInLeadWindow",
+      "type": "function",
+      "name": "isEventInLeadWindow",
+      "filePath": "src/lib/abandoned-checkout-followups.ts",
+      "summary": "function exported from abandoned-checkout-followups.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/abandoned-checkout-followups.ts:getAbandonedCheckoutEligibleEvents",
+      "type": "function",
+      "name": "getAbandonedCheckoutEligibleEvents",
+      "filePath": "src/lib/abandoned-checkout-followups.ts",
+      "summary": "function exported from abandoned-checkout-followups.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/abandoned-checkout-followups.ts:isObviousTestCheckoutAttempt",
+      "type": "function",
+      "name": "isObviousTestCheckoutAttempt",
+      "filePath": "src/lib/abandoned-checkout-followups.ts",
+      "summary": "function exported from abandoned-checkout-followups.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/abandoned-checkout-followups.ts:sendLiveCandidateOnce",
+      "type": "function",
+      "name": "sendLiveCandidateOnce",
+      "filePath": "src/lib/abandoned-checkout-followups.ts",
+      "summary": "function exported from abandoned-checkout-followups.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/abandoned-checkout-followups.ts:shouldSendTestPreview",
+      "type": "function",
+      "name": "shouldSendTestPreview",
+      "filePath": "src/lib/abandoned-checkout-followups.ts",
+      "summary": "function exported from abandoned-checkout-followups.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/abandoned-checkout-followups.ts:runAbandonedCheckoutFollowups",
+      "type": "function",
+      "name": "runAbandonedCheckoutFollowups",
+      "filePath": "src/lib/abandoned-checkout-followups.ts",
+      "summary": "function exported from abandoned-checkout-followups.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/abandoned-checkout-followups.ts:resolveEventFromSlug",
+      "type": "function",
+      "name": "resolveEventFromSlug",
+      "filePath": "src/lib/abandoned-checkout-followups.ts",
+      "summary": "function exported from abandoned-checkout-followups.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:scripts/abandoned-checkout-run.ts",
+      "target": "file:src/lib/abandoned-checkout-followups.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/abandoned-checkout-followups.test.ts",
+      "target": "file:src/lib/abandoned-checkout-followups.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/abandoned-checkout-followups.ts",
+      "target": "class:src/lib/abandoned-checkout-followups.ts:ABANDONED_CHECKOUT_DAY1_AUTOMATION_KEY",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/abandoned-checkout-followups.ts",
+      "target": "class:src/lib/abandoned-checkout-followups.ts:ABANDONED_CHECKOUT_T12H_AUTOMATION_KEY",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/abandoned-checkout-followups.ts",
+      "target": "class:src/lib/abandoned-checkout-followups.ts:DEFAULT_TEST_RECIPIENTS",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/abandoned-checkout-followups.ts",
+      "target": "function:src/lib/abandoned-checkout-followups.ts:getCheckoutFollowupDefinition",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/abandoned-checkout-followups.ts",
+      "target": "function:src/lib/abandoned-checkout-followups.ts:shouldIncludeFinanceLine",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/abandoned-checkout-followups.ts",
+      "target": "function:src/lib/abandoned-checkout-followups.ts:buildAbandonedCheckoutIdempotencyKey",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/abandoned-checkout-followups.ts",
+      "target": "function:src/lib/abandoned-checkout-followups.ts:buildAbandonedCheckoutT12hIdempotencyKey",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/abandoned-checkout-followups.ts",
+      "target": "function:src/lib/abandoned-checkout-followups.ts:buildAbandonedCheckoutTestIdempotencyKey",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/abandoned-checkout-followups.ts",
+      "target": "function:src/lib/abandoned-checkout-followups.ts:buildAbandonedCheckoutT12hTestIdempotencyKey",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/abandoned-checkout-followups.ts",
+      "target": "function:src/lib/abandoned-checkout-followups.ts:buildAbandonedCheckoutSubject",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/abandoned-checkout-followups.ts",
+      "target": "function:src/lib/abandoned-checkout-followups.ts:buildAbandonedCheckoutT12hSubject",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/abandoned-checkout-followups.ts",
+      "target": "function:src/lib/abandoned-checkout-followups.ts:buildAbandonedCheckoutTestSubject",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/abandoned-checkout-followups.ts",
+      "target": "function:src/lib/abandoned-checkout-followups.ts:buildAbandonedCheckoutT12hTestSubject",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/abandoned-checkout-followups.ts",
+      "target": "function:src/lib/abandoned-checkout-followups.ts:buildAbandonedCheckoutEmailHtml",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/abandoned-checkout-followups.ts",
+      "target": "function:src/lib/abandoned-checkout-followups.ts:buildAbandonedCheckoutT12hEmailHtml",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/abandoned-checkout-followups.ts",
+      "target": "function:src/lib/abandoned-checkout-followups.ts:buildAbandonedCheckoutTestEmailHtml",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/abandoned-checkout-followups.ts",
+      "target": "function:src/lib/abandoned-checkout-followups.ts:sendAbandonedCheckoutFollowupEmail",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/abandoned-checkout-followups.ts",
+      "target": "function:src/lib/abandoned-checkout-followups.ts:sendAbandonedCheckoutT12hEmail",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/abandoned-checkout-followups.ts",
+      "target": "function:src/lib/abandoned-checkout-followups.ts:sendAbandonedCheckoutFollowupTestEmail",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/abandoned-checkout-followups.ts",
+      "target": "function:src/lib/abandoned-checkout-followups.ts:getAbandonedCheckoutAutomationControl",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/abandoned-checkout-followups.ts",
+      "target": "function:src/lib/abandoned-checkout-followups.ts:isEventInLeadWindow",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/abandoned-checkout-followups.ts",
+      "target": "function:src/lib/abandoned-checkout-followups.ts:getAbandonedCheckoutEligibleEvents",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/abandoned-checkout-followups.ts",
+      "target": "function:src/lib/abandoned-checkout-followups.ts:isObviousTestCheckoutAttempt",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/abandoned-checkout-followups.ts",
+      "target": "function:src/lib/abandoned-checkout-followups.ts:sendLiveCandidateOnce",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/abandoned-checkout-followups.ts",
+      "target": "function:src/lib/abandoned-checkout-followups.ts:shouldSendTestPreview",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/abandoned-checkout-followups.ts",
+      "target": "function:src/lib/abandoned-checkout-followups.ts:runAbandonedCheckoutFollowups",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/abandoned-checkout-followups.ts",
+      "target": "function:src/lib/abandoned-checkout-followups.ts:resolveEventFromSlug",
+      "type": "exports",
+      "weight": 1
+    }
+  ],
+  "statistics": {
+    "nodeCount": 30,
+    "edgeCount": 29,
+    "fileCategories": {
+      "code": 3
+    },
+    "totalSizeLines": 1402,
+    "symbolCount": 27
+  }
+}

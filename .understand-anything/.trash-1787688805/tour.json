@@ -1,0 +1,111 @@
+[
+  {
+    "order": 1,
+    "title": "Project Setup & Entry Points",
+    "description": "Start with project configuration and the main application layout",
+    "nodeIds": [
+      "file:package.json",
+      "file:next.config.ts",
+      "file:src/app/layout.tsx",
+      "file:src/app/page.tsx",
+      "file:CLAUDE.md"
+    ],
+    "notes": "Understand Next.js configuration, dependencies, and the root layout that wraps all pages"
+  },
+  {
+    "order": 2,
+    "title": "Event System & Data Models",
+    "description": "Understand events, sessions, and registration data structures",
+    "nodeIds": [
+      "file:src/lib/events.tsx",
+      "file:src/lib/sessions.ts",
+      "file:src/lib/event-status.ts",
+      "file:src/lib/event-intake.ts",
+      "file:src/lib/event-tokens.ts"
+    ],
+    "notes": "These files define the core domain models for events and sessions that power the platform"
+  },
+  {
+    "order": 3,
+    "title": "Event Display & User Interface",
+    "description": "See how events are displayed to users and how they interact with event pages",
+    "nodeIds": [
+      "file:src/app/events/page.tsx",
+      "file:src/app/events/[slug]/page.tsx",
+      "file:src/app/events/[slug]/setup/page.tsx",
+      "file:src/components/events/EventPageView.tsx",
+      "file:src/components/events/EventRegistrationSection.tsx"
+    ],
+    "notes": "Follow the user journey: listing events, viewing individual event details, and starting registration"
+  },
+  {
+    "order": 4,
+    "title": "Registration & Checkout Flow",
+    "description": "Understand how users register and pay for events",
+    "nodeIds": [
+      "file:src/app/api/events/checkout-session/route.ts",
+      "file:src/lib/event-checkout.ts",
+      "file:src/lib/stripe.ts",
+      "file:src/lib/stripe-amount.ts",
+      "file:src/app/api/events/finalize-registration/route.ts",
+      "file:src/app/api/events/validate-promo/route.ts"
+    ],
+    "notes": "Stripe integration for payment processing, promo code validation, and transaction handling"
+  },
+  {
+    "order": 5,
+    "title": "Database & Registration Management",
+    "description": "See how registrations are stored and managed in the database",
+    "nodeIds": [
+      "file:src/lib/event-registration-db.ts",
+      "file:src/lib/supabase.ts",
+      "file:src/app/api/events/reconcile-registrations/route.ts",
+      "file:src/lib/email-suppressions.ts"
+    ],
+    "notes": "Supabase integration for data persistence, registration reconciliation, and email management"
+  },
+  {
+    "order": 6,
+    "title": "Communication & Email System",
+    "description": "Understand how event communications are sent to attendees",
+    "nodeIds": [
+      "file:src/lib/event-confirmation-email.ts",
+      "file:src/lib/event-email-ledger.ts",
+      "file:src/lib/event-followup.ts",
+      "file:src/lib/session-reminder.ts",
+      "file:src/lib/location-reminder.ts",
+      "file:src/lib/resend-sender.ts"
+    ],
+    "notes": "Email templates, ledger tracking for deduplication, reminder schedules, and Resend email service integration"
+  },
+  {
+    "order": 7,
+    "title": "Giveaways & Lead Magnets",
+    "description": "Explore the content distribution system for giveaways and lead magnets",
+    "nodeIds": [
+      "file:src/lib/giveaways.ts",
+      "file:src/app/giveaways/page.tsx",
+      "file:src/app/giveaways/lead-magnet/page.tsx",
+      "file:src/app/giveaways/benchmark/page.tsx",
+      "file:src/lib/lead-magnets.ts",
+      "file:src/app/api/lead-magnets/claudemd/route.ts"
+    ],
+    "notes": "Lead magnet registry, various giveaway implementations (quizzes, tools, guides), and associated API endpoints"
+  },
+  {
+    "order": 8,
+    "title": "API Endpoints & Background Jobs",
+    "description": "Understand the API surface for registrations, communications, and webhooks",
+    "nodeIds": [
+      "file:src/app/api/stripe/webhook/route.ts",
+      "file:src/app/api/events/session-reminders/route.ts",
+      "file:src/app/api/events/location-reminders/route.ts",
+      "file:src/app/api/events/abandoned-checkout-followups/route.ts",
+      "file:src/app/api/events/waitlist/join/route.ts",
+      "file:src/app/api/events/waitlist/notify/route.ts",
+      "file:src/app/api/subscribe/route.ts",
+      "file:src/app/api/unsubscribe/route.ts"
+    ],
+    "notes": "Webhook handlers for Stripe, scheduled reminders, waitlist management, and subscription endpoints"
+  }
+]

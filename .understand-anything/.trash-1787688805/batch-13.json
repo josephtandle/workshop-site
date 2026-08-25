@@ -1,0 +1,649 @@
+{
+  "batchIndex": 13,
+  "nodes": [
+    {
+      "id": "file:.claude/settings.json",
+      "type": "file",
+      "name": "settings.json",
+      "filePath": ".claude/settings.json",
+      "language": "json",
+      "sizeLines": 17,
+      "fileCategory": "config",
+      "summary": "Configuration file",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.claude/skills/gitnexus/gitnexus-cli/SKILL.md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": ".claude/skills/gitnexus/gitnexus-cli/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 84,
+      "fileCategory": "docs",
+      "summary": "Configuration file",
+      "tags": [],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.claude/skills/gitnexus/gitnexus-debugging/SKILL.md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": ".claude/skills/gitnexus/gitnexus-debugging/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 90,
+      "fileCategory": "docs",
+      "summary": "Configuration file",
+      "tags": [],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.claude/skills/gitnexus/gitnexus-exploring/SKILL.md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": ".claude/skills/gitnexus/gitnexus-exploring/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 79,
+      "fileCategory": "docs",
+      "summary": "Configuration file",
+      "tags": [],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.claude/skills/gitnexus/gitnexus-guide/SKILL.md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": ".claude/skills/gitnexus/gitnexus-guide/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 65,
+      "fileCategory": "docs",
+      "summary": "Configuration file",
+      "tags": [],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.claude/skills/gitnexus/gitnexus-impact-analysis/SKILL.md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": ".claude/skills/gitnexus/gitnexus-impact-analysis/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 98,
+      "fileCategory": "docs",
+      "summary": "Configuration file",
+      "tags": [],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.claude/skills/gitnexus/gitnexus-refactoring/SKILL.md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": ".claude/skills/gitnexus/gitnexus-refactoring/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 122,
+      "fileCategory": "docs",
+      "summary": "Configuration file",
+      "tags": [],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/STRIPE-TRIAL-MECHANICS.md",
+      "type": "file",
+      "name": "STRIPE-TRIAL-MECHANICS.md",
+      "filePath": "docs/STRIPE-TRIAL-MECHANICS.md",
+      "language": "markdown",
+      "sizeLines": 47,
+      "fileCategory": "docs",
+      "summary": "Configuration file",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:next-env.d.ts",
+      "type": "file",
+      "name": "next-env.d.ts",
+      "filePath": "next-env.d.ts",
+      "language": "typescript",
+      "sizeLines": 7,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:next.config.ts",
+      "type": "file",
+      "name": "next.config.ts",
+      "filePath": "next.config.ts",
+      "language": "typescript",
+      "sizeLines": 61,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pdf/client-launch-checklist.html",
+      "type": "file",
+      "name": "client-launch-checklist.html",
+      "filePath": "pdf/client-launch-checklist.html",
+      "language": "html",
+      "sizeLines": 306,
+      "fileCategory": "markup",
+      "summary": "Configuration file",
+      "tags": [],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:pdf/cross-cli-compatibility-routing-guide.html",
+      "type": "file",
+      "name": "cross-cli-compatibility-routing-guide.html",
+      "filePath": "pdf/cross-cli-compatibility-routing-guide.html",
+      "language": "html",
+      "sizeLines": 583,
+      "fileCategory": "markup",
+      "summary": "Configuration file",
+      "tags": [],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "file:pdf/render-client-launch-checklist.js",
+      "type": "file",
+      "name": "render-client-launch-checklist.js",
+      "filePath": "pdf/render-client-launch-checklist.js",
+      "language": "javascript",
+      "sizeLines": 50,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pdf/render-cross-cli-compatibility-routing-guide.js",
+      "type": "file",
+      "name": "render-cross-cli-compatibility-routing-guide.js",
+      "filePath": "pdf/render-cross-cli-compatibility-routing-guide.js",
+      "language": "javascript",
+      "sizeLines": 54,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/docs/jill-linkedin-cleanup-sop.md",
+      "type": "file",
+      "name": "jill-linkedin-cleanup-sop.md",
+      "filePath": "public/docs/jill-linkedin-cleanup-sop.md",
+      "language": "markdown",
+      "sizeLines": 58,
+      "fileCategory": "docs",
+      "summary": "Configuration file",
+      "tags": [],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/giveaways/cross-cli-compatibility-routing-prompt.md",
+      "type": "file",
+      "name": "cross-cli-compatibility-routing-prompt.md",
+      "filePath": "public/giveaways/cross-cli-compatibility-routing-prompt.md",
+      "language": "markdown",
+      "sizeLines": 210,
+      "fileCategory": "docs",
+      "summary": "Configuration file",
+      "tags": [],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/app/100-ai/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/100-ai/page.tsx",
+      "language": "typescript",
+      "sizeLines": 317,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/app/ai-agent-income/AiAgentIncomeCheckoutForm.tsx",
+      "type": "file",
+      "name": "AiAgentIncomeCheckoutForm.tsx",
+      "filePath": "src/app/ai-agent-income/AiAgentIncomeCheckoutForm.tsx",
+      "language": "typescript",
+      "sizeLines": 76,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/ai-agent-income/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/ai-agent-income/page.tsx",
+      "language": "typescript",
+      "sizeLines": 172,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/ai-os-architecture/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/ai-os-architecture/page.tsx",
+      "language": "typescript",
+      "sizeLines": 15,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/api/events/[slug]/calendar/route.ts",
+      "type": "file",
+      "name": "route.ts",
+      "filePath": "src/app/api/events/[slug]/calendar/route.ts",
+      "language": "typescript",
+      "sizeLines": 39,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "api-route",
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/api/events/abandoned-checkout-followups-t12h/route.ts",
+      "type": "file",
+      "name": "route.ts",
+      "filePath": "src/app/api/events/abandoned-checkout-followups-t12h/route.ts",
+      "language": "typescript",
+      "sizeLines": 75,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "api-route",
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/api/events/abandoned-checkout-followups/route.ts",
+      "type": "file",
+      "name": "route.ts",
+      "filePath": "src/app/api/events/abandoned-checkout-followups/route.ts",
+      "language": "typescript",
+      "sizeLines": 75,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "api-route",
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/api/events/cancel/route.ts",
+      "type": "file",
+      "name": "route.ts",
+      "filePath": "src/app/api/events/cancel/route.ts",
+      "language": "typescript",
+      "sizeLines": 88,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "api-route",
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/api/events/checkout-session/route.ts",
+      "type": "file",
+      "name": "route.ts",
+      "filePath": "src/app/api/events/checkout-session/route.ts",
+      "language": "typescript",
+      "sizeLines": 355,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "api-route",
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "react-component:src/app/100-ai/page.tsx:PassiveIncome100Page",
+      "type": "react-component",
+      "name": "PassiveIncome100Page",
+      "filePath": "src/app/100-ai/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/ai-agent-income/AiAgentIncomeCheckoutForm.tsx:AiAgentIncomeCheckoutForm",
+      "type": "react-component",
+      "name": "AiAgentIncomeCheckoutForm",
+      "filePath": "src/app/ai-agent-income/AiAgentIncomeCheckoutForm.tsx",
+      "summary": "react-component exported from AiAgentIncomeCheckoutForm.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/ai-agent-income/page.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/ai-agent-income/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/ai-agent-income/page.tsx:AiAgentIncomePage",
+      "type": "react-component",
+      "name": "AiAgentIncomePage",
+      "filePath": "src/app/ai-agent-income/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/ai-os-architecture/page.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/ai-os-architecture/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/ai-os-architecture/page.tsx:AIArchitecturePage",
+      "type": "react-component",
+      "name": "AIArchitecturePage",
+      "filePath": "src/app/ai-os-architecture/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/events/[slug]/calendar/route.ts:runtime",
+      "type": "react-component",
+      "name": "runtime",
+      "filePath": "src/app/api/events/[slug]/calendar/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/events/[slug]/calendar/route.ts:GET",
+      "type": "react-component",
+      "name": "GET",
+      "filePath": "src/app/api/events/[slug]/calendar/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/events/abandoned-checkout-followups-t12h/route.ts:runtime",
+      "type": "react-component",
+      "name": "runtime",
+      "filePath": "src/app/api/events/abandoned-checkout-followups-t12h/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/events/abandoned-checkout-followups-t12h/route.ts:GET",
+      "type": "react-component",
+      "name": "GET",
+      "filePath": "src/app/api/events/abandoned-checkout-followups-t12h/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/events/abandoned-checkout-followups/route.ts:runtime",
+      "type": "react-component",
+      "name": "runtime",
+      "filePath": "src/app/api/events/abandoned-checkout-followups/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/events/abandoned-checkout-followups/route.ts:GET",
+      "type": "react-component",
+      "name": "GET",
+      "filePath": "src/app/api/events/abandoned-checkout-followups/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/events/cancel/route.ts:runtime",
+      "type": "react-component",
+      "name": "runtime",
+      "filePath": "src/app/api/events/cancel/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/events/cancel/route.ts:GET",
+      "type": "react-component",
+      "name": "GET",
+      "filePath": "src/app/api/events/cancel/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/events/checkout-session/route.ts:runtime",
+      "type": "react-component",
+      "name": "runtime",
+      "filePath": "src/app/api/events/checkout-session/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/events/checkout-session/route.ts:POST",
+      "type": "react-component",
+      "name": "POST",
+      "filePath": "src/app/api/events/checkout-session/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/app/ai-agent-income/page.tsx",
+      "target": "file:src/app/ai-agent-income/AiAgentIncomeCheckoutForm.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/100-ai/page.tsx",
+      "target": "react-component:src/app/100-ai/page.tsx:PassiveIncome100Page",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/ai-agent-income/AiAgentIncomeCheckoutForm.tsx",
+      "target": "react-component:src/app/ai-agent-income/AiAgentIncomeCheckoutForm.tsx:AiAgentIncomeCheckoutForm",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/ai-agent-income/page.tsx",
+      "target": "react-component:src/app/ai-agent-income/page.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/ai-agent-income/page.tsx",
+      "target": "react-component:src/app/ai-agent-income/page.tsx:AiAgentIncomePage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/ai-os-architecture/page.tsx",
+      "target": "react-component:src/app/ai-os-architecture/page.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/ai-os-architecture/page.tsx",
+      "target": "react-component:src/app/ai-os-architecture/page.tsx:AIArchitecturePage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/events/[slug]/calendar/route.ts",
+      "target": "react-component:src/app/api/events/[slug]/calendar/route.ts:runtime",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/events/[slug]/calendar/route.ts",
+      "target": "react-component:src/app/api/events/[slug]/calendar/route.ts:GET",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/events/abandoned-checkout-followups-t12h/route.ts",
+      "target": "react-component:src/app/api/events/abandoned-checkout-followups-t12h/route.ts:runtime",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/events/abandoned-checkout-followups-t12h/route.ts",
+      "target": "react-component:src/app/api/events/abandoned-checkout-followups-t12h/route.ts:GET",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/events/abandoned-checkout-followups/route.ts",
+      "target": "react-component:src/app/api/events/abandoned-checkout-followups/route.ts:runtime",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/events/abandoned-checkout-followups/route.ts",
+      "target": "react-component:src/app/api/events/abandoned-checkout-followups/route.ts:GET",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/events/cancel/route.ts",
+      "target": "react-component:src/app/api/events/cancel/route.ts:runtime",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/events/cancel/route.ts",
+      "target": "react-component:src/app/api/events/cancel/route.ts:GET",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/events/checkout-session/route.ts",
+      "target": "react-component:src/app/api/events/checkout-session/route.ts:runtime",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/events/checkout-session/route.ts",
+      "target": "react-component:src/app/api/events/checkout-session/route.ts:POST",
+      "type": "exports",
+      "weight": 1
+    }
+  ],
+  "statistics": {
+    "nodeCount": 41,
+    "edgeCount": 17,
+    "fileCategories": {
+      "config": 1,
+      "docs": 9,
+      "code": 13,
+      "markup": 2
+    },
+    "totalSizeLines": 3143,
+    "symbolCount": 16
+  }
+}

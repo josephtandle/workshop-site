@@ -1,0 +1,127 @@
+{
+  "batchIndex": 8,
+  "nodes": [
+    {
+      "id": "file:src/components/giveaways/GiveawayAutoModal.tsx",
+      "type": "file",
+      "name": "GiveawayAutoModal.tsx",
+      "filePath": "src/components/giveaways/GiveawayAutoModal.tsx",
+      "language": "typescript",
+      "sizeLines": 53,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "react-component",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/giveaways/GiveawayCopyEmailGate.tsx",
+      "type": "file",
+      "name": "GiveawayCopyEmailGate.tsx",
+      "filePath": "src/components/giveaways/GiveawayCopyEmailGate.tsx",
+      "language": "typescript",
+      "sizeLines": 40,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "react-component",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/giveaways/GiveawayEmailModal.tsx",
+      "type": "file",
+      "name": "GiveawayEmailModal.tsx",
+      "filePath": "src/components/giveaways/GiveawayEmailModal.tsx",
+      "language": "typescript",
+      "sizeLines": 174,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "react-component",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "react-component:src/components/giveaways/GiveawayAutoModal.tsx:GiveawayAutoModal",
+      "type": "react-component",
+      "name": "GiveawayAutoModal",
+      "filePath": "src/components/giveaways/GiveawayAutoModal.tsx",
+      "summary": "react-component exported from GiveawayAutoModal.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/components/giveaways/GiveawayCopyEmailGate.tsx:GiveawayCopyEmailGate",
+      "type": "react-component",
+      "name": "GiveawayCopyEmailGate",
+      "filePath": "src/components/giveaways/GiveawayCopyEmailGate.tsx",
+      "summary": "react-component exported from GiveawayCopyEmailGate.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/components/giveaways/GiveawayEmailModal.tsx:GiveawayEmailModal",
+      "type": "react-component",
+      "name": "GiveawayEmailModal",
+      "filePath": "src/components/giveaways/GiveawayEmailModal.tsx",
+      "summary": "react-component exported from GiveawayEmailModal.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/components/giveaways/GiveawayAutoModal.tsx",
+      "target": "file:src/components/giveaways/GiveawayEmailModal.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/giveaways/GiveawayCopyEmailGate.tsx",
+      "target": "file:src/components/giveaways/GiveawayEmailModal.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/giveaways/GiveawayAutoModal.tsx",
+      "target": "react-component:src/components/giveaways/GiveawayAutoModal.tsx:GiveawayAutoModal",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/giveaways/GiveawayCopyEmailGate.tsx",
+      "target": "react-component:src/components/giveaways/GiveawayCopyEmailGate.tsx:GiveawayCopyEmailGate",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/giveaways/GiveawayEmailModal.tsx",
+      "target": "react-component:src/components/giveaways/GiveawayEmailModal.tsx:GiveawayEmailModal",
+      "type": "exports",
+      "weight": 1
+    }
+  ],
+  "statistics": {
+    "nodeCount": 6,
+    "edgeCount": 5,
+    "fileCategories": {
+      "code": 3
+    },
+    "totalSizeLines": 267,
+    "symbolCount": 3
+  }
+}

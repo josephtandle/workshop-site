@@ -1,5 +1,0 @@
-Loaded 0 files (0 code).
-compute-batches.mjs failed: Cannot read properties of undefined (reading 'length')
-TypeError: Cannot read properties of undefined (reading 'length')
-    at main (file:///Users/myos/.understand-anything/repo/understand-anything-plugin/skills/understand/compute-batches.mjs:544:28)
-    at async file:///Users/myos/.understand-anything/repo/understand-anything-plugin/skills/understand/compute-batches.mjs:583:5

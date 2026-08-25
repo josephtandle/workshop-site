@@ -1,0 +1,1660 @@
+{
+  "batchIndex": 1,
+  "nodes": [
+    {
+      "id": "file:src/lib/calendar.ts",
+      "type": "file",
+      "name": "calendar.ts",
+      "filePath": "src/lib/calendar.ts",
+      "language": "typescript",
+      "sizeLines": 95,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/lib/event-confirmation-email.ts",
+      "type": "file",
+      "name": "event-confirmation-email.ts",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "language": "typescript",
+      "sizeLines": 912,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "file:src/lib/event-email-ledger.ts",
+      "type": "file",
+      "name": "event-email-ledger.ts",
+      "filePath": "src/lib/event-email-ledger.ts",
+      "language": "typescript",
+      "sizeLines": 208,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/lib/event-followup.ts",
+      "type": "file",
+      "name": "event-followup.ts",
+      "filePath": "src/lib/event-followup.ts",
+      "language": "typescript",
+      "sizeLines": 335,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/lib/event-templates.ts",
+      "type": "file",
+      "name": "event-templates.ts",
+      "filePath": "src/lib/event-templates.ts",
+      "language": "typescript",
+      "sizeLines": 147,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/lib/events.tsx",
+      "type": "file",
+      "name": "events.tsx",
+      "filePath": "src/lib/events.tsx",
+      "language": "typescript",
+      "sizeLines": 1403,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "file:src/lib/google-calendar-invite.ts",
+      "type": "file",
+      "name": "google-calendar-invite.ts",
+      "filePath": "src/lib/google-calendar-invite.ts",
+      "language": "typescript",
+      "sizeLines": 81,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/lib/legacy-event-schedule.ts",
+      "type": "file",
+      "name": "legacy-event-schedule.ts",
+      "filePath": "src/lib/legacy-event-schedule.ts",
+      "language": "typescript",
+      "sizeLines": 745,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "file:src/lib/location-reminder.ts",
+      "type": "file",
+      "name": "location-reminder.ts",
+      "filePath": "src/lib/location-reminder.ts",
+      "language": "typescript",
+      "sizeLines": 223,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/lib/session-reminder.ts",
+      "type": "file",
+      "name": "session-reminder.ts",
+      "filePath": "src/lib/session-reminder.ts",
+      "language": "typescript",
+      "sizeLines": 168,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:tests/calendar.test.ts",
+      "type": "file",
+      "name": "calendar.test.ts",
+      "filePath": "tests/calendar.test.ts",
+      "language": "typescript",
+      "sizeLines": 151,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "test",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:tests/email-content.test.ts",
+      "type": "file",
+      "name": "email-content.test.ts",
+      "filePath": "tests/email-content.test.ts",
+      "language": "typescript",
+      "sizeLines": 320,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "test",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:tests/email-idempotency.test.ts",
+      "type": "file",
+      "name": "email-idempotency.test.ts",
+      "filePath": "tests/email-idempotency.test.ts",
+      "language": "typescript",
+      "sizeLines": 194,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "test",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:tests/event-confirmation-location-privacy.test.ts",
+      "type": "file",
+      "name": "event-confirmation-location-privacy.test.ts",
+      "filePath": "tests/event-confirmation-location-privacy.test.ts",
+      "language": "typescript",
+      "sizeLines": 41,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "test",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/event-followup.test.ts",
+      "type": "file",
+      "name": "event-followup.test.ts",
+      "filePath": "tests/event-followup.test.ts",
+      "language": "typescript",
+      "sizeLines": 261,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "test",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:tests/event-location-reminder-dedupe.test.ts",
+      "type": "file",
+      "name": "event-location-reminder-dedupe.test.ts",
+      "filePath": "tests/event-location-reminder-dedupe.test.ts",
+      "language": "typescript",
+      "sizeLines": 661,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "test",
+        "typescript-module"
+      ],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "file:tests/event-location-reminder.test.ts",
+      "type": "file",
+      "name": "event-location-reminder.test.ts",
+      "filePath": "tests/event-location-reminder.test.ts",
+      "language": "typescript",
+      "sizeLines": 195,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "test",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:tests/session-reminder.test.ts",
+      "type": "file",
+      "name": "session-reminder.test.ts",
+      "filePath": "tests/session-reminder.test.ts",
+      "language": "typescript",
+      "sizeLines": 157,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "test",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/calendar.ts:buildGoogleCalendarUrl",
+      "type": "function",
+      "name": "buildGoogleCalendarUrl",
+      "filePath": "src/lib/calendar.ts",
+      "summary": "function exported from calendar.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/calendar.ts:buildIcalString",
+      "type": "function",
+      "name": "buildIcalString",
+      "filePath": "src/lib/calendar.ts",
+      "summary": "function exported from calendar.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/calendar.ts:buildEventCalendarDescription",
+      "type": "function",
+      "name": "buildEventCalendarDescription",
+      "filePath": "src/lib/calendar.ts",
+      "summary": "function exported from calendar.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:buildAskAnAiExpertWelcomeEmailHtml",
+      "type": "function",
+      "name": "buildAskAnAiExpertWelcomeEmailHtml",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "function exported from event-confirmation-email.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:buildConfirmationEmailHtml",
+      "type": "function",
+      "name": "buildConfirmationEmailHtml",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "function exported from event-confirmation-email.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:buildLocationReminderEmailHtml",
+      "type": "function",
+      "name": "buildLocationReminderEmailHtml",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "function exported from event-confirmation-email.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:buildConfirmationIdempotencyKey",
+      "type": "function",
+      "name": "buildConfirmationIdempotencyKey",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "function exported from event-confirmation-email.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:buildWaitlistJoinIdempotencyKey",
+      "type": "function",
+      "name": "buildWaitlistJoinIdempotencyKey",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "function exported from event-confirmation-email.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:buildAiContentCreationSetupIdempotencyKey",
+      "type": "function",
+      "name": "buildAiContentCreationSetupIdempotencyKey",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "function exported from event-confirmation-email.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:buildAskAnAiExpertWelcomeIdempotencyKey",
+      "type": "function",
+      "name": "buildAskAnAiExpertWelcomeIdempotencyKey",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "function exported from event-confirmation-email.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:sendEventConfirmationEmail",
+      "type": "function",
+      "name": "sendEventConfirmationEmail",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "function exported from event-confirmation-email.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:sendAiContentCreationSetupEmail",
+      "type": "function",
+      "name": "sendAiContentCreationSetupEmail",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "function exported from event-confirmation-email.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:sendAskAnAiExpertWelcomeEmail",
+      "type": "function",
+      "name": "sendAskAnAiExpertWelcomeEmail",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "function exported from event-confirmation-email.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:sendEventLocationReminderEmail",
+      "type": "function",
+      "name": "sendEventLocationReminderEmail",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "function exported from event-confirmation-email.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:sendSessionReminderEmail",
+      "type": "function",
+      "name": "sendSessionReminderEmail",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "function exported from event-confirmation-email.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:sendWaitlistConfirmationEmail",
+      "type": "function",
+      "name": "sendWaitlistConfirmationEmail",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "function exported from event-confirmation-email.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-confirmation-email.ts:sendWaitlistSpotNotificationEmail",
+      "type": "function",
+      "name": "sendWaitlistSpotNotificationEmail",
+      "filePath": "src/lib/event-confirmation-email.ts",
+      "summary": "function exported from event-confirmation-email.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "class:src/lib/event-email-ledger.ts:LEDGER_STATUS_CLAIMED",
+      "type": "class",
+      "name": "LEDGER_STATUS_CLAIMED",
+      "filePath": "src/lib/event-email-ledger.ts",
+      "summary": "class exported from event-email-ledger.ts",
+      "tags": [
+        "class",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "class:src/lib/event-email-ledger.ts:LEDGER_STATUS_SENT",
+      "type": "class",
+      "name": "LEDGER_STATUS_SENT",
+      "filePath": "src/lib/event-email-ledger.ts",
+      "summary": "class exported from event-email-ledger.ts",
+      "tags": [
+        "class",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "class:src/lib/event-email-ledger.ts:LEDGER_STATUS_FAILED",
+      "type": "class",
+      "name": "LEDGER_STATUS_FAILED",
+      "filePath": "src/lib/event-email-ledger.ts",
+      "summary": "class exported from event-email-ledger.ts",
+      "tags": [
+        "class",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-email-ledger.ts:normalizeLedgerEmail",
+      "type": "function",
+      "name": "normalizeLedgerEmail",
+      "filePath": "src/lib/event-email-ledger.ts",
+      "summary": "function exported from event-email-ledger.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-email-ledger.ts:createSupabaseEventEmailLedger",
+      "type": "function",
+      "name": "createSupabaseEventEmailLedger",
+      "filePath": "src/lib/event-email-ledger.ts",
+      "summary": "function exported from event-email-ledger.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-email-ledger.ts:sendOneDeduped",
+      "type": "function",
+      "name": "sendOneDeduped",
+      "filePath": "src/lib/event-email-ledger.ts",
+      "summary": "function exported from event-email-ledger.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "class:src/lib/event-followup.ts:DEFAULT_FOLLOWUP_LEAD_HOURS",
+      "type": "class",
+      "name": "DEFAULT_FOLLOWUP_LEAD_HOURS",
+      "filePath": "src/lib/event-followup.ts",
+      "summary": "class exported from event-followup.ts",
+      "tags": [
+        "class",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-followup.ts:buildEventFollowupIdempotencyKey",
+      "type": "function",
+      "name": "buildEventFollowupIdempotencyKey",
+      "filePath": "src/lib/event-followup.ts",
+      "summary": "function exported from event-followup.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-followup.ts:buildEventFollowupLockKey",
+      "type": "function",
+      "name": "buildEventFollowupLockKey",
+      "filePath": "src/lib/event-followup.ts",
+      "summary": "function exported from event-followup.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-followup.ts:isEventFollowupDue",
+      "type": "function",
+      "name": "isEventFollowupDue",
+      "filePath": "src/lib/event-followup.ts",
+      "summary": "function exported from event-followup.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-followup.ts:hasEventEnded",
+      "type": "function",
+      "name": "hasEventEnded",
+      "filePath": "src/lib/event-followup.ts",
+      "summary": "function exported from event-followup.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-followup.ts:getEventFollowupCopy",
+      "type": "function",
+      "name": "getEventFollowupCopy",
+      "filePath": "src/lib/event-followup.ts",
+      "summary": "function exported from event-followup.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-followup.ts:buildEventFollowupSubject",
+      "type": "function",
+      "name": "buildEventFollowupSubject",
+      "filePath": "src/lib/event-followup.ts",
+      "summary": "function exported from event-followup.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-followup.ts:buildEventFollowupEmailHtml",
+      "type": "function",
+      "name": "buildEventFollowupEmailHtml",
+      "filePath": "src/lib/event-followup.ts",
+      "summary": "function exported from event-followup.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-followup.ts:sendEventFollowupEmail",
+      "type": "function",
+      "name": "sendEventFollowupEmail",
+      "filePath": "src/lib/event-followup.ts",
+      "summary": "function exported from event-followup.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-followup.ts:runEventFollowups",
+      "type": "function",
+      "name": "runEventFollowups",
+      "filePath": "src/lib/event-followup.ts",
+      "summary": "function exported from event-followup.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "class:src/lib/event-templates.ts:EVENT_TEMPLATE_VERSION",
+      "type": "class",
+      "name": "EVENT_TEMPLATE_VERSION",
+      "filePath": "src/lib/event-templates.ts",
+      "summary": "class exported from event-templates.ts",
+      "tags": [
+        "class",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "class:src/lib/event-templates.ts:FREE_WORKSHOP_TEMPLATE",
+      "type": "class",
+      "name": "FREE_WORKSHOP_TEMPLATE",
+      "filePath": "src/lib/event-templates.ts",
+      "summary": "class exported from event-templates.ts",
+      "tags": [
+        "class",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "class:src/lib/event-templates.ts:PAID_WORKSHOP_TEMPLATE",
+      "type": "class",
+      "name": "PAID_WORKSHOP_TEMPLATE",
+      "filePath": "src/lib/event-templates.ts",
+      "summary": "class exported from event-templates.ts",
+      "tags": [
+        "class",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "class:src/lib/event-templates.ts:MUST_CUSTOMISE",
+      "type": "class",
+      "name": "MUST_CUSTOMISE",
+      "filePath": "src/lib/event-templates.ts",
+      "summary": "class exported from event-templates.ts",
+      "tags": [
+        "class",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/events.tsx:getEventDiscountedPrice",
+      "type": "function",
+      "name": "getEventDiscountedPrice",
+      "filePath": "src/lib/events.tsx",
+      "summary": "function exported from events.tsx",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/events.tsx:resolvePromoCode",
+      "type": "function",
+      "name": "resolvePromoCode",
+      "filePath": "src/lib/events.tsx",
+      "summary": "function exported from events.tsx",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/events.tsx:formatEventPrice",
+      "type": "function",
+      "name": "formatEventPrice",
+      "filePath": "src/lib/events.tsx",
+      "summary": "function exported from events.tsx",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/events.tsx:events",
+      "type": "function",
+      "name": "events",
+      "filePath": "src/lib/events.tsx",
+      "summary": "function exported from events.tsx",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/events.tsx:getEventBySlug",
+      "type": "function",
+      "name": "getEventBySlug",
+      "filePath": "src/lib/events.tsx",
+      "summary": "function exported from events.tsx",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/events.tsx:getLiveEvents",
+      "type": "function",
+      "name": "getLiveEvents",
+      "filePath": "src/lib/events.tsx",
+      "summary": "function exported from events.tsx",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/events.tsx:getUpcomingLiveEvents",
+      "type": "function",
+      "name": "getUpcomingLiveEvents",
+      "filePath": "src/lib/events.tsx",
+      "summary": "function exported from events.tsx",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/google-calendar-invite.ts:inviteAttendeeToEvent",
+      "type": "function",
+      "name": "inviteAttendeeToEvent",
+      "filePath": "src/lib/google-calendar-invite.ts",
+      "summary": "function exported from google-calendar-invite.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/legacy-event-schedule.ts:inviteAttendeeBestEffort",
+      "type": "function",
+      "name": "inviteAttendeeBestEffort",
+      "filePath": "src/lib/legacy-event-schedule.ts",
+      "summary": "function exported from legacy-event-schedule.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/legacy-event-schedule.ts:syncLegacyRegistration",
+      "type": "function",
+      "name": "syncLegacyRegistration",
+      "filePath": "src/lib/legacy-event-schedule.ts",
+      "summary": "function exported from legacy-event-schedule.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/legacy-event-schedule.ts:finalizeLegacyCheckoutSession",
+      "type": "function",
+      "name": "finalizeLegacyCheckoutSession",
+      "filePath": "src/lib/legacy-event-schedule.ts",
+      "summary": "function exported from legacy-event-schedule.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/legacy-event-schedule.ts:getLegacyEventBySlug",
+      "type": "function",
+      "name": "getLegacyEventBySlug",
+      "filePath": "src/lib/legacy-event-schedule.ts",
+      "summary": "function exported from legacy-event-schedule.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/legacy-event-schedule.ts:listLegacyPaidAttendeesForEvent",
+      "type": "function",
+      "name": "listLegacyPaidAttendeesForEvent",
+      "filePath": "src/lib/legacy-event-schedule.ts",
+      "summary": "function exported from legacy-event-schedule.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/location-reminder.ts:buildLocationReminderIdempotencyKey",
+      "type": "function",
+      "name": "buildLocationReminderIdempotencyKey",
+      "filePath": "src/lib/location-reminder.ts",
+      "summary": "function exported from location-reminder.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/location-reminder.ts:buildLocationReminderLockKey",
+      "type": "function",
+      "name": "buildLocationReminderLockKey",
+      "filePath": "src/lib/location-reminder.ts",
+      "summary": "function exported from location-reminder.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/location-reminder.ts:buildLocationReminderLedgerSlug",
+      "type": "function",
+      "name": "buildLocationReminderLedgerSlug",
+      "filePath": "src/lib/location-reminder.ts",
+      "summary": "function exported from location-reminder.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/location-reminder.ts:isLocationReminderDue",
+      "type": "function",
+      "name": "isLocationReminderDue",
+      "filePath": "src/lib/location-reminder.ts",
+      "summary": "function exported from location-reminder.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/location-reminder.ts:hasLocationRevealWindowClosed",
+      "type": "function",
+      "name": "hasLocationRevealWindowClosed",
+      "filePath": "src/lib/location-reminder.ts",
+      "summary": "function exported from location-reminder.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/location-reminder.ts:dedupeAttendeesByEmail",
+      "type": "function",
+      "name": "dedupeAttendeesByEmail",
+      "filePath": "src/lib/location-reminder.ts",
+      "summary": "function exported from location-reminder.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/location-reminder.ts:runLocationReminders",
+      "type": "function",
+      "name": "runLocationReminders",
+      "filePath": "src/lib/location-reminder.ts",
+      "summary": "function exported from location-reminder.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/session-reminder.ts:buildSessionReminderIdempotencyKey",
+      "type": "function",
+      "name": "buildSessionReminderIdempotencyKey",
+      "filePath": "src/lib/session-reminder.ts",
+      "summary": "function exported from session-reminder.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/session-reminder.ts:buildSessionReminderLockKey",
+      "type": "function",
+      "name": "buildSessionReminderLockKey",
+      "filePath": "src/lib/session-reminder.ts",
+      "summary": "function exported from session-reminder.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/session-reminder.ts:isSessionReminderDue",
+      "type": "function",
+      "name": "isSessionReminderDue",
+      "filePath": "src/lib/session-reminder.ts",
+      "summary": "function exported from session-reminder.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/session-reminder.ts:getDueSessionReminderWindows",
+      "type": "function",
+      "name": "getDueSessionReminderWindows",
+      "filePath": "src/lib/session-reminder.ts",
+      "summary": "function exported from session-reminder.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/session-reminder.ts:runSessionReminders",
+      "type": "function",
+      "name": "runSessionReminders",
+      "filePath": "src/lib/session-reminder.ts",
+      "summary": "function exported from session-reminder.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "file:src/lib/location-reminder.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "file:src/lib/session-reminder.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "file:src/lib/calendar.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "file:src/lib/list-unsubscribe.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "file:src/lib/email-suppressions.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "file:src/lib/utm.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/event-followup.ts",
+      "target": "file:src/lib/location-reminder.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/event-templates.ts",
+      "target": "file:src/lib/events.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/google-calendar-invite.ts",
+      "target": "file:src/lib/events.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/google-calendar-invite.ts",
+      "target": "file:src/lib/calendar.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/legacy-event-schedule.ts",
+      "target": "file:src/lib/location-reminder.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/location-reminder.ts",
+      "target": "file:src/lib/event-email-ledger.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/session-reminder.ts",
+      "target": "file:src/lib/location-reminder.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/calendar.test.ts",
+      "target": "file:src/lib/calendar.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/email-content.test.ts",
+      "target": "file:src/lib/event-confirmation-email.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/email-content.test.ts",
+      "target": "file:src/lib/events.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/email-idempotency.test.ts",
+      "target": "file:src/lib/event-confirmation-email.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/email-idempotency.test.ts",
+      "target": "file:src/lib/events.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/event-confirmation-location-privacy.test.ts",
+      "target": "file:src/lib/event-confirmation-email.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/event-confirmation-location-privacy.test.ts",
+      "target": "file:src/lib/events.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/event-followup.test.ts",
+      "target": "file:src/lib/events.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/event-followup.test.ts",
+      "target": "file:src/lib/event-followup.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/event-location-reminder-dedupe.test.ts",
+      "target": "file:src/lib/events.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/event-location-reminder-dedupe.test.ts",
+      "target": "file:src/lib/event-email-ledger.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/event-location-reminder-dedupe.test.ts",
+      "target": "file:src/lib/location-reminder.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/event-location-reminder.test.ts",
+      "target": "file:src/lib/event-confirmation-email.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/event-location-reminder.test.ts",
+      "target": "file:src/lib/events.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/event-location-reminder.test.ts",
+      "target": "file:src/lib/location-reminder.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/session-reminder.test.ts",
+      "target": "file:src/lib/events.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/session-reminder.test.ts",
+      "target": "file:src/lib/session-reminder.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/session-reminder.test.ts",
+      "target": "file:src/lib/event-confirmation-email.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "file:src/lib/list-unsubscribe.ts",
+      "type": "imports",
+      "weight": 0.6,
+      "crossBatch": true,
+      "targetBatchIndex": 3
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "file:src/lib/email-suppressions.ts",
+      "type": "imports",
+      "weight": 0.6,
+      "crossBatch": true,
+      "targetBatchIndex": 4
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "file:src/lib/utm.ts",
+      "type": "imports",
+      "weight": 0.6,
+      "crossBatch": true,
+      "targetBatchIndex": 3
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "file:tests/checkout-branding.test.ts",
+      "type": "imports",
+      "weight": 0.6,
+      "crossBatch": true,
+      "targetBatchIndex": 2
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "file:tests/event-checkout.test.ts",
+      "type": "imports",
+      "weight": 0.6,
+      "crossBatch": true,
+      "targetBatchIndex": 2
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "file:tests/event-intake.test.ts",
+      "type": "imports",
+      "weight": 0.6,
+      "crossBatch": true,
+      "targetBatchIndex": 2
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "file:tests/event-pricing-and-data.test.ts",
+      "type": "imports",
+      "weight": 0.6,
+      "crossBatch": true,
+      "targetBatchIndex": 5
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "file:tests/event-status.test.ts",
+      "type": "imports",
+      "weight": 0.6,
+      "crossBatch": true,
+      "targetBatchIndex": 5
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "file:tests/hardening.test.ts",
+      "type": "imports",
+      "weight": 0.6,
+      "crossBatch": true,
+      "targetBatchIndex": 2
+    },
+    {
+      "source": "file:src/lib/calendar.ts",
+      "target": "function:src/lib/calendar.ts:buildGoogleCalendarUrl",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/calendar.ts",
+      "target": "function:src/lib/calendar.ts:buildIcalString",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/calendar.ts",
+      "target": "function:src/lib/calendar.ts:buildEventCalendarDescription",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:buildAskAnAiExpertWelcomeEmailHtml",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:buildConfirmationEmailHtml",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:buildLocationReminderEmailHtml",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:buildConfirmationIdempotencyKey",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:buildWaitlistJoinIdempotencyKey",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:buildAiContentCreationSetupIdempotencyKey",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:buildAskAnAiExpertWelcomeIdempotencyKey",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:sendEventConfirmationEmail",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:sendAiContentCreationSetupEmail",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:sendAskAnAiExpertWelcomeEmail",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:sendEventLocationReminderEmail",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:sendSessionReminderEmail",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:sendWaitlistConfirmationEmail",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-confirmation-email.ts",
+      "target": "function:src/lib/event-confirmation-email.ts:sendWaitlistSpotNotificationEmail",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-email-ledger.ts",
+      "target": "class:src/lib/event-email-ledger.ts:LEDGER_STATUS_CLAIMED",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-email-ledger.ts",
+      "target": "class:src/lib/event-email-ledger.ts:LEDGER_STATUS_SENT",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-email-ledger.ts",
+      "target": "class:src/lib/event-email-ledger.ts:LEDGER_STATUS_FAILED",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-email-ledger.ts",
+      "target": "function:src/lib/event-email-ledger.ts:normalizeLedgerEmail",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-email-ledger.ts",
+      "target": "function:src/lib/event-email-ledger.ts:createSupabaseEventEmailLedger",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-email-ledger.ts",
+      "target": "function:src/lib/event-email-ledger.ts:sendOneDeduped",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-followup.ts",
+      "target": "class:src/lib/event-followup.ts:DEFAULT_FOLLOWUP_LEAD_HOURS",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-followup.ts",
+      "target": "function:src/lib/event-followup.ts:buildEventFollowupIdempotencyKey",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-followup.ts",
+      "target": "function:src/lib/event-followup.ts:buildEventFollowupLockKey",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-followup.ts",
+      "target": "function:src/lib/event-followup.ts:isEventFollowupDue",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-followup.ts",
+      "target": "function:src/lib/event-followup.ts:hasEventEnded",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-followup.ts",
+      "target": "function:src/lib/event-followup.ts:getEventFollowupCopy",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-followup.ts",
+      "target": "function:src/lib/event-followup.ts:buildEventFollowupSubject",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-followup.ts",
+      "target": "function:src/lib/event-followup.ts:buildEventFollowupEmailHtml",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-followup.ts",
+      "target": "function:src/lib/event-followup.ts:sendEventFollowupEmail",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-followup.ts",
+      "target": "function:src/lib/event-followup.ts:runEventFollowups",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-templates.ts",
+      "target": "class:src/lib/event-templates.ts:EVENT_TEMPLATE_VERSION",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-templates.ts",
+      "target": "class:src/lib/event-templates.ts:FREE_WORKSHOP_TEMPLATE",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-templates.ts",
+      "target": "class:src/lib/event-templates.ts:PAID_WORKSHOP_TEMPLATE",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-templates.ts",
+      "target": "class:src/lib/event-templates.ts:MUST_CUSTOMISE",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "function:src/lib/events.tsx:getEventDiscountedPrice",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "function:src/lib/events.tsx:resolvePromoCode",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "function:src/lib/events.tsx:formatEventPrice",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "function:src/lib/events.tsx:events",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "function:src/lib/events.tsx:getEventBySlug",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "function:src/lib/events.tsx:getLiveEvents",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/events.tsx",
+      "target": "function:src/lib/events.tsx:getUpcomingLiveEvents",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/google-calendar-invite.ts",
+      "target": "function:src/lib/google-calendar-invite.ts:inviteAttendeeToEvent",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/legacy-event-schedule.ts",
+      "target": "function:src/lib/legacy-event-schedule.ts:inviteAttendeeBestEffort",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/legacy-event-schedule.ts",
+      "target": "function:src/lib/legacy-event-schedule.ts:syncLegacyRegistration",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/legacy-event-schedule.ts",
+      "target": "function:src/lib/legacy-event-schedule.ts:finalizeLegacyCheckoutSession",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/legacy-event-schedule.ts",
+      "target": "function:src/lib/legacy-event-schedule.ts:getLegacyEventBySlug",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/legacy-event-schedule.ts",
+      "target": "function:src/lib/legacy-event-schedule.ts:listLegacyPaidAttendeesForEvent",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/location-reminder.ts",
+      "target": "function:src/lib/location-reminder.ts:buildLocationReminderIdempotencyKey",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/location-reminder.ts",
+      "target": "function:src/lib/location-reminder.ts:buildLocationReminderLockKey",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/location-reminder.ts",
+      "target": "function:src/lib/location-reminder.ts:buildLocationReminderLedgerSlug",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/location-reminder.ts",
+      "target": "function:src/lib/location-reminder.ts:isLocationReminderDue",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/location-reminder.ts",
+      "target": "function:src/lib/location-reminder.ts:hasLocationRevealWindowClosed",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/location-reminder.ts",
+      "target": "function:src/lib/location-reminder.ts:dedupeAttendeesByEmail",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/location-reminder.ts",
+      "target": "function:src/lib/location-reminder.ts:runLocationReminders",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/session-reminder.ts",
+      "target": "function:src/lib/session-reminder.ts:buildSessionReminderIdempotencyKey",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/session-reminder.ts",
+      "target": "function:src/lib/session-reminder.ts:buildSessionReminderLockKey",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/session-reminder.ts",
+      "target": "function:src/lib/session-reminder.ts:isSessionReminderDue",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/session-reminder.ts",
+      "target": "function:src/lib/session-reminder.ts:getDueSessionReminderWindows",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/session-reminder.ts",
+      "target": "function:src/lib/session-reminder.ts:runSessionReminders",
+      "type": "exports",
+      "weight": 1
+    }
+  ],
+  "statistics": {
+    "nodeCount": 80,
+    "edgeCount": 102,
+    "fileCategories": {
+      "code": 18
+    },
+    "totalSizeLines": 6297,
+    "symbolCount": 62
+  }
+}

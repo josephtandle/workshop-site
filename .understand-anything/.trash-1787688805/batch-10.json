@@ -1,0 +1,100 @@
+{
+  "batchIndex": 10,
+  "nodes": [
+    {
+      "id": "file:.impeccable.md",
+      "type": "file",
+      "name": ".impeccable.md",
+      "filePath": ".impeccable.md",
+      "language": "markdown",
+      "sizeLines": 71,
+      "fileCategory": "docs",
+      "summary": "Configuration file",
+      "tags": [],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:AGENTS.md",
+      "type": "file",
+      "name": "AGENTS.md",
+      "filePath": "AGENTS.md",
+      "language": "markdown",
+      "sizeLines": 44,
+      "fileCategory": "docs",
+      "summary": "Configuration file",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:CLAUDE.md",
+      "type": "file",
+      "name": "CLAUDE.md",
+      "filePath": "CLAUDE.md",
+      "language": "markdown",
+      "sizeLines": 44,
+      "fileCategory": "docs",
+      "summary": "Configuration file",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:package-lock.json",
+      "type": "file",
+      "name": "package-lock.json",
+      "filePath": "package-lock.json",
+      "language": "json",
+      "sizeLines": 7567,
+      "fileCategory": "config",
+      "summary": "Configuration file",
+      "tags": [],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "file:package.json",
+      "type": "file",
+      "name": "package.json",
+      "filePath": "package.json",
+      "language": "json",
+      "sizeLines": 50,
+      "fileCategory": "config",
+      "summary": "Configuration file",
+      "tags": [],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:tsconfig.json",
+      "type": "file",
+      "name": "tsconfig.json",
+      "filePath": "tsconfig.json",
+      "language": "json",
+      "sizeLines": 42,
+      "fileCategory": "config",
+      "summary": "Configuration file",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:vercel.json",
+      "type": "file",
+      "name": "vercel.json",
+      "filePath": "vercel.json",
+      "language": "json",
+      "sizeLines": 52,
+      "fileCategory": "config",
+      "summary": "Configuration file",
+      "tags": [],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [],
+  "statistics": {
+    "nodeCount": 7,
+    "edgeCount": 0,
+    "fileCategories": {
+      "docs": 3,
+      "config": 4
+    },
+    "totalSizeLines": 7870,
+    "symbolCount": 0
+  }
+}

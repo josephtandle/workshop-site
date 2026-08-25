@@ -1,0 +1,75 @@
+{
+  "batchIndex": 12,
+  "nodes": [
+    {
+      "id": "file:public/2x-with-ai-playbook.html",
+      "type": "file",
+      "name": "2x-with-ai-playbook.html",
+      "filePath": "public/2x-with-ai-playbook.html",
+      "language": "html",
+      "sizeLines": 1449,
+      "fileCategory": "markup",
+      "summary": "Configuration file",
+      "tags": [],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "file:public/ai-os-architecture.html",
+      "type": "file",
+      "name": "ai-os-architecture.html",
+      "filePath": "public/ai-os-architecture.html",
+      "language": "html",
+      "sizeLines": 202,
+      "fileCategory": "markup",
+      "summary": "Configuration file",
+      "tags": [],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:public/automation-audit-sample.html",
+      "type": "file",
+      "name": "automation-audit-sample.html",
+      "filePath": "public/automation-audit-sample.html",
+      "language": "html",
+      "sizeLines": 651,
+      "fileCategory": "markup",
+      "summary": "Configuration file",
+      "tags": [],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "file:public/coach-kit-onboarding-matrix.html",
+      "type": "file",
+      "name": "coach-kit-onboarding-matrix.html",
+      "filePath": "public/coach-kit-onboarding-matrix.html",
+      "language": "html",
+      "sizeLines": 1109,
+      "fileCategory": "markup",
+      "summary": "Configuration file",
+      "tags": [],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "file:public/lead-magnet.html",
+      "type": "file",
+      "name": "lead-magnet.html",
+      "filePath": "public/lead-magnet.html",
+      "language": "html",
+      "sizeLines": 817,
+      "fileCategory": "markup",
+      "summary": "Configuration file",
+      "tags": [],
+      "complexity": "very-complex"
+    }
+  ],
+  "edges": [],
+  "statistics": {
+    "nodeCount": 5,
+    "edgeCount": 0,
+    "fileCategories": {
+      "markup": 5
+    },
+    "totalSizeLines": 4228,
+    "symbolCount": 0
+  }
+}

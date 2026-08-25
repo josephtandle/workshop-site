@@ -1,7 +1,0 @@
-src/app/api/lead-magnet/route.ts
-src/app/giveaways/intuition-quiz/layout.tsx
-src/app/giveaways/intuition-quiz/page.tsx
-src/app/illy/content.ts
-src/lib/giveaways.ts
-src/lib/lead-magnets.ts
-tests/registration-invite-and-lead-magnet-fail-closed.test.ts

@@ -1,3 +1,0 @@
-src/app/giveaways/fable-worth-it-audit/layout.tsx
-src/app/giveaways/fable-worth-it-audit/page.tsx
-src/lib/giveaways.ts

@@ -1,0 +1,557 @@
+{
+  "batchIndex": 3,
+  "nodes": [
+    {
+      "id": "file:src/lib/lead-magnets.ts",
+      "type": "file",
+      "name": "lead-magnets.ts",
+      "filePath": "src/lib/lead-magnets.ts",
+      "language": "typescript",
+      "sizeLines": 134,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/lib/list-unsubscribe.ts",
+      "type": "file",
+      "name": "list-unsubscribe.ts",
+      "filePath": "src/lib/list-unsubscribe.ts",
+      "language": "typescript",
+      "sizeLines": 151,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/lib/resend-sender.ts",
+      "type": "file",
+      "name": "resend-sender.ts",
+      "filePath": "src/lib/resend-sender.ts",
+      "language": "typescript",
+      "sizeLines": 59,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/lib/subscribe.ts",
+      "type": "file",
+      "name": "subscribe.ts",
+      "filePath": "src/lib/subscribe.ts",
+      "language": "typescript",
+      "sizeLines": 115,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/lib/utm.ts",
+      "type": "file",
+      "name": "utm.ts",
+      "filePath": "src/lib/utm.ts",
+      "language": "typescript",
+      "sizeLines": 86,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:tests/list-unsubscribe.test.ts",
+      "type": "file",
+      "name": "list-unsubscribe.test.ts",
+      "filePath": "tests/list-unsubscribe.test.ts",
+      "language": "typescript",
+      "sizeLines": 200,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "test",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:tests/registration-invite-and-lead-magnet-fail-closed.test.ts",
+      "type": "file",
+      "name": "registration-invite-and-lead-magnet-fail-closed.test.ts",
+      "filePath": "tests/registration-invite-and-lead-magnet-fail-closed.test.ts",
+      "language": "typescript",
+      "sizeLines": 199,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "test",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:tests/subscribe-lead-magnet.test.ts",
+      "type": "file",
+      "name": "subscribe-lead-magnet.test.ts",
+      "filePath": "tests/subscribe-lead-magnet.test.ts",
+      "language": "typescript",
+      "sizeLines": 170,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "test",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:tests/utm.test.ts",
+      "type": "file",
+      "name": "utm.test.ts",
+      "filePath": "tests/utm.test.ts",
+      "language": "typescript",
+      "sizeLines": 115,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "test",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/lib/lead-magnets.ts:SITE_URL",
+      "type": "class",
+      "name": "SITE_URL",
+      "filePath": "src/lib/lead-magnets.ts",
+      "summary": "class exported from lead-magnets.ts",
+      "tags": [
+        "class",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "class:src/lib/lead-magnets.ts:LEAD_MAGNETS",
+      "type": "class",
+      "name": "LEAD_MAGNETS",
+      "filePath": "src/lib/lead-magnets.ts",
+      "summary": "class exported from lead-magnets.ts",
+      "tags": [
+        "class",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/lead-magnets.ts:getLeadMagnet",
+      "type": "function",
+      "name": "getLeadMagnet",
+      "filePath": "src/lib/lead-magnets.ts",
+      "summary": "function exported from lead-magnets.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "class:src/lib/lead-magnets.ts:DELIVERABLE_LEAD_MAGNET_SOURCES",
+      "type": "class",
+      "name": "DELIVERABLE_LEAD_MAGNET_SOURCES",
+      "filePath": "src/lib/lead-magnets.ts",
+      "summary": "class exported from lead-magnets.ts",
+      "tags": [
+        "class",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/lead-magnets.ts:isDeliverableLeadMagnetSource",
+      "type": "function",
+      "name": "isDeliverableLeadMagnetSource",
+      "filePath": "src/lib/lead-magnets.ts",
+      "summary": "function exported from lead-magnets.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "class:src/lib/lead-magnets.ts:UnknownLeadMagnetSourceError",
+      "type": "class",
+      "name": "UnknownLeadMagnetSourceError",
+      "filePath": "src/lib/lead-magnets.ts",
+      "summary": "class exported from lead-magnets.ts",
+      "tags": [
+        "class",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/lead-magnets.ts:downloadUrlFor",
+      "type": "function",
+      "name": "downloadUrlFor",
+      "filePath": "src/lib/lead-magnets.ts",
+      "summary": "function exported from lead-magnets.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/lead-magnets.ts:buildWelcomeEmail",
+      "type": "function",
+      "name": "buildWelcomeEmail",
+      "filePath": "src/lib/lead-magnets.ts",
+      "summary": "function exported from lead-magnets.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/list-unsubscribe.ts:buildUnsubscribeToken",
+      "type": "function",
+      "name": "buildUnsubscribeToken",
+      "filePath": "src/lib/list-unsubscribe.ts",
+      "summary": "function exported from list-unsubscribe.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/list-unsubscribe.ts:verifyUnsubscribeToken",
+      "type": "function",
+      "name": "verifyUnsubscribeToken",
+      "filePath": "src/lib/list-unsubscribe.ts",
+      "summary": "function exported from list-unsubscribe.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/list-unsubscribe.ts:buildUnsubscribeUrl",
+      "type": "function",
+      "name": "buildUnsubscribeUrl",
+      "filePath": "src/lib/list-unsubscribe.ts",
+      "summary": "function exported from list-unsubscribe.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/list-unsubscribe.ts:buildUnsubscribeHeaders",
+      "type": "function",
+      "name": "buildUnsubscribeHeaders",
+      "filePath": "src/lib/list-unsubscribe.ts",
+      "summary": "function exported from list-unsubscribe.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/resend-sender.ts:isTestRun",
+      "type": "function",
+      "name": "isTestRun",
+      "filePath": "src/lib/resend-sender.ts",
+      "summary": "function exported from resend-sender.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/resend-sender.ts:sendViaResend",
+      "type": "function",
+      "name": "sendViaResend",
+      "filePath": "src/lib/resend-sender.ts",
+      "summary": "function exported from resend-sender.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "class:src/lib/subscribe.ts:FROM_ADDRESS",
+      "type": "class",
+      "name": "FROM_ADDRESS",
+      "filePath": "src/lib/subscribe.ts",
+      "summary": "class exported from subscribe.ts",
+      "tags": [
+        "class",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "class:src/lib/subscribe.ts:SubscribeError",
+      "type": "class",
+      "name": "SubscribeError",
+      "filePath": "src/lib/subscribe.ts",
+      "summary": "class exported from subscribe.ts",
+      "tags": [
+        "class",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/subscribe.ts:handleSubscribe",
+      "type": "function",
+      "name": "handleSubscribe",
+      "filePath": "src/lib/subscribe.ts",
+      "summary": "function exported from subscribe.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/utm.ts:withUtm",
+      "type": "function",
+      "name": "withUtm",
+      "filePath": "src/lib/utm.ts",
+      "summary": "function exported from utm.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/lib/lead-magnets.ts",
+      "target": "file:src/lib/list-unsubscribe.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/lead-magnets.ts",
+      "target": "file:src/lib/utm.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/resend-sender.ts",
+      "target": "file:src/lib/subscribe.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/subscribe.ts",
+      "target": "file:src/lib/lead-magnets.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/subscribe.ts",
+      "target": "file:src/lib/list-unsubscribe.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/list-unsubscribe.test.ts",
+      "target": "file:src/lib/list-unsubscribe.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/registration-invite-and-lead-magnet-fail-closed.test.ts",
+      "target": "file:src/lib/lead-magnets.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/subscribe-lead-magnet.test.ts",
+      "target": "file:src/lib/subscribe.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/subscribe-lead-magnet.test.ts",
+      "target": "file:src/lib/resend-sender.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/subscribe-lead-magnet.test.ts",
+      "target": "file:src/lib/lead-magnets.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/utm.test.ts",
+      "target": "file:src/lib/utm.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/list-unsubscribe.ts",
+      "target": "file:src/lib/event-confirmation-email.ts",
+      "type": "imports",
+      "weight": 0.6,
+      "crossBatch": true,
+      "targetBatchIndex": 1
+    },
+    {
+      "source": "file:src/lib/utm.ts",
+      "target": "file:src/lib/event-confirmation-email.ts",
+      "type": "imports",
+      "weight": 0.6,
+      "crossBatch": true,
+      "targetBatchIndex": 1
+    },
+    {
+      "source": "file:src/lib/lead-magnets.ts",
+      "target": "class:src/lib/lead-magnets.ts:SITE_URL",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/lead-magnets.ts",
+      "target": "class:src/lib/lead-magnets.ts:LEAD_MAGNETS",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/lead-magnets.ts",
+      "target": "function:src/lib/lead-magnets.ts:getLeadMagnet",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/lead-magnets.ts",
+      "target": "class:src/lib/lead-magnets.ts:DELIVERABLE_LEAD_MAGNET_SOURCES",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/lead-magnets.ts",
+      "target": "function:src/lib/lead-magnets.ts:isDeliverableLeadMagnetSource",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/lead-magnets.ts",
+      "target": "class:src/lib/lead-magnets.ts:UnknownLeadMagnetSourceError",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/lead-magnets.ts",
+      "target": "function:src/lib/lead-magnets.ts:downloadUrlFor",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/lead-magnets.ts",
+      "target": "function:src/lib/lead-magnets.ts:buildWelcomeEmail",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/list-unsubscribe.ts",
+      "target": "function:src/lib/list-unsubscribe.ts:buildUnsubscribeToken",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/list-unsubscribe.ts",
+      "target": "function:src/lib/list-unsubscribe.ts:verifyUnsubscribeToken",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/list-unsubscribe.ts",
+      "target": "function:src/lib/list-unsubscribe.ts:buildUnsubscribeUrl",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/list-unsubscribe.ts",
+      "target": "function:src/lib/list-unsubscribe.ts:buildUnsubscribeHeaders",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/resend-sender.ts",
+      "target": "function:src/lib/resend-sender.ts:isTestRun",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/resend-sender.ts",
+      "target": "function:src/lib/resend-sender.ts:sendViaResend",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/subscribe.ts",
+      "target": "class:src/lib/subscribe.ts:FROM_ADDRESS",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/subscribe.ts",
+      "target": "class:src/lib/subscribe.ts:SubscribeError",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/subscribe.ts",
+      "target": "function:src/lib/subscribe.ts:handleSubscribe",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/utm.ts",
+      "target": "function:src/lib/utm.ts:withUtm",
+      "type": "exports",
+      "weight": 1
+    }
+  ],
+  "statistics": {
+    "nodeCount": 27,
+    "edgeCount": 31,
+    "fileCategories": {
+      "code": 9
+    },
+    "totalSizeLines": 1229,
+    "symbolCount": 18
+  }
+}

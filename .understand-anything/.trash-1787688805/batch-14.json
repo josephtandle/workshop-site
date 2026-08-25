@@ -1,0 +1,1237 @@
+{
+  "batchIndex": 14,
+  "nodes": [
+    {
+      "id": "file:src/app/api/events/finalize-registration/route.ts",
+      "type": "file",
+      "name": "route.ts",
+      "filePath": "src/app/api/events/finalize-registration/route.ts",
+      "language": "typescript",
+      "sizeLines": 90,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "api-route",
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/api/events/followups/route.ts",
+      "type": "file",
+      "name": "route.ts",
+      "filePath": "src/app/api/events/followups/route.ts",
+      "language": "typescript",
+      "sizeLines": 81,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "api-route",
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/api/events/location-reminders/route.ts",
+      "type": "file",
+      "name": "route.ts",
+      "filePath": "src/app/api/events/location-reminders/route.ts",
+      "language": "typescript",
+      "sizeLines": 80,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "api-route",
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/api/events/reconcile-registrations/route.ts",
+      "type": "file",
+      "name": "route.ts",
+      "filePath": "src/app/api/events/reconcile-registrations/route.ts",
+      "language": "typescript",
+      "sizeLines": 135,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "api-route",
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/api/events/session-reminders/route.ts",
+      "type": "file",
+      "name": "route.ts",
+      "filePath": "src/app/api/events/session-reminders/route.ts",
+      "language": "typescript",
+      "sizeLines": 71,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "api-route",
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/api/events/validate-promo/route.ts",
+      "type": "file",
+      "name": "route.ts",
+      "filePath": "src/app/api/events/validate-promo/route.ts",
+      "language": "typescript",
+      "sizeLines": 51,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "api-route",
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/api/events/waitlist/join/route.ts",
+      "type": "file",
+      "name": "route.ts",
+      "filePath": "src/app/api/events/waitlist/join/route.ts",
+      "language": "typescript",
+      "sizeLines": 73,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "api-route",
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/api/events/waitlist/notify/route.ts",
+      "type": "file",
+      "name": "route.ts",
+      "filePath": "src/app/api/events/waitlist/notify/route.ts",
+      "language": "typescript",
+      "sizeLines": 120,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "api-route",
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/api/events/waitlist/remove/route.ts",
+      "type": "file",
+      "name": "route.ts",
+      "filePath": "src/app/api/events/waitlist/remove/route.ts",
+      "language": "typescript",
+      "sizeLines": 51,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "api-route",
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/api/illy-auth/route.ts",
+      "type": "file",
+      "name": "route.ts",
+      "filePath": "src/app/api/illy-auth/route.ts",
+      "language": "typescript",
+      "sizeLines": 51,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "api-route",
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/api/jill-auth/route.ts",
+      "type": "file",
+      "name": "route.ts",
+      "filePath": "src/app/api/jill-auth/route.ts",
+      "language": "typescript",
+      "sizeLines": 51,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "api-route",
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/api/lead-magnet/route.ts",
+      "type": "file",
+      "name": "route.ts",
+      "filePath": "src/app/api/lead-magnet/route.ts",
+      "language": "typescript",
+      "sizeLines": 631,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "api-route",
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "file:src/app/api/lead-magnets/claudemd/route 2.ts",
+      "type": "file",
+      "name": "route 2.ts",
+      "filePath": "src/app/api/lead-magnets/claudemd/route 2.ts",
+      "language": "typescript",
+      "sizeLines": 231,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "api-route",
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/app/api/lead-magnets/claudemd/route.ts",
+      "type": "file",
+      "name": "route.ts",
+      "filePath": "src/app/api/lead-magnets/claudemd/route.ts",
+      "language": "typescript",
+      "sizeLines": 262,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "api-route",
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/app/api/lead-magnets/passive-income-100/route.ts",
+      "type": "file",
+      "name": "route.ts",
+      "filePath": "src/app/api/lead-magnets/passive-income-100/route.ts",
+      "language": "typescript",
+      "sizeLines": 161,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "api-route",
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/api/stripe/webhook/route.ts",
+      "type": "file",
+      "name": "route.ts",
+      "filePath": "src/app/api/stripe/webhook/route.ts",
+      "language": "typescript",
+      "sizeLines": 86,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "api-route",
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/api/subscribe/route.ts",
+      "type": "file",
+      "name": "route.ts",
+      "filePath": "src/app/api/subscribe/route.ts",
+      "language": "typescript",
+      "sizeLines": 76,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "api-route",
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/api/unsubscribe/route.ts",
+      "type": "file",
+      "name": "route.ts",
+      "filePath": "src/app/api/unsubscribe/route.ts",
+      "language": "typescript",
+      "sizeLines": 82,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "api-route",
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/bonus-workshops/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/bonus-workshops/page.tsx",
+      "language": "typescript",
+      "sizeLines": 52,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/bonus/auto-lead-magnet/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/bonus/auto-lead-magnet/page.tsx",
+      "language": "typescript",
+      "sizeLines": 450,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/app/events/[slug]/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/events/[slug]/page.tsx",
+      "language": "typescript",
+      "sizeLines": 76,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/events/[slug]/setup/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/events/[slug]/setup/page.tsx",
+      "language": "typescript",
+      "sizeLines": 140,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/events/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/events/page.tsx",
+      "language": "typescript",
+      "sizeLines": 107,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/giveaways/agent-infrastructure/layout.tsx",
+      "type": "file",
+      "name": "layout.tsx",
+      "filePath": "src/app/giveaways/agent-infrastructure/layout.tsx",
+      "language": "typescript",
+      "sizeLines": 37,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/giveaways/agent-infrastructure/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/giveaways/agent-infrastructure/page.tsx",
+      "language": "typescript",
+      "sizeLines": 540,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "react-component:src/app/api/events/finalize-registration/route.ts:runtime",
+      "type": "react-component",
+      "name": "runtime",
+      "filePath": "src/app/api/events/finalize-registration/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/events/finalize-registration/route.ts:POST",
+      "type": "react-component",
+      "name": "POST",
+      "filePath": "src/app/api/events/finalize-registration/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/events/followups/route.ts:runtime",
+      "type": "react-component",
+      "name": "runtime",
+      "filePath": "src/app/api/events/followups/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/events/followups/route.ts:GET",
+      "type": "react-component",
+      "name": "GET",
+      "filePath": "src/app/api/events/followups/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/events/location-reminders/route.ts:runtime",
+      "type": "react-component",
+      "name": "runtime",
+      "filePath": "src/app/api/events/location-reminders/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/events/location-reminders/route.ts:GET",
+      "type": "react-component",
+      "name": "GET",
+      "filePath": "src/app/api/events/location-reminders/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/events/reconcile-registrations/route.ts:runtime",
+      "type": "react-component",
+      "name": "runtime",
+      "filePath": "src/app/api/events/reconcile-registrations/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/events/reconcile-registrations/route.ts:maxDuration",
+      "type": "react-component",
+      "name": "maxDuration",
+      "filePath": "src/app/api/events/reconcile-registrations/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/events/reconcile-registrations/route.ts:GET",
+      "type": "react-component",
+      "name": "GET",
+      "filePath": "src/app/api/events/reconcile-registrations/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/events/session-reminders/route.ts:runtime",
+      "type": "react-component",
+      "name": "runtime",
+      "filePath": "src/app/api/events/session-reminders/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/events/session-reminders/route.ts:GET",
+      "type": "react-component",
+      "name": "GET",
+      "filePath": "src/app/api/events/session-reminders/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/events/validate-promo/route.ts:POST",
+      "type": "react-component",
+      "name": "POST",
+      "filePath": "src/app/api/events/validate-promo/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/events/waitlist/join/route.ts:runtime",
+      "type": "react-component",
+      "name": "runtime",
+      "filePath": "src/app/api/events/waitlist/join/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/events/waitlist/join/route.ts:POST",
+      "type": "react-component",
+      "name": "POST",
+      "filePath": "src/app/api/events/waitlist/join/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/events/waitlist/notify/route.ts:runtime",
+      "type": "react-component",
+      "name": "runtime",
+      "filePath": "src/app/api/events/waitlist/notify/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/events/waitlist/notify/route.ts:GET",
+      "type": "react-component",
+      "name": "GET",
+      "filePath": "src/app/api/events/waitlist/notify/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/events/waitlist/remove/route.ts:runtime",
+      "type": "react-component",
+      "name": "runtime",
+      "filePath": "src/app/api/events/waitlist/remove/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/events/waitlist/remove/route.ts:GET",
+      "type": "react-component",
+      "name": "GET",
+      "filePath": "src/app/api/events/waitlist/remove/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/illy-auth/route.ts:POST",
+      "type": "react-component",
+      "name": "POST",
+      "filePath": "src/app/api/illy-auth/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/illy-auth/route.ts:GET",
+      "type": "react-component",
+      "name": "GET",
+      "filePath": "src/app/api/illy-auth/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/jill-auth/route.ts:POST",
+      "type": "react-component",
+      "name": "POST",
+      "filePath": "src/app/api/jill-auth/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/jill-auth/route.ts:GET",
+      "type": "react-component",
+      "name": "GET",
+      "filePath": "src/app/api/jill-auth/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/lead-magnet/route.ts:POST",
+      "type": "react-component",
+      "name": "POST",
+      "filePath": "src/app/api/lead-magnet/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/lead-magnets/claudemd/route 2.ts:POST",
+      "type": "react-component",
+      "name": "POST",
+      "filePath": "src/app/api/lead-magnets/claudemd/route 2.ts",
+      "summary": "react-component exported from route 2.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/lead-magnets/claudemd/route.ts:POST",
+      "type": "react-component",
+      "name": "POST",
+      "filePath": "src/app/api/lead-magnets/claudemd/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/lead-magnets/passive-income-100/route.ts:POST",
+      "type": "react-component",
+      "name": "POST",
+      "filePath": "src/app/api/lead-magnets/passive-income-100/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/stripe/webhook/route.ts:runtime",
+      "type": "react-component",
+      "name": "runtime",
+      "filePath": "src/app/api/stripe/webhook/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/stripe/webhook/route.ts:maxDuration",
+      "type": "react-component",
+      "name": "maxDuration",
+      "filePath": "src/app/api/stripe/webhook/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/stripe/webhook/route.ts:POST",
+      "type": "react-component",
+      "name": "POST",
+      "filePath": "src/app/api/stripe/webhook/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/subscribe/route.ts:POST",
+      "type": "react-component",
+      "name": "POST",
+      "filePath": "src/app/api/subscribe/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/unsubscribe/route.ts:runtime",
+      "type": "react-component",
+      "name": "runtime",
+      "filePath": "src/app/api/unsubscribe/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/unsubscribe/route.ts:POST",
+      "type": "react-component",
+      "name": "POST",
+      "filePath": "src/app/api/unsubscribe/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/unsubscribe/route.ts:GET",
+      "type": "react-component",
+      "name": "GET",
+      "filePath": "src/app/api/unsubscribe/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/bonus-workshops/page.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/bonus-workshops/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/bonus-workshops/page.tsx:BonusWorkshopsPage",
+      "type": "react-component",
+      "name": "BonusWorkshopsPage",
+      "filePath": "src/app/bonus-workshops/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/bonus/auto-lead-magnet/page.tsx:AutoLeadMagnetPage",
+      "type": "react-component",
+      "name": "AutoLeadMagnetPage",
+      "filePath": "src/app/bonus/auto-lead-magnet/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/events/[slug]/page.tsx:dynamic",
+      "type": "react-component",
+      "name": "dynamic",
+      "filePath": "src/app/events/[slug]/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/events/[slug]/page.tsx:generateMetadata",
+      "type": "react-component",
+      "name": "generateMetadata",
+      "filePath": "src/app/events/[slug]/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/events/[slug]/page.tsx:EventDetailPage",
+      "type": "react-component",
+      "name": "EventDetailPage",
+      "filePath": "src/app/events/[slug]/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/events/[slug]/setup/page.tsx:generateMetadata",
+      "type": "react-component",
+      "name": "generateMetadata",
+      "filePath": "src/app/events/[slug]/setup/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/events/[slug]/setup/page.tsx:EventSetupPage",
+      "type": "react-component",
+      "name": "EventSetupPage",
+      "filePath": "src/app/events/[slug]/setup/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/events/page.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/events/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/events/page.tsx:EventsIndexPage",
+      "type": "react-component",
+      "name": "EventsIndexPage",
+      "filePath": "src/app/events/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/agent-infrastructure/layout.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/giveaways/agent-infrastructure/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/agent-infrastructure/layout.tsx:AgentInfrastructureLayout",
+      "type": "react-component",
+      "name": "AgentInfrastructureLayout",
+      "filePath": "src/app/giveaways/agent-infrastructure/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/agent-infrastructure/page.tsx:AgentInfrastructurePage",
+      "type": "react-component",
+      "name": "AgentInfrastructurePage",
+      "filePath": "src/app/giveaways/agent-infrastructure/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/app/api/events/finalize-registration/route.ts",
+      "target": "react-component:src/app/api/events/finalize-registration/route.ts:runtime",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/events/finalize-registration/route.ts",
+      "target": "react-component:src/app/api/events/finalize-registration/route.ts:POST",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/events/followups/route.ts",
+      "target": "react-component:src/app/api/events/followups/route.ts:runtime",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/events/followups/route.ts",
+      "target": "react-component:src/app/api/events/followups/route.ts:GET",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/events/location-reminders/route.ts",
+      "target": "react-component:src/app/api/events/location-reminders/route.ts:runtime",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/events/location-reminders/route.ts",
+      "target": "react-component:src/app/api/events/location-reminders/route.ts:GET",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/events/reconcile-registrations/route.ts",
+      "target": "react-component:src/app/api/events/reconcile-registrations/route.ts:runtime",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/events/reconcile-registrations/route.ts",
+      "target": "react-component:src/app/api/events/reconcile-registrations/route.ts:maxDuration",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/events/reconcile-registrations/route.ts",
+      "target": "react-component:src/app/api/events/reconcile-registrations/route.ts:GET",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/events/session-reminders/route.ts",
+      "target": "react-component:src/app/api/events/session-reminders/route.ts:runtime",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/events/session-reminders/route.ts",
+      "target": "react-component:src/app/api/events/session-reminders/route.ts:GET",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/events/validate-promo/route.ts",
+      "target": "react-component:src/app/api/events/validate-promo/route.ts:POST",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/events/waitlist/join/route.ts",
+      "target": "react-component:src/app/api/events/waitlist/join/route.ts:runtime",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/events/waitlist/join/route.ts",
+      "target": "react-component:src/app/api/events/waitlist/join/route.ts:POST",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/events/waitlist/notify/route.ts",
+      "target": "react-component:src/app/api/events/waitlist/notify/route.ts:runtime",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/events/waitlist/notify/route.ts",
+      "target": "react-component:src/app/api/events/waitlist/notify/route.ts:GET",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/events/waitlist/remove/route.ts",
+      "target": "react-component:src/app/api/events/waitlist/remove/route.ts:runtime",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/events/waitlist/remove/route.ts",
+      "target": "react-component:src/app/api/events/waitlist/remove/route.ts:GET",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/illy-auth/route.ts",
+      "target": "react-component:src/app/api/illy-auth/route.ts:POST",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/illy-auth/route.ts",
+      "target": "react-component:src/app/api/illy-auth/route.ts:GET",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/jill-auth/route.ts",
+      "target": "react-component:src/app/api/jill-auth/route.ts:POST",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/jill-auth/route.ts",
+      "target": "react-component:src/app/api/jill-auth/route.ts:GET",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/lead-magnet/route.ts",
+      "target": "react-component:src/app/api/lead-magnet/route.ts:POST",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/lead-magnets/claudemd/route 2.ts",
+      "target": "react-component:src/app/api/lead-magnets/claudemd/route 2.ts:POST",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/lead-magnets/claudemd/route.ts",
+      "target": "react-component:src/app/api/lead-magnets/claudemd/route.ts:POST",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/lead-magnets/passive-income-100/route.ts",
+      "target": "react-component:src/app/api/lead-magnets/passive-income-100/route.ts:POST",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/stripe/webhook/route.ts",
+      "target": "react-component:src/app/api/stripe/webhook/route.ts:runtime",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/stripe/webhook/route.ts",
+      "target": "react-component:src/app/api/stripe/webhook/route.ts:maxDuration",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/stripe/webhook/route.ts",
+      "target": "react-component:src/app/api/stripe/webhook/route.ts:POST",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/subscribe/route.ts",
+      "target": "react-component:src/app/api/subscribe/route.ts:POST",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/unsubscribe/route.ts",
+      "target": "react-component:src/app/api/unsubscribe/route.ts:runtime",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/unsubscribe/route.ts",
+      "target": "react-component:src/app/api/unsubscribe/route.ts:POST",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/unsubscribe/route.ts",
+      "target": "react-component:src/app/api/unsubscribe/route.ts:GET",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/bonus-workshops/page.tsx",
+      "target": "react-component:src/app/bonus-workshops/page.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/bonus-workshops/page.tsx",
+      "target": "react-component:src/app/bonus-workshops/page.tsx:BonusWorkshopsPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/bonus/auto-lead-magnet/page.tsx",
+      "target": "react-component:src/app/bonus/auto-lead-magnet/page.tsx:AutoLeadMagnetPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/events/[slug]/page.tsx",
+      "target": "react-component:src/app/events/[slug]/page.tsx:dynamic",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/events/[slug]/page.tsx",
+      "target": "react-component:src/app/events/[slug]/page.tsx:generateMetadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/events/[slug]/page.tsx",
+      "target": "react-component:src/app/events/[slug]/page.tsx:EventDetailPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/events/[slug]/setup/page.tsx",
+      "target": "react-component:src/app/events/[slug]/setup/page.tsx:generateMetadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/events/[slug]/setup/page.tsx",
+      "target": "react-component:src/app/events/[slug]/setup/page.tsx:EventSetupPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/events/page.tsx",
+      "target": "react-component:src/app/events/page.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/events/page.tsx",
+      "target": "react-component:src/app/events/page.tsx:EventsIndexPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/agent-infrastructure/layout.tsx",
+      "target": "react-component:src/app/giveaways/agent-infrastructure/layout.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/agent-infrastructure/layout.tsx",
+      "target": "react-component:src/app/giveaways/agent-infrastructure/layout.tsx:AgentInfrastructureLayout",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/agent-infrastructure/page.tsx",
+      "target": "react-component:src/app/giveaways/agent-infrastructure/page.tsx:AgentInfrastructurePage",
+      "type": "exports",
+      "weight": 1
+    }
+  ],
+  "statistics": {
+    "nodeCount": 71,
+    "edgeCount": 46,
+    "fileCategories": {
+      "code": 25
+    },
+    "totalSizeLines": 3785,
+    "symbolCount": 46
+  }
+}
