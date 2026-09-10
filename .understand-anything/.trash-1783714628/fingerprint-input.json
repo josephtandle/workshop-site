@@ -1,5 +1,0 @@
-{
-  "projectRoot": "/Users/myos/.myos/workspace/projects/mastermind/workshop-site",
-  "sourceFilePaths": ["src/pages/index.tsx", "src/pages/api/giveaway/[id].ts", "src/lib/stripe.ts", "package.json", "tsconfig.json"],
-  "gitCommitHash": "d69cffa0e77414ce277b38f3fc6c67204c92c9c8"
-}

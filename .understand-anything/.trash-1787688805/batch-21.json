@@ -1,0 +1,841 @@
+{
+  "batchIndex": 21,
+  "nodes": [
+    {
+      "id": "file:src/content/session-7-prep.tsx",
+      "type": "file",
+      "name": "session-7-prep.tsx",
+      "filePath": "src/content/session-7-prep.tsx",
+      "language": "typescript",
+      "sizeLines": 301,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "content",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/content/session-8-guide.tsx",
+      "type": "file",
+      "name": "session-8-guide.tsx",
+      "filePath": "src/content/session-8-guide.tsx",
+      "language": "typescript",
+      "sizeLines": 1023,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "content",
+        "typescript-module"
+      ],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "file:src/content/session-8-prep.tsx",
+      "type": "file",
+      "name": "session-8-prep.tsx",
+      "filePath": "src/content/session-8-prep.tsx",
+      "language": "typescript",
+      "sizeLines": 206,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "content",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/content/session-9-guide.tsx",
+      "type": "file",
+      "name": "session-9-guide.tsx",
+      "filePath": "src/content/session-9-guide.tsx",
+      "language": "typescript",
+      "sizeLines": 642,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "content",
+        "typescript-module"
+      ],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "file:src/content/tiana-ai-positioning-workshop.tsx",
+      "type": "file",
+      "name": "tiana-ai-positioning-workshop.tsx",
+      "filePath": "src/content/tiana-ai-positioning-workshop.tsx",
+      "language": "typescript",
+      "sizeLines": 1274,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "content",
+        "typescript-module"
+      ],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "file:src/lib/celebrate.ts",
+      "type": "file",
+      "name": "celebrate.ts",
+      "filePath": "src/lib/celebrate.ts",
+      "language": "typescript",
+      "sizeLines": 23,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/lib/claude-links.ts",
+      "type": "file",
+      "name": "claude-links.ts",
+      "filePath": "src/lib/claude-links.ts",
+      "language": "typescript",
+      "sizeLines": 21,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/lib/copyWithConfetti.ts",
+      "type": "file",
+      "name": "copyWithConfetti.ts",
+      "filePath": "src/lib/copyWithConfetti.ts",
+      "language": "typescript",
+      "sizeLines": 40,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/lib/email-validation.ts",
+      "type": "file",
+      "name": "email-validation.ts",
+      "filePath": "src/lib/email-validation.ts",
+      "language": "typescript",
+      "sizeLines": 10,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/lib/event-tokens.ts",
+      "type": "file",
+      "name": "event-tokens.ts",
+      "filePath": "src/lib/event-tokens.ts",
+      "language": "typescript",
+      "sizeLines": 16,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/lib/giveaways.ts",
+      "type": "file",
+      "name": "giveaways.ts",
+      "filePath": "src/lib/giveaways.ts",
+      "language": "typescript",
+      "sizeLines": 213,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/lib/insight-to-fix.ts",
+      "type": "file",
+      "name": "insight-to-fix.ts",
+      "filePath": "src/lib/insight-to-fix.ts",
+      "language": "typescript",
+      "sizeLines": 38,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/lib/locks.ts",
+      "type": "file",
+      "name": "locks.ts",
+      "filePath": "src/lib/locks.ts",
+      "language": "typescript",
+      "sizeLines": 20,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/lib/sessions.ts",
+      "type": "file",
+      "name": "sessions.ts",
+      "filePath": "src/lib/sessions.ts",
+      "language": "typescript",
+      "sizeLines": 144,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/lib/stripe.ts",
+      "type": "file",
+      "name": "stripe.ts",
+      "filePath": "src/lib/stripe.ts",
+      "language": "typescript",
+      "sizeLines": 19,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/templates/session-guide-template.tsx",
+      "type": "file",
+      "name": "session-guide-template.tsx",
+      "filePath": "src/templates/session-guide-template.tsx",
+      "language": "typescript",
+      "sizeLines": 312,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "template",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/templates/tool-page-template.tsx",
+      "type": "file",
+      "name": "tool-page-template.tsx",
+      "filePath": "src/templates/tool-page-template.tsx",
+      "language": "typescript",
+      "sizeLines": 83,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "template",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:supabase/.temp/linked-project.json",
+      "type": "file",
+      "name": "linked-project.json",
+      "filePath": "supabase/.temp/linked-project.json",
+      "language": "json",
+      "sizeLines": 1,
+      "fileCategory": "config",
+      "summary": "Configuration file",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tailwind.config.ts",
+      "type": "file",
+      "name": "tailwind.config.ts",
+      "filePath": "tailwind.config.ts",
+      "language": "typescript",
+      "sizeLines": 56,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:tests/claude-referral-link.test.ts",
+      "type": "file",
+      "name": "claude-referral-link.test.ts",
+      "filePath": "tests/claude-referral-link.test.ts",
+      "language": "typescript",
+      "sizeLines": 67,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "test",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:tests/event-tokens.test.ts",
+      "type": "file",
+      "name": "event-tokens.test.ts",
+      "filePath": "tests/event-tokens.test.ts",
+      "language": "typescript",
+      "sizeLines": 59,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "test",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:tests/giveaway-email-collection.test.ts",
+      "type": "file",
+      "name": "giveaway-email-collection.test.ts",
+      "filePath": "tests/giveaway-email-collection.test.ts",
+      "language": "typescript",
+      "sizeLines": 191,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "test",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:tests/giveaway-template-structure.test.ts",
+      "type": "file",
+      "name": "giveaway-template-structure.test.ts",
+      "filePath": "tests/giveaway-template-structure.test.ts",
+      "language": "typescript",
+      "sizeLines": 130,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "test",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:tests/waitlist-join-validation.test.ts",
+      "type": "file",
+      "name": "waitlist-join-validation.test.ts",
+      "filePath": "tests/waitlist-join-validation.test.ts",
+      "language": "typescript",
+      "sizeLines": 93,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "test",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/content/session-7-prep.tsx:Session7Prep",
+      "type": "class",
+      "name": "Session7Prep",
+      "filePath": "src/content/session-7-prep.tsx",
+      "summary": "class exported from session-7-prep.tsx",
+      "tags": [
+        "class",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "class:src/content/session-8-guide.tsx:Session8Guide",
+      "type": "class",
+      "name": "Session8Guide",
+      "filePath": "src/content/session-8-guide.tsx",
+      "summary": "class exported from session-8-guide.tsx",
+      "tags": [
+        "class",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "class:src/content/session-8-prep.tsx:Session8Prep",
+      "type": "class",
+      "name": "Session8Prep",
+      "filePath": "src/content/session-8-prep.tsx",
+      "summary": "class exported from session-8-prep.tsx",
+      "tags": [
+        "class",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "class:src/content/session-9-guide.tsx:Session9Guide",
+      "type": "class",
+      "name": "Session9Guide",
+      "filePath": "src/content/session-9-guide.tsx",
+      "summary": "class exported from session-9-guide.tsx",
+      "tags": [
+        "class",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "class:src/content/tiana-ai-positioning-workshop.tsx:TianaAiPositioningWorkshop",
+      "type": "class",
+      "name": "TianaAiPositioningWorkshop",
+      "filePath": "src/content/tiana-ai-positioning-workshop.tsx",
+      "summary": "class exported from tiana-ai-positioning-workshop.tsx",
+      "tags": [
+        "class",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/celebrate.ts:celebrate",
+      "type": "function",
+      "name": "celebrate",
+      "filePath": "src/lib/celebrate.ts",
+      "summary": "function exported from celebrate.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "class:src/lib/claude-links.ts:CLAUDE_REFERRAL_URL",
+      "type": "class",
+      "name": "CLAUDE_REFERRAL_URL",
+      "filePath": "src/lib/claude-links.ts",
+      "summary": "class exported from claude-links.ts",
+      "tags": [
+        "class",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "class:src/lib/copyWithConfetti.ts:COPY_WITH_CONFETTI_SUCCESS_EVENT",
+      "type": "class",
+      "name": "COPY_WITH_CONFETTI_SUCCESS_EVENT",
+      "filePath": "src/lib/copyWithConfetti.ts",
+      "summary": "class exported from copyWithConfetti.ts",
+      "tags": [
+        "class",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/copyWithConfetti.ts:copyWithConfetti",
+      "type": "function",
+      "name": "copyWithConfetti",
+      "filePath": "src/lib/copyWithConfetti.ts",
+      "summary": "function exported from copyWithConfetti.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "class:src/lib/email-validation.ts:EMAIL_RE",
+      "type": "class",
+      "name": "EMAIL_RE",
+      "filePath": "src/lib/email-validation.ts",
+      "summary": "class exported from email-validation.ts",
+      "tags": [
+        "class",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/email-validation.ts:normaliseEmail",
+      "type": "function",
+      "name": "normaliseEmail",
+      "filePath": "src/lib/email-validation.ts",
+      "summary": "function exported from email-validation.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/email-validation.ts:isValidEmail",
+      "type": "function",
+      "name": "isValidEmail",
+      "filePath": "src/lib/email-validation.ts",
+      "summary": "function exported from email-validation.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-tokens.ts:generateToken",
+      "type": "function",
+      "name": "generateToken",
+      "filePath": "src/lib/event-tokens.ts",
+      "summary": "function exported from event-tokens.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-tokens.ts:verifyToken",
+      "type": "function",
+      "name": "verifyToken",
+      "filePath": "src/lib/event-tokens.ts",
+      "summary": "function exported from event-tokens.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/giveaways.ts:giveaways",
+      "type": "function",
+      "name": "giveaways",
+      "filePath": "src/lib/giveaways.ts",
+      "summary": "function exported from giveaways.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/giveaways.ts:getGiveaway",
+      "type": "function",
+      "name": "getGiveaway",
+      "filePath": "src/lib/giveaways.ts",
+      "summary": "function exported from giveaways.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/insight-to-fix.ts:trackInsightEvent",
+      "type": "function",
+      "name": "trackInsightEvent",
+      "filePath": "src/lib/insight-to-fix.ts",
+      "summary": "function exported from insight-to-fix.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "class:src/lib/locks.ts:LOCKS",
+      "type": "class",
+      "name": "LOCKS",
+      "filePath": "src/lib/locks.ts",
+      "summary": "class exported from locks.ts",
+      "tags": [
+        "class",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/sessions.ts:sessions",
+      "type": "function",
+      "name": "sessions",
+      "filePath": "src/lib/sessions.ts",
+      "summary": "function exported from sessions.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/sessions.ts:getSession",
+      "type": "function",
+      "name": "getSession",
+      "filePath": "src/lib/sessions.ts",
+      "summary": "function exported from sessions.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/stripe.ts:getStripeSecretKey",
+      "type": "function",
+      "name": "getStripeSecretKey",
+      "filePath": "src/lib/stripe.ts",
+      "summary": "function exported from stripe.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/stripe.ts:getStripePublishableKey",
+      "type": "function",
+      "name": "getStripePublishableKey",
+      "filePath": "src/lib/stripe.ts",
+      "summary": "function exported from stripe.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/stripe.ts:createStripeClient",
+      "type": "function",
+      "name": "createStripeClient",
+      "filePath": "src/lib/stripe.ts",
+      "summary": "function exported from stripe.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "class:src/templates/session-guide-template.tsx:Session_FILL_IN_Guide",
+      "type": "class",
+      "name": "Session_FILL_IN_Guide",
+      "filePath": "src/templates/session-guide-template.tsx",
+      "summary": "class exported from session-guide-template.tsx",
+      "tags": [
+        "class",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "class:src/templates/tool-page-template.tsx:ToolPageTemplate",
+      "type": "class",
+      "name": "ToolPageTemplate",
+      "filePath": "src/templates/tool-page-template.tsx",
+      "summary": "class exported from tool-page-template.tsx",
+      "tags": [
+        "class",
+        "exported"
+      ],
+      "complexity": "unknown"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:tests/claude-referral-link.test.ts",
+      "target": "file:src/lib/claude-links.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/event-tokens.test.ts",
+      "target": "file:src/lib/event-tokens.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/waitlist-join-validation.test.ts",
+      "target": "file:src/lib/email-validation.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/content/session-7-prep.tsx",
+      "target": "class:src/content/session-7-prep.tsx:Session7Prep",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/content/session-8-guide.tsx",
+      "target": "class:src/content/session-8-guide.tsx:Session8Guide",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/content/session-8-prep.tsx",
+      "target": "class:src/content/session-8-prep.tsx:Session8Prep",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/content/session-9-guide.tsx",
+      "target": "class:src/content/session-9-guide.tsx:Session9Guide",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/content/tiana-ai-positioning-workshop.tsx",
+      "target": "class:src/content/tiana-ai-positioning-workshop.tsx:TianaAiPositioningWorkshop",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/celebrate.ts",
+      "target": "function:src/lib/celebrate.ts:celebrate",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/claude-links.ts",
+      "target": "class:src/lib/claude-links.ts:CLAUDE_REFERRAL_URL",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/copyWithConfetti.ts",
+      "target": "class:src/lib/copyWithConfetti.ts:COPY_WITH_CONFETTI_SUCCESS_EVENT",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/copyWithConfetti.ts",
+      "target": "function:src/lib/copyWithConfetti.ts:copyWithConfetti",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/email-validation.ts",
+      "target": "class:src/lib/email-validation.ts:EMAIL_RE",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/email-validation.ts",
+      "target": "function:src/lib/email-validation.ts:normaliseEmail",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/email-validation.ts",
+      "target": "function:src/lib/email-validation.ts:isValidEmail",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-tokens.ts",
+      "target": "function:src/lib/event-tokens.ts:generateToken",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-tokens.ts",
+      "target": "function:src/lib/event-tokens.ts:verifyToken",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/giveaways.ts",
+      "target": "function:src/lib/giveaways.ts:giveaways",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/giveaways.ts",
+      "target": "function:src/lib/giveaways.ts:getGiveaway",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/insight-to-fix.ts",
+      "target": "function:src/lib/insight-to-fix.ts:trackInsightEvent",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/locks.ts",
+      "target": "class:src/lib/locks.ts:LOCKS",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/sessions.ts",
+      "target": "function:src/lib/sessions.ts:sessions",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/sessions.ts",
+      "target": "function:src/lib/sessions.ts:getSession",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/stripe.ts",
+      "target": "function:src/lib/stripe.ts:getStripeSecretKey",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/stripe.ts",
+      "target": "function:src/lib/stripe.ts:getStripePublishableKey",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/stripe.ts",
+      "target": "function:src/lib/stripe.ts:createStripeClient",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/templates/session-guide-template.tsx",
+      "target": "class:src/templates/session-guide-template.tsx:Session_FILL_IN_Guide",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/templates/tool-page-template.tsx",
+      "target": "class:src/templates/tool-page-template.tsx:ToolPageTemplate",
+      "type": "exports",
+      "weight": 1
+    }
+  ],
+  "statistics": {
+    "nodeCount": 49,
+    "edgeCount": 28,
+    "fileCategories": {
+      "code": 23,
+      "config": 1
+    },
+    "totalSizeLines": 4982,
+    "symbolCount": 25
+  }
+}

@@ -1,5 +1,0 @@
-Loaded 251 files (220 code).
-Warning: compute-batches: community size 42 > max 35 — splitting via alphabetical chunking — modularity may decrease
-Warning: compute-batches: community size 57 > max 35 — splitting via alphabetical chunking — modularity may decrease
-Info: compute-batches: merged 58 small batches (59 files) into 3 misc batches — singletons and orphans consolidated
-Wrote 2 batches (sizes: max=25, min=6) to /Users/myos/.myos/workspace/projects/mastermind/workshop-site/.understand-anything/intermediate/batches.json

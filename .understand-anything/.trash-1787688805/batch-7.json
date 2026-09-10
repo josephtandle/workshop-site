@@ -1,0 +1,202 @@
+{
+  "batchIndex": 7,
+  "nodes": [
+    {
+      "id": "file:src/app/api/ai-agent-income/checkout/route.ts",
+      "type": "file",
+      "name": "route.ts",
+      "filePath": "src/app/api/ai-agent-income/checkout/route.ts",
+      "language": "typescript",
+      "sizeLines": 93,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "api-route",
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/api/ai-agent-income/stripe.ts",
+      "type": "file",
+      "name": "stripe.ts",
+      "filePath": "src/app/api/ai-agent-income/stripe.ts",
+      "language": "typescript",
+      "sizeLines": 13,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "api-route",
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/api/ai-agent-income/webhook/route.ts",
+      "type": "file",
+      "name": "route.ts",
+      "filePath": "src/app/api/ai-agent-income/webhook/route.ts",
+      "language": "typescript",
+      "sizeLines": 211,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "api-route",
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "react-component:src/app/api/ai-agent-income/checkout/route.ts:runtime",
+      "type": "react-component",
+      "name": "runtime",
+      "filePath": "src/app/api/ai-agent-income/checkout/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/ai-agent-income/checkout/route.ts:POST",
+      "type": "react-component",
+      "name": "POST",
+      "filePath": "src/app/api/ai-agent-income/checkout/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/ai-agent-income/stripe.ts:AI_AGENT_INCOME_STRIPE_API_VERSION",
+      "type": "react-component",
+      "name": "AI_AGENT_INCOME_STRIPE_API_VERSION",
+      "filePath": "src/app/api/ai-agent-income/stripe.ts",
+      "summary": "react-component exported from stripe.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/ai-agent-income/stripe.ts:createAiAgentIncomeStripeClient",
+      "type": "react-component",
+      "name": "createAiAgentIncomeStripeClient",
+      "filePath": "src/app/api/ai-agent-income/stripe.ts",
+      "summary": "react-component exported from stripe.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/ai-agent-income/webhook/route.ts:runtime",
+      "type": "react-component",
+      "name": "runtime",
+      "filePath": "src/app/api/ai-agent-income/webhook/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/ai-agent-income/webhook/route.ts:maxDuration",
+      "type": "react-component",
+      "name": "maxDuration",
+      "filePath": "src/app/api/ai-agent-income/webhook/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/api/ai-agent-income/webhook/route.ts:POST",
+      "type": "react-component",
+      "name": "POST",
+      "filePath": "src/app/api/ai-agent-income/webhook/route.ts",
+      "summary": "react-component exported from route.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/app/api/ai-agent-income/checkout/route.ts",
+      "target": "file:src/app/api/ai-agent-income/stripe.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/api/ai-agent-income/webhook/route.ts",
+      "target": "file:src/app/api/ai-agent-income/stripe.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/api/ai-agent-income/checkout/route.ts",
+      "target": "react-component:src/app/api/ai-agent-income/checkout/route.ts:runtime",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/ai-agent-income/checkout/route.ts",
+      "target": "react-component:src/app/api/ai-agent-income/checkout/route.ts:POST",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/ai-agent-income/stripe.ts",
+      "target": "react-component:src/app/api/ai-agent-income/stripe.ts:AI_AGENT_INCOME_STRIPE_API_VERSION",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/ai-agent-income/stripe.ts",
+      "target": "react-component:src/app/api/ai-agent-income/stripe.ts:createAiAgentIncomeStripeClient",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/ai-agent-income/webhook/route.ts",
+      "target": "react-component:src/app/api/ai-agent-income/webhook/route.ts:runtime",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/ai-agent-income/webhook/route.ts",
+      "target": "react-component:src/app/api/ai-agent-income/webhook/route.ts:maxDuration",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/api/ai-agent-income/webhook/route.ts",
+      "target": "react-component:src/app/api/ai-agent-income/webhook/route.ts:POST",
+      "type": "exports",
+      "weight": 1
+    }
+  ],
+  "statistics": {
+    "nodeCount": 10,
+    "edgeCount": 9,
+    "fileCategories": {
+      "code": 3
+    },
+    "totalSizeLines": 317,
+    "symbolCount": 7
+  }
+}

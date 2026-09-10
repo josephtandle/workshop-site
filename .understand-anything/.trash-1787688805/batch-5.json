@@ -1,0 +1,208 @@
+{
+  "batchIndex": 5,
+  "nodes": [
+    {
+      "id": "file:src/lib/event-status.ts",
+      "type": "file",
+      "name": "event-status.ts",
+      "filePath": "src/lib/event-status.ts",
+      "language": "typescript",
+      "sizeLines": 32,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/lib/url-utils.ts",
+      "type": "file",
+      "name": "url-utils.ts",
+      "filePath": "src/lib/url-utils.ts",
+      "language": "typescript",
+      "sizeLines": 14,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/event-pricing-and-data.test.ts",
+      "type": "file",
+      "name": "event-pricing-and-data.test.ts",
+      "filePath": "tests/event-pricing-and-data.test.ts",
+      "language": "typescript",
+      "sizeLines": 240,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "test",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:tests/event-status.test.ts",
+      "type": "file",
+      "name": "event-status.test.ts",
+      "filePath": "tests/event-status.test.ts",
+      "language": "typescript",
+      "sizeLines": 42,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "test",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/event-status.ts:isEventEnded",
+      "type": "function",
+      "name": "isEventEnded",
+      "filePath": "src/lib/event-status.ts",
+      "summary": "function exported from event-status.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-status.ts:isEventRegistrationClosed",
+      "type": "function",
+      "name": "isEventRegistrationClosed",
+      "filePath": "src/lib/event-status.ts",
+      "summary": "function exported from event-status.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-status.ts:isRegistrationWindowPassed",
+      "type": "function",
+      "name": "isRegistrationWindowPassed",
+      "filePath": "src/lib/event-status.ts",
+      "summary": "function exported from event-status.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/url-utils.ts:toOrigin",
+      "type": "function",
+      "name": "toOrigin",
+      "filePath": "src/lib/url-utils.ts",
+      "summary": "function exported from url-utils.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:tests/event-pricing-and-data.test.ts",
+      "target": "file:src/lib/events.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/event-pricing-and-data.test.ts",
+      "target": "file:src/lib/event-status.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/event-pricing-and-data.test.ts",
+      "target": "file:src/lib/waitlist-notify-windows.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/event-pricing-and-data.test.ts",
+      "target": "file:src/lib/url-utils.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/event-status.test.ts",
+      "target": "file:src/lib/event-status.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/event-status.test.ts",
+      "target": "file:src/lib/events.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/event-pricing-and-data.test.ts",
+      "target": "file:src/lib/events.tsx",
+      "type": "imports",
+      "weight": 0.6,
+      "crossBatch": true,
+      "targetBatchIndex": 1
+    },
+    {
+      "source": "file:tests/event-pricing-and-data.test.ts",
+      "target": "file:src/lib/waitlist-notify-windows.ts",
+      "type": "imports",
+      "weight": 0.6,
+      "crossBatch": true,
+      "targetBatchIndex": 2
+    },
+    {
+      "source": "file:tests/event-status.test.ts",
+      "target": "file:src/lib/events.tsx",
+      "type": "imports",
+      "weight": 0.6,
+      "crossBatch": true,
+      "targetBatchIndex": 1
+    },
+    {
+      "source": "file:src/lib/event-status.ts",
+      "target": "function:src/lib/event-status.ts:isEventEnded",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-status.ts",
+      "target": "function:src/lib/event-status.ts:isEventRegistrationClosed",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-status.ts",
+      "target": "function:src/lib/event-status.ts:isRegistrationWindowPassed",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/url-utils.ts",
+      "target": "function:src/lib/url-utils.ts:toOrigin",
+      "type": "exports",
+      "weight": 1
+    }
+  ],
+  "statistics": {
+    "nodeCount": 8,
+    "edgeCount": 13,
+    "fileCategories": {
+      "code": 4
+    },
+    "totalSizeLines": 328,
+    "symbolCount": 4
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "batchIndex": 11,
+  "nodes": [
+    {
+      "id": "file:docs/giveaways/BACKLOG.md",
+      "type": "file",
+      "name": "BACKLOG.md",
+      "filePath": "docs/giveaways/BACKLOG.md",
+      "language": "markdown",
+      "sizeLines": 63,
+      "fileCategory": "docs",
+      "summary": "Configuration file",
+      "tags": [],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/giveaways/LESSONS.md",
+      "type": "file",
+      "name": "LESSONS.md",
+      "filePath": "docs/giveaways/LESSONS.md",
+      "language": "markdown",
+      "sizeLines": 112,
+      "fileCategory": "docs",
+      "summary": "Configuration file",
+      "tags": [],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/giveaways/PROCESS.md",
+      "type": "file",
+      "name": "PROCESS.md",
+      "filePath": "docs/giveaways/PROCESS.md",
+      "language": "markdown",
+      "sizeLines": 488,
+      "fileCategory": "docs",
+      "summary": "Configuration file",
+      "tags": [],
+      "complexity": "complex"
+    }
+  ],
+  "edges": [],
+  "statistics": {
+    "nodeCount": 3,
+    "edgeCount": 0,
+    "fileCategories": {
+      "docs": 3
+    },
+    "totalSizeLines": 663,
+    "symbolCount": 0
+  }
+}

@@ -1,0 +1,1081 @@
+{
+  "batchIndex": 16,
+  "nodes": [
+    {
+      "id": "file:src/app/giveaways/fable-worth-it-audit/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/giveaways/fable-worth-it-audit/page.tsx",
+      "language": "typescript",
+      "sizeLines": 569,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "file:src/app/giveaways/geometry-dash-fun-build/layout.tsx",
+      "type": "file",
+      "name": "layout.tsx",
+      "filePath": "src/app/giveaways/geometry-dash-fun-build/layout.tsx",
+      "language": "typescript",
+      "sizeLines": 37,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/giveaways/geometry-dash-fun-build/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/giveaways/geometry-dash-fun-build/page.tsx",
+      "language": "typescript",
+      "sizeLines": 1056,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "file:src/app/giveaways/guardog/layout.tsx",
+      "type": "file",
+      "name": "layout.tsx",
+      "filePath": "src/app/giveaways/guardog/layout.tsx",
+      "language": "typescript",
+      "sizeLines": 37,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/giveaways/guardog/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/giveaways/guardog/page.tsx",
+      "language": "typescript",
+      "sizeLines": 1085,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "file:src/app/giveaways/hooklab/content.ts",
+      "type": "file",
+      "name": "content.ts",
+      "filePath": "src/app/giveaways/hooklab/content.ts",
+      "language": "typescript",
+      "sizeLines": 182,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/giveaways/hooklab/layout.tsx",
+      "type": "file",
+      "name": "layout.tsx",
+      "filePath": "src/app/giveaways/hooklab/layout.tsx",
+      "language": "typescript",
+      "sizeLines": 36,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/giveaways/hooklab/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/giveaways/hooklab/page.tsx",
+      "language": "typescript",
+      "sizeLines": 690,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "file:src/app/giveaways/human/layout.tsx",
+      "type": "file",
+      "name": "layout.tsx",
+      "filePath": "src/app/giveaways/human/layout.tsx",
+      "language": "typescript",
+      "sizeLines": 8,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/giveaways/human/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/giveaways/human/page.tsx",
+      "language": "typescript",
+      "sizeLines": 2,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/giveaways/ig-settings/layout.tsx",
+      "type": "file",
+      "name": "layout.tsx",
+      "filePath": "src/app/giveaways/ig-settings/layout.tsx",
+      "language": "typescript",
+      "sizeLines": 31,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/giveaways/ig-settings/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/giveaways/ig-settings/page.tsx",
+      "language": "typescript",
+      "sizeLines": 232,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/app/giveaways/layout.tsx",
+      "type": "file",
+      "name": "layout.tsx",
+      "filePath": "src/app/giveaways/layout.tsx",
+      "language": "typescript",
+      "sizeLines": 11,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/giveaways/lead-magnet/layout.tsx",
+      "type": "file",
+      "name": "layout.tsx",
+      "filePath": "src/app/giveaways/lead-magnet/layout.tsx",
+      "language": "typescript",
+      "sizeLines": 11,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/giveaways/lead-magnet/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/giveaways/lead-magnet/page.tsx",
+      "language": "typescript",
+      "sizeLines": 230,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/app/giveaways/logo-maker-guide/layout.tsx",
+      "type": "file",
+      "name": "layout.tsx",
+      "filePath": "src/app/giveaways/logo-maker-guide/layout.tsx",
+      "language": "typescript",
+      "sizeLines": 11,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/giveaways/logo-maker-guide/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/giveaways/logo-maker-guide/page.tsx",
+      "language": "typescript",
+      "sizeLines": 941,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "file:src/app/giveaways/maccleaner/GiveawayForm.tsx",
+      "type": "file",
+      "name": "GiveawayForm.tsx",
+      "filePath": "src/app/giveaways/maccleaner/GiveawayForm.tsx",
+      "language": "typescript",
+      "sizeLines": 79,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/giveaways/maccleaner/layout.tsx",
+      "type": "file",
+      "name": "layout.tsx",
+      "filePath": "src/app/giveaways/maccleaner/layout.tsx",
+      "language": "typescript",
+      "sizeLines": 41,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/giveaways/maccleaner/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/giveaways/maccleaner/page.tsx",
+      "language": "typescript",
+      "sizeLines": 188,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/giveaways/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/giveaways/page.tsx",
+      "language": "typescript",
+      "sizeLines": 110,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/giveaways/ray-dalio-council/layout.tsx",
+      "type": "file",
+      "name": "layout.tsx",
+      "filePath": "src/app/giveaways/ray-dalio-council/layout.tsx",
+      "language": "typescript",
+      "sizeLines": 37,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/giveaways/ray-dalio-council/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/giveaways/ray-dalio-council/page.tsx",
+      "language": "typescript",
+      "sizeLines": 805,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "file:src/app/giveaways/speak-human/layout.tsx",
+      "type": "file",
+      "name": "layout.tsx",
+      "filePath": "src/app/giveaways/speak-human/layout.tsx",
+      "language": "typescript",
+      "sizeLines": 37,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/giveaways/speak-human/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/giveaways/speak-human/page.tsx",
+      "language": "typescript",
+      "sizeLines": 807,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "react-component:src/app/giveaways/fable-worth-it-audit/page.tsx:FableWorthItAuditPage",
+      "type": "react-component",
+      "name": "FableWorthItAuditPage",
+      "filePath": "src/app/giveaways/fable-worth-it-audit/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/geometry-dash-fun-build/layout.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/giveaways/geometry-dash-fun-build/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/geometry-dash-fun-build/layout.tsx:GeometryDashLayout",
+      "type": "react-component",
+      "name": "GeometryDashLayout",
+      "filePath": "src/app/giveaways/geometry-dash-fun-build/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/geometry-dash-fun-build/page.tsx:GeometryDashPage",
+      "type": "react-component",
+      "name": "GeometryDashPage",
+      "filePath": "src/app/giveaways/geometry-dash-fun-build/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/guardog/layout.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/giveaways/guardog/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/guardog/layout.tsx:GuardogLayout",
+      "type": "react-component",
+      "name": "GuardogLayout",
+      "filePath": "src/app/giveaways/guardog/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/guardog/page.tsx:GuardogPage",
+      "type": "react-component",
+      "name": "GuardogPage",
+      "filePath": "src/app/giveaways/guardog/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/hooklab/content.ts:INSTALL_PROMPT",
+      "type": "react-component",
+      "name": "INSTALL_PROMPT",
+      "filePath": "src/app/giveaways/hooklab/content.ts",
+      "summary": "react-component exported from content.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/hooklab/layout.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/giveaways/hooklab/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/hooklab/layout.tsx:HookLabLayout",
+      "type": "react-component",
+      "name": "HookLabLayout",
+      "filePath": "src/app/giveaways/hooklab/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/hooklab/page.tsx:HookLabPage",
+      "type": "react-component",
+      "name": "HookLabPage",
+      "filePath": "src/app/giveaways/hooklab/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/human/layout.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/giveaways/human/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/human/layout.tsx:HumanGiveawayLayout",
+      "type": "react-component",
+      "name": "HumanGiveawayLayout",
+      "filePath": "src/app/giveaways/human/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/ig-settings/layout.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/giveaways/ig-settings/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/ig-settings/layout.tsx:IgSettingsLayout",
+      "type": "react-component",
+      "name": "IgSettingsLayout",
+      "filePath": "src/app/giveaways/ig-settings/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/ig-settings/page.tsx:IgSettingsGiveawayPage",
+      "type": "react-component",
+      "name": "IgSettingsGiveawayPage",
+      "filePath": "src/app/giveaways/ig-settings/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/layout.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/giveaways/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/layout.tsx:GiveawaysLayout",
+      "type": "react-component",
+      "name": "GiveawaysLayout",
+      "filePath": "src/app/giveaways/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/lead-magnet/layout.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/giveaways/lead-magnet/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/lead-magnet/layout.tsx:LeadMagnetLayout",
+      "type": "react-component",
+      "name": "LeadMagnetLayout",
+      "filePath": "src/app/giveaways/lead-magnet/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/lead-magnet/page.tsx:LeadMagnetPage",
+      "type": "react-component",
+      "name": "LeadMagnetPage",
+      "filePath": "src/app/giveaways/lead-magnet/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/logo-maker-guide/layout.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/giveaways/logo-maker-guide/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/logo-maker-guide/layout.tsx:LogoMakerGuideLayout",
+      "type": "react-component",
+      "name": "LogoMakerGuideLayout",
+      "filePath": "src/app/giveaways/logo-maker-guide/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/logo-maker-guide/page.tsx:LogoMakerGuidePage",
+      "type": "react-component",
+      "name": "LogoMakerGuidePage",
+      "filePath": "src/app/giveaways/logo-maker-guide/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/maccleaner/GiveawayForm.tsx:GiveawayForm",
+      "type": "react-component",
+      "name": "GiveawayForm",
+      "filePath": "src/app/giveaways/maccleaner/GiveawayForm.tsx",
+      "summary": "react-component exported from GiveawayForm.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/maccleaner/layout.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/giveaways/maccleaner/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/maccleaner/layout.tsx:MacCleanerLayout",
+      "type": "react-component",
+      "name": "MacCleanerLayout",
+      "filePath": "src/app/giveaways/maccleaner/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/maccleaner/page.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/giveaways/maccleaner/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/maccleaner/page.tsx:MacCleanerPage",
+      "type": "react-component",
+      "name": "MacCleanerPage",
+      "filePath": "src/app/giveaways/maccleaner/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/page.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/giveaways/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/page.tsx:GiveawaysIndexPage",
+      "type": "react-component",
+      "name": "GiveawaysIndexPage",
+      "filePath": "src/app/giveaways/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/ray-dalio-council/layout.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/giveaways/ray-dalio-council/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/ray-dalio-council/layout.tsx:RayDalioCouncilLayout",
+      "type": "react-component",
+      "name": "RayDalioCouncilLayout",
+      "filePath": "src/app/giveaways/ray-dalio-council/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/ray-dalio-council/page.tsx:RayDalioCouncilPage",
+      "type": "react-component",
+      "name": "RayDalioCouncilPage",
+      "filePath": "src/app/giveaways/ray-dalio-council/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/speak-human/layout.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/giveaways/speak-human/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/speak-human/layout.tsx:SpeakHumanLayout",
+      "type": "react-component",
+      "name": "SpeakHumanLayout",
+      "filePath": "src/app/giveaways/speak-human/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/speak-human/page.tsx:SpeakHumanPage",
+      "type": "react-component",
+      "name": "SpeakHumanPage",
+      "filePath": "src/app/giveaways/speak-human/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/app/giveaways/hooklab/page.tsx",
+      "target": "file:src/app/giveaways/hooklab/content.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/giveaways/human/layout.tsx",
+      "target": "file:src/app/giveaways/speak-human/layout.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/giveaways/human/page.tsx",
+      "target": "file:src/app/giveaways/speak-human/page.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/giveaways/maccleaner/page.tsx",
+      "target": "file:src/app/giveaways/maccleaner/GiveawayForm.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/giveaways/fable-worth-it-audit/page.tsx",
+      "target": "react-component:src/app/giveaways/fable-worth-it-audit/page.tsx:FableWorthItAuditPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/geometry-dash-fun-build/layout.tsx",
+      "target": "react-component:src/app/giveaways/geometry-dash-fun-build/layout.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/geometry-dash-fun-build/layout.tsx",
+      "target": "react-component:src/app/giveaways/geometry-dash-fun-build/layout.tsx:GeometryDashLayout",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/geometry-dash-fun-build/page.tsx",
+      "target": "react-component:src/app/giveaways/geometry-dash-fun-build/page.tsx:GeometryDashPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/guardog/layout.tsx",
+      "target": "react-component:src/app/giveaways/guardog/layout.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/guardog/layout.tsx",
+      "target": "react-component:src/app/giveaways/guardog/layout.tsx:GuardogLayout",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/guardog/page.tsx",
+      "target": "react-component:src/app/giveaways/guardog/page.tsx:GuardogPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/hooklab/content.ts",
+      "target": "react-component:src/app/giveaways/hooklab/content.ts:INSTALL_PROMPT",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/hooklab/layout.tsx",
+      "target": "react-component:src/app/giveaways/hooklab/layout.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/hooklab/layout.tsx",
+      "target": "react-component:src/app/giveaways/hooklab/layout.tsx:HookLabLayout",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/hooklab/page.tsx",
+      "target": "react-component:src/app/giveaways/hooklab/page.tsx:HookLabPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/human/layout.tsx",
+      "target": "react-component:src/app/giveaways/human/layout.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/human/layout.tsx",
+      "target": "react-component:src/app/giveaways/human/layout.tsx:HumanGiveawayLayout",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/ig-settings/layout.tsx",
+      "target": "react-component:src/app/giveaways/ig-settings/layout.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/ig-settings/layout.tsx",
+      "target": "react-component:src/app/giveaways/ig-settings/layout.tsx:IgSettingsLayout",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/ig-settings/page.tsx",
+      "target": "react-component:src/app/giveaways/ig-settings/page.tsx:IgSettingsGiveawayPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/layout.tsx",
+      "target": "react-component:src/app/giveaways/layout.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/layout.tsx",
+      "target": "react-component:src/app/giveaways/layout.tsx:GiveawaysLayout",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/lead-magnet/layout.tsx",
+      "target": "react-component:src/app/giveaways/lead-magnet/layout.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/lead-magnet/layout.tsx",
+      "target": "react-component:src/app/giveaways/lead-magnet/layout.tsx:LeadMagnetLayout",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/lead-magnet/page.tsx",
+      "target": "react-component:src/app/giveaways/lead-magnet/page.tsx:LeadMagnetPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/logo-maker-guide/layout.tsx",
+      "target": "react-component:src/app/giveaways/logo-maker-guide/layout.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/logo-maker-guide/layout.tsx",
+      "target": "react-component:src/app/giveaways/logo-maker-guide/layout.tsx:LogoMakerGuideLayout",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/logo-maker-guide/page.tsx",
+      "target": "react-component:src/app/giveaways/logo-maker-guide/page.tsx:LogoMakerGuidePage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/maccleaner/GiveawayForm.tsx",
+      "target": "react-component:src/app/giveaways/maccleaner/GiveawayForm.tsx:GiveawayForm",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/maccleaner/layout.tsx",
+      "target": "react-component:src/app/giveaways/maccleaner/layout.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/maccleaner/layout.tsx",
+      "target": "react-component:src/app/giveaways/maccleaner/layout.tsx:MacCleanerLayout",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/maccleaner/page.tsx",
+      "target": "react-component:src/app/giveaways/maccleaner/page.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/maccleaner/page.tsx",
+      "target": "react-component:src/app/giveaways/maccleaner/page.tsx:MacCleanerPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/page.tsx",
+      "target": "react-component:src/app/giveaways/page.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/page.tsx",
+      "target": "react-component:src/app/giveaways/page.tsx:GiveawaysIndexPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/ray-dalio-council/layout.tsx",
+      "target": "react-component:src/app/giveaways/ray-dalio-council/layout.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/ray-dalio-council/layout.tsx",
+      "target": "react-component:src/app/giveaways/ray-dalio-council/layout.tsx:RayDalioCouncilLayout",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/ray-dalio-council/page.tsx",
+      "target": "react-component:src/app/giveaways/ray-dalio-council/page.tsx:RayDalioCouncilPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/speak-human/layout.tsx",
+      "target": "react-component:src/app/giveaways/speak-human/layout.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/speak-human/layout.tsx",
+      "target": "react-component:src/app/giveaways/speak-human/layout.tsx:SpeakHumanLayout",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/speak-human/page.tsx",
+      "target": "react-component:src/app/giveaways/speak-human/page.tsx:SpeakHumanPage",
+      "type": "exports",
+      "weight": 1
+    }
+  ],
+  "statistics": {
+    "nodeCount": 62,
+    "edgeCount": 41,
+    "fileCategories": {
+      "code": 25
+    },
+    "totalSizeLines": 7273,
+    "symbolCount": 37
+  }
+}

@@ -1,0 +1,486 @@
+{
+  "batchIndex": 4,
+  "nodes": [
+    {
+      "id": "file:src/lib/email-suppressions.ts",
+      "type": "file",
+      "name": "email-suppressions.ts",
+      "filePath": "src/lib/email-suppressions.ts",
+      "language": "typescript",
+      "sizeLines": 73,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/lib/event-registration-db.ts",
+      "type": "file",
+      "name": "event-registration-db.ts",
+      "filePath": "src/lib/event-registration-db.ts",
+      "language": "typescript",
+      "sizeLines": 361,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/lib/event-registration-flow.ts",
+      "type": "file",
+      "name": "event-registration-flow.ts",
+      "filePath": "src/lib/event-registration-flow.ts",
+      "language": "typescript",
+      "sizeLines": 44,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/lib/rate-limit.ts",
+      "type": "file",
+      "name": "rate-limit.ts",
+      "filePath": "src/lib/rate-limit.ts",
+      "language": "typescript",
+      "sizeLines": 44,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/lib/supabase.ts",
+      "type": "file",
+      "name": "supabase.ts",
+      "filePath": "src/lib/supabase.ts",
+      "language": "typescript",
+      "sizeLines": 9,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "utility",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/event-registration-flow.test.ts",
+      "type": "file",
+      "name": "event-registration-flow.test.ts",
+      "filePath": "tests/event-registration-flow.test.ts",
+      "language": "typescript",
+      "sizeLines": 69,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "test",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/email-suppressions.ts:isSuppressed",
+      "type": "function",
+      "name": "isSuppressed",
+      "filePath": "src/lib/email-suppressions.ts",
+      "summary": "function exported from email-suppressions.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/email-suppressions.ts:recordSuppression",
+      "type": "function",
+      "name": "recordSuppression",
+      "filePath": "src/lib/email-suppressions.ts",
+      "summary": "function exported from email-suppressions.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-registration-db.ts:saveRegistrationIntake",
+      "type": "function",
+      "name": "saveRegistrationIntake",
+      "filePath": "src/lib/event-registration-db.ts",
+      "summary": "function exported from event-registration-db.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-registration-db.ts:getRegistrationIntake",
+      "type": "function",
+      "name": "getRegistrationIntake",
+      "filePath": "src/lib/event-registration-db.ts",
+      "summary": "function exported from event-registration-db.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-registration-db.ts:saveRegistration",
+      "type": "function",
+      "name": "saveRegistration",
+      "filePath": "src/lib/event-registration-db.ts",
+      "summary": "function exported from event-registration-db.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-registration-db.ts:isAlreadyRegistered",
+      "type": "function",
+      "name": "isAlreadyRegistered",
+      "filePath": "src/lib/event-registration-db.ts",
+      "summary": "function exported from event-registration-db.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-registration-db.ts:isAlreadyOnWaitlist",
+      "type": "function",
+      "name": "isAlreadyOnWaitlist",
+      "filePath": "src/lib/event-registration-db.ts",
+      "summary": "function exported from event-registration-db.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-registration-db.ts:cancelRegistration",
+      "type": "function",
+      "name": "cancelRegistration",
+      "filePath": "src/lib/event-registration-db.ts",
+      "summary": "function exported from event-registration-db.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-registration-db.ts:getConfirmedCount",
+      "type": "function",
+      "name": "getConfirmedCount",
+      "filePath": "src/lib/event-registration-db.ts",
+      "summary": "function exported from event-registration-db.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-registration-db.ts:getConfirmedRegistrationsForEvent",
+      "type": "function",
+      "name": "getConfirmedRegistrationsForEvent",
+      "filePath": "src/lib/event-registration-db.ts",
+      "summary": "function exported from event-registration-db.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-registration-db.ts:addToWaitlist",
+      "type": "function",
+      "name": "addToWaitlist",
+      "filePath": "src/lib/event-registration-db.ts",
+      "summary": "function exported from event-registration-db.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-registration-db.ts:removeFromWaitlist",
+      "type": "function",
+      "name": "removeFromWaitlist",
+      "filePath": "src/lib/event-registration-db.ts",
+      "summary": "function exported from event-registration-db.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-registration-db.ts:getActiveWaitlist",
+      "type": "function",
+      "name": "getActiveWaitlist",
+      "filePath": "src/lib/event-registration-db.ts",
+      "summary": "function exported from event-registration-db.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-registration-db.ts:hasOpenSpots",
+      "type": "function",
+      "name": "hasOpenSpots",
+      "filePath": "src/lib/event-registration-db.ts",
+      "summary": "function exported from event-registration-db.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-registration-flow.ts:resolveAcquisitionRef",
+      "type": "function",
+      "name": "resolveAcquisitionRef",
+      "filePath": "src/lib/event-registration-flow.ts",
+      "summary": "function exported from event-registration-flow.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/event-registration-flow.ts:buildEventCheckoutRequestBody",
+      "type": "function",
+      "name": "buildEventCheckoutRequestBody",
+      "filePath": "src/lib/event-registration-flow.ts",
+      "summary": "function exported from event-registration-flow.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/rate-limit.ts:getClientIp",
+      "type": "function",
+      "name": "getClientIp",
+      "filePath": "src/lib/rate-limit.ts",
+      "summary": "function exported from rate-limit.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/rate-limit.ts:checkRateLimit",
+      "type": "function",
+      "name": "checkRateLimit",
+      "filePath": "src/lib/rate-limit.ts",
+      "summary": "function exported from rate-limit.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "function:src/lib/supabase.ts:supabase",
+      "type": "function",
+      "name": "supabase",
+      "filePath": "src/lib/supabase.ts",
+      "summary": "function exported from supabase.ts",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "unknown"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/lib/email-suppressions.ts",
+      "target": "file:src/lib/supabase.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/rate-limit.ts",
+      "target": "file:src/lib/supabase.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/event-registration-flow.test.ts",
+      "target": "file:src/lib/event-registration-flow.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/event-registration-flow.test.ts",
+      "target": "file:src/lib/event-registration-db.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/event-registration-flow.test.ts",
+      "target": "file:src/lib/supabase.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/email-suppressions.ts",
+      "target": "file:src/lib/event-confirmation-email.ts",
+      "type": "imports",
+      "weight": 0.6,
+      "crossBatch": true,
+      "targetBatchIndex": 1
+    },
+    {
+      "source": "file:src/lib/email-suppressions.ts",
+      "target": "function:src/lib/email-suppressions.ts:isSuppressed",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/email-suppressions.ts",
+      "target": "function:src/lib/email-suppressions.ts:recordSuppression",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-registration-db.ts",
+      "target": "function:src/lib/event-registration-db.ts:saveRegistrationIntake",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-registration-db.ts",
+      "target": "function:src/lib/event-registration-db.ts:getRegistrationIntake",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-registration-db.ts",
+      "target": "function:src/lib/event-registration-db.ts:saveRegistration",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-registration-db.ts",
+      "target": "function:src/lib/event-registration-db.ts:isAlreadyRegistered",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-registration-db.ts",
+      "target": "function:src/lib/event-registration-db.ts:isAlreadyOnWaitlist",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-registration-db.ts",
+      "target": "function:src/lib/event-registration-db.ts:cancelRegistration",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-registration-db.ts",
+      "target": "function:src/lib/event-registration-db.ts:getConfirmedCount",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-registration-db.ts",
+      "target": "function:src/lib/event-registration-db.ts:getConfirmedRegistrationsForEvent",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-registration-db.ts",
+      "target": "function:src/lib/event-registration-db.ts:addToWaitlist",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-registration-db.ts",
+      "target": "function:src/lib/event-registration-db.ts:removeFromWaitlist",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-registration-db.ts",
+      "target": "function:src/lib/event-registration-db.ts:getActiveWaitlist",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-registration-db.ts",
+      "target": "function:src/lib/event-registration-db.ts:hasOpenSpots",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-registration-flow.ts",
+      "target": "function:src/lib/event-registration-flow.ts:resolveAcquisitionRef",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/event-registration-flow.ts",
+      "target": "function:src/lib/event-registration-flow.ts:buildEventCheckoutRequestBody",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/rate-limit.ts",
+      "target": "function:src/lib/rate-limit.ts:getClientIp",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/rate-limit.ts",
+      "target": "function:src/lib/rate-limit.ts:checkRateLimit",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/supabase.ts",
+      "target": "function:src/lib/supabase.ts:supabase",
+      "type": "exports",
+      "weight": 1
+    }
+  ],
+  "statistics": {
+    "nodeCount": 25,
+    "edgeCount": 25,
+    "fileCategories": {
+      "code": 6
+    },
+    "totalSizeLines": 600,
+    "symbolCount": 19
+  }
+}

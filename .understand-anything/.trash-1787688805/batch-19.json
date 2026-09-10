@@ -1,0 +1,937 @@
+{
+  "batchIndex": 19,
+  "nodes": [
+    {
+      "id": "file:src/app/session/7/guide/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/session/7/guide/page.tsx",
+      "language": "typescript",
+      "sizeLines": 56,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/session/7/prep/page 2.tsx",
+      "type": "file",
+      "name": "page 2.tsx",
+      "filePath": "src/app/session/7/prep/page 2.tsx",
+      "language": "typescript",
+      "sizeLines": 56,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/session/7/prep/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/session/7/prep/page.tsx",
+      "language": "typescript",
+      "sizeLines": 56,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/session/8/guide/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/session/8/guide/page.tsx",
+      "language": "typescript",
+      "sizeLines": 53,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/session/8/prep/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/session/8/prep/page.tsx",
+      "language": "typescript",
+      "sizeLines": 53,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/session/9/guide/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/session/9/guide/page.tsx",
+      "language": "typescript",
+      "sizeLines": 53,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/sitemap.ts",
+      "type": "file",
+      "name": "sitemap.ts",
+      "filePath": "src/app/sitemap.ts",
+      "language": "typescript",
+      "sizeLines": 28,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/CodeBlock.tsx",
+      "type": "file",
+      "name": "CodeBlock.tsx",
+      "filePath": "src/components/CodeBlock.tsx",
+      "language": "typescript",
+      "sizeLines": 158,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "react-component",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/events/ask-an-ai-expert-quotes.ts",
+      "type": "file",
+      "name": "ask-an-ai-expert-quotes.ts",
+      "filePath": "src/components/events/ask-an-ai-expert-quotes.ts",
+      "language": "typescript",
+      "sizeLines": 311,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "react-component",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/components/events/AskAnAiExpertQuoteStrip.tsx",
+      "type": "file",
+      "name": "AskAnAiExpertQuoteStrip.tsx",
+      "filePath": "src/components/events/AskAnAiExpertQuoteStrip.tsx",
+      "language": "typescript",
+      "sizeLines": 128,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "react-component",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/events/EventMediaVideo.tsx",
+      "type": "file",
+      "name": "EventMediaVideo.tsx",
+      "filePath": "src/components/events/EventMediaVideo.tsx",
+      "language": "typescript",
+      "sizeLines": 63,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "react-component",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/events/EventPageView.tsx",
+      "type": "file",
+      "name": "EventPageView.tsx",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "language": "typescript",
+      "sizeLines": 662,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "react-component",
+        "typescript-module"
+      ],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "file:src/components/events/EventRegistrationSection.tsx",
+      "type": "file",
+      "name": "EventRegistrationSection.tsx",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "language": "typescript",
+      "sizeLines": 876,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "react-component",
+        "typescript-module"
+      ],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "file:src/components/events/HeroVideo.tsx",
+      "type": "file",
+      "name": "HeroVideo.tsx",
+      "filePath": "src/components/events/HeroVideo.tsx",
+      "language": "typescript",
+      "sizeLines": 55,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "react-component",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/events/ScrollToRegisterButton.tsx",
+      "type": "file",
+      "name": "ScrollToRegisterButton.tsx",
+      "filePath": "src/components/events/ScrollToRegisterButton.tsx",
+      "language": "typescript",
+      "sizeLines": 28,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "react-component",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/events/WaitlistJoinForm.tsx",
+      "type": "file",
+      "name": "WaitlistJoinForm.tsx",
+      "filePath": "src/components/events/WaitlistJoinForm.tsx",
+      "language": "typescript",
+      "sizeLines": 142,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "react-component",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/PageParticles.tsx",
+      "type": "file",
+      "name": "PageParticles.tsx",
+      "filePath": "src/components/PageParticles.tsx",
+      "language": "typescript",
+      "sizeLines": 111,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "react-component",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/ParticipantCarousel.tsx",
+      "type": "file",
+      "name": "ParticipantCarousel.tsx",
+      "filePath": "src/components/ParticipantCarousel.tsx",
+      "language": "typescript",
+      "sizeLines": 167,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "react-component",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/PrepChecklistItem.tsx",
+      "type": "file",
+      "name": "PrepChecklistItem.tsx",
+      "filePath": "src/components/PrepChecklistItem.tsx",
+      "language": "typescript",
+      "sizeLines": 66,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "react-component",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/ProTip.tsx",
+      "type": "file",
+      "name": "ProTip.tsx",
+      "filePath": "src/components/ProTip.tsx",
+      "language": "typescript",
+      "sizeLines": 50,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "react-component",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/Reveal.tsx",
+      "type": "file",
+      "name": "Reveal.tsx",
+      "filePath": "src/components/Reveal.tsx",
+      "language": "typescript",
+      "sizeLines": 41,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "react-component",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/ScreenshotCard.tsx",
+      "type": "file",
+      "name": "ScreenshotCard.tsx",
+      "filePath": "src/components/ScreenshotCard.tsx",
+      "language": "typescript",
+      "sizeLines": 23,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "react-component",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/sections/MastermindReactionsSection.tsx",
+      "type": "file",
+      "name": "MastermindReactionsSection.tsx",
+      "filePath": "src/components/sections/MastermindReactionsSection.tsx",
+      "language": "typescript",
+      "sizeLines": 152,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "react-component",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/SessionCard.tsx",
+      "type": "file",
+      "name": "SessionCard.tsx",
+      "filePath": "src/components/SessionCard.tsx",
+      "language": "typescript",
+      "sizeLines": 111,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "react-component",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/SiteChrome.tsx",
+      "type": "file",
+      "name": "SiteChrome.tsx",
+      "filePath": "src/components/SiteChrome.tsx",
+      "language": "typescript",
+      "sizeLines": 41,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "react-component",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "react-component:src/app/session/7/guide/page.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/session/7/guide/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/7/guide/page.tsx:Session7GuidePage",
+      "type": "react-component",
+      "name": "Session7GuidePage",
+      "filePath": "src/app/session/7/guide/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/7/prep/page 2.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/session/7/prep/page 2.tsx",
+      "summary": "react-component exported from page 2.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/7/prep/page 2.tsx:Session7PrepPage",
+      "type": "react-component",
+      "name": "Session7PrepPage",
+      "filePath": "src/app/session/7/prep/page 2.tsx",
+      "summary": "react-component exported from page 2.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/7/prep/page.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/session/7/prep/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/7/prep/page.tsx:Session7PrepPage",
+      "type": "react-component",
+      "name": "Session7PrepPage",
+      "filePath": "src/app/session/7/prep/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/8/guide/page.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/session/8/guide/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/8/guide/page.tsx:Session8GuidePage",
+      "type": "react-component",
+      "name": "Session8GuidePage",
+      "filePath": "src/app/session/8/guide/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/8/prep/page.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/session/8/prep/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/8/prep/page.tsx:Session8PrepPage",
+      "type": "react-component",
+      "name": "Session8PrepPage",
+      "filePath": "src/app/session/8/prep/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/9/guide/page.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/session/9/guide/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/session/9/guide/page.tsx:Session9GuidePage",
+      "type": "react-component",
+      "name": "Session9GuidePage",
+      "filePath": "src/app/session/9/guide/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/sitemap.ts:sitemap",
+      "type": "react-component",
+      "name": "sitemap",
+      "filePath": "src/app/sitemap.ts",
+      "summary": "react-component exported from sitemap.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/components/CodeBlock.tsx:CodeBlock",
+      "type": "react-component",
+      "name": "CodeBlock",
+      "filePath": "src/components/CodeBlock.tsx",
+      "summary": "react-component exported from CodeBlock.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/components/events/ask-an-ai-expert-quotes.ts:askAnAiExpertQuotes",
+      "type": "react-component",
+      "name": "askAnAiExpertQuotes",
+      "filePath": "src/components/events/ask-an-ai-expert-quotes.ts",
+      "summary": "react-component exported from ask-an-ai-expert-quotes.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/components/events/AskAnAiExpertQuoteStrip.tsx:AskAnAiExpertQuoteStrip",
+      "type": "react-component",
+      "name": "AskAnAiExpertQuoteStrip",
+      "filePath": "src/components/events/AskAnAiExpertQuoteStrip.tsx",
+      "summary": "react-component exported from AskAnAiExpertQuoteStrip.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/components/events/EventPageView.tsx:EventPageView",
+      "type": "react-component",
+      "name": "EventPageView",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "react-component exported from EventPageView.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/components/events/EventRegistrationSection.tsx:EventRegistrationSection",
+      "type": "react-component",
+      "name": "EventRegistrationSection",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "summary": "react-component exported from EventRegistrationSection.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/components/events/HeroVideo.tsx:HeroVideo",
+      "type": "react-component",
+      "name": "HeroVideo",
+      "filePath": "src/components/events/HeroVideo.tsx",
+      "summary": "react-component exported from HeroVideo.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/components/events/ScrollToRegisterButton.tsx:ScrollToRegisterButton",
+      "type": "react-component",
+      "name": "ScrollToRegisterButton",
+      "filePath": "src/components/events/ScrollToRegisterButton.tsx",
+      "summary": "react-component exported from ScrollToRegisterButton.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/components/events/WaitlistJoinForm.tsx:WaitlistJoinForm",
+      "type": "react-component",
+      "name": "WaitlistJoinForm",
+      "filePath": "src/components/events/WaitlistJoinForm.tsx",
+      "summary": "react-component exported from WaitlistJoinForm.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/components/PageParticles.tsx:PageParticles",
+      "type": "react-component",
+      "name": "PageParticles",
+      "filePath": "src/components/PageParticles.tsx",
+      "summary": "react-component exported from PageParticles.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/components/ParticipantCarousel.tsx:ParticipantCarousel",
+      "type": "react-component",
+      "name": "ParticipantCarousel",
+      "filePath": "src/components/ParticipantCarousel.tsx",
+      "summary": "react-component exported from ParticipantCarousel.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/components/PrepChecklistItem.tsx:PrepChecklistItem",
+      "type": "react-component",
+      "name": "PrepChecklistItem",
+      "filePath": "src/components/PrepChecklistItem.tsx",
+      "summary": "react-component exported from PrepChecklistItem.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/components/ProTip.tsx:ProTip",
+      "type": "react-component",
+      "name": "ProTip",
+      "filePath": "src/components/ProTip.tsx",
+      "summary": "react-component exported from ProTip.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/components/Reveal.tsx:Reveal",
+      "type": "react-component",
+      "name": "Reveal",
+      "filePath": "src/components/Reveal.tsx",
+      "summary": "react-component exported from Reveal.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/components/ScreenshotCard.tsx:ScreenshotCard",
+      "type": "react-component",
+      "name": "ScreenshotCard",
+      "filePath": "src/components/ScreenshotCard.tsx",
+      "summary": "react-component exported from ScreenshotCard.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/components/sections/MastermindReactionsSection.tsx:MastermindReactionsSection",
+      "type": "react-component",
+      "name": "MastermindReactionsSection",
+      "filePath": "src/components/sections/MastermindReactionsSection.tsx",
+      "summary": "react-component exported from MastermindReactionsSection.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/components/SessionCard.tsx:SessionCard",
+      "type": "react-component",
+      "name": "SessionCard",
+      "filePath": "src/components/SessionCard.tsx",
+      "summary": "react-component exported from SessionCard.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/components/SiteChrome.tsx:SiteChrome",
+      "type": "react-component",
+      "name": "SiteChrome",
+      "filePath": "src/components/SiteChrome.tsx",
+      "summary": "react-component exported from SiteChrome.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/components/events/AskAnAiExpertQuoteStrip.tsx",
+      "target": "file:src/components/events/ask-an-ai-expert-quotes.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/session/7/guide/page.tsx",
+      "target": "react-component:src/app/session/7/guide/page.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/7/guide/page.tsx",
+      "target": "react-component:src/app/session/7/guide/page.tsx:Session7GuidePage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/7/prep/page 2.tsx",
+      "target": "react-component:src/app/session/7/prep/page 2.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/7/prep/page 2.tsx",
+      "target": "react-component:src/app/session/7/prep/page 2.tsx:Session7PrepPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/7/prep/page.tsx",
+      "target": "react-component:src/app/session/7/prep/page.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/7/prep/page.tsx",
+      "target": "react-component:src/app/session/7/prep/page.tsx:Session7PrepPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/8/guide/page.tsx",
+      "target": "react-component:src/app/session/8/guide/page.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/8/guide/page.tsx",
+      "target": "react-component:src/app/session/8/guide/page.tsx:Session8GuidePage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/8/prep/page.tsx",
+      "target": "react-component:src/app/session/8/prep/page.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/8/prep/page.tsx",
+      "target": "react-component:src/app/session/8/prep/page.tsx:Session8PrepPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/9/guide/page.tsx",
+      "target": "react-component:src/app/session/9/guide/page.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/session/9/guide/page.tsx",
+      "target": "react-component:src/app/session/9/guide/page.tsx:Session9GuidePage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/sitemap.ts",
+      "target": "react-component:src/app/sitemap.ts:sitemap",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/CodeBlock.tsx",
+      "target": "react-component:src/components/CodeBlock.tsx:CodeBlock",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/events/ask-an-ai-expert-quotes.ts",
+      "target": "react-component:src/components/events/ask-an-ai-expert-quotes.ts:askAnAiExpertQuotes",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/events/AskAnAiExpertQuoteStrip.tsx",
+      "target": "react-component:src/components/events/AskAnAiExpertQuoteStrip.tsx:AskAnAiExpertQuoteStrip",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/events/EventPageView.tsx",
+      "target": "react-component:src/components/events/EventPageView.tsx:EventPageView",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/events/EventRegistrationSection.tsx",
+      "target": "react-component:src/components/events/EventRegistrationSection.tsx:EventRegistrationSection",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/events/HeroVideo.tsx",
+      "target": "react-component:src/components/events/HeroVideo.tsx:HeroVideo",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/events/ScrollToRegisterButton.tsx",
+      "target": "react-component:src/components/events/ScrollToRegisterButton.tsx:ScrollToRegisterButton",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/events/WaitlistJoinForm.tsx",
+      "target": "react-component:src/components/events/WaitlistJoinForm.tsx:WaitlistJoinForm",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/PageParticles.tsx",
+      "target": "react-component:src/components/PageParticles.tsx:PageParticles",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/ParticipantCarousel.tsx",
+      "target": "react-component:src/components/ParticipantCarousel.tsx:ParticipantCarousel",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/PrepChecklistItem.tsx",
+      "target": "react-component:src/components/PrepChecklistItem.tsx:PrepChecklistItem",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/ProTip.tsx",
+      "target": "react-component:src/components/ProTip.tsx:ProTip",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/Reveal.tsx",
+      "target": "react-component:src/components/Reveal.tsx:Reveal",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/ScreenshotCard.tsx",
+      "target": "react-component:src/components/ScreenshotCard.tsx:ScreenshotCard",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/sections/MastermindReactionsSection.tsx",
+      "target": "react-component:src/components/sections/MastermindReactionsSection.tsx:MastermindReactionsSection",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/SessionCard.tsx",
+      "target": "react-component:src/components/SessionCard.tsx:SessionCard",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/SiteChrome.tsx",
+      "target": "react-component:src/components/SiteChrome.tsx:SiteChrome",
+      "type": "exports",
+      "weight": 1
+    }
+  ],
+  "statistics": {
+    "nodeCount": 55,
+    "edgeCount": 31,
+    "fileCategories": {
+      "code": 25
+    },
+    "totalSizeLines": 3540,
+    "symbolCount": 30
+  }
+}

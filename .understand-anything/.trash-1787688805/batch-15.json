@@ -1,0 +1,1201 @@
+{
+  "batchIndex": 15,
+  "nodes": [
+    {
+      "id": "file:src/app/giveaways/ai-behavior-quiz/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/giveaways/ai-behavior-quiz/page.tsx",
+      "language": "typescript",
+      "sizeLines": 120,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/giveaways/ai-levels-quiz/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/giveaways/ai-levels-quiz/page.tsx",
+      "language": "typescript",
+      "sizeLines": 120,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/giveaways/all-sorted-overview/layout.tsx",
+      "type": "file",
+      "name": "layout.tsx",
+      "filePath": "src/app/giveaways/all-sorted-overview/layout.tsx",
+      "language": "typescript",
+      "sizeLines": 37,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/giveaways/all-sorted-overview/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/giveaways/all-sorted-overview/page.tsx",
+      "language": "typescript",
+      "sizeLines": 481,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/app/giveaways/anthropic-safety-checklist/layout.tsx",
+      "type": "file",
+      "name": "layout.tsx",
+      "filePath": "src/app/giveaways/anthropic-safety-checklist/layout.tsx",
+      "language": "typescript",
+      "sizeLines": 11,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/giveaways/anthropic-safety-checklist/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/giveaways/anthropic-safety-checklist/page.tsx",
+      "language": "typescript",
+      "sizeLines": 949,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "file:src/app/giveaways/benchmark/layout.tsx",
+      "type": "file",
+      "name": "layout.tsx",
+      "filePath": "src/app/giveaways/benchmark/layout.tsx",
+      "language": "typescript",
+      "sizeLines": 11,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/giveaways/benchmark/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/giveaways/benchmark/page.tsx",
+      "language": "typescript",
+      "sizeLines": 362,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/app/giveaways/business-builder-quiz/layout.tsx",
+      "type": "file",
+      "name": "layout.tsx",
+      "filePath": "src/app/giveaways/business-builder-quiz/layout.tsx",
+      "language": "typescript",
+      "sizeLines": 46,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/giveaways/business-builder-quiz/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/giveaways/business-builder-quiz/page.tsx",
+      "language": "typescript",
+      "sizeLines": 872,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "file:src/app/giveaways/claude-md/layout.tsx",
+      "type": "file",
+      "name": "layout.tsx",
+      "filePath": "src/app/giveaways/claude-md/layout.tsx",
+      "language": "typescript",
+      "sizeLines": 37,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/giveaways/claude-md/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/giveaways/claude-md/page.tsx",
+      "language": "typescript",
+      "sizeLines": 936,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "file:src/app/giveaways/client-launch-checklist/layout.tsx",
+      "type": "file",
+      "name": "layout.tsx",
+      "filePath": "src/app/giveaways/client-launch-checklist/layout.tsx",
+      "language": "typescript",
+      "sizeLines": 11,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/giveaways/client-launch-checklist/LeadMagnetExampleForm.tsx",
+      "type": "file",
+      "name": "LeadMagnetExampleForm.tsx",
+      "filePath": "src/app/giveaways/client-launch-checklist/LeadMagnetExampleForm.tsx",
+      "language": "typescript",
+      "sizeLines": 134,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/giveaways/client-launch-checklist/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/giveaways/client-launch-checklist/page.tsx",
+      "language": "typescript",
+      "sizeLines": 177,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/giveaways/compare/layout.tsx",
+      "type": "file",
+      "name": "layout.tsx",
+      "filePath": "src/app/giveaways/compare/layout.tsx",
+      "language": "typescript",
+      "sizeLines": 12,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/giveaways/compare/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/giveaways/compare/page.tsx",
+      "language": "typescript",
+      "sizeLines": 788,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "file:src/app/giveaways/cost-stack/layout.tsx",
+      "type": "file",
+      "name": "layout.tsx",
+      "filePath": "src/app/giveaways/cost-stack/layout.tsx",
+      "language": "typescript",
+      "sizeLines": 40,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/app/giveaways/cost-stack/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/giveaways/cost-stack/page.tsx",
+      "language": "typescript",
+      "sizeLines": 1101,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "very-complex"
+    },
+    {
+      "id": "file:src/app/giveaways/cross-cli-compatibility-routing/content.ts",
+      "type": "file",
+      "name": "content.ts",
+      "filePath": "src/app/giveaways/cross-cli-compatibility-routing/content.ts",
+      "language": "typescript",
+      "sizeLines": 340,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/app/giveaways/cross-cli-compatibility-routing/layout.tsx",
+      "type": "file",
+      "name": "layout.tsx",
+      "filePath": "src/app/giveaways/cross-cli-compatibility-routing/layout.tsx",
+      "language": "typescript",
+      "sizeLines": 51,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/giveaways/cross-cli-compatibility-routing/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/giveaways/cross-cli-compatibility-routing/page.tsx",
+      "language": "typescript",
+      "sizeLines": 491,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/app/giveaways/cult-brand-playbook/GiveawayForm.tsx",
+      "type": "file",
+      "name": "GiveawayForm.tsx",
+      "filePath": "src/app/giveaways/cult-brand-playbook/GiveawayForm.tsx",
+      "language": "typescript",
+      "sizeLines": 67,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app/giveaways/cult-brand-playbook/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/giveaways/cult-brand-playbook/page.tsx",
+      "language": "typescript",
+      "sizeLines": 235,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/app/giveaways/fable-worth-it-audit/layout.tsx",
+      "type": "file",
+      "name": "layout.tsx",
+      "filePath": "src/app/giveaways/fable-worth-it-audit/layout.tsx",
+      "language": "typescript",
+      "sizeLines": 45,
+      "fileCategory": "code",
+      "summary": "Source file",
+      "tags": [
+        "page",
+        "typescript-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "react-component:src/app/giveaways/ai-behavior-quiz/page.tsx:AiBehaviorQuizPage",
+      "type": "react-component",
+      "name": "AiBehaviorQuizPage",
+      "filePath": "src/app/giveaways/ai-behavior-quiz/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/ai-levels-quiz/page.tsx:AiLevelsQuizPage",
+      "type": "react-component",
+      "name": "AiLevelsQuizPage",
+      "filePath": "src/app/giveaways/ai-levels-quiz/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/all-sorted-overview/layout.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/giveaways/all-sorted-overview/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/all-sorted-overview/layout.tsx:AllSortedOverviewLayout",
+      "type": "react-component",
+      "name": "AllSortedOverviewLayout",
+      "filePath": "src/app/giveaways/all-sorted-overview/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/all-sorted-overview/page.tsx:AllSortedOverviewPage",
+      "type": "react-component",
+      "name": "AllSortedOverviewPage",
+      "filePath": "src/app/giveaways/all-sorted-overview/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/anthropic-safety-checklist/layout.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/giveaways/anthropic-safety-checklist/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/anthropic-safety-checklist/layout.tsx:AnthropicSafetyLayout",
+      "type": "react-component",
+      "name": "AnthropicSafetyLayout",
+      "filePath": "src/app/giveaways/anthropic-safety-checklist/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/anthropic-safety-checklist/page.tsx:AnthropicSafetyChecklistPage",
+      "type": "react-component",
+      "name": "AnthropicSafetyChecklistPage",
+      "filePath": "src/app/giveaways/anthropic-safety-checklist/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/benchmark/layout.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/giveaways/benchmark/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/benchmark/layout.tsx:BenchmarkLayout",
+      "type": "react-component",
+      "name": "BenchmarkLayout",
+      "filePath": "src/app/giveaways/benchmark/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/benchmark/page.tsx:BenchmarkPage",
+      "type": "react-component",
+      "name": "BenchmarkPage",
+      "filePath": "src/app/giveaways/benchmark/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/business-builder-quiz/layout.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/giveaways/business-builder-quiz/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/business-builder-quiz/layout.tsx:BusinessBuilderQuizLayout",
+      "type": "react-component",
+      "name": "BusinessBuilderQuizLayout",
+      "filePath": "src/app/giveaways/business-builder-quiz/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/business-builder-quiz/page.tsx:BusinessBuilderQuizPage",
+      "type": "react-component",
+      "name": "BusinessBuilderQuizPage",
+      "filePath": "src/app/giveaways/business-builder-quiz/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/claude-md/layout.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/giveaways/claude-md/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/claude-md/layout.tsx:ClaudeMdLayout",
+      "type": "react-component",
+      "name": "ClaudeMdLayout",
+      "filePath": "src/app/giveaways/claude-md/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/claude-md/page.tsx:ClaudeMdPage",
+      "type": "react-component",
+      "name": "ClaudeMdPage",
+      "filePath": "src/app/giveaways/claude-md/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/client-launch-checklist/layout.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/giveaways/client-launch-checklist/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/client-launch-checklist/layout.tsx:ClientLaunchChecklistLayout",
+      "type": "react-component",
+      "name": "ClientLaunchChecklistLayout",
+      "filePath": "src/app/giveaways/client-launch-checklist/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/client-launch-checklist/LeadMagnetExampleForm.tsx:LeadMagnetExampleForm",
+      "type": "react-component",
+      "name": "LeadMagnetExampleForm",
+      "filePath": "src/app/giveaways/client-launch-checklist/LeadMagnetExampleForm.tsx",
+      "summary": "react-component exported from LeadMagnetExampleForm.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/client-launch-checklist/page.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/giveaways/client-launch-checklist/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/client-launch-checklist/page.tsx:ClientLaunchChecklistPage",
+      "type": "react-component",
+      "name": "ClientLaunchChecklistPage",
+      "filePath": "src/app/giveaways/client-launch-checklist/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/compare/layout.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/giveaways/compare/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/compare/layout.tsx:CompareLayout",
+      "type": "react-component",
+      "name": "CompareLayout",
+      "filePath": "src/app/giveaways/compare/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/compare/page.tsx:ComparePage",
+      "type": "react-component",
+      "name": "ComparePage",
+      "filePath": "src/app/giveaways/compare/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/cost-stack/layout.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/giveaways/cost-stack/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/cost-stack/layout.tsx:CostStackLayout",
+      "type": "react-component",
+      "name": "CostStackLayout",
+      "filePath": "src/app/giveaways/cost-stack/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/cost-stack/page.tsx:CostStackPage",
+      "type": "react-component",
+      "name": "CostStackPage",
+      "filePath": "src/app/giveaways/cost-stack/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/cross-cli-compatibility-routing/content.ts:ROUTING_TITLE",
+      "type": "react-component",
+      "name": "ROUTING_TITLE",
+      "filePath": "src/app/giveaways/cross-cli-compatibility-routing/content.ts",
+      "summary": "react-component exported from content.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/cross-cli-compatibility-routing/content.ts:ROUTING_SUMMARY",
+      "type": "react-component",
+      "name": "ROUTING_SUMMARY",
+      "filePath": "src/app/giveaways/cross-cli-compatibility-routing/content.ts",
+      "summary": "react-component exported from content.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/cross-cli-compatibility-routing/content.ts:PROBLEM_POINTS",
+      "type": "react-component",
+      "name": "PROBLEM_POINTS",
+      "filePath": "src/app/giveaways/cross-cli-compatibility-routing/content.ts",
+      "summary": "react-component exported from content.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/cross-cli-compatibility-routing/content.ts:FLOW_STEPS",
+      "type": "react-component",
+      "name": "FLOW_STEPS",
+      "filePath": "src/app/giveaways/cross-cli-compatibility-routing/content.ts",
+      "summary": "react-component exported from content.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/cross-cli-compatibility-routing/content.ts:LANE_CARDS",
+      "type": "react-component",
+      "name": "LANE_CARDS",
+      "filePath": "src/app/giveaways/cross-cli-compatibility-routing/content.ts",
+      "summary": "react-component exported from content.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/cross-cli-compatibility-routing/content.ts:RULE_SECTIONS",
+      "type": "react-component",
+      "name": "RULE_SECTIONS",
+      "filePath": "src/app/giveaways/cross-cli-compatibility-routing/content.ts",
+      "summary": "react-component exported from content.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/cross-cli-compatibility-routing/content.ts:WHY_IT_SCALES",
+      "type": "react-component",
+      "name": "WHY_IT_SCALES",
+      "filePath": "src/app/giveaways/cross-cli-compatibility-routing/content.ts",
+      "summary": "react-component exported from content.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/cross-cli-compatibility-routing/content.ts:MIGRATION_PROMPT",
+      "type": "react-component",
+      "name": "MIGRATION_PROMPT",
+      "filePath": "src/app/giveaways/cross-cli-compatibility-routing/content.ts",
+      "summary": "react-component exported from content.ts",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/cross-cli-compatibility-routing/layout.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/giveaways/cross-cli-compatibility-routing/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/cross-cli-compatibility-routing/layout.tsx:CrossCliCompatibilityRoutingLayout",
+      "type": "react-component",
+      "name": "CrossCliCompatibilityRoutingLayout",
+      "filePath": "src/app/giveaways/cross-cli-compatibility-routing/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/cross-cli-compatibility-routing/page.tsx:CrossCliCompatibilityRoutingPage",
+      "type": "react-component",
+      "name": "CrossCliCompatibilityRoutingPage",
+      "filePath": "src/app/giveaways/cross-cli-compatibility-routing/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/cult-brand-playbook/GiveawayForm.tsx:GiveawayForm",
+      "type": "react-component",
+      "name": "GiveawayForm",
+      "filePath": "src/app/giveaways/cult-brand-playbook/GiveawayForm.tsx",
+      "summary": "react-component exported from GiveawayForm.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/cult-brand-playbook/page.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/giveaways/cult-brand-playbook/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/cult-brand-playbook/page.tsx:CultBrandPlaybookPage",
+      "type": "react-component",
+      "name": "CultBrandPlaybookPage",
+      "filePath": "src/app/giveaways/cult-brand-playbook/page.tsx",
+      "summary": "react-component exported from page.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/fable-worth-it-audit/layout.tsx:metadata",
+      "type": "react-component",
+      "name": "metadata",
+      "filePath": "src/app/giveaways/fable-worth-it-audit/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "react-component:src/app/giveaways/fable-worth-it-audit/layout.tsx:FableWorthItAuditLayout",
+      "type": "react-component",
+      "name": "FableWorthItAuditLayout",
+      "filePath": "src/app/giveaways/fable-worth-it-audit/layout.tsx",
+      "summary": "react-component exported from layout.tsx",
+      "tags": [
+        "react-component",
+        "exported"
+      ],
+      "complexity": "unknown"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/app/giveaways/client-launch-checklist/page.tsx",
+      "target": "file:src/app/giveaways/client-launch-checklist/LeadMagnetExampleForm.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/giveaways/cross-cli-compatibility-routing/page.tsx",
+      "target": "file:src/app/giveaways/cross-cli-compatibility-routing/content.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/giveaways/cult-brand-playbook/page.tsx",
+      "target": "file:src/app/giveaways/cult-brand-playbook/GiveawayForm.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/giveaways/ai-behavior-quiz/page.tsx",
+      "target": "react-component:src/app/giveaways/ai-behavior-quiz/page.tsx:AiBehaviorQuizPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/ai-levels-quiz/page.tsx",
+      "target": "react-component:src/app/giveaways/ai-levels-quiz/page.tsx:AiLevelsQuizPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/all-sorted-overview/layout.tsx",
+      "target": "react-component:src/app/giveaways/all-sorted-overview/layout.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/all-sorted-overview/layout.tsx",
+      "target": "react-component:src/app/giveaways/all-sorted-overview/layout.tsx:AllSortedOverviewLayout",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/all-sorted-overview/page.tsx",
+      "target": "react-component:src/app/giveaways/all-sorted-overview/page.tsx:AllSortedOverviewPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/anthropic-safety-checklist/layout.tsx",
+      "target": "react-component:src/app/giveaways/anthropic-safety-checklist/layout.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/anthropic-safety-checklist/layout.tsx",
+      "target": "react-component:src/app/giveaways/anthropic-safety-checklist/layout.tsx:AnthropicSafetyLayout",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/anthropic-safety-checklist/page.tsx",
+      "target": "react-component:src/app/giveaways/anthropic-safety-checklist/page.tsx:AnthropicSafetyChecklistPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/benchmark/layout.tsx",
+      "target": "react-component:src/app/giveaways/benchmark/layout.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/benchmark/layout.tsx",
+      "target": "react-component:src/app/giveaways/benchmark/layout.tsx:BenchmarkLayout",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/benchmark/page.tsx",
+      "target": "react-component:src/app/giveaways/benchmark/page.tsx:BenchmarkPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/business-builder-quiz/layout.tsx",
+      "target": "react-component:src/app/giveaways/business-builder-quiz/layout.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/business-builder-quiz/layout.tsx",
+      "target": "react-component:src/app/giveaways/business-builder-quiz/layout.tsx:BusinessBuilderQuizLayout",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/business-builder-quiz/page.tsx",
+      "target": "react-component:src/app/giveaways/business-builder-quiz/page.tsx:BusinessBuilderQuizPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/claude-md/layout.tsx",
+      "target": "react-component:src/app/giveaways/claude-md/layout.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/claude-md/layout.tsx",
+      "target": "react-component:src/app/giveaways/claude-md/layout.tsx:ClaudeMdLayout",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/claude-md/page.tsx",
+      "target": "react-component:src/app/giveaways/claude-md/page.tsx:ClaudeMdPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/client-launch-checklist/layout.tsx",
+      "target": "react-component:src/app/giveaways/client-launch-checklist/layout.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/client-launch-checklist/layout.tsx",
+      "target": "react-component:src/app/giveaways/client-launch-checklist/layout.tsx:ClientLaunchChecklistLayout",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/client-launch-checklist/LeadMagnetExampleForm.tsx",
+      "target": "react-component:src/app/giveaways/client-launch-checklist/LeadMagnetExampleForm.tsx:LeadMagnetExampleForm",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/client-launch-checklist/page.tsx",
+      "target": "react-component:src/app/giveaways/client-launch-checklist/page.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/client-launch-checklist/page.tsx",
+      "target": "react-component:src/app/giveaways/client-launch-checklist/page.tsx:ClientLaunchChecklistPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/compare/layout.tsx",
+      "target": "react-component:src/app/giveaways/compare/layout.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/compare/layout.tsx",
+      "target": "react-component:src/app/giveaways/compare/layout.tsx:CompareLayout",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/compare/page.tsx",
+      "target": "react-component:src/app/giveaways/compare/page.tsx:ComparePage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/cost-stack/layout.tsx",
+      "target": "react-component:src/app/giveaways/cost-stack/layout.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/cost-stack/layout.tsx",
+      "target": "react-component:src/app/giveaways/cost-stack/layout.tsx:CostStackLayout",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/cost-stack/page.tsx",
+      "target": "react-component:src/app/giveaways/cost-stack/page.tsx:CostStackPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/cross-cli-compatibility-routing/content.ts",
+      "target": "react-component:src/app/giveaways/cross-cli-compatibility-routing/content.ts:ROUTING_TITLE",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/cross-cli-compatibility-routing/content.ts",
+      "target": "react-component:src/app/giveaways/cross-cli-compatibility-routing/content.ts:ROUTING_SUMMARY",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/cross-cli-compatibility-routing/content.ts",
+      "target": "react-component:src/app/giveaways/cross-cli-compatibility-routing/content.ts:PROBLEM_POINTS",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/cross-cli-compatibility-routing/content.ts",
+      "target": "react-component:src/app/giveaways/cross-cli-compatibility-routing/content.ts:FLOW_STEPS",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/cross-cli-compatibility-routing/content.ts",
+      "target": "react-component:src/app/giveaways/cross-cli-compatibility-routing/content.ts:LANE_CARDS",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/cross-cli-compatibility-routing/content.ts",
+      "target": "react-component:src/app/giveaways/cross-cli-compatibility-routing/content.ts:RULE_SECTIONS",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/cross-cli-compatibility-routing/content.ts",
+      "target": "react-component:src/app/giveaways/cross-cli-compatibility-routing/content.ts:WHY_IT_SCALES",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/cross-cli-compatibility-routing/content.ts",
+      "target": "react-component:src/app/giveaways/cross-cli-compatibility-routing/content.ts:MIGRATION_PROMPT",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/cross-cli-compatibility-routing/layout.tsx",
+      "target": "react-component:src/app/giveaways/cross-cli-compatibility-routing/layout.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/cross-cli-compatibility-routing/layout.tsx",
+      "target": "react-component:src/app/giveaways/cross-cli-compatibility-routing/layout.tsx:CrossCliCompatibilityRoutingLayout",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/cross-cli-compatibility-routing/page.tsx",
+      "target": "react-component:src/app/giveaways/cross-cli-compatibility-routing/page.tsx:CrossCliCompatibilityRoutingPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/cult-brand-playbook/GiveawayForm.tsx",
+      "target": "react-component:src/app/giveaways/cult-brand-playbook/GiveawayForm.tsx:GiveawayForm",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/cult-brand-playbook/page.tsx",
+      "target": "react-component:src/app/giveaways/cult-brand-playbook/page.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/cult-brand-playbook/page.tsx",
+      "target": "react-component:src/app/giveaways/cult-brand-playbook/page.tsx:CultBrandPlaybookPage",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/fable-worth-it-audit/layout.tsx",
+      "target": "react-component:src/app/giveaways/fable-worth-it-audit/layout.tsx:metadata",
+      "type": "exports",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/giveaways/fable-worth-it-audit/layout.tsx",
+      "target": "react-component:src/app/giveaways/fable-worth-it-audit/layout.tsx:FableWorthItAuditLayout",
+      "type": "exports",
+      "weight": 1
+    }
+  ],
+  "statistics": {
+    "nodeCount": 69,
+    "edgeCount": 47,
+    "fileCategories": {
+      "code": 25
+    },
+    "totalSizeLines": 7474,
+    "symbolCount": 44
+  }
+}

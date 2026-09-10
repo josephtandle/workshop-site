@@ -1,0 +1,197 @@
+{
+  "batchIndex": 9,
+  "nodes": [
+    {
+      "id": "file:supabase/migrations/001_event_registrations.sql",
+      "type": "file",
+      "name": "001_event_registrations.sql",
+      "filePath": "supabase/migrations/001_event_registrations.sql",
+      "language": "sql",
+      "sizeLines": 36,
+      "fileCategory": "data",
+      "summary": "Configuration file",
+      "tags": [
+        "database-migration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:supabase/migrations/002_unique_email_constraints.sql",
+      "type": "file",
+      "name": "002_unique_email_constraints.sql",
+      "filePath": "supabase/migrations/002_unique_email_constraints.sql",
+      "language": "sql",
+      "sizeLines": 11,
+      "fileCategory": "data",
+      "summary": "Configuration file",
+      "tags": [
+        "database-migration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:supabase/migrations/003_rate_limit_and_cron_locks.sql",
+      "type": "file",
+      "name": "003_rate_limit_and_cron_locks.sql",
+      "filePath": "supabase/migrations/003_rate_limit_and_cron_locks.sql",
+      "language": "sql",
+      "sizeLines": 21,
+      "fileCategory": "data",
+      "summary": "Configuration file",
+      "tags": [
+        "database-migration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:supabase/migrations/004_abandoned_checkout_followups.sql",
+      "type": "file",
+      "name": "004_abandoned_checkout_followups.sql",
+      "filePath": "supabase/migrations/004_abandoned_checkout_followups.sql",
+      "language": "sql",
+      "sizeLines": 54,
+      "fileCategory": "data",
+      "summary": "Configuration file",
+      "tags": [
+        "database-migration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:supabase/migrations/005_abandoned_checkout_live_claims.sql",
+      "type": "file",
+      "name": "005_abandoned_checkout_live_claims.sql",
+      "filePath": "supabase/migrations/005_abandoned_checkout_live_claims.sql",
+      "language": "sql",
+      "sizeLines": 69,
+      "fileCategory": "data",
+      "summary": "Configuration file",
+      "tags": [
+        "database-migration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:supabase/migrations/006_abandoned_checkout_t12h_seed.sql",
+      "type": "file",
+      "name": "006_abandoned_checkout_t12h_seed.sql",
+      "filePath": "supabase/migrations/006_abandoned_checkout_t12h_seed.sql",
+      "language": "sql",
+      "sizeLines": 8,
+      "fileCategory": "data",
+      "summary": "Configuration file",
+      "tags": [
+        "database-migration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:supabase/migrations/007_ai_agent_income_subscriptions.sql",
+      "type": "file",
+      "name": "007_ai_agent_income_subscriptions.sql",
+      "filePath": "supabase/migrations/007_ai_agent_income_subscriptions.sql",
+      "language": "sql",
+      "sizeLines": 68,
+      "fileCategory": "data",
+      "summary": "Configuration file",
+      "tags": [
+        "database-migration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:supabase/migrations/008_leads_and_lead_magnet_signups.sql",
+      "type": "file",
+      "name": "008_leads_and_lead_magnet_signups.sql",
+      "filePath": "supabase/migrations/008_leads_and_lead_magnet_signups.sql",
+      "language": "sql",
+      "sizeLines": 68,
+      "fileCategory": "data",
+      "summary": "Configuration file",
+      "tags": [
+        "database-migration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:supabase/migrations/009_event_registration_acquisition_ref.sql",
+      "type": "file",
+      "name": "009_event_registration_acquisition_ref.sql",
+      "filePath": "supabase/migrations/009_event_registration_acquisition_ref.sql",
+      "language": "sql",
+      "sizeLines": 3,
+      "fileCategory": "data",
+      "summary": "Configuration file",
+      "tags": [
+        "database-migration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:supabase/migrations/010_email_suppressions.sql",
+      "type": "file",
+      "name": "010_email_suppressions.sql",
+      "filePath": "supabase/migrations/010_email_suppressions.sql",
+      "language": "sql",
+      "sizeLines": 27,
+      "fileCategory": "data",
+      "summary": "Configuration file",
+      "tags": [
+        "database-migration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:supabase/migrations/011_event_registration_intake.sql",
+      "type": "file",
+      "name": "011_event_registration_intake.sql",
+      "filePath": "supabase/migrations/011_event_registration_intake.sql",
+      "language": "sql",
+      "sizeLines": 35,
+      "fileCategory": "data",
+      "summary": "Configuration file",
+      "tags": [
+        "database-migration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:supabase/migrations/012_fix_intake_upsert_conflict_target.sql",
+      "type": "file",
+      "name": "012_fix_intake_upsert_conflict_target.sql",
+      "filePath": "supabase/migrations/012_fix_intake_upsert_conflict_target.sql",
+      "language": "sql",
+      "sizeLines": 15,
+      "fileCategory": "data",
+      "summary": "Configuration file",
+      "tags": [
+        "database-migration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:supabase/migrations/013_event_email_send_log.sql",
+      "type": "file",
+      "name": "013_event_email_send_log.sql",
+      "filePath": "supabase/migrations/013_event_email_send_log.sql",
+      "language": "sql",
+      "sizeLines": 32,
+      "fileCategory": "data",
+      "summary": "Configuration file",
+      "tags": [
+        "database-migration"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [],
+  "statistics": {
+    "nodeCount": 13,
+    "edgeCount": 0,
+    "fileCategories": {
+      "data": 13
+    },
+    "totalSizeLines": 447,
+    "symbolCount": 0
+  }
+}
