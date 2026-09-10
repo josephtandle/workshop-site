@@ -1,0 +1,13 @@
+diff --git a/src/app/illy/content.ts b/src/app/illy/content.ts
+index 865a7dc..8fad435 100644
+--- a/src/app/illy/content.ts
++++ b/src/app/illy/content.ts
+@@ -156,7 +156,7 @@ footer{position:relative;z-index:1;text-align:center;color:rgba(157,143,224,.6);
+ </ol>
+ <p>These two are number one. Everything else depends on them, and Tailscale comes first.</p>
+ <h2>Step 2: Your work email</h2>
+-<p>Your work address is <strong>illy@mastermindshq.business</strong>. This is your identity for everything else, so log in early. Go to mail.google.com and sign in with that address and this temporary password: <code>FAXT9@8!QRaJ9GhC</code>. Google makes you set your own password on the first login. Use this inbox for all work, and sign up for your work tools with it. Your Claude account in the next step uses this same Google account to sign in.</p>
++<p>Your work address is <strong>illy@mastermindshq.business</strong>. This is your identity for everything else, so log in early. Go to mail.google.com and sign in with that address using the temporary password Joe sends you directly over WhatsApp (never check it into this repo). Google makes you set your own password on the first login. Use this inbox for all work, and sign up for your work tools with it. Your Claude account in the next step uses this same Google account to sign in.</p>
+ <h2>Step 3: Your Claude account</h2>
+ <p>You work inside Claude every day. Joe has already created your Claude account on the free tier under your work email, so you do not sign up from scratch. You just log in and upgrade it to the work plan.</p>
+ <ol>
