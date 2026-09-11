@@ -6838,21 +6838,6 @@
       "complexity": "moderate"
     },
     {
-      "id": "file:src/app/illy/content.ts",
-      "type": "file",
-      "name": "content.ts",
-      "filePath": "src/app/illy/content.ts",
-      "language": "typescript",
-      "sizeLines": 1882,
-      "fileCategory": "code",
-      "summary": "Source file",
-      "tags": [
-        "page",
-        "typescript-module"
-      ],
-      "complexity": "moderate"
-    },
-    {
       "id": "file:src/app/illy/page.tsx",
       "type": "file",
       "name": "page.tsx",
@@ -7215,18 +7200,6 @@
       "name": "WebDesignArsenalPage",
       "filePath": "src/app/giveaways/web-design-arsenal/page.tsx",
       "summary": "react-component exported from page.tsx",
-      "tags": [
-        "react-component",
-        "exported"
-      ],
-      "complexity": "moderate"
-    },
-    {
-      "id": "file:react-component:src/app/illy/content.ts:GUIDE_HTML",
-      "type": "react-component",
-      "name": "GUIDE_HTML",
-      "filePath": "src/app/illy/content.ts",
-      "summary": "react-component exported from content.ts",
       "tags": [
         "react-component",
         "exported"
@@ -10183,21 +10156,6 @@
       "complexity": "simple"
     },
     {
-      "id": "file:src/lib/giveaways.ts",
-      "type": "file",
-      "name": "giveaways.ts",
-      "filePath": "src/lib/giveaways.ts",
-      "language": "typescript",
-      "sizeLines": 213,
-      "fileCategory": "code",
-      "summary": "Source file",
-      "tags": [
-        "utility",
-        "typescript-module"
-      ],
-      "complexity": "complex"
-    },
-    {
       "id": "file:src/lib/insight-to-fix.ts",
       "type": "file",
       "name": "insight-to-fix.ts",
@@ -10535,30 +10493,6 @@
       "name": "verifyToken",
       "filePath": "src/lib/event-tokens.ts",
       "summary": "function exported from event-tokens.ts",
-      "tags": [
-        "function",
-        "exported"
-      ],
-      "complexity": "moderate"
-    },
-    {
-      "id": "function:src/lib/giveaways.ts:giveaways",
-      "type": "function",
-      "name": "giveaways",
-      "filePath": "src/lib/giveaways.ts",
-      "summary": "function exported from giveaways.ts",
-      "tags": [
-        "function",
-        "exported"
-      ],
-      "complexity": "moderate"
-    },
-    {
-      "id": "function:src/lib/giveaways.ts:getGiveaway",
-      "type": "function",
-      "name": "getGiveaway",
-      "filePath": "src/lib/giveaways.ts",
-      "summary": "function exported from giveaways.ts",
       "tags": [
         "function",
         "exported"
@@ -13971,13 +13905,6 @@
       "direction": "forward"
     },
     {
-      "source": "file:src/app/illy/page.tsx",
-      "target": "file:src/app/illy/content.ts",
-      "type": "imports",
-      "weight": 0.8,
-      "direction": "forward"
-    },
-    {
       "source": "file:src/app/jill/page.tsx",
       "target": "file:src/app/jill/content.ts",
       "type": "imports",
@@ -14029,13 +13956,6 @@
     {
       "source": "file:src/app/giveaways/web-design-arsenal/page.tsx",
       "target": "file:react-component:src/app/giveaways/web-design-arsenal/page.tsx:WebDesignArsenalPage",
-      "type": "exports",
-      "weight": 1,
-      "direction": "forward"
-    },
-    {
-      "source": "file:src/app/illy/content.ts",
-      "target": "file:react-component:src/app/illy/content.ts:GUIDE_HTML",
       "type": "exports",
       "weight": 1,
       "direction": "forward"
@@ -15156,20 +15076,6 @@
     {
       "source": "file:src/lib/event-tokens.ts",
       "target": "function:src/lib/event-tokens.ts:verifyToken",
-      "type": "exports",
-      "weight": 1,
-      "direction": "forward"
-    },
-    {
-      "source": "file:src/lib/giveaways.ts",
-      "target": "function:src/lib/giveaways.ts:giveaways",
-      "type": "exports",
-      "weight": 1,
-      "direction": "forward"
-    },
-    {
-      "source": "file:src/lib/giveaways.ts",
-      "target": "function:src/lib/giveaways.ts:getGiveaway",
       "type": "exports",
       "weight": 1,
       "direction": "forward"
