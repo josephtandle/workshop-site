@@ -1,0 +1,626 @@
+{
+  "nodes": [
+    {
+      "id": "giveaways_ts_interface_Giveaway",
+      "type": "interface",
+      "name": "Giveaway",
+      "filePath": "src/lib/giveaways.ts",
+      "summary": "TypeScript interface defining the structure of a giveaway object with slug, title, description, icon, badge, and badge variant properties.",
+      "tags": ["interface", "type-definition", "giveaway", "public-api"],
+      "complexity": 1,
+      "languageNotes": "TypeScript interface with literal union type for badgeVariant property"
+    },
+    {
+      "id": "giveaways_ts_export_giveaways",
+      "type": "export",
+      "name": "giveaways",
+      "filePath": "src/lib/giveaways.ts",
+      "summary": "Array constant containing 25 giveaway objects with metadata for cost-stack, ai-levels-quiz, web-design-arsenal, and other resources.",
+      "tags": ["constant", "data", "giveaway-registry", "public-api"],
+      "complexity": 2,
+      "languageNotes": "Array of objects with Giveaway type, serves as registry for giveaway pages"
+    },
+    {
+      "id": "giveaways_ts_function_getGiveaway",
+      "type": "function",
+      "name": "getGiveaway",
+      "filePath": "src/lib/giveaways.ts",
+      "summary": "Exported function that returns a giveaway object by slug string, or undefined if not found. Simple array find operation.",
+      "tags": ["function", "lookup", "public-api", "giveaway"],
+      "complexity": 1,
+      "languageNotes": "Synchronous utility function using Array.find() method"
+    },
+    {
+      "id": "illy_content_ts_export_GUIDE_HTML",
+      "type": "export",
+      "name": "GUIDE_HTML",
+      "filePath": "src/app/illy/content.ts",
+      "summary": "Large HTML string constant containing complete styled onboarding guide for Illy with embedded CSS, sections for setup, job description, team management, sales strategy, and brand guidelines.",
+      "tags": ["constant", "html", "styling", "onboarding", "guide"],
+      "complexity": 4,
+      "languageNotes": "Contains 1882 lines of HTML/CSS in a template literal string, auto-generated from Illy guide HTML"
+    },
+    {
+      "id": "illy_page_tsx_function_sha256",
+      "type": "function",
+      "name": "sha256",
+      "filePath": "src/app/illy/page.tsx",
+      "summary": "Helper function that computes SHA256 hash digest of a string value using Node.js crypto module.",
+      "tags": ["function", "utility", "cryptography", "password-verification"],
+      "complexity": 1,
+      "languageNotes": "Uses Node crypto APIs, creates hex-encoded hash"
+    },
+    {
+      "id": "illy_page_tsx_function_matchesGuideCookie",
+      "type": "function",
+      "name": "matchesGuideCookie",
+      "filePath": "src/app/illy/page.tsx",
+      "summary": "Validates guide authentication cookie by comparing stored hash against password using timing-safe equality check.",
+      "tags": ["function", "security", "authentication", "cookie-validation"],
+      "complexity": 2,
+      "languageNotes": "Uses timingSafeEqual to prevent timing attacks in password comparison"
+    },
+    {
+      "id": "illy_page_tsx_function_matchesQueryPassword",
+      "type": "function",
+      "name": "matchesQueryPassword",
+      "filePath": "src/app/illy/page.tsx",
+      "summary": "Validates password from query parameter by checking length and comparing SHA256 hashes using timing-safe equality.",
+      "tags": ["function", "security", "authentication", "query-validation"],
+      "complexity": 2,
+      "languageNotes": "Validates query parameter password length before hashing to prevent length leakage"
+    },
+    {
+      "id": "illy_page_tsx_component_IllyPage",
+      "type": "component",
+      "name": "IllyPage",
+      "filePath": "src/app/illy/page.tsx",
+      "summary": "Async server component that renders password-protected Illy onboarding guide. Checks authentication via cookie or query parameter, displays auth form if not authenticated.",
+      "tags": ["component", "async", "server", "authentication", "page"],
+      "complexity": 3,
+      "languageNotes": "Next.js server component with async searchParams, renders GUIDE_HTML via dangerouslySetInnerHTML when authenticated"
+    },
+    {
+      "id": "illy_page_tsx_metadata_IllyPage",
+      "type": "export",
+      "name": "metadata",
+      "filePath": "src/app/illy/page.tsx",
+      "summary": "Next.js metadata object setting robots index and follow rules to false for the Illy guide page.",
+      "tags": ["metadata", "seo", "robots"],
+      "complexity": 1,
+      "languageNotes": "Next.js Metadata type from next/next.js"
+    },
+    {
+      "id": "jill_content_ts_export_GUIDE_HTML",
+      "type": "export",
+      "name": "GUIDE_HTML",
+      "filePath": "src/app/jill/content.ts",
+      "summary": "Large HTML string constant containing complete styled onboarding guide for Jill with embedded CSS, sections for mission, tools, playbooks, branding, and Joe's personal brand.",
+      "tags": ["constant", "html", "styling", "onboarding", "guide"],
+      "complexity": 4,
+      "languageNotes": "Contains 283 lines of HTML/CSS in a template literal, self-contained fragment with embedded styles"
+    },
+    {
+      "id": "jill_page_tsx_function_sha256",
+      "type": "function",
+      "name": "sha256",
+      "filePath": "src/app/jill/page.tsx",
+      "summary": "Helper function that computes SHA256 hash digest of a string value using Node.js crypto module.",
+      "tags": ["function", "utility", "cryptography", "password-verification"],
+      "complexity": 1,
+      "languageNotes": "Identical to illy/page.tsx sha256 function"
+    },
+    {
+      "id": "jill_page_tsx_function_matchesGuideCookie",
+      "type": "function",
+      "name": "matchesGuideCookie",
+      "filePath": "src/app/jill/page.tsx",
+      "summary": "Validates guide authentication cookie by comparing stored hash against password using timing-safe equality check.",
+      "tags": ["function", "security", "authentication", "cookie-validation"],
+      "complexity": 2,
+      "languageNotes": "Identical implementation to illy/page.tsx"
+    },
+    {
+      "id": "jill_page_tsx_function_matchesQueryPassword",
+      "type": "function",
+      "name": "matchesQueryPassword",
+      "filePath": "src/app/jill/page.tsx",
+      "summary": "Validates password from query parameter by checking length and comparing SHA256 hashes using timing-safe equality.",
+      "tags": ["function", "security", "authentication", "query-validation"],
+      "complexity": 2,
+      "languageNotes": "Identical implementation to illy/page.tsx"
+    },
+    {
+      "id": "jill_page_tsx_component_JillPage",
+      "type": "component",
+      "name": "JillPage",
+      "filePath": "src/app/jill/page.tsx",
+      "summary": "Async server component that renders password-protected Jill onboarding guide. Checks authentication via cookie or query parameter, displays auth form if not authenticated.",
+      "tags": ["component", "async", "server", "authentication", "page"],
+      "complexity": 3,
+      "languageNotes": "Next.js server component, nearly identical structure to IllyPage but uses jill_guide_auth cookie"
+    },
+    {
+      "id": "jill_page_tsx_metadata_JillPage",
+      "type": "export",
+      "name": "metadata",
+      "filePath": "src/app/jill/page.tsx",
+      "summary": "Next.js metadata object setting robots index and follow rules to false for the Jill guide page.",
+      "tags": ["metadata", "seo", "robots"],
+      "complexity": 1,
+      "languageNotes": "Identical to illy page metadata"
+    },
+    {
+      "id": "layout_tsx_component_RootLayout",
+      "type": "component",
+      "name": "RootLayout",
+      "filePath": "src/app/layout.tsx",
+      "summary": "Root layout component for Next.js app. Imports Plus Jakarta Sans font, wraps children with SiteChrome component, includes Meta Pixel tracking script.",
+      "tags": ["component", "layout", "root", "font-import", "analytics"],
+      "complexity": 2,
+      "languageNotes": "Next.js App Router root layout with Script component for Meta Pixel"
+    },
+    {
+      "id": "layout_tsx_metadata_RootLayout",
+      "type": "export",
+      "name": "metadata",
+      "filePath": "src/app/layout.tsx",
+      "summary": "Next.js metadata configuration with default title template, description, open graph, twitter card, and canonical URL for Masterminds Workshop.",
+      "tags": ["metadata", "seo", "og-tags", "twitter-card"],
+      "complexity": 2,
+      "languageNotes": "Comprehensive Next.js metadata configuration"
+    },
+    {
+      "id": "page_tsx_component_HomePage",
+      "type": "component",
+      "name": "HomePage",
+      "filePath": "src/app/page.tsx",
+      "summary": "Home page async component that displays session guides. Imports sessions data, sorts by session number, renders hero section, tab navigation, and session cards in a staggered list.",
+      "tags": ["component", "async", "page", "sessions", "home"],
+      "complexity": 2,
+      "languageNotes": "Uses session data structure and Reveal/StaggerList animation components"
+    },
+    {
+      "id": "page_tsx_metadata_HomePage",
+      "type": "export",
+      "name": "metadata",
+      "filePath": "src/app/page.tsx",
+      "summary": "Next.js metadata for home page with title and description about session guides.",
+      "tags": ["metadata", "seo"],
+      "complexity": 1,
+      "languageNotes": "Simple metadata object"
+    },
+    {
+      "id": "robots_ts_export_robots",
+      "type": "function",
+      "name": "robots",
+      "filePath": "src/app/robots.ts",
+      "summary": "Next.js robots.txt generator function that allows all paths except /illy for all user agents.",
+      "tags": ["function", "seo", "robots", "public-api"],
+      "complexity": 1,
+      "languageNotes": "Next.js MetadataRoute.Robots return type"
+    },
+    {
+      "id": "giveaways_squarespace_escape_page_tsx",
+      "type": "component",
+      "name": "SquarespaceEscapePage",
+      "filePath": "src/app/giveaways/squarespace-escape/page.tsx",
+      "summary": "Client component for Squarespace Escape giveaway page. Exports constants for the prompt, what you get, and how it works sections.",
+      "tags": ["component", "client", "giveaway", "page"],
+      "complexity": 3,
+      "languageNotes": "Client component with state management using useState, motion animations, code block display"
+    },
+    {
+      "id": "giveaways_viral_hooks_page_tsx_hook_useMagnet",
+      "type": "hook",
+      "name": "useMagnet",
+      "filePath": "src/app/giveaways/viral-hooks/page.tsx",
+      "summary": "Custom React hook that implements magnetic button behavior tracking mouse movement and applying transform translations.",
+      "tags": ["hook", "animation", "mouse-tracking", "custom-hook"],
+      "complexity": 2,
+      "languageNotes": "Uses useRef, useCallback with mouse event handlers"
+    },
+    {
+      "id": "giveaways_viral_hooks_page_tsx",
+      "type": "component",
+      "name": "ViralHooksPage",
+      "filePath": "src/app/giveaways/viral-hooks/page.tsx",
+      "summary": "Client component for Viral Hooks giveaway page showing 7 visual hook techniques with real Instagram Reel examples.",
+      "tags": ["component", "client", "giveaway", "page", "instagram"],
+      "complexity": 3,
+      "languageNotes": "Client component with motion animations and Reel embeds"
+    },
+    {
+      "id": "giveaways_web_design_arsenal_page_tsx",
+      "type": "component",
+      "name": "WebDesignArsenalPage",
+      "filePath": "src/app/giveaways/web-design-arsenal/page.tsx",
+      "summary": "Client component for Web Designer Agent Kit giveaway. Exports installation prompt, compatible tools list, and skill categories.",
+      "tags": ["component", "client", "giveaway", "page", "claude-code"],
+      "complexity": 3,
+      "languageNotes": "Client component with state and animation"
+    },
+    {
+      "id": "giveaways_viral_hooks_layout_tsx",
+      "type": "component",
+      "name": "ViralHooksLayout",
+      "filePath": "src/app/giveaways/viral-hooks/layout.tsx",
+      "summary": "Layout component for Viral Hooks giveaway with comprehensive metadata for SEO including keywords, authors, and social media tags.",
+      "tags": ["component", "layout", "metadata", "seo"],
+      "complexity": 2,
+      "languageNotes": "Layout component with extensive Next.js metadata"
+    },
+    {
+      "id": "giveaways_web_design_arsenal_layout_tsx",
+      "type": "component",
+      "name": "WebDesignArsenalLayout",
+      "filePath": "src/app/giveaways/web-design-arsenal/layout.tsx",
+      "summary": "Simple layout component for Web Design Arsenal giveaway with basic metadata.",
+      "tags": ["component", "layout", "metadata"],
+      "complexity": 1,
+      "languageNotes": "Minimal layout component"
+    },
+    {
+      "id": "lead_magnets_layout_tsx",
+      "type": "component",
+      "name": "LeadMagnetsLayout",
+      "filePath": "src/app/lead-magnets/layout.tsx",
+      "summary": "Layout component for lead magnets section with basic description metadata.",
+      "tags": ["component", "layout", "metadata"],
+      "complexity": 1,
+      "languageNotes": "Minimal layout component"
+    },
+    {
+      "id": "lead_magnets_ultimate_claudemd_layout_tsx",
+      "type": "component",
+      "name": "UltimateClaudeMDLayout",
+      "filePath": "src/app/lead-magnets/ultimate-claudemd/layout.tsx",
+      "summary": "Layout component for Ultimate CLAUDE.md lead magnet with metadata for title and description.",
+      "tags": ["component", "layout", "metadata"],
+      "complexity": 1,
+      "languageNotes": "Minimal layout component"
+    },
+    {
+      "id": "lead_magnets_ultimate_claudemd_page_tsx_component_UltimateClaudeMDPage",
+      "type": "component",
+      "name": "UltimateClaudeMDPage",
+      "filePath": "src/app/lead-magnets/ultimate-claudemd/page.tsx",
+      "summary": "Client component for Ultimate CLAUDE.md lead magnet page with benefits list and email capture form.",
+      "tags": ["component", "client", "page", "lead-magnet", "form"],
+      "complexity": 2,
+      "languageNotes": "Client component with form state management using useState"
+    },
+    {
+      "id": "lead_magnets_ultimate_claudemd_page_tsx_subcomponent_Form",
+      "type": "component",
+      "name": "Form",
+      "filePath": "src/app/lead-magnets/ultimate-claudemd/page.tsx",
+      "summary": "Nested component rendering either email capture form or success message after submission.",
+      "tags": ["component", "form", "nested"],
+      "complexity": 2,
+      "languageNotes": "Renders conditionally based on submitted state"
+    },
+    {
+      "id": "resource_vault_page_tsx",
+      "type": "component",
+      "name": "ResourceVaultPage",
+      "filePath": "src/app/resource-vault/page.tsx",
+      "summary": "Resource vault index page displaying featured resources with descriptions and resource request message.",
+      "tags": ["component", "page", "resources", "index"],
+      "complexity": 2,
+      "languageNotes": "Async component with styling and links to featured resources"
+    },
+    {
+      "id": "resource_vault_page_tsx_metadata",
+      "type": "export",
+      "name": "metadata",
+      "filePath": "src/app/resource-vault/page.tsx",
+      "summary": "Metadata export for resource vault page with title and description.",
+      "tags": ["metadata", "seo"],
+      "complexity": 1,
+      "languageNotes": "Simple metadata object"
+    },
+    {
+      "id": "connecting_to_google_sheets_page_tsx",
+      "type": "component",
+      "name": "ConnectingToGoogleSheetsPage",
+      "filePath": "src/app/resource-vault/connecting-to-google-sheets/page.tsx",
+      "summary": "Resource guide page for connecting Claude Code to Google Sheets using Composio Connect for Eric Horn's investor database.",
+      "tags": ["component", "page", "resource", "guide", "google-sheets"],
+      "complexity": 2,
+      "languageNotes": "Async component with StepCard components and table of contents"
+    },
+    {
+      "id": "connecting_to_xero_page_tsx",
+      "type": "component",
+      "name": "ConnectingToXeroPage",
+      "filePath": "src/app/resource-vault/connecting-to-xero/page.tsx",
+      "summary": "Resource guide page for connecting Claude Code to Xero API with detailed steps for setup, verification, and sample payloads.",
+      "tags": ["component", "page", "resource", "guide", "xero"],
+      "complexity": 2,
+      "languageNotes": "Async component with detailed instructions and code blocks"
+    },
+    {
+      "id": "eric_investor_pipeline_page_tsx",
+      "type": "component",
+      "name": "EricInvestorPipelinePage",
+      "filePath": "src/app/resource-vault/eric-investor-pipeline/page.tsx",
+      "summary": "Resource guide for Eric Horn's investor pipeline using Activepieces, Google Sheets, and WebFetch for investor research workflow.",
+      "tags": ["component", "page", "resource", "guide", "automation"],
+      "complexity": 2,
+      "languageNotes": "Async component with step cards and instructions"
+    },
+    {
+      "id": "how_to_stand_out_page_tsx",
+      "type": "component",
+      "name": "HowToStandOutDraftPage",
+      "filePath": "src/app/resource-vault/how-to-stand-out-in-the-age-of-ai/page.tsx",
+      "summary": "Resource page for Tiyana Gori's AI positioning workshop with breadcrumb navigation and footer.",
+      "tags": ["component", "page", "resource", "workshop", "draft"],
+      "complexity": 1,
+      "languageNotes": "Async component importing TianaAiPositioningWorkshop content component"
+    },
+    {
+      "id": "reza_website_control_page_tsx",
+      "type": "component",
+      "name": "RezaWebsiteControlPage",
+      "filePath": "src/app/resource-vault/reza-website-control/page.tsx",
+      "summary": "Resource guide for Reza to take control of his website by finding hosting, getting Git repo access, and practicing deployments.",
+      "tags": ["component", "page", "resource", "guide", "hosting"],
+      "complexity": 1,
+      "languageNotes": "Async component with step cards and code blocks"
+    },
+    {
+      "id": "wordpress_api_page_tsx",
+      "type": "component",
+      "name": "WordPressAPIPage",
+      "filePath": "src/app/resource-vault/wordpress-api/page.tsx",
+      "summary": "Resource guide for connecting Claude Code to WordPress and downloading entire site for redesign using WordPress REST API.",
+      "tags": ["component", "page", "resource", "guide", "wordpress"],
+      "complexity": 2,
+      "languageNotes": "Async component with video player and step cards"
+    },
+    {
+      "id": "session_bonus_page_tsx",
+      "type": "component",
+      "name": "SessionBonusPage",
+      "filePath": "src/app/session/[slug]/bonus/page.tsx",
+      "summary": "Dynamic page component for session bonus content that renders appropriate bonus component based on session slug.",
+      "tags": ["component", "async", "page", "dynamic", "bonus"],
+      "complexity": 2,
+      "languageNotes": "Async component with dynamic params and generateStaticParams for static generation"
+    },
+    {
+      "id": "session_bonus_page_tsx_metadata",
+      "type": "function",
+      "name": "generateMetadata",
+      "filePath": "src/app/session/[slug]/bonus/page.tsx",
+      "summary": "Dynamic metadata generator for session bonus pages that retrieves session details and constructs appropriate title and description.",
+      "tags": ["function", "metadata", "dynamic"],
+      "complexity": 1,
+      "languageNotes": "Next.js generateMetadata async function"
+    },
+    {
+      "id": "session_bonus_page_tsx_static",
+      "type": "function",
+      "name": "generateStaticParams",
+      "filePath": "src/app/session/[slug]/bonus/page.tsx",
+      "summary": "Next.js static params generator that pre-renders session bonus page for slug '1'.",
+      "tags": ["function", "static-generation", "ssg"],
+      "complexity": 1,
+      "languageNotes": "Next.js generateStaticParams function for static generation"
+    }
+  ],
+  "edges": [
+    {
+      "source": "illy_page_tsx_component_IllyPage",
+      "target": "illy_content_ts_export_GUIDE_HTML",
+      "type": "import",
+      "weight": 1,
+      "label": "imports GUIDE_HTML"
+    },
+    {
+      "source": "illy_page_tsx_function_sha256",
+      "target": "illy_page_tsx_function_matchesGuideCookie",
+      "type": "usage",
+      "weight": 1,
+      "label": "used by matchesGuideCookie"
+    },
+    {
+      "source": "illy_page_tsx_function_sha256",
+      "target": "illy_page_tsx_function_matchesQueryPassword",
+      "type": "usage",
+      "weight": 1,
+      "label": "used by matchesQueryPassword"
+    },
+    {
+      "source": "illy_page_tsx_component_IllyPage",
+      "target": "illy_page_tsx_function_matchesGuideCookie",
+      "type": "usage",
+      "weight": 1,
+      "label": "authenticates via cookie"
+    },
+    {
+      "source": "illy_page_tsx_component_IllyPage",
+      "target": "illy_page_tsx_function_matchesQueryPassword",
+      "type": "usage",
+      "weight": 1,
+      "label": "authenticates via query param"
+    },
+    {
+      "source": "jill_page_tsx_component_JillPage",
+      "target": "jill_content_ts_export_GUIDE_HTML",
+      "type": "import",
+      "weight": 1,
+      "label": "imports GUIDE_HTML"
+    },
+    {
+      "source": "jill_page_tsx_function_sha256",
+      "target": "jill_page_tsx_function_matchesGuideCookie",
+      "type": "usage",
+      "weight": 1,
+      "label": "used by matchesGuideCookie"
+    },
+    {
+      "source": "jill_page_tsx_function_sha256",
+      "target": "jill_page_tsx_function_matchesQueryPassword",
+      "type": "usage",
+      "weight": 1,
+      "label": "used by matchesQueryPassword"
+    },
+    {
+      "source": "jill_page_tsx_component_JillPage",
+      "target": "jill_page_tsx_function_matchesGuideCookie",
+      "type": "usage",
+      "weight": 1,
+      "label": "authenticates via cookie"
+    },
+    {
+      "source": "jill_page_tsx_component_JillPage",
+      "target": "jill_page_tsx_function_matchesQueryPassword",
+      "type": "usage",
+      "weight": 1,
+      "label": "authenticates via query param"
+    },
+    {
+      "source": "layout_tsx_component_RootLayout",
+      "target": "layout_tsx_metadata_RootLayout",
+      "type": "reference",
+      "weight": 1,
+      "label": "exports metadata"
+    },
+    {
+      "source": "page_tsx_component_HomePage",
+      "target": "page_tsx_metadata_HomePage",
+      "type": "reference",
+      "weight": 1,
+      "label": "exports metadata"
+    },
+    {
+      "source": "giveaways_viral_hooks_page_tsx",
+      "target": "giveaways_viral_hooks_page_tsx_hook_useMagnet",
+      "type": "usage",
+      "weight": 1,
+      "label": "uses custom hook"
+    },
+    {
+      "source": "lead_magnets_ultimate_claudemd_page_tsx_component_UltimateClaudeMDPage",
+      "target": "lead_magnets_ultimate_claudemd_page_tsx_subcomponent_Form",
+      "type": "composition",
+      "weight": 1,
+      "label": "renders Form component"
+    },
+    {
+      "source": "resource_vault_page_tsx",
+      "target": "resource_vault_page_tsx_metadata",
+      "type": "reference",
+      "weight": 1,
+      "label": "exports metadata"
+    },
+    {
+      "source": "session_bonus_page_tsx",
+      "target": "session_bonus_page_tsx_metadata",
+      "type": "usage",
+      "weight": 1,
+      "label": "calls generateMetadata"
+    },
+    {
+      "source": "session_bonus_page_tsx",
+      "target": "session_bonus_page_tsx_static",
+      "type": "usage",
+      "weight": 1,
+      "label": "calls generateStaticParams"
+    },
+    {
+      "source": "giveaways_squarespace_escape_page_tsx",
+      "target": "giveaways_ts_export_giveaways",
+      "type": "reference",
+      "weight": 0.5,
+      "label": "referenced by giveaways registry"
+    },
+    {
+      "source": "giveaways_viral_hooks_page_tsx",
+      "target": "giveaways_ts_export_giveaways",
+      "type": "reference",
+      "weight": 0.5,
+      "label": "referenced by giveaways registry"
+    },
+    {
+      "source": "giveaways_web_design_arsenal_page_tsx",
+      "target": "giveaways_ts_export_giveaways",
+      "type": "reference",
+      "weight": 0.5,
+      "label": "referenced by giveaways registry"
+    },
+    {
+      "source": "giveaways_viral_hooks_layout_tsx",
+      "target": "giveaways_viral_hooks_page_tsx",
+      "type": "wrapper",
+      "weight": 1,
+      "label": "wraps page component"
+    },
+    {
+      "source": "giveaways_web_design_arsenal_layout_tsx",
+      "target": "giveaways_web_design_arsenal_page_tsx",
+      "type": "wrapper",
+      "weight": 1,
+      "label": "wraps page component"
+    },
+    {
+      "source": "lead_magnets_ultimate_claudemd_layout_tsx",
+      "target": "lead_magnets_ultimate_claudemd_page_tsx_component_UltimateClaudeMDPage",
+      "type": "wrapper",
+      "weight": 1,
+      "label": "wraps page component"
+    },
+    {
+      "source": "page_tsx_component_HomePage",
+      "target": "giveaways_ts_function_getGiveaway",
+      "type": "reference",
+      "weight": 0.5,
+      "label": "potential reference to giveaway lookup"
+    },
+    {
+      "source": "connecting_to_google_sheets_page_tsx",
+      "target": "resource_vault_page_tsx",
+      "type": "part-of",
+      "weight": 0.5,
+      "label": "resource vault child page"
+    },
+    {
+      "source": "connecting_to_xero_page_tsx",
+      "target": "resource_vault_page_tsx",
+      "type": "part-of",
+      "weight": 0.5,
+      "label": "resource vault child page"
+    },
+    {
+      "source": "eric_investor_pipeline_page_tsx",
+      "target": "resource_vault_page_tsx",
+      "type": "part-of",
+      "weight": 0.5,
+      "label": "resource vault child page"
+    },
+    {
+      "source": "how_to_stand_out_page_tsx",
+      "target": "resource_vault_page_tsx",
+      "type": "part-of",
+      "weight": 0.5,
+      "label": "resource vault child page"
+    },
+    {
+      "source": "reza_website_control_page_tsx",
+      "target": "resource_vault_page_tsx",
+      "type": "part-of",
+      "weight": 0.5,
+      "label": "resource vault child page"
+    },
+    {
+      "source": "wordpress_api_page_tsx",
+      "target": "resource_vault_page_tsx",
+      "type": "part-of",
+      "weight": 0.5,
+      "label": "resource vault child page"
+    }
+  ]
+}
