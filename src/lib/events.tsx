@@ -1164,7 +1164,7 @@ export const events: EventDefinition[] = [
     shortTitle: 'Bring the Task You Hate the Most',
     eyebrow: 'Free Live AI Class',
     summary:
-      'Emails, proposals, invoices, follow-ups, content. Bring the one you hate on September 29 and I will automate it live with AI, on your actual business, for free. You leave with the recording and every prompt and setup from the night.',
+      'Emails, proposals, invoices, follow-ups, your CRM, content, bookkeeping, taxes, the process you keep doing by hand. Bring the one you hate the most on September 29 and I will automate it live with AI, on your actual business, for free. You leave with the recording and every prompt and setup from the night.',
     description:
       'A free live AI class. Tell Joe the task you hate the most, watch him automate it live with AI on a real business, and leave with the recording and every prompt from the night.',
     dateLabel: 'Tuesday, September 29, 2026',
@@ -1268,7 +1268,7 @@ export const events: EventDefinition[] = [
     metadata: {
       title: 'Free AI Class: Bring the Task You Hate the Most. Leave Without It.',
       description:
-        'Emails, proposals, invoices, follow-ups, content. Bring the one you hate on September 29 and Joe automates it live with AI, on your actual business, for free. Recording and every prompt included.',
+        'Emails, proposals, invoices, follow-ups, your CRM, content, bookkeeping, taxes, the process you keep doing by hand. Bring the one you hate the most on September 29 and Joe automates it live with AI, on your actual business, for free. Recording and every prompt included.',
     },
   },
   {
