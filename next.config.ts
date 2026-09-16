@@ -14,17 +14,17 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/session/:path*',
-        destination: 'https://portal.mastermindshq.business/',
+        destination: 'https://portal.mastermindshq.business/session/:path*',
         permanent: true,
       },
       {
         source: '/resource-vault',
-        destination: 'https://portal.mastermindshq.business/',
+        destination: 'https://portal.mastermindshq.business/resource-vault',
         permanent: true,
       },
       {
         source: '/resource-vault/:path*',
-        destination: 'https://portal.mastermindshq.business/',
+        destination: 'https://portal.mastermindshq.business/resource-vault/:path*',
         permanent: true,
       },
     ]

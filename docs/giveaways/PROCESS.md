@@ -250,28 +250,43 @@ curl -s http://localhost:9223/json/version | node -e \
 
 If Chrome is not reachable, the Playwright automation will fail silently. Start the agent Chrome profile before continuing, or go straight to the manual fallback.
 
-**Create the automation** in Mission Control at `localhost:3000/app/manychat-giveaways`:
+**The ManyChat API cannot create or modify flows. This is not a bug in our code, it is
+the shape of their public API.** Probed 2026-08-12 with a valid key:
 
-1. Click Create
-2. Fill in:
-   - **Keyword:** `<KEYWORD>` (all caps)
-   - **Giveaway name:** `<title>`
-   - **Delivery link:** `https://workshop-site-sigma.vercel.app/giveaways/<slug>`
-   - **Tag:** `Career_Funnel` (default unless Joe specifies)
-3. Click Create — Playwright auto-creates the flow within 90 seconds
+| Endpoint | Result |
+|---|---|
+| `/fb/page/cloneFlow` | 404 (HTML) |
+| `/fb/page/setFlowKeyword` | 404 |
+| `/fb/page/setFlowCustomFields` | 404 |
+| `/fb/page/activateFlow` | 404 |
+| `/fb/page/deactivateFlow` | 404 |
+| `/fb/page/getFlow` | 404 |
+| `/fb/page/getInfo` (control) | **200** |
+| `/fb/page/getFlows` (control) | **200** |
 
-**Verify the flow was created:**
+Reads work. Every write is fictional. The old instruction here claimed "Click Create,
+Playwright auto-creates the flow within 90 seconds". That never worked, and it failed with
+an opaque `SyntaxError: Unexpected token '<'` because the client parsed a 404 HTML page as
+JSON. `app/api/manychat-giveaways/_manychat.ts` now fails fast with an actionable message
+instead, and exports `preflight()` so a broken key can be told apart from a dead endpoint.
+
+**Step 1: create the giveaway row** (this part does work):
+
 ```bash
-curl -s http://localhost:3000/api/manychat-giveaways | \
-  node -e "const d=JSON.parse(require('fs').readFileSync('/dev/stdin','utf8')); \
-  const g=d.data?.find(x=>x.comment_keyword==='<KEYWORD>'); \
-  if (!g) { console.log('NOT FOUND'); process.exit(1); } \
-  console.log(g.manychat_flow_id ? 'Flow OK: ' + g.manychat_flow_id : 'MISSING — auto-create failed, run manual fallback')"
+curl -s -X POST http://localhost:3000/api/manychat-giveaways \
+  -H "Content-Type: application/json" \
+  -d '{"comment_keyword":"<KEYWORD>","giveaway_name":"<title>","giveaway_description":"<one line>","giveaway_link":"<url>","dynamic_tag":"Career_Funnel","draft":true}'
 ```
 
-**Manual fallback (if Playwright failed):**
+Returns the new row id. Keep it for step 3.
+
+**Step 2: build the flow by hand in the ManyChat UI.** There is no automated path.
+
+**The manual build (this is the only path):**
 1. Open ManyChat → Automation → Flows
-2. Find the master giveaway flow (search "MASTER" or the most recent working giveaway)
+2. Open the MASTER flow directly: **`content20260318104931_653756`** ("MASTER- Effects all new Automations through All Sorted") at
+   `https://app.manychat.com/fb1703817/cms/files/content20260318104931_653756`.
+   Do not clone SpeakHuman or any other giveaway; they carry their own keyword and link.
 3. Duplicate it
 4. Set the comment trigger keyword to `<KEYWORD>`
 5. Update the delivery link in the DM message to `https://workshop-site-sigma.vercel.app/giveaways/<slug>`

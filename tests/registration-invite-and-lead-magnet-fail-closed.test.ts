@@ -118,7 +118,6 @@ test('only sources with a real asset are deliverable', () => {
     'guardog',
     'cult-brand-playbook',
     'web-design-arsenal',
-    'all-sorted-overview',
     'human',
     'speak-human',
   ]) {
@@ -135,6 +134,7 @@ test('unregistered slugs are not deliverable', () => {
     'ray-dalio-council',
     'squarespace-escape',
     'intuition-quiz',
+    'all-sorted-overview',
     'totally-made-up-slug',
     '',
   ]) {

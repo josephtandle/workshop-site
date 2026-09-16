@@ -38,14 +38,6 @@ export const giveaways: Giveaway[] = [
     badgeVariant: 'pink',
   },
   {
-    slug: 'all-sorted-overview',
-    title: 'All Sorted Overview',
-    description: '30 specific things All Sorted does for your business. The pre-installed business operating system: 157 agents, 57 skills, 45+ integrations, already configured.',
-    icon: '◐',
-    badge: 'Overview',
-    badgeVariant: 'purple',
-  },
-  {
     slug: 'ig-settings',
     title: 'Instagram Settings Growth Checklist',
     description: 'The account settings checklist for making your Instagram profile public, recommendable, remixable, measurable, and ready for clean Reels uploads.',
@@ -198,27 +190,11 @@ export const giveaways: Giveaway[] = [
     badgeVariant: 'purple',
   },
   {
-    slug: 'cross-cli-compatibility-routing',
-    title: 'Cross CLI Compatibility Routing',
-    description: 'A lane-based routing architecture for recipes, skills, and workflows, plus a universal migration prompt and direct-download PDF.',
-    icon: '◎',
-    badge: 'Guide',
-    badgeVariant: 'pink',
-  },
-  {
     slug: 'geometry-dash-fun-build',
     title: 'Geometry Dash Fun Build',
     description: 'A fully working Geometry Dash clone in p5.js. Copy the code, paste it into editor.p5js.org, and play in under 2 minutes. Change colors, physics, and level design.',
     icon: '◆',
     badge: 'Game Build',
-    badgeVariant: 'purple',
-  },
-  {
-    slug: 'intuition-quiz',
-    title: 'Rate Your Intuition',
-    description: 'An 8-question quiz that rates your intuition across 5 evidence-based levels, from blocked to fully integrated. Backed by Klein, Kahneman, Gladwell, and Gigerenzen.',
-    icon: '✦',
-    badge: 'Quiz',
     badgeVariant: 'purple',
   },
   {

@@ -4,7 +4,9 @@ import { getEventBySlug, getLiveEvents } from '@/lib/events'
 import { sendEventLocationReminderEmail } from '@/lib/event-confirmation-email'
 import { listLegacyPaidAttendeesForEvent } from '@/lib/legacy-event-schedule'
 import { getConfirmedRegistrationsForEvent } from '@/lib/event-registration-db'
-import { isLocationReminderDue, dedupeAttendeesByEmail } from '@/lib/location-reminder'
+import { runLocationReminders } from '@/lib/location-reminder'
+import { createSupabaseEventEmailLedger } from '@/lib/event-email-ledger'
+import { supabase } from '@/lib/supabase'
 
 export const runtime = 'nodejs'
 
@@ -15,6 +17,11 @@ function isAuthorized(request: NextRequest) {
   const provided = request.headers.get('authorization') ?? ''
   if (provided.length !== expected.length) return false
   return timingSafeEqual(Buffer.from(provided), Buffer.from(expected))
+}
+
+async function acquireEventWindowLock(lockKey: string) {
+  const { error } = await supabase.from('cron_window_locks').insert({ lock_key: lockKey })
+  return !error
 }
 
 export async function GET(request: NextRequest) {
@@ -34,74 +41,39 @@ export async function GET(request: NextRequest) {
   }
 
   const events = slug
-    ? [getEventBySlug(slug)].filter(Boolean)
+    ? ([getEventBySlug(slug)].filter(Boolean) as ReturnType<typeof getLiveEvents>)
     : getLiveEvents()
 
-  const dueEvents = events.filter((event) => {
-    if (!event?.privateLocationReminder) return false
-    if (force) return true
+  const ledger = createSupabaseEventEmailLedger({ client: supabase, source: 'location-reminders' })
 
-    return isLocationReminderDue({
-      eventStartIso: event.privateLocationReminder.eventStartIso,
-      leadHours: event.privateLocationReminder.leadHours,
+  const run = await runLocationReminders(
+    {
       now,
-    })
-  })
-
-  const results: Array<{
-    slug: string
-    attendeeCount: number
-    sentCount: number
-    dryRun: boolean
-    errors: string[]
-  }> = []
-
-  for (const event of dueEvents) {
-    if (!event) continue
-
-    const [siteAttendees, legacyAttendees] = await Promise.all([
-      getConfirmedRegistrationsForEvent(event.slug),
-      event.legacyRegistration ? listLegacyPaidAttendeesForEvent(event) : Promise.resolve([]),
-    ])
-    const attendees = dedupeAttendeesByEmail([...siteAttendees, ...legacyAttendees])
-    const errors: string[] = []
-    let sentCount = 0
-
-    for (const attendee of attendees) {
-      if (dryRun) {
-        sentCount += 1
-        continue
-      }
-
-      try {
-        await sendEventLocationReminderEmail({
-          event,
-          attendeeName: attendee.attendeeName,
-          attendeeEmail: attendee.attendeeEmail,
-        })
-        sentCount += 1
-      } catch (error) {
-        errors.push(
-          `${attendee.attendeeEmail}: ${error instanceof Error ? error.message : 'Unknown send error.'}`,
-        )
-      }
-    }
-
-    results.push({
-      slug: event.slug,
-      attendeeCount: attendees.length,
-      sentCount,
+      force,
       dryRun,
-      errors,
-    })
-  }
+      slug,
+      events,
+    },
+    {
+      acquireLock: acquireEventWindowLock,
+      ledger,
+      listAttendees: async (event) => {
+        const [siteAttendees, legacyAttendees] = await Promise.all([
+          getConfirmedRegistrationsForEvent(event.slug),
+          event.legacyRegistration ? listLegacyPaidAttendeesForEvent(event) : Promise.resolve([]),
+        ])
+        return [...siteAttendees, ...legacyAttendees]
+      },
+      sendReminder: sendEventLocationReminderEmail,
+    },
+  )
 
   return NextResponse.json({
     ok: true,
     now: now.toISOString(),
-    dueEventCount: dueEvents.length,
+    dueEventCount: run.results.length,
     force,
     dryRun,
-    results,
+    results: run.results,
   })
 }

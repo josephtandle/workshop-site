@@ -1158,6 +1158,120 @@ export const events: EventDefinition[] = [
     },
   },
   {
+    slug: 'bring-the-task-you-hate',
+    status: 'live',
+    title: 'Illy - new title here',
+    shortTitle: 'Illy - new title here',
+    eyebrow: 'Free Live AI Class',
+    summary:
+      'Emails, proposals, invoices, follow-ups, your CRM, content, bookkeeping, taxes, the process you keep doing by hand. Bring the one you hate the most on September 29 and I will automate it live with AI, on your actual business, for free. You leave with the recording and every prompt and setup from the night.',
+    description:
+      'A free live AI class. Tell Joe the task you hate the most, watch him automate it live with AI on a real business, and leave with the recording and every prompt from the night.',
+    dateLabel: 'Tuesday, September 29, 2026',
+    timeLabel: '7:00 PM to 9:00 PM Asia/Makassar (Bali)',
+    locationLabel: 'Free online workshop',
+    durationLabel: '90 minutes of live builds plus a 30-minute open round',
+    heroImage: '/images/events/ask-an-ai-expert-hero.jpg',
+    heroAlt: 'Feet up on a beach lounger with a laptop showing sales climbing',
+    heroNoOverlay: true,
+    zoomLink: 'https://us02web.zoom.us/j/81275409884?pwd=lWpaRasSci7h7YHesIhRM2HlTbzVFA.1',
+    ctaLabel: 'Send Me the Task You Hate the Most',
+    intakeFields: {
+      whatsappNumber: true,
+      businessContext: true,
+      businessContextLabel: 'What is the one task you hate the most?',
+      businessContextPlaceholder: 'Example: replying to LinkedIn enquiries, writing proposals, chasing invoices, turning one recording into a month of posts',
+    },
+    successDetail: 'You are in. Your Zoom link and calendar invite are on their way from joe@mastermindshq.business. I read every task that comes in and pick the ones I build live from that list, so the more specific you are, the better your odds. If nothing shows up in a couple of minutes, check spam and add that address to your contacts so the reminders reach you.',
+    audience: [
+      'Coaches and consultants doing their own admin',
+      'Agency owners who are the backend of the agency',
+      'Founders who have ChatGPT open in a tab and nothing else set up',
+      'Anyone with a task they do every week and hate',
+    ],
+    outcomes: [
+      'Five or six real tasks automated live, on real businesses',
+      'Every prompt and setup from the night, in a doc you keep',
+      'The full recording, whether or not you attend live',
+      'A clear picture of what your week looks like with the busywork gone',
+    ],
+    hosts: [
+      {
+        name: 'Joe Che',
+        firstName: 'Joe',
+        role: 'Founder • AI Entrepreneur • Community Builder',
+        photoSrc: '/images/events/joe-che-bio-bw.jpg',
+        bio: [
+          'Joe Che is a number one bestselling author in three categories across business and AI, the founder of 26 companies, and the builder of two AI companies, including All Sorted AI, a practical AI operating system for service-based small business owners.',
+          'He previously built the largest software and business training company in New York City, where he trained more than 90,000 people, including Fortune 5 executives, the CIA, Microsoft, and Tyra Banks.',
+          'Today, Joe mentors entrepreneurs inside his Business Automation Mastermind and helps founders use AI to create cleaner operations, stronger offers, faster execution, and more freedom.',
+          'He demos his own AI operating system live and shows people how to use the 165 AI agents from his bestselling book in their own businesses.',
+          'He built All Sorted, a plug and play AI operating system he installs for businesses, pre-built with 157 agents covering social media strategy, payments, finances, bookkeeping, research, lead generation and outreach, and content creation.',
+        ],
+        bioHtml: [
+          'Joe Che is a number one bestselling author in three categories across business and AI, the founder of 26 companies, and the builder of two AI companies, including All Sorted AI, a practical AI operating system for service-based small business owners.',
+          'He previously built the largest software and business training company in New York City, where he trained more than 90,000 people, including Fortune 5 executives, the CIA, Microsoft, and Tyra Banks.',
+          'Today, Joe mentors entrepreneurs inside his <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 hover:text-[#FCF4EB]">Business Automation Mastermind</a> and helps founders use AI to create cleaner operations, stronger offers, faster execution, and more freedom. He also wrote <a href="https://a.mastermindshq.business/ai-os-kindle" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 hover:text-[#FCF4EB]">his number one bestselling book on AI operating systems</a>.',
+        ],
+      },
+    ],
+    pricing: {
+      currencySymbol: '$',
+      fullPrice: 0,
+      checkoutHref: '',
+      checkoutNote: 'Free registration. The Zoom link will be emailed right after you sign up.',
+    },
+    calendarEvent: {
+      startIso: '2026-09-29T19:00:00+08:00',
+      endIso: '2026-09-29T21:00:00+08:00',
+    },
+    sections: [
+      {
+        type: 'html',
+        id: 'about',
+        eyebrow: 'What This Is',
+        html: `
+          <div class="not-prose space-y-5">
+            <h2 class="event-gradient-title pt-2 text-[2rem] font-extrabold leading-[1.02] tracking-tight text-[#FCF4EB] md:text-[2.6rem]">
+              What is the one task you hate the most?
+            </h2>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              Everyone has one. The enquiry emails you answer the same way every week. Proposals you write from scratch at 11pm. Invoices you have to chase. Leads you meant to follow up with and never did. The recording that was supposed to become a month of content and is still sitting in a folder.
+            </p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              When you register, you tell me yours. On the night I pick five or six of them and automate them live with AI, on the actual business, in front of everyone. No slides, no theory. You watch a task that takes an hour a week turn into something that runs on its own, and you see exactly how it was done so you can do it yourself the next morning.
+            </p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              You do not need to be technical. If you have ChatGPT open in a browser tab, you are set up. Most of the people I work with came in exactly there.
+            </p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              I teach business owners to do this every week in my <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 transition hover:text-[#FCF4EB]">AI Business Mastermind</a>. Four cohorts have run and all four filled. Coaches, artists, therapists, consultants, none of them techies, who now have websites they built themselves, billing that runs itself, dashboards that track the whole business, and the same pattern across all of them: more sales coming in, less time on the work that used to eat their week. <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 transition hover:text-[#FCF4EB]">Cohort 5 starts October 7</a> and is the one currently open.
+            </p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              Everyone who registers gets the recording and every prompt and setup from the night, whether or not your task made it into the live round. If you are there live, you can ask anything during the open round at the end.
+            </p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              It is free. Send me the task you hate the most below.
+            </p>
+          </div>
+        `,
+      },
+      {
+        type: 'hosts',
+        id: 'bio',
+        eyebrow: 'Bio',
+        title: 'Joe Che',
+        intro: 'Founder • AI Entrepreneur • Community Builder',
+        hosts: [],
+      },
+    ],
+    metadata: {
+      title: 'Illy - new title here',
+      description:
+        'Emails, proposals, invoices, follow-ups, your CRM, content, bookkeeping, taxes, the process you keep doing by hand. Bring the one you hate the most on September 29 and Joe automates it live with AI, on your actual business, for free. Recording and every prompt included.',
+    },
+  },
+  {
     slug: 'business-blocks-ai-solved',
     status: 'live',
     title: 'The Biggest Business Blocks That AI Solved For Me',
