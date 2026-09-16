@@ -1160,8 +1160,8 @@ export const events: EventDefinition[] = [
   {
     slug: 'bring-the-task-you-hate',
     status: 'live',
-    title: 'Illy - new title here',
-    shortTitle: 'Illy - new title here',
+    title: 'Free AI Class: Bring the Task You Hate the Most. Leave Without It.',
+    shortTitle: 'Bring the Task You Hate the Most',
     eyebrow: 'Free Live AI Class',
     summary:
       'Emails, proposals, invoices, follow-ups, your CRM, content, bookkeeping, taxes, the process you keep doing by hand. Bring the one you hate the most on September 29 and I will automate it live with AI, on your actual business, for free. You leave with the recording and every prompt and setup from the night.',
@@ -1266,7 +1266,7 @@ export const events: EventDefinition[] = [
       },
     ],
     metadata: {
-      title: 'Illy - new title here',
+      title: 'Free AI Class: Bring the Task You Hate the Most. Leave Without It.',
       description:
         'Emails, proposals, invoices, follow-ups, your CRM, content, bookkeeping, taxes, the process you keep doing by hand. Bring the one you hate the most on September 29 and Joe automates it live with AI, on your actual business, for free. Recording and every prompt included.',
     },
