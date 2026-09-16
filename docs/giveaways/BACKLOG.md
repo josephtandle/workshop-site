@@ -29,7 +29,7 @@ Started 2026-08-03.
 | 2 | **The Owner Dependency Score** | Scorecard | LOVED | 3 | 5 | Half a day defining good vs bad answers | **NEXT** |
 | 3 | **Replace Yourself, five-day sprint** | Email course | - | 2 | 4 | Writes or approves 5 emails | IDEA |
 | 4 | **The Build Library** | Web app, proof gallery | - | 4 | 4 | Permission check per card | IDEA |
-| 5 | **Bring Your Busywork: Joe Automates It Live** (was "One Night Build") | Free live workshop, hot-seat | YES (2026-09-16) | 1 of workshop bank | 2 | Zero prep: the intake answers are the run sheet | **LIVE** Sept 29 rerun, slug `bring-your-busywork`. July 29 run: 56 signups, 7 net-new C4. See `projects/mastermind/marketing/WORKSHOP-LEAD-MAGNETS.md` |
+| 5 | **Free AI Class: Bring the Task You Hate. Leave Without It.** (was "One Night Build", then "Bring Your Busywork") | Free live workshop, hot-seat | YES (2026-09-16) | 1 of workshop bank | 2 | Zero prep: the intake answers are the run sheet | **LIVE** Sept 29 rerun, slug `bring-the-task-you-hate`. July 29 run: 56 signups, 7 net-new C4. See `projects/mastermind/marketing/WORKSHOP-LEAD-MAGNETS.md` |
 | 5b | **Make AI Sound Like You** (voice profile + Speak Human, finished live) | Free live workshop, build-along | YES (2026-09-16) | 2 of workshop bank | 4 | 90 min live, page and flow already exist (`stop-sounding-like-everyone-else`) | **NEXT**: second C5 lead magnet, needs 10 to 14 days runway + Marina ref link + LinkedIn hook. Aug 4 run got 10 on two days of promo |
 | 6 | **The Generic Test plus Voice Print** | Quiz and utility | - | 6 | 4 | Eyeball real outputs until the before and after lands | IDEA |
 | 7 | **AI Employee Job Descriptions** | Template pack | - | 7 | 5 | A writing job | IDEA |

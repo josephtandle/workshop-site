@@ -1158,15 +1158,15 @@ export const events: EventDefinition[] = [
     },
   },
   {
-    slug: 'bring-your-busywork',
+    slug: 'bring-the-task-you-hate',
     status: 'live',
-    title: 'Bring Your Busywork: Joe Automates It Live',
-    shortTitle: 'Bring Your Busywork',
-    eyebrow: 'Free Live Workshop',
+    title: 'Free AI Class: Bring the Task You Hate. Leave Without It.',
+    shortTitle: 'Bring the Task You Hate',
+    eyebrow: 'Free Live AI Class',
     summary:
-      'Send me the one task that eats your week. On September 29 I pick five or six of them and automate them live, on the actual business, for free. You leave with the recording and every prompt and setup from the night.',
+      'Emails, proposals, invoices, follow-ups, content. Bring the one you hate on September 29 and I will automate it live with AI, on your actual business, for free. You leave with the recording and every prompt and setup from the night.',
     description:
-      'A free live workshop where Joe takes real tasks from real business owners and automates them in front of you. No slides. No theory. Bring the work you hate.',
+      'A free live AI class where Joe takes the tasks real business owners hate and automates them in front of you. No slides. No theory. Bring yours.',
     dateLabel: 'Tuesday, September 29, 2026',
     timeLabel: '7:00 PM to 9:00 PM Asia/Makassar (Bali)',
     locationLabel: 'Free online workshop',
@@ -1175,7 +1175,7 @@ export const events: EventDefinition[] = [
     heroAlt: 'Feet up on a beach lounger with a laptop showing sales climbing',
     heroNoOverlay: true,
     zoomLink: 'https://us02web.zoom.us/j/81275409884?pwd=lWpaRasSci7h7YHesIhRM2HlTbzVFA.1',
-    ctaLabel: 'Send Me Your Busywork',
+    ctaLabel: 'Send Me the Task You Hate',
     intakeFields: {
       whatsappNumber: true,
       businessContext: true,
@@ -1238,7 +1238,7 @@ export const events: EventDefinition[] = [
             <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">You do not need to be technical. If you have ChatGPT open in a browser tab, you are set up. Most of the people I work with came in exactly there.</p>
             <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">I teach business owners to do this every week in my <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 transition hover:text-[#FCF4EB]">AI Business Mastermind</a>. Four cohorts have run and all four filled. Coaches, artists, therapists, consultants, none of them techies, who now have websites they built themselves, billing that runs itself, dashboards that track the whole business, and the same pattern across all of them: more sales coming in, less time on the work that used to eat their week. <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 transition hover:text-[#FCF4EB]">Cohort 5 starts October 7</a> and is the one currently open.</p>
             <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">Everyone who registers gets the recording and every prompt and setup from the night, whether or not your task made it into the live round. If you are there live, you can ask anything during the open round at the end.</p>
-            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">It is free. Send me your busywork below.</p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">It is free. Send me the task you hate below.</p>
           </div>
         `,
       },
@@ -1252,9 +1252,9 @@ export const events: EventDefinition[] = [
       },
     ],
     metadata: {
-      title: 'Bring Your Busywork: Joe Automates It Live',
+      title: 'Free AI Class: Bring the Task You Hate. Leave Without It.',
       description:
-        'Send me the one task that eats your week. On September 29 Joe picks five or six of them and automates them live, on the actual business, for free. Recording and every prompt included.',
+        'Emails, proposals, invoices, follow-ups, content. Bring the one you hate on September 29 and Joe automates it live with AI, on your actual business, for free. Recording and every prompt included.',
     },
   },
   {
