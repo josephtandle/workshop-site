@@ -1158,35 +1158,42 @@ export const events: EventDefinition[] = [
     },
   },
   {
-    slug: 'ai-more-sales-less-busy-work-sep-29',
+    slug: 'bring-your-busywork',
     status: 'live',
-    title: 'How to Get AI Making You More Sales and Less Busy Work',
-    shortTitle: 'More Sales, Less Busy Work',
+    title: 'Bring Your Busywork: Joe Automates It Live',
+    shortTitle: 'Bring Your Busywork',
     eyebrow: 'Free Live Workshop',
     summary:
-      'A free two-hour live session with Joe Che. Bring your business and your questions, get answers on the spot, and watch real businesses get AI working on their sales and their busywork right in front of you.',
+      'Send me the one task that eats your week. On September 29 I pick five or six of them and automate them live, on the actual business, for free. You leave with the recording and every prompt and setup from the night.',
     description:
-      'A live online workshop where Joe answers real questions, looks at real businesses, and shows practical ways to get AI working on sales and busywork.',
+      'A free live workshop where Joe takes real tasks from real business owners and automates them in front of you. No slides. No theory. Bring the work you hate.',
     dateLabel: 'Tuesday, September 29, 2026',
     timeLabel: '7:00 PM to 9:00 PM Asia/Makassar (Bali)',
     locationLabel: 'Free online workshop',
-    durationLabel: '90-minute AI business Q&A plus 30-minute bonus round',
+    durationLabel: '90 minutes of live builds plus a 30-minute open round',
     heroImage: '/images/events/ask-an-ai-expert-hero.jpg',
     heroAlt: 'Feet up on a beach lounger with a laptop showing sales climbing',
     heroNoOverlay: true,
     zoomLink: 'https://us02web.zoom.us/j/81275409884?pwd=lWpaRasSci7h7YHesIhRM2HlTbzVFA.1',
-    ctaLabel: 'Register Free',
+    ctaLabel: 'Send Me Your Busywork',
+    intakeFields: {
+      whatsappNumber: true,
+      businessContext: true,
+      businessContextLabel: 'What is the one task that eats your week?',
+      businessContextPlaceholder: 'Example: replying to LinkedIn enquiries, writing proposals, chasing invoices, turning one recording into a month of posts',
+    },
+    successDetail: 'You are in. Your Zoom link and calendar invite are on their way from joe@mastermindshq.business. I read every task that comes in and pick the ones I build live from that list, so the more specific you are, the better your odds. If nothing shows up in a couple of minutes, check spam and add that address to your contacts so the reminders reach you.',
     audience: [
-      'Owners who want more sales',
-      'Operators who want less busywork',
-      'Founders who want practical AI answers',
-      'People who want live hot-seat feedback',
+      'Coaches and consultants doing their own admin',
+      'Agency owners who are the backend of the agency',
+      'Founders who have ChatGPT open in a tab and nothing else set up',
+      'Anyone with a task they do every week and hate',
     ],
     outcomes: [
-      'Clear next steps for using AI in your actual business',
-      'Ideas for turning AI into more sales and less manual work',
-      'A chance to get your business looked at live',
-      'A simple way to think about your own AI operating system',
+      'Five or six real tasks automated live, on real businesses',
+      'Every prompt and setup from the night, in a doc you keep',
+      'The full recording, whether or not you attend live',
+      'A clear picture of what your week looks like with the busywork gone',
     ],
     hosts: [
       {
@@ -1225,27 +1232,13 @@ export const events: EventDefinition[] = [
         eyebrow: 'What This Is',
         html: `
           <div class="not-prose space-y-5">
-            <h2 class="event-gradient-title pt-2 text-[2rem] font-extrabold leading-[1.02] tracking-tight text-[#FCF4EB] md:text-[2.6rem]">
-              How do I get AI to make me more money?
-            </h2>
-            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
-              This is a live online workshop where Joe answers real questions, looks at real businesses, and shows practical ways to get AI working on sales and busywork.
-            </p>
-            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
-              Joe teaches business owners to do this every day in his <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 transition hover:text-[#FCF4EB]">AI Business Mastermind</a>. Four cohorts have run so far and all four filled. The people in them are not techies. They are coaches, artists, therapists, and consultants who now have websites they built themselves, honed their messages through branding and marketing agents, billing automations, business dashboards, tracking everything about the business, and the pattern across all of them is the same: more sales coming in, less time spent on the work that used to eat their week. <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 transition hover:text-[#FCF4EB]">Cohort 5 starts October 7</a> and is the one currently open.
-            </p>
-            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
-              For 90 minutes, Joe takes that question in every form, live. He pulls people into hot seats so everyone can look at a real business together and find the fastest ways AI can bring in sales and hand back time. When one person gets unstuck, everyone learns from it.
-            </p>
-            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
-              Joe will also be available to demo his AI operating system and give examples of how to use some of the 165 AI agents from his bestselling book.
-            </p>
-            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
-              He has also built All Sorted, a full plug and play AI operating system he has been installing for businesses. It comes pre-built with 157 agents that handle social media strategy, payments, finances and analysis, automated bookkeeping, research, lead generation and outreach, and video and content creation.
-            </p>
-            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
-              It is free. Save your seat below.
-            </p>
+            <h2 class="event-gradient-title pt-2 text-[2rem] font-extrabold leading-[1.02] tracking-tight text-[#FCF4EB] md:text-[2.6rem]">What is the one task that eats your week?</h2>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">Everyone has one. Replying to the same enquiries. Writing proposals from scratch. Chasing invoices. Turning one recording into a month of posts. Copying leads from a form into a spreadsheet you never look at again.</p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">When you register, you tell me yours. On the night I pick five or six of them and automate them live, on the actual business, in front of everyone. No slides, no theory. You watch a task that takes an hour a week turn into something that runs on its own, and you see exactly how it was done.</p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">You do not need to be technical. If you have ChatGPT open in a browser tab, you are set up. Most of the people I work with came in exactly there.</p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">I teach business owners to do this every week in my <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 transition hover:text-[#FCF4EB]">AI Business Mastermind</a>. Four cohorts have run and all four filled. Coaches, artists, therapists, consultants, none of them techies, who now have websites they built themselves, billing that runs itself, dashboards that track the whole business, and the same pattern across all of them: more sales coming in, less time on the work that used to eat their week. <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 transition hover:text-[#FCF4EB]">Cohort 5 starts October 7</a> and is the one currently open.</p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">Everyone who registers gets the recording and every prompt and setup from the night, whether or not your task made it into the live round. If you are there live, you can ask anything during the open round at the end.</p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">It is free. Send me your busywork below.</p>
           </div>
         `,
       },
@@ -1259,9 +1252,9 @@ export const events: EventDefinition[] = [
       },
     ],
     metadata: {
-      title: 'How to Get AI Making You More Sales and Less Busy Work',
+      title: 'Bring Your Busywork: Joe Automates It Live',
       description:
-        'A free two-hour live session with Joe Che. Bring your business and your questions, get answers on the spot, and watch real businesses get AI working on their sales and their busywork right in front of you.',
+        'Send me the one task that eats your week. On September 29 Joe picks five or six of them and automates them live, on the actual business, for free. Recording and every prompt included.',
     },
   },
   {
