@@ -1160,13 +1160,13 @@ export const events: EventDefinition[] = [
   {
     slug: 'bring-the-task-you-hate',
     status: 'live',
-    title: 'Free AI Class: Bring the Task You Hate. Leave Without It.',
-    shortTitle: 'Bring the Task You Hate',
+    title: 'Free AI Class: Bring the Task You Hate the Most. Leave Without It.',
+    shortTitle: 'Bring the Task You Hate the Most',
     eyebrow: 'Free Live AI Class',
     summary:
       'Emails, proposals, invoices, follow-ups, content. Bring the one you hate on September 29 and I will automate it live with AI, on your actual business, for free. You leave with the recording and every prompt and setup from the night.',
     description:
-      'A free live AI class where Joe takes the tasks real business owners hate and automates them in front of you. No slides. No theory. Bring yours.',
+      'A free live AI class. Tell Joe the task you hate the most, watch him automate it live with AI on a real business, and leave with the recording and every prompt from the night.',
     dateLabel: 'Tuesday, September 29, 2026',
     timeLabel: '7:00 PM to 9:00 PM Asia/Makassar (Bali)',
     locationLabel: 'Free online workshop',
@@ -1175,11 +1175,11 @@ export const events: EventDefinition[] = [
     heroAlt: 'Feet up on a beach lounger with a laptop showing sales climbing',
     heroNoOverlay: true,
     zoomLink: 'https://us02web.zoom.us/j/81275409884?pwd=lWpaRasSci7h7YHesIhRM2HlTbzVFA.1',
-    ctaLabel: 'Send Me the Task You Hate',
+    ctaLabel: 'Send Me the Task You Hate the Most',
     intakeFields: {
       whatsappNumber: true,
       businessContext: true,
-      businessContextLabel: 'What is the one task that eats your week?',
+      businessContextLabel: 'What is the one task you hate the most?',
       businessContextPlaceholder: 'Example: replying to LinkedIn enquiries, writing proposals, chasing invoices, turning one recording into a month of posts',
     },
     successDetail: 'You are in. Your Zoom link and calendar invite are on their way from joe@mastermindshq.business. I read every task that comes in and pick the ones I build live from that list, so the more specific you are, the better your odds. If nothing shows up in a couple of minutes, check spam and add that address to your contacts so the reminders reach you.',
@@ -1232,13 +1232,27 @@ export const events: EventDefinition[] = [
         eyebrow: 'What This Is',
         html: `
           <div class="not-prose space-y-5">
-            <h2 class="event-gradient-title pt-2 text-[2rem] font-extrabold leading-[1.02] tracking-tight text-[#FCF4EB] md:text-[2.6rem]">What is the one task that eats your week?</h2>
-            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">Everyone has one. Replying to the same enquiries. Writing proposals from scratch. Chasing invoices. Turning one recording into a month of posts. Copying leads from a form into a spreadsheet you never look at again.</p>
-            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">When you register, you tell me yours. On the night I pick five or six of them and automate them live, on the actual business, in front of everyone. No slides, no theory. You watch a task that takes an hour a week turn into something that runs on its own, and you see exactly how it was done.</p>
-            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">You do not need to be technical. If you have ChatGPT open in a browser tab, you are set up. Most of the people I work with came in exactly there.</p>
-            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">I teach business owners to do this every week in my <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 transition hover:text-[#FCF4EB]">AI Business Mastermind</a>. Four cohorts have run and all four filled. Coaches, artists, therapists, consultants, none of them techies, who now have websites they built themselves, billing that runs itself, dashboards that track the whole business, and the same pattern across all of them: more sales coming in, less time on the work that used to eat their week. <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 transition hover:text-[#FCF4EB]">Cohort 5 starts October 7</a> and is the one currently open.</p>
-            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">Everyone who registers gets the recording and every prompt and setup from the night, whether or not your task made it into the live round. If you are there live, you can ask anything during the open round at the end.</p>
-            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">It is free. Send me the task you hate below.</p>
+            <h2 class="event-gradient-title pt-2 text-[2rem] font-extrabold leading-[1.02] tracking-tight text-[#FCF4EB] md:text-[2.6rem]">
+              What is the one task you hate the most?
+            </h2>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              Everyone has one. The enquiry emails you answer the same way every week. Proposals you write from scratch at 11pm. Invoices you have to chase. Leads you meant to follow up with and never did. The recording that was supposed to become a month of content and is still sitting in a folder.
+            </p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              When you register, you tell me yours. On the night I pick five or six of them and automate them live with AI, on the actual business, in front of everyone. No slides, no theory. You watch a task that takes an hour a week turn into something that runs on its own, and you see exactly how it was done so you can do it yourself the next morning.
+            </p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              You do not need to be technical. If you have ChatGPT open in a browser tab, you are set up. Most of the people I work with came in exactly there.
+            </p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              I teach business owners to do this every week in my <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 transition hover:text-[#FCF4EB]">AI Business Mastermind</a>. Four cohorts have run and all four filled. Coaches, artists, therapists, consultants, none of them techies, who now have websites they built themselves, billing that runs itself, dashboards that track the whole business, and the same pattern across all of them: more sales coming in, less time on the work that used to eat their week. <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 transition hover:text-[#FCF4EB]">Cohort 5 starts October 7</a> and is the one currently open.
+            </p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              Everyone who registers gets the recording and every prompt and setup from the night, whether or not your task made it into the live round. If you are there live, you can ask anything during the open round at the end.
+            </p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              It is free. Send me the task you hate the most below.
+            </p>
           </div>
         `,
       },
@@ -1252,7 +1266,7 @@ export const events: EventDefinition[] = [
       },
     ],
     metadata: {
-      title: 'Free AI Class: Bring the Task You Hate. Leave Without It.',
+      title: 'Free AI Class: Bring the Task You Hate the Most. Leave Without It.',
       description:
         'Emails, proposals, invoices, follow-ups, content. Bring the one you hate on September 29 and Joe automates it live with AI, on your actual business, for free. Recording and every prompt included.',
     },
