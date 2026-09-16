@@ -1158,6 +1158,113 @@ export const events: EventDefinition[] = [
     },
   },
   {
+    slug: 'ai-more-sales-less-busy-work-sep-29',
+    status: 'live',
+    title: 'How to Get AI Making You More Sales and Less Busy Work',
+    shortTitle: 'More Sales, Less Busy Work',
+    eyebrow: 'Free Live Workshop',
+    summary:
+      'A free two-hour live session with Joe Che. Bring your business and your questions, get answers on the spot, and watch real businesses get AI working on their sales and their busywork right in front of you.',
+    description:
+      'A live online workshop where Joe answers real questions, looks at real businesses, and shows practical ways to get AI working on sales and busywork.',
+    dateLabel: 'Tuesday, September 29, 2026',
+    timeLabel: '7:00 PM to 9:00 PM Asia/Makassar (Bali)',
+    locationLabel: 'Free online workshop',
+    durationLabel: '90-minute AI business Q&A plus 30-minute bonus round',
+    heroImage: '/images/events/ask-an-ai-expert-hero.jpg',
+    heroAlt: 'Feet up on a beach lounger with a laptop showing sales climbing',
+    heroNoOverlay: true,
+    zoomLink: 'https://us02web.zoom.us/j/81275409884?pwd=lWpaRasSci7h7YHesIhRM2HlTbzVFA.1',
+    ctaLabel: 'Register Free',
+    audience: [
+      'Owners who want more sales',
+      'Operators who want less busywork',
+      'Founders who want practical AI answers',
+      'People who want live hot-seat feedback',
+    ],
+    outcomes: [
+      'Clear next steps for using AI in your actual business',
+      'Ideas for turning AI into more sales and less manual work',
+      'A chance to get your business looked at live',
+      'A simple way to think about your own AI operating system',
+    ],
+    hosts: [
+      {
+        name: 'Joe Che',
+        firstName: 'Joe',
+        role: 'Founder • AI Entrepreneur • Community Builder',
+        photoSrc: '/images/events/joe-che-bio-bw.jpg',
+        bio: [
+          'Joe Che is a number one bestselling author in three categories across business and AI, the founder of 26 companies, and the builder of two AI companies, including All Sorted AI, a practical AI operating system for service-based small business owners.',
+          'He previously built the largest software and business training company in New York City, where he trained more than 90,000 people, including Fortune 5 executives, the CIA, Microsoft, and Tyra Banks.',
+          'Today, Joe mentors entrepreneurs inside his Business Automation Mastermind and helps founders use AI to create cleaner operations, stronger offers, faster execution, and more freedom.',
+          'He demos his own AI operating system live and shows people how to use the 165 AI agents from his bestselling book in their own businesses.',
+          'He built All Sorted, a plug and play AI operating system he installs for businesses, pre-built with 157 agents covering social media strategy, payments, finances, bookkeeping, research, lead generation and outreach, and content creation.',
+        ],
+        bioHtml: [
+          'Joe Che is a number one bestselling author in three categories across business and AI, the founder of 26 companies, and the builder of two AI companies, including All Sorted AI, a practical AI operating system for service-based small business owners.',
+          'He previously built the largest software and business training company in New York City, where he trained more than 90,000 people, including Fortune 5 executives, the CIA, Microsoft, and Tyra Banks.',
+          'Today, Joe mentors entrepreneurs inside his <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 hover:text-[#FCF4EB]">Business Automation Mastermind</a> and helps founders use AI to create cleaner operations, stronger offers, faster execution, and more freedom. He also wrote <a href="https://a.mastermindshq.business/ai-os-kindle" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 hover:text-[#FCF4EB]">his number one bestselling book on AI operating systems</a>.',
+        ],
+      },
+    ],
+    pricing: {
+      currencySymbol: '$',
+      fullPrice: 0,
+      checkoutHref: '',
+      checkoutNote: 'Free registration. The Zoom link will be emailed right after you sign up.',
+    },
+    calendarEvent: {
+      startIso: '2026-09-29T19:00:00+08:00',
+      endIso: '2026-09-29T21:00:00+08:00',
+    },
+    sections: [
+      {
+        type: 'html',
+        id: 'about',
+        eyebrow: 'What This Is',
+        html: `
+          <div class="not-prose space-y-5">
+            <h2 class="event-gradient-title pt-2 text-[2rem] font-extrabold leading-[1.02] tracking-tight text-[#FCF4EB] md:text-[2.6rem]">
+              How do I get AI to make me more money?
+            </h2>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              This is a live online workshop where Joe answers real questions, looks at real businesses, and shows practical ways to get AI working on sales and busywork.
+            </p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              Joe teaches business owners to do this every day in his <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 transition hover:text-[#FCF4EB]">AI Business Mastermind</a>. Four cohorts have run so far and all four filled. The people in them are not techies. They are coaches, artists, therapists, and consultants who now have websites they built themselves, honed their messages through branding and marketing agents, billing automations, business dashboards, tracking everything about the business, and the pattern across all of them is the same: more sales coming in, less time spent on the work that used to eat their week. <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 transition hover:text-[#FCF4EB]">Cohort 5 starts October 7</a> and is the one currently open.
+            </p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              For 90 minutes, Joe takes that question in every form, live. He pulls people into hot seats so everyone can look at a real business together and find the fastest ways AI can bring in sales and hand back time. When one person gets unstuck, everyone learns from it.
+            </p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              Joe will also be available to demo his AI operating system and give examples of how to use some of the 165 AI agents from his bestselling book.
+            </p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              He has also built All Sorted, a full plug and play AI operating system he has been installing for businesses. It comes pre-built with 157 agents that handle social media strategy, payments, finances and analysis, automated bookkeeping, research, lead generation and outreach, and video and content creation.
+            </p>
+            <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
+              It is free. Save your seat below.
+            </p>
+          </div>
+        `,
+      },
+      {
+        type: 'hosts',
+        id: 'bio',
+        eyebrow: 'Bio',
+        title: 'Joe Che',
+        intro: 'Founder • AI Entrepreneur • Community Builder',
+        hosts: [],
+      },
+    ],
+    metadata: {
+      title: 'How to Get AI Making You More Sales and Less Busy Work',
+      description:
+        'A free two-hour live session with Joe Che. Bring your business and your questions, get answers on the spot, and watch real businesses get AI working on their sales and their busywork right in front of you.',
+    },
+  },
+  {
     slug: 'business-blocks-ai-solved',
     status: 'live',
     title: 'The Biggest Business Blocks That AI Solved For Me',
