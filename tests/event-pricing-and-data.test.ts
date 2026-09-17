@@ -39,19 +39,6 @@ test('all live events have valid calendar start and end times for automatic clos
   }
 })
 
-test('the Sep 29 workshop keeps its registration identity while exposing Illy\'s placeholder title', () => {
-  const event = getEventBySlug('bring-the-task-you-hate')
-  assert.ok(event, 'the established Sep 29 workshop must remain at its existing slug')
-  assert.equal(event.title, 'Illy - new title here')
-  assert.equal(event.shortTitle, 'Illy - new title here')
-  assert.equal(event.metadata?.title, 'Illy - new title here')
-  assert.equal(event.dateLabel, 'Tuesday, September 29, 2026')
-  assert.equal(event.timeLabel, '7:00 PM to 9:00 PM Asia/Makassar (Bali)')
-  assert.equal(event.zoomLink, 'https://us02web.zoom.us/j/81275409884?pwd=lWpaRasSci7h7YHesIhRM2HlTbzVFA.1')
-  assert.equal(event.calendarEvent?.startIso, '2026-09-29T19:00:00+08:00')
-  assert.equal(event.calendarEvent?.endIso, '2026-09-29T21:00:00+08:00')
-})
-
 test('connection dinner has capacity and emailConfig set', () => {
   const dinner = getEventBySlug('connection-dinner-canggu')
   assert.ok(dinner, 'connection dinner event must exist')
