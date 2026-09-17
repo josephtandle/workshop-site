@@ -57,6 +57,7 @@ test('October connection dinner is open for donation-based registration', () => 
   assert.equal(dinner.manuallyClosed, false)
   assert.equal(dinner.pricing.donationMode, true)
   assert.equal(dinner.pricing.minDonation, 0)
+  assert.deepEqual(dinner.capacityReservation, { holdMinutes: 30 })
 })
 
 test('donation-mode events have minDonation defined', () => {

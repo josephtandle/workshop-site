@@ -20,11 +20,13 @@ export type CalendarInviteResult =
 
 const CALENDAR_ID = process.env.GOOGLE_CALENDAR_ID?.trim() || 'primary'
 
-function eventIdFor(slug: string) {
+export function resolveCalendarEventId(event: EventDefinition, sharedEventId = process.env.GOOGLE_WORKSHOP_CALENDAR_EVENT_ID?.trim() || '') {
   // One env var per event keeps this generic: GOOGLE_CALENDAR_EVENT_ID_<SLUG>,
-  // falling back to the single workshop id.
-  const key = `GOOGLE_CALENDAR_EVENT_ID_${slug.replace(/-/g, '_').toUpperCase()}`
-  return process.env[key]?.trim() || process.env.GOOGLE_WORKSHOP_CALENDAR_EVENT_ID?.trim() || ''
+  // then uses the checked-in event id and finally the single workshop fallback.
+  // The environment override is intentionally first so an event can be
+  // recreated without a code redeploy.
+  const key = `GOOGLE_CALENDAR_EVENT_ID_${event.slug.replace(/-/g, '_').toUpperCase()}`
+  return process.env[key]?.trim() || event.calendarEvent?.googleCalendarEventId || sharedEventId
 }
 
 function getAuth() {
@@ -45,7 +47,7 @@ export async function inviteAttendeeToEvent(
   const email = attendeeEmail?.trim().toLowerCase()
   if (!email) return { status: 'skipped', reason: 'no email' }
 
-  const eventId = eventIdFor(event.slug)
+  const eventId = resolveCalendarEventId(event)
   if (!eventId) return { status: 'skipped', reason: `no calendar event id for ${event.slug}` }
 
   const auth = getAuth()

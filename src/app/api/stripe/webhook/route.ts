@@ -3,7 +3,8 @@
 // Setup (one time, in Stripe Dashboard):
 //   1. Developers → Webhooks → Add endpoint
 //   2. URL: https://workshop.mastermindshq.business/api/stripe/webhook
-//   3. Events: checkout.session.completed
+//   3. Events: checkout.session.completed, checkout.session.async_payment_succeeded,
+//      checkout.session.expired
 //   4. Reveal "Signing secret" and add it to Vercel as STRIPE_WEBHOOK_SECRET
 //
 // Without STRIPE_WEBHOOK_SECRET set, this route refuses every request.
@@ -18,6 +19,7 @@ import { getEventBySlug } from '@/lib/events'
 import { finalizeLegacyCheckoutSession } from '@/lib/legacy-event-schedule'
 import { createStripeClient } from '@/lib/stripe'
 import { trackInsightEvent } from '@/lib/insight-to-fix'
+import { releaseEventSeatByCheckout } from '@/lib/event-capacity'
 
 export const runtime = 'nodejs'
 export const maxDuration = 30
@@ -44,7 +46,15 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: message }, { status: 400 })
   }
 
-  if (event.type !== 'checkout.session.completed') {
+  if (event.type === 'checkout.session.expired') {
+    const session = event.data.object as Stripe.Checkout.Session
+    if (session.metadata?.event_slug && session.metadata?.event_seat_reservation_id) {
+      await releaseEventSeatByCheckout(session.id)
+    }
+    return NextResponse.json({ ok: true, expired: session.id })
+  }
+
+  if (event.type !== 'checkout.session.completed' && event.type !== 'checkout.session.async_payment_succeeded') {
     return NextResponse.json({ ok: true, ignored: event.type })
   }
 

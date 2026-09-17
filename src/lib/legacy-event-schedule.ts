@@ -5,6 +5,7 @@ import { saveRegistration } from '@/lib/event-registration-db'
 import { dedupeAttendeesByEmail } from './location-reminder'
 import { createStripeClient } from '@/lib/stripe'
 import { trackInsightEvent } from '@/lib/insight-to-fix'
+import { confirmEventSeat } from '@/lib/event-capacity'
 
 type SyncStatus = 'already_paid' | 'marked_paid' | 'imported'
 
@@ -540,6 +541,17 @@ export async function finalizeLegacyCheckoutSession(
     throw new Error('Checkout session is missing attendee details.')
   }
 
+  const capacityReservationId = input.event.capacityReservation
+    ? session.metadata?.event_seat_reservation_id?.trim()
+    : undefined
+  if (input.event.capacityReservation) {
+    const reservationId = capacityReservationId
+    if (!reservationId) {
+      throw new Error('Checkout session is missing its reserved seat.')
+    }
+    await confirmEventSeat(reservationId, session.id)
+  }
+
   if (paymentIntent?.metadata?.legacy_sync_status === 'complete') {
     const metadataUpdates: Record<string, string> = {}
 
@@ -618,11 +630,15 @@ export async function finalizeLegacyCheckoutSession(
       attendeeName,
       attendeeEmail,
       stripeSessionId: session.id,
+      capacityReservationId,
       amountPaid: (session.amount_total ?? 0) / 100,
     })
     cancelToken = saved.cancelToken
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Unknown registration save error.'
+    if (capacityReservationId) {
+      throw error
+    }
     if (message !== 'This email address is already registered for this event.') {
       console.error('event registration save error', error)
       await trackInsightEvent('registration_mirror_failed', {

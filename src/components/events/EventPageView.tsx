@@ -544,6 +544,7 @@ export default function EventPageView({
     manuallyClosed: Boolean(event.manuallyClosed),
     registrationWindowPassed,
     eventEnded,
+    capacityReservation: Boolean(event.capacityReservation),
     isVirtual: isVirtualEvent,
     intakeFields: event.intakeFields,
     durationLabel: event.pricing.donationMode ? undefined : event.durationLabel,

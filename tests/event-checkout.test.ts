@@ -111,3 +111,26 @@ test('hosted checkout session params retain Marina referral code metadata', () =
   assert.equal(params.metadata?.promo_code, 'MARINA')
   assert.equal(params.payment_intent_data?.metadata?.promo_code, 'MARINA')
 })
+
+test('capacity-managed checkout expires with its seat hold and carries the reservation ID', () => {
+  const event = getEventBySlug('joe-ches-connection-dinner-sunday-october-04-2026')
+  assert.ok(event)
+
+  const params = buildEventCheckoutSessionParams({
+    event,
+    attendeeName: 'Test Buyer',
+    attendeeEmail: 'buyer@example.com',
+    amount: 10,
+    promo: null,
+    baseUrl: 'https://workshop.mastermindshq.business',
+    mode: 'hosted',
+    seatReservation: {
+      reservationId: 'seat-1',
+      expiresAtUnix: 1791119400,
+    },
+  })
+
+  assert.equal(params.metadata?.event_seat_reservation_id, 'seat-1')
+  assert.equal(params.payment_intent_data?.metadata?.event_seat_reservation_id, 'seat-1')
+  assert.equal(params.expires_at, 1791119400)
+})

@@ -183,6 +183,9 @@ export type EventDefinition = {
   }
   registrationClosesIso?: string
   capacity?: number
+  capacityReservation?: {
+    holdMinutes: number
+  }
   manuallyClosed?: boolean
   // Post-checkout copy for the success modal. Without this an event falls back
   // to the generic paid-event line about setting up two free accounts, which is
@@ -453,6 +456,10 @@ export const events: EventDefinition[] = [
     calendarEvent: {
       startIso: '2026-10-04T18:00:00+08:00',
       endIso: '2026-10-04T21:00:00+08:00',
+      googleCalendarEventId: 'o15i65v5e4v2ntgn0rqsmem54c',
+    },
+    capacityReservation: {
+      holdMinutes: 30,
     },
     manuallyClosed: false,
     pricing: {
