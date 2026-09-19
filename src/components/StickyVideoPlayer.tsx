@@ -12,9 +12,36 @@ interface StickyVideoPlayerProps {
   videos?: VideoOption[]
   src?: string
   title?: string
+  inlineOnly?: boolean
 }
 
-export default function StickyVideoPlayer({ videoId, videos, src, title = 'Workshop Recording' }: StickyVideoPlayerProps) {
+function InlineOnlyVideoPlayer({ src, title = 'Workshop Recording' }: Pick<StickyVideoPlayerProps, 'src' | 'title'>) {
+  if (!src) return null
+
+  return (
+    <div className="relative w-full overflow-hidden rounded-2xl border border-white/[0.10] bg-black" style={{ aspectRatio: '16 / 9' }}>
+      <video
+        src={src}
+        title={title}
+        aria-label={title}
+        controls
+        preload="metadata"
+        playsInline
+        className="absolute inset-0 h-full w-full object-contain"
+      />
+    </div>
+  )
+}
+
+export default function StickyVideoPlayer(props: StickyVideoPlayerProps) {
+  if (props.inlineOnly) {
+    return <InlineOnlyVideoPlayer src={props.src} title={props.title} />
+  }
+
+  return <StickyVideoPlayerWithStickyBehavior {...props} />
+}
+
+function StickyVideoPlayerWithStickyBehavior({ videoId, videos, src, title = 'Workshop Recording' }: StickyVideoPlayerProps) {
   const initialVideoId = videos ? videos[videos.length - 1].id : (videoId ?? '')
   const [activeVideoId, setActiveVideoId] = useState(initialVideoId)
   const [isSticky, setIsSticky] = useState(false)

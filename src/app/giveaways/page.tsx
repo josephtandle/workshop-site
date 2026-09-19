@@ -1,12 +1,24 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
 import Reveal from '@/components/Reveal'
 import StaggerList, { StaggerItem } from '@/components/StaggerList'
 import TabNav from '@/components/TabNav'
 import { giveaways } from '@/lib/giveaways'
 
-export const metadata = {
+const URL = 'https://workshop.mastermindshq.business/giveaways'
+
+export const metadata: Metadata = {
   title: 'All Joe Che Giveaways',
   description: 'Free tools, templates, and guides from Joe Che and Masterminds HQ.',
+  alternates: { canonical: URL },
+  openGraph: {
+    title: 'All Joe Che Giveaways',
+    description: 'Free tools, templates, and guides from Joe Che and Masterminds HQ.',
+    url: URL,
+    siteName: 'Business Automation Mastermind Workshop',
+    type: 'website',
+    locale: 'en_US',
+  },
 }
 
 const BADGE_STYLES = {

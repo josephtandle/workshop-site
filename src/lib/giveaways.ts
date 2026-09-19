@@ -14,6 +14,14 @@ export interface Giveaway {
 // ---------------------------------------------------------------------------
 export const giveaways: Giveaway[] = [
   {
+    slug: 'terminal-to-claude-desktop',
+    title: 'From Terminal to Claude Desktop',
+    description: "Watch Joe's 8-minute walkthrough of moving your Claude Code workflow from Terminal into the desktop app. Free to watch, with no signup.",
+    icon: '▶',
+    badge: 'Video',
+    badgeVariant: 'purple',
+  },
+  {
     slug: 'cost-stack',
     title: 'The Cost Stack Audit',
     description: 'Add up what you pay every year for software, hosting and freelancers, then see which lines someone in the mastermind already replaced themselves. Takes about 60 seconds.',
