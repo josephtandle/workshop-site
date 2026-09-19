@@ -72,6 +72,7 @@ export type EventRegistrationData = {
   registrationWindowPassed?: boolean
   eventEnded?: boolean
   isVirtual?: boolean
+  capacityReservation?: boolean
   intakeFields?: {
     whatsappNumber?: boolean
     businessContext?: boolean
@@ -154,15 +155,6 @@ export default function EventRegistrationSection({
     )
   }
 
-  if (event.manuallyClosed) {
-    return (
-      <WaitlistJoinForm
-        durationLabel={event.durationLabel}
-        eventSlug={event.slug}
-        eventTitle={event.title}
-      />
-    )
-  }
   const isFreeRegistration = event.pricing.fullPrice === 0 && !event.pricing.donationMode
   const collectsWhatsapp = Boolean(event.intakeFields?.whatsappNumber)
   const collectsBusinessContext = Boolean(event.intakeFields?.businessContext)
@@ -193,6 +185,7 @@ export default function EventRegistrationSection({
   const [completionMessage, setCompletionMessage] = useState<string | null>(null)
   const [successState, setSuccessState] = useState<SuccessState | null>(null)
   const [error, setError] = useState<string | null>(null)
+  const [capacityReached, setCapacityReached] = useState(false)
   const [isPending, startTransition] = useTransition()
   const [isApplyingPromo, startApplyTransition] = useTransition()
   const checkoutRef = useRef<HTMLDivElement | null>(null)
@@ -359,6 +352,10 @@ export default function EventRegistrationSection({
     })
     const payload = await response.json()
     if (!response.ok) {
+      if (payload.code === 'EVENT_CAPACITY_FULL') {
+        setCapacityReached(true)
+        return
+      }
       if (checkoutMode !== 'hosted' && response.status >= 500) {
         await openCheckout(name, email, promo, 'hosted')
         return
@@ -516,12 +513,29 @@ export default function EventRegistrationSection({
       setAttendeeEmail(nextEmail)
 
       try {
-        await openCheckout(nextName, nextEmail, promoCode.trim() || appliedPromoCode || '')
+        await openCheckout(
+          nextName,
+          nextEmail,
+          promoCode.trim() || appliedPromoCode || '',
+          event.capacityReservation ? 'hosted' : 'embedded',
+        )
       } catch (submitError) {
         const message = submitError instanceof Error ? submitError.message : 'Unable to start checkout.'
         setError(message)
       }
     })
+  }
+
+  if (event.manuallyClosed || capacityReached) {
+    return (
+      <WaitlistJoinForm
+        durationLabel={event.durationLabel}
+        eventSlug={event.slug}
+        eventTitle={event.title}
+        initialName={attendeeName}
+        initialEmail={attendeeEmail}
+      />
+    )
   }
 
   return (

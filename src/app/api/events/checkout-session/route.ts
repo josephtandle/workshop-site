@@ -8,6 +8,12 @@ import {
 import { inviteAttendeeBestEffort, syncLegacyRegistration } from '@/lib/legacy-event-schedule'
 import { createStripeClient, getStripePublishableKey } from '@/lib/stripe'
 import { saveRegistration, saveRegistrationIntake } from '@/lib/event-registration-db'
+import {
+  attachCheckoutToEventSeat,
+  claimEventSeat,
+  confirmEventSeat,
+  releaseEventSeat,
+} from '@/lib/event-capacity'
 import { normalizeWhatsappNumber, validateIntakeFields } from '@/lib/event-intake'
 import { toOrigin } from '@/lib/url-utils'
 import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
@@ -34,6 +40,7 @@ function getBaseUrl(request: Request) {
 }
 
 export async function POST(request: Request) {
+  let seatReservationToRelease: string | null = null
   try {
     const { ok: rateLimitOk } = await checkRateLimit(`checkout:${getClientIp(request)}`, 10, 60)
     if (!rateLimitOk) {
@@ -170,19 +177,6 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Invalid amount.' }, { status: 400 })
     }
 
-    await trackInsightEvent('lead_acquired', {
-        route: acquisitionRoute,
-        email: attendeeEmail,
-        sessionId: journeyId,
-        properties: {
-          acquisition_query: acquisitionQuery,
-          acquisition_ref: acquisitionRef,
-          referrer,
-          event_slug: event.slug,
-          source: 'event_registration',
-        },
-      })
-
     const unitAmount = toStripeUnitAmount(amount)
     if (unitAmount === null) {
       await trackInsightEvent('checkout_failed', {
@@ -196,7 +190,53 @@ export async function POST(request: Request) {
       )
     }
 
+    const seatClaim = event.capacityReservation
+      ? await claimEventSeat(event, attendeeEmail)
+      : null
+
+    if (seatClaim?.status === 'full') {
+      return NextResponse.json(
+        {
+          code: 'EVENT_CAPACITY_FULL',
+          error: 'This dinner is currently full. Please join the waitlist and we will email you if a seat opens.',
+        },
+        { status: 409 },
+      )
+    }
+
+    if (seatClaim?.status === 'confirmed') {
+      return NextResponse.json({ error: 'You are already registered for this event.' }, { status: 409 })
+    }
+
+    if (seatClaim?.checkoutSessionId) {
+      return NextResponse.json(
+        { error: 'You already have a checkout in progress. Please complete it before starting another one.' },
+        { status: 409 },
+      )
+    }
+
+    if (seatClaim?.status === 'held') {
+      seatReservationToRelease = seatClaim.reservationId
+    }
+
+    await trackInsightEvent('lead_acquired', {
+        route: acquisitionRoute,
+        email: attendeeEmail,
+        sessionId: journeyId,
+        properties: {
+          acquisition_query: acquisitionQuery,
+          acquisition_ref: acquisitionRef,
+          referrer,
+          event_slug: event.slug,
+          source: 'event_registration',
+        },
+      })
+
     if (unitAmount === 0) {
+      if (seatClaim) {
+        await confirmEventSeat(seatClaim.reservationId)
+      }
+
       const syncResult = await syncLegacyRegistration({
         event,
         attendeeName,
@@ -218,11 +258,15 @@ export async function POST(request: Request) {
           amountPaid: amount,
           whatsappNumber: normalizeWhatsappNumber(whatsappNumber) || null,
           businessContext: businessContext || null,
+          capacityReservationId: seatClaim?.reservationId,
         })
         cancelToken = saved.cancelToken
       } catch (regErr) {
         console.error('event registration save error', regErr)
+        if (seatClaim) throw regErr
       }
+
+      seatReservationToRelease = null
 
       try {
         if (event.slug === 'ask-an-ai-expert') {
@@ -309,6 +353,16 @@ export async function POST(request: Request) {
     const publishableKey = getStripePublishableKey()
     const embeddedCheckoutEnabled = process.env.EVENTS_EMBEDDED_CHECKOUT === '1' && Boolean(publishableKey)
     const checkoutMode = resolveCheckoutMode(requestedCheckoutMode, embeddedCheckoutEnabled)
+    const seatReservation = seatClaim
+      ? {
+          reservationId: seatClaim.reservationId,
+          // Stripe requires at least 30 minutes from session creation. The
+          // reservation itself has a one-minute settlement buffer beyond this
+          // customer-facing checkout window.
+          expiresAtUnix: Math.ceil((Date.now() + (30 * 60 + 15) * 1000) / 1000),
+        }
+      : undefined
+
     const session = await stripe.checkout.sessions.create(
       buildEventCheckoutSessionParams({
         event,
@@ -318,8 +372,19 @@ export async function POST(request: Request) {
         promo,
         baseUrl,
         mode: checkoutMode,
+        seatReservation,
       }),
     )
+
+    if (seatClaim) {
+      try {
+        await attachCheckoutToEventSeat(seatClaim.reservationId, session.id)
+      } catch (error) {
+        await stripe.checkout.sessions.expire(session.id).catch(() => undefined)
+        throw error
+      }
+      seatReservationToRelease = null
+    }
 
     await trackInsightEvent('checkout_session_created', {
       route: '/events/checkout',
@@ -344,6 +409,11 @@ export async function POST(request: Request) {
       checkoutMode,
     })
   } catch (error) {
+    if (seatReservationToRelease) {
+      await releaseEventSeat(seatReservationToRelease).catch((releaseError) => {
+        console.error('event seat release after checkout error', releaseError)
+      })
+    }
     console.error('event checkout session error', error)
     await trackInsightEvent('checkout_failed', {
       route: '/events/checkout',

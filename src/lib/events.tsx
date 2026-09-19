@@ -183,6 +183,9 @@ export type EventDefinition = {
   }
   registrationClosesIso?: string
   capacity?: number
+  capacityReservation?: {
+    holdMinutes: number
+  }
   manuallyClosed?: boolean
   // Post-checkout copy for the success modal. Without this an event falls back
   // to the generic paid-event line about setting up two free accounts, which is
@@ -233,8 +236,7 @@ export function formatEventPrice(event: EventDefinition, promo?: EventPromoCode)
   return `${event.pricing.currencySymbol}${rounded}`
 }
 
-export const events: EventDefinition[] = [
-  {
+const connectionDinnerCangguTemplate: EventDefinition = {
     slug: 'connection-dinner-canggu',
     status: 'live',
     title: "Joe Che's VIP Connection Dinner",
@@ -437,6 +439,64 @@ export const events: EventDefinition[] = [
       title: "Joe Che's VIP Connection Dinner, May 27, 2026",
       description:
         'A monthly dinner for entrepreneurs, founders, and people doing interesting things in Canggu. Donations go to PKP Community Centre.',
+    },
+}
+
+export const events: EventDefinition[] = [
+  connectionDinnerCangguTemplate,
+  {
+    ...connectionDinnerCangguTemplate,
+    slug: 'joe-ches-connection-dinner-sunday-october-04-2026',
+    status: 'live',
+    title: "Joe Che's Connection Dinner",
+    shortTitle: 'Connection Dinner',
+    dateLabel: 'Sunday, October 4, 2026',
+    timeLabel: '6:00 PM',
+    badge: 'October Dinner',
+    calendarEvent: {
+      startIso: '2026-10-04T18:00:00+08:00',
+      endIso: '2026-10-04T21:00:00+08:00',
+      googleCalendarEventId: 'o15i65v5e4v2ntgn0rqsmem54c',
+    },
+    capacityReservation: {
+      holdMinutes: 30,
+    },
+    manuallyClosed: false,
+    pricing: {
+      ...connectionDinnerCangguTemplate.pricing,
+      checkoutNote: 'Your donation goes directly to Bali Street Mums.',
+    },
+    privateLocationReminder: {
+      eventStartIso: '2026-10-04T18:00:00+08:00',
+      leadHours: 4,
+      exactAddress: 'Mostly Restaurant, Jl. Pantai Pererenan No.114, Pererenan, Mengwi, Bali 80351',
+      googleMapsUrl:
+        'https://www.google.com/maps/search/?api=1&query=Mostly+Restaurant+Jl.+Pantai+Pererenan+No.114+Pererenan+Mengwi+Bali',
+      parkingInstructions: [
+        'Arrival is at 6:00 PM. Doors close at 6:30 PM.',
+        'The restaurant is on Jalan Pantai Pererenan, just off the main Pererenan strip.',
+      ],
+    },
+    sections: connectionDinnerCangguTemplate.sections.map((section): EventSection => {
+      if (section.id !== 'pkp') return section
+
+      return {
+        type: 'split',
+        id: 'bali-street-mums',
+        eyebrow: '100% of Donations Go To Bali Street Mums',
+        title: 'Supporting Bali Street Mums',
+        body: [
+          'Every dollar donated at this dinner goes directly to Bali Street Mums. The suggested amount is $10, but you decide what feels right.',
+        ],
+        imageSrc: '/events/connection-dinner-canggu/cover.jpg',
+        imageAlt: 'Joe Che\'s Connection Dinner at Mostly Restaurant',
+        caption: 'Joe Che\'s Connection Dinner at Mostly Restaurant',
+      }
+    }),
+    metadata: {
+      title: "Joe Che's Connection Dinner, October 4, 2026",
+      description:
+        'A monthly dinner for entrepreneurs, founders, and people doing interesting things in Canggu. Donations go to Bali Street Mums.',
     },
   },
   {

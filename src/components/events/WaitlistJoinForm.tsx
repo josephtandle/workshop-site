@@ -7,11 +7,13 @@ type Props = {
   durationLabel?: string
   eventSlug: string
   eventTitle?: string
+  initialName?: string
+  initialEmail?: string
 }
 
-export default function WaitlistJoinForm({ durationLabel, eventSlug, eventTitle }: Props) {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
+export default function WaitlistJoinForm({ durationLabel, eventSlug, eventTitle, initialName = '', initialEmail = '' }: Props) {
+  const [name, setName] = useState(initialName)
+  const [email, setEmail] = useState(initialEmail)
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [success, setSuccess] = useState(false)

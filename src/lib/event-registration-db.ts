@@ -2,6 +2,7 @@ import { randomUUID } from 'crypto'
 import { supabase } from '@/lib/supabase'
 import { generateToken } from '@/lib/event-tokens'
 import { getEventBySlug, type EventDefinition } from '@/lib/events'
+import { releaseEventSeat } from '@/lib/event-capacity'
 
 export type Registration = {
   id: string
@@ -10,6 +11,7 @@ export type Registration = {
   attendee_email: string
   acquisition_ref: string
   stripe_session_id: string | null
+  capacity_reservation_id: string | null
   amount_paid: number
   cancel_token: string
   status: 'confirmed' | 'cancelled'
@@ -103,6 +105,7 @@ export async function saveRegistration(input: {
   attendeeEmail: string
   acquisitionRef?: string
   stripeSessionId?: string
+  capacityReservationId?: string
   amountPaid?: number
   whatsappNumber?: string | null
   businessContext?: string | null
@@ -143,6 +146,7 @@ export async function saveRegistration(input: {
       attendee_email: input.attendeeEmail.trim().toLowerCase(),
       acquisition_ref: acquisitionRef,
       stripe_session_id: input.stripeSessionId ?? null,
+      capacity_reservation_id: input.capacityReservationId ?? null,
       amount_paid: input.amountPaid ?? 0,
       cancel_token: cancelToken,
       status: 'confirmed',
@@ -202,7 +206,7 @@ export async function cancelRegistration(cancelToken: string): Promise<{
 }> {
   const { data: reg, error: findError } = await supabase
     .from('event_registrations')
-    .select('id, event_slug, attendee_name, attendee_email, status')
+    .select('id, event_slug, attendee_name, attendee_email, status, capacity_reservation_id')
     .eq('cancel_token', cancelToken)
     .single()
 
@@ -211,11 +215,20 @@ export async function cancelRegistration(cancelToken: string): Promise<{
     throw new Error('Registration not found.')
   }
 
-  if (reg.status === 'cancelled') {
+  const registration = reg
+
+  async function releaseCapacitySeat() {
+    if (!getEventBySlug(registration.event_slug)?.capacityReservation) return
+    if (!registration.capacity_reservation_id) return
+    await releaseEventSeat(registration.capacity_reservation_id)
+  }
+
+  if (registration.status === 'cancelled') {
+    await releaseCapacitySeat()
     return {
-      eventSlug: reg.event_slug,
-      attendeeName: reg.attendee_name,
-      attendeeEmail: reg.attendee_email,
+      eventSlug: registration.event_slug,
+      attendeeName: registration.attendee_name,
+      attendeeEmail: registration.attendee_email,
       wasAlreadyCancelled: true,
     }
   }
@@ -223,17 +236,19 @@ export async function cancelRegistration(cancelToken: string): Promise<{
   const { error: updateError } = await supabase
     .from('event_registrations')
     .update({ status: 'cancelled', cancelled_at: new Date().toISOString() })
-    .eq('id', reg.id)
+    .eq('id', registration.id)
 
   if (updateError) {
     console.error('cancelRegistration update error', updateError)
     throw new Error('Failed to cancel registration.')
   }
 
+  await releaseCapacitySeat()
+
   return {
-    eventSlug: reg.event_slug,
-    attendeeName: reg.attendee_name,
-    attendeeEmail: reg.attendee_email,
+    eventSlug: registration.event_slug,
+    attendeeName: registration.attendee_name,
+    attendeeEmail: registration.attendee_email,
     wasAlreadyCancelled: false,
   }
 }

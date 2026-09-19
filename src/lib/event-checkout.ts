@@ -42,6 +42,7 @@ export function buildEventCheckoutSessionParams({
   promo,
   baseUrl,
   mode,
+  seatReservation,
 }: {
   event: EventDefinition
   attendeeName: string
@@ -50,6 +51,10 @@ export function buildEventCheckoutSessionParams({
   promo: EventPromoCode | null
   baseUrl: string
   mode: EventCheckoutMode
+  seatReservation?: {
+    reservationId: string
+    expiresAtUnix: number
+  }
 }): Stripe.Checkout.SessionCreateParams {
   const eventUrl = `${baseUrl}/events/${event.slug}`
   const unitAmount = toStripeUnitAmount(amount)
@@ -62,6 +67,7 @@ export function buildEventCheckoutSessionParams({
     attendee_name: attendeeName,
     attendee_email: attendeeEmail,
     promo_code: promo?.code ?? '',
+    ...(seatReservation ? { event_seat_reservation_id: seatReservation.reservationId } : {}),
   }
 
   // Declared as a loose record so `branding_settings` can be set: it is newer
@@ -104,6 +110,7 @@ export function buildEventCheckoutSessionParams({
     payment_intent_data: {
       metadata,
     },
+    ...(seatReservation ? { expires_at: seatReservation.expiresAtUnix } : {}),
   }
 
   return params as unknown as Stripe.Checkout.SessionCreateParams

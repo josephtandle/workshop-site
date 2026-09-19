@@ -49,6 +49,17 @@ test('connection dinner has capacity and emailConfig set', () => {
   assert.equal(dinner.emailConfig?.skipSetupInstructions, true, 'must skip setup instructions')
 })
 
+test('October connection dinner is open for donation-based registration', () => {
+  const dinner = getEventBySlug('joe-ches-connection-dinner-sunday-october-04-2026')
+  assert.ok(dinner, 'October connection dinner event must exist')
+  assert.equal(dinner.calendarEvent?.startIso, '2026-10-04T18:00:00+08:00')
+  assert.equal(dinner.calendarEvent?.endIso, '2026-10-04T21:00:00+08:00')
+  assert.equal(dinner.manuallyClosed, false)
+  assert.equal(dinner.pricing.donationMode, true)
+  assert.equal(dinner.pricing.minDonation, 0)
+  assert.deepEqual(dinner.capacityReservation, { holdMinutes: 30 })
+})
+
 test('donation-mode events have minDonation defined', () => {
   for (const event of events) {
     if (event.pricing.donationMode) {

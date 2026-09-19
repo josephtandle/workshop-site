@@ -31,6 +31,7 @@ const GIVEAWAYS_DIR = join(__dirname, '..', 'src', 'app', 'giveaways')
 // also commenting why in PROCESS.md / LESSONS.md.
 const EXEMPT_SLUGS = new Set<string>([
   'human', // re-export of speak-human/page.tsx (which is conforming). Single line: `export { default } from '../speak-human/page'`
+  'terminal-to-claude-desktop', // Free no-signup video. The layout gate exact-matches this route and does not render email capture.
 ])
 
 interface Page {
