@@ -97,7 +97,7 @@ export default function GiveawaysIndexPage() {
                               {item.badge}
                             </span>
                           </div>
-                          <p className="text-xs text-[#FCF4EB]/40 leading-relaxed line-clamp-2">
+                          <p className="text-xs text-[#FCF4EB]/65 leading-relaxed line-clamp-2">
                             {item.description}
                           </p>
                         </div>
