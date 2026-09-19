@@ -17,7 +17,7 @@ export const giveaways: Giveaway[] = [
     slug: 'terminal-to-claude-desktop',
     title: 'From Terminal to Claude Desktop',
     description: "Watch Joe's 8-minute walkthrough of moving your Claude Code workflow from Terminal into the desktop app. Free to watch, with no signup.",
-    icon: '▶',
+    icon: '◇',
     badge: 'Video',
     badgeVariant: 'purple',
   },

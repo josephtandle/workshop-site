@@ -38,7 +38,7 @@ export default function TerminalToClaudeDesktopGiveawayPage() {
             </Link>
           </Reveal>
 
-          <div className="mt-10 grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="mt-10 space-y-8">
             <div>
               <Reveal delay={1}>
                 <div className="mb-6 flex flex-wrap gap-2">
@@ -62,8 +62,7 @@ export default function TerminalToClaudeDesktopGiveawayPage() {
               </Reveal>
               <Reveal delay={4}>
                 <div className="mt-7 space-y-3 border-l-2 border-[#8B79D4]/60 pl-4 text-sm leading-relaxed text-[#FCF4EB]/55">
-                  <p>Watching this video is free and does not require a signup.</p>
-                  <p>You will use your own Claude account in the app. This video does not provide Claude account access.</p>
+                  <p>To follow along, sign in to your own Claude account in the app.</p>
                 </div>
               </Reveal>
             </div>
