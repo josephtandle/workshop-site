@@ -57,7 +57,22 @@ export async function inviteAttendeeToEvent(
     const calendar = google.calendar({ version: 'v3', auth })
     const existing = await calendar.events.get({ calendarId: CALENDAR_ID, eventId })
     const attendees = existing.data.attendees || []
+
+    // Registrants must never see each other. Google defaults to letting every
+    // guest see the full guest list, which exposed every registrant's name and
+    // email on the free workshop invite (Illy, 2026-09-21). Enforced on every
+    // registration so an event created with the default is corrected too.
+    const guestPrivacy = { guestsCanSeeOtherGuests: false, guestsCanInviteOthers: false }
+
     if (attendees.some((a) => a.email?.toLowerCase() === email)) {
+      if (existing.data.guestsCanSeeOtherGuests !== false || existing.data.guestsCanInviteOthers !== false) {
+        await calendar.events.patch({
+          calendarId: CALENDAR_ID,
+          eventId,
+          sendUpdates: 'none',
+          requestBody: guestPrivacy,
+        })
+      }
       return { status: 'already-invited' }
     }
 
@@ -70,6 +85,7 @@ export async function inviteAttendeeToEvent(
       eventId,
       sendUpdates: 'all',
       requestBody: {
+        ...guestPrivacy,
         attendees: [...attendees, { email, displayName: attendeeName || undefined }],
         ...(description ? { description } : {}),
         ...(event.zoomLink ? { location: event.zoomLink } : {}),
