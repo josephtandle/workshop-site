@@ -527,7 +527,7 @@ export default function EventPageView({
           title: event.title,
           startIso: event.calendarEvent.startIso,
           endIso: event.calendarEvent.endIso,
-          location: event.locationLabel,
+          location: event.zoomLink ?? event.locationLabel,
           description: event.privateLocationReminder
             ? 'Exact address will be emailed to you before the event.'
             : isVirtualEvent

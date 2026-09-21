@@ -11,8 +11,15 @@ import { withUtm } from './utm'
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
 
+const CANONICAL_SITE_URL = 'https://workshop.mastermindshq.business'
+
 function getSiteUrl() {
-  return (process.env.NEXT_PUBLIC_SITE_URL || 'https://workshop.mastermindshq.business').replace(/\/+$/g, '')
+  const configured = (process.env.NEXT_PUBLIC_SITE_URL || '').replace(/\/+$/g, '')
+  // Production had this set to the raw workshop-site-sigma.vercel.app host, so
+  // every emailed link (event page, iCal, cancel) pointed at a domain people
+  // do not recognise and spam filters distrust. Never email a vercel.app link.
+  if (!configured || /\.vercel\.app$/i.test(configured)) return CANONICAL_SITE_URL
+  return configured
 }
 
 function getFirstName(name: string) {
@@ -284,10 +291,12 @@ export function buildConfirmationEmailHtml(event: EventDefinition, attendeeName:
           title: event.title,
           startIso: event.calendarEvent!.startIso,
           endIso: event.calendarEvent!.endIso,
-          location: event.locationLabel,
+          location: event.zoomLink ?? event.locationLabel,
           description: event.privateLocationReminder
             ? 'Exact address will be emailed to you before the event.'
-            : undefined,
+            : event.zoomLink
+              ? `Join live on Zoom: ${event.zoomLink}`
+              : undefined,
         })
         const icalUrl = `${siteUrl}/api/events/${event.slug}/calendar`
         // No flexbox here. Gmail and Outlook strip `display:flex`, so the old
@@ -615,10 +624,14 @@ export async function sendEventConfirmationEmail(input: {
               title: input.event.title,
               startIso: input.event.calendarEvent.startIso,
               endIso: input.event.calendarEvent.endIso,
-              location: revealLocationNow && location ? location.exactAddress : input.event.locationLabel,
+              location: revealLocationNow && location
+                ? location.exactAddress
+                : input.event.zoomLink ?? input.event.locationLabel,
               description: location && !revealLocationNow
                 ? 'Exact address will be emailed to you before the event.'
-                : undefined,
+                : input.event.zoomLink
+                  ? `Join live on Zoom: ${input.event.zoomLink}`
+                  : undefined,
               organizer: { name: 'Joe Che', email: 'joe@mastermindshq.business' },
               attendee: { name: input.attendeeName, email: input.attendeeEmail },
               sequence: 0,
@@ -665,7 +678,7 @@ export async function sendAskAnAiExpertWelcomeEmail(input: {
               title: input.event.title,
               startIso: input.event.calendarEvent.startIso,
               endIso: input.event.calendarEvent.endIso,
-              location: input.event.locationLabel,
+              location: input.event.zoomLink ?? input.event.locationLabel,
               description: `Join on Zoom: ${input.event.zoomLink ?? 'ZOOM_LINK_TBD'}`,
               organizer: { name: 'Joe Che', email: 'joe@mastermindshq.business' },
               attendee: { name: input.attendeeName, email: input.attendeeEmail },

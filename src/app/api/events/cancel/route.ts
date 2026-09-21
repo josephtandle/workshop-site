@@ -5,7 +5,11 @@ import { sendWaitlistSpotNotificationEmail } from '@/lib/event-confirmation-emai
 
 export const runtime = 'nodejs'
 
-function htmlPage(title: string, message: string, status = 200) {
+function escapeHtml(value: string) {
+  return value.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!)
+}
+
+function htmlPage(title: string, message: string, status = 200, extraHtml = '') {
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,12 +21,14 @@ function htmlPage(title: string, message: string, status = 200) {
     .card { max-width: 480px; text-align: center; }
     h1 { font-size: 1.5rem; font-weight: 700; margin: 0 0 0.75rem; }
     p { color: #a0a0a0; margin: 0; line-height: 1.6; }
+    button { margin-top: 1.5rem; background: #8B79D4; color: #fff; border: 0; border-radius: 12px; padding: 14px 24px; font-size: 1rem; font-weight: 700; cursor: pointer; }
   </style>
 </head>
 <body>
   <div class="card">
     <h1>${title}</h1>
     <p>${message}</p>
+    ${extraHtml}
   </div>
 </body>
 </html>`
@@ -58,8 +64,33 @@ async function notifyWaitlist(eventSlug: string, cancelToken: string) {
   }
 }
 
+// GET never cancels. Work email security scanners (Microsoft Safe Links,
+// Mimecast, Proofpoint) open every link in an incoming email, so a one-click
+// GET cancel silently cancelled seats the moment the confirmation arrived and
+// those people then got no reminders. GET shows a button, POST cancels.
 export async function GET(request: NextRequest) {
   const token = request.nextUrl.searchParams.get('token')
+
+  if (!token) {
+    return htmlPage('Invalid Link', 'This cancellation link is invalid or has expired.', 400)
+  }
+
+  const form = `<form method="POST" action="/api/events/cancel"><input type="hidden" name="token" value="${escapeHtml(token)}" /><button type="submit">Yes, cancel my seat</button></form>`
+  return htmlPage(
+    'Cancel your seat?',
+    'If you cannot make it, press the button below and your seat will be released. If you still want to come, just close this page.',
+    200,
+    form,
+  )
+}
+
+export async function POST(request: NextRequest) {
+  let token = request.nextUrl.searchParams.get('token')
+  if (!token) {
+    const form = await request.formData().catch(() => null)
+    const value = form?.get('token')
+    token = typeof value === 'string' ? value : null
+  }
 
   if (!token) {
     return htmlPage('Invalid Link', 'This cancellation link is invalid or has expired.', 400)
