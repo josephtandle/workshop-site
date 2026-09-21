@@ -139,7 +139,11 @@ export async function POST(request: Request) {
       event.intakeFields?.whatsappNumber || event.intakeFields?.businessContext,
     )
     if (requiresIntake) {
-      const intakeErrors = validateIntakeFields({ whatsappNumber, businessContext })
+      const intakeErrors = validateIntakeFields({
+        whatsappNumber,
+        businessContext,
+        businessContextMinLength: event.intakeFields?.businessContextMinLength,
+      })
       const firstError = intakeErrors.whatsappNumber || intakeErrors.businessContext
       if (firstError) {
         await trackInsightEvent('checkout_failed', {

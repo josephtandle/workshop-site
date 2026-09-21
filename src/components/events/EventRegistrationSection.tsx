@@ -78,6 +78,9 @@ export type EventRegistrationData = {
     businessContext?: boolean
     businessContextLabel?: string
     businessContextPlaceholder?: string
+    // Defaults to BUSINESS_CONTEXT_MIN_LENGTH. Set low when the question has a
+    // naturally short answer, e.g. "What is the one task you hate the most?"
+    businessContextMinLength?: number
   }
 }
 
@@ -158,6 +161,8 @@ export default function EventRegistrationSection({
   const isFreeRegistration = event.pricing.fullPrice === 0 && !event.pricing.donationMode
   const collectsWhatsapp = Boolean(event.intakeFields?.whatsappNumber)
   const collectsBusinessContext = Boolean(event.intakeFields?.businessContext)
+  const businessContextMinLength =
+    event.intakeFields?.businessContextMinLength ?? BUSINESS_CONTEXT_MIN_LENGTH
   const collectsIntake = collectsWhatsapp || collectsBusinessContext
   // Per-event wording for the business question. Defaults preserve the original
   // copy so existing events are untouched.
@@ -411,7 +416,7 @@ export default function EventRegistrationSection({
     // The hosted fallback is a second way into checkout, so it has to clear the
     // same intake gate as the main submit.
     if (collectsIntake) {
-      const nextFieldErrors = validateIntakeFields({ whatsappNumber, businessContext })
+      const nextFieldErrors = validateIntakeFields({ whatsappNumber, businessContext, businessContextMinLength })
       if (!collectsWhatsapp) delete nextFieldErrors.whatsappNumber
       if (!collectsBusinessContext) delete nextFieldErrors.businessContext
 
@@ -493,7 +498,7 @@ export default function EventRegistrationSection({
     }
 
     if (collectsIntake) {
-      const nextFieldErrors = validateIntakeFields({ whatsappNumber, businessContext })
+      const nextFieldErrors = validateIntakeFields({ whatsappNumber, businessContext, businessContextMinLength })
       if (!collectsWhatsapp) delete nextFieldErrors.whatsappNumber
       if (!collectsBusinessContext) delete nextFieldErrors.businessContext
 
@@ -687,7 +692,9 @@ export default function EventRegistrationSection({
                   </p>
                 ) : (
                   <p className="text-sm text-[#FCF4EB]/55">
-                    Include your country code. This is how I send you the venue details.
+                    {event.isVirtual
+                      ? 'Include your country code. This is how I send you reminders and the Zoom link.'
+                      : 'Include your country code. This is how I send you the venue details.'}
                   </p>
                 )}
               </label>
@@ -730,16 +737,18 @@ export default function EventRegistrationSection({
                       Links are welcome. I read these before the workshop so I can bring examples that actually fit the room.
                     </p>
                   )}
-                  <p
-                    className={`text-xs tabular-nums ${
-                      businessContext.trim().length >= BUSINESS_CONTEXT_MIN_LENGTH
-                        ? 'text-[#BDE7C0]'
-                        : 'text-[#FCF4EB]/42'
-                    }`}
-                  >
-                    {Math.min(businessContext.trim().length, BUSINESS_CONTEXT_MIN_LENGTH)}/
-                    {BUSINESS_CONTEXT_MIN_LENGTH}
-                  </p>
+                  {businessContextMinLength >= 20 ? (
+                    <p
+                      className={`text-xs tabular-nums ${
+                        businessContext.trim().length >= businessContextMinLength
+                          ? 'text-[#BDE7C0]'
+                          : 'text-[#FCF4EB]/42'
+                      }`}
+                    >
+                      {Math.min(businessContext.trim().length, businessContextMinLength)}/
+                      {businessContextMinLength}
+                    </p>
+                  ) : null}
                 </div>
               </label>
             ) : null}

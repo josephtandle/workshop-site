@@ -108,11 +108,14 @@ export function validateWhatsappNumber(value: string): string | undefined {
   return undefined
 }
 
-export function validateBusinessContext(value: string): string | undefined {
+export function validateBusinessContext(
+  value: string,
+  minLength: number = BUSINESS_CONTEXT_MIN_LENGTH,
+): string | undefined {
   const trimmed = value.trim()
-  if (!trimmed) return 'Please tell us a little about your business.'
-  if (trimmed.length < BUSINESS_CONTEXT_MIN_LENGTH) {
-    const remaining = BUSINESS_CONTEXT_MIN_LENGTH - trimmed.length
+  if (!trimmed) return 'Please answer this question.'
+  if (trimmed.length < minLength) {
+    const remaining = minLength - trimmed.length
     return `A sentence or two is plenty. ${remaining} more character${remaining === 1 ? '' : 's'} to go.`
   }
   if (trimmed.length > BUSINESS_CONTEXT_MAX_LENGTH) return 'That is longer than the form can take. Please trim it down.'
@@ -123,13 +126,14 @@ export function validateBusinessContext(value: string): string | undefined {
 export function validateIntakeFields(input: {
   whatsappNumber: string
   businessContext: string
+  businessContextMinLength?: number
 }): IntakeFieldErrors {
   const errors: IntakeFieldErrors = {}
 
   const whatsappError = validateWhatsappNumber(input.whatsappNumber)
   if (whatsappError) errors.whatsappNumber = whatsappError
 
-  const businessError = validateBusinessContext(input.businessContext)
+  const businessError = validateBusinessContext(input.businessContext, input.businessContextMinLength)
   if (businessError) errors.businessContext = businessError
 
   return errors

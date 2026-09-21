@@ -144,3 +144,16 @@ test('the countdown message tells the user how many characters remain', () => {
   const message = validateBusinessContext('a'.repeat(BUSINESS_CONTEXT_MIN_LENGTH - 5))
   assert.match(String(message), /5 more characters/)
 })
+
+test('bring-the-task-you-hate accepts a short natural answer, other events keep the 55-char floor', () => {
+  const event = getEventBySlug('bring-the-task-you-hate')!
+  const min = event.intakeFields?.businessContextMinLength
+  assert.equal(min, 3)
+  const ok = validateIntakeFields({ whatsappNumber: '+62 812 3456 7890', businessContext: 'Chasing invoices', businessContextMinLength: min })
+  assert.equal(hasIntakeErrors(ok), false)
+  const empty = validateIntakeFields({ whatsappNumber: '+62 812 3456 7890', businessContext: '  ', businessContextMinLength: min })
+  assert.ok(empty.businessContext)
+  const dflt = validateIntakeFields({ whatsappNumber: '+62 812 3456 7890', businessContext: 'Chasing invoices' })
+  assert.ok(dflt.businessContext)
+  assert.equal(BUSINESS_CONTEXT_MIN_LENGTH, 55)
+})
