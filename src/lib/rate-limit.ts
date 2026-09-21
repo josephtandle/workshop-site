@@ -1,4 +1,5 @@
 import { supabase } from './supabase'
+import { withTimeout } from './with-timeout'
 
 export function getClientIp(request: Request): string {
   const forwarded = request.headers.get('x-forwarded-for') ?? ''
@@ -18,15 +19,20 @@ export async function checkRateLimit(
   try {
     const windowStart = new Date(Date.now() - windowSeconds * 1000).toISOString()
 
-    const { count } = await supabase
-      .from('rate_limit_log')
-      .select('id', { count: 'exact', head: true })
-      .eq('key', key)
-      .gte('created_at', windowStart)
+    // Bounded: a stalled database must never block a sign-up (fails open).
+    const { count } = await withTimeout(
+      supabase
+        .from('rate_limit_log')
+        .select('id', { count: 'exact', head: true })
+        .eq('key', key)
+        .gte('created_at', windowStart),
+      2500,
+      'rate limit count',
+    )
 
     if ((count ?? 0) >= limit) return { ok: false }
 
-    await supabase.from('rate_limit_log').insert({ key })
+    await withTimeout(supabase.from('rate_limit_log').insert({ key }), 2500, 'rate limit insert')
 
     // Best-effort cleanup of expired records for this key (non-blocking)
     supabase

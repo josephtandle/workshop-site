@@ -10,6 +10,7 @@ import { isSuppressed } from './email-suppressions'
 import { withUtm } from './utm'
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
+const REGISTRATION_BACKUP_ALERT_TO = 'illy@mastermindshq.business'
 
 const CANONICAL_SITE_URL = 'https://workshop.mastermindshq.business'
 
@@ -920,5 +921,40 @@ export async function sendWaitlistSpotNotificationEmail(input: {
     subject,
     html,
     idempotencyKey: input.idempotencyKey,
+  })
+}
+
+/**
+ * Backup record when a registration could not be written to the database.
+ * The attendee is still confirmed and emailed, so without this the only trace
+ * of them would be a Resend log line and they would miss the reminders.
+ */
+export async function sendRegistrationBackupAlert(input: {
+  event: EventDefinition
+  attendeeName: string
+  attendeeEmail: string
+  whatsappNumber?: string | null
+  businessContext?: string | null
+  acquisitionRef?: string
+  reason: string
+}) {
+  const esc = (v: string) => v.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!)
+  const rows: Array<[string, string]> = [
+    ['Event', input.event.slug],
+    ['Name', input.attendeeName],
+    ['Email', input.attendeeEmail],
+    ['WhatsApp', input.whatsappNumber || ''],
+    ['Answer', input.businessContext || ''],
+    ['Ref', input.acquisitionRef || ''],
+    ['Why', input.reason],
+  ]
+  const html = `<p>A registration was confirmed to the attendee but could NOT be saved to the database, so they will not get reminder emails until it is added back.</p><table>${rows
+    .map(([k, v]) => `<tr><td><b>${k}</b></td><td>${esc(v)}</td></tr>`)
+    .join('')}</table>`
+  return sendResendEmail({
+    attendeeEmail: REGISTRATION_BACKUP_ALERT_TO,
+    subject: `[Backup] Unsaved registration: ${input.attendeeName} (${input.event.slug})`,
+    html,
+    idempotencyKey: `registration-backup/${input.event.slug}/${input.attendeeEmail.trim().toLowerCase()}`,
   })
 }
