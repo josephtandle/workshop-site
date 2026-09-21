@@ -171,7 +171,7 @@ export async function POST(request: Request) {
             businessContext,
             acquisitionRef,
           }),
-          5000,
+          2500,
           'save registration intake',
         )
       } catch (intakeError) {
@@ -281,7 +281,7 @@ export async function POST(request: Request) {
             businessContext: businessContext || null,
             capacityReservationId: seatClaim?.reservationId,
           }),
-          6000,
+          intakeSaveError ? 500 : 3000,
           'save registration',
         )
         cancelToken = saved.cancelToken

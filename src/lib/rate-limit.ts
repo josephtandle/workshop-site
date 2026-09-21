@@ -26,13 +26,13 @@ export async function checkRateLimit(
         .select('id', { count: 'exact', head: true })
         .eq('key', key)
         .gte('created_at', windowStart),
-      2500,
+      1500,
       'rate limit count',
     )
 
     if ((count ?? 0) >= limit) return { ok: false }
 
-    await withTimeout(supabase.from('rate_limit_log').insert({ key }), 2500, 'rate limit insert')
+    await withTimeout(supabase.from('rate_limit_log').insert({ key }), 1500, 'rate limit insert')
 
     // Best-effort cleanup of expired records for this key (non-blocking)
     supabase
