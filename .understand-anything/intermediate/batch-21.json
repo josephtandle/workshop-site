@@ -1,0 +1,1282 @@
+{
+  "batch": 21,
+  "totalBatches": 13,
+  "timestamp": "2026-09-22T20:05:27.815Z",
+  "analyzedFiles": [
+    "src/lib/event-capacity.ts",
+    "src/lib/with-timeout.ts",
+    "src/components/StickyVideoPlayer.tsx",
+    "src/components/events/WaitlistJoinForm.tsx",
+    "src/components/giveaways/GiveawayCopyEmailGate.tsx",
+    "src/app/giveaways/terminal-to-claude-desktop/layout.tsx",
+    "src/app/giveaways/terminal-to-claude-desktop/page.tsx",
+    "src/app/giveaways/page.tsx",
+    "src/app/sitemap.ts",
+    "src/app/api/stripe/webhook/route.ts",
+    "supabase/migrations/014_event_capacity_reservations.sql",
+    "tests/event-cancellation.test.ts",
+    "tests/event-capacity-checkout-route.test.ts",
+    "tests/event-capacity.test.ts",
+    "tests/google-calendar-invite.test.ts",
+    "tests/with-timeout.test.ts"
+  ],
+  "nodeCount": 51,
+  "edgeCount": 52,
+  "nodes": [
+    {
+      "id": "file:src/lib/event-capacity.ts",
+      "type": "file",
+      "name": "event-capacity.ts",
+      "file": "src/lib/event-capacity.ts",
+      "category": "Source Code",
+      "language": "typescript",
+      "fileCategory": "code",
+      "description": "Typescript source file",
+      "properties": {
+        "language": "typescript",
+        "fileCategory": "code",
+        "totalLines": 100,
+        "nonEmptyLines": 85,
+        "importCount": 2,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "fn:src/lib/event-capacity.ts:claimEventSeat",
+      "type": "function",
+      "name": "claimEventSeat",
+      "file": "src/lib/event-capacity.ts",
+      "category": "Function",
+      "description": "Function claimEventSeat",
+      "properties": {
+        "startLine": 20,
+        "endLine": 50,
+        "lineCount": 31,
+        "paramCount": 2,
+        "params": [
+          "event",
+          "attendeeEmail"
+        ]
+      }
+    },
+    {
+      "id": "fn:src/lib/event-capacity.ts:confirmEventSeat",
+      "type": "function",
+      "name": "confirmEventSeat",
+      "file": "src/lib/event-capacity.ts",
+      "category": "Function",
+      "description": "Function confirmEventSeat",
+      "properties": {
+        "startLine": 52,
+        "endLine": 64,
+        "lineCount": 13,
+        "paramCount": 2,
+        "params": [
+          "reservationId",
+          "checkoutSessionId"
+        ]
+      }
+    },
+    {
+      "id": "fn:src/lib/event-capacity.ts:attachCheckoutToEventSeat",
+      "type": "function",
+      "name": "attachCheckoutToEventSeat",
+      "file": "src/lib/event-capacity.ts",
+      "category": "Function",
+      "description": "Function attachCheckoutToEventSeat",
+      "properties": {
+        "startLine": 66,
+        "endLine": 78,
+        "lineCount": 13,
+        "paramCount": 2,
+        "params": [
+          "reservationId",
+          "checkoutSessionId"
+        ]
+      }
+    },
+    {
+      "id": "fn:src/lib/event-capacity.ts:releaseEventSeat",
+      "type": "function",
+      "name": "releaseEventSeat",
+      "file": "src/lib/event-capacity.ts",
+      "category": "Function",
+      "description": "Function releaseEventSeat",
+      "properties": {
+        "startLine": 80,
+        "endLine": 90,
+        "lineCount": 11,
+        "paramCount": 1,
+        "params": [
+          "reservationId"
+        ]
+      }
+    },
+    {
+      "id": "fn:src/lib/event-capacity.ts:releaseEventSeatByCheckout",
+      "type": "function",
+      "name": "releaseEventSeatByCheckout",
+      "file": "src/lib/event-capacity.ts",
+      "category": "Function",
+      "description": "Function releaseEventSeatByCheckout",
+      "properties": {
+        "startLine": 92,
+        "endLine": 100,
+        "lineCount": 9,
+        "paramCount": 1,
+        "params": [
+          "checkoutSessionId"
+        ]
+      }
+    },
+    {
+      "id": "export:src/lib/event-capacity.ts:claimEventSeat",
+      "type": "export",
+      "name": "claimEventSeat",
+      "file": "src/lib/event-capacity.ts",
+      "category": "Export",
+      "description": "Export claimEventSeat",
+      "properties": {
+        "line": 20,
+        "isDefault": false
+      }
+    },
+    {
+      "id": "export:src/lib/event-capacity.ts:confirmEventSeat",
+      "type": "export",
+      "name": "confirmEventSeat",
+      "file": "src/lib/event-capacity.ts",
+      "category": "Export",
+      "description": "Export confirmEventSeat",
+      "properties": {
+        "line": 52,
+        "isDefault": false
+      }
+    },
+    {
+      "id": "export:src/lib/event-capacity.ts:attachCheckoutToEventSeat",
+      "type": "export",
+      "name": "attachCheckoutToEventSeat",
+      "file": "src/lib/event-capacity.ts",
+      "category": "Export",
+      "description": "Export attachCheckoutToEventSeat",
+      "properties": {
+        "line": 66,
+        "isDefault": false
+      }
+    },
+    {
+      "id": "export:src/lib/event-capacity.ts:releaseEventSeat",
+      "type": "export",
+      "name": "releaseEventSeat",
+      "file": "src/lib/event-capacity.ts",
+      "category": "Export",
+      "description": "Export releaseEventSeat",
+      "properties": {
+        "line": 80,
+        "isDefault": false
+      }
+    },
+    {
+      "id": "export:src/lib/event-capacity.ts:releaseEventSeatByCheckout",
+      "type": "export",
+      "name": "releaseEventSeatByCheckout",
+      "file": "src/lib/event-capacity.ts",
+      "category": "Export",
+      "description": "Export releaseEventSeatByCheckout",
+      "properties": {
+        "line": 92,
+        "isDefault": false
+      }
+    },
+    {
+      "id": "file:src/lib/with-timeout.ts",
+      "type": "file",
+      "name": "with-timeout.ts",
+      "file": "src/lib/with-timeout.ts",
+      "category": "Source Code",
+      "language": "typescript",
+      "fileCategory": "code",
+      "description": "Typescript source file",
+      "properties": {
+        "language": "typescript",
+        "fileCategory": "code",
+        "totalLines": 17,
+        "nonEmptyLines": 16,
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "id": "fn:src/lib/with-timeout.ts:withTimeout",
+      "type": "function",
+      "name": "withTimeout",
+      "file": "src/lib/with-timeout.ts",
+      "category": "Function",
+      "description": "Function withTimeout",
+      "properties": {
+        "startLine": 11,
+        "endLine": 17,
+        "lineCount": 7,
+        "paramCount": 3,
+        "params": [
+          "work",
+          "ms",
+          "label"
+        ]
+      }
+    },
+    {
+      "id": "class:src/lib/with-timeout.ts:TimeoutError",
+      "type": "class",
+      "name": "TimeoutError",
+      "file": "src/lib/with-timeout.ts",
+      "category": "Class",
+      "description": "Class TimeoutError",
+      "properties": {
+        "startLine": 4,
+        "endLine": 9,
+        "lineCount": 6,
+        "methods": [
+          "constructor"
+        ],
+        "methodCount": 1,
+        "properties": [],
+        "propertyCount": 0
+      }
+    },
+    {
+      "id": "method:src/lib/with-timeout.ts:TimeoutError:constructor",
+      "type": "method",
+      "name": "constructor",
+      "file": "src/lib/with-timeout.ts",
+      "category": "Method",
+      "description": "Method constructor of class TimeoutError",
+      "properties": {
+        "class": "TimeoutError",
+        "isConstructor": true
+      }
+    },
+    {
+      "id": "export:src/lib/with-timeout.ts:TimeoutError",
+      "type": "export",
+      "name": "TimeoutError",
+      "file": "src/lib/with-timeout.ts",
+      "category": "Export",
+      "description": "Export TimeoutError",
+      "properties": {
+        "line": 4,
+        "isDefault": false
+      }
+    },
+    {
+      "id": "export:src/lib/with-timeout.ts:withTimeout",
+      "type": "export",
+      "name": "withTimeout",
+      "file": "src/lib/with-timeout.ts",
+      "category": "Export",
+      "description": "Export withTimeout",
+      "properties": {
+        "line": 11,
+        "isDefault": false
+      }
+    },
+    {
+      "id": "file:src/components/StickyVideoPlayer.tsx",
+      "type": "file",
+      "name": "StickyVideoPlayer.tsx",
+      "file": "src/components/StickyVideoPlayer.tsx",
+      "category": "Source Code",
+      "language": "typescript",
+      "fileCategory": "code",
+      "description": "Typescript source file",
+      "properties": {
+        "language": "typescript",
+        "fileCategory": "code",
+        "totalLines": 503,
+        "nonEmptyLines": 458,
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "fn:src/components/StickyVideoPlayer.tsx:InlineOnlyVideoPlayer",
+      "type": "function",
+      "name": "InlineOnlyVideoPlayer",
+      "file": "src/components/StickyVideoPlayer.tsx",
+      "category": "Function",
+      "description": "Function InlineOnlyVideoPlayer",
+      "properties": {
+        "startLine": 18,
+        "endLine": 34,
+        "lineCount": 17,
+        "paramCount": 1,
+        "params": [
+          "{ src, title = 'Workshop Recording' }"
+        ]
+      }
+    },
+    {
+      "id": "fn:src/components/StickyVideoPlayer.tsx:StickyVideoPlayer",
+      "type": "function",
+      "name": "StickyVideoPlayer",
+      "file": "src/components/StickyVideoPlayer.tsx",
+      "category": "Function",
+      "description": "Function StickyVideoPlayer",
+      "properties": {
+        "startLine": 36,
+        "endLine": 42,
+        "lineCount": 7,
+        "paramCount": 1,
+        "params": [
+          "props"
+        ]
+      }
+    },
+    {
+      "id": "fn:src/components/StickyVideoPlayer.tsx:StickyVideoPlayerWithStickyBehavior",
+      "type": "function",
+      "name": "StickyVideoPlayerWithStickyBehavior",
+      "file": "src/components/StickyVideoPlayer.tsx",
+      "category": "Function",
+      "description": "Function StickyVideoPlayerWithStickyBehavior",
+      "properties": {
+        "startLine": 44,
+        "endLine": 503,
+        "lineCount": 460,
+        "paramCount": 1,
+        "params": [
+          "{ videoId, videos, src, title = 'Workshop Recording' }"
+        ]
+      }
+    },
+    {
+      "id": "export:src/components/StickyVideoPlayer.tsx:StickyVideoPlayer",
+      "type": "export",
+      "name": "StickyVideoPlayer",
+      "file": "src/components/StickyVideoPlayer.tsx",
+      "category": "Export",
+      "description": "Export StickyVideoPlayer",
+      "properties": {
+        "line": 36,
+        "isDefault": true
+      }
+    },
+    {
+      "id": "file:src/components/events/WaitlistJoinForm.tsx",
+      "type": "file",
+      "name": "WaitlistJoinForm.tsx",
+      "file": "src/components/events/WaitlistJoinForm.tsx",
+      "category": "Source Code",
+      "language": "typescript",
+      "fileCategory": "code",
+      "description": "Typescript source file",
+      "properties": {
+        "language": "typescript",
+        "fileCategory": "code",
+        "totalLines": 143,
+        "nonEmptyLines": 135,
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "fn:src/components/events/WaitlistJoinForm.tsx:WaitlistJoinForm",
+      "type": "function",
+      "name": "WaitlistJoinForm",
+      "file": "src/components/events/WaitlistJoinForm.tsx",
+      "category": "Function",
+      "description": "Function WaitlistJoinForm",
+      "properties": {
+        "startLine": 14,
+        "endLine": 143,
+        "lineCount": 130,
+        "paramCount": 1,
+        "params": [
+          "{ durationLabel, eventSlug, eventTitle, initialName = '', initialEmail = '' }"
+        ]
+      }
+    },
+    {
+      "id": "export:src/components/events/WaitlistJoinForm.tsx:WaitlistJoinForm",
+      "type": "export",
+      "name": "WaitlistJoinForm",
+      "file": "src/components/events/WaitlistJoinForm.tsx",
+      "category": "Export",
+      "description": "Export WaitlistJoinForm",
+      "properties": {
+        "line": 14,
+        "isDefault": true
+      }
+    },
+    {
+      "id": "file:src/components/giveaways/GiveawayCopyEmailGate.tsx",
+      "type": "file",
+      "name": "GiveawayCopyEmailGate.tsx",
+      "file": "src/components/giveaways/GiveawayCopyEmailGate.tsx",
+      "category": "Source Code",
+      "language": "typescript",
+      "fileCategory": "code",
+      "description": "Typescript source file",
+      "properties": {
+        "language": "typescript",
+        "fileCategory": "code",
+        "totalLines": 55,
+        "nonEmptyLines": 45,
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "fn:src/components/giveaways/GiveawayCopyEmailGate.tsx:getGiveawaySlug",
+      "type": "function",
+      "name": "getGiveawaySlug",
+      "file": "src/components/giveaways/GiveawayCopyEmailGate.tsx",
+      "category": "Function",
+      "description": "Function getGiveawaySlug",
+      "properties": {
+        "startLine": 9,
+        "endLine": 12,
+        "lineCount": 4,
+        "paramCount": 1,
+        "params": [
+          "pathname"
+        ]
+      }
+    },
+    {
+      "id": "fn:src/components/giveaways/GiveawayCopyEmailGate.tsx:isNoSignupGiveaway",
+      "type": "function",
+      "name": "isNoSignupGiveaway",
+      "file": "src/components/giveaways/GiveawayCopyEmailGate.tsx",
+      "category": "Function",
+      "description": "Function isNoSignupGiveaway",
+      "properties": {
+        "startLine": 19,
+        "endLine": 21,
+        "lineCount": 3,
+        "paramCount": 1,
+        "params": [
+          "pathname"
+        ]
+      }
+    },
+    {
+      "id": "fn:src/components/giveaways/GiveawayCopyEmailGate.tsx:GiveawayCopyEmailGate",
+      "type": "function",
+      "name": "GiveawayCopyEmailGate",
+      "file": "src/components/giveaways/GiveawayCopyEmailGate.tsx",
+      "category": "Function",
+      "description": "Function GiveawayCopyEmailGate",
+      "properties": {
+        "startLine": 23,
+        "endLine": 55,
+        "lineCount": 33,
+        "paramCount": 1,
+        "params": [
+          "{ children }"
+        ]
+      }
+    },
+    {
+      "id": "export:src/components/giveaways/GiveawayCopyEmailGate.tsx:GiveawayCopyEmailGate",
+      "type": "export",
+      "name": "GiveawayCopyEmailGate",
+      "file": "src/components/giveaways/GiveawayCopyEmailGate.tsx",
+      "category": "Export",
+      "description": "Export GiveawayCopyEmailGate",
+      "properties": {
+        "line": 23,
+        "isDefault": true
+      }
+    },
+    {
+      "id": "file:src/app/giveaways/terminal-to-claude-desktop/layout.tsx",
+      "type": "file",
+      "name": "layout.tsx",
+      "file": "src/app/giveaways/terminal-to-claude-desktop/layout.tsx",
+      "category": "Source Code",
+      "language": "typescript",
+      "fileCategory": "code",
+      "description": "Typescript source file",
+      "properties": {
+        "language": "typescript",
+        "fileCategory": "code",
+        "totalLines": 23,
+        "nonEmptyLines": 20,
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "fn:src/app/giveaways/terminal-to-claude-desktop/layout.tsx:TerminalToClaudeDesktopLayout",
+      "type": "function",
+      "name": "TerminalToClaudeDesktopLayout",
+      "file": "src/app/giveaways/terminal-to-claude-desktop/layout.tsx",
+      "category": "Function",
+      "description": "Function TerminalToClaudeDesktopLayout",
+      "properties": {
+        "startLine": 21,
+        "endLine": 23,
+        "lineCount": 3,
+        "paramCount": 1,
+        "params": [
+          "{ children }"
+        ]
+      }
+    },
+    {
+      "id": "export:src/app/giveaways/terminal-to-claude-desktop/layout.tsx:TerminalToClaudeDesktopLayout",
+      "type": "export",
+      "name": "TerminalToClaudeDesktopLayout",
+      "file": "src/app/giveaways/terminal-to-claude-desktop/layout.tsx",
+      "category": "Export",
+      "description": "Export TerminalToClaudeDesktopLayout",
+      "properties": {
+        "line": 21,
+        "isDefault": true
+      }
+    },
+    {
+      "id": "file:src/app/giveaways/terminal-to-claude-desktop/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "file": "src/app/giveaways/terminal-to-claude-desktop/page.tsx",
+      "category": "Source Code",
+      "language": "typescript",
+      "fileCategory": "code",
+      "description": "Typescript source file",
+      "properties": {
+        "language": "typescript",
+        "fileCategory": "code",
+        "totalLines": 143,
+        "nonEmptyLines": 132,
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "fn:src/app/giveaways/terminal-to-claude-desktop/page.tsx:TerminalToClaudeDesktopGiveawayPage",
+      "type": "function",
+      "name": "TerminalToClaudeDesktopGiveawayPage",
+      "file": "src/app/giveaways/terminal-to-claude-desktop/page.tsx",
+      "category": "Function",
+      "description": "Function TerminalToClaudeDesktopGiveawayPage",
+      "properties": {
+        "startLine": 21,
+        "endLine": 143,
+        "lineCount": 123,
+        "paramCount": 0,
+        "params": []
+      }
+    },
+    {
+      "id": "export:src/app/giveaways/terminal-to-claude-desktop/page.tsx:TerminalToClaudeDesktopGiveawayPage",
+      "type": "export",
+      "name": "TerminalToClaudeDesktopGiveawayPage",
+      "file": "src/app/giveaways/terminal-to-claude-desktop/page.tsx",
+      "category": "Export",
+      "description": "Export TerminalToClaudeDesktopGiveawayPage",
+      "properties": {
+        "line": 21,
+        "isDefault": true
+      }
+    },
+    {
+      "id": "file:src/app/giveaways/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "file": "src/app/giveaways/page.tsx",
+      "category": "Source Code",
+      "language": "typescript",
+      "fileCategory": "code",
+      "description": "Typescript source file",
+      "properties": {
+        "language": "typescript",
+        "fileCategory": "code",
+        "totalLines": 121,
+        "nonEmptyLines": 113,
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "fn:src/app/giveaways/page.tsx:GiveawaysIndexPage",
+      "type": "function",
+      "name": "GiveawaysIndexPage",
+      "file": "src/app/giveaways/page.tsx",
+      "category": "Function",
+      "description": "Function GiveawaysIndexPage",
+      "properties": {
+        "startLine": 37,
+        "endLine": 121,
+        "lineCount": 85,
+        "paramCount": 0,
+        "params": []
+      }
+    },
+    {
+      "id": "export:src/app/giveaways/page.tsx:GiveawaysIndexPage",
+      "type": "export",
+      "name": "GiveawaysIndexPage",
+      "file": "src/app/giveaways/page.tsx",
+      "category": "Export",
+      "description": "Export GiveawaysIndexPage",
+      "properties": {
+        "line": 37,
+        "isDefault": true
+      }
+    },
+    {
+      "id": "file:src/app/sitemap.ts",
+      "type": "file",
+      "name": "sitemap.ts",
+      "file": "src/app/sitemap.ts",
+      "category": "Source Code",
+      "language": "typescript",
+      "fileCategory": "code",
+      "description": "Typescript source file",
+      "properties": {
+        "language": "typescript",
+        "fileCategory": "code",
+        "totalLines": 27,
+        "nonEmptyLines": 24,
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "fn:src/app/sitemap.ts:sitemap",
+      "type": "function",
+      "name": "sitemap",
+      "file": "src/app/sitemap.ts",
+      "category": "Function",
+      "description": "Function sitemap",
+      "properties": {
+        "startLine": 6,
+        "endLine": 27,
+        "lineCount": 22,
+        "paramCount": 0,
+        "params": []
+      }
+    },
+    {
+      "id": "export:src/app/sitemap.ts:sitemap",
+      "type": "export",
+      "name": "sitemap",
+      "file": "src/app/sitemap.ts",
+      "category": "Export",
+      "description": "Export sitemap",
+      "properties": {
+        "line": 6,
+        "isDefault": true
+      }
+    },
+    {
+      "id": "file:src/app/api/stripe/webhook/route.ts",
+      "type": "file",
+      "name": "route.ts",
+      "file": "src/app/api/stripe/webhook/route.ts",
+      "category": "Source Code",
+      "language": "typescript",
+      "fileCategory": "code",
+      "description": "Typescript source file",
+      "properties": {
+        "language": "typescript",
+        "fileCategory": "code",
+        "totalLines": 95,
+        "nonEmptyLines": 84,
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "fn:src/app/api/stripe/webhook/route.ts:POST",
+      "type": "function",
+      "name": "POST",
+      "file": "src/app/api/stripe/webhook/route.ts",
+      "category": "Function",
+      "description": "Function POST",
+      "properties": {
+        "startLine": 27,
+        "endLine": 95,
+        "lineCount": 69,
+        "paramCount": 1,
+        "params": [
+          "request"
+        ]
+      }
+    },
+    {
+      "id": "export:src/app/api/stripe/webhook/route.ts:POST",
+      "type": "export",
+      "name": "POST",
+      "file": "src/app/api/stripe/webhook/route.ts",
+      "category": "Export",
+      "description": "Export POST",
+      "properties": {
+        "line": 27,
+        "isDefault": false
+      }
+    },
+    {
+      "id": "file:supabase/migrations/014_event_capacity_reservations.sql",
+      "type": "file",
+      "name": "014_event_capacity_reservations.sql",
+      "file": "supabase/migrations/014_event_capacity_reservations.sql",
+      "category": "Database",
+      "language": "sql",
+      "fileCategory": "code",
+      "description": "Sql source file",
+      "properties": {
+        "language": "sql",
+        "fileCategory": "code",
+        "totalLines": 311,
+        "nonEmptyLines": 267,
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 5
+      }
+    },
+    {
+      "id": "file:tests/event-cancellation.test.ts",
+      "type": "file",
+      "name": "event-cancellation.test.ts",
+      "file": "tests/event-cancellation.test.ts",
+      "category": "Source Code",
+      "language": "typescript",
+      "fileCategory": "code",
+      "description": "Typescript source file",
+      "properties": {
+        "language": "typescript",
+        "fileCategory": "code",
+        "totalLines": 53,
+        "nonEmptyLines": 49,
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:tests/event-capacity-checkout-route.test.ts",
+      "type": "file",
+      "name": "event-capacity-checkout-route.test.ts",
+      "file": "tests/event-capacity-checkout-route.test.ts",
+      "category": "Source Code",
+      "language": "typescript",
+      "fileCategory": "code",
+      "description": "Typescript source file",
+      "properties": {
+        "language": "typescript",
+        "fileCategory": "code",
+        "totalLines": 49,
+        "nonEmptyLines": 44,
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:tests/event-capacity.test.ts",
+      "type": "file",
+      "name": "event-capacity.test.ts",
+      "file": "tests/event-capacity.test.ts",
+      "category": "Source Code",
+      "language": "typescript",
+      "fileCategory": "code",
+      "description": "Typescript source file",
+      "properties": {
+        "language": "typescript",
+        "fileCategory": "code",
+        "totalLines": 149,
+        "nonEmptyLines": 135,
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:tests/google-calendar-invite.test.ts",
+      "type": "file",
+      "name": "google-calendar-invite.test.ts",
+      "file": "tests/google-calendar-invite.test.ts",
+      "category": "Source Code",
+      "language": "typescript",
+      "fileCategory": "code",
+      "description": "Typescript source file",
+      "properties": {
+        "language": "typescript",
+        "fileCategory": "code",
+        "totalLines": 29,
+        "nonEmptyLines": 25,
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:tests/with-timeout.test.ts",
+      "type": "file",
+      "name": "with-timeout.test.ts",
+      "file": "tests/with-timeout.test.ts",
+      "category": "Source Code",
+      "language": "typescript",
+      "fileCategory": "code",
+      "description": "Typescript source file",
+      "properties": {
+        "language": "typescript",
+        "fileCategory": "code",
+        "totalLines": 8,
+        "nonEmptyLines": 7,
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge:1",
+      "source": "file:src/lib/event-capacity.ts",
+      "target": "fn:src/lib/event-capacity.ts:claimEventSeat",
+      "type": "contains",
+      "label": "defines function",
+      "weight": 1
+    },
+    {
+      "id": "edge:2",
+      "source": "file:src/lib/event-capacity.ts",
+      "target": "fn:src/lib/event-capacity.ts:confirmEventSeat",
+      "type": "contains",
+      "label": "defines function",
+      "weight": 1
+    },
+    {
+      "id": "edge:3",
+      "source": "file:src/lib/event-capacity.ts",
+      "target": "fn:src/lib/event-capacity.ts:attachCheckoutToEventSeat",
+      "type": "contains",
+      "label": "defines function",
+      "weight": 1
+    },
+    {
+      "id": "edge:4",
+      "source": "file:src/lib/event-capacity.ts",
+      "target": "fn:src/lib/event-capacity.ts:releaseEventSeat",
+      "type": "contains",
+      "label": "defines function",
+      "weight": 1
+    },
+    {
+      "id": "edge:5",
+      "source": "file:src/lib/event-capacity.ts",
+      "target": "fn:src/lib/event-capacity.ts:releaseEventSeatByCheckout",
+      "type": "contains",
+      "label": "defines function",
+      "weight": 1
+    },
+    {
+      "id": "edge:6",
+      "source": "fn:src/lib/event-capacity.ts:claimEventSeat",
+      "target": "export:src/lib/event-capacity.ts:claimEventSeat",
+      "type": "exported_as",
+      "label": "exported",
+      "weight": 1
+    },
+    {
+      "id": "edge:7",
+      "source": "fn:src/lib/event-capacity.ts:confirmEventSeat",
+      "target": "export:src/lib/event-capacity.ts:confirmEventSeat",
+      "type": "exported_as",
+      "label": "exported",
+      "weight": 1
+    },
+    {
+      "id": "edge:8",
+      "source": "fn:src/lib/event-capacity.ts:attachCheckoutToEventSeat",
+      "target": "export:src/lib/event-capacity.ts:attachCheckoutToEventSeat",
+      "type": "exported_as",
+      "label": "exported",
+      "weight": 1
+    },
+    {
+      "id": "edge:9",
+      "source": "fn:src/lib/event-capacity.ts:releaseEventSeat",
+      "target": "export:src/lib/event-capacity.ts:releaseEventSeat",
+      "type": "exported_as",
+      "label": "exported",
+      "weight": 1
+    },
+    {
+      "id": "edge:10",
+      "source": "fn:src/lib/event-capacity.ts:releaseEventSeatByCheckout",
+      "target": "export:src/lib/event-capacity.ts:releaseEventSeatByCheckout",
+      "type": "exported_as",
+      "label": "exported",
+      "weight": 1
+    },
+    {
+      "id": "edge:11",
+      "source": "file:src/lib/with-timeout.ts",
+      "target": "fn:src/lib/with-timeout.ts:withTimeout",
+      "type": "contains",
+      "label": "defines function",
+      "weight": 1
+    },
+    {
+      "id": "edge:12",
+      "source": "file:src/lib/with-timeout.ts",
+      "target": "class:src/lib/with-timeout.ts:TimeoutError",
+      "type": "contains",
+      "label": "defines class",
+      "weight": 1
+    },
+    {
+      "id": "edge:13",
+      "source": "class:src/lib/with-timeout.ts:TimeoutError",
+      "target": "method:src/lib/with-timeout.ts:TimeoutError:constructor",
+      "type": "contains",
+      "label": "defines method",
+      "weight": 1
+    },
+    {
+      "id": "edge:14",
+      "source": "class:src/lib/with-timeout.ts:TimeoutError",
+      "target": "export:src/lib/with-timeout.ts:TimeoutError",
+      "type": "exported_as",
+      "label": "exported",
+      "weight": 1
+    },
+    {
+      "id": "edge:15",
+      "source": "fn:src/lib/with-timeout.ts:withTimeout",
+      "target": "export:src/lib/with-timeout.ts:withTimeout",
+      "type": "exported_as",
+      "label": "exported",
+      "weight": 1
+    },
+    {
+      "id": "edge:16",
+      "source": "file:src/components/StickyVideoPlayer.tsx",
+      "target": "fn:src/components/StickyVideoPlayer.tsx:InlineOnlyVideoPlayer",
+      "type": "contains",
+      "label": "defines function",
+      "weight": 1
+    },
+    {
+      "id": "edge:17",
+      "source": "file:src/components/StickyVideoPlayer.tsx",
+      "target": "fn:src/components/StickyVideoPlayer.tsx:StickyVideoPlayer",
+      "type": "contains",
+      "label": "defines function",
+      "weight": 1
+    },
+    {
+      "id": "edge:18",
+      "source": "file:src/components/StickyVideoPlayer.tsx",
+      "target": "fn:src/components/StickyVideoPlayer.tsx:StickyVideoPlayerWithStickyBehavior",
+      "type": "contains",
+      "label": "defines function",
+      "weight": 1
+    },
+    {
+      "id": "edge:19",
+      "source": "fn:src/components/StickyVideoPlayer.tsx:StickyVideoPlayer",
+      "target": "export:src/components/StickyVideoPlayer.tsx:StickyVideoPlayer",
+      "type": "exported_as",
+      "label": "exported",
+      "weight": 1
+    },
+    {
+      "id": "edge:20",
+      "source": "file:src/components/events/WaitlistJoinForm.tsx",
+      "target": "fn:src/components/events/WaitlistJoinForm.tsx:WaitlistJoinForm",
+      "type": "contains",
+      "label": "defines function",
+      "weight": 1
+    },
+    {
+      "id": "edge:21",
+      "source": "fn:src/components/events/WaitlistJoinForm.tsx:WaitlistJoinForm",
+      "target": "export:src/components/events/WaitlistJoinForm.tsx:WaitlistJoinForm",
+      "type": "exported_as",
+      "label": "exported",
+      "weight": 1
+    },
+    {
+      "id": "edge:22",
+      "source": "file:src/components/giveaways/GiveawayCopyEmailGate.tsx",
+      "target": "fn:src/components/giveaways/GiveawayCopyEmailGate.tsx:getGiveawaySlug",
+      "type": "contains",
+      "label": "defines function",
+      "weight": 1
+    },
+    {
+      "id": "edge:23",
+      "source": "file:src/components/giveaways/GiveawayCopyEmailGate.tsx",
+      "target": "fn:src/components/giveaways/GiveawayCopyEmailGate.tsx:isNoSignupGiveaway",
+      "type": "contains",
+      "label": "defines function",
+      "weight": 1
+    },
+    {
+      "id": "edge:24",
+      "source": "file:src/components/giveaways/GiveawayCopyEmailGate.tsx",
+      "target": "fn:src/components/giveaways/GiveawayCopyEmailGate.tsx:GiveawayCopyEmailGate",
+      "type": "contains",
+      "label": "defines function",
+      "weight": 1
+    },
+    {
+      "id": "edge:25",
+      "source": "fn:src/components/giveaways/GiveawayCopyEmailGate.tsx:GiveawayCopyEmailGate",
+      "target": "export:src/components/giveaways/GiveawayCopyEmailGate.tsx:GiveawayCopyEmailGate",
+      "type": "exported_as",
+      "label": "exported",
+      "weight": 1
+    },
+    {
+      "id": "edge:26",
+      "source": "file:src/app/giveaways/terminal-to-claude-desktop/layout.tsx",
+      "target": "fn:src/app/giveaways/terminal-to-claude-desktop/layout.tsx:TerminalToClaudeDesktopLayout",
+      "type": "contains",
+      "label": "defines function",
+      "weight": 1
+    },
+    {
+      "id": "edge:27",
+      "source": "fn:src/app/giveaways/terminal-to-claude-desktop/layout.tsx:TerminalToClaudeDesktopLayout",
+      "target": "export:src/app/giveaways/terminal-to-claude-desktop/layout.tsx:TerminalToClaudeDesktopLayout",
+      "type": "exported_as",
+      "label": "exported",
+      "weight": 1
+    },
+    {
+      "id": "edge:28",
+      "source": "file:src/app/giveaways/terminal-to-claude-desktop/page.tsx",
+      "target": "fn:src/app/giveaways/terminal-to-claude-desktop/page.tsx:TerminalToClaudeDesktopGiveawayPage",
+      "type": "contains",
+      "label": "defines function",
+      "weight": 1
+    },
+    {
+      "id": "edge:29",
+      "source": "fn:src/app/giveaways/terminal-to-claude-desktop/page.tsx:TerminalToClaudeDesktopGiveawayPage",
+      "target": "export:src/app/giveaways/terminal-to-claude-desktop/page.tsx:TerminalToClaudeDesktopGiveawayPage",
+      "type": "exported_as",
+      "label": "exported",
+      "weight": 1
+    },
+    {
+      "id": "edge:30",
+      "source": "file:src/app/giveaways/page.tsx",
+      "target": "fn:src/app/giveaways/page.tsx:GiveawaysIndexPage",
+      "type": "contains",
+      "label": "defines function",
+      "weight": 1
+    },
+    {
+      "id": "edge:31",
+      "source": "fn:src/app/giveaways/page.tsx:GiveawaysIndexPage",
+      "target": "export:src/app/giveaways/page.tsx:GiveawaysIndexPage",
+      "type": "exported_as",
+      "label": "exported",
+      "weight": 1
+    },
+    {
+      "id": "edge:32",
+      "source": "file:src/app/sitemap.ts",
+      "target": "fn:src/app/sitemap.ts:sitemap",
+      "type": "contains",
+      "label": "defines function",
+      "weight": 1
+    },
+    {
+      "id": "edge:33",
+      "source": "fn:src/app/sitemap.ts:sitemap",
+      "target": "export:src/app/sitemap.ts:sitemap",
+      "type": "exported_as",
+      "label": "exported",
+      "weight": 1
+    },
+    {
+      "id": "edge:34",
+      "source": "file:src/app/api/stripe/webhook/route.ts",
+      "target": "fn:src/app/api/stripe/webhook/route.ts:POST",
+      "type": "contains",
+      "label": "defines function",
+      "weight": 1
+    },
+    {
+      "id": "edge:35",
+      "source": "fn:src/app/api/stripe/webhook/route.ts:POST",
+      "target": "export:src/app/api/stripe/webhook/route.ts:POST",
+      "type": "exported_as",
+      "label": "exported",
+      "weight": 1
+    },
+    {
+      "id": "edge:36",
+      "source": "file:src/lib/event-capacity.ts",
+      "target": "file:src/lib/event-registration-db.ts",
+      "type": "imports",
+      "label": "imports module",
+      "weight": 0.85
+    },
+    {
+      "id": "edge:37",
+      "source": "file:src/lib/event-capacity.ts",
+      "target": "file:src/lib/supabase.ts",
+      "type": "imports",
+      "label": "imports module",
+      "weight": 0.85
+    },
+    {
+      "id": "edge:38",
+      "source": "file:src/components/events/WaitlistJoinForm.tsx",
+      "target": "file:src/lib/events.tsx",
+      "type": "imports",
+      "label": "imports module",
+      "weight": 0.85
+    },
+    {
+      "id": "edge:39",
+      "source": "file:src/components/events/WaitlistJoinForm.tsx",
+      "target": "file:src/lib/rate-limit.ts",
+      "type": "imports",
+      "label": "imports module",
+      "weight": 0.85
+    },
+    {
+      "id": "edge:40",
+      "source": "file:src/app/giveaways/terminal-to-claude-desktop/page.tsx",
+      "target": "file:src/lib/giveaways.ts",
+      "type": "imports",
+      "label": "imports module",
+      "weight": 0.85
+    },
+    {
+      "id": "edge:41",
+      "source": "file:src/app/giveaways/page.tsx",
+      "target": "file:src/lib/giveaways.ts",
+      "type": "imports",
+      "label": "imports module",
+      "weight": 0.85
+    },
+    {
+      "id": "edge:42",
+      "source": "file:src/app/sitemap.ts",
+      "target": "file:src/lib/events.tsx",
+      "type": "imports",
+      "label": "imports module",
+      "weight": 0.85
+    },
+    {
+      "id": "edge:43",
+      "source": "file:src/app/sitemap.ts",
+      "target": "file:src/lib/sessions.ts",
+      "type": "imports",
+      "label": "imports module",
+      "weight": 0.85
+    },
+    {
+      "id": "edge:44",
+      "source": "file:src/app/api/stripe/webhook/route.ts",
+      "target": "file:src/lib/events.tsx",
+      "type": "imports",
+      "label": "imports module",
+      "weight": 0.85
+    },
+    {
+      "id": "edge:45",
+      "source": "file:tests/event-cancellation.test.ts",
+      "target": "file:src/lib/event-registration-db.ts",
+      "type": "imports",
+      "label": "imports module",
+      "weight": 0.85
+    },
+    {
+      "id": "edge:46",
+      "source": "file:tests/event-cancellation.test.ts",
+      "target": "file:src/lib/events.tsx",
+      "type": "imports",
+      "label": "imports module",
+      "weight": 0.85
+    },
+    {
+      "id": "edge:47",
+      "source": "file:tests/event-capacity-checkout-route.test.ts",
+      "target": "file:src/lib/event-capacity.ts",
+      "type": "imports",
+      "label": "imports module",
+      "weight": 0.85
+    },
+    {
+      "id": "edge:48",
+      "source": "file:tests/event-capacity-checkout-route.test.ts",
+      "target": "file:src/lib/events.tsx",
+      "type": "imports",
+      "label": "imports module",
+      "weight": 0.85
+    },
+    {
+      "id": "edge:49",
+      "source": "file:tests/event-capacity.test.ts",
+      "target": "file:src/lib/event-capacity.ts",
+      "type": "imports",
+      "label": "imports module",
+      "weight": 0.85
+    },
+    {
+      "id": "edge:50",
+      "source": "file:tests/google-calendar-invite.test.ts",
+      "target": "file:src/lib/google-calendar-invite.ts",
+      "type": "imports",
+      "label": "imports module",
+      "weight": 0.85
+    },
+    {
+      "id": "edge:51",
+      "source": "file:tests/google-calendar-invite.test.ts",
+      "target": "file:src/lib/events.tsx",
+      "type": "imports",
+      "label": "imports module",
+      "weight": 0.85
+    },
+    {
+      "id": "edge:52",
+      "source": "file:tests/with-timeout.test.ts",
+      "target": "file:src/lib/with-timeout.ts",
+      "type": "imports",
+      "label": "imports module",
+      "weight": 0.85
+    }
+  ]
+}

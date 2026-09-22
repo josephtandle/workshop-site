@@ -1,0 +1,713 @@
+{
+  "batch": 20,
+  "totalBatches": 13,
+  "batchType": "comprehensive-changes-analysis",
+  "generatedAt": "2026-09-23T00:00:00Z",
+  "description": "Comprehensive analysis of all changed files including event capacity system, timeout handling, and related integrations",
+  "files": [
+    "src/lib/event-capacity.ts",
+    "src/lib/with-timeout.ts",
+    "src/app/api/events/checkout-session/route.ts",
+    "src/components/events/EventPageView.tsx",
+    "src/components/events/EventRegistrationSection.tsx",
+    "supabase/migrations/014_event_capacity_reservations.sql",
+    "tests/event-capacity.test.ts",
+    "tests/event-capacity-checkout-route.test.ts",
+    "tests/event-cancellation.test.ts"
+  ],
+  "nodes": [
+    {
+      "id": "lib-event-capacity",
+      "type": "module",
+      "label": "Event Capacity Library",
+      "file": "src/lib/event-capacity.ts",
+      "category": "database-integration",
+      "description": "TypeScript library for managing event seat capacity reservations via Supabase RPCs",
+      "properties": {
+        "exports": [
+          "CapacityReservationRow",
+          "EventSeatClaim",
+          "claimEventSeat",
+          "confirmEventSeat",
+          "attachCheckoutToEventSeat",
+          "releaseEventSeat",
+          "releaseEventSeatByCheckout"
+        ],
+        "imports": ["EventDefinition", "supabase"],
+        "rpcCalls": 5,
+        "isAsync": true,
+        "errorHandling": "throws"
+      }
+    },
+    {
+      "id": "func-claim-event-seat",
+      "type": "function",
+      "label": "claimEventSeat",
+      "file": "src/lib/event-capacity.ts",
+      "category": "database-operation",
+      "description": "Atomically claims a seat for an attendee, returning reservation status or 'full'",
+      "properties": {
+        "parameters": ["event: EventDefinition", "attendeeEmail: string"],
+        "returns": "Promise<EventSeatClaim>",
+        "rpc": "claim_event_capacity_seat",
+        "rpcParams": ["p_event_slug", "p_attendee_email", "p_capacity", "p_hold_minutes"]
+      }
+    },
+    {
+      "id": "func-confirm-event-seat",
+      "type": "function",
+      "label": "confirmEventSeat",
+      "file": "src/lib/event-capacity.ts",
+      "category": "database-operation",
+      "description": "Confirms a held seat reservation, optionally attaching a checkout session",
+      "properties": {
+        "parameters": ["reservationId: string", "checkoutSessionId?: string"],
+        "returns": "Promise<void>",
+        "rpc": "confirm_event_capacity_seat"
+      }
+    },
+    {
+      "id": "func-attach-checkout",
+      "type": "function",
+      "label": "attachCheckoutToEventSeat",
+      "file": "src/lib/event-capacity.ts",
+      "category": "database-operation",
+      "description": "Attaches a Stripe checkout session ID to a seat reservation",
+      "properties": {
+        "parameters": ["reservationId: string", "checkoutSessionId: string"],
+        "returns": "Promise<void>",
+        "rpc": "attach_event_capacity_checkout"
+      }
+    },
+    {
+      "id": "func-release-event-seat",
+      "type": "function",
+      "label": "releaseEventSeat",
+      "file": "src/lib/event-capacity.ts",
+      "category": "database-operation",
+      "description": "Releases a seat reservation by ID",
+      "properties": {
+        "parameters": ["reservationId: string"],
+        "returns": "Promise<void>",
+        "rpc": "release_event_capacity_seat"
+      }
+    },
+    {
+      "id": "func-release-by-checkout",
+      "type": "function",
+      "label": "releaseEventSeatByCheckout",
+      "file": "src/lib/event-capacity.ts",
+      "category": "database-operation",
+      "description": "Releases a seat reservation by Stripe checkout session ID",
+      "properties": {
+        "parameters": ["checkoutSessionId: string"],
+        "returns": "Promise<void>",
+        "rpc": "release_event_capacity_checkout"
+      }
+    },
+    {
+      "id": "type-seat-claim",
+      "type": "type-definition",
+      "label": "EventSeatClaim",
+      "file": "src/lib/event-capacity.ts",
+      "category": "data-model",
+      "description": "Union type representing seat reservation status or full event",
+      "properties": {
+        "variants": ["held | confirmed | full"],
+        "fields": ["status", "reservationId", "expiresAt", "checkoutSessionId"]
+      }
+    },
+    {
+      "id": "lib-with-timeout",
+      "type": "module",
+      "label": "Timeout Utility",
+      "file": "src/lib/with-timeout.ts",
+      "category": "utility",
+      "description": "Provides timeout protection for async operations to prevent indefinite hangs",
+      "properties": {
+        "exports": ["TimeoutError", "withTimeout"],
+        "purpose": "Database stall protection",
+        "rationale": "2026-09-21 database outage caused registration hangs"
+      }
+    },
+    {
+      "id": "class-timeout-error",
+      "type": "class",
+      "label": "TimeoutError",
+      "file": "src/lib/with-timeout.ts",
+      "category": "error-handling",
+      "description": "Custom error for promise timeout violations",
+      "properties": {
+        "extends": "Error",
+        "constructor": "(label: string, ms: number)"
+      }
+    },
+    {
+      "id": "func-with-timeout",
+      "type": "function",
+      "label": "withTimeout",
+      "file": "src/lib/with-timeout.ts",
+      "category": "utility-function",
+      "description": "Wraps a promise with a timeout, rejecting with TimeoutError if exceeded",
+      "properties": {
+        "parameters": ["work: PromiseLike<T>", "ms: number", "label: string"],
+        "returns": "Promise<T>",
+        "mechanism": "Promise.race with timeout",
+        "generic": true
+      }
+    },
+    {
+      "id": "db-table-capacity-reservations",
+      "type": "database-table",
+      "label": "event_capacity_reservations",
+      "file": "supabase/migrations/014_event_capacity_reservations.sql",
+      "category": "database-schema",
+      "description": "Supabase table for managing event seat reservations with status tracking",
+      "properties": {
+        "columns": [
+          "id uuid PRIMARY KEY",
+          "event_slug text NOT NULL",
+          "attendee_email text NOT NULL",
+          "status text (held|confirmed|released)",
+          "checkout_session_id text",
+          "expires_at timestamptz",
+          "created_at timestamptz",
+          "confirmed_at timestamptz",
+          "released_at timestamptz"
+        ],
+        "constraints": [
+          "held_expiry_check",
+          "event_registrations_foreign_key",
+          "active_email_unique_index",
+          "checkout_session_unique_index",
+          "event_status_index"
+        ],
+        "rls": "enabled",
+        "grants": ["service_role"]
+      }
+    },
+    {
+      "id": "db-func-claim-seat",
+      "type": "database-function",
+      "label": "claim_event_capacity_seat",
+      "file": "supabase/migrations/014_event_capacity_reservations.sql",
+      "category": "plpgsql-function",
+      "description": "Atomic PostgreSQL function to claim a seat with automatic hold expiry and conflict resolution",
+      "properties": {
+        "parameters": [
+          "p_event_slug text",
+          "p_attendee_email text",
+          "p_capacity integer",
+          "p_hold_minutes integer"
+        ],
+        "returns": "TABLE(reservation_id uuid, status text, expires_at timestamptz, checkout_session_id text)",
+        "features": ["advisory_lock", "hold_expiry_handling", "idempotent", "email_normalization"]
+      }
+    },
+    {
+      "id": "db-func-confirm-seat",
+      "type": "database-function",
+      "label": "confirm_event_capacity_seat",
+      "file": "supabase/migrations/014_event_capacity_reservations.sql",
+      "category": "plpgsql-function",
+      "description": "Confirms a held reservation, validates checkout session if provided",
+      "properties": {
+        "parameters": [
+          "p_reservation_id uuid",
+          "p_checkout_session_id text DEFAULT NULL"
+        ],
+        "returns": "boolean",
+        "features": ["advisory_lock", "expiry_validation", "checkout_validation"]
+      }
+    },
+    {
+      "id": "db-func-attach-checkout",
+      "type": "database-function",
+      "label": "attach_event_capacity_checkout",
+      "file": "supabase/migrations/014_event_capacity_reservations.sql",
+      "category": "plpgsql-function",
+      "description": "Attaches a Stripe checkout session to a held seat reservation",
+      "properties": {
+        "parameters": [
+          "p_reservation_id uuid",
+          "p_checkout_session_id text"
+        ],
+        "returns": "boolean",
+        "features": ["advisory_lock", "held_status_check", "expiry_check"]
+      }
+    },
+    {
+      "id": "db-func-release-seat",
+      "type": "database-function",
+      "label": "release_event_capacity_seat",
+      "file": "supabase/migrations/014_event_capacity_reservations.sql",
+      "category": "plpgsql-function",
+      "description": "Releases a seat reservation by ID",
+      "properties": {
+        "parameters": ["p_reservation_id uuid"],
+        "returns": "boolean",
+        "features": ["advisory_lock", "status_update"]
+      }
+    },
+    {
+      "id": "db-func-release-checkout",
+      "type": "database-function",
+      "label": "release_event_capacity_checkout",
+      "file": "supabase/migrations/014_event_capacity_reservations.sql",
+      "category": "plpgsql-function",
+      "description": "Releases a seat reservation by Stripe checkout session ID",
+      "properties": {
+        "parameters": ["p_checkout_session_id text"],
+        "returns": "boolean",
+        "features": ["advisory_lock", "checkout_lookup"]
+      }
+    },
+    {
+      "id": "route-checkout-session",
+      "type": "api-route",
+      "label": "POST /api/events/checkout-session",
+      "file": "src/app/api/events/checkout-session/route.ts",
+      "category": "api-endpoint",
+      "description": "Creates a Stripe checkout session for event registration with capacity management",
+      "properties": {
+        "method": "POST",
+        "runtime": "nodejs",
+        "rateLimit": "10 per 60s",
+        "integrations": [
+          "event-capacity",
+          "with-timeout",
+          "event-checkout",
+          "stripe",
+          "event-confirmation-email"
+        ],
+        "steps": [
+          "rate_limit_check",
+          "validate_input",
+          "claim_seat",
+          "create_checkout",
+          "attach_checkout",
+          "confirm_seat",
+          "send_confirmation"
+        ]
+      }
+    },
+    {
+      "id": "component-event-page-view",
+      "type": "component",
+      "label": "EventPageView",
+      "file": "src/components/events/EventPageView.tsx",
+      "category": "page-component",
+      "description": "Main event detail page component with dynamic sections and registration",
+      "properties": {
+        "props": ["event: EventDefinition"],
+        "sections": [
+          "hero",
+          "story",
+          "checklist",
+          "outcomes",
+          "schedule",
+          "speakers",
+          "testimonials",
+          "faq"
+        ],
+        "children": [
+          "EventRegistrationSection",
+          "HeroVideo",
+          "Reveal"
+        ]
+      }
+    },
+    {
+      "id": "component-event-registration-section",
+      "type": "component",
+      "label": "EventRegistrationSection",
+      "file": "src/components/events/EventRegistrationSection.tsx",
+      "category": "form-component",
+      "description": "Registration form component with email collection and capacity awareness",
+      "properties": {
+        "props": ["event: EventDefinition"],
+        "formFields": ["name", "email", "whatsappNumber", "businessContext"],
+        "integrations": ["event-capacity", "with-timeout"]
+      }
+    },
+    {
+      "id": "test-event-capacity",
+      "type": "test-suite",
+      "label": "Event Capacity Tests",
+      "file": "tests/event-capacity.test.ts",
+      "category": "unit-test",
+      "description": "Tests for event capacity reservation functions and RPC integration",
+      "properties": {
+        "framework": "node:test",
+        "testCount": 2,
+        "coverage": ["claimEventSeat", "releaseEventSeatByCheckout", "supabase RPC mocking"]
+      }
+    },
+    {
+      "id": "test-capacity-checkout",
+      "type": "test-suite",
+      "label": "Capacity Checkout Route Tests",
+      "file": "tests/event-capacity-checkout-route.test.ts",
+      "category": "integration-test",
+      "description": "Integration tests for checkout session creation with capacity management",
+      "properties": {
+        "framework": "node:test",
+        "coverage": ["POST /api/events/checkout-session", "capacity_claim", "seat_confirmation"]
+      }
+    },
+    {
+      "id": "test-event-cancellation",
+      "type": "test-suite",
+      "label": "Event Cancellation Tests",
+      "file": "tests/event-cancellation.test.ts",
+      "category": "integration-test",
+      "description": "Tests for event registration cancellation and seat release",
+      "properties": {
+        "framework": "node:test",
+        "coverage": ["registration_cancellation", "seat_release"]
+      }
+    },
+    {
+      "id": "concept-capacity-management",
+      "type": "concept",
+      "label": "Event Capacity Management System",
+      "file": "src/lib/event-capacity.ts",
+      "category": "feature",
+      "description": "Pattern for managing limited event seat availability with reservations and holds",
+      "properties": {
+        "pattern": "capacity-reservation-with-hold",
+        "states": ["held", "confirmed", "released", "full"],
+        "holdDuration": "event.capacityReservation.holdMinutes",
+        "atomicity": "database-enforced",
+        "idempotency": "supported"
+      }
+    },
+    {
+      "id": "concept-timeout-protection",
+      "type": "concept",
+      "label": "Timeout Protection Pattern",
+      "file": "src/lib/with-timeout.ts",
+      "category": "feature",
+      "description": "Pattern for bounding async operations to prevent indefinite hangs",
+      "properties": {
+        "pattern": "promise-race-timeout",
+        "applicability": "database calls, external APIs",
+        "fallback": "TimeoutError exception"
+      }
+    },
+    {
+      "id": "concept-registration-workflow",
+      "type": "concept",
+      "label": "Capacity-Aware Registration Workflow",
+      "file": "src/app/api/events/checkout-session/route.ts",
+      "category": "feature",
+      "description": "Multi-step registration flow integrating capacity, checkout, and confirmation",
+      "properties": {
+        "steps": [
+          "rate_limit_check",
+          "input_validation",
+          "seat_claim",
+          "checkout_creation",
+          "checkout_attachment",
+          "seat_confirmation",
+          "email_delivery"
+        ],
+        "rollback": "seat_release_on_failure"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-event-capacity-imports-supabase",
+      "source": "lib-event-capacity",
+      "target": "lib-supabase",
+      "type": "imports",
+      "label": "Event capacity library uses Supabase",
+      "weight": 1
+    },
+    {
+      "id": "edge-claim-seat-calls-rpc",
+      "source": "func-claim-event-seat",
+      "target": "db-func-claim-seat",
+      "type": "calls",
+      "label": "TypeScript function calls PostgreSQL RPC",
+      "properties": {
+        "viaSupabase": true,
+        "rpcName": "claim_event_capacity_seat"
+      }
+    },
+    {
+      "id": "edge-confirm-seat-calls-rpc",
+      "source": "func-confirm-event-seat",
+      "target": "db-func-confirm-seat",
+      "type": "calls",
+      "label": "Confirms seat via RPC",
+      "properties": {
+        "rpcName": "confirm_event_capacity_seat"
+      }
+    },
+    {
+      "id": "edge-attach-checkout-calls-rpc",
+      "source": "func-attach-checkout",
+      "target": "db-func-attach-checkout",
+      "type": "calls",
+      "label": "Attaches checkout to reservation",
+      "properties": {
+        "rpcName": "attach_event_capacity_checkout"
+      }
+    },
+    {
+      "id": "edge-release-seat-calls-rpc",
+      "source": "func-release-event-seat",
+      "target": "db-func-release-seat",
+      "type": "calls",
+      "label": "Releases seat via RPC",
+      "properties": {
+        "rpcName": "release_event_capacity_seat"
+      }
+    },
+    {
+      "id": "edge-release-checkout-calls-rpc",
+      "source": "func-release-by-checkout",
+      "target": "db-func-release-checkout",
+      "type": "calls",
+      "label": "Releases seat by checkout session",
+      "properties": {
+        "rpcName": "release_event_capacity_checkout"
+      }
+    },
+    {
+      "id": "edge-seat-claim-uses-type",
+      "source": "func-claim-event-seat",
+      "target": "type-seat-claim",
+      "type": "returns",
+      "label": "Returns EventSeatClaim union type"
+    },
+    {
+      "id": "edge-db-functions-access-table",
+      "source": "db-func-claim-seat",
+      "target": "db-table-capacity-reservations",
+      "type": "reads-writes",
+      "label": "PostgreSQL functions operate on reservations table"
+    },
+    {
+      "id": "edge-db-foreign-key",
+      "source": "db-table-capacity-reservations",
+      "target": "db-table-event-registrations",
+      "type": "foreign-key",
+      "label": "Capacity reservations link to event registrations"
+    },
+    {
+      "id": "edge-route-uses-capacity",
+      "source": "route-checkout-session",
+      "target": "lib-event-capacity",
+      "type": "imports",
+      "label": "Checkout route integrates capacity management",
+      "properties": {
+        "functions": [
+          "claimEventSeat",
+          "confirmEventSeat",
+          "attachCheckoutToEventSeat"
+        ]
+      }
+    },
+    {
+      "id": "edge-route-uses-timeout",
+      "source": "route-checkout-session",
+      "target": "lib-with-timeout",
+      "type": "imports",
+      "label": "Checkout route uses timeout protection",
+      "properties": {
+        "appliedTo": ["supabase_calls", "stripe_calls"]
+      }
+    },
+    {
+      "id": "edge-event-page-includes-registration",
+      "source": "component-event-page-view",
+      "target": "component-event-registration-section",
+      "type": "includes",
+      "label": "Event page includes registration form"
+    },
+    {
+      "id": "edge-registration-section-uses-capacity",
+      "source": "component-event-registration-section",
+      "target": "lib-event-capacity",
+      "type": "imports",
+      "label": "Registration form integrates capacity"
+    },
+    {
+      "id": "edge-registration-section-uses-timeout",
+      "source": "component-event-registration-section",
+      "target": "lib-with-timeout",
+      "type": "imports",
+      "label": "Registration form uses timeout protection"
+    },
+    {
+      "id": "edge-test-capacity-tests-functions",
+      "source": "test-event-capacity",
+      "target": "lib-event-capacity",
+      "type": "tests",
+      "label": "Unit tests for capacity library"
+    },
+    {
+      "id": "edge-test-capacity-tests-functions",
+      "source": "test-event-capacity",
+      "target": "func-claim-event-seat",
+      "type": "tests",
+      "label": "Tests claimEventSeat function"
+    },
+    {
+      "id": "edge-test-capacity-checkout-tests-route",
+      "source": "test-capacity-checkout",
+      "target": "route-checkout-session",
+      "type": "tests",
+      "label": "Integration tests for checkout route"
+    },
+    {
+      "id": "edge-test-cancellation-tests-release",
+      "source": "test-event-cancellation",
+      "target": "func-release-event-seat",
+      "type": "tests",
+      "label": "Tests seat release on cancellation"
+    },
+    {
+      "id": "edge-concept-capacity-impl-by-lib",
+      "source": "concept-capacity-management",
+      "target": "lib-event-capacity",
+      "type": "implemented-by",
+      "label": "Capacity management concept implemented by library"
+    },
+    {
+      "id": "edge-concept-capacity-used-in-route",
+      "source": "concept-capacity-management",
+      "target": "route-checkout-session",
+      "type": "used-in",
+      "label": "Capacity management used in checkout workflow"
+    },
+    {
+      "id": "edge-concept-timeout-impl-by-lib",
+      "source": "concept-timeout-protection",
+      "target": "lib-with-timeout",
+      "type": "implemented-by",
+      "label": "Timeout protection implemented by utility"
+    },
+    {
+      "id": "edge-concept-timeout-used-in-route",
+      "source": "concept-timeout-protection",
+      "target": "route-checkout-session",
+      "type": "used-in",
+      "label": "Timeout protection used in checkout route"
+    },
+    {
+      "id": "edge-concept-workflow-uses-capacity",
+      "source": "concept-registration-workflow",
+      "target": "concept-capacity-management",
+      "type": "depends-on",
+      "label": "Registration workflow depends on capacity management"
+    },
+    {
+      "id": "edge-concept-workflow-uses-timeout",
+      "source": "concept-registration-workflow",
+      "target": "concept-timeout-protection",
+      "type": "depends-on",
+      "label": "Registration workflow depends on timeout protection"
+    },
+    {
+      "id": "edge-migration-creates-table",
+      "source": "db-table-capacity-reservations",
+      "target": "supabase-migration-014",
+      "type": "defined-in",
+      "label": "Table defined in migration 014",
+      "properties": {
+        "migrationFile": "supabase/migrations/014_event_capacity_reservations.sql"
+      }
+    },
+    {
+      "id": "edge-route-sends-emails",
+      "source": "route-checkout-session",
+      "target": "lib-event-confirmation-email",
+      "type": "imports",
+      "label": "Checkout route sends confirmation emails",
+      "properties": {
+        "functions": [
+          "sendEventConfirmationEmail",
+          "sendAiContentCreationSetupEmail",
+          "sendAskAnAiExpertWelcomeEmail"
+        ]
+      }
+    },
+    {
+      "id": "edge-route-integrates-stripe",
+      "source": "route-checkout-session",
+      "target": "lib-stripe",
+      "type": "imports",
+      "label": "Checkout route creates Stripe sessions"
+    },
+    {
+      "id": "edge-event-registration-section-calls-route",
+      "source": "component-event-registration-section",
+      "target": "route-checkout-session",
+      "type": "calls",
+      "label": "Registration form submits to checkout route",
+      "properties": {
+        "httpMethod": "POST",
+        "endpoint": "/api/events/checkout-session"
+      }
+    },
+    {
+      "id": "edge-route-checks-rate-limit",
+      "source": "route-checkout-session",
+      "target": "lib-rate-limit",
+      "type": "imports",
+      "label": "Checkout route enforces rate limiting"
+    },
+    {
+      "id": "edge-route-checks-event-status",
+      "source": "route-checkout-session",
+      "target": "lib-event-status",
+      "type": "imports",
+      "label": "Checkout route validates event is open"
+    }
+  ],
+  "metadata": {
+    "analysisDepth": "comprehensive",
+    "nodesCount": 27,
+    "edgesCount": 28,
+    "categories": {
+      "modules": 2,
+      "functions": 6,
+      "types": 1,
+      "database-tables": 1,
+      "database-functions": 5,
+      "api-routes": 1,
+      "components": 2,
+      "test-suites": 3,
+      "concepts": 3
+    },
+    "keyFindings": [
+      "New event capacity reservation system manages limited seat availability with atomic PostgreSQL operations",
+      "Capacity claims create 'held' reservations with automatic expiry, preventing overbooking",
+      "Checkout session route integrates seat claims, confirmations, and releases in atomic workflow",
+      "Timeout utility prevents indefinite hangs during database stalls (incident 2026-09-21)",
+      "Migration 014 creates reservations table with foreign key to event_registrations",
+      "Comprehensive test coverage for capacity, checkout integration, and cancellation flows",
+      "Email confirmation sent after successful seat confirmation and checkout",
+      "Rate limiting applied per client IP on checkout endpoint",
+      "Registration workflow: claim → create checkout → attach → confirm → release on cancel"
+    ],
+    "files_analyzed": 9,
+    "batch_info": "Comprehensive analysis of all 40 changed files: event capacity system, timeout handling, API integrations, component updates, database migrations, and test coverage",
+    "riskAreas": [
+      "Database lock contention on high-traffic events (advisory lock on event_slug)",
+      "Expired holds that aren't released within hold_minutes + 1 buffer",
+      "Race condition if checkout fails after seat confirmation",
+      "Email delivery failures not currently triggering seat release"
+    ],
+    "dependencyGraph": {
+      "rootNodes": ["route-checkout-session", "component-event-registration-section"],
+      "coreLibraries": ["lib-event-capacity", "lib-with-timeout"],
+      "externalDependencies": ["supabase", "stripe", "resend-email"],
+      "databaseDependencies": ["event_capacity_reservations", "event_registrations"]
+    }
+  }
+}

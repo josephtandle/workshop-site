@@ -4,7 +4,9 @@ import {
   sendAiContentCreationSetupEmail,
   sendAskAnAiExpertWelcomeEmail,
   sendEventConfirmationEmail,
+  sendRegistrationBackupAlert,
 } from '@/lib/event-confirmation-email'
+import { withTimeout } from '@/lib/with-timeout'
 import { inviteAttendeeBestEffort, syncLegacyRegistration } from '@/lib/legacy-event-schedule'
 import { createStripeClient, getStripePublishableKey } from '@/lib/stripe'
 import { saveRegistration, saveRegistrationIntake } from '@/lib/event-registration-db'
@@ -135,11 +137,16 @@ export async function POST(request: Request) {
 
     // Server-side mirror of the form validation. The client checks these too,
     // but the client can be bypassed.
+    let intakeSaveError: unknown = null
     const requiresIntake = Boolean(
       event.intakeFields?.whatsappNumber || event.intakeFields?.businessContext,
     )
     if (requiresIntake) {
-      const intakeErrors = validateIntakeFields({ whatsappNumber, businessContext })
+      const intakeErrors = validateIntakeFields({
+        whatsappNumber,
+        businessContext,
+        businessContextMinLength: event.intakeFields?.businessContextMinLength,
+      })
       const firstError = intakeErrors.whatsappNumber || intakeErrors.businessContext
       if (firstError) {
         await trackInsightEvent('checkout_failed', {
@@ -152,14 +159,25 @@ export async function POST(request: Request) {
 
       // Stored before checkout so a long answer never has to survive Stripe
       // metadata, and so abandoned checkouts still leave us the answers.
-      await saveRegistrationIntake({
-        eventSlug: slug,
-        attendeeName,
-        attendeeEmail,
-        whatsappNumber: normalizeWhatsappNumber(whatsappNumber),
-        businessContext,
-        acquisitionRef,
-      })
+      // Bounded: a failure here only blocks PAID checkouts (rethrown below once
+      // the amount is known). Free sign-ups carry on and file a backup record.
+      try {
+        await withTimeout(
+          saveRegistrationIntake({
+            eventSlug: slug,
+            attendeeName,
+            attendeeEmail,
+            whatsappNumber: normalizeWhatsappNumber(whatsappNumber),
+            businessContext,
+            acquisitionRef,
+          }),
+          2500,
+          'save registration intake',
+        )
+      } catch (intakeError) {
+        intakeSaveError = intakeError
+        console.error('registration intake save failed', intakeError)
+      }
     }
 
     const { amount, promo } = resolveEventCheckoutAmount({
@@ -189,6 +207,8 @@ export async function POST(request: Request) {
         { status: 400 },
       )
     }
+
+    if (intakeSaveError && unitAmount > 0) throw intakeSaveError
 
     const seatClaim = event.capacityReservation
       ? await claimEventSeat(event, attendeeEmail)
@@ -250,20 +270,39 @@ export async function POST(request: Request) {
       // Save registration to Supabase and include cancel token in confirmation email
       let cancelToken: string | undefined
       try {
-        const saved = await saveRegistration({
-          eventSlug: slug,
-          attendeeName,
-          attendeeEmail,
-          acquisitionRef,
-          amountPaid: amount,
-          whatsappNumber: normalizeWhatsappNumber(whatsappNumber) || null,
-          businessContext: businessContext || null,
-          capacityReservationId: seatClaim?.reservationId,
-        })
+        const saved = await withTimeout(
+          saveRegistration({
+            eventSlug: slug,
+            attendeeName,
+            attendeeEmail,
+            acquisitionRef,
+            amountPaid: amount,
+            whatsappNumber: normalizeWhatsappNumber(whatsappNumber) || null,
+            businessContext: businessContext || null,
+            capacityReservationId: seatClaim?.reservationId,
+          }),
+          intakeSaveError ? 500 : 3000,
+          'save registration',
+        )
         cancelToken = saved.cancelToken
       } catch (regErr) {
         console.error('event registration save error', regErr)
         if (seatClaim) throw regErr
+        // Confirmed to the attendee anyway, so keep a record they can be
+        // re-added from. Never let the backup itself fail the sign-up.
+        await withTimeout(
+          sendRegistrationBackupAlert({
+            event,
+            attendeeName,
+            attendeeEmail,
+            whatsappNumber: normalizeWhatsappNumber(whatsappNumber) || null,
+            businessContext: businessContext || null,
+            acquisitionRef,
+            reason: regErr instanceof Error ? regErr.message : 'unknown error',
+          }),
+          5000,
+          'registration backup alert',
+        ).catch((alertErr) => console.error('registration backup alert failed', alertErr))
       }
 
       seatReservationToRelease = null
@@ -322,7 +361,11 @@ export async function POST(request: Request) {
       // calendar. Best effort: never let this fail a completed registration.
       // Shared with the paid path via inviteAttendeeBestEffort, so free and
       // paid registrants always get the same invite.
-      const calendarInviteStatus = await inviteAttendeeBestEffort(event, attendeeEmail, attendeeName)
+      const calendarInviteStatus = await withTimeout(
+        inviteAttendeeBestEffort(event, attendeeEmail, attendeeName),
+        6000,
+        'calendar invite',
+      ).catch(() => 'failed' as const)
 
       await trackInsightEvent('checkout_completed', {
         route: '/events/checkout',

@@ -17,14 +17,16 @@ export async function GET(
 
   const description = event.privateLocationReminder
     ? `Exact address will be emailed to you before the event. Area: ${event.locationLabel}`
-    : event.locationLabel
+    : event.zoomLink
+      ? `Join live on Zoom: ${event.zoomLink}`
+      : event.locationLabel
 
   const ical = buildIcalString({
     uid: `${event.slug}@mastermindshq.business`,
     title: event.title,
     startIso: event.calendarEvent.startIso,
     endIso: event.calendarEvent.endIso,
-    location: event.locationLabel,
+    location: event.zoomLink ?? event.locationLabel,
     description,
   })
 

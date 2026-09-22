@@ -198,6 +198,9 @@ export type EventDefinition = {
     businessContext?: boolean
     businessContextLabel?: string
     businessContextPlaceholder?: string
+    // Defaults to BUSINESS_CONTEXT_MIN_LENGTH. Set low when the question has a
+    // naturally short answer, e.g. "What is the one task you hate the most?"
+    businessContextMinLength?: number
   }
   emailConfig?: {
     headerLabel?: string | null
@@ -1241,6 +1244,9 @@ export const events: EventDefinition[] = [
       businessContext: true,
       businessContextLabel: 'What is the one task you hate the most?',
       businessContextPlaceholder: 'Example: replying to LinkedIn enquiries, writing proposals, chasing invoices, turning one recording into a month of posts',
+      // The 55-character default blocked natural answers like "Chasing invoices"
+      // (the placeholder's own example) and people gave up. Found 2026-09-21.
+      businessContextMinLength: 3,
     },
     successDetail: 'You are in. Your Zoom link and calendar invite are on their way from joe@mastermindshq.business. I read every task that comes in and pick the ones I build live from that list, so the more specific you are, the better your odds. If nothing shows up in a couple of minutes, check spam and add that address to your contacts so the reminders reach you.',
     audience: [

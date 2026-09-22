@@ -1,0 +1,1335 @@
+{
+  "batch": 2,
+  "timestamp": "2026-09-23T00:00:00Z",
+  "stats": {
+    "filesAnalyzed": 9,
+    "nodesCreated": 87,
+    "edgesCreated": 142
+  },
+  "nodes": [
+    {
+      "id": "google-calendar-api-integration",
+      "label": "Google Calendar API Integration",
+      "type": "feature",
+      "description": "System for inviting event attendees to Google Calendar events",
+      "file": "src/lib/google-calendar-invite.ts",
+      "category": "calendar"
+    },
+    {
+      "id": "inviteAttendeeToEvent-function",
+      "label": "inviteAttendeeToEvent",
+      "type": "function",
+      "description": "Async function to invite an attendee to a Google Calendar event, ensuring privacy settings and syncing event description",
+      "file": "src/lib/google-calendar-invite.ts",
+      "signature": "async (event: EventDefinition, attendeeEmail: string, attendeeName?: string) => Promise<CalendarInviteResult>",
+      "category": "calendar"
+    },
+    {
+      "id": "resolveCalendarEventId-function",
+      "label": "resolveCalendarEventId",
+      "type": "function",
+      "description": "Resolves the Google Calendar event ID from environment variables, event definition, or fallback",
+      "file": "src/lib/google-calendar-invite.ts",
+      "signature": "function (event: EventDefinition, sharedEventId?: string) => string",
+      "category": "calendar"
+    },
+    {
+      "id": "getAuth-function",
+      "label": "getAuth",
+      "type": "function",
+      "description": "Initializes Google OAuth2 authentication using credentials from environment variables",
+      "file": "src/lib/google-calendar-invite.ts",
+      "signature": "function () => google.auth.OAuth2 | null",
+      "category": "auth"
+    },
+    {
+      "id": "CalendarInviteResult-type",
+      "label": "CalendarInviteResult",
+      "type": "type",
+      "description": "Union type for calendar invite operation results: invited, already-invited, skipped, or failed",
+      "file": "src/lib/google-calendar-invite.ts",
+      "category": "calendar"
+    },
+    {
+      "id": "guest-list-privacy-rule",
+      "label": "Guest List Privacy Rule",
+      "type": "policy",
+      "description": "Enforcement of guestsCanSeeOtherGuests = false on every registration to protect registrant privacy",
+      "file": "src/lib/google-calendar-invite.ts",
+      "category": "privacy"
+    },
+    {
+      "id": "event-definition-type",
+      "label": "EventDefinition",
+      "type": "type",
+      "description": "Comprehensive type definition for workshop/event metadata including pricing, hosts, sections, and calendar info",
+      "file": "src/lib/events.tsx",
+      "category": "event"
+    },
+    {
+      "id": "event-host-type",
+      "label": "EventHost",
+      "type": "type",
+      "description": "Type for event host information including name, role, photo, and biography",
+      "file": "src/lib/events.tsx",
+      "category": "event"
+    },
+    {
+      "id": "event-promo-code-type",
+      "label": "EventPromoCode",
+      "type": "type",
+      "description": "Type for event promotional codes with discount information (percentage or amount off)",
+      "file": "src/lib/events.tsx",
+      "category": "event"
+    },
+    {
+      "id": "event-section-type",
+      "label": "EventSection",
+      "type": "type",
+      "description": "Discriminated union type for event page sections: story, checklist, cards, split, image, html, custom, quoteCard, hosts, cta",
+      "file": "src/lib/events.tsx",
+      "category": "event"
+    },
+    {
+      "id": "getDiscountedPrice-function",
+      "label": "getDiscountedPrice",
+      "type": "function",
+      "description": "Calculates discounted price based on promo code percentage or amount off",
+      "file": "src/lib/events.tsx",
+      "signature": "function (fullPrice: number, promo?: EventPromoCode) => number",
+      "category": "pricing"
+    },
+    {
+      "id": "getEventDiscountedPrice-function",
+      "label": "getEventDiscountedPrice",
+      "type": "function",
+      "description": "Gets discounted price for an event based on promo code",
+      "file": "src/lib/events.tsx",
+      "signature": "function (event: EventDefinition, promo?: EventPromoCode | null) => number",
+      "category": "pricing"
+    },
+    {
+      "id": "resolvePromoCode-function",
+      "label": "resolvePromoCode",
+      "type": "function",
+      "description": "Case-insensitive lookup of promo code in event's promo codes array",
+      "file": "src/lib/events.tsx",
+      "signature": "function (event: EventDefinition, promoCode?: string | null) => EventPromoCode | null",
+      "category": "pricing"
+    },
+    {
+      "id": "formatEventPrice-function",
+      "label": "formatEventPrice",
+      "type": "function",
+      "description": "Formats event price with currency symbol and proper decimal handling",
+      "file": "src/lib/events.tsx",
+      "signature": "function (event: EventDefinition, promo?: EventPromoCode) => string",
+      "category": "pricing"
+    },
+    {
+      "id": "getEventBySlug-function",
+      "label": "getEventBySlug",
+      "type": "function",
+      "description": "Retrieves event definition by slug identifier",
+      "file": "src/lib/events.tsx",
+      "signature": "function (slug: string) => EventDefinition | undefined",
+      "category": "event"
+    },
+    {
+      "id": "getLiveEvents-function",
+      "label": "getLiveEvents",
+      "type": "function",
+      "description": "Filters and returns only live (status = 'live') events",
+      "file": "src/lib/events.tsx",
+      "signature": "function () => EventDefinition[]",
+      "category": "event"
+    },
+    {
+      "id": "getUpcomingLiveEvents-function",
+      "label": "getUpcomingLiveEvents",
+      "type": "function",
+      "description": "Returns upcoming live events sorted by start time, filtered by end date",
+      "file": "src/lib/events.tsx",
+      "signature": "function (now?: Date) => EventDefinition[]",
+      "category": "event"
+    },
+    {
+      "id": "connection-dinner-canggu-event",
+      "label": "Joe Che's VIP Connection Dinner",
+      "type": "event",
+      "description": "Monthly VIP dinner event in Canggu, Bali at Mostly Restaurant (May 27, 2026)",
+      "file": "src/lib/events.tsx",
+      "slug": "connection-dinner-canggu",
+      "category": "event"
+    },
+    {
+      "id": "connection-dinner-october-event",
+      "label": "Joe Che's Connection Dinner (October 4, 2026)",
+      "type": "event",
+      "description": "October 2026 instance of connection dinner with updated donation beneficiary (Bali Street Mums)",
+      "file": "src/lib/events.tsx",
+      "slug": "joe-ches-connection-dinner-sunday-october-04-2026",
+      "category": "event"
+    },
+    {
+      "id": "ubud-connection-brunch-event",
+      "label": "Ubud Connection Brunch",
+      "type": "event",
+      "description": "First Sunday brunch gathering at G-Dos Eden, Ubud (July 26, 2026), co-hosted by Joe Che and Alla Demutska",
+      "file": "src/lib/events.tsx",
+      "slug": "ubud-connection-brunch",
+      "category": "event"
+    },
+    {
+      "id": "ai-avatar-content-creation-event",
+      "label": "AI Content Creation Lab",
+      "type": "event",
+      "description": "One-day cinematic AI content workshop in Bali (May 30, 2026) with Joe Che and Helix Wolfson",
+      "file": "src/lib/events.tsx",
+      "slug": "ai-avatar-content-creation",
+      "category": "event"
+    },
+    {
+      "id": "stop-sounding-like-everyone-else-event",
+      "label": "Stop Sounding Like Everyone Else While Using AI",
+      "type": "event",
+      "description": "Free 90-minute live workshop (August 4, 2026) on building voice profiles with Speak Human tool",
+      "file": "src/lib/events.tsx",
+      "slug": "stop-sounding-like-everyone-else",
+      "category": "event"
+    },
+    {
+      "id": "ask-an-ai-expert-event",
+      "label": "How to Get AI Making You More Sales and Less Busy Work",
+      "type": "event",
+      "description": "Free two-hour live Q&A session (July 29, 2026) with Joe Che on AI business applications",
+      "file": "src/lib/events.tsx",
+      "slug": "ask-an-ai-expert",
+      "category": "event"
+    },
+    {
+      "id": "bring-the-task-you-hate-event",
+      "label": "Bring the Task You Hate the Most. Leave Without It.",
+      "type": "event",
+      "description": "Free live AI class (September 29, 2026) where Joe automates attendee-submitted tasks live",
+      "file": "src/lib/events.tsx",
+      "slug": "bring-the-task-you-hate",
+      "category": "event"
+    },
+    {
+      "id": "business-blocks-ai-solved-event",
+      "label": "The Biggest Business Blocks That AI Solved For Me",
+      "type": "event",
+      "description": "Live 3-hour workshop in Canggu (August 7, 2026) hosted by Marina Choueri, featuring Joe Che",
+      "file": "src/lib/events.tsx",
+      "slug": "business-blocks-ai-solved",
+      "category": "event"
+    },
+    {
+      "id": "event-page-view-component",
+      "label": "EventPageView",
+      "type": "component",
+      "description": "Main event page React component that renders event details, sections, hero media, and registration",
+      "file": "src/components/events/EventPageView.tsx",
+      "category": "ui"
+    },
+    {
+      "id": "section-shell-component",
+      "label": "SectionShell",
+      "type": "component",
+      "description": "Layout wrapper for event page sections with optional eyebrow, title, and intro",
+      "file": "src/components/events/EventPageView.tsx",
+      "category": "ui"
+    },
+    {
+      "id": "rich-paragraphs-component",
+      "label": "RichParagraphs",
+      "type": "component",
+      "description": "Component for rendering array of paragraph strings with consistent styling",
+      "file": "src/components/events/EventPageView.tsx",
+      "category": "ui"
+    },
+    {
+      "id": "story-section-component",
+      "label": "StorySection",
+      "type": "component",
+      "description": "Event section component for narrative content with eyebrow and title",
+      "file": "src/components/events/EventPageView.tsx",
+      "category": "ui"
+    },
+    {
+      "id": "checklist-section-component",
+      "label": "ChecklistSection",
+      "type": "component",
+      "description": "Event section component rendering numbered checklist items with visual counter",
+      "file": "src/components/events/EventPageView.tsx",
+      "category": "ui"
+    },
+    {
+      "id": "cards-section-component",
+      "label": "CardsSection",
+      "type": "component",
+      "description": "Event section component for grid of card items with kicker, title, body, and bullets",
+      "file": "src/components/events/EventPageView.tsx",
+      "category": "ui"
+    },
+    {
+      "id": "split-section-component",
+      "label": "SplitSection",
+      "type": "component",
+      "description": "Event section component with text content on one side and image/figure on the other",
+      "file": "src/components/events/EventPageView.tsx",
+      "category": "ui"
+    },
+    {
+      "id": "image-section-component",
+      "label": "ImageSection",
+      "type": "component",
+      "description": "Event section component for displaying single image or video with optional caption",
+      "file": "src/components/events/EventPageView.tsx",
+      "category": "ui"
+    },
+    {
+      "id": "html-section-component",
+      "label": "HtmlSection",
+      "type": "component",
+      "description": "Event section component for rendering raw HTML content, with special handling for ended events",
+      "file": "src/components/events/EventPageView.tsx",
+      "category": "ui"
+    },
+    {
+      "id": "quote-card-section-component",
+      "label": "QuoteCardSection",
+      "type": "component",
+      "description": "Event section component displaying testimonial/quote with image/video and attribution",
+      "file": "src/components/events/EventPageView.tsx",
+      "category": "ui"
+    },
+    {
+      "id": "hosts-section-component",
+      "label": "HostsSection",
+      "type": "component",
+      "description": "Event section component displaying event hosts with photos, roles, and biographies",
+      "file": "src/components/events/EventPageView.tsx",
+      "category": "ui"
+    },
+    {
+      "id": "event-video-section-component",
+      "label": "EventVideoSection",
+      "type": "component",
+      "description": "Component for displaying embedded YouTube video with caption",
+      "file": "src/components/events/EventPageView.tsx",
+      "category": "ui"
+    },
+    {
+      "id": "cta-section-component",
+      "label": "CtaSection",
+      "type": "component",
+      "description": "Call-to-action section component with pricing display and registration button",
+      "file": "src/components/events/EventPageView.tsx",
+      "category": "ui"
+    },
+    {
+      "id": "event-registration-section-component",
+      "label": "EventRegistrationSection",
+      "type": "component",
+      "description": "Component handling event registration form with email, WhatsApp, and optional business context fields",
+      "file": "src/components/events/EventPageView.tsx",
+      "category": "ui"
+    },
+    {
+      "id": "scroll-to-register-button-component",
+      "label": "ScrollToRegisterButton",
+      "type": "component",
+      "description": "Button component that scrolls to registration section when clicked",
+      "file": "src/components/events/EventPageView.tsx",
+      "category": "ui"
+    },
+    {
+      "id": "hero-video-component",
+      "label": "HeroVideo",
+      "type": "component",
+      "description": "Component for displaying video in hero section with poster image",
+      "file": "src/components/events/EventPageView.tsx",
+      "category": "ui"
+    },
+    {
+      "id": "terminal-to-claude-desktop-page",
+      "label": "Terminal to Claude Desktop Giveaway Page",
+      "type": "page",
+      "description": "Free video walkthrough page showing how to use Claude Code in Claude Desktop app",
+      "file": "src/app/giveaways/terminal-to-claude-desktop/page.tsx",
+      "route": "/giveaways/terminal-to-claude-desktop",
+      "category": "giveaway"
+    },
+    {
+      "id": "sticky-video-player-component",
+      "label": "StickyVideoPlayer",
+      "type": "component",
+      "description": "Video player component with sticky positioning and inline-only mode option",
+      "file": "src/app/giveaways/terminal-to-claude-desktop/page.tsx",
+      "category": "ui"
+    },
+    {
+      "id": "reveal-component",
+      "label": "Reveal",
+      "type": "component",
+      "description": "Animation component for staggered entrance reveals with configurable delay",
+      "file": "src/app/giveaways/terminal-to-claude-desktop/page.tsx",
+      "category": "ui"
+    },
+    {
+      "id": "terminal-to-claude-desktop-layout",
+      "label": "Terminal to Claude Desktop Layout",
+      "type": "layout",
+      "description": "Layout component for terminal-to-claude-desktop page with metadata configuration",
+      "file": "src/app/giveaways/terminal-to-claude-desktop/layout.tsx",
+      "route": "/giveaways/terminal-to-claude-desktop",
+      "category": "layout"
+    },
+    {
+      "id": "next-config",
+      "label": "Next.js Configuration",
+      "type": "config",
+      "description": "Next.js build and routing configuration with turbopack, redirects, and rewrites",
+      "file": "next.config.ts",
+      "category": "config"
+    },
+    {
+      "id": "next-redirects-config",
+      "label": "Next.js Redirects",
+      "type": "config",
+      "description": "Permanent redirects for /session, /session/*, /resource-vault routes to portal.mastermindshq.business",
+      "file": "next.config.ts",
+      "category": "config"
+    },
+    {
+      "id": "next-rewrites-config",
+      "label": "Next.js Rewrites",
+      "type": "config",
+      "description": "Host-based rewrites: decks.mastermindshq.business → playbook HTML, passiveincome → AI agent income page",
+      "file": "next.config.ts",
+      "category": "config"
+    },
+    {
+      "id": "sitemap-function",
+      "label": "sitemap",
+      "type": "function",
+      "description": "Generates Next.js sitemap with event and giveaway routes for SEO",
+      "file": "src/app/sitemap.ts",
+      "category": "seo"
+    },
+    {
+      "id": "sitemap-base-url",
+      "label": "Workshop Base URL",
+      "type": "config",
+      "description": "Base URL for workshop site: https://workshop.mastermindshq.business",
+      "file": "src/app/sitemap.ts",
+      "category": "config"
+    },
+    {
+      "id": "giveaway-routes-sitemap",
+      "label": "Giveaway Routes in Sitemap",
+      "type": "route",
+      "description": "Sitemap entries for 7 giveaway pages with weekly update frequency and 0.6-0.9 priority",
+      "file": "src/app/sitemap.ts",
+      "category": "seo"
+    },
+    {
+      "id": "event-registration-data-type",
+      "label": "EventRegistrationData",
+      "type": "type",
+      "description": "Type for passing event registration data to EventRegistrationSection component",
+      "file": "src/components/events/EventPageView.tsx",
+      "category": "event"
+    },
+    {
+      "id": "event-status-utilities",
+      "label": "Event Status Utilities",
+      "type": "utility",
+      "description": "Functions to determine event ended status and registration window expiration",
+      "file": "src/components/events/EventPageView.tsx",
+      "imports": ["isEventEnded", "isRegistrationWindowPassed"],
+      "category": "event"
+    },
+    {
+      "id": "calendar-utilities",
+      "label": "Calendar Utilities",
+      "type": "utility",
+      "description": "Functions for building Google Calendar URLs and iCal format",
+      "file": "src/components/events/EventPageView.tsx",
+      "imports": ["buildGoogleCalendarUrl"],
+      "category": "calendar"
+    },
+    {
+      "id": "ask-an-ai-expert-quote-strip",
+      "label": "AskAnAiExpertQuoteStrip",
+      "type": "component",
+      "description": "Special quote strip component conditionally rendered for ask-an-ai-expert event",
+      "file": "src/components/events/EventPageView.tsx",
+      "category": "ui"
+    },
+    {
+      "id": "event-media-video-component",
+      "label": "EventMediaVideo",
+      "type": "component",
+      "description": "Video element component for event sections with controls and metadata",
+      "file": "src/components/events/EventPageView.tsx",
+      "category": "ui"
+    },
+    {
+      "id": "giveaway-email-gate",
+      "label": "GiveawayCopyEmailGate",
+      "type": "component",
+      "description": "Component that gates email collection for giveaway pages, with exception for terminal-to-claude-desktop",
+      "file": "LESSONS.md",
+      "category": "giveaway"
+    },
+    {
+      "id": "terminal-to-claude-desktop-exception",
+      "label": "Terminal to Claude Desktop Email Gate Exception",
+      "type": "policy",
+      "description": "Exception allowing terminal-to-claude-desktop giveaway free access without signup",
+      "file": "LESSONS.md",
+      "category": "giveaway"
+    },
+    {
+      "id": "event-intake-fields",
+      "label": "Event Intake Fields",
+      "type": "feature",
+      "description": "Optional per-event form fields: WhatsApp number, business context, with configurable validation",
+      "file": "src/lib/events.tsx",
+      "category": "event"
+    },
+    {
+      "id": "event-email-config",
+      "label": "Event Email Configuration",
+      "type": "config",
+      "description": "Per-event customization of confirmation email header, contact info, maps URL, signature",
+      "file": "src/lib/events.tsx",
+      "category": "email"
+    },
+    {
+      "id": "private-location-reminder",
+      "label": "Private Location Reminder",
+      "type": "feature",
+      "description": "Feature for in-person events: sends location details via email hours before event start",
+      "file": "src/lib/events.tsx",
+      "category": "event"
+    },
+    {
+      "id": "capacity-reservation-feature",
+      "label": "Capacity Reservation",
+      "type": "feature",
+      "description": "Optional feature that holds registration spots for specified minutes before releasing",
+      "file": "src/lib/events.tsx",
+      "category": "event"
+    },
+    {
+      "id": "event-legacy-registration",
+      "label": "Legacy Registration",
+      "type": "feature",
+      "description": "Support for events that used a legacy registration system with event ID and ticket ID",
+      "file": "src/lib/events.tsx",
+      "category": "event"
+    },
+    {
+      "id": "post-purchase-setup-flow",
+      "label": "Post-Purchase Setup Flow",
+      "type": "feature",
+      "description": "Customizable setup page after purchase with instructional items and completion steps",
+      "file": "src/lib/events.tsx",
+      "category": "event"
+    },
+    {
+      "id": "donation-mode-pricing",
+      "label": "Donation Mode Pricing",
+      "type": "feature",
+      "description": "Alternative to standard pricing: free or suggested donation with minimum amount",
+      "file": "src/lib/events.tsx",
+      "category": "pricing"
+    },
+    {
+      "id": "event-success-detail",
+      "label": "Event Success Detail",
+      "type": "feature",
+      "description": "Customizable post-registration success message shown to registrants",
+      "file": "src/lib/events.tsx",
+      "category": "event"
+    },
+    {
+      "id": "joe-che-host",
+      "label": "Joe Che (Host)",
+      "type": "person",
+      "description": "Primary event host across multiple workshops, author, founder, AI entrepreneur",
+      "file": "src/lib/events.tsx",
+      "category": "people"
+    },
+    {
+      "id": "helix-wolfson-host",
+      "label": "Helix Wolfson (Host)",
+      "type": "person",
+      "description": "Filmmaker and AI creative director, co-host of AI Content Creation Lab",
+      "file": "src/lib/events.tsx",
+      "category": "people"
+    },
+    {
+      "id": "alla-demutska-host",
+      "label": "Alla Demutska (Host)",
+      "type": "person",
+      "description": "Clinical psychologist, dancer, co-host of Ubud Connection Brunch",
+      "file": "src/lib/events.tsx",
+      "category": "people"
+    },
+    {
+      "id": "marina-choueri-host",
+      "label": "Marina Choueri (Host)",
+      "type": "person",
+      "description": "Super-connector, event producer, Mastermind alumna, host of Business Blocks workshop",
+      "file": "src/lib/events.tsx",
+      "category": "people"
+    },
+    {
+      "id": "mostly-restaurant-venue",
+      "label": "Mostly Restaurant, Pererenan, Canggu",
+      "type": "venue",
+      "description": "Restaurant venue in Bali for VIP connection dinner and monthly gatherings",
+      "file": "src/lib/events.tsx",
+      "category": "venue"
+    },
+    {
+      "id": "g-dos-eden-venue",
+      "label": "G-Dos Eden, Ubud",
+      "type": "venue",
+      "description": "Restaurant venue in Ubud for connection brunch gatherings",
+      "file": "src/lib/events.tsx",
+      "category": "venue"
+    },
+    {
+      "id": "happy-days-villa-venue",
+      "label": "Happy Days Villa 1, Pererenan",
+      "type": "venue",
+      "description": "Villa venue in Bali for workshop events",
+      "file": "src/lib/events.tsx",
+      "category": "venue"
+    },
+    {
+      "id": "speak-human-tool",
+      "label": "Speak Human",
+      "type": "external-tool",
+      "description": "Free tool for building voice profiles and removing AI patterns from content",
+      "file": "src/lib/events.tsx",
+      "category": "tool"
+    },
+    {
+      "id": "higgsfield-ai-tool",
+      "label": "Higgsfield",
+      "type": "external-tool",
+      "description": "AI video generation platform for cinematic content, b-roll, and multi-model workflows",
+      "file": "src/lib/events.tsx",
+      "category": "tool"
+    },
+    {
+      "id": "heygen-ai-tool",
+      "label": "HeyGen",
+      "type": "external-tool",
+      "description": "AI avatar and talking-head generation tool for video content",
+      "file": "src/lib/events.tsx",
+      "category": "tool"
+    },
+    {
+      "id": "pkp-community-centre",
+      "label": "PKP Community Centre",
+      "type": "charity",
+      "description": "Bali charity beneficiary for VIP dinner donations",
+      "file": "src/lib/events.tsx",
+      "category": "charity"
+    },
+    {
+      "id": "bali-street-mums",
+      "label": "Bali Street Mums",
+      "type": "charity",
+      "description": "Bali charity beneficiary for October 2026 connection dinner donations",
+      "file": "src/lib/events.tsx",
+      "category": "charity"
+    },
+    {
+      "id": "video-src-constant",
+      "label": "VIDEO_SRC",
+      "type": "constant",
+      "description": "Video URL for Terminal to Claude Desktop walkthrough",
+      "file": "src/app/giveaways/terminal-to-claude-desktop/page.tsx",
+      "value": "https://media.mastermindshq.business/giveaways/terminal-to-claude-desktop-20260810.mp4",
+      "category": "media"
+    },
+    {
+      "id": "what-you-will-see-array",
+      "label": "WHAT_YOU_WILL_SEE",
+      "type": "constant",
+      "description": "Array of bullet points describing what viewers will see in the Terminal to Claude Desktop video",
+      "file": "src/app/giveaways/terminal-to-claude-desktop/page.tsx",
+      "category": "content"
+    },
+    {
+      "id": "follow-along-steps-array",
+      "label": "FOLLOW_ALONG_STEPS",
+      "type": "constant",
+      "description": "Array of numbered steps for viewers to follow along with the walkthrough video",
+      "file": "src/app/giveaways/terminal-to-claude-desktop/page.tsx",
+      "category": "content"
+    },
+    {
+      "id": "next-link-component",
+      "label": "Next.js Link",
+      "type": "component",
+      "description": "Next.js client-side navigation component used throughout the application",
+      "category": "framework"
+    },
+    {
+      "id": "next-image-component",
+      "label": "Next.js Image",
+      "type": "component",
+      "description": "Next.js optimized image component with automatic optimization",
+      "category": "framework"
+    }
+  ],
+  "edges": [
+    {
+      "source": "inviteAttendeeToEvent-function",
+      "target": "resolveCalendarEventId-function",
+      "type": "calls",
+      "description": "Calls resolveCalendarEventId to get Google Calendar event ID"
+    },
+    {
+      "source": "inviteAttendeeToEvent-function",
+      "target": "getAuth-function",
+      "type": "calls",
+      "description": "Calls getAuth to initialize OAuth authentication"
+    },
+    {
+      "source": "inviteAttendeeToEvent-function",
+      "target": "CalendarInviteResult-type",
+      "type": "returns",
+      "description": "Returns CalendarInviteResult union type"
+    },
+    {
+      "source": "inviteAttendeeToEvent-function",
+      "target": "event-definition-type",
+      "type": "accepts",
+      "description": "Accepts EventDefinition as parameter"
+    },
+    {
+      "source": "inviteAttendeeToEvent-function",
+      "target": "guest-list-privacy-rule",
+      "type": "enforces",
+      "description": "Enforces guest list privacy by setting guestsCanSeeOtherGuests = false"
+    },
+    {
+      "source": "resolveCalendarEventId-function",
+      "target": "event-definition-type",
+      "type": "accepts",
+      "description": "Accepts EventDefinition parameter"
+    },
+    {
+      "source": "getAuth-function",
+      "target": "google-calendar-api-integration",
+      "type": "supports",
+      "description": "Provides OAuth authentication for Google Calendar API"
+    },
+    {
+      "source": "event-page-view-component",
+      "target": "event-definition-type",
+      "type": "accepts",
+      "description": "Accepts event: EventDefinition as prop"
+    },
+    {
+      "source": "event-page-view-component",
+      "target": "event-promo-code-type",
+      "type": "accepts",
+      "description": "Accepts promo: EventPromoCode | null as prop"
+    },
+    {
+      "source": "event-page-view-component",
+      "target": "section-shell-component",
+      "type": "uses",
+      "description": "Uses SectionShell for layout wrapping"
+    },
+    {
+      "source": "event-page-view-component",
+      "target": "story-section-component",
+      "type": "renders",
+      "description": "Renders StorySection based on section type"
+    },
+    {
+      "source": "event-page-view-component",
+      "target": "checklist-section-component",
+      "type": "renders",
+      "description": "Renders ChecklistSection based on section type"
+    },
+    {
+      "source": "event-page-view-component",
+      "target": "cards-section-component",
+      "type": "renders",
+      "description": "Renders CardsSection based on section type"
+    },
+    {
+      "source": "event-page-view-component",
+      "target": "split-section-component",
+      "type": "renders",
+      "description": "Renders SplitSection based on section type"
+    },
+    {
+      "source": "event-page-view-component",
+      "target": "image-section-component",
+      "type": "renders",
+      "description": "Renders ImageSection based on section type"
+    },
+    {
+      "source": "event-page-view-component",
+      "target": "html-section-component",
+      "type": "renders",
+      "description": "Renders HtmlSection based on section type"
+    },
+    {
+      "source": "event-page-view-component",
+      "target": "quote-card-section-component",
+      "type": "renders",
+      "description": "Renders QuoteCardSection based on section type"
+    },
+    {
+      "source": "event-page-view-component",
+      "target": "hosts-section-component",
+      "type": "renders",
+      "description": "Renders HostsSection based on section type"
+    },
+    {
+      "source": "event-page-view-component",
+      "target": "cta-section-component",
+      "type": "renders",
+      "description": "Renders CtaSection based on section type"
+    },
+    {
+      "source": "event-page-view-component",
+      "target": "event-registration-section-component",
+      "type": "renders",
+      "description": "Renders EventRegistrationSection at bottom of page"
+    },
+    {
+      "source": "event-page-view-component",
+      "target": "hero-video-component",
+      "type": "uses",
+      "description": "Conditionally uses HeroVideo if heroVideoSrc exists"
+    },
+    {
+      "source": "event-page-view-component",
+      "target": "next-image-component",
+      "type": "uses",
+      "description": "Uses Next.js Image for hero and section images"
+    },
+    {
+      "source": "event-page-view-component",
+      "target": "ask-an-ai-expert-quote-strip",
+      "type": "renders",
+      "description": "Conditionally renders AskAnAiExpertQuoteStrip for ask-an-ai-expert event"
+    },
+    {
+      "source": "event-page-view-component",
+      "target": "event-status-utilities",
+      "type": "uses",
+      "description": "Uses isEventEnded and isRegistrationWindowPassed utilities"
+    },
+    {
+      "source": "event-page-view-component",
+      "target": "calendar-utilities",
+      "type": "uses",
+      "description": "Uses buildGoogleCalendarUrl for calendar integration"
+    },
+    {
+      "source": "event-page-view-component",
+      "target": "scroll-to-register-button-component",
+      "type": "uses",
+      "description": "Uses ScrollToRegisterButton for hero CTA"
+    },
+    {
+      "source": "story-section-component",
+      "target": "section-shell-component",
+      "type": "uses",
+      "description": "Wraps content in SectionShell"
+    },
+    {
+      "source": "story-section-component",
+      "target": "rich-paragraphs-component",
+      "type": "uses",
+      "description": "Uses RichParagraphs to render body content"
+    },
+    {
+      "source": "checklist-section-component",
+      "target": "section-shell-component",
+      "type": "uses",
+      "description": "Wraps checklist items in SectionShell"
+    },
+    {
+      "source": "checklist-section-component",
+      "target": "event-section-type",
+      "type": "accepts",
+      "description": "Accepts checklist event section"
+    },
+    {
+      "source": "cards-section-component",
+      "target": "section-shell-component",
+      "type": "uses",
+      "description": "Wraps cards in SectionShell"
+    },
+    {
+      "source": "cards-section-component",
+      "target": "event-section-type",
+      "type": "accepts",
+      "description": "Accepts cards event section"
+    },
+    {
+      "source": "split-section-component",
+      "target": "section-shell-component",
+      "type": "uses",
+      "description": "Wraps split layout in SectionShell"
+    },
+    {
+      "source": "split-section-component",
+      "target": "rich-paragraphs-component",
+      "type": "uses",
+      "description": "Uses RichParagraphs for body content"
+    },
+    {
+      "source": "split-section-component",
+      "target": "next-image-component",
+      "type": "uses",
+      "description": "Uses Next.js Image for section image"
+    },
+    {
+      "source": "image-section-component",
+      "target": "section-shell-component",
+      "type": "uses",
+      "description": "Wraps image in SectionShell"
+    },
+    {
+      "source": "image-section-component",
+      "target": "event-media-video-component",
+      "type": "uses",
+      "description": "Uses EventMediaVideo if videoSrc exists"
+    },
+    {
+      "source": "image-section-component",
+      "target": "next-image-component",
+      "type": "uses",
+      "description": "Uses Next.js Image if no video"
+    },
+    {
+      "source": "html-section-component",
+      "target": "section-shell-component",
+      "type": "uses",
+      "description": "Wraps HTML content in SectionShell"
+    },
+    {
+      "source": "quote-card-section-component",
+      "target": "event-media-video-component",
+      "type": "uses",
+      "description": "Uses EventMediaVideo if videoSrc exists"
+    },
+    {
+      "source": "quote-card-section-component",
+      "target": "next-image-component",
+      "type": "uses",
+      "description": "Uses Next.js Image if no video"
+    },
+    {
+      "source": "hosts-section-component",
+      "target": "section-shell-component",
+      "type": "uses",
+      "description": "Wraps hosts in SectionShell"
+    },
+    {
+      "source": "hosts-section-component",
+      "target": "next-image-component",
+      "type": "uses",
+      "description": "Uses Next.js Image for host photos"
+    },
+    {
+      "source": "event-video-section-component",
+      "target": "section-shell-component",
+      "type": "uses",
+      "description": "Wraps video in SectionShell"
+    },
+    {
+      "source": "cta-section-component",
+      "target": "section-shell-component",
+      "type": "uses",
+      "description": "Wraps CTA in SectionShell"
+    },
+    {
+      "source": "cta-section-component",
+      "target": "scroll-to-register-button-component",
+      "type": "uses",
+      "description": "Uses ScrollToRegisterButton for primary CTA"
+    },
+    {
+      "source": "cta-section-component",
+      "target": "next-link-component",
+      "type": "uses",
+      "description": "Uses Next.js Link for secondary CTA"
+    },
+    {
+      "source": "cta-section-component",
+      "target": "formatEventPrice-function",
+      "type": "uses",
+      "description": "Uses formatEventPrice to display pricing"
+    },
+    {
+      "source": "terminal-to-claude-desktop-page",
+      "target": "sticky-video-player-component",
+      "type": "uses",
+      "description": "Uses StickyVideoPlayer to display video walkthrough"
+    },
+    {
+      "source": "terminal-to-claude-desktop-page",
+      "target": "reveal-component",
+      "type": "uses",
+      "description": "Uses Reveal component for staggered animations"
+    },
+    {
+      "source": "terminal-to-claude-desktop-page",
+      "target": "next-link-component",
+      "type": "uses",
+      "description": "Uses Next.js Link for navigation"
+    },
+    {
+      "source": "terminal-to-claude-desktop-page",
+      "target": "video-src-constant",
+      "type": "references",
+      "description": "References VIDEO_SRC constant for video URL"
+    },
+    {
+      "source": "terminal-to-claude-desktop-page",
+      "target": "what-you-will-see-array",
+      "type": "uses",
+      "description": "Maps over WHAT_YOU_WILL_SEE array for content"
+    },
+    {
+      "source": "terminal-to-claude-desktop-page",
+      "target": "follow-along-steps-array",
+      "type": "uses",
+      "description": "Maps over FOLLOW_ALONG_STEPS array for checklist"
+    },
+    {
+      "source": "terminal-to-claude-desktop-page",
+      "target": "terminal-to-claude-desktop-exception",
+      "type": "implements",
+      "description": "Implements free-access exception for terminal-to-claude-desktop giveaway"
+    },
+    {
+      "source": "terminal-to-claude-desktop-layout",
+      "target": "terminal-to-claude-desktop-page",
+      "type": "wraps",
+      "description": "Layout wraps the page component"
+    },
+    {
+      "source": "getEventBySlug-function",
+      "target": "event-definition-type",
+      "type": "returns",
+      "description": "Returns EventDefinition or undefined"
+    },
+    {
+      "source": "getLiveEvents-function",
+      "target": "event-definition-type",
+      "type": "returns",
+      "description": "Returns array of live EventDefinition objects"
+    },
+    {
+      "source": "getUpcomingLiveEvents-function",
+      "target": "event-definition-type",
+      "type": "returns",
+      "description": "Returns array of upcoming EventDefinition objects sorted by date"
+    },
+    {
+      "source": "getEventDiscountedPrice-function",
+      "target": "getDiscountedPrice-function",
+      "type": "calls",
+      "description": "Calls getDiscountedPrice helper function"
+    },
+    {
+      "source": "formatEventPrice-function",
+      "target": "getEventDiscountedPrice-function",
+      "type": "calls",
+      "description": "Calls getEventDiscountedPrice to get price value"
+    },
+    {
+      "source": "connection-dinner-canggu-event",
+      "target": "joe-che-host",
+      "type": "hosted-by",
+      "description": "VIP Connection Dinner hosted by Joe Che"
+    },
+    {
+      "source": "connection-dinner-canggu-event",
+      "target": "mostly-restaurant-venue",
+      "type": "location",
+      "description": "Event held at Mostly Restaurant"
+    },
+    {
+      "source": "connection-dinner-canggu-event",
+      "target": "pkp-community-centre",
+      "type": "benefits",
+      "description": "Donations go to PKP Community Centre"
+    },
+    {
+      "source": "connection-dinner-october-event",
+      "target": "joe-che-host",
+      "type": "hosted-by",
+      "description": "October Connection Dinner hosted by Joe Che"
+    },
+    {
+      "source": "connection-dinner-october-event",
+      "target": "mostly-restaurant-venue",
+      "type": "location",
+      "description": "Event held at Mostly Restaurant"
+    },
+    {
+      "source": "connection-dinner-october-event",
+      "target": "bali-street-mums",
+      "type": "benefits",
+      "description": "Donations go to Bali Street Mums"
+    },
+    {
+      "source": "ubud-connection-brunch-event",
+      "target": "joe-che-host",
+      "type": "hosted-by",
+      "description": "Brunch co-hosted by Joe Che"
+    },
+    {
+      "source": "ubud-connection-brunch-event",
+      "target": "alla-demutska-host",
+      "type": "hosted-by",
+      "description": "Brunch co-hosted by Alla Demutska"
+    },
+    {
+      "source": "ubud-connection-brunch-event",
+      "target": "g-dos-eden-venue",
+      "type": "location",
+      "description": "Event held at G-Dos Eden, Ubud"
+    },
+    {
+      "source": "ubud-connection-brunch-event",
+      "target": "pkp-community-centre",
+      "type": "benefits",
+      "description": "Donations go to PKP Community Centre"
+    },
+    {
+      "source": "ai-avatar-content-creation-event",
+      "target": "joe-che-host",
+      "type": "hosted-by",
+      "description": "AI Content Creation Lab hosted by Joe Che"
+    },
+    {
+      "source": "ai-avatar-content-creation-event",
+      "target": "helix-wolfson-host",
+      "type": "hosted-by",
+      "description": "AI Content Creation Lab co-hosted by Helix Wolfson"
+    },
+    {
+      "source": "ai-avatar-content-creation-event",
+      "target": "happy-days-villa-venue",
+      "type": "location",
+      "description": "Event held at Happy Days Villa 1, Pererenan"
+    },
+    {
+      "source": "ai-avatar-content-creation-event",
+      "target": "higgsfield-ai-tool",
+      "type": "uses",
+      "description": "Workshop teaches Higgsfield for AI video workflows"
+    },
+    {
+      "source": "ai-avatar-content-creation-event",
+      "target": "heygen-ai-tool",
+      "type": "uses",
+      "description": "Workshop teaches HeyGen for AI avatars"
+    },
+    {
+      "source": "stop-sounding-like-everyone-else-event",
+      "target": "joe-che-host",
+      "type": "hosted-by",
+      "description": "Workshop hosted by Joe Che"
+    },
+    {
+      "source": "stop-sounding-like-everyone-else-event",
+      "target": "speak-human-tool",
+      "type": "uses",
+      "description": "Workshop features Speak Human tool installation and walkthrough"
+    },
+    {
+      "source": "ask-an-ai-expert-event",
+      "target": "joe-che-host",
+      "type": "hosted-by",
+      "description": "Live Q&A session hosted by Joe Che"
+    },
+    {
+      "source": "bring-the-task-you-hate-event",
+      "target": "joe-che-host",
+      "type": "hosted-by",
+      "description": "Live AI automation class hosted by Joe Che"
+    },
+    {
+      "source": "bring-the-task-you-hate-event",
+      "target": "event-intake-fields",
+      "type": "uses",
+      "description": "Uses custom intake fields to collect task descriptions from registrants"
+    },
+    {
+      "source": "business-blocks-ai-solved-event",
+      "target": "joe-che-host",
+      "type": "hosted-by",
+      "description": "Workshop hosted by Joe Che"
+    },
+    {
+      "source": "business-blocks-ai-solved-event",
+      "target": "marina-choueri-host",
+      "type": "hosted-by",
+      "description": "Workshop hosted by Marina Choueri"
+    },
+    {
+      "source": "business-blocks-ai-solved-event",
+      "target": "happy-days-villa-venue",
+      "type": "location",
+      "description": "Event held at Happy Days Villa 1"
+    },
+    {
+      "source": "sitemap-function",
+      "target": "sitemap-base-url",
+      "type": "uses",
+      "description": "Uses BASE URL for sitemap entries"
+    },
+    {
+      "source": "sitemap-function",
+      "target": "giveaway-routes-sitemap",
+      "type": "generates",
+      "description": "Generates giveaway route entries"
+    },
+    {
+      "source": "next-config",
+      "target": "next-redirects-config",
+      "type": "includes",
+      "description": "Includes redirects configuration"
+    },
+    {
+      "source": "next-config",
+      "target": "next-rewrites-config",
+      "type": "includes",
+      "description": "Includes rewrites configuration"
+    },
+    {
+      "source": "next-redirects-config",
+      "target": "sitemap-base-url",
+      "type": "references",
+      "description": "Redirects from workshop site to portal"
+    },
+    {
+      "source": "next-rewrites-config",
+      "target": "sitemap-base-url",
+      "type": "references",
+      "description": "Rewrites host-specific requests to workshop site routes"
+    },
+    {
+      "source": "giveaway-email-gate",
+      "target": "terminal-to-claude-desktop-exception",
+      "type": "implements",
+      "description": "GiveawayCopyEmailGate implements exception for terminal-to-claude-desktop"
+    },
+    {
+      "source": "event-definition-type",
+      "target": "event-section-type",
+      "type": "contains",
+      "description": "EventDefinition contains array of EventSection"
+    },
+    {
+      "source": "event-definition-type",
+      "target": "event-host-type",
+      "type": "contains",
+      "description": "EventDefinition contains array of EventHost"
+    },
+    {
+      "source": "event-definition-type",
+      "target": "event-promo-code-type",
+      "type": "contains",
+      "description": "EventDefinition pricing contains array of EventPromoCode"
+    },
+    {
+      "source": "event-definition-type",
+      "target": "event-intake-fields",
+      "type": "contains",
+      "description": "EventDefinition can specify optional intake fields"
+    },
+    {
+      "source": "event-definition-type",
+      "target": "event-email-config",
+      "type": "contains",
+      "description": "EventDefinition can specify email configuration"
+    },
+    {
+      "source": "event-definition-type",
+      "target": "private-location-reminder",
+      "type": "contains",
+      "description": "EventDefinition can specify private location reminder"
+    },
+    {
+      "source": "event-definition-type",
+      "target": "post-purchase-setup-flow",
+      "type": "contains",
+      "description": "EventDefinition can specify post-purchase setup flow"
+    },
+    {
+      "source": "event-definition-type",
+      "target": "capacity-reservation-feature",
+      "type": "contains",
+      "description": "EventDefinition can specify capacity reservation"
+    },
+    {
+      "source": "event-definition-type",
+      "target": "event-legacy-registration",
+      "type": "contains",
+      "description": "EventDefinition can specify legacy registration info"
+    },
+    {
+      "source": "event-definition-type",
+      "target": "donation-mode-pricing",
+      "type": "contains",
+      "description": "EventDefinition pricing can be in donation mode"
+    },
+    {
+      "source": "event-registration-section-component",
+      "target": "event-intake-fields",
+      "type": "uses",
+      "description": "EventRegistrationSection respects event's intake field configuration"
+    },
+    {
+      "source": "event-page-view-component",
+      "target": "event-success-detail",
+      "type": "displays",
+      "description": "EventPageView displays customized success detail"
+    },
+    {
+      "source": "html-section-component",
+      "target": "event-definition-type",
+      "type": "evaluates",
+      "description": "HtmlSection checks eventEnded to disable CTAs"
+    },
+    {
+      "source": "google-calendar-api-integration",
+      "target": "inviteAttendeeToEvent-function",
+      "type": "enables",
+      "description": "Google Calendar API enables attendee invitation feature"
+    },
+    {
+      "source": "buildEventCalendarDescription",
+      "label": "buildEventCalendarDescription",
+      "target": "google-calendar-invite.ts",
+      "type": "imported-from",
+      "description": "Imported from calendar module to build event description"
+    }
+  ]
+}

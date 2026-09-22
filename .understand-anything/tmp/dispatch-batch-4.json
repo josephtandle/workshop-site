@@ -1,0 +1,83 @@
+{
+  "batchIndex": 4,
+  "totalBatches": 13,
+  "files": [
+    {
+      "path": "src/lib/email-suppressions.ts",
+      "language": "typescript",
+      "sizeLines": 73,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/lib/event-registration-db.ts",
+      "language": "typescript",
+      "sizeLines": 361,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/lib/event-registration-flow.ts",
+      "language": "typescript",
+      "sizeLines": 44,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/lib/rate-limit.ts",
+      "language": "typescript",
+      "sizeLines": 44,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/lib/supabase.ts",
+      "language": "typescript",
+      "sizeLines": 9,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/event-registration-flow.test.ts",
+      "language": "typescript",
+      "sizeLines": 69,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "src/lib/email-suppressions.ts": [
+      "src/lib/supabase.ts"
+    ],
+    "src/lib/event-registration-db.ts": [],
+    "src/lib/event-registration-flow.ts": [],
+    "src/lib/rate-limit.ts": [
+      "src/lib/supabase.ts"
+    ],
+    "src/lib/supabase.ts": [],
+    "tests/event-registration-flow.test.ts": [
+      "src/lib/event-registration-flow.ts",
+      "src/lib/event-registration-db.ts",
+      "src/lib/supabase.ts"
+    ]
+  },
+  "neighborMap": {
+    "src/lib/email-suppressions.ts": [
+      {
+        "path": "src/lib/event-confirmation-email.ts",
+        "batchIndex": 1,
+        "symbols": [
+          "buildAskAnAiExpertWelcomeEmailHtml",
+          "buildConfirmationEmailHtml",
+          "buildLocationReminderEmailHtml",
+          "buildConfirmationIdempotencyKey",
+          "buildWaitlistJoinIdempotencyKey",
+          "buildAiContentCreationSetupIdempotencyKey",
+          "buildAskAnAiExpertWelcomeIdempotencyKey",
+          "sendEventConfirmationEmail",
+          "sendAiContentCreationSetupEmail",
+          "sendAskAnAiExpertWelcomeEmail",
+          "sendEventLocationReminderEmail",
+          "sendSessionReminderEmail",
+          "sendWaitlistConfirmationEmail",
+          "sendWaitlistSpotNotificationEmail",
+          "sendRegistrationBackupAlert"
+        ]
+      }
+    ]
+  }
+}
