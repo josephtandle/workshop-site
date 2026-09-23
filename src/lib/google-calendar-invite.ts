@@ -56,6 +56,29 @@ export async function inviteAttendeeToEvent(
   try {
     const calendar = google.calendar({ version: 'v3', auth })
     const existing = await calendar.events.get({ calendarId: CALENDAR_ID, eventId })
+
+    // The resolver falls back to a single shared GOOGLE_WORKSHOP_CALENDAR_EVENT_ID.
+    // When a new workshop ships without its own id, that fallback still points at
+    // the PREVIOUS workshop, and every registrant is silently invited to an event
+    // on the wrong date. That is exactly what happened to the 29 Sep 2026 free
+    // class: 16 people were added to the 29 July 2026 entry (Illy, 2026-09-23).
+    // Never add a guest to an entry whose start does not match the event page.
+    const expectedStart = event.calendarEvent?.startIso
+    const actualStart = existing.data.start?.dateTime || existing.data.start?.date
+    if (expectedStart && actualStart) {
+      const expectedDay = new Date(expectedStart).toISOString().slice(0, 10)
+      const actualDay = new Date(actualStart).toISOString().slice(0, 10)
+      if (expectedDay !== actualDay) {
+        console.error(
+          `[calendar-invite] WRONG EVENT for ${event.slug}: calendar entry ${eventId} starts ${actualDay}, page says ${expectedDay}. Refusing to invite ${email}. Set GOOGLE_CALENDAR_EVENT_ID_${event.slug.replace(/-/g, '_').toUpperCase()}.`,
+        )
+        return {
+          status: 'failed',
+          reason: `calendar entry ${eventId} is dated ${actualDay}, event page is ${expectedDay}`,
+        }
+      }
+    }
+
     const attendees = existing.data.attendees || []
 
     // Registrants must never see each other. Google defaults to letting every

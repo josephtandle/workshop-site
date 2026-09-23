@@ -350,11 +350,19 @@ export default function EventRegistrationSection({
       ...(collectsWhatsapp ? { whatsappNumber: whatsappNumber.trim() } : {}),
       ...(collectsBusinessContext ? { businessContext: businessContext.trim() } : {}),
     })
-    const response = await fetch('/api/events/checkout-session', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
-    })
+    // Without a bound, a stalled API leaves the button on "Preparing..." forever.
+    let response: Response
+    try {
+      response = await fetch('/api/events/checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+        signal: AbortSignal.timeout(20000),
+      })
+    } catch {
+      setError('That took too long to go through. Please try again in a moment.')
+      return
+    }
     const payload = await response.json()
     if (!response.ok) {
       if (payload.code === 'EVENT_CAPACITY_FULL') {
@@ -546,7 +554,7 @@ export default function EventRegistrationSection({
   return (
     <section id="register" className="mx-auto max-w-6xl px-6 py-8 md:py-10">
       {successState ? (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/72 px-6 backdrop-blur-md">
+        <div className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/72 px-6 py-10 backdrop-blur-md">
           <div className="relative w-full max-w-xl rounded-[2rem] border border-white/12 bg-[#151517] px-7 pb-7 pt-14 text-center shadow-[0_30px_120px_rgba(0,0,0,0.45)] md:px-9 md:pb-9 md:pt-16">
             <button
               type="button"

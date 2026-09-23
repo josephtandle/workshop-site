@@ -191,6 +191,8 @@ export type EventDefinition = {
   // to the generic paid-event line about setting up two free accounts, which is
   // wrong for any event that has no setup items.
   successDetail?: string
+  successLabel?: string
+  successRedirect?: string
   // Opt-in per event. Events without this collect name and email only, so
   // adding a field here never changes the form on any other event.
   intakeFields?: {
@@ -1248,6 +1250,9 @@ export const events: EventDefinition[] = [
       // (the placeholder's own example) and people gave up. Found 2026-09-21.
       businessContextMinLength: 3,
     },
+    // No postPurchase block on this event, so the default /setup target 404s.
+    successLabel: 'Back to the class details',
+    successRedirect: '/events/bring-the-task-you-hate',
     successDetail: 'You are in. Your Zoom link and calendar invite are on their way from joe@mastermindshq.business. I read every task that comes in and pick the ones I build live from that list, so the more specific you are, the better your odds. If nothing shows up in a couple of minutes, check spam and add that address to your contacts so the reminders reach you.',
     audience: [
       'Coaches and consultants doing their own admin',
@@ -1290,6 +1295,10 @@ export const events: EventDefinition[] = [
     calendarEvent: {
       startIso: '2026-09-29T19:00:00+08:00',
       endIso: '2026-09-29T21:00:00+08:00',
+      // Pinned in code, not left to the shared GOOGLE_WORKSHOP_CALENDAR_EVENT_ID
+      // fallback. That fallback still held the 29 July workshop, so every
+      // September registrant was silently invited to a July event (Illy, 2026-09-23).
+      googleCalendarEventId: 'la3r9tth9v0kb45s0kkqqf23dc',
     },
     sections: [
       {
