@@ -1290,6 +1290,10 @@ export const events: EventDefinition[] = [
     calendarEvent: {
       startIso: '2026-09-29T19:00:00+08:00',
       endIso: '2026-09-29T21:00:00+08:00',
+      // Pinned in code, not left to the shared GOOGLE_WORKSHOP_CALENDAR_EVENT_ID
+      // fallback. That fallback still held the 29 July workshop, so every
+      // September registrant was silently invited to a July event (Illy, 2026-09-23).
+      googleCalendarEventId: 'la3r9tth9v0kb45s0kkqqf23dc',
     },
     sections: [
       {
