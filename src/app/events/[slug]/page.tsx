@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import EventPageView from '@/components/events/EventPageView'
+import { getPublicImageSize } from '@/lib/image-size'
 import { getEventBySlug, resolvePromoCode } from '@/lib/events'
 import { getStripePublishableKey } from '@/lib/stripe'
 
@@ -34,13 +35,26 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     }
   }
 
+  const title = event.metadata?.title ?? event.title
+  const description = event.metadata?.description ?? event.description
+  const { width, height } = getPublicImageSize(event.heroImage)
+
   return {
-    title: event.metadata?.title ?? event.title,
-    description: event.metadata?.description ?? event.description,
+    title,
+    description,
     openGraph: {
-      title: event.metadata?.title ?? event.title,
-      description: event.metadata?.description ?? event.description,
-      images: [{ url: event.heroImage, width: 1200, height: 630 }],
+      title,
+      description,
+      images: [{ url: event.heroImage, width, height, alt: event.heroAlt ?? title }],
+    },
+    // Without this the root layout's generic "Masterminds Workshop" card is
+    // what X and anything else reading twitter:* shows for every event
+    // (Illy, 2026-09-23).
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [event.heroImage],
     },
   }
 }
