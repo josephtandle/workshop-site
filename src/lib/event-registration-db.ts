@@ -3,6 +3,7 @@ import { supabase } from '@/lib/supabase'
 import { generateToken } from '@/lib/event-tokens'
 import { getEventBySlug, type EventDefinition } from '@/lib/events'
 import { releaseEventSeat } from '@/lib/event-capacity'
+import { UNTAGGED_ACQUISITION_REF } from '@/lib/event-registration-flow'
 
 export type Registration = {
   id: string
@@ -59,7 +60,7 @@ export async function saveRegistrationIntake(input: {
       attendee_email: input.attendeeEmail.trim().toLowerCase(),
       whatsapp_number: input.whatsappNumber?.trim() || null,
       business_context: input.businessContext?.trim() || null,
-      acquisition_ref: input.acquisitionRef?.trim().toLowerCase() || 'joe-che',
+      acquisition_ref: input.acquisitionRef?.trim().toLowerCase() || UNTAGGED_ACQUISITION_REF,
       updated_at: new Date().toISOString(),
     },
     { onConflict: 'event_slug,attendee_email' },
@@ -113,7 +114,7 @@ export async function saveRegistration(input: {
   // Pre-generate UUID so the cancel token can be derived in a single insert — no two-step update.
   const id = randomUUID()
   const cancelToken = generateToken(`cancel:${id}`)
-  const acquisitionRef = input.acquisitionRef?.trim().toLowerCase() || 'joe-che'
+  const acquisitionRef = input.acquisitionRef?.trim().toLowerCase() || UNTAGGED_ACQUISITION_REF
 
   // On the paid path the caller only has what Stripe gave back, so recover the
   // intake answers that were stored before the redirect. Skipped entirely for

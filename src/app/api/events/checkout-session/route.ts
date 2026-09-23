@@ -16,6 +16,7 @@ import {
   confirmEventSeat,
   releaseEventSeat,
 } from '@/lib/event-capacity'
+import { UNTAGGED_ACQUISITION_REF } from '@/lib/event-registration-flow'
 import { normalizeWhatsappNumber, validateIntakeFields } from '@/lib/event-intake'
 import { toOrigin } from '@/lib/url-utils'
 import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
@@ -65,7 +66,7 @@ export async function POST(request: Request) {
     const acquisitionRef =
       typeof body.acquisitionRef === 'string' && body.acquisitionRef.trim()
         ? body.acquisitionRef.trim().toLowerCase()
-        : 'joe-che'
+        : UNTAGGED_ACQUISITION_REF
     const rawDonationAmount = typeof body.donationAmount === 'number' ? body.donationAmount : null
     const requestedCheckoutMode = typeof body.checkoutMode === 'string' ? body.checkoutMode.trim() : null
     const whatsappNumber = typeof body.whatsappNumber === 'string' ? body.whatsappNumber.trim() : ''
