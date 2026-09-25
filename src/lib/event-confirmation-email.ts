@@ -361,6 +361,8 @@ export function buildConfirmationEmailHtml(event: EventDefinition, attendeeName:
         </div>
 
         <div style="padding: 30px 32px 10px;">
+          ${calendarButtonsHtml}
+
           <div style="border: 1px solid rgba(139, 121, 212, 0.16); border-radius: 18px; background: #faf8ff; padding: 22px 24px; margin-bottom: 24px;">
             <p style="margin: 0 0 14px; font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #8B79D4;">${detailsLabel}</p>
             <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.7; color: #2d2442;"><strong>Date:</strong> ${event.dateLabel}</p>
@@ -369,8 +371,6 @@ export function buildConfirmationEmailHtml(event: EventDefinition, attendeeName:
           </div>
 
           ${zoomBlockHtml}
-
-          ${calendarButtonsHtml}
 
           ${
             location && revealLocationNow
