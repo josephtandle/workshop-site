@@ -1227,9 +1227,9 @@ export const events: EventDefinition[] = [
     shortTitle: 'Bring the Task You Hate the Most',
     eyebrow: 'Free Live AI Class',
     summary:
-      'Emails, proposals, invoices, follow-ups, your CRM, content, bookkeeping, taxes, the process you keep doing by hand. Bring the one you hate the most on September 29 and I will automate it live with AI, on your actual business, for free. You leave with the recording and every prompt and setup from the night.',
+      'Emails, proposals, invoices, follow-ups, your CRM, content, bookkeeping, taxes, the process you keep doing by hand. Bring the one you hate the most on September 29 and I will automate it live with AI, on your actual business, for free. Join live and you leave with the fix and every prompt and setup from the night.',
     description:
-      'A free live AI class. Tell Joe the task you hate the most, watch him automate it live with AI on a real business, and leave with the recording and every prompt from the night.',
+      'A free live AI class. Tell Joe the task you hate the most and watch him automate it live with AI on a real business. Join live and leave with every prompt and setup from the night.',
     dateLabel: 'Tuesday, September 29, 2026',
     timeLabel: '7:00 PM to 9:00 PM Asia/Makassar (Bali)',
     locationLabel: 'Free online workshop',
@@ -1258,7 +1258,7 @@ export const events: EventDefinition[] = [
     outcomes: [
       'Five or six real tasks automated live, on real businesses',
       'Every prompt and setup from the night, in a doc you keep',
-      'The full recording, whether or not you attend live',
+      'Free tools and resources you keep, for everyone who joins live',
       'A clear picture of what your week looks like with the busywork gone',
     ],
     hosts: [
@@ -1318,7 +1318,7 @@ export const events: EventDefinition[] = [
               I teach business owners to do this every week in my <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 transition hover:text-[#FCF4EB]">AI Business Mastermind</a>. Four cohorts have run and all four filled. Coaches, artists, therapists, consultants, none of them techies, who now have websites they built themselves, billing that runs itself, dashboards that track the whole business, and the same pattern across all of them: more sales coming in, less time on the work that used to eat their week. <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 transition hover:text-[#FCF4EB]">Cohort 5 starts October 7</a> and is the one currently open.
             </p>
             <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
-              Everyone who registers gets the recording and every prompt and setup from the night, whether or not your task made it into the live round. If you are there live, you can ask anything during the open round at the end.
+              Everyone who joins live gets every prompt and setup from the night, plus free tools to take with you, whether or not your task made it into the live round. It is live only, so be there in the room. If you are there live, you can ask anything during the open round at the end.
             </p>
             <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
               It is free. Send me the task you hate the most below.
@@ -1338,7 +1338,7 @@ export const events: EventDefinition[] = [
     metadata: {
       title: 'Free AI Class: Bring the Task You Hate the Most. Leave Without It.',
       description:
-        'Emails, proposals, invoices, follow-ups, your CRM, content, bookkeeping, taxes, the process you keep doing by hand. Bring the one you hate the most on September 29 and Joe automates it live with AI, on your actual business, for free. Recording and every prompt included.',
+        'Emails, proposals, invoices, follow-ups, your CRM, content, bookkeeping, taxes, the process you keep doing by hand. Bring the one you hate the most on September 29 and Joe automates it live with AI, on your actual business, for free. Join live and leave with every prompt from the night.',
     },
   },
   {
