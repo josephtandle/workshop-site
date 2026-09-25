@@ -5,3 +5,7 @@ node_modules
 tsconfig.tsbuildinfo
 supabase/.temp/
 .gitnexus
+
+# understand-anything scratch (regenerated every index run)
+.understand-anything/intermediate/
+.understand-anything/tmp/
