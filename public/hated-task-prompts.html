@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+
+<meta property="og:title" content="The Hated-Task Prompt Pack">
+<meta property="og:description" content="Nine prompts for the work you would rather never do again. Your bonus for bringing a friend to the free AI class.">
+<title>Hated-Task Prompt Pack</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap">
+
+<style>
+  :root {
+    --page-bg: #efedf6;
+    --card-bg: #ffffff;
+    --cream: #fbf9ff;
+    --prompt-bg: #f6f4fc;
+    --field-bg: #ffffff;
+    --accent: #8B79D4;
+    --accent-dark: #6a59b8;
+    --chatgpt: #10a37f;
+    --ink: #1a1526;
+    --ink-soft: #5f5980;
+    --ink-faint: #9b93b5;
+    --border: #e8e4f3;
+    --border-strong: #d8d1ee;
+    --code-ink: #2a2440;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --page-bg: #0c0a15; --card-bg: #171429; --cream: #1e1a30; --prompt-bg: #211d38;
+      --field-bg: #12101f; --accent: #9d8ce0; --accent-dark: #b3a4ec; --chatgpt: #1db892;
+      --ink: #f0eef6; --ink-soft: #b4abd0; --ink-faint: #7d769c; --border: #2c2743;
+      --border-strong: #3a3357; --code-ink: #ded8f2;
+    }
+  }
+  :root[data-theme="dark"] {
+    --page-bg: #0c0a15; --card-bg: #171429; --cream: #1e1a30; --prompt-bg: #211d38;
+    --field-bg: #12101f; --accent: #9d8ce0; --accent-dark: #b3a4ec; --chatgpt: #1db892;
+    --ink: #f0eef6; --ink-soft: #b4abd0; --ink-faint: #7d769c; --border: #2c2743;
+    --border-strong: #3a3357; --code-ink: #ded8f2;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--page-bg); color: var(--ink);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 740px; margin: 0 auto; padding: 0 16px 64px; }
+
+  .masthead {
+    background: linear-gradient(160deg, #110f17 0%, #1a1526 55%, #2a2050 100%);
+    border-radius: 0 0 20px 20px; padding: 40px 40px 44px; margin-bottom: 28px;
+  }
+  .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.5); margin-bottom: 18px; }
+  .masthead h1 { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 46px; line-height: 1.04; color: #fff; margin: 0 0 16px; text-wrap: balance; }
+  .masthead h1 .em { color: #c9bcf5; font-style: italic; }
+  .masthead .lede { font-size: 16px; line-height: 1.6; color: rgba(255,255,255,.72); max-width: 34em; margin: 0; }
+  .byline { margin-top: 22px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 13px; color: rgba(255,255,255,.55); }
+  .byline .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--accent); }
+
+  /* opener */
+  .opener { background: var(--card-bg); border: 1px solid var(--border-strong); border-radius: 16px; padding: 26px 28px; margin-bottom: 26px; }
+  .opener .kick { font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .opener h2 { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 27px; line-height: 1.15; color: var(--ink); margin: 0 0 8px; }
+  .opener p { font-size: 14.5px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 16px; }
+  .opener .row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .opener input[type=text] { flex: 1 1 260px; }
+  .opener .locked { display: none; margin-top: 4px; background: var(--cream); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 10px; padding: 16px 18px; font-size: 15px; line-height: 1.6; color: var(--ink); }
+  .opener .locked b { color: var(--accent-dark); }
+
+  input[type=text], textarea, select {
+    width: 100%; background: var(--field-bg); color: var(--ink); border: 1px solid var(--border-strong);
+    border-radius: 9px; padding: 11px 13px; font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.5; resize: vertical;
+  }
+  textarea { min-height: 74px; }
+  input:focus, textarea:focus, select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(139,121,212,.18); }
+  label.fld { display: block; font-size: 12px; font-weight: 600; color: var(--ink-soft); margin: 0 0 5px; letter-spacing: .01em; }
+  .fieldset { display: flex; flex-direction: column; gap: 13px; margin: 4px 0 18px; }
+
+  .note { background: var(--card-bg); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 12px; padding: 22px 26px; margin-bottom: 30px; }
+  .note p { margin: 0 0 12px; font-size: 15.5px; line-height: 1.68; color: var(--ink-soft); }
+  .note p:last-child { margin-bottom: 0; }
+  .note strong { color: var(--ink); font-weight: 600; }
+  .note .sign { font-family: 'Instrument Serif', Georgia, serif; font-size: 20px; color: var(--ink); }
+
+  .section-label { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); margin: 34px 4px 14px; }
+
+  .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 24px 26px; margin-bottom: 16px; }
+  .card.deep { border-color: var(--border-strong); box-shadow: 0 6px 26px rgba(90,70,160,.08); }
+  .card-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 6px; }
+  .num { font-family: 'Instrument Serif', Georgia, serif; font-size: 30px; line-height: 1; color: var(--accent); flex-shrink: 0; width: 34px; }
+  .card h3 { font-size: 19px; font-weight: 600; color: var(--ink); margin: 0; letter-spacing: -.01em; }
+  .badge-deep { display: inline-block; margin-left: 10px; font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #fff; background: var(--accent); padding: 3px 8px; border-radius: 20px; vertical-align: middle; }
+  .when { font-size: 13.5px; line-height: 1.55; color: var(--ink-faint); margin: 2px 0 16px 48px; }
+  @media (max-width: 560px) { .when { margin-left: 0; } .masthead { padding: 34px 24px 38px; } .masthead h1 { font-size: 38px; } }
+
+  .assembled { position: relative; background: var(--prompt-bg); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; }
+  .assembled .cap { font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 8px; }
+  .assembled pre { margin: 0; font-family: 'SF Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12.5px; line-height: 1.6; color: var(--code-ink); white-space: pre-wrap; word-break: break-word; }
+  .assembled pre .ph { color: var(--accent); opacity: .8; }
+
+  .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .btn { display: inline-flex; align-items: center; gap: 7px; border: 0; border-radius: 8px; padding: 10px 15px; font-family: inherit; font-size: 13px; font-weight: 600; cursor: pointer; text-decoration: none; transition: filter .15s, background .15s; }
+  .btn svg { width: 14px; height: 14px; }
+  .btn-copy { background: var(--prompt-bg); color: var(--accent-dark); border: 1px solid var(--border-strong); }
+  .btn-copy:hover { filter: brightness(.97); }
+  .btn-copy.done { background: #2fb27a; color: #fff; border-color: #2fb27a; }
+  .btn-claude { background: var(--accent); color: #fff; }
+  .btn-claude:hover { background: var(--accent-dark); }
+  .btn-gpt { background: var(--chatgpt); color: #fff; }
+  .btn-gpt:hover { filter: brightness(1.06); }
+
+  .example { margin-top: 14px; border-top: 1px dashed var(--border-strong); padding-top: 14px; }
+  .example summary { cursor: pointer; font-size: 13px; font-weight: 600; color: var(--accent-dark); list-style: none; display: flex; align-items: center; gap: 7px; }
+  .example summary::-webkit-details-marker { display: none; }
+  .example summary .tw { transition: transform .2s; }
+  .example[open] summary .tw { transform: rotate(90deg); }
+  .ex-grid { margin-top: 14px; display: grid; gap: 12px; }
+  .ex-box { background: var(--cream); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
+  .ex-box .lab { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 8px; }
+  .ex-box.after .lab { color: var(--accent-dark); }
+  .ex-box p, .ex-box pre { margin: 0; font-size: 13px; line-height: 1.6; color: var(--ink-soft); white-space: pre-wrap; font-family: inherit; }
+  .ex-box.after p, .ex-box.after pre { color: var(--ink); }
+
+  .closing { margin-top: 36px; background: linear-gradient(160deg, #1a1526 0%, #2a2050 100%); border-radius: 16px; padding: 34px; text-align: center; }
+  .closing .big { font-family: 'Instrument Serif', Georgia, serif; font-size: 27px; color: #fff; margin: 0 0 14px; }
+  .closing p { font-size: 16px; line-height: 1.65; color: rgba(255,255,255,.8); margin: 0 auto; max-width: 34em; }
+  .closing .sign { font-family: 'Instrument Serif', Georgia, serif; font-size: 20px; color: #c9bcf5; margin-top: 18px; }
+  .footer { text-align: center; font-size: 12px; color: var(--ink-faint); margin-top: 28px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="eyebrow">AI Business Mastermind · Joe Che</div>
+    <h1>The Hated-Task <span class="em">Prompt Pack</span></h1>
+    <p class="lede">Nine prompts for the work you'd rather never do again. Fill in the blanks, then send it straight to Claude or ChatGPT in one click.</p>
+    <div class="byline"><span>Your secret bonus for bringing a friend</span><span class="dot"></span><span>Free AI class, Tuesday Sept 29</span></div>
+  </header>
+
+  <section class="opener">
+    <div class="kick">Start here</div>
+    <h2>What's the one task you'd pay to never do again?</h2>
+    <p>Name it now, while it stings. This is the one you bring to class on Tuesday. The nine tools below handle the everyday stuff so you have room to think about the big one.</p>
+    <div class="row">
+      <input type="text" id="worstTask" placeholder="e.g. writing proposals, chasing payments, editing videos...">
+      <button class="btn btn-claude" id="lockBtn" type="button">Lock it in</button>
+    </div>
+    <div class="locked" id="lockedMsg"></div>
+  </section>
+
+  <div class="note">
+    <p>You signed up for the class because there's a task you dread. Good. <strong>That's the whole point.</strong></p>
+    <p>Here are the everyday ones most people quietly hate. Type your details into each, and it builds the finished prompt for you. Then one click drops it into Claude or ChatGPT, ready to run.</p>
+    <p>None of these are clever. They just work, and they take a minute instead of an hour.</p>
+    <p class="sign">Joe</p>
+  </div>
+
+  <div class="section-label">The nine tools</div>
+  <div id="cards"></div>
+
+  <div class="closing">
+    <p class="big">One task down. Bring the worst one Tuesday.</p>
+    <p>These handle the everyday work. The class is for the one that's been sitting on your list for months, the one you'd pay to never touch again. Bring it. We take it apart live, and you leave without it.</p>
+    <p class="sign">See you there. Joe</p>
+  </div>
+
+  <p class="footer">mastermindshq.business · Made for the people who came, and the ones they brought.</p>
+</div>
+
+<script>
+  const PROMPTS = [
+    {
+      t: "The inbox you've been avoiding",
+      w: "You open your email, feel the dread, and close it again.",
+      tpl: "You are my email assistant. Below is a batch of emails. For each one, tell me in one line what it's really asking for, how urgent it is (now / this week / whenever), and draft a short reply in my voice: warm, direct, no filler, no exclamation points. If an email needs a decision only I can make, flag it and ask me the one question you need.\n\nHere are the emails:\n{{emails}}",
+      fields: [{ k:"emails", label:"Paste your emails", token:"paste your emails here", multi:true }]
+    },
+    {
+      t: "The invoice they still haven't paid",
+      w: "Someone owes you money and you hate being the one to bring it up.",
+      tpl: "Write a short, friendly payment reminder for an overdue invoice. Keep it warm and human, not stiff or legal. One short paragraph. Assume good intent, make it easy to pay, give one clear next step.\n\nClient: {{client}}\nAmount: {{amount}}\nInvoice sent: {{sent}}\nWas due: {{due}}\nThey pay via: {{method}}",
+      fields: [
+        { k:"client", label:"Client name", token:"client name" },
+        { k:"amount", label:"Amount owed", token:"amount" },
+        { k:"sent", label:"Date invoice sent", token:"date" },
+        { k:"due", label:"Date it was due", token:"date" },
+        { k:"method", label:"How they pay", token:"payment link or method" }
+      ]
+    },
+    {
+      t: "The call you now have to write up",
+      w: "The call ended, and now you have to turn 40 minutes of talking into notes.",
+      deep: true,
+      tpl: "Turn this messy call into clean notes. Give me: a 3-line summary, the decisions we made, the action items with who owns each one and any dates mentioned, and anything left open that needs a follow-up. Keep it short and skimmable.\n\nTranscript or rough notes:\n{{transcript}}",
+      fields: [{ k:"transcript", label:"Paste the transcript or your rough notes", token:"paste transcript or notes", multi:true }],
+      ex: {
+        before: "so yeah maria wants the landing page done, she'll send logo files, i said probably next friday, oh and she's not sure about the pricing section, budget is around 2k she thinks, need to check with her partner, we said we'd hop on again after she talks to him...",
+        after: "Summary: Maria wants a landing page, budget ~$2k, pending partner sign-off. Draft target next Friday. Pricing section still undecided.\n\nDecisions: Proceed on the build, hold the pricing section for now.\n\nActions:\n- Maria: send logo files\n- Maria: confirm budget with her partner\n- Me: draft landing page by Fri\n- Both: follow-up call after partner talk\n\nOpen: pricing section direction."
+      }
+    },
+    {
+      t: "The follow-up you keep putting off",
+      w: "You met someone good, meant to follow up, and now it's been two weeks.",
+      tpl: "Write a short follow-up message to someone I met recently. Warm, specific, no pressure, and do not use \"just checking in\". Reference what we actually talked about and suggest one easy next step. Keep it to four sentences.\n\nContext (who they are, what we talked about, what I want next):\n{{context}}",
+      fields: [{ k:"context", label:"Who they are and what you want next", token:"who they are, what you talked about, what you want", multi:true }]
+    },
+    {
+      t: "The one idea you could post ten times",
+      w: "You have one good thought and no time to make content from it.",
+      deep: true,
+      tpl: "Here is one idea I care about:\n{{idea}}\n\nTurn it into a week of content: three short social posts, one longer post, and two one-line hooks. Keep my voice plain and human. Short common words, no jargon, no hype, no exclamation points. Each one should stand on its own.",
+      fields: [{ k:"idea", label:"Your idea, in a few sentences", token:"paste your idea", multi:true }],
+      ex: {
+        before: "most people think they need more clients. they actually need to stop doing the work that doesn't pay. i cut 3 services last year and made more money.",
+        after: "Hook: You don't need more clients. You need to fire the work that doesn't pay.\n\nPost: Last year I cut three services. I made more money. Turns out \"busy\" and \"paid\" are not the same thing...\n\nPost: The fastest raise I ever gave myself was a subtraction, not an addition.\n\n(+ 1 long post and a second hook, all in your voice)"
+      }
+    },
+    {
+      t: "The boring update nobody wants to write",
+      w: "A weekly report, a client update, a status email. Necessary. Dull.",
+      tpl: "Write a clear, short status update from these rough notes. Structure it as: what got done, what's next, and anything blocked or needing a decision. Plain language, no fluff, easy to skim in twenty seconds.\n\nNotes:\n{{notes}}",
+      fields: [{ k:"notes", label:"Your rough notes", token:"paste your notes", multi:true }]
+    },
+    {
+      t: "The email you're a little scared to send",
+      w: "You need to say no, push back, or set a boundary, and you keep rewriting it.",
+      tpl: "Help me reply to a difficult email. I need to {{goal}} without hurting the relationship. Keep it kind, honest, and short. Do not over-apologize or over-explain. Give me two versions, one softer and one firmer.\n\nHere is the email and what I want to say:\n{{email}}",
+      fields: [
+        { k:"goal", label:"What you need to do", token:"say no / push back / set a boundary", select:["say no","push back","set a boundary","ask for more time","raise my price"] },
+        { k:"email", label:"The email + what you want to say back", token:"paste the email and your intent", multi:true }
+      ]
+    },
+    {
+      t: "The week that runs you",
+      w: "Monday morning, and everything feels equally urgent.",
+      deep: true,
+      tpl: "Here is everything on my plate this week:\n{{dump}}\n\nHelp me sort it. Tell me the three things that actually move something forward, what can wait, what I can drop or hand off, and what I should do first today. Be honest with me, not encouraging.",
+      fields: [{ k:"dump", label:"Dump everything on your plate", token:"list it all here", multi:true }],
+      ex: {
+        before: "finish client proposal, reply to 40 emails, post on instagram, book flights, fix website bug, call accountant, plan next launch, buy mom's birthday gift, review contractor invoice, update the deck...",
+        after: "Move the needle (do these): 1) client proposal, 2) plan next launch, 3) call accountant.\n\nDo first today: the proposal, it's the only one with money attached.\n\nCan wait: instagram, deck, flights.\n\nDrop or hand off: email triage and the website bug (use prompt 1, and send the bug to a dev).\n\nDon't lose: mom's gift. Order it in 2 minutes now."
+      }
+    },
+    {
+      t: "The question you keep answering over and over",
+      w: "You type nearly the same reply for the fifth time this month.",
+      tpl: "I keep answering the same question. Here are a few times I've answered it:\n{{answers}}\n\nWrite me one clean, reusable answer I can save and tweak, plus a shorter one-line version. Keep it in my voice: warm, plain, and direct.",
+      fields: [{ k:"answers", label:"Paste 3-4 of your past answers", token:"paste past answers", multi:true }]
+    }
+  ];
+
+  const ICON = {
+    copy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>',
+    done: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>',
+    launch: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>',
+    tw: '<svg class="tw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>'
+  };
+
+  function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  // build the final prompt string from current field values
+  function assemble(item, vals){
+    return item.tpl.replace(/\{\{(\w+)\}\}/g, (_, k) => {
+      const v = (vals[k]||'').trim();
+      return v || ('[' + (item.fields.find(f=>f.k===k)||{}).token + ']');
+    });
+  }
+  // same but with placeholders highlighted for on-screen preview
+  function assembleHtml(item, vals){
+    return item.tpl.replace(/\{\{(\w+)\}\}/g, (_, k) => {
+      const v = (vals[k]||'').trim();
+      if (v) return esc(v);
+      return '<span class="ph">[' + esc((item.fields.find(f=>f.k===k)||{}).token) + ']</span>';
+    });
+  }
+
+  const host = document.getElementById('cards');
+
+  PROMPTS.forEach((item, i) => {
+    const vals = {};
+    const card = document.createElement('div');
+    card.className = 'card' + (item.deep ? ' deep' : '');
+
+    let fieldsHtml = '<div class="fieldset">';
+    item.fields.forEach(f => {
+      fieldsHtml += '<div><label class="fld">' + esc(f.label) + '</label>';
+      if (f.select) {
+        fieldsHtml += '<select data-k="' + f.k + '">' + f.select.map(o => '<option>' + esc(o) + '</option>').join('') + '</select>';
+        vals[f.k] = f.select[0];
+      } else if (f.multi) {
+        fieldsHtml += '<textarea data-k="' + f.k + '" placeholder="' + esc(f.token) + '"></textarea>';
+      } else {
+        fieldsHtml += '<input type="text" data-k="' + f.k + '" placeholder="' + esc(f.token) + '">';
+      }
+      fieldsHtml += '</div>';
+    });
+    fieldsHtml += '</div>';
+
+    let exHtml = '';
+    if (item.ex) {
+      exHtml =
+        '<details class="example"><summary>' + ICON.tw + 'See it work</summary>' +
+        '<div class="ex-grid">' +
+        '<div class="ex-box"><div class="lab">What you paste</div><pre>' + esc(item.ex.before) + '</pre></div>' +
+        '<div class="ex-box after"><div class="lab">What comes back</div><pre>' + esc(item.ex.after) + '</pre></div>' +
+        '</div></details>';
+    }
+
+    card.innerHTML =
+      '<div class="card-head"><div class="num">' + (i+1<10?'0':'') + (i+1) + '</div>' +
+        '<h3>' + esc(item.t) + (item.deep ? '<span class="badge-deep">worked example</span>' : '') + '</h3></div>' +
+      '<p class="when">' + esc(item.w) + '</p>' +
+      fieldsHtml +
+      '<div class="assembled"><div class="cap">Your finished prompt</div><pre></pre></div>' +
+      '<div class="actions">' +
+        '<button class="btn btn-copy" type="button">' + ICON.copy + '<span>Copy</span></button>' +
+        '<a class="btn btn-claude" target="_blank" rel="noopener">' + ICON.launch + 'Open in Claude</a>' +
+        '<a class="btn btn-gpt" target="_blank" rel="noopener">' + ICON.launch + 'Open in ChatGPT</a>' +
+      '</div>' +
+      exHtml;
+
+    const pre = card.querySelector('.assembled pre');
+    const copyBtn = card.querySelector('.btn-copy');
+    const claudeA = card.querySelector('.btn-claude');
+    const gptA = card.querySelector('.btn-gpt');
+
+    function refresh(){
+      pre.innerHTML = assembleHtml(item, vals);
+      const finished = assemble(item, vals);
+      const enc = encodeURIComponent(finished);
+      claudeA.href = 'https://claude.ai/new?q=' + enc;
+      gptA.href = 'https://chatgpt.com/?q=' + enc;
+    }
+
+    card.querySelectorAll('[data-k]').forEach(el => {
+      el.addEventListener('input', () => { vals[el.dataset.k] = el.value; refresh(); });
+      el.addEventListener('change', () => { vals[el.dataset.k] = el.value; refresh(); });
+    });
+
+    copyBtn.addEventListener('click', async () => {
+      const finished = assemble(item, vals);
+      try { await navigator.clipboard.writeText(finished); }
+      catch(e){ const ta=document.createElement('textarea'); ta.value=finished; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(_){} document.body.removeChild(ta); }
+      copyBtn.classList.add('done'); copyBtn.innerHTML = ICON.done + '<span>Copied</span>';
+      setTimeout(()=>{ copyBtn.classList.remove('done'); copyBtn.innerHTML = ICON.copy + '<span>Copy</span>'; }, 1700);
+    });
+
+    refresh();
+    host.appendChild(card);
+  });
+
+  // opener: name your worst task, remember it, tie to Tuesday
+  const worstInput = document.getElementById('worstTask');
+  const lockBtn = document.getElementById('lockBtn');
+  const lockedMsg = document.getElementById('lockedMsg');
+  try { const saved = localStorage.getItem('htpp_worst'); if (saved) { worstInput.value = saved; showLocked(saved); } } catch(e){}
+  function showLocked(task){
+    lockedMsg.innerHTML = 'Locked in: <b>' + esc(task) + '</b>.<br>Bring that one to class on Tuesday. We take it apart live, and you leave without it.';
+    lockedMsg.style.display = 'block';
+  }
+  lockBtn.addEventListener('click', () => {
+    const t = worstInput.value.trim();
+    if (!t) { worstInput.focus(); return; }
+    try { localStorage.setItem('htpp_worst', t); } catch(e){}
+    showLocked(t);
+  });
+  worstInput.addEventListener('keydown', e => { if (e.key === 'Enter') lockBtn.click(); });
+</script>
+</body>
+</html>
