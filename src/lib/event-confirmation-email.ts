@@ -303,13 +303,18 @@ export function buildConfirmationEmailHtml(event: EventDefinition, attendeeName:
         // No flexbox here. Gmail and Outlook strip `display:flex`, so the old
         // `gap:10px` never applied and the two buttons rendered touching.
         // Spacing has to live on the elements themselves via margin.
-        const calendarButtonStyle =
+        // Add to Google Calendar is the primary action, so it gets the same
+        // bold filled purple treatment as the Zoom join button. Download iCal
+        // stays a secondary outline button so the two do not compete.
+        const calendarPrimaryStyle =
+          'display:inline-block; background:#8B79D4; color:#ffffff; border: 1.5px solid #8B79D4; text-decoration:none; padding:14px 24px; border-radius:12px; font-size:16px; font-weight:700; white-space:nowrap; box-shadow:0 14px 32px rgba(139,121,212,0.24);'
+        const calendarSecondaryStyle =
           'display:inline-block; background: transparent; color: #8B79D4; border: 1.5px solid #8B79D4; text-decoration:none; padding:10px 18px; border-radius:10px; font-size:13px; font-weight:700; white-space:nowrap;'
         return `<div style="margin: 20px 0 24px;">
-          <a href="${googleUrl}" style="${calendarButtonStyle} margin: 0 16px 10px 0;">
+          <a href="${googleUrl}" style="${calendarPrimaryStyle} margin: 0 16px 10px 0;">
             Add to Google Calendar
           </a>
-          <a href="${icalUrl}" style="${calendarButtonStyle} margin: 0 0 10px 0;">
+          <a href="${icalUrl}" style="${calendarSecondaryStyle} margin: 0 0 10px 0;">
             Download iCal
           </a>
         </div>`
@@ -356,7 +361,7 @@ export function buildConfirmationEmailHtml(event: EventDefinition, attendeeName:
             Your seat is reserved.
           </h1>
           <p style="margin: 18px 0 0; font-size: 17px; line-height: 1.7; color: rgba(252,244,235,0.84);">
-            ${attendeeName ? `Hi ${attendeeName.split(' ')[0]},` : 'Hi,'} you are confirmed for <strong style="color:#ffffff;">${event.title}</strong>.
+            ${attendeeName ? `Hi ${attendeeName.split(' ')[0]},` : 'Hi,'} you are confirmed for <strong style="color:#ffffff;">${event.title.replace(/\.\s*$/, '')}</strong>.
           </p>
         </div>
 
