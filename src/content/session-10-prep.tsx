@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import ProTip from '@/components/ProTip'
 import { celebrate } from '@/lib/celebrate'
+import { CLAUDE_REFERRAL_URL } from '@/lib/claude-links'
 
 const ITEMS = [
   { id: 'gather', label: 'Gather your current messaging', required: true, anchor: '#gather' },
@@ -190,7 +191,7 @@ export default function Session10Prep() {
         >
           <p>Run the test once before the session so you have a clear before picture. You will run it again at the end of the series.</p>
           <ol className="list-decimal list-inside space-y-2">
-            <li>Open Claude at <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">claude.ai</a>.</li>
+            <li>Open Claude at <a href={CLAUDE_REFERRAL_URL} target="_blank" rel="noopener noreferrer" className="text-[#7C69C7] hover:underline">claude.ai</a>.</li>
             <li>Paste in your current messaging from Task 1.</li>
             <li>Send this prompt exactly:</li>
           </ol>
