@@ -17,9 +17,24 @@ test('specified examples, empty input, boundaries and rule priority', () => {
     ['use ai', 3], ['using ai', 3], ['ai recap', 3], ['ChatGPT', 3],
     ['Claude and APIs and AI', 6], ['AI with Cursor', 5], ['MAKE.COM', 6],
   ] as const) assert.equal(estimateAiLevel(text).level, level, String(text));
-  assert.equal(estimateAiLevel('opus').note, 'mentions Claude/Opus/Fable/Cursor/Codex or building agents');
+  assert.equal(estimateAiLevel('opus').note, 'mentions Claude/Opus/Fable/Sonnet/Cursor/Codex/Lovable/Bolt/Replit');
   assert.equal(estimateAiLevel('ai').note, 'mentions using AI tools already');
   assert.equal(estimateAiLevel(null).note, 'no signal in sign-up; default for free-class attendees');
+});
+
+test('general GPT and agent signals stay at level 3 while hands-on tools get level 5', () => {
+  for (const [text, level] of [
+    ['Using Chat GPT for brainstorming', 3],
+    ['Creating operating system and ai agent.', 3],
+    ['I use claude code extensively', 5],
+    ['explored other tools such as Lovable', 5],
+    ['chat-gpt', 3], ['gpt', 3], ['custom gpt', 3],
+    ['I want an AI agent', 3], ['agent', 3], ['agents', 3],
+    ['claude', 5], ['opus', 5], ['fable', 5], ['sonnet', 5],
+    ['cursor', 5], ['codex', 5], ['bolt', 5], ['replit', 5],
+    ['agents with Replit', 5], ['GPT with APIs', 6],
+    ['agentic', 1], ['bolted', 1],
+  ] as const) assert.equal(estimateAiLevel(text).level, level, String(text));
 });
 
 test('dry run paginates, filters, preserves self reports, prints and logs', async () => {
