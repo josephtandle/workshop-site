@@ -9,3 +9,6 @@ supabase/.temp/
 # understand-anything scratch (regenerated every index run)
 .understand-anything/intermediate/
 .understand-anything/tmp/
+
+# INCIDENTS.md 2026-07-24: hostile filenames in these jammed git-autocommit
+.understand-anything/.trash-*/
