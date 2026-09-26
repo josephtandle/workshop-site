@@ -1,0 +1,555 @@
+[
+  {
+    "batchIndex": 14,
+    "files": [
+      {
+        "path": ".claude/settings.json",
+        "language": "json",
+        "sizeLines": 17,
+        "fileCategory": "config"
+      },
+      {
+        "path": ".claude/skills/gitnexus/gitnexus-cli/SKILL.md",
+        "language": "markdown",
+        "sizeLines": 84,
+        "fileCategory": "docs"
+      },
+      {
+        "path": ".claude/skills/gitnexus/gitnexus-debugging/SKILL.md",
+        "language": "markdown",
+        "sizeLines": 90,
+        "fileCategory": "docs"
+      },
+      {
+        "path": ".claude/skills/gitnexus/gitnexus-exploring/SKILL.md",
+        "language": "markdown",
+        "sizeLines": 79,
+        "fileCategory": "docs"
+      },
+      {
+        "path": ".claude/skills/gitnexus/gitnexus-guide/SKILL.md",
+        "language": "markdown",
+        "sizeLines": 65,
+        "fileCategory": "docs"
+      },
+      {
+        "path": ".claude/skills/gitnexus/gitnexus-impact-analysis/SKILL.md",
+        "language": "markdown",
+        "sizeLines": 98,
+        "fileCategory": "docs"
+      },
+      {
+        "path": ".claude/skills/gitnexus/gitnexus-refactoring/SKILL.md",
+        "language": "markdown",
+        "sizeLines": 122,
+        "fileCategory": "docs"
+      },
+      {
+        "path": "docs/STRIPE-TRIAL-MECHANICS.md",
+        "language": "markdown",
+        "sizeLines": 47,
+        "fileCategory": "docs"
+      },
+      {
+        "path": "next-env.d.ts",
+        "language": "typescript",
+        "sizeLines": 7,
+        "fileCategory": "code"
+      },
+      {
+        "path": "next.config.ts",
+        "language": "typescript",
+        "sizeLines": 61,
+        "fileCategory": "code"
+      },
+      {
+        "path": "pdf/client-launch-checklist.html",
+        "language": "html",
+        "sizeLines": 306,
+        "fileCategory": "markup"
+      },
+      {
+        "path": "pdf/cross-cli-compatibility-routing-guide.html",
+        "language": "html",
+        "sizeLines": 583,
+        "fileCategory": "markup"
+      },
+      {
+        "path": "pdf/render-client-launch-checklist.js",
+        "language": "javascript",
+        "sizeLines": 50,
+        "fileCategory": "code"
+      },
+      {
+        "path": "pdf/render-cross-cli-compatibility-routing-guide.js",
+        "language": "javascript",
+        "sizeLines": 54,
+        "fileCategory": "code"
+      },
+      {
+        "path": "public/docs/jill-linkedin-cleanup-sop.md",
+        "language": "markdown",
+        "sizeLines": 58,
+        "fileCategory": "docs"
+      },
+      {
+        "path": "public/giveaways/cross-cli-compatibility-routing-prompt.md",
+        "language": "markdown",
+        "sizeLines": 210,
+        "fileCategory": "docs"
+      },
+      {
+        "path": "src/app/100-ai/page.tsx",
+        "language": "typescript",
+        "sizeLines": 317,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/ai-agent-income/AiAgentIncomeCheckoutForm.tsx",
+        "language": "typescript",
+        "sizeLines": 76,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/ai-agent-income/page.tsx",
+        "language": "typescript",
+        "sizeLines": 172,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/ai-os-architecture/page.tsx",
+        "language": "typescript",
+        "sizeLines": 15,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/api/events/[slug]/calendar/route.ts",
+        "language": "typescript",
+        "sizeLines": 39,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/api/events/abandoned-checkout-followups-t12h/route.ts",
+        "language": "typescript",
+        "sizeLines": 75,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/api/events/abandoned-checkout-followups/route.ts",
+        "language": "typescript",
+        "sizeLines": 75,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/api/events/cancel/route.ts",
+        "language": "typescript",
+        "sizeLines": 88,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/api/events/checkout-session/route.ts",
+        "language": "typescript",
+        "sizeLines": 355,
+        "fileCategory": "code"
+      }
+    ],
+    "batchImportData": {
+      ".claude/settings.json": [],
+      ".claude/skills/gitnexus/gitnexus-cli/SKILL.md": [],
+      ".claude/skills/gitnexus/gitnexus-debugging/SKILL.md": [],
+      ".claude/skills/gitnexus/gitnexus-exploring/SKILL.md": [],
+      ".claude/skills/gitnexus/gitnexus-guide/SKILL.md": [],
+      ".claude/skills/gitnexus/gitnexus-impact-analysis/SKILL.md": [],
+      ".claude/skills/gitnexus/gitnexus-refactoring/SKILL.md": [],
+      "docs/STRIPE-TRIAL-MECHANICS.md": [],
+      "next-env.d.ts": [],
+      "next.config.ts": [],
+      "pdf/client-launch-checklist.html": [],
+      "pdf/cross-cli-compatibility-routing-guide.html": [],
+      "pdf/render-client-launch-checklist.js": [],
+      "pdf/render-cross-cli-compatibility-routing-guide.js": [],
+      "public/docs/jill-linkedin-cleanup-sop.md": [],
+      "public/giveaways/cross-cli-compatibility-routing-prompt.md": [],
+      "src/app/100-ai/page.tsx": [],
+      "src/app/ai-agent-income/AiAgentIncomeCheckoutForm.tsx": [],
+      "src/app/ai-agent-income/page.tsx": [
+        "src/app/ai-agent-income/AiAgentIncomeCheckoutForm.tsx"
+      ],
+      "src/app/ai-os-architecture/page.tsx": [],
+      "src/app/api/events/[slug]/calendar/route.ts": [],
+      "src/app/api/events/abandoned-checkout-followups-t12h/route.ts": [],
+      "src/app/api/events/abandoned-checkout-followups/route.ts": [],
+      "src/app/api/events/cancel/route.ts": [],
+      "src/app/api/events/checkout-session/route.ts": []
+    },
+    "neighborMap": {}
+  },
+  {
+    "batchIndex": 15,
+    "files": [
+      {
+        "path": "src/app/api/events/finalize-registration/route.ts",
+        "language": "typescript",
+        "sizeLines": 90,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/api/events/followups/route.ts",
+        "language": "typescript",
+        "sizeLines": 81,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/api/events/location-reminders/route.ts",
+        "language": "typescript",
+        "sizeLines": 80,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/api/events/reconcile-registrations/route.ts",
+        "language": "typescript",
+        "sizeLines": 135,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/api/events/session-reminders/route.ts",
+        "language": "typescript",
+        "sizeLines": 71,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/api/events/validate-promo/route.ts",
+        "language": "typescript",
+        "sizeLines": 51,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/api/events/waitlist/join/route.ts",
+        "language": "typescript",
+        "sizeLines": 73,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/api/events/waitlist/notify/route.ts",
+        "language": "typescript",
+        "sizeLines": 120,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/api/events/waitlist/remove/route.ts",
+        "language": "typescript",
+        "sizeLines": 51,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/api/illy-auth/route.ts",
+        "language": "typescript",
+        "sizeLines": 51,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/api/jill-auth/route.ts",
+        "language": "typescript",
+        "sizeLines": 51,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/api/lead-magnet/route.ts",
+        "language": "typescript",
+        "sizeLines": 631,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/api/lead-magnets/claudemd/route 2.ts",
+        "language": "typescript",
+        "sizeLines": 231,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/api/lead-magnets/claudemd/route.ts",
+        "language": "typescript",
+        "sizeLines": 262,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/api/lead-magnets/passive-income-100/route.ts",
+        "language": "typescript",
+        "sizeLines": 161,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/api/stripe/webhook/route.ts",
+        "language": "typescript",
+        "sizeLines": 86,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/api/subscribe/route.ts",
+        "language": "typescript",
+        "sizeLines": 76,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/api/unsubscribe/route.ts",
+        "language": "typescript",
+        "sizeLines": 82,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/bonus-workshops/page.tsx",
+        "language": "typescript",
+        "sizeLines": 52,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/bonus/auto-lead-magnet/page.tsx",
+        "language": "typescript",
+        "sizeLines": 450,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/events/[slug]/page.tsx",
+        "language": "typescript",
+        "sizeLines": 76,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/events/[slug]/setup/page.tsx",
+        "language": "typescript",
+        "sizeLines": 140,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/events/page.tsx",
+        "language": "typescript",
+        "sizeLines": 107,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/giveaways/agent-infrastructure/layout.tsx",
+        "language": "typescript",
+        "sizeLines": 37,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/giveaways/agent-infrastructure/page.tsx",
+        "language": "typescript",
+        "sizeLines": 540,
+        "fileCategory": "code"
+      }
+    ],
+    "batchImportData": {
+      "src/app/api/events/finalize-registration/route.ts": [],
+      "src/app/api/events/followups/route.ts": [],
+      "src/app/api/events/location-reminders/route.ts": [],
+      "src/app/api/events/reconcile-registrations/route.ts": [],
+      "src/app/api/events/session-reminders/route.ts": [],
+      "src/app/api/events/validate-promo/route.ts": [],
+      "src/app/api/events/waitlist/join/route.ts": [],
+      "src/app/api/events/waitlist/notify/route.ts": [],
+      "src/app/api/events/waitlist/remove/route.ts": [],
+      "src/app/api/illy-auth/route.ts": [],
+      "src/app/api/jill-auth/route.ts": [],
+      "src/app/api/lead-magnet/route.ts": [],
+      "src/app/api/lead-magnets/claudemd/route 2.ts": [],
+      "src/app/api/lead-magnets/claudemd/route.ts": [],
+      "src/app/api/lead-magnets/passive-income-100/route.ts": [],
+      "src/app/api/stripe/webhook/route.ts": [],
+      "src/app/api/subscribe/route.ts": [],
+      "src/app/api/unsubscribe/route.ts": [],
+      "src/app/bonus-workshops/page.tsx": [],
+      "src/app/bonus/auto-lead-magnet/page.tsx": [],
+      "src/app/events/[slug]/page.tsx": [],
+      "src/app/events/[slug]/setup/page.tsx": [],
+      "src/app/events/page.tsx": [],
+      "src/app/giveaways/agent-infrastructure/layout.tsx": [],
+      "src/app/giveaways/agent-infrastructure/page.tsx": []
+    },
+    "neighborMap": {}
+  },
+  {
+    "batchIndex": 20,
+    "files": [
+      {
+        "path": "src/app/session/7/guide/page.tsx",
+        "language": "typescript",
+        "sizeLines": 56,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/session/7/prep/page 2.tsx",
+        "language": "typescript",
+        "sizeLines": 56,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/session/7/prep/page.tsx",
+        "language": "typescript",
+        "sizeLines": 56,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/session/8/guide/page.tsx",
+        "language": "typescript",
+        "sizeLines": 53,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/session/8/prep/page.tsx",
+        "language": "typescript",
+        "sizeLines": 53,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/session/9/guide/page.tsx",
+        "language": "typescript",
+        "sizeLines": 53,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/app/sitemap.ts",
+        "language": "typescript",
+        "sizeLines": 28,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/components/CodeBlock.tsx",
+        "language": "typescript",
+        "sizeLines": 158,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/components/events/ask-an-ai-expert-quotes.ts",
+        "language": "typescript",
+        "sizeLines": 311,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/components/events/AskAnAiExpertQuoteStrip.tsx",
+        "language": "typescript",
+        "sizeLines": 128,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/components/events/EventMediaVideo.tsx",
+        "language": "typescript",
+        "sizeLines": 63,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/components/events/EventPageView.tsx",
+        "language": "typescript",
+        "sizeLines": 662,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/components/events/EventRegistrationSection.tsx",
+        "language": "typescript",
+        "sizeLines": 876,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/components/events/HeroVideo.tsx",
+        "language": "typescript",
+        "sizeLines": 55,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/components/events/ScrollToRegisterButton.tsx",
+        "language": "typescript",
+        "sizeLines": 28,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/components/events/WaitlistJoinForm.tsx",
+        "language": "typescript",
+        "sizeLines": 142,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/components/PageParticles.tsx",
+        "language": "typescript",
+        "sizeLines": 111,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/components/ParticipantCarousel.tsx",
+        "language": "typescript",
+        "sizeLines": 167,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/components/PrepChecklistItem.tsx",
+        "language": "typescript",
+        "sizeLines": 66,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/components/ProTip.tsx",
+        "language": "typescript",
+        "sizeLines": 50,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/components/Reveal.tsx",
+        "language": "typescript",
+        "sizeLines": 41,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/components/ScreenshotCard.tsx",
+        "language": "typescript",
+        "sizeLines": 23,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/components/sections/MastermindReactionsSection.tsx",
+        "language": "typescript",
+        "sizeLines": 152,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/components/SessionCard.tsx",
+        "language": "typescript",
+        "sizeLines": 111,
+        "fileCategory": "code"
+      },
+      {
+        "path": "src/components/SiteChrome.tsx",
+        "language": "typescript",
+        "sizeLines": 41,
+        "fileCategory": "code"
+      }
+    ],
+    "batchImportData": {
+      "src/app/session/7/guide/page.tsx": [],
+      "src/app/session/7/prep/page 2.tsx": [],
+      "src/app/session/7/prep/page.tsx": [],
+      "src/app/session/8/guide/page.tsx": [],
+      "src/app/session/8/prep/page.tsx": [],
+      "src/app/session/9/guide/page.tsx": [],
+      "src/app/sitemap.ts": [],
+      "src/components/CodeBlock.tsx": [],
+      "src/components/events/ask-an-ai-expert-quotes.ts": [],
+      "src/components/events/AskAnAiExpertQuoteStrip.tsx": [
+        "src/components/events/ask-an-ai-expert-quotes.ts"
+      ],
+      "src/components/events/EventMediaVideo.tsx": [],
+      "src/components/events/EventPageView.tsx": [],
+      "src/components/events/EventRegistrationSection.tsx": [],
+      "src/components/events/HeroVideo.tsx": [],
+      "src/components/events/ScrollToRegisterButton.tsx": [],
+      "src/components/events/WaitlistJoinForm.tsx": [],
+      "src/components/PageParticles.tsx": [],
+      "src/components/ParticipantCarousel.tsx": [],
+      "src/components/PrepChecklistItem.tsx": [],
+      "src/components/ProTip.tsx": [],
+      "src/components/Reveal.tsx": [],
+      "src/components/ScreenshotCard.tsx": [],
+      "src/components/sections/MastermindReactionsSection.tsx": [],
+      "src/components/SessionCard.tsx": [],
+      "src/components/SiteChrome.tsx": []
+    },
+    "neighborMap": {}
+  }
+]

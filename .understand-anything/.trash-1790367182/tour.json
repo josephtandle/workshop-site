@@ -1,0 +1,88 @@
+[
+  {
+    "order": 1,
+    "title": "User-Facing Pages: Event Landing Pages & Giveaways",
+    "description": "Start here to understand the pages that attendees see. This step covers the main entry points for event registration and bonus resource distribution. You'll see how pages are structured and what data they display to users.",
+    "nodeIds": [
+      "file:giveaways-page.tsx"
+    ]
+  },
+  {
+    "order": 2,
+    "title": "Event Page Layout & Component Orchestration",
+    "description": "Dive into the complete event page structure. The EventPageView component orchestrates all the sections that make up an event landing page: hero, description, video, registration form, and more. This is where all the pieces come together for the user experience.",
+    "nodeIds": [
+      "file:EventPageView.tsx"
+    ]
+  },
+  {
+    "order": 3,
+    "title": "Registration Forms: Interactive User Input",
+    "description": "Explore the interactive components that collect user input. EventRegistrationSection handles the main registration form with Stripe checkout integration, intake fields, and promo codes. WaitlistJoinForm provides the simpler waitlist signup. GiveawayCopyEmailGate controls when the email capture modal appears after giveaway actions.",
+    "nodeIds": [
+      "file:EventRegistrationSection.tsx",
+      "file:WaitlistJoinForm.tsx",
+      "file:GiveawayCopyEmailGate.tsx"
+    ]
+  },
+  {
+    "order": 4,
+    "title": "Input Validation & Intake Processing",
+    "description": "Learn how form data is validated and processed. The event-intake module provides shared validation logic for WhatsApp numbers (E.164 normalization), business context questions, and other intake fields. This is the foundation for data quality before anything hits the database.",
+    "nodeIds": [
+      "file:event-intake.ts"
+    ]
+  },
+  {
+    "order": 5,
+    "title": "Payment Flow: Checkout & Stripe Integration",
+    "description": "Understand the payment pipeline. The checkout-session API route creates Stripe checkout sessions, handling both free and paid event paths. The event-checkout utility builds sessions with promo code resolution. The stripe webhook route finalizes payments and triggers downstream confirmations. Together, these handle the complete monetary transaction.",
+    "nodeIds": [
+      "file:event-checkout.ts",
+      "file:checkout-session-route.ts",
+      "file:stripe-webhook-route.ts"
+    ]
+  },
+  {
+    "order": 6,
+    "title": "Event Capacity & Seat Management",
+    "description": "See how event capacity is managed. The event-capacity module uses Supabase RPC calls to reserve seats and track availability. This prevents overbooking and ensures data consistency when multiple attendees register simultaneously.",
+    "nodeIds": [
+      "file:event-capacity.ts"
+    ]
+  },
+  {
+    "order": 7,
+    "title": "Database Layer: Registrations, Intake & Waitlist",
+    "description": "Explore the core database operations. The event-registration-db module handles all database interactions: saving registrations, managing intake form answers, checking for duplicates, cancelling bookings, and managing the waitlist. This is the source of truth for all attendee data.",
+    "nodeIds": [
+      "file:event-registration-db.ts"
+    ]
+  },
+  {
+    "order": 8,
+    "title": "Communications: Email Templates & Reminders",
+    "description": "Understand how attendees stay informed. The event-confirmation-email module builds and sends HTML emails for confirmations, waitlist joins, and location reminders. It includes event details, calendar buttons, and cancellation links. This keeps attendees engaged from signup through event day.",
+    "nodeIds": [
+      "file:event-confirmation-email.ts"
+    ]
+  },
+  {
+    "order": 9,
+    "title": "Integrations: Calendar & External Services",
+    "description": "See how the system integrates with external platforms. The google-calendar-invite module adds registrants to a shared Google Calendar event. The calendar API route generates iCal files for calendar imports. These integrations help attendees add events to their calendars seamlessly.",
+    "nodeIds": [
+      "file:google-calendar-invite.ts",
+      "file:calendar-route.ts"
+    ]
+  },
+  {
+    "order": 10,
+    "title": "Utilities & Infrastructure: Rate Limiting & Timeout Protection",
+    "description": "Learn about the safety mechanisms that protect the system. The rate-limit module prevents abuse with sliding-window limits. The with-timeout utility protects database calls from hanging indefinitely. These small but critical utilities make the system more reliable and resilient.",
+    "nodeIds": [
+      "file:rate-limit.ts",
+      "file:with-timeout.ts"
+    ]
+  }
+]

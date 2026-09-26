@@ -1,0 +1,3703 @@
+{
+  "batch": 20,
+  "totalFiles": 25,
+  "generatedAt": "2026-09-25T20:11:55.306Z",
+  "analysisType": "comprehensive-batch-analysis",
+  "nodes": [
+    {
+      "id": "file-1",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/session/7/guide/page.tsx",
+      "summary": "page with 1 functions, 0 types/interfaces, 0 classes",
+      "tags": [
+        "page",
+        "typescript"
+      ],
+      "complexity": "low",
+      "properties": {
+        "lines": 56,
+        "imports": 2,
+        "functions": 1,
+        "interfaces": 0,
+        "classes": 0
+      }
+    },
+    {
+      "id": "file-1-func-Session7GuidePage",
+      "type": "function",
+      "name": "Session7GuidePage",
+      "filePath": "src/app/session/7/guide/page.tsx",
+      "summary": "Function Session7GuidePage",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-2",
+      "type": "file",
+      "name": "page 2.tsx",
+      "filePath": "src/app/session/7/prep/page 2.tsx",
+      "summary": "component with 1 functions, 0 types/interfaces, 0 classes",
+      "tags": [
+        "component",
+        "typescript"
+      ],
+      "complexity": "low",
+      "properties": {
+        "lines": 56,
+        "imports": 2,
+        "functions": 1,
+        "interfaces": 0,
+        "classes": 0
+      }
+    },
+    {
+      "id": "file-2-func-Session7PrepPage",
+      "type": "function",
+      "name": "Session7PrepPage",
+      "filePath": "src/app/session/7/prep/page 2.tsx",
+      "summary": "Function Session7PrepPage",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-3",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/session/7/prep/page.tsx",
+      "summary": "page with 1 functions, 0 types/interfaces, 0 classes",
+      "tags": [
+        "page",
+        "typescript"
+      ],
+      "complexity": "low",
+      "properties": {
+        "lines": 56,
+        "imports": 2,
+        "functions": 1,
+        "interfaces": 0,
+        "classes": 0
+      }
+    },
+    {
+      "id": "file-3-func-Session7PrepPage",
+      "type": "function",
+      "name": "Session7PrepPage",
+      "filePath": "src/app/session/7/prep/page.tsx",
+      "summary": "Function Session7PrepPage",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-4",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/session/8/guide/page.tsx",
+      "summary": "page with 1 functions, 0 types/interfaces, 0 classes",
+      "tags": [
+        "page",
+        "typescript"
+      ],
+      "complexity": "low",
+      "properties": {
+        "lines": 53,
+        "imports": 2,
+        "functions": 1,
+        "interfaces": 0,
+        "classes": 0
+      }
+    },
+    {
+      "id": "file-4-func-Session8GuidePage",
+      "type": "function",
+      "name": "Session8GuidePage",
+      "filePath": "src/app/session/8/guide/page.tsx",
+      "summary": "Function Session8GuidePage",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-5",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/session/8/prep/page.tsx",
+      "summary": "page with 1 functions, 0 types/interfaces, 0 classes",
+      "tags": [
+        "page",
+        "typescript"
+      ],
+      "complexity": "low",
+      "properties": {
+        "lines": 53,
+        "imports": 2,
+        "functions": 1,
+        "interfaces": 0,
+        "classes": 0
+      }
+    },
+    {
+      "id": "file-5-func-Session8PrepPage",
+      "type": "function",
+      "name": "Session8PrepPage",
+      "filePath": "src/app/session/8/prep/page.tsx",
+      "summary": "Function Session8PrepPage",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-6",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "src/app/session/9/guide/page.tsx",
+      "summary": "page with 1 functions, 0 types/interfaces, 0 classes",
+      "tags": [
+        "page",
+        "typescript"
+      ],
+      "complexity": "low",
+      "properties": {
+        "lines": 53,
+        "imports": 2,
+        "functions": 1,
+        "interfaces": 0,
+        "classes": 0
+      }
+    },
+    {
+      "id": "file-6-func-Session9GuidePage",
+      "type": "function",
+      "name": "Session9GuidePage",
+      "filePath": "src/app/session/9/guide/page.tsx",
+      "summary": "Function Session9GuidePage",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-7",
+      "type": "file",
+      "name": "sitemap.ts",
+      "filePath": "src/app/sitemap.ts",
+      "summary": "module with 1 functions, 0 types/interfaces, 0 classes",
+      "tags": [
+        "module",
+        "typescript"
+      ],
+      "complexity": "low",
+      "properties": {
+        "lines": 28,
+        "imports": 0,
+        "functions": 1,
+        "interfaces": 0,
+        "classes": 0
+      }
+    },
+    {
+      "id": "file-7-func-sitemap",
+      "type": "function",
+      "name": "sitemap",
+      "filePath": "src/app/sitemap.ts",
+      "summary": "Function sitemap",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-8",
+      "type": "file",
+      "name": "CodeBlock.tsx",
+      "filePath": "src/components/CodeBlock.tsx",
+      "summary": "component with 9 functions, 2 types/interfaces, 0 classes",
+      "tags": [
+        "component",
+        "typescript"
+      ],
+      "complexity": "low",
+      "properties": {
+        "lines": 158,
+        "imports": 2,
+        "functions": 9,
+        "interfaces": 2,
+        "classes": 0
+      }
+    },
+    {
+      "id": "file-8-func-toCodexPrompt",
+      "type": "function",
+      "name": "toCodexPrompt",
+      "filePath": "src/components/CodeBlock.tsx",
+      "summary": "Function toCodexPrompt",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-8-func-MagneticCopyButton",
+      "type": "function",
+      "name": "MagneticCopyButton",
+      "filePath": "src/components/CodeBlock.tsx",
+      "summary": "Function MagneticCopyButton",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-8-func-handleMouseMove",
+      "type": "function",
+      "name": "handleMouseMove",
+      "filePath": "src/components/CodeBlock.tsx",
+      "summary": "Function handleMouseMove",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-8-func-x",
+      "type": "function",
+      "name": "x",
+      "filePath": "src/components/CodeBlock.tsx",
+      "summary": "Function x",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-8-func-y",
+      "type": "function",
+      "name": "y",
+      "filePath": "src/components/CodeBlock.tsx",
+      "summary": "Function y",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-8-func-handleMouseLeave",
+      "type": "function",
+      "name": "handleMouseLeave",
+      "filePath": "src/components/CodeBlock.tsx",
+      "summary": "Function handleMouseLeave",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-8-func-CodeBlock",
+      "type": "function",
+      "name": "CodeBlock",
+      "filePath": "src/components/CodeBlock.tsx",
+      "summary": "Function CodeBlock",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-8-func-handleCopy",
+      "type": "function",
+      "name": "handleCopy",
+      "filePath": "src/components/CodeBlock.tsx",
+      "summary": "Function handleCopy",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-8-func-handleCodexCopy",
+      "type": "function",
+      "name": "handleCodexCopy",
+      "filePath": "src/components/CodeBlock.tsx",
+      "summary": "Function handleCodexCopy",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-8-type-CodeBlockProps",
+      "type": "interface",
+      "name": "CodeBlockProps",
+      "filePath": "src/components/CodeBlock.tsx",
+      "summary": "Type/Interface CodeBlockProps",
+      "tags": [
+        "type",
+        "interface"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-8-type-MagneticCopyButtonProps",
+      "type": "interface",
+      "name": "MagneticCopyButtonProps",
+      "filePath": "src/components/CodeBlock.tsx",
+      "summary": "Type/Interface MagneticCopyButtonProps",
+      "tags": [
+        "type",
+        "interface"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-9",
+      "type": "file",
+      "name": "ask-an-ai-expert-quotes.ts",
+      "filePath": "src/components/events/ask-an-ai-expert-quotes.ts",
+      "summary": "component with 0 functions, 1 types/interfaces, 1 classes",
+      "tags": [
+        "component",
+        "typescript"
+      ],
+      "complexity": "medium",
+      "properties": {
+        "lines": 311,
+        "imports": 0,
+        "functions": 0,
+        "interfaces": 1,
+        "classes": 1
+      }
+    },
+    {
+      "id": "file-9-type-AskAnAiExpertQuote",
+      "type": "interface",
+      "name": "AskAnAiExpertQuote",
+      "filePath": "src/components/events/ask-an-ai-expert-quotes.ts",
+      "summary": "Type/Interface AskAnAiExpertQuote",
+      "tags": [
+        "type",
+        "interface"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-9-class-and",
+      "type": "class",
+      "name": "and",
+      "filePath": "src/components/events/ask-an-ai-expert-quotes.ts",
+      "summary": "Class and",
+      "tags": [
+        "class"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-10",
+      "type": "file",
+      "name": "AskAnAiExpertQuoteStrip.tsx",
+      "filePath": "src/components/events/AskAnAiExpertQuoteStrip.tsx",
+      "summary": "component with 2 functions, 0 types/interfaces, 0 classes",
+      "tags": [
+        "component",
+        "typescript"
+      ],
+      "complexity": "low",
+      "properties": {
+        "lines": 128,
+        "imports": 2,
+        "functions": 2,
+        "interfaces": 0,
+        "classes": 0
+      }
+    },
+    {
+      "id": "file-10-func-AskAnAiExpertQuoteStrip",
+      "type": "function",
+      "name": "AskAnAiExpertQuoteStrip",
+      "filePath": "src/components/events/AskAnAiExpertQuoteStrip.tsx",
+      "summary": "Function AskAnAiExpertQuoteStrip",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-10-func-scroll",
+      "type": "function",
+      "name": "scroll",
+      "filePath": "src/components/events/AskAnAiExpertQuoteStrip.tsx",
+      "summary": "Function scroll",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-11",
+      "type": "file",
+      "name": "EventMediaVideo.tsx",
+      "filePath": "src/components/events/EventMediaVideo.tsx",
+      "summary": "component with 6 functions, 1 types/interfaces, 0 classes",
+      "tags": [
+        "component",
+        "typescript"
+      ],
+      "complexity": "low",
+      "properties": {
+        "lines": 63,
+        "imports": 1,
+        "functions": 6,
+        "interfaces": 1,
+        "classes": 0
+      }
+    },
+    {
+      "id": "file-11-func-EventMediaVideo",
+      "type": "function",
+      "name": "EventMediaVideo",
+      "filePath": "src/components/events/EventMediaVideo.tsx",
+      "summary": "Function EventMediaVideo",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-11-func-activateThisVideo",
+      "type": "function",
+      "name": "activateThisVideo",
+      "filePath": "src/components/events/EventMediaVideo.tsx",
+      "summary": "Function activateThisVideo",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-11-func-handleActiveVideo",
+      "type": "function",
+      "name": "handleActiveVideo",
+      "filePath": "src/components/events/EventMediaVideo.tsx",
+      "summary": "Function handleActiveVideo",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-11-func-activeId",
+      "type": "function",
+      "name": "activeId",
+      "filePath": "src/components/events/EventMediaVideo.tsx",
+      "summary": "Function activeId",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-11-func-handleVolumeChange",
+      "type": "function",
+      "name": "handleVolumeChange",
+      "filePath": "src/components/events/EventMediaVideo.tsx",
+      "summary": "Function handleVolumeChange",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-11-func-handlePlay",
+      "type": "function",
+      "name": "handlePlay",
+      "filePath": "src/components/events/EventMediaVideo.tsx",
+      "summary": "Function handlePlay",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-11-type-Props",
+      "type": "interface",
+      "name": "Props",
+      "filePath": "src/components/events/EventMediaVideo.tsx",
+      "summary": "Type/Interface Props",
+      "tags": [
+        "type",
+        "interface"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-12",
+      "type": "file",
+      "name": "EventPageView.tsx",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "component with 19 functions, 0 types/interfaces, 0 classes",
+      "tags": [
+        "component",
+        "typescript"
+      ],
+      "complexity": "high",
+      "properties": {
+        "lines": 663,
+        "imports": 11,
+        "functions": 19,
+        "interfaces": 0,
+        "classes": 0
+      }
+    },
+    {
+      "id": "file-12-func-sectionTitleClass",
+      "type": "function",
+      "name": "sectionTitleClass",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Function sectionTitleClass",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-12-func-sectionEyebrowClass",
+      "type": "function",
+      "name": "sectionEyebrowClass",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Function sectionEyebrowClass",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-12-func-SectionShell",
+      "type": "function",
+      "name": "SectionShell",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Function SectionShell",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-12-func-RichParagraphs",
+      "type": "function",
+      "name": "RichParagraphs",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Function RichParagraphs",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-12-func-StorySection",
+      "type": "function",
+      "name": "StorySection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Function StorySection",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-12-func-ChecklistSection",
+      "type": "function",
+      "name": "ChecklistSection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Function ChecklistSection",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-12-func-CardsSection",
+      "type": "function",
+      "name": "CardsSection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Function CardsSection",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-12-func-SplitSection",
+      "type": "function",
+      "name": "SplitSection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Function SplitSection",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-12-func-ImageSection",
+      "type": "function",
+      "name": "ImageSection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Function ImageSection",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-12-func-HtmlSection",
+      "type": "function",
+      "name": "HtmlSection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Function HtmlSection",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-12-func-QuoteCardSection",
+      "type": "function",
+      "name": "QuoteCardSection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Function QuoteCardSection",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-12-func-renderMedia",
+      "type": "function",
+      "name": "renderMedia",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Function renderMedia",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-12-func-HostsSection",
+      "type": "function",
+      "name": "HostsSection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Function HostsSection",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-12-func-EventVideoSection",
+      "type": "function",
+      "name": "EventVideoSection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Function EventVideoSection",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-12-func-EndedButton",
+      "type": "function",
+      "name": "EndedButton",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Function EndedButton",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-12-func-CtaSection",
+      "type": "function",
+      "name": "CtaSection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Function CtaSection",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-12-func-renderSection",
+      "type": "function",
+      "name": "renderSection",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Function renderSection",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-12-func-EventPageView",
+      "type": "function",
+      "name": "EventPageView",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Function EventPageView",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-12-func-hasSetupItems",
+      "type": "function",
+      "name": "hasSetupItems",
+      "filePath": "src/components/events/EventPageView.tsx",
+      "summary": "Function hasSetupItems",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-13",
+      "type": "file",
+      "name": "EventRegistrationSection.tsx",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "summary": "component with 9 functions, 4 types/interfaces, 0 classes",
+      "tags": [
+        "component",
+        "typescript"
+      ],
+      "complexity": "high",
+      "properties": {
+        "lines": 907,
+        "imports": 8,
+        "functions": 9,
+        "interfaces": 4,
+        "classes": 0
+      }
+    },
+    {
+      "id": "file-13-func-useAnimatedNumber",
+      "type": "function",
+      "name": "useAnimatedNumber",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "summary": "Function useAnimatedNumber",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-13-func-step",
+      "type": "function",
+      "name": "step",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "summary": "Function step",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-13-func-EventRegistrationSection",
+      "type": "function",
+      "name": "EventRegistrationSection",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "summary": "Function EventRegistrationSection",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-13-func-markSuccess",
+      "type": "function",
+      "name": "markSuccess",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "summary": "Function markSuccess",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-13-func-finalizeRegistration",
+      "type": "function",
+      "name": "finalizeRegistration",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "summary": "Function finalizeRegistration",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-13-func-openCheckout",
+      "type": "function",
+      "name": "openCheckout",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "summary": "Function openCheckout",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-13-func-openHostedFallback",
+      "type": "function",
+      "name": "openHostedFallback",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "summary": "Function openHostedFallback",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-13-func-handleApplyPromo",
+      "type": "function",
+      "name": "handleApplyPromo",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "summary": "Function handleApplyPromo",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-13-func-handleSubmit",
+      "type": "function",
+      "name": "handleSubmit",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "summary": "Function handleSubmit",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-13-type-EventRegistrationData",
+      "type": "interface",
+      "name": "EventRegistrationData",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "summary": "Type/Interface EventRegistrationData",
+      "tags": [
+        "type",
+        "interface"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-13-type-Props",
+      "type": "interface",
+      "name": "Props",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "summary": "Type/Interface Props",
+      "tags": [
+        "type",
+        "interface"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-13-type-SuccessState",
+      "type": "interface",
+      "name": "SuccessState",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "summary": "Type/Interface SuccessState",
+      "tags": [
+        "type",
+        "interface"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-13-type-CheckoutMode",
+      "type": "interface",
+      "name": "CheckoutMode",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "summary": "Type/Interface CheckoutMode",
+      "tags": [
+        "type",
+        "interface"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-14",
+      "type": "file",
+      "name": "HeroVideo.tsx",
+      "filePath": "src/components/events/HeroVideo.tsx",
+      "summary": "component with 2 functions, 1 types/interfaces, 0 classes",
+      "tags": [
+        "component",
+        "typescript"
+      ],
+      "complexity": "low",
+      "properties": {
+        "lines": 55,
+        "imports": 2,
+        "functions": 2,
+        "interfaces": 1,
+        "classes": 0
+      }
+    },
+    {
+      "id": "file-14-func-HeroVideo",
+      "type": "function",
+      "name": "HeroVideo",
+      "filePath": "src/components/events/HeroVideo.tsx",
+      "summary": "Function HeroVideo",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-14-func-handlePlayClick",
+      "type": "function",
+      "name": "handlePlayClick",
+      "filePath": "src/components/events/HeroVideo.tsx",
+      "summary": "Function handlePlayClick",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-14-type-Props",
+      "type": "interface",
+      "name": "Props",
+      "filePath": "src/components/events/HeroVideo.tsx",
+      "summary": "Type/Interface Props",
+      "tags": [
+        "type",
+        "interface"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-15",
+      "type": "file",
+      "name": "ScrollToRegisterButton.tsx",
+      "filePath": "src/components/events/ScrollToRegisterButton.tsx",
+      "summary": "component with 2 functions, 1 types/interfaces, 0 classes",
+      "tags": [
+        "component",
+        "typescript"
+      ],
+      "complexity": "low",
+      "properties": {
+        "lines": 28,
+        "imports": 0,
+        "functions": 2,
+        "interfaces": 1,
+        "classes": 0
+      }
+    },
+    {
+      "id": "file-15-func-ScrollToRegisterButton",
+      "type": "function",
+      "name": "ScrollToRegisterButton",
+      "filePath": "src/components/events/ScrollToRegisterButton.tsx",
+      "summary": "Function ScrollToRegisterButton",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-15-func-handleClick",
+      "type": "function",
+      "name": "handleClick",
+      "filePath": "src/components/events/ScrollToRegisterButton.tsx",
+      "summary": "Function handleClick",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-15-type-Props",
+      "type": "interface",
+      "name": "Props",
+      "filePath": "src/components/events/ScrollToRegisterButton.tsx",
+      "summary": "Type/Interface Props",
+      "tags": [
+        "type",
+        "interface"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-16",
+      "type": "file",
+      "name": "WaitlistJoinForm.tsx",
+      "filePath": "src/components/events/WaitlistJoinForm.tsx",
+      "summary": "component with 2 functions, 1 types/interfaces, 0 classes",
+      "tags": [
+        "component",
+        "typescript"
+      ],
+      "complexity": "low",
+      "properties": {
+        "lines": 144,
+        "imports": 2,
+        "functions": 2,
+        "interfaces": 1,
+        "classes": 0
+      }
+    },
+    {
+      "id": "file-16-func-WaitlistJoinForm",
+      "type": "function",
+      "name": "WaitlistJoinForm",
+      "filePath": "src/components/events/WaitlistJoinForm.tsx",
+      "summary": "Function WaitlistJoinForm",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-16-func-handleSubmit",
+      "type": "function",
+      "name": "handleSubmit",
+      "filePath": "src/components/events/WaitlistJoinForm.tsx",
+      "summary": "Function handleSubmit",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-16-type-Props",
+      "type": "interface",
+      "name": "Props",
+      "filePath": "src/components/events/WaitlistJoinForm.tsx",
+      "summary": "Type/Interface Props",
+      "tags": [
+        "type",
+        "interface"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-17",
+      "type": "file",
+      "name": "PageParticles.tsx",
+      "filePath": "src/components/PageParticles.tsx",
+      "summary": "component with 5 functions, 1 types/interfaces, 0 classes",
+      "tags": [
+        "component",
+        "typescript"
+      ],
+      "complexity": "low",
+      "properties": {
+        "lines": 111,
+        "imports": 1,
+        "functions": 5,
+        "interfaces": 1,
+        "classes": 0
+      }
+    },
+    {
+      "id": "file-17-func-PageParticles",
+      "type": "function",
+      "name": "PageParticles",
+      "filePath": "src/components/PageParticles.tsx",
+      "summary": "Function PageParticles",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-17-func-resize",
+      "type": "function",
+      "name": "resize",
+      "filePath": "src/components/PageParticles.tsx",
+      "summary": "Function resize",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-17-func-onMouseMove",
+      "type": "function",
+      "name": "onMouseMove",
+      "filePath": "src/components/PageParticles.tsx",
+      "summary": "Function onMouseMove",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-17-func-draw",
+      "type": "function",
+      "name": "draw",
+      "filePath": "src/components/PageParticles.tsx",
+      "summary": "Function draw",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-17-func-strength",
+      "type": "function",
+      "name": "strength",
+      "filePath": "src/components/PageParticles.tsx",
+      "summary": "Function strength",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-17-type-Particle",
+      "type": "interface",
+      "name": "Particle",
+      "filePath": "src/components/PageParticles.tsx",
+      "summary": "Type/Interface Particle",
+      "tags": [
+        "type",
+        "interface"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-18",
+      "type": "file",
+      "name": "ParticipantCarousel.tsx",
+      "filePath": "src/components/ParticipantCarousel.tsx",
+      "summary": "component with 2 functions, 1 types/interfaces, 0 classes",
+      "tags": [
+        "component",
+        "typescript"
+      ],
+      "complexity": "low",
+      "properties": {
+        "lines": 167,
+        "imports": 1,
+        "functions": 2,
+        "interfaces": 1,
+        "classes": 0
+      }
+    },
+    {
+      "id": "file-18-func-Avatar",
+      "type": "function",
+      "name": "Avatar",
+      "filePath": "src/components/ParticipantCarousel.tsx",
+      "summary": "Function Avatar",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-18-func-ParticipantCarousel",
+      "type": "function",
+      "name": "ParticipantCarousel",
+      "filePath": "src/components/ParticipantCarousel.tsx",
+      "summary": "Function ParticipantCarousel",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-18-type-Participant",
+      "type": "interface",
+      "name": "Participant",
+      "filePath": "src/components/ParticipantCarousel.tsx",
+      "summary": "Type/Interface Participant",
+      "tags": [
+        "type",
+        "interface"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-19",
+      "type": "file",
+      "name": "PrepChecklistItem.tsx",
+      "filePath": "src/components/PrepChecklistItem.tsx",
+      "summary": "component with 1 functions, 1 types/interfaces, 0 classes",
+      "tags": [
+        "component",
+        "typescript"
+      ],
+      "complexity": "low",
+      "properties": {
+        "lines": 66,
+        "imports": 1,
+        "functions": 1,
+        "interfaces": 1,
+        "classes": 0
+      }
+    },
+    {
+      "id": "file-19-func-PrepChecklistItem",
+      "type": "function",
+      "name": "PrepChecklistItem",
+      "filePath": "src/components/PrepChecklistItem.tsx",
+      "summary": "Function PrepChecklistItem",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-19-type-PrepChecklistItemProps",
+      "type": "interface",
+      "name": "PrepChecklistItemProps",
+      "filePath": "src/components/PrepChecklistItem.tsx",
+      "summary": "Type/Interface PrepChecklistItemProps",
+      "tags": [
+        "type",
+        "interface"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-20",
+      "type": "file",
+      "name": "ProTip.tsx",
+      "filePath": "src/components/ProTip.tsx",
+      "summary": "component with 1 functions, 2 types/interfaces, 0 classes",
+      "tags": [
+        "component",
+        "typescript"
+      ],
+      "complexity": "low",
+      "properties": {
+        "lines": 50,
+        "imports": 1,
+        "functions": 1,
+        "interfaces": 2,
+        "classes": 0
+      }
+    },
+    {
+      "id": "file-20-func-ProTip",
+      "type": "function",
+      "name": "ProTip",
+      "filePath": "src/components/ProTip.tsx",
+      "summary": "Function ProTip",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-20-type-TipType",
+      "type": "interface",
+      "name": "TipType",
+      "filePath": "src/components/ProTip.tsx",
+      "summary": "Type/Interface TipType",
+      "tags": [
+        "type",
+        "interface"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-20-type-ProTipProps",
+      "type": "interface",
+      "name": "ProTipProps",
+      "filePath": "src/components/ProTip.tsx",
+      "summary": "Type/Interface ProTipProps",
+      "tags": [
+        "type",
+        "interface"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-21",
+      "type": "file",
+      "name": "Reveal.tsx",
+      "filePath": "src/components/Reveal.tsx",
+      "summary": "component with 1 functions, 1 types/interfaces, 0 classes",
+      "tags": [
+        "component",
+        "typescript"
+      ],
+      "complexity": "low",
+      "properties": {
+        "lines": 41,
+        "imports": 2,
+        "functions": 1,
+        "interfaces": 1,
+        "classes": 0
+      }
+    },
+    {
+      "id": "file-21-func-Reveal",
+      "type": "function",
+      "name": "Reveal",
+      "filePath": "src/components/Reveal.tsx",
+      "summary": "Function Reveal",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-21-type-RevealProps",
+      "type": "interface",
+      "name": "RevealProps",
+      "filePath": "src/components/Reveal.tsx",
+      "summary": "Type/Interface RevealProps",
+      "tags": [
+        "type",
+        "interface"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-22",
+      "type": "file",
+      "name": "ScreenshotCard.tsx",
+      "filePath": "src/components/ScreenshotCard.tsx",
+      "summary": "component with 1 functions, 1 types/interfaces, 0 classes",
+      "tags": [
+        "component",
+        "typescript"
+      ],
+      "complexity": "low",
+      "properties": {
+        "lines": 23,
+        "imports": 0,
+        "functions": 1,
+        "interfaces": 1,
+        "classes": 0
+      }
+    },
+    {
+      "id": "file-22-func-ScreenshotCard",
+      "type": "function",
+      "name": "ScreenshotCard",
+      "filePath": "src/components/ScreenshotCard.tsx",
+      "summary": "Function ScreenshotCard",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-22-type-ScreenshotCardProps",
+      "type": "interface",
+      "name": "ScreenshotCardProps",
+      "filePath": "src/components/ScreenshotCard.tsx",
+      "summary": "Type/Interface ScreenshotCardProps",
+      "tags": [
+        "type",
+        "interface"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-23",
+      "type": "file",
+      "name": "MastermindReactionsSection.tsx",
+      "filePath": "src/components/sections/MastermindReactionsSection.tsx",
+      "summary": "component with 2 functions, 0 types/interfaces, 1 classes",
+      "tags": [
+        "component",
+        "typescript"
+      ],
+      "complexity": "low",
+      "properties": {
+        "lines": 152,
+        "imports": 2,
+        "functions": 2,
+        "interfaces": 0,
+        "classes": 1
+      }
+    },
+    {
+      "id": "file-23-func-MastermindReactionsSection",
+      "type": "function",
+      "name": "MastermindReactionsSection",
+      "filePath": "src/components/sections/MastermindReactionsSection.tsx",
+      "summary": "Function MastermindReactionsSection",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-23-func-scroll",
+      "type": "function",
+      "name": "scroll",
+      "filePath": "src/components/sections/MastermindReactionsSection.tsx",
+      "summary": "Function scroll",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-23-class-and",
+      "type": "class",
+      "name": "and",
+      "filePath": "src/components/sections/MastermindReactionsSection.tsx",
+      "summary": "Class and",
+      "tags": [
+        "class"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-24",
+      "type": "file",
+      "name": "SessionCard.tsx",
+      "filePath": "src/components/SessionCard.tsx",
+      "summary": "component with 2 functions, 1 types/interfaces, 0 classes",
+      "tags": [
+        "component",
+        "typescript"
+      ],
+      "complexity": "low",
+      "properties": {
+        "lines": 111,
+        "imports": 1,
+        "functions": 2,
+        "interfaces": 1,
+        "classes": 0
+      }
+    },
+    {
+      "id": "file-24-func-SessionCard",
+      "type": "function",
+      "name": "SessionCard",
+      "filePath": "src/components/SessionCard.tsx",
+      "summary": "Function SessionCard",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-24-func-inner",
+      "type": "function",
+      "name": "inner",
+      "filePath": "src/components/SessionCard.tsx",
+      "summary": "Function inner",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-24-type-SessionCardProps",
+      "type": "interface",
+      "name": "SessionCardProps",
+      "filePath": "src/components/SessionCard.tsx",
+      "summary": "Type/Interface SessionCardProps",
+      "tags": [
+        "type",
+        "interface"
+      ],
+      "complexity": "unknown"
+    },
+    {
+      "id": "file-25",
+      "type": "file",
+      "name": "SiteChrome.tsx",
+      "filePath": "src/components/SiteChrome.tsx",
+      "summary": "component with 1 functions, 0 types/interfaces, 0 classes",
+      "tags": [
+        "component",
+        "typescript"
+      ],
+      "complexity": "low",
+      "properties": {
+        "lines": 41,
+        "imports": 4,
+        "functions": 1,
+        "interfaces": 0,
+        "classes": 0
+      }
+    },
+    {
+      "id": "file-25-func-SiteChrome",
+      "type": "function",
+      "name": "SiteChrome",
+      "filePath": "src/components/SiteChrome.tsx",
+      "summary": "Function SiteChrome",
+      "tags": [
+        "function"
+      ],
+      "complexity": "unknown"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file-1",
+      "target": "file-1-func-Session7GuidePage",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-2",
+      "target": "file-2-func-Session7PrepPage",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-3",
+      "target": "file-3-func-Session7PrepPage",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-4",
+      "target": "file-4-func-Session8GuidePage",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-5",
+      "target": "file-5-func-Session8PrepPage",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-6",
+      "target": "file-6-func-Session9GuidePage",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-7",
+      "target": "file-7-func-sitemap",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-8",
+      "target": "file-8-func-toCodexPrompt",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-8",
+      "target": "file-8-func-MagneticCopyButton",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-8",
+      "target": "file-8-func-handleMouseMove",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-8",
+      "target": "file-8-func-x",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-8",
+      "target": "file-8-func-y",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-8",
+      "target": "file-8-func-handleMouseLeave",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-8",
+      "target": "file-8-func-CodeBlock",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-8",
+      "target": "file-8-func-handleCopy",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-8",
+      "target": "file-8-func-handleCodexCopy",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-8",
+      "target": "file-8-type-CodeBlockProps",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-8",
+      "target": "file-8-type-MagneticCopyButtonProps",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-9",
+      "target": "file-9-type-AskAnAiExpertQuote",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-9",
+      "target": "file-9-class-and",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-10",
+      "target": "file-10-func-AskAnAiExpertQuoteStrip",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-10",
+      "target": "file-10-func-scroll",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-11",
+      "target": "file-11-func-EventMediaVideo",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-11",
+      "target": "file-11-func-activateThisVideo",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-11",
+      "target": "file-11-func-handleActiveVideo",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-11",
+      "target": "file-11-func-activeId",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-11",
+      "target": "file-11-func-handleVolumeChange",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-11",
+      "target": "file-11-func-handlePlay",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-11",
+      "target": "file-11-type-Props",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-12-func-sectionTitleClass",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-12-func-sectionEyebrowClass",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-12-func-SectionShell",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-12-func-RichParagraphs",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-12-func-StorySection",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-12-func-ChecklistSection",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-12-func-CardsSection",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-12-func-SplitSection",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-12-func-ImageSection",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-12-func-HtmlSection",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-12-func-QuoteCardSection",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-12-func-renderMedia",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-12-func-HostsSection",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-12-func-EventVideoSection",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-12-func-EndedButton",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-12-func-CtaSection",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-12-func-renderSection",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-12-func-EventPageView",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-12-func-hasSetupItems",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-13-func-useAnimatedNumber",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-13-func-step",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-13-func-EventRegistrationSection",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-13-func-markSuccess",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-13-func-finalizeRegistration",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-13-func-openCheckout",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-13-func-openHostedFallback",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-13-func-handleApplyPromo",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-13-func-handleSubmit",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-13-type-EventRegistrationData",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-13-type-Props",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-13-type-SuccessState",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-13-type-CheckoutMode",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-14",
+      "target": "file-14-func-HeroVideo",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-14",
+      "target": "file-14-func-handlePlayClick",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-14",
+      "target": "file-14-type-Props",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-15",
+      "target": "file-15-func-ScrollToRegisterButton",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-15",
+      "target": "file-15-func-handleClick",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-15",
+      "target": "file-15-type-Props",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-16",
+      "target": "file-16-func-WaitlistJoinForm",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-16",
+      "target": "file-16-func-handleSubmit",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-16",
+      "target": "file-16-type-Props",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-17",
+      "target": "file-17-func-PageParticles",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-17",
+      "target": "file-17-func-resize",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-17",
+      "target": "file-17-func-onMouseMove",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-17",
+      "target": "file-17-func-draw",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-17",
+      "target": "file-17-func-strength",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-17",
+      "target": "file-17-type-Particle",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-18",
+      "target": "file-18-func-Avatar",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-18",
+      "target": "file-18-func-ParticipantCarousel",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-18",
+      "target": "file-18-type-Participant",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-19",
+      "target": "file-19-func-PrepChecklistItem",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-19",
+      "target": "file-19-type-PrepChecklistItemProps",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-20",
+      "target": "file-20-func-ProTip",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-20",
+      "target": "file-20-type-TipType",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-20",
+      "target": "file-20-type-ProTipProps",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-21",
+      "target": "file-21-func-Reveal",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-21",
+      "target": "file-21-type-RevealProps",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-22",
+      "target": "file-22-func-ScreenshotCard",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-22",
+      "target": "file-22-type-ScreenshotCardProps",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-23",
+      "target": "file-23-func-MastermindReactionsSection",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-23",
+      "target": "file-23-func-scroll",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-23",
+      "target": "file-23-class-and",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-24",
+      "target": "file-24-func-SessionCard",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-24",
+      "target": "file-24-func-inner",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-24",
+      "target": "file-24-type-SessionCardProps",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-25",
+      "target": "file-25-func-SiteChrome",
+      "type": "defines",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-9",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-9",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-9",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-9",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-9",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-9",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-9",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-9",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-9",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-9",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-9",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-9",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-9",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-9",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-9",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-9",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-9",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-9",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-9",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-9",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-9",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-9",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-9",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-9",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-13",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-13",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-13",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-13",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-13",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-13",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-13",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-13",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-13",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-13",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-13",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-13",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-13",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-13",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-13",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-13",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-13",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-13",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-13",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-13",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-13",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-13",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-13",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-13",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-14",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-14",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-14",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-14",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-14",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-14",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-14",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-14",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-14",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-14",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-14",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-14",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-14",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-14",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-14",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-14",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-14",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-14",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-14",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-14",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-14",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-14",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-14",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-14",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-15",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-15",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-15",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-15",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-15",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-15",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-15",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-15",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-15",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-15",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-15",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-15",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-15",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-15",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-15",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-15",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-15",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-15",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-15",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-15",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-15",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-15",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-15",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-15",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-10",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-10",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-10",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-10",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-10",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-10",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-10",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-10",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-10",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-10",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-10",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-10",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-10",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-10",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-10",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-10",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-10",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-10",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-10",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-10",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-10",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-10",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-10",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-12",
+      "target": "file-10",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-16",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-16",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-16",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-16",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-16",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-16",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-16",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-16",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-16",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-16",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-16",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-16",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-16",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-16",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-16",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-16",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-16",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-16",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-16",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-16",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-16",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-16",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-16",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-13",
+      "target": "file-16",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-14",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-14",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-14",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-14",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-14",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-14",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-14",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-14",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-14",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-14",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-14",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-14",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-14",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-14",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-14",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-14",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-14",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-14",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-14",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-14",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-14",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-14",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-14",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-14",
+      "target": "file-11",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-23",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-23",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-23",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-23",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-23",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-23",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-23",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-23",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-23",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-23",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-23",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-23",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-23",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-23",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-23",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-23",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-23",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-23",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-23",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-23",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-23",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-23",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-23",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-23",
+      "target": "file-21",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-25",
+      "target": "file-17",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-25",
+      "target": "file-17",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-25",
+      "target": "file-17",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-25",
+      "target": "file-17",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-25",
+      "target": "file-17",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-25",
+      "target": "file-17",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-25",
+      "target": "file-17",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-25",
+      "target": "file-17",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-25",
+      "target": "file-17",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-25",
+      "target": "file-17",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-25",
+      "target": "file-17",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-25",
+      "target": "file-17",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-25",
+      "target": "file-17",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-25",
+      "target": "file-17",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-25",
+      "target": "file-17",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-25",
+      "target": "file-17",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-25",
+      "target": "file-17",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-25",
+      "target": "file-17",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-25",
+      "target": "file-17",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-25",
+      "target": "file-17",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-25",
+      "target": "file-17",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-25",
+      "target": "file-17",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-25",
+      "target": "file-17",
+      "type": "imports",
+      "weight": 1
+    },
+    {
+      "source": "file-25",
+      "target": "file-17",
+      "type": "imports",
+      "weight": 1
+    }
+  ]
+}

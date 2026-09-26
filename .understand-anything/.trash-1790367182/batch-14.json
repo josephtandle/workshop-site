@@ -1,0 +1,590 @@
+{
+  "batchIndex": 14,
+  "totalFiles": 25,
+  "nodes": [
+    {
+      "id": "node_1",
+      "type": "config",
+      "name": "settings.json",
+      "filePath": ".claude/settings.json",
+      "summary": "config",
+      "tags": [],
+      "complexity": 1,
+      "lineCount": 17
+    },
+    {
+      "id": "node_2",
+      "type": "docs",
+      "name": "SKILL.md",
+      "filePath": ".claude/skills/gitnexus/gitnexus-cli/SKILL.md",
+      "summary": "docs",
+      "tags": [],
+      "complexity": 1,
+      "lineCount": 84
+    },
+    {
+      "id": "node_3",
+      "type": "docs",
+      "name": "SKILL.md",
+      "filePath": ".claude/skills/gitnexus/gitnexus-debugging/SKILL.md",
+      "summary": "docs",
+      "tags": [],
+      "complexity": 1,
+      "lineCount": 90
+    },
+    {
+      "id": "node_4",
+      "type": "docs",
+      "name": "SKILL.md",
+      "filePath": ".claude/skills/gitnexus/gitnexus-exploring/SKILL.md",
+      "summary": "docs",
+      "tags": [],
+      "complexity": 1,
+      "lineCount": 79
+    },
+    {
+      "id": "node_5",
+      "type": "docs",
+      "name": "SKILL.md",
+      "filePath": ".claude/skills/gitnexus/gitnexus-guide/SKILL.md",
+      "summary": "docs",
+      "tags": [],
+      "complexity": 1,
+      "lineCount": 65
+    },
+    {
+      "id": "node_6",
+      "type": "docs",
+      "name": "SKILL.md",
+      "filePath": ".claude/skills/gitnexus/gitnexus-impact-analysis/SKILL.md",
+      "summary": "docs",
+      "tags": [],
+      "complexity": 1,
+      "lineCount": 98
+    },
+    {
+      "id": "node_7",
+      "type": "docs",
+      "name": "SKILL.md",
+      "filePath": ".claude/skills/gitnexus/gitnexus-refactoring/SKILL.md",
+      "summary": "docs",
+      "tags": [],
+      "complexity": 1,
+      "lineCount": 122
+    },
+    {
+      "id": "node_8",
+      "type": "docs",
+      "name": "STRIPE-TRIAL-MECHANICS.md",
+      "filePath": "docs/STRIPE-TRIAL-MECHANICS.md",
+      "summary": "docs",
+      "tags": [],
+      "complexity": 1,
+      "lineCount": 47
+    },
+    {
+      "id": "node_9",
+      "type": "code",
+      "name": "next-env.d.ts",
+      "filePath": "next-env.d.ts",
+      "summary": "code",
+      "tags": [],
+      "complexity": 1,
+      "lineCount": 7,
+      "imports": [],
+      "exports": [],
+      "functions": [],
+      "classes": [],
+      "types": [],
+      "interfaces": []
+    },
+    {
+      "id": "node_10",
+      "type": "code",
+      "name": "next.config.ts",
+      "filePath": "next.config.ts",
+      "summary": "Exports: nextConfig",
+      "tags": [
+        "nextConfig"
+      ],
+      "complexity": 1,
+      "lineCount": 61,
+      "imports": [
+        "path"
+      ],
+      "exports": [],
+      "functions": [
+        "nextConfig"
+      ],
+      "classes": [],
+      "types": [],
+      "interfaces": []
+    },
+    {
+      "id": "node_11",
+      "type": "markup",
+      "name": "client-launch-checklist.html",
+      "filePath": "pdf/client-launch-checklist.html",
+      "summary": "markup",
+      "tags": [],
+      "complexity": 1,
+      "lineCount": 306
+    },
+    {
+      "id": "node_12",
+      "type": "markup",
+      "name": "cross-cli-compatibility-routing-guide.html",
+      "filePath": "pdf/cross-cli-compatibility-routing-guide.html",
+      "summary": "markup",
+      "tags": [],
+      "complexity": 1,
+      "lineCount": 583
+    },
+    {
+      "id": "node_13",
+      "type": "code",
+      "name": "render-client-launch-checklist.js",
+      "filePath": "pdf/render-client-launch-checklist.js",
+      "summary": "Exports: fs, path, ROOT...",
+      "tags": [
+        "fs",
+        "path",
+        "ROOT",
+        "INPUT",
+        "OUTPUT",
+        "CHROME_CANDIDATES",
+        "resolveChrome",
+        "render"
+      ],
+      "complexity": 3,
+      "lineCount": 50,
+      "imports": [
+        "fs",
+        "path",
+        "child_process"
+      ],
+      "exports": [],
+      "functions": [
+        "fs",
+        "path",
+        "ROOT",
+        "INPUT",
+        "OUTPUT",
+        "CHROME_CANDIDATES",
+        "resolveChrome",
+        "render"
+      ],
+      "classes": [],
+      "types": [],
+      "interfaces": []
+    },
+    {
+      "id": "node_14",
+      "type": "code",
+      "name": "render-cross-cli-compatibility-routing-guide.js",
+      "filePath": "pdf/render-cross-cli-compatibility-routing-guide.js",
+      "summary": "Exports: fs, path, ROOT...",
+      "tags": [
+        "fs",
+        "path",
+        "ROOT",
+        "INPUT",
+        "OUTPUT",
+        "CHROME_CANDIDATES",
+        "resolveChrome",
+        "render"
+      ],
+      "complexity": 3,
+      "lineCount": 54,
+      "imports": [
+        "fs",
+        "path",
+        "child_process"
+      ],
+      "exports": [],
+      "functions": [
+        "fs",
+        "path",
+        "ROOT",
+        "INPUT",
+        "OUTPUT",
+        "CHROME_CANDIDATES",
+        "resolveChrome",
+        "render"
+      ],
+      "classes": [],
+      "types": [],
+      "interfaces": []
+    },
+    {
+      "id": "node_15",
+      "type": "docs",
+      "name": "jill-linkedin-cleanup-sop.md",
+      "filePath": "public/docs/jill-linkedin-cleanup-sop.md",
+      "summary": "docs",
+      "tags": [],
+      "complexity": 1,
+      "lineCount": 58
+    },
+    {
+      "id": "node_16",
+      "type": "docs",
+      "name": "cross-cli-compatibility-routing-prompt.md",
+      "filePath": "public/giveaways/cross-cli-compatibility-routing-prompt.md",
+      "summary": "docs",
+      "tags": [],
+      "complexity": 1,
+      "lineCount": 210
+    },
+    {
+      "id": "node_17",
+      "type": "code",
+      "name": "page.tsx",
+      "filePath": "src/app/100-ai/page.tsx",
+      "summary": "Exports: LAUNCH_DATE, BENEFITS, SECTIONS...",
+      "tags": [
+        "LAUNCH_DATE",
+        "BENEFITS",
+        "SECTIONS",
+        "getCountdown",
+        "Countdown",
+        "PassiveIncome100Page"
+      ],
+      "complexity": 2,
+      "lineCount": 317,
+      "imports": [
+        "react",
+        "framer-motion"
+      ],
+      "exports": [
+        "PassiveIncome100Page"
+      ],
+      "functions": [
+        "LAUNCH_DATE",
+        "BENEFITS",
+        "SECTIONS",
+        "getCountdown"
+      ],
+      "classes": [],
+      "types": [
+        "Countdown"
+      ],
+      "interfaces": []
+    },
+    {
+      "id": "node_18",
+      "type": "code",
+      "name": "AiAgentIncomeCheckoutForm.tsx",
+      "filePath": "src/app/ai-agent-income/AiAgentIncomeCheckoutForm.tsx",
+      "summary": "Exports: CheckoutFormProps, AiAgentIncomeCheckoutForm",
+      "tags": [
+        "CheckoutFormProps",
+        "AiAgentIncomeCheckoutForm"
+      ],
+      "complexity": 1,
+      "lineCount": 76,
+      "imports": [
+        "react"
+      ],
+      "exports": [
+        "AiAgentIncomeCheckoutForm"
+      ],
+      "functions": [],
+      "classes": [],
+      "types": [
+        "CheckoutFormProps"
+      ],
+      "interfaces": []
+    },
+    {
+      "id": "node_19",
+      "type": "code",
+      "name": "page.tsx",
+      "filePath": "src/app/ai-agent-income/page.tsx",
+      "summary": "Exports: metadata, lanes, audience...",
+      "tags": [
+        "metadata",
+        "lanes",
+        "audience",
+        "metadata",
+        "AiAgentIncomePage"
+      ],
+      "complexity": 1,
+      "lineCount": 172,
+      "imports": [
+        "./AiAgentIncomeCheckoutForm"
+      ],
+      "exports": [
+        "metadata",
+        "AiAgentIncomePage"
+      ],
+      "functions": [
+        "metadata",
+        "lanes",
+        "audience"
+      ],
+      "classes": [],
+      "types": [],
+      "interfaces": []
+    },
+    {
+      "id": "node_20",
+      "type": "code",
+      "name": "page.tsx",
+      "filePath": "src/app/ai-os-architecture/page.tsx",
+      "summary": "Exports: metadata, metadata, AIArchitecturePage",
+      "tags": [
+        "metadata",
+        "metadata",
+        "AIArchitecturePage"
+      ],
+      "complexity": 1,
+      "lineCount": 15,
+      "imports": [],
+      "exports": [
+        "metadata",
+        "AIArchitecturePage"
+      ],
+      "functions": [
+        "metadata"
+      ],
+      "classes": [],
+      "types": [],
+      "interfaces": []
+    },
+    {
+      "id": "node_21",
+      "type": "code",
+      "name": "route.ts",
+      "filePath": "src/app/api/events/[slug]/calendar/route.ts",
+      "summary": "Exports: runtime, GET, runtime...",
+      "tags": [
+        "runtime",
+        "GET",
+        "runtime",
+        "GET"
+      ],
+      "complexity": 1,
+      "lineCount": 41,
+      "imports": [
+        "next/server",
+        "@/lib/events",
+        "@/lib/calendar"
+      ],
+      "exports": [
+        "runtime",
+        "GET"
+      ],
+      "functions": [
+        "runtime",
+        "GET"
+      ],
+      "classes": [],
+      "types": [],
+      "interfaces": []
+    },
+    {
+      "id": "node_22",
+      "type": "code",
+      "name": "route.ts",
+      "filePath": "src/app/api/events/abandoned-checkout-followups-t12h/route.ts",
+      "summary": "Exports: runtime, isAuthorized, acquireEventLock...",
+      "tags": [
+        "runtime",
+        "isAuthorized",
+        "acquireEventLock",
+        "GET",
+        "runtime",
+        "GET"
+      ],
+      "complexity": 2,
+      "lineCount": 75,
+      "imports": [
+        "next/server",
+        "crypto",
+        "@/lib/supabase"
+      ],
+      "exports": [
+        "runtime",
+        "GET"
+      ],
+      "functions": [
+        "runtime",
+        "isAuthorized",
+        "acquireEventLock",
+        "GET"
+      ],
+      "classes": [],
+      "types": [],
+      "interfaces": []
+    },
+    {
+      "id": "node_23",
+      "type": "code",
+      "name": "route.ts",
+      "filePath": "src/app/api/events/abandoned-checkout-followups/route.ts",
+      "summary": "Exports: runtime, isAuthorized, acquireEventLock...",
+      "tags": [
+        "runtime",
+        "isAuthorized",
+        "acquireEventLock",
+        "GET",
+        "runtime",
+        "GET"
+      ],
+      "complexity": 2,
+      "lineCount": 75,
+      "imports": [
+        "next/server",
+        "crypto",
+        "@/lib/supabase"
+      ],
+      "exports": [
+        "runtime",
+        "GET"
+      ],
+      "functions": [
+        "runtime",
+        "isAuthorized",
+        "acquireEventLock",
+        "GET"
+      ],
+      "classes": [],
+      "types": [],
+      "interfaces": []
+    },
+    {
+      "id": "node_24",
+      "type": "code",
+      "name": "route.ts",
+      "filePath": "src/app/api/events/cancel/route.ts",
+      "summary": "Exports: runtime, escapeHtml, htmlPage...",
+      "tags": [
+        "runtime",
+        "escapeHtml",
+        "htmlPage",
+        "notifyWaitlist",
+        "GET",
+        "POST",
+        "runtime",
+        "GET",
+        "POST"
+      ],
+      "complexity": 2,
+      "lineCount": 119,
+      "imports": [
+        "next/server",
+        "@/lib/event-registration-db",
+        "@/lib/events",
+        "@/lib/event-confirmation-email"
+      ],
+      "exports": [
+        "runtime",
+        "GET",
+        "POST"
+      ],
+      "functions": [
+        "runtime",
+        "escapeHtml",
+        "htmlPage",
+        "notifyWaitlist",
+        "GET",
+        "POST"
+      ],
+      "classes": [],
+      "types": [],
+      "interfaces": []
+    },
+    {
+      "id": "node_25",
+      "type": "code",
+      "name": "route.ts",
+      "filePath": "src/app/api/events/checkout-session/route.ts",
+      "summary": "Exports: runtime, getBaseUrl, POST...",
+      "tags": [
+        "runtime",
+        "getBaseUrl",
+        "POST",
+        "runtime",
+        "POST"
+      ],
+      "complexity": 4,
+      "lineCount": 469,
+      "imports": [
+        "next/server",
+        "@/lib/events",
+        "@/lib/with-timeout",
+        "@/lib/legacy-event-schedule",
+        "@/lib/stripe",
+        "@/lib/event-registration-db",
+        "@/lib/event-registration-flow",
+        "@/lib/event-intake",
+        "@/lib/url-utils",
+        "@/lib/rate-limit",
+        "@/lib/insight-to-fix",
+        "@/lib/stripe-amount",
+        "@/lib/email-validation",
+        "@/lib/event-status"
+      ],
+      "exports": [
+        "runtime",
+        "POST"
+      ],
+      "functions": [
+        "runtime",
+        "getBaseUrl",
+        "POST"
+      ],
+      "classes": [],
+      "types": [],
+      "interfaces": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "node_19",
+      "target": "node_18",
+      "type": "imports",
+      "weight": 1,
+      "label": "./AiAgentIncomeCheckoutForm"
+    }
+  ],
+  "externalDependencies": [
+    "@/lib/calendar",
+    "@/lib/email-validation",
+    "@/lib/event-confirmation-email",
+    "@/lib/event-intake",
+    "@/lib/event-registration-db",
+    "@/lib/event-registration-flow",
+    "@/lib/event-status",
+    "@/lib/events",
+    "@/lib/insight-to-fix",
+    "@/lib/legacy-event-schedule",
+    "@/lib/rate-limit",
+    "@/lib/stripe",
+    "@/lib/stripe-amount",
+    "@/lib/supabase",
+    "@/lib/url-utils",
+    "@/lib/with-timeout",
+    "child_process",
+    "crypto",
+    "framer-motion",
+    "fs",
+    "next/server",
+    "path",
+    "react"
+  ],
+  "metadata": {
+    "generatedAt": "2026-09-25T20:12:50.679Z",
+    "fileCount": 25,
+    "nodeCount": 25,
+    "edgeCount": 1,
+    "codeFiles": 13,
+    "configFiles": 1,
+    "docFiles": 9,
+    "markupFiles": 2,
+    "totalSymbols": 63,
+    "totalImports": 38,
+    "externalDependencyCount": 23
+  }
+}

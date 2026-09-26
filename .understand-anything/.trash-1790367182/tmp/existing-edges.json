@@ -1,0 +1,4396 @@
+[
+  {
+    "source": "file:EventRegistrationSection.tsx",
+    "target": "file:event-intake.ts",
+    "type": "import",
+    "weight": 1,
+    "label": "imports validation functions and types",
+    "direction": "forward"
+  },
+  {
+    "source": "file:EventRegistrationSection.tsx",
+    "target": "file:event-checkout.ts",
+    "type": "import",
+    "weight": 1,
+    "label": "imports checkout request builder",
+    "direction": "forward"
+  },
+  {
+    "source": "file:stripe-webhook-route.ts",
+    "target": "file:event-capacity.ts",
+    "type": "import",
+    "weight": 1,
+    "label": "calls releaseEventSeatByCheckout",
+    "direction": "forward"
+  },
+  {
+    "source": "file:stripe-webhook-route.ts",
+    "target": "function:src/app/api/stripe/webhook/route.ts:POST",
+    "type": "calls",
+    "weight": 1,
+    "label": "stripe webhook processor",
+    "direction": "forward"
+  },
+  {
+    "source": "file:checkout-session-route.ts",
+    "target": "file:event-registration-db.ts",
+    "type": "import",
+    "weight": 1,
+    "label": "calls saveRegistration, saveRegistrationIntake, isAlreadyOnWaitlist",
+    "direction": "forward"
+  },
+  {
+    "source": "file:checkout-session-route.ts",
+    "target": "file:event-capacity.ts",
+    "type": "import",
+    "weight": 1,
+    "label": "calls claimEventSeat, confirmEventSeat, attachCheckoutToEventSeat, releaseEventSeat",
+    "direction": "forward"
+  },
+  {
+    "source": "file:checkout-session-route.ts",
+    "target": "file:event-confirmation-email.ts",
+    "type": "import",
+    "weight": 1,
+    "label": "calls sendEventConfirmationEmail, sendAskAnAiExpertWelcomeEmail, sendAiContentCreationSetupEmail, sendRegistrationBackupAlert",
+    "direction": "forward"
+  },
+  {
+    "source": "file:checkout-session-route.ts",
+    "target": "file:rate-limit.ts",
+    "type": "import",
+    "weight": 1,
+    "label": "calls checkRateLimit",
+    "direction": "forward"
+  },
+  {
+    "source": "file:checkout-session-route.ts",
+    "target": "file:with-timeout.ts",
+    "type": "import",
+    "weight": 1,
+    "label": "wraps database and email operations",
+    "direction": "forward"
+  },
+  {
+    "source": "file:checkout-session-route.ts",
+    "target": "file:event-intake.ts",
+    "type": "import",
+    "weight": 1,
+    "label": "validates intake fields and normalizes phone numbers",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-confirmation-email.ts",
+    "target": "file:event-intake.ts",
+    "type": "import",
+    "weight": 0,
+    "label": "used for email template building",
+    "direction": "forward"
+  },
+  {
+    "source": "file:EventPageView.tsx",
+    "target": "file:EventRegistrationSection.tsx",
+    "type": "import",
+    "weight": 1,
+    "label": "renders EventRegistrationSection component",
+    "direction": "forward"
+  },
+  {
+    "source": "file:WaitlistJoinForm.tsx",
+    "target": "file:event-intake.ts",
+    "type": "import",
+    "weight": 1,
+    "label": "imports email validation",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-checkout.ts",
+    "target": "file:event-confirmation-email.ts",
+    "type": "import",
+    "weight": 0,
+    "label": "shares branding configuration",
+    "direction": "forward"
+  },
+  {
+    "source": "file:calendar-route.ts",
+    "target": "file:event-confirmation-email.ts",
+    "type": "import",
+    "weight": 1,
+    "label": "calls buildIcalString",
+    "direction": "forward"
+  },
+  {
+    "source": "file:cmp:EventPageView",
+    "target": "file:cmp:EventRegistrationSection",
+    "type": "renders",
+    "weight": 1,
+    "label": "renders as child component",
+    "direction": "forward"
+  },
+  {
+    "source": "function:src/app/api/events/checkout-session/route.ts:POST",
+    "target": "function:src/lib/rate-limit.ts:checkRateLimit",
+    "type": "calls",
+    "weight": 1,
+    "label": "checks rate limit by IP",
+    "direction": "forward"
+  },
+  {
+    "source": "function:src/app/api/events/checkout-session/route.ts:POST",
+    "target": "function:src/lib/event-registration-db.ts:saveRegistrationIntake",
+    "type": "calls",
+    "weight": 1,
+    "label": "saves intake before Stripe redirect",
+    "direction": "forward"
+  },
+  {
+    "source": "function:src/app/api/events/checkout-session/route.ts:POST",
+    "target": "function:src/lib/event-registration-db.ts:saveRegistration",
+    "type": "calls",
+    "weight": 1,
+    "label": "persists confirmed registration",
+    "direction": "forward"
+  },
+  {
+    "source": "function:src/app/api/events/checkout-session/route.ts:POST",
+    "target": "function:src/lib/event-capacity.ts:claimEventSeat",
+    "type": "calls",
+    "weight": 1,
+    "label": "reserves capacity for paid events",
+    "direction": "forward"
+  },
+  {
+    "source": "function:src/app/api/events/checkout-session/route.ts:POST",
+    "target": "function:src/lib/event-confirmation-email.ts:sendEventConfirmationEmail",
+    "type": "calls",
+    "weight": 1,
+    "label": "sends confirmation with calendar attachment",
+    "direction": "forward"
+  },
+  {
+    "source": "function:src/lib/event-registration-db.ts:saveRegistration",
+    "target": "function:src/lib/event-registration-db.ts:getRegistrationIntake",
+    "type": "calls",
+    "weight": 1,
+    "label": "recovers intake answers if not provided",
+    "direction": "forward"
+  },
+  {
+    "source": "function:src/lib/event-registration-db.ts:saveRegistration",
+    "target": "function:__nofilepath__:cancelRegistration",
+    "type": "related",
+    "weight": 0,
+    "label": "opposite operation",
+    "direction": "forward"
+  },
+  {
+    "source": "function:__nofilepath__:cancelRegistration",
+    "target": "file:event-capacity.ts",
+    "type": "calls",
+    "weight": 1,
+    "label": "releases capacity seat",
+    "direction": "forward"
+  },
+  {
+    "source": "function:src/lib/event-confirmation-email.ts:sendEventConfirmationEmail",
+    "target": "function:src/lib/event-confirmation-email.ts:buildConfirmationEmailHtml",
+    "type": "calls",
+    "weight": 1,
+    "label": "uses template builder",
+    "direction": "forward"
+  },
+  {
+    "source": "function:src/lib/event-intake.ts:validateIntakeFields",
+    "target": "function:src/lib/event-intake.ts:validateWhatsappNumber",
+    "type": "calls",
+    "weight": 1,
+    "label": "validates each field",
+    "direction": "forward"
+  },
+  {
+    "source": "function:src/lib/event-intake.ts:normalizeWhatsappNumber",
+    "target": "function:src/lib/event-intake.ts:toE164",
+    "type": "calls",
+    "weight": 1,
+    "label": "converts to E.164 format",
+    "direction": "forward"
+  },
+  {
+    "source": "function:src/lib/event-checkout.ts:buildEventCheckoutSessionParams",
+    "target": "function:src/lib/event-checkout.ts:resolveEventCheckoutAmount",
+    "type": "related",
+    "weight": 0,
+    "label": "used in checkout flow",
+    "direction": "forward"
+  },
+  {
+    "source": "function:src/lib/event-capacity.ts:claimEventSeat",
+    "target": "file:type:EventSeatClaim",
+    "type": "returns",
+    "weight": 1,
+    "label": "returns seat claim result",
+    "direction": "forward"
+  },
+  {
+    "source": "function:src/lib/google-calendar-invite.ts:inviteAttendeeToEvent",
+    "target": "function:src/lib/google-calendar-invite.ts:resolveCalendarEventId",
+    "type": "calls",
+    "weight": 1,
+    "label": "resolves target calendar event",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:api-checkout-to-db",
+    "source": "function:src/app/api/events/checkout-session/route.ts:POST",
+    "target": "file:event-registration-db.ts",
+    "type": "dataflow",
+    "weight": 1,
+    "label": "writes to event_registrations and event_registration_intake tables",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:api-checkout-to-stripe",
+    "source": "function:src/app/api/events/checkout-session/route.ts:POST",
+    "target": "file:event-checkout.ts",
+    "type": "dataflow",
+    "weight": 1,
+    "label": "creates Stripe session",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:webhook-to-capacity",
+    "source": "function:src/app/api/stripe/webhook/route.ts:POST",
+    "target": "file:event-capacity.ts",
+    "type": "dataflow",
+    "weight": 1,
+    "label": "releases seats on checkout expiry",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:form-to-checkout",
+    "source": "file:cmp:EventRegistrationSection",
+    "target": "function:src/app/api/events/checkout-session/route.ts:POST",
+    "type": "api-call",
+    "weight": 1,
+    "label": "POST /api/events/checkout-session",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:calendar-intake-schema",
+    "source": "function:src/lib/event-confirmation-email.ts:sendEventConfirmationEmail",
+    "target": "file:type:Registration",
+    "type": "uses",
+    "weight": 0,
+    "label": "references registration data schema",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:intake-shared-validation",
+    "source": "function:src/app/api/events/checkout-session/route.ts:POST",
+    "target": "function:src/lib/event-intake.ts:validateIntakeFields",
+    "type": "calls",
+    "weight": 1,
+    "label": "server-side mirror of client validation",
+    "direction": "forward"
+  },
+  {
+    "source": "function:__nofilepath__:inviteAttendeeToEvent-function",
+    "target": "function:__nofilepath__:resolveCalendarEventId-function",
+    "type": "calls",
+    "description": "Calls resolveCalendarEventId to get Google Calendar event ID",
+    "direction": "forward"
+  },
+  {
+    "source": "function:__nofilepath__:inviteAttendeeToEvent-function",
+    "target": "function:__nofilepath__:getAuth-function",
+    "type": "calls",
+    "description": "Calls getAuth to initialize OAuth authentication",
+    "direction": "forward"
+  },
+  {
+    "source": "function:__nofilepath__:inviteAttendeeToEvent-function",
+    "target": "file:CalendarInviteResult-type",
+    "type": "returns",
+    "description": "Returns CalendarInviteResult union type",
+    "direction": "forward"
+  },
+  {
+    "source": "function:__nofilepath__:inviteAttendeeToEvent-function",
+    "target": "file:event-definition-type",
+    "type": "accepts",
+    "description": "Accepts EventDefinition as parameter",
+    "direction": "forward"
+  },
+  {
+    "source": "function:__nofilepath__:inviteAttendeeToEvent-function",
+    "target": "file:guest-list-privacy-rule",
+    "type": "enforces",
+    "description": "Enforces guest list privacy by setting guestsCanSeeOtherGuests = false",
+    "direction": "forward"
+  },
+  {
+    "source": "function:__nofilepath__:resolveCalendarEventId-function",
+    "target": "file:event-definition-type",
+    "type": "accepts",
+    "description": "Accepts EventDefinition parameter",
+    "direction": "forward"
+  },
+  {
+    "source": "function:__nofilepath__:getAuth-function",
+    "target": "file:google-calendar-api-integration",
+    "type": "supports",
+    "description": "Provides OAuth authentication for Google Calendar API",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-page-view-component",
+    "target": "file:event-definition-type",
+    "type": "accepts",
+    "description": "Accepts event: EventDefinition as prop",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-page-view-component",
+    "target": "file:event-promo-code-type",
+    "type": "accepts",
+    "description": "Accepts promo: EventPromoCode | null as prop",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-page-view-component",
+    "target": "file:section-shell-component",
+    "type": "uses",
+    "description": "Uses SectionShell for layout wrapping",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-page-view-component",
+    "target": "file:story-section-component",
+    "type": "renders",
+    "description": "Renders StorySection based on section type",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-page-view-component",
+    "target": "file:checklist-section-component",
+    "type": "renders",
+    "description": "Renders ChecklistSection based on section type",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-page-view-component",
+    "target": "file:cards-section-component",
+    "type": "renders",
+    "description": "Renders CardsSection based on section type",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-page-view-component",
+    "target": "file:split-section-component",
+    "type": "renders",
+    "description": "Renders SplitSection based on section type",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-page-view-component",
+    "target": "file:image-section-component",
+    "type": "renders",
+    "description": "Renders ImageSection based on section type",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-page-view-component",
+    "target": "file:html-section-component",
+    "type": "renders",
+    "description": "Renders HtmlSection based on section type",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-page-view-component",
+    "target": "file:quote-card-section-component",
+    "type": "renders",
+    "description": "Renders QuoteCardSection based on section type",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-page-view-component",
+    "target": "file:hosts-section-component",
+    "type": "renders",
+    "description": "Renders HostsSection based on section type",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-page-view-component",
+    "target": "file:cta-section-component",
+    "type": "renders",
+    "description": "Renders CtaSection based on section type",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-page-view-component",
+    "target": "file:event-registration-section-component",
+    "type": "renders",
+    "description": "Renders EventRegistrationSection at bottom of page",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-page-view-component",
+    "target": "file:hero-video-component",
+    "type": "uses",
+    "description": "Conditionally uses HeroVideo if heroVideoSrc exists",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-page-view-component",
+    "target": "file:next-image-component",
+    "type": "uses",
+    "description": "Uses Next.js Image for hero and section images",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-page-view-component",
+    "target": "file:ask-an-ai-expert-quote-strip",
+    "type": "renders",
+    "description": "Conditionally renders AskAnAiExpertQuoteStrip for ask-an-ai-expert event",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-page-view-component",
+    "target": "file:event-status-utilities",
+    "type": "uses",
+    "description": "Uses isEventEnded and isRegistrationWindowPassed utilities",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-page-view-component",
+    "target": "file:calendar-utilities",
+    "type": "uses",
+    "description": "Uses buildGoogleCalendarUrl for calendar integration",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-page-view-component",
+    "target": "file:scroll-to-register-button-component",
+    "type": "uses",
+    "description": "Uses ScrollToRegisterButton for hero CTA",
+    "direction": "forward"
+  },
+  {
+    "source": "file:story-section-component",
+    "target": "file:section-shell-component",
+    "type": "uses",
+    "description": "Wraps content in SectionShell",
+    "direction": "forward"
+  },
+  {
+    "source": "file:story-section-component",
+    "target": "file:rich-paragraphs-component",
+    "type": "uses",
+    "description": "Uses RichParagraphs to render body content",
+    "direction": "forward"
+  },
+  {
+    "source": "file:checklist-section-component",
+    "target": "file:section-shell-component",
+    "type": "uses",
+    "description": "Wraps checklist items in SectionShell",
+    "direction": "forward"
+  },
+  {
+    "source": "file:checklist-section-component",
+    "target": "file:event-section-type",
+    "type": "accepts",
+    "description": "Accepts checklist event section",
+    "direction": "forward"
+  },
+  {
+    "source": "file:cards-section-component",
+    "target": "file:section-shell-component",
+    "type": "uses",
+    "description": "Wraps cards in SectionShell",
+    "direction": "forward"
+  },
+  {
+    "source": "file:cards-section-component",
+    "target": "file:event-section-type",
+    "type": "accepts",
+    "description": "Accepts cards event section",
+    "direction": "forward"
+  },
+  {
+    "source": "file:split-section-component",
+    "target": "file:section-shell-component",
+    "type": "uses",
+    "description": "Wraps split layout in SectionShell",
+    "direction": "forward"
+  },
+  {
+    "source": "file:split-section-component",
+    "target": "file:rich-paragraphs-component",
+    "type": "uses",
+    "description": "Uses RichParagraphs for body content",
+    "direction": "forward"
+  },
+  {
+    "source": "file:split-section-component",
+    "target": "file:next-image-component",
+    "type": "uses",
+    "description": "Uses Next.js Image for section image",
+    "direction": "forward"
+  },
+  {
+    "source": "file:image-section-component",
+    "target": "file:section-shell-component",
+    "type": "uses",
+    "description": "Wraps image in SectionShell",
+    "direction": "forward"
+  },
+  {
+    "source": "file:image-section-component",
+    "target": "file:event-media-video-component",
+    "type": "uses",
+    "description": "Uses EventMediaVideo if videoSrc exists",
+    "direction": "forward"
+  },
+  {
+    "source": "file:image-section-component",
+    "target": "file:next-image-component",
+    "type": "uses",
+    "description": "Uses Next.js Image if no video",
+    "direction": "forward"
+  },
+  {
+    "source": "file:html-section-component",
+    "target": "file:section-shell-component",
+    "type": "uses",
+    "description": "Wraps HTML content in SectionShell",
+    "direction": "forward"
+  },
+  {
+    "source": "file:quote-card-section-component",
+    "target": "file:event-media-video-component",
+    "type": "uses",
+    "description": "Uses EventMediaVideo if videoSrc exists",
+    "direction": "forward"
+  },
+  {
+    "source": "file:quote-card-section-component",
+    "target": "file:next-image-component",
+    "type": "uses",
+    "description": "Uses Next.js Image if no video",
+    "direction": "forward"
+  },
+  {
+    "source": "file:hosts-section-component",
+    "target": "file:section-shell-component",
+    "type": "uses",
+    "description": "Wraps hosts in SectionShell",
+    "direction": "forward"
+  },
+  {
+    "source": "file:hosts-section-component",
+    "target": "file:next-image-component",
+    "type": "uses",
+    "description": "Uses Next.js Image for host photos",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-video-section-component",
+    "target": "file:section-shell-component",
+    "type": "uses",
+    "description": "Wraps video in SectionShell",
+    "direction": "forward"
+  },
+  {
+    "source": "file:cta-section-component",
+    "target": "file:section-shell-component",
+    "type": "uses",
+    "description": "Wraps CTA in SectionShell",
+    "direction": "forward"
+  },
+  {
+    "source": "file:cta-section-component",
+    "target": "file:scroll-to-register-button-component",
+    "type": "uses",
+    "description": "Uses ScrollToRegisterButton for primary CTA",
+    "direction": "forward"
+  },
+  {
+    "source": "file:cta-section-component",
+    "target": "file:next-link-component",
+    "type": "uses",
+    "description": "Uses Next.js Link for secondary CTA",
+    "direction": "forward"
+  },
+  {
+    "source": "file:cta-section-component",
+    "target": "function:__nofilepath__:formatEventPrice-function",
+    "type": "uses",
+    "description": "Uses formatEventPrice to display pricing",
+    "direction": "forward"
+  },
+  {
+    "source": "file:terminal-to-claude-desktop-page",
+    "target": "file:sticky-video-player-component",
+    "type": "uses",
+    "description": "Uses StickyVideoPlayer to display video walkthrough",
+    "direction": "forward"
+  },
+  {
+    "source": "file:terminal-to-claude-desktop-page",
+    "target": "file:reveal-component",
+    "type": "uses",
+    "description": "Uses Reveal component for staggered animations",
+    "direction": "forward"
+  },
+  {
+    "source": "file:terminal-to-claude-desktop-page",
+    "target": "file:next-link-component",
+    "type": "uses",
+    "description": "Uses Next.js Link for navigation",
+    "direction": "forward"
+  },
+  {
+    "source": "file:terminal-to-claude-desktop-page",
+    "target": "file:video-src-constant",
+    "type": "references",
+    "description": "References VIDEO_SRC constant for video URL",
+    "direction": "forward"
+  },
+  {
+    "source": "file:terminal-to-claude-desktop-page",
+    "target": "file:what-you-will-see-array",
+    "type": "uses",
+    "description": "Maps over WHAT_YOU_WILL_SEE array for content",
+    "direction": "forward"
+  },
+  {
+    "source": "file:terminal-to-claude-desktop-page",
+    "target": "file:follow-along-steps-array",
+    "type": "uses",
+    "description": "Maps over FOLLOW_ALONG_STEPS array for checklist",
+    "direction": "forward"
+  },
+  {
+    "source": "file:terminal-to-claude-desktop-page",
+    "target": "file:terminal-to-claude-desktop-exception",
+    "type": "implements",
+    "description": "Implements free-access exception for terminal-to-claude-desktop giveaway",
+    "direction": "forward"
+  },
+  {
+    "source": "file:terminal-to-claude-desktop-layout",
+    "target": "file:terminal-to-claude-desktop-page",
+    "type": "wraps",
+    "description": "Layout wraps the page component",
+    "direction": "forward"
+  },
+  {
+    "source": "function:__nofilepath__:getEventBySlug-function",
+    "target": "file:event-definition-type",
+    "type": "returns",
+    "description": "Returns EventDefinition or undefined",
+    "direction": "forward"
+  },
+  {
+    "source": "function:__nofilepath__:getLiveEvents-function",
+    "target": "file:event-definition-type",
+    "type": "returns",
+    "description": "Returns array of live EventDefinition objects",
+    "direction": "forward"
+  },
+  {
+    "source": "function:__nofilepath__:getUpcomingLiveEvents-function",
+    "target": "file:event-definition-type",
+    "type": "returns",
+    "description": "Returns array of upcoming EventDefinition objects sorted by date",
+    "direction": "forward"
+  },
+  {
+    "source": "function:__nofilepath__:getEventDiscountedPrice-function",
+    "target": "function:__nofilepath__:getDiscountedPrice-function",
+    "type": "calls",
+    "description": "Calls getDiscountedPrice helper function",
+    "direction": "forward"
+  },
+  {
+    "source": "function:__nofilepath__:formatEventPrice-function",
+    "target": "function:__nofilepath__:getEventDiscountedPrice-function",
+    "type": "calls",
+    "description": "Calls getEventDiscountedPrice to get price value",
+    "direction": "forward"
+  },
+  {
+    "source": "file:connection-dinner-canggu-event",
+    "target": "file:joe-che-host",
+    "type": "hosted-by",
+    "description": "VIP Connection Dinner hosted by Joe Che",
+    "direction": "forward"
+  },
+  {
+    "source": "file:connection-dinner-canggu-event",
+    "target": "file:mostly-restaurant-venue",
+    "type": "location",
+    "description": "Event held at Mostly Restaurant",
+    "direction": "forward"
+  },
+  {
+    "source": "file:connection-dinner-canggu-event",
+    "target": "file:pkp-community-centre",
+    "type": "benefits",
+    "description": "Donations go to PKP Community Centre",
+    "direction": "forward"
+  },
+  {
+    "source": "file:connection-dinner-october-event",
+    "target": "file:joe-che-host",
+    "type": "hosted-by",
+    "description": "October Connection Dinner hosted by Joe Che",
+    "direction": "forward"
+  },
+  {
+    "source": "file:connection-dinner-october-event",
+    "target": "file:mostly-restaurant-venue",
+    "type": "location",
+    "description": "Event held at Mostly Restaurant",
+    "direction": "forward"
+  },
+  {
+    "source": "file:connection-dinner-october-event",
+    "target": "file:bali-street-mums",
+    "type": "benefits",
+    "description": "Donations go to Bali Street Mums",
+    "direction": "forward"
+  },
+  {
+    "source": "file:ubud-connection-brunch-event",
+    "target": "file:joe-che-host",
+    "type": "hosted-by",
+    "description": "Brunch co-hosted by Joe Che",
+    "direction": "forward"
+  },
+  {
+    "source": "file:ubud-connection-brunch-event",
+    "target": "file:alla-demutska-host",
+    "type": "hosted-by",
+    "description": "Brunch co-hosted by Alla Demutska",
+    "direction": "forward"
+  },
+  {
+    "source": "file:ubud-connection-brunch-event",
+    "target": "file:g-dos-eden-venue",
+    "type": "location",
+    "description": "Event held at G-Dos Eden, Ubud",
+    "direction": "forward"
+  },
+  {
+    "source": "file:ubud-connection-brunch-event",
+    "target": "file:pkp-community-centre",
+    "type": "benefits",
+    "description": "Donations go to PKP Community Centre",
+    "direction": "forward"
+  },
+  {
+    "source": "file:ai-avatar-content-creation-event",
+    "target": "file:joe-che-host",
+    "type": "hosted-by",
+    "description": "AI Content Creation Lab hosted by Joe Che",
+    "direction": "forward"
+  },
+  {
+    "source": "file:ai-avatar-content-creation-event",
+    "target": "file:helix-wolfson-host",
+    "type": "hosted-by",
+    "description": "AI Content Creation Lab co-hosted by Helix Wolfson",
+    "direction": "forward"
+  },
+  {
+    "source": "file:ai-avatar-content-creation-event",
+    "target": "file:happy-days-villa-venue",
+    "type": "location",
+    "description": "Event held at Happy Days Villa 1, Pererenan",
+    "direction": "forward"
+  },
+  {
+    "source": "file:ai-avatar-content-creation-event",
+    "target": "file:higgsfield-ai-tool",
+    "type": "uses",
+    "description": "Workshop teaches Higgsfield for AI video workflows",
+    "direction": "forward"
+  },
+  {
+    "source": "file:ai-avatar-content-creation-event",
+    "target": "file:heygen-ai-tool",
+    "type": "uses",
+    "description": "Workshop teaches HeyGen for AI avatars",
+    "direction": "forward"
+  },
+  {
+    "source": "file:stop-sounding-like-everyone-else-event",
+    "target": "file:joe-che-host",
+    "type": "hosted-by",
+    "description": "Workshop hosted by Joe Che",
+    "direction": "forward"
+  },
+  {
+    "source": "file:stop-sounding-like-everyone-else-event",
+    "target": "file:speak-human-tool",
+    "type": "uses",
+    "description": "Workshop features Speak Human tool installation and walkthrough",
+    "direction": "forward"
+  },
+  {
+    "source": "file:ask-an-ai-expert-event",
+    "target": "file:joe-che-host",
+    "type": "hosted-by",
+    "description": "Live Q&A session hosted by Joe Che",
+    "direction": "forward"
+  },
+  {
+    "source": "file:bring-the-task-you-hate-event",
+    "target": "file:joe-che-host",
+    "type": "hosted-by",
+    "description": "Live AI automation class hosted by Joe Che",
+    "direction": "forward"
+  },
+  {
+    "source": "file:bring-the-task-you-hate-event",
+    "target": "file:event-intake-fields",
+    "type": "uses",
+    "description": "Uses custom intake fields to collect task descriptions from registrants",
+    "direction": "forward"
+  },
+  {
+    "source": "file:business-blocks-ai-solved-event",
+    "target": "file:joe-che-host",
+    "type": "hosted-by",
+    "description": "Workshop hosted by Joe Che",
+    "direction": "forward"
+  },
+  {
+    "source": "file:business-blocks-ai-solved-event",
+    "target": "file:marina-choueri-host",
+    "type": "hosted-by",
+    "description": "Workshop hosted by Marina Choueri",
+    "direction": "forward"
+  },
+  {
+    "source": "file:business-blocks-ai-solved-event",
+    "target": "file:happy-days-villa-venue",
+    "type": "location",
+    "description": "Event held at Happy Days Villa 1",
+    "direction": "forward"
+  },
+  {
+    "source": "function:__nofilepath__:sitemap-function",
+    "target": "config:sitemap-base-url",
+    "type": "uses",
+    "description": "Uses BASE URL for sitemap entries",
+    "direction": "forward"
+  },
+  {
+    "source": "function:__nofilepath__:sitemap-function",
+    "target": "file:giveaway-routes-sitemap",
+    "type": "generates",
+    "description": "Generates giveaway route entries",
+    "direction": "forward"
+  },
+  {
+    "source": "config:next-config",
+    "target": "config:next-redirects-config",
+    "type": "includes",
+    "description": "Includes redirects configuration",
+    "direction": "forward"
+  },
+  {
+    "source": "config:next-config",
+    "target": "config:next-rewrites-config",
+    "type": "includes",
+    "description": "Includes rewrites configuration",
+    "direction": "forward"
+  },
+  {
+    "source": "config:next-redirects-config",
+    "target": "config:sitemap-base-url",
+    "type": "references",
+    "description": "Redirects from workshop site to portal",
+    "direction": "forward"
+  },
+  {
+    "source": "config:next-rewrites-config",
+    "target": "config:sitemap-base-url",
+    "type": "references",
+    "description": "Rewrites host-specific requests to workshop site routes",
+    "direction": "forward"
+  },
+  {
+    "source": "file:giveaway-email-gate",
+    "target": "file:terminal-to-claude-desktop-exception",
+    "type": "implements",
+    "description": "GiveawayCopyEmailGate implements exception for terminal-to-claude-desktop",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-definition-type",
+    "target": "file:event-section-type",
+    "type": "contains",
+    "description": "EventDefinition contains array of EventSection",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-definition-type",
+    "target": "file:event-host-type",
+    "type": "contains",
+    "description": "EventDefinition contains array of EventHost",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-definition-type",
+    "target": "file:event-promo-code-type",
+    "type": "contains",
+    "description": "EventDefinition pricing contains array of EventPromoCode",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-definition-type",
+    "target": "file:event-intake-fields",
+    "type": "contains",
+    "description": "EventDefinition can specify optional intake fields",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-definition-type",
+    "target": "config:event-email-config",
+    "type": "contains",
+    "description": "EventDefinition can specify email configuration",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-definition-type",
+    "target": "file:private-location-reminder",
+    "type": "contains",
+    "description": "EventDefinition can specify private location reminder",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-definition-type",
+    "target": "file:post-purchase-setup-flow",
+    "type": "contains",
+    "description": "EventDefinition can specify post-purchase setup flow",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-definition-type",
+    "target": "file:capacity-reservation-feature",
+    "type": "contains",
+    "description": "EventDefinition can specify capacity reservation",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-definition-type",
+    "target": "file:event-legacy-registration",
+    "type": "contains",
+    "description": "EventDefinition can specify legacy registration info",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-definition-type",
+    "target": "file:donation-mode-pricing",
+    "type": "contains",
+    "description": "EventDefinition pricing can be in donation mode",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-registration-section-component",
+    "target": "file:event-intake-fields",
+    "type": "uses",
+    "description": "EventRegistrationSection respects event's intake field configuration",
+    "direction": "forward"
+  },
+  {
+    "source": "file:event-page-view-component",
+    "target": "file:event-success-detail",
+    "type": "displays",
+    "description": "EventPageView displays customized success detail",
+    "direction": "forward"
+  },
+  {
+    "source": "file:html-section-component",
+    "target": "file:event-definition-type",
+    "type": "evaluates",
+    "description": "HtmlSection checks eventEnded to disable CTAs",
+    "direction": "forward"
+  },
+  {
+    "source": "file:google-calendar-api-integration",
+    "target": "function:__nofilepath__:inviteAttendeeToEvent-function",
+    "type": "enables",
+    "description": "Google Calendar API enables attendee invitation feature",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:1",
+    "source": "file:component:StickyVideoPlayer",
+    "target": "file:component:InlineOnlyVideoPlayer",
+    "type": "contains",
+    "label": "delegates to for inline-only mode",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:2",
+    "source": "file:component:StickyVideoPlayer",
+    "target": "file:component:StickyVideoPlayerWithStickyBehavior",
+    "type": "delegates",
+    "label": "delegates to for full sticky behavior",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:3",
+    "source": "file:api:events/cancel",
+    "target": "function:__nofilepath__:cancelRegistration",
+    "type": "imports",
+    "label": "from event-registration-db",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:4",
+    "source": "file:api:events/cancel",
+    "target": "function:__nofilepath__:notifyWaitlist",
+    "type": "calls",
+    "label": "on successful cancellation",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:5",
+    "source": "function:__nofilepath__:notifyWaitlist",
+    "target": "file:api:events/cancel",
+    "type": "called_by",
+    "label": "POST /api/events/cancel",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:6",
+    "source": "file:util:legacy-event-schedule",
+    "target": "function:__nofilepath__:inviteAttendeeBestEffort",
+    "type": "exports",
+    "label": "public API function",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:7",
+    "source": "function:__nofilepath__:finalizeLegacyCheckoutSession",
+    "target": "function:__nofilepath__:syncLegacyRegistration",
+    "type": "calls",
+    "label": "step 3: sync to legacy system",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:8",
+    "source": "function:__nofilepath__:finalizeLegacyCheckoutSession",
+    "target": "function:__nofilepath__:inviteAttendeeBestEffort",
+    "type": "calls",
+    "label": "step 8: send calendar invite",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:9",
+    "source": "function:__nofilepath__:syncLegacyRegistration",
+    "target": "function:__nofilepath__:authenticateEventSchedule",
+    "type": "calls",
+    "label": "establishes session",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:10",
+    "source": "function:__nofilepath__:syncLegacyRegistration",
+    "target": "function:__nofilepath__:parseLegacySalesCsv",
+    "type": "uses",
+    "label": "indirectly via listLegacySalesForEmail",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:11",
+    "source": "function:__nofilepath__:authenticateEventSchedule",
+    "target": "file:util:legacy-event-schedule",
+    "type": "internal_helper",
+    "label": "session management",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:12",
+    "source": "file:type:LegacySyncResult",
+    "target": "function:__nofilepath__:finalizeLegacyCheckoutSession",
+    "type": "returned_by",
+    "label": "primary return type",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:13",
+    "source": "file:type:CalendarInviteStatus",
+    "target": "file:type:LegacySyncResult",
+    "type": "used_in",
+    "label": "calendarInvite property",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:14",
+    "source": "file:type:CalendarInviteStatus",
+    "target": "function:__nofilepath__:inviteAttendeeBestEffort",
+    "type": "returned_by",
+    "label": "return type of function",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:15",
+    "source": "file:interface:Giveaway",
+    "target": "file:data:giveaways-registry",
+    "type": "defines",
+    "label": "structure of registry entries",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:16",
+    "source": "function:__nofilepath__:getGiveaway",
+    "target": "file:data:giveaways-registry",
+    "type": "queries",
+    "label": "searches registry by slug",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:17",
+    "source": "function:__nofilepath__:getGiveaway",
+    "target": "file:interface:Giveaway",
+    "type": "returns",
+    "label": "returns Giveaway | undefined",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:18",
+    "source": "file:data:giveaways-registry",
+    "target": "file:component:TerminalToClaudeDesktopLayout",
+    "type": "referenced_by",
+    "label": "terminal-to-claude-desktop entry",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:19",
+    "source": "file:component:TerminalToClaudeDesktopLayout",
+    "target": "file:data:giveaways-registry",
+    "type": "displays",
+    "label": "renders specific giveaway content",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:20",
+    "source": "file:component:StickyVideoPlayer",
+    "target": "file:component:TerminalToClaudeDesktopLayout",
+    "type": "used_in",
+    "label": "likely renders video for giveaway",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:21",
+    "source": "file:doc:AGENTS.md",
+    "target": "file:util:legacy-event-schedule",
+    "type": "documents",
+    "label": "covers codebase containing this module",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:22",
+    "source": "function:__nofilepath__:finalizeLegacyCheckoutSession",
+    "target": "file:type:LegacySyncResult",
+    "type": "returns",
+    "label": "primary return type",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:23",
+    "source": "file:api:events/cancel",
+    "target": "file:util:legacy-event-schedule",
+    "type": "integrates_with",
+    "label": "both manage event registrations",
+    "direction": "forward"
+  },
+  {
+    "id": "edge-page-uses-reveal",
+    "source": "file:page-terminal-to-claude-desktop",
+    "target": "file:component-reveal",
+    "type": "uses",
+    "label": "Page uses Reveal component",
+    "properties": {
+      "count": 9,
+      "delays": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "edge-page-uses-video-player",
+    "source": "file:page-terminal-to-claude-desktop",
+    "target": "file:component-sticky-video-player",
+    "type": "uses",
+    "label": "Page uses StickyVideoPlayer",
+    "properties": {
+      "videoSource": "https://media.mastermindshq.business/giveaways/terminal-to-claude-desktop-20260810.mp4",
+      "title": "Migrating to Claude Desktop"
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "edge-page-exempt-from-email-gate",
+    "source": "file:page-terminal-to-claude-desktop",
+    "target": "file:component-giveaway-copy-email-gate",
+    "type": "exemption",
+    "label": "Page is exempt from email gating",
+    "properties": {
+      "requiresSignup": false,
+      "inExemptList": true
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "edge-gate-imports-modal",
+    "source": "file:component-giveaway-copy-email-gate",
+    "target": "file:component-giveaway-email-modal",
+    "type": "imports",
+    "label": "Email gate component imports modal",
+    "direction": "forward"
+  },
+  {
+    "id": "edge-gate-listens-to-event",
+    "source": "file:component-giveaway-copy-email-gate",
+    "target": "file:event-copy-with-confetti-success",
+    "type": "listens-to",
+    "label": "Email gate listens for copy success event",
+    "properties": {
+      "triggers": "email-modal-open"
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "edge-event-from-library",
+    "source": "file:event-copy-with-confetti-success",
+    "target": "file:lib-copy-with-confetti",
+    "type": "defined-in",
+    "label": "Event defined in copyWithConfetti library",
+    "direction": "forward"
+  },
+  {
+    "id": "edge-config-defines-redirects",
+    "source": "file:config-next-config",
+    "target": "file:route-redirect-session",
+    "type": "defines",
+    "label": "Configuration defines session redirect",
+    "direction": "forward"
+  },
+  {
+    "id": "edge-config-defines-resource-redirect",
+    "source": "file:config-next-config",
+    "target": "file:route-redirect-resource-vault",
+    "type": "defines",
+    "label": "Configuration defines resource vault redirect",
+    "direction": "forward"
+  },
+  {
+    "id": "edge-config-defines-decks-rewrite",
+    "source": "file:config-next-config",
+    "target": "file:route-rewrite-decks-subdomain",
+    "type": "defines",
+    "label": "Configuration defines decks subdomain rewrite",
+    "direction": "forward"
+  },
+  {
+    "id": "edge-config-defines-passiveincome-rewrite",
+    "source": "file:config-next-config",
+    "target": "file:route-rewrite-passiveincome-subdomain",
+    "type": "defines",
+    "label": "Configuration defines passive income subdomain rewrite",
+    "direction": "forward"
+  },
+  {
+    "id": "edge-sitemap-includes-home",
+    "source": "file:route-sitemap",
+    "target": "file:sitemap-route-home",
+    "type": "includes",
+    "label": "Sitemap includes home route",
+    "direction": "forward"
+  },
+  {
+    "id": "edge-sitemap-includes-decks",
+    "source": "file:route-sitemap",
+    "target": "file:sitemap-route-decks",
+    "type": "includes",
+    "label": "Sitemap includes decks subdomain",
+    "direction": "forward"
+  },
+  {
+    "id": "edge-sitemap-includes-giveaways-hub",
+    "source": "file:route-sitemap",
+    "target": "file:sitemap-route-giveaways-hub",
+    "type": "includes",
+    "label": "Sitemap includes giveaways hub",
+    "direction": "forward"
+  },
+  {
+    "id": "edge-sitemap-includes-terminal-to-claude",
+    "source": "file:route-sitemap",
+    "target": "file:sitemap-route-terminal-to-claude",
+    "type": "includes",
+    "label": "Sitemap includes terminal-to-claude giveaway",
+    "direction": "forward"
+  },
+  {
+    "id": "edge-sitemap-includes-cross-cli",
+    "source": "file:route-sitemap",
+    "target": "file:sitemap-route-cross-cli-compatibility",
+    "type": "includes",
+    "label": "Sitemap includes cross-cli-compatibility giveaway",
+    "direction": "forward"
+  },
+  {
+    "id": "edge-sitemap-includes-claude-md",
+    "source": "file:route-sitemap",
+    "target": "file:sitemap-route-claude-md",
+    "type": "includes",
+    "label": "Sitemap includes claude-md giveaway",
+    "direction": "forward"
+  },
+  {
+    "id": "edge-sitemap-includes-web-design",
+    "source": "file:route-sitemap",
+    "target": "file:sitemap-route-web-design-arsenal",
+    "type": "includes",
+    "label": "Sitemap includes web-design-arsenal giveaway",
+    "direction": "forward"
+  },
+  {
+    "id": "edge-sitemap-includes-safety-checklist",
+    "source": "file:route-sitemap",
+    "target": "file:sitemap-route-anthropic-safety-checklist",
+    "type": "includes",
+    "label": "Sitemap includes anthropic-safety-checklist giveaway",
+    "direction": "forward"
+  },
+  {
+    "id": "edge-sitemap-includes-lead-magnet",
+    "source": "file:route-sitemap",
+    "target": "file:sitemap-route-lead-magnet",
+    "type": "includes",
+    "label": "Sitemap includes lead-magnet giveaway",
+    "direction": "forward"
+  },
+  {
+    "id": "edge-sitemap-includes-benchmark",
+    "source": "file:route-sitemap",
+    "target": "file:sitemap-route-benchmark",
+    "type": "includes",
+    "label": "Sitemap includes benchmark giveaway",
+    "direction": "forward"
+  },
+  {
+    "id": "edge-sitemap-includes-maccleaner",
+    "source": "file:route-sitemap",
+    "target": "file:sitemap-route-maccleaner",
+    "type": "includes",
+    "label": "Sitemap includes maccleaner giveaway",
+    "direction": "forward"
+  },
+  {
+    "id": "edge-sitemap-includes-speak-human",
+    "source": "file:route-sitemap",
+    "target": "file:sitemap-route-speak-human",
+    "type": "includes",
+    "label": "Sitemap includes speak-human giveaway",
+    "direction": "forward"
+  },
+  {
+    "id": "edge-sitemap-includes-ray-dalio",
+    "source": "file:route-sitemap",
+    "target": "file:sitemap-route-ray-dalio-council",
+    "type": "includes",
+    "label": "Sitemap includes ray-dalio-council giveaway",
+    "direction": "forward"
+  },
+  {
+    "id": "edge-sitemap-includes-ultimate-claudemd",
+    "source": "file:route-sitemap",
+    "target": "file:sitemap-route-ultimate-claudemd",
+    "type": "includes",
+    "label": "Sitemap includes ultimate-claudemd lead magnet",
+    "direction": "forward"
+  },
+  {
+    "id": "edge-terminal-claude-in-sitemap",
+    "source": "file:page-terminal-to-claude-desktop",
+    "target": "file:sitemap-route-terminal-to-claude",
+    "type": "referenced-by",
+    "label": "Terminal to Claude page listed in sitemap",
+    "properties": {
+      "priority": 0.8,
+      "changeFrequency": "monthly"
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "edge-giveaway-hub-parent",
+    "source": "file:sitemap-route-giveaways-hub",
+    "target": "file:page-terminal-to-claude-desktop",
+    "type": "parent-route",
+    "label": "Giveaways hub is parent route",
+    "properties": {
+      "parentPath": "/giveaways",
+      "childPath": "/giveaways/terminal-to-claude-desktop"
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "edge-concept-email-gating-impl",
+    "source": "concept:concept-email-gating",
+    "target": "file:component-giveaway-copy-email-gate",
+    "type": "implemented-by",
+    "label": "Email gating concept implemented by email gate component",
+    "direction": "forward"
+  },
+  {
+    "id": "edge-concept-giveaway-routing-impl",
+    "source": "concept:concept-giveaway-routing",
+    "target": "file:route-sitemap",
+    "type": "implemented-by",
+    "label": "Giveaway routing concept implemented in sitemap",
+    "direction": "forward"
+  },
+  {
+    "id": "edge-concept-domain-routing-impl",
+    "source": "concept:concept-domain-routing",
+    "target": "file:route-rewrite-decks-subdomain",
+    "type": "implemented-by",
+    "label": "Domain routing concept implemented in decks rewrite",
+    "direction": "forward"
+  },
+  {
+    "id": "edge-concept-domain-routing-impl-2",
+    "source": "concept:concept-domain-routing",
+    "target": "file:route-rewrite-passiveincome-subdomain",
+    "type": "implemented-by",
+    "label": "Domain routing concept implemented in passive income rewrite",
+    "direction": "forward"
+  },
+  {
+    "id": "rate-limit_imports_supabase",
+    "source": "module:rate-limit.ts",
+    "target": "file:supabase-client",
+    "type": "import",
+    "metadata": {
+      "line": 1,
+      "purpose": "Database client dependency"
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "rate-limit_imports_withTimeout",
+    "source": "module:rate-limit.ts",
+    "target": "file:withTimeout",
+    "type": "import",
+    "metadata": {
+      "line": 2,
+      "purpose": "Timeout wrapper dependency"
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "getClientIp_defined_in_rate-limit",
+    "source": "function:__nofilepath__:getClientIp",
+    "target": "module:rate-limit.ts",
+    "type": "defined_in",
+    "metadata": {
+      "line": 4
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "checkRateLimit_defined_in_rate-limit",
+    "source": "function:__nofilepath__:checkRateLimit",
+    "target": "module:rate-limit.ts",
+    "type": "defined_in",
+    "metadata": {
+      "line": 14
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "checkRateLimit_uses_withTimeout",
+    "source": "function:__nofilepath__:checkRateLimit",
+    "target": "file:withTimeout",
+    "type": "calls",
+    "metadata": {
+      "lines": [
+        23,
+        35
+      ],
+      "purpose": "Wraps DB queries with timeout"
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "checkRateLimit_accesses_rate_limit_log",
+    "source": "function:__nofilepath__:checkRateLimit",
+    "target": "file:rate_limit_log-table",
+    "type": "database_access",
+    "metadata": {
+      "operations": [
+        "select",
+        "insert",
+        "delete"
+      ],
+      "lines": [
+        24,
+        35,
+        39
+      ]
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "event-registration-db_imports_supabase",
+    "source": "module:event-registration-db.ts",
+    "target": "file:supabase-client",
+    "type": "import",
+    "metadata": {
+      "line": 2,
+      "purpose": "Database client dependency"
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "event-registration-db_imports_generateToken",
+    "source": "module:event-registration-db.ts",
+    "target": "file:generateToken",
+    "type": "import",
+    "metadata": {
+      "line": 3
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "event-registration-db_imports_getEventBySlug",
+    "source": "module:event-registration-db.ts",
+    "target": "file:getEventBySlug",
+    "type": "import",
+    "metadata": {
+      "line": 4
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "event-registration-db_imports_releaseEventSeat",
+    "source": "module:event-registration-db.ts",
+    "target": "file:releaseEventSeat",
+    "type": "import",
+    "metadata": {
+      "line": 5
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "event-registration-db_imports_randomUUID",
+    "source": "module:event-registration-db.ts",
+    "target": "file:randomUUID",
+    "type": "import",
+    "metadata": {
+      "line": 1
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "saveRegistrationIntake_defined_in_db",
+    "source": "function:__nofilepath__:saveRegistrationIntake",
+    "target": "module:event-registration-db.ts",
+    "type": "defined_in",
+    "metadata": {
+      "line": 47
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "saveRegistrationIntake_accesses_intake_table",
+    "source": "function:__nofilepath__:saveRegistrationIntake",
+    "target": "file:event_registration_intake-table",
+    "type": "database_access",
+    "metadata": {
+      "operations": [
+        "upsert"
+      ],
+      "line": 55
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "getRegistrationIntake_defined_in_db",
+    "source": "function:__nofilepath__:getRegistrationIntake",
+    "target": "module:event-registration-db.ts",
+    "type": "defined_in",
+    "metadata": {
+      "line": 78
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "getRegistrationIntake_accesses_intake_table",
+    "source": "function:__nofilepath__:getRegistrationIntake",
+    "target": "file:event_registration_intake-table",
+    "type": "database_access",
+    "metadata": {
+      "operations": [
+        "select"
+      ],
+      "line": 82
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "getRegistrationIntake_returns_intake_type",
+    "source": "function:__nofilepath__:getRegistrationIntake",
+    "target": "file:RegistrationIntake-type",
+    "type": "returns",
+    "metadata": {},
+    "direction": "forward"
+  },
+  {
+    "id": "saveRegistration_defined_in_db",
+    "source": "function:__nofilepath__:saveRegistration",
+    "target": "module:event-registration-db.ts",
+    "type": "defined_in",
+    "metadata": {
+      "line": 102
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "saveRegistration_uses_randomUUID",
+    "source": "function:__nofilepath__:saveRegistration",
+    "target": "file:randomUUID",
+    "type": "calls",
+    "metadata": {
+      "line": 114
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "saveRegistration_uses_generateToken",
+    "source": "function:__nofilepath__:saveRegistration",
+    "target": "file:generateToken",
+    "type": "calls",
+    "metadata": {
+      "line": 115
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "saveRegistration_uses_getEventBySlug",
+    "source": "function:__nofilepath__:saveRegistration",
+    "target": "file:getEventBySlug",
+    "type": "calls",
+    "metadata": {
+      "line": 123
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "saveRegistration_calls_getRegistrationIntake",
+    "source": "function:__nofilepath__:saveRegistration",
+    "target": "function:__nofilepath__:getRegistrationIntake",
+    "type": "calls",
+    "metadata": {
+      "line": 125
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "saveRegistration_accesses_registrations_table",
+    "source": "function:__nofilepath__:saveRegistration",
+    "target": "file:event_registrations-table",
+    "type": "database_access",
+    "metadata": {
+      "operations": [
+        "insert"
+      ],
+      "line": 140
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "saveRegistration_returns_registration_type",
+    "source": "function:__nofilepath__:saveRegistration",
+    "target": "file:Registration-type",
+    "type": "returns",
+    "metadata": {},
+    "direction": "forward"
+  },
+  {
+    "id": "isAlreadyRegistered_defined_in_db",
+    "source": "function:__nofilepath__:isAlreadyRegistered",
+    "target": "module:event-registration-db.ts",
+    "type": "defined_in",
+    "metadata": {
+      "line": 169
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "isAlreadyRegistered_accesses_registrations_table",
+    "source": "function:__nofilepath__:isAlreadyRegistered",
+    "target": "file:event_registrations-table",
+    "type": "database_access",
+    "metadata": {
+      "operations": [
+        "select"
+      ],
+      "line": 170
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "isAlreadyOnWaitlist_defined_in_db",
+    "source": "function:__nofilepath__:isAlreadyOnWaitlist",
+    "target": "module:event-registration-db.ts",
+    "type": "defined_in",
+    "metadata": {
+      "line": 185
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "isAlreadyOnWaitlist_accesses_waitlist_table",
+    "source": "function:__nofilepath__:isAlreadyOnWaitlist",
+    "target": "file:event_waitlist-table",
+    "type": "database_access",
+    "metadata": {
+      "operations": [
+        "select"
+      ],
+      "line": 187
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "cancelRegistration_defined_in_db",
+    "source": "function:__nofilepath__:cancelRegistration",
+    "target": "module:event-registration-db.ts",
+    "type": "defined_in",
+    "metadata": {
+      "line": 201
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "cancelRegistration_accesses_registrations_table",
+    "source": "function:__nofilepath__:cancelRegistration",
+    "target": "file:event_registrations-table",
+    "type": "database_access",
+    "metadata": {
+      "operations": [
+        "select",
+        "update"
+      ],
+      "lines": [
+        207,
+        236
+      ]
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "cancelRegistration_uses_getEventBySlug",
+    "source": "function:__nofilepath__:cancelRegistration",
+    "target": "file:getEventBySlug",
+    "type": "calls",
+    "metadata": {
+      "line": 221
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "cancelRegistration_uses_releaseEventSeat",
+    "source": "function:__nofilepath__:cancelRegistration",
+    "target": "file:releaseEventSeat",
+    "type": "calls",
+    "metadata": {
+      "line": 223
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "getConfirmedCount_defined_in_db",
+    "source": "function:__nofilepath__:getConfirmedCount",
+    "target": "module:event-registration-db.ts",
+    "type": "defined_in",
+    "metadata": {
+      "line": 256
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "getConfirmedCount_accesses_registrations_table",
+    "source": "function:__nofilepath__:getConfirmedCount",
+    "target": "file:event_registrations-table",
+    "type": "database_access",
+    "metadata": {
+      "operations": [
+        "select"
+      ],
+      "line": 257
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "getConfirmedRegistrationsForEvent_defined_in_db",
+    "source": "function:__nofilepath__:getConfirmedRegistrationsForEvent",
+    "target": "module:event-registration-db.ts",
+    "type": "defined_in",
+    "metadata": {
+      "line": 271
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "getConfirmedRegistrationsForEvent_accesses_registrations_table",
+    "source": "function:__nofilepath__:getConfirmedRegistrationsForEvent",
+    "target": "file:event_registrations-table",
+    "type": "database_access",
+    "metadata": {
+      "operations": [
+        "select"
+      ],
+      "line": 274
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "addToWaitlist_defined_in_db",
+    "source": "function:__nofilepath__:addToWaitlist",
+    "target": "module:event-registration-db.ts",
+    "type": "defined_in",
+    "metadata": {
+      "line": 291
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "addToWaitlist_uses_randomUUID",
+    "source": "function:__nofilepath__:addToWaitlist",
+    "target": "file:randomUUID",
+    "type": "calls",
+    "metadata": {
+      "line": 296
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "addToWaitlist_uses_generateToken",
+    "source": "function:__nofilepath__:addToWaitlist",
+    "target": "file:generateToken",
+    "type": "calls",
+    "metadata": {
+      "line": 298
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "addToWaitlist_accesses_waitlist_table",
+    "source": "function:__nofilepath__:addToWaitlist",
+    "target": "file:event_waitlist-table",
+    "type": "database_access",
+    "metadata": {
+      "operations": [
+        "insert"
+      ],
+      "line": 300
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "removeFromWaitlist_defined_in_db",
+    "source": "function:__nofilepath__:removeFromWaitlist",
+    "target": "module:event-registration-db.ts",
+    "type": "defined_in",
+    "metadata": {
+      "line": 322
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "removeFromWaitlist_accesses_waitlist_table",
+    "source": "function:__nofilepath__:removeFromWaitlist",
+    "target": "file:event_waitlist-table",
+    "type": "database_access",
+    "metadata": {
+      "operations": [
+        "select",
+        "update"
+      ],
+      "lines": [
+        323,
+        338
+      ]
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "getActiveWaitlist_defined_in_db",
+    "source": "function:__nofilepath__:getActiveWaitlist",
+    "target": "module:event-registration-db.ts",
+    "type": "defined_in",
+    "metadata": {
+      "line": 349
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "getActiveWaitlist_accesses_waitlist_table",
+    "source": "function:__nofilepath__:getActiveWaitlist",
+    "target": "file:event_waitlist-table",
+    "type": "database_access",
+    "metadata": {
+      "operations": [
+        "select"
+      ],
+      "line": 352
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "hasOpenSpots_defined_in_db",
+    "source": "function:__nofilepath__:hasOpenSpots",
+    "target": "module:event-registration-db.ts",
+    "type": "defined_in",
+    "metadata": {
+      "line": 371
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "hasOpenSpots_uses_getEventBySlug",
+    "source": "function:__nofilepath__:hasOpenSpots",
+    "target": "file:getEventBySlug",
+    "type": "calls",
+    "metadata": {
+      "line": 372
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "hasOpenSpots_calls_getConfirmedCount",
+    "source": "function:__nofilepath__:hasOpenSpots",
+    "target": "function:__nofilepath__:getConfirmedCount",
+    "type": "calls",
+    "metadata": {
+      "line": 373
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "event-registration-db_exports_Registration_type",
+    "source": "module:event-registration-db.ts",
+    "target": "file:Registration-type",
+    "type": "exports",
+    "metadata": {
+      "line": 7
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "event-registration-db_exports_RegistrationIntake_type",
+    "source": "module:event-registration-db.ts",
+    "target": "file:RegistrationIntake-type",
+    "type": "exports",
+    "metadata": {
+      "line": 24
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "event-registration-db_exports_WaitlistEntry_type",
+    "source": "module:event-registration-db.ts",
+    "target": "file:WaitlistEntry-type",
+    "type": "exports",
+    "metadata": {
+      "line": 29
+    },
+    "direction": "forward"
+  },
+  {
+    "id": "getEventBySlug_exports_EventDefinition",
+    "source": "file:getEventBySlug",
+    "target": "file:EventDefinition-type",
+    "type": "exports",
+    "metadata": {},
+    "direction": "forward"
+  },
+  {
+    "id": "edge:package-json-to-next",
+    "source": "config:package-json",
+    "target": "file:dependency:next",
+    "type": "depends-on",
+    "weight": 1,
+    "relationship": "runtime-dependency",
+    "description": "Project depends on Next.js framework",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:package-json-to-react",
+    "source": "config:package-json",
+    "target": "file:dependency:react",
+    "type": "depends-on",
+    "weight": 1,
+    "relationship": "runtime-dependency",
+    "description": "Project depends on React library",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:package-json-to-stripe",
+    "source": "config:package-json",
+    "target": "file:dependency:stripe",
+    "type": "depends-on",
+    "weight": 1,
+    "relationship": "runtime-dependency",
+    "description": "Project integrates Stripe for payments",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:package-json-to-supabase",
+    "source": "config:package-json",
+    "target": "file:dependency:supabase",
+    "type": "depends-on",
+    "weight": 1,
+    "relationship": "runtime-dependency",
+    "description": "Project uses Supabase database",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:stripe-react-to-stripe-js",
+    "source": "file:dependency:stripe-react",
+    "target": "file:dependency:stripe-js",
+    "type": "depends-on",
+    "weight": 0.9,
+    "relationship": "peer-dependency",
+    "description": "Stripe React components require Stripe.js library",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:next-to-react",
+    "source": "file:dependency:next",
+    "target": "file:dependency:react",
+    "type": "depends-on",
+    "weight": 1,
+    "relationship": "peer-dependency",
+    "description": "Next.js requires React as peer dependency",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:tsconfig-to-next",
+    "source": "config:tsconfig",
+    "target": "file:dependency:next",
+    "type": "configures",
+    "weight": 0.8,
+    "relationship": "configuration",
+    "description": "TypeScript config includes Next.js plugin",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:build-script-to-next",
+    "source": "file:script:build",
+    "target": "file:dependency:next",
+    "type": "invokes",
+    "weight": 0.9,
+    "relationship": "execution",
+    "description": "Build script runs Next.js compiler",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:dev-script-to-next",
+    "source": "file:script:dev",
+    "target": "file:dependency:next",
+    "type": "invokes",
+    "weight": 0.9,
+    "relationship": "execution",
+    "description": "Dev script starts Next.js dev server",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:start-script-to-next",
+    "source": "file:script:start",
+    "target": "file:dependency:next",
+    "type": "invokes",
+    "weight": 0.9,
+    "relationship": "execution",
+    "description": "Start script runs Next.js production server",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:test-script-to-tsconfig",
+    "source": "file:script:test",
+    "target": "config:tsconfig",
+    "type": "uses",
+    "weight": 0.7,
+    "relationship": "configuration",
+    "description": "Test script uses TypeScript configuration",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:abandoned-checkout-script-to-stripe",
+    "source": "file:script:abandoned-checkout-run",
+    "target": "file:dependency:stripe",
+    "type": "depends-on",
+    "weight": 0.8,
+    "relationship": "runtime-dependency",
+    "description": "Abandoned checkout script uses Stripe API",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:abandoned-checkout-cron-to-api",
+    "source": "file:cron:abandoned-checkout-followups",
+    "target": "file:dependency:resend",
+    "type": "triggers",
+    "weight": 0.7,
+    "relationship": "scheduled-execution",
+    "description": "Cron job triggers abandoned checkout email reminders",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:cron-t12h-to-resend",
+    "source": "file:cron:abandoned-checkout-followups-t12h",
+    "target": "file:dependency:resend",
+    "type": "triggers",
+    "weight": 0.7,
+    "relationship": "scheduled-execution",
+    "description": "12-hour follow-up cron uses Resend email service",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:session-reminders-to-resend",
+    "source": "file:cron:session-reminders",
+    "target": "file:dependency:resend",
+    "type": "triggers",
+    "weight": 0.7,
+    "relationship": "scheduled-execution",
+    "description": "Session reminder cron sends emails via Resend",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:location-reminders-to-resend",
+    "source": "file:cron:location-reminders",
+    "target": "file:dependency:resend",
+    "type": "triggers",
+    "weight": 0.6,
+    "relationship": "scheduled-execution",
+    "description": "Location reminder cron sends notifications",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:reconcile-registrations-to-supabase",
+    "source": "file:cron:reconcile-registrations",
+    "target": "file:dependency:supabase",
+    "type": "triggers",
+    "weight": 0.8,
+    "relationship": "database-operation",
+    "description": "Registration reconciliation queries Supabase database",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:reconcile-registrations-to-stripe",
+    "source": "file:cron:reconcile-registrations",
+    "target": "file:dependency:stripe",
+    "type": "triggers",
+    "weight": 0.8,
+    "relationship": "integration",
+    "description": "Reconciliation validates Stripe charges against registrations",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:vercel-config-to-crons",
+    "source": "config:vercel",
+    "target": "file:cron:abandoned-checkout-followups",
+    "type": "schedules",
+    "weight": 0.8,
+    "relationship": "configuration",
+    "description": "Vercel config schedules abandoned checkout cron job",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:decks-rewrite-to-vercel",
+    "source": "file:rewrite:decks-subdomain",
+    "target": "config:vercel",
+    "type": "defined-in",
+    "weight": 0.7,
+    "relationship": "routing-rule",
+    "description": "Decks subdomain rewrite rule in Vercel config",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:passive-income-rewrite-to-vercel",
+    "source": "file:rewrite:passiveincome-subdomain",
+    "target": "config:vercel",
+    "type": "defined-in",
+    "weight": 0.7,
+    "relationship": "routing-rule",
+    "description": "Passive income subdomain rewrite rule in Vercel config",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:package-json-to-framer",
+    "source": "config:package-json",
+    "target": "file:dependency:framer-motion",
+    "type": "depends-on",
+    "weight": 0.8,
+    "relationship": "runtime-dependency",
+    "description": "Project uses Framer Motion for animations",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:package-json-to-gsap",
+    "source": "config:package-json",
+    "target": "file:dependency:gsap",
+    "type": "depends-on",
+    "weight": 0.7,
+    "relationship": "runtime-dependency",
+    "description": "Project uses GSAP for advanced animations",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:package-json-to-three",
+    "source": "config:package-json",
+    "target": "file:dependency:three",
+    "type": "depends-on",
+    "weight": 0.7,
+    "relationship": "runtime-dependency",
+    "description": "Project uses Three.js for 3D graphics",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:package-json-to-vanta",
+    "source": "config:package-json",
+    "target": "file:dependency:vanta",
+    "type": "depends-on",
+    "weight": 0.6,
+    "relationship": "runtime-dependency",
+    "description": "Project uses Vanta for 3D backgrounds",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:package-json-to-googleapis",
+    "source": "config:package-json",
+    "target": "file:dependency:googleapis",
+    "type": "depends-on",
+    "weight": 0.8,
+    "relationship": "runtime-dependency",
+    "description": "Project integrates Google Calendar API",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:package-json-to-resend",
+    "source": "config:package-json",
+    "target": "file:dependency:resend",
+    "type": "depends-on",
+    "weight": 0.8,
+    "relationship": "runtime-dependency",
+    "description": "Project uses Resend for transactional emails",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:design-context-to-brand",
+    "source": "file:doc:impeccable-design",
+    "target": "config:package-json",
+    "type": "informs",
+    "weight": 0.6,
+    "relationship": "design-guidance",
+    "description": "Design guidelines inform UI component implementations",
+    "direction": "forward"
+  },
+  {
+    "id": "edge:backlog-references-process",
+    "source": "file:doc:batch-11:backlog-md",
+    "target": "file:doc:batch-11:process-md",
+    "type": "references",
+    "description": "BACKLOG.md states 'How to build one: PROCESS.md in this folder'",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "edge:backlog-references-lessons",
+    "source": "file:doc:batch-11:backlog-md",
+    "target": "file:doc:batch-11:lessons-md",
+    "description": "BACKLOG.md states 'What not to repeat: LESSONS.md'",
+    "type": "references",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "edge:backlog-references-entry-points",
+    "source": "file:doc:batch-11:backlog-md",
+    "target": "file:entry-point-offers",
+    "type": "references",
+    "description": "BACKLOG.md references 'projects/mastermind/ENTRY-POINT-OFFERS-2026-08-03.md' as source of ideas with full write-ups",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "edge:lessons-incorporates-into-process",
+    "source": "file:doc:batch-11:lessons-md",
+    "target": "file:doc:batch-11:process-md",
+    "type": "informs",
+    "description": "Each lesson ends with a rule that gets incorporated into PROCESS.md",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "edge:process-phase-preflight",
+    "source": "file:doc:batch-11:process-md",
+    "target": "file:phase:preflight",
+    "type": "contains",
+    "description": "PROCESS.md Phase 0 defines pre-flight checks",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "edge:process-phase-technical",
+    "source": "file:doc:batch-11:process-md",
+    "target": "file:phase:technical-setup",
+    "type": "contains",
+    "description": "PROCESS.md Phase 1 covers technical setup",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "edge:process-phase-content",
+    "source": "file:doc:batch-11:process-md",
+    "target": "file:phase:content",
+    "type": "contains",
+    "description": "PROCESS.md Phase 2 covers content creation",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "edge:process-phase-publishing",
+    "source": "file:doc:batch-11:process-md",
+    "target": "file:phase:publishing",
+    "type": "contains",
+    "description": "PROCESS.md Phase 3 covers publishing",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "edge:process-template-guardog",
+    "source": "file:doc:batch-11:process-md",
+    "target": "concept:giveaway-lesson-1",
+    "type": "enforces",
+    "description": "PROCESS.md Phase 1 Step 1 enforces 'clone guardog, nothing else, ever'",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "edge:process-requires-email-modal",
+    "source": "file:doc:batch-11:process-md",
+    "target": "concept:email-modal-trigger",
+    "type": "specifies",
+    "description": "PROCESS.md defines email modal trigger patterns for copy-prompt vs non-copy-prompt pages",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "edge:process-template-requirements",
+    "source": "file:doc:batch-11:process-md",
+    "target": "concept:giveaway-template",
+    "type": "defines",
+    "description": "PROCESS.md Phase 1 lists 14 required template elements and mobile design rules",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "edge:process-registry-reference",
+    "source": "file:doc:batch-11:process-md",
+    "target": "file:registry:giveaways",
+    "type": "uses",
+    "description": "PROCESS.md Phase 1 Step 2 requires entry in giveaways.ts registry",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "edge:process-api-endpoint",
+    "source": "file:doc:batch-11:process-md",
+    "target": "endpoint:api:lead-magnet",
+    "type": "uses",
+    "description": "PROCESS.md Phase 1 specifies /api/lead-magnet for email collection",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "edge:process-test-gate-template",
+    "source": "file:doc:batch-11:process-md",
+    "target": "file:test:giveaway-template-structure",
+    "type": "gates",
+    "description": "PROCESS.md Phase 1 requires giveaway-template-structure.test.ts to pass before deploy",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "edge:process-test-gate-email",
+    "source": "file:doc:batch-11:process-md",
+    "target": "file:test:giveaway-email-collection",
+    "type": "gates",
+    "description": "PROCESS.md Phase 1 requires giveaway-email-collection.test.ts to pass before deploy",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "edge:process-manychat-tool",
+    "source": "file:doc:batch-11:process-md",
+    "target": "file:tool:manychat",
+    "type": "uses",
+    "description": "PROCESS.md Phase 1 Step 5 sets up ManyChat automation flows",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "edge:process-hooklab-tool",
+    "source": "file:doc:batch-11:process-md",
+    "target": "file:tool:hooklab",
+    "type": "uses",
+    "description": "PROCESS.md Phase 2 Step 7 uses HookLab CTA First mode for hook generation",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "edge:process-hooklab-brief",
+    "source": "file:doc:batch-11:process-md",
+    "target": "file:hooklab-brief",
+    "type": "uses",
+    "description": "PROCESS.md Phase 2 Step 6 requires updating this-week.md before HookLab",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "edge:process-notify-script",
+    "source": "file:doc:batch-11:process-md",
+    "target": "file:notify-giveaway-launch",
+    "type": "uses",
+    "description": "PROCESS.md Phase 1 Step 4 runs notify-giveaway-launch.js to verify + notify",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "edge:template-requires-modal",
+    "source": "concept:giveaway-template",
+    "target": "file:component:giveaway-email-modal",
+    "type": "requires",
+    "description": "Template requires GiveawayEmailModal component; trigger depends on copy-prompt type",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "edge:auto-modal-wrapper-component",
+    "source": "file:component:giveaway-auto-modal",
+    "target": "file:component:giveaway-email-modal",
+    "type": "wraps",
+    "description": "GiveawayAutoModal encapsulates auto-popup logic and wraps GiveawayEmailModal",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "edge:template-requires-cta",
+    "source": "concept:giveaway-template",
+    "target": "file:component:mastermind-cta",
+    "type": "requires",
+    "description": "Template requires MastermindCTA soft-sell block before reactions",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "edge:template-requires-reactions",
+    "source": "concept:giveaway-template",
+    "target": "file:component:mastermind-reactions-section",
+    "type": "requires",
+    "description": "Template requires MastermindReactionsSection testimonial carousel at bottom",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "edge:lesson-1-guardog-clone",
+    "source": "file:doc:batch-11:lessons-md",
+    "target": "concept:giveaway-lesson-1",
+    "type": "documents",
+    "description": "LESSONS.md 2026-06-08 entry documents the guardog-clone rule",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "edge:lesson-2-email-modal",
+    "source": "file:doc:batch-11:lessons-md",
+    "target": "concept:giveaway-lesson-2",
+    "type": "documents",
+    "description": "LESSONS.md 2026-06-08 entry documents the email-modal-required rule",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "edge:lesson-3-auto-modal-component",
+    "source": "file:doc:batch-11:lessons-md",
+    "target": "concept:giveaway-lesson-3",
+    "type": "documents",
+    "description": "LESSONS.md 2026-06-09 entry documents the GiveawayAutoModal refactoring",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "edge:lesson-4-three-edit-rule",
+    "source": "file:doc:batch-11:lessons-md",
+    "target": "concept:giveaway-lesson-4",
+    "type": "documents",
+    "description": "LESSONS.md 2026-08-03 entry documents the three-edit registration rule",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "edge:lesson-5-whitespace-bug",
+    "source": "file:doc:batch-11:lessons-md",
+    "target": "concept:giveaway-lesson-5",
+    "type": "documents",
+    "description": "LESSONS.md 2026-08-03 entry documents the Resend 422 failure from env whitespace",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "edge:backlog-contains-cost-stack",
+    "source": "concept:giveaway-backlog",
+    "target": "file:giveaway:cost-stack",
+    "type": "contains",
+    "description": "Backlog item #1 is Cost Stack Audit",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "edge:backlog-contains-bring-task",
+    "source": "concept:giveaway-backlog",
+    "target": "file:giveaway:bring-task",
+    "type": "contains",
+    "description": "Backlog item #5 is Bring the Task You Hate",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "edge:backlog-contains-voice-profile",
+    "source": "concept:giveaway-backlog",
+    "target": "file:giveaway:voice-profile",
+    "type": "contains",
+    "description": "Backlog item #5b is Make AI Sound Like You (voice profile)",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "edge:api-endpoint-validates-email",
+    "source": "endpoint:api:lead-magnet",
+    "target": "concept:email-modal-trigger",
+    "type": "implements",
+    "description": "Lead magnet endpoint receives emails from modal trigger patterns",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "edge:api-uses-resend",
+    "source": "endpoint:api:lead-magnet",
+    "target": "file:tool:resend",
+    "type": "uses",
+    "description": "Lead magnet endpoint sends via Resend; whitespace in headers causes 422",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/finalize-registration/route.ts->import:NextResponse@next/server",
+    "source": "file:src/app/api/events/finalize-registration/route.ts",
+    "target": "file:import:NextResponse@next/server",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/finalize-registration/route.ts->import:getEventBySlug@@/lib/events",
+    "source": "file:src/app/api/events/finalize-registration/route.ts",
+    "target": "file:import:getEventBySlug@@/lib/events",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/finalize-registration/route.ts->import:finalizeLegacyCheckoutSession@@/lib/legacy-event-schedule",
+    "source": "file:src/app/api/events/finalize-registration/route.ts",
+    "target": "file:import:finalizeLegacyCheckoutSession@@/lib/legacy-event-schedule",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/finalize-registration/route.ts->import:trackInsightEvent@@/lib/insight-to-fix",
+    "source": "file:src/app/api/events/finalize-registration/route.ts",
+    "target": "file:import:trackInsightEvent@@/lib/insight-to-fix",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/finalize-registration/route.ts->export:runtime@src/app/api/events/finalize-registration/route.ts",
+    "source": "file:src/app/api/events/finalize-registration/route.ts",
+    "target": "file:export:runtime@src/app/api/events/finalize-registration/route.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/finalize-registration/route.ts->export:POST@src/app/api/events/finalize-registration/route.ts",
+    "source": "file:src/app/api/events/finalize-registration/route.ts",
+    "target": "file:export:POST@src/app/api/events/finalize-registration/route.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/finalize-registration/route.ts->route:POST@src/app/api/events/finalize-registration/route.ts",
+    "source": "file:src/app/api/events/finalize-registration/route.ts",
+    "target": "file:route:POST@src/app/api/events/finalize-registration/route.ts",
+    "type": "defines",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/followups/route.ts->import:NextResponse@next/server",
+    "source": "file:src/app/api/events/followups/route.ts",
+    "target": "file:import:NextResponse@next/server",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/followups/route.ts->import:type NextRequest@next/server",
+    "source": "file:src/app/api/events/followups/route.ts",
+    "target": "file:import:type NextRequest@next/server",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/followups/route.ts->import:timingSafeEqual@crypto",
+    "source": "file:src/app/api/events/followups/route.ts",
+    "target": "file:import:timingSafeEqual@crypto",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/followups/route.ts->import:getEventBySlug@@/lib/events",
+    "source": "file:src/app/api/events/followups/route.ts",
+    "target": "file:import:getEventBySlug@@/lib/events",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/followups/route.ts->import:getLiveEvents@@/lib/events",
+    "source": "file:src/app/api/events/followups/route.ts",
+    "target": "file:import:getLiveEvents@@/lib/events",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/followups/route.ts->import:getConfirmedRegistrationsForEvent@@/lib/event-registration-db",
+    "source": "file:src/app/api/events/followups/route.ts",
+    "target": "file:import:getConfirmedRegistrationsForEvent@@/lib/event-registration-db",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/followups/route.ts->import:isSuppressed@@/lib/email-suppressions",
+    "source": "file:src/app/api/events/followups/route.ts",
+    "target": "file:import:isSuppressed@@/lib/email-suppressions",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/followups/route.ts->import:DEFAULT_FOLLOWUP_LEAD_HOURS@@/lib/event-followup",
+    "source": "file:src/app/api/events/followups/route.ts",
+    "target": "file:import:DEFAULT_FOLLOWUP_LEAD_HOURS@@/lib/event-followup",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/followups/route.ts->import:runEventFollowups@@/lib/event-followup",
+    "source": "file:src/app/api/events/followups/route.ts",
+    "target": "file:import:runEventFollowups@@/lib/event-followup",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/followups/route.ts->import:sendEventFollowupEmail@@/lib/event-followup",
+    "source": "file:src/app/api/events/followups/route.ts",
+    "target": "file:import:sendEventFollowupEmail@@/lib/event-followup",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/followups/route.ts->import:supabase@@/lib/supabase",
+    "source": "file:src/app/api/events/followups/route.ts",
+    "target": "file:import:supabase@@/lib/supabase",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/followups/route.ts->export:runtime@src/app/api/events/followups/route.ts",
+    "source": "file:src/app/api/events/followups/route.ts",
+    "target": "file:export:runtime@src/app/api/events/followups/route.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/followups/route.ts->export:GET@src/app/api/events/followups/route.ts",
+    "source": "file:src/app/api/events/followups/route.ts",
+    "target": "file:export:GET@src/app/api/events/followups/route.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/followups/route.ts->route:GET@src/app/api/events/followups/route.ts",
+    "source": "file:src/app/api/events/followups/route.ts",
+    "target": "file:route:GET@src/app/api/events/followups/route.ts",
+    "type": "defines",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/location-reminders/route.ts->import:NextResponse@next/server",
+    "source": "file:src/app/api/events/location-reminders/route.ts",
+    "target": "file:import:NextResponse@next/server",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/location-reminders/route.ts->import:type NextRequest@next/server",
+    "source": "file:src/app/api/events/location-reminders/route.ts",
+    "target": "file:import:type NextRequest@next/server",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/location-reminders/route.ts->import:timingSafeEqual@crypto",
+    "source": "file:src/app/api/events/location-reminders/route.ts",
+    "target": "file:import:timingSafeEqual@crypto",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/location-reminders/route.ts->import:getEventBySlug@@/lib/events",
+    "source": "file:src/app/api/events/location-reminders/route.ts",
+    "target": "file:import:getEventBySlug@@/lib/events",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/location-reminders/route.ts->import:getLiveEvents@@/lib/events",
+    "source": "file:src/app/api/events/location-reminders/route.ts",
+    "target": "file:import:getLiveEvents@@/lib/events",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/location-reminders/route.ts->import:sendEventLocationReminderEmail@@/lib/event-confirmation-email",
+    "source": "file:src/app/api/events/location-reminders/route.ts",
+    "target": "file:import:sendEventLocationReminderEmail@@/lib/event-confirmation-email",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/location-reminders/route.ts->import:listLegacyPaidAttendeesForEvent@@/lib/legacy-event-schedule",
+    "source": "file:src/app/api/events/location-reminders/route.ts",
+    "target": "file:import:listLegacyPaidAttendeesForEvent@@/lib/legacy-event-schedule",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/location-reminders/route.ts->import:getConfirmedRegistrationsForEvent@@/lib/event-registration-db",
+    "source": "file:src/app/api/events/location-reminders/route.ts",
+    "target": "file:import:getConfirmedRegistrationsForEvent@@/lib/event-registration-db",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/location-reminders/route.ts->import:runLocationReminders@@/lib/location-reminder",
+    "source": "file:src/app/api/events/location-reminders/route.ts",
+    "target": "file:import:runLocationReminders@@/lib/location-reminder",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/location-reminders/route.ts->import:createSupabaseEventEmailLedger@@/lib/event-email-ledger",
+    "source": "file:src/app/api/events/location-reminders/route.ts",
+    "target": "file:import:createSupabaseEventEmailLedger@@/lib/event-email-ledger",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/location-reminders/route.ts->import:supabase@@/lib/supabase",
+    "source": "file:src/app/api/events/location-reminders/route.ts",
+    "target": "file:import:supabase@@/lib/supabase",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/location-reminders/route.ts->export:runtime@src/app/api/events/location-reminders/route.ts",
+    "source": "file:src/app/api/events/location-reminders/route.ts",
+    "target": "file:export:runtime@src/app/api/events/location-reminders/route.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/location-reminders/route.ts->export:GET@src/app/api/events/location-reminders/route.ts",
+    "source": "file:src/app/api/events/location-reminders/route.ts",
+    "target": "file:export:GET@src/app/api/events/location-reminders/route.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/location-reminders/route.ts->route:GET@src/app/api/events/location-reminders/route.ts",
+    "source": "file:src/app/api/events/location-reminders/route.ts",
+    "target": "file:route:GET@src/app/api/events/location-reminders/route.ts",
+    "type": "defines",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/reconcile-registrations/route.ts->import:NextResponse@next/server",
+    "source": "file:src/app/api/events/reconcile-registrations/route.ts",
+    "target": "file:import:NextResponse@next/server",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/reconcile-registrations/route.ts->import:type NextRequest@next/server",
+    "source": "file:src/app/api/events/reconcile-registrations/route.ts",
+    "target": "file:import:type NextRequest@next/server",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/reconcile-registrations/route.ts->import:randomUUID@crypto",
+    "source": "file:src/app/api/events/reconcile-registrations/route.ts",
+    "target": "file:import:randomUUID@crypto",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/reconcile-registrations/route.ts->import:timingSafeEqual@crypto",
+    "source": "file:src/app/api/events/reconcile-registrations/route.ts",
+    "target": "file:import:timingSafeEqual@crypto",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/reconcile-registrations/route.ts->import:Stripe@stripe",
+    "source": "file:src/app/api/events/reconcile-registrations/route.ts",
+    "target": "file:import:Stripe@stripe",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/reconcile-registrations/route.ts->import:supabase@@/lib/supabase",
+    "source": "file:src/app/api/events/reconcile-registrations/route.ts",
+    "target": "file:import:supabase@@/lib/supabase",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/reconcile-registrations/route.ts->import:generateToken@@/lib/event-tokens",
+    "source": "file:src/app/api/events/reconcile-registrations/route.ts",
+    "target": "file:import:generateToken@@/lib/event-tokens",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/reconcile-registrations/route.ts->import:getStripeSecretKey@@/lib/stripe",
+    "source": "file:src/app/api/events/reconcile-registrations/route.ts",
+    "target": "file:import:getStripeSecretKey@@/lib/stripe",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/reconcile-registrations/route.ts->export:runtime@src/app/api/events/reconcile-registrations/route.ts",
+    "source": "file:src/app/api/events/reconcile-registrations/route.ts",
+    "target": "file:export:runtime@src/app/api/events/reconcile-registrations/route.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/reconcile-registrations/route.ts->export:maxDuration@src/app/api/events/reconcile-registrations/route.ts",
+    "source": "file:src/app/api/events/reconcile-registrations/route.ts",
+    "target": "file:export:maxDuration@src/app/api/events/reconcile-registrations/route.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/reconcile-registrations/route.ts->export:GET@src/app/api/events/reconcile-registrations/route.ts",
+    "source": "file:src/app/api/events/reconcile-registrations/route.ts",
+    "target": "file:export:GET@src/app/api/events/reconcile-registrations/route.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/reconcile-registrations/route.ts->route:GET@src/app/api/events/reconcile-registrations/route.ts",
+    "source": "file:src/app/api/events/reconcile-registrations/route.ts",
+    "target": "file:route:GET@src/app/api/events/reconcile-registrations/route.ts",
+    "type": "defines",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/session-reminders/route.ts->import:NextResponse@next/server",
+    "source": "file:src/app/api/events/session-reminders/route.ts",
+    "target": "file:import:NextResponse@next/server",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/session-reminders/route.ts->import:type NextRequest@next/server",
+    "source": "file:src/app/api/events/session-reminders/route.ts",
+    "target": "file:import:type NextRequest@next/server",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/session-reminders/route.ts->import:timingSafeEqual@crypto",
+    "source": "file:src/app/api/events/session-reminders/route.ts",
+    "target": "file:import:timingSafeEqual@crypto",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/session-reminders/route.ts->import:getEventBySlug@@/lib/events",
+    "source": "file:src/app/api/events/session-reminders/route.ts",
+    "target": "file:import:getEventBySlug@@/lib/events",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/session-reminders/route.ts->import:getLiveEvents@@/lib/events",
+    "source": "file:src/app/api/events/session-reminders/route.ts",
+    "target": "file:import:getLiveEvents@@/lib/events",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/session-reminders/route.ts->import:getConfirmedRegistrationsForEvent@@/lib/event-registration-db",
+    "source": "file:src/app/api/events/session-reminders/route.ts",
+    "target": "file:import:getConfirmedRegistrationsForEvent@@/lib/event-registration-db",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/session-reminders/route.ts->import:sendSessionReminderEmail@@/lib/event-confirmation-email",
+    "source": "file:src/app/api/events/session-reminders/route.ts",
+    "target": "file:import:sendSessionReminderEmail@@/lib/event-confirmation-email",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/session-reminders/route.ts->import:buildSessionReminderLockKey@@/lib/session-reminder",
+    "source": "file:src/app/api/events/session-reminders/route.ts",
+    "target": "file:import:buildSessionReminderLockKey@@/lib/session-reminder",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/session-reminders/route.ts->import:runSessionReminders@@/lib/session-reminder",
+    "source": "file:src/app/api/events/session-reminders/route.ts",
+    "target": "file:import:runSessionReminders@@/lib/session-reminder",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/session-reminders/route.ts->import:supabase@@/lib/supabase",
+    "source": "file:src/app/api/events/session-reminders/route.ts",
+    "target": "file:import:supabase@@/lib/supabase",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/session-reminders/route.ts->export:runtime@src/app/api/events/session-reminders/route.ts",
+    "source": "file:src/app/api/events/session-reminders/route.ts",
+    "target": "file:export:runtime@src/app/api/events/session-reminders/route.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/session-reminders/route.ts->export:GET@src/app/api/events/session-reminders/route.ts",
+    "source": "file:src/app/api/events/session-reminders/route.ts",
+    "target": "file:export:GET@src/app/api/events/session-reminders/route.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/session-reminders/route.ts->route:GET@src/app/api/events/session-reminders/route.ts",
+    "source": "file:src/app/api/events/session-reminders/route.ts",
+    "target": "file:route:GET@src/app/api/events/session-reminders/route.ts",
+    "type": "defines",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/validate-promo/route.ts->import:NextResponse@next/server",
+    "source": "file:src/app/api/events/validate-promo/route.ts",
+    "target": "file:import:NextResponse@next/server",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/validate-promo/route.ts->import:getEventBySlug@@/lib/events",
+    "source": "file:src/app/api/events/validate-promo/route.ts",
+    "target": "file:import:getEventBySlug@@/lib/events",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/validate-promo/route.ts->import:resolvePromoCode@@/lib/events",
+    "source": "file:src/app/api/events/validate-promo/route.ts",
+    "target": "file:import:resolvePromoCode@@/lib/events",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/validate-promo/route.ts->import:checkRateLimit@@/lib/rate-limit",
+    "source": "file:src/app/api/events/validate-promo/route.ts",
+    "target": "file:import:checkRateLimit@@/lib/rate-limit",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/validate-promo/route.ts->import:getClientIp@@/lib/rate-limit",
+    "source": "file:src/app/api/events/validate-promo/route.ts",
+    "target": "file:import:getClientIp@@/lib/rate-limit",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/validate-promo/route.ts->export:POST@src/app/api/events/validate-promo/route.ts",
+    "source": "file:src/app/api/events/validate-promo/route.ts",
+    "target": "file:export:POST@src/app/api/events/validate-promo/route.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/validate-promo/route.ts->route:POST@src/app/api/events/validate-promo/route.ts",
+    "source": "file:src/app/api/events/validate-promo/route.ts",
+    "target": "file:route:POST@src/app/api/events/validate-promo/route.ts",
+    "type": "defines",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/join/route.ts->import:NextResponse@next/server",
+    "source": "file:src/app/api/events/waitlist/join/route.ts",
+    "target": "file:import:NextResponse@next/server",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/join/route.ts->import:type NextRequest@next/server",
+    "source": "file:src/app/api/events/waitlist/join/route.ts",
+    "target": "file:import:type NextRequest@next/server",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/join/route.ts->import:addToWaitlist@@/lib/event-registration-db",
+    "source": "file:src/app/api/events/waitlist/join/route.ts",
+    "target": "file:import:addToWaitlist@@/lib/event-registration-db",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/join/route.ts->import:isAlreadyOnWaitlist@@/lib/event-registration-db",
+    "source": "file:src/app/api/events/waitlist/join/route.ts",
+    "target": "file:import:isAlreadyOnWaitlist@@/lib/event-registration-db",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/join/route.ts->import:isAlreadyRegistered@@/lib/event-registration-db",
+    "source": "file:src/app/api/events/waitlist/join/route.ts",
+    "target": "file:import:isAlreadyRegistered@@/lib/event-registration-db",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/join/route.ts->import:getEventBySlug@@/lib/events",
+    "source": "file:src/app/api/events/waitlist/join/route.ts",
+    "target": "file:import:getEventBySlug@@/lib/events",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/join/route.ts->import:sendWaitlistConfirmationEmail@@/lib/event-confirmation-email",
+    "source": "file:src/app/api/events/waitlist/join/route.ts",
+    "target": "file:import:sendWaitlistConfirmationEmail@@/lib/event-confirmation-email",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/join/route.ts->import:checkRateLimit@@/lib/rate-limit",
+    "source": "file:src/app/api/events/waitlist/join/route.ts",
+    "target": "file:import:checkRateLimit@@/lib/rate-limit",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/join/route.ts->import:getClientIp@@/lib/rate-limit",
+    "source": "file:src/app/api/events/waitlist/join/route.ts",
+    "target": "file:import:getClientIp@@/lib/rate-limit",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/join/route.ts->import:isValidEmail@@/lib/email-validation",
+    "source": "file:src/app/api/events/waitlist/join/route.ts",
+    "target": "file:import:isValidEmail@@/lib/email-validation",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/join/route.ts->import:isEventEnded@@/lib/event-status",
+    "source": "file:src/app/api/events/waitlist/join/route.ts",
+    "target": "file:import:isEventEnded@@/lib/event-status",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/join/route.ts->export:runtime@src/app/api/events/waitlist/join/route.ts",
+    "source": "file:src/app/api/events/waitlist/join/route.ts",
+    "target": "file:export:runtime@src/app/api/events/waitlist/join/route.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/join/route.ts->export:POST@src/app/api/events/waitlist/join/route.ts",
+    "source": "file:src/app/api/events/waitlist/join/route.ts",
+    "target": "file:export:POST@src/app/api/events/waitlist/join/route.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/join/route.ts->route:POST@src/app/api/events/waitlist/join/route.ts",
+    "source": "file:src/app/api/events/waitlist/join/route.ts",
+    "target": "file:route:POST@src/app/api/events/waitlist/join/route.ts",
+    "type": "defines",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/notify/route.ts->import:NextResponse@next/server",
+    "source": "file:src/app/api/events/waitlist/notify/route.ts",
+    "target": "file:import:NextResponse@next/server",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/notify/route.ts->import:type NextRequest@next/server",
+    "source": "file:src/app/api/events/waitlist/notify/route.ts",
+    "target": "file:import:type NextRequest@next/server",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/notify/route.ts->import:timingSafeEqual@crypto",
+    "source": "file:src/app/api/events/waitlist/notify/route.ts",
+    "target": "file:import:timingSafeEqual@crypto",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/notify/route.ts->import:getLiveEvents@@/lib/events",
+    "source": "file:src/app/api/events/waitlist/notify/route.ts",
+    "target": "file:import:getLiveEvents@@/lib/events",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/notify/route.ts->import:getActiveWaitlist@@/lib/event-registration-db",
+    "source": "file:src/app/api/events/waitlist/notify/route.ts",
+    "target": "file:import:getActiveWaitlist@@/lib/event-registration-db",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/notify/route.ts->import:hasOpenSpots@@/lib/event-registration-db",
+    "source": "file:src/app/api/events/waitlist/notify/route.ts",
+    "target": "file:import:hasOpenSpots@@/lib/event-registration-db",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/notify/route.ts->import:sendWaitlistSpotNotificationEmail@@/lib/event-confirmation-email",
+    "source": "file:src/app/api/events/waitlist/notify/route.ts",
+    "target": "file:import:sendWaitlistSpotNotificationEmail@@/lib/event-confirmation-email",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/notify/route.ts->import:resolveNotifyWindow@@/lib/waitlist-notify-windows",
+    "source": "file:src/app/api/events/waitlist/notify/route.ts",
+    "target": "file:import:resolveNotifyWindow@@/lib/waitlist-notify-windows",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/notify/route.ts->import:supabase@@/lib/supabase",
+    "source": "file:src/app/api/events/waitlist/notify/route.ts",
+    "target": "file:import:supabase@@/lib/supabase",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/notify/route.ts->export:runtime@src/app/api/events/waitlist/notify/route.ts",
+    "source": "file:src/app/api/events/waitlist/notify/route.ts",
+    "target": "file:export:runtime@src/app/api/events/waitlist/notify/route.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/notify/route.ts->export:GET@src/app/api/events/waitlist/notify/route.ts",
+    "source": "file:src/app/api/events/waitlist/notify/route.ts",
+    "target": "file:export:GET@src/app/api/events/waitlist/notify/route.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/notify/route.ts->route:GET@src/app/api/events/waitlist/notify/route.ts",
+    "source": "file:src/app/api/events/waitlist/notify/route.ts",
+    "target": "file:route:GET@src/app/api/events/waitlist/notify/route.ts",
+    "type": "defines",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/remove/route.ts->import:type NextRequest@next/server",
+    "source": "file:src/app/api/events/waitlist/remove/route.ts",
+    "target": "file:import:type NextRequest@next/server",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/remove/route.ts->import:removeFromWaitlist@@/lib/event-registration-db",
+    "source": "file:src/app/api/events/waitlist/remove/route.ts",
+    "target": "file:import:removeFromWaitlist@@/lib/event-registration-db",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/remove/route.ts->export:runtime@src/app/api/events/waitlist/remove/route.ts",
+    "source": "file:src/app/api/events/waitlist/remove/route.ts",
+    "target": "file:export:runtime@src/app/api/events/waitlist/remove/route.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/remove/route.ts->export:GET@src/app/api/events/waitlist/remove/route.ts",
+    "source": "file:src/app/api/events/waitlist/remove/route.ts",
+    "target": "file:export:GET@src/app/api/events/waitlist/remove/route.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/events/waitlist/remove/route.ts->route:GET@src/app/api/events/waitlist/remove/route.ts",
+    "source": "file:src/app/api/events/waitlist/remove/route.ts",
+    "target": "file:route:GET@src/app/api/events/waitlist/remove/route.ts",
+    "type": "defines",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/illy-auth/route.ts->import:createHash@node:crypto",
+    "source": "file:src/app/api/illy-auth/route.ts",
+    "target": "file:import:createHash@node:crypto",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/illy-auth/route.ts->import:timingSafeEqual@node:crypto",
+    "source": "file:src/app/api/illy-auth/route.ts",
+    "target": "file:import:timingSafeEqual@node:crypto",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/illy-auth/route.ts->import:NextResponse@next/server",
+    "source": "file:src/app/api/illy-auth/route.ts",
+    "target": "file:import:NextResponse@next/server",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/illy-auth/route.ts->export:POST@src/app/api/illy-auth/route.ts",
+    "source": "file:src/app/api/illy-auth/route.ts",
+    "target": "file:export:POST@src/app/api/illy-auth/route.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/illy-auth/route.ts->export:GET@src/app/api/illy-auth/route.ts",
+    "source": "file:src/app/api/illy-auth/route.ts",
+    "target": "file:export:GET@src/app/api/illy-auth/route.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/illy-auth/route.ts->route:POST@src/app/api/illy-auth/route.ts",
+    "source": "file:src/app/api/illy-auth/route.ts",
+    "target": "file:route:POST@src/app/api/illy-auth/route.ts",
+    "type": "defines",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/illy-auth/route.ts->route:GET@src/app/api/illy-auth/route.ts",
+    "source": "file:src/app/api/illy-auth/route.ts",
+    "target": "file:route:GET@src/app/api/illy-auth/route.ts",
+    "type": "defines",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/jill-auth/route.ts->import:createHash@node:crypto",
+    "source": "file:src/app/api/jill-auth/route.ts",
+    "target": "file:import:createHash@node:crypto",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/jill-auth/route.ts->import:timingSafeEqual@node:crypto",
+    "source": "file:src/app/api/jill-auth/route.ts",
+    "target": "file:import:timingSafeEqual@node:crypto",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/jill-auth/route.ts->import:NextResponse@next/server",
+    "source": "file:src/app/api/jill-auth/route.ts",
+    "target": "file:import:NextResponse@next/server",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/jill-auth/route.ts->export:POST@src/app/api/jill-auth/route.ts",
+    "source": "file:src/app/api/jill-auth/route.ts",
+    "target": "file:export:POST@src/app/api/jill-auth/route.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/jill-auth/route.ts->export:GET@src/app/api/jill-auth/route.ts",
+    "source": "file:src/app/api/jill-auth/route.ts",
+    "target": "file:export:GET@src/app/api/jill-auth/route.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/jill-auth/route.ts->route:POST@src/app/api/jill-auth/route.ts",
+    "source": "file:src/app/api/jill-auth/route.ts",
+    "target": "file:route:POST@src/app/api/jill-auth/route.ts",
+    "type": "defines",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/jill-auth/route.ts->route:GET@src/app/api/jill-auth/route.ts",
+    "source": "file:src/app/api/jill-auth/route.ts",
+    "target": "file:route:GET@src/app/api/jill-auth/route.ts",
+    "type": "defines",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnet/route.ts->import:NextResponse@next/server",
+    "source": "file:src/app/api/lead-magnet/route.ts",
+    "target": "file:import:NextResponse@next/server",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnet/route.ts->import:createClient@@supabase/supabase-js",
+    "source": "file:src/app/api/lead-magnet/route.ts",
+    "target": "file:import:createClient@@supabase/supabase-js",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnet/route.ts->import:checkRateLimit@@/lib/rate-limit",
+    "source": "file:src/app/api/lead-magnet/route.ts",
+    "target": "file:import:checkRateLimit@@/lib/rate-limit",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnet/route.ts->import:getClientIp@@/lib/rate-limit",
+    "source": "file:src/app/api/lead-magnet/route.ts",
+    "target": "file:import:getClientIp@@/lib/rate-limit",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnet/route.ts->import:trackInsightEvent@@/lib/insight-to-fix",
+    "source": "file:src/app/api/lead-magnet/route.ts",
+    "target": "file:import:trackInsightEvent@@/lib/insight-to-fix",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnet/route.ts->import:buildUnsubscribeHeaders@@/lib/list-unsubscribe",
+    "source": "file:src/app/api/lead-magnet/route.ts",
+    "target": "file:import:buildUnsubscribeHeaders@@/lib/list-unsubscribe",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnet/route.ts->import:buildUnsubscribeUrl@@/lib/list-unsubscribe",
+    "source": "file:src/app/api/lead-magnet/route.ts",
+    "target": "file:import:buildUnsubscribeUrl@@/lib/list-unsubscribe",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnet/route.ts->import:isSuppressed@@/lib/email-suppressions",
+    "source": "file:src/app/api/lead-magnet/route.ts",
+    "target": "file:import:isSuppressed@@/lib/email-suppressions",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnet/route.ts->import:isDeliverableLeadMagnetSource@@/lib/lead-magnets",
+    "source": "file:src/app/api/lead-magnet/route.ts",
+    "target": "file:import:isDeliverableLeadMagnetSource@@/lib/lead-magnets",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnet/route.ts->import:UnknownLeadMagnetSourceError@@/lib/lead-magnets",
+    "source": "file:src/app/api/lead-magnet/route.ts",
+    "target": "file:import:UnknownLeadMagnetSourceError@@/lib/lead-magnets",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnet/route.ts->import:withUtm@@/lib/utm",
+    "source": "file:src/app/api/lead-magnet/route.ts",
+    "target": "file:import:withUtm@@/lib/utm",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnet/route.ts->export:POST@src/app/api/lead-magnet/route.ts",
+    "source": "file:src/app/api/lead-magnet/route.ts",
+    "target": "file:export:POST@src/app/api/lead-magnet/route.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnet/route.ts->route:POST@src/app/api/lead-magnet/route.ts",
+    "source": "file:src/app/api/lead-magnet/route.ts",
+    "target": "file:route:POST@src/app/api/lead-magnet/route.ts",
+    "type": "defines",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnets/claudemd/route 2.ts->import:NextResponse@next/server",
+    "source": "file:src/app/api/lead-magnets/claudemd/route 2.ts",
+    "target": "file:import:NextResponse@next/server",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnets/claudemd/route 2.ts->import:createClient@@supabase/supabase-js",
+    "source": "file:src/app/api/lead-magnets/claudemd/route 2.ts",
+    "target": "file:import:createClient@@supabase/supabase-js",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnets/claudemd/route 2.ts->export:POST@src/app/api/lead-magnets/claudemd/route 2.ts",
+    "source": "file:src/app/api/lead-magnets/claudemd/route 2.ts",
+    "target": "file:export:POST@src/app/api/lead-magnets/claudemd/route 2.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnets/claudemd/route 2.ts->route:POST@src/app/api/lead-magnets/claudemd/route 2.ts",
+    "source": "file:src/app/api/lead-magnets/claudemd/route 2.ts",
+    "target": "file:route:POST@src/app/api/lead-magnets/claudemd/route 2.ts",
+    "type": "defines",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnets/claudemd/route.ts->import:NextResponse@next/server",
+    "source": "file:src/app/api/lead-magnets/claudemd/route.ts",
+    "target": "file:import:NextResponse@next/server",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnets/claudemd/route.ts->import:createClient@@supabase/supabase-js",
+    "source": "file:src/app/api/lead-magnets/claudemd/route.ts",
+    "target": "file:import:createClient@@supabase/supabase-js",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnets/claudemd/route.ts->import:checkRateLimit@@/lib/rate-limit",
+    "source": "file:src/app/api/lead-magnets/claudemd/route.ts",
+    "target": "file:import:checkRateLimit@@/lib/rate-limit",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnets/claudemd/route.ts->import:getClientIp@@/lib/rate-limit",
+    "source": "file:src/app/api/lead-magnets/claudemd/route.ts",
+    "target": "file:import:getClientIp@@/lib/rate-limit",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnets/claudemd/route.ts->import:buildUnsubscribeHeaders@@/lib/list-unsubscribe",
+    "source": "file:src/app/api/lead-magnets/claudemd/route.ts",
+    "target": "file:import:buildUnsubscribeHeaders@@/lib/list-unsubscribe",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnets/claudemd/route.ts->import:buildUnsubscribeUrl@@/lib/list-unsubscribe",
+    "source": "file:src/app/api/lead-magnets/claudemd/route.ts",
+    "target": "file:import:buildUnsubscribeUrl@@/lib/list-unsubscribe",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnets/claudemd/route.ts->import:isSuppressed@@/lib/email-suppressions",
+    "source": "file:src/app/api/lead-magnets/claudemd/route.ts",
+    "target": "file:import:isSuppressed@@/lib/email-suppressions",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnets/claudemd/route.ts->import:withUtm@@/lib/utm",
+    "source": "file:src/app/api/lead-magnets/claudemd/route.ts",
+    "target": "file:import:withUtm@@/lib/utm",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnets/claudemd/route.ts->export:POST@src/app/api/lead-magnets/claudemd/route.ts",
+    "source": "file:src/app/api/lead-magnets/claudemd/route.ts",
+    "target": "file:export:POST@src/app/api/lead-magnets/claudemd/route.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnets/claudemd/route.ts->route:POST@src/app/api/lead-magnets/claudemd/route.ts",
+    "source": "file:src/app/api/lead-magnets/claudemd/route.ts",
+    "target": "file:route:POST@src/app/api/lead-magnets/claudemd/route.ts",
+    "type": "defines",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnets/passive-income-100/route.ts->import:NextResponse@next/server",
+    "source": "file:src/app/api/lead-magnets/passive-income-100/route.ts",
+    "target": "file:import:NextResponse@next/server",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnets/passive-income-100/route.ts->import:createClient@@supabase/supabase-js",
+    "source": "file:src/app/api/lead-magnets/passive-income-100/route.ts",
+    "target": "file:import:createClient@@supabase/supabase-js",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnets/passive-income-100/route.ts->import:checkRateLimit@@/lib/rate-limit",
+    "source": "file:src/app/api/lead-magnets/passive-income-100/route.ts",
+    "target": "file:import:checkRateLimit@@/lib/rate-limit",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnets/passive-income-100/route.ts->import:getClientIp@@/lib/rate-limit",
+    "source": "file:src/app/api/lead-magnets/passive-income-100/route.ts",
+    "target": "file:import:getClientIp@@/lib/rate-limit",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnets/passive-income-100/route.ts->import:buildUnsubscribeHeaders@@/lib/list-unsubscribe",
+    "source": "file:src/app/api/lead-magnets/passive-income-100/route.ts",
+    "target": "file:import:buildUnsubscribeHeaders@@/lib/list-unsubscribe",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnets/passive-income-100/route.ts->import:buildUnsubscribeUrl@@/lib/list-unsubscribe",
+    "source": "file:src/app/api/lead-magnets/passive-income-100/route.ts",
+    "target": "file:import:buildUnsubscribeUrl@@/lib/list-unsubscribe",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnets/passive-income-100/route.ts->import:isSuppressed@@/lib/email-suppressions",
+    "source": "file:src/app/api/lead-magnets/passive-income-100/route.ts",
+    "target": "file:import:isSuppressed@@/lib/email-suppressions",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnets/passive-income-100/route.ts->export:POST@src/app/api/lead-magnets/passive-income-100/route.ts",
+    "source": "file:src/app/api/lead-magnets/passive-income-100/route.ts",
+    "target": "file:export:POST@src/app/api/lead-magnets/passive-income-100/route.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/lead-magnets/passive-income-100/route.ts->route:POST@src/app/api/lead-magnets/passive-income-100/route.ts",
+    "source": "file:src/app/api/lead-magnets/passive-income-100/route.ts",
+    "target": "file:route:POST@src/app/api/lead-magnets/passive-income-100/route.ts",
+    "type": "defines",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/stripe/webhook/route.ts->import:NextResponse@next/server",
+    "source": "file:src/app/api/stripe/webhook/route.ts",
+    "target": "file:import:NextResponse@next/server",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/stripe/webhook/route.ts->import:Stripe@stripe",
+    "source": "file:src/app/api/stripe/webhook/route.ts",
+    "target": "file:import:Stripe@stripe",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/stripe/webhook/route.ts->import:getEventBySlug@@/lib/events",
+    "source": "file:src/app/api/stripe/webhook/route.ts",
+    "target": "file:import:getEventBySlug@@/lib/events",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/stripe/webhook/route.ts->import:finalizeLegacyCheckoutSession@@/lib/legacy-event-schedule",
+    "source": "file:src/app/api/stripe/webhook/route.ts",
+    "target": "file:import:finalizeLegacyCheckoutSession@@/lib/legacy-event-schedule",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/stripe/webhook/route.ts->import:createStripeClient@@/lib/stripe",
+    "source": "file:src/app/api/stripe/webhook/route.ts",
+    "target": "file:import:createStripeClient@@/lib/stripe",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/stripe/webhook/route.ts->import:trackInsightEvent@@/lib/insight-to-fix",
+    "source": "file:src/app/api/stripe/webhook/route.ts",
+    "target": "file:import:trackInsightEvent@@/lib/insight-to-fix",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/stripe/webhook/route.ts->import:releaseEventSeatByCheckout@@/lib/event-capacity",
+    "source": "file:src/app/api/stripe/webhook/route.ts",
+    "target": "file:import:releaseEventSeatByCheckout@@/lib/event-capacity",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/stripe/webhook/route.ts->export:runtime@src/app/api/stripe/webhook/route.ts",
+    "source": "file:src/app/api/stripe/webhook/route.ts",
+    "target": "file:export:runtime@src/app/api/stripe/webhook/route.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/stripe/webhook/route.ts->export:maxDuration@src/app/api/stripe/webhook/route.ts",
+    "source": "file:src/app/api/stripe/webhook/route.ts",
+    "target": "file:export:maxDuration@src/app/api/stripe/webhook/route.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/stripe/webhook/route.ts->export:POST@src/app/api/stripe/webhook/route.ts",
+    "source": "file:src/app/api/stripe/webhook/route.ts",
+    "target": "file:export:POST@src/app/api/stripe/webhook/route.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/stripe/webhook/route.ts->route:POST@src/app/api/stripe/webhook/route.ts",
+    "source": "file:src/app/api/stripe/webhook/route.ts",
+    "target": "file:route:POST@src/app/api/stripe/webhook/route.ts",
+    "type": "defines",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/subscribe/route.ts->import:NextResponse@next/server",
+    "source": "file:src/app/api/subscribe/route.ts",
+    "target": "file:import:NextResponse@next/server",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/subscribe/route.ts->import:createClient@@supabase/supabase-js",
+    "source": "file:src/app/api/subscribe/route.ts",
+    "target": "file:import:createClient@@supabase/supabase-js",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/subscribe/route.ts->import:handleSubscribe@@/lib/subscribe",
+    "source": "file:src/app/api/subscribe/route.ts",
+    "target": "file:import:handleSubscribe@@/lib/subscribe",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/subscribe/route.ts->import:SubscribeError@@/lib/subscribe",
+    "source": "file:src/app/api/subscribe/route.ts",
+    "target": "file:import:SubscribeError@@/lib/subscribe",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/subscribe/route.ts->import:type SubscribeDeps@@/lib/subscribe",
+    "source": "file:src/app/api/subscribe/route.ts",
+    "target": "file:import:type SubscribeDeps@@/lib/subscribe",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/subscribe/route.ts->import:sendViaResend@@/lib/resend-sender",
+    "source": "file:src/app/api/subscribe/route.ts",
+    "target": "file:import:sendViaResend@@/lib/resend-sender",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/subscribe/route.ts->import:isSuppressed@@/lib/email-suppressions",
+    "source": "file:src/app/api/subscribe/route.ts",
+    "target": "file:import:isSuppressed@@/lib/email-suppressions",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/subscribe/route.ts->export:POST@src/app/api/subscribe/route.ts",
+    "source": "file:src/app/api/subscribe/route.ts",
+    "target": "file:export:POST@src/app/api/subscribe/route.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/subscribe/route.ts->route:POST@src/app/api/subscribe/route.ts",
+    "source": "file:src/app/api/subscribe/route.ts",
+    "target": "file:route:POST@src/app/api/subscribe/route.ts",
+    "type": "defines",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/unsubscribe/route.ts->import:type NextRequest@next/server",
+    "source": "file:src/app/api/unsubscribe/route.ts",
+    "target": "file:import:type NextRequest@next/server",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/unsubscribe/route.ts->import:verifyUnsubscribeToken@@/lib/list-unsubscribe",
+    "source": "file:src/app/api/unsubscribe/route.ts",
+    "target": "file:import:verifyUnsubscribeToken@@/lib/list-unsubscribe",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/unsubscribe/route.ts->import:recordSuppression@@/lib/email-suppressions",
+    "source": "file:src/app/api/unsubscribe/route.ts",
+    "target": "file:import:recordSuppression@@/lib/email-suppressions",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/unsubscribe/route.ts->export:runtime@src/app/api/unsubscribe/route.ts",
+    "source": "file:src/app/api/unsubscribe/route.ts",
+    "target": "file:export:runtime@src/app/api/unsubscribe/route.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/unsubscribe/route.ts->export:POST@src/app/api/unsubscribe/route.ts",
+    "source": "file:src/app/api/unsubscribe/route.ts",
+    "target": "file:export:POST@src/app/api/unsubscribe/route.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/unsubscribe/route.ts->export:GET@src/app/api/unsubscribe/route.ts",
+    "source": "file:src/app/api/unsubscribe/route.ts",
+    "target": "file:export:GET@src/app/api/unsubscribe/route.ts",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/unsubscribe/route.ts->route:POST@src/app/api/unsubscribe/route.ts",
+    "source": "file:src/app/api/unsubscribe/route.ts",
+    "target": "file:route:POST@src/app/api/unsubscribe/route.ts",
+    "type": "defines",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/api/unsubscribe/route.ts->route:GET@src/app/api/unsubscribe/route.ts",
+    "source": "file:src/app/api/unsubscribe/route.ts",
+    "target": "file:route:GET@src/app/api/unsubscribe/route.ts",
+    "type": "defines",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/bonus-workshops/page.tsx->import:TabNav@@/components/TabNav",
+    "source": "file:src/app/bonus-workshops/page.tsx",
+    "target": "file:import:TabNav@@/components/TabNav",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/bonus-workshops/page.tsx->export:metadata@src/app/bonus-workshops/page.tsx",
+    "source": "file:src/app/bonus-workshops/page.tsx",
+    "target": "file:export:metadata@src/app/bonus-workshops/page.tsx",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/bonus-workshops/page.tsx->export:function@src/app/bonus-workshops/page.tsx",
+    "source": "file:src/app/bonus-workshops/page.tsx",
+    "target": "file:export:function@src/app/bonus-workshops/page.tsx",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/bonus/auto-lead-magnet/page.tsx->import:Link@next/link",
+    "source": "file:src/app/bonus/auto-lead-magnet/page.tsx",
+    "target": "file:import:Link@next/link",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/bonus/auto-lead-magnet/page.tsx->import:CodeBlock@@/components/CodeBlock",
+    "source": "file:src/app/bonus/auto-lead-magnet/page.tsx",
+    "target": "file:import:CodeBlock@@/components/CodeBlock",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/bonus/auto-lead-magnet/page.tsx->export:function@src/app/bonus/auto-lead-magnet/page.tsx",
+    "source": "file:src/app/bonus/auto-lead-magnet/page.tsx",
+    "target": "file:export:function@src/app/bonus/auto-lead-magnet/page.tsx",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/events/[slug]/page.tsx->import:notFound@next/navigation",
+    "source": "file:src/app/events/[slug]/page.tsx",
+    "target": "file:import:notFound@next/navigation",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/events/[slug]/page.tsx->import:EventPageView@@/components/events/EventPageView",
+    "source": "file:src/app/events/[slug]/page.tsx",
+    "target": "file:import:EventPageView@@/components/events/EventPageView",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/events/[slug]/page.tsx->import:getEventBySlug@@/lib/events",
+    "source": "file:src/app/events/[slug]/page.tsx",
+    "target": "file:import:getEventBySlug@@/lib/events",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/events/[slug]/page.tsx->import:resolvePromoCode@@/lib/events",
+    "source": "file:src/app/events/[slug]/page.tsx",
+    "target": "file:import:resolvePromoCode@@/lib/events",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/events/[slug]/page.tsx->import:getStripePublishableKey@@/lib/stripe",
+    "source": "file:src/app/events/[slug]/page.tsx",
+    "target": "file:import:getStripePublishableKey@@/lib/stripe",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/events/[slug]/page.tsx->export:dynamic@src/app/events/[slug]/page.tsx",
+    "source": "file:src/app/events/[slug]/page.tsx",
+    "target": "file:export:dynamic@src/app/events/[slug]/page.tsx",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/events/[slug]/page.tsx->export:generateMetadata@src/app/events/[slug]/page.tsx",
+    "source": "file:src/app/events/[slug]/page.tsx",
+    "target": "file:export:generateMetadata@src/app/events/[slug]/page.tsx",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/events/[slug]/page.tsx->export:async@src/app/events/[slug]/page.tsx",
+    "source": "file:src/app/events/[slug]/page.tsx",
+    "target": "file:export:async@src/app/events/[slug]/page.tsx",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/events/[slug]/setup/page.tsx->import:Link@next/link",
+    "source": "file:src/app/events/[slug]/setup/page.tsx",
+    "target": "file:import:Link@next/link",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/events/[slug]/setup/page.tsx->import:notFound@next/navigation",
+    "source": "file:src/app/events/[slug]/setup/page.tsx",
+    "target": "file:import:notFound@next/navigation",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/events/[slug]/setup/page.tsx->import:getEventBySlug@@/lib/events",
+    "source": "file:src/app/events/[slug]/setup/page.tsx",
+    "target": "file:import:getEventBySlug@@/lib/events",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/events/[slug]/setup/page.tsx->export:generateMetadata@src/app/events/[slug]/setup/page.tsx",
+    "source": "file:src/app/events/[slug]/setup/page.tsx",
+    "target": "file:export:generateMetadata@src/app/events/[slug]/setup/page.tsx",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/events/[slug]/setup/page.tsx->export:async@src/app/events/[slug]/setup/page.tsx",
+    "source": "file:src/app/events/[slug]/setup/page.tsx",
+    "target": "file:export:async@src/app/events/[slug]/setup/page.tsx",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/events/page.tsx->import:Image@next/image",
+    "source": "file:src/app/events/page.tsx",
+    "target": "file:import:Image@next/image",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/events/page.tsx->import:Link@next/link",
+    "source": "file:src/app/events/page.tsx",
+    "target": "file:import:Link@next/link",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/events/page.tsx->import:Reveal@@/components/Reveal",
+    "source": "file:src/app/events/page.tsx",
+    "target": "file:import:Reveal@@/components/Reveal",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/events/page.tsx->import:formatEventPrice@@/lib/events",
+    "source": "file:src/app/events/page.tsx",
+    "target": "file:import:formatEventPrice@@/lib/events",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/events/page.tsx->import:getUpcomingLiveEvents@@/lib/events",
+    "source": "file:src/app/events/page.tsx",
+    "target": "file:import:getUpcomingLiveEvents@@/lib/events",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/events/page.tsx->export:metadata@src/app/events/page.tsx",
+    "source": "file:src/app/events/page.tsx",
+    "target": "file:export:metadata@src/app/events/page.tsx",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/events/page.tsx->export:function@src/app/events/page.tsx",
+    "source": "file:src/app/events/page.tsx",
+    "target": "file:export:function@src/app/events/page.tsx",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/giveaways/agent-infrastructure/layout.tsx->export:metadata@src/app/giveaways/agent-infrastructure/layout.tsx",
+    "source": "file:src/app/giveaways/agent-infrastructure/layout.tsx",
+    "target": "file:export:metadata@src/app/giveaways/agent-infrastructure/layout.tsx",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/giveaways/agent-infrastructure/layout.tsx->export:function@src/app/giveaways/agent-infrastructure/layout.tsx",
+    "source": "file:src/app/giveaways/agent-infrastructure/layout.tsx",
+    "target": "file:export:function@src/app/giveaways/agent-infrastructure/layout.tsx",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/giveaways/agent-infrastructure/page.tsx->import:useState@react",
+    "source": "file:src/app/giveaways/agent-infrastructure/page.tsx",
+    "target": "file:import:useState@react",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/giveaways/agent-infrastructure/page.tsx->import:useCallback@react",
+    "source": "file:src/app/giveaways/agent-infrastructure/page.tsx",
+    "target": "file:import:useCallback@react",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/giveaways/agent-infrastructure/page.tsx->import:useEffect@react",
+    "source": "file:src/app/giveaways/agent-infrastructure/page.tsx",
+    "target": "file:import:useEffect@react",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/giveaways/agent-infrastructure/page.tsx->import:useRef@react",
+    "source": "file:src/app/giveaways/agent-infrastructure/page.tsx",
+    "target": "file:import:useRef@react",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/giveaways/agent-infrastructure/page.tsx->import:motion@framer-motion",
+    "source": "file:src/app/giveaways/agent-infrastructure/page.tsx",
+    "target": "file:import:motion@framer-motion",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/giveaways/agent-infrastructure/page.tsx->import:AnimatePresence@framer-motion",
+    "source": "file:src/app/giveaways/agent-infrastructure/page.tsx",
+    "target": "file:import:AnimatePresence@framer-motion",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/giveaways/agent-infrastructure/page.tsx->import:GiveawayAutoModal@@/components/giveaways/GiveawayAutoModal",
+    "source": "file:src/app/giveaways/agent-infrastructure/page.tsx",
+    "target": "file:import:GiveawayAutoModal@@/components/giveaways/GiveawayAutoModal",
+    "type": "imports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "id": "file:src/app/giveaways/agent-infrastructure/page.tsx->export:function@src/app/giveaways/agent-infrastructure/page.tsx",
+    "source": "file:src/app/giveaways/agent-infrastructure/page.tsx",
+    "target": "file:export:function@src/app/giveaways/agent-infrastructure/page.tsx",
+    "type": "exports",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "source": "file:comp_AskAnAiExpertQuoteStrip",
+    "target": "file:const_askAnAiExpertQuotes",
+    "type": "import",
+    "label": "uses quote data",
+    "weight": 2,
+    "direction": "forward"
+  },
+  {
+    "source": "file:comp_EventPageView",
+    "target": "file:comp_HeroVideo",
+    "type": "import",
+    "label": "renders video hero",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "source": "file:comp_EventPageView",
+    "target": "file:comp_EventRegistrationSection",
+    "type": "import",
+    "label": "renders registration section",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "source": "file:comp_EventPageView",
+    "target": "file:comp_AskAnAiExpertQuoteStrip",
+    "type": "import",
+    "label": "renders testimonials",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "source": "file:comp_EventPageView",
+    "target": "file:comp_EventMediaVideo",
+    "type": "import",
+    "label": "renders media videos",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "source": "file:comp_EventPageView",
+    "target": "file:comp_ScrollToRegisterButton",
+    "type": "import",
+    "label": "renders scroll button",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "source": "file:comp_EventPageView",
+    "target": "file:comp_Reveal",
+    "type": "import",
+    "label": "uses reveal animation",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "source": "file:comp_HeroVideo",
+    "target": "file:comp_EventMediaVideo",
+    "type": "import",
+    "label": "wraps media component",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "source": "file:comp_EventRegistrationSection",
+    "target": "function:__nofilepath__:useAnimatedNumber",
+    "type": "internal-function",
+    "label": "animates price display",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "source": "file:comp_SiteChrome",
+    "target": "file:comp_SiteHeader",
+    "type": "import",
+    "label": "renders header",
+    "weight": 1,
+    "direction": "forward"
+  },
+  {
+    "source": "file:comp_SiteChrome",
+    "target": "file:comp_SiteFooter",
+    "type": "import",
+    "label": "renders footer",
+    "weight": 1,
+    "direction": "forward"
+  }
+]

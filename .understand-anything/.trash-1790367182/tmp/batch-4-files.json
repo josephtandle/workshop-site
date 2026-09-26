@@ -1,0 +1,36 @@
+{
+  "path": "src/lib/email-suppressions.ts",
+  "language": "typescript",
+  "sizeLines": null,
+  "fileCategory": "code"
+}
+{
+  "path": "src/lib/event-registration-db.ts",
+  "language": "typescript",
+  "sizeLines": null,
+  "fileCategory": "code"
+}
+{
+  "path": "src/lib/event-registration-flow.ts",
+  "language": "typescript",
+  "sizeLines": null,
+  "fileCategory": "code"
+}
+{
+  "path": "src/lib/rate-limit.ts",
+  "language": "typescript",
+  "sizeLines": null,
+  "fileCategory": "code"
+}
+{
+  "path": "src/lib/supabase.ts",
+  "language": "typescript",
+  "sizeLines": null,
+  "fileCategory": "code"
+}
+{
+  "path": "tests/event-registration-flow.test.ts",
+  "language": "typescript",
+  "sizeLines": null,
+  "fileCategory": "code"
+}

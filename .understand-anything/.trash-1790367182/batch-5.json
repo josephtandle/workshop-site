@@ -1,0 +1,671 @@
+{
+  "batch": 5,
+  "totalBatches": 13,
+  "generatedAt": "2026-09-23T00:00:00Z",
+  "files": [
+    "src/app/giveaways/terminal-to-claude-desktop/page.tsx",
+    "src/components/giveaways/GiveawayCopyEmailGate.tsx",
+    "next.config.ts",
+    "src/app/sitemap.ts"
+  ],
+  "nodes": [
+    {
+      "id": "page-terminal-to-claude-desktop",
+      "type": "component",
+      "label": "TerminalToClaudeDesktop Giveaway Page",
+      "file": "src/app/giveaways/terminal-to-claude-desktop/page.tsx",
+      "category": "landing-page",
+      "description": "Giveaway landing page for Claude Desktop app walkthrough video",
+      "properties": {
+        "route": "/giveaways/terminal-to-claude-desktop",
+        "videoLength": "8 min 6 sec",
+        "videoSource": "https://media.mastermindshq.business/giveaways/terminal-to-claude-desktop-20260810.mp4",
+        "requiresSignup": false,
+        "featured": true,
+        "sections": ["hero", "video-player", "content-grid"]
+      }
+    },
+    {
+      "id": "component-giveaway-copy-email-gate",
+      "type": "component",
+      "label": "GiveawayCopyEmailGate",
+      "file": "src/components/giveaways/GiveawayCopyEmailGate.tsx",
+      "category": "wrapper-component",
+      "description": "Client-side wrapper component that gates giveaways behind email signup",
+      "properties": {
+        "clientSide": true,
+        "hooks": ["useEffect", "useMemo", "useState", "usePathname"],
+        "logic": "email-gate-on-copy",
+        "exemptPaths": [
+          "/giveaways/terminal-to-claude-desktop",
+          "/giveaways/terminal-to-claude-desktop/"
+        ]
+      }
+    },
+    {
+      "id": "component-giveaway-email-modal",
+      "type": "component",
+      "label": "GiveawayEmailModal",
+      "file": "src/components/giveaways/GiveawayEmailModal.tsx",
+      "category": "modal-component",
+      "description": "Email collection modal for giveaway opt-ins",
+      "properties": {
+        "triggered": "on-copy-success",
+        "receives": ["slug", "isOpen", "onClose"]
+      }
+    },
+    {
+      "id": "component-sticky-video-player",
+      "type": "component",
+      "label": "StickyVideoPlayer",
+      "file": "src/components/StickyVideoPlayer.tsx",
+      "category": "media-component",
+      "description": "Video player component with sticky positioning",
+      "properties": {
+        "props": ["src", "title", "inlineOnly"]
+      }
+    },
+    {
+      "id": "component-reveal",
+      "type": "component",
+      "label": "Reveal",
+      "file": "src/components/Reveal.tsx",
+      "category": "animation-component",
+      "description": "Staggered reveal/animation component for content",
+      "properties": {
+        "props": ["children", "delay"],
+        "delayValues": [0, 1, 2, 3, 4]
+      }
+    },
+    {
+      "id": "event-copy-with-confetti-success",
+      "type": "event",
+      "label": "COPY_WITH_CONFETTI_SUCCESS_EVENT",
+      "file": "src/components/giveaways/GiveawayCopyEmailGate.tsx",
+      "category": "custom-event",
+      "description": "Custom event fired when content copy succeeds with confetti animation",
+      "properties": {
+        "eventName": "COPY_WITH_CONFETTI_SUCCESS_EVENT",
+        "eventSource": "window",
+        "triggersAction": "email-modal-open"
+      }
+    },
+    {
+      "id": "config-next-config",
+      "type": "configuration",
+      "label": "Next.js Configuration",
+      "file": "next.config.ts",
+      "category": "build-config",
+      "description": "Next.js configuration with routing rules and redirects",
+      "properties": {
+        "turbopack": true,
+        "redirectCount": 2,
+        "rewriteCount": 2
+      }
+    },
+    {
+      "id": "route-redirect-session",
+      "type": "redirect-rule",
+      "label": "Session Route Redirect",
+      "file": "next.config.ts",
+      "category": "routing",
+      "description": "Redirect /session paths to portal",
+      "properties": {
+        "source": "/session",
+        "destination": "https://portal.mastermindshq.business/",
+        "sourcePattern": "/session/:path*",
+        "destinationPattern": "https://portal.mastermindshq.business/session/:path*",
+        "permanent": true
+      }
+    },
+    {
+      "id": "route-redirect-resource-vault",
+      "type": "redirect-rule",
+      "label": "Resource Vault Redirect",
+      "file": "next.config.ts",
+      "category": "routing",
+      "description": "Redirect /resource-vault paths to portal",
+      "properties": {
+        "source": "/resource-vault",
+        "destination": "https://portal.mastermindshq.business/resource-vault",
+        "sourcePattern": "/resource-vault/:path*",
+        "destinationPattern": "https://portal.mastermindshq.business/resource-vault/:path*",
+        "permanent": true
+      }
+    },
+    {
+      "id": "route-rewrite-decks-subdomain",
+      "type": "rewrite-rule",
+      "label": "Decks Subdomain Rewrite",
+      "file": "next.config.ts",
+      "category": "routing",
+      "description": "Host-based rewrite for decks.mastermindshq.business",
+      "properties": {
+        "source": "/",
+        "destination": "/2x-with-ai-playbook.html",
+        "condition": "host = decks.mastermindshq.business",
+        "type": "host-based"
+      }
+    },
+    {
+      "id": "route-rewrite-passiveincome-subdomain",
+      "type": "rewrite-rule",
+      "label": "Passive Income Subdomain Rewrite",
+      "file": "next.config.ts",
+      "category": "routing",
+      "description": "Host-based rewrite for passiveincome.mastermindshq.business",
+      "properties": {
+        "source": "/",
+        "destination": "/ai-agent-income",
+        "condition": "host = passiveincome.mastermindshq.business",
+        "type": "host-based"
+      }
+    },
+    {
+      "id": "route-sitemap",
+      "type": "metadata-route",
+      "label": "XML Sitemap",
+      "file": "src/app/sitemap.ts",
+      "category": "seo",
+      "description": "Dynamic XML sitemap for SEO",
+      "properties": {
+        "baseUrl": "https://workshop.mastermindshq.business",
+        "includesSubdomains": true,
+        "routeCount": 13,
+        "lastModified": "NOW",
+        "changeFrequencies": ["weekly", "monthly"]
+      }
+    },
+    {
+      "id": "sitemap-route-home",
+      "type": "sitemap-entry",
+      "label": "Home Route",
+      "file": "src/app/sitemap.ts",
+      "category": "seo-route",
+      "description": "Sitemap entry for workshop home",
+      "properties": {
+        "url": "https://workshop.mastermindshq.business",
+        "changeFrequency": "weekly",
+        "priority": 1.0
+      }
+    },
+    {
+      "id": "sitemap-route-decks",
+      "type": "sitemap-entry",
+      "label": "Decks Subdomain Route",
+      "file": "src/app/sitemap.ts",
+      "category": "seo-route",
+      "description": "Sitemap entry for decks.mastermindshq.business",
+      "properties": {
+        "url": "https://decks.mastermindshq.business/",
+        "changeFrequency": "monthly",
+        "priority": 0.9
+      }
+    },
+    {
+      "id": "sitemap-route-giveaways-hub",
+      "type": "sitemap-entry",
+      "label": "Giveaways Hub",
+      "file": "src/app/sitemap.ts",
+      "category": "seo-route",
+      "description": "Sitemap entry for giveaways index page",
+      "properties": {
+        "url": "https://workshop.mastermindshq.business/giveaways",
+        "changeFrequency": "weekly",
+        "priority": 0.9
+      }
+    },
+    {
+      "id": "sitemap-route-terminal-to-claude",
+      "type": "sitemap-entry",
+      "label": "Terminal to Claude Desktop Giveaway",
+      "file": "src/app/sitemap.ts",
+      "category": "seo-route",
+      "description": "Sitemap entry for terminal-to-claude-desktop giveaway",
+      "properties": {
+        "url": "https://workshop.mastermindshq.business/giveaways/terminal-to-claude-desktop",
+        "changeFrequency": "monthly",
+        "priority": 0.8
+      }
+    },
+    {
+      "id": "sitemap-route-cross-cli-compatibility",
+      "type": "sitemap-entry",
+      "label": "Cross CLI Compatibility Routing Giveaway",
+      "file": "src/app/sitemap.ts",
+      "category": "seo-route",
+      "description": "Sitemap entry for cross-cli-compatibility-routing giveaway",
+      "properties": {
+        "url": "https://workshop.mastermindshq.business/giveaways/cross-cli-compatibility-routing",
+        "changeFrequency": "monthly",
+        "priority": 0.8
+      }
+    },
+    {
+      "id": "sitemap-route-claude-md",
+      "type": "sitemap-entry",
+      "label": "Claude MD Giveaway",
+      "file": "src/app/sitemap.ts",
+      "category": "seo-route",
+      "description": "Sitemap entry for claude-md giveaway",
+      "properties": {
+        "url": "https://workshop.mastermindshq.business/giveaways/claude-md",
+        "changeFrequency": "monthly",
+        "priority": 0.9
+      }
+    },
+    {
+      "id": "sitemap-route-web-design-arsenal",
+      "type": "sitemap-entry",
+      "label": "Web Design Arsenal Giveaway",
+      "file": "src/app/sitemap.ts",
+      "category": "seo-route",
+      "description": "Sitemap entry for web-design-arsenal giveaway",
+      "properties": {
+        "url": "https://workshop.mastermindshq.business/giveaways/web-design-arsenal",
+        "changeFrequency": "monthly",
+        "priority": 0.8
+      }
+    },
+    {
+      "id": "sitemap-route-anthropic-safety-checklist",
+      "type": "sitemap-entry",
+      "label": "Anthropic Safety Checklist Giveaway",
+      "file": "src/app/sitemap.ts",
+      "category": "seo-route",
+      "description": "Sitemap entry for anthropic-safety-checklist giveaway",
+      "properties": {
+        "url": "https://workshop.mastermindshq.business/giveaways/anthropic-safety-checklist",
+        "changeFrequency": "monthly",
+        "priority": 0.7
+      }
+    },
+    {
+      "id": "sitemap-route-lead-magnet",
+      "type": "sitemap-entry",
+      "label": "Lead Magnet Giveaway",
+      "file": "src/app/sitemap.ts",
+      "category": "seo-route",
+      "description": "Sitemap entry for lead-magnet giveaway",
+      "properties": {
+        "url": "https://workshop.mastermindshq.business/giveaways/lead-magnet",
+        "changeFrequency": "monthly",
+        "priority": 0.7
+      }
+    },
+    {
+      "id": "sitemap-route-benchmark",
+      "type": "sitemap-entry",
+      "label": "Benchmark Giveaway",
+      "file": "src/app/sitemap.ts",
+      "category": "seo-route",
+      "description": "Sitemap entry for benchmark giveaway",
+      "properties": {
+        "url": "https://workshop.mastermindshq.business/giveaways/benchmark",
+        "changeFrequency": "monthly",
+        "priority": 0.6
+      }
+    },
+    {
+      "id": "sitemap-route-maccleaner",
+      "type": "sitemap-entry",
+      "label": "MacCleaner Giveaway",
+      "file": "src/app/sitemap.ts",
+      "category": "seo-route",
+      "description": "Sitemap entry for maccleaner giveaway",
+      "properties": {
+        "url": "https://workshop.mastermindshq.business/giveaways/maccleaner",
+        "changeFrequency": "monthly",
+        "priority": 0.8
+      }
+    },
+    {
+      "id": "sitemap-route-speak-human",
+      "type": "sitemap-entry",
+      "label": "Speak Human Giveaway",
+      "file": "src/app/sitemap.ts",
+      "category": "seo-route",
+      "description": "Sitemap entry for speak-human giveaway",
+      "properties": {
+        "url": "https://workshop.mastermindshq.business/giveaways/speak-human",
+        "changeFrequency": "monthly",
+        "priority": 0.9
+      }
+    },
+    {
+      "id": "sitemap-route-ray-dalio-council",
+      "type": "sitemap-entry",
+      "label": "Ray Dalio Council Giveaway",
+      "file": "src/app/sitemap.ts",
+      "category": "seo-route",
+      "description": "Sitemap entry for ray-dalio-council giveaway",
+      "properties": {
+        "url": "https://workshop.mastermindshq.business/giveaways/ray-dalio-council",
+        "changeFrequency": "monthly",
+        "priority": 0.9
+      }
+    },
+    {
+      "id": "sitemap-route-ultimate-claudemd",
+      "type": "sitemap-entry",
+      "label": "Ultimate Claude MD Lead Magnet",
+      "file": "src/app/sitemap.ts",
+      "category": "seo-route",
+      "description": "Sitemap entry for ultimate-claudemd lead magnet",
+      "properties": {
+        "url": "https://workshop.mastermindshq.business/lead-magnets/ultimate-claudemd",
+        "changeFrequency": "monthly",
+        "priority": 0.7
+      }
+    },
+    {
+      "id": "concept-email-gating",
+      "type": "concept",
+      "label": "Email Gating Logic",
+      "file": "src/components/giveaways/GiveawayCopyEmailGate.tsx",
+      "category": "feature",
+      "description": "Pattern for gating content behind email collection with exemptions",
+      "properties": {
+        "pattern": "copy-triggered-email-modal",
+        "exemptions": "NO_SIGNUP_PATHS",
+        "eventDriven": true
+      }
+    },
+    {
+      "id": "concept-giveaway-routing",
+      "type": "concept",
+      "label": "Giveaway Routing",
+      "file": "src/app/sitemap.ts",
+      "category": "feature",
+      "description": "Routing structure for giveaway landing pages and lead magnets",
+      "properties": {
+        "baseRoute": "/giveaways",
+        "subpaths": 10,
+        "leadMagnetRoute": "/lead-magnets"
+      }
+    },
+    {
+      "id": "concept-domain-routing",
+      "type": "concept",
+      "label": "Subdomain Routing",
+      "file": "next.config.ts",
+      "category": "feature",
+      "description": "Host-based request routing to different pages/content",
+      "properties": {
+        "subdomains": ["decks", "passiveincome"],
+        "mechanism": "Next.js rewrites"
+      }
+    },
+    {
+      "id": "lib-copy-with-confetti",
+      "type": "library",
+      "label": "Copy with Confetti Library",
+      "file": "src/lib/copyWithConfetti.ts",
+      "category": "utility",
+      "description": "Utility for copy-to-clipboard with celebratory confetti effect",
+      "properties": {
+        "eventExports": "COPY_WITH_CONFETTI_SUCCESS_EVENT"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-page-uses-reveal",
+      "source": "page-terminal-to-claude-desktop",
+      "target": "component-reveal",
+      "type": "uses",
+      "label": "Page uses Reveal component",
+      "properties": {
+        "count": 9,
+        "delays": [0, 1, 2, 3, 4]
+      }
+    },
+    {
+      "id": "edge-page-uses-video-player",
+      "source": "page-terminal-to-claude-desktop",
+      "target": "component-sticky-video-player",
+      "type": "uses",
+      "label": "Page uses StickyVideoPlayer",
+      "properties": {
+        "videoSource": "https://media.mastermindshq.business/giveaways/terminal-to-claude-desktop-20260810.mp4",
+        "title": "Migrating to Claude Desktop"
+      }
+    },
+    {
+      "id": "edge-page-exempt-from-email-gate",
+      "source": "page-terminal-to-claude-desktop",
+      "target": "component-giveaway-copy-email-gate",
+      "type": "exemption",
+      "label": "Page is exempt from email gating",
+      "properties": {
+        "requiresSignup": false,
+        "inExemptList": true
+      }
+    },
+    {
+      "id": "edge-gate-imports-modal",
+      "source": "component-giveaway-copy-email-gate",
+      "target": "component-giveaway-email-modal",
+      "type": "imports",
+      "label": "Email gate component imports modal"
+    },
+    {
+      "id": "edge-gate-listens-to-event",
+      "source": "component-giveaway-copy-email-gate",
+      "target": "event-copy-with-confetti-success",
+      "type": "listens-to",
+      "label": "Email gate listens for copy success event",
+      "properties": {
+        "triggers": "email-modal-open"
+      }
+    },
+    {
+      "id": "edge-event-from-library",
+      "source": "event-copy-with-confetti-success",
+      "target": "lib-copy-with-confetti",
+      "type": "defined-in",
+      "label": "Event defined in copyWithConfetti library"
+    },
+    {
+      "id": "edge-config-defines-redirects",
+      "source": "config-next-config",
+      "target": "route-redirect-session",
+      "type": "defines",
+      "label": "Configuration defines session redirect"
+    },
+    {
+      "id": "edge-config-defines-resource-redirect",
+      "source": "config-next-config",
+      "target": "route-redirect-resource-vault",
+      "type": "defines",
+      "label": "Configuration defines resource vault redirect"
+    },
+    {
+      "id": "edge-config-defines-decks-rewrite",
+      "source": "config-next-config",
+      "target": "route-rewrite-decks-subdomain",
+      "type": "defines",
+      "label": "Configuration defines decks subdomain rewrite"
+    },
+    {
+      "id": "edge-config-defines-passiveincome-rewrite",
+      "source": "config-next-config",
+      "target": "route-rewrite-passiveincome-subdomain",
+      "type": "defines",
+      "label": "Configuration defines passive income subdomain rewrite"
+    },
+    {
+      "id": "edge-sitemap-includes-home",
+      "source": "route-sitemap",
+      "target": "sitemap-route-home",
+      "type": "includes",
+      "label": "Sitemap includes home route"
+    },
+    {
+      "id": "edge-sitemap-includes-decks",
+      "source": "route-sitemap",
+      "target": "sitemap-route-decks",
+      "type": "includes",
+      "label": "Sitemap includes decks subdomain"
+    },
+    {
+      "id": "edge-sitemap-includes-giveaways-hub",
+      "source": "route-sitemap",
+      "target": "sitemap-route-giveaways-hub",
+      "type": "includes",
+      "label": "Sitemap includes giveaways hub"
+    },
+    {
+      "id": "edge-sitemap-includes-terminal-to-claude",
+      "source": "route-sitemap",
+      "target": "sitemap-route-terminal-to-claude",
+      "type": "includes",
+      "label": "Sitemap includes terminal-to-claude giveaway"
+    },
+    {
+      "id": "edge-sitemap-includes-cross-cli",
+      "source": "route-sitemap",
+      "target": "sitemap-route-cross-cli-compatibility",
+      "type": "includes",
+      "label": "Sitemap includes cross-cli-compatibility giveaway"
+    },
+    {
+      "id": "edge-sitemap-includes-claude-md",
+      "source": "route-sitemap",
+      "target": "sitemap-route-claude-md",
+      "type": "includes",
+      "label": "Sitemap includes claude-md giveaway"
+    },
+    {
+      "id": "edge-sitemap-includes-web-design",
+      "source": "route-sitemap",
+      "target": "sitemap-route-web-design-arsenal",
+      "type": "includes",
+      "label": "Sitemap includes web-design-arsenal giveaway"
+    },
+    {
+      "id": "edge-sitemap-includes-safety-checklist",
+      "source": "route-sitemap",
+      "target": "sitemap-route-anthropic-safety-checklist",
+      "type": "includes",
+      "label": "Sitemap includes anthropic-safety-checklist giveaway"
+    },
+    {
+      "id": "edge-sitemap-includes-lead-magnet",
+      "source": "route-sitemap",
+      "target": "sitemap-route-lead-magnet",
+      "type": "includes",
+      "label": "Sitemap includes lead-magnet giveaway"
+    },
+    {
+      "id": "edge-sitemap-includes-benchmark",
+      "source": "route-sitemap",
+      "target": "sitemap-route-benchmark",
+      "type": "includes",
+      "label": "Sitemap includes benchmark giveaway"
+    },
+    {
+      "id": "edge-sitemap-includes-maccleaner",
+      "source": "route-sitemap",
+      "target": "sitemap-route-maccleaner",
+      "type": "includes",
+      "label": "Sitemap includes maccleaner giveaway"
+    },
+    {
+      "id": "edge-sitemap-includes-speak-human",
+      "source": "route-sitemap",
+      "target": "sitemap-route-speak-human",
+      "type": "includes",
+      "label": "Sitemap includes speak-human giveaway"
+    },
+    {
+      "id": "edge-sitemap-includes-ray-dalio",
+      "source": "route-sitemap",
+      "target": "sitemap-route-ray-dalio-council",
+      "type": "includes",
+      "label": "Sitemap includes ray-dalio-council giveaway"
+    },
+    {
+      "id": "edge-sitemap-includes-ultimate-claudemd",
+      "source": "route-sitemap",
+      "target": "sitemap-route-ultimate-claudemd",
+      "type": "includes",
+      "label": "Sitemap includes ultimate-claudemd lead magnet"
+    },
+    {
+      "id": "edge-terminal-claude-in-sitemap",
+      "source": "page-terminal-to-claude-desktop",
+      "target": "sitemap-route-terminal-to-claude",
+      "type": "referenced-by",
+      "label": "Terminal to Claude page listed in sitemap",
+      "properties": {
+        "priority": 0.8,
+        "changeFrequency": "monthly"
+      }
+    },
+    {
+      "id": "edge-giveaway-hub-parent",
+      "source": "sitemap-route-giveaways-hub",
+      "target": "page-terminal-to-claude-desktop",
+      "type": "parent-route",
+      "label": "Giveaways hub is parent route",
+      "properties": {
+        "parentPath": "/giveaways",
+        "childPath": "/giveaways/terminal-to-claude-desktop"
+      }
+    },
+    {
+      "id": "edge-concept-email-gating-impl",
+      "source": "concept-email-gating",
+      "target": "component-giveaway-copy-email-gate",
+      "type": "implemented-by",
+      "label": "Email gating concept implemented by email gate component"
+    },
+    {
+      "id": "edge-concept-giveaway-routing-impl",
+      "source": "concept-giveaway-routing",
+      "target": "route-sitemap",
+      "type": "implemented-by",
+      "label": "Giveaway routing concept implemented in sitemap"
+    },
+    {
+      "id": "edge-concept-domain-routing-impl",
+      "source": "concept-domain-routing",
+      "target": "route-rewrite-decks-subdomain",
+      "type": "implemented-by",
+      "label": "Domain routing concept implemented in decks rewrite"
+    },
+    {
+      "id": "edge-concept-domain-routing-impl-2",
+      "source": "concept-domain-routing",
+      "target": "route-rewrite-passiveincome-subdomain",
+      "type": "implemented-by",
+      "label": "Domain routing concept implemented in passive income rewrite"
+    }
+  ],
+  "metadata": {
+    "analysisDepth": "complete",
+    "nodesCount": 35,
+    "edgesCount": 33,
+    "categories": {
+      "components": 5,
+      "pages": 1,
+      "configuration": 1,
+      "routing": 4,
+      "events": 1,
+      "metadata": 1,
+      "seo": 11,
+      "concepts": 3,
+      "libraries": 1
+    },
+    "keyFindings": [
+      "Terminal to Claude Desktop giveaway is exempt from email gating due to NO_SIGNUP_PATHS configuration",
+      "Email gate component uses event-driven architecture with COPY_WITH_CONFETTI_SUCCESS_EVENT",
+      "Subdomain routing enables content reuse across different domains without code duplication",
+      "Comprehensive SEO setup with dynamic sitemap including 10 giveaways at varying priority levels",
+      "Permanent redirects from session and resource-vault routes to portal subdomain"
+    ],
+    "files_analyzed": 4,
+    "batch_info": "Batch 5 of 13: Giveaway landing pages, email gating logic, configuration, and SEO setup"
+  }
+}

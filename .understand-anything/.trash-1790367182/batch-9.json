@@ -1,0 +1,320 @@
+{
+  "batchIndex": 9,
+  "schemaVersion": 1,
+  "nodes": [
+    {
+      "id": "calendar.toIcalDate",
+      "type": "function",
+      "name": "toIcalDate",
+      "filePath": "src/lib/calendar.ts",
+      "summary": "Private helper: converts ISO date string to iCalendar format (compact UTC without timezone offset)",
+      "tags": ["utility", "date-conversion", "private"],
+      "complexity": 2,
+      "isExported": false,
+      "signature": "(iso: string): string"
+    },
+    {
+      "id": "calendar.escapeIcal",
+      "type": "function",
+      "name": "escapeIcal",
+      "filePath": "src/lib/calendar.ts",
+      "summary": "Private helper: escapes special characters in iCalendar format (backslash, comma, semicolon, newline)",
+      "tags": ["utility", "escaping", "private"],
+      "complexity": 2,
+      "isExported": false,
+      "signature": "(s: string): string"
+    },
+    {
+      "id": "calendar.buildGoogleCalendarUrl",
+      "type": "function",
+      "name": "buildGoogleCalendarUrl",
+      "filePath": "src/lib/calendar.ts",
+      "summary": "Builds a Google Calendar render URL for creating a quick event from the workshop site",
+      "tags": ["calendar", "google-calendar", "url-builder"],
+      "complexity": 3,
+      "isExported": true,
+      "signature": "(params: { title: string; startIso: string; endIso: string; location?: string; description?: string }): string"
+    },
+    {
+      "id": "calendar.buildIcalString",
+      "type": "function",
+      "name": "buildIcalString",
+      "filePath": "src/lib/calendar.ts",
+      "summary": "Builds an iCalendar (RFC 5545) formatted string for email attachments or downloads; supports both METHOD:PUBLISH (standalone) and METHOD:REQUEST (with organizer/attendee)",
+      "tags": ["calendar", "ical", "rfc5545"],
+      "complexity": 4,
+      "isExported": true,
+      "signature": "(params: { uid: string; title: string; startIso: string; endIso: string; location?: string; description?: string; organizer?: { name: string; email: string }; attendee?: { name: string; email: string }; sequence?: number }): string"
+    },
+    {
+      "id": "calendar.buildEventCalendarDescription",
+      "type": "function",
+      "name": "buildEventCalendarDescription",
+      "filePath": "src/lib/calendar.ts",
+      "summary": "Builds the canonical calendar event description from event data; stays in sync with page content instead of drifting into stale hand-written copy",
+      "tags": ["calendar", "event-description", "content-sync"],
+      "complexity": 3,
+      "isExported": true,
+      "signature": "(event: { title: string; summary: string; slug: string; zoomLink?: string; durationLabel?: string }): string"
+    },
+    {
+      "id": "google-calendar-invite.CalendarInviteResult",
+      "type": "type",
+      "name": "CalendarInviteResult",
+      "filePath": "src/lib/google-calendar-invite.ts",
+      "summary": "Union type for calendar invite operation outcomes: invited, already-invited, skipped (with reason), or failed (with reason)",
+      "tags": ["calendar", "result-type", "union-type"],
+      "complexity": 2,
+      "isExported": true,
+      "signature": "{ status: 'invited' } | { status: 'already-invited' } | { status: 'skipped'; reason: string } | { status: 'failed'; reason: string }"
+    },
+    {
+      "id": "google-calendar-invite.CALENDAR_ID",
+      "type": "constant",
+      "name": "CALENDAR_ID",
+      "filePath": "src/lib/google-calendar-invite.ts",
+      "summary": "Google Calendar ID from environment or defaults to 'primary'",
+      "tags": ["calendar", "env-var", "config"],
+      "complexity": 1,
+      "isExported": false,
+      "signature": "string"
+    },
+    {
+      "id": "google-calendar-invite.resolveCalendarEventId",
+      "type": "function",
+      "name": "resolveCalendarEventId",
+      "filePath": "src/lib/google-calendar-invite.ts",
+      "summary": "Resolves the Google Calendar event ID for an event; checks env vars first (GOOGLE_CALENDAR_EVENT_ID_<SLUG>), then event.calendarEvent, then fallback",
+      "tags": ["calendar", "event-resolution", "env-override"],
+      "complexity": 3,
+      "isExported": true,
+      "signature": "(event: EventDefinition, sharedEventId?: string): string"
+    },
+    {
+      "id": "google-calendar-invite.getAuth",
+      "type": "function",
+      "name": "getAuth",
+      "filePath": "src/lib/google-calendar-invite.ts",
+      "summary": "Private helper: retrieves Google OAuth2 authentication from environment variables (clientId, clientSecret, refreshToken)",
+      "tags": ["google-calendar", "oauth2", "auth", "private"],
+      "complexity": 3,
+      "isExported": false,
+      "signature": "(): google.auth.OAuth2 | null"
+    },
+    {
+      "id": "google-calendar-invite.inviteAttendeeToEvent",
+      "type": "function",
+      "name": "inviteAttendeeToEvent",
+      "filePath": "src/lib/google-calendar-invite.ts",
+      "summary": "Adds a registrant to the event's Google Calendar entry; best-effort design (calendar failures never fail registration); validates event start date matches page, enforces guest privacy (guests cannot see other guests)",
+      "tags": ["calendar", "google-calendar", "attendee-management", "privacy"],
+      "complexity": 5,
+      "isExported": true,
+      "signature": "(event: EventDefinition, attendeeEmail: string, attendeeName?: string): Promise<CalendarInviteResult>"
+    },
+    {
+      "id": "calendar.test.constants",
+      "type": "constant",
+      "name": "START, END, UID",
+      "filePath": "tests/calendar.test.ts",
+      "summary": "Test fixtures for calendar tests: START/END timestamps and unique identifier",
+      "tags": ["test", "fixture"],
+      "complexity": 1,
+      "isExported": false,
+      "signature": "string"
+    },
+    {
+      "id": "calendar.test.buildGoogleCalendarUrl",
+      "type": "function",
+      "name": "buildGoogleCalendarUrl tests",
+      "filePath": "tests/calendar.test.ts",
+      "summary": "Test suite: 8 tests covering URL generation (base URL, action param, title encoding, dates format, location, description)",
+      "tags": ["test", "calendar", "google-calendar"],
+      "complexity": 2,
+      "isExported": false,
+      "signature": "test(...)"
+    },
+    {
+      "id": "calendar.test.buildIcalString",
+      "type": "function",
+      "name": "buildIcalString tests",
+      "filePath": "tests/calendar.test.ts",
+      "summary": "Test suite: 13 tests covering iCalendar generation (VCALENDAR/VEVENT wrappers, METHOD:PUBLISH vs REQUEST, UID, SEQUENCE, special char escaping, organizer, attendee, timestamps, CRLF line endings, update semantics)",
+      "tags": ["test", "calendar", "ical"],
+      "complexity": 2,
+      "isExported": false,
+      "signature": "test(...)"
+    }
+  ],
+  "edges": [
+    {
+      "source": "calendar.buildGoogleCalendarUrl",
+      "target": "calendar.toIcalDate",
+      "type": "calls",
+      "weight": 1,
+      "description": "buildGoogleCalendarUrl calls toIcalDate to convert start and end times"
+    },
+    {
+      "source": "calendar.buildIcalString",
+      "target": "calendar.toIcalDate",
+      "type": "calls",
+      "weight": 2,
+      "description": "buildIcalString calls toIcalDate for start, end, and stamp times"
+    },
+    {
+      "source": "calendar.buildIcalString",
+      "target": "calendar.escapeIcal",
+      "type": "calls",
+      "weight": 4,
+      "description": "buildIcalString calls escapeIcal for title, organizer name, attendee name, and location"
+    },
+    {
+      "source": "google-calendar-invite.inviteAttendeeToEvent",
+      "target": "google-calendar-invite.resolveCalendarEventId",
+      "type": "calls",
+      "weight": 1,
+      "description": "inviteAttendeeToEvent calls resolveCalendarEventId to get the target calendar event"
+    },
+    {
+      "source": "google-calendar-invite.inviteAttendeeToEvent",
+      "target": "google-calendar-invite.getAuth",
+      "type": "calls",
+      "weight": 1,
+      "description": "inviteAttendeeToEvent calls getAuth to retrieve Google OAuth credentials"
+    },
+    {
+      "source": "google-calendar-invite.inviteAttendeeToEvent",
+      "target": "calendar.buildEventCalendarDescription",
+      "type": "calls",
+      "weight": 1,
+      "description": "inviteAttendeeToEvent calls buildEventCalendarDescription to sync calendar copy with page"
+    },
+    {
+      "source": "google-calendar-invite.resolveCalendarEventId",
+      "target": "google-calendar-invite.CALENDAR_ID",
+      "type": "depends",
+      "weight": 1,
+      "description": "resolveCalendarEventId reads EventDefinition type with calendarEvent property"
+    },
+    {
+      "source": "google-calendar-invite.inviteAttendeeToEvent",
+      "target": "google-calendar-invite.CALENDAR_ID",
+      "type": "depends",
+      "weight": 2,
+      "description": "inviteAttendeeToEvent uses CALENDAR_ID for Google Calendar API calls"
+    },
+    {
+      "source": "google-calendar-invite",
+      "target": "calendar.buildEventCalendarDescription",
+      "type": "imports",
+      "weight": 1,
+      "description": "google-calendar-invite.ts imports buildEventCalendarDescription from calendar.ts"
+    },
+    {
+      "source": "calendar.test.buildGoogleCalendarUrl",
+      "target": "calendar.buildGoogleCalendarUrl",
+      "type": "tests",
+      "weight": 8,
+      "description": "Test suite validates buildGoogleCalendarUrl behavior across 8 test cases"
+    },
+    {
+      "source": "calendar.test.buildIcalString",
+      "target": "calendar.buildIcalString",
+      "type": "tests",
+      "weight": 13,
+      "description": "Test suite validates buildIcalString behavior across 13 test cases"
+    },
+    {
+      "source": "google-calendar-invite",
+      "target": "google-calendar-invite.CalendarInviteResult",
+      "type": "defines",
+      "weight": 1,
+      "description": "CalendarInviteResult type used as return type for inviteAttendeeToEvent"
+    },
+    {
+      "id": "batch-9-neighboring-batch-1",
+      "source": "google-calendar-invite.inviteAttendeeToEvent",
+      "target": "event-confirmation-email.sendEventConfirmationEmail",
+      "type": "external-dependency",
+      "weight": 1,
+      "batchReference": "batch-1",
+      "description": "google-calendar-invite is called from event confirmation flow (batch 1)"
+    },
+    {
+      "id": "batch-9-neighboring-batch-1-2",
+      "source": "calendar.buildEventCalendarDescription",
+      "target": "event-confirmation-email",
+      "type": "external-dependency",
+      "weight": 1,
+      "batchReference": "batch-1",
+      "description": "Calendar description building is used in email confirmation generation"
+    }
+  ],
+  "dependencies": {
+    "external": [
+      {
+        "module": "googleapis",
+        "usage": "google.calendar, google.auth.OAuth2",
+        "usedIn": ["src/lib/google-calendar-invite.ts"],
+        "purpose": "Google Calendar API v3 for event and attendee management"
+      },
+      {
+        "module": "node:assert/strict",
+        "usage": "assert",
+        "usedIn": ["tests/calendar.test.ts"],
+        "purpose": "Test assertions"
+      },
+      {
+        "module": "node:test",
+        "usage": "test",
+        "usedIn": ["tests/calendar.test.ts"],
+        "purpose": "Test runner"
+      }
+    ],
+    "internal": [
+      {
+        "source": "src/lib/google-calendar-invite.ts",
+        "target": "src/lib/calendar.ts",
+        "what": "buildEventCalendarDescription function",
+        "purpose": "Sync calendar description with event page content"
+      },
+      {
+        "source": "src/lib/google-calendar-invite.ts",
+        "target": "src/lib/events.tsx",
+        "what": "EventDefinition type",
+        "purpose": "Type definition for event data structure"
+      },
+      {
+        "source": "tests/calendar.test.ts",
+        "target": "src/lib/calendar.ts",
+        "what": "buildGoogleCalendarUrl, buildIcalString functions",
+        "purpose": "Test coverage for calendar utilities"
+      }
+    ]
+  },
+  "summary": {
+    "totalNodes": 12,
+    "totalEdges": 13,
+    "functions": 8,
+    "types": 1,
+    "constants": 1,
+    "testFunctions": 2,
+    "coreFiles": 3,
+    "mainFunctionality": [
+      "Google Calendar URL generation",
+      "iCalendar (RFC 5545) format generation",
+      "Event calendar description building",
+      "Google Calendar attendee management",
+      "Calendar event ID resolution",
+      "OAuth2 authentication for Google Calendar API"
+    ],
+    "keyPatterns": [
+      "Best-effort pattern (failures do not propagate to registration)",
+      "Environment variable override pattern (per-event env var fallback chain)",
+      "Guest privacy enforcement (guests cannot see guest list)",
+      "Event date validation (prevents inviting to wrong calendar event)",
+      "Canonical content sync (calendar description stays in sync with page)",
+      "Result type pattern (CalendarInviteResult union type for error handling)"
+    ]
+  }
+}

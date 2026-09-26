@@ -1,0 +1,878 @@
+{
+  "schemaVersion": 1,
+  "batchIndex": 13,
+  "totalNodes": 74,
+  "totalEdges": 89,
+  "analysisTimestamp": "2026-09-23T00:00:00Z",
+  "nodes": [
+    {
+      "id": "node_next_config",
+      "type": "configuration",
+      "name": "next.config.ts",
+      "filePath": "next.config.ts",
+      "summary": "Next.js configuration with turbopack, redirects, and rewrites for session/resource-vault to portal",
+      "tags": ["config", "next-js", "redirects", "rewrites"],
+      "exports": ["NextConfig"],
+      "weight": 0.8
+    },
+    {
+      "id": "node_claude_settings",
+      "type": "configuration",
+      "name": ".claude/settings.json",
+      "filePath": ".claude/settings.json",
+      "summary": "Claude Code settings with PostToolUse hooks for Chrome refresh on production deployment",
+      "tags": ["config", "claude-code", "hooks"],
+      "exports": [],
+      "weight": 0.3
+    },
+    {
+      "id": "node_next_env",
+      "type": "configuration",
+      "name": "next-env.d.ts",
+      "filePath": "next-env.d.ts",
+      "summary": "TypeScript Next.js environment type definitions",
+      "tags": ["config", "typescript", "types"],
+      "exports": [],
+      "weight": 0.2
+    },
+    {
+      "id": "comp_passive_income_100_page",
+      "type": "component",
+      "name": "PassiveIncome100Page",
+      "filePath": "src/app/100-ai/page.tsx",
+      "summary": "Launch countdown page (LAUNCH_DATE: 2026-06-19) with 12-day countdown timer and email signup form",
+      "tags": ["page", "react", "countdown", "form", "client-component"],
+      "exports": ["PassiveIncome100Page"],
+      "imports": ["useState", "useEffect", "motion", "FormEvent"],
+      "weight": 0.7
+    },
+    {
+      "id": "comp_ai_agent_income_checkout_form",
+      "type": "component",
+      "name": "AiAgentIncomeCheckoutForm",
+      "filePath": "src/app/ai-agent-income/AiAgentIncomeCheckoutForm.tsx",
+      "summary": "Client-side checkout form for AI Agent Income product; submits to /api/ai-agent-income/checkout endpoint",
+      "tags": ["component", "react", "form", "checkout", "client-component"],
+      "exports": ["AiAgentIncomeCheckoutForm"],
+      "imports": ["useState", "useId", "FormEvent"],
+      "weight": 0.6
+    },
+    {
+      "id": "comp_ai_agent_income_page",
+      "type": "component",
+      "name": "AiAgentIncomePage",
+      "filePath": "src/app/ai-agent-income/page.tsx",
+      "summary": "Landing page for AI Agent Income Playbook ($1 trial); includes metadata, lane descriptions, and embeds checkout form",
+      "tags": ["page", "react", "landing-page", "product-page"],
+      "exports": ["AiAgentIncomePage", "metadata"],
+      "imports": ["Metadata", "AiAgentIncomeCheckoutForm"],
+      "weight": 0.8
+    },
+    {
+      "id": "comp_ai_architecture_page",
+      "type": "component",
+      "name": "AIArchitecturePage",
+      "filePath": "src/app/ai-os-architecture/page.tsx",
+      "summary": "IFrame wrapper page for AI Operating System Architecture (MyOS Dispatch Layer)",
+      "tags": ["page", "react", "iframe", "documentation"],
+      "exports": ["AIArchitecturePage", "metadata"],
+      "imports": ["Metadata"],
+      "weight": 0.5
+    },
+    {
+      "id": "api_events_checkout_session_post",
+      "type": "api-endpoint",
+      "name": "POST /api/events/checkout-session",
+      "filePath": "src/app/api/events/checkout-session/route.ts",
+      "summary": "Creates Stripe checkout session for event registration; validates email/name, checks event status, rate limits (10/60s), saves registration & intake, claims seat, sends confirmation emails",
+      "tags": ["api", "post", "events", "checkout", "stripe", "registration", "rate-limit"],
+      "exports": ["runtime", "POST"],
+      "imports": [
+        "getEventBySlug",
+        "sendEventConfirmationEmail",
+        "sendAiContentCreationSetupEmail",
+        "sendAskAnAiExpertWelcomeEmail",
+        "sendRegistrationBackupAlert",
+        "withTimeout",
+        "inviteAttendeeBestEffort",
+        "syncLegacyRegistration",
+        "createStripeClient",
+        "getStripePublishableKey",
+        "saveRegistration",
+        "saveRegistrationIntake",
+        "attachCheckoutToEventSeat",
+        "claimEventSeat",
+        "confirmEventSeat",
+        "releaseEventSeat",
+        "normalizeWhatsappNumber",
+        "validateIntakeFields",
+        "toOrigin",
+        "checkRateLimit",
+        "getClientIp",
+        "trackInsightEvent",
+        "buildEventCheckoutSessionParams",
+        "resolveCheckoutMode",
+        "resolveEventCheckoutAmount",
+        "toStripeUnitAmount",
+        "isValidEmail",
+        "isEventEnded",
+        "isEventRegistrationClosed"
+      ],
+      "weight": 0.95
+    },
+    {
+      "id": "api_events_calendar_get",
+      "type": "api-endpoint",
+      "name": "GET /api/events/[slug]/calendar",
+      "filePath": "src/app/api/events/[slug]/calendar/route.ts",
+      "summary": "Generates iCalendar (.ics) file for event invitation; includes title, time, location/Zoom link, and description",
+      "tags": ["api", "get", "events", "calendar", "ical"],
+      "exports": ["runtime", "GET"],
+      "imports": ["getEventBySlug", "buildIcalString"],
+      "weight": 0.6
+    },
+    {
+      "id": "api_events_cancel_get",
+      "type": "api-endpoint",
+      "name": "GET /api/events/cancel",
+      "filePath": "src/app/api/events/cancel/route.ts",
+      "summary": "Renders HTML form for seat cancellation confirmation (prevents auto-cancel from email security scanners)",
+      "tags": ["api", "get", "events", "cancel"],
+      "exports": ["runtime", "GET"],
+      "imports": ["NextRequest"],
+      "weight": 0.5
+    },
+    {
+      "id": "api_events_cancel_post",
+      "type": "api-endpoint",
+      "name": "POST /api/events/cancel",
+      "filePath": "src/app/api/events/cancel/route.ts",
+      "summary": "Processes seat cancellation; releases seat, notifies waitlist if spots open, handles idempotency",
+      "tags": ["api", "post", "events", "cancel", "waitlist"],
+      "exports": ["runtime", "POST"],
+      "imports": [
+        "NextRequest",
+        "cancelRegistration",
+        "getActiveWaitlist",
+        "hasOpenSpots",
+        "getEventBySlug",
+        "sendWaitlistSpotNotificationEmail"
+      ],
+      "weight": 0.8
+    },
+    {
+      "id": "util_escape_html",
+      "type": "function",
+      "name": "escapeHtml",
+      "filePath": "src/app/api/events/cancel/route.ts",
+      "summary": "Escapes HTML special characters (&<>\\\"') to prevent XSS in cancel form",
+      "tags": ["utility", "security", "html-escape"],
+      "weight": 0.4
+    },
+    {
+      "id": "util_html_page",
+      "type": "function",
+      "name": "htmlPage",
+      "filePath": "src/app/api/events/cancel/route.ts",
+      "summary": "Renders styled HTML page response for cancellation flow with inline CSS and optional extra HTML",
+      "tags": ["utility", "html-render", "ui"],
+      "weight": 0.5
+    },
+    {
+      "id": "util_notify_waitlist",
+      "type": "function",
+      "name": "notifyWaitlist",
+      "filePath": "src/app/api/events/cancel/route.ts",
+      "summary": "Async function that notifies waitlist entries when a seat opens after cancellation; sends email to each entry",
+      "tags": ["utility", "email", "async", "waitlist"],
+      "weight": 0.6
+    },
+    {
+      "id": "util_get_countdown",
+      "type": "function",
+      "name": "getCountdown",
+      "filePath": "src/app/100-ai/page.tsx",
+      "summary": "Calculates days/hours/minutes/seconds until LAUNCH_DATE or marks as expired",
+      "tags": ["utility", "date", "countdown"],
+      "weight": 0.4
+    },
+    {
+      "id": "const_launch_date",
+      "type": "constant",
+      "name": "LAUNCH_DATE",
+      "filePath": "src/app/100-ai/page.tsx",
+      "summary": "Launch window lock: 2026-06-19T05:00:00Z (12-day countdown start from 2026-06-07)",
+      "tags": ["constant", "date"],
+      "weight": 0.3
+    },
+    {
+      "id": "const_benefits",
+      "type": "constant",
+      "name": "BENEFITS",
+      "filePath": "src/app/100-ai/page.tsx",
+      "summary": "Array of 5 benefit statements for Passive Income 100 product with icon numbers",
+      "tags": ["constant", "content"],
+      "weight": 0.3
+    },
+    {
+      "id": "const_sections",
+      "type": "constant",
+      "name": "SECTIONS",
+      "filePath": "src/app/100-ai/page.tsx",
+      "summary": "Array of 10 AI income lane categories (Content, Voice, Trading, Local, E-commerce, etc.)",
+      "tags": ["constant", "content"],
+      "weight": 0.3
+    },
+    {
+      "id": "type_checkout_form_props",
+      "type": "type",
+      "name": "CheckoutFormProps",
+      "filePath": "src/app/ai-agent-income/AiAgentIncomeCheckoutForm.tsx",
+      "summary": "Props interface for AiAgentIncomeCheckoutForm with optional compact boolean",
+      "tags": ["type", "props"],
+      "weight": 0.2
+    },
+    {
+      "id": "type_countdown",
+      "type": "type",
+      "name": "Countdown",
+      "filePath": "src/app/100-ai/page.tsx",
+      "summary": "Type definition for countdown state: days, hours, minutes, seconds, expired",
+      "tags": ["type", "state"],
+      "weight": 0.2
+    },
+    {
+      "id": "pdf_render_client_launch_checklist",
+      "type": "script",
+      "name": "render-client-launch-checklist.js",
+      "filePath": "pdf/render-client-launch-checklist.js",
+      "summary": "Node.js script that uses Chrome headless to render HTML to PDF; outputs to public/client-launch-checklist.pdf",
+      "tags": ["script", "pdf-render", "node-js", "chrome", "automation"],
+      "exports": ["render"],
+      "weight": 0.5
+    },
+    {
+      "id": "pdf_render_cross_cli_guide",
+      "type": "script",
+      "name": "render-cross-cli-compatibility-routing-guide.js",
+      "filePath": "pdf/render-cross-cli-compatibility-routing-guide.js",
+      "summary": "Node.js script that uses Chrome headless to render cross-CLI compatibility routing guide to PDF",
+      "tags": ["script", "pdf-render", "node-js", "chrome", "automation"],
+      "weight": 0.5
+    },
+    {
+      "id": "doc_stripe_trial_mechanics",
+      "type": "documentation",
+      "name": "STRIPE-TRIAL-MECHANICS.md",
+      "filePath": "docs/STRIPE-TRIAL-MECHANICS.md",
+      "summary": "Documentation on Stripe trial mechanics and billing",
+      "tags": ["documentation", "stripe", "billing"],
+      "weight": 0.4
+    },
+    {
+      "id": "skill_gitnexus_cli",
+      "type": "documentation",
+      "name": "gitnexus-cli/SKILL.md",
+      "filePath": ".claude/skills/gitnexus/gitnexus-cli/SKILL.md",
+      "summary": "GitNexus CLI commands and index management skill documentation",
+      "tags": ["documentation", "skill", "gitnexus", "cli"],
+      "weight": 0.4
+    },
+    {
+      "id": "skill_gitnexus_debugging",
+      "type": "documentation",
+      "name": "gitnexus-debugging/SKILL.md",
+      "filePath": ".claude/skills/gitnexus/gitnexus-debugging/SKILL.md",
+      "summary": "GitNexus debugging and bug-tracing skill documentation",
+      "tags": ["documentation", "skill", "gitnexus", "debugging"],
+      "weight": 0.4
+    },
+    {
+      "id": "skill_gitnexus_exploring",
+      "type": "documentation",
+      "name": "gitnexus-exploring/SKILL.md",
+      "filePath": ".claude/skills/gitnexus/gitnexus-exploring/SKILL.md",
+      "summary": "GitNexus architecture exploration and understanding skill documentation",
+      "tags": ["documentation", "skill", "gitnexus", "exploration"],
+      "weight": 0.4
+    },
+    {
+      "id": "skill_gitnexus_guide",
+      "type": "documentation",
+      "name": "gitnexus-guide/SKILL.md",
+      "filePath": ".claude/skills/gitnexus/gitnexus-guide/SKILL.md",
+      "summary": "GitNexus reference guide and schema documentation",
+      "tags": ["documentation", "skill", "gitnexus", "reference"],
+      "weight": 0.4
+    },
+    {
+      "id": "skill_gitnexus_impact_analysis",
+      "type": "documentation",
+      "name": "gitnexus-impact-analysis/SKILL.md",
+      "filePath": ".claude/skills/gitnexus/gitnexus-impact-analysis/SKILL.md",
+      "summary": "GitNexus impact analysis and blast-radius skill documentation",
+      "tags": ["documentation", "skill", "gitnexus", "impact-analysis"],
+      "weight": 0.4
+    },
+    {
+      "id": "skill_gitnexus_refactoring",
+      "type": "documentation",
+      "name": "gitnexus-refactoring/SKILL.md",
+      "filePath": ".claude/skills/gitnexus/gitnexus-refactoring/SKILL.md",
+      "summary": "GitNexus refactoring, renaming, and extraction skill documentation",
+      "tags": ["documentation", "skill", "gitnexus", "refactoring"],
+      "weight": 0.4
+    },
+    {
+      "id": "html_client_launch_checklist",
+      "type": "markup",
+      "name": "client-launch-checklist.html",
+      "filePath": "pdf/client-launch-checklist.html",
+      "summary": "HTML template for client launch checklist PDF rendering",
+      "tags": ["markup", "html", "pdf-template"],
+      "weight": 0.4
+    },
+    {
+      "id": "html_cross_cli_guide",
+      "type": "markup",
+      "name": "cross-cli-compatibility-routing-guide.html",
+      "filePath": "pdf/cross-cli-compatibility-routing-guide.html",
+      "summary": "HTML template for cross-CLI compatibility routing guide PDF rendering",
+      "tags": ["markup", "html", "pdf-template", "guide"],
+      "weight": 0.4
+    },
+    {
+      "id": "doc_jill_linkedin_sop",
+      "type": "documentation",
+      "name": "jill-linkedin-cleanup-sop.md",
+      "filePath": "public/docs/jill-linkedin-cleanup-sop.md",
+      "summary": "Standard Operating Procedure for LinkedIn cleanup",
+      "tags": ["documentation", "sop", "social-media"],
+      "weight": 0.3
+    },
+    {
+      "id": "doc_cross_cli_prompt",
+      "type": "documentation",
+      "name": "cross-cli-compatibility-routing-prompt.md",
+      "filePath": "public/giveaways/cross-cli-compatibility-routing-prompt.md",
+      "summary": "Prompt documentation for cross-CLI compatibility routing giveaway",
+      "tags": ["documentation", "prompt", "giveaway"],
+      "weight": 0.4
+    },
+    {
+      "id": "const_ai_agent_income_lanes",
+      "type": "constant",
+      "name": "lanes (AI Agent Income)",
+      "filePath": "src/app/ai-agent-income/page.tsx",
+      "summary": "Array of 4 lane descriptions for AI Agent Income product benefits",
+      "tags": ["constant", "content"],
+      "weight": 0.3
+    },
+    {
+      "id": "const_ai_agent_income_audience",
+      "type": "constant",
+      "name": "audience (AI Agent Income)",
+      "filePath": "src/app/ai-agent-income/page.tsx",
+      "summary": "Array of 3 audience segment descriptions for AI Agent Income product targeting",
+      "tags": ["constant", "content"],
+      "weight": 0.3
+    },
+    {
+      "id": "lib_events_import",
+      "type": "library",
+      "name": "getEventBySlug (imported)",
+      "filePath": "src/lib/events",
+      "summary": "Library function to fetch event by slug identifier",
+      "tags": ["library", "event", "lookup"],
+      "weight": 0.7
+    },
+    {
+      "id": "lib_event_confirmation_email",
+      "type": "library",
+      "name": "Event Confirmation Email Functions (imported)",
+      "filePath": "src/lib/event-confirmation-email",
+      "summary": "Email sending functions: sendEventConfirmationEmail, sendAiContentCreationSetupEmail, etc.",
+      "tags": ["library", "email"],
+      "weight": 0.8
+    },
+    {
+      "id": "lib_calendar",
+      "type": "library",
+      "name": "buildIcalString (imported)",
+      "filePath": "src/lib/calendar",
+      "summary": "Calendar utility to build iCalendar format strings",
+      "tags": ["library", "calendar", "ical"],
+      "weight": 0.6
+    },
+    {
+      "id": "lib_event_registration_db",
+      "type": "library",
+      "name": "Event Registration DB Functions (imported)",
+      "filePath": "src/lib/event-registration-db",
+      "summary": "Database functions for registration: saveRegistration, cancelRegistration, etc.",
+      "tags": ["library", "database", "registration"],
+      "weight": 0.8
+    },
+    {
+      "id": "lib_event_capacity",
+      "type": "library",
+      "name": "Event Capacity Functions (imported)",
+      "filePath": "src/lib/event-capacity",
+      "summary": "Event capacity management: claimEventSeat, releaseEventSeat, etc.",
+      "tags": ["library", "event", "capacity", "seat-management"],
+      "weight": 0.7
+    },
+    {
+      "id": "lib_stripe",
+      "type": "library",
+      "name": "Stripe Functions (imported)",
+      "filePath": "src/lib/stripe",
+      "summary": "Stripe client initialization and configuration",
+      "tags": ["library", "stripe", "payment"],
+      "weight": 0.7
+    },
+    {
+      "id": "lib_event_checkout",
+      "type": "library",
+      "name": "Event Checkout Utilities (imported)",
+      "filePath": "src/lib/event-checkout",
+      "summary": "Checkout session building: buildEventCheckoutSessionParams, resolveCheckoutMode, etc.",
+      "tags": ["library", "checkout", "event"],
+      "weight": 0.7
+    },
+    {
+      "id": "lib_email_validation",
+      "type": "library",
+      "name": "isValidEmail (imported)",
+      "filePath": "src/lib/email-validation",
+      "summary": "Email validation utility",
+      "tags": ["library", "validation", "email"],
+      "weight": 0.5
+    },
+    {
+      "id": "lib_event_status",
+      "type": "library",
+      "name": "Event Status Functions (imported)",
+      "filePath": "src/lib/event-status",
+      "summary": "Event status checks: isEventEnded, isEventRegistrationClosed",
+      "tags": ["library", "event", "status"],
+      "weight": 0.6
+    },
+    {
+      "id": "lib_rate_limit",
+      "type": "library",
+      "name": "checkRateLimit (imported)",
+      "filePath": "src/lib/rate-limit",
+      "summary": "Rate limiting utility for API endpoints",
+      "tags": ["library", "rate-limit", "security"],
+      "weight": 0.6
+    },
+    {
+      "id": "lib_insight_to_fix",
+      "type": "library",
+      "name": "trackInsightEvent (imported)",
+      "filePath": "src/lib/insight-to-fix",
+      "summary": "Event tracking for insights and debugging",
+      "tags": ["library", "tracking", "analytics"],
+      "weight": 0.5
+    },
+    {
+      "id": "lib_legacy_event_schedule",
+      "type": "library",
+      "name": "Legacy Event Functions (imported)",
+      "filePath": "src/lib/legacy-event-schedule",
+      "summary": "Legacy event registration sync functions",
+      "tags": ["library", "legacy", "event"],
+      "weight": 0.5
+    },
+    {
+      "id": "lib_event_intake",
+      "type": "library",
+      "name": "Event Intake Functions (imported)",
+      "filePath": "src/lib/event-intake",
+      "summary": "Event intake validation and normalization",
+      "tags": ["library", "intake", "validation"],
+      "weight": 0.6
+    },
+    {
+      "id": "lib_url_utils",
+      "type": "library",
+      "name": "toOrigin (imported)",
+      "filePath": "src/lib/url-utils",
+      "summary": "URL utility for extracting origin",
+      "tags": ["library", "url", "utility"],
+      "weight": 0.4
+    },
+    {
+      "id": "lib_stripe_amount",
+      "type": "library",
+      "name": "toStripeUnitAmount (imported)",
+      "filePath": "src/lib/stripe-amount",
+      "summary": "Stripe amount conversion utility",
+      "tags": ["library", "stripe", "amount"],
+      "weight": 0.5
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_ai_agent_income_page_uses_checkout_form",
+      "source": "comp_ai_agent_income_page",
+      "target": "comp_ai_agent_income_checkout_form",
+      "type": "imports",
+      "label": "imports and renders component",
+      "weight": 0.9
+    },
+    {
+      "id": "edge_checkout_form_calls_checkout_api",
+      "source": "comp_ai_agent_income_checkout_form",
+      "target": "api_events_checkout_session_post",
+      "type": "calls",
+      "label": "POST /api/ai-agent-income/checkout",
+      "weight": 0.85
+    },
+    {
+      "id": "edge_checkout_session_uses_events_lib",
+      "source": "api_events_checkout_session_post",
+      "target": "lib_events_import",
+      "type": "imports",
+      "label": "getEventBySlug",
+      "weight": 0.9
+    },
+    {
+      "id": "edge_checkout_session_uses_email_lib",
+      "source": "api_events_checkout_session_post",
+      "target": "lib_event_confirmation_email",
+      "type": "imports",
+      "label": "multiple email functions",
+      "weight": 0.9
+    },
+    {
+      "id": "edge_checkout_session_uses_registration_db",
+      "source": "api_events_checkout_session_post",
+      "target": "lib_event_registration_db",
+      "type": "imports",
+      "label": "save and lookup functions",
+      "weight": 0.9
+    },
+    {
+      "id": "edge_checkout_session_uses_capacity",
+      "source": "api_events_checkout_session_post",
+      "target": "lib_event_capacity",
+      "type": "imports",
+      "label": "seat management functions",
+      "weight": 0.9
+    },
+    {
+      "id": "edge_checkout_session_uses_stripe",
+      "source": "api_events_checkout_session_post",
+      "target": "lib_stripe",
+      "type": "imports",
+      "label": "Stripe client and keys",
+      "weight": 0.9
+    },
+    {
+      "id": "edge_checkout_session_uses_checkout_utils",
+      "source": "api_events_checkout_session_post",
+      "target": "lib_event_checkout",
+      "type": "imports",
+      "label": "buildEventCheckoutSessionParams",
+      "weight": 0.9
+    },
+    {
+      "id": "edge_checkout_session_uses_email_validation",
+      "source": "api_events_checkout_session_post",
+      "target": "lib_email_validation",
+      "type": "imports",
+      "label": "isValidEmail",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_checkout_session_uses_event_status",
+      "source": "api_events_checkout_session_post",
+      "target": "lib_event_status",
+      "type": "imports",
+      "label": "event status checks",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_checkout_session_uses_rate_limit",
+      "source": "api_events_checkout_session_post",
+      "target": "lib_rate_limit",
+      "type": "imports",
+      "label": "checkRateLimit",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_checkout_session_uses_tracking",
+      "source": "api_events_checkout_session_post",
+      "target": "lib_insight_to_fix",
+      "type": "imports",
+      "label": "trackInsightEvent",
+      "weight": 0.7
+    },
+    {
+      "id": "edge_checkout_session_uses_legacy_sync",
+      "source": "api_events_checkout_session_post",
+      "target": "lib_legacy_event_schedule",
+      "type": "imports",
+      "label": "legacy sync functions",
+      "weight": 0.7
+    },
+    {
+      "id": "edge_checkout_session_uses_intake",
+      "source": "api_events_checkout_session_post",
+      "target": "lib_event_intake",
+      "type": "imports",
+      "label": "intake validation",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_checkout_session_uses_url_utils",
+      "source": "api_events_checkout_session_post",
+      "target": "lib_url_utils",
+      "type": "imports",
+      "label": "toOrigin",
+      "weight": 0.7
+    },
+    {
+      "id": "edge_checkout_session_uses_stripe_amount",
+      "source": "api_events_checkout_session_post",
+      "target": "lib_stripe_amount",
+      "type": "imports",
+      "label": "toStripeUnitAmount",
+      "weight": 0.7
+    },
+    {
+      "id": "edge_calendar_endpoint_uses_events_lib",
+      "source": "api_events_calendar_get",
+      "target": "lib_events_import",
+      "type": "imports",
+      "label": "getEventBySlug",
+      "weight": 0.9
+    },
+    {
+      "id": "edge_calendar_endpoint_uses_calendar_lib",
+      "source": "api_events_calendar_get",
+      "target": "lib_calendar",
+      "type": "imports",
+      "label": "buildIcalString",
+      "weight": 0.9
+    },
+    {
+      "id": "edge_cancel_get_calls_cancel_post",
+      "source": "api_events_cancel_get",
+      "target": "api_events_cancel_post",
+      "type": "references",
+      "label": "form posts to same endpoint",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_cancel_post_uses_registration_db",
+      "source": "api_events_cancel_post",
+      "target": "lib_event_registration_db",
+      "type": "imports",
+      "label": "cancelRegistration",
+      "weight": 0.9
+    },
+    {
+      "id": "edge_cancel_post_uses_events_lib",
+      "source": "api_events_cancel_post",
+      "target": "lib_events_import",
+      "type": "imports",
+      "label": "getEventBySlug",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_cancel_post_uses_email_lib",
+      "source": "api_events_cancel_post",
+      "target": "lib_event_confirmation_email",
+      "type": "imports",
+      "label": "sendWaitlistSpotNotificationEmail",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_cancel_post_calls_notify_waitlist",
+      "source": "api_events_cancel_post",
+      "target": "util_notify_waitlist",
+      "type": "calls",
+      "label": "notifyWaitlist function",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_cancel_uses_escape_html",
+      "source": "api_events_cancel_get",
+      "target": "util_escape_html",
+      "type": "calls",
+      "label": "escapeHtml for XSS prevention",
+      "weight": 0.7
+    },
+    {
+      "id": "edge_cancel_uses_html_page",
+      "source": "api_events_cancel_get",
+      "target": "util_html_page",
+      "type": "calls",
+      "label": "htmlPage response builder",
+      "weight": 0.85
+    },
+    {
+      "id": "edge_cancel_post_uses_html_page",
+      "source": "api_events_cancel_post",
+      "target": "util_html_page",
+      "type": "calls",
+      "label": "htmlPage response builder",
+      "weight": 0.85
+    },
+    {
+      "id": "edge_passive_income_100_uses_countdown",
+      "source": "comp_passive_income_100_page",
+      "target": "util_get_countdown",
+      "type": "calls",
+      "label": "getCountdown function",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_passive_income_100_uses_launch_date",
+      "source": "comp_passive_income_100_page",
+      "target": "const_launch_date",
+      "type": "references",
+      "label": "LAUNCH_DATE constant",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_passive_income_100_uses_benefits",
+      "source": "comp_passive_income_100_page",
+      "target": "const_benefits",
+      "type": "references",
+      "label": "BENEFITS array",
+      "weight": 0.7
+    },
+    {
+      "id": "edge_passive_income_100_uses_sections",
+      "source": "comp_passive_income_100_page",
+      "target": "const_sections",
+      "type": "references",
+      "label": "SECTIONS array",
+      "weight": 0.7
+    },
+    {
+      "id": "edge_passive_income_100_calls_lead_magnet_api",
+      "source": "comp_passive_income_100_page",
+      "target": "util_get_countdown",
+      "type": "calls",
+      "label": "fetch /api/lead-magnets/passive-income-100",
+      "weight": 0.75
+    },
+    {
+      "id": "edge_checkout_form_uses_type",
+      "source": "comp_ai_agent_income_checkout_form",
+      "target": "type_checkout_form_props",
+      "type": "references",
+      "label": "CheckoutFormProps type",
+      "weight": 0.7
+    },
+    {
+      "id": "edge_passive_income_page_uses_countdown_type",
+      "source": "comp_passive_income_100_page",
+      "target": "type_countdown",
+      "type": "references",
+      "label": "Countdown type",
+      "weight": 0.7
+    },
+    {
+      "id": "edge_ai_agent_income_page_uses_metadata",
+      "source": "comp_ai_agent_income_page",
+      "target": "lib_events_import",
+      "type": "references",
+      "label": "metadata export",
+      "weight": 0.6
+    },
+    {
+      "id": "edge_ai_agent_income_page_uses_lanes",
+      "source": "comp_ai_agent_income_page",
+      "target": "const_ai_agent_income_lanes",
+      "type": "references",
+      "label": "lanes array",
+      "weight": 0.7
+    },
+    {
+      "id": "edge_ai_agent_income_page_uses_audience",
+      "source": "comp_ai_agent_income_page",
+      "target": "const_ai_agent_income_audience",
+      "type": "references",
+      "label": "audience array",
+      "weight": 0.7
+    },
+    {
+      "id": "edge_pdf_render_checklist_reads_html",
+      "source": "pdf_render_client_launch_checklist",
+      "target": "html_client_launch_checklist",
+      "type": "references",
+      "label": "reads and renders HTML",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_pdf_render_guide_reads_html",
+      "source": "pdf_render_cross_cli_guide",
+      "target": "html_cross_cli_guide",
+      "type": "references",
+      "label": "reads and renders HTML",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_next_config_affects_all_routes",
+      "source": "node_next_config",
+      "target": "api_events_checkout_session_post",
+      "type": "affects",
+      "label": "route configuration",
+      "weight": 0.7
+    },
+    {
+      "id": "edge_next_config_affects_calendar",
+      "source": "node_next_config",
+      "target": "api_events_calendar_get",
+      "type": "affects",
+      "label": "route configuration",
+      "weight": 0.7
+    },
+    {
+      "id": "edge_next_config_affects_cancel",
+      "source": "node_next_config",
+      "target": "api_events_cancel_get",
+      "type": "affects",
+      "label": "route configuration",
+      "weight": 0.7
+    },
+    {
+      "id": "edge_next_config_affects_pages",
+      "source": "node_next_config",
+      "target": "comp_ai_agent_income_page",
+      "type": "affects",
+      "label": "redirects and rewrites",
+      "weight": 0.6
+    },
+    {
+      "id": "edge_notify_waitlist_calls_email_lib",
+      "source": "util_notify_waitlist",
+      "target": "lib_event_confirmation_email",
+      "type": "calls",
+      "label": "sendWaitlistSpotNotificationEmail",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_checkout_session_imports_with_timeout",
+      "source": "api_events_checkout_session_post",
+      "target": "lib_calendar",
+      "type": "imports",
+      "label": "withTimeout",
+      "weight": 0.6
+    },
+    {
+      "id": "edge_ai_architecture_page_simple",
+      "source": "comp_ai_architecture_page",
+      "target": "html_cross_cli_guide",
+      "type": "references",
+      "label": "iframe src reference",
+      "weight": 0.5
+    }
+  ]
+}

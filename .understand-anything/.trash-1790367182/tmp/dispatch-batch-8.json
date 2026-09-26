@@ -1,0 +1,34 @@
+{
+  "batchIndex": 8,
+  "totalBatches": 13,
+  "files": [
+    {
+      "path": "src/components/giveaways/GiveawayAutoModal.tsx",
+      "language": "typescript",
+      "sizeLines": 53,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/giveaways/GiveawayCopyEmailGate.tsx",
+      "language": "typescript",
+      "sizeLines": 40,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/giveaways/GiveawayEmailModal.tsx",
+      "language": "typescript",
+      "sizeLines": 174,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "src/components/giveaways/GiveawayAutoModal.tsx": [
+      "src/components/giveaways/GiveawayEmailModal.tsx"
+    ],
+    "src/components/giveaways/GiveawayCopyEmailGate.tsx": [
+      "src/components/giveaways/GiveawayEmailModal.tsx"
+    ],
+    "src/components/giveaways/GiveawayEmailModal.tsx": []
+  },
+  "neighborMap": {}
+}

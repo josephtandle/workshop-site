@@ -1,0 +1,14 @@
+.gitignore
+.understand-anything/fingerprints.json
+.understand-anything/knowledge-graph.json
+.understand-anything/meta.json
+public/hated-task-prompts.html
+src/app/api/events/checkout-session/route.ts
+src/app/events/[slug]/page.tsx
+src/components/events/EventRegistrationSection.tsx
+src/lib/event-confirmation-email.ts
+src/lib/event-registration-db.ts
+src/lib/event-registration-flow.ts
+src/lib/events.tsx
+src/lib/google-calendar-invite.ts
+src/lib/image-size.ts

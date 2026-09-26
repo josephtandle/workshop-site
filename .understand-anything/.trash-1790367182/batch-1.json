@@ -1,0 +1,405 @@
+{
+  "nodes": [
+    {
+      "id": "hook:src/components/events/EventRegistrationSection.tsx:useAnimatedNumber",
+      "type": "hook",
+      "name": "useAnimatedNumber",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "summary": "Custom React hook that animates a numeric value to a target over a specified duration using requestAnimationFrame and easing",
+      "tags": ["animation", "ui", "custom-hook"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "component:src/components/events/EventRegistrationSection.tsx:EventRegistrationSection",
+      "type": "component",
+      "name": "EventRegistrationSection",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "summary": "Client-side React component managing event registration form with Stripe checkout, promo codes, intake fields (WhatsApp, business context), and capacity management",
+      "tags": ["registration", "checkout", "form", "stripe", "ui"],
+      "complexity": "high"
+    },
+    {
+      "id": "type:src/components/events/EventRegistrationSection.tsx:EventRegistrationData",
+      "type": "type",
+      "name": "EventRegistrationData",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "summary": "Props type defining event registration data including pricing, registration window status, intake fields, and success messaging configuration",
+      "tags": ["event", "pricing", "types"],
+      "complexity": "simple"
+    },
+    {
+      "id": "type:src/components/events/EventRegistrationSection.tsx:CheckoutMode",
+      "type": "type",
+      "name": "CheckoutMode",
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "summary": "Union type for checkout mode: 'embedded' or 'hosted'",
+      "tags": ["stripe", "checkout"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/event-registration-flow.ts:resolveAcquisitionRef",
+      "type": "function",
+      "name": "resolveAcquisitionRef",
+      "filePath": "src/lib/event-registration-flow.ts",
+      "summary": "Extracts and normalizes acquisition reference (channel/campaign tag) from URL search parameters or URLSearchParams object",
+      "tags": ["acquisition", "tracking", "url-params"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/event-registration-flow.ts:buildEventCheckoutRequestBody",
+      "type": "function",
+      "name": "buildEventCheckoutRequestBody",
+      "filePath": "src/lib/event-registration-flow.ts",
+      "summary": "Constructs API request body for event checkout by resolving acquisition ref and optionally including donation amount, WhatsApp, and business context",
+      "tags": ["checkout", "request-building", "acquisition"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "constant:src/lib/event-registration-flow.ts:UNTAGGED_ACQUISITION_REF",
+      "type": "constant",
+      "name": "UNTAGGED_ACQUISITION_REF",
+      "filePath": "src/lib/event-registration-flow.ts",
+      "summary": "Default acquisition reference value 'untagged' for registrations without explicit campaign tag",
+      "tags": ["acquisition", "tracking"],
+      "complexity": "simple"
+    },
+    {
+      "id": "type:src/lib/event-registration-db.ts:Registration",
+      "type": "type",
+      "name": "Registration",
+      "filePath": "src/lib/event-registration-db.ts",
+      "summary": "Type representing a confirmed event registration record with attendee info, payment details, and status",
+      "tags": ["database", "registration", "types"],
+      "complexity": "simple"
+    },
+    {
+      "id": "type:src/lib/event-registration-db.ts:RegistrationIntake",
+      "type": "type",
+      "name": "RegistrationIntake",
+      "filePath": "src/lib/event-registration-db.ts",
+      "summary": "Type for event intake answers: WhatsApp number and business context",
+      "tags": ["intake", "types"],
+      "complexity": "simple"
+    },
+    {
+      "id": "type:src/lib/event-registration-db.ts:WaitlistEntry",
+      "type": "type",
+      "name": "WaitlistEntry",
+      "filePath": "src/lib/event-registration-db.ts",
+      "summary": "Type representing a waitlist entry with status tracking and removal token",
+      "tags": ["waitlist", "database", "types"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/event-registration-db.ts:saveRegistrationIntake",
+      "type": "function",
+      "name": "saveRegistrationIntake",
+      "filePath": "src/lib/event-registration-db.ts",
+      "summary": "Persists event intake answers (WhatsApp, business context) to database before checkout using upsert pattern",
+      "tags": ["database", "intake", "supabase"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/event-registration-db.ts:getRegistrationIntake",
+      "type": "function",
+      "name": "getRegistrationIntake",
+      "filePath": "src/lib/event-registration-db.ts",
+      "summary": "Retrieves previously saved intake answers for an event and email",
+      "tags": ["database", "intake", "supabase", "query"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/event-registration-db.ts:saveRegistration",
+      "type": "function",
+      "name": "saveRegistration",
+      "filePath": "src/lib/event-registration-db.ts",
+      "summary": "Saves a confirmed registration record with attendee details, optional payment info, and retrieves saved intake answers",
+      "tags": ["database", "registration", "supabase"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/event-registration-db.ts:isAlreadyRegistered",
+      "type": "function",
+      "name": "isAlreadyRegistered",
+      "filePath": "src/lib/event-registration-db.ts",
+      "summary": "Checks if an email is already registered for an event with confirmed status",
+      "tags": ["database", "registration", "query"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/event-registration-db.ts:isAlreadyOnWaitlist",
+      "type": "function",
+      "name": "isAlreadyOnWaitlist",
+      "filePath": "src/lib/event-registration-db.ts",
+      "summary": "Checks if an email is already on the active waitlist for an event",
+      "tags": ["database", "waitlist", "query"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/event-registration-db.ts:cancelRegistration",
+      "type": "function",
+      "name": "cancelRegistration",
+      "filePath": "src/lib/event-registration-db.ts",
+      "summary": "Cancels a registration by token and optionally releases capacity reservation",
+      "tags": ["database", "registration", "cancellation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/event-registration-db.ts:getConfirmedCount",
+      "type": "function",
+      "name": "getConfirmedCount",
+      "filePath": "src/lib/event-registration-db.ts",
+      "summary": "Counts total confirmed registrations for an event",
+      "tags": ["database", "registration", "query"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/event-registration-db.ts:getConfirmedRegistrationsForEvent",
+      "type": "function",
+      "name": "getConfirmedRegistrationsForEvent",
+      "filePath": "src/lib/event-registration-db.ts",
+      "summary": "Retrieves list of confirmed registrations with attendee names and emails",
+      "tags": ["database", "registration", "query"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/event-registration-db.ts:addToWaitlist",
+      "type": "function",
+      "name": "addToWaitlist",
+      "filePath": "src/lib/event-registration-db.ts",
+      "summary": "Adds attendee to event waitlist with token-based removal mechanism",
+      "tags": ["database", "waitlist"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/event-registration-db.ts:removeFromWaitlist",
+      "type": "function",
+      "name": "removeFromWaitlist",
+      "filePath": "src/lib/event-registration-db.ts",
+      "summary": "Removes entry from waitlist by token and updates status",
+      "tags": ["database", "waitlist"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/event-registration-db.ts:getActiveWaitlist",
+      "type": "function",
+      "name": "getActiveWaitlist",
+      "filePath": "src/lib/event-registration-db.ts",
+      "summary": "Retrieves all active waitlist entries for an event ordered by added timestamp",
+      "tags": ["database", "waitlist", "query"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/event-registration-db.ts:hasOpenSpots",
+      "type": "function",
+      "name": "hasOpenSpots",
+      "filePath": "src/lib/event-registration-db.ts",
+      "summary": "Checks if event has available capacity remaining",
+      "tags": ["database", "capacity", "query"],
+      "complexity": "simple"
+    },
+    {
+      "id": "handler:src/app/api/events/checkout-session/route.ts:POST",
+      "type": "handler",
+      "name": "POST",
+      "filePath": "src/app/api/events/checkout-session/route.ts",
+      "summary": "Next.js API route handler for creating Stripe checkout sessions, managing event capacity, saving registrations, and sending confirmation emails",
+      "tags": ["api", "stripe", "checkout", "registration", "email"],
+      "complexity": "high"
+    },
+    {
+      "id": "function:src/app/api/events/checkout-session/route.ts:getBaseUrl",
+      "type": "function",
+      "name": "getBaseUrl",
+      "filePath": "src/app/api/events/checkout-session/route.ts",
+      "summary": "Resolves the canonical base URL for the workshop site from environment or request",
+      "tags": ["url-utils", "api"],
+      "complexity": "simple"
+    },
+    {
+      "id": "page:src/app/events/[slug]/page.tsx:EventDetailPage",
+      "type": "component",
+      "name": "EventDetailPage",
+      "filePath": "src/app/events/[slug]/page.tsx",
+      "summary": "Server-side Next.js page component rendering event details with metadata, resolving promo codes, and passing publishable key to client",
+      "tags": ["page", "ssr", "event-detail"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/app/events/[slug]/page.tsx:generateMetadata",
+      "type": "function",
+      "name": "generateMetadata",
+      "filePath": "src/app/events/[slug]/page.tsx",
+      "summary": "Generates Open Graph and Twitter metadata for event pages using event details and hero image",
+      "tags": ["metadata", "seo"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app/events/[slug]/page.tsx:getPromoParam",
+      "type": "function",
+      "name": "getPromoParam",
+      "filePath": "src/app/events/[slug]/page.tsx",
+      "summary": "Extracts promo code from multiple possible URL parameter names (promo, promoCode, code, discount)",
+      "tags": ["promo", "url-params"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "component:src/components/events/EventRegistrationSection.tsx:EventRegistrationSection",
+      "target": "function:src/lib/event-registration-flow.ts:buildEventCheckoutRequestBody",
+      "type": "calls",
+      "weight": 0.8
+    },
+    {
+      "source": "component:src/components/events/EventRegistrationSection.tsx:EventRegistrationSection",
+      "target": "hook:src/components/events/EventRegistrationSection.tsx:useAnimatedNumber",
+      "type": "calls",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/components/events/EventRegistrationSection.tsx",
+      "target": "file:src/lib/event-registration-flow.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/events/EventRegistrationSection.tsx",
+      "target": "file:src/lib/email-validation.ts",
+      "type": "imports",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/components/events/EventRegistrationSection.tsx",
+      "target": "file:src/lib/event-intake.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/events/EventRegistrationSection.tsx",
+      "target": "file:src/components/events/WaitlistJoinForm.tsx",
+      "type": "imports",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/lib/event-registration-db.ts",
+      "target": "file:src/lib/event-registration-flow.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/lib/event-registration-db.ts",
+      "target": "file:src/lib/supabase.ts",
+      "type": "imports",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/lib/event-registration-db.ts",
+      "target": "file:src/lib/event-tokens.ts",
+      "type": "imports",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/lib/event-registration-db.ts",
+      "target": "file:src/lib/events.ts",
+      "type": "imports",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/lib/event-registration-db.ts",
+      "target": "file:src/lib/event-capacity.ts",
+      "type": "imports",
+      "weight": 0.6
+    },
+    {
+      "source": "handler:src/app/api/events/checkout-session/route.ts:POST",
+      "target": "function:src/lib/event-registration-db.ts:saveRegistrationIntake",
+      "type": "calls",
+      "weight": 0.8
+    },
+    {
+      "source": "handler:src/app/api/events/checkout-session/route.ts:POST",
+      "target": "function:src/lib/event-registration-db.ts:saveRegistration",
+      "type": "calls",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/api/events/checkout-session/route.ts",
+      "target": "file:src/lib/event-registration-db.ts",
+      "type": "imports",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/app/api/events/checkout-session/route.ts",
+      "target": "file:src/lib/event-registration-flow.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/api/events/checkout-session/route.ts",
+      "target": "file:src/lib/stripe.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/api/events/checkout-session/route.ts",
+      "target": "file:src/lib/event-capacity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/api/events/checkout-session/route.ts",
+      "target": "file:src/lib/events.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/api/events/checkout-session/route.ts",
+      "target": "file:src/lib/event-intake.ts",
+      "type": "imports",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/app/api/events/checkout-session/route.ts",
+      "target": "file:src/lib/event-confirmation-email.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/api/events/checkout-session/route.ts",
+      "target": "file:src/lib/insight-to-fix.ts",
+      "type": "imports",
+      "weight": 0.5
+    },
+    {
+      "source": "page:src/app/events/[slug]/page.tsx:EventDetailPage",
+      "target": "function:src/app/events/[slug]/page.tsx:getPromoParam",
+      "type": "calls",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/events/[slug]/page.tsx",
+      "target": "file:src/lib/events.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/events/[slug]/page.tsx",
+      "target": "file:src/lib/stripe.ts",
+      "type": "imports",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/app/events/[slug]/page.tsx",
+      "target": "file:src/components/events/EventPageView.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/lib/event-registration-db.ts:saveRegistration",
+      "target": "function:src/lib/event-registration-db.ts:getRegistrationIntake",
+      "type": "calls",
+      "weight": 0.7
+    }
+  ]
+}
