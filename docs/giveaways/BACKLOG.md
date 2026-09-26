@@ -1,3 +1,11 @@
+---
+kg:
+  id: workshop-site:docs-giveaways-backlog
+  type: document
+  status: active
+  audience: team
+  relations: {}
+---
 # Giveaway and Entry-Point Backlog
 
 **What this is.** The standing list of entry-point offer ideas for Masterminds HQ, rated and ranked, so nothing has to be re-invented. When a new giveaway is wanted, pick the top unbuilt row here rather than brainstorming from scratch. When a new idea appears, add a row.

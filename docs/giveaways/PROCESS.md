@@ -1,3 +1,11 @@
+---
+kg:
+  id: workshop-site:docs-giveaways-process
+  type: document
+  status: active
+  audience: team
+  relations: {}
+---
 # Giveaway Launch Protocol
 
 **Purpose:** Every time a new lead magnet, skill, PDF, or resource is ready to give away, this is the end-to-end process from setup to posted reel.
