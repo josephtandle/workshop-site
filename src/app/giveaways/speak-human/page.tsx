@@ -13,7 +13,7 @@ const MASTERMIND_URL = 'https://www.mastermindshq.business'
 const GITHUB_URL = 'https://github.com/josephtandle/speak-human'
 const MANYCHAT_KEYWORD = 'human'
 
-const INSTALL_COMMAND = `git clone https://github.com/josephtandle/speak-human && cp -r speak-human/speak-human ~/.claude/skills/speak-human && rm -rf speak-human`
+const INSTALL_COMMAND = `Install Speak Human from https://github.com/josephtandle/speak-human for the assistant I am using. Read the repository's INSTALL.md, install the current release in the right skills folder for this assistant, check it works, and tell me the version and where you installed it. Then help me try it on: Our team will utilize the new form starting Monday.`
 
 const SKILL_SECTIONS = [
   {
@@ -53,16 +53,16 @@ const SKILL_SECTIONS = [
     name: 'Three Operation Modes',
     count: 3,
     items: [
-      { name: 'Rewrite mode', desc: 'Full rewrite. Runs detection internally, marks keeper passages, applies all fixes, injects your voice. Outputs the humanized version with a 2-3 line change summary.' },
-      { name: 'Detect mode', desc: 'Scans and reports every AI pattern found. No changes made. Shows category, pattern name, offending text, and suggested fix. Includes burstiness score and keeper passages.' },
-      { name: 'Edit mode', desc: 'Reads your file, applies targeted fixes in-place, re-reads to verify, then reports what changed. The file comes out clean. Your human passages stay untouched.' },
+      { name: 'Rewrite it', desc: 'Paste a draft and say "make this sound human" or "make this sound like me". It keeps your facts and meaning, fixes the stiff parts and tells you briefly what changed.' },
+      { name: 'Check it', desc: 'Say "check this without changing it". You get every pattern it found, where it is and a suggested fix. Nothing gets rewritten.' },
+      { name: 'Edit a file', desc: 'Name a file and it edits only the prose you asked about, then reads it back so you can see the result. Code and quotes stay untouched.' },
     ],
   },
   {
     name: 'Aggressive Mode',
     count: 1,
     items: [
-      { name: '--aggressive flag', desc: 'The nuclear option. Shorter sentences, stronger positions, kills all remaining hedging, prefers more dramatic specificity swaps. For when the text is deeply AI-brained and needs a hard reset.' },
+      { name: 'Go harder', desc: 'Ask for it blunter or shorter and it tightens sentences and cuts hedging, without inventing certainty you did not have.' },
     ],
   },
 ]
@@ -236,26 +236,26 @@ export default function SpeakHumanPage() {
     step: [
       {
         '@type': 'HowToStep',
-        name: 'Copy the install command',
-        text: 'Copy the one-line install command from this page.',
+        name: 'Copy the setup request',
+        text: 'Copy the setup request from this page.',
         position: 1,
       },
       {
         '@type': 'HowToStep',
-        name: 'Run it in your terminal',
-        text: 'Paste and run the command in your terminal. It clones the repo, copies the skill to your Claude skills directory, and cleans up.',
+        name: 'Paste it into Claude Code or Codex',
+        text: 'Paste it into the assistant chat, not Terminal. The assistant downloads the current release, installs it in the right skills folder and checks it works.',
         position: 2,
       },
       {
         '@type': 'HowToStep',
-        name: 'Type /speak-human in Claude Code',
-        text: 'Open Claude Code and type /speak-human followed by your text. The skill is ready immediately.',
+        name: 'Ask for a rewrite',
+        text: 'Paste a draft and say: Use Speak Human to make this sound like me.',
         position: 3,
       },
     ],
     tool: [
       { '@type': 'HowToTool', name: 'Claude Code' },
-      { '@type': 'HowToTool', name: 'Terminal' },
+      { '@type': 'HowToTool', name: 'Codex' },
     ],
     totalTime: 'PT2M',
   }
@@ -452,9 +452,9 @@ export default function SpeakHumanPage() {
           </motion.div>
           <div className="grid gap-5 sm:grid-cols-3">
             {[
-              { step: '01', title: 'Copy the install command', body: 'One line from Joe\'s GitHub repo. It installs the local Claude Code skill, not an external API.' },
-              { step: '02', title: 'Run it in your terminal', body: 'It clones the public repo, copies the skill into ~/.claude/skills/speak-human, then removes the temporary clone.' },
-              { step: '03', title: 'Type /speak-human', body: 'Use it on pasted text or a file. It detects AI patterns, protects real passages, then rewrites the synthetic parts in a human voice.' },
+              { step: '01', title: 'Copy the setup request', body: <>One short request that points your assistant at Joe&apos;s public GitHub repo. It is a local skill, not an external API.</> },
+              { step: '02', title: 'Paste it into the chat', body: 'In Claude Code or Codex (the Claude desktop app works), paste it into the chat, not Terminal. Your assistant installs it and checks it works.' },
+              { step: '03', title: 'Just ask', body: 'Paste a draft and say "make this sound like me". It protects what already sounds real and rewrites the rest.' },
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -499,7 +499,7 @@ export default function SpeakHumanPage() {
                 Copy. Paste. Done.
               </h2>
               <p className="text-[#FCF4EB]/45 max-w-xl mx-auto leading-relaxed">
-                The command comes from{' '}
+                The setup request comes from{' '}
                 <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="text-[#9D8FE0] hover:text-[#BDB3E8] transition-colors">
                   Joe&apos;s public GitHub repo
                 </a>
@@ -507,14 +507,14 @@ export default function SpeakHumanPage() {
                 <a href={MASTERMIND_URL} target="_blank" rel="noopener noreferrer" className="text-[#9D8FE0] hover:text-[#BDB3E8] transition-colors">
                   Business Automation Mastermind
                 </a>
-                , this is the skill we run before anything goes public. Run it once in your terminal and it is ready in Claude Code.
+                , this is the skill we run before anything goes public. Paste it once into your assistant&apos;s chat and it is ready.
               </p>
             </div>
 
             {/* Install command block */}
             <div className="my-6 rounded-xl overflow-hidden border border-white/[0.08] border-l-2 border-l-[#8B79D4]">
               <div className="flex items-center justify-between px-4 py-2 bg-white/[0.04] border-b border-white/[0.06]">
-                <span className="text-xs text-[#FCF4EB]/40 font-mono">Terminal</span>
+                <span className="text-xs text-[#FCF4EB]/40 font-mono">Paste into Claude Code or Codex chat</span>
                 <InlineCopyButton text={INSTALL_COMMAND} onAfterCopy={() => setEmailModalOpen(true)} />
               </div>
               <pre
@@ -529,11 +529,10 @@ export default function SpeakHumanPage() {
             <InstallCopyButton command={INSTALL_COMMAND} onAfterCopy={() => setEmailModalOpen(true)} />
 
             <p className="text-[#FCF4EB]/20 text-[11px] text-center mt-5 max-w-md mx-auto leading-relaxed">
-              Requires Git. Copies the skill to <code className="font-mono">~/.claude/skills/speak-human</code>. If your Claude Code skills live somewhere else,{' '}
-              <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="text-[#9D8FE0]/60 hover:text-[#9D8FE0] transition-colors underline underline-offset-2">
-                check the README
-              </a>{' '}
-              for the manual install path.
+              No Terminal or Git needed. Your assistant asks permission to download and install. Using ChatGPT or claude.ai in the browser? Download speak-human.zip from the latest release and attach SKILL.md to your chat.{' '}
+              <a href="https://github.com/josephtandle/speak-human/blob/main/INSTALL.md" target="_blank" rel="noopener noreferrer" className="text-[#9D8FE0]/60 hover:text-[#9D8FE0] transition-colors underline underline-offset-2">
+                see INSTALL.md
+              </a>.
             </p>
             <p className="text-[#FCF4EB]/20 text-[11px] text-center mt-3 max-w-md mx-auto leading-relaxed">
               Coming from Instagram or ManyChat? The giveaway keyword is <span className="font-bold uppercase text-[#9D8FE0]/75">{MANYCHAT_KEYWORD}</span>.
@@ -790,7 +789,7 @@ function InstallCopyButton({ command, onAfterCopy }: { command: string; onAfterC
         onMouseLeave={magnet.onMouseLeave}
         className="block w-full sm:inline-block sm:w-auto px-10 py-4 rounded-xl bg-[#8B79D4] hover:bg-[#6e5db8] text-[#FCF4EB] font-bold text-base active:scale-[0.98] glow-btn text-center"
       >
-        {copied ? 'Copied! Run it in your terminal.' : 'Copy Install Command'}
+        {copied ? 'Copied! Paste it into your assistant chat.' : 'Copy Setup Request'}
       </button>
       {copied && (
         <motion.p
