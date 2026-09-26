@@ -12,3 +12,4 @@ supabase/.temp/
 
 # INCIDENTS.md 2026-07-24: hostile filenames in these jammed git-autocommit
 .understand-anything/.trash-*/
+logs/
