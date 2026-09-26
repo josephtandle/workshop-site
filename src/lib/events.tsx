@@ -194,6 +194,7 @@ export type EventDefinition = {
   // Opt-in per event. Events without this collect name and email only, so
   // adding a field here never changes the form on any other event.
   intakeFields?: {
+    aiLevelStep?: boolean
     whatsappNumber?: boolean
     businessContext?: boolean
     businessContextLabel?: string
@@ -1242,6 +1243,7 @@ export const events: EventDefinition[] = [
     intakeFields: {
       whatsappNumber: true,
       businessContext: true,
+      aiLevelStep: true,
       businessContextLabel: 'What is the one task you hate the most?',
       businessContextPlaceholder: 'Example: replying to LinkedIn enquiries, writing proposals, chasing invoices, turning one recording into a month of posts',
       // The 55-character default blocked natural answers like "Chasing invoices"

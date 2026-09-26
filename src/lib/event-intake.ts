@@ -127,6 +127,7 @@ export function validateIntakeFields(input: {
   whatsappNumber: string
   businessContext: string
   businessContextMinLength?: number
+  aiLevelStep?: boolean
 }): IntakeFieldErrors {
   const errors: IntakeFieldErrors = {}
 
@@ -134,11 +135,15 @@ export function validateIntakeFields(input: {
   if (whatsappError) errors.whatsappNumber = whatsappError
 
   const businessError = validateBusinessContext(input.businessContext, input.businessContextMinLength)
-  if (businessError) errors.businessContext = businessError
+  if ((!input.aiLevelStep || input.businessContext.trim()) && businessError) errors.businessContext = businessError
 
   return errors
 }
 
 export function hasIntakeErrors(errors: IntakeFieldErrors): boolean {
   return Boolean(errors.whatsappNumber || errors.businessContext)
+}
+
+export function isValidAiLevel(value: unknown): value is number {
+  return typeof value === 'number' && Number.isInteger(value) && value >= 0 && value <= 14
 }

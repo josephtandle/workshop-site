@@ -157,3 +157,17 @@ test('bring-the-task-you-hate accepts a short natural answer, other events keep 
   assert.ok(dflt.businessContext)
   assert.equal(BUSINESS_CONTEXT_MIN_LENGTH, 55)
 })
+
+test("AI level step defers business context but still requires WhatsApp", () => {
+  const input = { whatsappNumber: "+62 812 3456 7890", businessContext: "", aiLevelStep: true }
+  assert.equal(hasIntakeErrors(validateIntakeFields(input)), false)
+  assert.ok(validateIntakeFields({ ...input, whatsappNumber: "" }).whatsappNumber)
+  assert.ok(validateIntakeFields({ ...input, aiLevelStep: false }).businessContext)
+})
+
+test('only the free task class opts into the AI level step', () => {
+  assert.equal(getEventBySlug('bring-the-task-you-hate')?.intakeFields?.aiLevelStep, true)
+  assert.equal(getEventBySlug('business-blocks-ai-solved')?.intakeFields?.aiLevelStep, undefined)
+  assert.equal(validateBusinessContext('abc', 3), undefined)
+  assert.ok(validateBusinessContext('ab', 3))
+})
