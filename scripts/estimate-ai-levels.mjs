@@ -69,7 +69,7 @@ export async function runEstimateAiLevels(args = process.argv.slice(2), io = {})
       print(`${String(row.attendee_name ?? '').replace(/[\r\n]/g, ' ')}\t${level}\t${note}`);
       if (summary.live) {
         const url = eligibleUrl();
-        url.searchParams.set('id', `eq.${JSON.stringify(String(row.id))}`);
+        url.searchParams.set('id', `eq.${String(row.id)}`);
         const updated = await jsonRequest(url, {
           method: 'PATCH',
           headers: { ...headers, 'Content-Type': 'application/json', Prefer: 'return=representation' },
