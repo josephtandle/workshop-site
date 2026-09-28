@@ -1,6 +1,8 @@
 // Shared intake-field rules. The form and the API route both import these so
 // client-side validation can never disagree with what the server enforces.
 
+import { isValidPhoneNumber, parsePhoneNumberFromString } from 'libphonenumber-js'
+
 export const BUSINESS_CONTEXT_MIN_LENGTH = 55
 export const BUSINESS_CONTEXT_MAX_LENGTH = 4000
 export const WHATSAPP_MIN_DIGITS = 8
@@ -17,69 +19,46 @@ export function countPhoneDigits(value: string): number {
   return (value.match(/\d/g) ?? []).length
 }
 
-// Country calling codes, longest first so matching is unambiguous. Not the full
-// ITU list, just enough to recognise a leading code and spot a doubled one.
-const CALLING_CODES = [
-  '1', '7', '20', '27', '30', '31', '32', '33', '34', '36', '39', '40', '41', '43', '44',
-  '45', '46', '47', '48', '49', '51', '52', '53', '54', '55', '56', '57', '58', '60', '61',
-  '62', '63', '64', '65', '66', '81', '82', '84', '86', '90', '91', '92', '93', '94', '95',
-  '98', '212', '213', '216', '218', '220', '221', '233', '234', '250', '251', '254', '255',
-  '256', '260', '263', '264', '265', '266', '267', '268', '269', '351', '352', '353', '354',
-  '355', '356', '357', '358', '359', '370', '371', '372', '373', '374', '375', '376', '377',
-  '378', '380', '381', '382', '385', '386', '387', '389', '420', '421', '423', '501', '502',
-  '503', '504', '505', '506', '507', '509', '590', '591', '593', '595', '598', '673', '674',
-  '675', '676', '677', '679', '680', '682', '685', '686', '687', '689', '852', '853', '855',
-  '856', '880', '886', '960', '961', '962', '963', '964', '965', '966', '967', '968', '970',
-  '971', '972', '973', '974', '975', '976', '977', '992', '993', '994', '995', '996', '998',
-].sort((a, b) => b.length - a.length)
+// The kind, canonical message shown whenever a number is not a valid, dialable
+// international number. Kept in one place so the client and server never drift.
+const WHATSAPP_INVALID_MESSAGE =
+  'Add your full WhatsApp number including country code, like +62 812 3456 7890.'
 
-const E164_MIN_DIGITS = 8
-const E164_MAX_DIGITS = 15
-
-function leadingCallingCode(digits: string): string | null {
-  return CALLING_CODES.find((code) => digits.startsWith(code)) ?? null
+/**
+ * Build the candidate string we hand to libphonenumber-js. Every valid entry is
+ * an international number, so we require a leading `+`. If the user omitted it we
+ * add one in front of the digits: a number that already carries its country code
+ * (`6281234567890`) becomes `+6281234567890` and parses, while a bare national
+ * number (`081234567890`, `832305949`) becomes `+081234567890` / `+832305949`,
+ * which no country claims, so it is correctly rejected. No default country is
+ * ever assumed: this audience is international and guessing one silently mangles
+ * everyone else's number.
+ */
+function toDialableCandidate(value: string): string {
+  const trimmed = String(value ?? '').trim()
+  if (!trimmed) return ''
+  if (trimmed.startsWith('+')) return trimmed
+  return `+${trimmed.replace(/[^\d]/g, '')}`
 }
 
 /**
  * Normalise to E.164 (`+` followed by digits) so every stored number is dialable.
  *
- * The old version only stripped punctuation. Someone whose number already
- * carried its country code, typing an extra leading 1, was stored as
- * 116462092333: a doubled country code no dialler can use. Seen on a real
- * registration 2026-08-02, which is why the doubling check below exists.
+ * Uses libphonenumber-js so a number is only normalised when it is a genuinely
+ * valid, dialable international number with the correct national length for its
+ * country code. Returns null otherwise. On the happy path validation has already
+ * accepted the value, so this parses cleanly.
  *
- * No default country is assumed. This audience is international and defaulting
- * to one country silently mangles everyone else's number, so the field asks for
- * the country code and a bare number is read as international.
- *
- * Deliberately not libphonenumber-js: its ESM build throws a metadata error
- * under this repo's tsx test runner, and it would add ~145KB to a client bundle
- * for one form field.
- *
- * Returns null when the input cannot be read as a valid international number.
+ * We import from the package's main entry, which resolves to its CommonJS build
+ * here and works under this repo's tsx test runner (an earlier note claimed the
+ * ESM build threw a metadata error; the main-entry import verified clean).
  */
 export function toE164(value: string): string | null {
-  const cleaned = String(value ?? '').trim().replace(/[^\d]/g, '')
-  if (!cleaned) return null
-
-  const code = leadingCallingCode(cleaned)
-  if (!code) return null
-
-  // Collapse an accidentally doubled country code, but only when dropping one
-  // copy still leaves a plausible number. Never guess beyond that.
-  let digits = cleaned
-  if (digits.startsWith(code + code)) {
-    const collapsed = digits.slice(code.length)
-    if (collapsed.length >= E164_MIN_DIGITS && collapsed.length <= E164_MAX_DIGITS) {
-      digits = collapsed
-    }
-  }
-
-  if (digits.length < E164_MIN_DIGITS || digits.length > E164_MAX_DIGITS) return null
-  // A country code alone is not a phone number.
-  if (digits.length <= code.length) return null
-
-  return `+${digits}`
+  const candidate = toDialableCandidate(value)
+  if (!candidate) return null
+  const parsed = parsePhoneNumberFromString(candidate)
+  if (!parsed || !parsed.isValid()) return null
+  return parsed.number
 }
 
 export function normalizeWhatsappNumber(value: string): string {
@@ -95,15 +74,14 @@ export function validateWhatsappNumber(value: string): string | undefined {
   if (trimmed.length > WHATSAPP_MAX_LENGTH) return 'That number looks too long.'
   if (/[^\d\s+()\-.]/.test(trimmed)) return 'Use digits only, with an optional + for the country code.'
 
-  const digits = countPhoneDigits(trimmed)
-  if (digits < WHATSAPP_MIN_DIGITS) return 'That number looks too short. Include your country code.'
-  if (digits > WHATSAPP_MAX_DIGITS) return 'That number looks too long.'
-
-  // Deliberately NOT rejecting numbers that fail E.164 parsing. Plenty of this
-  // audience types a national format such as 081234567890 in Indonesia, and
-  // blocking a real registration is worse than storing a number that needs a
-  // human to read the country off. toE164 upgrades what it can; the rest is
-  // stored verbatim.
+  // A number must parse to a valid, dialable international number: correct
+  // country code AND correct national length, not merely a plausible digit
+  // count. libphonenumber-js catches the undialable numbers the old digit-range
+  // check let through (e.g. "+9177429141" India missing two digits,
+  // "+4132689224" Switzerland short a digit, "832305949" with no country code).
+  if (!isValidPhoneNumber(toDialableCandidate(trimmed))) {
+    return WHATSAPP_INVALID_MESSAGE
+  }
 
   return undefined
 }
