@@ -1,0 +1,423 @@
+{
+  "schema": "mnstry.atelier-knowledge-graph@v1",
+  "generatedAt": "deterministic",
+  "project": "workshop-site",
+  "counts": {
+    "nodes": 20,
+    "edges": 0,
+    "diagnostics": 0
+  },
+  "nodes": [
+    {
+      "id": "workshop-site:agents",
+      "title": "GitNexus — Code Intelligence",
+      "summary": "<!-- gitnexus:start -->",
+      "repo": "workshop-site",
+      "path": "AGENTS.md",
+      "type": "document",
+      "status": "active",
+      "audience": "team",
+      "tags": [
+        "agents",
+        "root",
+        "workshop-site",
+        "workstream"
+      ],
+      "relations": {},
+      "repoAccess": {
+        "readBoundary": "team"
+      }
+    },
+    {
+      "id": "workshop-site:claude",
+      "title": "GitNexus — Code Intelligence",
+      "summary": "<!-- gitnexus:start -->",
+      "repo": "workshop-site",
+      "path": "CLAUDE.md",
+      "type": "document",
+      "status": "active",
+      "audience": "team",
+      "tags": [
+        "claude",
+        "root",
+        "workshop-site",
+        "workstream"
+      ],
+      "relations": {},
+      "repoAccess": {
+        "readBoundary": "team"
+      }
+    },
+    {
+      "id": "workshop-site:docs-giveaways-backlog",
+      "title": "Giveaway and Entry-Point Backlog",
+      "summary": "**What this is.** The standing list of entry-point offer ideas for Masterminds HQ, rated and ranked, so nothing has to be re-invented. When a new giveaway is wanted, pick the top u",
+      "repo": "workshop-site",
+      "path": "docs/giveaways/BACKLOG.md",
+      "type": "document",
+      "status": "active",
+      "audience": "team",
+      "tags": [
+        "backlog",
+        "docs",
+        "giveaways",
+        "workshop-site",
+        "workstream"
+      ],
+      "relations": {},
+      "repoAccess": {
+        "readBoundary": "team"
+      }
+    },
+    {
+      "id": "workshop-site:docs-giveaways-lessons",
+      "title": "Giveaway Build — Lessons Log",
+      "summary": "Mistakes made building giveaway pages and the rule that prevents the repeat.",
+      "repo": "workshop-site",
+      "path": "docs/giveaways/LESSONS.md",
+      "type": "document",
+      "status": "active",
+      "audience": "team",
+      "tags": [
+        "docs",
+        "giveaways",
+        "lessons",
+        "workshop-site",
+        "workstream"
+      ],
+      "relations": {},
+      "repoAccess": {
+        "readBoundary": "team"
+      }
+    },
+    {
+      "id": "workshop-site:docs-giveaways-process",
+      "title": "Giveaway Launch Protocol",
+      "summary": "**Purpose:** Every time a new lead magnet, skill, PDF, or resource is ready to give away, this is the end-to-end process from setup to posted reel.",
+      "repo": "workshop-site",
+      "path": "docs/giveaways/PROCESS.md",
+      "type": "document",
+      "status": "active",
+      "audience": "team",
+      "tags": [
+        "docs",
+        "giveaways",
+        "process",
+        "workshop-site",
+        "workstream"
+      ],
+      "relations": {},
+      "repoAccess": {
+        "readBoundary": "team"
+      }
+    },
+    {
+      "id": "workshop-site:docs-stripe-trial-mechanics",
+      "title": "Stripe Trial Mechanics",
+      "summary": "The confirmed implementation is a single Stripe Checkout Session with `mode: \"subscription\"` containing both:",
+      "repo": "workshop-site",
+      "path": "docs/STRIPE-TRIAL-MECHANICS.md",
+      "type": "document",
+      "status": "active",
+      "audience": "team",
+      "tags": [
+        "docs",
+        "stripe-trial-mechanics",
+        "workshop-site",
+        "workstream"
+      ],
+      "relations": {},
+      "repoAccess": {
+        "readBoundary": "team"
+      }
+    },
+    {
+      "id": "workshop-site:lessons",
+      "title": "Giveaway exceptions",
+      "summary": "",
+      "repo": "workshop-site",
+      "path": "LESSONS.md",
+      "type": "document",
+      "status": "active",
+      "audience": "team",
+      "tags": [
+        "lessons",
+        "root",
+        "workshop-site",
+        "workstream"
+      ],
+      "relations": {},
+      "repoAccess": {
+        "readBoundary": "team"
+      }
+    },
+    {
+      "id": "workshop-site:asset:pdf-client-launch-checklist-html",
+      "title": "client-launch-checklist",
+      "summary": "Enrolled at adoption; not yet described.",
+      "repo": "workshop-site",
+      "path": "pdf/client-launch-checklist.html",
+      "type": "html",
+      "status": "active",
+      "audience": "team",
+      "tags": [
+        "active",
+        "client-launch-checklist",
+        "pdf",
+        "workshop-site"
+      ],
+      "relations": {},
+      "repoAccess": {
+        "readBoundary": "team"
+      }
+    },
+    {
+      "id": "workshop-site:asset:pdf-cross-cli-compatibility-routing-guide-html",
+      "title": "cross-cli-compatibility-routing-guide",
+      "summary": "Enrolled at adoption; not yet described.",
+      "repo": "workshop-site",
+      "path": "pdf/cross-cli-compatibility-routing-guide.html",
+      "type": "html",
+      "status": "active",
+      "audience": "team",
+      "tags": [
+        "active",
+        "cross-cli-compatibility-routing-guide",
+        "pdf",
+        "workshop-site"
+      ],
+      "relations": {},
+      "repoAccess": {
+        "readBoundary": "team"
+      }
+    },
+    {
+      "id": "workshop-site:asset:public-2x-with-ai-playbook-html",
+      "title": "2x-with-ai-playbook",
+      "summary": "Enrolled at adoption; not yet described.",
+      "repo": "workshop-site",
+      "path": "public/2x-with-ai-playbook.html",
+      "type": "html",
+      "status": "active",
+      "audience": "team",
+      "tags": [
+        "2x-with-ai-playbook",
+        "active",
+        "public",
+        "workshop-site"
+      ],
+      "relations": {},
+      "repoAccess": {
+        "readBoundary": "team"
+      }
+    },
+    {
+      "id": "workshop-site:asset:public-ai-os-architecture-html",
+      "title": "ai-os-architecture",
+      "summary": "Enrolled at adoption; not yet described.",
+      "repo": "workshop-site",
+      "path": "public/ai-os-architecture.html",
+      "type": "html",
+      "status": "active",
+      "audience": "team",
+      "tags": [
+        "active",
+        "ai-os-architecture",
+        "public",
+        "workshop-site"
+      ],
+      "relations": {},
+      "repoAccess": {
+        "readBoundary": "team"
+      }
+    },
+    {
+      "id": "workshop-site:asset:public-automation-audit-sample-html",
+      "title": "automation-audit-sample",
+      "summary": "Enrolled at adoption; not yet described.",
+      "repo": "workshop-site",
+      "path": "public/automation-audit-sample.html",
+      "type": "html",
+      "status": "active",
+      "audience": "team",
+      "tags": [
+        "active",
+        "automation-audit-sample",
+        "public",
+        "workshop-site"
+      ],
+      "relations": {},
+      "repoAccess": {
+        "readBoundary": "team"
+      }
+    },
+    {
+      "id": "workshop-site:asset:public-client-launch-checklist-pdf",
+      "title": "client-launch-checklist",
+      "summary": "Enrolled at adoption; not yet described.",
+      "repo": "workshop-site",
+      "path": "public/client-launch-checklist.pdf",
+      "type": "pdf",
+      "status": "active",
+      "audience": "team",
+      "tags": [
+        "active",
+        "client-launch-checklist",
+        "public",
+        "workshop-site"
+      ],
+      "relations": {},
+      "repoAccess": {
+        "readBoundary": "team"
+      }
+    },
+    {
+      "id": "workshop-site:asset:public-coach-kit-onboarding-matrix-html",
+      "title": "coach-kit-onboarding-matrix",
+      "summary": "Enrolled at adoption; not yet described.",
+      "repo": "workshop-site",
+      "path": "public/coach-kit-onboarding-matrix.html",
+      "type": "html",
+      "status": "active",
+      "audience": "team",
+      "tags": [
+        "active",
+        "coach-kit-onboarding-matrix",
+        "public",
+        "workshop-site"
+      ],
+      "relations": {},
+      "repoAccess": {
+        "readBoundary": "team"
+      }
+    },
+    {
+      "id": "workshop-site:asset:public-cross-cli-compatibility-routing-guide-pdf",
+      "title": "cross-cli-compatibility-routing-guide",
+      "summary": "Enrolled at adoption; not yet described.",
+      "repo": "workshop-site",
+      "path": "public/cross-cli-compatibility-routing-guide.pdf",
+      "type": "pdf",
+      "status": "active",
+      "audience": "team",
+      "tags": [
+        "active",
+        "cross-cli-compatibility-routing-guide",
+        "public",
+        "workshop-site"
+      ],
+      "relations": {},
+      "repoAccess": {
+        "readBoundary": "team"
+      }
+    },
+    {
+      "id": "workshop-site:public-docs-jill-linkedin-cleanup-sop",
+      "title": "SOP: Clean Up Joe's LinkedIn",
+      "summary": "**Owner:** Jill (executes) · **Reviewer:** Illy (approves deletions in batches) · **Account:** Joe Che, LinkedIn login in LastPass (`linkedin.com`, newyork1@gmail.com)",
+      "repo": "workshop-site",
+      "path": "public/docs/jill-linkedin-cleanup-sop.md",
+      "type": "document",
+      "status": "active",
+      "audience": "team",
+      "tags": [
+        "docs",
+        "jill-linkedin-cleanup-sop",
+        "public",
+        "root",
+        "workshop-site",
+        "workstream"
+      ],
+      "relations": {},
+      "repoAccess": {
+        "readBoundary": "team"
+      }
+    },
+    {
+      "id": "workshop-site:public-giveaways-cross-cli-compatibility-routing-prompt",
+      "title": "Cross Cli Compatibility Routing Prompt",
+      "summary": "You are the top-level orchestrator for a migration from an ad hoc AI capability system to a lane-based cross-CLI routing architecture.",
+      "repo": "workshop-site",
+      "path": "public/giveaways/cross-cli-compatibility-routing-prompt.md",
+      "type": "document",
+      "status": "active",
+      "audience": "team",
+      "tags": [
+        "cross-cli-compatibility-routing-prompt",
+        "giveaways",
+        "public",
+        "root",
+        "workshop-site",
+        "workstream"
+      ],
+      "relations": {},
+      "repoAccess": {
+        "readBoundary": "team"
+      }
+    },
+    {
+      "id": "workshop-site:asset:public-hated-task-prompts-html",
+      "title": "hated-task-prompts",
+      "summary": "Enrolled at adoption; not yet described.",
+      "repo": "workshop-site",
+      "path": "public/hated-task-prompts.html",
+      "type": "html",
+      "status": "active",
+      "audience": "team",
+      "tags": [
+        "active",
+        "hated-task-prompts",
+        "public",
+        "workshop-site"
+      ],
+      "relations": {},
+      "repoAccess": {
+        "readBoundary": "team"
+      }
+    },
+    {
+      "id": "workshop-site:asset:public-lead-magnet-html",
+      "title": "lead-magnet",
+      "summary": "Enrolled at adoption; not yet described.",
+      "repo": "workshop-site",
+      "path": "public/lead-magnet.html",
+      "type": "html",
+      "status": "active",
+      "audience": "team",
+      "tags": [
+        "active",
+        "lead-magnet",
+        "public",
+        "workshop-site"
+      ],
+      "relations": {},
+      "repoAccess": {
+        "readBoundary": "team"
+      }
+    },
+    {
+      "id": "workshop-site:asset:public-unlearning-success-pdf",
+      "title": "unlearning-success",
+      "summary": "Enrolled at adoption; not yet described.",
+      "repo": "workshop-site",
+      "path": "public/unlearning-success.pdf",
+      "type": "pdf",
+      "status": "active",
+      "audience": "team",
+      "tags": [
+        "active",
+        "public",
+        "unlearning-success",
+        "workshop-site"
+      ],
+      "relations": {},
+      "repoAccess": {
+        "readBoundary": "team"
+      }
+    }
+  ],
+  "edges": [],
+  "diagnostics": [],
+  "external": [],
+  "errors": []
+}

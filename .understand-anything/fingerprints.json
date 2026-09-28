@@ -1,18 +1,8 @@
 {
   "version": "1.0.0",
-  "gitCommitHash": "adc3e92585ea162fa4d0cc627f26b1bd19c583b8",
-  "generatedAt": "2026-09-25T20:13:02.251Z",
+  "gitCommitHash": "fea7bd344fb6890db89e08182e6590383c508571",
+  "generatedAt": "2026-09-27T20:23:28.768Z",
   "files": {
-    ".claude/settings.json": {
-      "filePath": ".claude/settings.json",
-      "contentHash": "9080f054caa171d47803957c0ac398cfc643584893497356635d44278c40260b",
-      "functions": [],
-      "classes": [],
-      "imports": [],
-      "exports": [],
-      "totalLines": 17,
-      "hasStructuralAnalysis": true
-    },
     "next-env.d.ts": {
       "filePath": "next-env.d.ts",
       "contentHash": "7b550dda9686c16f36a17bf9051d5dbf31e98555b30d114ac49fc49a1e712651",
@@ -49,26 +39,6 @@
       ],
       "exports": [],
       "totalLines": 61,
-      "hasStructuralAnalysis": true
-    },
-    "package-lock.json": {
-      "filePath": "package-lock.json",
-      "contentHash": "171aeef949bfdb81737974fbe8649917775c156c85e6929d84a15fe22b6a1f30",
-      "functions": [],
-      "classes": [],
-      "imports": [],
-      "exports": [],
-      "totalLines": 7567,
-      "hasStructuralAnalysis": true
-    },
-    "package.json": {
-      "filePath": "package.json",
-      "contentHash": "67867bf2428ef29490b731cf28d12c9cf6afeb409cfe3e30e579cae04c242342",
-      "functions": [],
-      "classes": [],
-      "imports": [],
-      "exports": [],
-      "totalLines": 50,
       "hasStructuralAnalysis": true
     },
     "pdf/render-client-launch-checklist.js": {
@@ -772,7 +742,7 @@
     },
     "src/app/api/events/checkout-session/route.ts": {
       "filePath": "src/app/api/events/checkout-session/route.ts",
-      "contentHash": "24a8e508bd7e76eaa26f28d403855f4da637622db772816e839d6645c0cfc0c1",
+      "contentHash": "2f2a0a8b8e3e56ba5a67b5d44445543519918d7bead0e1c562f61bf257087429",
       "functions": [
         {
           "name": "getBaseUrl",
@@ -788,7 +758,7 @@
             "request"
           ],
           "exported": true,
-          "lineCount": 424
+          "lineCount": 429
         }
       ],
       "classes": [],
@@ -797,6 +767,12 @@
           "source": "next/server",
           "specifiers": [
             "NextResponse"
+          ]
+        },
+        {
+          "source": "@/lib/registration-profile-token",
+          "specifiers": [
+            "createRegistrationProfileToken"
           ]
         },
         {
@@ -914,7 +890,7 @@
         "runtime",
         "POST"
       ],
-      "totalLines": 469,
+      "totalLines": 475,
       "hasStructuralAnalysis": true
     },
     "src/app/api/events/finalize-registration/route.ts": {
@@ -1691,7 +1667,7 @@
     },
     "src/app/api/lead-magnet/route.ts": {
       "filePath": "src/app/api/lead-magnet/route.ts",
-      "contentHash": "dcf6b1c2f97d373d5a6cbfad7f7b7c8c8e59d0e213c51ddf13c2ce67221078ba",
+      "contentHash": "54ee89d339b37299d4c57042273b052ee875f261af215743db2133e44e9890c8",
       "functions": [
         {
           "name": "sendViaResend",
@@ -1701,7 +1677,7 @@
             "idempotencyKey"
           ],
           "exported": false,
-          "lineCount": 457
+          "lineCount": 412
         },
         {
           "name": "ingestIntoCrm",
@@ -1773,12 +1749,18 @@
           "specifiers": [
             "withUtm"
           ]
+        },
+        {
+          "source": "@/lib/speak-human-email",
+          "specifiers": [
+            "buildSpeakHumanEmail"
+          ]
         }
       ],
       "exports": [
         "POST"
       ],
-      "totalLines": 631,
+      "totalLines": 587,
       "hasStructuralAnalysis": true
     },
     "src/app/api/lead-magnets/claudemd/route 2.ts": {
@@ -3079,6 +3061,32 @@
       "totalLines": 936,
       "hasStructuralAnalysis": true
     },
+    "src/app/giveaways/client-launch-checklist/LeadMagnetExampleForm.tsx": {
+      "filePath": "src/app/giveaways/client-launch-checklist/LeadMagnetExampleForm.tsx",
+      "contentHash": "b8f25794f0f3f68f7d496160a497d932cdba9dc48f85533a81bae2bef175ef1d",
+      "functions": [
+        {
+          "name": "LeadMagnetExampleForm",
+          "params": [],
+          "exported": true,
+          "lineCount": 122
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useState"
+          ]
+        }
+      ],
+      "exports": [
+        "LeadMagnetExampleForm"
+      ],
+      "totalLines": 134,
+      "hasStructuralAnalysis": true
+    },
     "src/app/giveaways/client-launch-checklist/layout.tsx": {
       "filePath": "src/app/giveaways/client-launch-checklist/layout.tsx",
       "contentHash": "33eb954fa0b8a5a719b135e3e3b0ad76a93d1ad6bddd01ac540f8a0d502be739",
@@ -3106,32 +3114,6 @@
         "ClientLaunchChecklistLayout"
       ],
       "totalLines": 11,
-      "hasStructuralAnalysis": true
-    },
-    "src/app/giveaways/client-launch-checklist/LeadMagnetExampleForm.tsx": {
-      "filePath": "src/app/giveaways/client-launch-checklist/LeadMagnetExampleForm.tsx",
-      "contentHash": "b8f25794f0f3f68f7d496160a497d932cdba9dc48f85533a81bae2bef175ef1d",
-      "functions": [
-        {
-          "name": "LeadMagnetExampleForm",
-          "params": [],
-          "exported": true,
-          "lineCount": 122
-        }
-      ],
-      "classes": [],
-      "imports": [
-        {
-          "source": "react",
-          "specifiers": [
-            "useState"
-          ]
-        }
-      ],
-      "exports": [
-        "LeadMagnetExampleForm"
-      ],
-      "totalLines": 134,
       "hasStructuralAnalysis": true
     },
     "src/app/giveaways/client-launch-checklist/page.tsx": {
@@ -4801,7 +4783,7 @@
     },
     "src/app/giveaways/speak-human/page.tsx": {
       "filePath": "src/app/giveaways/speak-human/page.tsx",
-      "contentHash": "017e5b71a497def4c03663c18e2a63b5e1d1b13d4033efa21109d456e5b56092",
+      "contentHash": "d41842bd4e143e5d271a11eae31e6a58d3a5df0fc6253dbd772c9a137c1d98cb",
       "functions": [
         {
           "name": "useMagnet",
@@ -4815,7 +4797,7 @@
           "name": "SpeakHumanPage",
           "params": [],
           "exported": true,
-          "lineCount": 589
+          "lineCount": 588
         },
         {
           "name": "MastermindCTA",
@@ -4879,7 +4861,7 @@
       "exports": [
         "SpeakHumanPage"
       ],
-      "totalLines": 807,
+      "totalLines": 806,
       "hasStructuralAnalysis": true
     },
     "src/app/giveaways/squarespace-escape/page.tsx": {
@@ -5932,468 +5914,6 @@
         "robots"
       ],
       "totalLines": 15,
-      "hasStructuralAnalysis": true
-    },
-    "src/app/session/[slug]/bonus/page 2.tsx": {
-      "filePath": "src/app/session/[slug]/bonus/page 2.tsx",
-      "contentHash": "cb0d3e2251d07eaf2b305fe0fdff6e97719683d8ef3beb29b57e890e6c62b446",
-      "functions": [
-        {
-          "name": "generateStaticParams",
-          "params": [],
-          "exported": true,
-          "lineCount": 3
-        },
-        {
-          "name": "generateMetadata",
-          "params": [
-            "{ params }"
-          ],
-          "exported": true,
-          "lineCount": 10
-        },
-        {
-          "name": "SessionBonusPage",
-          "params": [
-            "{ params }"
-          ],
-          "exported": true,
-          "lineCount": 36
-        }
-      ],
-      "classes": [],
-      "imports": [
-        {
-          "source": "next/link",
-          "specifiers": [
-            "Link"
-          ]
-        },
-        {
-          "source": "next/navigation",
-          "specifiers": [
-            "notFound"
-          ]
-        },
-        {
-          "source": "@/lib/sessions",
-          "specifiers": [
-            "getSession"
-          ]
-        },
-        {
-          "source": "@/content/session-1-bonus",
-          "specifiers": [
-            "Session1Bonus"
-          ]
-        },
-        {
-          "source": "react",
-          "specifiers": [
-            "ComponentType"
-          ]
-        }
-      ],
-      "exports": [
-        "generateStaticParams",
-        "generateMetadata",
-        "SessionBonusPage"
-      ],
-      "totalLines": 66,
-      "hasStructuralAnalysis": true
-    },
-    "src/app/session/[slug]/bonus/page.tsx": {
-      "filePath": "src/app/session/[slug]/bonus/page.tsx",
-      "contentHash": "cb0d3e2251d07eaf2b305fe0fdff6e97719683d8ef3beb29b57e890e6c62b446",
-      "functions": [
-        {
-          "name": "generateStaticParams",
-          "params": [],
-          "exported": true,
-          "lineCount": 3
-        },
-        {
-          "name": "generateMetadata",
-          "params": [
-            "{ params }"
-          ],
-          "exported": true,
-          "lineCount": 10
-        },
-        {
-          "name": "SessionBonusPage",
-          "params": [
-            "{ params }"
-          ],
-          "exported": true,
-          "lineCount": 36
-        }
-      ],
-      "classes": [],
-      "imports": [
-        {
-          "source": "next/link",
-          "specifiers": [
-            "Link"
-          ]
-        },
-        {
-          "source": "next/navigation",
-          "specifiers": [
-            "notFound"
-          ]
-        },
-        {
-          "source": "@/lib/sessions",
-          "specifiers": [
-            "getSession"
-          ]
-        },
-        {
-          "source": "@/content/session-1-bonus",
-          "specifiers": [
-            "Session1Bonus"
-          ]
-        },
-        {
-          "source": "react",
-          "specifiers": [
-            "ComponentType"
-          ]
-        }
-      ],
-      "exports": [
-        "generateStaticParams",
-        "generateMetadata",
-        "SessionBonusPage"
-      ],
-      "totalLines": 66,
-      "hasStructuralAnalysis": true
-    },
-    "src/app/session/[slug]/guide-brain/page.tsx": {
-      "filePath": "src/app/session/[slug]/guide-brain/page.tsx",
-      "contentHash": "10d22665ad0b8c7418eadf9c01cd6484c0d4465453d8c3abe02f8764599cb3c1",
-      "functions": [
-        {
-          "name": "generateStaticParams",
-          "params": [],
-          "exported": true,
-          "lineCount": 3
-        },
-        {
-          "name": "generateMetadata",
-          "params": [
-            "{ params }"
-          ],
-          "exported": true,
-          "lineCount": 9
-        },
-        {
-          "name": "SessionGuideBrainPage",
-          "params": [
-            "{ params }"
-          ],
-          "exported": true,
-          "lineCount": 52
-        }
-      ],
-      "classes": [],
-      "imports": [
-        {
-          "source": "next/link",
-          "specifiers": [
-            "Link"
-          ]
-        },
-        {
-          "source": "next/navigation",
-          "specifiers": [
-            "notFound"
-          ]
-        },
-        {
-          "source": "@/lib/sessions",
-          "specifiers": [
-            "getSession"
-          ]
-        },
-        {
-          "source": "@/content/session-4-guide",
-          "specifiers": [
-            "Session4Guide"
-          ]
-        }
-      ],
-      "exports": [
-        "generateStaticParams",
-        "generateMetadata",
-        "SessionGuideBrainPage"
-      ],
-      "totalLines": 76,
-      "hasStructuralAnalysis": true
-    },
-    "src/app/session/[slug]/guide/page.tsx": {
-      "filePath": "src/app/session/[slug]/guide/page.tsx",
-      "contentHash": "f876f9c02b9a96fd8a3c55e4e25f6d5b67a918c8e3be0f7ca96e0577fad9c527",
-      "functions": [
-        {
-          "name": "generateStaticParams",
-          "params": [],
-          "exported": true,
-          "lineCount": 9
-        },
-        {
-          "name": "generateMetadata",
-          "params": [
-            "{ params }"
-          ],
-          "exported": true,
-          "lineCount": 9
-        },
-        {
-          "name": "SessionGuidePage",
-          "params": [
-            "{ params }"
-          ],
-          "exported": true,
-          "lineCount": 55
-        }
-      ],
-      "classes": [],
-      "imports": [
-        {
-          "source": "next/link",
-          "specifiers": [
-            "Link"
-          ]
-        },
-        {
-          "source": "next/navigation",
-          "specifiers": [
-            "notFound"
-          ]
-        },
-        {
-          "source": "@/lib/sessions",
-          "specifiers": [
-            "getSession"
-          ]
-        },
-        {
-          "source": "@/lib/locks",
-          "specifiers": [
-            "LOCKS"
-          ]
-        },
-        {
-          "source": "@/content/session-1-guide",
-          "specifiers": [
-            "Session1Guide"
-          ]
-        },
-        {
-          "source": "@/content/session-2-guide",
-          "specifiers": [
-            "Session2Guide"
-          ]
-        },
-        {
-          "source": "@/content/session-3-guide",
-          "specifiers": [
-            "Session3Guide"
-          ]
-        },
-        {
-          "source": "@/content/session-6-guide",
-          "specifiers": [
-            "Session6Guide"
-          ]
-        },
-        {
-          "source": "@/content/session-7-guide",
-          "specifiers": [
-            "Session7Guide"
-          ]
-        },
-        {
-          "source": "react",
-          "specifiers": [
-            "ComponentType"
-          ]
-        }
-      ],
-      "exports": [
-        "generateStaticParams",
-        "generateMetadata",
-        "SessionGuidePage"
-      ],
-      "totalLines": 99,
-      "hasStructuralAnalysis": true
-    },
-    "src/app/session/[slug]/page.tsx": {
-      "filePath": "src/app/session/[slug]/page.tsx",
-      "contentHash": "f58eb1d2a4a5b4b0dbda094666f696dfb1eb12566893308a22c907de9927dd53",
-      "functions": [
-        {
-          "name": "generateStaticParams",
-          "params": [],
-          "exported": true,
-          "lineCount": 3
-        },
-        {
-          "name": "generateMetadata",
-          "params": [
-            "{ params }"
-          ],
-          "exported": true,
-          "lineCount": 9
-        },
-        {
-          "name": "SessionIndexPage",
-          "params": [
-            "{ params }"
-          ],
-          "exported": true,
-          "lineCount": 537
-        }
-      ],
-      "classes": [],
-      "imports": [
-        {
-          "source": "next/link",
-          "specifiers": [
-            "Link"
-          ]
-        },
-        {
-          "source": "next/navigation",
-          "specifiers": [
-            "notFound"
-          ]
-        },
-        {
-          "source": "@/lib/sessions",
-          "specifiers": [
-            "getSession"
-          ]
-        },
-        {
-          "source": "@/lib/locks",
-          "specifiers": [
-            "LOCKS"
-          ]
-        },
-        {
-          "source": "@/components/Reveal",
-          "specifiers": [
-            "Reveal"
-          ]
-        }
-      ],
-      "exports": [
-        "generateStaticParams",
-        "generateMetadata",
-        "SessionIndexPage"
-      ],
-      "totalLines": 562,
-      "hasStructuralAnalysis": true
-    },
-    "src/app/session/[slug]/prep/page.tsx": {
-      "filePath": "src/app/session/[slug]/prep/page.tsx",
-      "contentHash": "56d05c012ccd99b96373e343d320017d9dfd229f567ac1c23549693b953609a7",
-      "functions": [
-        {
-          "name": "generateStaticParams",
-          "params": [],
-          "exported": true,
-          "lineCount": 3
-        },
-        {
-          "name": "generateMetadata",
-          "params": [
-            "{ params }"
-          ],
-          "exported": true,
-          "lineCount": 9
-        },
-        {
-          "name": "SessionPrepPage",
-          "params": [
-            "{ params }"
-          ],
-          "exported": true,
-          "lineCount": 44
-        }
-      ],
-      "classes": [],
-      "imports": [
-        {
-          "source": "next/link",
-          "specifiers": [
-            "Link"
-          ]
-        },
-        {
-          "source": "next/navigation",
-          "specifiers": [
-            "notFound"
-          ]
-        },
-        {
-          "source": "@/lib/sessions",
-          "specifiers": [
-            "getSession"
-          ]
-        },
-        {
-          "source": "@/content/session-1-prep",
-          "specifiers": [
-            "Session1Prep"
-          ]
-        },
-        {
-          "source": "@/content/session-2-prep",
-          "specifiers": [
-            "Session2Prep"
-          ]
-        },
-        {
-          "source": "@/content/session-3-prep",
-          "specifiers": [
-            "Session3Prep"
-          ]
-        },
-        {
-          "source": "@/content/session-5-prep",
-          "specifiers": [
-            "Session5Prep"
-          ]
-        },
-        {
-          "source": "@/content/session-6-prep",
-          "specifiers": [
-            "Session6Prep"
-          ]
-        },
-        {
-          "source": "@/content/session-7-prep",
-          "specifiers": [
-            "Session7Prep"
-          ]
-        },
-        {
-          "source": "react",
-          "specifiers": [
-            "ComponentType"
-          ]
-        }
-      ],
-      "exports": [
-        "generateStaticParams",
-        "generateMetadata",
-        "SessionPrepPage"
-      ],
-      "totalLines": 84,
       "hasStructuralAnalysis": true
     },
     "src/app/session/1/prep-codex/page 2.tsx": {
@@ -7608,6 +7128,468 @@
       "totalLines": 53,
       "hasStructuralAnalysis": true
     },
+    "src/app/session/[slug]/bonus/page 2.tsx": {
+      "filePath": "src/app/session/[slug]/bonus/page 2.tsx",
+      "contentHash": "cb0d3e2251d07eaf2b305fe0fdff6e97719683d8ef3beb29b57e890e6c62b446",
+      "functions": [
+        {
+          "name": "generateStaticParams",
+          "params": [],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "generateMetadata",
+          "params": [
+            "{ params }"
+          ],
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "SessionBonusPage",
+          "params": [
+            "{ params }"
+          ],
+          "exported": true,
+          "lineCount": 36
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/link",
+          "specifiers": [
+            "Link"
+          ]
+        },
+        {
+          "source": "next/navigation",
+          "specifiers": [
+            "notFound"
+          ]
+        },
+        {
+          "source": "@/lib/sessions",
+          "specifiers": [
+            "getSession"
+          ]
+        },
+        {
+          "source": "@/content/session-1-bonus",
+          "specifiers": [
+            "Session1Bonus"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "ComponentType"
+          ]
+        }
+      ],
+      "exports": [
+        "generateStaticParams",
+        "generateMetadata",
+        "SessionBonusPage"
+      ],
+      "totalLines": 66,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/session/[slug]/bonus/page.tsx": {
+      "filePath": "src/app/session/[slug]/bonus/page.tsx",
+      "contentHash": "cb0d3e2251d07eaf2b305fe0fdff6e97719683d8ef3beb29b57e890e6c62b446",
+      "functions": [
+        {
+          "name": "generateStaticParams",
+          "params": [],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "generateMetadata",
+          "params": [
+            "{ params }"
+          ],
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "SessionBonusPage",
+          "params": [
+            "{ params }"
+          ],
+          "exported": true,
+          "lineCount": 36
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/link",
+          "specifiers": [
+            "Link"
+          ]
+        },
+        {
+          "source": "next/navigation",
+          "specifiers": [
+            "notFound"
+          ]
+        },
+        {
+          "source": "@/lib/sessions",
+          "specifiers": [
+            "getSession"
+          ]
+        },
+        {
+          "source": "@/content/session-1-bonus",
+          "specifiers": [
+            "Session1Bonus"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "ComponentType"
+          ]
+        }
+      ],
+      "exports": [
+        "generateStaticParams",
+        "generateMetadata",
+        "SessionBonusPage"
+      ],
+      "totalLines": 66,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/session/[slug]/guide-brain/page.tsx": {
+      "filePath": "src/app/session/[slug]/guide-brain/page.tsx",
+      "contentHash": "10d22665ad0b8c7418eadf9c01cd6484c0d4465453d8c3abe02f8764599cb3c1",
+      "functions": [
+        {
+          "name": "generateStaticParams",
+          "params": [],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "generateMetadata",
+          "params": [
+            "{ params }"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "SessionGuideBrainPage",
+          "params": [
+            "{ params }"
+          ],
+          "exported": true,
+          "lineCount": 52
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/link",
+          "specifiers": [
+            "Link"
+          ]
+        },
+        {
+          "source": "next/navigation",
+          "specifiers": [
+            "notFound"
+          ]
+        },
+        {
+          "source": "@/lib/sessions",
+          "specifiers": [
+            "getSession"
+          ]
+        },
+        {
+          "source": "@/content/session-4-guide",
+          "specifiers": [
+            "Session4Guide"
+          ]
+        }
+      ],
+      "exports": [
+        "generateStaticParams",
+        "generateMetadata",
+        "SessionGuideBrainPage"
+      ],
+      "totalLines": 76,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/session/[slug]/guide/page.tsx": {
+      "filePath": "src/app/session/[slug]/guide/page.tsx",
+      "contentHash": "f876f9c02b9a96fd8a3c55e4e25f6d5b67a918c8e3be0f7ca96e0577fad9c527",
+      "functions": [
+        {
+          "name": "generateStaticParams",
+          "params": [],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "generateMetadata",
+          "params": [
+            "{ params }"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "SessionGuidePage",
+          "params": [
+            "{ params }"
+          ],
+          "exported": true,
+          "lineCount": 55
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/link",
+          "specifiers": [
+            "Link"
+          ]
+        },
+        {
+          "source": "next/navigation",
+          "specifiers": [
+            "notFound"
+          ]
+        },
+        {
+          "source": "@/lib/sessions",
+          "specifiers": [
+            "getSession"
+          ]
+        },
+        {
+          "source": "@/lib/locks",
+          "specifiers": [
+            "LOCKS"
+          ]
+        },
+        {
+          "source": "@/content/session-1-guide",
+          "specifiers": [
+            "Session1Guide"
+          ]
+        },
+        {
+          "source": "@/content/session-2-guide",
+          "specifiers": [
+            "Session2Guide"
+          ]
+        },
+        {
+          "source": "@/content/session-3-guide",
+          "specifiers": [
+            "Session3Guide"
+          ]
+        },
+        {
+          "source": "@/content/session-6-guide",
+          "specifiers": [
+            "Session6Guide"
+          ]
+        },
+        {
+          "source": "@/content/session-7-guide",
+          "specifiers": [
+            "Session7Guide"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "ComponentType"
+          ]
+        }
+      ],
+      "exports": [
+        "generateStaticParams",
+        "generateMetadata",
+        "SessionGuidePage"
+      ],
+      "totalLines": 99,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/session/[slug]/page.tsx": {
+      "filePath": "src/app/session/[slug]/page.tsx",
+      "contentHash": "f58eb1d2a4a5b4b0dbda094666f696dfb1eb12566893308a22c907de9927dd53",
+      "functions": [
+        {
+          "name": "generateStaticParams",
+          "params": [],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "generateMetadata",
+          "params": [
+            "{ params }"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "SessionIndexPage",
+          "params": [
+            "{ params }"
+          ],
+          "exported": true,
+          "lineCount": 537
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/link",
+          "specifiers": [
+            "Link"
+          ]
+        },
+        {
+          "source": "next/navigation",
+          "specifiers": [
+            "notFound"
+          ]
+        },
+        {
+          "source": "@/lib/sessions",
+          "specifiers": [
+            "getSession"
+          ]
+        },
+        {
+          "source": "@/lib/locks",
+          "specifiers": [
+            "LOCKS"
+          ]
+        },
+        {
+          "source": "@/components/Reveal",
+          "specifiers": [
+            "Reveal"
+          ]
+        }
+      ],
+      "exports": [
+        "generateStaticParams",
+        "generateMetadata",
+        "SessionIndexPage"
+      ],
+      "totalLines": 562,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/session/[slug]/prep/page.tsx": {
+      "filePath": "src/app/session/[slug]/prep/page.tsx",
+      "contentHash": "56d05c012ccd99b96373e343d320017d9dfd229f567ac1c23549693b953609a7",
+      "functions": [
+        {
+          "name": "generateStaticParams",
+          "params": [],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "generateMetadata",
+          "params": [
+            "{ params }"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "SessionPrepPage",
+          "params": [
+            "{ params }"
+          ],
+          "exported": true,
+          "lineCount": 44
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/link",
+          "specifiers": [
+            "Link"
+          ]
+        },
+        {
+          "source": "next/navigation",
+          "specifiers": [
+            "notFound"
+          ]
+        },
+        {
+          "source": "@/lib/sessions",
+          "specifiers": [
+            "getSession"
+          ]
+        },
+        {
+          "source": "@/content/session-1-prep",
+          "specifiers": [
+            "Session1Prep"
+          ]
+        },
+        {
+          "source": "@/content/session-2-prep",
+          "specifiers": [
+            "Session2Prep"
+          ]
+        },
+        {
+          "source": "@/content/session-3-prep",
+          "specifiers": [
+            "Session3Prep"
+          ]
+        },
+        {
+          "source": "@/content/session-5-prep",
+          "specifiers": [
+            "Session5Prep"
+          ]
+        },
+        {
+          "source": "@/content/session-6-prep",
+          "specifiers": [
+            "Session6Prep"
+          ]
+        },
+        {
+          "source": "@/content/session-7-prep",
+          "specifiers": [
+            "Session7Prep"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "ComponentType"
+          ]
+        }
+      ],
+      "exports": [
+        "generateStaticParams",
+        "generateMetadata",
+        "SessionPrepPage"
+      ],
+      "totalLines": 84,
+      "hasStructuralAnalysis": true
+    },
     "src/app/sitemap.ts": {
       "filePath": "src/app/sitemap.ts",
       "contentHash": "ed4da9e8a75da1ebcdab9ffb9370ace4e7e74bd13da382b6a38c76f371f079a6",
@@ -7691,629 +7673,6 @@
         "CodeBlock"
       ],
       "totalLines": 158,
-      "hasStructuralAnalysis": true
-    },
-    "src/components/events/ask-an-ai-expert-quotes.ts": {
-      "filePath": "src/components/events/ask-an-ai-expert-quotes.ts",
-      "contentHash": "038b7b3deaff449e5606a3a6b2aeb62094906c5f169539eb483def01116674bc",
-      "functions": [],
-      "classes": [],
-      "imports": [],
-      "exports": [
-        "askAnAiExpertQuotes"
-      ],
-      "totalLines": 311,
-      "hasStructuralAnalysis": true
-    },
-    "src/components/events/AskAnAiExpertQuoteStrip.tsx": {
-      "filePath": "src/components/events/AskAnAiExpertQuoteStrip.tsx",
-      "contentHash": "fb54e47af5c13d5bc121a64b5e8de6de8b770b03a0658f2d00fb7856e4462e73",
-      "functions": [
-        {
-          "name": "AskAnAiExpertQuoteStrip",
-          "params": [],
-          "exported": true,
-          "lineCount": 119
-        }
-      ],
-      "classes": [],
-      "imports": [
-        {
-          "source": "react",
-          "specifiers": [
-            "useEffect",
-            "useRef",
-            "useState"
-          ]
-        },
-        {
-          "source": "./ask-an-ai-expert-quotes",
-          "specifiers": [
-            "askAnAiExpertQuotes"
-          ]
-        }
-      ],
-      "exports": [
-        "AskAnAiExpertQuoteStrip"
-      ],
-      "totalLines": 128,
-      "hasStructuralAnalysis": true
-    },
-    "src/components/events/EventMediaVideo.tsx": {
-      "filePath": "src/components/events/EventMediaVideo.tsx",
-      "contentHash": "e08b940ad79efd5e281eb4a0236613ea9551617e792c24741a00e022166a9887",
-      "functions": [],
-      "classes": [],
-      "imports": [
-        {
-          "source": "react",
-          "specifiers": [
-            "forwardRef",
-            "useEffect",
-            "useId",
-            "useImperativeHandle",
-            "useRef"
-          ]
-        }
-      ],
-      "exports": [],
-      "totalLines": 63,
-      "hasStructuralAnalysis": true
-    },
-    "src/components/events/EventPageView.tsx": {
-      "filePath": "src/components/events/EventPageView.tsx",
-      "contentHash": "e6a73f1cdb54cba293766d53e18e7fd04057ca1bf84aac4957d8ca21336757ce",
-      "functions": [
-        {
-          "name": "sectionTitleClass",
-          "params": [
-            "sectionId"
-          ],
-          "exported": false,
-          "lineCount": 6
-        },
-        {
-          "name": "sectionEyebrowClass",
-          "params": [
-            "sectionId"
-          ],
-          "exported": false,
-          "lineCount": 3
-        },
-        {
-          "name": "SectionShell",
-          "params": [
-            "{\n  eyebrow,\n  title,\n  intro,\n  sectionId,\n  children,\n}"
-          ],
-          "exported": false,
-          "lineCount": 34
-        },
-        {
-          "name": "RichParagraphs",
-          "params": [
-            "{ body }"
-          ],
-          "exported": false,
-          "lineCount": 9
-        },
-        {
-          "name": "StorySection",
-          "params": [
-            "{ section }"
-          ],
-          "exported": false,
-          "lineCount": 11
-        },
-        {
-          "name": "ChecklistSection",
-          "params": [
-            "{ section }"
-          ],
-          "exported": false,
-          "lineCount": 21
-        },
-        {
-          "name": "CardsSection",
-          "params": [
-            "{ section }"
-          ],
-          "exported": false,
-          "lineCount": 39
-        },
-        {
-          "name": "SplitSection",
-          "params": [
-            "{ section }"
-          ],
-          "exported": false,
-          "lineCount": 21
-        },
-        {
-          "name": "ImageSection",
-          "params": [
-            "{ section }"
-          ],
-          "exported": false,
-          "lineCount": 28
-        },
-        {
-          "name": "HtmlSection",
-          "params": [
-            "{ section, eventEnded }"
-          ],
-          "exported": false,
-          "lineCount": 26
-        },
-        {
-          "name": "QuoteCardSection",
-          "params": [
-            "{ section }"
-          ],
-          "exported": false,
-          "lineCount": 90
-        },
-        {
-          "name": "HostsSection",
-          "params": [
-            "{ section }"
-          ],
-          "exported": false,
-          "lineCount": 44
-        },
-        {
-          "name": "EventVideoSection",
-          "params": [
-            "{ video }"
-          ],
-          "exported": false,
-          "lineCount": 25
-        },
-        {
-          "name": "EndedButton",
-          "params": [
-            "{ className }"
-          ],
-          "exported": false,
-          "lineCount": 7
-        },
-        {
-          "name": "CtaSection",
-          "params": [
-            "{\n  section,\n  event,\n  promo,\n  eventEnded,\n}"
-          ],
-          "exported": false,
-          "lineCount": 67
-        },
-        {
-          "name": "renderSection",
-          "params": [
-            "section",
-            "event",
-            "promo",
-            "eventEnded"
-          ],
-          "exported": false,
-          "lineCount": 26
-        },
-        {
-          "name": "EventPageView",
-          "params": [
-            "{\n  event,\n  promo,\n  publishableKey,\n  initialPromoCode,\n}"
-          ],
-          "exported": true,
-          "lineCount": 175
-        }
-      ],
-      "classes": [],
-      "imports": [
-        {
-          "source": "next/image",
-          "specifiers": [
-            "Image"
-          ]
-        },
-        {
-          "source": "next/link",
-          "specifiers": [
-            "Link"
-          ]
-        },
-        {
-          "source": "@/lib/events",
-          "specifiers": [
-            "EventDefinition",
-            "EventPromoCode",
-            "EventSection"
-          ]
-        },
-        {
-          "source": "@/lib/events",
-          "specifiers": [
-            "formatEventPrice",
-            "getEventDiscountedPrice"
-          ]
-        },
-        {
-          "source": "@/lib/calendar",
-          "specifiers": [
-            "buildGoogleCalendarUrl"
-          ]
-        },
-        {
-          "source": "@/lib/event-status",
-          "specifiers": [
-            "isEventEnded",
-            "isRegistrationWindowPassed"
-          ]
-        },
-        {
-          "source": "@/components/Reveal",
-          "specifiers": [
-            "Reveal"
-          ]
-        },
-        {
-          "source": "@/components/events/EventRegistrationSection",
-          "specifiers": [
-            "EventRegistrationSection"
-          ]
-        },
-        {
-          "source": "@/components/events/EventRegistrationSection",
-          "specifiers": [
-            "EventRegistrationData"
-          ]
-        },
-        {
-          "source": "@/components/events/HeroVideo",
-          "specifiers": [
-            "HeroVideo"
-          ]
-        },
-        {
-          "source": "@/components/events/ScrollToRegisterButton",
-          "specifiers": [
-            "ScrollToRegisterButton"
-          ]
-        },
-        {
-          "source": "@/components/events/EventMediaVideo",
-          "specifiers": [
-            "EventMediaVideo"
-          ]
-        },
-        {
-          "source": "@/components/events/AskAnAiExpertQuoteStrip",
-          "specifiers": [
-            "AskAnAiExpertQuoteStrip"
-          ]
-        }
-      ],
-      "exports": [
-        "EventPageView"
-      ],
-      "totalLines": 663,
-      "hasStructuralAnalysis": true
-    },
-    "src/components/events/EventRegistrationSection.tsx": {
-      "filePath": "src/components/events/EventRegistrationSection.tsx",
-      "contentHash": "79822e01603ef60a3bf27740872efc456993a7fb2009f420fb12106ca829fb0b",
-      "functions": [
-        {
-          "name": "useAnimatedNumber",
-          "params": [
-            "target",
-            "duration"
-          ],
-          "returnType": "number",
-          "exported": false,
-          "lineCount": 35
-        },
-        {
-          "name": "EventRegistrationSection",
-          "params": [
-            "{\n  event,\n  publishableKey,\n  initialPromoCode,\n  initialPromoAmount,\n  initialPromoMessage,\n}"
-          ],
-          "exported": true,
-          "lineCount": 805
-        }
-      ],
-      "classes": [],
-      "imports": [
-        {
-          "source": "react",
-          "specifiers": [
-            "useEffect",
-            "useRef",
-            "useMemo",
-            "useState",
-            "useTransition"
-          ]
-        },
-        {
-          "source": "@stripe/react-stripe-js",
-          "specifiers": [
-            "EmbeddedCheckout",
-            "EmbeddedCheckoutProvider"
-          ]
-        },
-        {
-          "source": "@stripe/stripe-js",
-          "specifiers": [
-            "loadStripe"
-          ]
-        },
-        {
-          "source": "@/lib/celebrate",
-          "specifiers": [
-            "celebrate"
-          ]
-        },
-        {
-          "source": "@/lib/email-validation",
-          "specifiers": [
-            "isValidEmail"
-          ]
-        },
-        {
-          "source": "@/components/events/WaitlistJoinForm",
-          "specifiers": [
-            "WaitlistJoinForm"
-          ]
-        },
-        {
-          "source": "@/lib/event-registration-flow",
-          "specifiers": [
-            "buildEventCheckoutRequestBody"
-          ]
-        },
-        {
-          "source": "@/lib/event-intake",
-          "specifiers": [
-            "BUSINESS_CONTEXT_MIN_LENGTH",
-            "hasIntakeErrors",
-            "validateIntakeFields",
-            "IntakeFieldErrors"
-          ]
-        }
-      ],
-      "exports": [
-        "EventRegistrationSection"
-      ],
-      "totalLines": 907,
-      "hasStructuralAnalysis": true
-    },
-    "src/components/events/HeroVideo.tsx": {
-      "filePath": "src/components/events/HeroVideo.tsx",
-      "contentHash": "8173b1b15a3f3f75ea53fd2217ac188474cfb52617ed7a98161640490fa0a0a3",
-      "functions": [
-        {
-          "name": "HeroVideo",
-          "params": [
-            "{ src, poster, alt, className }"
-          ],
-          "exported": true,
-          "lineCount": 42
-        }
-      ],
-      "classes": [],
-      "imports": [
-        {
-          "source": "react",
-          "specifiers": [
-            "useRef",
-            "useState"
-          ]
-        },
-        {
-          "source": "@/components/events/EventMediaVideo",
-          "specifiers": [
-            "EventMediaVideo"
-          ]
-        }
-      ],
-      "exports": [
-        "HeroVideo"
-      ],
-      "totalLines": 55,
-      "hasStructuralAnalysis": true
-    },
-    "src/components/events/ScrollToRegisterButton.tsx": {
-      "filePath": "src/components/events/ScrollToRegisterButton.tsx",
-      "contentHash": "5eaa344845823fe7cc9e655b2c30d23c1bce2c57d04673606c921b15c6de16ea",
-      "functions": [
-        {
-          "name": "ScrollToRegisterButton",
-          "params": [
-            "{ className, children }"
-          ],
-          "exported": true,
-          "lineCount": 18
-        }
-      ],
-      "classes": [],
-      "imports": [
-        {
-          "source": "react",
-          "specifiers": [
-            "ReactNode"
-          ]
-        }
-      ],
-      "exports": [
-        "ScrollToRegisterButton"
-      ],
-      "totalLines": 28,
-      "hasStructuralAnalysis": true
-    },
-    "src/components/events/WaitlistJoinForm.tsx": {
-      "filePath": "src/components/events/WaitlistJoinForm.tsx",
-      "contentHash": "48e5a4d83b444086ab18f385a563eaada1a57644cdb1b6e4dbeeaa1a6dd9b5f4",
-      "functions": [
-        {
-          "name": "WaitlistJoinForm",
-          "params": [
-            "{ durationLabel, eventSlug, eventTitle, initialName = '', initialEmail = '' }"
-          ],
-          "exported": true,
-          "lineCount": 130
-        }
-      ],
-      "classes": [],
-      "imports": [
-        {
-          "source": "react",
-          "specifiers": [
-            "useState"
-          ]
-        },
-        {
-          "source": "@/lib/email-validation",
-          "specifiers": [
-            "isValidEmail",
-            "normaliseEmail"
-          ]
-        }
-      ],
-      "exports": [
-        "WaitlistJoinForm"
-      ],
-      "totalLines": 144,
-      "hasStructuralAnalysis": true
-    },
-    "src/components/giveaways/GiveawayAutoModal.tsx": {
-      "filePath": "src/components/giveaways/GiveawayAutoModal.tsx",
-      "contentHash": "2ccb0f36b6a09427cbe02787a78ff821cbaec03aa59c2a4900e95b0c5da59891",
-      "functions": [
-        {
-          "name": "GiveawayAutoModal",
-          "params": [
-            "{ slug, headingOverride, delayMs = 20000 }"
-          ],
-          "exported": true,
-          "lineCount": 24
-        }
-      ],
-      "classes": [],
-      "imports": [
-        {
-          "source": "react",
-          "specifiers": [
-            "useEffect",
-            "useState"
-          ]
-        },
-        {
-          "source": "./GiveawayEmailModal",
-          "specifiers": [
-            "GiveawayEmailModal"
-          ]
-        }
-      ],
-      "exports": [
-        "GiveawayAutoModal"
-      ],
-      "totalLines": 53,
-      "hasStructuralAnalysis": true
-    },
-    "src/components/giveaways/GiveawayCopyEmailGate.tsx": {
-      "filePath": "src/components/giveaways/GiveawayCopyEmailGate.tsx",
-      "contentHash": "5bd2c4aad87dd9e94581e237efd77a50cc818b92593f996b26db3c0a74b3dadd",
-      "functions": [
-        {
-          "name": "getGiveawaySlug",
-          "params": [
-            "pathname"
-          ],
-          "exported": false,
-          "lineCount": 4
-        },
-        {
-          "name": "isNoSignupGiveaway",
-          "params": [
-            "pathname"
-          ],
-          "exported": false,
-          "lineCount": 3
-        },
-        {
-          "name": "GiveawayCopyEmailGate",
-          "params": [
-            "{ children }"
-          ],
-          "exported": true,
-          "lineCount": 33
-        }
-      ],
-      "classes": [],
-      "imports": [
-        {
-          "source": "react",
-          "specifiers": [
-            "ReactNode"
-          ]
-        },
-        {
-          "source": "react",
-          "specifiers": [
-            "useEffect",
-            "useMemo",
-            "useState"
-          ]
-        },
-        {
-          "source": "next/navigation",
-          "specifiers": [
-            "usePathname"
-          ]
-        },
-        {
-          "source": "@/lib/copyWithConfetti",
-          "specifiers": [
-            "COPY_WITH_CONFETTI_SUCCESS_EVENT"
-          ]
-        },
-        {
-          "source": "./GiveawayEmailModal",
-          "specifiers": [
-            "GiveawayEmailModal"
-          ]
-        }
-      ],
-      "exports": [
-        "GiveawayCopyEmailGate"
-      ],
-      "totalLines": 56,
-      "hasStructuralAnalysis": true
-    },
-    "src/components/giveaways/GiveawayEmailModal.tsx": {
-      "filePath": "src/components/giveaways/GiveawayEmailModal.tsx",
-      "contentHash": "a73ccab44a1f84bb9d2f87ade3db62a689c98a03fe98c03b76b4b78d6cc79231",
-      "functions": [
-        {
-          "name": "GiveawayEmailModal",
-          "params": [
-            "{ slug, isOpen, onClose, headingOverride, showCopiedBadge = true }"
-          ],
-          "exported": true,
-          "lineCount": 157
-        }
-      ],
-      "classes": [],
-      "imports": [
-        {
-          "source": "react",
-          "specifiers": [
-            "useEffect",
-            "useRef",
-            "useState"
-          ]
-        }
-      ],
-      "exports": [
-        "GiveawayEmailModal"
-      ],
-      "totalLines": 174,
       "hasStructuralAnalysis": true
     },
     "src/components/PageParticles.tsx": {
@@ -8489,40 +7848,6 @@
         "ScreenshotCard"
       ],
       "totalLines": 23,
-      "hasStructuralAnalysis": true
-    },
-    "src/components/sections/MastermindReactionsSection.tsx": {
-      "filePath": "src/components/sections/MastermindReactionsSection.tsx",
-      "contentHash": "26ee4f3bad82abda80ce1df53fce8d5cd60a3e636d48a77556546698b48ae9c1",
-      "functions": [
-        {
-          "name": "MastermindReactionsSection",
-          "params": [],
-          "exported": true,
-          "lineCount": 122
-        }
-      ],
-      "classes": [],
-      "imports": [
-        {
-          "source": "react",
-          "specifiers": [
-            "useRef",
-            "useEffect",
-            "useState"
-          ]
-        },
-        {
-          "source": "@/components/Reveal",
-          "specifiers": [
-            "Reveal"
-          ]
-        }
-      ],
-      "exports": [
-        "MastermindReactionsSection"
-      ],
-      "totalLines": 152,
       "hasStructuralAnalysis": true
     },
     "src/components/SessionCard.tsx": {
@@ -8866,6 +8191,671 @@
         "VantaHero"
       ],
       "totalLines": 95,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/events/AskAnAiExpertQuoteStrip.tsx": {
+      "filePath": "src/components/events/AskAnAiExpertQuoteStrip.tsx",
+      "contentHash": "fb54e47af5c13d5bc121a64b5e8de6de8b770b03a0658f2d00fb7856e4462e73",
+      "functions": [
+        {
+          "name": "AskAnAiExpertQuoteStrip",
+          "params": [],
+          "exported": true,
+          "lineCount": 119
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useEffect",
+            "useRef",
+            "useState"
+          ]
+        },
+        {
+          "source": "./ask-an-ai-expert-quotes",
+          "specifiers": [
+            "askAnAiExpertQuotes"
+          ]
+        }
+      ],
+      "exports": [
+        "AskAnAiExpertQuoteStrip"
+      ],
+      "totalLines": 128,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/events/EventMediaVideo.tsx": {
+      "filePath": "src/components/events/EventMediaVideo.tsx",
+      "contentHash": "e08b940ad79efd5e281eb4a0236613ea9551617e792c24741a00e022166a9887",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "forwardRef",
+            "useEffect",
+            "useId",
+            "useImperativeHandle",
+            "useRef"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 63,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/events/EventPageView.tsx": {
+      "filePath": "src/components/events/EventPageView.tsx",
+      "contentHash": "e6a73f1cdb54cba293766d53e18e7fd04057ca1bf84aac4957d8ca21336757ce",
+      "functions": [
+        {
+          "name": "sectionTitleClass",
+          "params": [
+            "sectionId"
+          ],
+          "exported": false,
+          "lineCount": 6
+        },
+        {
+          "name": "sectionEyebrowClass",
+          "params": [
+            "sectionId"
+          ],
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "SectionShell",
+          "params": [
+            "{\n  eyebrow,\n  title,\n  intro,\n  sectionId,\n  children,\n}"
+          ],
+          "exported": false,
+          "lineCount": 34
+        },
+        {
+          "name": "RichParagraphs",
+          "params": [
+            "{ body }"
+          ],
+          "exported": false,
+          "lineCount": 9
+        },
+        {
+          "name": "StorySection",
+          "params": [
+            "{ section }"
+          ],
+          "exported": false,
+          "lineCount": 11
+        },
+        {
+          "name": "ChecklistSection",
+          "params": [
+            "{ section }"
+          ],
+          "exported": false,
+          "lineCount": 21
+        },
+        {
+          "name": "CardsSection",
+          "params": [
+            "{ section }"
+          ],
+          "exported": false,
+          "lineCount": 39
+        },
+        {
+          "name": "SplitSection",
+          "params": [
+            "{ section }"
+          ],
+          "exported": false,
+          "lineCount": 21
+        },
+        {
+          "name": "ImageSection",
+          "params": [
+            "{ section }"
+          ],
+          "exported": false,
+          "lineCount": 28
+        },
+        {
+          "name": "HtmlSection",
+          "params": [
+            "{ section, eventEnded }"
+          ],
+          "exported": false,
+          "lineCount": 26
+        },
+        {
+          "name": "QuoteCardSection",
+          "params": [
+            "{ section }"
+          ],
+          "exported": false,
+          "lineCount": 90
+        },
+        {
+          "name": "HostsSection",
+          "params": [
+            "{ section }"
+          ],
+          "exported": false,
+          "lineCount": 44
+        },
+        {
+          "name": "EventVideoSection",
+          "params": [
+            "{ video }"
+          ],
+          "exported": false,
+          "lineCount": 25
+        },
+        {
+          "name": "EndedButton",
+          "params": [
+            "{ className }"
+          ],
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "CtaSection",
+          "params": [
+            "{\n  section,\n  event,\n  promo,\n  eventEnded,\n}"
+          ],
+          "exported": false,
+          "lineCount": 67
+        },
+        {
+          "name": "renderSection",
+          "params": [
+            "section",
+            "event",
+            "promo",
+            "eventEnded"
+          ],
+          "exported": false,
+          "lineCount": 26
+        },
+        {
+          "name": "EventPageView",
+          "params": [
+            "{\n  event,\n  promo,\n  publishableKey,\n  initialPromoCode,\n}"
+          ],
+          "exported": true,
+          "lineCount": 175
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/image",
+          "specifiers": [
+            "Image"
+          ]
+        },
+        {
+          "source": "next/link",
+          "specifiers": [
+            "Link"
+          ]
+        },
+        {
+          "source": "@/lib/events",
+          "specifiers": [
+            "EventDefinition",
+            "EventPromoCode",
+            "EventSection"
+          ]
+        },
+        {
+          "source": "@/lib/events",
+          "specifiers": [
+            "formatEventPrice",
+            "getEventDiscountedPrice"
+          ]
+        },
+        {
+          "source": "@/lib/calendar",
+          "specifiers": [
+            "buildGoogleCalendarUrl"
+          ]
+        },
+        {
+          "source": "@/lib/event-status",
+          "specifiers": [
+            "isEventEnded",
+            "isRegistrationWindowPassed"
+          ]
+        },
+        {
+          "source": "@/components/Reveal",
+          "specifiers": [
+            "Reveal"
+          ]
+        },
+        {
+          "source": "@/components/events/EventRegistrationSection",
+          "specifiers": [
+            "EventRegistrationSection"
+          ]
+        },
+        {
+          "source": "@/components/events/EventRegistrationSection",
+          "specifiers": [
+            "EventRegistrationData"
+          ]
+        },
+        {
+          "source": "@/components/events/HeroVideo",
+          "specifiers": [
+            "HeroVideo"
+          ]
+        },
+        {
+          "source": "@/components/events/ScrollToRegisterButton",
+          "specifiers": [
+            "ScrollToRegisterButton"
+          ]
+        },
+        {
+          "source": "@/components/events/EventMediaVideo",
+          "specifiers": [
+            "EventMediaVideo"
+          ]
+        },
+        {
+          "source": "@/components/events/AskAnAiExpertQuoteStrip",
+          "specifiers": [
+            "AskAnAiExpertQuoteStrip"
+          ]
+        }
+      ],
+      "exports": [
+        "EventPageView"
+      ],
+      "totalLines": 663,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/events/EventRegistrationSection.tsx": {
+      "filePath": "src/components/events/EventRegistrationSection.tsx",
+      "contentHash": "fb4bf63b4d78e10c66e3d692e03cfd4d8238f3f89fad0ce23a75ee4699b4193f",
+      "functions": [
+        {
+          "name": "useAnimatedNumber",
+          "params": [
+            "target",
+            "duration"
+          ],
+          "returnType": "number",
+          "exported": false,
+          "lineCount": 35
+        },
+        {
+          "name": "EventRegistrationSection",
+          "params": [
+            "{\n  event,\n  publishableKey,\n  initialPromoCode,\n  initialPromoAmount,\n  initialPromoMessage,\n}"
+          ],
+          "exported": true,
+          "lineCount": 914
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useEffect",
+            "useRef",
+            "useMemo",
+            "useState",
+            "useTransition"
+          ]
+        },
+        {
+          "source": "@stripe/react-stripe-js",
+          "specifiers": [
+            "EmbeddedCheckout",
+            "EmbeddedCheckoutProvider"
+          ]
+        },
+        {
+          "source": "@stripe/stripe-js",
+          "specifiers": [
+            "loadStripe"
+          ]
+        },
+        {
+          "source": "@/lib/celebrate",
+          "specifiers": [
+            "celebrate"
+          ]
+        },
+        {
+          "source": "@/data/ai-levels-signup",
+          "specifiers": [
+            "AI_LEVELS_SIGNUP"
+          ]
+        },
+        {
+          "source": "@/lib/email-validation",
+          "specifiers": [
+            "isValidEmail"
+          ]
+        },
+        {
+          "source": "@/components/events/WaitlistJoinForm",
+          "specifiers": [
+            "WaitlistJoinForm"
+          ]
+        },
+        {
+          "source": "@/lib/event-registration-flow",
+          "specifiers": [
+            "buildEventCheckoutRequestBody"
+          ]
+        },
+        {
+          "source": "@/lib/event-intake",
+          "specifiers": [
+            "BUSINESS_CONTEXT_MIN_LENGTH",
+            "BUSINESS_CONTEXT_MAX_LENGTH",
+            "validateBusinessContext",
+            "hasIntakeErrors",
+            "validateIntakeFields",
+            "IntakeFieldErrors"
+          ]
+        }
+      ],
+      "exports": [
+        "EventRegistrationSection"
+      ],
+      "totalLines": 1020,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/events/HeroVideo.tsx": {
+      "filePath": "src/components/events/HeroVideo.tsx",
+      "contentHash": "8173b1b15a3f3f75ea53fd2217ac188474cfb52617ed7a98161640490fa0a0a3",
+      "functions": [
+        {
+          "name": "HeroVideo",
+          "params": [
+            "{ src, poster, alt, className }"
+          ],
+          "exported": true,
+          "lineCount": 42
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useRef",
+            "useState"
+          ]
+        },
+        {
+          "source": "@/components/events/EventMediaVideo",
+          "specifiers": [
+            "EventMediaVideo"
+          ]
+        }
+      ],
+      "exports": [
+        "HeroVideo"
+      ],
+      "totalLines": 55,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/events/ScrollToRegisterButton.tsx": {
+      "filePath": "src/components/events/ScrollToRegisterButton.tsx",
+      "contentHash": "5eaa344845823fe7cc9e655b2c30d23c1bce2c57d04673606c921b15c6de16ea",
+      "functions": [
+        {
+          "name": "ScrollToRegisterButton",
+          "params": [
+            "{ className, children }"
+          ],
+          "exported": true,
+          "lineCount": 18
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "ReactNode"
+          ]
+        }
+      ],
+      "exports": [
+        "ScrollToRegisterButton"
+      ],
+      "totalLines": 28,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/events/WaitlistJoinForm.tsx": {
+      "filePath": "src/components/events/WaitlistJoinForm.tsx",
+      "contentHash": "48e5a4d83b444086ab18f385a563eaada1a57644cdb1b6e4dbeeaa1a6dd9b5f4",
+      "functions": [
+        {
+          "name": "WaitlistJoinForm",
+          "params": [
+            "{ durationLabel, eventSlug, eventTitle, initialName = '', initialEmail = '' }"
+          ],
+          "exported": true,
+          "lineCount": 130
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useState"
+          ]
+        },
+        {
+          "source": "@/lib/email-validation",
+          "specifiers": [
+            "isValidEmail",
+            "normaliseEmail"
+          ]
+        }
+      ],
+      "exports": [
+        "WaitlistJoinForm"
+      ],
+      "totalLines": 144,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/events/ask-an-ai-expert-quotes.ts": {
+      "filePath": "src/components/events/ask-an-ai-expert-quotes.ts",
+      "contentHash": "038b7b3deaff449e5606a3a6b2aeb62094906c5f169539eb483def01116674bc",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "askAnAiExpertQuotes"
+      ],
+      "totalLines": 311,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/giveaways/GiveawayAutoModal.tsx": {
+      "filePath": "src/components/giveaways/GiveawayAutoModal.tsx",
+      "contentHash": "2ccb0f36b6a09427cbe02787a78ff821cbaec03aa59c2a4900e95b0c5da59891",
+      "functions": [
+        {
+          "name": "GiveawayAutoModal",
+          "params": [
+            "{ slug, headingOverride, delayMs = 20000 }"
+          ],
+          "exported": true,
+          "lineCount": 24
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useEffect",
+            "useState"
+          ]
+        },
+        {
+          "source": "./GiveawayEmailModal",
+          "specifiers": [
+            "GiveawayEmailModal"
+          ]
+        }
+      ],
+      "exports": [
+        "GiveawayAutoModal"
+      ],
+      "totalLines": 53,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/giveaways/GiveawayCopyEmailGate.tsx": {
+      "filePath": "src/components/giveaways/GiveawayCopyEmailGate.tsx",
+      "contentHash": "5bd2c4aad87dd9e94581e237efd77a50cc818b92593f996b26db3c0a74b3dadd",
+      "functions": [
+        {
+          "name": "getGiveawaySlug",
+          "params": [
+            "pathname"
+          ],
+          "exported": false,
+          "lineCount": 4
+        },
+        {
+          "name": "isNoSignupGiveaway",
+          "params": [
+            "pathname"
+          ],
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "GiveawayCopyEmailGate",
+          "params": [
+            "{ children }"
+          ],
+          "exported": true,
+          "lineCount": 33
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "ReactNode"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "useEffect",
+            "useMemo",
+            "useState"
+          ]
+        },
+        {
+          "source": "next/navigation",
+          "specifiers": [
+            "usePathname"
+          ]
+        },
+        {
+          "source": "@/lib/copyWithConfetti",
+          "specifiers": [
+            "COPY_WITH_CONFETTI_SUCCESS_EVENT"
+          ]
+        },
+        {
+          "source": "./GiveawayEmailModal",
+          "specifiers": [
+            "GiveawayEmailModal"
+          ]
+        }
+      ],
+      "exports": [
+        "GiveawayCopyEmailGate"
+      ],
+      "totalLines": 56,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/giveaways/GiveawayEmailModal.tsx": {
+      "filePath": "src/components/giveaways/GiveawayEmailModal.tsx",
+      "contentHash": "a73ccab44a1f84bb9d2f87ade3db62a689c98a03fe98c03b76b4b78d6cc79231",
+      "functions": [
+        {
+          "name": "GiveawayEmailModal",
+          "params": [
+            "{ slug, isOpen, onClose, headingOverride, showCopiedBadge = true }"
+          ],
+          "exported": true,
+          "lineCount": 157
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useEffect",
+            "useRef",
+            "useState"
+          ]
+        }
+      ],
+      "exports": [
+        "GiveawayEmailModal"
+      ],
+      "totalLines": 174,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/sections/MastermindReactionsSection.tsx": {
+      "filePath": "src/components/sections/MastermindReactionsSection.tsx",
+      "contentHash": "26ee4f3bad82abda80ce1df53fce8d5cd60a3e636d48a77556546698b48ae9c1",
+      "functions": [
+        {
+          "name": "MastermindReactionsSection",
+          "params": [],
+          "exported": true,
+          "lineCount": 122
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useRef",
+            "useEffect",
+            "useState"
+          ]
+        },
+        {
+          "source": "@/components/Reveal",
+          "specifiers": [
+            "Reveal"
+          ]
+        }
+      ],
+      "exports": [
+        "MastermindReactionsSection"
+      ],
+      "totalLines": 152,
       "hasStructuralAnalysis": true
     },
     "src/content/session-1-bonus.tsx": {
@@ -11312,7 +11302,7 @@
     },
     "src/lib/event-intake.ts": {
       "filePath": "src/lib/event-intake.ts",
-      "contentHash": "c9e3b93779226e7fb75913cfde08b91767c34116a6338459bf2c6441da0be8cf",
+      "contentHash": "22a67e99f0e58fe9c1355041c06c5713ea6bbcea88be86ea43d73c37bd835639",
       "functions": [
         {
           "name": "countPhoneDigits",
@@ -11376,7 +11366,7 @@
           ],
           "returnType": "IntakeFieldErrors",
           "exported": true,
-          "lineCount": 15
+          "lineCount": 16
         },
         {
           "name": "hasIntakeErrors",
@@ -11384,6 +11374,14 @@
             "errors"
           ],
           "returnType": "boolean",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "isValidAiLevel",
+          "params": [
+            "value"
+          ],
           "exported": true,
           "lineCount": 3
         }
@@ -11402,15 +11400,25 @@
         "validateWhatsappNumber",
         "validateBusinessContext",
         "validateIntakeFields",
-        "hasIntakeErrors"
+        "hasIntakeErrors",
+        "isValidAiLevel"
       ],
-      "totalLines": 145,
+      "totalLines": 150,
       "hasStructuralAnalysis": true
     },
     "src/lib/event-registration-db.ts": {
       "filePath": "src/lib/event-registration-db.ts",
-      "contentHash": "f5aa5e56ed495d4988f9789bda5b6fb3efbfb4b09e950f56a0bdfa464fdd0483",
+      "contentHash": "a63efb1a58faaafdd21a971e7d90d482a874daad50b4f97a0ee35e49f5efe61c",
       "functions": [
+        {
+          "name": "saveRegistrationProfile",
+          "params": [
+            "input"
+          ],
+          "returnType": "Promise<boolean>",
+          "exported": true,
+          "lineCount": 49
+        },
         {
           "name": "saveRegistrationIntake",
           "params": [
@@ -11564,6 +11572,7 @@
         }
       ],
       "exports": [
+        "saveRegistrationProfile",
         "saveRegistrationIntake",
         "getRegistrationIntake",
         "saveRegistration",
@@ -11577,7 +11586,7 @@
         "getActiveWaitlist",
         "hasOpenSpots"
       ],
-      "totalLines": 377,
+      "totalLines": 428,
       "hasStructuralAnalysis": true
     },
     "src/lib/event-registration-flow.ts": {
@@ -11731,7 +11740,7 @@
     },
     "src/lib/events.tsx": {
       "filePath": "src/lib/events.tsx",
-      "contentHash": "b38853ae72dec0ee60fc6936d769f1d2d2e933e28436bd06a3991e75c5f2ad2a",
+      "contentHash": "f66633cadeb594e5da3c4aa9e23c84934c5671afa65d7a910f57d7414763c271",
       "functions": [
         {
           "name": "getDiscountedPrice",
@@ -11816,7 +11825,7 @@
         "getLiveEvents",
         "getUpcomingLiveEvents"
       ],
-      "totalLines": 1587,
+      "totalLines": 1589,
       "hasStructuralAnalysis": true
     },
     "src/lib/giveaways.ts": {
@@ -12945,16 +12954,6 @@
       "totalLines": 83,
       "hasStructuralAnalysis": true
     },
-    "supabase/.temp/linked-project.json": {
-      "filePath": "supabase/.temp/linked-project.json",
-      "contentHash": "f59182b8cc848bdc2f8b162c6262ebe23e12f405872fdaed2ae1ac1f16c3b856",
-      "functions": [],
-      "classes": [],
-      "imports": [],
-      "exports": [],
-      "totalLines": 1,
-      "hasStructuralAnalysis": true
-    },
     "tailwind.config.ts": {
       "filePath": "tailwind.config.ts",
       "contentHash": "d0e7f5430c09256c9b9429fcb4cc15b67b88af912ce3fabb1cbd858eacecc361",
@@ -13388,7 +13387,7 @@
     },
     "tests/event-intake.test.ts": {
       "filePath": "tests/event-intake.test.ts",
-      "contentHash": "e2ad85734b366b3415e31288367f89407ce0de833c1b0197ee28e2d76f7aea7b",
+      "contentHash": "2f507f60b8b2d16db9f13c3a8fc22c1fde496db7c176dd2ed1e197e5ac12584c",
       "functions": [],
       "classes": [],
       "imports": [
@@ -13437,7 +13436,7 @@
         }
       ],
       "exports": [],
-      "totalLines": 160,
+      "totalLines": 174,
       "hasStructuralAnalysis": true
     },
     "tests/event-location-reminder-dedupe.test.ts": {
@@ -13615,7 +13614,7 @@
     },
     "tests/event-registration-flow.test.ts": {
       "filePath": "tests/event-registration-flow.test.ts",
-      "contentHash": "98c6f3ed4af74db260971f3619fbc6e883a4ffa322a96fd06e3e3363dad0c85f",
+      "contentHash": "9f78cc08bb5bfdc064181ee92f52b698d52c0056980c863178661e2af7edc782",
       "functions": [],
       "classes": [],
       "imports": [
@@ -14145,26 +14144,6 @@
       ],
       "exports": [],
       "totalLines": 93,
-      "hasStructuralAnalysis": true
-    },
-    "tsconfig.json": {
-      "filePath": "tsconfig.json",
-      "contentHash": "55134881a23efd2a1f9266d2d0752731ff9c40d0e867136cd8863ea679560a09",
-      "functions": [],
-      "classes": [],
-      "imports": [],
-      "exports": [],
-      "totalLines": 42,
-      "hasStructuralAnalysis": true
-    },
-    "vercel.json": {
-      "filePath": "vercel.json",
-      "contentHash": "63bbd1bdc92d9d66acabd09f45bd52e7ba77979e76df3ba31d661976a210eb34",
-      "functions": [],
-      "classes": [],
-      "imports": [],
-      "exports": [],
-      "totalLines": 52,
       "hasStructuralAnalysis": true
     }
   }
