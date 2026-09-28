@@ -1,0 +1,17 @@
+export const AI_LEVELS_SIGNUP = [
+  { level: 0, name: 'AI Bystander', description: "I don't use AI tools on purpose. It's just in spell check, spam filters and maps." },
+  { level: 1, name: 'AI Question Asker', description: 'I open ChatGPT, Claude or Gemini now and then to ask a quick question.' },
+  { level: 2, name: 'AI Searcher', description: 'I use AI instead of Google to research and learn, with follow-up questions.' },
+  { level: 3, name: 'AI Writer', description: 'I use AI to draft and rewrite emails, captions and proposals, then edit them.' },
+  { level: 4, name: 'AI Creator', description: 'I make images, slides, videos or PDFs with AI that I hand to clients or post.' },
+  { level: 5, name: 'AI Contextual Operator', description: 'I feed AI my own material (brand voice, past work, client notes) so it sounds like me.' },
+  { level: 6, name: 'AI Tool Power User', description: 'AI is built into the tools I use all day: Gmail, Docs, Notion, Canva, my CRM.' },
+  { level: 7, name: 'AI Builder', description: "I've built a working page, prototype or small tool with AI's help." },
+  { level: 8, name: 'AI Automator', description: 'I connect AI to Zapier, Make, n8n or APIs so it runs on real events.' },
+  { level: 9, name: 'AI Workflow Owner', description: 'I have documented AI workflows my business actually relies on.' },
+  { level: 10, name: 'AI Assistant Owner', description: 'I have an AI assistant that remembers context and does real work I review.' },
+  { level: 11, name: 'AI Agent Operator', description: 'I have an agent that takes real actions across my tools with my sign-off.' },
+  { level: 12, name: 'AI Agent Manager', description: 'I run several agents, each with its own job, and coordinate them.' },
+  { level: 13, name: 'AI Operations Architect', description: 'My agents hand work to each other in set sequences and log what they did.' },
+  { level: 14, name: 'AI Routing Architect', description: 'Incoming work is routed automatically to the right agent, tool or model.' },
+] as const

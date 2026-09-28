@@ -40,11 +40,14 @@ function useAnimatedNumber(target: number, duration = 750): number {
 import { EmbeddedCheckout, EmbeddedCheckoutProvider } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
 import { celebrate } from '@/lib/celebrate'
+import { AI_LEVELS_SIGNUP } from '@/data/ai-levels-signup'
 import { isValidEmail } from '@/lib/email-validation'
 import WaitlistJoinForm from '@/components/events/WaitlistJoinForm'
 import { buildEventCheckoutRequestBody } from '@/lib/event-registration-flow'
 import {
   BUSINESS_CONTEXT_MIN_LENGTH,
+  BUSINESS_CONTEXT_MAX_LENGTH,
+  validateBusinessContext,
   hasIntakeErrors,
   validateIntakeFields,
   type IntakeFieldErrors,
@@ -74,6 +77,7 @@ export type EventRegistrationData = {
   isVirtual?: boolean
   capacityReservation?: boolean
   intakeFields?: {
+    aiLevelStep?: boolean
     whatsappNumber?: boolean
     businessContext?: boolean
     businessContextLabel?: string
@@ -159,6 +163,7 @@ export default function EventRegistrationSection({
   }
 
   const isFreeRegistration = event.pricing.fullPrice === 0 && !event.pricing.donationMode
+  const aiLevelStep = isFreeRegistration && Boolean(event.intakeFields?.aiLevelStep)
   const collectsWhatsapp = Boolean(event.intakeFields?.whatsappNumber)
   const collectsBusinessContext = Boolean(event.intakeFields?.businessContext)
   const businessContextMinLength =
@@ -176,6 +181,10 @@ export default function EventRegistrationSection({
   const [attendeeEmail, setAttendeeEmail] = useState('')
   const [whatsappNumber, setWhatsappNumber] = useState('')
   const [businessContext, setBusinessContext] = useState('')
+  const [profileStep, setProfileStep] = useState<{ token: string; email: string; detail: string } | null>(null)
+  const [aiLevel, setAiLevel] = useState<number | undefined>(undefined)
+  const [profileError, setProfileError] = useState<string | null>(null)
+  const [savingProfile, setSavingProfile] = useState(false)
   const [fieldErrors, setFieldErrors] = useState<IntakeFieldErrors>({})
   const [donationAmount, setDonationAmount] = useState(event.pricing.fullPrice)
   const [promoOpen, setPromoOpen] = useState(Boolean(initialPromoCode))
@@ -196,6 +205,7 @@ export default function EventRegistrationSection({
   const checkoutRef = useRef<HTMLDivElement | null>(null)
   const checkoutSessionIdRef = useRef<string | null>(null)
   const finalizedSessionIdsRef = useRef<Set<string>>(new Set())
+  const profileDialogRef = useRef<HTMLDivElement | null>(null)
 
   const stripePromise = useMemo(
     () => (publishableKey ? loadStripe(publishableKey) : null),
@@ -305,6 +315,10 @@ export default function EventRegistrationSection({
     celebrate()
   }, [successState])
 
+  useEffect(() => {
+    if (profileStep) profileDialogRef.current?.focus()
+  }, [profileStep])
+
   const embeddedCheckoutOptions = useMemo(
     () =>
       clientSecret
@@ -348,7 +362,7 @@ export default function EventRegistrationSection({
       checkoutMode,
       ...(event.pricing.donationMode ? { donationAmount } : {}),
       ...(collectsWhatsapp ? { whatsappNumber: whatsappNumber.trim() } : {}),
-      ...(collectsBusinessContext ? { businessContext: businessContext.trim() } : {}),
+      ...(collectsBusinessContext && !aiLevelStep ? { businessContext: businessContext.trim() } : {}),
     })
     // Without a bound, a stalled API leaves the button on "Preparing..." forever.
     let response: Response
@@ -383,11 +397,15 @@ export default function EventRegistrationSection({
       // still surface payload.message when it carries a real warning (e.g. the
       // confirmation email failed to send).
       const genericFreeMessage = 'Free ticket reserved. No payment needed.'
-      markSuccess(
-        event.successDetail && payload.message === genericFreeMessage
-          ? event.successDetail
-          : payload.message || (isFreeRegistration ? 'Your free spot is reserved.' : genericFreeMessage),
-      )
+      const detail = event.successDetail && payload.message === genericFreeMessage
+        ? event.successDetail
+        : payload.message || (isFreeRegistration ? 'Your free spot is reserved.' : genericFreeMessage)
+      if (aiLevelStep && typeof payload.profileToken === 'string' && payload.profileToken) {
+        setCompletionMessage(successTitle)
+        setProfileStep({ token: payload.profileToken, email, detail })
+      } else {
+        markSuccess(detail)
+      }
       return
     }
     if (typeof payload.checkoutUrl === 'string' && payload.checkoutUrl) {
@@ -424,7 +442,7 @@ export default function EventRegistrationSection({
     // The hosted fallback is a second way into checkout, so it has to clear the
     // same intake gate as the main submit.
     if (collectsIntake) {
-      const nextFieldErrors = validateIntakeFields({ whatsappNumber, businessContext, businessContextMinLength })
+      const nextFieldErrors = validateIntakeFields({ whatsappNumber, businessContext, businessContextMinLength, aiLevelStep })
       if (!collectsWhatsapp) delete nextFieldErrors.whatsappNumber
       if (!collectsBusinessContext) delete nextFieldErrors.businessContext
 
@@ -506,7 +524,7 @@ export default function EventRegistrationSection({
     }
 
     if (collectsIntake) {
-      const nextFieldErrors = validateIntakeFields({ whatsappNumber, businessContext, businessContextMinLength })
+      const nextFieldErrors = validateIntakeFields({ whatsappNumber, businessContext, businessContextMinLength, aiLevelStep })
       if (!collectsWhatsapp) delete nextFieldErrors.whatsappNumber
       if (!collectsBusinessContext) delete nextFieldErrors.businessContext
 
@@ -539,6 +557,48 @@ export default function EventRegistrationSection({
     })
   }
 
+  function finishProfile() {
+    if (!profileStep) return
+    markSuccess(profileStep.detail)
+    setProfileStep(null)
+    setProfileError(null)
+  }
+
+  async function saveProfile() {
+    if (!profileStep || savingProfile) return
+    const context = businessContext.trim()
+    const contextError = collectsBusinessContext && context
+      ? validateBusinessContext(context, businessContextMinLength)
+      : undefined
+    if (contextError) {
+      setProfileError(contextError)
+      return
+    }
+    setSavingProfile(true)
+    setProfileError(null)
+    try {
+      const response = await fetch('/api/events/registration-profile', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          slug: event.slug,
+          email: profileStep.email,
+          profileToken: profileStep.token,
+          aiLevel,
+          ...(collectsBusinessContext && context ? { businessContext: context } : {}),
+        }),
+        signal: AbortSignal.timeout(15000),
+      })
+      const payload = await response.json()
+      if (!response.ok) throw new Error(payload.error || 'Unable to save your answers.')
+      finishProfile()
+    } catch (saveError) {
+      setProfileError(saveError instanceof Error ? saveError.message : 'Unable to save your answers. Your registration is already saved. You can retry or skip.')
+    } finally {
+      setSavingProfile(false)
+    }
+  }
+
   if (event.manuallyClosed || capacityReached) {
     return (
       <WaitlistJoinForm
@@ -553,6 +613,59 @@ export default function EventRegistrationSection({
 
   return (
     <section id="register" className="mx-auto max-w-6xl px-6 py-8 md:py-10">
+      {profileStep ? (
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-black/75 px-4 py-6 backdrop-blur-md">
+          <div ref={profileDialogRef} tabIndex={-1} role="dialog" aria-modal="true" aria-labelledby="profile-heading"
+            onKeyDown={(event) => {
+              if (event.key === 'Escape' && !savingProfile) finishProfile()
+              if (event.key !== 'Tab') return
+              const radios = Array.from(event.currentTarget.querySelectorAll<HTMLInputElement>('input[type="radio"]:not(:disabled)'))
+              const activeRadio = radios.find((radio) => radio.checked) ?? radios[0]
+              const controls = Array.from(event.currentTarget.querySelectorAll<HTMLElement>('input:not(:disabled), textarea:not(:disabled), button:not(:disabled)'))
+                .filter((control) => !radios.includes(control as HTMLInputElement) || control === activeRadio)
+              const first = controls[0]
+              const last = controls[controls.length - 1]
+              if (!first) { event.preventDefault(); return }
+              if (event.shiftKey && (document.activeElement === first || document.activeElement === event.currentTarget)) {
+                event.preventDefault()
+                last.focus()
+              } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault()
+                first.focus()
+              }
+            }}
+            className="mx-auto w-full max-w-xl rounded-3xl border border-white/15 bg-[#151517] p-5 text-[#FCF4EB] shadow-2xl sm:p-8">
+            <h3 id="profile-heading" className="text-xl font-bold leading-7 sm:text-2xl">You're in. One quick question so Joe can pitch the night at the right level.</h3>
+            <form onSubmit={(event) => { event.preventDefault(); void saveProfile() }} className="mt-6 grid gap-5">
+              <fieldset disabled={savingProfile} className="min-w-0">
+                <legend className="mb-3 text-base font-semibold">Where are you with AI right now?</legend>
+                <div className="grid gap-2">
+                  {AI_LEVELS_SIGNUP.map((level) => (
+                    <label key={level.level} className={`flex cursor-pointer items-start gap-3 rounded-xl border p-3 transition focus-within:ring-2 focus-within:ring-[#BDB3E8] ${aiLevel === level.level ? 'border-[#BDB3E8] bg-[#8B79D4]/20' : 'border-white/15 bg-white/5 hover:border-[#BDB3E8]/60'}`}>
+                      <input type="radio" name="aiLevel" value={level.level} checked={aiLevel === level.level} onChange={() => setAiLevel(level.level)} className="mt-1 shrink-0 accent-[#BDB3E8]" />
+                      <span className="min-w-0">
+                        <span className="block text-sm font-semibold">{level.level}. {level.name}</span>
+                        <span className="mt-1 block text-sm leading-5 text-[#FCF4EB]/75">{level.description}</span>
+                      </span>
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
+              {collectsBusinessContext ? (
+                <label className="grid gap-2 text-sm font-semibold">
+                  <span>{businessContextLabel} <span className="font-normal text-[#FCF4EB]/60">(optional)</span></span>
+                  <textarea value={businessContext} onChange={(event) => setBusinessContext(event.target.value)} placeholder={businessContextPlaceholder} rows={4} maxLength={BUSINESS_CONTEXT_MAX_LENGTH} disabled={savingProfile} className="w-full rounded-xl border border-white/20 bg-white/5 p-3 text-base font-normal text-[#FCF4EB] placeholder:text-[#FCF4EB]/45 focus:outline-none focus:ring-2 focus:ring-[#BDB3E8]" />
+                </label>
+              ) : null}
+              {profileError ? <p role="alert" className="text-sm text-[#F5C3C6]">{profileError}</p> : null}
+              <div className="flex items-center gap-5">
+                <button type="submit" disabled={savingProfile} className="copy-button-glass copy-button-primary rounded-xl px-8 py-3 font-semibold disabled:opacity-60">{savingProfile ? 'Saving...' : 'Save'}</button>
+                <button type="button" disabled={savingProfile} onClick={finishProfile} className="px-2 py-3 text-sm text-[#FCF4EB]/75 underline underline-offset-4">Skip</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      ) : null}
       {successState ? (
         <div className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/72 px-6 py-10 backdrop-blur-md">
           <div className="relative w-full max-w-xl rounded-[2rem] border border-white/12 bg-[#151517] px-7 pb-7 pt-14 text-center shadow-[0_30px_120px_rgba(0,0,0,0.45)] md:px-9 md:pb-9 md:pt-16">
@@ -708,7 +821,7 @@ export default function EventRegistrationSection({
               </label>
             ) : null}
 
-            {collectsBusinessContext ? (
+            {collectsBusinessContext && !aiLevelStep ? (
               <label className="grid gap-2">
                 <span className="text-sm font-semibold leading-snug text-[#FCF4EB]">
                   {businessContextLabel}{' '}

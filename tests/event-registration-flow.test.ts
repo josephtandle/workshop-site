@@ -50,7 +50,7 @@ test('ask-an-ai-expert checkout payload keeps ref=marina as acquisition_ref', as
   assert.equal(inserts[0].acquisition_ref, 'marina')
 })
 
-test('ask-an-ai-expert checkout payload defaults to joe-che without ref', () => {
+test('ask-an-ai-expert checkout payload defaults to untagged without ref', () => {
   const body = buildEventCheckoutRequestBody({
     slug: 'ask-an-ai-expert',
     attendeeName: 'Joe Che',
@@ -63,6 +63,6 @@ test('ask-an-ai-expert checkout payload defaults to joe-che without ref', () => 
     checkoutMode: 'embedded',
   })
 
-  assert.equal(resolveAcquisitionRef(''), 'joe-che')
-  assert.equal(body.acquisitionRef, 'joe-che')
+  assert.equal(resolveAcquisitionRef(''), 'untagged')
+  assert.equal(body.acquisitionRef, 'untagged')
 })

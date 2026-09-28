@@ -27,6 +27,57 @@ export type RegistrationIntake = {
   businessContext: string | null
 }
 
+/** Add optional answers only after the attendee has a confirmed registration. */
+export async function saveRegistrationProfile(input: {
+  eventSlug: string
+  attendeeEmail: string
+  aiLevel?: number
+  businessContext?: string
+}): Promise<boolean> {
+  const email = input.attendeeEmail.trim().toLowerCase()
+  // Escape LIKE metacharacters so this is a case-insensitive exact match.
+  const emailPattern = email.replace(/[\\%_]/g, '\\$&')
+  const { data, error: findError } = await supabase
+    .from('event_registrations')
+    .select('id, attendee_name, attendee_email')
+    .eq('event_slug', input.eventSlug)
+    .ilike('attendee_email', emailPattern)
+    .eq('status', 'confirmed')
+  if (findError) throw new Error('Failed to find registration.')
+  // PostgREST also treats '*' as a pattern alias. Never authorize an update
+  // from a pattern match alone, including for unusual but valid email names.
+  const registrations = data?.filter((row) => row.attendee_email.toLowerCase() === email)
+  if (!registrations?.length) return false
+
+  const answers = {
+    ...(input.aiLevel !== undefined ? { ai_level: input.aiLevel, ai_level_source: 'self' } : {}),
+    ...(input.businessContext?.trim() ? { business_context: input.businessContext.trim() } : {}),
+  }
+  if (!Object.keys(answers).length) return true
+  const now = new Date().toISOString()
+  const { data: updated, error: updateError } = await supabase
+    .from('event_registrations')
+    .update({ ...answers, ...(input.aiLevel !== undefined ? { ai_level_set_at: now } : {}) })
+    .in('id', registrations.map((registration) => registration.id))
+    .eq('event_slug', input.eventSlug)
+    .eq('status', 'confirmed')
+    .select('id')
+  if (updateError) throw new Error('Failed to save registration profile.')
+  if (!updated?.length) return false
+
+  // Include the required name so a missing intake row can also be recovered.
+  // Omitted answers never erase values already saved on either table.
+  const { error: intakeError } = await supabase.from('event_registration_intake').upsert({
+    event_slug: input.eventSlug,
+    attendee_email: email,
+    attendee_name: registrations[0].attendee_name,
+    ...answers,
+    updated_at: now,
+  }, { onConflict: 'event_slug,attendee_email' })
+  if (intakeError) throw new Error('Failed to save registration intake profile.')
+  return true
+}
+
 export type WaitlistEntry = {
   id: string
   event_slug: string

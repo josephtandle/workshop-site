@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { createRegistrationProfileToken } from '@/lib/registration-profile-token'
 import { getEventBySlug } from '@/lib/events'
 import {
   sendAiContentCreationSetupEmail,
@@ -147,6 +148,7 @@ export async function POST(request: Request) {
         whatsappNumber,
         businessContext,
         businessContextMinLength: event.intakeFields?.businessContextMinLength,
+        aiLevelStep: Boolean(event.intakeFields?.aiLevelStep && event.pricing.fullPrice === 0 && !event.pricing.donationMode),
       })
       const firstError = intakeErrors.whatsappNumber || intakeErrors.businessContext
       if (firstError) {
@@ -254,6 +256,9 @@ export async function POST(request: Request) {
       })
 
     if (unitAmount === 0) {
+      const profileToken = event.intakeFields?.aiLevelStep && event.pricing.fullPrice === 0 && !event.pricing.donationMode
+        ? createRegistrationProfileToken(slug, attendeeEmail)
+        : undefined
       if (seatClaim) {
         await confirmEventSeat(seatClaim.reservationId)
       }
@@ -384,6 +389,7 @@ export async function POST(request: Request) {
 
       return NextResponse.json({
         completed: true,
+        ...(profileToken ? { profileToken } : {}),
         freeCheckout: true,
         appliedPromoCode: promo?.code ?? null,
         amount,

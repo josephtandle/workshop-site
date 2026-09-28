@@ -6,6 +6,7 @@ import { buildUnsubscribeHeaders, buildUnsubscribeUrl } from '@/lib/list-unsubsc
 import { isSuppressed } from '@/lib/email-suppressions'
 import { isDeliverableLeadMagnetSource, UnknownLeadMagnetSourceError } from '@/lib/lead-magnets'
 import { withUtm } from '@/lib/utm'
+import { buildSpeakHumanEmail } from '@/lib/speak-human-email'
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
 
@@ -23,59 +24,14 @@ async function sendViaResend(email: string, source: string, idempotencyKey: stri
   const speakHumanPageUrl = withUtm(`${siteUrl}/giveaways/speak-human`, { campaign: 'lead-magnet', content: 'speak-human-page' })
   const costStackPageUrl = withUtm(`${siteUrl}/giveaways/cost-stack`, { campaign: 'lead-magnet', content: 'cost-stack-page' })
   const businessBuilderQuizPageUrl = withUtm(`${siteUrl}/giveaways/business-builder-quiz`, { campaign: 'lead-magnet', content: 'business-builder-quiz-page' })
-  const speakHumanInstallCommand = 'git clone https://github.com/josephtandle/speak-human && cp -r speak-human/speak-human ~/.claude/skills/speak-human && rm -rf speak-human'
 
   let subject: string
   let html: string
 
   if (source === 'human' || source === 'speak-human') {
-    subject = 'Your Speak Human install command'
-    html = `
-      <div style="font-family: system-ui, sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #ffffff;">
-        <p style="font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 24px;">Speak Human</p>
-
-        <h1 style="font-size: 26px; font-weight: 800; line-height: 1.25; margin-bottom: 16px; color: #111;">
-          Here&rsquo;s the Speak Human skill.
-        </h1>
-
-        <p style="font-size: 16px; color: #444; line-height: 1.7; margin-bottom: 20px;">
-          It is a free Claude Code skill from Joe&rsquo;s public GitHub repo. It strips AI writing patterns, protects the lines that already sound real, and rewrites the synthetic parts in a human voice.
-        </p>
-
-        <div style="background: #f5f0ff; border-left: 3px solid #8B79D4; padding: 16px 20px; border-radius: 0 8px 8px 0; margin-bottom: 24px;">
-          <p style="font-size: 14px; color: #333; margin: 0; line-height: 1.7;">
-            <strong>How it works:</strong><br>
-            1. Detects AI tells: generic conclusions, fake significance, over-polished vocabulary, em dashes, list syndrome, and chatbot artifacts.<br>
-            2. Marks what to keep: facts, names, numbers, strong opinions, and passages that already sound like you.<br>
-            3. Rewrites only what needs rewriting, using a preset voice or your own saved voice profile.
-          </p>
-        </div>
-
-        <p style="font-size: 14px; color: #555; line-height: 1.7; margin-bottom: 12px;">
-          Install it with this one command:
-        </p>
-
-        <pre style="background: #0f0f12; color: #f0eee6; padding: 20px; border-radius: 10px; font-size: 13px; line-height: 1.65; white-space: pre-wrap; word-break: break-word; margin-bottom: 24px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;">${speakHumanInstallCommand}</pre>
-
-        <p style="margin-bottom: 24px;">
-          <a href="${speakHumanPageUrl}"
-             style="display: inline-block; background: #8B79D4; color: white; padding: 13px 26px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 15px;">
-            Open the Speak Human page
-          </a>
-        </p>
-
-        <p style="font-size: 15px; color: #444; line-height: 1.7; margin-bottom: 16px;">
-          After install, open Claude Code and type <code>/speak-human</code> followed by your text. Use <code>--mode detect</code> to diagnose, <code>--mode rewrite</code> to rewrite, or <code>--file path/to/file.md --mode edit</code> to clean a file in place.
-        </p>
-
-        <p style="font-size: 15px; color: #444; line-height: 1.7; margin-bottom: 28px;">
-          The ManyChat giveaway keyword is <strong>human</strong>. Hit reply and tell me what kind of copy you want it to clean up first. I read every one.
-        </p>
-
-        <p style="font-size: 14px; color: #999; margin-top: 24px;">Joe Che</p>
-        ${unsubscribeFooter}
-      </div>
-    `
+    const speakHumanEmail = buildSpeakHumanEmail({ speakHumanPageUrl, unsubscribeFooter })
+    subject = speakHumanEmail.subject
+    html = speakHumanEmail.html
   } else if (source === 'guardog') {
     subject = 'Your GuardDog setup prompt'
     html = `
