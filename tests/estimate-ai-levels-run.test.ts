@@ -9,6 +9,7 @@ test('live grading includes self reports, preserves existing grades and guards c
     { id: 'manual', status: 'confirmed', business_context: 'API', ai_level: 4, ai_level_source: 'self', ai_our_grade: 9 },
     { id: 'race', status: 'confirmed', business_context: 'AI', ai_level: 3, ai_level_source: 'self', ai_our_grade: null },
     { id: 'cancelled', status: 'cancelled', business_context: 'API', ai_level: null, ai_level_source: null, ai_our_grade: null },
+    { id: 'noevidence', status: 'confirmed', business_context: '', ai_level: null, ai_level_source: null, ai_our_grade: null },
   ];
   const patches: { url: URL; body: Record<string, unknown> }[] = [];
   const logs: string[] = [];
@@ -56,6 +57,10 @@ test('live grading includes self reports, preserves existing grades and guards c
   assert.equal(rows[2].ai_our_grade, 9);
   assert.equal(rows[3].ai_our_grade, 8);
   assert.equal(rows[4].ai_our_grade, null);
+  // No evidence: stays ungraded (not assessed) on both fields, no PATCH sent for it.
+  assert.equal(rows[5].ai_level, null);
+  assert.equal(rows[5].ai_our_grade, null);
+  assert.ok(!patches.some(({ url }) => url.searchParams.get('id') === 'eq.noevidence'));
   const grades = patches.filter(({ body }) => 'ai_our_grade' in body);
   assert.equal(grades.length, 3);
   for (const { url, body } of grades) {
