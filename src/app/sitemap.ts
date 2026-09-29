@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/giveaways/maccleaner`,                 lastModified: NOW, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/giveaways/speak-human`,                 lastModified: NOW, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE}/giveaways/ray-dalio-council`,           lastModified: NOW, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE}/giveaways/lead-machine`,                lastModified: NOW, changeFrequency: 'monthly', priority: 0.8 },
     // Lead magnets
     { url: `${BASE}/lead-magnets/ultimate-claudemd`,        lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
   ]

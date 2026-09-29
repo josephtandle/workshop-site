@@ -1,3 +1,11 @@
+---
+kg:
+  id: workshop-site:docs-stripe-trial-mechanics
+  type: document
+  status: active
+  audience: team
+  relations: {}
+---
 # Stripe Trial Mechanics
 
 ## Conclusion

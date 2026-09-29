@@ -1,3 +1,11 @@
+---
+kg:
+  id: workshop-site:claude
+  type: document
+  status: active
+  audience: team
+  relations: {}
+---
 <!-- gitnexus:start -->
 # GitNexus — Code Intelligence
 

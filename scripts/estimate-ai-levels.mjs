@@ -10,7 +10,7 @@ export async function runEstimateAiLevels(args = process.argv.slice(2), io = {})
   const env = { ...(io.env ?? process.env) };
   const request = io.fetch ?? globalThis.fetch;
   const print = io.print ?? console.log;
-  const summary = { ts: new Date().toISOString(), live: args.includes('--live'), scanned: 0, estimated: 0, byLevel: {} };
+  const summary = { ts: new Date().toISOString(), live: args.includes('--live'), scanned: 0, estimated: 0, ourGraded: 0, byLevel: {} };
   try {
     let slug;
     for (let i = 0; i < args.length; i++) {
@@ -47,6 +47,48 @@ export async function runEstimateAiLevels(args = process.argv.slice(2), io = {})
       if (!response.ok) throw new Error(`HTTP ${response.status}: ${await response.text()}`);
       return response.json();
     };
+    // Keep legacy dry-run output unchanged. Live runs grade self reports too.
+    // Grade before legacy writes, whose database trigger can also fill our grade.
+    if (summary.live) {
+      const ourGradeUrl = () => {
+        const url = new URL(endpoint);
+        url.searchParams.set('status', 'eq.confirmed');
+        url.searchParams.set('ai_our_grade', 'is.null');
+        if (slug !== undefined) url.searchParams.set('event_slug', `eq.${JSON.stringify(slug)}`);
+        return url;
+      };
+      const ungraded = [];
+      let gradeOffset = 0;
+      // Collect every page before PATCHes remove rows from the eligible set.
+      while (true) {
+        const url = ourGradeUrl();
+        url.searchParams.set('select', 'id,business_context,ai_our_grade');
+        url.searchParams.set('order', 'id.asc');
+        url.searchParams.set('limit', '1000');
+        url.searchParams.set('offset', String(gradeOffset));
+        const page = await jsonRequest(url, { headers });
+        if (!Array.isArray(page)) throw new Error('Expected a registration array');
+        ungraded.push(...page);
+        if (page.length === 0) break;
+        gradeOffset += page.length;
+      }
+      for (const row of ungraded) {
+        if (row.ai_our_grade != null) continue;
+        const { level, note } = estimateAiLevel(row.business_context);
+        // No real evidence: leave "our grade" empty (null / "not assessed") instead of
+        // writing a default level. Re-checked on later runs in case evidence shows up.
+        if (level == null) continue;
+        const url = ourGradeUrl();
+        url.searchParams.set('id', `eq.${String(row.id)}`);
+        const updated = await jsonRequest(url, {
+          method: 'PATCH',
+          headers: { ...headers, 'Content-Type': 'application/json', Prefer: 'return=representation' },
+          body: JSON.stringify({ ai_our_grade: level, ai_our_grade_source: 'estimate', ai_our_grade_note: note, ai_our_grade_at: new Date().toISOString() }),
+        });
+        if (!Array.isArray(updated)) throw new Error('Expected updated registration array');
+        if (updated.length > 0) summary.ourGraded++;
+      }
+    }
     // Gather every page before writing: PATCHes shrink the eligible result set.
     const rows = [];
     let offset = 0;
@@ -66,7 +108,9 @@ export async function runEstimateAiLevels(args = process.argv.slice(2), io = {})
     for (const row of rows) {
       if (row.ai_level != null || row.ai_level_source === 'self') continue;
       const { level, note } = estimateAiLevel(row.business_context);
-      print(`${String(row.attendee_name ?? '').replace(/[\r\n]/g, ' ')}\t${level}\t${note}`);
+      print(`${String(row.attendee_name ?? '').replace(/[\r\n]/g, ' ')}\t${level ?? 'not assessed'}\t${note}`);
+      // No real evidence: leave the legacy field empty too rather than defaulting to 1.
+      if (level == null) continue;
       if (summary.live) {
         const url = eligibleUrl();
         url.searchParams.set('id', `eq.${String(row.id)}`);

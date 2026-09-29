@@ -213,6 +213,14 @@ export const giveaways: Giveaway[] = [
     badge: 'Quiz',
     badgeVariant: 'pink',
   },
+  {
+    slug: 'lead-machine',
+    title: 'The Lead Machine',
+    description: 'Paste one prompt into ChatGPT or Claude and get 25 real businesses that fit who you serve, each with a real public way to reach them. Free, from Joe Che\'s AI class.',
+    icon: '✦',
+    badge: 'Prompt',
+    badgeVariant: 'purple',
+  },
 ]
 
 export function getGiveaway(slug: string): Giveaway | undefined {

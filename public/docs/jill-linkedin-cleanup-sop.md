@@ -1,3 +1,11 @@
+---
+kg:
+  id: workshop-site:public-docs-jill-linkedin-cleanup-sop
+  type: document
+  status: active
+  audience: team
+  relations: {}
+---
 # SOP: Clean Up Joe's LinkedIn
 
 **Owner:** Jill (executes) · **Reviewer:** Illy (approves deletions in batches) · **Account:** Joe Che, LinkedIn login in LastPass (`linkedin.com`, newyork1@gmail.com)

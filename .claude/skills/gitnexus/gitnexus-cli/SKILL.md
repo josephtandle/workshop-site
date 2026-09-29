@@ -1,6 +1,12 @@
 ---
 name: gitnexus-cli
 description: "Use when the user needs to run GitNexus CLI commands like analyze/index a repo, check status, clean the index, generate a wiki, or list indexed repos. Examples: \"Index this repo\", \"Reanalyze the codebase\", \"Generate a wiki\""
+kg:
+  id: workshop-site:-claude-skills-gitnexus-gitnexus-cli-skill
+  type: document
+  status: active
+  audience: team
+  relations: {}
 ---
 
 # GitNexus CLI Commands

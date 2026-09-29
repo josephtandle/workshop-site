@@ -62,6 +62,7 @@ export const DELIVERABLE_LEAD_MAGNET_SOURCES: ReadonlySet<string> = new Set([
   'cult-brand-playbook',
   'guardog',
   'human',
+  'lead-machine',
   'lead-magnet',
   'maccleaner',
   'speak-human',

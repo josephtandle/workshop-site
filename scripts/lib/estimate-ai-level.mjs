@@ -7,5 +7,9 @@ export function estimateAiLevel(text) {
   for (const [level, pattern, note] of rules) {
     if (pattern.test(text ?? '')) return { level, note };
   }
-  return { level: 1, note: 'no signal in sign-up; default for free-class attendees' };
+  // No real evidence (no business-context signal, no chat/transcript note, no member
+  // history hit). Leave it ungraded rather than guessing a level — a low default here
+  // used to overwrite genuine self-reports (e.g. "self 7 / ours 1") every hour, since
+  // the grading pass evaluates every confirmed row, not just ones lacking a self-report.
+  return { level: null, note: 'no evidence to grade from; leaving ungraded until real signal appears' };
 }
