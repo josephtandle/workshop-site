@@ -1,0 +1,16 @@
+{
+  "schema": "mnstry.source-sidecar@v1",
+  "asset": "lead-magnet.html",
+  "title": "lead-magnet",
+  "summary": "Enrolled at adoption; not yet described.",
+  "tags": [],
+  "kg": {
+    "id": "workshop-site:asset:public-lead-magnet-html",
+    "type": "html",
+    "domain": "workshop-site",
+    "lifecycle": "active",
+    "status": "active",
+    "audience": "team",
+    "relations": {}
+  }
+}

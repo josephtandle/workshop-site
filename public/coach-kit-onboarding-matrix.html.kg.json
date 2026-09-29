@@ -1,0 +1,16 @@
+{
+  "schema": "mnstry.source-sidecar@v1",
+  "asset": "coach-kit-onboarding-matrix.html",
+  "title": "coach-kit-onboarding-matrix",
+  "summary": "Enrolled at adoption; not yet described.",
+  "tags": [],
+  "kg": {
+    "id": "workshop-site:asset:public-coach-kit-onboarding-matrix-html",
+    "type": "html",
+    "domain": "workshop-site",
+    "lifecycle": "active",
+    "status": "active",
+    "audience": "team",
+    "relations": {}
+  }
+}

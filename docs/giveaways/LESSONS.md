@@ -1,3 +1,11 @@
+---
+kg:
+  id: workshop-site:docs-giveaways-lessons
+  type: document
+  status: active
+  audience: team
+  relations: {}
+---
 # Giveaway Build — Lessons Log
 
 Mistakes made building giveaway pages and the rule that prevents the repeat.
