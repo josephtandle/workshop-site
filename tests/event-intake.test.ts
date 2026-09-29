@@ -92,16 +92,39 @@ test('whatsapp number requires a real number with enough digits', () => {
   assert.ok(validateWhatsappNumber('+1234567890123456789'), 'too many digits is rejected')
 })
 
-test('whatsapp number accepts common international formats', () => {
-  for (const value of ['+62 812 3456 7890', '+1 (646) 230-4209', '081234567890', '+6281234567890']) {
+test('whatsapp number rejects undialable numbers (wrong length or no country code)', () => {
+  // Real examples pulled from the 29 Sep sign-ups plus other undialable inputs.
+  // The old 8-15 digit check let all of these through; libphonenumber must not.
+  for (const value of ['+9177429141', '+4132689224', '832305949', '+6035088871', '+5047221695']) {
+    assert.ok(validateWhatsappNumber(value), `${value} must be rejected as undialable`)
+  }
+})
+
+test('whatsapp number accepts valid international numbers', () => {
+  // Every accepted number carries a country code and the correct national length.
+  for (const value of [
+    '+62 812 3456 7890',
+    '+1 (646) 230-4209',
+    '+6281234567890',
+    '+14155552671',
+    '+447911123456',
+    '+6588910218',
+    '6281234567890', // country code present, leading + optional
+  ]) {
     assert.equal(validateWhatsappNumber(value), undefined, `${value} should be accepted`)
   }
+})
+
+test('whatsapp number requires a country code (a bare national number is rejected)', () => {
+  // 081234567890 is a valid Indonesian national number but carries no country
+  // code, so it is not internationally dialable and must be rejected.
+  assert.ok(validateWhatsappNumber('081234567890'), 'a national-only number is rejected')
 })
 
 test('whatsapp normalisation keeps the country-code marker and drops formatting', () => {
   assert.equal(normalizeWhatsappNumber('+62 812 3456 7890'), '+6281234567890')
   assert.equal(normalizeWhatsappNumber('+1 (646) 230-4209'), '+16462304209')
-  assert.equal(normalizeWhatsappNumber('081234567890'), '081234567890')
+  assert.equal(normalizeWhatsappNumber('6281234567890'), '+6281234567890')
 })
 
 test('business context requires at least one real sentence', () => {
