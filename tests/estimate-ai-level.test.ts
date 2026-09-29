@@ -13,13 +13,15 @@ test('specified examples, empty input, boundaries and rule priority', () => {
   for (const [text, level] of [
     ["I'm primarily working on opus but curious to learn more on fable", 5],
     ['Sending proposals to clients by email after zoom calls with fathom', 3],
-    ['Chasing invoices', 1], [null, 1], ['', 1], ['maintain', 1], ['email', 1],
+    ['Chasing invoices', null], [null, null], ['', null], ['maintain', null], ['email', null],
     ['use ai', 3], ['using ai', 3], ['ai recap', 3], ['ChatGPT', 3],
     ['Claude and APIs and AI', 6], ['AI with Cursor', 5], ['MAKE.COM', 6],
   ] as const) assert.equal(estimateAiLevel(text).level, level, String(text));
   assert.equal(estimateAiLevel('opus').note, 'mentions Claude/Opus/Fable/Sonnet/Cursor/Codex/Lovable/Bolt/Replit');
   assert.equal(estimateAiLevel('ai').note, 'mentions using AI tools already');
-  assert.equal(estimateAiLevel(null).note, 'no signal in sign-up; default for free-class attendees');
+  // No evidence: stays ungraded (null) rather than defaulting to a low level.
+  assert.equal(estimateAiLevel(null).level, null);
+  assert.match(estimateAiLevel(null).note, /no evidence/);
 });
 
 test('general GPT and agent signals stay at level 3 while hands-on tools get level 5', () => {
@@ -33,7 +35,7 @@ test('general GPT and agent signals stay at level 3 while hands-on tools get lev
     ['claude', 5], ['opus', 5], ['fable', 5], ['sonnet', 5],
     ['cursor', 5], ['codex', 5], ['bolt', 5], ['replit', 5],
     ['agents with Replit', 5], ['GPT with APIs', 6],
-    ['agentic', 1], ['bolted', 1],
+    ['agentic', null], ['bolted', null],
   ] as const) assert.equal(estimateAiLevel(text).level, level, String(text));
 });
 
@@ -43,7 +45,11 @@ test('dry run paginates, filters, preserves self reports, prints and logs', asyn
   const logs: string[] = [];
   const pages = [
     [{ id: '1', attendee_name: 'Alice', business_context: 'API', ai_level: null, ai_level_source: null }],
-    [{ id: '2', ai_level: null, ai_level_source: 'self' }, { id: '3', ai_level: 5 }],
+    [
+      { id: '2', ai_level: null, ai_level_source: 'self' },
+      { id: '3', ai_level: 5 },
+      { id: '4', attendee_name: 'Bob', business_context: '', ai_level: null, ai_level_source: null },
+    ],
     [],
   ];
   const result = await runEstimateAiLevels(['--slug', 'free-class'], {
@@ -63,15 +69,19 @@ test('dry run paginates, filters, preserves self reports, prints and logs', asyn
       },
     },
   });
-  assert.deepEqual(calls.map(url => url.searchParams.get('offset')), ['0', '1', '3']);
+  assert.deepEqual(calls.map(url => url.searchParams.get('offset')), ['0', '1', '4']);
   for (const url of calls) {
     assert.equal(url.searchParams.get('status'), 'eq.confirmed');
     assert.equal(url.searchParams.get('ai_level'), 'is.null');
     assert.equal(url.searchParams.get('or'), '(ai_level_source.is.null,ai_level_source.neq.self)');
     assert.equal(url.searchParams.get('event_slug'), 'eq."free-class"');
   }
-  assert.deepEqual(lines, ['Alice\t6\tmentions APIs/bots/webhooks or automation tools']);
-  assert.equal(result.scanned, 3);
+  assert.deepEqual(lines, [
+    'Alice\t6\tmentions APIs/bots/webhooks or automation tools',
+    'Bob\tnot assessed\tno evidence to grade from; leaving ungraded until real signal appears',
+  ]);
+  // Bob has no evidence: scanned, but neither estimated nor written anywhere.
+  assert.equal(result.scanned, 4);
   assert.equal(result.estimated, 1);
   assert.deepEqual(result.byLevel, { 6: 1 });
   assert.equal(logs.length, 1);

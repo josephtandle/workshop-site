@@ -75,6 +75,9 @@ export async function runEstimateAiLevels(args = process.argv.slice(2), io = {})
       for (const row of ungraded) {
         if (row.ai_our_grade != null) continue;
         const { level, note } = estimateAiLevel(row.business_context);
+        // No real evidence: leave "our grade" empty (null / "not assessed") instead of
+        // writing a default level. Re-checked on later runs in case evidence shows up.
+        if (level == null) continue;
         const url = ourGradeUrl();
         url.searchParams.set('id', `eq.${String(row.id)}`);
         const updated = await jsonRequest(url, {
@@ -105,7 +108,9 @@ export async function runEstimateAiLevels(args = process.argv.slice(2), io = {})
     for (const row of rows) {
       if (row.ai_level != null || row.ai_level_source === 'self') continue;
       const { level, note } = estimateAiLevel(row.business_context);
-      print(`${String(row.attendee_name ?? '').replace(/[\r\n]/g, ' ')}\t${level}\t${note}`);
+      print(`${String(row.attendee_name ?? '').replace(/[\r\n]/g, ' ')}\t${level ?? 'not assessed'}\t${note}`);
+      // No real evidence: leave the legacy field empty too rather than defaulting to 1.
+      if (level == null) continue;
       if (summary.live) {
         const url = eligibleUrl();
         url.searchParams.set('id', `eq.${String(row.id)}`);

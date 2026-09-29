@@ -24,6 +24,9 @@ async function sendViaResend(email: string, source: string, idempotencyKey: stri
   const speakHumanPageUrl = withUtm(`${siteUrl}/giveaways/speak-human`, { campaign: 'lead-magnet', content: 'speak-human-page' })
   const costStackPageUrl = withUtm(`${siteUrl}/giveaways/cost-stack`, { campaign: 'lead-magnet', content: 'cost-stack-page' })
   const businessBuilderQuizPageUrl = withUtm(`${siteUrl}/giveaways/business-builder-quiz`, { campaign: 'lead-magnet', content: 'business-builder-quiz-page' })
+  const leadMachineZipUrl = withUtm(`${siteUrl}/lead-machine-starter.zip`, { campaign: 'lead-magnet', content: 'lead-machine-zip' })
+  const leadMachinePdfUrl = withUtm(`${siteUrl}/lead-machine-quick-start.pdf`, { campaign: 'lead-magnet', content: 'lead-machine-pdf' })
+  const leadMachineGithubUrl = 'https://github.com/josephtandle/lead-machine'
 
   let subject: string
   let html: string
@@ -251,6 +254,76 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
         ${unsubscribeFooter}
       </div>
     `
+  } else if (source === 'lead-machine') {
+    subject = 'Your Lead Machine download'
+    html = `
+      <div style="font-family: system-ui, sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; background: #ffffff;">
+        <p style="font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 24px;">The Lead Machine</p>
+
+        <h1 style="font-size: 26px; font-weight: 800; line-height: 1.25; margin-bottom: 16px; color: #111;">
+          Here is the whole thing: the Lead Machine.
+        </h1>
+
+        <p style="font-size: 16px; color: #444; line-height: 1.7; margin-bottom: 20px;">
+          You paste one prompt into ChatGPT or Claude, and in a few minutes it hands you 25 real businesses that fit,
+          each with a real public way to reach them, right there in the chat. No install, no setup, nothing to figure out.
+          It asks one thing first: cold outreach, warm network, or both. Say cold. Then it checks what it already knows
+          about you. If it can tell what you sell and who you serve, it just goes. If not, it asks you one question,
+          who your ideal clients are, and you can answer in words or just paste your website link. Then it finds 25
+          that fit and lists them for you.
+        </p>
+
+        <p style="margin-bottom: 24px;">
+          <a href="${leadMachineZipUrl}"
+             style="display: inline-block; background: #8B79D4; color: white; padding: 14px 28px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 16px;">
+            Download the Lead Machine
+          </a>
+        </p>
+
+        <div style="background: #f5f0ff; border-left: 3px solid #8B79D4; padding: 16px 20px; border-radius: 0 8px 8px 0; margin-bottom: 24px;">
+          <p style="font-size: 14px; color: #333; margin: 0 0 8px; font-weight: 700;">Three steps, about two minutes:</p>
+          <p style="font-size: 14px; color: #444; margin: 0 0 6px; line-height: 1.6;">1. Download the file above and unzip it.</p>
+          <p style="font-size: 14px; color: #444; margin: 0 0 6px; line-height: 1.6;">2. Open PASTE-INTO-CHATGPT-OR-CLAUDE.txt inside, select all, and copy.</p>
+          <p style="font-size: 14px; color: #444; margin: 0; line-height: 1.6;">3. Open ChatGPT or Claude, start a new chat, paste it, and hit send.</p>
+        </div>
+
+        <p style="font-size: 15px; color: #444; line-height: 1.7; margin-bottom: 20px;">
+          That is it. Your 25 leads land right in the chat, each with a real way to reach them.
+        </p>
+
+        <div style="background: #f9f9f9; border: 1px solid #eee; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px;">
+          <p style="font-size: 14px; color: #333; margin: 0; line-height: 1.65;">
+            <strong>Want more?</strong> After your 25, just say "more" and it finds another 25, no repeats. Keep going
+            as long as you like. Most people happily stay right here. If you ever want it on autopilot from your own
+            LinkedIn and inbox, say "warm" and it walks you through it step by step. It never pushes you there. The
+            Quick Start guide below shows you how.
+          </p>
+        </div>
+
+        <p style="font-size: 14px; color: #555; line-height: 1.7; margin-bottom: 20px;">
+          Use Claude Code, Codex, or Gemini CLI? Open the unzipped folder in it and say "go". Same 25 leads, and it
+          remembers everyone it found for you across days.
+        </p>
+
+        <p style="margin-bottom: 12px;">
+          <a href="${leadMachinePdfUrl}" style="color: #8B79D4; font-weight: 600; text-decoration: none;">
+            Open the Quick Start PDF
+          </a>
+        </p>
+        <p style="margin-bottom: 28px;">
+          <a href="${leadMachineGithubUrl}" style="color: #8B79D4; font-weight: 600; text-decoration: none;">
+            View it on GitHub
+          </a>
+        </p>
+
+        <p style="font-size: 15px; color: #444; line-height: 1.7; margin-bottom: 8px;">
+          Stuck on anything? Just reply to this email and we will get you running.
+        </p>
+
+        <p style="font-size: 14px; color: #999; margin-top: 24px;">Joe</p>
+        ${unsubscribeFooter}
+      </div>
+    `
   } else if (source === 'web-design-arsenal') {
     subject = "You're on the list"
     html = `
@@ -437,6 +510,7 @@ const GIVEAWAY_SOURCE_MAP: Record<string, string> = {
   'human': 'giveaway-speak-human',
   'speak-human': 'giveaway-speak-human',
   'business-builder-quiz': 'giveaway-business-builder-quiz',
+  'lead-machine': 'giveaway-lead-machine',
 }
 
 async function ingestIntoCrm(email: string, source: string) {
