@@ -39,7 +39,12 @@ function isTestEntry({ name, email }) {
     n.includes('test') ||
     e.startsWith('joe-check') ||
     n === 'sdf' ||
-    n === 'stes'
+    n === 'stes' ||
+    // Our own QA / audit sign-ups: plus-addressed test emails (illy+wstest*, illy+wsjourney*,
+    // illy+wsj-*, illy+wslinks*, illy+wsref*, illy+wsfinal*, illyhelianthi+wstest) and the
+    // 'Uni ...' names we use for them (Uni Journey, Uni Verify0923, Uni Linkcheck, Uni Refcheck).
+    e.includes('+ws') ||
+    n.startsWith('uni ')
   )
 }
 
