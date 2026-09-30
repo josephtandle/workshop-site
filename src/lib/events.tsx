@@ -403,10 +403,11 @@ const connectionDinnerCangguTemplate: EventDefinition = {
         title: 'Supporting PKP Community Centre',
         body: [
           'Every dollar donated at this dinner goes directly to PKP. The suggested amount is $10, but you decide what feels right.',
+          'PKP is a community centre in Bali founded by Ibu Sari. It trains women in sewing, cooking and English so they can earn for their families, and it is a safe place for women and children facing domestic violence, divorce or social exclusion.',
         ],
         imageSrc: '/events/connection-dinner-canggu/pkp-catering.jpg',
         imageAlt: 'PKP Community Centre women, Bali',
-        caption: 'PKP Community Centre, Bali — pkpcommunitycentre.org',
+        caption: 'PKP Community Centre, Bali, pkpcommunitycentre.org',
       },
       {
         type: 'html',
@@ -466,10 +467,6 @@ export const events: EventDefinition[] = [
       holdMinutes: 30,
     },
     manuallyClosed: false,
-    pricing: {
-      ...connectionDinnerCangguTemplate.pricing,
-      checkoutNote: 'Your donation goes directly to Bali Street Mums.',
-    },
     privateLocationReminder: {
       eventStartIso: '2026-10-04T18:00:00+08:00',
       leadHours: 4,
@@ -481,26 +478,10 @@ export const events: EventDefinition[] = [
         'The restaurant is on Jalan Pantai Pererenan, just off the main Pererenan strip.',
       ],
     },
-    sections: connectionDinnerCangguTemplate.sections.map((section): EventSection => {
-      if (section.id !== 'pkp') return section
-
-      return {
-        type: 'split',
-        id: 'bali-street-mums',
-        eyebrow: '100% of Donations Go To Bali Street Mums',
-        title: 'Supporting Bali Street Mums',
-        body: [
-          'Every dollar donated at this dinner goes directly to Bali Street Mums. The suggested amount is $10, but you decide what feels right.',
-        ],
-        imageSrc: '/events/connection-dinner-canggu/cover.jpg',
-        imageAlt: 'Joe Che\'s Connection Dinner at Mostly Restaurant',
-        caption: 'Joe Che\'s Connection Dinner at Mostly Restaurant',
-      }
-    }),
     metadata: {
       title: "Joe Che's Connection Dinner, October 4, 2026",
       description:
-        'A monthly dinner for entrepreneurs, founders, and people doing interesting things in Canggu. Donations go to Bali Street Mums.',
+        'A monthly dinner for entrepreneurs, founders, and people doing interesting things in Canggu. Donations go to PKP Community Centre.',
     },
   },
   {
@@ -642,7 +623,7 @@ export const events: EventDefinition[] = [
         ],
         imageSrc: '/events/connection-dinner-canggu/pkp-catering.jpg',
         imageAlt: 'PKP Community Centre women, Bali',
-        caption: 'PKP Community Centre, Bali — pkpcommunitycentre.org',
+        caption: 'PKP Community Centre, Bali, pkpcommunitycentre.org',
       },
       {
         type: 'hosts',
