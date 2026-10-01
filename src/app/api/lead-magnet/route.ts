@@ -372,7 +372,8 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
 
         <p style="font-size: 16px; line-height: 1.7; margin-bottom: 20px;">
           Before you pay more for AI, stop burning what you already pay for. These four changes cut my
-          agents' token use by 70% on the same plan, doing the same work. The full guide, with the exact
+          agents wasting 1.4 billion tokens on the same plan. RTK trimmed 70% of noisy command output
+          before my agents read it, not 70% of total plan usage. The full guide, with the exact
           setup for each one, stays open at the link below.
         </p>
 

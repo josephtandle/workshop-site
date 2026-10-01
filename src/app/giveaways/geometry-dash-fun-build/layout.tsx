@@ -5,7 +5,7 @@ const BASE = 'https://workshop.mastermindshq.business'
 const URL  = `${BASE}/giveaways/geometry-dash-fun-build`
 
 export const metadata: Metadata = {
-  title: 'Geometry Dash Fun Build — Vibe Code a Game with p5.js',
+  title: 'Geometry Dash Fun Build | Vibe Code a Game with p5.js',
   description: 'Build a Geometry Dash clone from scratch with p5.js. Copy the full game code, paste it into editor.p5js.org, and start customizing. Zero setup, instant play. Vibe coding for beginners.',
   keywords: [
     'Geometry Dash clone', 'p5.js game', 'vibe coding', 'build a game with AI',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   alternates: { canonical: URL },
   openGraph: {
-    title: 'Geometry Dash Fun Build — Vibe Code a Game with p5.js',
+    title: 'Geometry Dash Fun Build | Vibe Code a Game with p5.js',
     description: 'Copy the full game code, paste it into editor.p5js.org, and play your own Geometry Dash clone in under 2 minutes. Then make it yours.',
     url: URL,
     siteName: 'Business Automation Mastermind Workshop',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Geometry Dash Fun Build — Vibe Code a Game with p5.js',
+    title: 'Geometry Dash Fun Build | Vibe Code a Game with p5.js',
     description: 'Full p5.js game code. Copy, paste, play. Then change the colors, physics, and level design.',
     creator: '@joecheuk',
   },

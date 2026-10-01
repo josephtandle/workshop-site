@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'AI Operating System Architecture — Mastermind HQ',
+  title: 'AI Operating System Architecture | Mastermind HQ',
   description: 'The MyOS Dispatch Layer: 8-step ordered evaluation ladder for provider-agnostic, goal-driven AI systems.',
 }
 

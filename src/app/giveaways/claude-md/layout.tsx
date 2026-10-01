@@ -5,7 +5,7 @@ const BASE = 'https://workshop.mastermindshq.business'
 const URL = `${BASE}/giveaways/claude-md`
 
 export const metadata: Metadata = {
-  title: 'The Ultimate CLAUDE.md File — Free Download',
+  title: 'The Ultimate CLAUDE.md File | Free Download',
   description: 'Stop repeating yourself to Claude. One file in your project root loads your rules, preferences, and context automatically at the start of every Claude Code session. Free from the Business Automation Mastermind.',
   keywords: [
     'CLAUDE.md', 'Claude Code', 'Claude Code configuration', 'AI coding setup',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   alternates: { canonical: URL },
   openGraph: {
-    title: 'The Ultimate CLAUDE.md File — Free Download',
+    title: 'The Ultimate CLAUDE.md File | Free Download',
     description: 'One file. Your rules, preferences, and project context loaded automatically every Claude Code session. Free from the Business Automation Mastermind.',
     url: URL,
     siteName: 'Business Automation Mastermind Workshop',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'The Ultimate CLAUDE.md File — Free Download',
+    title: 'The Ultimate CLAUDE.md File | Free Download',
     description: 'One file. Your rules loaded automatically every Claude Code session. Free from the Business Automation Mastermind.',
     creator: '@joecheuk',
   },

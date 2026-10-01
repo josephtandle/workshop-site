@@ -5,8 +5,8 @@ const BASE = 'https://workshop.mastermindshq.business'
 const URL = `${BASE}/giveaways/tokens`
 
 export const metadata: Metadata = {
-  title: 'The Token Diet: Cut Your AI Token Use by 70%',
-  description: 'The four changes that cut my AI agents\' token use by 70% on the same plan, with the exact setup for each. Free guide from Joe Che.',
+  title: 'The Token Diet: 1.4 Billion Tokens My Agents Never Had to Read',
+  description: 'Four changes that stopped my agents wasting 1.4 billion tokens. RTK trimmed 70% of noisy command output before my agents read it. Free guide from Joe Che.',
   keywords: [
     'The Token Diet', 'AI token usage', 'Claude Code tokens', 'ChatGPT Pro price', 'RTK',
     'cheapest AI model', 'MyOS Dispatch', 'Jev', 'CLAUDE.md', 'AGENTS.md', 'AI costs', 'usage limits',
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   alternates: { canonical: URL },
   openGraph: {
-    title: 'The Token Diet: Cut Your AI Token Use by 70%',
-    description: 'Before you pay more for AI, stop burning what you already pay for. Four changes, the exact setup for each. Free from the Business Automation Mastermind.',
+    title: 'The Token Diet: 1.4 Billion Tokens My Agents Never Had to Read',
+    description: 'RTK trimmed 70% of the noisy command output before my agents read it. Four changes with the exact setup for each. Free from the Business Automation Mastermind.',
     url: URL,
     siteName: 'Business Automation Mastermind Workshop',
     type: 'website',
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'The Token Diet: Cut Your AI Token Use by 70%',
-    description: 'Four changes that cut my AI agents\' token use by 70% on the same plan. Free guide.',
+    title: 'The Token Diet: 1.4 Billion Tokens My Agents Never Had to Read',
+    description: 'RTK trimmed 70% of noisy command output before my agents read it. Free guide.',
     creator: '@joecheuk',
   },
 }

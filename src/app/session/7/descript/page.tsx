@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Session7DescriptGuide from '@/content/session-7-descript-guide'
 
 export const metadata = {
-  title: 'Session 7: Descript — Repurpose Long-Form Content into Short-Form Gold',
+  title: 'Session 7: Descript | Repurpose Long-Form Content into Short-Form Gold',
   description:
     'Learn to turn any long-form recording into social clips, reels, and short-form content using Descript. No video editing skills required.',
 }

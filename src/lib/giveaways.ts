@@ -16,7 +16,7 @@ export const giveaways: Giveaway[] = [
   {
     slug: 'tokens',
     title: 'The Token Diet',
-    description: "The four changes that cut my AI agents' token use by 70% on the same plan, with the exact setup for each.",
+    description: "Four changes that stopped my agents wasting 1.4 billion tokens. RTK trimmed 70% of noisy command output before my agents read it.",
     icon: '◈',
     badge: 'Guide',
     badgeVariant: 'purple',

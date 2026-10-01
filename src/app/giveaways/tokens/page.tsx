@@ -195,7 +195,7 @@ export default function TokensPage() {
     '@type': 'HowTo',
     name: 'The Token Diet: cut your AI agents\' token use',
     description:
-      'Four changes that cut AI agent token use by about 70% on the same plan: filter command output with RTK, route each job to the cheapest model that can do it, audit your CLAUDE.md against mine, and put a receptionist in front of your AI.',
+      'Four changes, including RTK trimming 70% of noisy command output before my agents read it, with 1.4 billion tokens my agents never had to read.',
     author: {
       '@type': 'Person',
       name: 'Joe Che',
@@ -377,7 +377,9 @@ export default function TokensPage() {
               transition={{ duration: 0.55, delay: 1.6 }}
               className="text-[#FCF4EB]/55 text-base sm:text-lg leading-relaxed max-w-xl mx-auto mb-6"
             >
-              OpenAI just made ChatGPT&apos;s top plan $500 a month. From October 30, the $200 plan gets half the usage it had, 10x the Plus plan instead of 20x. Most of us are not short on plan. We are wasting it. Here are the four changes that cut my agents&apos; token use by 70% on the same plan.
+              OpenAI just made ChatGPT&apos;s top plan $500 a month. From October 30, the $200 plan gets half the usage it had, 10x the Plus plan instead of 20x.{' '}
+              <a href="https://www.businessinsider.com/chatgpt-new-plan-pro-500-cost-compute-allowance-2026-9" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">Source: Business Insider</a>.{' '}
+              Most of us are not short on plan. We are wasting it. These are the four changes that stopped my agents wasting 1.4 billion tokens on the same plan.
             </motion.p>
 
             {/* Works in strip */}
@@ -427,16 +429,16 @@ export default function TokensPage() {
               My real numbers
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold text-[#FCF4EB] mb-3">
-              Same plan. Same work. 70% fewer tokens.
+              1.4 billion tokens my agents never had to read.
             </h2>
             <p className="text-[#FCF4EB]/45 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
-              These come straight from <span className="font-mono text-[#9D8FE0]">rtk gain</span> on my own machine, where my AI agents run all day. I did not pay for a bigger plan. I just stopped feeding them junk.
+              <span className="font-mono text-[#9D8FE0]">rtk gain</span> showed that RTK trimmed 70% of the noisy command output before my agents read it. These are test logs, file listings and git logs, not total plan usage.
             </p>
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
-              { idx: 0, suffix: 'B', label: 'tokens saved' },
-              { idx: 1, suffix: '%', label: 'of everything my agents would have used' },
+              { idx: 0, suffix: 'B', label: 'tokens my agents never had to read' },
+              { idx: 1, suffix: '%', label: 'of noisy command output trimmed' },
               { idx: 2, suffix: '', label: 'commands, about' },
             ].map((stat) => (
               <motion.div
@@ -456,6 +458,24 @@ export default function TokensPage() {
                 </p>
               </motion.div>
             ))}
+          </div>
+        </section>
+
+        <section className="max-w-5xl mx-auto px-6 pb-8" aria-label="Start here">
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="rounded-2xl border border-[#8B79D4]/25 bg-white/[0.04] p-5 sm:p-6">
+              <h2 className="mb-2 text-lg font-bold text-[#FCF4EB]">Do this first (2 minutes, no terminal)</h2>
+              <p className="text-sm leading-relaxed text-[#FCF4EB]/65">In Claude Code, type <code className="font-mono text-[#9D8FE0]">/model</code> and pick Sonnet as your everyday model. Switch to Opus only when a job actually fails. In ChatGPT, use the regular model for everyday work and save the Pro and thinking models for hard problems.</p>
+            </div>
+            <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-5 sm:p-6">
+              <h2 className="mb-2 text-lg font-bold text-[#FCF4EB]">Words on this page, in plain English</h2>
+              <ul className="space-y-1 text-sm leading-relaxed text-[#FCF4EB]/60">
+                <li><strong className="text-[#FCF4EB]/80">Token:</strong> the unit AI reads and writes; your plan&apos;s limit is counted in tokens.</li>
+                <li><strong className="text-[#FCF4EB]/80">Claude Code:</strong> Anthropic&apos;s AI coding assistant that runs on your computer.</li>
+                <li><strong className="text-[#FCF4EB]/80">Terminal:</strong> the app on your Mac where you type commands.</li>
+                <li><strong className="text-[#FCF4EB]/80">Hook:</strong> a small rule that runs automatically before the AI does something.</li>
+              </ul>
+            </div>
           </div>
         </section>
 
@@ -532,12 +552,13 @@ export default function TokensPage() {
                   <a href={RTK_URL} target="_blank" rel="noopener noreferrer" className="text-[#9D8FE0]/80 hover:text-[#9D8FE0] transition-colors underline underline-offset-2">
                     rtk-ai.app
                   </a>
-                  . I just use it every single day, and it is where most of my 70% came from.
+                  . I just use it every day. It trimmed 70% of noisy command output before my agents read it.
                 </p>
               </div>
 
               {/* Steps */}
               <div className="max-w-2xl mx-auto mt-8 space-y-3">
+                <p className="text-sm text-[#FCF4EB]/55">Don&apos;t have Homebrew? Install it from <a href="https://brew.sh" target="_blank" rel="noopener noreferrer" className="text-[#9D8FE0] underline underline-offset-2">brew.sh</a> first (one command).</p>
                 {[
                   { cmd: 'brew install rtk', text: 'Installs RTK on your Mac.' },
                   { cmd: 'rtk init -g', text: 'Adds the hook to Claude Code so every command gets filtered automatically.' },
@@ -739,7 +760,7 @@ export default function TokensPage() {
             <div className="px-5 py-8 sm:px-8 sm:py-10">
               <div className="text-center mb-8">
                 <span className="inline-block text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 bg-[#8B79D4]/15 text-[#9D8FE0] border border-[#8B79D4]/25">
-                  Fix 4
+                  Fix 4 · Advanced, optional
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-bold text-[#FCF4EB]">
                   Put a receptionist in front of your AI
@@ -747,6 +768,7 @@ export default function TokensPage() {
               </div>
 
               <div className="max-w-2xl mx-auto space-y-4 text-[#FCF4EB]/60 leading-relaxed mb-8">
+                <p>If you use Claude Code, you can install it from the <a href="https://github.com/josephtandle/myos-dispatch" target="_blank" rel="noopener noreferrer" className="text-[#9D8FE0] underline underline-offset-2">GitHub page</a>; if not, skip this one.</p>
                 <p>
                   Most people send every request straight to the most expensive model. That's like having your CEO answer the phone.
                 </p>

@@ -5,7 +5,7 @@ const BASE = 'https://workshop.mastermindshq.business'
 const URL = `${BASE}/giveaways/fable-worth-it-audit`
 
 export const metadata: Metadata = {
-  title: 'Fable Worth-It Audit — Claude Fable 5 Giveaway',
+  title: 'Fable Worth-It Audit | Claude Fable 5 Giveaway',
   description:
     'A free codebase audit prompt that shows where Claude Fable 5 is actually worth using instead of Sonnet.',
   keywords: [

@@ -5,7 +5,7 @@ const BASE = 'https://workshop.mastermindshq.business'
 const URL = `${BASE}/giveaways/business-builder-quiz`
 
 export const metadata: Metadata = {
-  title: 'Do You Have What It Takes to Build Your Own Business? — Take the Quiz',
+  title: 'Do You Have What It Takes to Build Your Own Business? | Take the Quiz',
   description:
     '6 questions that score your founder readiness across 5 research-backed levels, from not yet to built for this. Free from the Business Automation Mastermind.',
   keywords: [
