@@ -21,7 +21,7 @@ test('specified examples, empty input, boundaries and rule priority', () => {
   assert.equal(estimateAiLevel('ai').note, 'mentions using AI tools already');
   // No evidence: stays ungraded (null) rather than defaulting to a low level.
   assert.equal(estimateAiLevel(null).level, null);
-  assert.match(estimateAiLevel(null).note, /no evidence/);
+  assert.match(String(estimateAiLevel(null).note), /no evidence/);
 });
 
 test('general GPT and agent signals stay at level 3 while hands-on tools get level 5', () => {

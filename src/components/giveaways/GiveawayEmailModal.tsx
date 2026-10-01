@@ -123,7 +123,7 @@ export default function GiveawayEmailModal({ slug, isOpen, onClose, headingOverr
                 ✓ Copied
               </p>
             ) : null}
-            <h3 className={`${showCopiedBadge ? 'mt-3' : ''} text-[1.05rem] sm:text-[1.55rem] font-extrabold leading-[1.25] sm:leading-[1.15] text-[#FCF4EB]`}>
+            <h3 className={`${showCopiedBadge ? 'mt-3' : 'px-10'} text-[1.05rem] sm:text-[1.55rem] font-extrabold leading-[1.25] sm:leading-[1.15] text-[#FCF4EB]`}>
               {headingOverride || 'Your prompt is ready to paste into Claude Code or Codex.'}
             </h3>
             <p className="mt-3 sm:mt-4 text-[13px] sm:text-[15px] leading-[1.55] sm:leading-7 text-[#FCF4EB]/70">
