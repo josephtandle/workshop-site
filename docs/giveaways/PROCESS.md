@@ -253,6 +253,17 @@ No manual refresh needed. If the script exits with a non-zero code, the page is 
 
 ---
 
+### 4b. Usefulness Gate (loop until super useful)
+
+**Rule (Joe, 2026-10-02): every giveaway must pass the user usefulness test before ManyChat goes live or anything is posted, and the loop keeps going until it does.**
+
+Run the locked rubric in `docs/giveaways/USEFULNESS-RUBRIC.md`: deterministic checks D1-D5, then a clean-context grader (a subagent that did not build the page) answers U1-U9 YES/NO as a non-technical small business owner on a phone. Fix, redeploy, re-grade. Max 5 rounds. Grades go in `docs/giveaways/grades/`. The builder never edits the rubric or the grade files. No ManyChat activation and no post until every check is YES.
+
+**Other launch rules (Joe, 2026-10-02):**
+- The ManyChat flow must be live (step 14 shows `LIVE: ns:...`) BEFORE the reel or carousel is posted; a comment keyword with no flow gets silence.
+- Delivery links always use `https://workshop.mastermindshq.business/giveaways/<slug>`, never the vercel.app alias.
+- Carousels for a giveaway: minimal, one idea per slide, no logos on content slides, old MHQ purple branding, every render passes an overflow/safe-area check and is looked at before sending.
+
 ### 5. Set Up ManyChat Automation
 
 **Pre-check: confirm agent Chrome is reachable before attempting automation.**
@@ -469,6 +480,7 @@ Must show `LIVE: ns:xxxxx`. If status is not active or flow is missing, fix befo
 | Create page + register | Uni | workshop-site | `ls` files + `tsc --noEmit` passes |
 | Commit + push + deploy | Uni | git + vercel | `Aliased:` line confirmed |
 | Notify (verify + Telegram + email + hard refresh) | Uni | `notify-giveaway-launch.js` | Script exits 0 |
+| Usefulness gate (rubric D1-D5, U1-U9) | Clean-context grader | USEFULNESS-RUBRIC.md | Every check YES (max 5 loops) |
 | ManyChat CDP pre-check | Uni | curl port 9223 | Chrome reachable |
 | ManyChat setup | Uni | Mission Control / Playwright | `manychat_flow_id` present |
 | Brief HookLab | Uni + Joe | `this-week.md` | Keyword + URL have real values |
