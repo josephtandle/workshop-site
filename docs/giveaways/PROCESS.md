@@ -297,7 +297,7 @@ Returns the new row id. Keep it for step 3.
    Do not clone SpeakHuman or any other giveaway; they carry their own keyword and link.
 3. Duplicate it
 4. Set the comment trigger keyword to `<KEYWORD>`
-5. Update the delivery link in the DM message to `https://workshop-site-sigma.vercel.app/giveaways/<slug>`
+5. Update the delivery link in the DM message to `https://workshop.mastermindshq.business/giveaways/<slug>`
 6. Activate the flow — copy the NS (e.g. `ns:12345`) from the flow URL
 7. In Mission Control → Manychat Giveaways → Edit this entry → paste the NS → Save
 
@@ -320,7 +320,7 @@ Update `~/.myos/workspace/projects/mastermind/hook-writer/personal/this-week.md`
 - Lead magnet name (exact name as it appears on the page)
 - What it delivers (one sentence)
 - Keyword: `<KEYWORD>`
-- Delivery URL: `https://workshop-site-sigma.vercel.app/giveaways/<slug>`
+- Delivery URL: `https://workshop.mastermindshq.business/giveaways/<slug>`
 - Why it matters (the specific pain point)
 
 **Verify the file has real values, not blanks:**
