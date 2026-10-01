@@ -18,25 +18,14 @@ rtk init -g
 # now work normally for a day or two, then:
 rtk gain`
 
-const STARTUP_TEMPLATE = `# CLAUDE.md
+const STARTUP_TEMPLATE = `Read my CLAUDE.md (and AGENTS.md if I have one). Then read Joe Che's Ultimate CLAUDE.md at https://workshop.mastermindshq.business/giveaways/claude-md
 
-## Who I am
-- I run [your business] and sell [what you sell] to [who you sell to].
-- I am not a developer. Explain things in plain English, short answer first.
-- My main tools: [e.g. Claude Code, Stripe, Gmail, my website repo].
+Audit mine against his:
+1. What useful rules or sections am I missing?
+2. What in mine is stale, repeated, or too long?
+3. What in his does not apply to my business? Skip those.
 
-## The 5 rules that matter
-1. Never send an email or message without showing me first.
-2. Ask before deleting any file or data.
-3. Run the tests before you tell me something is done.
-4. Use the cheapest model that can do the job. Step up only if it fails.
-5. Keep answers short unless I ask for detail.
-
-## Where the details live
-- Brand and writing voice: read docs/voice.md
-- Deploying the website: read docs/deploy.md
-- Clients and pricing: read docs/clients.md
-Only open these when the task needs them.`
+Then upgrade my CLAUDE.md. Add only what is relevant to how I actually work. Keep it short: move long details into separate docs files and point to them. Show me the changes before you save.`
 
 const MODEL_TIERS = [
   {
@@ -206,7 +195,7 @@ export default function TokensPage() {
     '@type': 'HowTo',
     name: 'The Token Diet: cut your AI agents\' token use',
     description:
-      'Four changes that cut AI agent token use by about 70% on the same plan: filter command output with RTK, route each job to the cheapest model that can do it, keep startup files short, and put a receptionist in front of your AI.',
+      'Four changes that cut AI agent token use by about 70% on the same plan: filter command output with RTK, route each job to the cheapest model that can do it, audit your CLAUDE.md against mine, and put a receptionist in front of your AI.',
     author: {
       '@type': 'Person',
       name: 'Joe Che',
@@ -232,8 +221,8 @@ export default function TokensPage() {
       },
       {
         '@type': 'HowToStep',
-        name: 'Keep startup files short',
-        text: 'Cut CLAUDE.md or AGENTS.md down to who you are, the five rules that matter, and pointers to detail files that load only when a task needs them.',
+        name: 'Audit your CLAUDE.md',
+        text: 'Have Claude compare yours to my Ultimate CLAUDE.md and keep only what fits.',
         position: 3,
       },
       {
@@ -488,7 +477,7 @@ export default function TokensPage() {
             {[
               { step: '01', title: 'Filter the noise', body: 'Trim test output, git logs and file listings before the model ever reads them.' },
               { step: '02', title: 'Right-size the model', body: 'The cheapest model that can do each job. Step up only when a task actually fails.' },
-              { step: '03', title: 'Short startup files', body: 'Your CLAUDE.md is read every session. Make it short and point to the details.' },
+              { step: '03', title: 'Audit your CLAUDE.md', body: 'Have Claude compare yours to my Ultimate CLAUDE.md and keep only what fits.' },
               { step: '04', title: 'Route before you run', body: 'How I built MyOS Dispatch, with Jev making the routing calls, so most requests never touch the expensive model.' },
             ].map((item, i) => (
               <motion.div
@@ -674,16 +663,13 @@ export default function TokensPage() {
                   Fix 3
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-bold text-[#FCF4EB]">
-                  Short startup files
+                  Audit your CLAUDE.md against mine
                 </h2>
               </div>
 
               <div className="max-w-2xl mx-auto space-y-4 text-[#FCF4EB]/60 leading-relaxed mb-8">
                 <p>
-                  Your CLAUDE.md (or AGENTS.md in Codex) gets read at the start of every single session. That is the point of it. It also means a 2,000-line file is paid for every time, even when you only asked the agent to fix a typo.
-                </p>
-                <p>
-                  Mine used to be huge. Now it is the few things the agent needs every time, plus pointers to everything else. The details still exist. They just load when a task needs them, not on every hello.
+                  Your CLAUDE.md gets read at the start of every session, so every extra line costs you every time. But short is not the goal, right is. I keep an Ultimate CLAUDE.md that I give away. Paste this into Claude Code in your project folder and it will audit yours against mine and upgrade only what fits your business:
                 </p>
               </div>
 
@@ -692,17 +678,17 @@ export default function TokensPage() {
                 <div className="rounded-xl p-5" style={{ background: 'rgba(248,113,113,0.05)', border: '1px solid rgba(248,113,113,0.18)' }}>
                   <div className="text-[10px] font-bold uppercase tracking-widest mb-3" style={{ color: '#f87171' }}>Before</div>
                   <ul className="space-y-2 text-sm text-[#FCF4EB]/55 leading-relaxed">
-                    <li className="flex gap-2"><span className="text-[#f87171]/70">◇</span>2,000 lines, read on every session</li>
-                    <li className="flex gap-2"><span className="text-[#f87171]/70">◇</span>Brand guide, client list, deploy steps and old notes all pasted in</li>
-                    <li className="flex gap-2"><span className="text-[#f87171]/70">◇</span>You pay for all of it, even for a one-line fix</li>
+                    <li className="flex gap-2"><span className="text-[#f87171]/70">◇</span>Rules that do not fit your business</li>
+                    <li className="flex gap-2"><span className="text-[#f87171]/70">◇</span>Stale, repeated, or overly long instructions</li>
+                    <li className="flex gap-2"><span className="text-[#f87171]/70">◇</span>Useful rules from the Ultimate CLAUDE.md may be missing</li>
                   </ul>
                 </div>
                 <div className="rounded-xl p-5" style={{ background: 'rgba(52,211,153,0.05)', border: '1px solid rgba(52,211,153,0.18)' }}>
                   <div className="text-[10px] font-bold uppercase tracking-widest mb-3" style={{ color: '#34d399' }}>After</div>
                   <ul className="space-y-2 text-sm text-[#FCF4EB]/55 leading-relaxed">
-                    <li className="flex gap-2"><span className="text-[#34d399]/70">◆</span>About 25 lines</li>
-                    <li className="flex gap-2"><span className="text-[#34d399]/70">◆</span>Who you are, the 5 rules that matter, where the details live</li>
-                    <li className="flex gap-2"><span className="text-[#34d399]/70">◆</span>Details load only when a task needs them</li>
+                    <li className="flex gap-2"><span className="text-[#34d399]/70">◆</span>Only rules relevant to your business</li>
+                    <li className="flex gap-2"><span className="text-[#34d399]/70">◆</span>Short startup instructions with detail files linked</li>
+                    <li className="flex gap-2"><span className="text-[#34d399]/70">◆</span>Review the changes before saving</li>
                   </ul>
                 </div>
               </div>
@@ -710,7 +696,7 @@ export default function TokensPage() {
               {/* Template */}
               <div className="rounded-xl overflow-hidden border border-white/[0.08]" style={{ borderLeftWidth: 2, borderLeftColor: '#F5C3C6' }}>
                 <div className="flex items-center justify-between px-4 py-2 bg-white/[0.04] border-b border-white/[0.06]">
-                  <span className="text-xs text-[#FCF4EB]/40 font-mono">CLAUDE.md template</span>
+                  <span className="text-xs text-[#FCF4EB]/40 font-mono">Audit and upgrade prompt</span>
                   <InlineCopyButton text={STARTUP_TEMPLATE} />
                 </div>
                 <pre
@@ -721,10 +707,16 @@ export default function TokensPage() {
                 </pre>
               </div>
 
+              <p className="max-w-2xl mx-auto mt-4 text-sm text-[#FCF4EB]/45">
+                <a href="/giveaways/claude-md" className="text-[#9D8FE0]/80 hover:text-[#9D8FE0] transition-colors underline underline-offset-2">
+                  Get the full Ultimate CLAUDE.md
+                </a>
+              </p>
+
               <TemplateCopyButton text={STARTUP_TEMPLATE} />
 
               <p className="text-[#FCF4EB]/25 text-[11px] text-center mt-4 max-w-md mx-auto leading-relaxed">
-                Fill in the brackets, save it as CLAUDE.md (or AGENTS.md for Codex) in your project folder, and move everything else into the docs files it points to.
+                Review Claude&apos;s proposed changes before saving your updated CLAUDE.md.
               </p>
             </div>
           </motion.div>
@@ -843,10 +835,11 @@ export default function TokensPage() {
                 lineHeight: 1.45,
               }}
             >
-              &ldquo;I used to pay all these people; now I can do it myself.&rdquo;
+              &ldquo;I had an idea for an app. I got a quote for $200,000 two years ago. I built the bones of it myself in one night. Now I have it built already, and I think I&apos;ve spent about $14.&rdquo;
             </blockquote>
             <figcaption className="mt-4 text-[#FCF4EB]/45 text-sm uppercase tracking-widest">
-              SunDari · Session 1, Business Automation Mastermind
+              <span className="block">Beata Fuller</span>
+              <span className="block normal-case tracking-normal mt-1">Started it in session 9, had it built by session 10; the $14 is her API spend</span>
             </figcaption>
           </motion.figure>
         </section>

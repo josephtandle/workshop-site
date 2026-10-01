@@ -398,8 +398,7 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
             when a task fails.
           </p>
           <p style="font-size: 14px; color: #555; line-height: 1.7; margin: 0 0 12px;">
-            <strong>3. Short startup files.</strong> Your CLAUDE.md is read on every session. Keep who you are,
-            the five rules that matter, and pointers to the details.
+            <strong>3. Audit your CLAUDE.md against mine.</strong> Paste the prompt from the page into Claude Code. It compares yours to my <a href="https://workshop.mastermindshq.business/giveaways/claude-md">Ultimate CLAUDE.md</a> and keeps only what fits.
           </p>
           <p style="font-size: 14px; color: #555; line-height: 1.7; margin: 0;">
             <strong>4. Put a receptionist in front of your AI.</strong> I built MyOS Dispatch so simple jobs never touch a model and real work goes to the cheapest model that can do it. It's free: <a href="https://github.com/josephtandle/myos-dispatch">github.com/josephtandle/myos-dispatch</a>
