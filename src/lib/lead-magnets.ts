@@ -66,6 +66,7 @@ export const DELIVERABLE_LEAD_MAGNET_SOURCES: ReadonlySet<string> = new Set([
   'lead-magnet',
   'maccleaner',
   'speak-human',
+  'tokens',
   'web-design-arsenal',
 ])
 
