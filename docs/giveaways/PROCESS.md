@@ -93,6 +93,12 @@ If you are about to clone something other than `guardog`, stop. There is no exce
 | 13 | Dark theme wrapper: `min-h-screen bg-[#151515] text-[#FCF4EB] overflow-x-hidden` | wraps the page |
 | 14 | Lenis smooth scroll (optional but standard) | `useEffect` import |
 
+**Testimonial quote rule (Joe, 2026-10-02): always use the LATEST featured quotes on the MHQ homepage.** Do not reuse an old quote from another giveaway page or from the reactions data. Pull the current featured quotes from the live homepage (the `data-featured-quote` cards on https://mastermindshq.business, source `mhq-homepage/src/components/sections/FeaturedQuoteSection.tsx` + `src/data/testimonials.json`) and pick the one most relevant to the giveaway topic. Use the exact quote text, name, and bio line as shown there (proof and permission live in BRAND-BRAIN.md section 21A). Quick pull:
+
+```bash
+curl -s https://mastermindshq.business/ | node -e "const h=require('fs').readFileSync(0,'utf8');const re=/data-featured-quote=\"([^\"]+)\"[\\s\\S]*?data-featured-quote-text[^>]*>([\\s\\S]*?)<\\/blockquote>[\\s\\S]*?<p class=\"font-semibold[^>]*>([^<]+)</g;let m;while((m=re.exec(h)))console.log(m[3]+': '+m[2].replace(/<[^>]+>/g,'').trim())"
+```
+
 **Email modal is required on every giveaway page. The trigger depends on whether the page has a copy-prompt:**
 
 | Page type | Trigger | Required props |
@@ -247,6 +253,17 @@ No manual refresh needed. If the script exits with a non-zero code, the page is 
 
 ---
 
+### 4b. Usefulness Gate (loop until super useful)
+
+**Rule (Joe, 2026-10-02): every giveaway must pass the user usefulness test before ManyChat goes live or anything is posted, and the loop keeps going until it does.**
+
+Run the locked rubric in `docs/giveaways/USEFULNESS-RUBRIC.md`: deterministic checks D1-D5, then a clean-context grader (a subagent that did not build the page) answers U1-U9 YES/NO as a non-technical small business owner on a phone. Fix, redeploy, re-grade. Max 5 rounds. Grades go in `docs/giveaways/grades/`. The builder never edits the rubric or the grade files. No ManyChat activation and no post until every check is YES.
+
+**Other launch rules (Joe, 2026-10-02):**
+- The ManyChat flow must be live (step 14 shows `LIVE: ns:...`) BEFORE the reel or carousel is posted; a comment keyword with no flow gets silence.
+- Delivery links always use `https://workshop.mastermindshq.business/giveaways/<slug>`, never the vercel.app alias.
+- Carousels for a giveaway: minimal, one idea per slide, no logos on content slides, old MHQ purple branding, every render passes an overflow/safe-area check and is looked at before sending.
+
 ### 5. Set Up ManyChat Automation
 
 **Pre-check: confirm agent Chrome is reachable before attempting automation.**
@@ -288,7 +305,22 @@ curl -s -X POST http://localhost:3000/api/manychat-giveaways \
 
 Returns the new row id. Keep it for step 3.
 
-**Step 2: build the flow by hand in the ManyChat UI.** There is no automated path.
+**Step 2: create the flow with the agent browser (WORKS, verified 2026-10-02 on TOKENS).** The public API cannot write flows, but the logged-in agent Chrome (CDP port 9223) can:
+
+```bash
+cd ~/.myos/workspace/agents/manychat
+node src/browser.js auto-create --keyword "<KEYWORD>" --name "<title>" \
+  --description "<one-line DM teaser>" \
+  --link "https://workshop.mastermindshq.business/giveaways/<slug>" --tag "Career_Funnel"
+# verify the DM really carries the link (dry run, prints matching nodes):
+node src/swap-link.js --ns <flowNs> --from "<link>" --to "<link>"
+# then mark the DB row live (snapshot first):
+sqlite3 ~/.myos/workspace/data/manychat-giveaways.db "UPDATE giveaways SET manychat_flow_id='<flowNs>', status='active' WHERE id=<id>;"
+```
+
+If auto-create reports a content-injection failure, run `node src/browser.js inject-content --ns <flowNs> --name ... --description ... --link ...` (see agents/manychat/CONTEXT.md). If the agent browser is logged out, run `node src/browser.js sync-session` or log in at app.manychat.com in the agent browser. The manual UI build below is the fallback only.
+
+**Manual fallback:** build the flow by hand in the ManyChat UI.
 
 **The manual build (this is the only path):**
 1. Open ManyChat → Automation → Flows
@@ -297,7 +329,7 @@ Returns the new row id. Keep it for step 3.
    Do not clone SpeakHuman or any other giveaway; they carry their own keyword and link.
 3. Duplicate it
 4. Set the comment trigger keyword to `<KEYWORD>`
-5. Update the delivery link in the DM message to `https://workshop-site-sigma.vercel.app/giveaways/<slug>`
+5. Update the delivery link in the DM message to `https://workshop.mastermindshq.business/giveaways/<slug>`
 6. Activate the flow — copy the NS (e.g. `ns:12345`) from the flow URL
 7. In Mission Control → Manychat Giveaways → Edit this entry → paste the NS → Save
 
@@ -320,7 +352,7 @@ Update `~/.myos/workspace/projects/mastermind/hook-writer/personal/this-week.md`
 - Lead magnet name (exact name as it appears on the page)
 - What it delivers (one sentence)
 - Keyword: `<KEYWORD>`
-- Delivery URL: `https://workshop-site-sigma.vercel.app/giveaways/<slug>`
+- Delivery URL: `https://workshop.mastermindshq.business/giveaways/<slug>`
 - Why it matters (the specific pain point)
 
 **Verify the file has real values, not blanks:**
@@ -463,8 +495,9 @@ Must show `LIVE: ns:xxxxx`. If status is not active or flow is missing, fix befo
 | Create page + register | Uni | workshop-site | `ls` files + `tsc --noEmit` passes |
 | Commit + push + deploy | Uni | git + vercel | `Aliased:` line confirmed |
 | Notify (verify + Telegram + email + hard refresh) | Uni | `notify-giveaway-launch.js` | Script exits 0 |
+| Usefulness gate (rubric D1-D5, U1-U9) | Clean-context grader | USEFULNESS-RUBRIC.md | Every check YES (max 5 loops) |
 | ManyChat CDP pre-check | Uni | curl port 9223 | Chrome reachable |
-| ManyChat setup | Uni | Mission Control / Playwright | `manychat_flow_id` present |
+| ManyChat setup | Uni | agents/manychat browser.js auto-create (port 9223) | `manychat_flow_id` present + swap-link dry run finds the link |
 | Brief HookLab | Uni + Joe | `this-week.md` | Keyword + URL have real values |
 | Hook generation Pass 1 | Uni | HookLab CTA First (Claude Code) | 5 scored hooks + winner logged |
 | Full script Pass 2 | Uni | HookLab giveaway script (Claude Code) | Full 4-section script delivered |

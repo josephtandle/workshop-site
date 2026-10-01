@@ -4,7 +4,7 @@ import Link from 'next/link'
 import CodeBlock from '@/components/CodeBlock'
 
 export const metadata = {
-  title: 'Add a Custom Domain to Vercel — Masterminds Workshop',
+  title: 'Add a Custom Domain to Vercel | Masterminds Workshop',
   description: 'Buy a domain, connect it to Vercel, and configure DNS so your site is live at your own address.',
 }
 
@@ -86,21 +86,21 @@ export default function CustomDomainPage() {
         </p>
         <div className="space-y-3 mb-5">
           <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
-            <p className="text-[#FCF4EB] font-semibold text-sm mb-1">.com — the gold standard</p>
+            <p className="text-[#FCF4EB] font-semibold text-sm mb-1">.com: the gold standard</p>
             <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
               This is what everyone recognizes. If your .com is available, get it. It signals you
               are serious and is the most trusted extension worldwide. Typical price: $9 to $12 per year.
             </p>
           </div>
           <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
-            <p className="text-[#FCF4EB] font-semibold text-sm mb-1">.co, .io, .business — solid alternatives</p>
+            <p className="text-[#FCF4EB] font-semibold text-sm mb-1">.co, .io, .business: solid alternatives</p>
             <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
               If your .com is taken, these are the next best options. Common in the startup world.
               Same price range as .com.
             </p>
           </div>
           <div className="bg-white/[0.04] border border-[#8B79D4]/30 rounded-xl p-4" style={{ background: 'rgba(139, 121, 212, 0.06)' }}>
-            <p className="text-[#8B79D4] font-semibold text-sm mb-1">.site or .xyz — just for testing today</p>
+            <p className="text-[#8B79D4] font-semibold text-sm mb-1">.site or .xyz: just for testing today</p>
             <p className="text-[#FCF4EB]/60 text-sm leading-relaxed">
               If you want to learn the process without committing to a domain yet, grab a .site
               or .xyz for $1 to $2 per year. Perfect for a practice run. You can always buy your
@@ -146,7 +146,7 @@ export default function CustomDomainPage() {
         <p className="text-[#FCF4EB]/70 font-medium mb-4">Then add these two records:</p>
         <div className="space-y-5">
           <div>
-            <p className="text-[#FCF4EB] font-semibold mb-3">Record 1 of 2 — A Record</p>
+            <p className="text-[#FCF4EB] font-semibold mb-3">Record 1 of 2: A Record</p>
             <p className="text-[#FCF4EB]/60 text-sm leading-relaxed mb-4">
               In the &ldquo;Add Record&rdquo; form, set Type to <span className="text-[#FCF4EB]">A</span>, Host to{' '}
               <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-sm text-[#FCF4EB]">@</code> (the @ means your root domain), TTL to{' '}
@@ -155,7 +155,7 @@ export default function CustomDomainPage() {
             <DnsRecord type="A" host="@" ttl="600" valueLabel="Value / Answer" value="76.76.21.21" />
           </div>
           <div>
-            <p className="text-[#FCF4EB] font-semibold mb-3">Record 2 of 2 — CNAME Record</p>
+            <p className="text-[#FCF4EB] font-semibold mb-3">Record 2 of 2: CNAME Record</p>
             <p className="text-[#FCF4EB]/60 text-sm leading-relaxed mb-4">
               Add a second record. Set Type to <span className="text-[#FCF4EB]">CNAME</span>, Host to{' '}
               <code className="bg-white/[0.08] px-1.5 py-0.5 rounded text-sm text-[#FCF4EB]">www</code>, TTL to{' '}

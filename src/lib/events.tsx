@@ -403,10 +403,11 @@ const connectionDinnerCangguTemplate: EventDefinition = {
         title: 'Supporting PKP Community Centre',
         body: [
           'Every dollar donated at this dinner goes directly to PKP. The suggested amount is $10, but you decide what feels right.',
+          'PKP is a community centre in Bali founded by Ibu Sari. It trains women in sewing, cooking and English so they can earn for their families, and it is a safe place for women and children facing domestic violence, divorce or social exclusion.',
         ],
         imageSrc: '/events/connection-dinner-canggu/pkp-catering.jpg',
         imageAlt: 'PKP Community Centre women, Bali',
-        caption: 'PKP Community Centre, Bali — pkpcommunitycentre.org',
+        caption: 'PKP Community Centre, Bali, pkpcommunitycentre.org',
       },
       {
         type: 'html',
@@ -466,10 +467,6 @@ export const events: EventDefinition[] = [
       holdMinutes: 30,
     },
     manuallyClosed: false,
-    pricing: {
-      ...connectionDinnerCangguTemplate.pricing,
-      checkoutNote: 'Your donation goes directly to Bali Street Mums.',
-    },
     privateLocationReminder: {
       eventStartIso: '2026-10-04T18:00:00+08:00',
       leadHours: 4,
@@ -481,26 +478,10 @@ export const events: EventDefinition[] = [
         'The restaurant is on Jalan Pantai Pererenan, just off the main Pererenan strip.',
       ],
     },
-    sections: connectionDinnerCangguTemplate.sections.map((section): EventSection => {
-      if (section.id !== 'pkp') return section
-
-      return {
-        type: 'split',
-        id: 'bali-street-mums',
-        eyebrow: '100% of Donations Go To Bali Street Mums',
-        title: 'Supporting Bali Street Mums',
-        body: [
-          'Every dollar donated at this dinner goes directly to Bali Street Mums. The suggested amount is $10, but you decide what feels right.',
-        ],
-        imageSrc: '/events/connection-dinner-canggu/cover.jpg',
-        imageAlt: 'Joe Che\'s Connection Dinner at Mostly Restaurant',
-        caption: 'Joe Che\'s Connection Dinner at Mostly Restaurant',
-      }
-    }),
     metadata: {
       title: "Joe Che's Connection Dinner, October 4, 2026",
       description:
-        'A monthly dinner for entrepreneurs, founders, and people doing interesting things in Canggu. Donations go to Bali Street Mums.',
+        'A monthly dinner for entrepreneurs, founders, and people doing interesting things in Canggu. Donations go to PKP Community Centre.',
     },
   },
   {
@@ -642,7 +623,7 @@ export const events: EventDefinition[] = [
         ],
         imageSrc: '/events/connection-dinner-canggu/pkp-catering.jpg',
         imageAlt: 'PKP Community Centre women, Bali',
-        caption: 'PKP Community Centre, Bali — pkpcommunitycentre.org',
+        caption: 'PKP Community Centre, Bali, pkpcommunitycentre.org',
       },
       {
         type: 'hosts',
@@ -1317,7 +1298,7 @@ export const events: EventDefinition[] = [
               You do not need to be technical. If you have ChatGPT open in a browser tab, you are set up. Most of the people I work with came in exactly there.
             </p>
             <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
-              I teach business owners to do this every week in my <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 transition hover:text-[#FCF4EB]">AI Business Mastermind</a>. Four cohorts have run and all four filled. Coaches, artists, therapists, consultants, none of them techies, who now have websites they built themselves, billing that runs itself, dashboards that track the whole business, and the same pattern across all of them: more sales coming in, less time on the work that used to eat their week. <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 transition hover:text-[#FCF4EB]">Cohort 5 starts October 7</a> and is the one currently open.
+              I teach business owners to do this every week in my <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 transition hover:text-[#FCF4EB]">AI Business Mastermind</a>. Four cohorts have run and all four filled. Coaches, artists, therapists, consultants, none of them techies, who now have websites they built themselves, billing that runs itself, dashboards that track the whole business, and the same pattern across all of them: more sales coming in, less time on the work that used to eat their week. <a href="https://mastermindshq.business" target="_blank" rel="noopener noreferrer" class="text-[#BDB3E8] underline underline-offset-4 transition hover:text-[#FCF4EB]">Cohort 5 starts October 14</a> and is the one currently open.
             </p>
             <p class="text-base leading-8 text-[#FCF4EB]/72 md:text-lg">
               Everyone who joins live gets every prompt and setup from the night, plus free tools to take with you, whether or not your task made it into the live round. It is live only, so be there in the room. If you are there live, you can ask anything during the open round at the end.

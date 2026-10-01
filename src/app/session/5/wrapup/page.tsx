@@ -5,7 +5,7 @@ import Reveal from '@/components/Reveal'
 import StaggerList, { StaggerItem } from '@/components/StaggerList'
 
 export const metadata = {
-  title: 'Session 5 Wrap-Up: Mastermind Alignment — Masterminds Workshop',
+  title: 'Session 5 Wrap-Up: Mastermind Alignment | Masterminds Workshop',
   description: 'Recording, summary, participant wins, and suggested improvements from our first Mastermind Alignment call.',
 }
 

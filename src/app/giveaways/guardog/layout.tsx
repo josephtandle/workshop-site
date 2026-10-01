@@ -5,7 +5,7 @@ const BASE = 'https://workshop.mastermindshq.business'
 const URL = `${BASE}/giveaways/guardog`
 
 export const metadata: Metadata = {
-  title: 'Guardog — Free Package Security Scanner',
+  title: 'Guardog | Free Package Security Scanner',
   description: 'A free Claude Code skill that scans npm and PyPI packages for malware, CVEs, and suspicious patterns before you install them. One command to set up.',
   keywords: [
     'Guardog', 'package security', 'npm security', 'supply chain attack', 'malware scanner',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   alternates: { canonical: URL },
   openGraph: {
-    title: 'Guardog — Free Package Security Scanner',
+    title: 'Guardog | Free Package Security Scanner',
     description: 'Scan npm and PyPI packages for malware, CVEs, and suspicious patterns before you install them. Free from the Business Automation Mastermind.',
     url: URL,
     siteName: 'Business Automation Mastermind Workshop',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Guardog — Free Package Security Scanner',
+    title: 'Guardog | Free Package Security Scanner',
     description: 'Scan npm and PyPI packages for malware, CVEs, and suspicious code before you install. One command to set up. Free.',
     creator: '@joecheuk',
   },

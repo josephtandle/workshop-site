@@ -5,7 +5,7 @@ import StickyVideoPlayer from '@/components/StickyVideoPlayer'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Bonus: Verify Your Domain in Resend — Masterminds Workshop',
+  title: 'Bonus: Verify Your Domain in Resend | Masterminds Workshop',
   description: 'Step-by-step guide to verify your custom domain in Resend so you can send emails to anyone from your own address.',
 }
 
@@ -153,7 +153,7 @@ export default function Session3Homework() {
 
     </div>
 
-    {/* Workshop Recording — sticky video player */}
+    {/* Workshop Recording: sticky video player */}
     <div className="max-w-5xl mx-auto px-6 mb-14">
       <div className="mb-4">
         <p className="text-[#FCF4EB]/50 text-xs uppercase tracking-widest font-semibold mb-1">Walkthrough Video</p>
@@ -173,7 +173,7 @@ export default function Session3Homework() {
         <CodeBlock
           filename="Paste into Claude Code"
           editable
-          code={`Add my domain [YOUR DOMAIN — for example: mybusiness.com] to Resend using my Resend API key.
+          code={`Add my domain [YOUR DOMAIN: for example: mybusiness.com] to Resend using my Resend API key.
 
 After you get the DNS records back, do the following:
 1. Show me each DNS record in a clear table format (Type, Name, Value, Priority if applicable)
@@ -218,7 +218,7 @@ After you get the DNS records back, do the following:
             host="resend._domainkey"
             ttl="Auto"
             valueLabel="Value (Claude will give you yours)"
-            value="p=MIGf... (your unique key from Claude — do not use this example)"
+            value="p=MIGf... (your unique key from Claude: do not use this example)"
             note="This is just an example. Copy the actual value Claude gives you."
           />
         </div>
@@ -240,7 +240,7 @@ After you get the DNS records back, do the following:
             type="MX"
             host="send"
             ttl="Auto"
-            valueLabel="Value — copy this exactly"
+            valueLabel="Value: copy this exactly"
             value="feedback-smtp.us-east-1.amazonses.com"
             priority="10"
           />
@@ -262,7 +262,7 @@ After you get the DNS records back, do the following:
             type="TXT"
             host="send"
             ttl="Auto"
-            valueLabel="Value — copy this exactly"
+            valueLabel="Value: copy this exactly"
             value="v=spf1 include:amazonses.com ~all"
           />
         </div>
@@ -334,11 +334,11 @@ After you get the DNS records back, do the following:
           For each record, you will fill in these fields in your registrar:
         </p>
         <ol className="space-y-3 text-[#FCF4EB]/70 text-sm list-decimal list-inside mb-4">
-          <li><span className="text-[#FCF4EB] font-semibold">Type</span> — select TXT or MX from the dropdown</li>
-          <li><span className="text-[#FCF4EB] font-semibold">Host / Name</span> — paste the host value (like <code className="bg-white/[0.06] px-1 py-0.5 rounded text-xs">resend._domainkey</code> or <code className="bg-white/[0.06] px-1 py-0.5 rounded text-xs">send</code>)</li>
-          <li><span className="text-[#FCF4EB] font-semibold">Value / Answer</span> — paste the full value from the record card above</li>
-          <li><span className="text-[#FCF4EB] font-semibold">TTL</span> — leave as Auto or set to 600</li>
-          <li><span className="text-[#FCF4EB] font-semibold">Priority</span> — only needed for the MX record. Set it to <code className="bg-white/[0.06] px-1 py-0.5 rounded text-xs">10</code></li>
+          <li><span className="text-[#FCF4EB] font-semibold">Type</span>: select TXT or MX from the dropdown</li>
+          <li><span className="text-[#FCF4EB] font-semibold">Host / Name</span>: paste the host value (like <code className="bg-white/[0.06] px-1 py-0.5 rounded text-xs">resend._domainkey</code> or <code className="bg-white/[0.06] px-1 py-0.5 rounded text-xs">send</code>)</li>
+          <li><span className="text-[#FCF4EB] font-semibold">Value / Answer</span>: paste the full value from the record card above</li>
+          <li><span className="text-[#FCF4EB] font-semibold">TTL</span>: leave as Auto or set to 600</li>
+          <li><span className="text-[#FCF4EB] font-semibold">Priority</span>: only needed for the MX record. Set it to <code className="bg-white/[0.06] px-1 py-0.5 rounded text-xs">10</code></li>
         </ol>
         <p className="text-[#FCF4EB]/70 text-sm">Click Save after each record. You should have 3 new records when you are done.</p>
 

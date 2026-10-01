@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'The Cult Brand Playbook',
   description: 'The 7-element system behind Apple, Nike, and Supreme. Stop competing on features. Start competing on identity.',
   openGraph: {
-    title: 'The Cult Brand Playbook — Free Guide',
+    title: 'The Cult Brand Playbook | Free Guide',
     description: 'The 7-element system behind Apple, Nike, and Supreme. Stop competing on features. Start competing on identity.',
   },
 }
@@ -92,8 +92,8 @@ export default function CultBrandPlaybookPage() {
 
           <Reveal delay={2}>
             <p className="text-cream/60 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-10">
-              Most brands compete on features, price, and specs — the Visible Market.
-              The brands with the most devoted customers compete on identity, belief, and meaning — the Mental Market.
+              Most brands compete on features, price, and specs: the Visible Market.
+              The brands with the most devoted customers compete on identity, belief, and meaning: the Mental Market.
               This playbook shows you how to move.
             </p>
           </Reveal>

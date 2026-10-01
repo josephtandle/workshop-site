@@ -14,6 +14,14 @@ export interface Giveaway {
 // ---------------------------------------------------------------------------
 export const giveaways: Giveaway[] = [
   {
+    slug: 'tokens',
+    title: 'The Token Diet',
+    description: "Four changes that stopped my agents wasting 1.4 billion tokens. RTK trimmed 70% of noisy command output before my agents read it.",
+    icon: '◈',
+    badge: 'Guide',
+    badgeVariant: 'purple',
+  },
+  {
     slug: 'terminal-to-claude-desktop',
     title: 'From Terminal to Claude Desktop',
     description: "Watch Joe's 8-minute walkthrough of moving your Claude Code workflow from Terminal into the desktop app. Free to watch, with no signup.",

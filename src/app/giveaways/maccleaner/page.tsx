@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'MacCleaner',
   description: 'A safer way to clean up disk space on a Mac. Preview first, confirm before deleting anything, and archive old backups only when an external drive is available.',
   openGraph: {
-    title: 'MacCleaner — Free Mac Cleanup Script',
+    title: 'MacCleaner | Free Mac Cleanup Script',
     description: 'Preview-first Mac cleanup with explicit confirmation and external-drive-aware backup handling.',
   },
 }

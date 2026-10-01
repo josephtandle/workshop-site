@@ -5,7 +5,7 @@ const BASE = 'https://workshop.mastermindshq.business'
 const URL = `${BASE}/giveaways/maccleaner`
 
 export const metadata: Metadata = {
-  title: 'MacCleaner — Safe Mac Cleanup Script',
+  title: 'MacCleaner | Safe Mac Cleanup Script',
   description: 'A preview-first Mac cleanup script. No Electron app, no subscription, explicit confirmation before cleanup, and external-drive-aware backup archiving.',
   keywords: [
     'MacCleaner',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   alternates: { canonical: URL },
   openGraph: {
-    title: 'MacCleaner — Safe Mac Cleanup Script',
+    title: 'MacCleaner | Safe Mac Cleanup Script',
     description: 'Preview first, confirm before cleanup, and use an external drive for old backups only when one is available.',
     url: URL,
     siteName: 'Business Automation Mastermind Workshop',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MacCleaner — Safe Mac Cleanup Script',
+    title: 'MacCleaner | Safe Mac Cleanup Script',
     description: 'Preview-first Mac cleanup. Explicit confirmation required before anything destructive happens.',
     creator: '@joecheuk',
   },

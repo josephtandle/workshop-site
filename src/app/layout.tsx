@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE),
   title: {
     default: 'Masterminds Workshop',
-    template: '%s — Masterminds Workshop',
+    template: '%s | Masterminds Workshop',
   },
   description:
     'Live session guides, recordings, and resources for building real businesses with AI. Led by Joe Che.',
