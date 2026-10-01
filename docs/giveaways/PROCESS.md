@@ -93,6 +93,12 @@ If you are about to clone something other than `guardog`, stop. There is no exce
 | 13 | Dark theme wrapper: `min-h-screen bg-[#151515] text-[#FCF4EB] overflow-x-hidden` | wraps the page |
 | 14 | Lenis smooth scroll (optional but standard) | `useEffect` import |
 
+**Testimonial quote rule (Joe, 2026-10-02): always use the LATEST featured quotes on the MHQ homepage.** Do not reuse an old quote from another giveaway page or from the reactions data. Pull the current featured quotes from the live homepage (the `data-featured-quote` cards on https://mastermindshq.business, source `mhq-homepage/src/components/sections/FeaturedQuoteSection.tsx` + `src/data/testimonials.json`) and pick the one most relevant to the giveaway topic. Use the exact quote text, name, and bio line as shown there (proof and permission live in BRAND-BRAIN.md section 21A). Quick pull:
+
+```bash
+curl -s https://mastermindshq.business/ | node -e "const h=require('fs').readFileSync(0,'utf8');const re=/data-featured-quote=\"([^\"]+)\"[\\s\\S]*?data-featured-quote-text[^>]*>([\\s\\S]*?)<\\/blockquote>[\\s\\S]*?<p class=\"font-semibold[^>]*>([^<]+)</g;let m;while((m=re.exec(h)))console.log(m[3]+': '+m[2].replace(/<[^>]+>/g,'').trim())"
+```
+
 **Email modal is required on every giveaway page. The trigger depends on whether the page has a copy-prompt:**
 
 | Page type | Trigger | Required props |
