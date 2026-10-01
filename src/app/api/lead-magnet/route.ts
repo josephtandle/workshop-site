@@ -371,7 +371,7 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
         <h1 style="font-size: 22px; margin-bottom: 16px;">Here is The Token Diet</h1>
 
         <p style="font-size: 16px; line-height: 1.7; margin-bottom: 20px;">
-          Before you pay more for AI, stop burning what you already pay for. These four changes cut my
+          Before you pay more for AI, stop burning what you already pay for. These four changes stopped my
           agents wasting 1.4 billion tokens on the same plan. RTK trimmed 70% of noisy command output
           before my agents read it, not 70% of total plan usage. The full guide, with the exact
           setup for each one, stays open at the link below.
@@ -391,8 +391,9 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
         <div style="border-left: 3px solid #8B79D4; padding-left: 16px; margin-bottom: 24px;">
           <p style="font-size: 14px; color: #555; line-height: 1.7; margin: 0 0 12px;">
             <strong>1. Filter the noise.</strong> RTK (free, open source, not mine) trims test output, git logs
-            and file listings before the model reads them. <code>brew install rtk</code>, then <code>rtk init -g</code>,
-            then work normally and run <code>rtk gain</code> to see your own savings.
+            and file listings before the model reads them. <code>brew install rtk</code>, <code>mkdir -p ~/.claude</code>,
+            <code>rtk init -g --auto-patch</code>, then quit and reopen Claude Code so the hook loads. Work normally
+            for a day or two, then run <code>rtk gain</code> to see your own savings.
           </p>
           <p style="font-size: 14px; color: #555; line-height: 1.7; margin: 0 0 12px;">
             <strong>2. The cheapest model that can do each job.</strong> Default to the mid model. Step up only

@@ -14,8 +14,9 @@ const RTK_URL = 'https://www.rtk-ai.app/'
 const TYPESAFE_URL = 'https://typesafe.ai'
 
 const RTK_COMMANDS = `brew install rtk
-rtk init -g
-# now work normally for a day or two, then:
+mkdir -p ~/.claude
+rtk init -g --auto-patch
+# quit and reopen Claude Code, then work normally for a day or two
 rtk gain`
 
 const STARTUP_TEMPLATE = `Read my CLAUDE.md (and AGENTS.md if I have one). Then read Joe Che's Ultimate CLAUDE.md at https://workshop.mastermindshq.business/giveaways/claude-md
@@ -76,7 +77,7 @@ function useMagnet(strength = 0.3) {
 // ---------------------------------------------------------------------------
 export default function TokensPage() {
   const particleCanvasRef = useRef<HTMLCanvasElement>(null)
-  const statRefs = useRef<(HTMLSpanElement | null)[]>([null, null, null])
+  const statRefs = useRef<(HTMLSpanElement | null)[]>([null, null])
 
   // Load fonts
   useEffect(() => {
@@ -161,12 +162,11 @@ export default function TokensPage() {
     }
   }, [])
 
-  // CountUp animated stats: 1.4 billion tokens, 70.7%, ~243,000 commands
+  // CountUp animated stats: 1.4 billion tokens and 70.7%
   useEffect(() => {
     const configs = [
       { value: 1.4, decimals: 1, separator: '' },
       { value: 70.7, decimals: 1, separator: '' },
-      { value: 243000, decimals: 0, separator: ',' },
     ]
     const observer = new IntersectionObserver(
       (entries) => {
@@ -210,7 +210,7 @@ export default function TokensPage() {
       {
         '@type': 'HowToStep',
         name: 'Filter the noise before AI reads it',
-        text: 'Install RTK with brew install rtk, run rtk init -g to add the Claude Code hook, work normally, then run rtk gain to see your savings.',
+        text: 'Install RTK with brew install rtk, create ~/.claude, run rtk init -g --auto-patch to install its Claude Code hook without prompts, restart Claude Code so the hook loads, work normally for a day or two, then run rtk gain to see your savings.',
         position: 1,
       },
       {
@@ -439,7 +439,6 @@ export default function TokensPage() {
             {[
               { idx: 0, suffix: 'B', label: 'tokens my agents never had to read' },
               { idx: 1, suffix: '%', label: 'of noisy command output trimmed' },
-              { idx: 2, suffix: '', label: 'commands, about' },
             ].map((stat) => (
               <motion.div
                 key={stat.idx}
@@ -454,7 +453,7 @@ export default function TokensPage() {
                   {stat.suffix && <span className="text-3xl">{stat.suffix}</span>}
                 </div>
                 <p className="text-[#FCF4EB]/40 text-sm">
-                  {stat.idx === 2 ? 'commands across every agent session' : stat.label}
+                  {stat.label}
                 </p>
               </motion.div>
             ))}
@@ -471,8 +470,9 @@ export default function TokensPage() {
               <h2 className="mb-2 text-lg font-bold text-[#FCF4EB]">Words on this page, in plain English</h2>
               <ul className="space-y-1 text-sm leading-relaxed text-[#FCF4EB]/60">
                 <li><strong className="text-[#FCF4EB]/80">Token:</strong> the unit AI reads and writes; your plan&apos;s limit is counted in tokens.</li>
-                <li><strong className="text-[#FCF4EB]/80">Claude Code:</strong> Anthropic&apos;s AI coding assistant that runs on your computer.</li>
-                <li><strong className="text-[#FCF4EB]/80">Terminal:</strong> the app on your Mac where you type commands.</li>
+                <li><strong className="text-[#FCF4EB]/80">Claude Code:</strong> Anthropic&apos;s AI assistant that works in your project folder. Get it at <a href="https://claude.com/claude-code" target="_blank" rel="noopener noreferrer" className="text-[#9D8FE0] underline underline-offset-2">claude.com/claude-code</a>.</li>
+                <li><strong className="text-[#FCF4EB]/80">Terminal:</strong> the app on your Mac where you type commands. Open it with Cmd+Space, type Terminal, press Enter.</li>
+                <li><strong className="text-[#FCF4EB]/80">Codex:</strong> OpenAI&apos;s coding assistant, the ChatGPT version of Claude Code.</li>
                 <li><strong className="text-[#FCF4EB]/80">Hook:</strong> a small rule that runs automatically before the AI does something.</li>
               </ul>
             </div>
@@ -561,9 +561,10 @@ export default function TokensPage() {
                 <p className="text-sm text-[#FCF4EB]/55">Don&apos;t have Homebrew? Install it from <a href="https://brew.sh" target="_blank" rel="noopener noreferrer" className="text-[#9D8FE0] underline underline-offset-2">brew.sh</a> first (one command).</p>
                 {[
                   { cmd: 'brew install rtk', text: 'Installs RTK on your Mac.' },
-                  { cmd: 'rtk init -g', text: 'Adds the hook to Claude Code so every command gets filtered automatically.' },
-                  { cmd: 'work normally', text: 'Nothing to remember. Use your agent the way you already do.' },
-                  { cmd: 'rtk gain', text: 'After a day or two, run this to see your own savings.' },
+                  { cmd: 'mkdir -p ~/.claude', text: "Makes sure Claude Code's settings folder exists." },
+                  { cmd: 'rtk init -g --auto-patch', text: "Installs RTK's hook into Claude Code with no questions asked." },
+                  { cmd: 'quit and reopen Claude Code', text: 'The hook loads when Claude Code starts. Then work normally for a day or two.' },
+                  { cmd: 'rtk gain', text: 'Run this later to see your own savings.' },
                 ].map((s, i) => (
                   <div key={s.cmd} className="flex items-start gap-4">
                     <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold text-[#9D8FE0] bg-[#8B79D4]/15 border border-[#8B79D4]/25">
@@ -767,6 +768,11 @@ export default function TokensPage() {
                 </h2>
               </div>
 
+              <details className="rounded-xl border border-white/[0.08] bg-white/[0.03]">
+                <summary className="cursor-pointer list-none px-5 py-4 text-sm font-semibold text-[#9D8FE0]">
+                  For developers: how I route every request (optional)
+                </summary>
+                <div className="px-5 pb-5 pt-1">
               <div className="max-w-2xl mx-auto space-y-4 text-[#FCF4EB]/60 leading-relaxed mb-8">
                 <p>If you use Claude Code, you can install it from the <a href="https://github.com/josephtandle/myos-dispatch" target="_blank" rel="noopener noreferrer" className="text-[#9D8FE0] underline underline-offset-2">GitHub page</a>; if not, skip this one.</p>
                 <p>
@@ -833,6 +839,8 @@ export default function TokensPage() {
                   use a classifier for choices, and save the big model for real work. Picking a lane is not a job for the smartest model you pay for.
                 </p>
               </div>
+                </div>
+              </details>
             </div>
           </motion.div>
         </section>
