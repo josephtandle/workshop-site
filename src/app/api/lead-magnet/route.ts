@@ -402,9 +402,7 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
             the five rules that matter, and pointers to the details.
           </p>
           <p style="font-size: 14px; color: #555; line-height: 1.7; margin: 0;">
-            <strong>4. Let a router decide first.</strong> I built MyOS Dispatch to sit in front of every request
-            my agents get, and it uses Jev, a small decision model from TypeSafe AI, to make the routing calls for
-            about $0.18 a day. Use a classifier for choices and save the big model for real work.
+            <strong>4. Put a receptionist in front of your AI.</strong> I built MyOS Dispatch so simple jobs never touch a model and real work goes to the cheapest model that can do it. It's free: <a href="https://github.com/josephtandle/myos-dispatch">github.com/josephtandle/myos-dispatch</a>
           </p>
         </div>
 
@@ -493,15 +491,15 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
 
         <div style="border-left: 3px solid #8B79D4; padding-left: 16px; margin-bottom: 24px;">
           <p style="font-size: 14px; color: #555; line-height: 1.7; margin: 0 0 10px;">
-            <strong>Not Yet / Curious</strong> — you're waiting for certainty that never fully
+            <strong>Not Yet / Curious</strong>, you're waiting for certainty that never fully
             arrives. Nobody starts with it. The first small move is what breaks the wait.
           </p>
           <p style="font-size: 14px; color: #555; line-height: 1.7; margin: 0 0 10px;">
-            <strong>Capable</strong> — you already make do with what's in front of you. The gap
+            <strong>Capable</strong>, you already make do with what's in front of you. The gap
             left is reps, not ability.
           </p>
           <p style="font-size: 14px; color: #555; line-height: 1.7; margin: 0;">
-            <strong>Founder Mode / Built For This</strong> — you already think like someone
+            <strong>Founder Mode / Built For This</strong>, you already think like someone
             building something. What's usually missing is a room full of people already doing
             it, so the next move isn't made alone.
           </p>
@@ -509,8 +507,7 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
 
         <p style="font-size: 14px; color: #555; line-height: 1.7; margin-bottom: 8px;">
           That room is what we run every week at
-          <a href="${withUtm('https://mastermindshq.business', { campaign: 'lead-magnet', content: 'business-builder-quiz' })}" style="color: #8B79D4; font-weight: 600;">Masterminds HQ</a>
-          — a small group of business owners who build real things together, fast.
+          <a href="${withUtm('https://mastermindshq.business', { campaign: 'lead-magnet', content: 'business-builder-quiz' })}" style="color: #8B79D4; font-weight: 600;">Masterminds HQ</a>, a small group of business owners who build real things together, fast.
         </p>
 
         <p style="font-size: 15px; color: #444; line-height: 1.7; margin-bottom: 28px;">

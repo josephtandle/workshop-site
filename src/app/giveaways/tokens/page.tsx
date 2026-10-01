@@ -206,7 +206,7 @@ export default function TokensPage() {
     '@type': 'HowTo',
     name: 'The Token Diet: cut your AI agents\' token use',
     description:
-      'Four changes that cut AI agent token use by about 70% on the same plan: filter command output with RTK, route each job to the cheapest model that can do it, keep startup files short, and let a router decide before a big model runs.',
+      'Four changes that cut AI agent token use by about 70% on the same plan: filter command output with RTK, route each job to the cheapest model that can do it, keep startup files short, and put a receptionist in front of your AI.',
     author: {
       '@type': 'Person',
       name: 'Joe Che',
@@ -750,23 +750,25 @@ export default function TokensPage() {
                   Fix 4
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-bold text-[#FCF4EB]">
-                  Let a router decide before a big model ever runs
+                  Put a receptionist in front of your AI
                 </h2>
               </div>
 
               <div className="max-w-2xl mx-auto space-y-4 text-[#FCF4EB]/60 leading-relaxed mb-8">
                 <p>
-                  This is the one I built for myself. I call it MyOS Dispatch. It is a hook that sits in front of every request my agents get, every prompt and every terminal command, and it decides what actually needs a big model before anything expensive runs.
+                  Most people send every request straight to the most expensive model. That's like having your CEO answer the phone.
+                </p>
+                <p>
+                  So I built a receptionist. I call it MyOS Dispatch. Before any AI runs, it looks at the request and sends it to the cheapest place that can handle it:
                 </p>
               </div>
 
               {/* Router steps */}
               <div className="max-w-2xl mx-auto space-y-3 mb-8">
                 {[
-                  { title: 'A free safety gate', body: 'Read-only commands, like listing files or checking status, get waved straight through. No AI call at all.' },
-                  { title: 'Saved recipes', body: 'Jobs with a known, step-by-step answer run the recipe. No reasoning needed, so no model needed.' },
-                  { title: 'Indexes of my projects and tools', body: 'The agent loads only the context this task needs, not everything I have ever written down.' },
-                  { title: 'Then, and only then, a model', body: 'The cheapest one that can actually do the job. Most requests never touch the expensive model.' },
+                  { title: 'Simple stuff', body: 'Checking a file or a status. Handled instantly, no AI at all.' },
+                  { title: "Jobs I've done before", body: 'It runs the saved recipe. No AI needed.' },
+                  { title: 'Real work', body: 'Goes to the cheapest model that can do it, with only the files it needs.' },
                 ].map((s, i) => (
                   <div key={s.title} className="flex items-start gap-4">
                     <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold text-[#9D8FE0] bg-[#8B79D4]/15 border border-[#8B79D4]/25">
@@ -782,19 +784,17 @@ export default function TokensPage() {
 
               <div className="max-w-2xl mx-auto space-y-4 text-[#FCF4EB]/60 leading-relaxed">
                 <p>
-                  For the routing calls themselves I use Jev, a small decision model from{' '}
+                  To make those calls fast, Dispatch uses Jev, a tiny model from{' '}
                   <a href={TYPESAFE_URL} target="_blank" rel="noopener noreferrer" className="text-[#9D8FE0]/80 hover:text-[#9D8FE0] transition-colors underline underline-offset-2">
                     TypeSafe AI
                   </a>
-                  . Same as RTK, it is not my product. Jev does not write free text. It only picks from a fixed list of answers: which lane, which project, is this safe. That is why it is fast and very cheap.
+                  {' '}(not mine) that only picks from a short list of answers. It costs me about 18 cents a day.
                 </p>
               </div>
 
               <div className="grid gap-4 sm:grid-cols-3 mt-8">
                 {[
-                  { value: '~420 ms', label: 'per routing decision' },
-                  { value: '~$0.18', label: 'a day, on every prompt and command' },
-                  { value: '$0.0006', label: 'to sort 13 emails in 3.1 seconds' },
+                  { value: '~$0.18 a day', label: 'for every routing decision' },
                 ].map((stat) => (
                   <div
                     key={stat.label}
@@ -805,6 +805,12 @@ export default function TokensPage() {
                     <div className="text-[#FCF4EB]/50 text-xs">{stat.label}</div>
                   </div>
                 ))}
+              </div>
+
+              <div className="max-w-2xl mx-auto mt-8 text-center">
+                <a href="https://github.com/josephtandle/myos-dispatch" target="_blank" rel="noopener noreferrer" className="text-[#9D8FE0]/80 hover:text-[#9D8FE0] transition-colors underline underline-offset-2">
+                  MyOS Dispatch is free and open source: github.com/josephtandle/myos-dispatch
+                </a>
               </div>
 
               <div className="max-w-2xl mx-auto mt-8 rounded-xl px-5 py-5 sm:px-6" style={{ background: 'rgba(245,195,198,0.06)', border: '1px solid rgba(245,195,198,0.14)' }}>
