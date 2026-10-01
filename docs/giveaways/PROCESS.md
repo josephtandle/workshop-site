@@ -305,7 +305,22 @@ curl -s -X POST http://localhost:3000/api/manychat-giveaways \
 
 Returns the new row id. Keep it for step 3.
 
-**Step 2: build the flow by hand in the ManyChat UI.** There is no automated path.
+**Step 2: create the flow with the agent browser (WORKS, verified 2026-10-02 on TOKENS).** The public API cannot write flows, but the logged-in agent Chrome (CDP port 9223) can:
+
+```bash
+cd ~/.myos/workspace/agents/manychat
+node src/browser.js auto-create --keyword "<KEYWORD>" --name "<title>" \
+  --description "<one-line DM teaser>" \
+  --link "https://workshop.mastermindshq.business/giveaways/<slug>" --tag "Career_Funnel"
+# verify the DM really carries the link (dry run, prints matching nodes):
+node src/swap-link.js --ns <flowNs> --from "<link>" --to "<link>"
+# then mark the DB row live (snapshot first):
+sqlite3 ~/.myos/workspace/data/manychat-giveaways.db "UPDATE giveaways SET manychat_flow_id='<flowNs>', status='active' WHERE id=<id>;"
+```
+
+If auto-create reports a content-injection failure, run `node src/browser.js inject-content --ns <flowNs> --name ... --description ... --link ...` (see agents/manychat/CONTEXT.md). If the agent browser is logged out, run `node src/browser.js sync-session` or log in at app.manychat.com in the agent browser. The manual UI build below is the fallback only.
+
+**Manual fallback:** build the flow by hand in the ManyChat UI.
 
 **The manual build (this is the only path):**
 1. Open ManyChat → Automation → Flows
@@ -482,7 +497,7 @@ Must show `LIVE: ns:xxxxx`. If status is not active or flow is missing, fix befo
 | Notify (verify + Telegram + email + hard refresh) | Uni | `notify-giveaway-launch.js` | Script exits 0 |
 | Usefulness gate (rubric D1-D5, U1-U9) | Clean-context grader | USEFULNESS-RUBRIC.md | Every check YES (max 5 loops) |
 | ManyChat CDP pre-check | Uni | curl port 9223 | Chrome reachable |
-| ManyChat setup | Uni | Mission Control / Playwright | `manychat_flow_id` present |
+| ManyChat setup | Uni | agents/manychat browser.js auto-create (port 9223) | `manychat_flow_id` present + swap-link dry run finds the link |
 | Brief HookLab | Uni + Joe | `this-week.md` | Keyword + URL have real values |
 | Hook generation Pass 1 | Uni | HookLab CTA First (Claude Code) | 5 scored hooks + winner logged |
 | Full script Pass 2 | Uni | HookLab giveaway script (Claude Code) | Full 4-section script delivered |
