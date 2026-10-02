@@ -16,6 +16,7 @@ import {
   claimEventSeat,
   confirmEventSeat,
   releaseEventSeat,
+  settleAttachedCheckout,
 } from '@/lib/event-capacity'
 import { UNTAGGED_ACQUISITION_REF } from '@/lib/event-registration-flow'
 import { normalizeWhatsappNumber, validateIntakeFields } from '@/lib/event-intake'
@@ -213,9 +214,13 @@ export async function POST(request: Request) {
 
     if (intakeSaveError && unitAmount > 0) throw intakeSaveError
 
-    const seatClaim = event.capacityReservation
+    let seatClaim = event.capacityReservation
       ? await claimEventSeat(event, attendeeEmail)
       : null
+
+    if (seatClaim?.status === 'held' && seatClaim.checkoutSessionId) {
+      seatClaim = await settleAttachedCheckout(event, attendeeEmail, seatClaim, createStripeClient().checkout.sessions)
+    }
 
     if (seatClaim?.status === 'full') {
       return NextResponse.json(
@@ -231,11 +236,10 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'You are already registered for this event.' }, { status: 409 })
     }
 
-    if (seatClaim?.checkoutSessionId) {
-      return NextResponse.json(
-        { error: 'You already have a checkout in progress. Please complete it before starting another one.' },
-        { status: 409 },
-      )
+    if (seatClaim?.status === 'held' && seatClaim.checkoutSessionId) {
+      // settleAttachedCheckout always resolves an attached session; reaching
+      // here means the fresh claim came back with one, which should be impossible.
+      throw new Error('Seat claim still has an attached checkout after settling it.')
     }
 
     if (seatClaim?.status === 'held') {
