@@ -164,6 +164,8 @@ export default function TokensPage() {
 
   // CountUp animated stats: 1.4 billion tokens and 70.7%
   useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
     const configs = [
       { value: 1.4, decimals: 1, separator: '' },
       { value: 70.7, decimals: 1, separator: '' },
@@ -179,7 +181,10 @@ export default function TokensPage() {
           ;(async () => {
             const { CountUp } = await import('countup.js')
             const cu = new CountUp(el, cfg.value, { duration: 2.4, decimalPlaces: cfg.decimals, separator: cfg.separator })
-            if (!cu.error) cu.start()
+            if (!cu.error) {
+              cu.update(0)
+              cu.start()
+            }
           })()
           observer.unobserve(el)
         })
@@ -437,8 +442,8 @@ export default function TokensPage() {
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
-              { idx: 0, suffix: 'B', label: 'tokens my agents never had to read' },
-              { idx: 1, suffix: '%', label: 'of noisy command output trimmed' },
+              { idx: 0, value: '1.4', suffix: 'B', label: 'tokens my agents never had to read' },
+              { idx: 1, value: '70.7', suffix: '%', label: 'of noisy command output trimmed' },
             ].map((stat) => (
               <motion.div
                 key={stat.idx}
@@ -449,7 +454,7 @@ export default function TokensPage() {
                 className="glow-card bg-white/[0.04] border border-white/[0.08] rounded-2xl p-8 text-center"
               >
                 <div className="text-4xl sm:text-5xl font-extrabold mb-3 tabular-nums" style={{ fontFamily: 'monospace', color: '#9D8FE0' }}>
-                  <span ref={(el) => { statRefs.current[stat.idx] = el }}>0</span>
+                  <span ref={(el) => { statRefs.current[stat.idx] = el }}>{stat.value}</span>
                   {stat.suffix && <span className="text-3xl">{stat.suffix}</span>}
                 </div>
                 <p className="text-[#FCF4EB]/40 text-sm">
