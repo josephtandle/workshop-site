@@ -42,10 +42,6 @@
     {
       "path": "/api/events/reconcile-registrations",
       "schedule": "0 20 * * *"
-    },
-    {
-      "path": "/api/events/followups",
-      "schedule": "*/30 * * * *"
     }
   ]
 }
