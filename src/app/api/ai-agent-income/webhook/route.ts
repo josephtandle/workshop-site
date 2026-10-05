@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import Stripe from 'stripe'
 import { supabase } from '@/lib/supabase'
+import { sendPackEmail } from '@/lib/ai-agent-income-prompt-pack'
 import { createAiAgentIncomeStripeClient } from '../stripe'
 
 export const runtime = 'nodejs'
@@ -160,6 +161,7 @@ export async function POST(request: Request) {
         if (email && stripeCustomerId) {
           await ensureTelegramLink(email, stripeCustomerId)
         }
+        if (email) await sendPackEmail(email)
         break
       }
 
