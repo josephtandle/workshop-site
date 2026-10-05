@@ -6,6 +6,10 @@ import { FROM_ADDRESS, type SentEmail } from './subscribe'
 const SITE = 'https://passiveincome.mastermindshq.business'
 const TOKEN_LIFETIME_MS = 30 * 24 * 60 * 60 * 1000
 
+export function emailLookupPattern(email: string): string {
+  return email.trim().toLowerCase().replace(/[\\%_]/g, '\\$&')
+}
+
 function signingKey(): Buffer {
   const secret = process.env.AI_AGENT_INCOME_STRIPE_SECRET_KEY?.trim()
   if (!secret) throw new Error('AI_AGENT_INCOME_STRIPE_SECRET_KEY is not configured.')

@@ -1,6 +1,16 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
-import { buildPackEmail, createPackToken, packDownloadUrl, sendPackEmail, verifyPackToken } from '../src/lib/ai-agent-income-prompt-pack'
+import { buildPackEmail, createPackToken, emailLookupPattern, packDownloadUrl, sendPackEmail, verifyPackToken } from '../src/lib/ai-agent-income-prompt-pack'
+
+test('email lookup pattern escapes LIKE special characters', () => {
+  assert.equal(emailLookupPattern('A_b%c@X.com'), 'a\\_b\\%c@x.com')
+  assert.equal(emailLookupPattern('A\\b@X.com'), 'a\\\\b@x.com')
+})
+
+test('email lookup pattern lowercases and trims plain addresses', () => {
+  assert.equal(emailLookupPattern('Reader@Example.COM'), 'reader@example.com')
+  assert.equal(emailLookupPattern('  Reader@Example.COM  '), 'reader@example.com')
+})
 
 const now = 1_800_000_000_000
 const lifetime = 30 * 24 * 60 * 60 * 1000

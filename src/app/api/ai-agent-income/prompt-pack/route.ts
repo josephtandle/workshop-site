@@ -1,7 +1,7 @@
 import { readFile } from 'node:fs/promises'
 import path from 'node:path'
 import { NextResponse } from 'next/server'
-import { verifyPackToken } from '@/lib/ai-agent-income-prompt-pack'
+import { emailLookupPattern, verifyPackToken } from '@/lib/ai-agent-income-prompt-pack'
 import { supabase } from '@/lib/supabase'
 
 export const runtime = 'nodejs'
@@ -15,7 +15,7 @@ export async function GET(request: Request) {
     if (!email) return NextResponse.json({ message: deniedMessage }, { status: 403 })
 
     const { data, error } = await supabase.from('ai_agent_income_subscriptions')
-      .select('email').eq('email', email).limit(1).maybeSingle()
+      .select('email').ilike('email', emailLookupPattern(email)).limit(1).maybeSingle()
     if (error) throw error
     if (!data) return NextResponse.json({ message: deniedMessage }, { status: 403 })
 

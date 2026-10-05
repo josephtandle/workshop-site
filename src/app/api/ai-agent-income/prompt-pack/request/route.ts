@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { sendPackEmail } from '@/lib/ai-agent-income-prompt-pack'
+import { emailLookupPattern, sendPackEmail } from '@/lib/ai-agent-income-prompt-pack'
 import { isValidEmail, normaliseEmail } from '@/lib/email-validation'
 import { supabase } from '@/lib/supabase'
 
@@ -30,7 +30,7 @@ export async function POST(request: Request) {
     const email = typeof body?.email === 'string' ? normaliseEmail(body.email) : ''
     if (email.length <= 254 && isValidEmail(email)) {
       const { data, error } = await supabase.from('ai_agent_income_subscriptions')
-        .select('email').eq('email', email).limit(1).maybeSingle()
+        .select('email').ilike('email', emailLookupPattern(email)).limit(1).maybeSingle()
       if (error) throw error
       if (data) await sendPackEmail(email)
     }
