@@ -31,6 +31,8 @@ async function sendViaResend(email: string, source: string, idempotencyKey: stri
 
   let subject: string
   let html: string
+  // Optional plain-text part. Set it for any email that must reach the inbox.
+  let text: string | undefined
 
   if (source === 'human' || source === 'speak-human') {
     const speakHumanEmail = buildSpeakHumanEmail({ speakHumanPageUrl, unsubscribeFooter })
@@ -365,57 +367,54 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
       </div>
     `
   } else if (source === 'tokens') {
+    // Pretty-light letter format on purpose: the old purple button, shaded code
+    // blocks and no text part landed this email in Gmail spam for a cold inbox
+    // (tested 2026-10-07). Serif letter + styled text links reaches Primary.
     subject = 'Your copy of The Token Diet'
+    const linkStyle = 'color:#6f5cc4;font-weight:bold;'
+    const itemStyle = 'margin:0 0 10px;padding-left:14px;border-left:2px solid #d9d2ee;color:#3a3550;'
+    const claudeMdUrl = 'https://workshop.mastermindshq.business/giveaways/claude-md'
+    const dispatchUrl = 'https://github.com/josephtandle/myos-dispatch'
+    const mhqUrl = withUtm('https://mastermindshq.business', { campaign: 'lead-magnet', content: 'tokens' })
     html = `
-      <div style="font-family: system-ui, sans-serif; max-width: 560px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a;">
-        <h1 style="font-size: 22px; margin-bottom: 16px;">Here is The Token Diet</h1>
-
-        <p style="font-size: 16px; line-height: 1.7; margin-bottom: 20px;">
-          Before you pay more for AI, stop burning what you already pay for. These four changes stopped my
-          agents wasting 1.4 billion tokens on the same plan. RTK trimmed 70% of noisy command output
-          before my agents read it, not 70% of total plan usage. The full guide, with the exact
-          setup for each one, stays open at the link below.
-        </p>
-
-        <p style="margin: 0 0 28px;">
-          <a href="${tokensPageUrl}"
-             style="display: inline-block; background: #8B79D4; color: #ffffff; padding: 14px 28px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px;">
-            Open The Token Diet
-          </a>
-        </p>
-
-        <p style="font-size: 15px; line-height: 1.7; color: #444; margin-bottom: 10px;">
-          The short version:
-        </p>
-
-        <div style="border-left: 3px solid #8B79D4; padding-left: 16px; margin-bottom: 24px;">
-          <p style="font-size: 14px; color: #555; line-height: 1.7; margin: 0 0 12px;">
-            <strong>1. Filter the noise.</strong> RTK (free, open source, not mine) trims test output, git logs
-            and file listings before the model reads them. <code>brew install rtk</code>, <code>mkdir -p ~/.claude</code>,
-            <code>rtk init -g --auto-patch</code>, then quit and reopen Claude Code so the hook loads. Work normally
-            for a day or two, then run <code>rtk gain</code> to see your own savings.
-          </p>
-          <p style="font-size: 14px; color: #555; line-height: 1.7; margin: 0 0 12px;">
-            <strong>2. The cheapest model that can do each job.</strong> Default to the mid model. Step up only
-            when a task fails.
-          </p>
-          <p style="font-size: 14px; color: #555; line-height: 1.7; margin: 0 0 12px;">
-            <strong>3. Audit your CLAUDE.md against mine.</strong> Paste the prompt from the page into Claude Code. It compares yours to my <a href="https://workshop.mastermindshq.business/giveaways/claude-md">Ultimate CLAUDE.md</a> and keeps only what fits.
-          </p>
-          <p style="font-size: 14px; color: #555; line-height: 1.7; margin: 0;">
-            <strong>4. Put a receptionist in front of your AI.</strong> I built MyOS Dispatch so simple jobs never touch a model and real work goes to the cheapest model that can do it. It's free: <a href="https://github.com/josephtandle/myos-dispatch">github.com/josephtandle/myos-dispatch</a>
-          </p>
-        </div>
-
-        <p style="font-size: 14px; color: #555; line-height: 1.7; margin-bottom: 8px;">
-          If you want help setting this up on your own work, that is what we do every week at
-          <a href="${withUtm('https://mastermindshq.business', { campaign: 'lead-magnet', content: 'tokens' })}" style="color: #8B79D4; font-weight: 600;">Masterminds HQ</a>.
-        </p>
-
-        <p style="font-size: 14px; color: #999; margin-top: 32px;">Joe Che</p>
+      <div style="font-family:Georgia,'Times New Roman',serif;font-size:16px;line-height:1.7;color:#2a2536;max-width:560px;">
+        <p>Hi,</p>
+        <p>Here is The Token Diet, as promised.</p>
+        <p>Before you pay more for AI, stop burning what you already pay for. These four changes stopped my agents wasting 1.4 billion tokens on the same plan. The full guide, with the exact setup for each one, stays open here: <a href="${tokensPageUrl}" style="${linkStyle}">open The Token Diet</a>.</p>
+        <p style="color:#6a6480;">The short version:</p>
+        <p style="${itemStyle}"><span style="color:#8B79D4;font-weight:bold;">1. Filter the noise.</span> RTK (free, open source, not mine) trims test output, git logs and file listings before the model reads them. On my setup it cut 70% of the noisy command output. The install steps are on the page.</p>
+        <p style="${itemStyle}"><span style="color:#8B79D4;font-weight:bold;">2. Use the cheapest model that can do each job.</span> Default to the mid model. Step up only when a task fails.</p>
+        <p style="${itemStyle}"><span style="color:#8B79D4;font-weight:bold;">3. Audit your CLAUDE.md against mine.</span> Paste the prompt from the page into Claude Code. It compares yours to my <a href="${claudeMdUrl}" style="${linkStyle}">Ultimate CLAUDE.md</a> and keeps only what fits.</p>
+        <p style="margin:0 0 16px;padding-left:14px;border-left:2px solid #d9d2ee;color:#3a3550;"><span style="color:#8B79D4;font-weight:bold;">4. Put a receptionist in front of your AI.</span> I built MyOS Dispatch so simple jobs never touch a model and real work goes to the cheapest model that can do it. It is free: <a href="${dispatchUrl}" style="${linkStyle}">MyOS Dispatch on GitHub</a>.</p>
+        <p>If you want help setting this up on your own work, that is what we do every week at <a href="${mhqUrl}" style="${linkStyle}">Masterminds HQ</a>. And if you get stuck, just hit reply, I read them all.</p>
+        <p style="margin-top:20px;">Joe</p>
         ${unsubscribeFooter}
       </div>
     `
+    text = [
+      'Hi,',
+      '',
+      'Here is The Token Diet, as promised.',
+      '',
+      'Before you pay more for AI, stop burning what you already pay for. These four changes stopped my agents wasting 1.4 billion tokens on the same plan. The full guide, with the exact setup for each one, stays open here:',
+      tokensPageUrl,
+      '',
+      'The short version:',
+      '',
+      '1. Filter the noise. RTK (free, open source, not mine) trims test output, git logs and file listings before the model reads them. On my setup it cut 70% of the noisy command output. The install steps are on the page.',
+      '',
+      '2. Use the cheapest model that can do each job. Default to the mid model. Step up only when a task fails.',
+      '',
+      `3. Audit your CLAUDE.md against mine. Paste the prompt from the page into Claude Code. It compares yours to my Ultimate CLAUDE.md (${claudeMdUrl}) and keeps only what fits.`,
+      '',
+      `4. Put a receptionist in front of your AI. I built MyOS Dispatch so simple jobs never touch a model and real work goes to the cheapest model that can do it. It is free: ${dispatchUrl}`,
+      '',
+      `If you want help setting this up on your own work, that is what we do every week at Masterminds HQ (${mhqUrl}). And if you get stuck, just hit reply, I read them all.`,
+      '',
+      'Joe',
+      '',
+      unsubscribeUrl ? `Sent by Masterminds HQ. Unsubscribe any time: ${unsubscribeUrl}` : 'Sent by Masterminds HQ.',
+    ].join('\n')
   } else if (source === 'cost-stack') {
     subject = 'Your Cost Stack Audit'
     html = `
@@ -540,6 +539,7 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
       to: [email],
       subject,
       html,
+      ...(text ? { text } : {}),
       headers: buildUnsubscribeHeaders(email),
     }),
   })
