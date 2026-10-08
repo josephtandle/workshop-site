@@ -9,6 +9,7 @@
 
 import { buildUnsubscribeUrl } from './list-unsubscribe'
 import { withUtm } from './utm'
+import { FREE_AI_TOOL_SLUGS } from './free-ai-tools'
 
 export type LeadMagnet = {
   slug: string
@@ -68,6 +69,8 @@ export const DELIVERABLE_LEAD_MAGNET_SOURCES: ReadonlySet<string> = new Set([
   'speak-human',
   'tokens',
   'web-design-arsenal',
+  // Free AI Tools batch (2026-10-08): one template for all ten, see src/lib/free-ai-tool-email.ts.
+  ...FREE_AI_TOOL_SLUGS,
 ])
 
 /** True when /api/lead-magnet has a real asset for this source. */

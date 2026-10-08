@@ -3,6 +3,7 @@ import test from 'node:test'
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 
+import { FREE_AI_TOOL_SLUGS } from '../src/lib/free-ai-tools'
 import {
   DELIVERABLE_LEAD_MAGNET_SOURCES,
   isDeliverableLeadMagnetSource,
@@ -147,6 +148,11 @@ test('unregistered slugs are not deliverable', () => {
 
 test('every deliverable source has a matching branch in the route', () => {
   for (const source of DELIVERABLE_LEAD_MAGNET_SOURCES) {
+    // The ten Free AI Tools pages share one table-driven branch.
+    if (FREE_AI_TOOL_SLUGS.includes(source)) {
+      assert.ok(leadMagnetSrc.includes('isFreeAiToolSource(source)'), `"${source}" needs the isFreeAiToolSource branch in /api/lead-magnet`)
+      continue
+    }
     assert.ok(
       leadMagnetSrc.includes(`source === '${source}'`),
       `DELIVERABLE_LEAD_MAGNET_SOURCES lists "${source}" but /api/lead-magnet has no branch for it. The set and the template chain must not drift.`,

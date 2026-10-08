@@ -7,6 +7,8 @@ import { isSuppressed } from '@/lib/email-suppressions'
 import { isDeliverableLeadMagnetSource, UnknownLeadMagnetSourceError } from '@/lib/lead-magnets'
 import { withUtm } from '@/lib/utm'
 import { buildSpeakHumanEmail } from '@/lib/speak-human-email'
+import { buildFreeAiToolEmail } from '@/lib/free-ai-tool-email'
+import { isFreeAiToolSource } from '@/lib/free-ai-tools'
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
 
@@ -518,6 +520,13 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
         ${unsubscribeFooter}
       </div>
     `
+  } else if (isFreeAiToolSource(source)) {
+    // Free AI Tools batch (/giveaways/free-ai-<tool>): setup notes in the
+    // pretty-light letter format, content from src/lib/free-ai-tools.ts.
+    const freeAiToolEmail = buildFreeAiToolEmail({ source, unsubscribeFooter, unsubscribeUrl })
+    subject = freeAiToolEmail.subject
+    html = freeAiToolEmail.html
+    text = freeAiToolEmail.text
   } else {
     // Fail closed. This branch used to send the Un-Learning Success PDF to any
     // unrecognised source, which meant roughly eighteen giveaway pages emailed
