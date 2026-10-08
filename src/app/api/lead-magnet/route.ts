@@ -10,6 +10,7 @@ import { htmlToText } from '@/lib/html-to-text'
 import { buildSpeakHumanEmail } from '@/lib/speak-human-email'
 import { buildFreeAiToolEmail } from '@/lib/free-ai-tool-email'
 import { isFreeAiToolSource } from '@/lib/free-ai-tools'
+import { buildQuizGiveawayEmail, isQuizGiveawaySource } from '@/lib/quiz-giveaway-email'
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
 
@@ -528,6 +529,13 @@ Remind me to run guardog analyze &lt;package-name&gt; &lt;npm or pypi&gt; before
     subject = freeAiToolEmail.subject
     html = freeAiToolEmail.html
     text = freeAiToolEmail.text
+  } else if (isQuizGiveawaySource(source)) {
+    // AI quiz giveaways (IG keywords LEVEL and BEHAVIOR): quiz link plus the
+    // band map, pretty-light letter, see src/lib/quiz-giveaway-email.ts.
+    const quizEmail = buildQuizGiveawayEmail({ source, unsubscribeFooter, unsubscribeUrl })
+    subject = quizEmail.subject
+    html = quizEmail.html
+    text = quizEmail.text
   } else {
     // Fail closed. This branch used to send the Un-Learning Success PDF to any
     // unrecognised source, which meant roughly eighteen giveaway pages emailed
@@ -574,6 +582,8 @@ const GIVEAWAY_SOURCE_MAP: Record<string, string> = {
   'business-builder-quiz': 'giveaway-business-builder-quiz',
   'lead-machine': 'giveaway-lead-machine',
   'tokens': 'giveaway-tokens',
+  'ai-levels-quiz': 'giveaway-ai-levels-quiz',
+  'ai-behavior-quiz': 'giveaway-ai-behavior-quiz',
 }
 
 async function ingestIntoCrm(email: string, source: string) {
