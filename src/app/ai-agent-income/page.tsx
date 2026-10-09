@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import AiAgentIncomeCheckoutForm from './AiAgentIncomeCheckoutForm'
+import PromptPackRequestForm from './PromptPackRequestForm'
 
 export const metadata: Metadata = {
   title: {
@@ -21,6 +22,7 @@ export const metadata: Metadata = {
 }
 
 const lanes = [
+  'All 200 full build prompts from the book, as copy-and-paste files, on day one',
   'A new batch of 10 passive-income lanes every week',
   'Full Claude Code build prompts for each lane',
   'Idea, copy-paste prompt, and tripwire offer in the same format as the book',
@@ -165,6 +167,9 @@ export default function AiAgentIncomePage() {
         <div className="mt-8">
           <AiAgentIncomeCheckoutForm />
         </div>
+      </section>
+      <section className="mx-auto max-w-3xl px-6 pb-20">
+        <PromptPackRequestForm />
       </section>
     </main>
   )

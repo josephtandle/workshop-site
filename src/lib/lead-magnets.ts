@@ -9,6 +9,8 @@
 
 import { buildUnsubscribeUrl } from './list-unsubscribe'
 import { withUtm } from './utm'
+import { FREE_AI_TOOL_SLUGS } from './free-ai-tools'
+import { QUIZ_GIVEAWAY_SLUGS } from './quiz-giveaway-email'
 
 export type LeadMagnet = {
   slug: string
@@ -48,7 +50,7 @@ export function getLeadMagnet(slug: string): LeadMagnet | undefined {
  * route AND its slug here, in the same change.
  *
  * Known gap the fail-closed behaviour exposes: several live giveaway pages
- * (agent-infrastructure, ai-behavior-quiz, ai-levels-quiz, anthropic-safety-checklist,
+ * (agent-infrastructure, anthropic-safety-checklist,
  * benchmark, claude-md, client-launch-checklist, compare,
  * cross-cli-compatibility-routing, fable-worth-it-audit, ig-settings,
  * logo-maker-guide, ray-dalio-council, squarespace-escape,
@@ -68,6 +70,10 @@ export const DELIVERABLE_LEAD_MAGNET_SOURCES: ReadonlySet<string> = new Set([
   'speak-human',
   'tokens',
   'web-design-arsenal',
+  // Free AI Tools batch (2026-10-08): one template for all ten, see src/lib/free-ai-tool-email.ts.
+  ...FREE_AI_TOOL_SLUGS,
+  // AI quiz giveaways, IG keywords LEVEL and BEHAVIOR (2026-10-08), see src/lib/quiz-giveaway-email.ts.
+  ...QUIZ_GIVEAWAY_SLUGS,
 ])
 
 /** True when /api/lead-magnet has a real asset for this source. */

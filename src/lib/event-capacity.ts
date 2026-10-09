@@ -98,3 +98,51 @@ export async function releaseEventSeatByCheckout(checkoutSessionId: string): Pro
     throw new Error(`Unable to release the expired checkout seat: ${error.message}`)
   }
 }
+
+type CheckoutSessionLike = { id: string; status: string | null }
+export type CheckoutSessionsApi = {
+  retrieve(id: string): Promise<CheckoutSessionLike>
+  expire(id: string): Promise<CheckoutSessionLike>
+}
+
+/**
+ * A guest who starts a checkout, leaves, and comes back used to hit "You already
+ * have a checkout in progress" until Stripe's expiry webhook freed the seat
+ * (Jasmine Oh, 2026-10-02; several other guests before her signed up under a
+ * second email or gave up). The earlier Checkout Session is still attached to
+ * their held seat, so settle it instead of blocking:
+ *   - already paid  -> confirm the seat (the webhook may simply be late)
+ *   - still open    -> expire it (Stripe guarantees it can no longer be paid),
+ *                      release the hold, and claim a fresh seat
+ *   - expired       -> release the hold and claim a fresh seat
+ */
+export async function settleAttachedCheckout(
+  event: EventDefinition,
+  attendeeEmail: string,
+  claim: EventSeatClaim,
+  sessions: CheckoutSessionsApi,
+): Promise<EventSeatClaim> {
+  if (claim.status !== 'held' || !claim.checkoutSessionId) return claim
+  const sessionId = claim.checkoutSessionId
+
+  let session = await sessions.retrieve(sessionId)
+  if (session.status === 'open') {
+    try {
+      session = await sessions.expire(sessionId)
+    } catch {
+      // It may have completed between retrieve and expire; re-read and decide.
+      session = await sessions.retrieve(sessionId)
+    }
+  }
+
+  if (session.status === 'complete') {
+    await confirmEventSeat(claim.reservationId, sessionId)
+    return { ...claim, status: 'confirmed' }
+  }
+  if (session.status !== 'expired') {
+    throw new Error(`Checkout ${sessionId} is still ${session.status}; cannot start another one.`)
+  }
+
+  await releaseEventSeatByCheckout(sessionId)
+  return claimEventSeat(event, attendeeEmail)
+}

@@ -2,6 +2,10 @@ import type { NextConfig } from 'next'
 import path from 'path'
 
 const nextConfig: NextConfig = {
+  outputFileTracingIncludes: {
+    '/api/ai-agent-income/prompt-pack': ['./private-assets/ai-agent-income/**'],
+    '/api/ai-agent-income/prompt-pack/request': ['./private-assets/ai-agent-income/**'],
+  },
   turbopack: {
     root: path.resolve(__dirname),
   },

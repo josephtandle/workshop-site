@@ -117,3 +117,4 @@ Testing the new `cost-stack` capture on production returned a 500. So did `guard
 Before starting a new giveaway, read this file end to end. Each entry costs roughly one full rebuild cycle in lost time. The rule that follows the failure is the cheap version.
 
 When a new failure happens, add an entry with: date, what happened, root cause, the rule that prevents the repeat. Link the rule into PROCESS.md so it has somewhere durable to live.
+- 2026-10-02 tokens: PASS in 3 rounds. First failures: U6 overstated claim (rtk gain measures trimmed command output, not plan usage), D2 rtk init -g needs ~/.claude + --auto-patch + restart, U2/U3 no first win or glossary for non-technical readers, U5 developer-only section. Lesson: verify every number's denominator and run every command on a clean HOME before grading.
